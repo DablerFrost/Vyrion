@@ -1147,6 +1147,34 @@ const DATA = [
     flags:['First major tech company to ship carbon neutral products (Watch Ultra, 2023)','Active supplier engagement program covering 70% of manufacturing emissions','Uses some carbon removals — methodology published and under independent review'],
     src:'Apple Environmental Progress Report 2024 · SBTi Database · CDP A-List 2024',
     tags:['TECHNOLOGY','SCOPE 3 INCLUDED','CLOSEST TO TARGET']
+  },
+   {
+    id:'starbucks', name:'Starbucks', icon:'☕', 
+    sector:'BEVERAGE RETAIL', status:'warn', score:29,
+    pledges:[
+      { q:'"Cut Scope 1, 2 and 3 GHG emissions by 50% absolute by FY2030 vs FY2019." — Starbucks Environmental Commitment, Jan 2020 · SBTi Validated',
+        bars:[
+          { l:'Target by 2030',    pct:100, fc:'f-pledged', vc:'var(--t2)',    vt:'−50%' },
+          { l:'Required by now',   pct:60,  fc:'f-pledged', vc:'var(--t2)',    vt:'−30%' },
+          { l:'Actual FY2024',     pct:56,  fc:'f-breach',  vc:'var(--breach)',vt:'+3% ↑' },
+        ]
+      },
+      { q:'"Cut waste sent to landfill from stores and manufacturing by 50% by FY2030." — Starbucks Resource Positive Vision 2020',
+        bars:[
+          { l:'Required by now',   pct:60,  fc:'f-pledged', vc:'var(--t2)',    vt:'−30%' },
+          { l:'Actual FY2024',     pct:56,  fc:'f-breach',  vc:'var(--breach)',vt:'+6% ↑' },
+        ]
+      },
+    ],
+    flags:[
+      '90.9% of total emissions are Scope 3 — the dominant driver is dairy. The business model is a dairy company with coffee in it.',
+      'On a linear path to −50% by 2030, emissions should be −30% by now. They are +3%. Gap: 33 percentage points moving the wrong direction.',
+      'No structural mechanism announced to close a 33-point gap in 4 years without changing what they sell.',
+      'Credit: SBTi 1.5°C validated. 100% renewable energy for US/Canada/EMEA stores since 2015. Transparent reporting.',
+      'Disclosure: Researcher\'s wife is a Starbucks Partner. The oat milk latte was excellent. The numbers remain the numbers.'
+    ],
+    src:'Starbucks FY2024 Global Impact Report · CDP Climate 2023 · SBTi Database · Net Zero Tracker Dec 2024 · ESG Dive March 2024',
+    tags:['BEVERAGE RETAIL','SCOPE 3 = 90.9%','WRONG DIRECTION']
   }
 ];
 
