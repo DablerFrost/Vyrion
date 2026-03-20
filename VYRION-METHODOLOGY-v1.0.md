@@ -61,6 +61,18 @@ Each morning, any indicators with new published data are ingested from their sou
 
 ---
 
+### Uncertainty & Minimum Detectable Change
+
+All VYRION Index scores carry a propagated uncertainty 
+of approximately ±1.8 points derived from source data 
+measurement error across the 48 indicators. Day-to-day 
+score changes of less than ±0.5 points fall within 
+measurement uncertainty and should not be interpreted 
+as statistically significant movements. Scores are 
+reported as: [score] ± 1.8 / 100.
+
+---
+
 ## SECTION 3 — THE 48 INDICATORS
 
 ### SYSTEM 1 — ATMOSPHERE (Weight: 22%)
