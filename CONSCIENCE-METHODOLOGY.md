@@ -61,6 +61,57 @@ February 2025 strategic reset explicitly increased fossil fuel capital allocatio
 - IEA Net Zero by 2050 Roadmap (pathway benchmarks)
 
 ---
+---
+
+## Starbucks — Score: 29 / 100
+### BREACH
+
+**Pledge:** −50% absolute Scope 1+2+3 emissions by 2030 vs 2019 baseline. 
+Resource Positive by 2030: waste to landfill −50%, water withdrawal −50%.
+
+**Verified Reality (FY2024 · CDP Climate 2023 · SBTi Database · Net Zero Tracker):**
+
+| Indicator | Required by Now | Actual FY2024 | Gap |
+|---|---|---|---|
+| Scope 1+2+3 emissions | −17% vs 2019 (linear path) | +3% vs 2019 | −20 pts |
+| Waste to landfill | −17% vs 2019 (linear path) | +6% vs 2019 | −23 pts |
+| Scope 3 share of footprint | Reduction trajectory | 90.9% of total | Structurally dominant |
+| Renewable energy | Maintain 100% US/Canada/EMEA | 100% maintained | ✓ Credit |
+
+**Emissions Trajectory: 7/25**
+On a linear path to −50% by 2030, emissions should be approximately −17% vs 2019 
+by now. Actual: +3%. Gap: 20 percentage points. Waste to landfill gap: 23 percentage 
+points. Both primary metrics are moving in the wrong direction.
+
+**Pledge Integrity: 8/25**
+SBTi 1.5°C validated — genuine credit. 100% renewable energy for US/Canada/EMEA 
+stores since 2015 — verified and maintained. These are real commitments with real 
+verification. However: 90.9% of total emissions are Scope 3, dominated by dairy supply 
+chain. No structural mechanism has been announced to close a 20-point gap in 4 years 
+without changing the core product model. The business model is a dairy company with 
+coffee in it. SBTi validation does not resolve that arithmetic.
+
+**Reporting Transparency: 8/25**
+CDP Climate questionnaire submitted. FY2024 Global Impact Report published. Scope 3 
+categories disclosed. Reporting is above average for the sector.
+
+**Structural Commitment: 6/25**
+No announced changes to dairy sourcing model. No credible supply chain transition 
+plan proportionate to the 90.9% Scope 3 exposure. Oat milk and plant-based 
+alternatives available but not at scale sufficient to shift the emissions curve.
+
+**Total: 29/100 — BREACH**
+
+**Disclosure:** The VYRION researcher's wife is a Starbucks Partner. 
+The oat milk latte was excellent. The numbers remain the numbers.
+
+**Sources:**
+- Starbucks FY2024 Global Impact Report
+- CDP Climate 2023 — Starbucks submission
+- SBTi Database — Starbucks target record
+- Net Zero Tracker — December 2024
+
+---
 
 ## Score Audit Log
 
@@ -70,7 +121,7 @@ February 2025 strategic reset explicitly increased fossil fuel capital allocatio
 | ExxonMobil | 8 | March 18, 2026 | March 25, 2026 |
 | Shell | 19 | March 18, 2026 | April 1, 2026 |
 | Delta | 14 | March 18, 2026 | April 8, 2026 |
-| Starbucks | 29 | March 20, 2026 | Pending confirmation |
+| Starbucks | 29 | March 20, 2026 | March 20, 2026 |
 | Walmart | 38 | March 18, 2026 | TBD |
 | Meta | 43 | March 18, 2026 | TBD |
 | Amazon | 47 | March 18, 2026 | TBD |
