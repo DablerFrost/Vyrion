@@ -33,7 +33,7 @@ html{scroll-behavior:smooth}
 body{
   background:var(--void);color:var(--t1);
   font-family:'Archivo',sans-serif;
-  font-size:calc(15px * var(--font-scale));
+  font-size:calc(18px * var(--font-scale));
   line-height:1.65;min-height:100vh;overflow-x:hidden;
   transition:background .35s,color .35s;
 }
@@ -884,12 +884,14 @@ try {
 // ─────────────────────────────────────────────────────────
 //  FONT SCALE
 // ─────────────────────────────────────────────────────────
-function setScale(btn) {
+function setScale(btn) function setScale(btn) {
   const scale = btn.dataset.scale;
   document.documentElement.style.setProperty('--font-scale', scale);
   document.querySelectorAll('.nc-size').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   try { localStorage.setItem('vyrion-scale', scale); } catch(e){}
+  document.body.style.fontSize = 'calc(18px * ' + scale + ')';
+}
 }
 // Restore saved scale
 try {
