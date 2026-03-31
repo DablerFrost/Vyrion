@@ -894,14 +894,13 @@ function setScale(btn) {
 }
 }
 // Restore saved scale
+// Restore saved scale — runs immediately, DOM already ready at bottom of body
 try {
   const saved = localStorage.getItem('vyrion-scale');
   if (saved) {
     document.documentElement.style.setProperty('--font-scale', saved);
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.nc-size').forEach(b => {
-        b.classList.toggle('active', b.dataset.scale === saved);
-      });
+    document.querySelectorAll('.nc-size').forEach(b => {
+      b.classList.toggle('active', b.dataset.scale === saved);
     });
   }
 } catch(e){}
