@@ -15,7 +15,7 @@
   --breach-bg:rgba(240,48,48,0.07);--warn-bg:rgba(240,144,0,0.07);--track-bg:rgba(0,255,157,0.06);
   --nav-bg:rgba(3,10,5,0.96);--mag-bg:rgba(5,15,10,0.97);
   --scanline:rgba(0,255,157,0.006);
-  --font-scale:1.2;
+  --font-scale:1;
 }
 [data-theme="light"]{
   --void:#f0f7f3;--void2:#e3ede7;--void3:#d3e6da;
@@ -29,11 +29,11 @@
 
 /* ── RESET & BASE ─────────────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:21px;}
+html{scroll-behavior:smooth}
 body{
   background:var(--void);color:var(--t1);
   font-family:'Archivo',sans-serif;
-  font-size:inherit;
+  font-size:calc(15px * var(--font-scale));
   line-height:1.65;min-height:100vh;overflow-x:hidden;
   transition:background .35s,color .35s;
 }
@@ -81,7 +81,7 @@ body::after{
   background:transparent;color:var(--t3);cursor:pointer;transition:all .18s;
 }
 .nc-size:hover{border-color:rgba(0,255,157,.3);color:var(--t1)}
-.nc-size.active{background:rgba(0,255,157,.18);border-color:rgba(0,255,157,.7);color:var(--glow);box-shadow:0 0 6px rgba(0,255,157,.25)}
+.nc-size.active{background:rgba(0,255,157,.08);border-color:rgba(0,255,157,.4);color:var(--glow)}
 
 /* ── LIVE TICKER ──────────────────────────────────────────── */
 .live-banner{display:flex;align-items:center;flex-wrap:wrap;background:var(--void2);border-bottom:1px solid var(--border)}
@@ -312,6 +312,7 @@ body::after{
   <a href="https://dablerfrost.github.io/conscience" class="nav-logo">VYRION</a>
   <ul class="nav-links">
     <li><a href="https://dablerfrost.github.io/conscience" class="active">CONSCIENCE</a></li>
+    <li><a href="atlas.html">ATLAS</a></li>
     <li><a href="shield.html">SHIELD</a></li>
     <li><a href="https://dablerfrost.github.io/conscience/archive">ARCHIVE</a></li>
   </ul>
@@ -400,15 +401,15 @@ body::after{
 <div class="filter-bar">
   <div class="filter-btns">
     <button class="f-btn active" data-filter="all">All <span id="f-all">11</span></button>
-    <button class="f-btn breach" data-filter="breach">Breach <span id="f-breach">5</span></button>
+    <button class="f-btn breach" data-filter="breach">Breach <span id="f-breach">7</span></button>
     <button class="f-btn warn" data-filter="warning">Warning <span id="f-warn">3</span></button>
-    <button class="f-btn track" data-filter="on-track">On Track <span id="f-track">3</span></button>
+    <button class="f-btn track" data-filter="on-track">On Track <span id="f-track">1</span></button>
   </div>
   <div class="filter-stats">
     <div class="fstat total">Tracking <span>11</span> companies</div>
-    <div class="fstat breach">Breach <span>5</span></div>
+    <div class="fstat breach">Breach <span>7</span></div>
     <div class="fstat warn">Warning <span>3</span></div>
-    <div class="fstat track">On Track <span>3</span></div>
+    <div class="fstat track">On Track <span>1</span></div>
   </div>
 </div>
 
@@ -442,6 +443,7 @@ body::after{
     Methodology: <a href="https://github.com/dablerfrost/conscience/blob/main/VYRION-METHODOLOGY-v1.0.md" target="_blank">VYRION-METHODOLOGY-v1.0.md</a> · <a href="https://github.com/dablerfrost/conscience" target="_blank">github.com/dablerfrost/conscience</a> · Tyler Frost / DablerFrost · Hilo, Hawaii
   </div>
   <div class="footer-r">
+    <a href="atlas.html">ATLAS →</a>
     <a href="shield.html">SHIELD →</a>
     <a href="https://dablerfrost.github.io/conscience/archive">ARCHIVE →</a>
   </div>
@@ -724,118 +726,6 @@ function edgarUrl(cik) {
 // ─────────────────────────────────────────────────────────
 //  NOAA CO2
 // ─────────────────────────────────────────────────────────
-// ─────────────────────────────────────────────────────────
-//  LIVE DATA LOADER — reads from conscience-data.json
-//  Written by GitHub Actions daily. Falls back to direct
-//  API calls if JSON not yet available.
-// ─────────────────────────────────────────────────────────
-
-async function loadConscienceData() {
-  try {
-    const r = await fetch('conscience-data.json?v=' + Date.now());
-    if (!r.ok) throw new Error('conscience-data.json not found');
-    const d = await r.json();
-    // Check freshness — warn if data is older than 36 hours
-    if (d.meta?.generated) {
-      const age = Date.now() - new Date(d.meta.generated).getTime();
-      if (age > 36 * 3600 * 1000) {
-        console.warn('[CONSCIENCE] Data is >36h old. GitHub Actions may have failed.');
-      }
-    }
-    return d;
-  } catch(e) {
-    console.warn('[CONSCIENCE] conscience-data.json unavailable, falling back to live API calls');
-    return null;
-  }
-}
-
-async function applyConscienceData(d) {
-  // ── CO2 ────────────────────────────────────────────────
-  const co2 = d?.atmosphere?.co2;
-  if (co2?.ppm) {
-    document.getElementById('co2-val').textContent = co2.ppm;
-    document.getElementById('co2-sub').textContent =
-      `ppm · NOAA Mauna Loa · ${co2.date}`;
-  }
-
-  // ── VYRION INDEX ───────────────────────────────────────
-  const idx = d?.vyrion_index;
-  if (idx) {
-    // Update the ticker banner (score already hardcoded in HTML,
-    // but this future-proofs it once Tyler wires manual updates)
-    const idxEl = document.querySelector('.lb-val.amber');
-    if (idxEl && idx.score) {
-      idxEl.innerHTML = `${idx.score} <span style="font-size:.65rem;color:var(--t3)">± ${idx.uncertainty}</span>`;
-    }
-    const idxSub = idxEl?.nextElementSibling;
-    if (idxSub && idx.day && idx.date) {
-      idxSub.textContent = `/ 100 · Day ${idx.day} · ${formatDate(idx.date)}`;
-    }
-  }
-
-  // ── GLOBAL TEMP ANOMALY (supplementary badge) ──────────
-  const tempAnomaly = d?.atmosphere?.global_temp_anomaly;
-  if (tempAnomaly?.anomaly_celsius !== undefined) {
-    const sign = tempAnomaly.anomaly_celsius >= 0 ? '+' : '';
-    // Inject into last ticker cell if element exists
-    const tsEl = document.getElementById('check-ts');
-    if (tsEl) {
-      // Add anomaly as a sub-line below timestamp
-      const anomalyEl = document.createElement('div');
-      anomalyEl.style.cssText = 'font-family:"Courier Prime",monospace;font-size:.55rem;color:var(--breach);margin-top:.1rem';
-      anomalyEl.textContent = `${sign}${tempAnomaly.anomaly_celsius}°C vs 20th-C avg`;
-      if (!document.getElementById('temp-anomaly-badge')) {
-        anomalyEl.id = 'temp-anomaly-badge';
-        tsEl.parentNode?.appendChild(anomalyEl);
-      }
-    }
-  }
-
-  // ── EDGAR PER COMPANY ──────────────────────────────────
-  const companies = d?.companies || {};
-  let edgarOk = 0;
-  for (const [id, co] of Object.entries(companies)) {
-    const edgar = co?.edgar;
-    if (!edgar) continue;
-    const valEl = document.getElementById('edgar-val-' + id);
-    const subEl = document.getElementById('edgar-sub-' + id);
-    if (!valEl || !subEl) continue;
-
-    if (edgar.annual_filing?.date) {
-      valEl.textContent = edgar.annual_filing.date;
-      valEl.classList.remove('loading-pulse');
-      valEl.style.color = 'var(--glow)';
-      valEl.style.fontSize = '.7rem';
-      const filingUrl = edgar.annual_filing?.url || `https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=${edgar.cik}&type=10-K`;
-      let subHtml = `<a href="${filingUrl}" target="_blank" style="color:rgba(0,255,157,.4);text-decoration:none">${edgar.annual_filing.form} →</a>`;
-      // Append 8-K count signal if notable
-      if (edgar.count_8k_90d >= 3) {
-        subHtml += `<span style="color:var(--warn);font-size:.54rem;display:block;margin-top:.08rem">${edgar.count_8k_90d} events / 90d ⚠</span>`;
-      } else if (edgar.count_8k_90d > 0) {
-        subHtml += `<span style="color:var(--t3);font-size:.54rem;display:block;margin-top:.08rem">${edgar.count_8k_90d} events / 90d</span>`;
-      }
-      subEl.innerHTML = subHtml;
-      edgarOk++;
-    } else {
-      valEl.textContent = 'N/A';
-      valEl.classList.remove('loading-pulse');
-      valEl.style.color = 'var(--t3)';
-      subEl.textContent = 'EDGAR offline';
-    }
-  }
-
-  return edgarOk;
-}
-
-function formatDate(iso) {
-  try {
-    return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-  } catch(e) { return iso; }
-}
-
-// ─────────────────────────────────────────────────────────
-//  FALLBACK — direct NOAA + EDGAR calls if no JSON yet
-// ─────────────────────────────────────────────────────────
 async function fetchCO2() {
   try {
     const r = await fetch('https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_daily_mlo.txt');
@@ -846,7 +736,7 @@ async function fetchCO2() {
       if (parts.length >= 5) {
         const val = parseFloat(parts[4]);
         if (!isNaN(val) && val > 0) {
-          return { ppm: val.toFixed(2), date: `${parts[0]}-${parts[1].padStart(2,'0')}-${parts[2].padStart(2,'0')}` };
+          return { ppm:val.toFixed(2), date:`${parts[0]}-${parts[1].padStart(2,'0')}-${parts[2].padStart(2,'0')}` };
         }
       }
     }
@@ -854,31 +744,294 @@ async function fetchCO2() {
   } catch(e) { return null; }
 }
 
-async function fetchEdgar(company) {
-  try {
-    const r = await fetch(`https://data.sec.gov/submissions/CIK${company.cik}.json`);
-    if (!r.ok) throw new Error();
-    const d = await r.json();
-    const forms = d.filings.recent.form;
-    const dates = d.filings.recent.filingDate;
-    for (let i = 0; i < forms.length; i++) {
-      if (forms[i] === '10-K' || forms[i] === '20-F') {
-        return { form: forms[i], date: dates[i], cik: company.cik.replace(/^0+/, '') };
-      }
-    }
-    return null;
-  } catch(e) { return null; }
+// ─────────────────────────────────────────────────────────
+//  RENDER CARDS
+// ─────────────────────────────────────────────────────────
+function cdpClass(g){if(!g)return'cdp-D';if(g.startsWith('A'))return'cdp-A';if(g.startsWith('B'))return'cdp-B';if(g.startsWith('C'))return'cdp-C';return'cdp-D'}
+function imClass(g){if(!g)return'im-worst';if(g.startsWith('A'))return'im-good';if(g.startsWith('B'))return'im-mid';if(g.startsWith('C'))return'im-bad';return'im-worst'}
+function lawClass(n){if(n===0)return'law-0';if(n<=3)return'law-low';if(n<=12)return'law-mid';return'law-high'}
+
+function renderCard(co) {
+  const bc = co.band==='breach'?'band-breach':co.band==='warning'?'band-warning':'band-track';
+  const sbRows = co.sb.map(r=>`<div class="sb-row"><span class="sb-factor">${r.factor}</span><span class="sb-weight">${r.weight}</span><span class="sb-pts">${r.pts>0?'+':''}${r.pts}</span></div>`).join('');
+  const sbTotal = co.sb.reduce((a,r)=>a+r.pts,0);
+  return `
+  <div class="c-card ${bc}" data-band="${co.band}" data-id="${co.id}">
+    <div class="c-head">
+      <div>
+        <div class="c-name">${co.name}</div>
+        <div class="c-meta">${co.ticker} · ${co.sector} · CIK ${co.cik.replace(/^0+/,'')}</div>
+      </div>
+      <div class="c-score-wrap">
+        <div class="c-score-num">${co.score}<span class="c-score-den">/100</span></div>
+        <div class="c-band">${co.bandLabel}</div>
+      </div>
+    </div>
+    <div class="score-bar-wrap" data-mag="score-bar">
+      <div class="score-bar-bg"><div class="score-bar-fill" data-target="${co.score}" style="width:0"></div></div>
+      <div class="score-bar-labels"><span>0 BREACH</span><span>30</span><span>60</span><span>ON TRACK 100</span></div>
+    </div>
+    <div class="pr-block">
+      <div class="pr-row" data-mag="pledge-row">
+        <span class="pr-tag tag-pledge">PLEDGE</span>
+        <span class="pr-text">${co.pledge}</span>
+      </div>
+      <div class="pr-src"><a href="${co.pledgeUrl}" target="_blank">↗ ${co.pledgeSrc}</a></div>
+      <div class="pr-row" data-mag="reality-row">
+        <span class="pr-tag tag-reality ${co.realityClass}">REALITY</span>
+        <span class="pr-text">${co.reality}</span>
+      </div>
+      <div class="pr-src">Sources: ${co.realitySrc}</div>
+    </div>
+    <div class="val-grid">
+      <div class="v-badge" data-mag="cdp-badge"><a href="${co.cdpUrl}" target="_blank">
+        <div class="v-badge-name">CDP ${co.cdpYear}</div>
+        <div class="v-badge-val ${cdpClass(co.cdpGrade)}">${co.cdpGrade}</div>
+        <div class="v-badge-sub">Climate disclosure</div>
+      </a></div>
+      <div class="v-badge" data-mag="im-badge"><a href="${co.imUrl}" target="_blank">
+        <div class="v-badge-name">InfluenceMap</div>
+        <div class="v-badge-val ${imClass(co.im)}">${co.im}</div>
+        <div class="v-badge-sub">Lobbying alignment</div>
+      </a></div>
+      <div class="v-badge" data-mag="sbti-badge"><a href="${co.sbtiUrl}" target="_blank">
+        <div class="v-badge-name">SBTi</div>
+        <div class="v-badge-val ${co.sbtiClass}" style="font-size:.66rem;line-height:1.2">${co.sbti}</div>
+        <div class="v-badge-sub">Science Based Targets</div>
+      </a></div>
+      <div class="v-badge" data-mag="sabin-badge"><a href="${co.sabinUrl}" target="_blank">
+        <div class="v-badge-name">Sabin Center</div>
+        <div class="v-badge-val ${lawClass(co.sabin)}">${co.sabin}</div>
+        <div class="v-badge-sub">Active lawsuits</div>
+      </a></div>
+      <div class="v-badge" data-mag="tpi-badge"><a href="${co.tpiUrl}" target="_blank">
+        <div class="v-badge-name">TPI</div>
+        <div class="v-badge-val" style="font-size:.76rem;color:var(--t2)">${co.tpi}</div>
+        <div class="v-badge-sub">Mgmt quality</div>
+      </a></div>
+      <div class="v-badge" data-mag="edgar-badge" id="edgar-card-${co.id}">
+        <div class="v-badge-name">SEC EDGAR</div>
+        <div class="v-badge-val loading-pulse" style="font-size:.68rem;color:var(--t3)" id="edgar-val-${co.id}">—</div>
+        <div class="v-badge-sub" id="edgar-sub-${co.id}">Fetching…</div>
+      </div>
+    </div>
+    <button class="expand-toggle" onclick="toggleBreakdown('${co.id}',this)">
+      <span>Score calculation · ${co.sb.length} factors · formula per CONSCIENCE-v1.0</span>
+      <span class="chevron">▼</span>
+    </button>
+    <div class="score-breakdown" id="bd-${co.id}">
+      ${sbRows}
+      <div class="sb-total-row">
+        <span class="sb-factor">CONSCIENCE Score (computed)</span>
+        <span class="sb-pts">${sbTotal} / 100</span>
+      </div>
+      <div class="sb-method">
+        Methodology: <a href="https://github.com/dablerfrost/conscience/blob/main/VYRION-METHODOLOGY-v1.0.md" target="_blank">VYRION-METHODOLOGY-v1.0.md</a> ·
+        Open Proof Protocol: <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a>
+      </div>
+    </div>
+  </div>`;
 }
 
-function edgarUrl(cik) {
-  return `https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=${cik}&type=10-K&dateb=&owner=include&count=5`;
+function toggleBreakdown(id, btn) {
+  document.getElementById('bd-'+id).classList.toggle('open');
+  btn.classList.toggle('open');
+}
+
+// ─────────────────────────────────────────────────────────
+//  FILTER
+// ─────────────────────────────────────────────────────────
+document.querySelectorAll('.f-btn').forEach(b => {
+  b.addEventListener('click', () => {
+    const f = b.dataset.filter;
+    document.querySelectorAll('.f-btn').forEach(x => {
+      x.classList.remove('active','breach','warn','track');
+    });
+    b.classList.add('active');
+    if(f==='breach') b.classList.add('breach');
+    if(f==='warning') b.classList.add('warn');
+    if(f==='on-track') b.classList.add('track');
+    document.querySelectorAll('.c-card').forEach(c => {
+      c.classList.toggle('hidden', f !== 'all' && c.dataset.band !== f);
+    });
+  });
+});
+
+// ─────────────────────────────────────────────────────────
+//  THEME TOGGLE
+// ─────────────────────────────────────────────────────────
+function toggleTheme() {
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  const btn = document.getElementById('theme-btn');
+  btn.textContent = isDark ? '◑ LIGHT' : '◐ DARK';
+  btn.classList.toggle('active', true);
+  try { localStorage.setItem('vyrion-theme', isDark ? 'light' : 'dark'); } catch(e){}
+}
+// Restore saved theme
+try {
+  const saved = localStorage.getItem('vyrion-theme');
+  if (saved === 'light') {
+    document.documentElement.setAttribute('data-theme','light');
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('theme-btn');
+      if(btn) btn.textContent = '◑ LIGHT';
+    });
+  }
+} catch(e){}
+
+// ─────────────────────────────────────────────────────────
+//  FONT SCALE
+// ─────────────────────────────────────────────────────────
+function setScale(btn) {
+  const scale = btn.dataset.scale;
+  document.documentElement.style.setProperty('--font-scale', scale);
+  document.querySelectorAll('.nc-size').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  try { localStorage.setItem('vyrion-scale', scale); } catch(e){}
+}
+// Restore saved scale
+try {
+  const saved = localStorage.getItem('vyrion-scale');
+  if (saved) {
+    document.documentElement.style.setProperty('--font-scale', saved);
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.nc-size').forEach(b => {
+        b.classList.toggle('active', b.dataset.scale === saved);
+      });
+    });
+  }
+} catch(e){}
+
+// ─────────────────────────────────────────────────────────
+//  MAGNIFIER ENGINE
+// ─────────────────────────────────────────────────────────
+const magEl  = document.getElementById('mag');
+const magT   = document.getElementById('mag-t');
+const magB   = document.getElementById('mag-b');
+const magS   = document.getElementById('mag-s');
+let magActive = false;
+
+document.addEventListener('mousemove', e => {
+  if (!magActive) return;
+  const pad = 22, w = magEl.offsetWidth || 290, h = magEl.offsetHeight || 170;
+  const vw = window.innerWidth, vh = window.innerHeight;
+  let x = e.clientX + pad, y = e.clientY - 14;
+  if (x + w > vw - 8) x = e.clientX - w - pad;
+  if (y + h > vh - 8) y = e.clientY - h - 4;
+  if (y < 8) y = 8;
+  magEl.style.left = x + 'px';
+  magEl.style.top  = y + 'px';
+});
+
+// Attach magnifier to all [data-mag] elements — including dynamically rendered cards
+function attachMag(container) {
+  (container || document).querySelectorAll('[data-mag]').forEach(el => {
+    if (el._magAttached) return;
+    el._magAttached = true;
+    el.addEventListener('mouseenter', () => {
+      const d = getMagContent(el);
+      if (!d) return;
+      magT.textContent = d.t;
+      magB.textContent = d.b;
+      magS.textContent = d.s;
+      magEl.classList.add('show');
+      magActive = true;
+    });
+    el.addEventListener('mouseleave', () => {
+      magEl.classList.remove('show');
+      magActive = false;
+    });
+  });
+}
+
+// ─────────────────────────────────────────────────────────
+//  LIVE DATA LOADER — reads conscience-data.json (GitHub Actions daily)
+//  Falls back to direct API calls if JSON not available yet.
+// ─────────────────────────────────────────────────────────
+
+async function loadConscienceData() {
+  try {
+    const r = await fetch('conscience-data.json?v=' + Date.now());
+    if (!r.ok) throw new Error('conscience-data.json not found');
+    const d = await r.json();
+    if (d.meta?.generated) {
+      const age = Date.now() - new Date(d.meta.generated).getTime();
+      if (age > 36 * 3600 * 1000) console.warn('[CONSCIENCE] Data >36h old — GitHub Actions may have failed');
+    }
+    return d;
+  } catch(e) {
+    console.warn('[CONSCIENCE] conscience-data.json unavailable, using live API fallback');
+    return null;
+  }
+}
+
+function formatDateStr(iso) {
+  try { return new Date(iso).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}); }
+  catch(e) { return iso; }
+}
+
+async function applyConscienceData(d) {
+  // CO2
+  const co2 = d?.atmosphere?.co2;
+  if (co2?.ppm) {
+    document.getElementById('co2-val').textContent = co2.ppm;
+    document.getElementById('co2-sub').textContent = `ppm · NOAA Mauna Loa · ${co2.date}`;
+  }
+
+  // VYRION Index score from JSON (Tyler sets this manually each morning)
+  const idx = d?.vyrion_index;
+  if (idx?.score) {
+    const idxEl = document.querySelector('.lb-val.amber');
+    if (idxEl) idxEl.innerHTML = `${idx.score} <span style="font-size:.65rem;color:var(--t3)">± ${idx.uncertainty || 1.8}</span>`;
+    const idxSub = idxEl?.nextElementSibling;
+    if (idxSub && idx.day && idx.date) idxSub.textContent = `/ 100 · Day ${idx.day} · ${formatDateStr(idx.date)}`;
+  }
+
+  // Global temp anomaly badge
+  const temp = d?.atmosphere?.global_temp_anomaly;
+  if (temp?.anomaly_celsius !== undefined && !document.getElementById('temp-anomaly-badge')) {
+    const sign = temp.anomaly_celsius >= 0 ? '+' : '';
+    const el = document.createElement('div');
+    el.id = 'temp-anomaly-badge';
+    el.style.cssText = 'font-family:"Courier Prime",monospace;font-size:.55rem;color:var(--breach);margin-top:.1rem';
+    el.textContent = `${sign}${temp.anomaly_celsius}°C vs 20th-C avg · NOAA`;
+    document.getElementById('check-ts')?.parentNode?.appendChild(el);
+  }
+
+  // EDGAR per company
+  const companies = d?.companies || {};
+  let edgarOk = 0;
+  for (const [id, co] of Object.entries(companies)) {
+    const edgar = co?.edgar;
+    if (!edgar) continue;
+    const vEl = document.getElementById('edgar-val-' + id);
+    const sEl = document.getElementById('edgar-sub-' + id);
+    if (!vEl || !sEl) continue;
+    if (edgar.annual_filing?.date) {
+      vEl.textContent = edgar.annual_filing.date;
+      vEl.classList.remove('loading-pulse');
+      vEl.style.color = 'var(--glow)'; vEl.style.fontSize = '.7rem';
+      const fUrl = edgar.annual_filing?.url || `https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=${edgar.cik}&type=10-K`;
+      let sub = `<a href="${fUrl}" target="_blank" style="color:rgba(0,255,157,.4);text-decoration:none">${edgar.annual_filing.form} →</a>`;
+      if (edgar.count_8k_90d >= 3) sub += `<span style="color:var(--warn);font-size:.54rem;display:block;margin-top:.08rem">${edgar.count_8k_90d} events/90d ⚠</span>`;
+      else if (edgar.count_8k_90d > 0) sub += `<span style="color:var(--t3);font-size:.54rem;display:block;margin-top:.08rem">${edgar.count_8k_90d} events/90d</span>`;
+      sEl.innerHTML = sub;
+      edgarOk++;
+    } else {
+      vEl.textContent = 'N/A'; vEl.classList.remove('loading-pulse');
+      vEl.style.color = 'var(--t3)'; sEl.textContent = 'EDGAR offline';
+    }
+  }
+  return edgarOk;
 }
 
 // ─────────────────────────────────────────────────────────
 //  INIT
 // ─────────────────────────────────────────────────────────
 async function init() {
-  // 1. Render cards
+  // 1. Render all 11 company cards
   const grid = document.getElementById('grid');
   grid.innerHTML = COMPANIES.map(renderCard).join('');
 
@@ -889,7 +1042,7 @@ async function init() {
     });
   }, 180));
 
-  // 3. Attach magnifier
+  // 3. Attach magnifier to new cards
   attachMag(grid);
 
   // 4. Timestamp
@@ -897,26 +1050,27 @@ async function init() {
   document.getElementById('check-ts').textContent =
     now.toUTCString().replace(' GMT','').replace(/:\d\d /,' ').trim() + ' UTC';
 
-  // 5. Try conscience-data.json first (GitHub Actions daily data)
-  const conscienceData = await loadConscienceData();
+  // 5. Try conscience-data.json first (written daily by GitHub Actions)
+  const cdata = await loadConscienceData();
 
-  if (conscienceData) {
-    // ── HAPPY PATH: use pre-fetched JSON ────────────────────
-    const edgarOk = await applyConscienceData(conscienceData);
-    const generated = conscienceData.meta?.generated_date || 'today';
+  if (cdata) {
+    // ── HAPPY PATH: pre-fetched GitHub Actions data ─────────
+    const edgarOk = await applyConscienceData(cdata);
+    const generated = cdata.meta?.generated_date || 'today';
     document.getElementById('edgar-status').textContent =
       `${edgarOk}/11 verified · Data: ${generated} · GitHub Actions`;
 
-    // CO2 may have already been set by applyConscienceData but double-check
-    if (!conscienceData.atmosphere?.co2) {
+    // CO2 fallback if not in JSON
+    if (!cdata.atmosphere?.co2) {
       const co2 = await fetchCO2();
       if (co2) {
         document.getElementById('co2-val').textContent = co2.ppm;
         document.getElementById('co2-sub').textContent = `ppm · NOAA Mauna Loa · ${co2.date}`;
       }
     }
+
   } else {
-    // ── FALLBACK: call APIs directly ────────────────────────
+    // ── FALLBACK: call APIs directly from browser ────────────
     const co2 = await fetchCO2();
     if (co2) {
       document.getElementById('co2-val').textContent = co2.ppm;
@@ -931,18 +1085,18 @@ async function init() {
     const results = await Promise.allSettled(COMPANIES.map(co => fetchEdgar(co)));
     results.forEach((res, i) => {
       const co = COMPANIES[i];
-      const vEl = document.getElementById('edgar-val-' + co.id);
-      const sEl = document.getElementById('edgar-sub-' + co.id);
+      const vEl = document.getElementById('edgar-val-'+co.id);
+      const sEl = document.getElementById('edgar-sub-'+co.id);
       if (!vEl || !sEl) return;
-      if (res.status === 'fulfilled' && res.value) {
-        const { form, date, cik } = res.value;
+      if (res.status==='fulfilled' && res.value) {
+        const {form,date,cik} = res.value;
         vEl.textContent = date; vEl.classList.remove('loading-pulse');
-        vEl.style.color = 'var(--glow)'; vEl.style.fontSize = '.7rem';
+        vEl.style.color='var(--glow)'; vEl.style.fontSize='.7rem';
         sEl.innerHTML = `<a href="${edgarUrl(cik)}" target="_blank" style="color:rgba(0,255,157,.4);text-decoration:none">${form} →</a>`;
         ok++;
       } else {
         vEl.textContent = 'N/A'; vEl.classList.remove('loading-pulse');
-        vEl.style.color = 'var(--t3)'; sEl.textContent = 'EDGAR offline';
+        vEl.style.color='var(--t3)'; sEl.textContent='EDGAR offline';
       }
     });
     document.getElementById('edgar-status').textContent =
@@ -950,6 +1104,7 @@ async function init() {
   }
 }
 
+// Attach magnifier to static elements on load
 document.addEventListener('DOMContentLoaded', () => attachMag());
 init();
 setInterval(init, 15 * 60 * 1000);
