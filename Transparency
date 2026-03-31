@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vyrion — Transparency Intelligence</title>
+
+<style>
+/* Base Reset & Body */
+body {
+    margin: 0;
+    background-color: #05070a;
+    color: #e8f0f2;
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* Headings */
+h1, h2, h3 {
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+/* Header */
+.header {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+}
+
+.logo {
+    font-size: 24px;
+    color: #00f0ff;
+    font-weight: 700;
+}
+
+.tagline {
+    color: #7f8c8d;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+/* Cards */
+.card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* Score Styling */
+.score {
+    font-size: clamp(28px, 6vw, 42px);
+    color: #00ff9c;
+    font-weight: 700;
+}
+
+.label {
+    font-size: 12px;
+    color: #ccc;
+    margin-top: 5px;
+}
+
+/* Tags */
+.tag {
+    display: inline-block;
+    padding: 4px 8px;
+    border: 1px solid #00f0ff;
+    color: #00f0ff;
+    font-size: 10px;
+    margin-top: 10px;
+    margin-right: 5px;
+    border-radius: 4px;
+}
+
+/* Grid Modules */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.module {
+    text-align: center;
+    padding: 15px;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 6px;
+}
+
+/* Footer */
+.footer {
+    margin-top: 60px;
+    font-size: 12px;
+    color: #888;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 15px;
+    }
+    .logo {
+        font-size: 20px;
+    }
+    .tagline {
+        font-size: 12px;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">VYRION</div>
+        <div class="tagline">Transparency Intelligence System</div>
+    </div>
+
+    <!-- Definition -->
+    <div class="card">
+        <h2>Definition</h2>
+        <p>Vyrion Score = A weighted transparency index measuring verifiable ESG signal integrity across 8 modules.</p>
+    </div>
+
+    <!-- Example Company Score -->
+    <div class="card">
+        <h2>Company Profile — Example</h2>
+        <div class="score">74</div>
+        <div class="label">Vyrion Score</div>
+        <div class="tag">Confidence: Medium</div>
+        <div class="tag">Updated: March 2026</div>
+    </div>
+
+    <!-- Module Breakdown -->
+    <div class="card">
+        <h2>Module Breakdown</h2>
+        <div class="grid">
+            <div class="module">Environmental<br><strong>68</strong></div>
+            <div class="module">Social<br><strong>72</strong></div>
+            <div class="module">Governance<br><strong>79</strong></div>
+        </div>
+    </div>
+
+    <!-- Key Issues -->
+    <div class="card">
+        <h2>Key Issues</h2>
+        <ul>
+            <li>Emission data lacks third-party verification</li>
+            <li>Labor audit inconsistencies identified</li>
+            <li>Governance transparency above industry baseline</li>
+        </ul>
+    </div>
+
+    <!-- Data Verification -->
+    <div class="card">
+        <h2>Data Verification Layer</h2>
+        <p><strong>Claim:</strong> Emissions reduced by 12%</p>
+        <p><strong>Source:</strong> 2023 Sustainability Report (pg. 42)</p>
+        <p><strong>Type:</strong> Self-Reported</p>
+        <p><strong>Confidence:</strong> Medium</p>
+        <p><strong>Updated:</strong> March 2024</p>
+    </div>
+
+    <!-- Methodology -->
+    <div class="card">
+        <h2>Methodology</h2>
+        <p>Vyrion Methodology v1.0 is a fixed, version-controlled framework. No scoring changes occur without public updates.</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>This analysis is based on publicly available data.</p>
+        <p>Vyrion is a methodology-based scoring system.</p>
+        <p>This content is not financial advice.</p>
+    </div>
+
+</div>
+</body>
+</html>
