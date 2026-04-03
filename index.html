@@ -807,6 +807,42 @@ body::after{
       <tr><td>Legal Exposure</td><td>20</td><td>Sabin Center litigation DB</td><td>Base 20 − (0.5 × active cases); floor 0</td></tr>
     </tbody>
   </table>
+  <!-- DATA CADENCE DISCLOSURE — add after existing method-table -->
+<div style="margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid var(--border2)">
+  <div class="method-title" style="font-size:.75rem;margin-bottom:.6rem">Indicator Update Cadences — 48 Indicators · 8 Systems</div>
+  <div style="font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--t3);margin-bottom:.8rem;line-height:1.6">
+    The VYRION Index is a daily composite. Each indicator updates at its scientifically-appropriate cadence — 
+    from continuous satellite streams to annual assessments. The composite score reflects the most current 
+    available data for each indicator. Day-to-day changes under ±0.5 are within measurement error.
+    Full cadence documentation: <a href="https://github.com/dablerfrost/conscience/blob/main/VYRION-METHODOLOGY-v1.0.md" target="_blank" style="color:rgba(0,212,255,.4);text-decoration:none">VYRION-METHODOLOGY-v1.0.md §Data Freshness</a>
+  </div>
+  <table class="method-table">
+    <thead>
+      <tr>
+        <th>System</th>
+        <th>Weight</th>
+        <th>Fastest Indicator</th>
+        <th>Slowest Indicator</th>
+        <th>Composite Cadence</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Atmosphere</td><td>22%</td><td>CO₂ (daily · NOAA GML)</td><td>Radiative forcing (monthly)</td><td style="color:var(--glow)">Daily update</td></tr>
+      <tr><td>Ocean</td><td>18%</td><td>SST anomaly (daily · NOAA OISST)</td><td>Ocean heat content (monthly)</td><td style="color:var(--glow)">Daily update</td></tr>
+      <tr><td>Ice / Cryosphere</td><td>14%</td><td>Arctic sea ice extent (daily · NSIDC)</td><td>Glacier volume (annual)</td><td style="color:var(--glow)">Daily update</td></tr>
+      <tr><td>Forest</td><td>13%</td><td>Active fire events (daily · NASA EONET)</td><td>Deforestation rate (annual · GFW)</td><td style="color:var(--amber)">Monthly refresh</td></tr>
+      <tr><td>Biodiversity</td><td>12%</td><td>GBIF occurrence records (weekly)</td><td>Living Planet Index (annual · WWF)</td><td style="color:var(--amber)">Monthly refresh</td></tr>
+      <tr><td>Freshwater</td><td>10%</td><td>Drought index (daily · SPEI)</td><td>Groundwater depletion (annual · GRACE)</td><td style="color:var(--glow)">Daily update</td></tr>
+      <tr><td>Soil</td><td>7%</td><td>Desertification proxy (monthly · Copernicus)</td><td>Carbon density (annual)</td><td style="color:var(--amber)">Monthly refresh</td></tr>
+      <tr><td>Corporate Accountability</td><td>4%</td><td>SEC 8-K filings (daily · EDGAR)</td><td>CDP responses (annual)</td><td style="color:var(--glow)">Daily update</td></tr>
+    </tbody>
+  </table>
+  <div style="font-family:'Courier Prime',monospace;font-size:.54rem;color:var(--t3);margin-top:.6rem;line-height:1.6">
+    ⊕ "Daily update" = one or more indicators in this system refresh daily, anchoring the composite.<br>
+    ⊕ "Monthly refresh" = indicators update as new satellite or assessment data publishes. Score held at last confirmed value between updates, disclosed as such.<br>
+    ⊕ Uncertainty bounds of ±1.8 propagated across all indicator cadences. Pre-industrial 1850–1900 baseline = 100/100.
+  </div>
+</div>
 </section>
 
 <!-- FOOTER -->
