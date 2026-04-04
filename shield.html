@@ -1,1357 +1,268 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.2">
-<title>VYRION SHIELD — Global Disaster Early Warning</title>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&family=Archivo:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VYRION CONSCIENCE — Data Feed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&family=Archivo:wght@400;500&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --void:      #030a05;
-  --void2:     #071210;
-  --void3:     #0a1a14;
-  --glow:      #00FF9D;
-  --amber:     #FFB84D;
-  --breach:    #F03030;
-  --warn:      #F09000;
-  --t1:        #e8f5ec;
-  --t2:        #8aab92;
-  --t3:        #4a7a58;
-  --border:    rgba(0,255,157,0.10);
-  --border2:   rgba(0,255,157,0.06);
-  /* SHIELD hazard palette */
-  --h-seismic:  #F03030;
-  --h-fire:     #FF6B1A;
-  --h-storm:    #4AADFF;
-  --h-flood:    #44CCAA;
-  --h-volcanic: #FF4400;
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--void);
-  color: var(--t1);
-  font-family: 'Archivo', sans-serif;
-  font-size: 18px;
-  line-height: 1.65;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-/* Scanline */
-body::after {
-  content: '';
-  position: fixed; inset: 0;
-  background: repeating-linear-gradient(0deg,
-    transparent, transparent 3px,
-    rgba(0,255,157,0.007) 3px, rgba(0,255,157,0.007) 4px);
-  pointer-events: none; z-index: 1000;
-}
-
-/* ── NAV ───────────────────────────────────────────── */
-.nav {
-  position: sticky; top: 0; z-index: 500;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 2rem; height: 52px;
-  background: rgba(3,10,5,0.96);
-  border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(16px);
-}
-.nav-logo {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-weight: 800; font-size: 1rem;
-  color: var(--glow); letter-spacing: 0.14em; text-decoration: none;
-}
-.nav-links { display: flex; gap: 2rem; list-style: none; }
-.nav-links a {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-weight: 700; font-size: 0.72rem;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--t2); text-decoration: none; transition: color 0.2s;
-  padding-bottom: 2px;
-}
-.nav-links a:hover { color: var(--t1); }
-.nav-links a.active { color: var(--breach); border-bottom: 1px solid rgba(240,48,48,0.4); }
-.nav-dot {
-  width: 6px; height: 6px;
-  background: var(--breach); border-radius: 50%;
-  animation: pulse-dot 2.2s infinite;
-}
-@keyframes pulse-dot {
-  0%,100% { opacity:1; box-shadow:0 0 0 0 rgba(240,48,48,0.4); }
-  50%      { opacity:0.5; box-shadow:0 0 0 5px rgba(240,48,48,0); }
-}
-
-/* ── HEADER ─────────────────────────────────────────── */
-.shield-header {
-  position: relative;
-  padding: 3.2rem 2rem 2.4rem;
-  border-bottom: 1px solid var(--border);
-  overflow: hidden;
-}
-.shield-header .bg-word {
-  position: absolute; right: -1rem; top: 50%;
-  transform: translateY(-50%);
-  font-family: 'Archivo Narrow', sans-serif;
-  font-weight: 800; font-size: clamp(6rem, 14vw, 11rem);
-  color: rgba(240,48,48,0.04); letter-spacing: 0.05em;
-  pointer-events: none; user-select: none; line-height: 1;
-}
-.header-eyebrow {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.7rem; color: var(--breach);
-  letter-spacing: 0.22em; text-transform: uppercase;
-  margin-bottom: 0.6rem;
-  display: flex; align-items: center; gap: 0.6rem;
-}
-.header-eyebrow::before {
-  content: ''; display: inline-block;
-  width: 24px; height: 1px; background: var(--breach); opacity: 0.5;
-}
-.header-title {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-weight: 800; font-size: clamp(2.4rem, 6vw, 4rem);
-  color: var(--t1); line-height: 1;
-  letter-spacing: -0.02em; margin-bottom: 0.7rem;
-}
-.header-sub {
-  font-size: 0.88rem; color: var(--t2);
-  max-width: 68ch; line-height: 1.7;
-}
-
-/* ── THREAT LEVEL STRIP ─────────────────────────────── */
-.threat-strip {
-  display: flex; align-items: center; flex-wrap: wrap;
-  gap: 0; padding: 0;
-  border-bottom: 1px solid var(--border);
-  background: var(--void2);
-  overflow: hidden;
-}
-
-.threat-main {
-  padding: 1.6rem 2rem;
-  border-right: 1px solid var(--border);
-  display: flex; flex-direction: column; gap: 0.5rem;
-  min-width: 280px;
-}
-.threat-label {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.65rem; color: var(--t3);
-  letter-spacing: 0.18em; text-transform: uppercase;
-}
-.threat-level-badge {
-  display: flex; align-items: center; gap: 0.8rem;
-}
-.threat-dot {
-  width: 10px; height: 10px; border-radius: 50%;
-  flex-shrink: 0;
-}
-.threat-word {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-weight: 800; font-size: 2.2rem;
-  letter-spacing: 0.04em; line-height: 1;
-}
-.threat-dot-nominal { background: var(--glow); }
-.threat-dot-watch   { background: var(--amber); animation: pulse-threat 2s infinite; }
-.threat-dot-elevated{ background: var(--warn);  animation: pulse-threat 1.5s infinite; }
-.threat-dot-critical{ background: var(--breach);animation: pulse-threat 1s infinite; }
-
-.threat-word-nominal  { color: var(--glow); }
-.threat-word-watch    { color: var(--amber); }
-.threat-word-elevated { color: var(--warn); }
-.threat-word-critical { color: var(--breach); }
-
-@keyframes pulse-threat {
-  0%,100%{ opacity:1; }
-  50%    { opacity:0.55; }
-}
-
-.threat-counts {
-  flex: 1; display: flex; flex-wrap: wrap;
-  align-items: stretch;
-}
-.threat-count-cell {
-  flex: 1; min-width: 100px;
-  padding: 1rem 1.4rem;
-  border-right: 1px solid var(--border);
-  display: flex; flex-direction: column; gap: 0.2rem;
-}
-.threat-count-cell:last-child { border-right: none; }
-.tc-icon {
-  font-size: 0.72rem; color: var(--t3);
-  font-family: 'Courier Prime', monospace;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  margin-bottom: 0.1rem;
-}
-.tc-num {
-  font-family: 'Courier Prime', monospace;
-  font-weight: 700; font-size: 1.8rem;
-  line-height: 1; letter-spacing: -0.02em;
-}
-.tc-sub {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.6rem; color: var(--t3);
-}
-.tc-seismic  .tc-num { color: var(--h-seismic); }
-.tc-fire     .tc-num { color: var(--h-fire); }
-.tc-storm    .tc-num { color: var(--h-storm); }
-.tc-flood    .tc-num { color: var(--h-flood); }
-.tc-volcanic .tc-num { color: var(--h-volcanic); }
-
-.threat-meta {
-  padding: 1rem 1.5rem;
-  border-left: 1px solid var(--border);
-  display: flex; flex-direction: column;
-  justify-content: center; gap: 0.3rem;
-  min-width: 190px;
-}
-.threat-window {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.65rem; color: var(--glow);
-  display: flex; align-items: center; gap: 0.4rem;
-}
-.threat-window::before {
-  content: '';
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--breach);
-  animation: pulse-dot 2s infinite; flex-shrink: 0;
-}
-.threat-updated {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.6rem; color: var(--t3);
-}
-
-/* ── HAZARD GRID ─────────────────────────────────────── */
-.hazard-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  border-left: 1px solid var(--border);
-  border-top: 1px solid var(--border);
-}
-@media (max-width: 1200px) { .hazard-grid { grid-template-columns: repeat(3,1fr); } }
-@media (max-width: 800px)  { .hazard-grid { grid-template-columns: repeat(2,1fr); } }
-@media (max-width: 500px)  { .hazard-grid { grid-template-columns: 1fr; } }
-
-.h-card {
-  background: var(--void2);
-  border-right: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 1.4rem 1.4rem 1.15rem;
-  position: relative; overflow: hidden;
-  transition: background 0.25s;
-}
-.h-card::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, transparent, var(--card-accent, var(--glow)), transparent);
-  opacity: 0; transition: opacity 0.3s;
-}
-.h-card:hover { background: var(--void3); }
-.h-card:hover::before { opacity: 1; }
-
-.h-card-num {
-  position: absolute; right: 0.9rem; bottom: 0.4rem;
-  font-family: 'Archivo Narrow', sans-serif; font-weight: 800;
-  font-size: 3.2rem; color: rgba(0,255,157,0.025);
-  pointer-events: none; user-select: none; line-height: 1;
-}
-
-.h-card-top {
-  display: flex; align-items: flex-start;
-  justify-content: space-between; margin-bottom: 1rem;
-}
-.h-name {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-weight: 800; font-size: 0.85rem;
-  letter-spacing: 0.12em; text-transform: uppercase;
-}
-.h-type {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.6rem; color: var(--t3);
-  letter-spacing: 0.08em; margin-top: 0.18rem;
-}
-
-.status-pill {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.6rem; letter-spacing: 0.08em;
-  padding: 0.14rem 0.5rem; border-radius: 2px;
-  white-space: nowrap; flex-shrink: 0;
-}
-.pill-live    { background:rgba(0,255,157,0.07);  color:var(--glow);   border:1px solid rgba(0,255,157,0.2); }
-.pill-loading { background:rgba(255,184,77,0.07); color:var(--amber);  border:1px solid rgba(255,184,77,0.2); }
-.pill-static  { background:rgba(138,171,146,0.05); color:var(--t2);  border:1px solid rgba(138,171,146,0.15); }
-
-/* Primary metric */
-.h-primary { margin-bottom: 0.9rem; }
-.h-val {
-  font-family: 'Courier Prime', monospace;
-  font-weight: 700; font-size: 1.65rem;
-  line-height: 1.1; transition: color 0.2s;
-}
-.h-unit {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.76rem; color: var(--t3); margin-left: 0.2rem;
-}
-.h-label {
-  font-size: 0.7rem; color: var(--t2);
-  margin-top: 0.2rem; line-height: 1.4;
-}
-
-/* Rows */
-.h-rows {
-  display: flex; flex-direction: column; gap: 0.38rem;
-  padding-top: 0.7rem; margin-bottom: 0.8rem;
-  border-top: 1px solid var(--border2);
-}
-.h-row {
-  display: flex; justify-content: space-between;
-  align-items: baseline; gap: 0.4rem;
-}
-.h-row-lbl {
-  font-size: 0.68rem; color: var(--t2); flex-shrink: 0;
-}
-.h-row-val {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.71rem; color: var(--t1); text-align: right;
-}
-
-/* Event mini-list */
-.h-events { display: flex; flex-direction: column; gap: 0.25rem; }
-.h-ev {
-  font-family: 'Courier Prime', monospace; font-size: 0.64rem;
-  color: var(--t2); white-space: nowrap;
-  overflow: hidden; text-overflow: ellipsis;
-  padding: 0.12rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.03);
-}
-.h-ev-tag { margin-right: 0.3rem; }
-
-.h-src {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.6rem; color: var(--t3);
-  padding-top: 0.65rem; border-top: 1px solid var(--border2);
-  line-height: 1.5;
-}
-.h-src a { color: rgba(0,255,157,0.4); text-decoration: none; transition: color 0.2s; }
-.h-src a:hover { color: var(--glow); }
-
-/* ── 14-DAY EVENT LOG ───────────────────────────────── */
-.log-section {
-  border-top: 1px solid var(--border);
-  padding: 0;
-}
-.log-header {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 1.2rem 2rem;
-  border-bottom: 1px solid var(--border);
-  background: var(--void2);
-  flex-wrap: wrap; gap: 0.8rem;
-}
-.log-title {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-weight: 800; font-size: 0.9rem;
-  letter-spacing: 0.12em; text-transform: uppercase; color: var(--t1);
-}
-.log-subtitle {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.65rem; color: var(--t3); margin-top: 0.15rem;
-}
-.log-count {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.65rem; color: var(--glow);
-  border: 1px solid rgba(0,255,157,0.18); padding: 0.2rem 0.65rem; border-radius: 2px;
-}
-
-.log-table { width: 100%; border-collapse: collapse; }
-.log-table thead th {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--t3); font-weight: 400;
-  padding: 0.7rem 1rem 0.7rem;
-  border-bottom: 1px solid var(--border);
-  text-align: left; background: var(--void2);
-}
-.log-table thead th:first-child { padding-left: 2rem; }
-.log-table thead th:last-child  { padding-right: 2rem; text-align: right; }
-
-.log-row {
-  border-bottom: 1px solid rgba(0,255,157,0.04);
-  transition: background 0.15s;
-}
-.log-row:hover { background: var(--void3); }
-
-.log-row td {
-  padding: 0.7rem 1rem;
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.72rem; vertical-align: middle;
-}
-.log-row td:first-child { padding-left: 2rem; }
-.log-row td:last-child  { padding-right: 2rem; text-align: right; }
-
-.type-badge {
-  display: inline-flex; align-items: center; gap: 0.35rem;
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.6rem; letter-spacing: 0.08em;
-  padding: 0.14rem 0.55rem; border-radius: 2px; white-space: nowrap;
-}
-.badge-seismic  { color: var(--h-seismic);  background: rgba(240,48,48,0.08);  border: 1px solid rgba(240,48,48,0.2);  }
-.badge-fire     { color: var(--h-fire);     background: rgba(255,107,26,0.08); border: 1px solid rgba(255,107,26,0.2); }
-.badge-storm    { color: var(--h-storm);    background: rgba(74,173,255,0.08); border: 1px solid rgba(74,173,255,0.2); }
-.badge-flood    { color: var(--h-flood);    background: rgba(68,204,170,0.08); border: 1px solid rgba(68,204,170,0.2); }
-.badge-volcanic { color: var(--h-volcanic); background: rgba(255,68,0,0.08);   border: 1px solid rgba(255,68,0,0.2);   }
-
-.sev-critical { color: var(--breach); }
-.sev-elevated { color: var(--warn); }
-.sev-watch    { color: var(--amber); }
-.sev-nominal  { color: var(--t3); }
-
-.log-name { color: var(--t1); }
-.log-place { color: var(--t2); font-size: 0.67rem; }
-.log-age   { color: var(--t3); font-size: 0.65rem; letter-spacing: 0.04em; }
-
-.log-empty {
-  padding: 2.5rem 2rem;
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.75rem; color: var(--t3); text-align: center;
-}
-
-/* ── 14-DAY CALENDAR ────────────────────────────────── */
-.outlook-section {
-  border-top: 1px solid var(--border);
-  padding: 2rem;
-}
-.outlook-header {
-  display: flex; align-items: baseline; justify-content: space-between;
-  margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.5rem;
-}
-.outlook-title {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-weight: 800; font-size: 0.9rem;
-  letter-spacing: 0.12em; text-transform: uppercase; color: var(--t1);
-}
-.outlook-sub {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.65rem; color: var(--t3);
-}
-
-/* Calendar strip */
-.cal-strip {
-  display: flex; gap: 0.3rem; margin-bottom: 1.8rem;
-  flex-wrap: nowrap; overflow-x: auto; padding-bottom: 0.5rem;
-}
-.cal-cell {
-  flex: 1; min-width: 44px;
-  display: flex; flex-direction: column;
-  align-items: center; gap: 0.3rem;
-  background: var(--void2); border: 1px solid var(--border2);
-  border-radius: 2px; padding: 0.55rem 0.3rem;
-  position: relative; overflow: hidden;
-  transition: border-color 0.2s;
-}
-.cal-cell.has-critical { border-color: rgba(240,48,48,0.35); }
-.cal-cell.has-elevated { border-color: rgba(240,144,0,0.35); }
-.cal-cell.has-watch    { border-color: rgba(255,184,77,0.2); }
-
-.cal-day-name {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.58rem; color: var(--t3); letter-spacing: 0.06em;
-}
-.cal-day-num {
-  font-family: 'Courier Prime', monospace;
-  font-weight: 700; font-size: 0.85rem; line-height: 1;
-}
-.cal-count {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.6rem;
-}
-.cal-bar {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: 2px;
-}
-.cal-today { border-color: rgba(0,255,157,0.3) !important; }
-.cal-today .cal-day-num { color: var(--glow); }
-
-/* Intelligence brief */
-.intel-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-}
-@media (max-width: 900px) { .intel-grid { grid-template-columns: repeat(2,1fr); } }
-@media (max-width: 600px) { .intel-grid { grid-template-columns: 1fr; } }
-
-.intel-card {
-  background: var(--void2);
-  padding: 1.2rem 1.3rem;
-}
-.intel-card-label {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
-  margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem;
-}
-.intel-card-body {
-  font-size: 0.76rem; color: var(--t2); line-height: 1.6;
-}
-.intel-marker {
-  width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0;
-}
-
-/* ── FOOTER ─────────────────────────────────────────── */
-.shield-footer {
-  display: flex; align-items: center;
-  justify-content: space-between; flex-wrap: wrap;
-  gap: 1rem; padding: 1.5rem 2rem;
-  border-top: 1px solid var(--border);
-}
-.footer-l {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.65rem; color: var(--t3); line-height: 1.7;
-}
-.footer-l a { color: rgba(0,255,157,0.4); text-decoration:none; }
-.footer-l a:hover { color: var(--glow); }
-.footer-r { display: flex; gap: 1.5rem; }
-.footer-r a {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.65rem; color: rgba(0,255,157,0.35);
-  text-decoration:none; transition: color 0.2s; letter-spacing: 0.06em;
-}
-.footer-r a:hover { color: var(--glow); }
-
-/* ── MAGNIFIER ──────────────────────────────────────── */
-#mag {
-  position: fixed; pointer-events: none;
-  z-index: 9999; opacity: 0; width: 276px;
-  transition: opacity 0.18s cubic-bezier(.4,0,.2,1);
-}
-#mag.show { opacity: 1; }
-.mag-box {
-  background: rgba(5,15,10,0.97);
-  border: 1px solid rgba(240,48,48,0.22);
-  border-radius: 3px; padding: 0.9rem 1rem;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.7), 0 0 0 1px rgba(240,48,48,0.04);
-  position: relative; overflow: hidden;
-}
-.mag-box::before {
-  content: '';
-  position: absolute; top:0; left:0; right:0; height:1px;
-  background: linear-gradient(90deg, transparent, rgba(240,48,48,0.55), transparent);
-}
-.mag-brand {
-  font-family: 'Archivo Narrow', sans-serif; font-weight: 800;
-  font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
-  color: rgba(240,48,48,0.35); margin-bottom: 0.45rem;
-  display: flex; align-items: center; gap: 0.5rem;
-}
-.mag-brand::before {
-  content: ''; width: 5px; height: 5px;
-  background: var(--breach); border-radius: 50%;
-  opacity: 0.6; animation: pulse-dot 2s infinite; flex-shrink: 0;
-}
-.mag-title {
-  font-family: 'Archivo Narrow', sans-serif; font-weight: 700;
-  font-size: 0.82rem; color: var(--t1); margin-bottom: 0.4rem;
-  letter-spacing: 0.04em; line-height: 1.3;
-}
-.mag-body {
-  font-size: 0.72rem; color: var(--t2); line-height: 1.55; margin-bottom: 0.5rem;
-}
-.mag-src {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.62rem; color: rgba(240,48,48,0.4);
-  border-top: 1px solid var(--border2); padding-top: 0.4rem; line-height: 1.5;
-}
-
-/* ── UTILS ──────────────────────────────────────────── */
-@keyframes shimmer { 0%,100%{opacity:.3} 50%{opacity:.75} }
-.loading-pulse { animation: shimmer 1.5s infinite; }
-@keyframes data-flash { 0%{color:var(--glow)} 100%{color:inherit} }
-.flashed { animation: data-flash 1s ease-out; }
-.up   { color: var(--breach); }
-.down { color: var(--glow); }
+:root{
+  --void:#020912;--void2:#061624;--void3:#0b2035;
+  --glow:#00D4FF;--amber:#FFB84D;--breach:#F03030;--warn:#F09000;
+  --t1:#e4f2ff;--t2:#6a9ab8;--t3:#2d6080;
+  --border:rgba(0,212,255,.12);--border2:rgba(0,212,255,.07);
+  --breach-bg:rgba(240,48,48,.07);--warn-bg:rgba(240,144,0,.07);--track-bg:rgba(0,212,255,.07);
+}
+[data-theme="light"]{
+  --void:#f0f5ff;--void2:#e4eeff;--void3:#d5e5ff;
+  --glow:#0066CC;--amber:#b07800;--breach:#b82020;--warn:#a05800;
+  --t1:#060e1e;--t2:#1e4a7a;--t3:#3a6090;
+  --border:rgba(0,102,204,.18);--border2:rgba(0,102,204,.10);
+  --breach-bg:rgba(184,32,32,.09);--warn-bg:rgba(160,88,0,.09);--track-bg:rgba(0,102,204,.09);
+}
+[data-theme="light"] body{background:var(--void);color:var(--t1)}
+[data-theme="light"] .nav{background:rgba(240,245,255,.97)}
+[data-theme="light"] .meta-cell,[data-theme="light"] .agg-cell,[data-theme="light"] .factor-card,[data-theme="light"] .idx-cell,[data-theme="light"] .fw-cell,[data-theme="light"] .data-table tbody tr{background:var(--void2)}
+[data-theme="light"] .data-table tbody tr:hover,[data-theme="light"] .factor-card:hover{background:var(--void3)}
+[data-theme="light"] .api-bar{background:rgba(0,0,0,.04)}
+[data-theme="light"] .license-block{background:rgba(0,102,204,.04);border-color:rgba(0,102,204,.2)}
+[data-theme="light"] .cadence-table td,[data-theme="light"] .cadence-table th{color:var(--t2)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--void);color:var(--t1);font-family:"Archivo",sans-serif;line-height:1.6;min-height:100vh;overflow-x:hidden}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:900;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,212,255,.004) 3px,rgba(0,212,255,.004) 4px)}
+.nav{position:sticky;top:0;z-index:500;height:50px;display:flex;align-items:center;gap:.8rem;padding:0 1.8rem;background:rgba(2,9,18,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(20px)}
+.nav-logo{font-family:"Archivo Narrow",sans-serif;font-weight:800;font-size:.9rem;color:var(--glow);letter-spacing:.15em;text-decoration:none;text-shadow:0 0 20px rgba(0,212,255,.3)}
+.nav-links{display:flex;gap:1.5rem;list-style:none;flex:1}
+.nav-links a{font-family:"Archivo Narrow",sans-serif;font-weight:700;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--t2);text-decoration:none;transition:color .2s;padding-bottom:2px}
+.nav-links a:hover{color:var(--t1)}
+.nav-links a.active{color:var(--glow);border-bottom:1px solid rgba(0,212,255,.4)}
+.nav-dot{width:6px;height:6px;background:var(--glow);border-radius:50%;animation:pdot 2.2s infinite;flex-shrink:0}
+@keyframes pdot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,212,255,.5)}50%{opacity:.4;box-shadow:0 0 0 7px rgba(0,212,255,0)}}
+.nav-controls{display:flex;align-items:center;gap:.35rem;flex-shrink:0}
+.nc-sep{width:1px;height:16px;background:var(--border);margin:0 .1rem}
+.nc-theme{font-family:"Courier Prime",monospace;font-size:.58rem;font-weight:700;letter-spacing:.12em;padding:.22rem .5rem;border-radius:2px;border:1px solid var(--border);background:transparent;color:var(--t2);cursor:pointer;transition:all .2s;white-space:nowrap}
+.nc-theme:hover{border-color:var(--glow);color:var(--glow);background:rgba(0,212,255,.08)}
+.nc-sz{font-family:"Courier Prime",monospace;font-size:.6rem;font-weight:700;width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:2px;border:1px solid var(--border);background:transparent;color:var(--t3);cursor:pointer;transition:all .2s}
+.nc-sz:hover{border-color:rgba(0,212,255,.4);color:var(--t1)}
+.nc-sz.active{background:rgba(0,212,255,.15);border-color:var(--glow);color:var(--glow)}
+[data-theme="light"] .nc-theme:hover{background:rgba(0,102,204,.08)}
+[data-theme="light"] .nc-sz.active{background:rgba(0,102,204,.12);border-color:var(--glow);color:var(--glow)}
+@media(max-width:720px){.nav-links{display:none}.nav-controls{gap:.22rem}.nc-sep{display:none}.nc-sz{width:22px;height:22px;font-size:.52rem}.nc-theme{font-size:.52rem;padding:.16rem .32rem}}
+.page-header{padding:2.8rem 1.8rem 2.2rem;border-bottom:1px solid var(--border);position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(0,100,200,.06) 0%,transparent 60%)}
+.page-header::after{content:"DATA FEED";position:absolute;right:-1rem;top:50%;transform:translateY(-50%);font-family:"Archivo Narrow",sans-serif;font-weight:800;font-size:clamp(4rem,10vw,8rem);color:rgba(0,212,255,.025);pointer-events:none;user-select:none}
+.eyebrow{font-family:"Courier Prime",monospace;font-size:.6rem;color:var(--glow);letter-spacing:.24em;text-transform:uppercase;margin-bottom:.45rem;display:flex;align-items:center;gap:.5rem}
+.eyebrow::before{content:"";width:16px;height:1px;background:var(--glow);opacity:.5}
+.page-title{font-family:"Archivo Narrow",sans-serif;font-weight:800;font-size:clamp(2rem,5vw,3.2rem);color:var(--t1);line-height:1;letter-spacing:-.02em;margin-bottom:.5rem}
+.page-sub{font-size:.78rem;color:var(--t2);max-width:64ch;line-height:1.7}
+.meta-strip{display:flex;flex-wrap:wrap;background:var(--void2);border-bottom:1px solid var(--border)}
+.meta-cell{flex:1;min-width:120px;padding:.7rem 1.2rem;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:.1rem}
+.meta-cell:last-child{border-right:none}
+.meta-lbl{font-family:"Courier Prime",monospace;font-size:.52rem;color:var(--t3);letter-spacing:.16em;text-transform:uppercase}
+.meta-val{font-family:"Courier Prime",monospace;font-weight:700;font-size:.92rem;color:var(--glow);line-height:1}
+.meta-val.red{color:var(--breach)}.meta-val.amber{color:var(--amber)}.meta-val.white{color:var(--t1)}
+.meta-sub{font-family:"Courier Prime",monospace;font-size:.5rem;color:var(--t3)}
+.api-bar{background:rgba(0,0,0,.35);border-bottom:1px solid var(--border);padding:.75rem 1.8rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.api-label{font-family:"Courier Prime",monospace;font-size:.54rem;color:var(--t3);letter-spacing:.12em;text-transform:uppercase;flex-shrink:0}
+.api-url{font-family:"Courier Prime",monospace;font-size:.62rem;color:var(--glow);background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.2);padding:.25rem .65rem;border-radius:2px;flex:1;word-break:break-all;cursor:pointer;transition:background .15s}
+.api-url:hover{background:rgba(0,212,255,.12)}
+.api-copy{font-family:"Courier Prime",monospace;font-size:.54rem;letter-spacing:.08em;text-transform:uppercase;padding:.24rem .6rem;border-radius:2px;border:1px solid rgba(0,212,255,.25);background:transparent;color:var(--t2);cursor:pointer;transition:all .15s;white-space:nowrap;flex-shrink:0}
+.api-copy:hover{border-color:rgba(0,212,255,.5);color:var(--glow)}
+.api-note{font-family:"Courier Prime",monospace;font-size:.52rem;color:var(--t3);flex-basis:100%}
+.section-head{display:flex;align-items:center;gap:.6rem;padding:1.4rem 1.8rem .35rem}
+.section-head-title{font-family:"Archivo Narrow",sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t1)}
+.section-rule{flex:1;height:1px;background:var(--border)}
+.agg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1px;background:var(--border);margin:0 1.8rem .5rem;border:1px solid var(--border)}
+.agg-cell{background:var(--void2);padding:.85rem 1rem}
+.agg-lbl{font-family:"Courier Prime",monospace;font-size:.5rem;color:var(--t3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.25rem}
+.agg-val{font-family:"Courier Prime",monospace;font-weight:700;font-size:1.4rem;line-height:1;letter-spacing:-.02em}
+.agg-sub{font-family:"Courier Prime",monospace;font-size:.5rem;color:var(--t3);margin-top:.12rem}
+.table-wrap{overflow-x:auto;margin:0 1.8rem .5rem;border:1px solid var(--border)}
+.data-table{width:100%;border-collapse:collapse;font-family:"Courier Prime",monospace;font-size:.6rem}
+.data-table thead th{text-align:left;padding:.5rem .8rem;color:var(--t3);letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--border);font-weight:400;background:var(--void2);white-space:nowrap}
+.data-table tbody tr{border-bottom:1px solid var(--border2);transition:background .15s}
+.data-table tbody tr:hover{background:var(--void3)}
+.data-table tbody td{padding:.5rem .8rem;vertical-align:middle;color:var(--t2)}
+.data-table tbody td:first-child{color:var(--t1);font-weight:700}
+.td-score{font-weight:700;font-size:.72rem}
+.td-breach{color:var(--breach)}.td-warn{color:var(--warn)}.td-track{color:var(--glow)}
+.band-pill{display:inline-block;font-size:.48rem;letter-spacing:.1em;text-transform:uppercase;padding:.06rem .32rem;border-radius:2px}
+.pill-breach{background:var(--breach-bg);color:var(--breach);border:1px solid rgba(240,48,48,.25)}
+.pill-warn{background:var(--warn-bg);color:var(--warn);border:1px solid rgba(240,144,0,.25)}
+.pill-track{background:var(--track-bg);color:var(--glow);border:1px solid rgba(0,212,255,.25)}
+.src-link{color:rgba(0,212,255,.4);text-decoration:none;transition:color .15s}
+.src-link:hover{color:var(--glow)}
+.factor-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;background:var(--border);margin:0 1.8rem .5rem;border:1px solid var(--border)}
+.factor-card{background:var(--void2);padding:1rem 1.1rem;transition:background .18s}
+.factor-card:hover{background:var(--void3)}
+.factor-name{font-family:"Archivo Narrow",sans-serif;font-weight:800;font-size:.82rem;color:var(--t1);margin-bottom:.15rem}
+.factor-ticker{font-family:"Courier Prime",monospace;font-size:.5rem;color:var(--t3);margin-bottom:.6rem;letter-spacing:.08em}
+.factor-row{display:flex;justify-content:space-between;align-items:baseline;padding:.16rem 0;border-bottom:1px solid var(--border2);font-family:"Courier Prime",monospace;font-size:.56rem}
+.factor-row:last-of-type{border-bottom:none}
+.fr-lbl{color:var(--t2);flex:1}.fr-max{color:var(--t3);font-size:.5rem;padding:0 .5rem;flex-shrink:0}.fr-val{font-weight:700;min-width:28px;text-align:right;flex-shrink:0}
+.factor-total{display:flex;justify-content:space-between;padding:.3rem 0 0;margin-top:.25rem;border-top:1px solid var(--border);font-family:"Courier Prime",monospace;font-size:.62rem}
+.ft-lbl{color:var(--t1)}.ft-val{font-weight:700;font-size:.72rem}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;background:var(--border);margin:0 1.8rem .5rem;border:1px solid var(--border)}
+.idx-cell{background:var(--void2);padding:.9rem 1rem}
+.idx-lbl{font-family:"Courier Prime",monospace;font-size:.5rem;color:var(--t3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.2rem}
+.idx-val{font-family:"Courier Prime",monospace;font-weight:700;font-size:1rem;color:var(--amber);line-height:1.1}
+.idx-sub{font-family:"Courier Prime",monospace;font-size:.5rem;color:var(--t3);margin-top:.1rem;line-height:1.4}
+.section-pad{padding:0 1.8rem}
+.cadence-table{width:100%;border-collapse:collapse;font-family:"Courier Prime",monospace;font-size:.58rem;margin-bottom:.5rem}
+.cadence-table th{text-align:left;padding:.38rem .6rem;color:var(--t3);letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--border);font-weight:400}
+.cadence-table td{padding:.35rem .6rem;color:var(--t2);border-bottom:1px solid var(--border2)}
+.cadence-daily{color:var(--glow)}.cadence-monthly{color:var(--amber)}
+.license-block{margin:0 1.8rem .5rem;padding:1.2rem 1.4rem;background:linear-gradient(135deg,rgba(0,100,200,.06),rgba(0,212,255,.03));border:1px solid rgba(0,212,255,.18);border-radius:2px}
+.license-title{font-family:"Archivo Narrow",sans-serif;font-weight:800;font-size:1rem;color:var(--t1);margin-bottom:.35rem}
+.license-body{font-size:.7rem;color:var(--t2);line-height:1.72;max-width:72ch}
+.license-body a{color:rgba(0,212,255,.5);text-decoration:none}
+.license-body a:hover{color:var(--glow)}
+.license-tiers{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.9rem}
+.lt{font-family:"Courier Prime",monospace;font-size:.56rem;padding:.3rem .7rem;border-radius:2px;border:1px solid rgba(0,212,255,.22);background:rgba(0,212,255,.06);color:var(--glow)}
+.footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem;padding:1.2rem 1.8rem;border-top:1px solid var(--border);margin-top:1.5rem}
+.footer-l{font-family:"Courier Prime",monospace;font-size:.58rem;color:var(--t3);line-height:1.7}
+.footer-l a{color:rgba(0,212,255,.4);text-decoration:none}.footer-l a:hover{color:var(--glow)}
+.footer-r{display:flex;gap:1.2rem}
+.footer-r a{font-family:"Courier Prime",monospace;font-size:.58rem;color:rgba(0,212,255,.3);text-decoration:none;transition:color .15s}
+.footer-r a:hover{color:var(--glow)}
+.mt1{margin-top:1rem}
+@media(max-width:720px){.agg-grid,.factor-grid,.index-grid{grid-template-columns:1fr}.table-wrap,.agg-grid,.factor-grid,.index-grid,.license-block{margin:0 .9rem .5rem}.api-bar,.section-head,.footer,.section-pad{padding-left:.9rem;padding-right:.9rem}}
 </style>
 </head>
 <body>
-
-<!-- NAV -->
 <nav class="nav">
   <a href="https://dablerfrost.github.io/conscience" class="nav-logo">VYRION</a>
   <ul class="nav-links">
     <li><a href="https://dablerfrost.github.io/conscience">CONSCIENCE</a></li>
-    <li><a href="shield.html" class="active">SHIELD</a></li>
+    <li><a href="conscience-data.html" class="active">DATA FEED</a></li>
+    <li><a href="shield.html">SHIELD</a></li>
     <li><a href="https://dablerfrost.github.io/conscience/archive">ARCHIVE</a></li>
   </ul>
+  <div class="nav-controls">
+    <button class="nc-theme" id="theme-btn" onclick="toggleTheme()">&#9680; DARK</button>
+    <div class="nc-sep"></div>
+    <button class="nc-sz" data-scale="0.88" onclick="setScale(this)">S</button>
+    <button class="nc-sz active" data-scale="1.0" onclick="setScale(this)">M</button>
+    <button class="nc-sz" data-scale="1.22" onclick="setScale(this)">L</button>
+  </div>
   <div class="nav-dot"></div>
 </nav>
-
-<!-- HEADER -->
-<header class="shield-header">
-  <div class="bg-word">SHIELD</div>
-  <div class="header-eyebrow">Module 02 · Global Disaster Early Warning</div>
-  <h1 class="header-title">SHIELD</h1>
-  <p class="header-sub">14-day planetary threat window. Real-time aggregation across seismic, wildfire, severe storm, flood, and volcanic systems. All data sourced from USGS, NASA, and NOAA. Find an error — we publish the correction.</p>
+<header class="page-header">
+  <div class="eyebrow">VYRION CONSCIENCE &middot; Machine-Readable Data Feed</div>
+  <h1 class="page-title">conscience-data.json</h1>
+  <p class="page-sub">Complete CONSCIENCE score data for all 11 tracked companies. All factor breakdowns, source URLs, band classifications, VYRION Index metadata, and aggregate statistics. Raw JSON available below for programmatic access.</p>
 </header>
-
-<!-- THREAT LEVEL STRIP -->
-<div class="threat-strip">
-  <div class="threat-main" data-mag="threat-level">
-    <div class="threat-label">SHIELD THREAT ASSESSMENT</div>
-    <div class="threat-level-badge">
-      <div class="threat-dot threat-dot-watch" id="threat-dot"></div>
-      <div class="threat-word threat-word-watch" id="threat-word">
-        <span class="loading-pulse">LOADING</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="threat-counts">
-    <div class="threat-count-cell tc-seismic" data-mag="seismic-count">
-      <div class="tc-icon">⬟ Seismic</div>
-      <div class="tc-num" id="ct-seismic"><span class="loading-pulse">—</span></div>
-      <div class="tc-sub">M4.5+ · 14 days</div>
-    </div>
-    <div class="threat-count-cell tc-fire" data-mag="fire-count">
-      <div class="tc-icon">▲ Wildfire</div>
-      <div class="tc-num" id="ct-fire"><span class="loading-pulse">—</span></div>
-      <div class="tc-sub">Active events</div>
-    </div>
-    <div class="threat-count-cell tc-storm" data-mag="storm-count">
-      <div class="tc-icon">◉ Severe Storm</div>
-      <div class="tc-num" id="ct-storm"><span class="loading-pulse">—</span></div>
-      <div class="tc-sub">Active events</div>
-    </div>
-    <div class="threat-count-cell tc-flood" data-mag="flood-count">
-      <div class="tc-icon">◈ Flood</div>
-      <div class="tc-num" id="ct-flood"><span class="loading-pulse">—</span></div>
-      <div class="tc-sub">Active events</div>
-    </div>
-    <div class="threat-count-cell tc-volcanic" data-mag="volcanic-count">
-      <div class="tc-icon">◆ Volcanic</div>
-      <div class="tc-num" id="ct-volcanic"><span class="loading-pulse">—</span></div>
-      <div class="tc-sub">Active events</div>
-    </div>
-  </div>
-
-  <div class="threat-meta">
-    <div class="threat-window">14-DAY WINDOW ACTIVE</div>
-    <div class="threat-updated">Updated: <span id="ts">—</span></div>
-    <div class="threat-updated" id="window-dates" style="color:var(--t3);font-family:'Courier Prime',monospace;font-size:0.6rem;margin-top:0.15rem;">—</div>
+<div class="meta-strip">
+  <div class="meta-cell"><div class="meta-lbl">Feed Version</div><div class="meta-val">2.8</div><div class="meta-sub">April 3, 2026</div></div>
+  <div class="meta-cell"><div class="meta-lbl">Companies</div><div class="meta-val white">11</div><div class="meta-sub">Coverage portfolio</div></div>
+  <div class="meta-cell"><div class="meta-lbl">Mean Score</div><div class="meta-val amber">38.6</div><div class="meta-sub">/ 100 &middot; v1.0</div></div>
+  <div class="meta-cell"><div class="meta-lbl">Pledge Gap</div><div class="meta-val red">&minus;34.6</div><div class="meta-sub">vs 1.5&deg;C alignment</div></div>
+  <div class="meta-cell"><div class="meta-lbl">Active Lawsuits</div><div class="meta-val red">97</div><div class="meta-sub">Sabin Center total</div></div>
+  <div class="meta-cell"><div class="meta-lbl">Score Version</div><div class="meta-val white">v1.0</div><div class="meta-sub">March 18, 2026</div></div>
+</div>
+<div class="api-bar">
+  <div class="api-label">RAW JSON</div>
+  <div class="api-url" onclick="copyURL()" title="Click to copy">https://dablerfrost.github.io/conscience/conscience-data.json</div>
+  <button class="api-copy" onclick="copyURL()" id="copy-btn">&#8862; COPY URL</button>
+  <div class="api-note">No authentication required. CORS-open. Institutional licensing: <a href="mailto:contact@vyrion.earth" style="color:rgba(0,212,255,.45);text-decoration:none">contact@vyrion.earth</a></div>
+</div>
+<div class="section-head"><div class="section-head-title">Aggregate Statistics</div><div class="section-rule"></div></div>
+<div class="agg-grid">
+  <div class="agg-cell"><div class="agg-lbl">Mean Score</div><div class="agg-val" style="color:var(--amber)" id="agg-mean">38.6</div><div class="agg-sub">/ 100 &middot; 11 companies</div></div>
+  <div class="agg-cell"><div class="agg-lbl">Pledge Gap</div><div class="agg-val" style="color:var(--breach)" id="agg-gap">&minus;34.6</div><div class="agg-sub">vs 1.5&deg;C full alignment</div></div>
+  <div class="agg-cell"><div class="agg-lbl">Breach (0&ndash;30)</div><div class="agg-val" style="color:var(--breach)" id="agg-breach">7</div><div class="agg-sub">companies</div></div>
+  <div class="agg-cell"><div class="agg-lbl">Warning (31&ndash;60)</div><div class="agg-val" style="color:var(--warn)" id="agg-warn">3</div><div class="agg-sub">companies</div></div>
+  <div class="agg-cell"><div class="agg-lbl">On Track (61&ndash;100)</div><div class="agg-val" style="color:var(--glow)" id="agg-track">1</div><div class="agg-sub">companies</div></div>
+  <div class="agg-cell"><div class="agg-lbl">Total Lawsuits</div><div class="agg-val" style="color:var(--breach)" id="agg-law">97</div><div class="agg-sub">Sabin Center active</div></div>
+</div>
+<div class="section-head mt1"><div class="section-head-title">Company Scores &middot; v1.0</div><div class="section-rule"></div></div>
+<div class="table-wrap">
+  <table class="data-table">
+    <thead><tr><th>Company</th><th>Ticker</th><th>Sector</th><th>Score</th><th>Band</th><th>CDP</th><th>InfluenceMap</th><th>SBTi</th><th>Lawsuits</th><th>TPI</th><th>EDGAR</th></tr></thead>
+    <tbody id="scores-tbody"></tbody>
+  </table>
+</div>
+<div class="section-head mt1"><div class="section-head-title">Factor Breakdowns &middot; All 11 Companies</div><div class="section-rule"></div></div>
+<div class="factor-grid" id="factor-grid"></div>
+<div class="section-head mt1"><div class="section-head-title">VYRION Index Metadata</div><div class="section-rule"></div></div>
+<div class="index-grid">
+  <div class="idx-cell"><div class="idx-lbl">Current Score</div><div class="idx-val">41.2 &plusmn; 1.8</div><div class="idx-sub">/ 100 &middot; Day 16</div></div>
+  <div class="idx-cell"><div class="idx-lbl">Date</div><div class="idx-val" style="color:var(--t1);font-size:.82rem">2026-04-04</div><div class="idx-sub">April 4, 2026</div></div>
+  <div class="idx-cell"><div class="idx-lbl">Baseline</div><div class="idx-val" style="color:var(--t1);font-size:.75rem">100 / 100</div><div class="idx-sub">Pre-industrial 1850&ndash;1900</div></div>
+  <div class="idx-cell"><div class="idx-lbl">Indicators</div><div class="idx-val" style="color:var(--t1)">48</div><div class="idx-sub">Across 8 Earth systems</div></div>
+  <div class="idx-cell"><div class="idx-lbl">Uncertainty</div><div class="idx-val" style="color:var(--t1);font-size:.82rem">&plusmn;1.8 pts</div><div class="idx-sub">Min detectable: &plusmn;0.5</div></div>
+  <div class="idx-cell"><div class="idx-lbl">Methodology</div><div class="idx-val" style="font-size:.65rem;line-height:1.3"><a href="https://github.com/dablerfrost/conscience/blob/main/VYRION-METHODOLOGY-v1.0.md" target="_blank" style="color:var(--glow);text-decoration:none">VYRION-METHODOLOGY-v1.0.md &rarr;</a></div></div>
+</div>
+<div class="section-head mt1"><div class="section-head-title">Indicator Update Cadences &middot; 8 Systems</div><div class="section-rule"></div></div>
+<div class="section-pad">
+<table class="cadence-table">
+  <thead><tr><th>System</th><th>Weight</th><th>Fastest Indicator</th><th>Slowest Indicator</th><th>Composite</th></tr></thead>
+  <tbody>
+    <tr><td>Atmosphere</td><td>22%</td><td>CO&#8322; (daily &middot; NOAA GML)</td><td>Radiative forcing (monthly)</td><td class="cadence-daily">Daily</td></tr>
+    <tr><td>Ocean</td><td>18%</td><td>SST anomaly (daily &middot; NOAA OISST)</td><td>Ocean heat content (monthly)</td><td class="cadence-daily">Daily</td></tr>
+    <tr><td>Ice / Cryosphere</td><td>14%</td><td>Arctic extent (daily &middot; NSIDC)</td><td>Glacier volume (annual)</td><td class="cadence-daily">Daily</td></tr>
+    <tr><td>Forest</td><td>13%</td><td>Active fires (daily &middot; NASA EONET)</td><td>Deforestation rate (annual)</td><td class="cadence-monthly">Monthly</td></tr>
+    <tr><td>Biodiversity</td><td>12%</td><td>GBIF occurrence records (weekly)</td><td>Living Planet Index (annual)</td><td class="cadence-monthly">Monthly</td></tr>
+    <tr><td>Freshwater</td><td>10%</td><td>Drought index (daily &middot; SPEI)</td><td>Groundwater (annual &middot; GRACE)</td><td class="cadence-daily">Daily</td></tr>
+    <tr><td>Soil</td><td>7%</td><td>Desertification proxy (monthly)</td><td>Carbon density (annual)</td><td class="cadence-monthly">Monthly</td></tr>
+    <tr><td>Corporate Accountability</td><td>4%</td><td>SEC 8-K filings (daily &middot; EDGAR)</td><td>CDP responses (annual)</td><td class="cadence-daily">Daily</td></tr>
+  </tbody>
+</table>
+</div>
+<div class="section-head mt1"><div class="section-head-title">Data Licensing</div><div class="section-rule"></div></div>
+<div class="license-block">
+  <div class="license-title">License CONSCIENCE Score Data</div>
+  <div class="license-body">CONSCIENCE scores are available for institutional licensing. The JSON feed above is the sample data set &mdash; full licensing agreements provide daily-updating feeds, expanded company coverage, factor-level data, and API integration support.<br><br>
+  Contact: <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a> &middot; Methodology: <a href="https://github.com/dablerfrost/conscience/blob/main/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a> &middot; Open Proof Protocol: errors corrected within 24 hours.</div>
+  <div class="license-tiers">
+    <div class="lt">TIER 1 &middot; ESG Research &middot; $500&ndash;1,500/mo</div>
+    <div class="lt">TIER 2 &middot; Reinsurance Analytics &middot; $2,000&ndash;5,000/mo</div>
+    <div class="lt">TIER 3 &middot; Bloomberg / Index Funds &middot; $8,000&ndash;25,000/mo</div>
   </div>
 </div>
-
-<!-- 5-HAZARD GRID -->
-<section class="hazard-grid">
-
-  <!-- SEISMIC -->
-  <div class="h-card" style="--card-accent:var(--h-seismic)">
-    <div class="h-card-num">01</div>
-    <div class="h-card-top">
-      <div>
-        <div class="h-name" style="color:var(--h-seismic)">Seismic</div>
-        <div class="h-type">USGS REAL-TIME FEED</div>
-      </div>
-      <span class="status-pill pill-loading" id="pill-seismic">LOADING</span>
-    </div>
-    <div class="h-primary" data-mag="seismic-primary">
-      <div class="h-val" id="seis-primary" style="color:var(--h-seismic)"><span class="loading-pulse">—</span><span class="h-unit">M4.5+ / 14 days</span></div>
-      <div class="h-label">Significant Seismic Events · USGS Earthquake Hazards Program</div>
-    </div>
-    <div class="h-rows">
-      <div class="h-row" data-mag="seis-largest">
-        <span class="h-row-lbl">Largest event</span>
-        <span class="h-row-val" id="seis-largest"><span class="loading-pulse">Loading…</span></span>
-      </div>
-      <div class="h-row" data-mag="seis-m6">
-        <span class="h-row-lbl">M6.0+ events</span>
-        <span class="h-row-val" id="seis-m6"><span class="loading-pulse">—</span></span>
-      </div>
-      <div class="h-row" data-mag="seis-m7">
-        <span class="h-row-lbl">M7.0+ events</span>
-        <span class="h-row-val" id="seis-m7"><span class="loading-pulse">—</span></span>
-      </div>
-    </div>
-    <div class="h-src">SOURCE: <a href="https://www.usgs.gov/programs/earthquake-hazards" target="_blank">USGS Earthquake Hazards</a> · 4.5_month GeoJSON v1.0</div>
-  </div>
-
-  <!-- WILDFIRE -->
-  <div class="h-card" style="--card-accent:var(--h-fire)">
-    <div class="h-card-num">02</div>
-    <div class="h-card-top">
-      <div>
-        <div class="h-name" style="color:var(--h-fire)">Wildfire</div>
-        <div class="h-type">NASA EONET LIVE FEED</div>
-      </div>
-      <span class="status-pill pill-loading" id="pill-fire">LOADING</span>
-    </div>
-    <div class="h-primary" data-mag="fire-primary">
-      <div class="h-val" id="fire-primary" style="color:var(--h-fire)"><span class="loading-pulse">—</span><span class="h-unit">active fires</span></div>
-      <div class="h-label">Open Wildfire Events · Past 14 Days · NASA EONET + FIRMS</div>
-    </div>
-    <div class="h-events" id="fire-events">
-      <div class="h-ev"><span class="loading-pulse">Fetching live NASA data…</span></div>
-    </div>
-    <div class="h-src">SOURCE: <a href="https://eonet.gsfc.nasa.gov/" target="_blank">NASA EONET v3</a> · MODIS VIIRS Active Fire</div>
-  </div>
-
-  <!-- SEVERE STORM -->
-  <div class="h-card" style="--card-accent:var(--h-storm)">
-    <div class="h-card-num">03</div>
-    <div class="h-card-top">
-      <div>
-        <div class="h-name" style="color:var(--h-storm)">Severe Storm</div>
-        <div class="h-type">NASA EONET LIVE FEED</div>
-      </div>
-      <span class="status-pill pill-loading" id="pill-storm">LOADING</span>
-    </div>
-    <div class="h-primary" data-mag="storm-primary">
-      <div class="h-val" id="storm-primary" style="color:var(--h-storm)"><span class="loading-pulse">—</span><span class="h-unit">active events</span></div>
-      <div class="h-label">Severe Storms · Tropical Systems · Past 14 Days</div>
-    </div>
-    <div class="h-events" id="storm-events">
-      <div class="h-ev"><span class="loading-pulse">Fetching live NASA data…</span></div>
-    </div>
-    <div class="h-src">SOURCE: <a href="https://eonet.gsfc.nasa.gov/" target="_blank">NASA EONET v3</a> · NOAA NHC · WMO</div>
-  </div>
-
-  <!-- FLOOD -->
-  <div class="h-card" style="--card-accent:var(--h-flood)">
-    <div class="h-card-num">04</div>
-    <div class="h-card-top">
-      <div>
-        <div class="h-name" style="color:var(--h-flood)">Flood</div>
-        <div class="h-type">NASA EONET LIVE FEED</div>
-      </div>
-      <span class="status-pill pill-loading" id="pill-flood">LOADING</span>
-    </div>
-    <div class="h-primary" data-mag="flood-primary">
-      <div class="h-val" id="flood-primary" style="color:var(--h-flood)"><span class="loading-pulse">—</span><span class="h-unit">active events</span></div>
-      <div class="h-label">Active Flood Events · River Flooding · Extreme Precipitation</div>
-    </div>
-    <div class="h-events" id="flood-events">
-      <div class="h-ev"><span class="loading-pulse">Fetching live NASA data…</span></div>
-    </div>
-    <div class="h-src">SOURCE: <a href="https://eonet.gsfc.nasa.gov/" target="_blank">NASA EONET v3</a> · GLOFAS · Copernicus EMS</div>
-  </div>
-
-  <!-- VOLCANIC -->
-  <div class="h-card" style="--card-accent:var(--h-volcanic)">
-    <div class="h-card-num">05</div>
-    <div class="h-card-top">
-      <div>
-        <div class="h-name" style="color:var(--h-volcanic)">Volcanic</div>
-        <div class="h-type">NASA EONET LIVE FEED</div>
-      </div>
-      <span class="status-pill pill-loading" id="pill-volcanic">LOADING</span>
-    </div>
-    <div class="h-primary" data-mag="volcanic-primary">
-      <div class="h-val" id="volcanic-primary" style="color:var(--h-volcanic)"><span class="loading-pulse">—</span><span class="h-unit">active events</span></div>
-      <div class="h-label">Active Volcanic Events · Eruptions · Elevated Alert Levels</div>
-    </div>
-    <div class="h-events" id="volcanic-events">
-      <div class="h-ev"><span class="loading-pulse">Fetching live NASA data…</span></div>
-    </div>
-    <div class="h-src">SOURCE: <a href="https://eonet.gsfc.nasa.gov/" target="_blank">NASA EONET v3</a> · Smithsonian GVP · VAAC</div>
-  </div>
-
-</section>
-
-<!-- 14-DAY EVENT LOG -->
-<section class="log-section">
-  <div class="log-header">
-    <div>
-      <div class="log-title">14-Day Event Log</div>
-      <div class="log-subtitle">All hazard events · Sorted by severity then recency · Past 14 days</div>
-    </div>
-    <div class="log-count" id="log-count">Loading…</div>
-  </div>
-  <div style="overflow-x:auto">
-    <table class="log-table">
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Event</th>
-          <th>Severity</th>
-          <th>Location / Detail</th>
-          <th style="text-align:right">Age</th>
-        </tr>
-      </thead>
-      <tbody id="log-body">
-        <tr><td colspan="5" class="log-empty loading-pulse">Loading event feed…</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- 14-DAY OUTLOOK & CALENDAR -->
-<section class="outlook-section">
-  <div class="outlook-header">
-    <div>
-      <div class="outlook-title">14-Day Event Calendar</div>
-    </div>
-    <div class="outlook-sub">Daily event density · Past 14 days · Color = intensity</div>
-  </div>
-
-  <div class="cal-strip" id="cal-strip">
-    <!-- Populated by JS -->
-  </div>
-
-  <div style="display:flex;gap:1.5rem;align-items:center;margin-bottom:1.8rem;flex-wrap:wrap;">
-    <div style="display:flex;align-items:center;gap:0.4rem">
-      <div style="width:8px;height:8px;background:var(--breach);border-radius:50%"></div>
-      <span style="font-family:'Courier Prime',monospace;font-size:0.65rem;color:var(--t3)">Critical (M7+ / major event)</span>
-    </div>
-    <div style="display:flex;align-items:center;gap:0.4rem">
-      <div style="width:8px;height:8px;background:var(--warn);border-radius:50%"></div>
-      <span style="font-family:'Courier Prime',monospace;font-size:0.65rem;color:var(--t3)">Elevated (M6+ / active threat)</span>
-    </div>
-    <div style="display:flex;align-items:center;gap:0.4rem">
-      <div style="width:8px;height:8px;background:var(--amber);border-radius:50%"></div>
-      <span style="font-family:'Courier Prime',monospace;font-size:0.65rem;color:var(--t3)">Watch (active events)</span>
-    </div>
-    <div style="display:flex;align-items:center;gap:0.4rem">
-      <div style="width:8px;height:8px;background:var(--t3);border-radius:50%"></div>
-      <span style="font-family:'Courier Prime',monospace;font-size:0.65rem;color:var(--t3)">Nominal</span>
-    </div>
-  </div>
-
-  <div class="intel-grid">
-    <div class="intel-card" data-mag="intel-seismic">
-      <div class="intel-card-label" style="color:var(--h-seismic)">
-        <div class="intel-marker" style="background:var(--h-seismic)"></div>
-        SEISMIC OUTLOOK
-      </div>
-      <div class="intel-card-body">Pacific Ring of Fire accounts for ~90% of global seismic energy release. Elevated activity in any arc segment warrants monitoring of adjacent zones. Subduction zones (Japan, Chile, Cascadia, Alaska) carry maximum tsunami risk.</div>
-    </div>
-    <div class="intel-card" data-mag="intel-fire">
-      <div class="intel-card-label" style="color:var(--h-fire)">
-        <div class="intel-marker" style="background:var(--h-fire)"></div>
-        WILDFIRE OUTLOOK
-      </div>
-      <div class="intel-card-body">Northern Hemisphere wildfire season onset within 4–6 weeks as snowpack recedes (April–May). Current Arctic melt season (active since March 20) accelerates drying conditions at high latitudes. Boreal forest zones at elevated risk.</div>
-    </div>
-    <div class="intel-card" data-mag="intel-storm">
-      <div class="intel-card-label" style="color:var(--h-storm)">
-        <div class="intel-marker" style="background:var(--h-storm)"></div>
-        STORM OUTLOOK
-      </div>
-      <div class="intel-card-body">Atlantic hurricane pre-season: current SST anomaly (+0.9°C above average) suggests above-normal 2026 season probability. Season officially begins June 1. Western Pacific remains the world's most active tropical basin year-round.</div>
-    </div>
-    <div class="intel-card" data-mag="intel-flood">
-      <div class="intel-card-label" style="color:var(--h-flood)">
-        <div class="intel-marker" style="background:var(--h-flood)"></div>
-        FLOOD OUTLOOK
-      </div>
-      <div class="intel-card-body">Bangladesh/Southeast Asia: Monsoon season onset in 8–10 weeks — peak flood risk window opening. Himalayan glacial melt accelerating with spring warming. High-elevation watershed flood risk elevated across Hindu Kush-Himalaya arc.</div>
-    </div>
-    <div class="intel-card" data-mag="intel-volcanic">
-      <div class="intel-card-label" style="color:var(--h-volcanic)">
-        <div class="intel-marker" style="background:var(--h-volcanic)"></div>
-        VOLCANIC OUTLOOK
-      </div>
-      <div class="intel-card-body">Approximately 45 volcanoes are in a state of ongoing eruption globally at any time. Eruption column height determines aviation hazard radius. Major stratovolcano eruptions (VEI 5+) can induce short-term global cooling via stratospheric aerosol injection.</div>
-    </div>
-    <div class="intel-card" data-mag="intel-vyrion">
-      <div class="intel-card-label" style="color:var(--glow)">
-        <div class="intel-marker" style="background:var(--glow)"></div>
-        VYRION INDEX CONNECTION
-      </div>
-      <div class="intel-card-body">Current VYRION Index: 41.2 ± 1.8 / 100. At this planetary health level, background frequency and intensity of all five hazard categories is statistically elevated versus the 1850–1900 pre-industrial baseline. SHIELD events are symptoms, not causes — root causes tracked in ATLAS, launching soon.</div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="shield-footer">
-  <div class="footer-l">
-    VYRION SHIELD · Module 02 · v1.0<br>
-    All data public domain or open license · Methodology: <a href="https://github.com/dablerfrost/conscience/blob/main/VYRION-METHODOLOGY-v1.0.md" target="_blank">VYRION-METHODOLOGY-v1.0.md</a><br>
-    <a href="https://github.com/dablerfrost/conscience" target="_blank">github.com/dablerfrost/conscience</a> · Tyler Frost / DablerFrost · Hilo, Hawaii
-  </div>
+<footer class="footer">
+  <div class="footer-l">VYRION CONSCIENCE &middot; Data Feed &middot; v2.8 &middot; April 2026<br>
+  Methodology: <a href="https://github.com/dablerfrost/conscience/blob/main/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a> &middot;
+  <a href="https://github.com/dablerfrost/conscience" target="_blank">github.com/dablerfrost/conscience</a> &middot; Tyler Frost / DablerFrost &middot; Hilo, Hawaii</div>
   <div class="footer-r">
-    <a href="https://dablerfrost.github.io/conscience">CONSCIENCE →</a>
-    <a href="https://dablerfrost.github.io/conscience/archive">ARCHIVE →</a>
+    <a href="https://dablerfrost.github.io/conscience">&larr; CONSCIENCE</a>
+    <a href="conscience-data.json" target="_blank">RAW JSON &rarr;</a>
+    <a href="https://dablerfrost.github.io/conscience/archive">ARCHIVE &rarr;</a>
   </div>
 </footer>
-
-<!-- MAGNIFIER -->
-<div id="mag">
-  <div class="mag-box">
-    <div class="mag-brand">VYRION · SHIELD · MODULE 02</div>
-    <div class="mag-title" id="mag-t">—</div>
-    <div class="mag-body" id="mag-b">—</div>
-    <div class="mag-src" id="mag-s">—</div>
-  </div>
-</div>
-
 <script>
-// ── MAGNIFIER DATA ──────────────────────────────────────────────
-const MAG = {
-  'threat-level': {
-    t: 'SHIELD Global Threat Level',
-    b: 'Computed in real-time from all active hazard feeds. Score = weighted sum of active event severity across 5 hazard categories. Thresholds: NOMINAL <3, WATCH 3–5, ELEVATED 6–9, CRITICAL 10+. Refreshes every 15 minutes.',
-    s: 'VYRION SHIELD algorithm · USGS + NASA EONET · Computed at page load'
-  },
-  'seismic-count': {
-    t: 'Seismic Event Count (M4.5+)',
-    b: 'Total M4.5+ earthquake events in the 14-day window. M4.5 is the threshold for events detectable globally by seismograph networks. Events are sourced from the USGS real-time feed and filtered to the past 14 days.',
-    s: 'USGS Earthquake Hazards Program · 4.5_month.geojson · Updated continuously'
-  },
-  'fire-count': {
-    t: 'Active Wildfire Event Count',
-    b: 'Total open wildfire events tracked by NASA EONET in the past 14 days. Events are identified by MODIS (250m resolution) and VIIRS (375m resolution) active fire detection satellites. A single event may span multiple detection points.',
-    s: 'NASA EONET v3 · category: wildfires · status: open · days: 14'
-  },
-  'storm-count': {
-    t: 'Active Severe Storm Event Count',
-    b: 'Total open severe storm events tracked by NASA EONET. Includes named tropical cyclones (hurricanes, typhoons, cyclones), extratropical storms, and severe weather systems. Sourced from NOAA NHC, JTWC, and WMO Regional Specialized Meteorological Centres.',
-    s: 'NASA EONET v3 · category: severeStorms · status: open · days: 14'
-  },
-  'flood-count': {
-    t: 'Active Flood Event Count',
-    b: 'Total open flood events tracked by NASA EONET. Includes river flooding, flash flooding, and coastal inundation events identified via satellite monitoring. Integrated with Copernicus Emergency Management Service (EMS) for European events.',
-    s: 'NASA EONET v3 · category: floods · status: open · days: 14'
-  },
-  'volcanic-count': {
-    t: 'Active Volcanic Event Count',
-    b: 'Total open volcanic events tracked by NASA EONET. Includes eruptions and elevated activity alerts. Corroborated by Smithsonian Global Volcanism Program (GVP) weekly activity reports and Volcanic Ash Advisory Center (VAAC) alerts.',
-    s: 'NASA EONET v3 · category: volcanoes · status: open · days: 14'
-  },
-  'seismic-primary': {
-    t: 'Seismic Events (M4.5+, 14-Day Window)',
-    b: 'M4.5 events are felt by people near the epicenter. M5.5+ can cause minor structural damage. M6.5+ are destructive events. M7.0+ are major earthquakes. M8.0+ are great earthquakes capable of tsunamis. Global average: ~12,000 M4+ events per year.',
-    s: 'USGS NEIC · earthquake.usgs.gov · Continuous seismograph network · IGF'
-  },
-  'seis-largest': {
-    t: 'Largest Seismic Event (14-Day Window)',
-    b: 'The highest-magnitude earthquake event recorded in the past 14 days. Magnitude is measured on the Moment Magnitude scale (Mw). Location is the epicenter coordinates described by nearest geographic landmark.',
-    s: 'USGS · earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson'
-  },
-  'seis-m6': {
-    t: 'M6.0+ Earthquake Events',
-    b: 'Events M6.0 and above are classified as strong earthquakes. They can cause considerable damage in populated areas. M6.0+ events occur approximately 120–130 times per year globally. Elevated counts in short windows indicate active seismic cycles.',
-    s: 'USGS NEIC · Global Seismographic Network (GSN) · IRIS'
-  },
-  'seis-m7': {
-    t: 'M7.0+ Earthquake Events',
-    b: 'Events M7.0 and above are classified as major earthquakes, capable of causing widespread damage over large areas. M7.0+ events occur approximately 15–20 times per year globally. Events near oceanic subduction zones carry maximum tsunami threat.',
-    s: 'USGS NEIC · Pacific Tsunami Warning System (PTWS) · IOC-UNESCO'
-  },
-  'fire-primary': {
-    t: 'Active Wildfire Events (NASA EONET)',
-    b: 'Live count of open wildfire events from NASA EONET — the authoritative global fire event catalog. EONET aggregates fire detections from MODIS (Terra/Aqua) and VIIRS (Suomi-NPP/NOAA-20) satellites. A "fire event" may encompass a large complex spanning thousands of hectares.',
-    s: 'NASA EONET v3 · eonet.gsfc.nasa.gov/api/v3/events · category: wildfires'
-  },
-  'storm-primary': {
-    t: 'Active Severe Storm Events (NASA EONET)',
-    b: 'Live count of open severe storm events from NASA EONET. Includes tropical cyclones (category 1–5 hurricanes/typhoons), significant extratropical systems, and named severe weather events tracked by WMO-affiliated forecasting centres.',
-    s: 'NASA EONET v3 · category: severeStorms · NOAA NHC · JTWC · ECMWF'
-  },
-  'flood-primary': {
-    t: 'Active Flood Events (NASA EONET)',
-    b: 'Live count of open flood events from NASA EONET. Flood detection uses multispectral satellite analysis (Sentinel-1 SAR, MODIS NRT Flood) to identify inundation extents. Events persist in EONET while satellite-confirmed flooding is ongoing.',
-    s: 'NASA EONET v3 · category: floods · Copernicus EMS · GLOFAS · DFO'
-  },
-  'volcanic-primary': {
-    t: 'Active Volcanic Events (NASA EONET)',
-    b: 'Live count of open volcanic activity events. Includes confirmed eruptions and elevated alert-level activity tracked by Smithsonian GVP. Aviation hazard (ash cloud extent, Flight Level) is tracked in coordination with Volcanic Ash Advisory Centres (VAAC) worldwide.',
-    s: 'NASA EONET v3 · category: volcanoes · Smithsonian GVP · VAAC · VRC'
-  },
-  'intel-seismic': {
-    t: 'Seismic Intelligence Brief',
-    b: 'SHIELD monitors the full Ring of Fire arc continuously. Seismic clustering — multiple M5+ events in a short window within a single arc segment — is a recognized precursor pattern for elevated magnitude activity in that zone. USGS monitors this in near-real-time.',
-    s: 'USGS · IRIS Consortium · Incorporated Research Institutions for Seismology'
-  },
-  'intel-fire': {
-    t: 'Wildfire Intelligence Brief',
-    b: 'Wildfire frequency and intensity are direct VYRION Index inputs via the Forest system (13% weight). Current VYRION Forest score integrates fire event frequency as a forest health degradation indicator. Arctic melt acceleration compounds Northern Hemisphere wildfire risk via earlier vegetation drying.',
-    s: 'NASA FIRMS · ESA Sentinel-3 SLSTR · VYRION-METHODOLOGY-v1.0.md §Forest'
-  },
-  'intel-storm': {
-    t: 'Severe Storm Intelligence Brief',
-    b: 'Atlantic hurricane season intensity correlates directly with pre-season sea surface temperature anomalies. VYRION Ocean system (18% weight) tracks SST in real-time. The 14th consecutive monthly ocean heat record (VYRION Day 1) is the primary intensification driver for 2026 season forecasts.',
-    s: 'NOAA NHC · VYRION ATLAS Ocean card · NOAA OISST v2.1'
-  },
-  'intel-flood': {
-    t: 'Flood Intelligence Brief',
-    b: 'Flood risk is compounded by three VYRION Index factors simultaneously: elevated precipitation extremes (Atmosphere), accelerating glacial melt (Cryosphere), and degraded soil water retention (Soil). These interactions are tracked in ATLAS but manifest as events here in SHIELD.',
-    s: 'GLOFAS v4 · Copernicus EMS · VYRION ATLAS (Atmosphere · Cryosphere · Soil)'
-  },
-  'intel-volcanic': {
-    t: 'Volcanic Intelligence Brief',
-    b: 'Volcanic eruptions are not driven by climate change. However, eruption-induced short-term cooling events (aerosol injection) can temporarily mask warming trends — a confounding factor in VYRION Index time-series analysis. Major eruptions (VEI 5+) are flagged in VYRION methodology as index anomaly events.',
-    s: 'Smithsonian GVP · VYRION-METHODOLOGY-v1.0.md §Uncertainty §Anomalies'
-  },
-  'intel-vyrion': {
-    t: 'SHIELD ↔ VYRION Index Relationship',
-    b: 'SHIELD tracks event symptoms. ATLAS tracks system health. The VYRION Index (currently 41.2/100) represents the degraded baseline from which all these events emerge. A planet at 100/100 (pre-industrial health) would not produce the current frequency and intensity of hazard events across all five SHIELD categories.',
-    s: 'VYRION Index Day 8 · 41.2 ± 1.8 / 100 · Pre-industrial baseline = 100 · dablerfrost.github.io/conscience'
-  }
-};
-
-// ── GLOBALS ─────────────────────────────────────────────────────
-const FOURTEEN_DAYS_MS = 14 * 24 * 60 * 60 * 1000;
-let ALL_EVENTS = [];
-
-// ── TIME HELPERS ────────────────────────────────────────────────
-function timeAgo(ts) {
-  const diff = Date.now() - ts;
-  const h = Math.floor(diff / 3600000);
-  const d = Math.floor(diff / 86400000);
-  if (d >= 1) return d + 'd ago';
-  if (h >= 1) return h + 'h ago';
-  return '< 1h';
-}
-
-function shortDate(ts) {
-  const d = new Date(ts);
-  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-}
-
-function dayName(d) {
-  return ['Su','Mo','Tu','We','Th','Fr','Sa'][d.getDay()];
-}
-
-// ── SEVERITY HELPERS ────────────────────────────────────────────
-function magToSeverity(mag) {
-  if (mag >= 7.0) return { label: 'CRITICAL', cls: 'sev-critical', score: 4 };
-  if (mag >= 6.0) return { label: 'ELEVATED', cls: 'sev-elevated', score: 3 };
-  if (mag >= 5.0) return { label: 'WATCH',    cls: 'sev-watch',    score: 2 };
-  return               { label: 'NOMINAL',   cls: 'sev-nominal',  score: 1 };
-}
-
-function eventSeverity(type, mag) {
-  if (type === 'SEISMIC') return magToSeverity(mag || 4.5);
-  if (type === 'WILDFIRE') return { label: 'WATCH', cls: 'sev-watch', score: 2 };
-  if (type === 'STORM')    return { label: 'ELEVATED', cls: 'sev-elevated', score: 3 };
-  if (type === 'FLOOD')    return { label: 'WATCH', cls: 'sev-watch', score: 2 };
-  if (type === 'VOLCANIC') return { label: 'ELEVATED', cls: 'sev-elevated', score: 3 };
-  return { label: 'NOMINAL', cls: 'sev-nominal', score: 1 };
-}
-
-// ── PILL HELPER ─────────────────────────────────────────────────
-function setPill(id, text, cls) {
-  const el = document.getElementById(id);
-  el.textContent = text; el.className = 'status-pill ' + cls;
-}
-
-function flashEl(el) {
-  el.classList.remove('flashed'); void el.offsetWidth; el.classList.add('flashed');
-}
-
-// ── THREAT LEVEL ─────────────────────────────────────────────────
-function computeThreat(seismic, fires, storms, floods, volcanoes) {
-  let score = 0;
-  seismic.forEach(q => {
-    const m = q.properties.mag || 0;
-    if (m >= 8.0)      score += 6;
-    else if (m >= 7.0) score += 3.5;
-    else if (m >= 6.0) score += 1.5;
-    else               score += 0.25;
-  });
-  score += fires.length    * 0.35;
-  score += storms.length   * 0.9;
-  score += floods.length   * 0.45;
-  score += volcanoes.length * 1.1;
-  if (score >= 10) return { level:'CRITICAL', dotCls:'threat-dot-critical', wordCls:'threat-word-critical', score };
-  if (score >= 6)  return { level:'ELEVATED', dotCls:'threat-dot-elevated', wordCls:'threat-word-elevated', score };
-  if (score >= 3)  return { level:'WATCH',    dotCls:'threat-dot-watch',    wordCls:'threat-word-watch',    score };
-  return               { level:'NOMINAL',   dotCls:'threat-dot-nominal',  wordCls:'threat-word-nominal',  score };
-}
-
-function renderThreat(t) {
-  const dot  = document.getElementById('threat-dot');
-  const word = document.getElementById('threat-word');
-  dot.className  = 'threat-dot ' + t.dotCls;
-  word.className = 'threat-word ' + t.wordCls;
-  word.textContent = t.level;
-}
-
-// ── SEISMIC (USGS) ───────────────────────────────────────────────
-async function fetchSeismic() {
-  const cutoff = Date.now() - FOURTEEN_DAYS_MS;
-  try {
-    const r = await fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson');
-    const d = await r.json();
-    const recent = d.features.filter(f => f.properties.time > cutoff);
-
-    // Primary count
-    const el = document.getElementById('seis-primary');
-    el.innerHTML = `${recent.length}<span class="h-unit">M4.5+ / 14 days</span>`;
-    flashEl(el);
-
-    // Largest
-    if (recent.length > 0) {
-      const biggest = recent.reduce((a,b) =>
-        (b.properties.mag > a.properties.mag ? b : a));
-      const mag   = biggest.properties.mag.toFixed(1);
-      const place = (biggest.properties.place || '').split(',').slice(-1)[0].trim().slice(0,22);
-      const largestEl = document.getElementById('seis-largest');
-      const sev = magToSeverity(parseFloat(mag));
-      largestEl.innerHTML = `<span class="${sev.cls}">M${mag}</span> · ${place}`;
-      flashEl(largestEl);
-    } else {
-      document.getElementById('seis-largest').textContent = 'None recorded';
-    }
-
-    // M6+ / M7+
-    const m6 = recent.filter(f => f.properties.mag >= 6.0).length;
-    const m7 = recent.filter(f => f.properties.mag >= 7.0).length;
-    const m6el = document.getElementById('seis-m6');
-    const m7el = document.getElementById('seis-m7');
-    m6el.innerHTML = `<span class="${m6 > 0 ? 'sev-elevated' : 'sev-nominal'}">${m6}</span>`;
-    m7el.innerHTML = `<span class="${m7 > 0 ? 'sev-critical' : 'sev-nominal'}">${m7}</span>`;
-
-    // Counter
-    document.getElementById('ct-seismic').textContent = recent.length;
-
-    // Add to global events
-    recent.forEach(f => {
-      ALL_EVENTS.push({
-        type: 'SEISMIC',
-        name: `M${f.properties.mag.toFixed(1)}`,
-        detail: f.properties.place || '—',
-        time: f.properties.time,
-        severity: eventSeverity('SEISMIC', f.properties.mag),
-        mag: f.properties.mag
-      });
-    });
-
-    setPill('pill-seismic', 'LIVE', 'pill-live');
-    return recent;
-  } catch (e) {
-    document.getElementById('seis-primary').innerHTML = `—<span class="h-unit">M4.5+ / 14 days</span>`;
-    document.getElementById('seis-largest').textContent = 'Unavailable';
-    document.getElementById('ct-seismic').textContent = '—';
-    setPill('pill-seismic', 'OFFLINE', 'pill-static');
-    return [];
-  }
-}
-
-// ── EONET ────────────────────────────────────────────────────────
-async function fetchEONET() {
-  try {
-    const r = await fetch('https://eonet.gsfc.nasa.gov/api/v3/events?status=open&limit=200&days=14');
-    const d = await r.json();
-    return d.events || [];
-  } catch {
-    return [];
-  }
-}
-
-function processEONET(events, catId, type, primaryId, eventsId, pillId, countId) {
-  const filtered = events.filter(e =>
-    e.categories && e.categories.some(c => c.id === catId)
-  );
-
-  // Primary count
-  const pEl = document.getElementById(primaryId);
-  pEl.innerHTML = `${filtered.length}<span class="h-unit">active events</span>`;
-  flashEl(pEl);
-
-  // Event list
-  const icons = { WILDFIRE:'🔥', STORM:'🌀', FLOOD:'🌊', VOLCANIC:'🌋' };
-  const icon = icons[type] || '•';
-  const eEl = document.getElementById(eventsId);
-  if (filtered.length === 0) {
-    eEl.innerHTML = `<div class="h-ev" style="color:var(--glow)">✓ No active events tracked</div>`;
-  } else {
-    eEl.innerHTML = filtered.slice(0, 4).map(e =>
-      `<div class="h-ev"><span class="h-ev-tag">${icon}</span>${e.title.slice(0, 38)}</div>`
-    ).join('');
-  }
-
-  // Counter
-  document.getElementById(countId).textContent = filtered.length;
-
-  // Add to global events
-  filtered.forEach(e => {
-    const geom = e.geometry && e.geometry[0];
-    const ts = geom ? new Date(geom.date).getTime() : Date.now();
-    ALL_EVENTS.push({
-      type,
-      name: e.title.slice(0,40),
-      detail: e.categories.map(c => c.title).join(', '),
-      time: ts,
-      severity: eventSeverity(type, null),
-      mag: null
-    });
-  });
-
-  setPill(pillId, filtered.length > 0 ? 'LIVE' : 'LIVE', 'pill-live');
-  return filtered;
-}
-
-// ── EVENT LOG ─────────────────────────────────────────────────────
-const TYPE_BADGE = {
-  SEISMIC:  { cls:'badge-seismic',  label:'SEISMIC' },
-  WILDFIRE: { cls:'badge-fire',     label:'WILDFIRE' },
-  STORM:    { cls:'badge-storm',    label:'STORM' },
-  FLOOD:    { cls:'badge-flood',    label:'FLOOD' },
-  VOLCANIC: { cls:'badge-volcanic', label:'VOLCANIC' }
-};
-
-function renderLog() {
-  const sorted = ALL_EVENTS.slice().sort((a,b) => {
-    if (b.severity.score !== a.severity.score) return b.severity.score - a.severity.score;
-    return b.time - a.time;
-  });
-
-  const MAX = 30;
-  const shown = sorted.slice(0, MAX);
-  document.getElementById('log-count').textContent = `${sorted.length} events · showing ${shown.length}`;
-
-  if (shown.length === 0) {
-    document.getElementById('log-body').innerHTML =
-      '<tr><td colspan="5" class="log-empty">No events loaded — API may be offline</td></tr>';
-    return;
-  }
-
-  document.getElementById('log-body').innerHTML = shown.map(ev => {
-    const badge = TYPE_BADGE[ev.type] || { cls:'', label: ev.type };
-    const ago   = timeAgo(ev.time);
-    const detail = (ev.detail || '').slice(0, 36);
-    return `
-      <tr class="log-row">
-        <td><span class="type-badge ${badge.cls}">${badge.label}</span></td>
-        <td class="log-name">${ev.name}</td>
-        <td class="${ev.severity.cls}">${ev.severity.label}</td>
-        <td class="log-place">${detail}</td>
-        <td class="log-age">${ago}</td>
-      </tr>`;
-  }).join('');
-}
-
-// ── CALENDAR ─────────────────────────────────────────────────────
-function renderCalendar() {
-  const today = new Date();
-  today.setHours(0,0,0,0);
-  const strip = document.getElementById('cal-strip');
-  strip.innerHTML = '';
-
-  for (let i = 13; i >= 0; i--) {
-    const day = new Date(today.getTime() - i * 86400000);
-    const dayEnd = new Date(day.getTime() + 86400000);
-    const dayEvents = ALL_EVENTS.filter(e => e.time >= day.getTime() && e.time < dayEnd.getTime());
-    const hasCritical = dayEvents.some(e => e.severity.score >= 4);
-    const hasElevated = dayEvents.some(e => e.severity.score >= 3);
-    const hasWatch    = dayEvents.some(e => e.severity.score >= 2);
-    const count = dayEvents.length;
-
-    const barColor = hasCritical ? 'var(--breach)'
-                   : hasElevated ? 'var(--warn)'
-                   : hasWatch    ? 'var(--amber)'
-                   : count > 0   ? 'var(--t3)'
-                   : 'transparent';
-
-    const numColor = hasCritical ? 'var(--breach)'
-                   : hasElevated ? 'var(--warn)'
-                   : hasWatch    ? 'var(--amber)'
-                   : 'var(--t2)';
-
-    const isToday = i === 0;
-    const cellCls = [
-      'cal-cell',
-      hasCritical ? 'has-critical' : '',
-      hasElevated && !hasCritical ? 'has-elevated' : '',
-      hasWatch && !hasCritical && !hasElevated ? 'has-watch' : '',
-      isToday ? 'cal-today' : ''
-    ].filter(Boolean).join(' ');
-
-    const cell = document.createElement('div');
-    cell.className = cellCls;
-    cell.innerHTML = `
-      <div class="cal-day-name">${dayName(day)}</div>
-      <div class="cal-day-num" style="color:${isToday ? 'var(--glow)' : numColor}">${day.getDate()}</div>
-      <div class="cal-count" style="color:${barColor}">${count > 0 ? count : '·'}</div>
-      <div class="cal-bar" style="background:${barColor}"></div>`;
-    strip.appendChild(cell);
-  }
-}
-
-// ── WINDOW DATES ─────────────────────────────────────────────────
-function setWindowDates() {
-  const end   = new Date();
-  const start = new Date(Date.now() - FOURTEEN_DAYS_MS);
-  const fmt   = d => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-  document.getElementById('window-dates').textContent = `${fmt(start)} – ${fmt(end)}`;
-}
-
-// ── TIMESTAMP ─────────────────────────────────────────────────────
-function stamp() {
-  document.getElementById('ts').textContent = new Date().toUTCString().replace(' GMT', '') + ' UTC';
-}
-
-// ── MAGNIFIER ENGINE ──────────────────────────────────────────────
-const magEl = document.getElementById('mag');
-const magT  = document.getElementById('mag-t');
-const magB  = document.getElementById('mag-b');
-const magS  = document.getElementById('mag-s');
-let magOn   = false;
-
-document.addEventListener('mousemove', e => {
-  if (!magOn) return;
-  const pad = 20, w = magEl.offsetWidth || 276, h = magEl.offsetHeight || 160;
-  const vw = window.innerWidth, vh = window.innerHeight;
-  let x = e.clientX + pad, y = e.clientY - 12;
-  if (x + w > vw - 8) x = e.clientX - w - pad;
-  if (y + h > vh - 8) y = e.clientY - h - 4;
-  magEl.style.left = x + 'px';
-  magEl.style.top  = y + 'px';
-});
-
-document.querySelectorAll('[data-mag]').forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    const d = MAG[el.dataset.mag];
-    if (!d) return;
-    magT.textContent = d.t;
-    magB.textContent = d.b;
-    magS.textContent = d.s;
-    magEl.classList.add('show');
-    magOn = true;
-  });
-  el.addEventListener('mouseleave', () => {
-    magEl.classList.remove('show');
-    magOn = false;
-  });
-});
-
-// ── INIT ──────────────────────────────────────────────────────────
-async function init() {
-  ALL_EVENTS = [];
-  stamp();
-  setWindowDates();
-
-  // Fetch all in parallel
-  const [seismic, eonetEvents] = await Promise.allSettled([
-    fetchSeismic(),
-    fetchEONET()
-  ]);
-
-  const seismicData  = seismic.status  === 'fulfilled' ? seismic.value  : [];
-  const eonetData    = eonetEvents.status === 'fulfilled' ? eonetEvents.value : [];
-
-  // Process EONET by category
-  const fires    = processEONET(eonetData, 'wildfires',    'WILDFIRE', 'fire-primary',     'fire-events',     'pill-fire',     'ct-fire');
-  const storms   = processEONET(eonetData, 'severeStorms', 'STORM',    'storm-primary',    'storm-events',    'pill-storm',    'ct-storm');
-  const floods   = processEONET(eonetData, 'floods',       'FLOOD',    'flood-primary',    'flood-events',    'pill-flood',    'ct-flood');
-  const volcanoes = processEONET(eonetData, 'volcanoes',   'VOLCANIC', 'volcanic-primary', 'volcanic-events', 'pill-volcanic', 'ct-volcanic');
-
-  // Compute + render threat level
-  const threat = computeThreat(seismicData, fires, storms, floods, volcanoes);
-  renderThreat(threat);
-
-  // Render event log + calendar
-  renderLog();
-  renderCalendar();
-
-  stamp();
-}
-
-init();
-setInterval(() => { ALL_EVENTS = []; init(); }, 15 * 60 * 1000);
+'use strict';
+function copyURL(){const u='https://dablerfrost.github.io/conscience/conscience-data.json';if(navigator.clipboard){navigator.clipboard.writeText(u).then(()=>{const b=document.getElementById('copy-btn');if(b){const o=b.textContent;b.textContent='COPIED';setTimeout(()=>b.textContent=o,1800);}});}}
+function bandPill(b){const m={breach:['pill-breach','BREACH'],warning:['pill-warn','WARNING'],on_track:['pill-track','ON TRACK'],'on-track':['pill-track','ON TRACK']};const[c,l]=m[b]||['','--'];return'<span class="band-pill '+c+'">'+l+'</span>';}
+function scoreCls(b){return b==='breach'?'td-breach':b==='warning'?'td-warn':'td-track';}
+function factorColor(p,m){const r=p/m;if(r>=.75)return'var(--glow)';if(r>=.4)return'var(--amber)';if(p<0)return'var(--breach)';return'var(--warn)';}
+const D={companies:[
+{id:'exxon',name:'ExxonMobil',ticker:'XOM',sector:'Oil & Gas',cik:'34088',score:8,band:'breach',cdp:{grade:'D'},influencemap:{grade:'F'},sbti:{status:'Not committed'},sabin_center:{active_cases:27},tpi:{level:'2/5'},edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000034088.json'},factors:{pledge_quality:{points:3,max:30},cdp_performance:{points:4,max:25},lobbying_alignment:{points:0,max:25},legal_exposure:{points:1,max:20}}},
+{id:'bp',name:'BP',ticker:'BP',sector:'Oil & Gas',cik:'313807',score:11,band:'breach',cdp:{grade:'C'},influencemap:{grade:'D-'},sbti:{status:'Not committed'},sabin_center:{active_cases:12},tpi:{level:'3/5'},edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000313807.json'},factors:{pledge_quality:{points:2,max:30},cdp_performance:{points:10,max:25},lobbying_alignment:{points:2,max:25},legal_exposure:{points:-3,max:20}}},
+{id:'shell',name:'Shell',ticker:'SHEL',sector:'Oil & Gas',cik:'806517',score:19,band:'breach',cdp:{grade:'C'},influencemap:{grade:'D'},sbti:{status:'Not committed'},sabin_center:{active_cases:19},tpi:{level:'3/5'},edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000806517.json'},factors:{pledge_quality:{points:8,max:30},cdp_performance:{points:10,max:25},lobbying_alignment:{points:3,max:25},legal_exposure:{points:-2,max:20}}},
+{id:'delta',name:'Delta Air Lines',ticker:'DAL',sector:'Aviation',cik:'27904',score:14,band:'breach',cdp:{grade:'C'},influencemap:{grade:'D'},sbti:{status:'Not committed'},sabin_center:{active_cases:3},tpi:{level:'2/5'},edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000027904.json'},factors:{pledge_quality:{points:4,max:30},cdp_performance:{points:10,max:25},lobbying_alignment:{points:3,max:25},legal_exposure:{points:-3,max:20}}},
+{id:'starbucks',name:'Starbucks',ticker:'SBUX',sector:'Food & Beverage',cik:'829224',score:29,band:'breach',cdp:{grade:'B'},influencemap:{grade:'C'},sbti:{status:'Committed'},sabin_center:{active_cases:1},tpi:{level:'3/5'},edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000829224.json'},factors:{pledge_quality:{points:14,max:30},cdp_performance:{points:18,max:25},lobbying_alignment:{points:9,max:25},legal_exposure:{points:-12,max:20}}},
+{id:'walmart',name:'Walmart',ticker:'WMT',sector:'Retail',cik:'104169',score:38,band:'warning',cdp:{grade:'B'},influencemap:{grade:'C'},sbti:{status:'Approved (ops)'},sabin_center:{active_cases:2},tpi:{level:'3/5'},edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000104169.json'},factors:{pledge_quality:{points:18,max:30},cdp_performance:{points:18,max:25},lobbying_alignment:{points:9,max:25},legal_exposure:{points:-7,max:20}}},
+{id:'meta',name:'Meta',ticker:'META',sector:'Technology',cik:'1326801',score:43,band:'warning',cdp:{grade:'B'},influencemap:{grade:'C-'},sbti:{status:'Committed'},sabin_center:{active_cases:1},tpi:{level:'3/5'},edgar:{cik_url:'https://data.sec.gov/submissions/CIK0001326801.json'},factors:{pledge_quality:{points:20,max:30},cdp_performance:{points:18,max:25},lobbying_alignment:{points:7,max:25},legal_exposure:{points:-2,max:20}}},
+{id:'amazon',name:'Amazon',ticker:'AMZN',sector:'Tech / Retail',cik:'1018724',score:47,band:'warning',cdp:{grade:'B'},influencemap:{grade:'C'},sbti:{status:'Committed'},sabin_center:{active_cases:3},tpi:{level:'3/5'},edgar:{cik_url:'https://data.sec.gov/submissions/CIK0001018724.json'},factors:{pledge_quality:{points:20,max:30},cdp_performance:{points:18,max:25},lobbying_alignment:{points:9,max:25},legal_exposure:{points:0,max:20}}},
+{id:'microsoft',name:'Microsoft',ticker:'MSFT',sector:'Technology',cik:'789019',score:61,band:'on_track',cdp:{grade:'A-'},influencemap:{grade:'B-'},sbti:{status:'Approved 1.5C'},sabin_center:{active_cases:1},tpi:{level:'4/5'},edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000789019.json'},factors:{pledge_quality:{points:26,max:30},cdp_performance:{points:22,max:25},lobbying_alignment:{points:13,max:25},legal_exposure:{points:0,max:20}}},
+{id:'unilever',name:'Unilever',ticker:'ULVR',sector:'Consumer Goods',cik:'49519',score:72,band:'on_track',cdp:{grade:'A-'},influencemap:{grade:'B'},sbti:{status:'Approved 1.5C'},sabin_center:{active_cases:1},tpi:{level:'4/5'},edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000049519.json'},factors:{pledge_quality:{points:28,max:30},cdp_performance:{points:22,max:25},lobbying_alignment:{points:16,max:25},legal_exposure:{points:6,max:20}}},
+{id:'apple',name:'Apple',ticker:'AAPL',sector:'Technology',cik:'320193',score:84,band:'on_track',cdp:{grade:'A'},influencemap:{grade:'B+'},sbti:{status:'Approved 1.5C'},sabin_center:{active_cases:0},tpi:{level:'5/5'},edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000320193.json'},factors:{pledge_quality:{points:30,max:30},cdp_performance:{points:25,max:25},lobbying_alignment:{points:19,max:25},legal_exposure:{points:10,max:20}}}
+]};
+function renderScoresTable(cos){const t=document.getElementById('scores-tbody');if(!t)return;t.innerHTML=cos.map(co=>{const bc=scoreCls(co.band);const s=co.sabin_center?co.sabin_center.active_cases:'--';const e=co.edgar?'<a href="'+co.edgar.cik_url+'" target="_blank" class="src-link">EDGAR &rarr;</a>':'--';return'<tr><td>'+co.name+'</td><td>'+co.ticker+'</td><td>'+co.sector+'</td><td class="td-score '+bc+'">'+co.score+'</td><td>'+bandPill(co.band)+'</td><td class="'+(co.cdp&&co.cdp.grade.startsWith('A')?'td-track':co.cdp&&co.cdp.grade.startsWith('B')?'':'td-warn')+'">'+(co.cdp?co.cdp.grade:'--')+'</td><td class="'+((co.influencemap&&(co.influencemap.grade==='F'||co.influencemap.grade.startsWith('D')))?'td-breach':'')+'">'+(co.influencemap?co.influencemap.grade:'--')+'</td><td style="font-size:.52rem">'+(co.sbti?co.sbti.status:'--')+'</td><td class="'+(s>=20?'td-breach':s>=10?'td-warn':'')+'">'+(s||0)+'</td><td>'+(co.tpi?co.tpi.level:'--')+'</td><td>'+e+'</td></tr>';}).join('');}
+function renderFactorGrid(cos){const g=document.getElementById('factor-grid');if(!g)return;g.innerHTML=cos.map(co=>{const f=co.factors;const bc=co.band==='breach'?'var(--breach)':co.band==='warning'?'var(--warn)':'var(--glow)';const rows=[{l:'Pledge Quality',p:f.pledge_quality.points,m:f.pledge_quality.max},{l:'CDP Performance',p:f.cdp_performance.points,m:f.cdp_performance.max},{l:'Lobbying Alignment',p:f.lobbying_alignment.points,m:f.lobbying_alignment.max},{l:'Legal Exposure',p:f.legal_exposure.points,m:f.legal_exposure.max}];const tot=rows.reduce((a,r)=>a+r.p,0);return'<div class="factor-card"><div class="factor-name">'+co.name+'</div><div class="factor-ticker">'+co.ticker+' &middot; '+co.sector+' &middot; CIK '+co.cik+'</div>'+rows.map(r=>'<div class="factor-row"><div class="fr-lbl">'+r.l+'</div><div class="fr-max">'+r.m+' max</div><div class="fr-val" style="color:'+factorColor(r.p,r.m)+'">'+(r.p>0?'+':'')+r.p+'</div></div>').join('')+'<div class="factor-total"><div class="ft-lbl">Total</div><div class="ft-val" style="color:'+bc+'">'+tot+' / 100</div></div></div>';}).join('');}
+renderScoresTable(D.companies);
+renderFactorGrid(D.companies);
+// Silent background fetch for live updates
+fetch('https://dablerfrost.github.io/conscience/conscience-data.json').then(r=>r.ok?r.json():null).then(data=>{if(data&&data.companies){renderScoresTable(data.companies);renderFactorGrid(data.companies);}}).catch(()=>{});
+// ── THEME TOGGLE
+function toggleTheme(){const h=document.documentElement;const l=h.getAttribute('data-theme')==='light';h.setAttribute('data-theme',l?'dark':'light');const b=document.getElementById('theme-btn');if(b)b.innerHTML=l?'&#9680; DARK':'&#9681; LIGHT';try{localStorage.setItem('vc-theme',l?'dark':'light');}catch(e){}}
+(function(){try{const t=localStorage.getItem('vc-theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');const b=document.getElementById('theme-btn');if(b)b.innerHTML='&#9681; LIGHT';}}catch(e){}})();
+// ── FONT SCALE
+const SCALES={'0.88':16,'1.0':18,'1.22':22};
+function setScale(btn){document.documentElement.style.fontSize=(SCALES[btn.dataset.scale]||18)+'px';document.querySelectorAll('.nc-sz').forEach(b=>b.classList.toggle('active',b===btn));try{localStorage.setItem('vc-scale',btn.dataset.scale);}catch(e){}}
+(function(){try{const s=localStorage.getItem('vc-scale');if(s&&SCALES[s]){document.documentElement.style.fontSize=SCALES[s]+'px';requestAnimationFrame(()=>{document.querySelectorAll('.nc-sz').forEach(b=>b.classList.toggle('active',b.dataset.scale===s));});}}catch(e){}})();
 </script>
 </body>
 </html>
