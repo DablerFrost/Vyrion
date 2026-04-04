@@ -14,62 +14,72 @@
   --border:rgba(0,212,255,.12);--border2:rgba(0,212,255,.07);
   --breach-bg:rgba(240,48,48,.07);--warn-bg:rgba(240,144,0,.07);--track-bg:rgba(0,212,255,.07);
 }
+[data-theme="light"]{
+  --void:#f0f5ff;--void2:#e4eeff;--void3:#d5e5ff;
+  --glow:#0066CC;--amber:#b07800;--breach:#b82020;--warn:#a05800;
+  --t1:#060e1e;--t2:#1e4a7a;--t3:#3a6090;
+  --border:rgba(0,102,204,.18);--border2:rgba(0,102,204,.10);
+  --breach-bg:rgba(184,32,32,.09);--warn-bg:rgba(160,88,0,.09);--track-bg:rgba(0,102,204,.09);
+}
+[data-theme="light"] body{background:var(--void);color:var(--t1)}
+[data-theme="light"] .nav{background:rgba(240,245,255,.97)}
+[data-theme="light"] .meta-cell,[data-theme="light"] .agg-cell,[data-theme="light"] .factor-card,[data-theme="light"] .idx-cell,[data-theme="light"] .fw-cell,[data-theme="light"] .data-table tbody tr{background:var(--void2)}
+[data-theme="light"] .data-table tbody tr:hover,[data-theme="light"] .factor-card:hover{background:var(--void3)}
+[data-theme="light"] .api-bar{background:rgba(0,0,0,.04)}
+[data-theme="light"] .license-block{background:rgba(0,102,204,.04);border-color:rgba(0,102,204,.2)}
+[data-theme="light"] .cadence-table td,[data-theme="light"] .cadence-table th{color:var(--t2)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
-body{background:var(--void);color:var(--t1);font-family:'Archivo',sans-serif;line-height:1.6;min-height:100vh;overflow-x:hidden}
-body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:900;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,212,255,.004) 3px,rgba(0,212,255,.004) 4px)}
-
-/* NAV */
-.nav{position:sticky;top:0;z-index:500;height:50px;display:flex;align-items:center;gap:1rem;padding:0 1.8rem;background:rgba(2,9,18,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(20px)}
-.nav-logo{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:.9rem;color:var(--glow);letter-spacing:.15em;text-decoration:none;text-shadow:0 0 20px rgba(0,212,255,.3)}
-.nav-links{display:flex;gap:1.6rem;list-style:none;flex:1}
-.nav-links a{font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--t2);text-decoration:none;transition:color .2s}
+body{background:var(--void);color:var(--t1);font-family:"Archivo",sans-serif;line-height:1.6;min-height:100vh;overflow-x:hidden}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:900;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,212,255,.004) 3px,rgba(0,212,255,.004) 4px)}
+.nav{position:sticky;top:0;z-index:500;height:50px;display:flex;align-items:center;gap:.8rem;padding:0 1.8rem;background:rgba(2,9,18,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(20px)}
+.nav-logo{font-family:"Archivo Narrow",sans-serif;font-weight:800;font-size:.9rem;color:var(--glow);letter-spacing:.15em;text-decoration:none;text-shadow:0 0 20px rgba(0,212,255,.3)}
+.nav-links{display:flex;gap:1.5rem;list-style:none;flex:1}
+.nav-links a{font-family:"Archivo Narrow",sans-serif;font-weight:700;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--t2);text-decoration:none;transition:color .2s;padding-bottom:2px}
 .nav-links a:hover{color:var(--t1)}
 .nav-links a.active{color:var(--glow);border-bottom:1px solid rgba(0,212,255,.4)}
-.nav-dot{width:6px;height:6px;background:var(--glow);border-radius:50%;animation:pdot 2.2s infinite}
+.nav-dot{width:6px;height:6px;background:var(--glow);border-radius:50%;animation:pdot 2.2s infinite;flex-shrink:0}
 @keyframes pdot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,212,255,.5)}50%{opacity:.4;box-shadow:0 0 0 7px rgba(0,212,255,0)}}
-
-/* HEADER */
+.nav-controls{display:flex;align-items:center;gap:.35rem;flex-shrink:0}
+.nc-sep{width:1px;height:16px;background:var(--border);margin:0 .1rem}
+.nc-theme{font-family:"Courier Prime",monospace;font-size:.58rem;font-weight:700;letter-spacing:.12em;padding:.22rem .5rem;border-radius:2px;border:1px solid var(--border);background:transparent;color:var(--t2);cursor:pointer;transition:all .2s;white-space:nowrap}
+.nc-theme:hover{border-color:var(--glow);color:var(--glow);background:rgba(0,212,255,.08)}
+.nc-sz{font-family:"Courier Prime",monospace;font-size:.6rem;font-weight:700;width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:2px;border:1px solid var(--border);background:transparent;color:var(--t3);cursor:pointer;transition:all .2s}
+.nc-sz:hover{border-color:rgba(0,212,255,.4);color:var(--t1)}
+.nc-sz.active{background:rgba(0,212,255,.15);border-color:var(--glow);color:var(--glow)}
+[data-theme="light"] .nc-theme:hover{background:rgba(0,102,204,.08)}
+[data-theme="light"] .nc-sz.active{background:rgba(0,102,204,.12);border-color:var(--glow);color:var(--glow)}
+@media(max-width:720px){.nav-links{display:none}.nav-controls{gap:.22rem}.nc-sep{display:none}.nc-sz{width:22px;height:22px;font-size:.52rem}.nc-theme{font-size:.52rem;padding:.16rem .32rem}}
 .page-header{padding:2.8rem 1.8rem 2.2rem;border-bottom:1px solid var(--border);position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(0,100,200,.06) 0%,transparent 60%)}
-.page-header::after{content:'DATA FEED';position:absolute;right:-1rem;top:50%;transform:translateY(-50%);font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:clamp(4rem,10vw,8rem);color:rgba(0,212,255,.025);pointer-events:none;user-select:none}
-.eyebrow{font-family:'Courier Prime',monospace;font-size:.6rem;color:var(--glow);letter-spacing:.24em;text-transform:uppercase;margin-bottom:.45rem;display:flex;align-items:center;gap:.5rem}
-.eyebrow::before{content:'';width:16px;height:1px;background:var(--glow);opacity:.5}
-.page-title{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,3.2rem);color:var(--t1);line-height:1;letter-spacing:-.02em;margin-bottom:.5rem}
+.page-header::after{content:"DATA FEED";position:absolute;right:-1rem;top:50%;transform:translateY(-50%);font-family:"Archivo Narrow",sans-serif;font-weight:800;font-size:clamp(4rem,10vw,8rem);color:rgba(0,212,255,.025);pointer-events:none;user-select:none}
+.eyebrow{font-family:"Courier Prime",monospace;font-size:.6rem;color:var(--glow);letter-spacing:.24em;text-transform:uppercase;margin-bottom:.45rem;display:flex;align-items:center;gap:.5rem}
+.eyebrow::before{content:"";width:16px;height:1px;background:var(--glow);opacity:.5}
+.page-title{font-family:"Archivo Narrow",sans-serif;font-weight:800;font-size:clamp(2rem,5vw,3.2rem);color:var(--t1);line-height:1;letter-spacing:-.02em;margin-bottom:.5rem}
 .page-sub{font-size:.78rem;color:var(--t2);max-width:64ch;line-height:1.7}
-
-/* META STRIP */
 .meta-strip{display:flex;flex-wrap:wrap;background:var(--void2);border-bottom:1px solid var(--border)}
 .meta-cell{flex:1;min-width:120px;padding:.7rem 1.2rem;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:.1rem}
 .meta-cell:last-child{border-right:none}
-.meta-lbl{font-family:'Courier Prime',monospace;font-size:.52rem;color:var(--t3);letter-spacing:.16em;text-transform:uppercase}
-.meta-val{font-family:'Courier Prime',monospace;font-weight:700;font-size:.92rem;color:var(--glow);line-height:1}
+.meta-lbl{font-family:"Courier Prime",monospace;font-size:.52rem;color:var(--t3);letter-spacing:.16em;text-transform:uppercase}
+.meta-val{font-family:"Courier Prime",monospace;font-weight:700;font-size:.92rem;color:var(--glow);line-height:1}
 .meta-val.red{color:var(--breach)}.meta-val.amber{color:var(--amber)}.meta-val.white{color:var(--t1)}
-.meta-sub{font-family:'Courier Prime',monospace;font-size:.5rem;color:var(--t3)}
-
-/* API BAR */
+.meta-sub{font-family:"Courier Prime",monospace;font-size:.5rem;color:var(--t3)}
 .api-bar{background:rgba(0,0,0,.35);border-bottom:1px solid var(--border);padding:.75rem 1.8rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
-.api-label{font-family:'Courier Prime',monospace;font-size:.54rem;color:var(--t3);letter-spacing:.12em;text-transform:uppercase;flex-shrink:0}
-.api-url{font-family:'Courier Prime',monospace;font-size:.62rem;color:var(--glow);background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.2);padding:.25rem .65rem;border-radius:2px;flex:1;word-break:break-all;cursor:pointer;transition:background .15s}
+.api-label{font-family:"Courier Prime",monospace;font-size:.54rem;color:var(--t3);letter-spacing:.12em;text-transform:uppercase;flex-shrink:0}
+.api-url{font-family:"Courier Prime",monospace;font-size:.62rem;color:var(--glow);background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.2);padding:.25rem .65rem;border-radius:2px;flex:1;word-break:break-all;cursor:pointer;transition:background .15s}
 .api-url:hover{background:rgba(0,212,255,.12)}
-.api-copy{font-family:'Courier Prime',monospace;font-size:.54rem;letter-spacing:.08em;text-transform:uppercase;padding:.24rem .6rem;border-radius:2px;border:1px solid rgba(0,212,255,.25);background:transparent;color:var(--t2);cursor:pointer;transition:all .15s;white-space:nowrap;flex-shrink:0}
+.api-copy{font-family:"Courier Prime",monospace;font-size:.54rem;letter-spacing:.08em;text-transform:uppercase;padding:.24rem .6rem;border-radius:2px;border:1px solid rgba(0,212,255,.25);background:transparent;color:var(--t2);cursor:pointer;transition:all .15s;white-space:nowrap;flex-shrink:0}
 .api-copy:hover{border-color:rgba(0,212,255,.5);color:var(--glow)}
-.api-note{font-family:'Courier Prime',monospace;font-size:.52rem;color:var(--t3);flex-basis:100%}
-
-/* SECTION HEADS */
-.section-head{display:flex;align-items:center;gap:.6rem;padding:1.4rem 1.8rem .35rem;background:var(--void)}
-.section-head-title{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t1)}
+.api-note{font-family:"Courier Prime",monospace;font-size:.52rem;color:var(--t3);flex-basis:100%}
+.section-head{display:flex;align-items:center;gap:.6rem;padding:1.4rem 1.8rem .35rem}
+.section-head-title{font-family:"Archivo Narrow",sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t1)}
 .section-rule{flex:1;height:1px;background:var(--border)}
-
-/* AGGREGATE GRID */
 .agg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1px;background:var(--border);margin:0 1.8rem .5rem;border:1px solid var(--border)}
 .agg-cell{background:var(--void2);padding:.85rem 1rem}
-.agg-lbl{font-family:'Courier Prime',monospace;font-size:.5rem;color:var(--t3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.25rem}
-.agg-val{font-family:'Courier Prime',monospace;font-weight:700;font-size:1.4rem;line-height:1;letter-spacing:-.02em}
-.agg-sub{font-family:'Courier Prime',monospace;font-size:.5rem;color:var(--t3);margin-top:.12rem}
-
-/* COMPANY TABLE */
+.agg-lbl{font-family:"Courier Prime",monospace;font-size:.5rem;color:var(--t3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.25rem}
+.agg-val{font-family:"Courier Prime",monospace;font-weight:700;font-size:1.4rem;line-height:1;letter-spacing:-.02em}
+.agg-sub{font-family:"Courier Prime",monospace;font-size:.5rem;color:var(--t3);margin-top:.12rem}
 .table-wrap{overflow-x:auto;margin:0 1.8rem .5rem;border:1px solid var(--border)}
-.data-table{width:100%;border-collapse:collapse;font-family:'Courier Prime',monospace;font-size:.6rem}
+.data-table{width:100%;border-collapse:collapse;font-family:"Courier Prime",monospace;font-size:.6rem}
 .data-table thead th{text-align:left;padding:.5rem .8rem;color:var(--t3);letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--border);font-weight:400;background:var(--void2);white-space:nowrap}
 .data-table tbody tr{border-bottom:1px solid var(--border2);transition:background .15s}
 .data-table tbody tr:hover{background:var(--void3)}
@@ -83,62 +93,44 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:900;ba
 .pill-track{background:var(--track-bg);color:var(--glow);border:1px solid rgba(0,212,255,.25)}
 .src-link{color:rgba(0,212,255,.4);text-decoration:none;transition:color .15s}
 .src-link:hover{color:var(--glow)}
-
-/* FACTOR BREAKDOWN */
 .factor-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;background:var(--border);margin:0 1.8rem .5rem;border:1px solid var(--border)}
-.factor-card{background:var(--void2);padding:1rem 1.1rem}
-.factor-name{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:.82rem;color:var(--t1);margin-bottom:.15rem}
-.factor-ticker{font-family:'Courier Prime',monospace;font-size:.5rem;color:var(--t3);margin-bottom:.6rem;letter-spacing:.08em}
-.factor-row{display:flex;justify-content:space-between;align-items:baseline;padding:.16rem 0;border-bottom:1px solid var(--border2);font-family:'Courier Prime',monospace;font-size:.56rem}
+.factor-card{background:var(--void2);padding:1rem 1.1rem;transition:background .18s}
+.factor-card:hover{background:var(--void3)}
+.factor-name{font-family:"Archivo Narrow",sans-serif;font-weight:800;font-size:.82rem;color:var(--t1);margin-bottom:.15rem}
+.factor-ticker{font-family:"Courier Prime",monospace;font-size:.5rem;color:var(--t3);margin-bottom:.6rem;letter-spacing:.08em}
+.factor-row{display:flex;justify-content:space-between;align-items:baseline;padding:.16rem 0;border-bottom:1px solid var(--border2);font-family:"Courier Prime",monospace;font-size:.56rem}
 .factor-row:last-of-type{border-bottom:none}
-.fr-lbl{color:var(--t2);flex:1}
-.fr-max{color:var(--t3);font-size:.5rem;padding:0 .5rem;flex-shrink:0}
-.fr-val{font-weight:700;min-width:28px;text-align:right;flex-shrink:0}
-.factor-total{display:flex;justify-content:space-between;padding:.3rem 0 0;margin-top:.25rem;border-top:1px solid var(--border);font-family:'Courier Prime',monospace;font-size:.62rem}
-.ft-lbl{color:var(--t1)}
-.ft-val{font-weight:700;font-size:.72rem}
-
-/* INDEX SECTION */
+.fr-lbl{color:var(--t2);flex:1}.fr-max{color:var(--t3);font-size:.5rem;padding:0 .5rem;flex-shrink:0}.fr-val{font-weight:700;min-width:28px;text-align:right;flex-shrink:0}
+.factor-total{display:flex;justify-content:space-between;padding:.3rem 0 0;margin-top:.25rem;border-top:1px solid var(--border);font-family:"Courier Prime",monospace;font-size:.62rem}
+.ft-lbl{color:var(--t1)}.ft-val{font-weight:700;font-size:.72rem}
 .index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;background:var(--border);margin:0 1.8rem .5rem;border:1px solid var(--border)}
 .idx-cell{background:var(--void2);padding:.9rem 1rem}
-.idx-lbl{font-family:'Courier Prime',monospace;font-size:.5rem;color:var(--t3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.2rem}
-.idx-val{font-family:'Courier Prime',monospace;font-weight:700;font-size:1rem;color:var(--amber);line-height:1.1}
-.idx-sub{font-family:'Courier Prime',monospace;font-size:.5rem;color:var(--t3);margin-top:.1rem;line-height:1.4}
-
-/* CADENCE TABLE */
-.cadence-table{width:100%;border-collapse:collapse;font-family:'Courier Prime',monospace;font-size:.58rem;margin:0 0 .5rem}
+.idx-lbl{font-family:"Courier Prime",monospace;font-size:.5rem;color:var(--t3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.2rem}
+.idx-val{font-family:"Courier Prime",monospace;font-weight:700;font-size:1rem;color:var(--amber);line-height:1.1}
+.idx-sub{font-family:"Courier Prime",monospace;font-size:.5rem;color:var(--t3);margin-top:.1rem;line-height:1.4}
+.section-pad{padding:0 1.8rem}
+.cadence-table{width:100%;border-collapse:collapse;font-family:"Courier Prime",monospace;font-size:.58rem;margin-bottom:.5rem}
 .cadence-table th{text-align:left;padding:.38rem .6rem;color:var(--t3);letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--border);font-weight:400}
 .cadence-table td{padding:.35rem .6rem;color:var(--t2);border-bottom:1px solid var(--border2)}
 .cadence-daily{color:var(--glow)}.cadence-monthly{color:var(--amber)}
-
-/* LICENSING */
 .license-block{margin:0 1.8rem .5rem;padding:1.2rem 1.4rem;background:linear-gradient(135deg,rgba(0,100,200,.06),rgba(0,212,255,.03));border:1px solid rgba(0,212,255,.18);border-radius:2px}
-.license-title{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:1rem;color:var(--t1);margin-bottom:.35rem}
+.license-title{font-family:"Archivo Narrow",sans-serif;font-weight:800;font-size:1rem;color:var(--t1);margin-bottom:.35rem}
 .license-body{font-size:.7rem;color:var(--t2);line-height:1.72;max-width:72ch}
 .license-body a{color:rgba(0,212,255,.5);text-decoration:none}
 .license-body a:hover{color:var(--glow)}
 .license-tiers{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.9rem}
-.lt{font-family:'Courier Prime',monospace;font-size:.56rem;padding:.3rem .7rem;border-radius:2px;border:1px solid rgba(0,212,255,.22);background:rgba(0,212,255,.06);color:var(--glow)}
-
-/* FOOTER */
+.lt{font-family:"Courier Prime",monospace;font-size:.56rem;padding:.3rem .7rem;border-radius:2px;border:1px solid rgba(0,212,255,.22);background:rgba(0,212,255,.06);color:var(--glow)}
 .footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem;padding:1.2rem 1.8rem;border-top:1px solid var(--border);margin-top:1.5rem}
-.footer-l{font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--t3);line-height:1.7}
-.footer-l a{color:rgba(0,212,255,.4);text-decoration:none}
-.footer-l a:hover{color:var(--glow)}
+.footer-l{font-family:"Courier Prime",monospace;font-size:.58rem;color:var(--t3);line-height:1.7}
+.footer-l a{color:rgba(0,212,255,.4);text-decoration:none}.footer-l a:hover{color:var(--glow)}
 .footer-r{display:flex;gap:1.2rem}
-.footer-r a{font-family:'Courier Prime',monospace;font-size:.58rem;color:rgba(0,212,255,.3);text-decoration:none;transition:color .15s}
+.footer-r a{font-family:"Courier Prime",monospace;font-size:.58rem;color:rgba(0,212,255,.3);text-decoration:none;transition:color .15s}
 .footer-r a:hover{color:var(--glow)}
-
-/* UTILS */
-.section-pad{padding:0 1.8rem}
 .mt1{margin-top:1rem}
-.loading-pulse{animation:pulse 1.4s infinite}
-@keyframes pulse{0%,100%{opacity:.3}50%{opacity:.8}}
-@media(max-width:720px){.nav-links{display:none}.agg-grid,.factor-grid,.index-grid{grid-template-columns:1fr}.table-wrap,.agg-grid,.factor-grid,.index-grid,.license-block{margin:0 .9rem .5rem}.api-bar,.section-head,.footer,.section-pad{padding-left:.9rem;padding-right:.9rem}}
+@media(max-width:720px){.agg-grid,.factor-grid,.index-grid{grid-template-columns:1fr}.table-wrap,.agg-grid,.factor-grid,.index-grid,.license-block{margin:0 .9rem .5rem}.api-bar,.section-head,.footer,.section-pad{padding-left:.9rem;padding-right:.9rem}}
 </style>
 </head>
 <body>
-
 <nav class="nav">
   <a href="https://dablerfrost.github.io/conscience" class="nav-logo">VYRION</a>
   <ul class="nav-links">
@@ -147,329 +139,130 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:900;ba
     <li><a href="shield.html">SHIELD</a></li>
     <li><a href="https://dablerfrost.github.io/conscience/archive">ARCHIVE</a></li>
   </ul>
+  <div class="nav-controls">
+    <button class="nc-theme" id="theme-btn" onclick="toggleTheme()">&#9680; DARK</button>
+    <div class="nc-sep"></div>
+    <button class="nc-sz" data-scale="0.88" onclick="setScale(this)">S</button>
+    <button class="nc-sz active" data-scale="1.0" onclick="setScale(this)">M</button>
+    <button class="nc-sz" data-scale="1.22" onclick="setScale(this)">L</button>
+  </div>
   <div class="nav-dot"></div>
 </nav>
-
 <header class="page-header">
-  <div class="eyebrow">VYRION CONSCIENCE · Machine-Readable Data Feed</div>
+  <div class="eyebrow">VYRION CONSCIENCE &middot; Machine-Readable Data Feed</div>
   <h1 class="page-title">conscience-data.json</h1>
-  <p class="page-sub">Complete CONSCIENCE score data for all 11 tracked companies. All factor breakdowns, source URLs, band classifications, VYRION Index metadata, and aggregate statistics. Updated with each score revision. Raw JSON available below for programmatic access.</p>
+  <p class="page-sub">Complete CONSCIENCE score data for all 11 tracked companies. All factor breakdowns, source URLs, band classifications, VYRION Index metadata, and aggregate statistics. Raw JSON available below for programmatic access.</p>
 </header>
-
-<!-- META STRIP -->
 <div class="meta-strip">
   <div class="meta-cell"><div class="meta-lbl">Feed Version</div><div class="meta-val">2.8</div><div class="meta-sub">April 3, 2026</div></div>
   <div class="meta-cell"><div class="meta-lbl">Companies</div><div class="meta-val white">11</div><div class="meta-sub">Coverage portfolio</div></div>
-  <div class="meta-cell"><div class="meta-lbl">Mean Score</div><div class="meta-val amber">38.6</div><div class="meta-sub">/ 100 · v1.0</div></div>
-  <div class="meta-cell"><div class="meta-lbl">Pledge Gap</div><div class="meta-val red">−34.6</div><div class="meta-sub">vs 1.5°C alignment</div></div>
+  <div class="meta-cell"><div class="meta-lbl">Mean Score</div><div class="meta-val amber">38.6</div><div class="meta-sub">/ 100 &middot; v1.0</div></div>
+  <div class="meta-cell"><div class="meta-lbl">Pledge Gap</div><div class="meta-val red">&minus;34.6</div><div class="meta-sub">vs 1.5&deg;C alignment</div></div>
   <div class="meta-cell"><div class="meta-lbl">Active Lawsuits</div><div class="meta-val red">97</div><div class="meta-sub">Sabin Center total</div></div>
   <div class="meta-cell"><div class="meta-lbl">Score Version</div><div class="meta-val white">v1.0</div><div class="meta-sub">March 18, 2026</div></div>
 </div>
-
-<!-- API ACCESS BAR -->
 <div class="api-bar">
-  <div class="api-label">RAW JSON ENDPOINT</div>
-  <div class="api-url" id="api-url-display" onclick="copyURL()" title="Click to copy">https://dablerfrost.github.io/conscience/conscience-data.json</div>
-  <button class="api-copy" onclick="copyURL()" id="copy-btn">⊞ COPY URL</button>
-  <div class="api-note">For programmatic access — use the URL above in your application. No authentication required. CORS-open. Updated on each score revision. License institutional use: <a href="/cdn-cgi/l/email-protection#01626e6f7560627541777873686e6f2f6460737569" style="color:rgba(0,212,255,.45);text-decoration:none"><span class="__cf_email__" data-cfemail="f695999882979582b6808f849f9998d8939784829e">[email&#160;Contact@Vyrion.Earth]</span></a></div>
+  <div class="api-label">RAW JSON</div>
+  <div class="api-url" onclick="copyURL()" title="Click to copy">https://dablerfrost.github.io/conscience/conscience-data.json</div>
+  <button class="api-copy" onclick="copyURL()" id="copy-btn">&#8862; COPY URL</button>
+  <div class="api-note">No authentication required. CORS-open. Institutional licensing: <a href="mailto:contact@vyrion.earth" style="color:rgba(0,212,255,.45);text-decoration:none">contact@vyrion.earth</a></div>
 </div>
-
-<!-- AGGREGATE STATS -->
 <div class="section-head"><div class="section-head-title">Aggregate Statistics</div><div class="section-rule"></div></div>
-<div class="agg-grid" id="agg-grid">
-  <div class="agg-cell"><div class="agg-lbl">Mean Score</div><div class="agg-val" style="color:var(--amber)" id="agg-mean">38.6</div><div class="agg-sub">/ 100 · 11 companies</div></div>
-  <div class="agg-cell"><div class="agg-lbl">Pledge Gap</div><div class="agg-val" style="color:var(--breach)" id="agg-gap">−34.6</div><div class="agg-sub">vs 1.5°C full alignment</div></div>
-  <div class="agg-cell"><div class="agg-lbl">Breach (0–30)</div><div class="agg-val" style="color:var(--breach)" id="agg-breach">7</div><div class="agg-sub">companies</div></div>
-  <div class="agg-cell"><div class="agg-lbl">Warning (31–60)</div><div class="agg-val" style="color:var(--warn)" id="agg-warn">3</div><div class="agg-sub">companies</div></div>
-  <div class="agg-cell"><div class="agg-lbl">On Track (61–100)</div><div class="agg-val" style="color:var(--glow)" id="agg-track">1</div><div class="agg-sub">companies</div></div>
+<div class="agg-grid">
+  <div class="agg-cell"><div class="agg-lbl">Mean Score</div><div class="agg-val" style="color:var(--amber)" id="agg-mean">38.6</div><div class="agg-sub">/ 100 &middot; 11 companies</div></div>
+  <div class="agg-cell"><div class="agg-lbl">Pledge Gap</div><div class="agg-val" style="color:var(--breach)" id="agg-gap">&minus;34.6</div><div class="agg-sub">vs 1.5&deg;C full alignment</div></div>
+  <div class="agg-cell"><div class="agg-lbl">Breach (0&ndash;30)</div><div class="agg-val" style="color:var(--breach)" id="agg-breach">7</div><div class="agg-sub">companies</div></div>
+  <div class="agg-cell"><div class="agg-lbl">Warning (31&ndash;60)</div><div class="agg-val" style="color:var(--warn)" id="agg-warn">3</div><div class="agg-sub">companies</div></div>
+  <div class="agg-cell"><div class="agg-lbl">On Track (61&ndash;100)</div><div class="agg-val" style="color:var(--glow)" id="agg-track">1</div><div class="agg-sub">companies</div></div>
   <div class="agg-cell"><div class="agg-lbl">Total Lawsuits</div><div class="agg-val" style="color:var(--breach)" id="agg-law">97</div><div class="agg-sub">Sabin Center active</div></div>
 </div>
-
-<!-- COMPANY SCORES TABLE -->
-<div class="section-head mt1"><div class="section-head-title">Company Scores · v1.0</div><div class="section-rule"></div></div>
+<div class="section-head mt1"><div class="section-head-title">Company Scores &middot; v1.0</div><div class="section-rule"></div></div>
 <div class="table-wrap">
-  <table class="data-table" id="scores-table">
-    <thead>
-      <tr>
-        <th>Company</th><th>Ticker</th><th>Sector</th>
-        <th>Score</th><th>Band</th>
-        <th>CDP</th><th>InfluenceMap</th><th>SBTi</th><th>Lawsuits</th><th>TPI</th>
-        <th>Sources</th>
-      </tr>
-    </thead>
+  <table class="data-table">
+    <thead><tr><th>Company</th><th>Ticker</th><th>Sector</th><th>Score</th><th>Band</th><th>CDP</th><th>InfluenceMap</th><th>SBTi</th><th>Lawsuits</th><th>TPI</th><th>EDGAR</th></tr></thead>
     <tbody id="scores-tbody"></tbody>
   </table>
 </div>
-
-<!-- FACTOR BREAKDOWNS -->
-<div class="section-head mt1"><div class="section-head-title">Factor Breakdowns · All 11 Companies</div><div class="section-rule"></div></div>
+<div class="section-head mt1"><div class="section-head-title">Factor Breakdowns &middot; All 11 Companies</div><div class="section-rule"></div></div>
 <div class="factor-grid" id="factor-grid"></div>
-
-<!-- VYRION INDEX -->
 <div class="section-head mt1"><div class="section-head-title">VYRION Index Metadata</div><div class="section-rule"></div></div>
-<div class="index-grid" id="index-grid">
-  <div class="idx-cell"><div class="idx-lbl">Current Score</div><div class="idx-val">41.2 ± 1.8</div><div class="idx-sub">/ 100 · Day 16</div></div>
-  <div class="idx-cell"><div class="idx-lbl">Date</div><div class="idx-val" style="color:var(--t1);font-size:.82rem">2026-04-03</div><div class="idx-sub">April 3, 2026</div></div>
-  <div class="idx-cell"><div class="idx-lbl">Baseline</div><div class="idx-val" style="color:var(--t1);font-size:.75rem">100 / 100</div><div class="idx-sub">Pre-industrial 1850–1900</div></div>
+<div class="index-grid">
+  <div class="idx-cell"><div class="idx-lbl">Current Score</div><div class="idx-val">41.2 &plusmn; 1.8</div><div class="idx-sub">/ 100 &middot; Day 16</div></div>
+  <div class="idx-cell"><div class="idx-lbl">Date</div><div class="idx-val" style="color:var(--t1);font-size:.82rem">2026-04-04</div><div class="idx-sub">April 4, 2026</div></div>
+  <div class="idx-cell"><div class="idx-lbl">Baseline</div><div class="idx-val" style="color:var(--t1);font-size:.75rem">100 / 100</div><div class="idx-sub">Pre-industrial 1850&ndash;1900</div></div>
   <div class="idx-cell"><div class="idx-lbl">Indicators</div><div class="idx-val" style="color:var(--t1)">48</div><div class="idx-sub">Across 8 Earth systems</div></div>
-  <div class="idx-cell"><div class="idx-lbl">Uncertainty</div><div class="idx-val" style="color:var(--t1);font-size:.82rem">±1.8 pts</div><div class="idx-sub">Min detectable: ±0.5</div></div>
-  <div class="idx-cell"><div class="idx-lbl">Methodology</div><div class="idx-val" style="color:var(--glow);font-size:.65rem;line-height:1.3"><a href="https://github.com/dablerfrost/conscience/blob/main/VYRION-METHODOLOGY-v1.0.md" target="_blank" style="color:var(--glow);text-decoration:none">VYRION-METHODOLOGY<br>-v1.0.md →</a></div></div>
+  <div class="idx-cell"><div class="idx-lbl">Uncertainty</div><div class="idx-val" style="color:var(--t1);font-size:.82rem">&plusmn;1.8 pts</div><div class="idx-sub">Min detectable: &plusmn;0.5</div></div>
+  <div class="idx-cell"><div class="idx-lbl">Methodology</div><div class="idx-val" style="font-size:.65rem;line-height:1.3"><a href="https://github.com/dablerfrost/conscience/blob/main/VYRION-METHODOLOGY-v1.0.md" target="_blank" style="color:var(--glow);text-decoration:none">VYRION-METHODOLOGY-v1.0.md &rarr;</a></div></div>
 </div>
-
-<!-- INDICATOR CADENCE -->
-<div class="section-head mt1"><div class="section-head-title">Indicator Update Cadences · 8 Systems</div><div class="section-rule"></div></div>
+<div class="section-head mt1"><div class="section-head-title">Indicator Update Cadences &middot; 8 Systems</div><div class="section-rule"></div></div>
 <div class="section-pad">
 <table class="cadence-table">
   <thead><tr><th>System</th><th>Weight</th><th>Fastest Indicator</th><th>Slowest Indicator</th><th>Composite</th></tr></thead>
   <tbody>
-    <tr><td>Atmosphere</td><td>22%</td><td>CO₂ (daily · NOAA GML)</td><td>Radiative forcing (monthly)</td><td class="cadence-daily">Daily</td></tr>
-    <tr><td>Ocean</td><td>18%</td><td>SST anomaly (daily · NOAA OISST)</td><td>Ocean heat content (monthly)</td><td class="cadence-daily">Daily</td></tr>
-    <tr><td>Ice / Cryosphere</td><td>14%</td><td>Arctic extent (daily · NSIDC)</td><td>Glacier volume (annual)</td><td class="cadence-daily">Daily</td></tr>
-    <tr><td>Forest</td><td>13%</td><td>Active fires (daily · NASA EONET)</td><td>Deforestation rate (annual)</td><td class="cadence-monthly">Monthly</td></tr>
+    <tr><td>Atmosphere</td><td>22%</td><td>CO&#8322; (daily &middot; NOAA GML)</td><td>Radiative forcing (monthly)</td><td class="cadence-daily">Daily</td></tr>
+    <tr><td>Ocean</td><td>18%</td><td>SST anomaly (daily &middot; NOAA OISST)</td><td>Ocean heat content (monthly)</td><td class="cadence-daily">Daily</td></tr>
+    <tr><td>Ice / Cryosphere</td><td>14%</td><td>Arctic extent (daily &middot; NSIDC)</td><td>Glacier volume (annual)</td><td class="cadence-daily">Daily</td></tr>
+    <tr><td>Forest</td><td>13%</td><td>Active fires (daily &middot; NASA EONET)</td><td>Deforestation rate (annual)</td><td class="cadence-monthly">Monthly</td></tr>
     <tr><td>Biodiversity</td><td>12%</td><td>GBIF occurrence records (weekly)</td><td>Living Planet Index (annual)</td><td class="cadence-monthly">Monthly</td></tr>
-    <tr><td>Freshwater</td><td>10%</td><td>Drought index (daily · SPEI)</td><td>Groundwater (annual · GRACE)</td><td class="cadence-daily">Daily</td></tr>
+    <tr><td>Freshwater</td><td>10%</td><td>Drought index (daily &middot; SPEI)</td><td>Groundwater (annual &middot; GRACE)</td><td class="cadence-daily">Daily</td></tr>
     <tr><td>Soil</td><td>7%</td><td>Desertification proxy (monthly)</td><td>Carbon density (annual)</td><td class="cadence-monthly">Monthly</td></tr>
-    <tr><td>Corporate Accountability</td><td>4%</td><td>SEC 8-K filings (daily · EDGAR)</td><td>CDP responses (annual)</td><td class="cadence-daily">Daily</td></tr>
+    <tr><td>Corporate Accountability</td><td>4%</td><td>SEC 8-K filings (daily &middot; EDGAR)</td><td>CDP responses (annual)</td><td class="cadence-daily">Daily</td></tr>
   </tbody>
 </table>
 </div>
-
-<!-- LICENSING -->
 <div class="section-head mt1"><div class="section-head-title">Data Licensing</div><div class="section-rule"></div></div>
 <div class="license-block">
   <div class="license-title">License CONSCIENCE Score Data</div>
-  <div class="license-body">
-    CONSCIENCE scores are available for institutional licensing. The JSON feed above is the sample data set — full licensing agreements provide daily-updating feeds, expanded company coverage, factor-level data, and API integration support.
-    <br><br>
-    Email Vyrion: <a href="/cdn-cgi/l/email-protection#8ae9e5e4feebe9fecafcf3f8e3e5e4a4efebf8fee2"><span class="__cf_email__" data-cfemail="ee8d81809a8f8d9aae98979c878180c08b8f9c9a86">[&#160;contact@vyrion.earth]</span></a> ·
-    Methodology: <a href="https://github.com/dablerfrost/conscience/blob/main/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a> ·
-    Open Proof Protocol: errors reported within 24 hours.
-  </div>
+  <div class="license-body">CONSCIENCE scores are available for institutional licensing. The JSON feed above is the sample data set &mdash; full licensing agreements provide daily-updating feeds, expanded company coverage, factor-level data, and API integration support.<br><br>
+  Contact: <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a> &middot; Methodology: <a href="https://github.com/dablerfrost/conscience/blob/main/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a> &middot; Open Proof Protocol: errors corrected within 24 hours.</div>
   <div class="license-tiers">
-    <div class="lt">TIER 1 · ESG Research · $500–1,500/mo</div>
-    <div class="lt">TIER 2 · Reinsurance Analytics · $2,000–5,000/mo</div>
-    <div class="lt">TIER 3 · Bloomberg / Index Funds · $8,000–25,000/mo</div>
+    <div class="lt">TIER 1 &middot; ESG Research &middot; $500&ndash;1,500/mo</div>
+    <div class="lt">TIER 2 &middot; Reinsurance Analytics &middot; $2,000&ndash;5,000/mo</div>
+    <div class="lt">TIER 3 &middot; Bloomberg / Index Funds &middot; $8,000&ndash;25,000/mo</div>
   </div>
 </div>
-
 <footer class="footer">
-  <div class="footer-l">
-    VYRION CONSCIENCE · Data Feed · v2.8 · April 3, 2026<br>
-    Methodology: <a href="https://github.com/dablerfrost/conscience/blob/main/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a> ·
-    <a href="https://github.com/dablerfrost/conscience" target="_blank">github.com/dablerfrost/conscience</a> ·
-    Tyler Frost / DablerFrost · Hilo, Hawaii
-  </div>
+  <div class="footer-l">VYRION CONSCIENCE &middot; Data Feed &middot; v2.8 &middot; April 2026<br>
+  Methodology: <a href="https://github.com/dablerfrost/conscience/blob/main/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a> &middot;
+  <a href="https://github.com/dablerfrost/conscience" target="_blank">github.com/dablerfrost/conscience</a> &middot; Tyler Frost / DablerFrost &middot; Hilo, Hawaii</div>
   <div class="footer-r">
-    <a href="https://dablerfrost.github.io/conscience">← CONSCIENCE</a>
-    <a href="conscience-data.json" target="_blank">RAW JSON →</a>
-    <a href="https://dablerfrost.github.io/conscience/archive">ARCHIVE →</a>
+    <a href="https://dablerfrost.github.io/conscience">&larr; CONSCIENCE</a>
+    <a href="conscience-data.json" target="_blank">RAW JSON &rarr;</a>
+    <a href="https://dablerfrost.github.io/conscience/archive">ARCHIVE &rarr;</a>
   </div>
 </footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 'use strict';
-
-// Copy URL helper
-function copyURL() {
-  const url = 'https://dablerfrost.github.io/conscience/conscience-data.json';
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(url).then(() => {
-      const btn = document.getElementById('copy-btn');
-      if (btn) { const o = btn.textContent; btn.textContent = '✓ COPIED'; setTimeout(() => btn.textContent = o, 1800); }
-    });
-  }
-}
-
-// Band helpers
-function bandPill(band) {
-  const map = {
-    breach: ['pill-breach','BREACH'],
-    warning: ['pill-warn','WARNING'],
-    on_track: ['pill-track','ON TRACK'],
-    'on-track': ['pill-track','ON TRACK'],
-  };
-  const [cls, label] = map[band] || ['','—'];
-  return `<span class="band-pill ${cls}">${label}</span>`;
-}
-function scoreCls(band) {
-  return band === 'breach' ? 'td-breach' : band === 'warning' ? 'td-warn' : 'td-track';
-}
-function factorColor(pts, max) {
-  const pct = pts / max;
-  if (pct >= 0.75) return 'var(--glow)';
-  if (pct >= 0.4)  return 'var(--amber)';
-  if (pts < 0)     return 'var(--breach)';
-  return 'var(--warn)';
-}
-
-// ── STATIC DATA — always renders, fetch updates if available ────────
-const STATIC_DATA = {
-  meta: {
-    aggregate: { mean_score:38.6, pledge_gap:-34.6, breach_count:7, warning_count:3, on_track_count:1, total_active_lawsuits:97 },
-    vyrion_index: { score:41.2, uncertainty:1.8, day:16, date:'2026-04-03', baseline:'Pre-industrial 1850-1900 = 100/100', indicators:48, systems:8 }
-  },
-  companies: [
-    { id:'exxon', name:'ExxonMobil', ticker:'XOM', sector:'Oil & Gas', cik:'34088', score:8, band:'breach',
-      cdp:{grade:'D',year:2023}, influencemap:{grade:'F',url:'https://influencemap.org/company/ExxonMobil'},
-      sbti:{status:'Not committed'}, sabin_center:{active_cases:27}, tpi:{level:'2/5'},
-      pledge_source:'ExxonMobil 2023 Sustainability Report', pledge_url:'https://corporate.exxonmobil.com/sustainability-and-society/sustainability-report',
-      edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000034088.json'},
-      factors:{ pledge_quality:{points:3,max:30}, cdp_performance:{points:4,max:25}, lobbying_alignment:{points:0,max:25}, legal_exposure:{points:1,max:20} }},
-    { id:'bp', name:'BP', ticker:'BP', sector:'Oil & Gas', cik:'313807', score:11, band:'breach',
-      cdp:{grade:'C',year:2023}, influencemap:{grade:'D-',url:'https://influencemap.org/company/BP'},
-      sbti:{status:'Not committed'}, sabin_center:{active_cases:12}, tpi:{level:'3/5'},
-      pledge_source:'BP Strategy Update 2023', pledge_url:'https://www.bp.com/en/global/corporate/news-and-insights/press-releases/bp-sets-out-new-ambition-for-a-net-zero-future.html',
-      edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000313807.json'},
-      factors:{ pledge_quality:{points:2,max:30}, cdp_performance:{points:10,max:25}, lobbying_alignment:{points:2,max:25}, legal_exposure:{points:-3,max:20} }},
-    { id:'shell', name:'Shell', ticker:'SHEL', sector:'Oil & Gas', cik:'806517', score:19, band:'breach',
-      cdp:{grade:'C',year:2023}, influencemap:{grade:'D',url:'https://influencemap.org/company/Shell'},
-      sbti:{status:'Not committed'}, sabin_center:{active_cases:19}, tpi:{level:'3/5'},
-      pledge_source:'Shell Energy Transition Strategy 2023', pledge_url:'https://www.shell.com/sustainability/our-climate-target.html',
-      edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000806517.json'},
-      factors:{ pledge_quality:{points:8,max:30}, cdp_performance:{points:10,max:25}, lobbying_alignment:{points:3,max:25}, legal_exposure:{points:-2,max:20} }},
-    { id:'delta', name:'Delta Air Lines', ticker:'DAL', sector:'Aviation', cik:'27904', score:14, band:'breach',
-      cdp:{grade:'C',year:2023}, influencemap:{grade:'D',url:'https://influencemap.org/company/Delta-Air-Lines'},
-      sbti:{status:'Not committed'}, sabin_center:{active_cases:3}, tpi:{level:'2/5'},
-      pledge_source:'Delta Sustainability Report 2023', pledge_url:'https://www.delta.com/us/en/about-delta/sustainability',
-      edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000027904.json'},
-      factors:{ pledge_quality:{points:4,max:30}, cdp_performance:{points:10,max:25}, lobbying_alignment:{points:3,max:25}, legal_exposure:{points:-3,max:20} }},
-    { id:'starbucks', name:'Starbucks', ticker:'SBUX', sector:'Food & Beverage', cik:'829224', score:29, band:'breach',
-      cdp:{grade:'B',year:2023}, influencemap:{grade:'C',url:'https://influencemap.org/company/Starbucks'},
-      sbti:{status:'Committed'}, sabin_center:{active_cases:1}, tpi:{level:'3/5'},
-      pledge_source:'Starbucks FY2024 Impact Report', pledge_url:'https://stories.starbucks.com/stories/sustainability/',
-      edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000829224.json'},
-      factors:{ pledge_quality:{points:14,max:30}, cdp_performance:{points:18,max:25}, lobbying_alignment:{points:9,max:25}, legal_exposure:{points:-12,max:20} }},
-    { id:'walmart', name:'Walmart', ticker:'WMT', sector:'Retail', cik:'104169', score:38, band:'warning',
-      cdp:{grade:'B',year:2023}, influencemap:{grade:'C',url:'https://influencemap.org/company/Walmart'},
-      sbti:{status:'Approved (ops)'}, sabin_center:{active_cases:2}, tpi:{level:'3/5'},
-      pledge_source:'Walmart ESG Report FY2024', pledge_url:'https://corporate.walmart.com/esgreport',
-      edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000104169.json'},
-      factors:{ pledge_quality:{points:18,max:30}, cdp_performance:{points:18,max:25}, lobbying_alignment:{points:9,max:25}, legal_exposure:{points:-7,max:20} }},
-    { id:'meta', name:'Meta', ticker:'META', sector:'Technology', cik:'1326801', score:43, band:'warning',
-      cdp:{grade:'B',year:2023}, influencemap:{grade:'C-',url:'https://influencemap.org/company/Facebook-Meta'},
-      sbti:{status:'Committed'}, sabin_center:{active_cases:1}, tpi:{level:'3/5'},
-      pledge_source:'Meta Sustainability Report 2023', pledge_url:'https://sustainability.fb.com/',
-      edgar:{cik_url:'https://data.sec.gov/submissions/CIK0001326801.json'},
-      factors:{ pledge_quality:{points:20,max:30}, cdp_performance:{points:18,max:25}, lobbying_alignment:{points:7,max:25}, legal_exposure:{points:-2,max:20} }},
-    { id:'amazon', name:'Amazon', ticker:'AMZN', sector:'Tech / Retail', cik:'1018724', score:47, band:'warning',
-      cdp:{grade:'B',year:2023}, influencemap:{grade:'C',url:'https://influencemap.org/company/Amazon'},
-      sbti:{status:'Committed'}, sabin_center:{active_cases:3}, tpi:{level:'3/5'},
-      pledge_source:'Amazon Climate Pledge 2023', pledge_url:'https://sustainability.aboutamazon.com/',
-      edgar:{cik_url:'https://data.sec.gov/submissions/CIK0001018724.json'},
-      factors:{ pledge_quality:{points:20,max:30}, cdp_performance:{points:18,max:25}, lobbying_alignment:{points:9,max:25}, legal_exposure:{points:0,max:20} }},
-    { id:'microsoft', name:'Microsoft', ticker:'MSFT', sector:'Technology', cik:'789019', score:61, band:'on_track',
-      cdp:{grade:'A-',year:2023}, influencemap:{grade:'B-',url:'https://influencemap.org/company/Microsoft'},
-      sbti:{status:'Approved 1.5°C'}, sabin_center:{active_cases:1}, tpi:{level:'4/5'},
-      pledge_source:'Microsoft Sustainability Report 2024', pledge_url:'https://www.microsoft.com/en-us/sustainability',
-      edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000789019.json'},
-      factors:{ pledge_quality:{points:26,max:30}, cdp_performance:{points:22,max:25}, lobbying_alignment:{points:13,max:25}, legal_exposure:{points:0,max:20} }},
-    { id:'unilever', name:'Unilever', ticker:'ULVR', sector:'Consumer Goods', cik:'49519', score:72, band:'on_track',
-      cdp:{grade:'A-',year:2023}, influencemap:{grade:'B',url:'https://influencemap.org/company/Unilever'},
-      sbti:{status:'Approved 1.5°C'}, sabin_center:{active_cases:1}, tpi:{level:'4/5'},
-      pledge_source:'Unilever Climate Transition Action Plan 2023', pledge_url:'https://www.unilever.com/planet-and-society/climate-action/',
-      edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000049519.json'},
-      factors:{ pledge_quality:{points:28,max:30}, cdp_performance:{points:22,max:25}, lobbying_alignment:{points:16,max:25}, legal_exposure:{points:6,max:20} }},
-    { id:'apple', name:'Apple', ticker:'AAPL', sector:'Technology', cik:'320193', score:84, band:'on_track',
-      cdp:{grade:'A',year:2023}, influencemap:{grade:'B+',url:'https://influencemap.org/company/Apple'},
-      sbti:{status:'Approved 1.5°C'}, sabin_center:{active_cases:0}, tpi:{level:'5/5'},
-      pledge_source:'Apple Environmental Progress Report 2024', pledge_url:'https://www.apple.com/environment/pdf/Apple_Environmental_Progress_Report_2024.pdf',
-      edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000320193.json'},
-      factors:{ pledge_quality:{points:30,max:30}, cdp_performance:{points:25,max:25}, lobbying_alignment:{points:19,max:25}, legal_exposure:{points:10,max:20} }}
-  ]
-};
-
-// Render static data immediately — page always works
-renderScoresTable(STATIC_DATA.companies);
-renderFactorGrid(STATIC_DATA.companies);
-renderIndex(STATIC_DATA.meta.vyrion_index);
-renderAgg(STATIC_DATA.meta.aggregate);
-
-// Then try to fetch live JSON to override (catches any future updates)
-const JSON_URL = 'https://dablerfrost.github.io/conscience/conscience-data.json';
-fetch(JSON_URL)
-  .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-  .then(data => {
-    renderScoresTable(data.companies);
-    renderFactorGrid(data.companies);
-    if (data.meta && data.meta.vyrion_index) renderIndex(data.meta.vyrion_index);
-    if (data.meta && data.meta.aggregate) renderAgg(data.meta.aggregate);
-  })
-  .catch(() => {
-    // Static data already rendered — silent fail, no console warning
-  });
-
-function renderAgg(agg) {
-  const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
-  set('agg-mean', agg.mean_score);
-  set('agg-gap', '−' + Math.abs(agg.pledge_gap));
-  set('agg-breach', agg.breach_count);
-  set('agg-warn', agg.warning_count);
-  set('agg-track', agg.on_track_count);
-  set('agg-law', agg.total_active_lawsuits);
-}
-
-function renderScoresTable(companies) {
-  const tbody = document.getElementById('scores-tbody');
-  if (!tbody) return;
-  tbody.innerHTML = companies.map(co => {
-    const sc = co.score;
-    const bc = scoreCls(co.band);
-    const sabin = co.sabin_center ? co.sabin_center.active_cases : '—';
-    const edgar = co.edgar ? `<a href="${co.edgar.cik_url}" target="_blank" class="src-link">EDGAR →</a>` : '—';
-    const pledgeLink = co.pledge_source ? `<a href="${co.pledge_url}" target="_blank" class="src-link">${co.pledge_source.slice(0,22)}… →</a>` : '—';
-    return `<tr>
-      <td>${co.name}</td>
-      <td>${co.ticker}</td>
-      <td>${co.sector}</td>
-      <td class="td-score ${bc}">${sc}</td>
-      <td>${bandPill(co.band)}</td>
-      <td class="${co.cdp && co.cdp.grade.startsWith('A') ? 'td-track' : co.cdp && co.cdp.grade.startsWith('B') ? '' : 'td-warn'}">${co.cdp ? co.cdp.grade : '—'}</td>
-      <td class="${co.influencemap && (co.influencemap.grade === 'F' || co.influencemap.grade.startsWith('D')) ? 'td-breach' : ''}">${co.influencemap ? co.influencemap.grade : '—'}</td>
-      <td style="font-size:.52rem">${co.sbti ? co.sbti.status : '—'}</td>
-      <td class="${sabin >= 20 ? 'td-breach' : sabin >= 10 ? 'td-warn' : ''}">${sabin}</td>
-      <td>${co.tpi ? co.tpi.level : '—'}</td>
-      <td>${edgar}</td>
-    </tr>`;
-  }).join('');
-}
-
-function renderFactorGrid(companies) {
-  const grid = document.getElementById('factor-grid');
-  if (!grid) return;
-  grid.innerHTML = companies.map(co => {
-    const f = co.factors;
-    const bc = co.band === 'breach' ? 'var(--breach)' : co.band === 'warning' ? 'var(--warn)' : 'var(--glow)';
-    const rows = [
-      { label:'Pledge Quality', pts: f.pledge_quality.points, max: f.pledge_quality.max },
-      { label:'CDP Performance', pts: f.cdp_performance.points, max: f.cdp_performance.max },
-      { label:'Lobbying Alignment', pts: f.lobbying_alignment.points, max: f.lobbying_alignment.max },
-      { label:'Legal Exposure', pts: f.legal_exposure.points, max: f.legal_exposure.max },
-    ];
-    const total = rows.reduce((a,r) => a + r.pts, 0);
-    return `
-    <div class="factor-card">
-      <div class="factor-name">${co.name}</div>
-      <div class="factor-ticker">${co.ticker} · ${co.sector} · CIK ${co.cik}</div>
-      ${rows.map(r => `
-        <div class="factor-row">
-          <div class="fr-lbl">${r.label}</div>
-          <div class="fr-max">${r.max} max</div>
-          <div class="fr-val" style="color:${factorColor(r.pts, r.max)}">${r.pts > 0 ? '+' : ''}${r.pts}</div>
-        </div>`).join('')}
-      <div class="factor-total">
-        <div class="ft-lbl">Total</div>
-        <div class="ft-val" style="color:${bc}">${total} / 100</div>
-      </div>
-    </div>`;
-  }).join('');
-}
-
-function renderIndex(idx) {
-  const grid = document.getElementById('index-grid');
-  if (!grid || !idx.score) return;
-  grid.innerHTML = `
-    <div class="idx-cell"><div class="idx-lbl">Current Score</div><div class="idx-val">${idx.score} ± ${idx.uncertainty}</div><div class="idx-sub">/ 100 · Day ${idx.day}</div></div>
-    <div class="idx-cell"><div class="idx-lbl">Date</div><div class="idx-val" style="color:var(--t1);font-size:.82rem">${idx.date}</div><div class="idx-sub">Latest publish</div></div>
-    <div class="idx-cell"><div class="idx-lbl">Baseline</div><div class="idx-val" style="color:var(--t1);font-size:.75rem">100 / 100</div><div class="idx-sub">Pre-industrial 1850–1900</div></div>
-    <div class="idx-cell"><div class="idx-lbl">Indicators</div><div class="idx-val" style="color:var(--t1)">${idx.indicators}</div><div class="idx-sub">Across ${idx.systems} Earth systems</div></div>
-    <div class="idx-cell"><div class="idx-lbl">Uncertainty</div><div class="idx-val" style="color:var(--t1);font-size:.82rem">±${idx.uncertainty} pts</div><div class="idx-sub">Min detectable: ±0.5</di
+function copyURL(){const u='https://dablerfrost.github.io/conscience/conscience-data.json';if(navigator.clipboard){navigator.clipboard.writeText(u).then(()=>{const b=document.getElementById('copy-btn');if(b){const o=b.textContent;b.textContent='COPIED';setTimeout(()=>b.textContent=o,1800);}});}}
+function bandPill(b){const m={breach:['pill-breach','BREACH'],warning:['pill-warn','WARNING'],on_track:['pill-track','ON TRACK'],'on-track':['pill-track','ON TRACK']};const[c,l]=m[b]||['','--'];return'<span class="band-pill '+c+'">'+l+'</span>';}
+function scoreCls(b){return b==='breach'?'td-breach':b==='warning'?'td-warn':'td-track';}
+function factorColor(p,m){const r=p/m;if(r>=.75)return'var(--glow)';if(r>=.4)return'var(--amber)';if(p<0)return'var(--breach)';return'var(--warn)';}
+const D={companies:[
+{id:'exxon',name:'ExxonMobil',ticker:'XOM',sector:'Oil & Gas',cik:'34088',score:8,band:'breach',cdp:{grade:'D'},influencemap:{grade:'F'},sbti:{status:'Not committed'},sabin_center:{active_cases:27},tpi:{level:'2/5'},edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000034088.json'},factors:{pledge_quality:{points:3,max:30},cdp_performance:{points:4,max:25},lobbying_alignment:{points:0,max:25},legal_exposure:{points:1,max:20}}},
+{id:'bp',name:'BP',ticker:'BP',sector:'Oil & Gas',cik:'313807',score:11,band:'breach',cdp:{grade:'C'},influencemap:{grade:'D-'},sbti:{status:'Not committed'},sabin_center:{active_cases:12},tpi:{level:'3/5'},edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000313807.json'},factors:{pledge_quality:{points:2,max:30},cdp_performance:{points:10,max:25},lobbying_alignment:{points:2,max:25},legal_exposure:{points:-3,max:20}}},
+{id:'shell',name:'Shell',ticker:'SHEL',sector:'Oil & Gas',cik:'806517',score:19,band:'breach',cdp:{grade:'C'},influencemap:{grade:'D'},sbti:{status:'Not committed'},sabin_center:{active_cases:19},tpi:{level:'3/5'},edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000806517.json'},factors:{pledge_quality:{points:8,max:30},cdp_performance:{points:10,max:25},lobbying_alignment:{points:3,max:25},legal_exposure:{points:-2,max:20}}},
+{id:'delta',name:'Delta Air Lines',ticker:'DAL',sector:'Aviation',cik:'27904',score:14,band:'breach',cdp:{grade:'C'},influencemap:{grade:'D'},sbti:{status:'Not committed'},sabin_center:{active_cases:3},tpi:{level:'2/5'},edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000027904.json'},factors:{pledge_quality:{points:4,max:30},cdp_performance:{points:10,max:25},lobbying_alignment:{points:3,max:25},legal_exposure:{points:-3,max:20}}},
+{id:'starbucks',name:'Starbucks',ticker:'SBUX',sector:'Food & Beverage',cik:'829224',score:29,band:'breach',cdp:{grade:'B'},influencemap:{grade:'C'},sbti:{status:'Committed'},sabin_center:{active_cases:1},tpi:{level:'3/5'},edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000829224.json'},factors:{pledge_quality:{points:14,max:30},cdp_performance:{points:18,max:25},lobbying_alignment:{points:9,max:25},legal_exposure:{points:-12,max:20}}},
+{id:'walmart',name:'Walmart',ticker:'WMT',sector:'Retail',cik:'104169',score:38,band:'warning',cdp:{grade:'B'},influencemap:{grade:'C'},sbti:{status:'Approved (ops)'},sabin_center:{active_cases:2},tpi:{level:'3/5'},edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000104169.json'},factors:{pledge_quality:{points:18,max:30},cdp_performance:{points:18,max:25},lobbying_alignment:{points:9,max:25},legal_exposure:{points:-7,max:20}}},
+{id:'meta',name:'Meta',ticker:'META',sector:'Technology',cik:'1326801',score:43,band:'warning',cdp:{grade:'B'},influencemap:{grade:'C-'},sbti:{status:'Committed'},sabin_center:{active_cases:1},tpi:{level:'3/5'},edgar:{cik_url:'https://data.sec.gov/submissions/CIK0001326801.json'},factors:{pledge_quality:{points:20,max:30},cdp_performance:{points:18,max:25},lobbying_alignment:{points:7,max:25},legal_exposure:{points:-2,max:20}}},
+{id:'amazon',name:'Amazon',ticker:'AMZN',sector:'Tech / Retail',cik:'1018724',score:47,band:'warning',cdp:{grade:'B'},influencemap:{grade:'C'},sbti:{status:'Committed'},sabin_center:{active_cases:3},tpi:{level:'3/5'},edgar:{cik_url:'https://data.sec.gov/submissions/CIK0001018724.json'},factors:{pledge_quality:{points:20,max:30},cdp_performance:{points:18,max:25},lobbying_alignment:{points:9,max:25},legal_exposure:{points:0,max:20}}},
+{id:'microsoft',name:'Microsoft',ticker:'MSFT',sector:'Technology',cik:'789019',score:61,band:'on_track',cdp:{grade:'A-'},influencemap:{grade:'B-'},sbti:{status:'Approved 1.5C'},sabin_center:{active_cases:1},tpi:{level:'4/5'},edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000789019.json'},factors:{pledge_quality:{points:26,max:30},cdp_performance:{points:22,max:25},lobbying_alignment:{points:13,max:25},legal_exposure:{points:0,max:20}}},
+{id:'unilever',name:'Unilever',ticker:'ULVR',sector:'Consumer Goods',cik:'49519',score:72,band:'on_track',cdp:{grade:'A-'},influencemap:{grade:'B'},sbti:{status:'Approved 1.5C'},sabin_center:{active_cases:1},tpi:{level:'4/5'},edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000049519.json'},factors:{pledge_quality:{points:28,max:30},cdp_performance:{points:22,max:25},lobbying_alignment:{points:16,max:25},legal_exposure:{points:6,max:20}}},
+{id:'apple',name:'Apple',ticker:'AAPL',sector:'Technology',cik:'320193',score:84,band:'on_track',cdp:{grade:'A'},influencemap:{grade:'B+'},sbti:{status:'Approved 1.5C'},sabin_center:{active_cases:0},tpi:{level:'5/5'},edgar:{cik_url:'https://data.sec.gov/submissions/CIK0000320193.json'},factors:{pledge_quality:{points:30,max:30},cdp_performance:{points:25,max:25},lobbying_alignment:{points:19,max:25},legal_exposure:{points:10,max:20}}}
+]};
+function renderScoresTable(cos){const t=document.getElementById('scores-tbody');if(!t)return;t.innerHTML=cos.map(co=>{const bc=scoreCls(co.band);const s=co.sabin_center?co.sabin_center.active_cases:'--';const e=co.edgar?'<a href="'+co.edgar.cik_url+'" target="_blank" class="src-link">EDGAR &rarr;</a>':'--';return'<tr><td>'+co.name+'</td><td>'+co.ticker+'</td><td>'+co.sector+'</td><td class="td-score '+bc+'">'+co.score+'</td><td>'+bandPill(co.band)+'</td><td class="'+(co.cdp&&co.cdp.grade.startsWith('A')?'td-track':co.cdp&&co.cdp.grade.startsWith('B')?'':'td-warn')+'">'+(co.cdp?co.cdp.grade:'--')+'</td><td class="'+((co.influencemap&&(co.influencemap.grade==='F'||co.influencemap.grade.startsWith('D')))?'td-breach':'')+'">'+(co.influencemap?co.influencemap.grade:'--')+'</td><td style="font-size:.52rem">'+(co.sbti?co.sbti.status:'--')+'</td><td class="'+(s>=20?'td-breach':s>=10?'td-warn':'')+'">'+(s||0)+'</td><td>'+(co.tpi?co.tpi.level:'--')+'</td><td>'+e+'</td></tr>';}).join('');}
+function renderFactorGrid(cos){const g=document.getElementById('factor-grid');if(!g)return;g.innerHTML=cos.map(co=>{const f=co.factors;const bc=co.band==='breach'?'var(--breach)':co.band==='warning'?'var(--warn)':'var(--glow)';const rows=[{l:'Pledge Quality',p:f.pledge_quality.points,m:f.pledge_quality.max},{l:'CDP Performance',p:f.cdp_performance.points,m:f.cdp_performance.max},{l:'Lobbying Alignment',p:f.lobbying_alignment.points,m:f.lobbying_alignment.max},{l:'Legal Exposure',p:f.legal_exposure.points,m:f.legal_exposure.max}];const tot=rows.reduce((a,r)=>a+r.p,0);return'<div class="factor-card"><div class="factor-name">'+co.name+'</div><div class="factor-ticker">'+co.ticker+' &middot; '+co.sector+' &middot; CIK '+co.cik+'</div>'+rows.map(r=>'<div class="factor-row"><div class="fr-lbl">'+r.l+'</div><div class="fr-max">'+r.m+' max</div><div class="fr-val" style="color:'+factorColor(r.p,r.m)+'">'+(r.p>0?'+':'')+r.p+'</div></div>').join('')+'<div class="factor-total"><div class="ft-lbl">Total</div><div class="ft-val" style="color:'+bc+'">'+tot+' / 100</div></div></div>';}).join('');}
+renderScoresTable(D.companies);
+renderFactorGrid(D.companies);
+// Silent background fetch for live updates
+fetch('https://dablerfrost.github.io/conscience/conscience-data.json').then(r=>r.ok?r.json():null).then(data=>{if(data&&data.companies){renderScoresTable(data.companies);renderFactorGrid(data.companies);}}).catch(()=>{});
+// ── THEME TOGGLE
+function toggleTheme(){const h=document.documentElement;const l=h.getAttribute('data-theme')==='light';h.setAttribute('data-theme',l?'dark':'light');const b=document.getElementById('theme-btn');if(b)b.innerHTML=l?'&#9680; DARK':'&#9681; LIGHT';try{localStorage.setItem('vc-theme',l?'dark':'light');}catch(e){}}
+(function(){try{const t=localStorage.getItem('vc-theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');const b=document.getElementById('theme-btn');if(b)b.innerHTML='&#9681; LIGHT';}}catch(e){}})();
+// ── FONT SCALE
+const SCALES={'0.88':16,'1.0':18,'1.22':22};
+function setScale(btn){document.documentElement.style.fontSize=(SCALES[btn.dataset.scale]||18)+'px';document.querySelectorAll('.nc-sz').forEach(b=>b.classList.toggle('active',b===btn));try{localStorage.setItem('vc-scale',btn.dataset.scale);}catch(e){}}
+(function(){try{const s=localStorage.getItem('vc-scale');if(s&&SCALES[s]){document.documentElement.style.fontSize=SCALES[s]+'px';requestAnimationFrame(()=>{document.querySelectorAll('.nc-sz').forEach(b=>b.classList.toggle('active',b.dataset.scale===s));});}}catch(e){}})();
+</script>
+</body>
+</html>
