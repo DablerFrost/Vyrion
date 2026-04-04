@@ -1,8 +1,10 @@
-[README.md](https://github.com/user-attachments/files/26479068/README.md)
+[README (1).md](https://github.com/user-attachments/files/26483400/README.1.md)
 # VYRION CONSCIENCE
 ## Corporate Climate Pledge Verification · v2.8 · April 2026
 
-**Live platform:** [dablerfrost.github.io/conscience](https://dablerfrost.github.io/conscience)
+**Live platform:** [dablerfrost.github.io/conscience](https://dablerfrost.github.io/conscience)  
+**Data feed viewer:** [dablerfrost.github.io/conscience/conscience-data.html](https://dablerfrost.github.io/conscience/conscience-data.html)  
+**Raw JSON:** [dablerfrost.github.io/conscience/conscience-data.json](https://dablerfrost.github.io/conscience/conscience-data.json)
 
 > Not activism. Not a nonprofit. Accountability infrastructure.
 
@@ -17,11 +19,11 @@ This is not a coverage product. ISS ESG covers 10,000+ companies. MSCI covers 16
 **Live platform features (v2.8):**
 - 11 companies scored against Paris Agreement 1.5°C pathways
 - Signal Intelligence Feed — real-time risk signals from EDGAR 8-K density, SBTi status, lobbying grades, legal exposure
-- Change Detection — shows what changed since your last visit (CO₂, 8-K events, new annual filings)
+- Change Detection — shows what changed since your last visit
 - Audit Pack per company — one-click source bundle for analysts, journalists, and funds
 - Regulatory Filing Watch — live SEC EDGAR dates for all 11 companies
 - Portfolio Stress Tester — aggregate CONSCIENCE score and band distribution for any portfolio
-- Data Cadence Disclosure — full transparency on which of the 48 VYRION Index indicators update daily vs. monthly vs. annually
+- Data Cadence Disclosure — full transparency on 48 VYRION Index indicator update frequencies
 - VYRION Index live ticker — daily 0–100 planetary health benchmark
 
 ---
@@ -69,7 +71,7 @@ The world's first daily investable planetary health benchmark.
 
 - **Current score:** 41.2 ± 1.8 / 100
 - **Baseline:** Pre-industrial 1850–1900 = 100/100
-- **Formula:** Deviation-from-Baseline Weighted Composite — S_final = Σ(W_i × S_i)
+- **Formula:** S_final = Σ(W_i × S_i)
 - **Indicators:** 48 across 8 Earth systems
 - **Uncertainty:** ±1.8 points propagated · Minimum detectable change: ±0.5
 
@@ -90,37 +92,34 @@ Full methodology: [VYRION-METHODOLOGY-v1.0.md](VYRION-METHODOLOGY-v1.0.md) · Pr
 
 ## Data Sources
 
-All sources are public-domain or open-license:
-
 - **CDP** — cdp.net/en/responses · Annual corporate climate disclosures
 - **InfluenceMap** — influencemap.org · Corporate lobbying grades (continuous)
-- **Sabin Center for Climate Change Law** — climatecasechart.com · Columbia Law School
-- **SBTi Registry** — sciencebasedtargets.org · Science Based Targets initiative
-- **SEC EDGAR** — data.sec.gov/submissions · Live via CORS-open public API
-- **TPI** — transitionpathwayinitiative.org · Transition Pathway Initiative
-- **NOAA GML** — gml.noaa.gov/ccgg/trends · Atmospheric CO₂ daily
-- **NSIDC** — nsidc.org · Arctic sea ice extent daily
-- **NASA EONET** — eonet.gsfc.nasa.gov · Active natural hazard events
-- **USGS** — earthquake.usgs.gov · Seismic event feed
+- **Sabin Center** — climatecasechart.com · Columbia Law School
+- **SBTi Registry** — sciencebasedtargets.org
+- **SEC EDGAR** — data.sec.gov/submissions · Live CORS-open public API
+- **TPI** — transitionpathwayinitiative.org
+- **NOAA GML** — gml.noaa.gov/ccgg/trends · CO₂ daily
+- **NSIDC** — nsidc.org · Arctic sea ice daily
+- **NASA EONET** — eonet.gsfc.nasa.gov · Natural hazard events
+- **USGS** — earthquake.usgs.gov · Seismic feed
 
 ---
 
 ## Data Feed
 
-Machine-readable scores available at:
-[dablerfrost.github.io/conscience/conscience-data.json](https://dablerfrost.github.io/conscience/conscience-data.json)
+Human-readable viewer: [dablerfrost.github.io/conscience/conscience-data.html](https://dablerfrost.github.io/conscience/conscience-data.html)
 
-Contains: all 11 companies · scores · bands · factor breakdowns · source URLs · EDGAR CIK links · aggregate statistics · VYRION Index metadata.
+Raw JSON: [dablerfrost.github.io/conscience/conscience-data.json](https://dablerfrost.github.io/conscience/conscience-data.json)
 
-Data licensing for institutional use: [contact@vyrion.earth](mailto:contact@vyrion.earth)
+Contains all 11 companies · scores · bands · factor breakdowns · source URLs · EDGAR CIK links · aggregate statistics · VYRION Index metadata.
+
+Data licensing: [contact@vyrion.earth](mailto:contact@vyrion.earth)
 
 ---
 
 ## Open Proof Protocol
 
-Find an error in any score, source citation, or data point — report it to [contact@vyrion.earth](mailto:contact@vyrion.earth). VYRION publishes corrections within 24 hours as a permanent, timestamped entry in the Score Changelog on the live platform. No original entries are ever deleted. Corrections are additive and public.
-
-This is the accountability standard VYRION applies to itself.
+Find an error → [contact@vyrion.earth](mailto:contact@vyrion.earth). Corrections published within 24 hours as permanent, timestamped changelog entries. No original entries ever deleted.
 
 ---
 
@@ -128,17 +127,57 @@ This is the accountability standard VYRION applies to itself.
 
 ```
 conscience/
-├── index.html                    — Live CONSCIENCE platform (v2.8)
-├── shield.html                   — VYRION SHIELD disaster early warning module
-├── archive/
-│   └── index.html               — Daily VYRION Index archive
-├── conscience-data.json          — Machine-readable score data feed
-├── CONSCIENCE-METHODOLOGY.md     — Per-company score derivation
-├── VYRION-METHODOLOGY-v1.0.md    — Full 48-indicator methodology paper
-├── VYRION-INDEX.md               — Index documentation
-├── VYRION-MASTER.md              — Master architecture reference
-└── README.md                     — This file
+│
+├── .github/
+│   └── workflows/
+│       ├── conscience-daily.yml      — Automated daily data pipeline
+│       └── shield-update.yml         — SHIELD refresh (00:00 + 12:00 UTC)
+│
+├── VYRION/                           — Architecture and planning documents
+│   └── [8 architecture .md files]
+│
+├── archive/                          — Daily VYRION Index archive
+│   ├── index.html                    — Archive page
+│   └── [daily YYYY-MM-DD.md entries]
+│
+├── record/                           — The Record — weekly company deep-dives
+│   ├── issue-001-bp.html             — Issue 001: BP (March 18)
+│   └── issue-002-exxonmobil.html     — Issue 002: ExxonMobil (March 25)
+│
+├── scripts/                          — GitHub Actions automation scripts
+│   ├── fetch-conscience-data.js      — Pulls NOAA, EDGAR, Open-Meteo, World Bank
+│   └── fetch-shield-data.js          — Pulls USGS, NASA EONET for SHIELD
+│
+├── CONSCIENCE-METHODOLOGY.md         — Per-company score derivation (all 11)
+├── README.md                         — This file
+├── VYRION-INDEX.md                   — VYRION Index documentation
+├── VYRION-MASTER.md                  — Master architecture reference
+├── VYRION-METHODOLOGY-v1.0.md        — Full 48-indicator methodology paper
+│
+├── conscience-data.html              — Human-readable data feed viewer
+├── conscience-data.json              — Machine-readable score data (raw JSON)
+├── index.html                        — Live CONSCIENCE platform (v2.8)
+└── shield.html                       — VYRION SHIELD early warning module
 ```
+
+---
+
+## The Record — Publication Schedule
+
+| Issue | Company | Published | File |
+|-------|---------|-----------|------|
+| 001 | BP | March 18, 2026 | record/issue-001-bp.html |
+| 002 | ExxonMobil | March 25, 2026 | record/issue-002-exxonmobil.html |
+| 003 | Shell | April 1, 2026 | record/issue-003-shell.html |
+| 004 | Delta Air Lines | April 8, 2026 | record/issue-004-delta.html |
+
+---
+
+## Automation
+
+**conscience-daily.yml** — Daily data refresh: NOAA GML (CO₂), SEC EDGAR, Open-Meteo ERA5, World Bank. Feeds the VYRION Index pipeline.
+
+**shield-update.yml** — Runs 00:00 + 12:00 UTC. Fetches USGS seismic, NASA EONET (wildfire/storm/flood/volcanic), outputs to `data/shield-snapshot.json`.
 
 ---
 
@@ -146,21 +185,21 @@ conscience/
 
 | Date | Version | Change |
 |------|---------|--------|
-| 2026-03-18 | v1.0 | Initial scores — 11 companies · CONSCIENCE baseline established |
-| 2026-03-20 | — | Correction: Arctic Day 2 post corrected (March = annual maximum, not minimum) |
-| 2026-03-20 | — | VYRION-METHODOLOGY-v1.0.md uploaded — prior art timestamped |
-| 2026-03-30 | v2.7 | Investor Terminal layer · VYRION Stack · Boundary Breakers board · Portfolio Stress Tester · Data Licensing CTA |
-| 2026-04-03 | v2.8 | Signal Intelligence Feed · Change Detection · Audit Pack · Filing Watch · Data Cadence table · conscience-data.json · README rewrite |
+| 2026-03-18 | v1.0 | Initial scores — 11 companies established |
+| 2026-03-20 | — | Arctic correction published · VYRION-METHODOLOGY-v1.0.md timestamped |
+| 2026-03-25 | — | The Record Issue 002: ExxonMobil |
+| 2026-03-30 | v2.7 | Investor Terminal · VYRION Stack · Boundary Breakers · Stress Tester · Licensing CTA |
+| 2026-04-01 | — | The Record Issue 003: Shell |
+| 2026-04-03 | v2.8 | Signal Intelligence · Change Detection · Audit Pack · Filing Watch · Cadence table · Data viewer · README |
 
 ---
 
 ## Entity
 
 **VYRION PBC** — Planetary accountability infrastructure  
-**The Nexan Institute** — Parent entity · AI-human alignment  
+**The Nexan Institute** — Parent entity  
 **Founder:** Tyler Frost / DablerFrost · Hilo, Hawaii  
 **Contact:** [contact@vyrion.earth](mailto:contact@vyrion.earth)  
-**Platform:** [dablerfrost.github.io/conscience](https://dablerfrost.github.io/conscience)  
 **X / Instagram:** @DablerFrost
 
 > The planet has a score. Now it has a daily number.
