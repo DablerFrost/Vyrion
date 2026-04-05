@@ -1,353 +1,376 @@
 {
   "meta": {
-    "version": "2.8",
-    "generated": "2026-04-03",
-    "description": "VYRION CONSCIENCE — Corporate Climate Pledge Verification Data Feed",
-    "methodology": "https://github.com/dablerfrost/conscience/blob/main/CONSCIENCE-METHODOLOGY.md",
-    "platform": "https://dablerfrost.github.io/conscience",
-    "license": "Data licensing: contact@vyrion.earth",
-    "open_proof_protocol": "Errors reported to contact@vyrion.earth published as corrections within 24h",
-    "band_thresholds": {
-      "breach": "0-30",
-      "warning": "31-60",
-      "on_track": "61-100"
-    },
-    "basis": "Paris Agreement 1.5C pathways — Science Based Targets initiative criteria",
-    "sources": ["CDP 2023", "InfluenceMap", "Sabin Center for Climate Change Law", "SBTi Registry", "SEC EDGAR"],
-    "score_factors": {
-      "pledge_quality": {"max": 30, "source": "Company filings · SBTi registry"},
-      "cdp_performance": {"max": 25, "source": "CDP 2023 public responses"},
-      "lobbying_alignment": {"max": 25, "source": "InfluenceMap profiles"},
-      "legal_exposure": {"max": 20, "source": "Sabin Center litigation DB", "formula": "Base 20 minus 0.5 per active case, floor 0"}
-    },
-    "vyrion_index": {
-      "score": 41.2,
-      "uncertainty": 1.8,
-      "day": 16,
+    "generated": "2026-04-05T03:34:06.361Z",
+    "generated_date": "2026-04-05",
+    "script_version": "1.0",
+    "runtime_ms": 1027,
+    "sources": [
+      "NOAA Global Monitoring Laboratory (CO₂)",
+      "SEC EDGAR Public API (corporate filings)",
+      "Open-Meteo ERA5 Reanalysis (temperature)",
+      "World Bank Open Data (global emissions)",
+      "NOAA NCEI (global temperature anomaly)"
+    ]
+  },
+  "atmosphere": {
+    "co2": {
+      "ppm": 431.14,
       "date": "2026-04-03",
-      "baseline": "Pre-industrial 1850-1900 = 100/100",
-      "indicators": 48,
-      "systems": 8
+      "source": "NOAA Global Monitoring Laboratory — Mauna Loa Observatory",
+      "url": "https://gml.noaa.gov/ccgg/trends/",
+      "retrieved": "2026-04-05T03:34:05.622Z"
     },
-    "aggregate": {
-      "companies_tracked": 11,
-      "mean_score": 38.6,
-      "pledge_gap": -34.6,
-      "breach_count": 7,
-      "warning_count": 3,
-      "on_track_count": 1,
-      "total_active_lawsuits": 97
+    "global_temp_anomaly": null,
+    "global_temp_era5": {
+      "sample_avg_celsius": 17.73,
+      "anomaly_vs_proxy": 9.23,
+      "sample_coords": [
+        "N.Europe",
+        "N.America",
+        "S.America",
+        "SE.Asia"
+      ],
+      "period": "2026-03-27 to 2026-04-03",
+      "baseline_note": "Proxy baseline from ERA5 sample mean — not IPCC global mean. Supplementary signal only.",
+      "source": "Open-Meteo ERA5 Reanalysis (ECMWF)",
+      "url": "https://open-meteo.com/",
+      "license": "CC BY 4.0",
+      "retrieved": "2026-04-05T03:34:06.361Z"
     }
   },
-  "companies": [
-    {
-      "id": "exxon",
+  "global_emissions": null,
+  "vyrion_index": {
+    "score": 41.2,
+    "uncertainty": 1.8,
+    "day": 12,
+    "date": "2026-03-29",
+    "note": "Updated manually by Tyler Frost / DablerFrost each morning"
+  },
+  "companies": {
+    "exxon": {
       "name": "ExxonMobil",
       "ticker": "XOM",
-      "sector": "Oil & Gas",
       "cik": "34088",
-      "score": 8,
-      "band": "breach",
-      "score_version": "1.0",
-      "score_date": "2026-03-18",
-      "factors": {
-        "pledge_quality": {"points": 3, "max": 30, "notes": "Scope 1 and 2 only — 99% of lifecycle emissions (Scope 3) unaddressed. No SBTi commitment."},
-        "cdp_performance": {"points": 4, "max": 25, "grade": "D", "year": 2023},
-        "lobbying_alignment": {"points": 0, "max": 25, "grade": "F", "notes": "Actively lobbying against climate legislation"},
-        "legal_exposure": {"points": 1, "max": 20, "active_cases": 27, "formula": "20 - (0.5 * 27) = 6.5 capped interaction, net 1"}
-      },
-      "pledge": "Net zero Scope 1 and 2 emissions by 2050",
-      "pledge_source": "ExxonMobil 2023 Sustainability Report",
-      "pledge_url": "https://corporate.exxonmobil.com/sustainability-and-society/sustainability-report",
-      "reality": "No Scope 3 target. Production expansion through 2028. Lobbying spend vs climate policy $7M+ (2023).",
-      "reality_sources": ["CDP 2023", "SEC 10-K 2024", "InfluenceMap"],
-      "cdp": {"grade": "D", "year": 2023, "url": "https://www.cdp.net/en/responses"},
-      "influencemap": {"grade": "F", "url": "https://influencemap.org/company/ExxonMobil"},
-      "sbti": {"status": "Not committed", "url": "https://sciencebasedtargets.org/companies-taking-action"},
-      "sabin_center": {"active_cases": 27, "url": "https://climatecasechart.com/case-list/?organization_name=exxon"},
-      "tpi": {"level": "2/5", "url": "https://www.transitionpathwayinitiative.org/"},
-      "edgar": {"cik_url": "https://data.sec.gov/submissions/CIK0000034088.json"}
+      "edgar": {
+        "ticker": "XOM",
+        "cik": "34088",
+        "annual_filing": {
+          "form": "10-K",
+          "date": "2026-02-18",
+          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=34088&type=10-K&dateb=&owner=include&count=5"
+        },
+        "latest_8k": {
+          "date": "2026-03-31",
+          "items": "8.01,9.01"
+        },
+        "count_8k_90d": 4,
+        "recent_8k_items": [
+          {
+            "date": "2026-03-31",
+            "items": "8.01,9.01"
+          },
+          {
+            "date": "2026-02-20",
+            "items": "5.02"
+          },
+          {
+            "date": "2026-01-30",
+            "items": "2.02,7.01"
+          },
+          {
+            "date": "2026-01-07",
+            "items": "7.01"
+          }
+        ],
+        "retrieved": "2026-04-05T03:34:05.673Z"
+      }
     },
-    {
-      "id": "bp",
+    "bp": {
       "name": "BP",
       "ticker": "BP",
-      "sector": "Oil & Gas",
       "cik": "313807",
-      "score": 11,
-      "band": "breach",
-      "score_version": "1.0",
-      "score_date": "2026-03-18",
-      "factors": {
-        "pledge_quality": {"points": 2, "max": 30, "notes": "Reversed 2030 production cut targets under investor pressure. Net zero 2050 remains."},
-        "cdp_performance": {"points": 10, "max": 25, "grade": "C", "year": 2023},
-        "lobbying_alignment": {"points": 2, "max": 25, "grade": "D-"},
-        "legal_exposure": {"points": -3, "max": 20, "active_cases": 12, "notes": "Base 20 minus 6 = 14, adjusted for backtracked targets"}
-      },
-      "pledge": "Net zero by 2050. Cut oil and gas production 25% by 2030 (revised down from 40% in 2023).",
-      "pledge_source": "BP Strategy Update 2023",
-      "pledge_url": "https://www.bp.com/en/global/corporate/news-and-insights/press-releases/bp-sets-out-new-ambition-for-a-net-zero-future.html",
-      "reality": "Reversed 2030 production cut targets under investor pressure. Upstream investment increasing. No SBTi commitment.",
-      "reality_sources": ["BP 2023 Annual Report", "CDP 2023", "Bloomberg Energy"],
-      "cdp": {"grade": "C", "year": 2023, "url": "https://www.cdp.net/en/responses"},
-      "influencemap": {"grade": "D-", "url": "https://influencemap.org/company/BP"},
-      "sbti": {"status": "Not committed", "url": "https://sciencebasedtargets.org/companies-taking-action"},
-      "sabin_center": {"active_cases": 12, "url": "https://climatecasechart.com/case-list/?organization_name=bp"},
-      "tpi": {"level": "3/5", "url": "https://www.transitionpathwayinitiative.org/"},
-      "edgar": {"cik_url": "https://data.sec.gov/submissions/CIK0000313807.json"}
+      "edgar": {
+        "ticker": "BP",
+        "cik": "313807",
+        "annual_filing": {
+          "form": "20-F",
+          "date": "2026-03-06",
+          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=313807&type=20-F&dateb=&owner=include&count=5"
+        },
+        "latest_8k": null,
+        "count_8k_90d": 0,
+        "recent_8k_items": [],
+        "retrieved": "2026-04-05T03:34:05.831Z"
+      }
     },
-    {
-      "id": "shell",
+    "shell": {
       "name": "Shell",
       "ticker": "SHEL",
-      "sector": "Oil & Gas",
       "cik": "806517",
-      "score": 19,
-      "band": "breach",
-      "score_version": "1.0",
-      "score_date": "2026-03-18",
-      "factors": {
-        "pledge_quality": {"points": 8, "max": 30, "notes": "Intensity metric masks volume growth. No absolute Scope 3 target."},
-        "cdp_performance": {"points": 10, "max": 25, "grade": "C", "year": 2023},
-        "lobbying_alignment": {"points": 3, "max": 25, "grade": "D"},
-        "legal_exposure": {"points": -2, "max": 20, "active_cases": 19, "notes": "Dutch court order (Milieudefensie v Shell) — Shell appealing"}
-      },
-      "pledge": "Net zero by 2050. 30% emissions intensity reduction by 2035 vs 2016.",
-      "pledge_source": "Shell Energy Transition Strategy 2023",
-      "pledge_url": "https://www.shell.com/sustainability/our-climate-target.html",
-      "reality": "Dutch court ordered faster cuts (Milieudefensie v Shell, 2021) — Shell appealing. Absolute emissions increased. Intensity metric masks volume growth.",
-      "reality_sources": ["Milieudefensie v Shell", "CDP 2023", "Shell Annual Report 2024"],
-      "cdp": {"grade": "C", "year": 2023, "url": "https://www.cdp.net/en/responses"},
-      "influencemap": {"grade": "D", "url": "https://influencemap.org/company/Shell"},
-      "sbti": {"status": "Not committed", "url": "https://sciencebasedtargets.org/companies-taking-action"},
-      "sabin_center": {"active_cases": 19, "url": "https://climatecasechart.com/case-list/?organization_name=shell"},
-      "tpi": {"level": "3/5", "url": "https://www.transitionpathwayinitiative.org/"},
-      "edgar": {"cik_url": "https://data.sec.gov/submissions/CIK0000806517.json"}
+      "edgar": {
+        "ticker": "SHEL",
+        "cik": "806517",
+        "annual_filing": {
+          "form": "10-K",
+          "date": "2025-03-24",
+          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=806517&type=10-K&dateb=&owner=include&count=5"
+        },
+        "latest_8k": {
+          "date": "2024-12-10",
+          "items": "8.01"
+        },
+        "count_8k_90d": 0,
+        "recent_8k_items": [],
+        "retrieved": "2026-04-05T03:34:05.819Z"
+      }
     },
-    {
-      "id": "delta",
+    "delta": {
       "name": "Delta Air Lines",
       "ticker": "DAL",
-      "sector": "Aviation",
       "cik": "27904",
-      "score": 14,
-      "band": "breach",
-      "score_version": "1.0",
-      "score_date": "2026-03-18",
-      "factors": {
-        "pledge_quality": {"points": 4, "max": 30, "notes": "SAF under 1% of total fuel. Carbon neutral 2030 claim is offset-dependent."},
-        "cdp_performance": {"points": 10, "max": 25, "grade": "C", "year": 2023},
-        "lobbying_alignment": {"points": 3, "max": 25, "grade": "D"},
-        "legal_exposure": {"points": -3, "max": 20, "active_cases": 3, "notes": "FTC inquiry into offset quality (2023) adds credibility risk"}
-      },
-      "pledge": "Carbon neutral by 2030 via offsets and SAF. Net zero by 2050.",
-      "pledge_source": "Delta Sustainability Report 2023",
-      "pledge_url": "https://www.delta.com/us/en/about-delta/sustainability",
-      "reality": "SAF at under 1% of total fuel. Offset quality under FTC inquiry (2023). Absolute emissions recovering to pre-pandemic levels.",
-      "reality_sources": ["Delta 10-K 2024", "FTC Inquiry 2023", "CDP 2023"],
-      "cdp": {"grade": "C", "year": 2023, "url": "https://www.cdp.net/en/responses"},
-      "influencemap": {"grade": "D", "url": "https://influencemap.org/company/Delta-Air-Lines"},
-      "sbti": {"status": "Not committed", "url": "https://sciencebasedtargets.org/companies-taking-action"},
-      "sabin_center": {"active_cases": 3, "url": "https://climatecasechart.com/case-list/?organization_name=delta"},
-      "tpi": {"level": "2/5", "url": "https://www.transitionpathwayinitiative.org/"},
-      "edgar": {"cik_url": "https://data.sec.gov/submissions/CIK0000027904.json"}
+      "edgar": {
+        "ticker": "DAL",
+        "cik": "27904",
+        "annual_filing": {
+          "form": "10-K",
+          "date": "2026-02-11",
+          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=27904&type=10-K&dateb=&owner=include&count=5"
+        },
+        "latest_8k": {
+          "date": "2026-03-17",
+          "items": "7.01,9.01"
+        },
+        "count_8k_90d": 5,
+        "recent_8k_items": [
+          {
+            "date": "2026-03-17",
+            "items": "7.01,9.01"
+          },
+          {
+            "date": "2026-03-05",
+            "items": "5.02,9.01"
+          },
+          {
+            "date": "2026-02-13",
+            "items": "5.02"
+          },
+          {
+            "date": "2026-01-27",
+            "items": "1.01"
+          },
+          {
+            "date": "2026-01-13",
+            "items": "1.01,2.02,9.01"
+          }
+        ],
+        "retrieved": "2026-04-05T03:34:05.771Z"
+      }
     },
-    {
-      "id": "starbucks",
+    "starbucks": {
       "name": "Starbucks",
       "ticker": "SBUX",
-      "sector": "Food & Beverage",
       "cik": "829224",
-      "score": 29,
-      "band": "breach",
-      "score_version": "1.0",
-      "score_date": "2026-03-18",
-      "score_flag": "Verify before posting — most vulnerable score in portfolio. Starbucks has published SBTi commitment and renewable energy targets.",
-      "factors": {
-        "pledge_quality": {"points": 14, "max": 30, "notes": "SBTi Committed. 2030 target is ambitious. Points reflect commitment not performance."},
-        "cdp_performance": {"points": 18, "max": 25, "grade": "B", "year": 2023},
-        "lobbying_alignment": {"points": 9, "max": 25, "grade": "C"},
-        "legal_exposure": {"points": -12, "max": 20, "active_cases": 1, "notes": "Performance divergence: FY2024 emissions +3.3% vs 2019 baseline — moving away from -50% by 2030 target. Waste to landfill +6%."}
-      },
-      "pledge": "Minus 50% emissions vs 2019 baseline by 2030. Carbon positive by 2030.",
-      "pledge_source": "Starbucks FY2024 Global Environmental and Social Impact Report",
-      "pledge_url": "https://stories.starbucks.com/stories/sustainability/",
-      "reality": "FY2024: +3.3% emissions vs 2019 — moving away from target. Waste to landfill +6%. Scope 3 = 90.9% of footprint; dominant driver is dairy.",
-      "reality_sources": ["Starbucks FY2024 Impact Report", "CDP 2023", "SEC 10-K 2024"],
-      "cdp": {"grade": "B", "year": 2023, "url": "https://www.cdp.net/en/responses"},
-      "influencemap": {"grade": "C", "url": "https://influencemap.org/company/Starbucks"},
-      "sbti": {"status": "Committed", "url": "https://sciencebasedtargets.org/companies-taking-action"},
-      "sabin_center": {"active_cases": 1, "url": "https://climatecasechart.com/case-list/?organization_name=starbucks"},
-      "tpi": {"level": "3/5", "url": "https://www.transitionpathwayinitiative.org/"},
-      "edgar": {"cik_url": "https://data.sec.gov/submissions/CIK0000829224.json"}
+      "edgar": {
+        "ticker": "SBUX",
+        "cik": "829224",
+        "annual_filing": {
+          "form": "10-K",
+          "date": "2025-11-14",
+          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=829224&type=10-K&dateb=&owner=include&count=5"
+        },
+        "latest_8k": {
+          "date": "2026-04-02",
+          "items": "7.01,9.01"
+        },
+        "count_8k_90d": 3,
+        "recent_8k_items": [
+          {
+            "date": "2026-04-02",
+            "items": "7.01,9.01"
+          },
+          {
+            "date": "2026-03-30",
+            "items": "5.07"
+          },
+          {
+            "date": "2026-01-28",
+            "items": "2.02,9.01"
+          }
+        ],
+        "retrieved": "2026-04-05T03:34:05.793Z"
+      }
     },
-    {
-      "id": "walmart",
+    "walmart": {
       "name": "Walmart",
       "ticker": "WMT",
-      "sector": "Retail",
       "cik": "104169",
-      "score": 38,
-      "band": "warning",
-      "score_version": "1.0",
-      "score_date": "2026-03-18",
-      "factors": {
-        "pledge_quality": {"points": 18, "max": 30, "notes": "Zero emissions own operations by 2040. Project Gigaton 1B tonnes supply chain. Third-party verified."},
-        "cdp_performance": {"points": 18, "max": 25, "grade": "B", "year": 2023},
-        "lobbying_alignment": {"points": 9, "max": 25, "grade": "C"},
-        "legal_exposure": {"points": -7, "max": 20, "active_cases": 2, "notes": "Scope 3 supply chain growing despite Gigaton. Own operations 35% renewable."}
-      },
-      "pledge": "Zero emissions own operations by 2040. Project Gigaton: 1B tonnes from supply chain by 2030.",
-      "pledge_source": "Walmart ESG Report FY2024",
-      "pledge_url": "https://corporate.walmart.com/esgreport",
-      "reality": "Scope 3 supply chain emissions growing despite Gigaton. Own operations approximately 35% renewable. Gigaton methodology third-party verified, results mixed.",
-      "reality_sources": ["Walmart FY2024 ESG Report", "CDP 2023", "Gigaton Progress Report"],
-      "cdp": {"grade": "B", "year": 2023, "url": "https://www.cdp.net/en/responses"},
-      "influencemap": {"grade": "C", "url": "https://influencemap.org/company/Walmart"},
-      "sbti": {"status": "Approved (ops)", "url": "https://sciencebasedtargets.org/companies-taking-action"},
-      "sabin_center": {"active_cases": 2, "url": "https://climatecasechart.com/case-list/?organization_name=walmart"},
-      "tpi": {"level": "3/5", "url": "https://www.transitionpathwayinitiative.org/"},
-      "edgar": {"cik_url": "https://data.sec.gov/submissions/CIK0000104169.json"}
+      "edgar": {
+        "ticker": "WMT",
+        "cik": "104169",
+        "annual_filing": {
+          "form": "10-K",
+          "date": "2026-03-13",
+          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=104169&type=10-K&dateb=&owner=include&count=5"
+        },
+        "latest_8k": {
+          "date": "2026-03-27",
+          "items": "8.01"
+        },
+        "count_8k_90d": 5,
+        "recent_8k_items": [
+          {
+            "date": "2026-03-27",
+            "items": "8.01"
+          },
+          {
+            "date": "2026-03-13",
+            "items": "8.01"
+          },
+          {
+            "date": "2026-02-19",
+            "items": "2.02,9.01"
+          },
+          {
+            "date": "2026-01-16",
+            "items": "5.02,9.01"
+          },
+          {
+            "date": "2026-01-08",
+            "items": "5.02,9.01"
+          }
+        ],
+        "retrieved": "2026-04-05T03:34:05.716Z"
+      }
     },
-    {
-      "id": "meta",
+    "meta": {
       "name": "Meta",
       "ticker": "META",
-      "sector": "Technology",
       "cik": "1326801",
-      "score": 43,
-      "band": "warning",
-      "score_version": "1.0",
-      "score_date": "2026-03-18",
-      "factors": {
-        "pledge_quality": {"points": 20, "max": 30, "notes": "Net zero across value chain by 2030. 100% renewable in owned operations since 2020."},
-        "cdp_performance": {"points": 18, "max": 25, "grade": "B", "year": 2023},
-        "lobbying_alignment": {"points": 7, "max": 25, "grade": "C-"},
-        "legal_exposure": {"points": -2, "max": 20, "active_cases": 1, "notes": "AI expansion driving 25%+ energy demand increase. New gas power plant agreements signed 2024."}
-      },
-      "pledge": "Net zero across value chain by 2030. 100% renewable in owned operations since 2020.",
-      "pledge_source": "Meta Sustainability Report 2023",
-      "pledge_url": "https://sustainability.fb.com/",
-      "reality": "AI expansion driving 25%+ energy demand increase. New gas power plant agreements signed 2024. Scope 3 growing rapidly.",
-      "reality_sources": ["Meta 10-K 2024", "CDP 2023", "Bloomberg New Energy Finance"],
-      "cdp": {"grade": "B", "year": 2023, "url": "https://www.cdp.net/en/responses"},
-      "influencemap": {"grade": "C-", "url": "https://influencemap.org/company/Facebook-Meta"},
-      "sbti": {"status": "Committed", "url": "https://sciencebasedtargets.org/companies-taking-action"},
-      "sabin_center": {"active_cases": 1, "url": "https://climatecasechart.com/case-list/?organization_name=meta"},
-      "tpi": {"level": "3/5", "url": "https://www.transitionpathwayinitiative.org/"},
-      "edgar": {"cik_url": "https://data.sec.gov/submissions/CIK0001326801.json"}
+      "edgar": {
+        "ticker": "META",
+        "cik": "1326801",
+        "annual_filing": {
+          "form": "10-K",
+          "date": "2026-01-29",
+          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1326801&type=10-K&dateb=&owner=include&count=5"
+        },
+        "latest_8k": {
+          "date": "2026-01-28",
+          "items": "2.02,9.01"
+        },
+        "count_8k_90d": 2,
+        "recent_8k_items": [
+          {
+            "date": "2026-01-28",
+            "items": "2.02,9.01"
+          },
+          {
+            "date": "2026-01-16",
+            "items": "5.02"
+          }
+        ],
+        "retrieved": "2026-04-05T03:34:05.748Z"
+      }
     },
-    {
-      "id": "amazon",
+    "amazon": {
       "name": "Amazon",
       "ticker": "AMZN",
-      "sector": "Tech / Retail",
       "cik": "1018724",
-      "score": 47,
-      "band": "warning",
-      "score_version": "1.0",
-      "score_date": "2026-03-18",
-      "factors": {
-        "pledge_quality": {"points": 20, "max": 30, "notes": "Net zero carbon by 2040. 100% renewable energy by 2025 — target missed."},
-        "cdp_performance": {"points": 18, "max": 25, "grade": "B", "year": 2023},
-        "lobbying_alignment": {"points": 9, "max": 25, "grade": "C"},
-        "legal_exposure": {"points": 0, "max": 20, "active_cases": 3}
-      },
-      "pledge": "Net zero carbon by 2040 (Climate Pledge). 100% renewable energy by 2025.",
-      "pledge_source": "Amazon Climate Pledge — Sustainability Report 2023",
-      "pledge_url": "https://sustainability.aboutamazon.com/",
-      "reality": "Missed 2025 renewable energy target. Emissions +18% (2021-22). AWS and logistics growth outpacing renewable procurement.",
-      "reality_sources": ["Amazon Sustainability Report 2023", "CDP 2023", "Bloomberg Green"],
-      "cdp": {"grade": "B", "year": 2023, "url": "https://www.cdp.net/en/responses"},
-      "influencemap": {"grade": "C", "url": "https://influencemap.org/company/Amazon"},
-      "sbti": {"status": "Committed", "url": "https://sciencebasedtargets.org/companies-taking-action"},
-      "sabin_center": {"active_cases": 3, "url": "https://climatecasechart.com/case-list/?organization_name=amazon"},
-      "tpi": {"level": "3/5", "url": "https://www.transitionpathwayinitiative.org/"},
-      "edgar": {"cik_url": "https://data.sec.gov/submissions/CIK0001018724.json"}
+      "edgar": {
+        "ticker": "AMZN",
+        "cik": "1018724",
+        "annual_filing": {
+          "form": "10-K",
+          "date": "2026-02-06",
+          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1018724&type=10-K&dateb=&owner=include&count=5"
+        },
+        "latest_8k": {
+          "date": "2026-03-16",
+          "items": "8.01,9.01"
+        },
+        "count_8k_90d": 4,
+        "recent_8k_items": [
+          {
+            "date": "2026-03-16",
+            "items": "8.01,9.01"
+          },
+          {
+            "date": "2026-03-13",
+            "items": "8.01,9.01"
+          },
+          {
+            "date": "2026-02-27",
+            "items": "1.01,7.01,8.01,9.01"
+          },
+          {
+            "date": "2026-02-05",
+            "items": "2.02,9.01"
+          }
+        ],
+        "retrieved": "2026-04-05T03:34:05.776Z"
+      }
     },
-    {
-      "id": "microsoft",
+    "microsoft": {
       "name": "Microsoft",
       "ticker": "MSFT",
-      "sector": "Technology",
       "cik": "789019",
-      "score": 61,
-      "band": "on_track",
-      "score_version": "1.0",
-      "score_date": "2026-03-18",
-      "factors": {
-        "pledge_quality": {"points": 26, "max": 30, "notes": "Carbon negative by 2030. Remove all historical emissions by 2050. SBTi Approved 1.5C."},
-        "cdp_performance": {"points": 22, "max": 25, "grade": "A-", "year": 2023},
-        "lobbying_alignment": {"points": 13, "max": 25, "grade": "B-"},
-        "legal_exposure": {"points": 0, "max": 20, "active_cases": 1, "notes": "Self-disclosed +29% emissions since 2020 pledge due to AI data center expansion"}
-      },
-      "pledge": "Carbon negative by 2030. Remove all historical emissions by 2050.",
-      "pledge_source": "Microsoft Sustainability Report 2024",
-      "pledge_url": "https://www.microsoft.com/en-us/sustainability",
-      "reality": "Emissions +29% since 2020 pledge due to AI data center expansion — disclosed in own 2024 report. Nuclear and clean energy offtakes in progress.",
-      "reality_sources": ["Microsoft 2024 Environmental Sustainability Report", "CDP 2023", "SEC 10-K"],
-      "cdp": {"grade": "A-", "year": 2023, "url": "https://www.cdp.net/en/responses"},
-      "influencemap": {"grade": "B-", "url": "https://influencemap.org/company/Microsoft"},
-      "sbti": {"status": "Approved 1.5C", "url": "https://sciencebasedtargets.org/companies-taking-action"},
-      "sabin_center": {"active_cases": 1, "url": "https://climatecasechart.com/case-list/?organization_name=microsoft"},
-      "tpi": {"level": "4/5", "url": "https://www.transitionpathwayinitiative.org/"},
-      "edgar": {"cik_url": "https://data.sec.gov/submissions/CIK0000789019.json"}
+      "edgar": {
+        "ticker": "MSFT",
+        "cik": "789019",
+        "annual_filing": {
+          "form": "10-K",
+          "date": "2025-07-30",
+          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=789019&type=10-K&dateb=&owner=include&count=5"
+        },
+        "latest_8k": {
+          "date": "2026-01-28",
+          "items": "2.02,9.01"
+        },
+        "count_8k_90d": 1,
+        "recent_8k_items": [
+          {
+            "date": "2026-01-28",
+            "items": "2.02,9.01"
+          }
+        ],
+        "retrieved": "2026-04-05T03:34:05.788Z"
+      }
     },
-    {
-      "id": "unilever",
+    "unilever": {
       "name": "Unilever",
       "ticker": "ULVR",
-      "sector": "Consumer Goods",
       "cik": "49519",
-      "score": 72,
-      "band": "on_track",
-      "score_version": "1.0",
-      "score_date": "2026-03-18",
-      "factors": {
-        "pledge_quality": {"points": 28, "max": 30, "notes": "Net zero across value chain by 2039. Zero deforestation. -50% by 2030 in operations. SBTi Approved 1.5C."},
-        "cdp_performance": {"points": 22, "max": 25, "grade": "A-", "year": 2023},
-        "lobbying_alignment": {"points": 16, "max": 25, "grade": "B"},
-        "legal_exposure": {"points": 6, "max": 20, "active_cases": 1}
-      },
-      "pledge": "Net zero across value chain by 2039. Zero deforestation. -50% by 2030 in operations.",
-      "pledge_source": "Unilever Climate Transition Action Plan 2023",
-      "pledge_url": "https://www.unilever.com/planet-and-society/climate-action/",
-      "reality": "-23% operational emissions since 2015. Scope 3 improving slowly. Some palm oil supply chain concerns remain.",
-      "reality_sources": ["Unilever Annual Report 2024", "CDP 2023", "Supply Chain Due Diligence"],
-      "cdp": {"grade": "A-", "year": 2023, "url": "https://www.cdp.net/en/responses"},
-      "influencemap": {"grade": "B", "url": "https://influencemap.org/company/Unilever"},
-      "sbti": {"status": "Approved 1.5C", "url": "https://sciencebasedtargets.org/companies-taking-action"},
-      "sabin_center": {"active_cases": 1, "url": "https://climatecasechart.com/case-list/?organization_name=unilever"},
-      "tpi": {"level": "4/5", "url": "https://www.transitionpathwayinitiative.org/"},
-      "edgar": {"cik_url": "https://data.sec.gov/submissions/CIK0000049519.json"}
+      "edgar": null
     },
-    {
-      "id": "apple",
+    "apple": {
       "name": "Apple",
       "ticker": "AAPL",
-      "sector": "Technology",
       "cik": "320193",
-      "score": 84,
-      "band": "on_track",
-      "score_version": "1.0",
-      "score_date": "2026-03-18",
-      "factors": {
-        "pledge_quality": {"points": 30, "max": 30, "notes": "Carbon neutral across all products and supply chain by 2030. All interim targets met. SBTi Approved 1.5C."},
-        "cdp_performance": {"points": 25, "max": 25, "grade": "A", "year": 2023},
-        "lobbying_alignment": {"points": 19, "max": 25, "grade": "B+"},
-        "legal_exposure": {"points": 10, "max": 20, "active_cases": 0}
-      },
-      "pledge": "Carbon neutral across all products and supply chain by 2030.",
-      "pledge_source": "Apple Environmental Progress Report 2024",
-      "pledge_url": "https://www.apple.com/environment/pdf/Apple_Environmental_Progress_Report_2024.pdf",
-      "reality": "62% emission reduction since 2015. 100% renewable energy since 2018. Supplier Clean Energy Program: over 80% of manufacturing energy now clean.",
-      "reality_sources": ["Apple EPR 2024", "CDP 2023", "SEC 10-K", "SBTi Registry"],
-      "cdp": {"grade": "A", "year": 2023, "url": "https://www.cdp.net/en/responses"},
-      "influencemap": {"grade": "B+", "url": "https://influencemap.org/company/Apple"},
-      "sbti": {"status": "Approved 1.5C", "url": "https://sciencebasedtargets.org/companies-taking-action"},
-      "sabin_center": {"active_cases": 0, "url": "https://climatecasechart.com/case-list/?organization_name=apple"},
-      "tpi": {"level": "5/5", "url": "https://www.transitionpathwayinitiative.org/"},
-      "edgar": {"cik_url": "https://data.sec.gov/submissions/CIK0000320193.json"}
+      "edgar": {
+        "ticker": "AAPL",
+        "cik": "320193",
+        "annual_filing": {
+          "form": "10-K",
+          "date": "2025-10-31",
+          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=320193&type=10-K&dateb=&owner=include&count=5"
+        },
+        "latest_8k": {
+          "date": "2026-02-24",
+          "items": "5.07,9.01"
+        },
+        "count_8k_90d": 2,
+        "recent_8k_items": [
+          {
+            "date": "2026-02-24",
+            "items": "5.07,9.01"
+          },
+          {
+            "date": "2026-01-29",
+            "items": "2.02,9.01"
+          }
+        ],
+        "retrieved": "2026-04-05T03:34:05.817Z"
+      }
     }
-  ]
+  }
 }
