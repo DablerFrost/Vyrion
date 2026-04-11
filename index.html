@@ -149,15 +149,15 @@ body::after{
 }
 .page-header::before{
   content:'';position:absolute;inset:0;z-index:0;
-  background:linear-gradient(120deg,rgba(3,10,5,.94) 0%,rgba(3,10,5,.76) 45%,rgba(3,10,5,.90) 100%);
+  background:linear-gradient(120deg,rgba(2,9,18,.94) 0%,rgba(2,9,18,.76) 45%,rgba(2,9,18,.90) 100%);
   transition:background .3s;
 }
 [data-theme="light"] .page-header::before{
-  background:linear-gradient(120deg,rgba(240,247,243,.95) 0%,rgba(240,247,243,.82) 45%,rgba(240,247,243,.92) 100%);
+  background:linear-gradient(120deg,rgba(238,248,255,.96) 0%,rgba(238,248,255,.82) 45%,rgba(238,248,255,.93) 100%);
 }
 .page-header::after{
   content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:radial-gradient(ellipse 55% 60% at 72% 52%,rgba(0,212,255,.05) 0%,transparent 70%);
+  background:radial-gradient(ellipse 55% 60% at 72% 52%,rgba(0,212,255,.06) 0%,transparent 70%);
   animation:hpulse 7s ease-in-out infinite alternate;
 }
 @keyframes hpulse{0%{opacity:.4;transform:scale(1)}100%{opacity:1;transform:scale(1.05)}}
@@ -228,7 +228,6 @@ body::after{
   display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
   gap:1px;background:var(--border);
 }
-@media(max-width:720px){.company-grid{grid-template-columns:1fr}}
 
 /* ── COMPANY CARD ────────────────────────────────────────── */
 .c-card{
@@ -451,10 +450,33 @@ body::after{
 .hidden{display:none!important}
 
 /* ─── RESPONSIVE BREAKPOINTS ──────────────────────────────── */
-@media(max-width:1024px){
-  :root{--pad:1.3rem}
-  .company-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,380px),1fr))}
+/* 1280px — large desktop */
+@media(min-width:1280px){
+  .nav,.live-banner,.page-header,.source-strip,.toolbar,.filter-bar,.method-section,.changelog-section,.footer{max-width:1440px;margin-left:auto;margin-right:auto}
 }
+/* 1100px — tablet landscape / small laptop */
+@media(max-width:1100px){
+  .nav-links{gap:1rem}
+  .nav-links a{font-size:.6rem;letter-spacing:.11em}
+  .company-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr))}
+  .stack-grid{grid-template-columns:repeat(2,1fr)}
+  .license-tiers{grid-template-columns:repeat(2,1fr)}
+  .stress-grid{grid-template-columns:1fr}
+  .boundary-split{grid-template-columns:1fr}
+  .intel-grid{grid-template-columns:repeat(2,1fr)}
+}
+/* 900px — tablet landscape narrower */
+@media(max-width:900px){
+  .nav-links{gap:.7rem}
+  .nav-links a{font-size:.56rem;letter-spacing:.09em}
+  .stack-grid{grid-template-columns:1fr}
+  .license-tiers{grid-template-columns:1fr}
+  .live-banner{flex-wrap:wrap}
+  .lb-cell{min-width:50%;border-bottom:1px solid var(--border)}
+  .source-strip{flex-wrap:wrap}
+  .src-badge{min-width:50%}
+}
+/* 720px — tablet portrait / large phone */
 @media(max-width:720px){
   html{font-size:16px !important}
   .nav{padding:0 .9rem;gap:.5rem;height:48px}
@@ -464,10 +486,10 @@ body::after{
   .nc-sep{display:none}
   .nc-sz{width:22px;height:22px;font-size:.52rem}
   .nc-theme{font-size:.52rem;padding:.16rem .32rem}
-  .ticker{flex-wrap:wrap}
-  .t-cell,.lb-cell{min-width:50%;border-bottom:1px solid var(--border)}
+  .live-banner{flex-wrap:wrap}
+  .lb-cell{min-width:50%;border-bottom:1px solid var(--border)}
   .page-header{padding:1.8rem .9rem 1.5rem}
-  .toolbar{padding:.7rem .9rem;gap:.4rem}
+  .toolbar{padding:.7rem .9rem;gap:.4rem;flex-wrap:wrap}
   .search-wrap{min-width:120px;max-width:100%;flex:1 1 120px}
   .btn-export{margin-left:0}
   .filter-bar,.filter-btns{gap:.28rem}
@@ -478,12 +500,47 @@ body::after{
   .method-section,.changelog-section,.footer{padding:1.4rem .9rem}
   .method-table,.cl-table{font-size:.52rem}
   .bg-word{display:none}
+  .terminal-banner{padding:2rem .9rem}
+  .tb-title{font-size:clamp(1.4rem,4vw,2rem)}
+  .stack-grid{grid-template-columns:1fr}
+  .boundary-split{grid-template-columns:1fr}
+  .stress-grid{grid-template-columns:1fr}
+  .license-tiers{grid-template-columns:1fr}
+  .license-section{padding:2rem .9rem}
+  .license-cta-row{flex-direction:column;align-items:flex-start}
+  .intel-grid{grid-template-columns:1fr}
+  .attr-lbl{min-width:72px;font-size:.48rem}
+  .cl-table{font-size:.5rem}
+  .cl-table th:nth-child(3),.cl-table td:nth-child(3),.cl-table th:last-child,.cl-table td:last-child{display:none}
 }
-@media(max-width:400px){
+/* 480px — standard phone portrait */
+@media(max-width:480px){
+  html{font-size:15px !important}
+  .nav-controls .nc-sz{display:none}
+  .nc-sep{display:none}
+  .nc-theme{font-size:.5rem}
   .val-grid{grid-template-columns:repeat(2,1fr)}
   .f-btn{font-size:.5rem;padding:.18rem .4rem}
   .nav-logo{font-size:.75rem}
-  .nc-sep,.nc-sz{display:none}
+  .lb-cell{min-width:100%}
+  .score-ring-wrap{width:60px;height:60px}
+  .ring-score{font-size:.9rem}
+  .ring-denom{font-size:.38rem}
+  .c-name{font-size:.95rem}
+  .license-tiers,.stack-grid{grid-template-columns:1fr}
+  .company-checkboxes{gap:.22rem}
+  .co-check-name{font-size:.54rem}
+  .src-badge{min-width:100%}
+}
+/* 360px — small phone */
+@media(max-width:360px){
+  html{font-size:14px !important}
+  .nav-logo{font-size:.7rem;letter-spacing:.08em}
+  .page-title{font-size:2rem}
+  .val-grid{grid-template-columns:1fr}
+  .filter-btns{gap:.18rem}
+  .f-btn{font-size:.46rem;padding:.14rem .32rem}
+  .tb-title{font-size:1.2rem}
 }
 @media(hover:none){#mag{display:none!important}}
 
@@ -641,97 +698,6 @@ body::after{
 /* Search focus */
 #search-input:focus{border-color:rgba(0,212,255,.5);box-shadow:0 0 0 2px rgba(0,212,255,.08)}
 
-/* ─── v2.8 SIGNAL INTELLIGENCE ────────────────────────────── */
-.signal-section{border-top:1px solid var(--border);padding:2rem 1.8rem;background:var(--void)}
-.signal-header{display:flex;align-items:center;gap:.6rem;margin-bottom:.35rem;flex-wrap:wrap}
-.signal-title{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t1)}
-.signal-rule{flex:1;height:1px;background:var(--border);min-width:20px}
-.signal-grid{display:flex;flex-direction:column;gap:1px;background:var(--border)}
-.signal-row{background:var(--void2);padding:.82rem 1.2rem;display:grid;grid-template-columns:auto 1fr auto;align-items:start;gap:.9rem;transition:background .2s}
-.signal-row:hover{background:var(--void3)}
-@media(max-width:600px){.signal-row{grid-template-columns:1fr;gap:.4rem}}
-.sig-level{font-family:'Courier Prime',monospace;font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;padding:.1rem .38rem;border-radius:2px;flex-shrink:0;display:flex;align-items:center;gap:.28rem;white-space:nowrap;margin-top:.06rem}
-.sig-critical{background:rgba(240,48,48,.1);color:var(--breach);border:1px solid rgba(240,48,48,.25)}
-.sig-elevated{background:rgba(240,144,0,.08);color:var(--warn);border:1px solid rgba(240,144,0,.22)}
-.sig-watch{background:rgba(255,184,77,.07);color:var(--amber);border:1px solid rgba(255,184,77,.2)}
-.sig-dot{width:4px;height:4px;border-radius:50%;flex-shrink:0}
-.sig-critical .sig-dot{background:var(--breach);animation:pdot 1.2s infinite}
-.sig-elevated .sig-dot{background:var(--warn)}
-.sig-watch .sig-dot{background:var(--amber)}
-.sig-body{display:flex;flex-direction:column;gap:.18rem}
-.sig-company{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:.82rem;color:var(--t1);line-height:1}
-.sig-msg{font-size:.69rem;color:var(--t2);line-height:1.55}
-.sig-src{font-family:'Courier Prime',monospace;font-size:.5rem;color:var(--t3);margin-top:.2rem;line-height:1.4}
-.sig-type{font-family:'Courier Prime',monospace;font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);white-space:nowrap;padding-top:.08rem}
-.signal-empty{padding:1.4rem 1.2rem;font-family:'Courier Prime',monospace;font-size:.64rem;color:var(--glow);text-align:center}
-
-/* ─── v2.8 AUDIT PACK MODAL ────────────────────────────────── */
-.audit-overlay{display:none;position:fixed;inset:0;z-index:2000;background:rgba(2,9,18,.9);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:1rem}
-.audit-overlay.open{display:flex}
-.audit-modal{background:var(--void2);border:1px solid var(--border);border-radius:3px;max-width:700px;width:100%;max-height:90vh;display:flex;flex-direction:column;box-shadow:0 24px 72px rgba(0,0,0,.85);position:relative;overflow:hidden}
-.audit-modal::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--glow),transparent)}
-.audit-modal-head{display:flex;align-items:flex-start;justify-content:space-between;padding:1rem 1.2rem .85rem;border-bottom:1px solid var(--border);flex-shrink:0;gap:.8rem}
-.audit-modal-title{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:1rem;color:var(--t1);letter-spacing:.02em}
-.audit-modal-sub{font-family:'Courier Prime',monospace;font-size:.54rem;color:var(--t3);margin-top:.18rem}
-.audit-close{font-family:'Courier Prime',monospace;font-size:.6rem;color:var(--t3);cursor:pointer;border:1px solid var(--border);background:transparent;padding:.22rem .55rem;border-radius:2px;transition:all .15s;flex-shrink:0;white-space:nowrap}
-.audit-close:hover{color:var(--t1);border-color:rgba(0,212,255,.35)}
-.audit-modal-body{padding:1rem 1.2rem;overflow-y:auto;flex:1}
-.audit-section{margin-bottom:1rem;padding-bottom:.9rem;border-bottom:1px solid var(--border2)}
-.audit-section:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.audit-section-title{font-family:'Courier Prime',monospace;font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--glow);margin-bottom:.52rem}
-.audit-row{display:flex;justify-content:space-between;align-items:baseline;padding:.2rem 0;border-bottom:1px solid rgba(255,255,255,.03);font-family:'Courier Prime',monospace;font-size:.6rem;gap:.5rem}
-.audit-row:last-child{border-bottom:none}
-.audit-row-l{color:var(--t2);flex:1}
-.audit-row-r{color:var(--t1);font-weight:700;text-align:right;min-width:80px;flex-shrink:0}
-.audit-src-block{background:rgba(0,0,0,.28);border:1px solid var(--border2);border-radius:2px;padding:.65rem .8rem;margin-top:.4rem;font-family:'Courier Prime',monospace;font-size:.56rem;color:var(--t2);line-height:1.9}
-.audit-src-block a{color:rgba(0,212,255,.4);text-decoration:none;transition:color .15s}
-.audit-src-block a:hover{color:var(--glow)}
-.audit-src-lbl{color:var(--t1);display:block;margin-bottom:.1rem;margin-top:.45rem}
-.audit-src-lbl:first-child{margin-top:0}
-.audit-modal-foot{padding:.75rem 1.2rem;border-top:1px solid var(--border);display:flex;gap:.55rem;flex-wrap:wrap;flex-shrink:0;background:rgba(0,0,0,.2);align-items:center}
-.audit-btn{font-family:'Courier Prime',monospace;font-size:.58rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .7rem;border-radius:2px;cursor:pointer;transition:all .18s;border:1px solid rgba(0,212,255,.25);background:rgba(0,212,255,.07);color:var(--glow)}
-.audit-btn:hover{background:rgba(0,212,255,.15);border-color:rgba(0,212,255,.55);box-shadow:0 0 10px rgba(0,212,255,.15)}
-.audit-btn-sec{font-family:'Courier Prime',monospace;font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;padding:.28rem .6rem;border-radius:2px;cursor:pointer;transition:all .18s;border:1px solid var(--border);background:transparent;color:var(--t3)}
-.audit-btn-sec:hover{border-color:rgba(0,212,255,.3);color:var(--t2)}
-.audit-pack-btn{display:flex;align-items:center;justify-content:center;gap:.4rem;width:100%;margin-top:.55rem;font-family:'Courier Prime',monospace;font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .5rem;border-radius:2px;cursor:pointer;transition:all .18s;border:1px solid var(--border2);background:transparent;color:var(--t3)}
-.audit-pack-btn:hover{border-color:rgba(0,212,255,.3);color:var(--t2);background:rgba(0,212,255,.04)}
-
-/* ─── v2.8 CHANGE DETECTION ────────────────────────────────── */
-.delta-bar{display:none;border-bottom:1px solid var(--border);background:rgba(0,212,255,.03)}
-.delta-bar.show{display:block}
-.delta-bar-head{display:flex;align-items:center;justify-content:space-between;padding:.65rem 1.8rem;flex-wrap:wrap;gap:.6rem;cursor:pointer;user-select:none}
-.delta-bar-head:hover{background:rgba(0,212,255,.025)}
-.delta-eyebrow{font-family:'Courier Prime',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--glow);display:flex;align-items:center;gap:.42rem}
-.delta-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--glow);animation:pdot 2s infinite;flex-shrink:0}
-.delta-summary{font-family:'Courier Prime',monospace;font-size:.6rem;color:var(--t2)}
-.delta-since{font-family:'Courier Prime',monospace;font-size:.55rem;color:var(--t3)}
-.delta-expand-lbl{font-family:'Courier Prime',monospace;font-size:.54rem;color:var(--t3)}
-.delta-grid{display:none;padding:.4rem 1.8rem .9rem;gap:1px;background:var(--border2)}
-.delta-grid.open{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
-.delta-item{background:var(--void2);padding:.72rem .9rem;display:flex;align-items:flex-start;gap:.55rem}
-.delta-icon{font-size:.85rem;flex-shrink:0;margin-top:.04rem;line-height:1}
-.delta-item-body{display:flex;flex-direction:column;gap:.14rem}
-.delta-item-label{font-family:'Courier Prime',monospace;font-size:.52rem;color:var(--t3);text-transform:uppercase;letter-spacing:.1em}
-.delta-item-val{font-family:'Courier Prime',monospace;font-size:.7rem;font-weight:700}
-.delta-item-sub{font-family:'Courier Prime',monospace;font-size:.51rem;color:var(--t3);line-height:1.45}
-.delta-new{color:var(--glow)}.delta-up{color:var(--breach)}.delta-down{color:var(--glow)}.delta-same{color:var(--t3)}
-
-/* ─── v2.8 FILING WATCH ────────────────────────────────────── */
-.filing-watch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:1px;background:var(--border)}
-.fw-cell{background:var(--void2);padding:.82rem 1rem;transition:background .18s}
-.fw-cell:hover{background:var(--void3)}
-.fw-ticker{font-family:'Courier Prime',monospace;font-size:.5rem;color:var(--t3);margin-bottom:.18rem;text-transform:uppercase;letter-spacing:.1em}
-.fw-date{font-family:'Courier Prime',monospace;font-size:.74rem;font-weight:700;color:var(--glow);line-height:1.1}
-.fw-sub{font-family:'Courier Prime',monospace;font-size:.5rem;color:var(--t3);margin-top:.14rem;line-height:1.4}
-
-/* ─── v2.8 CHANGELOG FILTER ────────────────────────────────── */
-.cl-filter-bar{display:flex;gap:.38rem;flex-wrap:wrap;margin-bottom:.65rem}
-.cl-filter-btn{font-family:'Courier Prime',monospace;font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .52rem;border-radius:2px;border:1px solid var(--border);background:transparent;color:var(--t3);cursor:pointer;transition:all .15s}
-.cl-filter-btn:hover{border-color:rgba(0,212,255,.3);color:var(--t2)}
-.cl-filter-btn.active{background:rgba(0,212,255,.08);border-color:rgba(0,212,255,.35);color:var(--glow)}
-.cl-correction{background:rgba(240,144,0,.08);color:var(--warn);border:1px solid rgba(240,144,0,.22)}
-.cadence-note{font-family:'Courier Prime',monospace;font-size:.52rem;color:var(--t3);margin-top:.55rem;line-height:1.6;padding:.5rem .6rem;border:1px solid var(--border2);border-radius:2px;background:rgba(0,0,0,.12)}
-
 </style>
 </head>
 <body>
@@ -740,17 +706,20 @@ body::after{
 <nav class="nav">
   <a href="https://dablerfrost.github.io/conscience" class="nav-logo">VYRION</a>
   <ul class="nav-links">
-    <li><a href="https://dablerfrost.github.io/conscience/atlas">ATLAS</a></li>
     <li><a href="https://dablerfrost.github.io/conscience" class="active">CONSCIENCE</a></li>
+    <li><a href="#terminal">TERMINAL</a></li>
+    <li><a href="#licensing">LICENSING</a></li>
+    <li><a href="atlas.html">ATLAS</a></li>
     <li><a href="shield.html">SHIELD</a></li>
-    <li><a href="https://dablerfrost.github.io/conscience/nexan.html">THE NEXAN INSTITUTE</a></li>
+    <li><a href="nexan.html">NEXAN</a></li>
+    <li><a href="https://dablerfrost.github.io/conscience/archive">ARCHIVE</a></li>
   </ul>
   <div class="nav-controls">
     <button class="nc-theme active" id="theme-btn" onclick="toggleTheme()" title="Toggle light/dark mode">◐ DARK</button>
     <div class="nc-sep"></div>
-    <button class="nc-sz" data-scale="0.88" onclick="setScale(this)" title="Small text (18px)">S</button>
-    <button class="nc-sz active" data-scale="1.0" onclick="setScale(this)" title="Medium text (20px)">M</button>
-    <button class="nc-sz" data-scale="1.22" onclick="setScale(this)" title="Large text (24px)">L</button>
+    <button class="nc-sz" data-scale="0.88" onclick="setScale(this)" title="Small text (16px)">S</button>
+    <button class="nc-sz active" data-scale="1.0" onclick="setScale(this)" title="Medium text (18px)">M</button>
+    <button class="nc-sz" data-scale="1.22" onclick="setScale(this)" title="Large text (22px)">L</button>
   </div>
   <div class="nav-dot"></div>
 </nav>
@@ -765,22 +734,17 @@ body::after{
   <div class="lb-cell" data-mag="index">
     <div class="lb-lbl">VYRION Index</div>
     <div class="lb-val amber" id="idx-val">41.2 <span style="font-size:.62rem;color:var(--t3)">± 1.8</span></div>
-    <div class="lb-sub" id="idx-sub">/ 100 · Day 16 · 48 indicators · cadences published</div>
+    <div class="lb-sub" id="idx-sub">/ 100 · Day 14 · Mar 31, 2026</div>
   </div>
   <div class="lb-cell" data-mag="coverage">
     <div class="lb-lbl">Companies Tracked</div>
     <div class="lb-val white">11</div>
-    <div class="lb-sub">5 Breach · 3 Warning · 3 On Track</div>
+    <div class="lb-sub">7 Breach · 3 Warning · 1 On Track</div>
   </div>
   <div class="lb-cell" data-mag="lawsuits">
     <div class="lb-lbl">Active Lawsuits</div>
     <div class="lb-val red">97</div>
     <div class="lb-sub">Sabin Center · Columbia Law</div>
-  </div>
-  <div class="lb-cell" data-mag="pledge-gap">
-    <div class="lb-lbl"><span class="lb-dot" style="background:var(--breach)"></span>Pledge Gap</div>
-    <div class="lb-val red">−34.6</div>
-    <div class="lb-sub">avg vs 1.5°C alignment · 11 cos.</div>
   </div>
   <div class="lb-cell" data-mag="refresh">
     <div class="lb-lbl">Sources Checked</div>
@@ -789,25 +753,10 @@ body::after{
   </div>
 </div>
 
-<!-- ── CHANGE DETECTION BANNER ──────────────────────────────────────── -->
-<div class="delta-bar" id="delta-bar">
-  <div class="delta-bar-head" onclick="toggleDeltaGrid()">
-    <div style="display:flex;align-items:center;gap:.8rem;flex-wrap:wrap">
-      <div class="delta-eyebrow">What Changed</div>
-      <div class="delta-summary" id="delta-summary">Checking for updates…</div>
-    </div>
-    <div style="display:flex;align-items:center;gap:1rem">
-      <div class="delta-since" id="delta-since"></div>
-      <div class="delta-expand-lbl" id="delta-expand-lbl">▼ SHOW DETAILS</div>
-    </div>
-  </div>
-  <div class="delta-grid" id="delta-grid"></div>
-</div>
-
 <!-- HEADER -->
 <header class="page-header">
   <div class="bg-word">CONSCIENCE</div>
-  <div class="eyebrow">Module 02 · Corporate Climate Pledge Verification</div>
+  <div class="eyebrow">Module 01 · Corporate Climate Pledge Verification</div>
   <h1 class="page-title">CONSCIENCE</h1>
   <p class="page-sub">Pledge vs. reality for 11 major corporations. Scores derived from CDP disclosures, InfluenceMap lobbying grades, Sabin Center climate litigation, SBTi registry, and live SEC EDGAR filings — cross-referenced against Paris Agreement 1.5°C pathways. Find an error — we publish the correction.</p>
 </header>
@@ -885,63 +834,28 @@ body::after{
 <div class="company-grid" id="grid"></div>
 <div id="no-results">No companies match your filters. <a href="#" onclick="clearFilters();return false;">Clear filters</a></div>
 
-<!-- ── SIGNAL INTELLIGENCE FEED ─────────────────────────────────────── -->
-<section class="signal-section" id="signals">
-  <div class="signal-header">
-    <div class="signal-title">Signal Intelligence Feed</div>
-    <div class="signal-rule"></div>
-    <div id="signal-count-badge" style="font-family:'Courier Prime',monospace;font-size:.56rem;letter-spacing:.1em;padding:.12rem .5rem;border-radius:2px;border:1px solid rgba(240,48,48,.25);color:var(--breach)">Computing…</div>
-  </div>
-  <div style="font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--t3);margin-bottom:1rem;line-height:1.65">
-    Risk signals computed in real-time from CONSCIENCE scores, SEC EDGAR 8-K event density, SBTi status vs. emissions trajectory, InfluenceMap lobbying grades, and legal exposure thresholds. All signals are source-cited. Not financial advice.
-  </div>
-  <div class="signal-grid" id="signal-grid">
-    <div class="signal-empty loading-pulse">Computing signal intelligence…</div>
-  </div>
-</section>
-
-<!-- ENHANCED CHANGELOG v2.8 -->
+<!-- CHANGELOG -->
 <section class="changelog-section" id="changelog">
-  <div class="changelog-title">Score Changelog — Versioned Audit Record</div>
+  <div class="changelog-title">Score Changelog</div>
   <div class="changelog-sub">
-    Every score change, correction, and platform update logged permanently. Original entries never deleted. This is the Audit Readiness record — every version of every score, sourced and timestamped.<br>
+    Every score change, correction, and new entry is logged here permanently. Original entries are never deleted.<br>
     Open Proof Protocol: <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a> ·
-    <a href="https://github.com/dablerfrost/conscience/blob/main/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a> ·
-    <a href="https://github.com/dablerfrost/conscience" target="_blank">Prior art: GitHub timestamps from March 18, 2026</a>
+    <a href="https://github.com/dablerfrost/conscience/blob/main/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a>
   </div>
-  <div class="cl-filter-bar">
-    <button class="cl-filter-btn active" data-clf="all" onclick="filterChangelog(this)">All</button>
-    <button class="cl-filter-btn" data-clf="score" onclick="filterChangelog(this)">Score Changes</button>
-    <button class="cl-filter-btn" data-clf="platform" onclick="filterChangelog(this)">Platform</button>
-    <button class="cl-filter-btn" data-clf="correction" onclick="filterChangelog(this)">Corrections</button>
-    <button class="cl-filter-btn" data-clf="methodology" onclick="filterChangelog(this)">Methodology</button>
-  </div>
-  <table class="cl-table" id="cl-table">
-    <thead><tr><th>Date</th><th>Company / Scope</th><th>Previous</th><th>New</th><th>Type</th><th>Reason</th><th>Source</th></tr></thead>
-    <tbody id="cl-tbody">
-      <tr data-clf="score platform">
-        <td>2026-03-18</td><td>All 11 companies</td><td>—</td><td>v1.0 established</td>
+  <table class="cl-table">
+    <thead><tr><th>Date</th><th>Company</th><th>Previous</th><th>New Score</th><th>Band</th><th>Reason</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>2026-03-18</td><td>All 11 companies</td><td>—</td><td>Established</td>
         <td><span class="cl-pill cl-new">NEW</span></td>
-        <td>Initial scoring: CONSCIENCE v1.0 baseline. All scores derived from CDP 2023, InfluenceMap, Sabin Center (March 2026), SBTi registry, SEC EDGAR. Prior art timestamped GitHub March 18, 2026.</td>
+        <td>Initial scoring: CONSCIENCE v1.0 baseline. All scores derived from CDP 2023, InfluenceMap, Sabin Center (March 2026), SBTi registry, SEC EDGAR.</td>
         <td><a href="https://github.com/dablerfrost/conscience/blob/main/CONSCIENCE-METHODOLOGY.md" target="_blank" style="color:rgba(0,212,255,.35);text-decoration:none">CONSCIENCE-METHODOLOGY.md →</a></td>
       </tr>
-      <tr data-clf="correction">
-        <td>2026-03-20</td><td>VYRION Index</td><td>—</td><td>Correction issued</td>
-        <td><span class="cl-pill cl-correction">CORRECTION</span></td>
-        <td>Day 2 Arctic post incorrectly stated "new daily low." March = annual maximum, not minimum. Minimums occur in September. Correction posted publicly same day. Open Proof Protocol applied.</td>
-        <td><a href="https://nsidc.org/arcticseaicenews/" target="_blank" style="color:rgba(0,212,255,.35);text-decoration:none">NSIDC →</a></td>
-      </tr>
-      <tr data-clf="platform">
-        <td>2026-03-30</td><td>Platform</td><td>v2.3</td><td>v2.7</td>
+      <tr>
+        <td>2026-03-30</td><td>Platform</td><td>v2.3</td><td>v2.6</td>
         <td><span class="cl-pill cl-plat">PLATFORM</span></td>
-        <td>v2.7: Investor Terminal, VYRION Stack visualization, Boundary Breakers board, Portfolio Stress Tester, Data Licensing CTA. No score values changed.</td>
-        <td><a href="https://github.com/dablerfrost/conscience" target="_blank" style="color:rgba(0,212,255,.35);text-decoration:none">github.com/dablerfrost →</a></td>
-      </tr>
-      <tr data-clf="platform">
-        <td>2026-04-03</td><td>Platform</td><td>v2.7</td><td>v2.8</td>
-        <td><span class="cl-pill cl-plat">PLATFORM</span></td>
-        <td>v2.8: Signal Intelligence Feed (live risk signals from EDGAR+CONSCIENCE), Change Detection system (what changed since last visit), Audit Pack per company (one-click source bundle), Regulatory Filing Watch (live 11-company EDGAR grid), Data Cadence Disclosure table, Pledge Gap ticker, Coverage Rationale. No score values changed.</td>
-        <td><a href="https://github.com/dablerfrost/conscience" target="_blank" style="color:rgba(0,212,255,.35);text-decoration:none">github.com/dablerfrost →</a></td>
+        <td>v2.7 deployed: Investor Terminal layer, VYRION Stack architecture visualization, Boundary Breakers/Regenerators board, Portfolio Stress Tester, Data Licensing CTA. No score values changed.</td>
+        <td><a href="https://github.com/dablerfrost/conscience" target="_blank" style="color:rgba(0,212,255,.35);text-decoration:none">github.com/dablerfrost/conscience →</a></td>
       </tr>
     </tbody>
   </table>
@@ -1070,7 +984,7 @@ body::after{
   display:grid;grid-template-columns:1fr 1fr;
   gap:1px;background:var(--border);
 }
-@media(max-width:720px){.boundary-split{grid-template-columns:1fr}}
+
 
 .bside{background:var(--void2);padding:1.2rem 1.3rem}
 .bside-title{
@@ -1140,7 +1054,7 @@ body::after{
   margin-bottom:1.3rem;line-height:1.6;
 }
 .stress-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
-@media(max-width:720px){.stress-grid{grid-template-columns:1fr}}
+
 
 .stress-picker{background:var(--void3);border:1px solid var(--border);border-radius:2px;padding:1.1rem}
 .stress-picker-title{
@@ -1518,35 +1432,6 @@ body::after{
   </div>
 </section>
 
-<!-- ══ REGULATORY FILING WATCH v2.8 ═══════════════════════════════════ -->
-<section style="border-top:1px solid var(--border);padding:2rem 1.8rem;background:var(--void2)" id="filing-watch">
-  <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.35rem;flex-wrap:wrap">
-    <div style="font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t1)">Regulatory Filing Watch</div>
-    <div style="flex:1;height:1px;background:var(--border);min-width:20px"></div>
-    <div style="font-family:'Courier Prime',monospace;font-size:.56rem;color:var(--glow);border:1px solid rgba(0,212,255,.2);padding:.12rem .5rem;border-radius:2px">LIVE · SEC EDGAR API</div>
-  </div>
-  <div style="font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--t3);margin-bottom:1rem;line-height:1.65">
-    Annual 10-K and 20-F filings are the primary CONSCIENCE score-update triggers. 8-K events signal material disclosures — pledge revisions, new commitments, litigation outcomes. 3+ 8-K events in 90 days triggers a ⚠ flag. Dates fetched live from <a href="https://data.sec.gov/submissions/" target="_blank" style="color:rgba(0,212,255,.35);text-decoration:none">data.sec.gov</a>.
-  </div>
-  <div class="filing-watch-grid" id="fw-grid">
-    <div class="fw-cell"><div class="fw-ticker">ExxonMobil · XOM</div><div class="fw-date loading-pulse" id="fw-exxon">—</div><div class="fw-sub" id="fw-exxon-sub">10-K filing date</div></div>
-    <div class="fw-cell"><div class="fw-ticker">BP · BP</div><div class="fw-date loading-pulse" id="fw-bp">—</div><div class="fw-sub" id="fw-bp-sub">20-F filing date</div></div>
-    <div class="fw-cell"><div class="fw-ticker">Shell · SHEL</div><div class="fw-date loading-pulse" id="fw-shell">—</div><div class="fw-sub" id="fw-shell-sub">20-F filing date</div></div>
-    <div class="fw-cell"><div class="fw-ticker">Delta · DAL</div><div class="fw-date loading-pulse" id="fw-delta">—</div><div class="fw-sub" id="fw-delta-sub">10-K filing date</div></div>
-    <div class="fw-cell"><div class="fw-ticker">Starbucks · SBUX</div><div class="fw-date loading-pulse" id="fw-starbucks">—</div><div class="fw-sub" id="fw-starbucks-sub">10-K filing date</div></div>
-    <div class="fw-cell"><div class="fw-ticker">Walmart · WMT</div><div class="fw-date loading-pulse" id="fw-walmart">—</div><div class="fw-sub" id="fw-walmart-sub">10-K filing date</div></div>
-    <div class="fw-cell"><div class="fw-ticker">Meta · META</div><div class="fw-date loading-pulse" id="fw-meta">—</div><div class="fw-sub" id="fw-meta-sub">10-K filing date</div></div>
-    <div class="fw-cell"><div class="fw-ticker">Amazon · AMZN</div><div class="fw-date loading-pulse" id="fw-amazon">—</div><div class="fw-sub" id="fw-amazon-sub">10-K filing date</div></div>
-    <div class="fw-cell"><div class="fw-ticker">Microsoft · MSFT</div><div class="fw-date loading-pulse" id="fw-microsoft">—</div><div class="fw-sub" id="fw-microsoft-sub">10-K filing date</div></div>
-    <div class="fw-cell"><div class="fw-ticker">Unilever · ULVR</div><div class="fw-date loading-pulse" id="fw-unilever">—</div><div class="fw-sub" id="fw-unilever-sub">20-F filing date</div></div>
-    <div class="fw-cell"><div class="fw-ticker">Apple · AAPL</div><div class="fw-date loading-pulse" id="fw-apple">—</div><div class="fw-sub" id="fw-apple-sub">10-K filing date</div></div>
-    <div class="fw-cell" style="display:flex;flex-direction:column;justify-content:center;gap:.35rem">
-      <div style="font-family:'Courier Prime',monospace;font-size:.5rem;color:rgba(0,212,255,.4);text-transform:uppercase;letter-spacing:.1em">Score Update Triggers</div>
-      <div style="font-family:'Courier Prime',monospace;font-size:.52rem;color:var(--t3);line-height:1.7">10-K / 20-F → Full review<br>8-K spike ⚠ → Credibility check<br>CDP publish → Score update<br>SBTi change → Band review</div>
-    </div>
-  </div>
-</section>
-
 <!-- ══════════════════════════════════════════════════════════════════
      SECTION 4: PORTFOLIO STRESS TESTER
      ══════════════════════════════════════════════════════════════════ -->
@@ -1632,7 +1517,7 @@ body::after{
     <h2 class="license-title">License CONSCIENCE Score Data</h2>
     <p class="license-sub">
       CONSCIENCE scores are available as a daily-updating JSON feed, accessible now at
-      <a href="https://dablerfrost.github.io/conscience/conscience-data.html" target="_blank" style="color:rgba(0,212,255,.55);text-decoration:none">conscience-data.json</a>.
+      <a href="https://dablerfrost.github.io/conscience/conscience-data.json" target="_blank" style="color:rgba(0,212,255,.55);text-decoration:none">conscience-data.json</a>.
       Institutional data licensing agreements available for ESG research firms, reinsurance
       analytics teams, and Bloomberg Terminal integration.
     </p>
@@ -1720,68 +1605,18 @@ body::after{
       <tr><td>Legal Exposure</td><td>20</td><td>Sabin Center litigation DB</td><td>Base 20 − (0.5 × active cases); floor 0</td></tr>
     </tbody>
   </table>
-
-  <div style="margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid var(--border2)">
-    <div class="method-title" style="font-size:.75rem;margin-bottom:.5rem">Indicator Update Cadences — 48 Indicators · 8 Systems</div>
-    <div style="font-family:'Courier Prime',monospace;font-size:.57rem;color:var(--t3);margin-bottom:.8rem;line-height:1.65">
-      The VYRION Index is a daily composite. Each indicator updates at its scientifically-appropriate cadence. The composite reflects the most current available data per indicator. Day-to-day changes under ±0.5 are within measurement error.
-      Full documentation: <a href="https://github.com/dablerfrost/conscience/blob/main/VYRION-METHODOLOGY-v1.0.md" target="_blank" style="color:rgba(0,212,255,.4);text-decoration:none">VYRION-METHODOLOGY-v1.0.md §Data Freshness</a>
-    </div>
-    <table class="method-table">
-      <thead><tr><th>System</th><th>Weight</th><th>Fastest Indicator</th><th>Slowest Indicator</th><th>Composite Cadence</th></tr></thead>
-      <tbody>
-        <tr><td>Atmosphere</td><td>22%</td><td>CO₂ (daily · NOAA GML)</td><td>Radiative forcing (monthly)</td><td style="color:var(--glow)">Daily update</td></tr>
-        <tr><td>Ocean</td><td>18%</td><td>SST anomaly (daily · NOAA OISST)</td><td>Ocean heat content (monthly)</td><td style="color:var(--glow)">Daily update</td></tr>
-        <tr><td>Ice / Cryosphere</td><td>14%</td><td>Arctic extent (daily · NSIDC)</td><td>Glacier volume (annual)</td><td style="color:var(--glow)">Daily update</td></tr>
-        <tr><td>Forest</td><td>13%</td><td>Active fires (daily · NASA EONET)</td><td>Deforestation rate (annual · GFW)</td><td style="color:var(--amber)">Monthly refresh</td></tr>
-        <tr><td>Biodiversity</td><td>12%</td><td>GBIF occurrence records (weekly)</td><td>Living Planet Index (annual)</td><td style="color:var(--amber)">Monthly refresh</td></tr>
-        <tr><td>Freshwater</td><td>10%</td><td>Drought index (daily · SPEI)</td><td>Groundwater (annual · GRACE)</td><td style="color:var(--glow)">Daily update</td></tr>
-        <tr><td>Soil</td><td>7%</td><td>Desertification proxy (monthly)</td><td>Carbon density (annual)</td><td style="color:var(--amber)">Monthly refresh</td></tr>
-        <tr><td>Corporate Accountability</td><td>4%</td><td>SEC 8-K filings (daily · EDGAR)</td><td>CDP responses (annual)</td><td style="color:var(--glow)">Daily update</td></tr>
-      </tbody>
-    </table>
-    <div class="cadence-note">
-      ⊕ "Daily update" = one or more indicators in this system refresh daily, anchoring the composite. ⊕ "Monthly refresh" = indicators update as new satellite or assessment data publishes. Score held at last confirmed value between updates, disclosed as such. ⊕ Uncertainty bounds of ±1.8 propagated across all indicator cadences. Pre-industrial 1850–1900 baseline = 100/100.
-    </div>
-  </div>
 </section>
-
-<!-- ── AUDIT PACK MODAL ──────────────────────────────────────────────── -->
-<div class="audit-overlay" id="audit-overlay" onclick="if(event.target===this)closeAudit()">
-  <div class="audit-modal">
-    <div class="audit-modal-head">
-      <div>
-        <div class="audit-modal-title" id="audit-modal-title">Audit Pack</div>
-        <div class="audit-modal-sub" id="audit-modal-sub">CONSCIENCE v2.8 · VYRION PBC · Open Proof Protocol</div>
-      </div>
-      <button class="audit-close" onclick="closeAudit()">✕ CLOSE</button>
-    </div>
-    <div class="audit-modal-body" id="audit-modal-body"></div>
-    <div class="audit-modal-foot">
-      <button class="audit-btn" onclick="copyAuditPack()">⊞ COPY FULL PACK</button>
-      <button class="audit-btn-sec" onclick="window.print()">↗ PRINT</button>
-      <button class="audit-btn-sec" onclick="closeAudit()">CLOSE</button>
-      <div style="flex:1;font-family:'Courier Prime',monospace;font-size:.5rem;color:var(--t3);text-align:right;line-height:1.5">
-        CONSCIENCE-METHODOLOGY.md · Open Proof Protocol<br>
-        Errors: contact@vyrion.earth → correction ≤24h
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-l">
-    VYRION CONSCIENCE · Module 02 · v2.8 · April 3, 2026<br>
+    VYRION CONSCIENCE · Module 01 · v2.7 · April 2, 2026<br>
     Data: CDP · InfluenceMap · Sabin Center · SBTi · SEC EDGAR · All public-domain or open-license sources<br>
     Methodology: <a href="https://github.com/dablerfrost/conscience/blob/main/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a> ·
     <a href="https://github.com/dablerfrost/conscience" target="_blank">github.com/dablerfrost/conscience</a> ·
-    <a href="https://github.com/dablerfrost/conscience/blob/main/LEGAL-DISCLAIMER.md" target="_blank">LEGAL-DISCLAIMER.md</a> ·
-    <a href="https://github.com/dablerfrost/conscience/blob/main/INVESTABLE-DISCLAIMER.md" target="_blank">INVESTABLE-DISCLAIMER.md</a> ·
     Tyler Frost / DablerFrost · Hilo, Hawaii
   </div>
   <div class="footer-r">
-    <a href="#signals">SIGNALS →</a>
     <a href="#terminal">TERMINAL →</a>
     <a href="#licensing">LICENSING →</a>
     <a href="shield.html">SHIELD →</a>
@@ -1807,8 +1642,8 @@ body::after{
 // ─────────────────────────────────────────────────────────
 const MAG = {
   co2:{t:'Atmospheric CO₂ — NOAA Mauna Loa Observatory',b:'Real-time CO₂ concentration from NOAA\'s Global Monitoring Laboratory. Mauna Loa has the world\'s longest continuous atmospheric CO₂ record, running since 1958. Pre-industrial baseline ≈ 280 ppm. VYRION uses this as one of 6 Atmosphere indicators (22% weight in the Index).',s:'NOAA GML · gml.noaa.gov/ccgg/trends · Daily · Fetched live'},
-  index:{t:'VYRION Index — Daily Planetary Health Benchmark',b:'Daily composite score. 48 indicators across 8 Earth systems. Score of 41.2 ± 1.8 / 100 against a pre-industrial 1850–1900 baseline of 100. Indicators update at scientifically-appropriate cadences — from daily satellite feeds (CO₂ via NOAA GML, Arctic sea ice via NSIDC, SST via NOAA OISST) to monthly and annual assessments (forest cover, biodiversity, soil carbon). The composite reflects the most current available data per indicator. Cadences for all 48 indicators are published openly. Day-to-day changes under ±0.5 are within measurement error and are disclosed as such.',s:'VYRION-METHODOLOGY-v1.0.md §Data Freshness · 48 indicators · 8 systems · github.com/dablerfrost/conscience'},
-  coverage:{t:'CONSCIENCE Coverage — 11 Companies',b:'11 major corporations tracked across Oil & Gas, Aviation, Food & Beverage, Retail, and Technology. Selected for material climate pledges and significant emissions footprints. Expansion planned. Full selection criteria in CONSCIENCE-METHODOLOGY.md.',s:'VYRION CONSCIENCE · Module 02 · v2.7'},
+  index:{t:'VYRION Index — Daily Planetary Health Benchmark',b:'The world\'s first daily investable planetary health benchmark. Score of 41.2 ± 1.8 / 100 against a pre-industrial 1850–1900 baseline of 100. Computed across 8 Earth systems: Atmosphere 22%, Ocean 18%, Ice 14%, Forest 13%, Biodiversity 12%, Freshwater 10%, Soil 7%, Corporate Accountability 4%. Changes <±0.5 are within measurement error.',s:'VYRION-METHODOLOGY-v1.0.md · github.com/dablerfrost/conscience · Day 13 · April 2, 2026'},
+  coverage:{t:'CONSCIENCE Coverage — 11 Companies',b:'11 major corporations tracked across Oil & Gas, Aviation, Food & Beverage, Retail, and Technology. Selected for material climate pledges and significant emissions footprints. Expansion planned. Full selection criteria in CONSCIENCE-METHODOLOGY.md.',s:'VYRION CONSCIENCE · Module 01 · v2.7'},
   lawsuits:{t:'Total Active Climate Lawsuits',b:'Aggregate active climate litigation against the 11 tracked companies, per Sabin Center for Climate Change Law at Columbia Law School. Legal exposure = one of the four CONSCIENCE scoring factors (20 pts max). Counts refreshed monthly.',s:'Sabin Center for Climate Change Law · climatecasechart.com · Columbia Law School'},
   refresh:{t:'Auto-Refresh — Live Data',b:'CONSCIENCE refreshes on page load and every 15 minutes. Live: NOAA GML CO₂ (direct API), SEC EDGAR filing dates (data.sec.gov). Static sources (CDP, InfluenceMap, SBTi, TPI) update when annual assessments publish.',s:'NOAA GML · data.sec.gov/submissions · 15 min interval'},
   'src-cdp':{t:'CDP — Carbon Disclosure Project',b:'World\'s largest environmental disclosure system. Companies respond annually to standardised climate questionnaires. Grades: A (Leadership) → D (Disclosure only). A requires demonstrated governance, strategy, and action — not just reporting. CDP grades are independent; companies cannot buy a better score.',s:'CDP · cdp.net/en/responses · Annual cycle · 23,000+ companies'},
@@ -1821,7 +1656,6 @@ const MAG = {
   'sector':{t:'Filter by Sector',b:'Filter visible cards by industry sector: Oil & Gas, Technology, Tech / Retail, Retail, Aviation, Food & Beverage, Consumer Goods. Combine with band filter and search for precision institutional-grade views.',s:'CONSCIENCE company registry · VICS sector classification'},
   'export':{t:'Export Data as CSV',b:'Downloads a CSV file containing all 11 companies with: Name, Ticker, Sector, Score, Band, CDP Grade, InfluenceMap Grade, SBTi Status, Active Lawsuit Count, TPI Level, CIK, and latest EDGAR filing date. Drops directly into Excel or Bloomberg.',s:'Client-side CSV · Blob API · no server required'},
   'src-tpi':{t:'TPI — Transition Pathway Initiative',b:'Rates companies on management quality (1–5) and carbon performance vs low-carbon transition benchmarks. Level 5 = aligned with well-below 2°C. TPI provides independent corroboration of CONSCIENCE scoring, particularly on governance quality.',s:'TPI · transitionpathwayinitiative.org · London School of Economics'},
-  'pledge-gap':{t:'Aggregate Pledge Gap — 11 Companies',b:'Mean CONSCIENCE score across all 11 tracked companies is 38.6 / 100. A score of 100 represents full alignment with Paris Agreement 1.5°C pathways as validated by SBTi. The aggregate gap of −34.6 points is the distance between current verified performance and what the science requires. 7 of 11 companies are in active Breach. 97 active climate lawsuits across the portfolio. This is the headline signal CONSCIENCE is built to surface.',s:'CONSCIENCE-METHODOLOGY.md · CDP · InfluenceMap · Sabin Center · SBTi Registry · April 2026'},
   'sz-s':{t:'Font Size: Small (16px)',b:'Reduces the site-wide font size to 16px. Useful on larger monitors or for dense data scanning. Click to apply.',s:'VYRION CONSCIENCE display settings · Saved in your browser'},
   'sz-m':{t:'Font Size: Medium (18px)',b:'Default reading size — 18px. Optimised for comfortable reading across all CONSCIENCE data tables, score cards, and source citations.',s:'VYRION CONSCIENCE display settings · Saved in your browser'},
   'sz-l':{t:'Font Size: Large (22px)',b:'Increases the site-wide font size to 22px. Best for accessibility, presentations, or smaller screens. Click to apply.',s:'VYRION CONSCIENCE display settings · Saved in your browser'},
@@ -2131,7 +1965,6 @@ function renderCard(co) {
       Errors: <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a>
     </div>
   </div>
-  <button class="audit-pack-btn" onclick="openAudit('${co.id}')">⊞ GENERATE AUDIT PACK — ${co.name}</button>
 </div>`;
 }
 
@@ -2308,31 +2141,30 @@ async function fetchEdgar(co) {
 }
 
 // ─────────────────────────────────────────────────────────
-//  INIT v2.8
+//  INIT
 // ─────────────────────────────────────────────────────────
 async function init() {
   // 1. Render cards
   const grid = document.getElementById('grid');
   grid.innerHTML = getSorted ? getSorted().map(renderCard).join('') : COMPANIES.map(renderCard).join('');
 
-  // 2. Animate bars + rings
+  // 2. Animate bars
   requestAnimationFrame(() => setTimeout(() => {
-    grid.querySelectorAll('.score-bar-fill').forEach(el => { el.style.width = el.dataset.target + '%'; });
-    grid.querySelectorAll('.ring-fill').forEach(el => { el.style.strokeDashoffset = el.dataset.filled; });
+    grid.querySelectorAll('.score-bar-fill').forEach(el => {
+      el.style.width = el.dataset.target + '%';
+    });
   }, 120));
 
-  // 3. Attach magnifier
+  // 3. Attach magnifier to newly rendered cards
   attachMag(grid);
 
   // 4. Timestamp
   document.getElementById('ts-val').textContent =
     new Date().toUTCString().replace(' GMT','').replace(/:\d{2} /,' ').trim();
 
-  // 5. NOAA CO2 — capture value for change detection
-  let freshCO2ppm = null;
+  // 5. NOAA CO2 (live)
   fetchCO2().then(co2 => {
     if (co2) {
-      freshCO2ppm = co2.ppm;
       document.getElementById('co2-val').textContent = co2.ppm;
       document.getElementById('co2-sub').textContent = `ppm · NOAA Mauna Loa · ${co2.date}`;
     } else {
@@ -2341,10 +2173,7 @@ async function init() {
     }
   });
 
-  // 6. Static signals immediately (no EDGAR data yet)
-  updateSignals(null);
-
-  // 7. SEC EDGAR — all 11 companies in parallel
+  // 6. SEC EDGAR — all 11 companies in parallel
   document.getElementById('edgar-status').textContent = 'Fetching…';
   let ok = 0;
   const results = await Promise.allSettled(COMPANIES.map(co => fetchEdgar(co)));
@@ -2377,16 +2206,8 @@ async function init() {
   });
 
   const today = new Date().toISOString().slice(0,10);
-  document.getElementById('edgar-status').textContent = `${ok}/11 verified · ${today}`;
-
-  // 8. Populate Filing Watch from EDGAR results
-  populateFilingWatch(results);
-
-  // 9. Enhanced signals with live EDGAR 8-K data
-  updateSignals(results);
-
-  // 10. Change Detection — compare to stored state
-  runChangeDetection(freshCO2ppm, results);
+  document.getElementById('edgar-status').textContent =
+    `${ok}/11 verified · ${today}`;
 }
 
 // ─── PORTFOLIO STRESS TESTER ─────────────────────────────────────────
@@ -2617,451 +2438,6 @@ function reattachEdgar() {
 }
 
 window.addEventListener('hashchange', checkHash);
-
-// ═══════════════════════════════════════════════════════════════════
-//  v2.8 — FILING WATCH POPULATOR
-// ═══════════════════════════════════════════════════════════════════
-function populateFilingWatch(edgarResults) {
-  const idMap = {
-    exxon:'exxon', bp:'bp', shell:'shell', delta:'delta',
-    starbucks:'starbucks', walmart:'walmart', meta:'meta',
-    amazon:'amazon', microsoft:'microsoft', unilever:'unilever', apple:'apple'
-  };
-  COMPANIES.forEach((co, i) => {
-    const fwId  = 'fw-' + idMap[co.id];
-    const fwSub = fwId + '-sub';
-    const valEl = document.getElementById(fwId);
-    const subEl = document.getElementById(fwSub);
-    if (!valEl || !subEl) return;
-    const res = edgarResults[i];
-    if (res && res.status === 'fulfilled' && res.value && res.value.annual) {
-      const { annual, k8count } = res.value;
-      valEl.textContent = annual.date;
-      valEl.classList.remove('loading-pulse');
-      if (k8count >= 3) {
-        subEl.innerHTML = `<span style="color:var(--warn)">${annual.form} · ⚠ ${k8count} 8-K / 90d</span>`;
-      } else {
-        subEl.textContent = `${annual.form} · ${k8count || 0} 8-K / 90d`;
-      }
-    } else {
-      valEl.textContent = 'N/A';
-      valEl.classList.remove('loading-pulse');
-      valEl.style.color = 'var(--t3)';
-      subEl.textContent = 'Offline';
-    }
-  });
-}
-
-// ═══════════════════════════════════════════════════════════════════
-//  v2.8 — SIGNAL INTELLIGENCE ENGINE
-// ═══════════════════════════════════════════════════════════════════
-const SIGNAL_TYPE_LABELS = {
-  threshold:   'BAND THRESHOLD',
-  credibility: 'CREDIBILITY GAP',
-  lobbying:    'LOBBYING OBSTRUCTION',
-  legal:       'LEGAL EXPOSURE',
-  regulatory:  'REGULATORY EVENT',
-  trajectory:  'TRAJECTORY DIVERGENCE',
-};
-
-function computeSignals(edgarData) {
-  const signals = [];
-
-  COMPANIES.forEach((co, i) => {
-    const edgar = edgarData && edgarData[i] && edgarData[i].status === 'fulfilled'
-      ? edgarData[i].value : null;
-
-    // ── BAND THRESHOLD ───────────────────────────────────────────
-    if (co.band === 'breach' && co.score >= 25 && co.score <= 30) {
-      signals.push({ level:'watch', company:co.name, type:'threshold',
-        msg:`Score ${co.score}/100 — within 5 points of Warning band upgrade. Next CDP assessment or SBTi validation could trigger reclassification. Monitor Q2 2026 CDP cycle.`,
-        src:`CONSCIENCE ${co.score}/100 · Band threshold: 31 · CDP annual cycle · SBTi registry`
-      });
-    }
-    if (co.band === 'warning' && co.score <= 35) {
-      signals.push({ level:'elevated', company:co.name, type:'threshold',
-        msg:`Score ${co.score}/100 — 5 points above Breach threshold. Emissions trajectory or next legal ruling could trigger downgrade to Breach band.`,
-        src:`CONSCIENCE ${co.score}/100 · Breach threshold: 30 · Sabin Center ${co.sabin} active cases`
-      });
-    }
-    if (co.band === 'warning' && co.score >= 55) {
-      signals.push({ level:'watch', company:co.name, type:'threshold',
-        msg:`Score ${co.score}/100 — approaching On Track threshold (61). Legal exposure (${co.sabin} cases) is the primary score drag. Sabin case resolution would trigger upward revision.`,
-        src:`CONSCIENCE ${co.score}/100 · On Track threshold: 61 · Sabin Center ${co.sabin} active cases`
-      });
-    }
-
-    // ── CREDIBILITY GAP ──────────────────────────────────────────
-    if (co.sbti === 'Committed' && co.band === 'breach') {
-      signals.push({ level:'elevated', company:co.name, type:'credibility',
-        msg:`SBTi target letter submitted but CONSCIENCE score ${co.score}/100 — active Breach. Pledge commitment not reflected in verified performance. InfluenceMap grade ${co.im} confirms credibility gap.`,
-        src:`SBTi registry — Committed · CONSCIENCE ${co.score}/100 · InfluenceMap ${co.im} · CDP ${co.cdpGrade}`
-      });
-    }
-
-    // ── TRAJECTORY DIVERGENCE ────────────────────────────────────
-    if (co.id === 'starbucks') {
-      signals.push({ level:'critical', company:co.name, type:'trajectory',
-        msg:`FY2024 emissions +3.3% vs 2019 baseline — moving away from −50% by 2030 target. Waste to landfill +6%. Scope 3 = 90.9% of footprint; dairy supply chain is the dominant driver. Distance to target accelerating in wrong direction.`,
-        src:`Starbucks FY2024 Global Environmental & Social Impact Report · CDP B · SBTi Committed`
-      });
-    }
-    if (co.id === 'microsoft') {
-      signals.push({ level:'elevated', company:co.name, type:'trajectory',
-        msg:`Self-disclosed +29% emissions since 2020 net-zero pledge (Microsoft 2024 Environmental Report). Carbon-negative-by-2030 target requires immediate reversal. AI data center expansion is primary driver. On Track band maintained by SBTi approval and lobbying alignment.`,
-        src:`Microsoft 2024 Environmental Sustainability Report · SBTi Approved 1.5°C · CDP A−`
-      });
-    }
-    if (co.id === 'amazon') {
-      signals.push({ level:'watch', company:co.name, type:'trajectory',
-        msg:`Missed 2025 renewable energy target. Emissions +18% (2021–2022). AWS and logistics growth currently outpacing renewable procurement. Climate Pledge 2040 target intact but interim trajectory is negative.`,
-        src:`Amazon Sustainability Report 2023 · CDP B · Climate Pledge · SBTi Committed`
-      });
-    }
-
-    // ── LOBBYING OBSTRUCTION ─────────────────────────────────────
-    if (co.im === 'F' || co.im === 'D-') {
-      signals.push({ level:'critical', company:co.name, type:'lobbying',
-        msg:`InfluenceMap grade ${co.im} — actively lobbying against climate legislation while maintaining net-zero pledge. Financial commitment to blocking the regulatory framework required to meet stated targets. Climate credibility downgraded.`,
-        src:`InfluenceMap grade ${co.im} · influencemap.org · SBTi status: ${co.sbti} · ${co.sabin} active lawsuits`
-      });
-    }
-    if (co.im === 'D' && co.band === 'breach') {
-      signals.push({ level:'elevated', company:co.name, type:'lobbying',
-        msg:`InfluenceMap grade ${co.im} combined with Breach score ${co.score}/100. Lobbying misalignment is compounding the pledge gap — policy obstruction is quantified as a score penalty under CONSCIENCE methodology.`,
-        src:`InfluenceMap grade ${co.im} · CONSCIENCE score ${co.score}/100 · CONSCIENCE-METHODOLOGY.md §Lobbying`
-      });
-    }
-
-    // ── LEGAL EXPOSURE ───────────────────────────────────────────
-    if (co.sabin >= 20) {
-      signals.push({ level:'critical', company:co.name, type:'legal',
-        msg:`${co.sabin} active climate cases (Sabin Center). Volume indicates pledge-vs-reality gaps that governments, NGOs, and citizens have found legally actionable. Material legal liability confirmed independently of CONSCIENCE scoring.`,
-        src:`Sabin Center for Climate Change Law · climatecasechart.com · Columbia Law School`
-      });
-    } else if (co.sabin >= 10) {
-      signals.push({ level:'elevated', company:co.name, type:'legal',
-        msg:`${co.sabin} active climate cases. Elevated litigation signals third-party verification of pledge gap. Adverse ruling is a score-update trigger — CONSCIENCE review initiated within 24 hours of material judgments.`,
-        src:`Sabin Center for Climate Change Law · climatecasechart.com · Columbia Law School`
-      });
-    }
-
-    // ── REGULATORY EVENTS (live EDGAR 8-K data) ──────────────────
-    if (edgar && edgar.k8count >= 5) {
-      signals.push({ level:'elevated', company:co.name, type:'regulatory',
-        msg:`${edgar.k8count} 8-K material disclosure events in 90 days — above normal threshold. High 8-K frequency signals active regulatory environment. Review filings for pledge revisions, litigation outcomes, or emissions data updates that may trigger a CONSCIENCE score review.`,
-        src:`SEC EDGAR · CIK ${co.cik.replace(/^0+/,'')} · data.sec.gov/submissions · 90-day window`
-      });
-    } else if (edgar && edgar.k8count >= 3) {
-      signals.push({ level:'watch', company:co.name, type:'regulatory',
-        msg:`${edgar.k8count} 8-K events in 90 days. Monitor for material climate-related disclosures. Available at SEC EDGAR.`,
-        src:`SEC EDGAR · CIK ${co.cik.replace(/^0+/,'')} · data.sec.gov/submissions`
-      });
-    }
-  });
-
-  // Sort: critical → elevated → watch
-  const order = { critical:0, elevated:1, watch:2 };
-  return signals.sort((a, b) => (order[a.level]||3) - (order[b.level]||3));
-}
-
-function renderSignals(signals) {
-  const grid = document.getElementById('signal-grid');
-  const badge = document.getElementById('signal-count-badge');
-  if (!grid) return;
-  const critCount = signals.filter(s => s.level === 'critical').length;
-  const elevCount = signals.filter(s => s.level === 'elevated').length;
-  if (badge) {
-    badge.textContent = `${critCount} CRITICAL · ${elevCount} ELEVATED · ${signals.length} TOTAL`;
-    badge.style.color = critCount > 0 ? 'var(--breach)' : 'var(--warn)';
-    badge.style.borderColor = critCount > 0 ? 'rgba(240,48,48,.3)' : 'rgba(240,144,0,.3)';
-  }
-  if (signals.length === 0) {
-    grid.innerHTML = '<div class="signal-empty">No active signals — all companies within expected parameters.</div>';
-    return;
-  }
-  const cls = { critical:'sig-critical', elevated:'sig-elevated', watch:'sig-watch' };
-  grid.innerHTML = signals.map(s => `
-    <div class="signal-row">
-      <div class="sig-level ${cls[s.level]||'sig-watch'}"><div class="sig-dot"></div>${s.level.toUpperCase()}</div>
-      <div class="sig-body">
-        <div class="sig-company">${s.company}</div>
-        <div class="sig-msg">${s.msg}</div>
-        <div class="sig-src">SOURCE: ${s.src}</div>
-      </div>
-      <div class="sig-type">${SIGNAL_TYPE_LABELS[s.type] || s.type.toUpperCase()}</div>
-    </div>`).join('');
-}
-
-function updateSignals(edgarResults) {
-  renderSignals(computeSignals(edgarResults));
-}
-
-// ═══════════════════════════════════════════════════════════════════
-//  v2.8 — AUDIT PACK ENGINE
-// ═══════════════════════════════════════════════════════════════════
-function openAudit(companyId) {
-  const co = COMPANIES.find(c => c.id === companyId);
-  if (!co) return;
-  const overlay = document.getElementById('audit-overlay');
-  const body    = document.getElementById('audit-modal-body');
-  const titleEl = document.getElementById('audit-modal-title');
-  const subEl   = document.getElementById('audit-modal-sub');
-  if (!overlay || !body) return;
-
-  const edgarEl  = document.getElementById('ev-' + co.id);
-  const edgarDate = edgarEl && edgarEl.textContent && edgarEl.textContent !== '—'
-    ? edgarEl.textContent : 'Fetching…';
-  const generated = new Date().toISOString().replace('T',' ').slice(0,19) + ' UTC';
-  const bc = co.band === 'breach' ? 'var(--breach)' : co.band === 'warning' ? 'var(--warn)' : 'var(--glow)';
-
-  titleEl.textContent = co.name + ' — Audit Pack';
-  subEl.textContent   = `CONSCIENCE v2.8 · Generated ${generated} · VYRION PBC`;
-
-  const factorRows = co.sb.map(r => `
-    <div class="audit-row">
-      <div class="audit-row-l">${r.f}</div>
-      <div style="font-family:'Courier Prime',monospace;font-size:.52rem;color:var(--t3);padding:0 .7rem;flex-shrink:0">${r.w}</div>
-      <div class="audit-row-r" style="color:${r.p>0?'var(--glow)':r.p<0?'var(--breach)':'var(--t3)'}">${r.p>0?'+':''}${r.p}</div>
-    </div>`).join('');
-  const total = co.sb.reduce((a,r) => a+r.p, 0);
-
-  body.innerHTML = `
-    <div class="audit-section">
-      <div class="audit-section-title">Identity & Classification</div>
-      <div class="audit-row"><div class="audit-row-l">Company</div><div class="audit-row-r">${co.name}</div></div>
-      <div class="audit-row"><div class="audit-row-l">Ticker / Sector</div><div class="audit-row-r">${co.ticker} · ${co.sector}</div></div>
-      <div class="audit-row"><div class="audit-row-l">SEC CIK</div><div class="audit-row-r">${co.cik.replace(/^0+/,'')}</div></div>
-      <div class="audit-row"><div class="audit-row-l">CONSCIENCE Score</div><div class="audit-row-r" style="color:${bc};font-size:.88rem">${co.score} / 100</div></div>
-      <div class="audit-row"><div class="audit-row-l">Band</div><div class="audit-row-r" style="color:${bc}">${co.bandLabel}</div></div>
-      <div class="audit-row"><div class="audit-row-l">Score Version</div><div class="audit-row-r">v1.0 · March 18, 2026</div></div>
-      <div class="audit-row"><div class="audit-row-l">Latest Annual Filing (EDGAR)</div><div class="audit-row-r">${edgarDate}</div></div>
-      <div class="audit-row"><div class="audit-row-l">Audit Pack Generated</div><div class="audit-row-r" style="font-size:.56rem">${generated}</div></div>
-    </div>
-
-    <div class="audit-section">
-      <div class="audit-section-title">Score Derivation — 4 Factors</div>
-      ${factorRows}
-      <div class="audit-row" style="border-top:1px solid var(--border);margin-top:.3rem;padding-top:.3rem">
-        <div class="audit-row-l" style="color:var(--t1);font-weight:700">Computed Total</div>
-        <div class="audit-row-r" style="color:${bc};font-size:.9rem">${total} / 100</div>
-      </div>
-      <div style="font-family:'Courier Prime',monospace;font-size:.5rem;color:var(--t3);margin-top:.5rem;line-height:1.55">
-        Band thresholds: Breach 0–30 · Warning 31–60 · On Track 61–100<br>
-        Basis: Paris Agreement 1.5°C pathways · Science Based Targets initiative
-      </div>
-    </div>
-
-    <div class="audit-section">
-      <div class="audit-section-title">Source Bundle — All Citations</div>
-      <div class="audit-src-block">
-        <span class="audit-src-lbl">PLEDGE SOURCE</span>
-        ${co.pledgeSrc} · <a href="${co.pledgeUrl}" target="_blank">${co.pledgeUrl}</a>
-        <span class="audit-src-lbl">REALITY SOURCES</span>
-        ${co.realitySrc}
-        <span class="audit-src-lbl">VALIDATION SOURCES</span>
-        CDP ${co.cdpYear}: <a href="${co.cdpUrl}" target="_blank">cdp.net/en/responses</a> · Grade: ${co.cdpGrade}<br>
-        InfluenceMap: <a href="${co.imUrl}" target="_blank">${co.imUrl}</a> · Grade: ${co.im}<br>
-        SBTi Registry: <a href="${co.sbtiUrl}" target="_blank">sciencebasedtargets.org</a> · Status: ${co.sbti}<br>
-        Sabin Center: <a href="${co.sabinUrl}" target="_blank">climatecasechart.com</a> · ${co.sabin} active cases<br>
-        TPI: <a href="${co.tpiUrl}" target="_blank">transitionpathwayinitiative.org</a> · ${co.tpi}<br>
-        SEC EDGAR: <a href="https://data.sec.gov/submissions/CIK${co.cik}.json" target="_blank">data.sec.gov/submissions/CIK${co.cik}.json</a> · Latest annual: ${edgarDate}
-        <span class="audit-src-lbl">METHODOLOGY</span>
-        CONSCIENCE-METHODOLOGY.md · <a href="https://github.com/dablerfrost/conscience/blob/main/CONSCIENCE-METHODOLOGY.md" target="_blank">github.com/dablerfrost/conscience</a><br>
-        VYRION-METHODOLOGY-v1.0.md · Prior art timestamp: March 20, 2026
-      </div>
-    </div>
-
-    <div class="audit-section">
-      <div class="audit-section-title">Score History — Versioned</div>
-      <div class="audit-row"><div class="audit-row-l">v1.0 · March 18, 2026</div><div class="audit-row-r" style="color:${bc}">${co.score} / 100 · ${co.bandLabel}</div></div>
-      <div style="font-family:'Courier Prime',monospace;font-size:.5rem;color:var(--t3);margin-top:.4rem;line-height:1.55">
-        No subsequent score changes. All score changes are logged in the Score Changelog permanently.<br>
-        Update triggers: CDP annual cycle · SBTi registry · Sabin Center litigation DB · SEC EDGAR annual filings · InfluenceMap reassessments
-      </div>
-    </div>
-
-    <div class="audit-section">
-      <div class="audit-section-title">Open Proof Protocol Statement</div>
-      <div style="font-family:'Courier Prime',monospace;font-size:.56rem;color:var(--t2);line-height:1.72">
-        If any data point in this audit pack is incorrect, contact <a href="mailto:contact@vyrion.earth" style="color:rgba(0,212,255,.45);text-decoration:none">contact@vyrion.earth</a>.
-        VYRION commits to publishing corrections within 24 hours as a permanent, timestamped entry in the Score Changelog.
-        No original entries are ever deleted. This is the accountability standard VYRION applies to itself.
-        <br><br>
-        Find the error. We will publish the correction.
-      </div>
-    </div>`;
-
-  overlay.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeAudit() {
-  const overlay = document.getElementById('audit-overlay');
-  if (overlay) overlay.classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function copyAuditPack() {
-  const body  = document.getElementById('audit-modal-body');
-  const title = document.getElementById('audit-modal-title');
-  const sub   = document.getElementById('audit-modal-sub');
-  if (!body) return;
-  const text = `VYRION CONSCIENCE — ${title.textContent}\n${sub.textContent}\n\n${body.innerText}`;
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(text).then(() => {
-      const btn = document.querySelector('.audit-btn');
-      if (btn) { const orig = btn.textContent; btn.textContent = '✓ COPIED'; setTimeout(() => btn.textContent = orig, 1800); }
-    });
-  }
-}
-
-// ═══════════════════════════════════════════════════════════════════
-//  v2.8 — CHANGE DETECTION SYSTEM
-// ═══════════════════════════════════════════════════════════════════
-const VC_STATE_KEY = 'vc-state-v28';
-
-function loadStoredState() {
-  try { return JSON.parse(localStorage.getItem(VC_STATE_KEY)); } catch { return null; }
-}
-
-function saveState(co2ppm, edgarResults) {
-  const state = { ts: Date.now(), co2: co2ppm ? parseFloat(co2ppm) : null, edgar: {} };
-  if (edgarResults) {
-    COMPANIES.forEach((co, i) => {
-      const res = edgarResults[i];
-      if (res && res.status === 'fulfilled' && res.value) {
-        state.edgar[co.id] = {
-          filingDate: res.value.annual ? res.value.annual.date : null,
-          k8count: res.value.k8count || 0
-        };
-      }
-    });
-  }
-  try { localStorage.setItem(VC_STATE_KEY, JSON.stringify(state)); } catch {}
-}
-
-function timeSince(ts) {
-  const diff = Date.now() - ts;
-  const m = Math.floor(diff / 60000);
-  const h = Math.floor(diff / 3600000);
-  const d = Math.floor(diff / 86400000);
-  if (d >= 1) return `${d}d ${Math.floor((diff % 86400000) / 3600000)}h ago`;
-  if (h >= 1) return `${h}h ${Math.floor((diff % 3600000) / 60000)}m ago`;
-  return `${m}m ago`;
-}
-
-function runChangeDetection(freshCO2, edgarResults) {
-  const stored = loadStoredState();
-  // Always save the new state for next visit
-  saveState(freshCO2, edgarResults);
-
-  const bar = document.getElementById('delta-bar');
-  if (!bar) return;
-
-  if (!stored || !stored.ts) return; // First visit — nothing to compare
-
-  const changes = [];
-  const since = timeSince(stored.ts);
-
-  // CO2 change
-  if (stored.co2 && freshCO2) {
-    const co2Delta = (parseFloat(freshCO2) - stored.co2).toFixed(2);
-    if (Math.abs(co2Delta) >= 0.1) {
-      changes.push({
-        icon: '◉',
-        label: 'Atmospheric CO₂',
-        val: `${co2Delta > 0 ? '+' : ''}${co2Delta} ppm`,
-        valCls: co2Delta > 0 ? 'delta-up' : 'delta-down',
-        sub: `${freshCO2} ppm now · NOAA Mauna Loa · since your last visit`
-      });
-    }
-  }
-
-  // EDGAR changes — new 8-K events or new annual filing
-  if (stored.edgar && edgarResults) {
-    COMPANIES.forEach((co, i) => {
-      const oldE  = stored.edgar[co.id];
-      const res   = edgarResults[i];
-      const freshE = res && res.status === 'fulfilled' && res.value ? res.value : null;
-      if (!oldE || !freshE) return;
-
-      if (freshE.k8count > oldE.k8count) {
-        const diff = freshE.k8count - oldE.k8count;
-        changes.push({
-          icon: '⚑',
-          label: `${co.name} · ${co.ticker}`,
-          val: `+${diff} 8-K filing${diff > 1 ? 's' : ''}`,
-          valCls: 'delta-up',
-          sub: `Material disclosure event detected. ${freshE.k8count} total in 90d. Review SEC EDGAR for climate-related content.`
-        });
-      }
-      if (oldE.filingDate && freshE.annual && freshE.annual.date !== oldE.filingDate) {
-        changes.push({
-          icon: '◆',
-          label: `${co.name} · New Annual Filing`,
-          val: `NEW: ${freshE.annual.date}`,
-          valCls: 'delta-new',
-          sub: `${freshE.annual.form} filed (was ${oldE.filingDate}). CONSCIENCE score review triggered — check for pledge revisions or emissions changes.`
-        });
-      }
-    });
-  }
-
-  // Always show VYRION Index (static disclosure)
-  changes.push({
-    icon: '◈',
-    label: 'VYRION Index',
-    val: `41.2 ± 1.8 / 100`,
-    valCls: 'delta-same',
-    sub: `No change from previous visit. Day-to-day changes <0.5 are within measurement error (±1.8).`
-  });
-
-  // Show bar
-  bar.classList.add('show');
-  const changeCount = changes.filter(c => c.valCls !== 'delta-same').length;
-  const summaryEl = document.getElementById('delta-summary');
-  const sinceEl   = document.getElementById('delta-since');
-  if (summaryEl) {
-    summaryEl.textContent = changeCount > 0
-      ? `${changeCount} data change${changeCount > 1 ? 's' : ''} detected since last visit`
-      : 'No data changes — scores and filings confirmed current';
-    summaryEl.style.color = changeCount > 0 ? 'var(--warn)' : 'var(--t2)';
-  }
-  if (sinceEl) sinceEl.textContent = `Last visit: ${since}`;
-
-  const grid = document.getElementById('delta-grid');
-  if (!grid) return;
-  grid.innerHTML = changes.map(c => `
-    <div class="delta-item">
-      <div class="delta-icon">${c.icon}</div>
-      <div class="delta-item-body">
-        <div class="delta-item-label">${c.label}</div>
-        <div class="delta-item-val ${c.valCls}">${c.val}</div>
-        <div class="delta-item-sub">${c.sub}</div>
-      </div>
-    </div>`).join('');
-}
-
-function toggleDeltaGrid() {
-  const grid = document.getElementById('delta-grid');
-  const lbl  = document.getElementById('delta-expand-lbl');
-  const open = grid.classList.toggle('open');
-  if (lbl) lbl.textContent = open ? '▲ HIDE' : '▼ SHOW DETAILS';
-}
-
-// ═══════════════════════════════════════════════════════════════════
-//  v2.8 — CHANGELOG FILTER
-// ═══════════════════════════════════════════════════════════════════
-function filterChangelog(btn) {
-  const f = btn.dataset.clf;
-  document.querySelectorAll('.cl-filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('#cl-tbody tr').forEach(row => {
-    const cats = row.dataset.clf || '';
-    row.style.display = (f === 'all' || cats.includes(f)) ? '' : 'none';
-  });
-}
 
 </script>
 </body>
