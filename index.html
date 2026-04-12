@@ -2440,54 +2440,58 @@ function reattachEdgar() {
 window.addEventListener('hashchange', checkHash);
 
 </script>
-  <!-- ── SYNTHEKAI PLAYER ─────────────────────────────────── -->
+<!-- ── SYNTHEKAI PLAYER ─────────────────────────────────── -->
 <style>
 #sk-wrap{
-  position:fixed;bottom:1.8rem;right:1.8rem;
-  z-index:800;display:flex;flex-direction:column;align-items:flex-end;gap:.5rem;
+  position:fixed;bottom:1.4rem;right:1.4rem;
+  z-index:800;display:flex;flex-direction:column;align-items:flex-end;gap:.35rem;
 }
 #sk-btn{
-  width:52px;height:52px;border-radius:3px;cursor:pointer;
-  border:1px solid rgba(0,212,255,.28);background:rgba(2,9,18,.96);
-  color:var(--glow);font-size:1.3rem;
+  width:38px;height:38px;border-radius:2px;cursor:pointer;
+  border:1px solid rgba(0,212,255,.22);background:rgba(2,9,18,.94);
+  color:var(--glow);font-size:1rem;
   display:flex;align-items:center;justify-content:center;
-  transition:border-color .2s,box-shadow .2s;backdrop-filter:blur(16px);
+  transition:border-color .2s,box-shadow .2s;backdrop-filter:blur(12px);
   font-family:'Courier Prime',monospace;line-height:1;
-  box-shadow:0 4px 24px rgba(0,0,0,.4);
 }
 #sk-btn:hover{
-  border-color:rgba(0,212,255,.6);
-  box-shadow:0 0 18px rgba(0,212,255,.18),0 4px 24px rgba(0,0,0,.4);
-}
-#sk-label{
-  font-family:'Courier Prime',monospace;font-size:.52rem;
-  color:rgba(0,212,255,.35);letter-spacing:.12em;text-transform:uppercase;
-  text-align:right;line-height:1;
+  border-color:rgba(0,212,255,.5);
+  box-shadow:0 0 10px rgba(0,212,255,.12);
 }
 #sk-panel{
   overflow:hidden;max-height:0;opacity:0;
-  transition:max-height .35s cubic-bezier(.4,0,.2,1),opacity .28s ease;
+  transition:max-height .38s cubic-bezier(.4,0,.2,1),opacity .28s ease;
 }
-#sk-panel.open{max-height:120px;opacity:1}
+#sk-panel.open{max-height:160px;opacity:1}
 #sk-frame{
-  display:block;width:500px;height:90px;border:none;
-  outline:1px solid rgba(0,212,255,.14);border-radius:3px;
-  box-shadow:0 8px 32px rgba(0,0,0,.5);
+  display:block;width:930px;height:133px;border:none;
+  outline:1px solid rgba(0,212,255,.12);border-radius:2px;
 }
-@media(max-width:600px){
-  #sk-frame{width:300px;height:90px}
-}
+@media(max-width:1024px){#sk-frame{width:680px}}
+@media(max-width:800px){#sk-frame{width:460px}}
+@media(max-width:500px){#sk-frame{width:calc(100vw - 2.8rem)}}
 </style>
 
 <div id="sk-wrap">
   <div id="sk-panel">
     <iframe id="sk-frame" seamless src=""></iframe>
   </div>
-  <div id="sk-label">Synthekai</div>
   <button id="sk-btn" onclick="skToggle()" title="Synthekai — Mycelium Bloom">♪</button>
 </div>
 
 <script>
+var _skOpen=false,_skLoaded=false;
+function skToggle(){
+  _skOpen=!_skOpen;
+  document.getElementById('sk-panel').classList.toggle('open',_skOpen);
+  document.getElementById('sk-btn').textContent=_skOpen?'×':'♪';
+  if(_skOpen&&!_skLoaded){
+    document.getElementById('sk-frame').src=
+      'https://bandcamp.com/EmbeddedPlayer/album=692362963/size=large/bgcol=020912/linkcol=00D4FF/tracklist=false/artwork=small/transparent=true/';
+    _skLoaded=true;
+  }
+}
+</script>
 var _skOpen=false,_skLoaded=false;
 function skToggle(){
   _skOpen=!_skOpen;
