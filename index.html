@@ -765,7 +765,7 @@ body::after{
   <div class="src-badge" data-mag="src-cdp">
     <div class="src-name"><span class="dot-static"></span>CDP</div>
     <div class="src-status">2023 public responses · A–D grades</div>
-    <a class="src-link" href="https://www.cdp.net/en/responses" target="_blank">cdp.net →</a>
+    <a class="src-link" href="https://www.cdp.net/en" target="_blank">cdp.net →</a>
   </div>
   <div class="src-badge" data-mag="src-im">
     <div class="src-name"><span class="dot-static"></span>InfluenceMap</div>
@@ -2477,18 +2477,6 @@ window.addEventListener('hashchange', checkHash);
   <button id="sk-btn" onclick="skToggle()" title="Synthekai — Mycelium Bloom">♪</button>
 </div>
 <script>
-var _skOpen=false,_skLoaded=false;
-function skToggle(){
-  _skOpen=!_skOpen;
-  document.getElementById('sk-panel').classList.toggle('open',_skOpen);
-  document.getElementById('sk-btn').textContent=_skOpen?'×':'♪';
-  if(_skOpen&&!_skLoaded){
-    document.getElementById('sk-frame').src=
-      'https://bandcamp.com/EmbeddedPlayer/album=692362963/size=large/bgcol=020912/linkcol=00D4FF/tracklist=false/artwork=small/transparent=true/';
-    _skLoaded=true;
-  }
-}
-</script>
 var _skOpen=false,_skLoaded=false;
 function skToggle(){
   _skOpen=!_skOpen;
