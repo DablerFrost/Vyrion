@@ -5,7 +5,7 @@
 Live links: www.vyrion.earth · www.vyrion.earth/atlas.html · www.vyrion.earth/shield.html
 Methodology link: methodology/VYRION-METHODOLOGY-v1.0.md
 Contact: contact@vyrion.earth 
-**Data feed viewer:** [dablerfrost.github.io/conscience/conscience-data.html](https://dablerfrost.github.io/conscience/conscience-data.html)  
+**Data feed viewer:** https://vyrion.earth/conscience-data.html)  
 **Raw JSON:** [dablerfrost.github.io/conscience/conscience-data.json](https://dablerfrost.github.io/conscience/conscience-data.json)
 
 > Not activism. Not a nonprofit. Accountability infrastructure.
