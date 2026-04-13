@@ -593,11 +593,12 @@ body::after {
 
 /* ── THEME SUPPORT ─────────────────────────────────── */
 html { font-size: 15px; scroll-behavior: smooth; }
-[data-theme="light"] {
-  --void:#f0f7f2;--void2:#e2f0e6;--void3:#d4e9da;
-  --glow:#007744;--t1:#040e07;--t2:#2a5a38;--t3:#4a7a58;
-  --border:rgba(0,119,68,.18);--border2:rgba(0,119,68,.09);
-  background:#f0f7f2;
+[data-theme="light"]{
+--void:#f0f5ff;--void2:#e4eeff;--void3:#d5e5ff;
+--glow:#0066CC;--amber:#b07800;--breach:#b82020;--warn:#a05800;
+--t1:#060e1e;--t2:#1e4a7a;--t3:#3a6090;
+--border:rgba(0,102,204,.18);--border2:rgba(0,102,204,.10);
+--nav-bg:rgba(240,245,255,.98);
 }
 [data-theme="light"] body { background: var(--void); color: var(--t1); }
 
@@ -1023,6 +1024,46 @@ html { font-size: 15px; scroll-behavior: smooth; }
 </div>
 
 <script>
+  function toggleTheme(){
+const html=document.documentElement;
+const isLight=html.getAttribute('data-theme')==='light';
+html.setAttribute('data-theme',isLight?'dark':'light');
+const btn=document.getElementById('theme-btn');
+btn.textContent=isLight?'◐ DARK':'◑ LIGHT';
+try{localStorage.setItem('vc-theme',isLight?'dark':'light')}catch(e){}
+}
+(function(){
+try{
+const t=localStorage.getItem('vc-theme');
+if(t==='light'){
+document.documentElement.setAttribute('data-theme','light');
+const btn=document.getElementById('theme-btn');
+if(btn)btn.textContent='◑ LIGHT';
+}
+}catch(e){}
+})();
+const _SCALES={'0.88':16,'1.0':18,'1.22':22};
+function setScale(btn){
+const px=_SCALES[btn.dataset.scale]||18;
+document.documentElement.style.fontSize=px+'px';
+document.querySelectorAll('.nc-sz').forEach(b=>
+b.classList.toggle('active',b===btn)
+);
+try{localStorage.setItem('vc-scale',btn.dataset.scale)}catch(e){}
+}
+(function(){
+try{
+const s=localStorage.getItem('vc-scale');
+if(s&&_SCALES[s]){
+document.documentElement.style.fontSize=_SCALES[s]+'px';
+requestAnimationFrame(()=>{
+document.querySelectorAll('.nc-sz').forEach(b=>
+b.classList.toggle('active',b.dataset.scale===s)
+);
+});
+}
+}catch(e){}
+})();
 // ── MAGNIFIER DATA ──────────────────────────────────────────────
 const MAG = {
   'threat-level': {
