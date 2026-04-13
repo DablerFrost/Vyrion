@@ -21,11 +21,11 @@
   --bio:#44BB88;--fw:#33AAFF;--sol:#CC9944;--corp:#FFB84D;
 }
 [data-theme="light"]{
-  --void:#eff5fc;--void2:#ddeaf8;--void3:#ccdff3;
-  --glow:#0066CC;--t1:#03111f;--t2:#1a4068;--t3:#2a6090;
-  --border:rgba(0,102,204,.18);--border2:rgba(0,102,204,.09);
-  --nav-bg:rgba(239,245,252,.97);--mag-bg:rgba(235,244,255,.99);
-  --scanline:transparent;
+--void:#f0f5ff;--void2:#e4eeff;--void3:#d5e5ff;
+--glow:#0066CC;--amber:#b07800;--breach:#b82020;--warn:#a05800;
+--t1:#060e1e;--t2:#1e4a7a;--t3:#3a6090;
+--border:rgba(0,102,204,.18);--border2:rgba(0,102,204,.10);
+--nav-bg:rgba(240,245,255,.98);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:18px}
@@ -295,20 +295,20 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:990;ba
 <body>
 
 <nav class="nav">
-  <a class="nav-logo" href="https://dablerfrost.github.io/conscience">VYRION</a>
+  <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
   <ul class="nav-links">
-    <li><a href="https://dablerfrost.github.io/conscience">CONSCIENCE</a></li>
-    <li><a href="atlas.html" class="active">ATLAS</a></li>
-    <li><a href="shield.html">SHIELD</a></li>
-    <li><a href="nexan.html">NEXAN</a></li>
+    <li><a href="https://vyrion.earth">CONSCIENCE</a></li>
+    <li><a href="https://vyrion.earth/atlas.html" class="active">ATLAS</a></li>
+    <li><a href="https://vyrion.earth/shield.html">SHIELD</a></li>
+    <li><a href="https://vyrion.earth/record/">RECORD</a></li>
     <li><a href="https://dablerfrost.github.io/conscience/archive">ARCHIVE</a></li>
   </ul>
   <div class="nav-controls">
-    <button class="nc-theme" id="theme-btn" onclick="toggleTheme()">◐ DARK</button>
+    <button class="nc-theme active" id="theme-btn" onclick="toggleTheme()" title="Toggle light/dark mode">◐ DARK</button>
     <div class="nc-sep"></div>
-    <button class="nc-sz" data-scale="0.88" onclick="setScale(this)">S</button>
-    <button class="nc-sz active" data-scale="1.0" onclick="setScale(this)">M</button>
-    <button class="nc-sz" data-scale="1.22" onclick="setScale(this)">L</button>
+    <button class="nc-sz" data-scale="0.88" onclick="setScale(this)" title="Small">S</button>
+    <button class="nc-sz active" data-scale="1.0" onclick="setScale(this)" title="Medium">M</button>
+    <button class="nc-sz" data-scale="1.22" onclick="setScale(this)" title="Large">L</button>
   </div>
   <div class="nav-dot"></div>
 </nav>
@@ -721,6 +721,46 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:990;ba
 <div id="mag"><div class="mag-box"><div class="mag-brand">VYRION · ATLAS · MODULE 00</div><div class="mag-title" id="mag-t"></div><div class="mag-body" id="mag-b"></div><div class="mag-src" id="mag-s"></div></div></div>
 
 <script>
+  function toggleTheme(){
+const html=document.documentElement;
+const isLight=html.getAttribute('data-theme')==='light';
+html.setAttribute('data-theme',isLight?'dark':'light');
+const btn=document.getElementById('theme-btn');
+btn.textContent=isLight?'◐ DARK':'◑ LIGHT';
+try{localStorage.setItem('vc-theme',isLight?'dark':'light')}catch(e){}
+}
+(function(){
+try{
+const t=localStorage.getItem('vc-theme');
+if(t==='light'){
+document.documentElement.setAttribute('data-theme','light');
+const btn=document.getElementById('theme-btn');
+if(btn)btn.textContent='◑ LIGHT';
+}
+}catch(e){}
+})();
+const _SCALES={'0.88':16,'1.0':18,'1.22':22};
+function setScale(btn){
+const px=_SCALES[btn.dataset.scale]||18;
+document.documentElement.style.fontSize=px+'px';
+document.querySelectorAll('.nc-sz').forEach(b=>
+b.classList.toggle('active',b===btn)
+);
+try{localStorage.setItem('vc-scale',btn.dataset.scale)}catch(e){}
+}
+(function(){
+try{
+const s=localStorage.getItem('vc-scale');
+if(s&&_SCALES[s]){
+document.documentElement.style.fontSize=_SCALES[s]+'px';
+requestAnimationFrame(()=>{
+document.querySelectorAll('.nc-sz').forEach(b=>
+b.classList.toggle('active',b.dataset.scale===s)
+);
+});
+}
+}catch(e){}
+})();
 'use strict';
 /* ── MAGNIFIER DATA ─────────────────────────────────── */
 const MAG={
