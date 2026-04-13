@@ -2471,15 +2471,25 @@ window.addEventListener('hashchange', checkHash);
 @media(max-width:800px){#sk-frame{width:460px}}
 @media(max-width:500px){#sk-frame{width:calc(100vw - 2.8rem)}}
 </style>
-
 <div id="sk-wrap">
   <div id="sk-panel">
     <iframe id="sk-frame" seamless src=""></iframe>
   </div>
   <button id="sk-btn" onclick="skToggle()" title="Synthekai — Mycelium Bloom">♪</button>
 </div>
-
 <script>
+var _skOpen=false,_skLoaded=false;
+function skToggle(){
+  _skOpen=!_skOpen;
+  document.getElementById('sk-panel').classList.toggle('open',_skOpen);
+  document.getElementById('sk-btn').textContent=_skOpen?'×':'♪';
+  if(_skOpen&&!_skLoaded){
+    document.getElementById('sk-frame').src=
+      'https://bandcamp.com/EmbeddedPlayer/album=692362963/size=large/bgcol=020912/linkcol=00D4FF/tracklist=false/artwork=small/transparent=true/';
+    _skLoaded=true;
+  }
+}
+</script>
 var _skOpen=false,_skLoaded=false;
 function skToggle(){
   _skOpen=!_skOpen;
