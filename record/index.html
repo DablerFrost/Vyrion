@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="The Record — VYRION's weekly accountability publication. Corporate climate pledge vs. reality, scored and sourced.">
+<meta property="og:title" content="The Record — VYRION">
+<meta property="og:description" content="Weekly corporate climate accountability. Pledge vs. reality, every Wednesday.">
+<meta property="og:url" content="https://vyrion.earth/record/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Record — VYRION">
+<meta name="twitter:description" content="Weekly corporate climate accountability. Pledge vs. reality, every Wednesday.">
+<link rel="canonical" href="https://vyrion.earth/record/">
+<title>The Record — VYRION</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&family=Archivo:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+/* ── THEME ──────────────────────────────────────────────── */
+:root{
+  --void:#020912;--void2:#061624;--void3:#0b2035;
+  --glow:#00D4FF;--amber:#FFB84D;--breach:#F03030;--warn:#F09000;
+  --t1:#e4f2ff;--t2:#6a9ab8;--t3:#2d6080;
+  --border:rgba(0,212,255,.12);--border2:rgba(0,212,255,.07);
+  --nav-bg:rgba(2,9,18,.97);
+  --scanline:rgba(0,212,255,.004);
+}
+[data-theme="light"]{
+  --void:#f0f5ff;--void2:#e4eeff;--void3:#d5e5ff;
+  --glow:#0066CC;--amber:#b07800;--breach:#b82020;--warn:#a05800;
+  --t1:#060e1e;--t2:#1e4a7a;--t3:#3a6090;
+  --border:rgba(0,102,204,.18);--border2:rgba(0,102,204,.10);
+  --nav-bg:rgba(240,245,255,.98);
+  --scanline:transparent;
+}
+
+/* ── RESET ──────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:18px}
+body{
+  background:var(--void);color:var(--t1);
+  font-family:'Archivo',sans-serif;font-size:1rem;
+  line-height:1.65;min-height:100vh;overflow-x:hidden;
+  transition:background .3s,color .3s;
+}
+body::after{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:990;
+  background:repeating-linear-gradient(0deg,transparent,transparent 3px,
+    var(--scanline) 3px,var(--scanline) 4px);
+}
+
+/* ── NAV ────────────────────────────────────────────────── */
+.nav{
+  position:sticky;top:0;z-index:500;height:52px;
+  display:flex;align-items:center;gap:1rem;padding:0 1.8rem;
+  background:var(--nav-bg);border-bottom:1px solid var(--border);
+  backdrop-filter:blur(20px);
+}
+.nav-logo{
+  font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:.95rem;
+  color:var(--glow);letter-spacing:.15em;text-decoration:none;flex-shrink:0;
+  text-shadow:0 0 20px rgba(0,212,255,.3);
+}
+.nav-links{display:flex;gap:1.8rem;list-style:none;flex:1}
+.nav-links a{
+  font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:.65rem;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:var(--t2);text-decoration:none;transition:color .2s;padding-bottom:2px;
+}
+.nav-links a:hover{color:var(--t1)}
+.nav-links a.active{color:var(--glow);border-bottom:1px solid rgba(0,212,255,.4)}
+.nav-controls{display:flex;align-items:center;gap:.35rem;flex-shrink:0}
+.nc-sep{width:1px;height:16px;background:var(--border);margin:0 .15rem}
+.nc-theme{
+  font-family:'Courier Prime',monospace;font-size:.58rem;font-weight:700;
+  letter-spacing:.12em;padding:.22rem .5rem;border-radius:2px;
+  border:1px solid var(--border);background:transparent;
+  color:var(--t2);cursor:pointer;transition:all .2s;white-space:nowrap;
+}
+.nc-theme:hover,.nc-theme.active{
+  border-color:var(--glow);color:var(--glow);
+  background:rgba(0,212,255,.08);box-shadow:0 0 8px rgba(0,212,255,.12);
+}
+.nc-sz{
+  font-family:'Courier Prime',monospace;font-size:.6rem;font-weight:700;
+  width:26px;height:26px;display:flex;align-items:center;justify-content:center;
+  border-radius:2px;border:1px solid var(--border);
+  background:transparent;color:var(--t3);cursor:pointer;transition:all .2s;
+}
+.nc-sz:hover{border-color:rgba(0,212,255,.4);color:var(--t1)}
+.nc-sz.active{
+  background:rgba(0,212,255,.15);border-color:var(--glow);color:var(--glow);
+  box-shadow:0 0 8px rgba(0,212,255,.2);
+}
+.nav-dot{
+  width:6px;height:6px;background:var(--glow);
+  border-radius:50%;flex-shrink:0;animation:nav-pulse 2.2s infinite;
+}
+@keyframes nav-pulse{
+  0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,212,255,.5)}
+  50%{opacity:.4;box-shadow:0 0 0 7px rgba(0,212,255,0)}
+}
+@media(max-width:720px){
+  .nav{padding:0 .9rem;gap:.5rem;height:48px}
+  .nav-logo{font-size:.8rem}
+  .nav-links{display:none}
+  .nav-controls{gap:.22rem}
+  .nc-sep{display:none}
+  .nc-sz{width:22px;height:22px;font-size:.52rem}
+  .nc-theme{font-size:.52rem;padding:.16rem .32rem}
+}
+@media(max-width:400px){
+  .nav-logo{font-size:.75rem}
+  .nc-sz{display:none}
+}
+
+/* ── PAGE HEADER ─────────────────────────────────────────── */
+.page-header{
+  padding:3.5rem 2rem 2.8rem;
+  border-bottom:1px solid var(--border);
+  position:relative;overflow:hidden;
+  background:var(--void);
+}
+.page-header::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 80% at 80% 50%,
+    rgba(0,212,255,.04) 0%,transparent 70%);
+  pointer-events:none;
+}
+.page-header::after{
+  content:'THE RECORD';
+  position:absolute;right:-1rem;top:50%;transform:translateY(-50%);
+  font-family:'Archivo Narrow',sans-serif;font-weight:800;
+  font-size:clamp(5rem,14vw,10rem);
+  color:rgba(0,212,255,.025);pointer-events:none;user-select:none;
+  letter-spacing:.04em;line-height:1;white-space:nowrap;
+}
+.page-header>*{position:relative;z-index:2}
+.eyebrow{
+  font-family:'Courier Prime',monospace;font-size:.65rem;color:var(--glow);
+  letter-spacing:.24em;text-transform:uppercase;margin-bottom:.55rem;
+  display:flex;align-items:center;gap:.55rem;
+}
+.eyebrow::before{content:'';width:18px;height:1px;background:var(--glow);opacity:.5}
+.page-title{
+  font-family:'Archivo Narrow',sans-serif;font-weight:800;
+  font-size:clamp(2.6rem,6vw,4.2rem);color:var(--t1);
+  line-height:.95;letter-spacing:-.02em;margin-bottom:.7rem;
+}
+.page-sub{
+  font-size:.84rem;color:var(--t2);
+  max-width:58ch;line-height:1.75;
+}
+
+/* ── STATS STRIP ─────────────────────────────────────────── */
+.stats-strip{
+  display:flex;flex-wrap:wrap;
+  background:var(--void2);border-bottom:1px solid var(--border);
+}
+.stat-cell{
+  flex:1;min-width:120px;padding:.85rem 1.6rem;
+  border-right:1px solid var(--border);
+  display:flex;flex-direction:column;gap:.14rem;
+}
+.stat-cell:last-child{border-right:none}
+.stat-lbl{
+  font-family:'Courier Prime',monospace;font-size:.56rem;
+  color:var(--t3);letter-spacing:.18em;text-transform:uppercase;
+  display:flex;align-items:center;gap:.35rem;
+}
+.stat-dot{
+  width:4px;height:4px;background:var(--glow);
+  border-radius:50%;animation:nav-pulse 2.2s infinite;flex-shrink:0;
+}
+.stat-val{
+  font-family:'Courier Prime',monospace;font-weight:700;
+  font-size:1.1rem;color:var(--glow);line-height:1;
+}
+.stat-sub{
+  font-family:'Courier Prime',monospace;font-size:.54rem;color:var(--t3);
+}
+
+/* ── ISSUE GRID ──────────────────────────────────────────── */
+.issues-wrap{padding:2.4rem 2rem}
+.issues-label{
+  font-family:'Courier Prime',monospace;font-size:.62rem;
+  color:var(--t3);letter-spacing:.18em;text-transform:uppercase;
+  margin-bottom:1.4rem;display:flex;align-items:center;gap:.7rem;
+}
+.issues-label::after{content:'';flex:1;height:1px;background:var(--border)}
+
+.issues-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(min(100%,480px),1fr));
+  gap:1px;background:var(--border);
+}
+
+/* ── ISSUE CARD ──────────────────────────────────────────── */
+.issue-card{
+  background:var(--void2);
+  display:flex;flex-direction:column;
+  position:relative;overflow:hidden;
+  transition:background .2s;
+  text-decoration:none;color:inherit;
+}
+.issue-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:var(--card-accent,rgba(0,212,255,.08));
+  transition:opacity .2s;
+}
+.issue-card:hover{background:var(--void3)}
+.issue-card:hover::before{opacity:1}
+.issue-card[data-band="breach"]{--card-accent:var(--breach)}
+.issue-card[data-band="warning"]{--card-accent:var(--warn)}
+.issue-card[data-band="on-track"]{--card-accent:var(--glow)}
+
+/* Card number watermark */
+.card-num{
+  position:absolute;right:1.2rem;bottom:.6rem;
+  font-family:'Archivo Narrow',sans-serif;font-weight:800;
+  font-size:5rem;color:rgba(0,212,255,.025);
+  pointer-events:none;user-select:none;line-height:1;
+}
+
+.card-inner{padding:1.6rem 1.6rem 1.3rem}
+
+/* Card top row */
+.card-top{
+  display:flex;align-items:flex-start;
+  justify-content:space-between;gap:1rem;margin-bottom:1rem;
+}
+.card-issue-num{
+  font-family:'Courier Prime',monospace;font-size:.58rem;
+  color:var(--t3);letter-spacing:.14em;margin-bottom:.3rem;
+}
+.card-company{
+  font-family:'Archivo Narrow',sans-serif;font-weight:800;
+  font-size:1.5rem;color:var(--t1);line-height:1;letter-spacing:.02em;
+}
+.card-sector{
+  font-family:'Courier Prime',monospace;font-size:.56rem;
+  color:var(--t3);margin-top:.18rem;letter-spacing:.06em;
+}
+
+/* Score ring */
+.score-ring-wrap{position:relative;width:64px;height:64px;flex-shrink:0}
+.score-ring-wrap svg{position:absolute;inset:0;transform:rotate(-90deg)}
+.ring-track{fill:none;stroke:rgba(255,255,255,.06);stroke-width:5}
+[data-theme="light"] .ring-track{stroke:rgba(0,0,0,.08)}
+.ring-fill{fill:none;stroke-width:5;stroke-linecap:round;
+  transition:stroke-dashoffset 1.4s cubic-bezier(.4,0,.2,1)}
+.band-breach .ring-fill{stroke:var(--breach)}
+.band-warning .ring-fill{stroke:var(--warn)}
+.band-track .ring-fill{stroke:var(--glow)}
+.ring-inner{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+}
+.ring-score{
+  font-family:'Courier Prime',monospace;font-weight:700;
+  font-size:1rem;line-height:1;letter-spacing:-.02em;
+}
+.ring-denom{
+  font-family:'Courier Prime',monospace;font-size:.4rem;
+  color:var(--t3);line-height:1;margin-top:.06rem;
+}
+.band-breach .ring-score{color:var(--breach)}
+.band-warning .ring-score{color:var(--warn)}
+.band-track .ring-score{color:var(--glow)}
+
+/* Band pill */
+.band-pill{
+  display:inline-block;font-family:'Courier Prime',monospace;
+  font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;
+  padding:.1rem .42rem;border-radius:2px;margin-bottom:.7rem;
+}
+.band-breach .band-pill{
+  background:rgba(240,48,48,.07);color:var(--breach);
+  border:1px solid rgba(240,48,48,.28);
+}
+.band-warning .band-pill{
+  background:rgba(240,144,0,.07);color:var(--warn);
+  border:1px solid rgba(240,144,0,.28);
+}
+.band-track .band-pill{
+  background:rgba(0,212,255,.07);color:var(--glow);
+  border:1px solid rgba(0,212,255,.28);
+}
+
+/* Summary block */
+.card-summary{
+  font-size:.76rem;color:var(--t2);line-height:1.68;
+  margin-bottom:1rem;
+  display:-webkit-box;-webkit-line-clamp:3;
+  -webkit-box-orient:vertical;overflow:hidden;
+}
+
+/* Divider */
+.card-div{height:1px;background:var(--border2);margin:0 0 .9rem}
+
+/* Meta row */
+.card-meta{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:.4rem;
+}
+.card-date{
+  font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--t3);
+}
+.card-cta{
+  font-family:'Courier Prime',monospace;font-size:.6rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  padding:.22rem .65rem;border-radius:2px;
+  border:1px solid rgba(0,212,255,.22);background:rgba(0,212,255,.05);
+  color:var(--glow);text-decoration:none;
+  transition:all .2s;white-space:nowrap;cursor:pointer;
+}
+.card-cta:hover{
+  background:rgba(0,212,255,.12);
+  border-color:rgba(0,212,255,.5);
+  box-shadow:0 0 10px rgba(0,212,255,.12);
+}
+.band-breach .card-cta{
+  border-color:rgba(240,48,48,.22);background:rgba(240,48,48,.05);color:var(--breach);
+}
+.band-breach .card-cta:hover{
+  background:rgba(240,48,48,.12);border-color:rgba(240,48,48,.5);
+  box-shadow:0 0 10px rgba(240,48,48,.12);
+}
+.band-warning .card-cta{
+  border-color:rgba(240,144,0,.22);background:rgba(240,144,0,.05);color:var(--warn);
+}
+.band-warning .card-cta:hover{
+  background:rgba(240,144,0,.12);border-color:rgba(240,144,0,.5);
+  box-shadow:0 0 10px rgba(240,144,0,.12);
+}
+
+/* ── UPCOMING SECTION ────────────────────────────────────── */
+.upcoming-wrap{
+  border-top:1px solid var(--border);padding:2rem;background:var(--void2);
+}
+.upcoming-label{
+  font-family:'Courier Prime',monospace;font-size:.62rem;
+  color:var(--t3);letter-spacing:.18em;text-transform:uppercase;
+  margin-bottom:1.2rem;display:flex;align-items:center;gap:.7rem;
+}
+.upcoming-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.upcoming-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));
+  gap:1px;background:var(--border);
+}
+.upcoming-card{
+  background:var(--void);padding:1rem 1.1rem;
+  display:flex;flex-direction:column;gap:.2rem;
+}
+.up-issue{
+  font-family:'Courier Prime',monospace;font-size:.54rem;
+  color:var(--t3);letter-spacing:.12em;
+}
+.up-company{
+  font-family:'Archivo Narrow',sans-serif;font-weight:800;
+  font-size:1rem;color:var(--t2);letter-spacing:.02em;
+}
+.up-date{
+  font-family:'Courier Prime',monospace;font-size:.54rem;
+  color:var(--t3);margin-top:.1rem;
+}
+.up-status{
+  font-family:'Courier Prime',monospace;font-size:.5rem;
+  letter-spacing:.1em;text-transform:uppercase;margin-top:.4rem;
+  color:var(--t3);
+}
+
+/* ── METHODOLOGY NOTE ────────────────────────────────────── */
+.method-note{
+  border-top:1px solid var(--border);
+  padding:1.6rem 2rem;background:var(--void);
+}
+.method-note-inner{
+  display:flex;align-items:flex-start;gap:2rem;
+  flex-wrap:wrap;
+}
+.mn-col{flex:1;min-width:240px}
+.mn-title{
+  font-family:'Courier Prime',monospace;font-size:.6rem;
+  color:var(--t3);letter-spacing:.16em;text-transform:uppercase;
+  margin-bottom:.5rem;
+}
+.mn-body{
+  font-size:.74rem;color:var(--t2);line-height:1.72;
+}
+.mn-body a{color:rgba(0,212,255,.45);text-decoration:none;transition:color .18s}
+.mn-body a:hover{color:var(--glow)}
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+.footer{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;padding:1.4rem 2rem;
+  border-top:1px solid var(--border);
+}
+.footer-l{
+  font-family:'Courier Prime',monospace;font-size:.6rem;
+  color:var(--t3);line-height:1.75;
+}
+.footer-l a{color:rgba(0,212,255,.4);text-decoration:none;transition:color .18s}
+.footer-l a:hover{color:var(--glow)}
+.footer-r{display:flex;gap:1.4rem}
+.footer-r a{
+  font-family:'Courier Prime',monospace;font-size:.6rem;
+  color:rgba(0,212,255,.3);text-decoration:none;transition:color .18s;
+}
+.footer-r a:hover{color:var(--glow)}
+
+/* ── UTILS ───────────────────────────────────────────────── */
+@keyframes shimmer{0%,100%{opacity:.3}50%{opacity:.75}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
+  <ul class="nav-links">
+    <li><a href="https://vyrion.earth">CONSCIENCE</a></li>
+    <li><a href="https://vyrion.earth/atlas.html">ATLAS</a></li>
+    <li><a href="https://vyrion.earth/shield.html">SHIELD</a></li>
+    <li><a href="https://vyrion.earth/record/" class="active">RECORD</a></li>
+    <li><a href="https://dablerfrost.github.io/conscience/archive">ARCHIVE</a></li>
+  </ul>
+  <div class="nav-controls">
+    <button class="nc-theme active" id="theme-btn" onclick="toggleTheme()" title="Toggle light/dark mode">◐ DARK</button>
+    <div class="nc-sep"></div>
+    <button class="nc-sz" data-scale="0.88" onclick="setScale(this)" title="Small">S</button>
+    <button class="nc-sz active" data-scale="1.0" onclick="setScale(this)" title="Medium">M</button>
+    <button class="nc-sz" data-scale="1.22" onclick="setScale(this)" title="Large">L</button>
+  </div>
+  <div class="nav-dot"></div>
+</nav>
+
+<!-- HEADER -->
+<header class="page-header">
+  <div class="eyebrow">VYRION · Weekly Accountability Publication</div>
+  <h1 class="page-title">The Record</h1>
+  <p class="page-sub">
+    Every Wednesday. One company. Pledge vs. reality — sourced, scored, and published openly.
+    Scores derived from CDP disclosures, InfluenceMap lobbying grades, Sabin Center climate
+    litigation, SBTi registry, and live SEC EDGAR filings.
+  </p>
+</header>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stat-cell">
+    <div class="stat-lbl"><span class="stat-dot"></span>Issues Published</div>
+    <div class="stat-val">004</div>
+    <div class="stat-sub">March 18 – April 8, 2026</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-lbl">Publication Cadence</div>
+    <div class="stat-val">Weekly</div>
+    <div class="stat-sub">Every Wednesday</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-lbl">Avg CONSCIENCE Score</div>
+    <div class="stat-val">13 / 100</div>
+    <div class="stat-sub">Issues 001–004 · All Breach band</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-lbl">Open Proof Protocol</div>
+    <div class="stat-val">ACTIVE</div>
+    <div class="stat-sub">Errors published within 24h</div>
+  </div>
+</div>
+
+<!-- PUBLISHED ISSUES -->
+<main class="issues-wrap">
+  <div class="issues-label">Published Issues</div>
+  <div class="issues-grid" id="issues-grid">
+
+    <!-- ISSUE 004 — DELTA -->
+    <a class="issue-card band-breach" data-band="breach"
+       href="https://vyrion.earth/record/issue-004-delta.html">
+      <div class="card-num">004</div>
+      <div class="card-inner">
+        <div class="card-top">
+          <div>
+            <div class="card-issue-num">ISSUE 004 · AVIATION</div>
+            <div class="card-company">Delta Air Lines</div>
+            <div class="card-sector">NYSE: DAL · CIK 0000027904</div>
+          </div>
+          <div class="score-ring-wrap">
+            <svg viewBox="0 0 64 64" width="64" height="64">
+              <circle class="ring-track" cx="32" cy="32" r="27"/>
+              <circle class="ring-fill" cx="32" cy="32" r="27"
+                stroke-dasharray="169.6"
+                stroke-dashoffset="169.6"
+                data-filled="145.5"/>
+            </svg>
+            <div class="ring-inner">
+              <div class="ring-score">14</div>
+              <div class="ring-denom">/100</div>
+            </div>
+          </div>
+        </div>
+        <div class="band-pill">BREACH</div>
+        <div class="card-summary">
+          Carbon neutral by 2030 via offsets and sustainable aviation fuel — with SAF at
+          under 1% of total fuel consumption. Absolute emissions recovering to pre-pandemic
+          levels. Offset quality under FTC inquiry. No SBTi commitment filed.
+        </div>
+        <div class="card-div"></div>
+        <div class="card-meta">
+          <span class="card-date">Published April 8, 2026</span>
+          <span class="card-cta">Read Issue →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- ISSUE 003 — SHELL -->
+    <a class="issue-card band-breach" data-band="breach"
+       href="https://vyrion.earth/record/issue-003-shell.html">
+      <div class="card-num">003</div>
+      <div class="card-inner">
+        <div class="card-top">
+          <div>
+            <div class="card-issue-num">ISSUE 003 · OIL & GAS</div>
+            <div class="card-company">Shell</div>
+            <div class="card-sector">NYSE: SHEL · CIK 0000806517</div>
+          </div>
+          <div class="score-ring-wrap">
+            <svg viewBox="0 0 64 64" width="64" height="64">
+              <circle class="ring-track" cx="32" cy="32" r="27"/>
+              <circle class="ring-fill" cx="32" cy="32" r="27"
+                stroke-dasharray="169.6"
+                stroke-dashoffset="169.6"
+                data-filled="135.7"/>
+            </svg>
+            <div class="ring-inner">
+              <div class="ring-score">19</div>
+              <div class="ring-denom">/100</div>
+            </div>
+          </div>
+        </div>
+        <div class="band-pill">BREACH</div>
+        <div class="card-summary">
+          Net zero by 2050 with a 30% emissions intensity reduction target by 2035. Dutch
+          court ordered Shell to cut emissions faster — Shell is appealing. Absolute emissions
+          increased while intensity metric masks volume growth. No SBTi commitment.
+        </div>
+        <div class="card-div"></div>
+        <div class="card-meta">
+          <span class="card-date">Published April 1, 2026</span>
+          <span class="card-cta">Read Issue →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- ISSUE 002 — EXXONMOBIL -->
+    <a class="issue-card band-breach" data-band="breach"
+       href="https://vyrion.earth/record/issue-002-exxonmobil.html">
+      <div class="card-num">002</div>
+      <div class="card-inner">
+        <div class="card-top">
+          <div>
+            <div class="card-issue-num">ISSUE 002 · OIL & GAS</div>
+            <div class="card-company">ExxonMobil</div>
+            <div class="card-sector">NYSE: XOM · CIK 0000034088</div>
+          </div>
+          <div class="score-ring-wrap">
+            <svg viewBox="0 0 64 64" width="64" height="64">
+              <circle class="ring-track" cx="32" cy="32" r="27"/>
+              <circle class="ring-fill" cx="32" cy="32" r="27"
+                stroke-dasharray="169.6"
+                stroke-dashoffset="169.6"
+                data-filled="156.2"/>
+            </svg>
+            <div class="ring-inner">
+              <div class="ring-score">8</div>
+              <div class="ring-denom">/100</div>
+            </div>
+          </div>
+        </div>
+        <div class="band-pill">BREACH</div>
+        <div class="card-summary">
+          Net zero Scope 1 and 2 by 2050 — with no Scope 3 target addressing 99% of total
+          lifecycle emissions. Production expansion planned through 2028. Lobbying spend
+          against climate policy exceeds $7M in 2023. CDP grade D. InfluenceMap grade F.
+        </div>
+        <div class="card-div"></div>
+        <div class="card-meta">
+          <span class="card-date">Published March 25, 2026</span>
+          <span class="card-cta">Read Issue →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- ISSUE 001 — BP -->
+    <a class="issue-card band-breach" data-band="breach"
+       href="https://vyrion.earth/record/issue-001-bp.html">
+      <div class="card-num">001</div>
+      <div class="card-inner">
+        <div class="card-top">
+          <div>
+            <div class="card-issue-num">ISSUE 001 · OIL & GAS</div>
+            <div class="card-company">BP</div>
+            <div class="card-sector">NYSE: BP · CIK 0000313807</div>
+          </div>
+          <div class="score-ring-wrap">
+            <svg viewBox="0 0 64 64" width="64" height="64">
+              <circle class="ring-track" cx="32" cy="32" r="27"/>
+              <circle class="ring-fill" cx="32" cy="32" r="27"
+                stroke-dasharray="169.6"
+                stroke-dashoffset="169.6"
+                data-filled="150.9"/>
+            </svg>
+            <div class="ring-inner">
+              <div class="ring-score">11</div>
+              <div class="ring-denom">/100</div>
+            </div>
+          </div>
+        </div>
+        <div class="band-pill">BREACH</div>
+        <div class="card-summary">
+          Net zero by 2050. Cut oil and gas production 25% by 2030 — revised down from 40%
+          in 2023 under investor pressure. Upstream investment now increasing. No SBTi
+          commitment. CDP grade C. InfluenceMap grade D−.
+        </div>
+        <div class="card-div"></div>
+        <div class="card-meta">
+          <span class="card-date">Published March 18, 2026</span>
+          <span class="card-cta">Read Issue →</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</main>
+
+<!-- UPCOMING -->
+<section class="upcoming-wrap">
+  <div class="upcoming-label">Upcoming Issues</div>
+  <div class="upcoming-grid">
+    <div class="upcoming-card">
+      <div class="up-issue">ISSUE 005</div>
+      <div class="up-company">Starbucks</div>
+      <div class="up-date">Wednesday · April 15, 2026</div>
+      <div class="up-status">▸ Scheduled</div>
+    </div>
+    <div class="upcoming-card">
+      <div class="up-issue">ISSUE 006</div>
+      <div class="up-company">Walmart</div>
+      <div class="up-date">Wednesday · April 22, 2026</div>
+      <div class="up-status">▸ Scheduled</div>
+    </div>
+    <div class="upcoming-card">
+      <div class="up-issue">ISSUE 007</div>
+      <div class="up-company">Meta</div>
+      <div class="up-date">Wednesday · April 29, 2026</div>
+      <div class="up-status">▸ Scheduled</div>
+    </div>
+    <div class="upcoming-card">
+      <div class="up-issue">ISSUE 008</div>
+      <div class="up-company">Amazon</div>
+      <div class="up-date">Wednesday · May 6, 2026</div>
+      <div class="up-status">▸ Scheduled</div>
+    </div>
+    <div class="upcoming-card">
+      <div class="up-issue">ISSUE 009</div>
+      <div class="up-company">Microsoft</div>
+      <div class="up-date">Wednesday · May 13, 2026</div>
+      <div class="up-status">▸ Scheduled</div>
+    </div>
+    <div class="upcoming-card">
+      <div class="up-issue">ISSUE 010</div>
+      <div class="up-company">Unilever</div>
+      <div class="up-date">Wednesday · May 20, 2026</div>
+      <div class="up-status">▸ Scheduled</div>
+    </div>
+    <div class="upcoming-card">
+      <div class="up-issue">ISSUE 011</div>
+      <div class="up-company">Apple</div>
+      <div class="up-date">Wednesday · May 27, 2026</div>
+      <div class="up-status">▸ Scheduled</div>
+    </div>
+  </div>
+</section>
+
+<!-- METHODOLOGY NOTE -->
+<section class="method-note">
+  <div class="method-note-inner">
+    <div class="mn-col">
+      <div class="mn-title">Scoring Methodology</div>
+      <div class="mn-body">
+        Every Record issue derives its CONSCIENCE score from four weighted public data
+        sources: Pledge Quality (30 pts), CDP Performance (25 pts), InfluenceMap Lobbying
+        Alignment (25 pts), and Legal Exposure via Sabin Center (20 pts). All sources are
+        linked directly inside each issue. Full derivation:
+        <a href="https://github.com/DablerFrost/conscience/blob/main/CONSCIENCE-METHODOLOGY.md"
+           target="_blank">CONSCIENCE-METHODOLOGY.md →</a>
+      </div>
+    </div>
+    <div class="mn-col">
+      <div class="mn-title">Open Proof Protocol</div>
+      <div class="mn-body">
+        Every score in every issue is challengeable. Find an error —
+        <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a> —
+        and VYRION publishes the correction within 24 hours. Corrections are additive and
+        public. Originals are never deleted. This protocol applies to every issue, every
+        score, every data point, permanently.
+      </div>
+    </div>
+    <div class="mn-col">
+      <div class="mn-title">Publication Standard</div>
+      <div class="mn-body">
+        No issue publishes without a confirmed CONSCIENCE-METHODOLOGY.md breakdown for
+        that company. No score is stated without a named source. No pledge is quoted without
+        a link to the original filing. The Record is a permanent public document, not a
+        news cycle. It does not expire.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-l">
+    VYRION · The Record · Weekly Accountability Publication<br>
+    Methodology:
+    <a href="https://github.com/DablerFrost/conscience/blob/main/CONSCIENCE-METHODOLOGY.md"
+       target="_blank">CONSCIENCE-METHODOLOGY.md</a> ·
+    <a href="https://github.com/DablerFrost/conscience" target="_blank">
+      github.com/DablerFrost/conscience</a><br>
+    Tyler Frost / DablerFrost · Hilo, Hawaii · contact@vyrion.earth
+  </div>
+  <div class="footer-r">
+    <a href="https://vyrion.earth">CONSCIENCE →</a>
+    <a href="https://vyrion.earth/atlas.html">ATLAS →</a>
+    <a href="https://vyrion.earth/shield.html">SHIELD →</a>
+    <a href="https://dablerfrost.github.io/conscience/archive">ARCHIVE →</a>
+  </div>
+</footer>
+
+<script>
+'use strict';
+
+// ── THEME ────────────────────────────────────────────────
+function toggleTheme(){
+  const html=document.documentElement;
+  const isLight=html.getAttribute('data-theme')==='light';
+  html.setAttribute('data-theme',isLight?'dark':'light');
+  const btn=document.getElementById('theme-btn');
+  btn.textContent=isLight?'◐ DARK':'◑ LIGHT';
+  try{localStorage.setItem('vc-theme',isLight?'dark':'light')}catch(e){}
+}
+(function(){
+  try{
+    const t=localStorage.getItem('vc-theme');
+    if(t==='light'){
+      document.documentElement.setAttribute('data-theme','light');
+      const btn=document.getElementById('theme-btn');
+      if(btn)btn.textContent='◑ LIGHT';
+    }
+  }catch(e){}
+})();
+
+// ── FONT SCALE ────────────────────────────────────────────
+const _SCALES={'0.88':16,'1.0':18,'1.22':22};
+function setScale(btn){
+  const px=_SCALES[btn.dataset.scale]||18;
+  document.documentElement.style.fontSize=px+'px';
+  document.querySelectorAll('.nc-sz').forEach(b=>
+    b.classList.toggle('active',b===btn)
+  );
+  try{localStorage.setItem('vc-scale',btn.dataset.scale)}catch(e){}
+}
+(function(){
+  try{
+    const s=localStorage.getItem('vc-scale');
+    if(s&&_SCALES[s]){
+      document.documentElement.style.fontSize=_SCALES[s]+'px';
+      requestAnimationFrame(()=>{
+        document.querySelectorAll('.nc-sz').forEach(b=>
+          b.classList.toggle('active',b.dataset.scale===s)
+        );
+      });
+    }
+  }catch(e){}
+})();
+
+// ── ANIMATE SCORE RINGS ───────────────────────────────────
+function animateRings(){
+  document.querySelectorAll('.ring-fill').forEach(el=>{
+    el.style.strokeDashoffset=el.dataset.filled;
+  });
+}
+requestAnimationFrame(()=>setTimeout(animateRings,120));
+</script>
+</body>
+</html>
