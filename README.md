@@ -2,7 +2,7 @@
 # VYRION CONSCIENCE
 ## Corporate Climate Pledge Verification · v2.8 · April 2026
 
-Live links: vyrion.earth · atlas.html · shield.html
+Live links: www.vyrion.earth · www.atlas.html · www.shield.html
 Methodology link: methodology/VYRION-METHODOLOGY-v1.0.md
 Contact: contact@vyrion.earth 
 **Data feed viewer:** [dablerfrost.github.io/conscience/conscience-data.html](https://dablerfrost.github.io/conscience/conscience-data.html)  
