@@ -24,7 +24,7 @@
   --t1:#e4f2ff;--t2:#6a9ab8;--t3:#2d6080;
   --border:rgba(0,212,255,.12);--border2:rgba(0,212,255,.07);
   --breach-bg:rgba(240,48,48,.07);--warn-bg:rgba(240,144,0,.07);--track-bg:rgba(0,212,255,.07);
-  --nav-bg:rgba(2,9,18,.97);--mag-bg:rgba(3,12,24,.98);
+  --nav-bg:rgba(2,9,18,.97);--mag-bg:rgba(3,12,24,.98); --scanline:rgba(0,212,255,.004); --pad:2rem;
   --scanline:rgba(0,212,255,.004);
 }
 [data-theme="light"]{
@@ -144,8 +144,8 @@ body::after{
 .page-header{
   padding:3.5rem 2rem 2.8rem;border-bottom:1px solid var(--border);
   position:relative;overflow:hidden;
-  background-image:url('https://okay-gold-oof5kipmvh.edgeone.app/Testing%20The%20Surface%20-%20Imgur.png');
-  background-size:cover;background-position:center 38%;
+  background-image:url('https://okay-gold-oof5kipmvh.edgeone.app/Testing%20The%20Surface%20-%20Imgur.png'); 
+  background-size:cover;background-position:center 38%; background-color:var(--void2);
 }
 .page-header::before{
   content:'';position:absolute;inset:0;z-index:0;
@@ -401,7 +401,7 @@ body::after{
 
 /* ── MAGNIFIER ───────────────────────────────────────────── */
 #mag{
-  position:fixed;pointer-events:none;z-index:9999;
+  position:fixed;pointer-events:none;z-index: 9500;
   width:300px;opacity:0;
   transition:opacity .14s cubic-bezier(.4,0,.2,1);
   will-change:transform,opacity;
@@ -462,7 +462,7 @@ body::after{
  
 /* ── 1. WELCOME OVERLAY ──────────────────────────────────────── */
 #vyr-welcome {
-  position: fixed; inset: 0; z-index: 9000;
+  position: fixed; inset: 0; z-index: 9999;
   display: flex; align-items: center; justify-content: center;
   padding: 20px;
   background: radial-gradient(
@@ -809,7 +809,7 @@ body::after{
 }
 .oo-link:nth-child(2) .oo-dot { background: var(--amber); box-shadow: 0 0 5px var(--amber); }
 .oo-link:nth-child(3) .oo-dot { background: var(--warn, #F09000); box-shadow: 0 0 5px var(--warn, #F09000); }
-.oo-link:nth-child(4) .oo-dot { background: var(--void3, #0b2035); box-shadow: 0 0 5px var(--void3, #0b2035); }  
+.oo-link:nth-child(4) .oo-dot { background: var(--amber); box-shadow: 0 0 5px var(--amber); }  
  
 /* ── 4. SIDE PANEL ───────────────────────────────────────────── */
 #vyr-backdrop {
@@ -1285,7 +1285,7 @@ body::after{
     <li><a href="https://vyrion.earth/shield.html">SHIELD</a></li>
     <li><a href="https://vyrion.earth/atlas.html">ATLAS</a></li>
     <li><a href="https://vyrion.earth/record/">RECORD</a></li>
-    <li><a href="https://dablerfrost.github.io/conscience/archive">ARCHIVE</a></li>
+    <li><a href="https://vyrion.earth/archive/">ARCHIVE</a></li>
     <li><a href="nexan.html">NEXAN</a></li>
   </ul>
   <div class="nav-controls">
@@ -1679,7 +1679,7 @@ body::after{
 .sb-fill{height:100%;border-radius:2px;transition:width .5s cubic-bezier(.4,0,.2,1)}
 .sb-pct{font-family:'Courier Prime',monospace;font-size:.5rem;color:var(--t3);min-width:28px;text-align:right}
 .stress-note{
-  font-family:'Courier Prime',monospace;font-size:.52rem;color:var(--t3);
+  font-family:'Courier Prime',monospace;font-size:.65rem;color:var(--t3);
   margin-top:.7rem;line-height:1.6;padding-top:.5rem;border-top:1px solid var(--border2);
 }
 .stress-note a{color:rgba(0,212,255,.38);text-decoration:none}
@@ -1946,7 +1946,7 @@ body::after{
 
     <!-- Regenerators -->
     <div class="bside bside-track">
-      <div class="bside-title">◈ Boundary Regenerators</div>
+      <div class="bside-title">◈ Progress Tracked</div>
 
       <div class="bcompany">
         <span class="bc-name">Apple</span>
@@ -2795,11 +2795,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const sBtn = document.querySelector('[data-scale="0.88"]');
   const mBtn = document.querySelector('[data-scale="1.0"]');
   const lBtn = document.querySelector('[data-scale="1.22"]');
-  if (sBtn) sBtn.dataset.mag = 'sz-s';
-  if (mBtn) mBtn.dataset.mag = 'sz-m';
-  if (lBtn) lBtn.dataset.mag = 'sz-l';
-  attachMag(document);
-});
+ if (sBtn) sBtn.dataset.mag = 'sz-s'; if (mBtn) mBtn.dataset.mag = 'sz-m'; if (lBtn) lBtn.dataset.mag = 'sz-l'; attachMag(document); // Check for anchor hash on initial page load checkHash(); });
 
 // ─────────────────────────────────────────────────────────
 //  MAGNIFIER ENGINE
@@ -2917,9 +2913,13 @@ async function init() {
   // 3. Attach magnifier to newly rendered cards
   attachMag(grid);
 
-  // 4. Timestamp
-  document.getElementById('ts-val').textContent =
-    new Date().toUTCString().replace(' GMT','').replace(/:\d{2} /,' ').trim();
+  // 4. Timestamp + dynamic VYRION Index day counter 
+  document.getElementById('ts-val').textContent = new Date().toUTCString().replace(' GMT','').replace(/:\d{2} /,' ').trim(); 
+  // Compute days since Day 1 (March 18, 2026) (function updateIndexTicker() 
+  { const DAY_ONE = new Date('2026-03-18T00:00:00-10:00'); 
+  // Hawaii time const now = new Date(); 
+   const dayNum = Math.max(1, Math.floor((now - DAY_ONE) / 86400000) + 1); 
+   const dateStr = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }); const idxSub = document.getElementById('idx-sub'); if (idxSub) idxSub.textContent = `/ 100 · Day ${dayNum} · ${dateStr}`; })();
 
   // 5. NOAA CO2 (live)
   fetchCO2().then(co2 => {
@@ -2941,12 +2941,7 @@ async function init() {
     const vEl = document.getElementById('ev-'+co.id);
     const sEl = document.getElementById('es-'+co.id);
     if (!vEl || !sEl) return;
-    if (res.status === 'fulfilled' && res.value?.annual) {
-      const {annual, k8count, cik} = res.value;
-      vEl.textContent = annual.date;
-      vEl.classList.remove('loading-pulse');
-      vEl.style.color = 'var(--glow)';
-      vEl.style.fontSize = '.68rem';
+    if (res.status === 'fulfilled' && res.value?.annual) { const {annual, k8count, cik} = res.value; // Store in cache so reattachEdgar() can repopulate after filter re-renders edgarCache[co.id] = { date: annual.date, form: annual.form, cik, k8count }; vEl.textContent = annual.date; vEl.classList.remove('loading-pulse'); vEl.style.color = 'var(--glow)'; vEl.style.fontSize = '.68rem';
       const url = `https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=${cik}&type=10-K`;
       let sub = `<a href="${url}" target="_blank" style="color:rgba(0,212,255,.38);text-decoration:none">${annual.form} filing →</a>`;
       if (k8count >= 3) {
@@ -3186,15 +3181,11 @@ function exportCSV() {
   document.body.removeChild(a); URL.revokeObjectURL(url);
 }
 
-// Store EDGAR results for re-use after re-render
-const edgarCache = {};
-function reattachEdgar() {
-  COMPANIES.forEach(co => {
-    if (edgarCache[co.id] !== undefined) {
-      updateEdgar(co, edgarCache[co.id]);
-    }
-  });
-}
+// ── EDGAR result cache — populated in init(), replayed on filter re-render const edgarCache = {}; function reattachEdgar() { COMPANIES.forEach(co => { const cached = edgarCache[co.id]; if (!cached) return; const vEl = document.getElementById('ev-' + co.id); const sEl = document.getElementById('es-' + co.id); if (!vEl || !sEl) return; vEl.textContent = cached.date; vEl.classList.remove('loading-pulse'); vEl.style.color = 'var(--glow)'; vEl.style.fontSize = '.68rem'; const url = `https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=${cached.cik}&type=10-K`; let sub = `${cached.form} filing →`; if (cached.k8count >= 3) { sub += `
+${cached.k8count} 8-K events / 90d ⚠
+`; } else if (cached.k8count > 0) { sub += `
+${cached.k8count} 8-K / 90d
+`; } sEl.innerHTML = sub; }); }
 
 window.addEventListener('hashchange', checkHash);
 
