@@ -24,7 +24,7 @@
   --t1:#e4f2ff;--t2:#6a9ab8;--t3:#2d6080;
   --border:rgba(0,212,255,.12);--border2:rgba(0,212,255,.07);
   --breach-bg:rgba(240,48,48,.07);--warn-bg:rgba(240,144,0,.07);--track-bg:rgba(0,212,255,.07);
-  --nav-bg:rgba(2,9,18,.97);--mag-bg:rgba(3,12,24,.98); --scanline:rgba(0,212,255,.004); --pad:2rem;
+  --nav-bg:rgba(2,9,18,.97);--mag-bg:rgba(3,12,24,.98);
   --scanline:rgba(0,212,255,.004);
 }
 [data-theme="light"]{
@@ -74,7 +74,7 @@ body::after{
 .nav-links a:hover{color:var(--t1)}
 .nav-links a.active{color:var(--glow);border-bottom:1px solid rgba(0,212,255,.4)}
 .nav-dot{width:6px;height:6px;background:var(--glow);border-radius:50%;flex-shrink:0;animation:pdot 2.2s infinite}
-@keyframes pdot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,212,255,.5)}50%{opacity:.4;box-shadow:0 0 0 7px rgba(0,212,255,0)}}
+@keyframes pdot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,212,255,.5)}50%{opacity:.4;box-shadow:0 0 0 7px rgba(0,255,157,0)}}
 
 /* ── NAV CONTROLS ───────────────────────────────────────── */
 .nav-controls{display:flex;align-items:center;gap:.35rem;flex-shrink:0}
@@ -144,8 +144,8 @@ body::after{
 .page-header{
   padding:3.5rem 2rem 2.8rem;border-bottom:1px solid var(--border);
   position:relative;overflow:hidden;
-  background-image:url('https://okay-gold-oof5kipmvh.edgeone.app/Testing%20The%20Surface%20-%20Imgur.png'); 
-  background-size:cover;background-position:center 38%; background-color:var(--void2);
+  background-image:url('https://okay-gold-oof5kipmvh.edgeone.app/Testing%20The%20Surface%20-%20Imgur.png');
+  background-size:cover;background-position:center 38%;
 }
 .page-header::before{
   content:'';position:absolute;inset:0;z-index:0;
@@ -401,7 +401,7 @@ body::after{
 
 /* ── MAGNIFIER ───────────────────────────────────────────── */
 #mag{
-  position:fixed;pointer-events:none;z-index: 9500;
+  position:fixed;pointer-events:none;z-index:9999;
   width:300px;opacity:0;
   transition:opacity .14s cubic-bezier(.4,0,.2,1);
   will-change:transform,opacity;
@@ -462,7 +462,7 @@ body::after{
  
 /* ── 1. WELCOME OVERLAY ──────────────────────────────────────── */
 #vyr-welcome {
-  position: fixed; inset: 0; z-index: 9999;
+  position: fixed; inset: 0; z-index: 9000;
   display: flex; align-items: center; justify-content: center;
   padding: 20px;
   background: radial-gradient(
@@ -809,7 +809,7 @@ body::after{
 }
 .oo-link:nth-child(2) .oo-dot { background: var(--amber); box-shadow: 0 0 5px var(--amber); }
 .oo-link:nth-child(3) .oo-dot { background: var(--warn, #F09000); box-shadow: 0 0 5px var(--warn, #F09000); }
-.oo-link:nth-child(4) .oo-dot { background: var(--amber); box-shadow: 0 0 5px var(--amber); }  
+.oo-link:nth-child(4) .oo-dot { background: var(--void3, #0b2035); box-shadow: 0 0 5px var(--void3, #0b2035); }  
  
 /* ── 4. SIDE PANEL ───────────────────────────────────────────── */
 #vyr-backdrop {
@@ -1282,10 +1282,10 @@ body::after{
   <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
   <ul class="nav-links">
     <li><a href="https://vyrion.earth" class="active">CONSCIENCE</a></li>
-    <li><a href="https://vyrion.earth/shield.html">SHIELD</a></li>
     <li><a href="https://vyrion.earth/atlas.html">ATLAS</a></li>
+    <li><a href="https://vyrion.earth/shield.html">SHIELD</a></li>
     <li><a href="https://vyrion.earth/record/">RECORD</a></li>
-    <li><a href="https://vyrion.earth/archive/">ARCHIVE</a></li>
+    <li><a href="https://dablerfrost.github.io/conscience/archive">ARCHIVE</a></li>
     <li><a href="nexan.html">NEXAN</a></li>
   </ul>
   <div class="nav-controls">
@@ -1308,7 +1308,6 @@ body::after{
   <div class="lb-cell" data-mag="index">
     <div class="lb-lbl">VYRION Index</div>
     <div class="lb-val amber" id="idx-val">41.2 <span style="font-size:.62rem;color:var(--t3)">± 1.8</span></div>
-    <div class="lb-sub" id="idx-sub">/ 100 · Day 31 · Apr 17, 2026</div>
   </div>
   <div class="lb-cell" data-mag="coverage">
     <div class="lb-lbl">Companies Tracked</div>
@@ -1426,7 +1425,7 @@ body::after{
         <td><a href="https://github.com/DablerFrost/conscience/blob/main/methodology/CONSCIENCE-METHODOLOGY.md" target="_blank" style="color:rgba(0,212,255,.35);text-decoration:none">CONSCIENCE-METHODOLOGY.md →</a></td>
       </tr>
       <tr>
-        <td>2026-03-30</td><td>Platform</td><td>v2.3</td><td>v2.7</td>
+        <td>2026-03-30</td><td>Platform</td><td>v2.3</td><td>v2.6</td>
         <td><span class="cl-pill cl-plat">PLATFORM</span></td>
         <td>v2.7 deployed: Investor Terminal layer, VYRION Stack architecture visualization, Boundary Breakers/Regenerators board, Portfolio Stress Tester, Data Licensing CTA. No score values changed.</td>
         <td><a href="https://github.com/dablerfrost/conscience" target="_blank" style="color:rgba(0,212,255,.35);text-decoration:none">github.com/dablerfrost/conscience →</a></td>
@@ -1679,7 +1678,7 @@ body::after{
 .sb-fill{height:100%;border-radius:2px;transition:width .5s cubic-bezier(.4,0,.2,1)}
 .sb-pct{font-family:'Courier Prime',monospace;font-size:.5rem;color:var(--t3);min-width:28px;text-align:right}
 .stress-note{
-  font-family:'Courier Prime',monospace;font-size:.65rem;color:var(--t3);
+  font-family:'Courier Prime',monospace;font-size:.52rem;color:var(--t3);
   margin-top:.7rem;line-height:1.6;padding-top:.5rem;border-top:1px solid var(--border2);
 }
 .stress-note a{color:rgba(0,212,255,.38);text-decoration:none}
@@ -1795,7 +1794,7 @@ body::after{
     <br><br>
     <a href="https://github.com/DablerFrost/conscience/blob/main/methodology/VYRION-METHODOLOGY-v1.0.md#vyrion-methodology-v10md" target="_blank">VYRION-METHODOLOGY-v1.0.md</a> ·
     <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a> ·
-    Open Proof Protocol: Find an error → <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a> — corrections published within 24 hours.
+    Open Proof Protocol: find an error — we publish the correction.
   </p>
 </section>
 
@@ -1818,7 +1817,7 @@ body::after{
       </div>
       <div class="sc-status">
         <div class="sc-dot sc-dot-live"></div>
-        <span class="sc-live">CONSCIENCE v2.7 · 11 companies · 6 sources · Live</span>
+        <span class="sc-live">CONSCIENCE v2.6 · 11 companies · 6 sources · Live</span>
       </div>
     </div>
 
@@ -1946,7 +1945,7 @@ body::after{
 
     <!-- Regenerators -->
     <div class="bside bside-track">
-      <div class="bside-title">◈ Progress Tracked</div>
+      <div class="bside-title">◈ Boundary Regenerators</div>
 
       <div class="bcompany">
         <span class="bc-name">Apple</span>
@@ -2154,7 +2153,7 @@ body::after{
       </a>
       <div class="cta-note">
         All scores are source-cited. Methodology is open and auditable.
-        Open Proof Protocol: Find an error → <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a> — corrections published within 24 hours.
+        Open Proof Protocol: errors reported to contact@vyrion.earth published as corrections within 24h.
         VYRION PBC · Tyler Frost · Hilo, Hawaii
       </div>
     </div>
@@ -2167,7 +2166,7 @@ body::after{
   <div class="method-body">
     CONSCIENCE scores use a 0–100 scale computed from four weighted public data sources, cross-referenced against Paris Agreement 1.5°C pathways and Science Based Targets initiative criteria. All source data is linked per company card.
     <br><br>
-    Open Proof Protocol: Find an error → <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a> — corrections published within 24 hours.
+    Open Proof Protocol: find an error → <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a> — corrections published within 24 hours.
     Full derivation: <a href="https://github.com/DablerFrost/conscience/blob/main/methodology/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a>
   </div>
   <table class="method-table">
@@ -2401,7 +2400,7 @@ body::after{
 // ─────────────────────────────────────────────────────────
 const MAG = {
   co2:{t:'Atmospheric CO₂ — NOAA Mauna Loa Observatory',b:'Real-time CO₂ concentration from NOAA\'s Global Monitoring Laboratory. Mauna Loa has the world\'s longest continuous atmospheric CO₂ record, running since 1958. Pre-industrial baseline ≈ 280 ppm. VYRION uses this as one of 6 Atmosphere indicators (22% weight in the Index).',s:'NOAA GML · gml.noaa.gov/ccgg/trends · Daily · Fetched live'},
-  index:{t:'VYRION Index — Daily Planetary Health Benchmark',b:'The world\'s first daily investable planetary health benchmark. Score of 41.2 ± 1.8 / 100 against a pre-industrial 1850–1900 baseline of 100. Computed across 8 Earth systems: Atmosphere 22%, Ocean 18%, Ice 14%, Forest 13%, Biodiversity 12%, Freshwater 10%, Soil 7%, Corporate Accountability 4%. Changes <±0.5 are within measurement error.',s:'VYRION-METHODOLOGY-v1.0.md · github.com/dablerfrost/conscience '},
+  index:{t:'VYRION Index — Daily Planetary Health Benchmark',b:'The world\'s first daily investable planetary health benchmark. Score of 41.2 ± 1.8 / 100 against a pre-industrial 1850–1900 baseline of 100. Computed across 8 Earth systems: Atmosphere 22%, Ocean 18%, Ice 14%, Forest 13%, Biodiversity 12%, Freshwater 10%, Soil 7%, Corporate Accountability 4%. Changes <±0.5 are within measurement error.',s:'VYRION-METHODOLOGY-v1.0.md · github.com/dablerfrost/conscience'},
   coverage:{t:'CONSCIENCE Coverage — 11 Companies',b:'11 major corporations tracked across Oil & Gas, Aviation, Food & Beverage, Retail, and Technology. Selected for material climate pledges and significant emissions footprints. Expansion planned. Full selection criteria in CONSCIENCE-METHODOLOGY.md.',s:'VYRION CONSCIENCE · Module 01 · v2.7'},
   lawsuits:{t:'Total Active Climate Lawsuits',b:'Aggregate active climate litigation against the 11 tracked companies, per Sabin Center for Climate Change Law at Columbia Law School. Legal exposure = one of the four CONSCIENCE scoring factors (20 pts max). Counts refreshed monthly.',s:'Sabin Center for Climate Change Law · climatecasechart.com · Columbia Law School'},
   refresh:{t:'Auto-Refresh — Live Data',b:'CONSCIENCE refreshes on page load and every 15 minutes. Live: NOAA GML CO₂ (direct API), SEC EDGAR filing dates (data.sec.gov). Static sources (CDP, InfluenceMap, SBTi, TPI) update when annual assessments publish.',s:'NOAA GML · data.sec.gov/submissions · 15 min interval'},
@@ -2795,7 +2794,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const sBtn = document.querySelector('[data-scale="0.88"]');
   const mBtn = document.querySelector('[data-scale="1.0"]');
   const lBtn = document.querySelector('[data-scale="1.22"]');
- if (sBtn) sBtn.dataset.mag = 'sz-s'; if (mBtn) mBtn.dataset.mag = 'sz-m'; if (lBtn) lBtn.dataset.mag = 'sz-l'; attachMag(document); // Check for anchor hash on initial page load checkHash(); });
+  if (sBtn) sBtn.dataset.mag = 'sz-s';
+  if (mBtn) mBtn.dataset.mag = 'sz-m';
+  if (lBtn) lBtn.dataset.mag = 'sz-l';
+  attachMag(document);
+});
 
 // ─────────────────────────────────────────────────────────
 //  MAGNIFIER ENGINE
@@ -2913,15 +2916,9 @@ async function init() {
   // 3. Attach magnifier to newly rendered cards
   attachMag(grid);
 
-  // 4. Timestamp + dynamic VYRION Index day counter 
-  document.getElementById('ts-val').textContent = new Date().toUTCString().replace(' GMT','').replace(/:\d{2} /,' ').trim(); 
-  // Compute days since Day 1 (March 18, 2026) 
-  const _d1 = new Date('2026-03-18T00:00:00-10:00');
-  const _now = new Date();
-  const _day = Math.max(1, Math.floor((_now - _d1) / 86400000) + 1);
-  const _ds = _now.toLocaleDateString('en-US', {month:'short',day:'numeric',year:'numeric'});
-  const _el = document.getElementById('idx-sub');
-  if (_el) _el.textContent = '/ 100 \u00b7 Day ' + _day + ' \u00b7 ' + _ds;
+  // 4. Timestamp
+  document.getElementById('ts-val').textContent =
+    new Date().toUTCString().replace(' GMT','').replace(/:\d{2} /,' ').trim();
 
   // 5. NOAA CO2 (live)
   fetchCO2().then(co2 => {
@@ -2943,7 +2940,12 @@ async function init() {
     const vEl = document.getElementById('ev-'+co.id);
     const sEl = document.getElementById('es-'+co.id);
     if (!vEl || !sEl) return;
-    if (res.status === 'fulfilled' && res.value?.annual) { const {annual, k8count, cik} = res.value; // Store in cache so reattachEdgar() can repopulate after filter re-renders edgarCache[co.id] = { date: annual.date, form: annual.form, cik, k8count }; vEl.textContent = annual.date; vEl.classList.remove('loading-pulse'); vEl.style.color = 'var(--glow)'; vEl.style.fontSize = '.68rem';
+    if (res.status === 'fulfilled' && res.value?.annual) {
+      const {annual, k8count, cik} = res.value;
+      vEl.textContent = annual.date;
+      vEl.classList.remove('loading-pulse');
+      vEl.style.color = 'var(--glow)';
+      vEl.style.fontSize = '.68rem';
       const url = `https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=${cik}&type=10-K`;
       let sub = `<a href="${url}" target="_blank" style="color:rgba(0,212,255,.38);text-decoration:none">${annual.form} filing →</a>`;
       if (k8count >= 3) {
@@ -3183,12 +3185,15 @@ function exportCSV() {
   document.body.removeChild(a); URL.revokeObjectURL(url);
 }
 
-// ── EDGAR result cache — populated in init(), 
-  replayed on filter re-render const edgarCache = {}; function reattachEdgar() { COMPANIES.forEach(co => { const cached = edgarCache[co.id]; if (!cached) return; const vEl = document.getElementById('ev-' + co.id); const sEl = document.getElementById('es-' + co.id); if (!vEl || !sEl) return; vEl.textContent = cached.date; vEl.classList.remove('loading-pulse'); vEl.style.color = 'var(--glow)'; vEl.style.fontSize = '.68rem'; const url = `https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=${cached.cik}&type=10-K`; let sub = `${cached.form} filing →`; if (cached.k8count >= 3) { sub += `
-${cached.k8count} 8-K events / 90d ⚠
-`; } else if (cached.k8count > 0) { sub += `
-${cached.k8count} 8-K / 90d
-`; } sEl.innerHTML = sub; }); }
+// Store EDGAR results for re-use after re-render
+const edgarCache = {};
+function reattachEdgar() {
+  COMPANIES.forEach(co => {
+    if (edgarCache[co.id] !== undefined) {
+      updateEdgar(co, edgarCache[co.id]);
+    }
+  });
+}
 
 window.addEventListener('hashchange', checkHash);
 
