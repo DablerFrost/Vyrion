@@ -3181,7 +3181,8 @@ function exportCSV() {
   document.body.removeChild(a); URL.revokeObjectURL(url);
 }
 
-// ── EDGAR result cache — populated in init(), replayed on filter re-render const edgarCache = {}; function reattachEdgar() { COMPANIES.forEach(co => { const cached = edgarCache[co.id]; if (!cached) return; const vEl = document.getElementById('ev-' + co.id); const sEl = document.getElementById('es-' + co.id); if (!vEl || !sEl) return; vEl.textContent = cached.date; vEl.classList.remove('loading-pulse'); vEl.style.color = 'var(--glow)'; vEl.style.fontSize = '.68rem'; const url = `https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=${cached.cik}&type=10-K`; let sub = `${cached.form} filing →`; if (cached.k8count >= 3) { sub += `
+// ── EDGAR result cache — populated in init(), 
+  replayed on filter re-render const edgarCache = {}; function reattachEdgar() { COMPANIES.forEach(co => { const cached = edgarCache[co.id]; if (!cached) return; const vEl = document.getElementById('ev-' + co.id); const sEl = document.getElementById('es-' + co.id); if (!vEl || !sEl) return; vEl.textContent = cached.date; vEl.classList.remove('loading-pulse'); vEl.style.color = 'var(--glow)'; vEl.style.fontSize = '.68rem'; const url = `https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=${cached.cik}&type=10-K`; let sub = `${cached.form} filing →`; if (cached.k8count >= 3) { sub += `
 ${cached.k8count} 8-K events / 90d ⚠
 `; } else if (cached.k8count > 0) { sub += `
 ${cached.k8count} 8-K / 90d
