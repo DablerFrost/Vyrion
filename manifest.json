@@ -1,0 +1,43 @@
+{
+  "name": "VYRION CONSCIENCE",
+  "short_name": "VYRION",
+  "description": "Corporate climate pledge accountability — scored against Paris Agreement 1.5°C pathways.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020912",
+  "theme_color": "#00D4FF",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["finance", "news", "productivity"],
+  "screenshots": [
+    {
+      "src": "/assets/og-image.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg"
+    }
+  ]
+}
+-->
+ 
+ 
+<!-- ══════════════════════════════════════════════════════
+     _redirects FILE (for Cloudflare Pages / Netlify)
+     Create at root: /_redirects
+     Forces www → non-www + HTTP → HTTPS redirect.
+     Cloudflare handles this natively in dashboard —
+     enable "Always Use HTTPS" + "www redirect" in your
+     Cloudflare SSL/TLS and Rules settings.
+════════════════════════════════════════════════════════════ -->
