@@ -3078,10 +3078,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const sBtn = document.querySelector('[data-scale="0.88"]');
   const mBtn = document.querySelector('[data-scale="1.0"]');
   const lBtn = document.querySelector('[data-scale="1.22"]');
-  if (sBtn) sBtn.dataset.mag = 'sz-s';
+ if (sBtn) sBtn.dataset.mag = 'sz-s';
   if (mBtn) mBtn.dataset.mag = 'sz-m';
   if (lBtn) lBtn.dataset.mag = 'sz-l';
   attachMag(document);
+  checkHash();
 });
 
 // ─────────────────────────────────────────────────────────
