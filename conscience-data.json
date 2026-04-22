@@ -1,19 +1,9 @@
 {
-  "version": "2.8",
-  "generated": "2026-04-19T00:00:00-10:00",
-  "methodology": "https://github.com/DablerFrost/conscience/blob/main/methodology/CONSCIENCE-METHODOLOGY.md",
-  "openProofProtocol": "Find an error — contact@vyrion.earth — corrections published within 24h",
-  "index": {
-    "score": 41.2,
-    "uncertainty": 1.8,
-    "dayNumber": 33,
-    "date": "2026-04-19",
-    "displayString": "41.2 ± 1.8 / 100"
   "meta": {
-    "generated": "2026-04-21T03:40:00.171Z",
-    "generated_date": "2026-04-21",
+    "generated": "2026-04-22T03:36:38.903Z",
+    "generated_date": "2026-04-22",
     "script_version": "1.0",
-    "runtime_ms": 882,
+    "runtime_ms": 1247,
     "sources": [
       "NOAA Global Monitoring Laboratory (CO₂)",
       "SEC EDGAR Public API (corporate filings)",
@@ -24,28 +14,28 @@
   },
   "atmosphere": {
     "co2": {
-      "ppm": 430.36,
-      "date": "2026-04-19",
+      "ppm": 429.93,
+      "date": "2026-04-20",
       "source": "NOAA Global Monitoring Laboratory — Mauna Loa Observatory",
       "url": "https://gml.noaa.gov/ccgg/trends/",
-      "retrieved": "2026-04-21T03:39:59.828Z"
+      "retrieved": "2026-04-22T03:36:37.977Z"
     },
     "global_temp_anomaly": null,
     "global_temp_era5": {
-      "sample_avg_celsius": 20.14,
-      "anomaly_vs_proxy": 11.64,
+      "sample_avg_celsius": 20.02,
+      "anomaly_vs_proxy": 11.52,
       "sample_coords": [
         "N.Europe",
         "N.America",
         "S.America",
         "SE.Asia"
       ],
-      "period": "2026-04-12 to 2026-04-19",
+      "period": "2026-04-13 to 2026-04-20",
       "baseline_note": "Proxy baseline from ERA5 sample mean — not IPCC global mean. Supplementary signal only.",
       "source": "Open-Meteo ERA5 Reanalysis (ECMWF)",
       "url": "https://open-meteo.com/",
       "license": "CC BY 4.0",
-      "retrieved": "2026-04-21T03:40:00.171Z"
+      "retrieved": "2026-04-22T03:36:38.903Z"
     }
   },
   "global_emissions": null,
@@ -92,7 +82,7 @@
             "items": "2.02,7.01"
           }
         ],
-        "retrieved": "2026-04-21T03:39:59.527Z"
+        "retrieved": "2026-04-22T03:36:37.901Z"
       }
     },
     "bp": {
@@ -110,7 +100,7 @@
         "latest_8k": null,
         "count_8k_90d": 0,
         "recent_8k_items": [],
-        "retrieved": "2026-04-21T03:39:59.578Z"
+        "retrieved": "2026-04-22T03:36:38.270Z"
       }
     },
     "shell": {
@@ -131,7 +121,7 @@
         },
         "count_8k_90d": 0,
         "recent_8k_items": [],
-        "retrieved": "2026-04-21T03:39:59.525Z"
+        "retrieved": "2026-04-22T03:36:38.160Z"
       }
     },
     "delta": {
@@ -173,7 +163,7 @@
             "items": "1.01"
           }
         ],
-        "retrieved": "2026-04-21T03:39:59.531Z"
+        "retrieved": "2026-04-22T03:36:38.171Z"
       }
     },
     "starbucks": {
@@ -207,7 +197,7 @@
             "items": "2.02,9.01"
           }
         ],
-        "retrieved": "2026-04-21T03:39:59.585Z"
+        "retrieved": "2026-04-22T03:36:37.894Z"
       }
     },
     "walmart": {
@@ -241,7 +231,7 @@
             "items": "2.02,9.01"
           }
         ],
-        "retrieved": "2026-04-21T03:39:59.530Z"
+        "retrieved": "2026-04-22T03:36:38.206Z"
       }
     },
     "meta": {
@@ -271,7 +261,7 @@
             "items": "2.02,9.01"
           }
         ],
-        "retrieved": "2026-04-21T03:39:59.542Z"
+        "retrieved": "2026-04-22T03:36:38.165Z"
       }
     },
     "amazon": {
@@ -313,7 +303,7 @@
             "items": "1.01,7.01,8.01,9.01"
           }
         ],
-        "retrieved": "2026-04-21T03:39:59.582Z"
+        "retrieved": "2026-04-22T03:36:37.892Z"
       }
     },
     "microsoft": {
@@ -339,7 +329,7 @@
             "items": "2.02,9.01"
           }
         ],
-        "retrieved": "2026-04-21T03:39:59.539Z"
+        "retrieved": "2026-04-22T03:36:38.158Z"
       }
     },
     "unilever": {
@@ -379,7 +369,7 @@
             "items": "2.02,9.01"
           }
         ],
-        "retrieved": "2026-04-21T03:39:59.541Z"
+        "retrieved": "2026-04-22T03:36:37.912Z"
       }
     }
   }
