@@ -1661,10 +1661,11 @@ Paste DIRECTLY AFTER that line.
 <!-- TOOLBAR: search + sort + sector + band filter + CSV export -->
 <div class="toolbar">
   <div class="search-wrap">
+   <ul>
     <input id="search-input" type="text" placeholder="Search company or ticker…" autocomplete="off" oninput="applyFilters()">
-  </div>
+  
   <span class="ctrl-lbl">SORT</span>
-  <select class="ctrl-sel" id="sort-sel" onchange="applyFilters()">
+<select class="ctrl-sel" id="sort-sel" onchange="applyFilters()">
     <option value="score-desc">Score ↓ High–Low</option>
     <option value="score-asc">Score ↑ Low–High</option>
     <option value="name-asc">Name A–Z</option>
@@ -1684,13 +1685,13 @@ Paste DIRECTLY AFTER that line.
     <option value="Consumer Goods">Consumer Goods</option>
   </select>
   <div class="filter-btns">
+      <ul>
     <button class="f-btn active"    data-band="all">All</button>
     <button class="f-btn fb-breach" data-band="breach">Breach</button>
     <button class="f-btn fb-warn"   data-band="warning">Warning</button>
     <button class="f-btn fb-track" data-band="on-track">On Track</button>
-  </div>
   <span class="result-count" id="result-count"><b id="vis-count">11</b> / 11</span>
-  <button class="btn-export" onclick="exportCSV()" title="Download all data as CSV">↓ CSV</button>
+    <button class="btn-export" onclick="exportCSV()" title="Download all data as CSV">↓ CSV</button>
 </div>
 
 <!-- GRID -->
@@ -2932,8 +2933,7 @@ Corporate
       <div class="ov-ring"></div>
     </div>
  
-    <h1 class="ov-title">
-      VYRION <span>CONSCIENCE</span><br>
+    <h1 class="ov-title">VYRION <span>CONSCIENCE</span><br>
       Pledge vs. Reality
     </h1>
     <p class="ov-sub">
@@ -2955,21 +2955,6 @@ Corporate
     <p class="ov-footer">
       VYRION PBC · VYRION Index: 41.2 ± 1.8 / 100 · Open Proof Protocol
     </p>
-  </div>
-</div>
- 
-<!-- ── 2. PWA INSTALL PROMPT ────────────────────────────────── -->
-<div id="vyr-install" role="complementary" aria-label="Install VYRION">
-  <div class="oi-icon" aria-hidden="true">◉</div>
-  <div class="oi-text">
-    <strong>Install VYRION</strong>
-    <span>Daily planetary accountability tracking on your device</span>
-  </div>
-  <div class="oi-actions">
-    <button class="oi-btn-install" id="oi-install-btn" onclick="oInstallTrigger()">
-      Install
-    </button>
-    <button class="oi-btn-dismiss" onclick="oInstallDismiss()">Not now</button>
   </div>
 </div>
  
