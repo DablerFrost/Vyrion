@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-<link rel="canonical" ...>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="VYRION CONSCIENCE — Corporate Climate Pledge Tracker. Pledge vs. reality for 11 major corporations, scored against Paris Agreement 1.5°C pathways.">
+<meta property="og:title" content="VYRION CONSCIENCE — Corporate Climate Pledge Tracker">
+<meta property="og:description" content="Pledge vs. reality for 11 major corporations. Scores derived from CDP, InfluenceMap, Sabin Center, SBTi registry, and live SEC EDGAR filings.">
+<meta property="og:url" content="https://dablerfrost.github.io/conscience/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="VYRION CONSCIENCE">
+<meta name="twitter:description" content="Corporate climate pledge accountability. 11 companies scored against Paris Agreement 1.5°C pathways.">
+<link rel="canonical" href="https://dablerfrost.github.io/conscience/">
 <title>VYRION CONSCIENCE — Corporate Climate Pledge Tracker</title>
-<script src="/assets/vyrion-config.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&family=Archivo:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
@@ -17,7 +26,6 @@
   --breach-bg:rgba(240,48,48,.07);--warn-bg:rgba(240,144,0,.07);--track-bg:rgba(0,212,255,.07);
   --nav-bg:rgba(2,9,18,.97);--mag-bg:rgba(3,12,24,.98);
   --scanline:rgba(0,212,255,.004);
-  --pad:2rem;
 }
 [data-theme="light"]{
   --void:#f0f5ff;--void2:#e4eeff;--void3:#d5e5ff;
@@ -114,57 +122,6 @@ body::after{
   display:flex;flex-direction:column;gap:.12rem;
 }
 .lb-cell:last-child{border-right:none}
-  VYRION MODULES
-◈ ATLAS ⬟ SHIELD
-◉ ROOT ⌁
-◆ CANOPY ⌁
-◎ TIDE ⌁
-⟳ LOOP ⌁
-⚡ FLUX ⌁
-◐ PULSE ⌁
-VYRION Module Stack
-2 Active · 6 Phase 2 · All data routes through CONSCIENCE
-◈ LIVE
-ATLAS
-Real-time planetary intelligence
-Atmosphere Ocean Cryosphere Forest Biodiversity
-15-min refresh · NOAA · NASA · ESA Enter →
-⬟ LIVE
-SHIELD
-14-day disaster early warning
-Seismic Wildfire Storm Flood Volcanic
-15-min refresh · USGS · NASA EONET Enter →
-◉ PHASE 2
-ROOT
-Regenerative agriculture OS
-Soil Freshwater Biodiversity
-⌁ Offline · Phase 2
-◆ PHASE 2
-CANOPY
-Reforestation + habitat restoration
-Forest Biodiversity Soil
-⌁ Offline · Phase 2
-◎ PHASE 2
-TIDE
-Ocean + water systems
-Ocean Freshwater
-⌁ Offline · Phase 2
-⟳ PHASE 2
-LOOP
-Circular waste economy
-Soil Ocean Atmosphere
-⌁ Offline · Phase 2
-⚡ PHASE 2
-FLUX
-Clean energy infrastructure
-Atmosphere Corporate
-⌁ Offline · Phase 2
-◐ PHASE 2
-PULSE
-Impact credit marketplace
-Corporate
-⌁ Offline · Phase 2
-  ═══════════════════════════════════════════════════════════ -->
 .lb-lbl{
   font-family:'Courier Prime',monospace;font-size:.55rem;
   color:var(--t3);letter-spacing:.18em;text-transform:uppercase;
@@ -444,7 +401,7 @@ Corporate
 
 /* ── MAGNIFIER ───────────────────────────────────────────── */
 #mag{
-  position:fixed;pointer-events:none;z-index:9500;
+  position:fixed;pointer-events:none;z-index:9999;
   width:300px;opacity:0;
   transition:opacity .14s cubic-bezier(.4,0,.2,1);
   will-change:transform,opacity;
@@ -491,253 +448,6 @@ Corporate
 .loading-pulse{animation:pulse 1.4s infinite}
 @keyframes pulse{0%,100%{opacity:.3}50%{opacity:.75}}
 .hidden{display:none!important}
-<!--
-═══════════════════════════════════════════════════════════
-VYRION v2.8 — FILE 2: MODULE NAV CSS
-Paste inside your existing <style> block.
-Find: .hidden{display:none!important}
-Paste DIRECTLY AFTER that line.
-═══════════════════════════════════════════════════════════
--->
-
-/* ── MODULE NAV STRIP ────────────────────────────────────────────── */
-.module-strip {
-  display: flex; align-items: stretch;
-  background: var(--void2);
-  border-bottom: 1px solid var(--border);
-  overflow-x: auto; overflow-y: hidden;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-  position: relative; z-index: 10;
-}
-.module-strip::-webkit-scrollbar { display: none; }
-
-.module-strip-label {
-  display: flex; align-items: center;
-  padding: 0 1.2rem;
-  border-right: 1px solid var(--border);
-  flex-shrink: 0;
-  font-family: 'Courier Prime', monospace;
-  font-size: .55rem; letter-spacing: .18em;
-  text-transform: uppercase; color: var(--t3);
-  white-space: nowrap;
-}
-
-.module-pill {
-  display: flex; align-items: center; gap: .45rem;
-  padding: .65rem 1.1rem;
-  border-right: 1px solid var(--border);
-  flex-shrink: 0;
-  text-decoration: none;
-  color: var(--t2);
-  font-family: 'Courier Prime', monospace;
-  font-size: .6rem; font-weight: 700;
-  letter-spacing: .1em; text-transform: uppercase;
-  transition: background .18s, color .18s;
-  position: relative; white-space: nowrap;
-  cursor: pointer;
-}
-.module-pill:hover {
-  background: rgba(255,255,255,.03);
-  color: var(--t1);
-}
-.module-pill.active {
-  color: var(--mp-accent, var(--glow));
-  background: var(--mp-bg, rgba(0,212,255,.05));
-}
-.module-pill.active::after {
-  content: '';
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: 2px;
-  background: var(--mp-accent, var(--glow));
-}
-.module-pill.locked {
-  opacity: .45; cursor: default; pointer-events: none;
-}
-.mp-icon {
-  font-size: .8rem; line-height: 1;
-  color: var(--mp-accent, var(--t3));
-  transition: color .18s;
-}
-.mp-status {
-  width: 5px; height: 5px; border-radius: 50%;
-  background: var(--mp-accent, var(--t3));
-  flex-shrink: 0;
-}
-.mp-status.pulse { animation: mpPulse 2.2s ease-in-out infinite; }
-@keyframes mpPulse {
-  0%,100% { opacity: 1; box-shadow: 0 0 0 0 var(--mp-accent); }
-  50%      { opacity: .5; box-shadow: 0 0 0 5px transparent; }
-}
-.mp-lock {
-  font-size: .55rem; color: var(--t3); opacity: .6;
-}
-
-/* ── MODULE HUB SECTION ─────────────────────────────────────────── */
-.module-hub {
-  border-top: 1px solid var(--border);
-  padding: 2.4rem 2rem;
-  background: var(--void);
-  position: relative; overflow: hidden;
-}
-.module-hub::after {
-  content: 'MODULES';
-  position: absolute; right: -1rem; top: 50%;
-  transform: translateY(-50%);
-  font-family: 'Archivo Narrow', sans-serif; font-weight: 800;
-  font-size: clamp(4rem, 12vw, 9rem);
-  color: rgba(0,212,255,.022);
-  pointer-events: none; user-select: none; line-height: 1;
-}
-
-.hub-header {
-  display: flex; align-items: baseline;
-  justify-content: space-between; flex-wrap: wrap;
-  gap: .7rem; margin-bottom: 1.8rem;
-  position: relative; z-index: 1;
-}
-.hub-title {
-  font-family: 'Archivo Narrow', sans-serif; font-weight: 800;
-  font-size: .82rem; letter-spacing: .14em; text-transform: uppercase;
-  color: var(--t1); display: flex; align-items: center; gap: .6rem;
-}
-.hub-title::after {
-  content: ''; height: 1px; width: 60px;
-  background: var(--border);
-}
-.hub-meta {
-  font-family: 'Courier Prime', monospace;
-  font-size: .58rem; color: var(--t3);
-  display: flex; align-items: center; gap: .8rem;
-}
-.hub-meta-dot {
-  width: 5px; height: 5px; border-radius: 50%;
-  background: var(--glow); flex-shrink: 0;
-  animation: mpPulse 2.2s ease-in-out infinite;
-  --mp-accent: var(--glow);
-}
-
-/* Module card grid */
-.hub-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
-  gap: 1px; background: var(--border);
-  position: relative; z-index: 1;
-}
-
-.hub-card {
-  background: var(--void2);
-  padding: 1.3rem 1.3rem 1.1rem;
-  position: relative; overflow: hidden;
-  transition: background .2s;
-  text-decoration: none; color: inherit;
-  display: flex; flex-direction: column; gap: .6rem;
-}
-.hub-card::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: var(--hc-accent, rgba(0,212,255,.08));
-  transition: opacity .2s;
-}
-.hub-card:not(.hub-card-locked):hover {
-  background: var(--void3);
-}
-.hub-card:not(.hub-card-locked):hover::before {
-  opacity: 1;
-}
-.hub-card-locked {
-  opacity: .52;
-  cursor: default;
-}
-
-.hc-top {
-  display: flex; align-items: flex-start;
-  justify-content: space-between; gap: .5rem;
-}
-.hc-icon {
-  font-size: 1.1rem; line-height: 1;
-  color: var(--hc-accent, var(--glow));
-  flex-shrink: 0;
-}
-.hc-status-badge {
-  font-family: 'Courier Prime', monospace;
-  font-size: .52rem; letter-spacing: .1em; text-transform: uppercase;
-  padding: .1rem .42rem; border-radius: 2px;
-  display: flex; align-items: center; gap: .3rem;
-  flex-shrink: 0;
-}
-.hc-status-badge.live {
-  background: rgba(0,212,255,.08);
-  border: 1px solid rgba(0,212,255,.25);
-  color: var(--glow);
-}
-.hc-status-badge.built {
-  background: rgba(240,48,48,.07);
-  border: 1px solid rgba(240,48,48,.2);
-  color: var(--breach);
-}
-.hc-status-badge.locked {
-  background: rgba(45,96,128,.06);
-  border: 1px solid rgba(45,96,128,.15);
-  color: var(--t3);
-}
-.hc-badge-dot {
-  width: 4px; height: 4px; border-radius: 50%;
-  background: currentColor; flex-shrink: 0;
-}
-.hc-badge-dot.pulse { animation: mpPulse 2s infinite; }
-
-.hc-name {
-  font-family: 'Archivo Narrow', sans-serif; font-weight: 800;
-  font-size: .88rem; letter-spacing: .06em;
-  color: var(--hc-accent, var(--t1)); line-height: 1;
-}
-.hc-tagline {
-  font-family: 'Courier Prime', monospace;
-  font-size: .56rem; color: var(--t3);
-  letter-spacing: .06em; line-height: 1.4;
-  margin-top: .1rem;
-}
-
-.hc-systems {
-  display: flex; flex-wrap: wrap; gap: .25rem;
-  margin-top: auto; padding-top: .6rem;
-  border-top: 1px solid var(--border2);
-}
-.hc-sys-tag {
-  font-family: 'Courier Prime', monospace;
-  font-size: .48rem; letter-spacing: .08em; text-transform: uppercase;
-  padding: .08rem .3rem; border-radius: 2px;
-  background: rgba(0,212,255,.04);
-  border: 1px solid rgba(0,212,255,.1);
-  color: var(--t3);
-}
-
-.hc-footer {
-  display: flex; align-items: center;
-  justify-content: space-between;
-  font-family: 'Courier Prime', monospace;
-  font-size: .54rem; color: var(--t3);
-  padding-top: .5rem; border-top: 1px solid var(--border2);
-}
-.hc-enter {
-  color: var(--hc-accent, var(--glow));
-  display: flex; align-items: center; gap: .25rem;
-  transition: gap .15s;
-}
-.hub-card:not(.hub-card-locked):hover .hc-enter { gap: .45rem; }
-.hc-lock-note {
-  color: var(--t3); font-size: .52rem;
-  display: flex; align-items: center; gap: .3rem;
-}
-
-/* ── RESPONSIVE ─────────────────────────────────────────────────── */
-@media (max-width: 900px) {
-  .hub-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 600px) {
-  .module-hub { padding: 1.6rem .9rem; }
-  .hub-grid { grid-template-columns: 1fr; }
   /* ── ONBOARDING LAYER TOKENS ──────────────────────────────────
    Inherits VYRION brand: --void, --glow, --amber, --breach
    No new font imports needed — uses Archivo Narrow + Courier Prime
@@ -752,7 +462,7 @@ Paste DIRECTLY AFTER that line.
  
 /* ── 1. WELCOME OVERLAY ──────────────────────────────────────── */
 #vyr-welcome {
-  position: fixed; inset: 0; z-index: 9999;
+  position: fixed; inset: 0; z-index: 9000;
   display: flex; align-items: center; justify-content: center;
   padding: 20px;
   background: radial-gradient(
@@ -1572,11 +1282,11 @@ Paste DIRECTLY AFTER that line.
   <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
   <ul class="nav-links">
     <li><a href="https://vyrion.earth" class="active">CONSCIENCE</a></li>
-    <li><a href="https://vyrion.earth/shield.html">SHIELD</a></li>
     <li><a href="https://vyrion.earth/atlas.html">ATLAS</a></li>
+    <li><a href="https://vyrion.earth/shield.html">SHIELD</a></li>
     <li><a href="https://vyrion.earth/record/">RECORD</a></li>
-    <li><a href="https://vyrion.earth/archive/">ARCHIVE</a></li>
-    <li><a href="https://vyrion.earth/nexan.html">NEXAN</a></li>
+    <li><a href="https://dablerfrost.github.io/conscience/archive">ARCHIVE</a></li>
+    <li><a href="nexan.html">NEXAN</a></li>
   </ul>
   <div class="nav-controls">
     <button class="nc-theme active" id="theme-btn" onclick="toggleTheme()" title="Toggle light/dark mode">◐ DARK</button>
@@ -1598,6 +1308,7 @@ Paste DIRECTLY AFTER that line.
   <div class="lb-cell" data-mag="index">
     <div class="lb-lbl">VYRION Index</div>
     <div class="lb-val amber" id="idx-val">41.2 <span style="font-size:.62rem;color:var(--t3)">± 1.8</span></div>
+    <div class="lb-sub" id="idx-sub">/ 100 · Day 14 · Mar 31, 2026</div>
   </div>
   <div class="lb-cell" data-mag="coverage">
     <div class="lb-lbl">Companies Tracked</div>
@@ -1619,7 +1330,7 @@ Paste DIRECTLY AFTER that line.
 <!-- HEADER -->
 <header class="page-header">
   <div class="bg-word">CONSCIENCE</div>
-  <div class="eyebrow">Module 01 · Corporate Climate Pledge Verification</div>
+  <div class="eyebrow">Module 00 · Corporate Climate Pledge Verification</div>
   <h1 class="page-title">CONSCIENCE</h1>
   <p class="page-sub">Pledge vs. reality for 11 major corporations. Scores derived from CDP disclosures, InfluenceMap lobbying grades, Sabin Center climate litigation, SBTi registry, and live SEC EDGAR filings — cross-referenced against Paris Agreement 1.5°C pathways. Find an error — we publish the correction.</p>
 </header>
@@ -1661,11 +1372,10 @@ Paste DIRECTLY AFTER that line.
 <!-- TOOLBAR: search + sort + sector + band filter + CSV export -->
 <div class="toolbar">
   <div class="search-wrap">
-   <ul>
     <input id="search-input" type="text" placeholder="Search company or ticker…" autocomplete="off" oninput="applyFilters()">
-  
+  </div>
   <span class="ctrl-lbl">SORT</span>
-<select class="ctrl-sel" id="sort-sel" onchange="applyFilters()">
+  <select class="ctrl-sel" id="sort-sel" onchange="applyFilters()">
     <option value="score-desc">Score ↓ High–Low</option>
     <option value="score-asc">Score ↑ Low–High</option>
     <option value="name-asc">Name A–Z</option>
@@ -1685,13 +1395,13 @@ Paste DIRECTLY AFTER that line.
     <option value="Consumer Goods">Consumer Goods</option>
   </select>
   <div class="filter-btns">
-      <ul>
     <button class="f-btn active"    data-band="all">All</button>
     <button class="f-btn fb-breach" data-band="breach">Breach</button>
     <button class="f-btn fb-warn"   data-band="warning">Warning</button>
     <button class="f-btn fb-track" data-band="on-track">On Track</button>
+  </div>
   <span class="result-count" id="result-count"><b id="vis-count">11</b> / 11</span>
-    <button class="btn-export" onclick="exportCSV()" title="Download all data as CSV">↓ CSV</button>
+  <button class="btn-export" onclick="exportCSV()" title="Download all data as CSV">↓ CSV</button>
 </div>
 
 <!-- GRID -->
@@ -1719,7 +1429,7 @@ Paste DIRECTLY AFTER that line.
         <td>2026-03-30</td><td>Platform</td><td>v2.3</td><td>v2.6</td>
         <td><span class="cl-pill cl-plat">PLATFORM</span></td>
         <td>v2.7 deployed: Investor Terminal layer, VYRION Stack architecture visualization, Boundary Breakers/Regenerators board, Portfolio Stress Tester, Data Licensing CTA. No score values changed.</td>
-        <td><a href="https://vyrion.earth" target="_blank" style="color:rgba(0,212,255,.35);text-decoration:none">https://vyrion.earth →</a></td>
+        <td><a href="https://github.com/dablerfrost/conscience" target="_blank" style="color:rgba(0,212,255,.35);text-decoration:none">github.com/dablerfrost/conscience →</a></td>
       </tr>
     </tbody>
   </table>
@@ -2140,7 +1850,7 @@ Paste DIRECTLY AFTER that line.
       </div>
       <div class="sc-status">
         <div class="sc-dot sc-dot-live"></div>
-        <span class="sc-live">https://vyrion.earth · Live now</span>
+        <span class="sc-live">dablerfrost.github.io/conscience · Live now</span>
       </div>
     </div>
 
@@ -2450,425 +2160,7 @@ Paste DIRECTLY AFTER that line.
     </div>
   </div>
 </section>
-VYRION MODULES
-◈ ATLAS ⬟ SHIELD
-◉ ROOT ⌁
-◆ CANOPY ⌁
-◎ TIDE ⌁
-⟳ LOOP ⌁
-⚡ FLUX ⌁
-◐ PULSE ⌁
-VYRION Module Stack
-2 Active · 6 Phase 2 · All data routes through CONSCIENCE
-◈ LIVE
-ATLAS
-Real-time planetary intelligence
-Atmosphere Ocean Cryosphere Forest Biodiversity
-15-min refresh · NOAA · NASA · ESA Enter →
-⬟ LIVE
-SHIELD
-14-day disaster early warning
-Seismic Wildfire Storm Flood Volcanic
-15-min refresh · USGS · NASA EONET Enter →
-◉ PHASE 2
-ROOT
-Regenerative agriculture OS
-Soil Freshwater Biodiversity
-⌁ Offline · Phase 2
-◆ PHASE 2
-CANOPY
-Reforestation + habitat restoration
-Forest Biodiversity Soil
-⌁ Offline · Phase 2
-◎ PHASE 2
-TIDE
-Ocean + water systems
-Ocean Freshwater
-⌁ Offline · Phase 2
-⟳ PHASE 2
-LOOP
-Circular waste economy
-Soil Ocean Atmosphere
-⌁ Offline · Phase 2
-⚡ PHASE 2
-FLUX
-Clean energy infrastructure
-Atmosphere Corporate
-⌁ Offline · Phase 2
-◐ PHASE 2
-PULSE
-Impact credit marketplace
-Corporate
-⌁ Offline · Phase 2
-  <nav class="module-strip" aria-label="VYRION module navigation">
-  <div class="module-strip-label">VYRION MODULES</div>
-  <a class="module-pill active" href="/atlas.html" style="--mp-accent:#00D4FF;--mp-bg:rgba(0,212,255,0.06)" title="ATLAS — Real-time planetary intelligence">
-    <span class="mp-icon">◈</span>
-    <span class="mp-status pulse" style="--mp-accent:#00D4FF"></span>
-    ATLAS
-  </a>
-  <a class="module-pill" href="/shield.html" style="--mp-accent:#F03030;--mp-bg:rgba(240,48,48,0.06)" title="SHIELD — 14-day disaster early warning">
-    <span class="mp-icon">⬟</span>
-    <span class="mp-status pulse" style="--mp-accent:#F03030"></span>
-    SHIELD
-  </a>
-  <div class="module-pill locked" style="--mp-accent:#4CAF72" title="ROOT — Phase 2">
-    <span class="mp-icon">◉</span>ROOT<span class="mp-lock">⌁</span>
-  </div>
-  <div class="module-pill locked" style="--mp-accent:#2E8B57" title="CANOPY — Phase 2">
-    <span class="mp-icon">◆</span>CANOPY<span class="mp-lock">⌁</span>
-  </div>
-  <div class="module-pill locked" style="--mp-accent:#0096C7" title="TIDE — Phase 2">
-    <span class="mp-icon">◎</span>TIDE<span class="mp-lock">⌁</span>
-  </div>
-  <div class="module-pill locked" style="--mp-accent:#FFB84D" title="LOOP — Phase 2">
-    <span class="mp-icon">⟳</span>LOOP<span class="mp-lock">⌁</span>
-  </div>
-  <div class="module-pill locked" style="--mp-accent:#FFD700" title="FLUX — Phase 2">
-    <span class="mp-icon">⚡</span>FLUX<span class="mp-lock">⌁</span>
-  </div>
-  <div class="module-pill locked" style="--mp-accent:#9C6FE4" title="PULSE — Phase 2">
-    <span class="mp-icon">◐</span>PULSE<span class="mp-lock">⌁</span>
-  </div>
-</nav>
-  <section class="module-hub" id="modules">
 
-  <div class="hub-header">
-    <div class="hub-title">VYRION Module Stack</div>
-    <div class="hub-meta">
-      <span class="hub-meta-dot"></span>
-      2 Active · 6 Phase 2 · All data routes through CONSCIENCE
-    </div>
-  </div>
-
-  <div class="hub-grid" id="hub-grid">
-
-    <a class="hub-card" href="/atlas.html" style="--hc-accent:#00D4FF">
-      <div class="hc-top">
-        <span class="hc-icon">◈</span>
-        <span class="hc-status-badge live"><span class="hc-badge-dot pulse"></span>LIVE</span>
-      </div>
-      <div>
-        <div class="hc-name">ATLAS</div>
-        <div class="hc-tagline">Real-time planetary intelligence</div>
-      </div>
-      <div class="hc-systems">
-        <span class="hc-sys-tag">Atmosphere</span>
-        <span class="hc-sys-tag">Ocean</span>
-        <span class="hc-sys-tag">Cryosphere</span>
-        <span class="hc-sys-tag">Forest</span>
-        <span class="hc-sys-tag">Biodiversity</span>
-      </div>
-      <div class="hc-footer">
-        <span>15-min refresh · NOAA · NASA · ESA</span>
-        <span class="hc-enter">Enter →</span>
-      </div>
-    </a>
-
-    <a class="hub-card" href="/shield.html" style="--hc-accent:#F03030">
-      <div class="hc-top">
-        <span class="hc-icon">⬟</span>
-        <span class="hc-status-badge live"><span class="hc-badge-dot pulse"></span>LIVE</span>
-      </div>
-      <div>
-        <div class="hc-name">SHIELD</div>
-        <div class="hc-tagline">14-day disaster early warning</div>
-      </div>
-      <div class="hc-systems">
-        <span class="hc-sys-tag">Seismic</span>
-        <span class="hc-sys-tag">Wildfire</span>
-        <span class="hc-sys-tag">Storm</span>
-        <span class="hc-sys-tag">Flood</span>
-        <span class="hc-sys-tag">Volcanic</span>
-      </div>
-      <div class="hc-footer">
-        <span>15-min refresh · USGS · NASA EONET</span>
-        <span class="hc-enter" style="color:#F03030">Enter →</span>
-      </div>
-    </a>
-
-    <div class="hub-card hub-card-locked" style="--hc-accent:#4CAF72">
-      <div class="hc-top">
-        <span class="hc-icon">◉</span>
-        <span class="hc-status-badge locked"><span class="hc-badge-dot"></span>PHASE 2</span>
-      </div>
-      <div>
-        <div class="hc-name">ROOT</div>
-        <div class="hc-tagline">Regenerative agriculture OS</div>
-      </div>
-      <div class="hc-systems">
-        <span class="hc-sys-tag">Soil</span>
-        <span class="hc-sys-tag">Freshwater</span>
-        <span class="hc-sys-tag">Biodiversity</span>
-      </div>
-      <div class="hc-footer">
-        <span class="hc-lock-note">⌁ Offline · Phase 2</span>
-      </div>
-    </div>
-
-    <div class="hub-card hub-card-locked" style="--hc-accent:#2E8B57">
-      <div class="hc-top">
-        <span class="hc-icon">◆</span>
-        <span class="hc-status-badge locked"><span class="hc-badge-dot"></span>PHASE 2</span>
-      </div>
-      <div>
-        <div class="hc-name">CANOPY</div>
-        <div class="hc-tagline">Reforestation + habitat restoration</div>
-      </div>
-      <div class="hc-systems">
-        <span class="hc-sys-tag">Forest</span>
-        <span class="hc-sys-tag">Biodiversity</span>
-        <span class="hc-sys-tag">Soil</span>
-      </div>
-      <div class="hc-footer">
-        <span class="hc-lock-note">⌁ Offline · Phase 2</span>
-      </div>
-    </div>
-
-    <div class="hub-card hub-card-locked" style="--hc-accent:#0096C7">
-      <div class="hc-top">
-        <span class="hc-icon">◎</span>
-        <span class="hc-status-badge locked"><span class="hc-badge-dot"></span>PHASE 2</span>
-      </div>
-      <div>
-        <div class="hc-name">TIDE</div>
-        <div class="hc-tagline">Ocean + water systems</div>
-      </div>
-      <div class="hc-systems">
-        <span class="hc-sys-tag">Ocean</span>
-        <span class="hc-sys-tag">Freshwater</span>
-      </div>
-      <div class="hc-footer">
-        <span class="hc-lock-note">⌁ Offline · Phase 2</span>
-      </div>
-    </div>
-
-    <div class="hub-card hub-card-locked" style="--hc-accent:#FFB84D">
-      <div class="hc-top">
-        <span class="hc-icon">⟳</span>
-        <span class="hc-status-badge locked"><span class="hc-badge-dot"></span>PHASE 2</span>
-      </div>
-      <div>
-        <div class="hc-name">LOOP</div>
-        <div class="hc-tagline">Circular waste economy</div>
-      </div>
-      <div class="hc-systems">
-        <span class="hc-sys-tag">Soil</span>
-        <span class="hc-sys-tag">Ocean</span>
-        <span class="hc-sys-tag">Atmosphere</span>
-      </div>
-      <div class="hc-footer">
-        <span class="hc-lock-note">⌁ Offline · Phase 2</span>
-      </div>
-    </div>
-
-    <div class="hub-card hub-card-locked" style="--hc-accent:#FFD700">
-      <div class="hc-top">
-        <span class="hc-icon">⚡</span>
-        <span class="hc-status-badge locked"><span class="hc-badge-dot"></span>PHASE 2</span>
-      </div>
-      <div>
-        <div class="hc-name">FLUX</div>
-        <div class="hc-tagline">Clean energy infrastructure</div>
-      </div>
-      <div class="hc-systems">
-        <span class="hc-sys-tag">Atmosphere</span>
-        <span class="hc-sys-tag">Corporate</span>
-      </div>
-      <div class="hc-footer">
-        <span class="hc-lock-note">⌁ Offline · Phase 2</span>
-      </div>
-    </div>
-
-    <div class="hub-card hub-card-locked" style="--hc-accent:#9C6FE4">
-      <div class="hc-top">
-        <span class="hc-icon">◐</span>
-        <span class="hc-status-badge locked"><span class="hc-badge-dot"></span>PHASE 2</span>
-      </div>
-      <div>
-        <div class="hc-name">PULSE</div>
-        <div class="hc-tagline">Impact credit marketplace</div>
-      </div>
-      <div class="hc-systems">
-        <span class="hc-sys-tag">Corporate</span>
-      </div>
-      <div class="hc-footer">
-        <span class="hc-lock-note">⌁ Offline · Phase 2</span>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-  <section class="module-hub" id="modules">
-
-  <div class="hub-header">
-    <div class="hub-title">VYRION Module Stack</div>
-    <div class="hub-meta">
-      <span class="hub-meta-dot"></span>
-      2 Active · 6 Phase 2 · All data routes through CONSCIENCE
-    </div>
-  </div>
-
-  <div class="hub-grid" id="hub-grid">
-
-    <a class="hub-card" href="/atlas.html" style="--hc-accent:#00D4FF">
-      <div class="hc-top">
-        <span class="hc-icon">◈</span>
-        <span class="hc-status-badge live"><span class="hc-badge-dot pulse"></span>LIVE</span>
-      </div>
-      <div>
-        <div class="hc-name">ATLAS</div>
-        <div class="hc-tagline">Real-time planetary intelligence</div>
-      </div>
-      <div class="hc-systems">
-        <span class="hc-sys-tag">Atmosphere</span>
-        <span class="hc-sys-tag">Ocean</span>
-        <span class="hc-sys-tag">Cryosphere</span>
-        <span class="hc-sys-tag">Forest</span>
-        <span class="hc-sys-tag">Biodiversity</span>
-      </div>
-      <div class="hc-footer">
-        <span>15-min refresh · NOAA · NASA · ESA</span>
-        <span class="hc-enter">Enter →</span>
-      </div>
-    </a>
-
-    <a class="hub-card" href="/shield.html" style="--hc-accent:#F03030">
-      <div class="hc-top">
-        <span class="hc-icon">⬟</span>
-        <span class="hc-status-badge live"><span class="hc-badge-dot pulse"></span>LIVE</span>
-      </div>
-      <div>
-        <div class="hc-name">SHIELD</div>
-        <div class="hc-tagline">14-day disaster early warning</div>
-      </div>
-      <div class="hc-systems">
-        <span class="hc-sys-tag">Seismic</span>
-        <span class="hc-sys-tag">Wildfire</span>
-        <span class="hc-sys-tag">Storm</span>
-        <span class="hc-sys-tag">Flood</span>
-        <span class="hc-sys-tag">Volcanic</span>
-      </div>
-      <div class="hc-footer">
-        <span>15-min refresh · USGS · NASA EONET</span>
-        <span class="hc-enter" style="color:#F03030">Enter →</span>
-      </div>
-    </a>
-
-    <div class="hub-card hub-card-locked" style="--hc-accent:#4CAF72">
-      <div class="hc-top">
-        <span class="hc-icon">◉</span>
-        <span class="hc-status-badge locked"><span class="hc-badge-dot"></span>PHASE 2</span>
-      </div>
-      <div>
-        <div class="hc-name">ROOT</div>
-        <div class="hc-tagline">Regenerative agriculture OS</div>
-      </div>
-      <div class="hc-systems">
-        <span class="hc-sys-tag">Soil</span>
-        <span class="hc-sys-tag">Freshwater</span>
-        <span class="hc-sys-tag">Biodiversity</span>
-      </div>
-      <div class="hc-footer">
-        <span class="hc-lock-note">⌁ Offline · Phase 2</span>
-      </div>
-    </div>
-
-    <div class="hub-card hub-card-locked" style="--hc-accent:#2E8B57">
-      <div class="hc-top">
-        <span class="hc-icon">◆</span>
-        <span class="hc-status-badge locked"><span class="hc-badge-dot"></span>PHASE 2</span>
-      </div>
-      <div>
-        <div class="hc-name">CANOPY</div>
-        <div class="hc-tagline">Reforestation + habitat restoration</div>
-      </div>
-      <div class="hc-systems">
-        <span class="hc-sys-tag">Forest</span>
-        <span class="hc-sys-tag">Biodiversity</span>
-        <span class="hc-sys-tag">Soil</span>
-      </div>
-      <div class="hc-footer">
-        <span class="hc-lock-note">⌁ Offline · Phase 2</span>
-      </div>
-    </div>
-
-    <div class="hub-card hub-card-locked" style="--hc-accent:#0096C7">
-      <div class="hc-top">
-        <span class="hc-icon">◎</span>
-        <span class="hc-status-badge locked"><span class="hc-badge-dot"></span>PHASE 2</span>
-      </div>
-      <div>
-        <div class="hc-name">TIDE</div>
-        <div class="hc-tagline">Ocean + water systems</div>
-      </div>
-      <div class="hc-systems">
-        <span class="hc-sys-tag">Ocean</span>
-        <span class="hc-sys-tag">Freshwater</span>
-      </div>
-      <div class="hc-footer">
-        <span class="hc-lock-note">⌁ Offline · Phase 2</span>
-      </div>
-    </div>
-
-    <div class="hub-card hub-card-locked" style="--hc-accent:#FFB84D">
-      <div class="hc-top">
-        <span class="hc-icon">⟳</span>
-        <span class="hc-status-badge locked"><span class="hc-badge-dot"></span>PHASE 2</span>
-      </div>
-      <div>
-        <div class="hc-name">LOOP</div>
-        <div class="hc-tagline">Circular waste economy</div>
-      </div>
-      <div class="hc-systems">
-        <span class="hc-sys-tag">Soil</span>
-        <span class="hc-sys-tag">Ocean</span>
-        <span class="hc-sys-tag">Atmosphere</span>
-      </div>
-      <div class="hc-footer">
-        <span class="hc-lock-note">⌁ Offline · Phase 2</span>
-      </div>
-    </div>
-
-    <div class="hub-card hub-card-locked" style="--hc-accent:#FFD700">
-      <div class="hc-top">
-        <span class="hc-icon">⚡</span>
-        <span class="hc-status-badge locked"><span class="hc-badge-dot"></span>PHASE 2</span>
-      </div>
-      <div>
-        <div class="hc-name">FLUX</div>
-        <div class="hc-tagline">Clean energy infrastructure</div>
-      </div>
-      <div class="hc-systems">
-        <span class="hc-sys-tag">Atmosphere</span>
-        <span class="hc-sys-tag">Corporate</span>
-      </div>
-      <div class="hc-footer">
-        <span class="hc-lock-note">⌁ Offline · Phase 2</span>
-      </div>
-    </div>
-
-    <div class="hub-card hub-card-locked" style="--hc-accent:#9C6FE4">
-      <div class="hc-top">
-        <span class="hc-icon">◐</span>
-        <span class="hc-status-badge locked"><span class="hc-badge-dot"></span>PHASE 2</span>
-      </div>
-      <div>
-        <div class="hc-name">PULSE</div>
-        <div class="hc-tagline">Impact credit marketplace</div>
-      </div>
-      <div class="hc-systems">
-        <span class="hc-sys-tag">Corporate</span>
-      </div>
-      <div class="hc-footer">
-        <span class="hc-lock-note">⌁ Offline · Phase 2</span>
-      </div>
-    </div>
-
-  </div>
-
-</section>
 <!-- METHODOLOGY -->
 <section class="method-section">
   <div class="method-title">Scoring Methodology</div>
@@ -2892,16 +2184,18 @@ Corporate
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-l">
-    VYRION CONSCIENCE · Module 01 · v2.7 · April 2, 2026<br>
+    VYRION CONSCIENCE · Module 00 · v2.7 · April 2, 2026<br>
     Data: CDP · InfluenceMap · Sabin Center · SBTi · SEC EDGAR · All public-domain or open-license sources<br>
     Methodology: <a href="https://github.com/DablerFrost/conscience/blob/main/methodology/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a> ·
-    <a href="https://vyrion.earth" target="_blank">https://vyrion.earth</a> ·
+    <a href="https://github.com/dablerfrost/conscience" target="_blank">github.com/dablerfrost/conscience</a> ·
     Tyler Frost / DablerFrost · Hilo, Hawaii
   </div>
   <div class="footer-r">
+    <a href="#terminal">TERMINAL →</a>
+    <a href="#licensing">LICENSING →</a>
     <a href="#changelog">CHANGELOG →</a>
     <a href="shield.html">SHIELD →</a>
-    <a href="https://vyrion.earth/archive/">ARCHIVE →</a>
+    <a href="https://dablerfrost.github.io/conscience/archive">ARCHIVE →</a>
   </div>
 </footer>
 
@@ -2933,7 +2227,8 @@ Corporate
       <div class="ov-ring"></div>
     </div>
  
-    <h1 class="ov-title">VYRION <span>CONSCIENCE</span><br>
+    <h1 class="ov-title">
+      VYRION <span>CONSCIENCE</span><br>
       Pledge vs. Reality
     </h1>
     <p class="ov-sub">
@@ -2958,6 +2253,21 @@ Corporate
   </div>
 </div>
  
+<!-- ── 2. PWA INSTALL PROMPT ────────────────────────────────── -->
+<div id="vyr-install" role="complementary" aria-label="Install VYRION">
+  <div class="oi-icon" aria-hidden="true">◉</div>
+  <div class="oi-text">
+    <strong>Install VYRION</strong>
+    <span>Daily planetary accountability tracking on your device</span>
+  </div>
+  <div class="oi-actions">
+    <button class="oi-btn-install" id="oi-install-btn" onclick="oInstallTrigger()">
+      Install
+    </button>
+    <button class="oi-btn-dismiss" onclick="oInstallDismiss()">Not now</button>
+  </div>
+</div>
+ 
 <!-- ── 3. FLOATING ORB ──────────────────────────────────────── -->
 <div id="vyr-orb" aria-label="Quick navigation">
   <div class="oo-btn" id="oo-btn" onclick="oOrbToggle()"
@@ -2975,8 +2285,8 @@ Corporate
     <a class="oo-link" href="#boundary-board" onclick="oOrbClose()">
       <span class="oo-dot"></span> Boundary Signal Board
     </a>
-    <a class="oo-link" href="https://vyrion.earth/archive/" onclick="oOrbClose()">
-      <span class="oo-dot"></span> Vyrion Archive
+    <a class="oo-link" href="https://dablerfrost.github.io/conscience/archive" onclick="oOrbClose()">
+      <span class="oo-dot"></span> VYRION Archive
     </a>
     <a class="oo-link" href="https://vyrion.earth/nexan.html" onclick="oOrbClose()">
       <span class="oo-dot"></span> Nexan Institute
@@ -3031,7 +2341,7 @@ Corporate
   <div class="op-section">
     <p class="op-label">Navigate</p>
     <div class="op-navlinks">
-      <a class="op-navlink" href="https://vyrion.earth">
+      <a class="op-navlink" href="https://dablerfrost.github.io/conscience">
         ◉ CONSCIENCE <span class="op-navlink-arrow">›</span>
       </a>
       <a class="op-navlink" href="atlas.html">
@@ -3040,8 +2350,15 @@ Corporate
       <a class="op-navlink" href="shield.html">
         ⬟ SHIELD <span class="op-navlink-arrow">›</span>
       </a>
-      <a class="op-navlink" href="https://vyrion.earth/archive/">
+      <a class="op-navlink" href="https://dablerfrost.github.io/conscience/archive">
         ◆ ARCHIVE <span class="op-navlink-arrow">›</span>
+      </a>
+      <a class="op-navlink" href="#terminal">
+        → Investor Terminal <span class="op-navlink-arrow">›</span>
+      </a>
+      <a class="op-navlink" href="#licensing">
+        → Data Licensing <span class="op-navlink-arrow">›</span>
+      </a>
     </div>
   </div>
  
@@ -3084,8 +2401,8 @@ Corporate
 // ─────────────────────────────────────────────────────────
 const MAG = {
   co2:{t:'Atmospheric CO₂ — NOAA Mauna Loa Observatory',b:'Real-time CO₂ concentration from NOAA\'s Global Monitoring Laboratory. Mauna Loa has the world\'s longest continuous atmospheric CO₂ record, running since 1958. Pre-industrial baseline ≈ 280 ppm. VYRION uses this as one of 6 Atmosphere indicators (22% weight in the Index).',s:'NOAA GML · gml.noaa.gov/ccgg/trends · Daily · Fetched live'},
-  index:{t:'VYRION Index — Daily Planetary Health Benchmark',b:'The world\'s first daily investable planetary health benchmark. Score of 41.2 ± 1.8 / 100 against a pre-industrial 1850–1900 baseline of 100. Computed across 8 Earth systems: Atmosphere 22%, Ocean 18%, Ice 14%, Forest 13%, Biodiversity 12%, Freshwater 10%, Soil 7%, Corporate Accountability 4%. Changes <±0.5 are within measurement error.',s:'VYRION-METHODOLOGY-v1.0.md · https://vyrion.earth'},
-  coverage:{t:'CONSCIENCE Coverage — 11 Companies',b:'11 major corporations tracked across Oil & Gas, Aviation, Food & Beverage, Retail, and Technology. Selected for material climate pledges and significant emissions footprints. Expansion planned. Full selection criteria in CONSCIENCE-METHODOLOGY.md.',s:'VYRION CONSCIENCE · Module 01 · v2.7'},
+  index:{t:'VYRION Index — Daily Planetary Health Benchmark',b:'The world\'s first daily investable planetary health benchmark. Score of 41.2 ± 1.8 / 100 against a pre-industrial 1850–1900 baseline of 100. Computed across 8 Earth systems: Atmosphere 22%, Ocean 18%, Ice 14%, Forest 13%, Biodiversity 12%, Freshwater 10%, Soil 7%, Corporate Accountability 4%. Changes <±0.5 are within measurement error.',s:'VYRION-METHODOLOGY-v1.0.md · github.com/dablerfrost/conscience · Day 13 · April 2, 2026'},
+  coverage:{t:'CONSCIENCE Coverage — 11 Companies',b:'11 major corporations tracked across Oil & Gas, Aviation, Food & Beverage, Retail, and Technology. Selected for material climate pledges and significant emissions footprints. Expansion planned. Full selection criteria in CONSCIENCE-METHODOLOGY.md.',s:'VYRION CONSCIENCE · Module 00 · v2.7'},
   lawsuits:{t:'Total Active Climate Lawsuits',b:'Aggregate active climate litigation against the 11 tracked companies, per Sabin Center for Climate Change Law at Columbia Law School. Legal exposure = one of the four CONSCIENCE scoring factors (20 pts max). Counts refreshed monthly.',s:'Sabin Center for Climate Change Law · climatecasechart.com · Columbia Law School'},
   refresh:{t:'Auto-Refresh — Live Data',b:'CONSCIENCE refreshes on page load and every 15 minutes. Live: NOAA GML CO₂ (direct API), SEC EDGAR filing dates (data.sec.gov). Static sources (CDP, InfluenceMap, SBTi, TPI) update when annual assessments publish.',s:'NOAA GML · data.sec.gov/submissions · 15 min interval'},
   'src-cdp':{t:'CDP — Carbon Disclosure Project',b:'World\'s largest environmental disclosure system. Companies respond annually to standardised climate questionnaires. Grades: A (Leadership) → D (Disclosure only). A requires demonstrated governance, strategy, and action — not just reporting. CDP grades are independent; companies cannot buy a better score.',s:'CDP · cdp.net/en/responses · Annual cycle · 23,000+ companies'},
@@ -3478,11 +2795,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const sBtn = document.querySelector('[data-scale="0.88"]');
   const mBtn = document.querySelector('[data-scale="1.0"]');
   const lBtn = document.querySelector('[data-scale="1.22"]');
- if (sBtn) sBtn.dataset.mag = 'sz-s';
+  if (sBtn) sBtn.dataset.mag = 'sz-s';
   if (mBtn) mBtn.dataset.mag = 'sz-m';
   if (lBtn) lBtn.dataset.mag = 'sz-l';
   attachMag(document);
-  checkHash();
 });
 
 // ─────────────────────────────────────────────────────────
@@ -3886,7 +3202,7 @@ window.addEventListener('hashchange', checkHash);
 <!-- ── SYNTHEKAI PLAYER ─────────────────────────────────── -->
 <style>
 #sk-wrap{
-  position:fixed;bottom:1.4rem;right:1.4rem;
+  position:right;bottom:1.4rem;left:0.5rem;
   z-index:800;display:flex;flex-direction:column;align-items:flex-end;gap:.35rem;
 }
 #sk-btn{
