@@ -1,797 +1,802 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="THE RECORD — VYRION Issue 006: Walmart Inc. Zero emissions own operations by 2040. Project Gigaton: 1B tonnes by 2030. CONSCIENCE Score 38/100 WARNING.">
+<meta property="og:title" content="THE RECORD — Issue 006: Walmart · VYRION">
+<meta property="og:description" content="Walmart pledged zero emissions by 2040 and 1B tonnes via Project Gigaton. Scope 3 growing. Own ops ~35% renewable. CONSCIENCE Score: 38/100 WARNING.">
+<meta property="og:type" content="article">
+<title>THE RECORD — Issue 006: Walmart · VYRION</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&family=Archivo:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Archivo+Narrow:wght@400;500;600;700&family=Courier+Prime:wght@400;700&display=swap');
-
-.record-issue {
-  background: #f0ebe0;
-  color: #1a1a18;
-  max-width: 1040px;
-  margin: 0 auto;
-  padding: 48px 40px 64px;
-  font-family: 'Archivo Narrow', sans-serif;
-  position: relative;
-  box-sizing: border-box;
-}
-
-.record-issue *,
-.record-issue *::before,
-.record-issue *::after {
-  box-sizing: border-box;
-}
-
-.record-issue a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.record-issue a:hover {
-  text-decoration: underline;
-}
-
-/* ─── MASTHEAD ─── */
-.record-issue .masthead {
-  border-top: 3px solid #1a1a18;
-  border-bottom: 1px solid #1a1a18;
-  padding: 10px 0 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 4px;
-}
-
-.record-issue .masthead-left {
-  display: flex;
-  align-items: baseline;
-  gap: 16px;
-}
-
-.record-issue .pub-name {
-  font-family: 'Playfair Display', serif;
-  font-weight: 900;
-  font-size: 11px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-}
-
-.record-issue .issue-tag {
-  font-family: 'Courier Prime', monospace;
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  color: #555;
-  text-transform: uppercase;
-}
-
-.record-issue .masthead-right {
-  font-family: 'Courier Prime', monospace;
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  color: #555;
-}
-
-/* ─── RULE ─── */
-.record-issue .rule-thin {
-  border: none;
-  border-top: 1px solid #1a1a18;
-  margin: 6px 0;
-}
-
-.record-issue .rule-thick {
-  border: none;
-  border-top: 3px solid #1a1a18;
-  margin: 0;
-}
-
-/* ─── HEADLINE BLOCK ─── */
-.record-issue .headline-block {
-  padding: 32px 0 20px;
-  border-bottom: 1px solid #1a1a18;
-}
-
-.record-issue .kicker {
-  font-family: 'Courier Prime', monospace;
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #444;
-  margin-bottom: 12px;
-}
-
-.record-issue .headline {
-  font-family: 'Playfair Display', serif;
-  font-weight: 900;
-  font-size: 52px;
-  line-height: 1.0;
-  letter-spacing: -0.01em;
-  margin: 0 0 8px;
-}
-
-.record-issue .headline em {
-  font-style: italic;
-  color: #3a2a14;
-}
-
-.record-issue .subhead {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: #444;
-  letter-spacing: 0.02em;
-  margin-top: 10px;
-}
-
-/* ─── META ROW ─── */
-.record-issue .meta-row {
-  display: flex;
-  gap: 0;
-  border-bottom: 1px solid #1a1a18;
-  margin-bottom: 0;
-}
-
-.record-issue .meta-cell {
-  flex: 1;
-  padding: 10px 16px 10px 0;
-  border-right: 1px solid #ccc;
-}
-
-.record-issue .meta-cell:last-child {
-  border-right: none;
-  padding-left: 16px;
-}
-
-.record-issue .meta-label {
-  font-family: 'Courier Prime', monospace;
-  font-size: 9px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #888;
-  margin-bottom: 3px;
-}
-
-.record-issue .meta-value {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  color: #1a1a18;
-  letter-spacing: 0.04em;
-}
-
-/* ─── SCORE BADGE ─── */
-.record-issue .score-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: #1a1a18;
-  color: #f0ebe0;
-  padding: 6px 16px;
-  margin: 16px 0 0;
-}
-
-.record-issue .score-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  font-weight: 900;
-  line-height: 1;
-}
-
-.record-issue .score-denom {
-  font-family: 'Courier Prime', monospace;
-  font-size: 11px;
-  color: #aaa;
-  border-left: 1px solid #555;
-  padding-left: 10px;
-  letter-spacing: 0.08em;
-}
-
-.record-issue .warning-pill {
-  display: inline-block;
-  border: 1.5px solid #b8600a;
-  color: #b8600a;
-  font-family: 'Courier Prime', monospace;
-  font-size: 9px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  padding: 3px 10px;
-  margin-left: 10px;
-}
-
-/* ─── TWO COLUMN LAYOUT ─── */
-.record-issue .two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  border-bottom: 1px solid #1a1a18;
-}
-
-.record-issue .col-left {
-  padding: 24px 28px 24px 0;
-  border-right: 1px solid #1a1a18;
-}
-
-.record-issue .col-right {
-  padding: 24px 0 24px 28px;
-}
-
-/* ─── SECTION HEADERS ─── */
-.record-issue .section-label {
-  font-family: 'Courier Prime', monospace;
-  font-size: 9px;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: #888;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 5px;
-  margin-bottom: 14px;
-}
-
-/* ─── PLEDGE / REALITY ─── */
-.record-issue .pledge-item {
-  font-size: 13px;
-  line-height: 1.55;
-  color: #1a1a18;
-  padding: 6px 0;
-  border-bottom: 1px dashed #ccc;
-}
-
-.record-issue .pledge-item:last-child {
-  border-bottom: none;
-}
-
-.record-issue .pledge-item strong {
-  display: block;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  margin-bottom: 2px;
-}
-
-.record-issue .reality-item {
-  font-size: 13px;
-  line-height: 1.55;
-  padding: 6px 0;
-  border-bottom: 1px dashed #ccc;
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-}
-
-.record-issue .reality-item:last-child {
-  border-bottom: none;
-}
-
-.record-issue .reality-item::before {
-  content: '▸';
-  color: #b8600a;
-  font-size: 10px;
-  margin-top: 3px;
-  flex-shrink: 0;
-}
-
-/* ─── SCORE TABLE ─── */
-.record-issue .score-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 12px;
-}
-
-.record-issue .score-table thead tr {
-  border-bottom: 2px solid #1a1a18;
-}
-
-.record-issue .score-table th {
-  font-family: 'Courier Prime', monospace;
-  font-size: 9px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #888;
-  padding: 0 8px 7px 0;
-  text-align: left;
-  font-weight: 400;
-}
-
-.record-issue .score-table th:last-child {
-  text-align: right;
-}
-
-.record-issue .score-table td {
-  padding: 8px 8px 8px 0;
-  vertical-align: top;
-  border-bottom: 1px solid #ddd;
-  line-height: 1.4;
-}
-
-.record-issue .score-table td:last-child {
-  text-align: right;
-  font-family: 'Courier Prime', monospace;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.record-issue .score-table .total-row td {
-  border-top: 2px solid #1a1a18;
-  border-bottom: none;
-  font-weight: 700;
-  padding-top: 10px;
-}
-
-.record-issue .score-positive {
-  color: #2a6a2a;
-}
-
-.record-issue .score-negative {
-  color: #b8100a;
-}
-
-/* ─── BAR METER ─── */
-.record-issue .meter-wrap {
-  margin-top: 16px;
-}
-
-.record-issue .meter-track {
-  height: 10px;
-  background: #ddd;
-  position: relative;
-  overflow: hidden;
-}
-
-.record-issue .meter-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #4a7c4a 0%, #b8600a 55%, #b8100a 80%);
-  width: 38%;
-}
-
-.record-issue .meter-labels {
-  display: flex;
-  justify-content: space-between;
-  font-family: 'Courier Prime', monospace;
-  font-size: 9px;
-  color: #888;
-  margin-top: 4px;
-}
-
-.record-issue .meter-pointer-row {
-  position: relative;
-  height: 18px;
-  margin-top: -4px;
-}
-
-.record-issue .meter-pointer {
-  position: absolute;
-  left: 38%;
-  transform: translateX(-50%);
-  font-family: 'Courier Prime', monospace;
-  font-size: 10px;
-  font-weight: 700;
-  color: #b8600a;
-}
-
-/* ─── CAPITAL ANALYSIS ─── */
-.record-issue .capital-section {
-  padding: 28px 0;
-  border-bottom: 1px solid #1a1a18;
-}
-
-.record-issue .capital-body {
-  font-size: 13.5px;
-  line-height: 1.7;
-  color: #1a1a18;
-  margin-bottom: 16px;
-}
-
-.record-issue .risk-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 0;
-  border: 1px solid #1a1a18;
-  margin: 16px 0;
-}
-
-.record-issue .risk-cell {
-  padding: 14px 16px;
-  border-right: 1px solid #1a1a18;
-}
-
-.record-issue .risk-cell:last-child {
-  border-right: none;
-}
-
-.record-issue .risk-cell-label {
-  font-family: 'Courier Prime', monospace;
-  font-size: 9px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #888;
-  margin-bottom: 6px;
-}
-
-.record-issue .risk-cell-text {
-  font-size: 12px;
-  line-height: 1.5;
-}
-
-.record-issue .investable-signal {
-  background: #1a1a18;
-  color: #f0ebe0;
-  padding: 16px 20px;
-  margin-top: 16px;
-}
-
-.record-issue .investable-signal .signal-label {
-  font-family: 'Courier Prime', monospace;
-  font-size: 9px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #aaa;
-  margin-bottom: 8px;
-}
-
-.record-issue .investable-signal p {
-  font-size: 13px;
-  line-height: 1.65;
-  margin: 0;
-  color: #e8e3d8;
-}
-
-/* ─── VYRION LAYER ─── */
-.record-issue .vyrion-layer {
-  padding: 20px 0;
-  border-bottom: 1px solid #1a1a18;
-}
-
-.record-issue .vyrion-statement {
-  font-family: 'Playfair Display', serif;
-  font-size: 15px;
-  font-style: italic;
-  line-height: 1.6;
-  color: #2a2a20;
-  padding-left: 20px;
-  border-left: 3px solid #1a1a18;
-}
-
-/* ─── OPP PROTOCOL ─── */
-.record-issue .opp-row {
-  padding: 16px 0;
-  border-bottom: 1px solid #1a1a18;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.record-issue .opp-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #2a6a2a;
-  flex-shrink: 0;
-}
-
-.record-issue .opp-text {
-  font-size: 12px;
-  line-height: 1.55;
-  color: #333;
-}
-
-.record-issue .opp-text strong {
-  font-weight: 700;
-  letter-spacing: 0.04em;
-}
-
-/* ─── FOOTER ─── */
-.record-issue .footer-section {
-  padding: 20px 0 0;
-}
-
-.record-issue .footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 32px;
-}
-
-.record-issue .footer-disclaimer {
-  font-size: 10.5px;
-  color: #666;
-  line-height: 1.65;
-}
-
-.record-issue .footer-right {
-  text-align: right;
-}
-
-.record-issue .footer-sig {
-  font-family: 'Playfair Display', serif;
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 3px;
-}
-
-.record-issue .footer-title {
-  font-family: 'Courier Prime', monospace;
-  font-size: 9px;
-  letter-spacing: 0.14em;
-  color: #888;
-  text-transform: uppercase;
-  line-height: 1.8;
-}
-
-.record-issue .next-issue-line {
-  font-family: 'Courier Prime', monospace;
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  color: #888;
-  border-top: 1px solid #ccc;
-  padding-top: 10px;
-  margin-top: 14px;
-  text-transform: uppercase;
-}
-
-/* ─── SOURCE STRIP ─── */
-.record-issue .source-strip {
-  padding: 12px 0;
-  border-bottom: 1px solid #ccc;
-  font-family: 'Courier Prime', monospace;
-  font-size: 9.5px;
-  color: #888;
-  letter-spacing: 0.08em;
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.record-issue .source-strip span::before {
-  content: '■ ';
-  font-size: 7px;
-  vertical-align: middle;
-}
-
-/* ─── PRINT/EMBED HELPERS ─── */
-.record-issue .visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-}
-
-/* ─── RESPONSIVE ─── */
-@media (max-width: 700px) {
-  .record-issue {
-    padding: 28px 20px 40px;
-  }
-  .record-issue .headline {
-    font-size: 34px;
-  }
-  .record-issue .two-col {
-    grid-template-columns: 1fr;
-  }
-  .record-issue .col-left {
-    border-right: none;
-    border-bottom: 1px solid #1a1a18;
-    padding: 20px 0;
-  }
-  .record-issue .col-right {
-    padding: 20px 0;
-  }
-  .record-issue .risk-grid {
-    grid-template-columns: 1fr;
-  }
-  .record-issue .risk-cell {
-    border-right: none;
-    border-bottom: 1px solid #1a1a18;
-  }
-  .record-issue .footer-grid {
-    grid-template-columns: 1fr;
-  }
-  .record-issue .footer-right {
-    text-align: left;
-  }
-  .record-issue .meta-row {
-    flex-wrap: wrap;
-  }
-  .record-issue .meta-cell {
-    flex: 1 1 48%;
-  }
+:root {
+  --void:#020912; --void2:#061624; --void3:#0b2035;
+  --glow:#00D4FF; --amber:#FFB84D; --breach:#F03030; --warn:#F09000;
+  --t1:#e4f2ff; --t2:#6a9ab8; --t3:#2d6080;
+  --border:rgba(0,212,255,.12); --border2:rgba(0,212,255,.07);
+  --nav-bg:rgba(2,9,18,.97); --scanline:rgba(0,212,255,.004);
+  --breach-bg:rgba(240,48,48,.07);
+  --warn-bg:rgba(240,144,0,.07);
+  --warn-border:rgba(240,144,0,.35);
+}
+[data-theme="light"] {
+  --void:#f0f5ff; --void2:#e4eeff; --void3:#d5e5ff;
+  --glow:#0066CC; --amber:#b07800; --breach:#b82020; --warn:#a05800;
+  --t1:#060e1e; --t2:#1e4a7a; --t3:#3a6090;
+  --border:rgba(0,102,204,.18); --border2:rgba(0,102,204,.10);
+  --nav-bg:rgba(240,245,255,.98); --scanline:transparent;
+  --breach-bg:rgba(184,32,32,.08);
+  --warn-bg:rgba(160,88,0,.08);
+  --warn-border:rgba(160,88,0,.35);
+}
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; font-size:18px; }
+body {
+  background:var(--void); color:var(--t1);
+  font-family:'Archivo',sans-serif; font-size:1rem;
+  line-height:1.65; min-height:100vh; overflow-x:hidden;
+}
+body::after {
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:990;
+  background:repeating-linear-gradient(0deg,transparent,transparent 3px,var(--scanline) 3px,var(--scanline) 4px);
+}
+
+/* ── NAV ── */
+.nav {
+  position:sticky; top:0; z-index:500; height:52px;
+  display:flex; align-items:center; gap:1.4rem; padding:0 1.8rem;
+  background:var(--nav-bg); border-bottom:1px solid var(--border);
+  backdrop-filter:blur(20px);
+}
+.nav-logo {
+  font-family:'Archivo Narrow',sans-serif; font-weight:800; font-size:.95rem;
+  color:var(--glow); letter-spacing:.15em; text-decoration:none; flex-shrink:0;
+  text-shadow:0 0 20px rgba(0,212,255,.3);
+}
+.nav-links { display:flex; gap:1.8rem; list-style:none; flex:1; }
+.nav-links a {
+  font-family:'Archivo Narrow',sans-serif; font-weight:700; font-size:.65rem;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:var(--t2); text-decoration:none; transition:color .2s; padding-bottom:2px;
+}
+.nav-links a:hover { color:var(--t1); }
+.nav-links a.active { color:var(--glow); border-bottom:1px solid rgba(0,212,255,.4); }
+.nav-controls { display:flex; align-items:center; gap:.35rem; flex-shrink:0; }
+.nc-sep { width:1px; height:16px; background:var(--border); }
+.nc-theme {
+  font-family:'Courier Prime',monospace; font-size:.58rem; font-weight:700;
+  letter-spacing:.12em; padding:.22rem .5rem; border-radius:2px;
+  border:1px solid var(--border); background:transparent;
+  color:var(--t2); cursor:pointer; transition:all .2s;
+}
+.nc-theme:hover { border-color:var(--glow); color:var(--glow); }
+.nc-sz {
+  font-family:'Courier Prime',monospace; font-size:.6rem; font-weight:700;
+  width:26px; height:26px; display:flex; align-items:center; justify-content:center;
+  border-radius:2px; border:1px solid var(--border);
+  background:transparent; color:var(--t3); cursor:pointer; transition:all .2s;
+}
+.nc-sz:hover { border-color:rgba(0,212,255,.4); color:var(--t1); }
+.nc-sz.active { background:rgba(0,212,255,.15); border-color:var(--glow); color:var(--glow); }
+.nav-dot { width:6px; height:6px; background:var(--glow); border-radius:50%; flex-shrink:0; animation:pdot 2.2s infinite; }
+@keyframes pdot { 0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,212,255,.5)} 50%{opacity:.4;box-shadow:0 0 0 7px rgba(0,212,255,0)} }
+
+/* ── ISSUE HEADER ── */
+.issue-header {
+  padding:3.5rem 2rem 2.8rem;
+  border-bottom:1px solid var(--border);
+  position:relative; overflow:hidden;
+}
+.issue-header::before {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(ellipse 60% 70% at 85% 50%, rgba(240,144,0,.04) 0%, transparent 70%);
+  pointer-events:none;
+}
+.bg-word {
+  position:absolute; right:-1rem; top:50%; transform:translateY(-50%);
+  font-family:'Archivo Narrow',sans-serif; font-weight:800;
+  font-size:clamp(5rem,14vw,11rem);
+  color:rgba(240,144,0,.035); pointer-events:none; user-select:none; line-height:1;
+}
+.eyebrow {
+  font-family:'Courier Prime',monospace; font-size:.65rem; color:var(--glow);
+  letter-spacing:.24em; text-transform:uppercase; margin-bottom:.4rem;
+  display:flex; align-items:center; gap:.55rem; position:relative; z-index:1;
+}
+.eyebrow::before { content:''; width:18px; height:1px; background:var(--glow); opacity:.5; }
+.issue-kicker {
+  font-family:'Courier Prime',monospace; font-size:.6rem; color:var(--t3);
+  letter-spacing:.18em; text-transform:uppercase; margin-bottom:.4rem;
+  position:relative; z-index:1;
+}
+.issue-title {
+  font-family:'Archivo Narrow',sans-serif; font-weight:800;
+  font-size:clamp(2.4rem,5.5vw,3.8rem); color:var(--t1);
+  line-height:.95; letter-spacing:-.02em; margin-bottom:.2rem;
+  position:relative; z-index:1;
+}
+.issue-company {
+  font-family:'Archivo Narrow',sans-serif; font-weight:800;
+  font-size:clamp(1.4rem,3vw,2rem); color:var(--warn);
+  line-height:1; letter-spacing:-.01em; margin-bottom:.5rem;
+  position:relative; z-index:1;
+}
+.issue-meta {
+  font-family:'Courier Prime',monospace; font-size:.6rem; color:var(--t3);
+  letter-spacing:.1em; margin-bottom:.8rem; position:relative; z-index:1;
+}
+.issue-sub {
+  font-size:.82rem; color:var(--t2); max-width:62ch; line-height:1.72;
+  position:relative; z-index:1;
+}
+
+/* ── WARNING BADGE ── */
+.warn-badge {
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:var(--warn-bg); border:1px solid var(--warn-border);
+  color:var(--warn); padding:.4rem 1rem; border-radius:2px;
+  font-family:'Archivo Narrow',sans-serif; font-weight:800;
+  font-size:1rem; letter-spacing:.16em; text-transform:uppercase;
+  margin-bottom:1.2rem; position:relative; z-index:1;
+}
+.warn-badge::before {
+  content:''; width:8px; height:8px; background:var(--warn);
+  border-radius:50%; animation:wpulse 1.8s infinite;
+}
+@keyframes wpulse { 0%,100%{opacity:1} 50%{opacity:.35} }
+
+/* ── SCORE STRIP ── */
+.score-strip {
+  display:flex; flex-wrap:wrap;
+  background:var(--void2); border-bottom:1px solid var(--border);
+}
+.ss-cell {
+  flex:1; min-width:140px; padding:1.1rem 1.6rem;
+  border-right:1px solid var(--border);
+  display:flex; flex-direction:column; gap:.15rem;
+}
+.ss-cell:last-child { border-right:none; }
+.ss-label {
+  font-family:'Courier Prime',monospace; font-size:.56rem;
+  color:var(--t3); letter-spacing:.16em; text-transform:uppercase;
+}
+.ss-val {
+  font-family:'Courier Prime',monospace; font-weight:700;
+  font-size:1.7rem; line-height:1; letter-spacing:-.02em;
+}
+.ss-sub { font-family:'Courier Prime',monospace; font-size:.56rem; color:var(--t3); line-height:1.4; }
+.val-breach { color:var(--breach); }
+.val-amber  { color:var(--amber); }
+.val-glow   { color:var(--glow); }
+.val-warn   { color:var(--warn); }
+
+/* ── SCORE BAR ── */
+.score-bar-section {
+  padding:1.2rem 2rem 1.4rem;
+  border-bottom:1px solid var(--border);
+  background:var(--void2);
+}
+.sb-label-row {
+  display:flex; justify-content:space-between; align-items:baseline;
+  font-family:'Courier Prime',monospace; font-size:.56rem; color:var(--t3);
+  letter-spacing:.12em; text-transform:uppercase; margin-bottom:.5rem;
+}
+.sb-label-row span:last-child { color:var(--warn); font-size:.7rem; font-weight:700; }
+.sb-track {
+  height:5px; background:rgba(255,255,255,.06); border-radius:3px; overflow:hidden;
+  margin-bottom:.35rem;
+}
+[data-theme="light"] .sb-track { background:rgba(0,0,0,.08); }
+.sb-fill {
+  height:100%; width:0; border-radius:3px;
+  background:linear-gradient(90deg, rgba(240,48,48,.35), var(--warn));
+  transition:width 1.4s cubic-bezier(.4,0,.2,1);
+}
+.sb-scale {
+  display:flex; justify-content:space-between;
+  font-family:'Courier Prime',monospace; font-size:.52rem; color:var(--t3);
+}
+
+/* ── MAIN LAYOUT ── */
+.content-wrap {
+  display:grid; grid-template-columns:1fr 320px;
+}
+@media(max-width:900px) { .content-wrap { grid-template-columns:1fr; } }
+
+.content-main { padding:2.4rem 2rem; border-right:1px solid var(--border); }
+.content-sidebar { padding:2rem 1.6rem; background:var(--void2); }
+@media(max-width:900px) {
+  .content-main { border-right:none; border-bottom:1px solid var(--border); }
+}
+
+/* ── SECTION HEADING ── */
+.section-heading {
+  font-family:'Archivo Narrow',sans-serif; font-weight:800;
+  font-size:.8rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--t1); margin-bottom:1rem;
+  display:flex; align-items:center; gap:.6rem;
+}
+.section-heading::after { content:''; flex:1; height:1px; background:var(--border); }
+
+/* ── PLEDGE / REALITY ── */
+.pr-block { margin-bottom:2rem; }
+.pr-row {
+  display:flex; gap:.65rem; margin-bottom:.45rem; align-items:flex-start;
+}
+.pr-tag {
+  font-family:'Courier Prime',monospace; font-size:.54rem; letter-spacing:.1em;
+  text-transform:uppercase; flex-shrink:0; padding:.1rem .35rem;
+  border-radius:2px; margin-top:.15rem; line-height:1.2;
+}
+.tag-pledge  { background:rgba(74,173,255,.08); color:#4AADFF; border:1px solid rgba(74,173,255,.25); }
+.tag-reality { background:var(--warn-bg); color:var(--warn); border:1px solid rgba(240,144,0,.25); }
+.pr-text { font-size:.82rem; color:var(--t1); line-height:1.65; }
+.pr-sub {
+  font-family:'Courier Prime',monospace; font-size:.58rem; color:var(--t3);
+  margin-left:calc(.35rem + 54px + .65rem); line-height:1.5; margin-top:-.15rem; margin-bottom:.6rem;
+}
+.pr-sub a { color:rgba(0,212,255,.4); text-decoration:none; }
+.pr-sub a:hover { color:var(--glow); }
+
+/* ── PROSE ── */
+.prose { font-size:.82rem; color:var(--t2); line-height:1.78; margin-bottom:1.8rem; }
+.prose p { margin-bottom:.9rem; }
+.prose p:last-child { margin-bottom:0; }
+.prose strong { color:var(--t1); font-weight:600; }
+.prose a { color:rgba(0,212,255,.5); text-decoration:none; }
+.prose a:hover { color:var(--glow); }
+.prose .highlight-warn   { color:var(--warn); font-weight:700; }
+.prose .highlight-breach { color:var(--breach); font-weight:700; }
+.prose .highlight-glow   { color:var(--glow); font-weight:600; }
+
+/* ── SCORE BREAKDOWN ── */
+.breakdown-block {
+  background:rgba(0,0,0,.22); border:1px solid var(--border2);
+  border-radius:2px; padding:.9rem 1rem; margin-bottom:1.8rem;
+}
+[data-theme="light"] .breakdown-block { background:rgba(0,0,0,.04); }
+.bd-row {
+  display:grid; grid-template-columns:1fr auto auto;
+  gap:.5rem; align-items:baseline;
+  padding:.32rem 0; border-bottom:1px solid var(--border2);
+  font-family:'Courier Prime',monospace; font-size:.62rem;
+}
+.bd-row:last-child { border-bottom:none; }
+.bd-factor { color:var(--t2); }
+.bd-weight { color:var(--t3); font-size:.54rem; }
+.bd-score { font-weight:700; text-align:right; min-width:40px; }
+.bd-score.pos { color:var(--glow); }
+.bd-score.neg { color:var(--breach); }
+.bd-total {
+  display:flex; justify-content:space-between;
+  padding:.4rem 0 0; margin-top:.2rem; border-top:1px solid var(--border);
+  font-family:'Courier Prime',monospace; font-size:.68rem;
+}
+.bd-total-label { color:var(--t1); font-weight:700; }
+.bd-total-score { color:var(--warn); font-weight:700; font-size:.82rem; }
+.bd-note {
+  font-family:'Courier Prime',monospace; font-size:.54rem; color:var(--t3);
+  margin-top:.5rem; padding-top:.4rem; border-top:1px solid var(--border2); line-height:1.5;
+}
+.bd-note a { color:rgba(0,212,255,.38); text-decoration:none; }
+.bd-note a:hover { color:var(--glow); }
+
+/* ── OPEN PROOF ── */
+.proof-block {
+  background:var(--warn-bg);
+  border:1px solid rgba(240,144,0,.2); border-radius:2px;
+  padding:1.1rem 1.2rem; margin-bottom:1.8rem;
+}
+.proof-header {
+  font-family:'Courier Prime',monospace; font-size:.58rem;
+  color:var(--warn); letter-spacing:.16em; text-transform:uppercase;
+  margin-bottom:.5rem; display:flex; align-items:center; gap:.4rem;
+}
+.proof-header::before {
+  content:''; width:5px; height:5px; background:var(--warn);
+  border-radius:50%; flex-shrink:0; animation:wpulse 1.8s infinite;
+}
+.proof-body { font-size:.76rem; color:var(--t2); line-height:1.65; }
+.proof-body a { color:rgba(0,212,255,.5); text-decoration:none; }
+.proof-body a:hover { color:var(--glow); }
+
+/* ── SIDEBAR COMPONENTS ── */
+.sidebar-block {
+  background:rgba(0,0,0,.2); border:1px solid var(--border2);
+  border-radius:2px; padding:.9rem 1rem; margin-bottom:1.2rem;
+}
+[data-theme="light"] .sidebar-block { background:rgba(0,0,0,.04); }
+.sidebar-label {
+  font-family:'Courier Prime',monospace; font-size:.56rem;
+  color:var(--t3); letter-spacing:.14em; text-transform:uppercase;
+  margin-bottom:.6rem;
+}
+.sval-row {
+  display:flex; justify-content:space-between; align-items:baseline;
+  padding:.28rem 0; border-bottom:1px solid var(--border2);
+  font-family:'Courier Prime',monospace; font-size:.62rem;
+}
+.sval-row:last-child { border-bottom:none; }
+.sval-label  { color:var(--t2); }
+.sval-val    { font-weight:700; text-align:right; }
+.sval-breach { color:var(--breach); }
+.sval-glow   { color:var(--glow); }
+.sval-warn   { color:var(--warn); }
+.sval-amber  { color:var(--amber); }
+.sval-neutral { color:var(--t2); }
+
+.nav-block {
+  border:1px solid var(--border); border-radius:2px; overflow:hidden;
+  margin-bottom:1.2rem;
+}
+.nb-header {
+  font-family:'Courier Prime',monospace; font-size:.54rem;
+  color:var(--t3); letter-spacing:.14em; text-transform:uppercase;
+  padding:.55rem .85rem; background:rgba(0,0,0,.22);
+  border-bottom:1px solid var(--border);
+}
+[data-theme="light"] .nb-header { background:rgba(0,0,0,.05); }
+.nb-row {
+  display:flex; justify-content:space-between; align-items:baseline;
+  padding:.5rem .85rem; border-bottom:1px solid var(--border2);
+  font-family:'Courier Prime',monospace; font-size:.6rem;
+  text-decoration:none; color:var(--t2); transition:background .15s;
+}
+.nb-row:last-child { border-bottom:none; }
+.nb-row:hover { background:rgba(0,212,255,.04); color:var(--t1); }
+.nb-issue  { color:var(--t3); font-size:.54rem; }
+.nb-name   { flex:1; padding:0 .6rem; }
+.nb-score  { font-weight:700; }
+.nb-breach { color:var(--breach); }
+.nb-warn   { color:var(--warn); }
+.nb-glow   { color:var(--glow); }
+.nb-current  { background:rgba(240,144,0,.06); }
+.nb-upcoming { color:var(--t3); font-style:italic; }
+
+.source-block { margin-bottom:1.2rem; }
+.src-row {
+  display:flex; align-items:flex-start; gap:.5rem;
+  padding:.38rem 0; border-bottom:1px solid var(--border2);
+  font-family:'Courier Prime',monospace; font-size:.58rem;
+}
+.src-row:last-child { border-bottom:none; }
+.src-dot { width:4px; height:4px; border-radius:50%; flex-shrink:0; margin-top:.32rem; }
+.src-dot-live   { background:var(--glow); }
+.src-dot-static { background:var(--t3); }
+.src-name { color:var(--t2); line-height:1.45; }
+.src-name a { color:rgba(0,212,255,.4); text-decoration:none; }
+.src-name a:hover { color:var(--glow); }
+
+/* ── FOOTER ── */
+.record-footer {
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:1rem; padding:1.4rem 2rem;
+  border-top:1px solid var(--border);
+  background:var(--void2);
+}
+.footer-l { font-family:'Courier Prime',monospace; font-size:.6rem; color:var(--t3); line-height:1.8; }
+.footer-l a { color:rgba(0,212,255,.4); text-decoration:none; }
+.footer-l a:hover { color:var(--glow); }
+.footer-r { display:flex; gap:1.4rem; }
+.footer-r a {
+  font-family:'Courier Prime',monospace; font-size:.6rem;
+  color:rgba(0,212,255,.3); text-decoration:none; transition:color .18s;
+}
+.footer-r a:hover { color:var(--glow); }
+
+@media(max-width:720px) {
+  html { font-size:16px!important; }
+  .nav { padding:0 .9rem; height:48px; }
+  .nav-links { display:none; }
+  .issue-header { padding:2rem .9rem 1.8rem; }
+  .content-main { padding:1.6rem .9rem; }
+  .content-sidebar { padding:1.6rem .9rem; }
+  .score-strip .ss-cell { min-width:45%; }
+  .record-footer { padding:1.2rem .9rem; }
 }
 </style>
+</head>
+<body>
 
-<div class="record-issue">
-
-  <!-- MASTHEAD -->
-  <div class="masthead">
-    <div class="masthead-left">
-      <span class="pub-name">The Record · Vyrion PBC</span>
-      <span class="issue-tag">Issue 006</span>
-    </div>
-    <div class="masthead-right">Wednesday, April 22, 2026</div>
+<!-- NAV -->
+<nav class="nav">
+  <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
+  <ul class="nav-links">
+    <li><a href="https://vyrion.earth">CONSCIENCE</a></li>
+    <li><a href="https://vyrion.earth/atlas.html">ATLAS</a></li>
+    <li><a href="https://vyrion.earth/shield.html">SHIELD</a></li>
+    <li><a href="https://vyrion.earth/record" class="active">RECORD</a></li>
+    <li><a href="https://vyrion.earth/archive">ARCHIVE</a></li>
+  </ul>
+  <div class="nav-controls">
+    <button class="nc-theme" id="theme-btn" onclick="toggleTheme()">◐ DARK</button>
+    <div class="nc-sep"></div>
+    <button class="nc-sz" data-scale="0.88" onclick="setScale(this)">S</button>
+    <button class="nc-sz active" data-scale="1.0" onclick="setScale(this)">M</button>
+    <button class="nc-sz" data-scale="1.22" onclick="setScale(this)">L</button>
   </div>
-  <hr class="rule-thick">
+  <div class="nav-dot"></div>
+</nav>
 
-  <!-- HEADLINE BLOCK -->
-  <div class="headline-block">
-    <p class="kicker">CONSCIENCE Scan · Corporate Audit · Consumer Staples / Retail</p>
-    <h1 class="headline"><em>Walmart</em> Inc.</h1>
-    <p class="subhead">One company. Pledge vs. reality. Sourced. Scored. Published openly.</p>
+<!-- ISSUE HEADER -->
+<header class="issue-header">
+  <div class="bg-word">WMT</div>
+  <div class="eyebrow">The Record · Issue 006 · Wednesday April 22, 2026</div>
+  <div class="issue-kicker">NYSE: WMT · CIK 0000104169 · Consumer Staples / Retail</div>
+  <div class="warn-badge">WARNING</div>
+  <h1 class="issue-title">THE RECORD — ISSUE 006</h1>
+  <div class="issue-company">Walmart Inc.</div>
+  <p class="issue-sub">One company. Pledge vs. reality. Sourced. Scored. Published openly. CONSCIENCE Score: 38 / 100. Published: Wednesday, April 22, 2026.</p>
+</header>
 
-    <div style="margin-top: 20px; display: flex; align-items: center; flex-wrap: wrap; gap: 12px;">
-      <div class="score-badge">
-        <span class="score-num">38</span>
-        <span class="score-denom">/ 100 &nbsp; CONSCIENCE SCORE</span>
-      </div>
-      <span class="warning-pill">⚠ WARNING</span>
-    </div>
+<!-- SCORE STRIP -->
+<div class="score-strip">
+  <div class="ss-cell">
+    <div class="ss-label">CONSCIENCE Score</div>
+    <div class="ss-val val-warn">38<span style="font-size:.9rem;color:var(--t3)">/100</span></div>
+    <div class="ss-sub">Band: WARNING · 31–49 range</div>
   </div>
-
-  <!-- META ROW -->
-  <div class="meta-row">
-    <div class="meta-cell">
-      <div class="meta-label">Ticker / Exchange</div>
-      <div class="meta-value">WMT · NYSE</div>
-    </div>
-    <div class="meta-cell" style="padding-left: 16px;">
-      <div class="meta-label">CIK</div>
-      <div class="meta-value">104169</div>
-    </div>
-    <div class="meta-cell" style="padding-left: 16px;">
-      <div class="meta-label">Sector</div>
-      <div class="meta-value">Consumer Staples / Retail</div>
-    </div>
-    <div class="meta-cell" style="padding-left: 16px;">
-      <div class="meta-label">Audit Day</div>
-      <div class="meta-value">Day 006 · FY2024 Data</div>
-    </div>
+  <div class="ss-cell">
+    <div class="ss-label">Own Ops Renewable</div>
+    <div class="ss-val val-warn">~35%</div>
+    <div class="ss-sub">FY2024 · 2040 zero ops target</div>
   </div>
-
-  <!-- PLEDGE vs REALITY -->
-  <div class="two-col">
-    <div class="col-left">
-      <div class="section-label">Pledge</div>
-
-      <div class="pledge-item">
-        <strong>Own Operations — Net Zero by 2040</strong>
-        Zero emissions across all owned and operated facilities by 2040.
-      </div>
-      <div class="pledge-item">
-        <strong>Project Gigaton — Supply Chain Reduction</strong>
-        1 billion tonnes of Scope 3 supply chain emission reductions by 2030. Third-party verified methodology.
-      </div>
-    </div>
-    <div class="col-right">
-      <div class="section-label">Reality (FY2024)</div>
-
-      <div class="reality-item">Scope 3 supply chain emissions continuing to grow despite active Gigaton campaign.</div>
-      <div class="reality-item">Own operations running at ~35% renewable energy — well short of trajectory required for 2040 zero claim.</div>
-      <div class="reality-item">Gigaton methodology independently verified; delivery results remain mixed with no absolute decarbonization pathway confirmed.</div>
-
-      <div class="source-strip" style="margin-top: 16px;">
-        <span>Walmart FY2024 ESG Report</span>
-        <span>CDP 2023</span>
-        <span>Gigaton Progress Report</span>
-      </div>
-    </div>
+  <div class="ss-cell">
+    <div class="ss-label">Scope 3 Trajectory</div>
+    <div class="ss-val val-breach">↑ Growing</div>
+    <div class="ss-sub">Despite Gigaton · FY2024 data</div>
   </div>
-
-  <!-- SCORE BREAKDOWN -->
-  <div style="padding: 28px 0; border-bottom: 1px solid #1a1a18;">
-    <div class="section-label">CONSCIENCE Score Breakdown — Weighted</div>
-
-    <table class="score-table">
-      <thead>
-        <tr>
-          <th style="width: 60%;">Factor</th>
-          <th>Basis</th>
-          <th>Score</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Pledge Quality<br><span style="font-size: 11px; color: #888;">Own operations + supply chain; 3rd-party verified</span></td>
-          <td style="font-size: 11px; color: #555;">30 pts max</td>
-          <td class="score-positive">+18 / 30</td>
-        </tr>
-        <tr>
-          <td>CDP Performance<br><span style="font-size: 11px; color: #888;">2023 Disclosure Grade B</span></td>
-          <td style="font-size: 11px; color: #555;">25 pts max</td>
-          <td class="score-positive">+18 / 25</td>
-        </tr>
-        <tr>
-          <td>InfluenceMap Lobbying Alignment<br><span style="font-size: 11px; color: #888;">Grade C — policy misalignment flagged</span></td>
-          <td style="font-size: 11px; color: #555;">25 pts max</td>
-          <td class="score-positive">+9 / 25</td>
-        </tr>
-        <tr>
-          <td>Legal Exposure + Scope 3 Trajectory<br><span style="font-size: 11px; color: #888;">2 active lawsuits; Scope 3 growing vs. target</span></td>
-          <td style="font-size: 11px; color: #555;">20 pts max</td>
-          <td class="score-negative">−7 / 20</td>
-        </tr>
-        <tr class="total-row">
-          <td colspan="2"><strong>CONSCIENCE Score — Total</strong></td>
-          <td style="font-size: 15px;" class="score-negative"><strong>38 / 100</strong></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <!-- Meter -->
-    <div class="meter-wrap" style="margin-top: 20px;">
-      <div style="font-family: 'Courier Prime', monospace; font-size: 9px; letter-spacing: 0.18em; color: #888; text-transform: uppercase; margin-bottom: 8px;">Score Position — CONSCIENCE Band</div>
-      <div class="meter-track">
-        <div class="meter-fill"></div>
-      </div>
-      <div class="meter-pointer-row">
-        <div class="meter-pointer">▲ 38</div>
-      </div>
-      <div class="meter-labels">
-        <span>0 · CRITICAL</span>
-        <span>25</span>
-        <span>50 · WATCH</span>
-        <span>75</span>
-        <span>100 · LEADER</span>
-      </div>
-    </div>
+  <div class="ss-cell">
+    <div class="ss-label">Project Gigaton Target</div>
+    <div class="ss-val val-glow">1B T</div>
+    <div class="ss-sub">Supply chain reduction by 2030</div>
   </div>
-
-  <!-- CAPITAL ANALYSIS -->
-  <div class="capital-section">
-    <div class="section-label">Capital Gains Translation — Precision Allocators</div>
-
-    <p class="capital-body">
-      Walmart sits squarely in the WARNING band — a textbook greenwashing signal in high-visibility retail. Project Gigaton's ambitious 1B-tonne supply-chain claim is aggressively marketed, yet Scope 3 emissions continue to grow while own operations remain only ~35% renewable. Mixed third-party verification of Gigaton results, combined with active litigation exposure, reveals a classic pledge-reality divergence: bold targets without verifiable absolute decarbonization.
-    </p>
-
-    <div class="risk-grid">
-      <div class="risk-cell">
-        <div class="risk-cell-label">Reputational</div>
-        <div class="risk-cell-text">Consumer backlash potential in a staple retail brand operating at massive global visibility.</div>
-      </div>
-      <div class="risk-cell">
-        <div class="risk-cell-label">Portfolio Stress</div>
-        <div class="risk-cell-text">Material transition risk under tightening 1.5°C pathways and intensifying ESG scrutiny across funds.</div>
-      </div>
-      <div class="risk-cell">
-        <div class="risk-cell-label">Opportunity Cost</div>
-        <div class="risk-cell-text">Capital competes directly with higher-scoring regenerators delivering measurable unit-level progress.</div>
-      </div>
-    </div>
-
-    <div class="investable-signal">
-      <div class="signal-label">Investable Signal</div>
-      <p>Elevated boundary pressure masked by marketing volume. Precision allocators should demand verifiable Scope 3 inflection and audited Gigaton delivery metrics in upcoming 10-K / ESG filings before increasing exposure. Capital deployed here competes directly with true boundary-aware compounders.</p>
-    </div>
+  <div class="ss-cell">
+    <div class="ss-label">Gigaton Verification</div>
+    <div class="ss-val val-amber">Mixed</div>
+    <div class="ss-sub">3rd-party verified methodology</div>
   </div>
-
-  <!-- VYRION INFRASTRUCTURE LAYER -->
-  <div class="vyrion-layer">
-    <div class="section-label">Vyrion Infrastructure Layer</div>
-    <div class="vyrion-statement">
-      VYRION converts these exact public data points into daily, auditable signals — the infrastructure layer between planetary science and disciplined capital deployment.
-    </div>
+  <div class="ss-cell">
+    <div class="ss-label">Active Lawsuits</div>
+    <div class="ss-val val-breach">2</div>
+    <div class="ss-sub">Sabin Center monitoring</div>
   </div>
-
-  <!-- OPEN PROOF PROTOCOL -->
-  <div style="padding: 18px 0; border-bottom: 1px solid #1a1a18; display: flex; align-items: flex-start; gap: 14px;">
-    <div class="opp-dot" style="margin-top: 4px;"></div>
-    <div>
-      <div style="font-family: 'Courier Prime', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: #2a6a2a; margin-bottom: 5px;">Open Proof Protocol · ACTIVE</div>
-      <div style="font-size: 12px; line-height: 1.6; color: #333;">
-        All data immutable. Every citation challengeable. Corrections published within 24 hours at <strong>contact@vyrion.earth</strong>. No deletions. Full methodology and raw datasets: <strong>vyrion.earth</strong> + GitHub-linked <strong>CONSCIENCE-METHODOLOGY.md</strong>.
-      </div>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  <div class="footer-section">
-    <div class="footer-grid">
-      <div>
-        <p class="footer-disclaimer">
-          The Record is VYRION PBC's permanent public ledger. Scores derived exclusively from public-domain sources: Walmart FY2024 ESG Report, CDP 2023, InfluenceMap, Sabin Center, SBTi, SEC EDGAR. Not financial advice. Conduct your own due diligence.
-        </p>
-        <p class="next-issue-line">Next Issue 007 — April 29, 2026</p>
-      </div>
-      <div class="footer-right">
-        <div class="footer-sig">DablerFrost</div>
-        <div class="footer-title">
-          Founder · VYRION PBC<br>
-          Hilo, Hawaii<br>
-          April 22, 2026
-        </div>
-      </div>
-    </div>
-  </div>
-
 </div>
+
+<!-- SCORE BAR -->
+<div class="score-bar-section">
+  <div class="sb-label-row">
+    <span>CONSCIENCE Score Position</span>
+    <span>38 / 100 — WARNING BAND</span>
+  </div>
+  <div class="sb-track">
+    <div class="sb-fill" id="score-bar" data-target="38"></div>
+  </div>
+  <div class="sb-scale">
+    <span>0 — BREACH</span>
+    <span style="color:var(--warn)">▲ 38/100</span>
+    <span>50</span>
+    <span>75</span>
+    <span style="color:var(--glow)">100 — ON TRACK</span>
+  </div>
+</div>
+
+<!-- MAIN CONTENT + SIDEBAR -->
+<div class="content-wrap">
+
+  <!-- MAIN -->
+  <div class="content-main">
+
+    <!-- PLEDGE VS REALITY -->
+    <div class="section-heading">Pledge vs. Reality</div>
+    <div class="pr-block">
+      <div class="pr-row">
+        <span class="pr-tag tag-pledge">PLEDGE</span>
+        <span class="pr-text">Zero emissions across all owned and operated facilities by 2040. Project Gigaton: 1 billion tonnes of Scope 3 supply chain emission reductions by 2030. Third-party verified methodology.</span>
+      </div>
+      <div class="pr-sub">Walmart FY2024 ESG Report · Gigaton Progress Report</div>
+
+      <div class="pr-row">
+        <span class="pr-tag tag-reality">REALITY</span>
+        <span class="pr-text">Scope 3 supply chain emissions <strong>continuing to grow</strong> despite active Gigaton campaign. Own operations running at <strong>~35% renewable energy</strong> — well short of trajectory required for 2040 zero claim. Gigaton methodology independently verified; delivery results <strong>remain mixed</strong> with no absolute decarbonization pathway confirmed. <strong>2 active lawsuits</strong> tracked by Sabin Center.</span>
+      </div>
+      <div class="pr-sub">Walmart FY2024 ESG Report · CDP 2023 · Gigaton Progress Report · Sabin Center</div>
+    </div>
+
+    <!-- CONSCIENCE SCORE BREAKDOWN -->
+    <div class="section-heading">CONSCIENCE Score Breakdown</div>
+    <div class="breakdown-block">
+      <div class="bd-row">
+        <span class="bd-factor">Pledge Quality — own ops + supply chain; 3rd-party verified methodology</span>
+        <span class="bd-weight">30 max</span>
+        <span class="bd-score pos">+18</span>
+      </div>
+      <div class="bd-row">
+        <span class="bd-factor">CDP Performance — 2023 Disclosure Grade B</span>
+        <span class="bd-weight">25 max</span>
+        <span class="bd-score pos">+18</span>
+      </div>
+      <div class="bd-row">
+        <span class="bd-factor">InfluenceMap Lobbying Alignment — Grade C · policy misalignment flagged</span>
+        <span class="bd-weight">25 max</span>
+        <span class="bd-score pos">+9</span>
+      </div>
+      <div class="bd-row">
+        <span class="bd-factor">Legal Exposure + Scope 3 Trajectory — 2 active lawsuits; Scope 3 growing vs. target</span>
+        <span class="bd-weight">20 max</span>
+        <span class="bd-score neg">−7</span>
+      </div>
+      <div class="bd-total">
+        <span class="bd-total-label">CONSCIENCE Score — Total</span>
+        <span class="bd-total-score">38 / 100 · WARNING</span>
+      </div>
+      <div class="bd-note">
+        Full derivation: <a href="https://github.com/dablerfrost/conscience/blob/main/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a> ·
+        Challenge any figure: <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a>
+      </div>
+    </div>
+
+    <!-- CAPITAL MARKETS SIGNAL -->
+    <div class="section-heading">Capital Markets Signal</div>
+    <div class="prose">
+      <p>Walmart sits squarely in the <strong class="highlight-warn">WARNING band</strong> — a textbook greenwashing signal in high-visibility retail. Project Gigaton's ambitious 1B-tonne supply-chain claim is aggressively marketed, yet Scope 3 emissions continue to grow while own operations remain only <strong class="highlight-warn">~35% renewable</strong>. Mixed third-party verification of Gigaton results, combined with active litigation exposure, reveals a classic pledge-reality divergence: bold targets without verifiable absolute decarbonization.</p>
+
+      <p>For disciplined capital, this is material transition risk: reputational drag and consumer backlash potential in a staple retail brand at massive global visibility. Portfolio stress-test implication under tightening 1.5°C pathways and intensifying ESG scrutiny. Opportunity cost versus higher-scoring regenerators delivering measurable unit-level progress.</p>
+
+      <p><strong>Investable Signal:</strong> Elevated boundary pressure masked by marketing volume. Precision allocators should demand verifiable Scope 3 inflection and audited Gigaton delivery metrics in upcoming 10-K / ESG filings before increasing exposure. Capital deployed here competes directly with true boundary-aware compounders.</p>
+
+      <p>VYRION converts these exact public data points into daily, auditable signals — the infrastructure layer between planetary science and disciplined capital deployment.</p>
+    </div>
+
+    <!-- OPEN PROOF PROTOCOL -->
+    <div class="proof-block">
+      <div class="proof-header">Open Proof Protocol — Active</div>
+      <div class="proof-body">
+        All data immutable. Every citation challengeable. Corrections published within 24 hours at <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a>. No deletions. Full methodology and raw datasets: <a href="https://vyrion.earth" target="_blank">vyrion.earth</a> + <a href="https://github.com/dablerfrost/conscience/blob/main/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a>.
+      </div>
+    </div>
+
+    <!-- PRIMARY SOURCES -->
+    <div class="section-heading">Primary Sources</div>
+    <div class="source-block">
+      <div class="src-row">
+        <div class="src-dot src-dot-static"></div>
+        <div class="src-name">Walmart FY2024 ESG Report — Third-party verified emissions data · <a href="https://corporate.walmart.com/esgreport" target="_blank">corporate.walmart.com/esgreport →</a></div>
+      </div>
+      <div class="src-row">
+        <div class="src-dot src-dot-static"></div>
+        <div class="src-name">Project Gigaton Progress Report — Scope 3 supply chain reduction tracking · <a href="https://corporate.walmart.com/purpose/sustainability/planet/climate-change/gigaton" target="_blank">corporate.walmart.com →</a></div>
+      </div>
+      <div class="src-row">
+        <div class="src-dot src-dot-static"></div>
+        <div class="src-name">CDP 2023 Public Response — Grade B · <a href="https://www.cdp.net/en/responses" target="_blank">cdp.net →</a></div>
+      </div>
+      <div class="src-row">
+        <div class="src-dot src-dot-static"></div>
+        <div class="src-name">InfluenceMap Corporate Lobbying Profile — Grade C · <a href="https://influencemap.org/company/Walmart" target="_blank">influencemap.org →</a></div>
+      </div>
+      <div class="src-row">
+        <div class="src-dot src-dot-live"></div>
+        <div class="src-name">SEC EDGAR — CIK 0000104169 · 10-K regulatory filings · <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000104169&type=10-K" target="_blank">sec.gov/edgar →</a></div>
+      </div>
+      <div class="src-row">
+        <div class="src-dot src-dot-static"></div>
+        <div class="src-name">Sabin Center for Climate Change Law — 2 active cases · <a href="https://climatecasechart.com/case-list/?organization_name=walmart" target="_blank">climatecasechart.com →</a></div>
+      </div>
+      <div class="src-row">
+        <div class="src-dot src-dot-static"></div>
+        <div class="src-name">VYRION CONSCIENCE-METHODOLOGY.md — full scoring derivation · <a href="https://github.com/dablerfrost/conscience/blob/main/CONSCIENCE-METHODOLOGY.md" target="_blank">github.com/dablerfrost/conscience →</a></div>
+      </div>
+    </div>
+
+  </div><!-- /content-main -->
+
+  <!-- SIDEBAR -->
+  <div class="content-sidebar">
+
+    <!-- KEY METRICS -->
+    <div class="sidebar-label">Key Indicators — FY2024</div>
+    <div class="sidebar-block">
+      <div class="sval-row">
+        <span class="sval-label">CONSCIENCE Score</span>
+        <span class="sval-val sval-warn">38 / 100</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">Band</span>
+        <span class="sval-val sval-warn">WARNING</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">Own Ops Renewable</span>
+        <span class="sval-val sval-warn">~35%</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">2040 Own Ops Target</span>
+        <span class="sval-val sval-glow">Net Zero</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">Scope 3 Trajectory</span>
+        <span class="sval-val sval-breach">Growing ↑</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">Gigaton Target (2030)</span>
+        <span class="sval-val sval-glow">1B Tonnes</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">Gigaton Verification</span>
+        <span class="sval-val sval-amber">Mixed</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">CDP Grade (2023)</span>
+        <span class="sval-val sval-amber">B</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">InfluenceMap Grade</span>
+        <span class="sval-val sval-warn">C</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">Active Lawsuits (Sabin)</span>
+        <span class="sval-val sval-breach">2</span>
+      </div>
+    </div>
+
+    <!-- RISK FLAGS -->
+    <div class="sidebar-label" style="margin-top:1.4rem">Transition Risk Flags</div>
+    <div class="sidebar-block">
+      <div class="sval-row">
+        <span class="sval-label">Scope 3 Supply Chain</span>
+        <span class="sval-val sval-breach">Growing</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">Gigaton Delivery Gap</span>
+        <span class="sval-val sval-warn">Elevated</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">Renewable Energy Gap</span>
+        <span class="sval-val sval-warn">Elevated</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">Reputational Exposure</span>
+        <span class="sval-val sval-warn">High Visibility</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">1.5°C Pathway Trajectory</span>
+        <span class="sval-val sval-breach">Diverging</span>
+      </div>
+    </div>
+
+    <!-- RECORD NAVIGATION -->
+    <div class="sidebar-label" style="margin-top:1.4rem">The Record — All Issues</div>
+    <div class="nav-block">
+      <div class="nb-header">Issue History</div>
+      <a class="nb-row" href="issue-001.html">
+        <span class="nb-issue">001</span>
+        <span class="nb-name">BP</span>
+        <span class="nb-score nb-breach">11/100</span>
+      </a>
+      <a class="nb-row" href="issue-002.html">
+        <span class="nb-issue">002</span>
+        <span class="nb-name">ExxonMobil</span>
+        <span class="nb-score nb-breach">8/100</span>
+      </a>
+      <a class="nb-row" href="issue-003.html">
+        <span class="nb-issue">003</span>
+        <span class="nb-name">Shell</span>
+        <span class="nb-score nb-breach">19/100</span>
+      </a>
+      <a class="nb-row" href="issue-004.html">
+        <span class="nb-issue">004</span>
+        <span class="nb-name">Delta Air Lines</span>
+        <span class="nb-score nb-breach">14/100</span>
+      </a>
+      <a class="nb-row" href="issue-005.html">
+        <span class="nb-issue">005</span>
+        <span class="nb-name">Starbucks</span>
+        <span class="nb-score nb-breach">29/100</span>
+      </a>
+      <div class="nb-row nb-current">
+        <span class="nb-issue">006</span>
+        <span class="nb-name" style="color:var(--warn)">Walmart ←</span>
+        <span class="nb-score nb-warn">38/100</span>
+      </div>
+      <div class="nb-row nb-upcoming">
+        <span class="nb-issue">007</span>
+        <span class="nb-name">Meta — Apr 29</span>
+        <span class="nb-score" style="color:var(--t3)">—</span>
+      </div>
+    </div>
+
+    <!-- PLATFORM LINKS -->
+    <div class="sidebar-label" style="margin-top:1.4rem">VYRION Platform</div>
+    <div class="sidebar-block">
+      <div class="sval-row">
+        <a href="https://vyrion.earth" style="color:rgba(0,212,255,.5);text-decoration:none;font-family:'Courier Prime',monospace;font-size:.6rem;" target="_blank">CONSCIENCE → All 11 Companies</a>
+      </div>
+      <div class="sval-row">
+        <a href="https://vyrion.earth/atlas.html" style="color:rgba(0,212,255,.5);text-decoration:none;font-family:'Courier Prime',monospace;font-size:.6rem;" target="_blank">ATLAS → Planetary Systems</a>
+      </div>
+      <div class="sval-row">
+        <a href="https://vyrion.earth/shield.html" style="color:rgba(0,212,255,.5);text-decoration:none;font-family:'Courier Prime',monospace;font-size:.6rem;" target="_blank">SHIELD → Disaster Early Warning</a>
+      </div>
+      <div class="sval-row">
+        <a href="https://vyrion.earth/record" style="color:rgba(0,212,255,.5);text-decoration:none;font-family:'Courier Prime',monospace;font-size:.6rem;" target="_blank">RECORD → Issue Archive</a>
+      </div>
+      <div class="sval-row" style="border-bottom:none">
+        <a href="https://github.com/dablerfrost/conscience" style="color:rgba(0,212,255,.4);text-decoration:none;font-family:'Courier Prime',monospace;font-size:.6rem;" target="_blank">GitHub → github.com/dablerfrost/conscience</a>
+      </div>
+    </div>
+
+  </div><!-- /content-sidebar -->
+
+</div><!-- /content-wrap -->
+
+<!-- FOOTER -->
+<footer class="record-footer">
+  <div class="footer-l">
+    THE RECORD — VYRION Issue 006 · Walmart Inc. · Published April 22, 2026<br>
+    VYRION PBC · Tyler Frost · Hilo, Hawaii · <a href="https://vyrion.earth" target="_blank">vyrion.earth</a><br>
+    Methodology: <a href="https://github.com/dablerfrost/conscience/blob/main/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a> ·
+    Corrections: <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a> · Open Proof Protocol Active
+  </div>
+  <div class="footer-r">
+    <a href="https://vyrion.earth">CONSCIENCE →</a>
+    <a href="https://vyrion.earth/record">RECORD INDEX →</a>
+    <a href="https://vyrion.earth/archive">ARCHIVE →</a>
+  </div>
+</footer>
+
+<script>
+'use strict';
+
+// ── THEME ──
+function toggleTheme() {
+  const html = document.documentElement;
+  const isLight = html.getAttribute('data-theme') === 'light';
+  html.setAttribute('data-theme', isLight ? 'dark' : 'light');
+  document.getElementById('theme-btn').textContent = isLight ? '◐ DARK' : '◑ LIGHT';
+  try { localStorage.setItem('vc-theme', isLight ? 'dark' : 'light'); } catch(e) {}
+}
+(function(){
+  try {
+    const t = localStorage.getItem('vc-theme');
+    if (t === 'light') {
+      document.documentElement.setAttribute('data-theme','light');
+      const btn = document.getElementById('theme-btn');
+      if (btn) btn.textContent = '◑ LIGHT';
+    }
+  } catch(e) {}
+})();
+
+// ── FONT SCALE ──
+const SCALES = { '0.88':16, '1.0':18, '1.22':22 };
+function setScale(btn) {
+  const px = SCALES[btn.dataset.scale] || 18;
+  document.documentElement.style.fontSize = px + 'px';
+  document.querySelectorAll('.nc-sz').forEach(b => b.classList.toggle('active', b === btn));
+  try { localStorage.setItem('vc-scale', btn.dataset.scale); } catch(e) {}
+}
+(function(){
+  try {
+    const s = localStorage.getItem('vc-scale');
+    if (s && SCALES[s]) {
+      document.documentElement.style.fontSize = SCALES[s] + 'px';
+      requestAnimationFrame(() => {
+        document.querySelectorAll('.nc-sz').forEach(b =>
+          b.classList.toggle('active', b.dataset.scale === s));
+      });
+    }
+  } catch(e) {}
+})();
+
+// ── SCORE BAR ANIMATE ──
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    const bar = document.getElementById('score-bar');
+    if (bar) bar.style.width = bar.dataset.target + '%';
+  }, 200);
+});
+</script>
+</body>
+</html>
