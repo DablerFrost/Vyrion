@@ -6,12 +6,12 @@
 <meta name="description" content="VYRION CONSCIENCE — Corporate Climate Pledge Tracker. Pledge vs. reality for 11 major corporations, scored against Paris Agreement 1.5°C pathways.">
 <meta property="og:title" content="VYRION CONSCIENCE — Corporate Climate Pledge Tracker">
 <meta property="og:description" content="Pledge vs. reality for 11 major corporations. Scores derived from CDP, InfluenceMap, Sabin Center, SBTi registry, and live SEC EDGAR filings.">
-<meta property="og:url" content="https://dablerfrost.github.io/conscience/">
+<meta property="og:url" content="https://vyrion.earth/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VYRION CONSCIENCE">
 <meta name="twitter:description" content="Corporate climate pledge accountability. 11 companies scored against Paris Agreement 1.5°C pathways.">
-<link rel="canonical" href="https://dablerfrost.github.io/conscience/">
+<link rel="canonical" href="https://vyrion.earth/">
 <title>VYRION CONSCIENCE — Corporate Climate Pledge Tracker</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,6 +26,7 @@
   --breach-bg:rgba(240,48,48,.07);--warn-bg:rgba(240,144,0,.07);--track-bg:rgba(0,212,255,.07);
   --nav-bg:rgba(2,9,18,.97);--mag-bg:rgba(3,12,24,.98);
   --scanline:rgba(0,212,255,.004);
+  --pad:2rem;
 }
 [data-theme="light"]{
   --void:#f0f5ff;--void2:#e4eeff;--void3:#d5e5ff;
@@ -79,7 +80,6 @@ body::after{
 /* ── NAV CONTROLS ───────────────────────────────────────── */
 .nav-controls{display:flex;align-items:center;gap:.35rem;flex-shrink:0}
 .nc-sep{width:1px;height:16px;background:var(--border);margin:0 .15rem}
-/* Theme button */
 .nc-theme{
   font-family:'Courier Prime',monospace;font-size:.58rem;font-weight:700;
   letter-spacing:.12em;padding:.22rem .5rem;border-radius:2px;
@@ -93,7 +93,6 @@ body::after{
 [data-theme="light"] .nc-theme:hover,[data-theme="light"] .nc-theme.active{
   border-color:var(--glow);color:var(--glow);background:rgba(0,136,68,.1);box-shadow:none;
 }
-/* Font scale buttons */
 .nc-sz{
   font-family:'Courier Prime',monospace;font-size:.6rem;font-weight:700;
   width:26px;height:26px;display:flex;align-items:center;justify-content:center;
@@ -245,7 +244,6 @@ body::after{
 .c-card[data-band="breach"]{--card-accent:var(--breach)}
 .c-card[data-band="warning"]{--card-accent:var(--warn)}
 .c-card[data-band="on-track"]{--card-accent:var(--glow)}
-
 .c-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:.8rem;gap:.5rem}
 .c-name{
   font-family:'Archivo Narrow',sans-serif;font-weight:800;
@@ -399,9 +397,9 @@ body::after{
 .footer-r a{font-family:'Courier Prime',monospace;font-size:.6rem;color:rgba(0,212,255,.3);text-decoration:none;transition:color .18s}
 .footer-r a:hover{color:var(--glow)}
 
-/* ── MAGNIFIER ───────────────────────────────────────────── */
+/* ── MAGNIFIER — z-index 9500 ────────────────────────────── */
 #mag{
-  position:fixed;pointer-events:none;z-index:9999;
+  position:fixed;pointer-events:none;z-index:9500;
   width:300px;opacity:0;
   transition:opacity .14s cubic-bezier(.4,0,.2,1);
   will-change:transform,opacity;
@@ -448,10 +446,8 @@ body::after{
 .loading-pulse{animation:pulse 1.4s infinite}
 @keyframes pulse{0%,100%{opacity:.3}50%{opacity:.75}}
 .hidden{display:none!important}
-  /* ── ONBOARDING LAYER TOKENS ──────────────────────────────────
-   Inherits VYRION brand: --void, --glow, --amber, --breach
-   No new font imports needed — uses Archivo Narrow + Courier Prime
-──────────────────────────────────────────────────────────── */
+
+/* ── ONBOARDING LAYER TOKENS ─────────────────────────────── */
 :root {
   --ov-glass:   rgba(2, 9, 18, 0.88);
   --ov-surface: rgba(6, 22, 44, 0.72);
@@ -459,10 +455,10 @@ body::after{
   --ov-glow:    0 0 32px rgba(0, 212, 255, 0.35);
   --ov-ease:    cubic-bezier(0.22, 1, 0.36, 1);
 }
- 
-/* ── 1. WELCOME OVERLAY ──────────────────────────────────────── */
+
+/* ── 1. WELCOME OVERLAY — z-index 9999 ───────────────────── */
 #vyr-welcome {
-  position: fixed; inset: 0; z-index: 9000;
+  position: fixed; inset: 0; z-index: 9999;
   display: flex; align-items: center; justify-content: center;
   padding: 20px;
   background: radial-gradient(
@@ -480,7 +476,7 @@ body::after{
   animation: oWelcomeOut 0.5s var(--ov-ease) forwards;
 }
 @keyframes oWelcomeOut { to { opacity: 0; pointer-events: none; } }
- 
+
 .ov-inner {
   max-width: 540px; width: 100%;
   padding: 50px 42px;
@@ -496,7 +492,7 @@ body::after{
   animation: oInnerRise 0.85s 0.38s var(--ov-ease) forwards;
 }
 @keyframes oInnerRise { to { transform: translateY(0); opacity: 1; } }
- 
+
 .ov-eyebrow {
   font-family: 'Courier Prime', monospace;
   font-size: 0.6rem;
@@ -513,8 +509,7 @@ body::after{
   opacity: 0.5;
 }
 .ov-eyebrow::after { transform: scaleX(-1); }
- 
-/* SVG Globe */
+
 .ov-globe {
   width: 68px; height: 68px;
   margin: 0 auto 26px;
@@ -539,7 +534,7 @@ body::after{
   0%,100% { transform: scale(1); opacity: 0.6; }
   50%      { transform: scale(1.07); opacity: 1; }
 }
- 
+
 .ov-title {
   font-family: 'Archivo Narrow', sans-serif;
   font-weight: 800;
@@ -550,7 +545,7 @@ body::after{
   margin-bottom: 16px;
 }
 .ov-title span { color: var(--glow); }
- 
+
 .ov-sub {
   font-family: 'Archivo', sans-serif;
   font-size: 0.84rem;
@@ -559,12 +554,12 @@ body::after{
   margin-bottom: 36px;
   font-weight: 400;
 }
- 
+
 .ov-actions {
   display: flex; gap: 12px;
   justify-content: center; flex-wrap: wrap;
 }
- 
+
 .ov-btn-primary {
   display: inline-flex; align-items: center; gap: 7px;
   padding: 13px 26px;
@@ -573,10 +568,8 @@ body::after{
   border-radius: 4px;
   color: var(--glow);
   font-family: 'Courier Prime', monospace;
-  font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: 0.66rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
   cursor: pointer;
   box-shadow: 0 0 18px rgba(0, 212, 255, 0.2);
   transition: box-shadow 0.2s, transform 0.18s var(--ov-ease), background 0.2s;
@@ -587,7 +580,7 @@ body::after{
   background: linear-gradient(135deg, rgba(0,212,255,0.26), rgba(0,100,200,0.38));
 }
 .ov-btn-primary:active { transform: scale(0.97); }
- 
+
 .ov-btn-ghost {
   display: inline-flex; align-items: center; gap: 7px;
   padding: 12px 24px;
@@ -596,10 +589,8 @@ body::after{
   border-radius: 4px;
   color: var(--t2);
   font-family: 'Courier Prime', monospace;
-  font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: 0.66rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
   cursor: pointer;
   transition: border-color 0.2s, color 0.2s, transform 0.18s var(--ov-ease);
 }
@@ -609,7 +600,7 @@ body::after{
   transform: scale(1.04);
 }
 .ov-btn-ghost:active { transform: scale(0.97); }
- 
+
 .ov-divider {
   margin: 28px 0 18px;
   height: 1px;
@@ -621,8 +612,8 @@ body::after{
   color: var(--t3);
   letter-spacing: 0.1em;
 }
- 
-/* ── 2. PWA INSTALL PROMPT ───────────────────────────────────── */
+
+/* ── 2. PWA INSTALL PROMPT ───────────────────────────────── */
 #vyr-install {
   position: fixed;
   bottom: 24px; left: 24px;
@@ -641,80 +632,51 @@ body::after{
 }
 #vyr-install.visible { transform: translateY(0); opacity: 1; }
 #vyr-install.dismissed { transform: translateY(110px); opacity: 0; }
- 
+
 .oi-icon {
-  flex-shrink: 0;
-  width: 40px; height: 40px;
+  flex-shrink: 0; width: 40px; height: 40px;
   background: linear-gradient(135deg, rgba(0,212,255,0.18), rgba(0,100,200,0.3));
-  border: 1px solid rgba(0,212,255,0.3);
-  border-radius: 10px;
+  border: 1px solid rgba(0,212,255,0.3); border-radius: 10px;
   display: flex; align-items: center; justify-content: center;
   font-size: 1.15rem;
 }
 .oi-text { flex: 1; }
 .oi-text strong {
   display: block;
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--glow);
-  margin-bottom: 3px;
+  font-family: 'Courier Prime', monospace; font-size: 0.62rem;
+  font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--glow); margin-bottom: 3px;
 }
 .oi-text span {
-  font-family: 'Archivo', sans-serif;
-  font-size: 0.75rem;
-  color: var(--t2);
-  line-height: 1.4;
+  font-family: 'Archivo', sans-serif; font-size: 0.75rem;
+  color: var(--t2); line-height: 1.4;
 }
-.oi-actions {
-  display: flex; flex-direction: column;
-  gap: 5px; flex-shrink: 0;
-}
+.oi-actions { display: flex; flex-direction: column; gap: 5px; flex-shrink: 0; }
 .oi-btn-install {
   padding: 7px 13px;
-  background: rgba(0,212,255,0.12);
-  border: 1px solid rgba(0,212,255,0.4);
-  border-radius: 3px;
-  color: var(--glow);
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  background: rgba(0,212,255,0.12); border: 1px solid rgba(0,212,255,0.4);
+  border-radius: 3px; color: var(--glow);
+  font-family: 'Courier Prime', monospace; font-size: 0.6rem;
+  font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
   cursor: pointer;
   transition: background 0.15s, box-shadow 0.15s, transform 0.15s;
 }
-.oi-btn-install:hover {
-  background: rgba(0,212,255,0.22);
-  box-shadow: 0 0 12px rgba(0,212,255,0.3);
-  transform: scale(1.04);
-}
+.oi-btn-install:hover { background: rgba(0,212,255,0.22); box-shadow: 0 0 12px rgba(0,212,255,0.3); transform: scale(1.04); }
 .oi-btn-dismiss {
-  padding: 5px 7px;
-  background: transparent;
-  border: none;
-  color: var(--t3);
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.58rem;
-  letter-spacing: 0.06em;
-  cursor: pointer;
-  text-align: center;
+  padding: 5px 7px; background: transparent; border: none;
+  color: var(--t3); font-family: 'Courier Prime', monospace;
+  font-size: 0.58rem; letter-spacing: 0.06em; cursor: pointer; text-align: center;
   transition: color 0.15s;
 }
 .oi-btn-dismiss:hover { color: var(--t2); }
- 
-/* ── 3. FLOATING ORB ─────────────────────────────────────────── */
+
+/* ── 3. FLOATING ORB ─────────────────────────────────────── */
 #vyr-orb {
-  position: fixed;
-  bottom: 28px; right: 28px;
-  z-index: 8000;
-  width: 58px; height: 58px;
+  position: fixed; bottom: 28px; right: 28px;
+  z-index: 8000; width: 58px; height: 58px;
 }
 .oo-btn {
-  width: 100%; height: 100%;
-  border-radius: 50%;
+  width: 100%; height: 100%; border-radius: 50%;
   background: radial-gradient(circle at 36% 36%, rgba(0,212,255,0.35), rgba(0,60,140,0.7));
   border: 1.5px solid rgba(0,212,255,0.45);
   display: flex; align-items: center; justify-content: center;
@@ -731,288 +693,151 @@ body::after{
   100% { box-shadow: 0 0 0 0 rgba(0,212,255,0); }
 }
 .oo-icon {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-weight: 800;
-  font-size: 1.1rem;
-  color: var(--glow);
-  letter-spacing: 0;
-  line-height: 1;
-  transition: transform 0.3s var(--ov-ease);
-  user-select: none;
+  font-family: 'Archivo Narrow', sans-serif; font-weight: 800;
+  font-size: 1.1rem; color: var(--glow);
+  letter-spacing: 0; line-height: 1;
+  transition: transform 0.3s var(--ov-ease); user-select: none;
 }
 .oo-btn.open .oo-icon { transform: rotate(45deg); }
- 
 .oo-tooltip {
-  position: absolute;
-  right: calc(100% + 10px); top: 50%;
-  transform: translateY(-50%);
-  white-space: nowrap;
-  background: rgba(2,9,18,0.94);
-  border: 1px solid var(--ov-border);
-  border-radius: 4px;
-  padding: 5px 11px;
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.62rem;
-  letter-spacing: 0.07em;
-  color: var(--t2);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.18s;
+  position: absolute; right: calc(100% + 10px); top: 50%;
+  transform: translateY(-50%); white-space: nowrap;
+  background: rgba(2,9,18,0.94); border: 1px solid var(--ov-border);
+  border-radius: 4px; padding: 5px 11px;
+  font-family: 'Courier Prime', monospace; font-size: 0.62rem;
+  letter-spacing: 0.07em; color: var(--t2);
+  pointer-events: none; opacity: 0; transition: opacity 0.18s;
 }
 #vyr-orb:hover .oo-tooltip { opacity: 1; }
- 
 .oo-panel {
-  position: absolute;
-  bottom: calc(100% + 10px); right: 0;
+  position: absolute; bottom: calc(100% + 10px); right: 0;
   width: 215px;
-  background: rgba(2, 9, 18, 0.96);
-  backdrop-filter: blur(24px);
-  border: 1px solid var(--ov-border);
-  border-radius: 10px;
-  padding: 5px;
-  opacity: 0;
-  transform: scale(0.88) translateY(8px);
-  transform-origin: bottom right;
-  pointer-events: none;
+  background: rgba(2, 9, 18, 0.96); backdrop-filter: blur(24px);
+  border: 1px solid var(--ov-border); border-radius: 10px; padding: 5px;
+  opacity: 0; transform: scale(0.88) translateY(8px);
+  transform-origin: bottom right; pointer-events: none;
   transition: opacity 0.22s var(--ov-ease), transform 0.22s var(--ov-ease);
   box-shadow: 0 14px 44px rgba(0,0,0,0.55);
 }
 .oo-panel.open { opacity: 1; transform: scale(1) translateY(0); pointer-events: auto; }
- 
 .oo-panel-header {
   padding: 9px 13px 7px;
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.56rem;
-  letter-spacing: 0.2em;
-  color: var(--glow);
-  text-transform: uppercase;
-  border-bottom: 1px solid var(--ov-border);
-  margin-bottom: 4px;
+  font-family: 'Courier Prime', monospace; font-size: 0.56rem;
+  letter-spacing: 0.2em; color: var(--glow); text-transform: uppercase;
+  border-bottom: 1px solid var(--ov-border); margin-bottom: 4px;
 }
 .oo-link {
   display: flex; align-items: center; gap: 9px;
-  padding: 9px 13px;
-  border-radius: 6px;
-  color: var(--t2);
-  font-family: 'Archivo', sans-serif;
-  font-size: 0.78rem;
-  transition: background 0.14s, color 0.14s;
-  cursor: pointer;
-  text-decoration: none;
+  padding: 9px 13px; border-radius: 6px; color: var(--t2);
+  font-family: 'Archivo', sans-serif; font-size: 0.78rem;
+  transition: background 0.14s, color 0.14s; cursor: pointer; text-decoration: none;
 }
 .oo-link:hover { background: rgba(0,212,255,0.07); color: var(--t1); }
-.oo-dot {
-  width: 5px; height: 5px;
-  border-radius: 50%; flex-shrink: 0;
-  background: var(--glow);
-  box-shadow: 0 0 5px var(--glow);
-}
+.oo-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; background: var(--glow); box-shadow: 0 0 5px var(--glow); }
 .oo-link:nth-child(2) .oo-dot { background: var(--amber); box-shadow: 0 0 5px var(--amber); }
-.oo-link:nth-child(3) .oo-dot { background: var(--warn, #F09000); box-shadow: 0 0 5px var(--warn, #F09000); }
-.oo-link:nth-child(4) .oo-dot { background: var(--void3, #0b2035); box-shadow: 0 0 5px var(--void3, #0b2035); }  
- 
-/* ── 4. SIDE PANEL ───────────────────────────────────────────── */
+.oo-link:nth-child(3) .oo-dot { background: var(--warn); box-shadow: 0 0 5px var(--warn); }
+.oo-link:nth-child(4) .oo-dot { background: var(--void3); box-shadow: 0 0 5px var(--void3); }
+
+/* ── 4. SIDE PANEL ───────────────────────────────────────── */
 #vyr-backdrop {
   position: fixed; inset: 0; z-index: 7500;
-  background: rgba(2, 9, 18, 0.65);
-  backdrop-filter: blur(4px);
-  opacity: 0; pointer-events: none;
-  transition: opacity 0.35s;
+  background: rgba(2, 9, 18, 0.65); backdrop-filter: blur(4px);
+  opacity: 0; pointer-events: none; transition: opacity 0.35s;
 }
 #vyr-backdrop.open { opacity: 1; pointer-events: auto; }
- 
 #vyr-panel {
-  position: fixed;
-  top: 0; right: 0; bottom: 0;
-  z-index: 7600;
+  position: fixed; top: 0; right: 0; bottom: 0; z-index: 7600;
   width: min(360px, 90vw);
-  background: rgba(2, 9, 18, 0.97);
-  backdrop-filter: blur(30px);
+  background: rgba(2, 9, 18, 0.97); backdrop-filter: blur(30px);
   border-left: 1px solid var(--ov-border);
   display: flex; flex-direction: column;
   transform: translateX(100%);
   transition: transform 0.5s var(--ov-ease);
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow-y: auto; overflow-x: hidden;
 }
 #vyr-panel.open { transform: translateX(0); }
- 
 .op-header {
-  padding: 26px 26px 18px;
-  border-bottom: 1px solid var(--ov-border);
-  display: flex; align-items: flex-start;
-  justify-content: space-between; gap: 14px;
+  padding: 26px 26px 18px; border-bottom: 1px solid var(--ov-border);
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 14px;
   flex-shrink: 0;
 }
-.op-logo {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-weight: 800;
-  font-size: 1.05rem;
-  letter-spacing: 0.14em;
-  color: var(--glow);
-}
-.op-sub {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.58rem;
-  color: var(--t3);
-  margin-top: 4px;
-  letter-spacing: 0.08em;
-}
+.op-logo { font-family: 'Archivo Narrow', sans-serif; font-weight: 800; font-size: 1.05rem; letter-spacing: 0.14em; color: var(--glow); }
+.op-sub { font-family: 'Courier Prime', monospace; font-size: 0.58rem; color: var(--t3); margin-top: 4px; letter-spacing: 0.08em; }
 .op-close {
-  width: 32px; height: 32px;
-  border-radius: 50%;
-  background: transparent;
-  border: 1px solid var(--ov-border);
-  color: var(--t2);
-  font-size: 0.9rem;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: transparent; border: 1px solid var(--ov-border);
+  color: var(--t2); font-size: 0.9rem;
   display: flex; align-items: center; justify-content: center;
   cursor: pointer; flex-shrink: 0;
   transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
 .op-close:hover { background: rgba(0,212,255,0.08); border-color: rgba(0,212,255,0.3); color: var(--t1); }
- 
-.op-section {
-  padding: 20px 26px;
-  border-bottom: 1px solid var(--ov-border);
-}
+.op-section { padding: 20px 26px; border-bottom: 1px solid var(--ov-border); }
 .op-section:last-child { border-bottom: none; }
-.op-label {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.56rem;
-  letter-spacing: 0.2em;
-  color: var(--t3);
-  text-transform: uppercase;
-  margin-bottom: 13px;
-}
-.op-desc {
-  font-family: 'Archivo', sans-serif;
-  font-size: 0.82rem;
-  color: var(--t2);
-  line-height: 1.75;
-}
+.op-label { font-family: 'Courier Prime', monospace; font-size: 0.56rem; letter-spacing: 0.2em; color: var(--t3); text-transform: uppercase; margin-bottom: 13px; }
+.op-desc { font-family: 'Archivo', sans-serif; font-size: 0.82rem; color: var(--t2); line-height: 1.75; }
 .op-desc strong { color: var(--t1); font-weight: 500; }
- 
-.op-stats {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 9px;
-}
-.op-stat {
-  background: rgba(0,212,255,0.05);
-  border: 1px solid rgba(0,212,255,0.12);
-  border-radius: 8px;
-  padding: 13px;
-  text-align: center;
-}
-.op-stat-num {
-  font-family: 'Courier Prime', monospace;
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: var(--glow);
-  line-height: 1;
-}
+.op-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+.op-stat { background: rgba(0,212,255,0.05); border: 1px solid rgba(0,212,255,0.12); border-radius: 8px; padding: 13px; text-align: center; }
+.op-stat-num { font-family: 'Courier Prime', monospace; font-weight: 700; font-size: 1.2rem; color: var(--glow); line-height: 1; }
 .op-stat-num.amber { color: var(--amber); }
-.op-stat-lbl {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.54rem;
-  color: var(--t3);
-  margin-top: 5px;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-}
- 
+.op-stat-lbl { font-family: 'Courier Prime', monospace; font-size: 0.54rem; color: var(--t3); margin-top: 5px; letter-spacing: 0.07em; text-transform: uppercase; }
 .op-navlinks { display: flex; flex-direction: column; gap: 3px; }
 .op-navlink {
-  display: flex; align-items: center; gap: 10px;
-  padding: 10px 12px;
-  border-radius: 6px;
-  color: var(--t2);
-  font-family: 'Archivo', sans-serif;
-  font-size: 0.8rem;
-  border: 1px solid transparent;
-  cursor: pointer; text-decoration: none;
+  display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 6px;
+  color: var(--t2); font-family: 'Archivo', sans-serif; font-size: 0.8rem;
+  border: 1px solid transparent; cursor: pointer; text-decoration: none;
   transition: background 0.14s, border-color 0.14s, color 0.14s, transform 0.14s;
 }
-.op-navlink:hover {
-  background: rgba(0,212,255,0.06);
-  border-color: rgba(0,212,255,0.14);
-  color: var(--t1);
-  transform: translateX(3px);
-}
-.op-navlink-arrow {
-  margin-left: auto;
-  font-size: 0.65rem;
-  color: var(--t3);
-  transition: transform 0.14s, color 0.14s;
-}
+.op-navlink:hover { background: rgba(0,212,255,0.06); border-color: rgba(0,212,255,0.14); color: var(--t1); transform: translateX(3px); }
+.op-navlink-arrow { margin-left: auto; font-size: 0.65rem; color: var(--t3); transition: transform 0.14s, color 0.14s; }
 .op-navlink:hover .op-navlink-arrow { transform: translateX(3px); color: var(--glow); }
- 
 .op-cta-stack { display: flex; flex-direction: column; gap: 9px; }
 .op-cta-primary {
   width: 100%; padding: 13px;
   background: linear-gradient(135deg, rgba(0,212,255,0.16), rgba(0,80,180,0.25));
-  border: 1px solid rgba(0,212,255,0.45);
-  border-radius: 4px;
-  color: var(--glow);
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.64rem; font-weight: 700;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  cursor: pointer;
+  border: 1px solid rgba(0,212,255,0.45); border-radius: 4px; color: var(--glow);
+  font-family: 'Courier Prime', monospace; font-size: 0.64rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;
   box-shadow: 0 0 14px rgba(0,212,255,0.15);
   transition: background 0.18s, box-shadow 0.18s, transform 0.16s var(--ov-ease);
   text-decoration: none; display: block; text-align: center;
 }
 .op-cta-primary:hover { background: linear-gradient(135deg, rgba(0,212,255,0.24), rgba(0,80,180,0.36)); box-shadow: 0 0 26px rgba(0,212,255,0.3); transform: scale(1.02); }
 .op-cta-ghost {
-  width: 100%; padding: 12px;
-  background: transparent;
-  border: 1px solid rgba(0,212,255,0.18);
-  border-radius: 4px;
-  color: var(--t2);
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.64rem; font-weight: 700;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  cursor: pointer;
+  width: 100%; padding: 12px; background: transparent;
+  border: 1px solid rgba(0,212,255,0.18); border-radius: 4px; color: var(--t2);
+  font-family: 'Courier Prime', monospace; font-size: 0.64rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;
   transition: border-color 0.18s, color 0.18s, transform 0.16s var(--ov-ease);
   text-decoration: none; display: block; text-align: center;
 }
 .op-cta-ghost:hover { border-color: rgba(0,212,255,0.38); color: var(--t1); transform: scale(1.02); }
- 
-/* ── 5. SCROLL NOTIFICATION ──────────────────────────────────── */
+
+/* ── 5. SCROLL NOTIFICATION ──────────────────────────────── */
 #vyr-scroll-notif {
-  position: fixed;
-  top: 70px; left: 50%;
+  position: fixed; top: 70px; left: 50%;
   transform: translateX(-50%) translateY(-90px);
   z-index: 8000;
-  display: flex; align-items: center; gap: 9px;
-  padding: 9px 18px;
-  background: rgba(2, 9, 18, 0.93);
-  backdrop-filter: blur(18px);
-  border: 1px solid rgba(0,212,255,0.25);
-  border-radius: 50px;
+  display: flex; align-items: center; gap: 9px; padding: 9px 18px;
+  background: rgba(2, 9, 18, 0.93); backdrop-filter: blur(18px);
+  border: 1px solid rgba(0,212,255,0.25); border-radius: 50px;
   box-shadow: 0 4px 22px rgba(0,0,0,0.45), 0 0 14px rgba(0,212,255,0.15);
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.06em;
-  color: var(--t2);
-  white-space: nowrap;
+  font-family: 'Courier Prime', monospace; font-size: 0.68rem;
+  letter-spacing: 0.06em; color: var(--t2); white-space: nowrap;
   opacity: 0;
   transition: transform 0.5s var(--ov-ease), opacity 0.5s var(--ov-ease);
   pointer-events: none;
 }
-#vyr-scroll-notif.show {
-  transform: translateX(-50%) translateY(0);
-  opacity: 1;
-}
+#vyr-scroll-notif.show { transform: translateX(-50%) translateY(0); opacity: 1; }
 .osn-dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--glow);
-  box-shadow: 0 0 7px var(--glow);
-  flex-shrink: 0;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--glow);
+  box-shadow: 0 0 7px var(--glow); flex-shrink: 0;
   animation: oSnDot 2s ease-in-out infinite;
 }
 @keyframes oSnDot { 0%,100%{opacity:1} 50%{opacity:0.25} }
- 
-/* ── MOBILE ADJUSTMENTS ──────────────────────────────────────── */
+
+/* ── MOBILE ADJUSTMENTS ──────────────────────────────────── */
 @media (max-width: 480px) {
   .ov-inner { padding: 32px 22px; }
   .ov-actions { flex-direction: column; }
@@ -1024,12 +849,10 @@ body::after{
   #vyr-scroll-notif { font-size: 0.6rem; padding: 8px 14px; }
 }
 
-/* ─── RESPONSIVE BREAKPOINTS ──────────────────────────────── */
-/* 1280px — large desktop */
+/* ── RESPONSIVE ──────────────────────────────────────────── */
 @media(min-width:1280px){
   .nav,.live-banner,.page-header,.source-strip,.toolbar,.filter-bar,.method-section,.changelog-section,.footer{max-width:1440px;margin-left:auto;margin-right:auto}
 }
-/* 1100px — tablet landscape / small laptop */
 @media(max-width:1100px){
   .nav-links{gap:1rem}
   .nav-links a{font-size:.6rem;letter-spacing:.11em}
@@ -1038,9 +861,7 @@ body::after{
   .license-tiers{grid-template-columns:repeat(2,1fr)}
   .stress-grid{grid-template-columns:1fr}
   .boundary-split{grid-template-columns:1fr}
-  .intel-grid{grid-template-columns:repeat(2,1fr)}
 }
-/* 900px — tablet landscape narrower */
 @media(max-width:900px){
   .nav-links{gap:.7rem}
   .nav-links a{font-size:.56rem;letter-spacing:.09em}
@@ -1051,7 +872,6 @@ body::after{
   .source-strip{flex-wrap:wrap}
   .src-badge{min-width:50%}
 }
-/* 720px — tablet portrait / large phone */
 @media(max-width:720px){
   html{font-size:16px !important}
   .nav{padding:0 .9rem;gap:.5rem;height:48px}
@@ -1061,13 +881,12 @@ body::after{
   .nc-sep{display:none}
   .nc-sz{width:22px;height:22px;font-size:.52rem}
   .nc-theme{font-size:.52rem;padding:.16rem .32rem}
-  .live-banner{flex-wrap:wrap}
   .lb-cell{min-width:50%;border-bottom:1px solid var(--border)}
   .page-header{padding:1.8rem .9rem 1.5rem}
   .toolbar{padding:.7rem .9rem;gap:.4rem;flex-wrap:wrap}
   .search-wrap{min-width:120px;max-width:100%;flex:1 1 120px}
   .btn-export{margin-left:0}
-  .filter-bar,.filter-btns{gap:.28rem}
+  .filter-btns{gap:.28rem}
   .f-btn{font-size:.54rem;padding:.2rem .5rem}
   .company-grid{grid-template-columns:1fr;gap:0;border-top:1px solid var(--border)}
   .c-card{border-bottom:1px solid var(--border)}
@@ -1083,12 +902,10 @@ body::after{
   .license-tiers{grid-template-columns:1fr}
   .license-section{padding:2rem .9rem}
   .license-cta-row{flex-direction:column;align-items:flex-start}
-  .intel-grid{grid-template-columns:1fr}
   .attr-lbl{min-width:72px;font-size:.48rem}
   .cl-table{font-size:.5rem}
   .cl-table th:nth-child(3),.cl-table td:nth-child(3),.cl-table th:last-child,.cl-table td:last-child{display:none}
 }
-/* 480px — standard phone portrait */
 @media(max-width:480px){
   html{font-size:15px !important}
   .nav-controls .nc-sz{display:none}
@@ -1107,7 +924,6 @@ body::after{
   .co-check-name{font-size:.54rem}
   .src-badge{min-width:100%}
 }
-/* 360px — small phone */
 @media(max-width:360px){
   html{font-size:14px !important}
   .nav-logo{font-size:.7rem;letter-spacing:.08em}
@@ -1119,7 +935,7 @@ body::after{
 }
 @media(hover:none){#mag{display:none!important}}
 
-/* ─── TOOLBAR ─────────────────────────────────────────────── */
+/* ── TOOLBAR ─────────────────────────────────────────────── */
 .toolbar{
   display:flex;flex-wrap:wrap;align-items:center;
   gap:.55rem;padding:.8rem 1.8rem;
@@ -1172,7 +988,7 @@ body::after{
 #no-results.show{display:block}
 #no-results a{color:var(--glow);text-decoration:none}
 
-/* ─── ANCHOR LINK ─────────────────────────────────────────── */
+/* ── ANCHOR LINK ─────────────────────────────────────────── */
 .c-anchor{
   font-size:.58rem;color:var(--t3);text-decoration:none;
   opacity:0;transition:opacity .18s;margin-left:.28rem;vertical-align:middle;
@@ -1182,7 +998,7 @@ body::after{
 .c-card.highlighted{outline:2px solid var(--glow);outline-offset:-2px}
 .c-card{scroll-margin-top:60px}
 
-/* ─── CHANGELOG ───────────────────────────────────────────── */
+/* ── CHANGELOG ───────────────────────────────────────────── */
 .changelog-section{border-top:1px solid var(--border);padding:2rem 1.8rem;background:var(--void)}
 .changelog-title{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t1);margin-bottom:.2rem}
 .changelog-sub{font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--t3);margin-bottom:.85rem;line-height:1.6}
@@ -1198,8 +1014,7 @@ body::after{
 .cl-new{background:rgba(74,173,255,.08);color:#4AADFF;border:1px solid rgba(74,173,255,.22)}
 .cl-plat{background:var(--track-bg);color:var(--glow);border:1px solid rgba(0,212,255,.22)}
 
-
-/* ── SCORE RING ─────────────────────────────────────────────── */
+/* ── SCORE RING ──────────────────────────────────────────── */
 .score-ring-wrap{position:relative;width:72px;height:72px;flex-shrink:0}
 .score-ring-wrap svg{position:absolute;inset:0;transform:rotate(-90deg)}
 .ring-track{fill:none;stroke:rgba(255,255,255,.06);stroke-width:5}
@@ -1217,62 +1032,36 @@ body::after{
 .band-breach .ring-score{color:var(--breach)}
 .band-warning .ring-score{color:var(--warn)}
 .band-track .ring-score{color:var(--glow)}
-/* Card header layout update */
 .c-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:.8rem;gap:.8rem}
 .c-head-left{flex:1;min-width:0}
-/* Teal card shimmer */
 .c-card::after{
   content:'';position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(ellipse 80% 40% at 50% 0%,rgba(0,212,255,.025) 0%,transparent 70%);
   opacity:0;transition:opacity .3s;
 }
 .c-card:hover::after{opacity:1}
-/* Enhanced score bar gradient */
-.band-track .bar-fill{
+.band-track .score-bar-fill{
   background:linear-gradient(90deg,rgba(0,150,255,.4),rgba(0,212,255,.8),rgba(0,230,255,1));
   box-shadow:0 0 8px rgba(0,212,255,.3);
 }
-/* Nav glow tweak */
 .nav-logo{text-shadow:0 0 20px rgba(0,212,255,.3)}
-/* Ticker dot pulse cyan */
 @keyframes pdot{
   0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,212,255,.5)}
   50%{opacity:.4;box-shadow:0 0 0 7px rgba(0,212,255,0)}
 }
-/* Source strip: live dot cyan */
 .dot-live{background:var(--glow)}
-/* Page header glow: cyan */
 .page-header::after{
   background:radial-gradient(ellipse 55% 60% at 72% 52%,rgba(0,212,255,.06) 0%,transparent 70%);
 }
-/* Mag top line */
 .mag-box::before{
   background:linear-gradient(90deg,transparent,rgba(0,212,255,.6),transparent);
 }
-/* Export button cyber blue */
-.btn-export{
-  border-color:rgba(0,212,255,.28);background:rgba(0,212,255,.06);color:var(--glow);
-}
-.btn-export:hover{
-  background:rgba(0,212,255,.14);border-color:rgba(0,212,255,.55);
-  box-shadow:0 0 12px rgba(0,212,255,.15);
-}
-/* nc-theme/sz active glow */
-.nc-theme.on,.nc-sz.on{
-  box-shadow:0 0 10px rgba(0,212,255,.2);
-}
-/* Changelog pills */
+.btn-export{border-color:rgba(0,212,255,.28);background:rgba(0,212,255,.06);color:var(--glow);}
+.btn-export:hover{background:rgba(0,212,255,.14);border-color:rgba(0,212,255,.55);box-shadow:0 0 12px rgba(0,212,255,.15);}
+.nc-theme.on,.nc-sz.on{box-shadow:0 0 10px rgba(0,212,255,.2);}
 .cl-plat{background:rgba(0,212,255,.08);color:var(--glow);border:1px solid rgba(0,212,255,.25)}
-/* Band track glow on card */
-.band-track .c-card::before{box-shadow:0 0 12px rgba(0,212,255,.15)}
-/* Score band pill */
-.band-track .c-band-pill{
-  background:rgba(0,212,255,.1);color:var(--glow);border:1px solid rgba(0,212,255,.35);
-  box-shadow:0 0 8px rgba(0,212,255,.1);
-}
-/* Search focus */
+.band-track .c-band-pill{background:rgba(0,212,255,.1);color:var(--glow);border:1px solid rgba(0,212,255,.35);box-shadow:0 0 8px rgba(0,212,255,.1);}
 #search-input:focus{border-color:rgba(0,212,255,.5);box-shadow:0 0 0 2px rgba(0,212,255,.08)}
-
 </style>
 </head>
 <body>
@@ -1285,8 +1074,7 @@ body::after{
     <li><a href="https://vyrion.earth/shield.html">SHIELD</a></li>
     <li><a href="https://vyrion.earth/atlas.html">ATLAS</a></li>
     <li><a href="https://vyrion.earth/record/">RECORD</a></li>
-    <li><a href="https://dablerfrost.github.io/conscience/archive">ARCHIVE</a></li>
-    <li><a href="nexan.html">NEXAN</a></li>
+    <li><a href="https://vyrion.earth/archive">ARCHIVE</a></li>
   </ul>
   <div class="nav-controls">
     <button class="nc-theme active" id="theme-btn" onclick="toggleTheme()" title="Toggle light/dark mode">◐ DARK</button>
@@ -1308,7 +1096,7 @@ body::after{
   <div class="lb-cell" data-mag="index">
     <div class="lb-lbl">VYRION Index</div>
     <div class="lb-val amber" id="idx-val">41.2 <span style="font-size:.62rem;color:var(--t3)">± 1.8</span></div>
-    <div class="lb-sub" id="idx-sub">/ 100 · Day 14 · Mar 31, 2026</div>
+    <div class="lb-sub" id="idx-sub">/ 100 · Day — · —</div>
   </div>
   <div class="lb-cell" data-mag="coverage">
     <div class="lb-lbl">Companies Tracked</div>
@@ -1330,7 +1118,7 @@ body::after{
 <!-- HEADER -->
 <header class="page-header">
   <div class="bg-word">CONSCIENCE</div>
-  <div class="eyebrow">Module 00 · Corporate Climate Pledge Verification</div>
+  <div class="eyebrow">Module 01 · Corporate Climate Pledge Verification</div>
   <h1 class="page-title">CONSCIENCE</h1>
   <p class="page-sub">Pledge vs. reality for 11 major corporations. Scores derived from CDP disclosures, InfluenceMap lobbying grades, Sabin Center climate litigation, SBTi registry, and live SEC EDGAR filings — cross-referenced against Paris Agreement 1.5°C pathways. Find an error — we publish the correction.</p>
 </header>
@@ -1431,21 +1219,15 @@ body::after{
         <td>v2.7 deployed: Investor Terminal layer, VYRION Stack architecture visualization, Boundary Breakers/Regenerators board, Portfolio Stress Tester, Data Licensing CTA. No score values changed.</td>
         <td><a href="https://github.com/dablerfrost/conscience" target="_blank" style="color:rgba(0,212,255,.35);text-decoration:none">github.com/dablerfrost/conscience →</a></td>
       </tr>
+      <tr>
+        <td>2026-04-24</td><td>Platform</td><td>v2.7</td><td>v2.8</td>
+        <td><span class="cl-pill cl-plat">PLATFORM</span></td>
+        <td>v2.8: Band counts corrected to 5/3/3. Dynamic day counter from origin 2026-03-18. updateEdgar() defined; edgarCache populated in init(). checkHash() on DOMContentLoaded. --pad:2rem added to :root. sk-wrap position:fixed. Mag z-index 9500, welcome z-index 9999. ARCHIVE links → vyrion.earth. Boundary board right column → "Progress Tracked." Side panel breach count → 5. Ring animation in init(). No score values changed.</td>
+        <td><a href="https://github.com/dablerfrost/conscience" target="_blank" style="color:rgba(0,212,255,.35);text-decoration:none">github.com/dablerfrost/conscience →</a></td>
+      </tr>
     </tbody>
   </table>
 </section>
-
-
-<!-- ═══════════════════════════════════════════════════════════════════════
-     VYRION v2.7 INJECTION — Investor Terminal Layer
-     Injects AFTER the existing CONSCIENCE grid, BEFORE methodology section.
-     New sections:
-       1. VYRION Stack — 4-layer architecture visualization
-       2. Boundary Signal Board — Breakers vs Regenerators framing  
-       3. Portfolio Stress Tester — aggregate exposure widget
-       4. Data Licensing CTA — revenue path activation
-     ═══════════════════════════════════════════════════════════════════════ -->
-
 <!-- ── V2.7 CSS ──────────────────────────────────────────────────────── -->
 <style>
 /* ─── INVESTOR TERMINAL BANNER ───────────────────────────────────── */
@@ -1558,8 +1340,6 @@ body::after{
   display:grid;grid-template-columns:1fr 1fr;
   gap:1px;background:var(--border);
 }
-
-
 .bside{background:var(--void2);padding:1.2rem 1.3rem}
 .bside-title{
   font-family:'Courier Prime',monospace;font-size:.58rem;
@@ -1571,7 +1351,6 @@ body::after{
 .bside-title::before{content:'';width:5px;height:5px;border-radius:50%;flex-shrink:0}
 .bside-breach .bside-title::before{background:var(--breach);box-shadow:0 0 5px var(--breach)}
 .bside-track .bside-title::before{background:var(--glow);box-shadow:0 0 5px var(--glow)}
-
 .bcompany{
   display:flex;align-items:center;justify-content:space-between;
   padding:.38rem 0;border-bottom:1px solid var(--border2);
@@ -1584,15 +1363,10 @@ body::after{
   font-size:.48rem;letter-spacing:.09em;text-transform:uppercase;
   padding:.06rem .28rem;border-radius:2px;
 }
-
-/* Breach side */
 .bside-breach .bc-score{color:var(--breach)}
 .bside-breach .bc-tag{background:var(--breach-bg);color:var(--breach);border:1px solid rgba(255,46,85,.22)}
-/* Track side */
 .bside-track .bc-score{color:var(--glow)}
 .bside-track .bc-tag{background:var(--track-bg);color:var(--glow);border:1px solid rgba(0,212,255,.22)}
-
-/* Boundary attribution bars */
 .attr-bars{margin-top:1rem;padding-top:.8rem;border-top:1px solid var(--border2)}
 .attr-title{
   font-family:'Courier Prime',monospace;font-size:.52rem;
@@ -1628,8 +1402,6 @@ body::after{
   margin-bottom:1.3rem;line-height:1.6;
 }
 .stress-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
-
-
 .stress-picker{background:var(--void3);border:1px solid var(--border);border-radius:2px;padding:1.1rem}
 .stress-picker-title{
   font-family:'Courier Prime',monospace;font-size:.56rem;
@@ -1652,8 +1424,6 @@ body::after{
 .co-check-score{
   font-family:'Courier Prime',monospace;font-size:.56rem;font-weight:700;
 }
-
-/* Results panel */
 .stress-results{background:var(--void3);border:1px solid var(--border);border-radius:2px;padding:1.1rem}
 .stress-results-title{
   font-family:'Courier Prime',monospace;font-size:.56rem;
@@ -1746,7 +1516,6 @@ body::after{
 }
 .lt-features li{list-style:none;display:flex;gap:.3rem}
 .lt-features li::before{content:'→';color:var(--glow);flex-shrink:0}
-
 .license-cta-row{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center}
 .cta-primary{
   font-family:'Courier Prime',monospace;font-size:.62rem;font-weight:700;
@@ -1773,17 +1542,13 @@ body::after{
   font-family:'Courier Prime',monospace;font-size:.56rem;
   color:var(--t3);line-height:1.6;flex:1;min-width:180px;
 }
-
-/* ─── NAV TERMINAL LINK ───────────────────────────────────────────── */
 .nav-links li a.nav-terminal{
   color:var(--glow);
   border-bottom:1px solid rgba(0,212,255,.35);
 }
 </style>
 
-<!-- ══════════════════════════════════════════════════════════════════
-     SECTION 1: INVESTOR TERMINAL BANNER
-     ══════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 1: INVESTOR TERMINAL BANNER -->
 <section class="terminal-banner" id="terminal">
   <div class="tb-eyebrow">VYRION Stack · Capital Markets Infrastructure Layer</div>
   <h2 class="tb-title">The Earth Bloomberg Terminal</h2>
@@ -1793,20 +1558,16 @@ body::after{
     community has never built — a real-time planetary risk benchmark with source-cited,
     auditable methodology designed for institutional due diligence.
     <br><br>
-    <a href="https://github.com/DablerFrost/conscience/blob/main/methodology/VYRION-METHODOLOGY-v1.0.md#vyrion-methodology-v10md" target="_blank">VYRION-METHODOLOGY-v1.0.md</a> ·
+    <a href="https://github.com/DablerFrost/conscience/blob/main/methodology/VYRION-METHODOLOGY-v1.0.md" target="_blank">VYRION-METHODOLOGY-v1.0.md</a> ·
     <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a> ·
     Open Proof Protocol: find an error — we publish the correction.
   </p>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════════════
-     SECTION 2: VYRION STACK — 4-Layer Architecture
-     ══════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 2: VYRION STACK -->
 <section class="stack-section">
   <div class="stack-title">VYRION Architecture Stack · Four Layers</div>
   <div class="stack-grid">
-
-    <!-- Layer 1: Data Ingestion — LIVE -->
     <div class="stack-card" style="--sc-accent:var(--glow)">
       <div class="sc-num">LAYER 01</div>
       <div class="sc-label">Multi-Modal Data Ingestion</div>
@@ -1818,11 +1579,9 @@ body::after{
       </div>
       <div class="sc-status">
         <div class="sc-dot sc-dot-live"></div>
-        <span class="sc-live">CONSCIENCE v2.6 · 11 companies · 6 sources · Live</span>
+        <span class="sc-live">CONSCIENCE v2.8 · 11 companies · 6 sources · Live</span>
       </div>
     </div>
-
-    <!-- Layer 2: Causal Intelligence — Building -->
     <div class="stack-card" style="--sc-accent:var(--amber)">
       <div class="sc-num">LAYER 02</div>
       <div class="sc-label">Bio-Digital Twin Attribution Engine</div>
@@ -1837,8 +1596,6 @@ body::after{
         <span class="sc-build">Architecture defined · Month 6–12 build</span>
       </div>
     </div>
-
-    <!-- Layer 3: Transparency — Live + Roadmap -->
     <div class="stack-card" style="--sc-accent:var(--glow)">
       <div class="sc-num">LAYER 03</div>
       <div class="sc-label">Planetary Dashboard + Investor Terminal</div>
@@ -1850,11 +1607,9 @@ body::after{
       </div>
       <div class="sc-status">
         <div class="sc-dot sc-dot-live"></div>
-        <span class="sc-live">dablerfrost.github.io/conscience · Live now</span>
+        <span class="sc-live">vyrion.earth · Live now</span>
       </div>
     </div>
-
-    <!-- Layer 4: Execution — Future -->
     <div class="stack-card" style="--sc-accent:var(--t3)">
       <div class="sc-num">LAYER 04</div>
       <div class="sc-label">Boundary-Linked Financial Instruments</div>
@@ -1869,17 +1624,14 @@ body::after{
         <span class="sc-future">Architecture defined · Regulatory framework pending</span>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════════════
-     SECTION 3: BOUNDARY SIGNAL BOARD — Breakers vs Regenerators
-     ══════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 3: BOUNDARY SIGNAL BOARD -->
 <section class="boundary-section" id="boundary-board">
   <div class="boundary-title">Boundary Signal Board · Attribution Layer Preview</div>
   <div class="boundary-sub">
-    Boundary Breakers accelerate planetary boundary violations. Boundary Regenerators are decelerating them.
+    Boundary Breakers accelerate planetary boundary violations. Progress Tracked companies are decelerating them.
     Attribution percentages are current proxies derived from sector emissions weight, CDP performance, and lobbying interference grade.
     Full causal attribution model ships Phase 2. Source: CONSCIENCE-METHODOLOGY.md.
   </div>
@@ -1888,7 +1640,6 @@ body::after{
     <!-- Breakers -->
     <div class="bside bside-breach">
       <div class="bside-title">⬟ Boundary Breakers</div>
-
       <div class="bcompany">
         <span class="bc-name">ExxonMobil</span>
         <span class="bc-score" style="color:var(--breach)">8/100</span>
@@ -1914,8 +1665,6 @@ body::after{
         <span class="bc-score" style="color:var(--breach)">29/100</span>
         <span class="bc-tag" style="background:var(--breach-bg);color:var(--breach);border:1px solid rgba(255,46,85,.22)">BREACH</span>
       </div>
-
-      <!-- Boundary attribution bars for top breacher -->
       <div class="attr-bars">
         <div class="attr-title">ExxonMobil — Boundary Attribution Proxy</div>
         <div class="attr-row">
@@ -1944,10 +1693,9 @@ body::after{
       </div>
     </div>
 
-    <!-- Regenerators -->
+    <!-- Progress Tracked — v2.8 rename from "Boundary Regenerators" -->
     <div class="bside bside-track">
-      <div class="bside-title">◈ Boundary Regenerators</div>
-
+      <div class="bside-title">◈ Progress Tracked.</div>
       <div class="bcompany">
         <span class="bc-name">Apple</span>
         <span class="bc-score" style="color:var(--glow)">84/100</span>
@@ -1973,8 +1721,6 @@ body::after{
         <span class="bc-score" style="color:var(--warn)">43/100</span>
         <span class="bc-tag" style="background:var(--warn-bg);color:var(--warn);border:1px solid rgba(255,140,0,.22)">WARNING</span>
       </div>
-
-      <!-- Attribution bars for top regenerator -->
       <div class="attr-bars">
         <div class="attr-title">Apple — Boundary Alignment Proxy</div>
         <div class="attr-row">
@@ -2006,9 +1752,7 @@ body::after{
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════════════
-     SECTION 4: PORTFOLIO STRESS TESTER
-     ══════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 4: PORTFOLIO STRESS TESTER -->
 <section class="stress-section" id="stress-test">
   <div class="stress-title">Portfolio Transition Risk — Stress Tester</div>
   <div class="stress-sub">
@@ -2017,17 +1761,12 @@ body::after{
     investors use for climate stress testing. Full VaR modeling ships Phase 2.
   </div>
   <div class="stress-grid">
-
     <div class="stress-picker">
       <div class="stress-picker-title">Select portfolio companies</div>
-      <div class="company-checkboxes" id="stress-checkboxes">
-        <!-- Populated by JS -->
-      </div>
+      <div class="company-checkboxes" id="stress-checkboxes"></div>
     </div>
-
     <div class="stress-results" id="stress-results">
       <div class="stress-results-title">Portfolio Risk Output</div>
-
       <div class="stress-metric">
         <span class="sm-label">Portfolio CONSCIENCE Avg</span>
         <span class="sm-value" id="st-avg" style="color:var(--amber)">—</span>
@@ -2052,7 +1791,6 @@ body::after{
         <span class="sm-label">SBTi Approved (1.5°C)</span>
         <span class="sm-value sm-track" id="st-sbti">—</span>
       </div>
-
       <div class="stress-bar-section" id="st-bars">
         <div class="stress-bar-title">Band Distribution</div>
         <div class="stress-bar-row">
@@ -2071,9 +1809,8 @@ body::after{
           <span class="sb-pct" id="st-bar-track-pct">0%</span>
         </div>
       </div>
-
       <div class="stress-note">
-        Scoring per <a href="https://github.com/DablerFrost/conscience/blob/main/methodology/VYRION-METHODOLOGY-v1.0.md#vyrion-methodology-v10md" target="_blank">CONSCIENCE-METHODOLOGY.md</a>.
+        Scoring per <a href="https://github.com/DablerFrost/conscience/blob/main/methodology/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a>.
         All scores sourced from CDP, InfluenceMap, Sabin Center, SBTi.
         This tool is provided for informational purposes. Not financial advice.
         Data licensing: <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a>
@@ -2082,9 +1819,7 @@ body::after{
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════════════
-     SECTION 5: DATA LICENSING CTA
-     ══════════════════════════════════════════════════════════════════ -->
+<!-- SECTION 5: DATA LICENSING CTA -->
 <section class="license-section" id="licensing">
   <div class="license-inner">
     <div class="license-eyebrow">Data Licensing · VYRION PBC</div>
@@ -2095,9 +1830,7 @@ body::after{
       Institutional data licensing agreements available for ESG research firms, reinsurance
       analytics teams, and Bloomberg Terminal integration.
     </p>
-
     <div class="license-tiers">
-
       <div class="lt-card" style="--lt-accent:var(--t3)">
         <div class="lt-tier">Tier 1 · ESG Research</div>
         <div class="lt-buyer">ESG Data Firms</div>
@@ -2111,7 +1844,6 @@ body::after{
           <li>CONSCIENCE-METHODOLOGY.md license</li>
         </ul>
       </div>
-
       <div class="lt-card" style="--lt-accent:var(--amber)">
         <div class="lt-tier">Tier 2 · Reinsurance</div>
         <div class="lt-buyer">Reinsurance Analytics</div>
@@ -2125,7 +1857,6 @@ body::after{
           <li>Co-development of additional sectors</li>
         </ul>
       </div>
-
       <div class="lt-card" style="--lt-accent:var(--glow)">
         <div class="lt-tier">Tier 3 · Institutional</div>
         <div class="lt-buyer">Bloomberg · Index Funds</div>
@@ -2139,9 +1870,7 @@ body::after{
           <li>Bloomberg EAP integration path</li>
         </ul>
       </div>
-
     </div>
-
     <div class="license-cta-row">
       <a class="cta-primary" href="mailto:contact@vyrion.earth?subject=VYRION%20CONSCIENCE%20Data%20Licensing%20Inquiry&body=I%20am%20interested%20in%20licensing%20CONSCIENCE%20score%20data.%20Please%20send%20a%20data%20licensing%20agreement.">
         → CONTACT FOR LICENSING
@@ -2149,7 +1878,7 @@ body::after{
       <a class="cta-secondary" href="https://vyrion.earth/conscience-data.html" target="_blank">
         ↓ SAMPLE DATA FEED
       </a>
-      <a class="cta-secondary" href="https://github.com/DablerFrost/conscience/blob/main/methodology/VYRION-METHODOLOGY-v1.0.md#vyrion-methodology-v10md" target="_blank">
+      <a class="cta-secondary" href="https://github.com/DablerFrost/conscience/blob/main/methodology/VYRION-METHODOLOGY-v1.0.md" target="_blank">
         → METHODOLOGY PAPER
       </a>
       <div class="cta-note">
@@ -2184,7 +1913,7 @@ body::after{
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-l">
-    VYRION CONSCIENCE · Module 00 · v2.7 · April 2, 2026<br>
+    VYRION CONSCIENCE · Module 01 · v2.8 · April 2026<br>
     Data: CDP · InfluenceMap · Sabin Center · SBTi · SEC EDGAR · All public-domain or open-license sources<br>
     Methodology: <a href="https://github.com/DablerFrost/conscience/blob/main/methodology/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a> ·
     <a href="https://github.com/dablerfrost/conscience" target="_blank">github.com/dablerfrost/conscience</a> ·
@@ -2194,39 +1923,34 @@ body::after{
     <a href="#terminal">TERMINAL →</a>
     <a href="#licensing">LICENSING →</a>
     <a href="#changelog">CHANGELOG →</a>
-    <a href="shield.html">SHIELD →</a>
-    <a href="https://dablerfrost.github.io/conscience/archive">ARCHIVE →</a>
+    <a href="https://vyrion.earth/shield.html">SHIELD →</a>
+    <a href="https://vyrion.earth/archive">ARCHIVE →</a>
   </div>
 </footer>
 
-  <!-- ── 1. WELCOME OVERLAY ──────────────────────────────────── -->
+<!-- ── 1. WELCOME OVERLAY ──────────────────────────────────── -->
 <div id="vyr-welcome" role="dialog" aria-modal="true" aria-label="Welcome to VYRION CONSCIENCE">
   <div class="ov-inner">
     <p class="ov-eyebrow">Module 01 · Corporate Climate Accountability</p>
- 
     <div class="ov-globe" aria-hidden="true">
       <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="50" cy="50" r="36" stroke="#00D4FF" stroke-width="1.2" opacity="0.55"/>
         <ellipse cx="50" cy="50" rx="18" ry="36" stroke="#00D4FF" stroke-width="0.8" opacity="0.35"/>
         <ellipse cx="50" cy="50" rx="36" ry="10" stroke="#00D4FF" stroke-width="0.7" opacity="0.25"/>
         <ellipse cx="50" cy="50" rx="36" ry="22" stroke="#00D4FF" stroke-width="0.6" opacity="0.18"/>
-        <!-- grid lines -->
         <path d="M20 38 Q35 34 50 38 Q65 42 80 38" stroke="#00D4FF" stroke-width="0.6" opacity="0.4" fill="none"/>
         <path d="M16 50 Q33 46 50 50 Q67 54 84 50" stroke="#00D4FF" stroke-width="0.6" opacity="0.4" fill="none"/>
         <path d="M20 62 Q35 58 50 62 Q65 66 80 62" stroke="#00D4FF" stroke-width="0.6" opacity="0.4" fill="none"/>
-        <!-- land masses -->
         <path d="M34 40 Q40 36 46 39 Q44 45 38 46 Z" fill="#00D4FF" opacity="0.2"/>
         <path d="M52 43 Q59 39 65 42 Q63 49 57 49 Z" fill="#FFB84D" opacity="0.18"/>
         <path d="M40 55 Q47 51 53 54 Q51 61 44 61 Z" fill="#00D4FF" opacity="0.18"/>
         <path d="M26 46 Q30 43 34 46 Q32 51 27 51 Z" fill="#00D4FF" opacity="0.15"/>
-        <!-- pole dots -->
         <circle cx="50" cy="14" r="2" fill="#00D4FF" opacity="0.7"/>
         <circle cx="50" cy="86" r="2" fill="#00D4FF" opacity="0.7"/>
       </svg>
       <div class="ov-ring"></div>
       <div class="ov-ring"></div>
     </div>
- 
     <h1 class="ov-title">
       VYRION <span>CONSCIENCE</span><br>
       Pledge vs. Reality
@@ -2236,7 +1960,6 @@ body::after{
       Data sourced from CDP, InfluenceMap, Sabin Center, SBTi, and SEC EDGAR.
       Find an error — we publish the correction.
     </p>
- 
     <div class="ov-actions">
       <button class="ov-btn-primary" id="ov-enter" onclick="oWelcomeDismiss('enter')">
         → Enter CONSCIENCE
@@ -2245,14 +1968,13 @@ body::after{
         View Methodology
       </button>
     </div>
- 
     <div class="ov-divider"></div>
     <p class="ov-footer">
       VYRION PBC · VYRION Index: 41.2 ± 1.8 / 100 · Open Proof Protocol
     </p>
   </div>
 </div>
- 
+
 <!-- ── 2. PWA INSTALL PROMPT ────────────────────────────────── -->
 <div id="vyr-install" role="complementary" aria-label="Install VYRION">
   <div class="oi-icon" aria-hidden="true">◉</div>
@@ -2267,7 +1989,7 @@ body::after{
     <button class="oi-btn-dismiss" onclick="oInstallDismiss()">Not now</button>
   </div>
 </div>
- 
+
 <!-- ── 3. FLOATING ORB ──────────────────────────────────────── -->
 <div id="vyr-orb" aria-label="Quick navigation">
   <div class="oo-btn" id="oo-btn" onclick="oOrbToggle()"
@@ -2276,7 +1998,6 @@ body::after{
     <span class="oo-icon">⬟</span>
   </div>
   <span class="oo-tooltip">VYRION Index</span>
- 
   <div class="oo-panel" id="oo-panel" aria-hidden="true">
     <div class="oo-panel-header">Quick Access</div>
     <a class="oo-link" href="#terminal" onclick="oOrbClose()">
@@ -2285,20 +2006,19 @@ body::after{
     <a class="oo-link" href="#boundary-board" onclick="oOrbClose()">
       <span class="oo-dot"></span> Boundary Signal Board
     </a>
-    <a class="oo-link" href="https://dablerfrost.github.io/conscience/archive" onclick="oOrbClose()">
+    <a class="oo-link" href="https://vyrion.earth/archive" onclick="oOrbClose()">
       <span class="oo-dot"></span> VYRION Archive
     </a>
-    <a class="oo-link" href="https://vyrion.earth/nexan.html" onclick="oOrbClose()">
-      <span class="oo-dot"></span> Nexan Institute
+    <a class="oo-link" href="https://vyrion.earth/atlas.html" onclick="oOrbClose()">
+      <span class="oo-dot"></span> ATLAS
     </a>
   </div>
 </div>
- 
+
 <!-- ── 4. SLIDE-IN SIDE PANEL ──────────────────────────────── -->
 <div id="vyr-backdrop" onclick="oPanelClose()" aria-hidden="true"></div>
- 
+
 <nav id="vyr-panel" role="navigation" aria-label="VYRION navigation panel">
- 
   <div class="op-header">
     <div>
       <div class="op-logo">VYRION</div>
@@ -2306,7 +2026,6 @@ body::after{
     </div>
     <button class="op-close" onclick="oPanelClose()" aria-label="Close panel">✕</button>
   </div>
- 
   <div class="op-section">
     <p class="op-label">About CONSCIENCE</p>
     <p class="op-desc">
@@ -2315,7 +2034,6 @@ body::after{
       SBTi registry, and live SEC EDGAR filings.
     </p>
   </div>
- 
   <div class="op-section">
     <p class="op-label">Live Metrics</p>
     <div class="op-stats">
@@ -2328,7 +2046,7 @@ body::after{
         <div class="op-stat-lbl">VYRION Index</div>
       </div>
       <div class="op-stat">
-        <div class="op-stat-num" style="color:var(--breach)">7</div>
+        <div class="op-stat-num" style="color:var(--breach)">5</div>
         <div class="op-stat-lbl">In Breach</div>
       </div>
       <div class="op-stat">
@@ -2337,20 +2055,19 @@ body::after{
       </div>
     </div>
   </div>
- 
   <div class="op-section">
     <p class="op-label">Navigate</p>
     <div class="op-navlinks">
-      <a class="op-navlink" href="https://dablerfrost.github.io/conscience">
+      <a class="op-navlink" href="https://vyrion.earth">
         ◉ CONSCIENCE <span class="op-navlink-arrow">›</span>
       </a>
-      <a class="op-navlink" href="atlas.html">
+      <a class="op-navlink" href="https://vyrion.earth/atlas.html">
         ◈ ATLAS <span class="op-navlink-arrow">›</span>
       </a>
-      <a class="op-navlink" href="shield.html">
+      <a class="op-navlink" href="https://vyrion.earth/shield.html">
         ⬟ SHIELD <span class="op-navlink-arrow">›</span>
       </a>
-      <a class="op-navlink" href="https://dablerfrost.github.io/conscience/archive">
+      <a class="op-navlink" href="https://vyrion.earth/archive">
         ◆ ARCHIVE <span class="op-navlink-arrow">›</span>
       </a>
       <a class="op-navlink" href="#terminal">
@@ -2361,12 +2078,11 @@ body::after{
       </a>
     </div>
   </div>
- 
   <div class="op-section">
     <p class="op-label">Actions</p>
     <div class="op-cta-stack">
       <a class="op-cta-primary"
-         href="https://github.com/dablerfrost/conscience/blob/main/VYRION-METHODOLOGY-v1.0.md"
+         href="https://github.com/DablerFrost/conscience/blob/main/methodology/VYRION-METHODOLOGY-v1.0.md"
          target="_blank">
         → View Methodology
       </a>
@@ -2376,33 +2092,79 @@ body::after{
       </a>
     </div>
   </div>
- 
 </nav>
- 
+
 <!-- ── 5. SCROLL NOTIFICATION ───────────────────────────────── -->
 <div id="vyr-scroll-notif" role="status" aria-live="polite">
   <span class="osn-dot" aria-hidden="true"></span>
   Viewing live corporate accountability data
 </div>
+
 <!-- MAGNIFIER -->
 <div id="mag">
   <div class="mag-box">
-    <div class="mag-brand">VYRION · CONSCIENCE · v2.7</div>
+    <div class="mag-brand">VYRION · CONSCIENCE · v2.8</div>
     <div class="mag-title" id="mag-t"></div>
     <div class="mag-body"  id="mag-b"></div>
     <div class="mag-src"   id="mag-s"></div>
   </div>
 </div>
 
+<!-- SYNTHEKAI PLAYER — position:fixed (v2.8 fix) -->
+<style>
+#sk-wrap{
+  position:fixed;bottom:1.4rem;left:0.5rem;
+  z-index:800;display:flex;flex-direction:column;align-items:flex-end;gap:.35rem;
+}
+#sk-btn{
+  width:38px;height:38px;border-radius:2px;cursor:pointer;
+  border:1px solid rgba(0,212,255,.22);background:rgba(2,9,18,.94);
+  color:var(--glow);font-size:1rem;
+  display:flex;align-items:center;justify-content:center;
+  transition:border-color .2s,box-shadow .2s;backdrop-filter:blur(12px);
+  font-family:'Courier Prime',monospace;line-height:1;
+}
+#sk-btn:hover{
+  border-color:rgba(0,212,255,.5);
+  box-shadow:0 0 10px rgba(0,212,255,.12);
+}
+#sk-panel{
+  overflow:hidden;max-height:0;opacity:0;
+  transition:max-height .38s cubic-bezier(.4,0,.2,1),opacity .28s ease;
+}
+#sk-panel.open{max-height:160px;opacity:1}
+#sk-frame{
+  display:block;width:930px;height:133px;border:none;
+  outline:1px solid rgba(0,212,255,.12);border-radius:2px;
+}
+@media(max-width:1024px){#sk-frame{width:680px}}
+@media(max-width:800px){#sk-frame{width:460px}}
+@media(max-width:500px){#sk-frame{width:calc(100vw - 2.8rem)}}
+</style>
+<div id="sk-wrap">
+  <div id="sk-panel">
+    <iframe id="sk-frame" seamless src=""></iframe>
+  </div>
+  <button id="sk-btn" onclick="skToggle()" title="Synthekai — Mycelium Bloom">♪</button>
+</div>
 <script>
 'use strict';
+
+// ── DYNAMIC DAY COUNTER — flat vars, no IIFE (v2.8 fix) ───────────
+var _originMs = new Date('2026-03-18T00:00:00Z').getTime();
+var _dayNum   = Math.floor((Date.now() - _originMs) / 86400000) + 1;
+var _dayDate  = new Date();
+var _dayStr   = _dayDate.toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
+var _idxSub   = document.getElementById('idx-sub');
+if (_idxSub) _idxSub.textContent = '/ 100 \u00b7 Day ' + _dayNum + ' \u00b7 ' + _dayStr;
+
 // ─────────────────────────────────────────────────────────
 //  MAGNIFIER DATA — static elements
 // ─────────────────────────────────────────────────────────
 const MAG = {
   co2:{t:'Atmospheric CO₂ — NOAA Mauna Loa Observatory',b:'Real-time CO₂ concentration from NOAA\'s Global Monitoring Laboratory. Mauna Loa has the world\'s longest continuous atmospheric CO₂ record, running since 1958. Pre-industrial baseline ≈ 280 ppm. VYRION uses this as one of 6 Atmosphere indicators (22% weight in the Index).',s:'NOAA GML · gml.noaa.gov/ccgg/trends · Daily · Fetched live'},
-  index:{t:'VYRION Index — Daily Planetary Health Benchmark',b:'The world\'s first daily investable planetary health benchmark. Score of 41.2 ± 1.8 / 100 against a pre-industrial 1850–1900 baseline of 100. Computed across 8 Earth systems: Atmosphere 22%, Ocean 18%, Ice 14%, Forest 13%, Biodiversity 12%, Freshwater 10%, Soil 7%, Corporate Accountability 4%. Changes <±0.5 are within measurement error.',s:'VYRION-METHODOLOGY-v1.0.md · github.com/dablerfrost/conscience · Day 13 · April 2, 2026'},
-  coverage:{t:'CONSCIENCE Coverage — 11 Companies',b:'11 major corporations tracked across Oil & Gas, Aviation, Food & Beverage, Retail, and Technology. Selected for material climate pledges and significant emissions footprints. Expansion planned. Full selection criteria in CONSCIENCE-METHODOLOGY.md.',s:'VYRION CONSCIENCE · Module 00 · v2.7'},
+  index:{t:'VYRION Index — Daily Planetary Health Benchmark',b:'The world\'s first daily investable planetary health benchmark. Score of 41.2 ± 1.8 / 100 against a pre-industrial 1850–1900 baseline of 100. Computed across 8 Earth systems: Atmosphere 22%, Ocean 18%, Ice 14%, Forest 13%, Biodiversity 12%, Freshwater 10%, Soil 7%, Corporate Accountability 4%. Changes <±0.5 are within measurement error.',s:'VYRION-METHODOLOGY-v1.0.md · github.com/dablerfrost/conscience · Dynamic day counter · Origin: 2026-03-18'},
+  coverage:{t:'CONSCIENCE Coverage — 11 Companies',b:'11 major corporations tracked across Oil & Gas, Aviation, Food & Beverage, Retail, and Technology. Selected for material climate pledges and significant emissions footprints. Expansion planned. Full selection criteria in CONSCIENCE-METHODOLOGY.md.',s:'VYRION CONSCIENCE · Module 01 · v2.8'},
   lawsuits:{t:'Total Active Climate Lawsuits',b:'Aggregate active climate litigation against the 11 tracked companies, per Sabin Center for Climate Change Law at Columbia Law School. Legal exposure = one of the four CONSCIENCE scoring factors (20 pts max). Counts refreshed monthly.',s:'Sabin Center for Climate Change Law · climatecasechart.com · Columbia Law School'},
   refresh:{t:'Auto-Refresh — Live Data',b:'CONSCIENCE refreshes on page load and every 15 minutes. Live: NOAA GML CO₂ (direct API), SEC EDGAR filing dates (data.sec.gov). Static sources (CDP, InfluenceMap, SBTi, TPI) update when annual assessments publish.',s:'NOAA GML · data.sec.gov/submissions · 15 min interval'},
   'src-cdp':{t:'CDP — Carbon Disclosure Project',b:'World\'s largest environmental disclosure system. Companies respond annually to standardised climate questionnaires. Grades: A (Leadership) → D (Disclosure only). A requires demonstrated governance, strategy, and action — not just reporting. CDP grades are independent; companies cannot buy a better score.',s:'CDP · cdp.net/en/responses · Annual cycle · 23,000+ companies'},
@@ -2720,7 +2482,7 @@ function renderCard(co) {
       <span class="sb-p">${total} / 100</span>
     </div>
     <div class="sb-note">
-      Full derivation: <a href="https://github.com/DablerFrost/conscience/blob/main/methodology/VYRION-METHODOLOGY-v1.0.md#vyrion-methodology-v10md" target="_blank">CONSCIENCE-METHODOLOGY.md</a> ·
+      Full derivation: <a href="https://github.com/DablerFrost/conscience/blob/main/methodology/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a> ·
       Errors: <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a>
     </div>
   </div>
@@ -2731,11 +2493,6 @@ function toggleBD(id, btn) {
   document.getElementById('bd-'+id).classList.toggle('open');
   btn.classList.toggle('open');
 }
-
-// ─────────────────────────────────────────────────────────
-//  FILTER
-// ─────────────────────────────────────────────────────────
-// filter buttons handled by applyFilters() below
 
 // ─────────────────────────────────────────────────────────
 //  THEME TOGGLE
@@ -2761,8 +2518,7 @@ function toggleTheme() {
 })();
 
 // ─────────────────────────────────────────────────────────
-//  FONT SCALE — sets html root font-size directly in px
-//  This is bulletproof: all rem/em units scale with it.
+//  FONT SCALE
 // ─────────────────────────────────────────────────────────
 const SCALES = { '0.88': 16, '1.0': 18, '1.22': 22 };
 
@@ -2774,13 +2530,11 @@ function setScale(btn) {
   );
   try { localStorage.setItem('vc-scale', btn.dataset.scale); } catch(e) {}
 }
-// Restore — runs immediately, DOM is ready at bottom of body
 (function(){
   try {
     const s = localStorage.getItem('vc-scale');
     if (s && SCALES[s]) {
       document.documentElement.style.fontSize = SCALES[s] + 'px';
-      // Mark correct button active after render
       requestAnimationFrame(() => {
         document.querySelectorAll('.nc-sz').forEach(b =>
           b.classList.toggle('active', b.dataset.scale === s)
@@ -2790,7 +2544,7 @@ function setScale(btn) {
   } catch(e) {}
 })();
 
-// Add mag data to S/M/L buttons after DOM is ready
+// ── DOMContentLoaded — v2.8: adds checkHash() + buildStressCheckboxes() ──
 document.addEventListener('DOMContentLoaded', () => {
   const sBtn = document.querySelector('[data-scale="0.88"]');
   const mBtn = document.querySelector('[data-scale="1.0"]');
@@ -2799,6 +2553,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mBtn) mBtn.dataset.mag = 'sz-m';
   if (lBtn) lBtn.dataset.mag = 'sz-l';
   attachMag(document);
+  checkHash();
+  buildStressCheckboxes();
 });
 
 // ─────────────────────────────────────────────────────────
@@ -2830,7 +2586,6 @@ function positionMag() {
 
 function attachMag(root) {
   (root || document).querySelectorAll('[data-mag]').forEach(el => {
-    // Remove old listeners by cloning
     const fresh = el.cloneNode(true);
     el.parentNode?.replaceChild(fresh, el);
     fresh.addEventListener('mouseenter', () => {
@@ -2882,7 +2637,6 @@ async function fetchEdgar(co) {
     const d = await r.json();
     const forms = d.filings.recent.form;
     const dates = d.filings.recent.filingDate;
-    const accs  = d.filings.recent.accessionNumber;
     let annual = null, k8count = 0, k8recent = null;
     const cut90 = new Date(Date.now() - 90*86400000).toISOString().slice(0,10);
     for (let i = 0; i < forms.length; i++) {
@@ -2899,18 +2653,59 @@ async function fetchEdgar(co) {
   } catch(e) { return null; }
 }
 
+// ── updateEdgar — defined here, used by init() and reattachEdgar() (v2.8 fix) ──
+function updateEdgar(co, data) {
+  const vEl = document.getElementById('ev-'+co.id);
+  const sEl = document.getElementById('es-'+co.id);
+  if (!vEl || !sEl) return;
+  if (data && data.annual) {
+    const {annual, k8count, cik} = data;
+    vEl.textContent = annual.date;
+    vEl.classList.remove('loading-pulse');
+    vEl.style.color = 'var(--glow)';
+    vEl.style.fontSize = '.68rem';
+    const url = `https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=${cik}&type=10-K`;
+    let sub = `<a href="${url}" target="_blank" style="color:rgba(0,212,255,.38);text-decoration:none">${annual.form} filing →</a>`;
+    if (k8count >= 3) {
+      sub += `<span style="color:var(--warn);font-size:.52rem;display:block;margin-top:.06rem">${k8count} 8-K events / 90d ⚠</span>`;
+    } else if (k8count > 0) {
+      sub += `<span style="color:var(--t3);font-size:.52rem;display:block;margin-top:.06rem">${k8count} 8-K / 90d</span>`;
+    }
+    sEl.innerHTML = sub;
+  } else {
+    vEl.textContent = 'N/A';
+    vEl.classList.remove('loading-pulse');
+    vEl.style.color = 'var(--t3)';
+    sEl.textContent = 'Offline';
+  }
+}
+
+// ── edgarCache — stores results so reattachEdgar() survives re-render (v2.8 fix) ──
+const edgarCache = {};
+
+function reattachEdgar() {
+  COMPANIES.forEach(co => {
+    if (edgarCache[co.id] !== undefined) {
+      updateEdgar(co, edgarCache[co.id]);
+    }
+  });
+}
+
 // ─────────────────────────────────────────────────────────
-//  INIT
+//  INIT — v2.8: ring animation + edgarCache population
 // ─────────────────────────────────────────────────────────
 async function init() {
   // 1. Render cards
   const grid = document.getElementById('grid');
   grid.innerHTML = getSorted ? getSorted().map(renderCard).join('') : COMPANIES.map(renderCard).join('');
 
-  // 2. Animate bars
+  // 2. Animate bars + rings (v2.8: rings added)
   requestAnimationFrame(() => setTimeout(() => {
     grid.querySelectorAll('.score-bar-fill').forEach(el => {
       el.style.width = el.dataset.target + '%';
+    });
+    grid.querySelectorAll('.ring-fill').forEach(el => {
+      el.style.strokeDashoffset = el.dataset.filled;
     });
   }, 120));
 
@@ -2932,36 +2727,16 @@ async function init() {
     }
   });
 
-  // 6. SEC EDGAR — all 11 companies in parallel
+  // 6. SEC EDGAR — all 11 companies in parallel; populate edgarCache (v2.8 fix)
   document.getElementById('edgar-status').textContent = 'Fetching…';
   let ok = 0;
   const results = await Promise.allSettled(COMPANIES.map(co => fetchEdgar(co)));
   results.forEach((res, i) => {
     const co = COMPANIES[i];
-    const vEl = document.getElementById('ev-'+co.id);
-    const sEl = document.getElementById('es-'+co.id);
-    if (!vEl || !sEl) return;
-    if (res.status === 'fulfilled' && res.value?.annual) {
-      const {annual, k8count, cik} = res.value;
-      vEl.textContent = annual.date;
-      vEl.classList.remove('loading-pulse');
-      vEl.style.color = 'var(--glow)';
-      vEl.style.fontSize = '.68rem';
-      const url = `https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=${cik}&type=10-K`;
-      let sub = `<a href="${url}" target="_blank" style="color:rgba(0,212,255,.38);text-decoration:none">${annual.form} filing →</a>`;
-      if (k8count >= 3) {
-        sub += `<span style="color:var(--warn);font-size:.52rem;display:block;margin-top:.06rem">${k8count} 8-K events / 90d ⚠</span>`;
-      } else if (k8count > 0) {
-        sub += `<span style="color:var(--t3);font-size:.52rem;display:block;margin-top:.06rem">${k8count} 8-K / 90d</span>`;
-      }
-      sEl.innerHTML = sub;
-      ok++;
-    } else {
-      vEl.textContent = 'N/A';
-      vEl.classList.remove('loading-pulse');
-      vEl.style.color = 'var(--t3)';
-      sEl.textContent = 'Offline';
-    }
+    const data = res.status === 'fulfilled' ? res.value : null;
+    edgarCache[co.id] = data;   // v2.8: populate cache
+    updateEdgar(co, data);      // v2.8: use defined function
+    if (data && data.annual) ok++;
   });
 
   const today = new Date().toISOString().slice(0,10);
@@ -3053,9 +2828,6 @@ function updateStress() {
   document.getElementById('st-bar-warn-pct').textContent   = warnPct + '%';
   document.getElementById('st-bar-track-pct').textContent  = trackPct + '%';
 }
-
-// Call on DOM ready — integrates with existing init() pattern
-document.addEventListener('DOMContentLoaded', buildStressCheckboxes);
 
 init();
 setInterval(init, 15 * 60 * 1000);
@@ -3186,56 +2958,10 @@ function exportCSV() {
   document.body.removeChild(a); URL.revokeObjectURL(url);
 }
 
-// Store EDGAR results for re-use after re-render
-const edgarCache = {};
-function reattachEdgar() {
-  COMPANIES.forEach(co => {
-    if (edgarCache[co.id] !== undefined) {
-      updateEdgar(co, edgarCache[co.id]);
-    }
-  });
-}
-
 window.addEventListener('hashchange', checkHash);
-
 </script>
-<!-- ── SYNTHEKAI PLAYER ─────────────────────────────────── -->
-<style>
-#sk-wrap{
-  position:right;bottom:1.4rem;left:0.5rem;
-  z-index:800;display:flex;flex-direction:column;align-items:flex-end;gap:.35rem;
-}
-#sk-btn{
-  width:38px;height:38px;border-radius:2px;cursor:pointer;
-  border:1px solid rgba(0,212,255,.22);background:rgba(2,9,18,.94);
-  color:var(--glow);font-size:1rem;
-  display:flex;align-items:center;justify-content:center;
-  transition:border-color .2s,box-shadow .2s;backdrop-filter:blur(12px);
-  font-family:'Courier Prime',monospace;line-height:1;
-}
-#sk-btn:hover{
-  border-color:rgba(0,212,255,.5);
-  box-shadow:0 0 10px rgba(0,212,255,.12);
-}
-#sk-panel{
-  overflow:hidden;max-height:0;opacity:0;
-  transition:max-height .38s cubic-bezier(.4,0,.2,1),opacity .28s ease;
-}
-#sk-panel.open{max-height:160px;opacity:1}
-#sk-frame{
-  display:block;width:930px;height:133px;border:none;
-  outline:1px solid rgba(0,212,255,.12);border-radius:2px;
-}
-@media(max-width:1024px){#sk-frame{width:680px}}
-@media(max-width:800px){#sk-frame{width:460px}}
-@media(max-width:500px){#sk-frame{width:calc(100vw - 2.8rem)}}
-</style>
-<div id="sk-wrap">
-  <div id="sk-panel">
-    <iframe id="sk-frame" seamless src=""></iframe>
-  </div>
-  <button id="sk-btn" onclick="skToggle()" title="Synthekai — Mycelium Bloom">♪</button>
-</div>
+
+<!-- ── SYNTHEKAI PLAYER SCRIPT ────────────────────────────── -->
 <script>
 var _skOpen=false,_skLoaded=false;
 function skToggle(){
@@ -3249,11 +2975,10 @@ function skToggle(){
   }
 }
 </script>
-  <script>
-/* ── VYRION ONBOARDING LAYER v1.0 ───────────────────────────────
-   Console analytics stub — swap vyrLog backend for PostHog,
-   Segment, or your own endpoint when ready.
-────────────────────────────────────────────────────────────── */
+
+<!-- ── ONBOARDING LAYER SCRIPT ───────────────────────────── -->
+<script>
+/* ── VYRION ONBOARDING LAYER v1.0 ─────────────────────────── */
 const vyrLog = (event, data = {}) => {
   console.log(
     `%c[VYRION Analytics] ${event}`,
@@ -3261,8 +2986,8 @@ const vyrLog = (event, data = {}) => {
     { ts: new Date().toISOString(), ...data }
   );
 };
- 
-/* ── STATE ────────────────────────────────────────────────────── */
+
+/* ── STATE ────────────────────────────────────────────────── */
 const oState = {
   welcomeSeen:      localStorage.getItem('vyr_welcome_seen') === 'true',
   installDismissed: localStorage.getItem('vyr_install_dismissed') === 'true',
@@ -3271,12 +2996,10 @@ const oState = {
   panelOpen:        false,
   deferredPrompt:   null,
 };
- 
-/* ══════════════════════════════════════════════════════════════
-   1. WELCOME OVERLAY
-══════════════════════════════════════════════════════════════ */
+
+/* ── 1. WELCOME OVERLAY ───────────────────────────────────── */
 const oWelcomeEl = document.getElementById('vyr-welcome');
- 
+
 function oWelcomeInit() {
   if (!oWelcomeEl) return;
   if (oState.welcomeSeen) {
@@ -3286,12 +3009,11 @@ function oWelcomeInit() {
   }
   vyrLog('welcome_shown', { firstVisit: true });
   oWelcomeEl.addEventListener('keydown', oWelcomeTrapFocus);
-  // Failsafe auto-dismiss after 90s
   setTimeout(() => {
     if (!oState.welcomeSeen) oWelcomeDismiss('timeout');
   }, 90000);
 }
- 
+
 function oWelcomeDismiss(action) {
   if (!oWelcomeEl) return;
   oState.welcomeSeen = true;
@@ -3302,7 +3024,6 @@ function oWelcomeDismiss(action) {
     oWelcomeEl.style.display = 'none';
     oWelcomeEl.removeEventListener('keydown', oWelcomeTrapFocus);
   }, 560);
-  // "View Methodology" → scroll to methodology section
   if (action === 'learn') {
     setTimeout(() => {
       const m = document.querySelector('.method-section');
@@ -3310,22 +3031,19 @@ function oWelcomeDismiss(action) {
     }, 650);
   }
 }
- 
+
 function oWelcomeTrapFocus(e) {
   if (e.key === 'Escape') oWelcomeDismiss('escape');
 }
- 
-/* ══════════════════════════════════════════════════════════════
-   2. PWA INSTALL PROMPT
-══════════════════════════════════════════════════════════════ */
+
+/* ── 2. PWA INSTALL PROMPT ────────────────────────────────── */
 const oInstallEl = document.getElementById('vyr-install');
- 
+
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   oState.deferredPrompt = e;
   vyrLog('pwa_available');
   if (!oState.installDismissed) {
-    // Wait for welcome to clear before showing install prompt
     const delay = oState.welcomeSeen ? 3500 : 7000;
     setTimeout(() => {
       if (oInstallEl) oInstallEl.classList.add('visible');
@@ -3333,12 +3051,12 @@ window.addEventListener('beforeinstallprompt', (e) => {
     }, delay);
   }
 });
- 
+
 window.addEventListener('appinstalled', () => {
   vyrLog('pwa_installed');
   oInstallHide();
 });
- 
+
 async function oInstallTrigger() {
   if (!oState.deferredPrompt) return;
   vyrLog('pwa_install_clicked');
@@ -3348,27 +3066,25 @@ async function oInstallTrigger() {
   oState.deferredPrompt = null;
   oInstallDismiss();
 }
- 
+
 function oInstallDismiss() {
   oState.installDismissed = true;
   localStorage.setItem('vyr_install_dismissed', 'true');
   oInstallHide();
   vyrLog('pwa_dismissed');
 }
- 
+
 function oInstallHide() {
   if (!oInstallEl) return;
   oInstallEl.classList.remove('visible');
   oInstallEl.classList.add('dismissed');
   setTimeout(() => { oInstallEl.style.display = 'none'; }, 600);
 }
- 
-/* ══════════════════════════════════════════════════════════════
-   3. FLOATING ORB
-══════════════════════════════════════════════════════════════ */
+
+/* ── 3. FLOATING ORB ──────────────────────────────────────── */
 const oOrbBtn   = document.getElementById('oo-btn');
 const oOrbPanel = document.getElementById('oo-panel');
- 
+
 function oOrbToggle() {
   oState.orbOpen = !oState.orbOpen;
   if (oOrbBtn)   oOrbBtn.classList.toggle('open', oState.orbOpen);
@@ -3377,32 +3093,28 @@ function oOrbToggle() {
   if (oOrbPanel) oOrbPanel.setAttribute('aria-hidden', String(!oState.orbOpen));
   vyrLog('orb_toggled', { open: oState.orbOpen });
 }
- 
+
 function oOrbClose() {
   oState.orbOpen = false;
   if (oOrbBtn)   { oOrbBtn.classList.remove('open'); oOrbBtn.setAttribute('aria-expanded','false'); }
   if (oOrbPanel) { oOrbPanel.classList.remove('open'); oOrbPanel.setAttribute('aria-hidden','true'); }
 }
- 
-// Keyboard support
+
 if (oOrbBtn) {
   oOrbBtn.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); oOrbToggle(); }
   });
 }
- 
-// Click outside closes orb panel
+
 document.addEventListener('click', (e) => {
   const orbEl = document.getElementById('vyr-orb');
   if (oState.orbOpen && orbEl && !orbEl.contains(e.target)) oOrbClose();
 });
- 
-/* ══════════════════════════════════════════════════════════════
-   4. SIDE PANEL
-══════════════════════════════════════════════════════════════ */
+
+/* ── 4. SIDE PANEL ────────────────────────────────────────── */
 const oPanelEl     = document.getElementById('vyr-panel');
 const oBackdropEl  = document.getElementById('vyr-backdrop');
- 
+
 function oPanelOpen() {
   oState.panelOpen = true;
   if (oPanelEl)    { oPanelEl.classList.add('open'); oPanelEl.setAttribute('aria-hidden','false'); }
@@ -3410,7 +3122,7 @@ function oPanelOpen() {
   document.body.style.overflow = 'hidden';
   vyrLog('panel_opened');
 }
- 
+
 function oPanelClose() {
   oState.panelOpen = false;
   if (oPanelEl)    { oPanelEl.classList.remove('open'); oPanelEl.setAttribute('aria-hidden','true'); }
@@ -3418,8 +3130,7 @@ function oPanelClose() {
   document.body.style.overflow = '';
   vyrLog('panel_closed');
 }
- 
-// Global ESC handler
+
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     if (oState.panelOpen) oPanelClose();
@@ -3427,12 +3138,10 @@ document.addEventListener('keydown', (e) => {
     if (!oState.welcomeSeen) oWelcomeDismiss('escape');
   }
 });
- 
-/* ══════════════════════════════════════════════════════════════
-   5. SCROLL NOTIFICATION
-══════════════════════════════════════════════════════════════ */
+
+/* ── 5. SCROLL NOTIFICATION ───────────────────────────────── */
 const oScrollNotifEl = document.getElementById('vyr-scroll-notif');
- 
+
 function oScrollCheck() {
   if (oState.scrollNotifShown) return;
   const docH   = document.documentElement.scrollHeight - window.innerHeight;
@@ -3446,12 +3155,10 @@ function oScrollCheck() {
     }, 3800);
   }
 }
- 
+
 window.addEventListener('scroll', oScrollCheck, { passive: true });
- 
-/* ══════════════════════════════════════════════════════════════
-   INIT
-══════════════════════════════════════════════════════════════ */
+
+/* ── INIT ─────────────────────────────────────────────────── */
 (function oInit() {
   oWelcomeInit();
   vyrLog('onboarding_layer_init', {
