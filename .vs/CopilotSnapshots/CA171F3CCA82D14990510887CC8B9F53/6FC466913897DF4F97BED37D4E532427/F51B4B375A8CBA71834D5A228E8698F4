@@ -1,0 +1,762 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="The Record Issue 004: Delta Air Lines — VYRION CONSCIENCE. Pledge vs. reality. Net zero by 2050. SAF at 3.25% of 2030 target. Emissions at post-pandemic high.">
+<meta property="og:title" content="The Record · Issue 004 · Delta Air Lines · VYRION CONSCIENCE">
+<meta property="og:description" content="Delta pledges net zero by 2050. Emissions hit post-pandemic highs in 2024. SAF at 13M gallons vs. 400M gallon 2030 goal. CONSCIENCE Score: 14/100.">
+<title>The Record · Issue 004 · Delta Air Lines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&family=Archivo:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<script src="js/header-loader.js" defer></script>
+<style>
+:root{
+  --void:#020912;--void2:#061624;--void3:#0b2035;
+  --glow:#00D4FF;--amber:#FFB84D;--breach:#F03030;--warn:#F09000;
+  --t1:#e4f2ff;--t2:#6a9ab8;--t3:#2d6080;
+  --border:rgba(0,212,255,.12);--border2:rgba(0,212,255,.06);
+  --nav-bg:rgba(2,9,18,.97);--mag-bg:rgba(2,9,18,.98);
+  --scanline:rgba(0,212,255,.004);
+  --dal:#0033A0; /* Delta blue */
+}
+[data-theme="light"]{
+  --void:#eef4f8;--void2:#ddeef6;--void3:#cce4f0;
+  --glow:#0077aa;--t1:#06101a;--t2:#1a4a6a;--t3:#3a7090;
+  --border:rgba(0,119,170,.18);--border2:rgba(0,119,170,.09);
+  --nav-bg:rgba(238,244,248,.97);--mag-bg:rgba(230,244,252,.99);
+  --scanline:transparent;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:18px}
+body{background:var(--void);color:var(--t1);font-family:'Archivo',sans-serif;font-size:1rem;line-height:1.65;min-height:100vh;overflow-x:hidden;transition:background .3s,color .3s}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:990;background:repeating-linear-gradient(0deg,transparent,transparent 3px,var(--scanline) 3px,var(--scanline) 4px)}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:600;height:52px;display:flex;align-items:center;gap:1rem;padding:0 1.8rem;background:var(--nav-bg);border-bottom:1px solid var(--border);backdrop-filter:blur(20px);transition:background .3s}
+.nav-logo{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:.95rem;color:var(--glow);letter-spacing:.15em;text-decoration:none;flex-shrink:0}
+.nav-links{display:flex;gap:1.6rem;list-style:none;flex:1}
+.nav-links a{font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t2);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--t1)}
+.nav-links a.active{color:var(--glow);border-bottom:1px solid rgba(0,212,255,.4);padding-bottom:2px}
+.nav-controls{display:flex;align-items:center;gap:.3rem;flex-shrink:0}
+.nc-sep{width:1px;height:16px;background:var(--border);margin:0 .1rem}
+.nc-theme{font-family:'Courier Prime',monospace;font-size:.56rem;font-weight:700;letter-spacing:.1em;padding:.2rem .45rem;border-radius:2px;border:1px solid var(--border);background:transparent;color:var(--t2);cursor:pointer;transition:all .2s;white-space:nowrap}
+.nc-theme:hover,.nc-theme.on{border-color:var(--glow);color:var(--glow);background:rgba(0,212,255,.07)}
+.nc-sz{font-family:'Courier Prime',monospace;font-size:.58rem;font-weight:700;width:24px;height:24px;display:flex;align-items:center;justify-content:center;border-radius:2px;border:1px solid var(--border);background:transparent;color:var(--t3);cursor:pointer;transition:all .2s}
+.nc-sz:hover{border-color:rgba(0,212,255,.4);color:var(--t1)}
+.nc-sz.active{background:rgba(0,212,255,.12);border-color:var(--glow);color:var(--glow)}
+.nav-dot{width:6px;height:6px;background:var(--glow);border-radius:50%;flex-shrink:0;animation:pdot 2.2s infinite}
+@keyframes pdot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,212,255,.5)}50%{opacity:.4;box-shadow:0 0 0 7px rgba(0,212,255,0)}}
+
+/* HERO */
+.hero{
+  position:relative;padding:4rem 2rem 3.2rem;
+  border-bottom:1px solid var(--border);overflow:hidden;
+  background-image:url('https://okay-gold-oof5kipmvh.edgeone.app/Testing%20The%20Surface%20-%20Imgur.png');
+  background-size:cover;background-position:center 38%;
+}
+.hero::before{content:'';position:absolute;inset:0;z-index:0;background:linear-gradient(120deg,rgba(2,9,18,.96) 0%,rgba(2,9,18,.80) 45%,rgba(2,9,18,.93) 100%);transition:background .3s}
+[data-theme="light"] .hero::before{background:linear-gradient(120deg,rgba(238,244,248,.97) 0%,rgba(238,244,248,.84) 45%,rgba(238,244,248,.94) 100%)}
+.hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 50% 65% at 75% 50%,rgba(240,48,48,.05) 0%,transparent 70%)}
+.hero>*{position:relative;z-index:2}
+
+.issue-meta{
+  display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;
+  font-family:'Courier Prime',monospace;font-size:.62rem;
+  color:var(--t3);letter-spacing:.14em;text-transform:uppercase;
+  margin-bottom:1.4rem;
+}
+.issue-badge{
+  background:rgba(240,48,48,.1);color:var(--breach);
+  border:1px solid rgba(240,48,48,.3);
+  padding:.12rem .5rem;border-radius:2px;
+  font-size:.58rem;letter-spacing:.12em;
+}
+.issue-num{color:var(--glow)}
+.hero-eyebrow{
+  font-family:'Courier Prime',monospace;font-size:.65rem;color:var(--glow);
+  letter-spacing:.22em;text-transform:uppercase;margin-bottom:.5rem;
+  display:flex;align-items:center;gap:.5rem;
+}
+.hero-eyebrow::before{content:'';width:16px;height:1px;background:var(--glow);opacity:.5}
+.hero-company{
+  font-family:'Archivo Narrow',sans-serif;font-weight:800;
+  font-size:clamp(3rem,7vw,5.5rem);color:var(--t1);
+  line-height:.9;letter-spacing:-.02em;margin-bottom:.5rem;
+}
+.hero-ticker{
+  font-family:'Courier Prime',monospace;font-size:.72rem;
+  color:var(--t3);letter-spacing:.1em;margin-bottom:.9rem;
+}
+.hero-verdict{
+  font-size:clamp(.82rem,1.2vw+.5rem,.98rem);
+  color:var(--t2);max-width:60ch;line-height:1.72;
+  margin-bottom:1.6rem;
+}
+.hero-score-row{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.score-big{
+  font-family:'Courier Prime',monospace;font-weight:700;
+  font-size:3.2rem;color:var(--breach);line-height:1;letter-spacing:-.04em;
+}
+.score-denom{font-family:'Courier Prime',monospace;font-size:.82rem;color:var(--t3)}
+.score-band{
+  font-family:'Courier Prime',monospace;font-size:.6rem;letter-spacing:.14em;
+  text-transform:uppercase;padding:.18rem .55rem;border-radius:2px;
+  background:rgba(240,48,48,.1);color:var(--breach);
+  border:1px solid rgba(240,48,48,.3);
+}
+.score-label{font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--t3);line-height:1.5}
+
+/* STAT STRIP */
+.stat-strip{display:flex;flex-wrap:wrap;background:var(--void2);border-bottom:1px solid var(--border)}
+.st-cell{flex:1;min-width:160px;padding:1rem 1.6rem;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:.12rem}
+.st-cell:last-child{border-right:none}
+.st-lbl{font-family:'Courier Prime',monospace;font-size:.54rem;color:var(--t3);letter-spacing:.16em;text-transform:uppercase}
+.st-val{font-family:'Courier Prime',monospace;font-weight:700;font-size:1.05rem;line-height:1;letter-spacing:-.01em}
+.st-sub{font-family:'Courier Prime',monospace;font-size:.52rem;color:var(--t3);line-height:1.35}
+.breach{color:var(--breach)}
+.warn{color:var(--warn)}
+.track{color:var(--glow)}
+.amber{color:var(--amber)}
+
+/* MAIN LAYOUT */
+.main{display:grid;grid-template-columns:1fr 340px;gap:1px;background:var(--border);border-bottom:1px solid var(--border)}
+@media(max-width:960px){.main{grid-template-columns:1fr}}
+
+/* ARTICLE */
+.article{background:var(--void);padding:2.8rem 2rem}
+.article-section{margin-bottom:2.4rem}
+.section-label{
+  font-family:'Courier Prime',monospace;font-size:.6rem;color:var(--glow);
+  letter-spacing:.22em;text-transform:uppercase;margin-bottom:.6rem;
+  display:flex;align-items:center;gap:.5rem;
+}
+.section-label::before{content:'';width:12px;height:1px;background:var(--glow);opacity:.5}
+.section-title{
+  font-family:'Archivo Narrow',sans-serif;font-weight:800;
+  font-size:1.4rem;color:var(--t1);letter-spacing:-.01em;
+  margin-bottom:.8rem;line-height:1.1;
+}
+.body{font-size:.82rem;color:var(--t2);line-height:1.82;margin-bottom:.9rem}
+.body b{color:var(--t1);font-weight:600}
+.body a{color:rgba(0,212,255,.5);text-decoration:none;transition:color .18s}
+.body a:hover{color:var(--glow)}
+
+/* Pull quote */
+.pull{
+  border-left:3px solid var(--breach);
+  padding:.8rem 1.2rem;margin:1.4rem 0;
+  background:rgba(240,48,48,.04);border-radius:0 3px 3px 0;
+}
+.pull p{font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:1.05rem;color:var(--t1);line-height:1.4;letter-spacing:.01em;margin-bottom:.35rem}
+.pull cite{font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--t3);letter-spacing:.08em}
+
+/* Data comparison rows */
+.compare-block{margin:1.2rem 0}
+.compare-row{
+  display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:var(--border);margin-bottom:1px;
+}
+.compare-row:last-child{margin-bottom:0}
+.cr-pledge{background:rgba(74,173,255,.04);padding:.8rem 1rem}
+.cr-reality{background:rgba(240,48,48,.04);padding:.8rem 1rem}
+.cr-tag{
+  font-family:'Courier Prime',monospace;font-size:.52rem;
+  letter-spacing:.12em;text-transform:uppercase;
+  margin-bottom:.3rem;display:block;
+}
+.tag-p{color:#4AADFF}.tag-r{color:var(--breach)}
+.cr-text{font-size:.74rem;color:var(--t1);line-height:1.55}
+.cr-src{font-family:'Courier Prime',monospace;font-size:.52rem;color:var(--t3);margin-top:.28rem}
+
+/* SAF progress bar */
+.progress-block{margin:1.2rem 0;padding:1.2rem;background:var(--void2);border:1px solid var(--border);border-radius:2px}
+.pb-title{font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--t3);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.6rem}
+.pb-bar-bg{height:8px;background:rgba(255,255,255,.06);border-radius:4px;overflow:hidden;margin-bottom:.5rem}
+[data-theme="light"] .pb-bar-bg{background:rgba(0,0,0,.08)}
+.pb-bar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--breach),var(--warn));transition:width 1.5s cubic-bezier(.4,0,.2,1)}
+.pb-labels{display:flex;justify-content:space-between;font-family:'Courier Prime',monospace;font-size:.55rem;color:var(--t3)}
+.pb-actual{color:var(--breach)}
+.pb-goal{color:var(--t2)}
+
+/* Lobbying block */
+.lobby-block{
+  margin:1.2rem 0;padding:1rem 1.2rem;
+  background:rgba(240,48,48,.05);
+  border:1px solid rgba(240,48,48,.18);border-radius:2px;
+}
+.lb-title{font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--breach);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.7rem;display:flex;align-items:center;gap:.4rem}
+.lb-title::before{content:'⚠';font-size:.6rem}
+.lb-item{
+  display:flex;gap:.6rem;align-items:flex-start;
+  padding:.32rem 0;border-bottom:1px solid rgba(240,48,48,.08);
+  font-size:.73rem;color:var(--t2);line-height:1.5;
+}
+.lb-item:last-child{border-bottom:none}
+.lb-item::before{content:'→';color:var(--breach);flex-shrink:0;margin-top:.06rem}
+
+/* SIDEBAR */
+.sidebar{background:var(--void2);padding:2rem 1.5rem;display:flex;flex-direction:column;gap:1.4rem}
+
+.scorecard{background:var(--void);border:1px solid var(--border);padding:1.2rem;border-radius:2px}
+.sc-title{font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--t3);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.9rem}
+.sc-factor{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:.38rem 0;border-bottom:1px solid var(--border2);
+  font-family:'Courier Prime',monospace;font-size:.6rem;
+}
+.sc-factor:last-of-type{border-bottom:none}
+.sc-fname{color:var(--t2);flex:1;padding-right:.5rem}
+.sc-fmax{color:var(--t3);font-size:.52rem;padding-right:.6rem}
+.sc-fval{font-weight:700;min-width:28px;text-align:right}
+.sc-total{
+  display:flex;justify-content:space-between;
+  padding:.45rem 0 0;margin-top:.25rem;border-top:1px solid var(--border);
+  font-family:'Courier Prime',monospace;font-size:.66rem;
+}
+.sc-total .sc-fname{color:var(--t1)}
+.sc-total .sc-fval{color:var(--breach);font-size:.8rem}
+
+/* Validation badges sidebar */
+.val-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.vb{background:var(--void);border:1px solid var(--border);padding:.7rem .8rem;border-radius:2px}
+.vb-name{font-family:'Courier Prime',monospace;font-size:.5rem;color:var(--t3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.18rem}
+.vb-val{font-family:'Courier Prime',monospace;font-weight:700;font-size:.9rem;line-height:1.1}
+.vb-sub{font-family:'Courier Prime',monospace;font-size:.5rem;color:var(--t3);line-height:1.3;margin-top:.08rem}
+.cdp-C{color:var(--warn)}.im-D{color:var(--breach)}.sbti-no{color:var(--breach)}.law-low{color:var(--amber)}
+
+/* Timeline */
+.timeline{display:flex;flex-direction:column;gap:0}
+.tl-item{display:flex;gap:.8rem;padding:.55rem 0;border-bottom:1px solid var(--border2);position:relative}
+.tl-item:last-child{border-bottom:none}
+.tl-year{font-family:'Courier Prime',monospace;font-size:.56rem;color:var(--glow);min-width:34px;padding-top:.12rem;flex-shrink:0}
+.tl-text{font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--t2);line-height:1.5}
+.tl-badge{font-family:'Courier Prime',monospace;font-size:.48rem;letter-spacing:.08em;padding:.06rem .24rem;border-radius:2px;flex-shrink:0;margin-top:.1rem;height:fit-content;align-self:flex-start}
+.tl-breach{background:rgba(240,48,48,.1);color:var(--breach);border:1px solid rgba(240,48,48,.25)}
+.tl-warn{background:rgba(240,144,0,.1);color:var(--warn);border:1px solid rgba(240,144,0,.25)}
+.tl-track{background:rgba(0,212,255,.08);color:var(--glow);border:1px solid rgba(0,212,255,.25)}
+
+/* Context block */
+.context-block{background:var(--void);border:1px solid var(--border);padding:1rem 1.1rem;border-radius:2px}
+.cb-title{font-family:'Courier Prime',monospace;font-size:.56rem;color:var(--t3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.6rem}
+.cb-stat{display:flex;justify-content:space-between;align-items:baseline;padding:.3rem 0;border-bottom:1px solid var(--border2);font-family:'Courier Prime',monospace;font-size:.6rem}
+.cb-stat:last-child{border-bottom:none}
+.cb-lbl{color:var(--t2);flex:1}
+.cb-val{font-weight:700;color:var(--t1)}
+
+/* FOOTER */
+.footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding:1.5rem 2rem;border-top:1px solid var(--border)}
+.footer-l{font-family:'Courier Prime',monospace;font-size:.6rem;color:var(--t3);line-height:1.75}
+.footer-l a{color:rgba(0,212,255,.4);text-decoration:none;transition:color .18s}
+.footer-l a:hover{color:var(--glow)}
+.footer-r{display:flex;gap:1.4rem}
+.footer-r a{font-family:'Courier Prime',monospace;font-size:.6rem;color:rgba(0,212,255,.3);text-decoration:none;transition:color .18s;letter-spacing:.06em}
+.footer-r a:hover{color:var(--glow)}
+
+/* RECORD NAV */
+.record-nav{
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;
+  gap:.6rem;padding:.9rem 2rem;
+  background:var(--void2);border-bottom:1px solid var(--border);
+}
+.rn-prev,.rn-next{font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--t2);text-decoration:none;letter-spacing:.08em;transition:color .18s}
+.rn-prev:hover,.rn-next:hover{color:var(--glow)}
+.rn-label{font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--t3);letter-spacing:.14em;text-transform:uppercase}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .main{grid-template-columns:1fr}
+  .sidebar{border-top:1px solid var(--border)}
+}
+@media(max-width:680px){
+  html{font-size:16px!important}
+  .nav{padding:0 .9rem;height:48px}
+  .nav-links{display:none}
+  .nav-controls{gap:.22rem}
+  .hero{padding:2.8rem 1rem 2.2rem}
+  .hero-company{font-size:clamp(2.4rem,9vw,4rem)}
+  .score-big{font-size:2.6rem}
+  .article{padding:2rem 1rem}
+  .sidebar{padding:1.5rem 1rem}
+  .compare-row{grid-template-columns:1fr}
+  .stat-strip{flex-wrap:wrap}
+  .st-cell{min-width:calc(50% - 1px)}
+  .val-grid{grid-template-columns:repeat(2,1fr)}
+  .footer{padding:1.2rem 1rem;flex-direction:column;gap:.5rem}
+  .footer-r{display:none}
+  .record-nav{padding:.7rem 1rem}
+}
+@media(max-width:480px){
+  html{font-size:15px!important}
+  .nc-sz{display:none}
+  .nc-sep{display:none}
+  .hero-company{font-size:2.2rem}
+  .st-cell{min-width:100%}
+  .compare-row{grid-template-columns:1fr}
+}
+@media(hover:none){.mag-box{display:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-logo" href="https://dablerfrost.github.io/conscience">VYRION</a>
+  <ul class="nav-links">
+    <li><a href="https://vyrion.earth">CONSCIENCE</a></li>
+    <li><a href="../atlas.html">ATLAS</a></li>
+    <li><a href="../shield.html">SHIELD</a></li>
+    <li><a href="../nexan.html">NEXAN</a></li>
+    <li><a href="https://vyrion.earth/archive/">ARCHIVE</a></li>
+  </ul>
+  <div class="nav-controls">
+    <button class="nc-theme" id="theme-btn" onclick="toggleTheme()">◐ DARK</button>
+    <div class="nc-sep"></div>
+    <button class="nc-sz" data-scale="0.88" onclick="setScale(this)">S</button>
+    <button class="nc-sz active" data-scale="1.0" onclick="setScale(this)">M</button>
+    <button class="nc-sz" data-scale="1.22" onclick="setScale(this)">L</button>
+  </div>
+  <div class="nav-dot"></div>
+</nav>
+
+<!-- RECORD NAV -->
+<div class="record-nav">
+  <a class="rn-prev" href="issue-003-shell.html">← Issue 003 · Shell</a>
+  <span class="rn-label">The Record · Weekly Accountability</span>
+  <span style="font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--t3)">Issue 005 coming →</span>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="issue-meta">
+    <span class="issue-num">THE RECORD · ISSUE 004</span>
+    <span>·</span>
+    <span>April 8, 2026</span>
+    <span>·</span>
+    <span class="issue-badge">BREACH · 14/100</span>
+  </div>
+  <div class="hero-eyebrow">VYRION CONSCIENCE · Corporate Accountability</div>
+  <h1 class="hero-company">Delta Air Lines</h1>
+  <div class="hero-ticker">DAL · Aviation · CIK 0000027904</div>
+  <p class="hero-verdict">Delta pledges net zero by 2050. In 2024, emissions hit their highest point since before the pandemic. SAF deliveries reached 13 million gallons — against a 400 million gallon 2030 target. The gap between the runway and the destination is widening, not narrowing.</p>
+  <div class="hero-score-row">
+    <div>
+      <div class="score-big">14</div>
+      <div class="score-denom">/ 100</div>
+    </div>
+    <div>
+      <div class="score-band">BREACH</div>
+      <div class="score-label" style="margin-top:.4rem">
+        CDP: C · InfluenceMap: D · SBTi: Not committed<br>
+        CONSCIENCE v2.8 · March 18, 2026 baseline
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- STAT STRIP -->
+<div class="stat-strip">
+  <div class="st-cell">
+    <div class="st-lbl">CONSCIENCE Score</div>
+    <div class="st-val breach">14 / 100</div>
+    <div class="st-sub">Breach band · 0–30</div>
+  </div>
+  <div class="st-cell">
+    <div class="st-lbl">2024 SAF Delivered</div>
+    <div class="st-val warn">13M gal</div>
+    <div class="st-sub">vs 400M/yr 2030 goal = 3.25%</div>
+  </div>
+  <div class="st-cell">
+    <div class="st-lbl">2024 Emissions</div>
+    <div class="st-val breach">Post-pandemic high</div>
+    <div class="st-sub">Delta Difference Report 2024</div>
+  </div>
+  <div class="st-cell">
+    <div class="st-lbl">InfluenceMap Grade</div>
+    <div class="st-val breach">D</div>
+    <div class="st-sub">Broadly misaligned · Paris Agreement</div>
+  </div>
+  <div class="st-cell">
+    <div class="st-lbl">SBTi Status</div>
+    <div class="st-val breach">Not committed</div>
+    <div class="st-sub">No science-based target filed</div>
+  </div>
+  <div class="st-cell">
+    <div class="st-lbl">Active Lawsuits</div>
+    <div class="st-val amber">3</div>
+    <div class="st-sub">Sabin Center · Columbia Law</div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- ARTICLE -->
+  <div class="article">
+
+    <div class="article-section">
+      <div class="section-label">The Pledge</div>
+      <h2 class="section-title">Net Zero by 2050. Carbon Neutral by 2030 — Quietly Dropped.</h2>
+      <p class="body">
+        Delta's stated goal is <b>net zero carbon emissions by 2050</b> from airline operations. The strategy rests on three pillars: what they fly (fleet efficiency), how they fly (operational savings), and the fuel they use (sustainable aviation fuel). On paper, it is a coherent framework. In practice, the numbers do not yet support the ambition.
+      </p>
+      <p class="body">
+        An earlier pledge — to achieve <b>carbon neutrality by 2030</b> — was effectively abandoned after the FTC opened an inquiry into the quality of carbon offsets used to back that claim. The 2030 carbon neutral commitment has disappeared from Delta's current communications. What remains is the 2050 net zero goal, supported largely by a bet on SAF at a scale that does not yet exist in commercial supply.
+      </p>
+      <div class="pull">
+        <p>"Sustainable aviation fuel (SAF) is the biggest lever. It's the only thing that gets us to net zero. We're in a race against time."</p>
+        <cite>— Amelia DeLuca, Delta Chief Sustainability Officer</cite>
+      </div>
+    </div>
+
+    <div class="article-section">
+      <div class="section-label">The Reality</div>
+      <h2 class="section-title">Emissions Rising. SAF at 3.25% of the 2030 Target.</h2>
+      <p class="body">
+        <b>Delta's 2024 emissions reached their highest point since before the pandemic.</b> The airline disclosed this in its own Delta Difference Report 2024. The stated reason is growth — post-pandemic demand recovery across international routes and premium cabins. That explanation is accurate. It does not change what the data shows.
+      </p>
+
+      <div class="compare-block">
+        <div class="compare-row">
+          <div class="cr-pledge">
+            <span class="cr-tag tag-p">Pledge</span>
+            <div class="cr-text">10% SAF utilization by 2030 — requires 400 million gallons per year</div>
+            <div class="cr-src">Delta Difference Report 2024 · delta.com/sustainability</div>
+          </div>
+          <div class="cr-reality">
+            <span class="cr-tag tag-r">Reality</span>
+            <div class="cr-text">13 million gallons delivered in 2024 — up 3× from 2023, but 3.25% of the 2030 annual goal</div>
+            <div class="cr-src">Delta Difference Report 2024 · esghub.delta.com</div>
+          </div>
+        </div>
+        <div class="compare-row">
+          <div class="cr-pledge">
+            <span class="cr-tag tag-p">Pledge</span>
+            <div class="cr-text">Net zero emissions by 2050 across all airline operations</div>
+            <div class="cr-src">Delta Difference Report 2024</div>
+          </div>
+          <div class="cr-reality">
+            <span class="cr-tag tag-r">Reality</span>
+            <div class="cr-text">2024 emissions: highest since pre-pandemic. Trajectory is still moving away from the 2050 destination.</div>
+            <div class="cr-src">Delta Difference Report 2024 · Skift, June 2025</div>
+          </div>
+        </div>
+        <div class="compare-row">
+          <div class="cr-pledge">
+            <span class="cr-tag tag-p">Pledge</span>
+            <div class="cr-text">Carbon neutral by 2030 (original commitment, backed by offset purchases)</div>
+            <div class="cr-src">Delta Air Lines, 2020</div>
+          </div>
+          <div class="cr-reality">
+            <span class="cr-tag tag-r">Reality</span>
+            <div class="cr-text">Commitment quietly removed from current strategy. FTC inquiry into offset quality opened 2023. Carbon neutral 2030 is no longer a stated target.</div>
+            <div class="cr-src">FTC Inquiry 2023 · CDP 2023</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SAF progress bar -->
+      <div class="progress-block">
+        <div class="pb-title">SAF Progress Toward 2030 Goal — 400M Gallons / Year Required</div>
+        <div class="pb-bar-bg">
+          <div class="pb-bar-fill" style="width:3.25%"></div>
+        </div>
+        <div class="pb-labels">
+          <span class="pb-actual">2024 actual: 13M gal (3.25%)</span>
+          <span class="pb-goal">2030 goal: 400M gal</span>
+        </div>
+      </div>
+
+      <p class="body">
+        To reach the 400 million gallon annual target by 2030, Delta would need to roughly <b>30× its current SAF volume in six years</b>. The airline itself acknowledges that global SAF production cannot currently fuel the world's airlines for a single week. The Minnesota SAF Hub and other initiatives are steps in the right direction. The math between those steps and the 2030 deadline is difficult.
+      </p>
+    </div>
+
+    <div class="article-section">
+      <div class="section-label">Lobbying Record</div>
+      <h2 class="section-title">Supporting SAF Credits. Opposing the Regulations That Would Drive Demand.</h2>
+      <p class="body">
+        InfluenceMap grades Delta a <b>D — broadly misaligned with the policy pathways required by the Paris Agreement.</b> Delta's lobbying record reveals a pattern: support for incentives that benefit airlines, opposition to the regulatory mandates that would create structural demand for SAF and climate accountability.
+      </p>
+
+      <div class="lobby-block">
+        <div class="lb-title">Verified Lobbying Actions — InfluenceMap · Sabin Center · Public Records</div>
+        <div class="lb-item">Opposed EU SAF mandate "without appropriate incentives" — 2023 ESG Report and 2024 Difference Report. Also opposed full-scope non-CO₂ monitoring under EU ETS.</div>
+        <div class="lb-item">Opposed Amsterdam's Schiphol flight cap. Took legal action against the Dutch government's decision to allow the cap — July 2023.</div>
+        <div class="lb-item">Monroe Energy, Delta's wholly-owned refinery subsidiary, advocated against California's phase-out of internal combustion engine vehicle sales — disclosed in Delta's own ESG report.</div>
+        <div class="lb-item">Endorsed the Big Beautiful Bill (2025), which proposes to repeal Inflation Reduction Act climate incentives and the Clean Fuel Production Credit. Signed a White House webpage supporting the bill.</div>
+        <div class="lb-item">Through the ACAF coalition, opposed removal of indirect land-use change exemptions in California's Low Carbon Fuel Standard — December 2024.</div>
+        <div class="lb-item">Retained memberships in multiple industry associations with negative engagement on climate policy.</div>
+      </div>
+
+      <p class="body">
+        The lobbying record matters because Delta's decarbonization strategy depends on regulatory frameworks — SAF mandates, tax credits, carbon pricing — creating the market conditions for SAF to scale. Delta's public communications support the destination. Its policy engagement works against some of the roads that lead there.
+      </p>
+    </div>
+
+    <div class="article-section">
+      <div class="section-label">What Delta Is Actually Doing Right</div>
+      <h2 class="section-title">Fleet Efficiency. Carbon Council. Minnesota SAF Hub.</h2>
+      <p class="body">
+        The score is 14/100 — not 0. Delta's operational improvement program is genuine. The Carbon Council saved <b>44 million gallons of jet fuel in 2024</b> vs. a no-action baseline, worth over $100M in cost savings. Aircraft added to the fleet since 2019 are on average <b>28% more fuel efficient per seat mile</b> than the aircraft they replaced. These are real reductions. They are being outpaced by growth.
+      </p>
+      <p class="body">
+        The Minnesota SAF Hub is the most substantive structural initiative — a coalition effort to build regional SAF production capacity from agricultural feedstocks including winter camelina. If it scales, it addresses supply constraints. Currently it is early-stage.
+      </p>
+      <p class="body">
+        Delta's CDP grade of C reflects genuine engagement with disclosure — more than many airlines — without the performance results to match. The CDP C grade is not a failure grade. It is an acknowledgment that awareness and strategy are present, but verified progress is not yet there.
+      </p>
+    </div>
+
+    <div class="article-section">
+      <div class="section-label">CONSCIENCE Verdict</div>
+      <h2 class="section-title">The Gap is Structural, Not Rhetorical.</h2>
+      <p class="body">
+        Delta scores <b>14/100</b> because the gap between its climate narrative and its verified performance is material, measurable, and documented in its own reports. The emissions trajectory is moving in the wrong direction. The SAF target is at 3.25% with six years remaining. The 2030 carbon neutral pledge has been quietly dropped. The lobbying record undermines the regulatory conditions needed for SAF to scale.
+      </p>
+      <p class="body">
+        Aviation is genuinely hard to decarbonize. CONSCIENCE scores against what is possible and what was pledged — not against what is easy. Delta's score reflects an industry that is moving, but not yet moving fast enough to close the gap between its stated destinations and its current trajectory.
+      </p>
+      <p class="body" style="border-top:1px solid var(--border2);padding-top:.9rem;margin-top:.9rem">
+        <b>Find an error in this analysis.</b> Every figure cited here is sourced and linked. If the data is wrong, we publish the correction within 24 hours. <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a> · Open Proof Protocol.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <!-- Score breakdown -->
+    <div class="scorecard">
+      <div class="sc-title">CONSCIENCE Score · Derivation</div>
+      <div class="sc-factor">
+        <span class="sc-fname">Pledge Quality</span>
+        <span class="sc-fmax">30 max</span>
+        <span class="sc-fval" style="color:var(--breach)">+4</span>
+      </div>
+      <div class="sc-factor">
+        <span class="sc-fname">CDP Performance (Grade C)</span>
+        <span class="sc-fmax">25 max</span>
+        <span class="sc-fval" style="color:var(--warn)">+10</span>
+      </div>
+      <div class="sc-factor">
+        <span class="sc-fname">InfluenceMap (Grade D)</span>
+        <span class="sc-fmax">25 max</span>
+        <span class="sc-fval" style="color:var(--breach)">+3</span>
+      </div>
+      <div class="sc-factor">
+        <span class="sc-fname">Legal Exposure (3 cases + FTC)</span>
+        <span class="sc-fmax">20 max</span>
+        <span class="sc-fval" style="color:var(--breach)">−3</span>
+      </div>
+      <div class="sc-total">
+        <span class="sc-fname">CONSCIENCE Score</span>
+        <span class="sc-fval">14 / 100</span>
+      </div>
+      <div style="font-family:'Courier Prime',monospace;font-size:.52rem;color:var(--t3);margin-top:.6rem;padding-top:.5rem;border-top:1px solid var(--border2);line-height:1.5">
+        Full derivation: <a href="https://github.com/dablerfrost/conscience/blob/main/CONSCIENCE-METHODOLOGY.md" target="_blank" style="color:rgba(0,212,255,.4);text-decoration:none">CONSCIENCE-METHODOLOGY.md →</a>
+      </div>
+    </div>
+
+    <!-- Validation badges -->
+    <div>
+      <div style="font-family:'Courier Prime',monospace;font-size:.56rem;color:var(--t3);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.6rem">Validation Sources</div>
+      <div class="val-grid">
+        <div class="vb">
+          <div class="vb-name">CDP 2023</div>
+          <div class="vb-val cdp-C">C</div>
+          <div class="vb-sub">Awareness grade</div>
+        </div>
+        <div class="vb">
+          <div class="vb-name">InfluenceMap</div>
+          <div class="vb-val im-D">D</div>
+          <div class="vb-sub">Paris misaligned</div>
+        </div>
+        <div class="vb">
+          <div class="vb-name">SBTi</div>
+          <div class="vb-val sbti-no" style="font-size:.72rem">Not committed</div>
+          <div class="vb-sub">No 1.5°C target</div>
+        </div>
+        <div class="vb">
+          <div class="vb-name">Sabin Center</div>
+          <div class="vb-val law-low">3</div>
+          <div class="vb-sub">Active cases</div>
+        </div>
+        <div class="vb">
+          <div class="vb-name">TPI</div>
+          <div class="vb-val" style="color:var(--t2);font-size:.72rem">Level 2/5</div>
+          <div class="vb-sub">Acknowledging</div>
+        </div>
+        <div class="vb">
+          <div class="vb-name">SEC EDGAR</div>
+          <div class="vb-val" id="edgar-val" style="font-size:.68rem;color:var(--glow)"><span style="opacity:.5">—</span></div>
+          <div class="vb-sub" id="edgar-sub">Latest 10-K · fetching</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pledge timeline -->
+    <div>
+      <div style="font-family:'Courier Prime',monospace;font-size:.56rem;color:var(--t3);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.7rem">Pledge Timeline</div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-year">2020</div>
+          <div class="tl-text">Delta pledges carbon neutrality by 2030 backed by offsets. Commits $1B to sustainability over 10 years.</div>
+          <div class="tl-badge tl-track">Filed</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2023</div>
+          <div class="tl-text">FTC inquiry into offset quality opens. Carbon neutral 2030 commitment begins disappearing from communications.</div>
+          <div class="tl-badge tl-warn">⚠ Inquiry</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2024</div>
+          <div class="tl-text">13M gallons SAF delivered. Emissions hit post-pandemic high. Minnesota SAF Hub launched. Fleet renewal ongoing.</div>
+          <div class="tl-badge tl-breach">Breach</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2025</div>
+          <div class="tl-text">Delta endorses Big Beautiful Bill — proposes to repeal IRA climate incentives. InfluenceMap grade: D.</div>
+          <div class="tl-badge tl-breach">Breach</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2030</div>
+          <div class="tl-text">10% SAF utilization target (400M gal/yr). Currently at 3.25% of annual goal with 6 years remaining.</div>
+          <div class="tl-badge tl-warn">Target</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2050</div>
+          <div class="tl-text">Net zero emissions across all airline operations — current stated ultimate goal.</div>
+          <div class="tl-badge tl-warn">Target</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Aviation context -->
+    <div class="context-block">
+      <div class="cb-title">Aviation Context</div>
+      <div class="cb-stat">
+        <span class="cb-lbl">Global aviation % of CO₂</span>
+        <span class="cb-val" style="color:var(--warn)">~2–2.5%</span>
+      </div>
+      <div class="cb-stat">
+        <span class="cb-lbl">Delta's carbon from jet fuel</span>
+        <span class="cb-val" style="color:var(--breach)">~90%</span>
+      </div>
+      <div class="cb-stat">
+        <span class="cb-lbl">Global SAF production 2024</span>
+        <span class="cb-val" style="color:var(--breach)">&lt; 1 week of aviation</span>
+      </div>
+      <div class="cb-stat">
+        <span class="cb-lbl">Hard-to-abate sector</span>
+        <span class="cb-val" style="color:var(--warn)">Yes — IATA confirmed</span>
+      </div>
+      <div class="cb-stat">
+        <span class="cb-lbl">Delta CONSCIENCE rank</span>
+        <span class="cb-val" style="color:var(--breach)">4th lowest of 11</span>
+      </div>
+    </div>
+
+    <!-- Sources -->
+    <div>
+      <div style="font-family:'Courier Prime',monospace;font-size:.56rem;color:var(--t3);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.6rem">Sources</div>
+      <div style="display:flex;flex-direction:column;gap:.3rem">
+        <a href="https://esghub.delta.com/content/esg/en/2024/home.html" target="_blank" style="font-family:'Courier Prime',monospace;font-size:.55rem;color:rgba(0,212,255,.4);text-decoration:none" onmouseover="this.style.color='var(--glow)'" onmouseout="this.style.color='rgba(0,212,255,.4)'">Delta Difference Report 2024 →</a>
+        <a href="https://lobbymap.org/company/Delta-Air-Lines/projectlink/Delta-Air-Lines-In-Climate-Change" target="_blank" style="font-family:'Courier Prime',monospace;font-size:.55rem;color:rgba(0,212,255,.4);text-decoration:none" onmouseover="this.style.color='var(--glow)'" onmouseout="this.style.color='rgba(0,212,255,.4)'">InfluenceMap — Delta Lobbying Profile →</a>
+        <a href="https://climatecasechart.com/case-list/?organization_name=delta" target="_blank" style="font-family:'Courier Prime',monospace;font-size:.55rem;color:rgba(0,212,255,.4);text-decoration:none" onmouseover="this.style.color='var(--glow)'" onmouseout="this.style.color='rgba(0,212,255,.4)'">Sabin Center — Delta Litigation →</a>
+        <a href="https://www.cdp.net/en/responses" target="_blank" style="font-family:'Courier Prime',monospace;font-size:.55rem;color:rgba(0,212,255,.4);text-decoration:none" onmouseover="this.style.color='var(--glow)'" onmouseout="this.style.color='rgba(0,212,255,.4)'">CDP 2023 Public Responses →</a>
+        <a href="https://github.com/dablerfrost/conscience/blob/main/CONSCIENCE-METHODOLOGY.md" target="_blank" style="font-family:'Courier Prime',monospace;font-size:.55rem;color:rgba(0,212,255,.4);text-decoration:none" onmouseover="this.style.color='var(--glow)'" onmouseout="this.style.color='rgba(0,212,255,.4)'">CONSCIENCE-METHODOLOGY.md →</a>
+      </div>
+    </div>
+
+  </div><!-- /sidebar -->
+</div><!-- /main -->
+
+<footer class="footer">
+  <div class="footer-l">
+    The Record · Issue 004 · Delta Air Lines · April 8, 2026<br>
+    VYRION CONSCIENCE v2.8 · <a href="https://vyrion.earth">dablerfrost.github.io/conscience</a> ·
+    <a href="https://github.com/dablerfrost/conscience/blob/main/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a> ·
+    <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a>
+  </div>
+  <div class="footer-r">
+    <a href="https://dablerfrost.github.io/conscience">CONSCIENCE →</a>
+    <a href="issue-003-shell.html">← ISSUE 003</a>
+    <a href="https://vyrion.earth/archive/">ARCHIVE →</a>
+  </div>
+</footer>
+
+<script>
+'use strict';
+
+/* THEME */
+function toggleTheme(){
+  const h=document.documentElement,il=h.getAttribute('data-theme')==='light';
+  h.setAttribute('data-theme',il?'dark':'light');
+  const b=document.getElementById('theme-btn');
+  if(b)b.textContent=il?'◐ DARK':'◑ LIGHT';
+  try{localStorage.setItem('rc-theme',il?'dark':'light')}catch(e){}
+}
+(function(){
+  try{
+    const t=localStorage.getItem('rc-theme');
+    if(t==='light'){
+      document.documentElement.setAttribute('data-theme','light');
+      const b=document.getElementById('theme-btn');
+      if(b)b.textContent='◑ LIGHT';
+    }
+  }catch(e){}
+})();
+
+/* FONT SCALE */
+const SCALES={'0.88':16,'1.0':18,'1.22':22};
+function setScale(btn){
+  const px=SCALES[btn.dataset.scale]||18;
+  document.documentElement.style.fontSize=px+'px';
+  document.querySelectorAll('.nc-sz').forEach(b=>b.classList.toggle('active',b===btn));
+  try{localStorage.setItem('rc-scale',btn.dataset.scale)}catch(e){}
+}
+(function(){
+  try{
+    const s=localStorage.getItem('rc-scale');
+    if(s&&SCALES[s]){
+      document.documentElement.style.fontSize=SCALES[s]+'px';
+      requestAnimationFrame(()=>
+        document.querySelectorAll('.nc-sz').forEach(b=>b.classList.toggle('active',b.dataset.scale===s))
+      );
+    }
+  }catch(e){}
+})();
+
+/* SAF BAR ANIMATION */
+window.addEventListener('load',()=>{
+  const bar=document.querySelector('.pb-bar-fill');
+  if(bar){bar.style.width='0%';setTimeout(()=>{bar.style.width='3.25%'},400);}
+});
+
+/* SEC EDGAR — fetch Delta latest 10-K */
+(async function(){
+  try{
+    const r=await fetch('https://data.sec.gov/submissions/CIK0000027904.json');
+    const d=await r.json();
+    const forms=d.filings.recent.form;
+    const dates=d.filings.recent.filingDate;
+    for(let i=0;i<forms.length;i++){
+      if(forms[i]==='10-K'||forms[i]==='10-K/A'){
+        const ev=document.getElementById('edgar-val');
+        const es=document.getElementById('edgar-sub');
+        if(ev){ev.textContent=dates[i];ev.style.color='var(--glow)'}
+        if(es)es.textContent=`${forms[i]} · Most recent filing`;
+        break;
+      }
+    }
+  }catch(e){
+    const ev=document.getElementById('edgar-val');
+    if(ev){ev.textContent='N/A';ev.style.color='var(--t3)';}
+  }
+})();
+</script>
+</body>
+</html>

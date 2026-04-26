@@ -1,0 +1,804 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="THE RECORD — VYRION Issue 005: Starbucks Corporation. Pledge −50% by 2030. Reality: +3% vs FY2019 baseline. CONSCIENCE Score 29/100 BREACH.">
+<meta property="og:title" content="THE RECORD — Issue 005: Starbucks · VYRION">
+<meta property="og:description" content="Starbucks pledged −50% absolute emissions by 2030. FY2024: +3% vs baseline. Scope 3 = 94% of footprint. CONSCIENCE Score: 29/100 BREACH.">
+<meta property="og:type" content="article">
+<title>THE RECORD — Issue 005: Starbucks · VYRION</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&family=Archivo:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --void:#020912; --void2:#061624; --void3:#0b2035;
+  --glow:#00D4FF; --amber:#FFB84D; --breach:#F03030; --warn:#F09000;
+  --t1:#e4f2ff; --t2:#6a9ab8; --t3:#2d6080;
+  --border:rgba(0,212,255,.12); --border2:rgba(0,212,255,.07);
+  --nav-bg:rgba(2,9,18,.97); --scanline:rgba(0,212,255,.004);
+  --breach-bg:rgba(240,48,48,.07);
+}
+[data-theme="light"] {
+  --void:#f0f5ff; --void2:#e4eeff; --void3:#d5e5ff;
+  --glow:#0066CC; --amber:#b07800; --breach:#b82020; --warn:#a05800;
+  --t1:#060e1e; --t2:#1e4a7a; --t3:#3a6090;
+  --border:rgba(0,102,204,.18); --border2:rgba(0,102,204,.10);
+  --nav-bg:rgba(240,245,255,.98); --scanline:transparent;
+  --breach-bg:rgba(184,32,32,.08);
+}
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; font-size:18px; }
+body {
+  background:var(--void); color:var(--t1);
+  font-family:'Archivo',sans-serif; font-size:1rem;
+  line-height:1.65; min-height:100vh; overflow-x:hidden;
+}
+body::after {
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:990;
+  background:repeating-linear-gradient(0deg,transparent,transparent 3px,var(--scanline) 3px,var(--scanline) 4px);
+}
+
+/* ── NAV ── */
+.nav {
+  position:sticky; top:0; z-index:500; height:52px;
+  display:flex; align-items:center; gap:1.4rem; padding:0 1.8rem;
+  background:var(--nav-bg); border-bottom:1px solid var(--border);
+  backdrop-filter:blur(20px);
+}
+.nav-logo {
+  font-family:'Archivo Narrow',sans-serif; font-weight:800; font-size:.95rem;
+  color:var(--glow); letter-spacing:.15em; text-decoration:none; flex-shrink:0;
+  text-shadow:0 0 20px rgba(0,212,255,.3);
+}
+.nav-links { display:flex; gap:1.8rem; list-style:none; flex:1; }
+.nav-links a {
+  font-family:'Archivo Narrow',sans-serif; font-weight:700; font-size:.65rem;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:var(--t2); text-decoration:none; transition:color .2s; padding-bottom:2px;
+}
+.nav-links a:hover { color:var(--t1); }
+.nav-links a.active { color:var(--glow); border-bottom:1px solid rgba(0,212,255,.4); }
+.nav-controls { display:flex; align-items:center; gap:.35rem; flex-shrink:0; }
+.nc-sep { width:1px; height:16px; background:var(--border); }
+.nc-theme {
+  font-family:'Courier Prime',monospace; font-size:.58rem; font-weight:700;
+  letter-spacing:.12em; padding:.22rem .5rem; border-radius:2px;
+  border:1px solid var(--border); background:transparent;
+  color:var(--t2); cursor:pointer; transition:all .2s;
+}
+.nc-theme:hover { border-color:var(--glow); color:var(--glow); }
+.nc-sz {
+  font-family:'Courier Prime',monospace; font-size:.6rem; font-weight:700;
+  width:26px; height:26px; display:flex; align-items:center; justify-content:center;
+  border-radius:2px; border:1px solid var(--border);
+  background:transparent; color:var(--t3); cursor:pointer; transition:all .2s;
+}
+.nc-sz:hover { border-color:rgba(0,212,255,.4); color:var(--t1); }
+.nc-sz.active { background:rgba(0,212,255,.15); border-color:var(--glow); color:var(--glow); }
+.nav-dot { width:6px; height:6px; background:var(--glow); border-radius:50%; flex-shrink:0; animation:pdot 2.2s infinite; }
+@keyframes pdot { 0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,212,255,.5)} 50%{opacity:.4;box-shadow:0 0 0 7px rgba(0,212,255,0)} }
+
+/* ── ISSUE HEADER ── */
+.issue-header {
+  padding:3.5rem 2rem 2.8rem;
+  border-bottom:1px solid var(--border);
+  position:relative; overflow:hidden;
+}
+.issue-header::before {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(ellipse 60% 70% at 85% 50%, rgba(240,48,48,.04) 0%, transparent 70%);
+  pointer-events:none;
+}
+.bg-word {
+  position:absolute; right:-1rem; top:50%; transform:translateY(-50%);
+  font-family:'Archivo Narrow',sans-serif; font-weight:800;
+  font-size:clamp(5rem,14vw,11rem);
+  color:rgba(240,48,48,.035); pointer-events:none; user-select:none; line-height:1;
+}
+.eyebrow {
+  font-family:'Courier Prime',monospace; font-size:.65rem; color:var(--glow);
+  letter-spacing:.24em; text-transform:uppercase; margin-bottom:.4rem;
+  display:flex; align-items:center; gap:.55rem; position:relative; z-index:1;
+}
+.eyebrow::before { content:''; width:18px; height:1px; background:var(--glow); opacity:.5; }
+.issue-kicker {
+  font-family:'Courier Prime',monospace; font-size:.6rem; color:var(--t3);
+  letter-spacing:.18em; text-transform:uppercase; margin-bottom:.4rem;
+  position:relative; z-index:1;
+}
+.issue-title {
+  font-family:'Archivo Narrow',sans-serif; font-weight:800;
+  font-size:clamp(2.4rem,5.5vw,3.8rem); color:var(--t1);
+  line-height:.95; letter-spacing:-.02em; margin-bottom:.2rem;
+  position:relative; z-index:1;
+}
+.issue-company {
+  font-family:'Archivo Narrow',sans-serif; font-weight:800;
+  font-size:clamp(1.4rem,3vw,2rem); color:var(--breach);
+  line-height:1; letter-spacing:-.01em; margin-bottom:.5rem;
+  position:relative; z-index:1;
+}
+.issue-meta {
+  font-family:'Courier Prime',monospace; font-size:.6rem; color:var(--t3);
+  letter-spacing:.1em; margin-bottom:.8rem; position:relative; z-index:1;
+}
+.issue-sub {
+  font-size:.82rem; color:var(--t2); max-width:62ch; line-height:1.72;
+  position:relative; z-index:1;
+}
+
+/* ── BREACH BADGE ── */
+.breach-badge {
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:var(--breach-bg); border:1px solid rgba(240,48,48,.35);
+  color:var(--breach); padding:.4rem 1rem; border-radius:2px;
+  font-family:'Archivo Narrow',sans-serif; font-weight:800;
+  font-size:1rem; letter-spacing:.16em; text-transform:uppercase;
+  margin-bottom:1.2rem; position:relative; z-index:1;
+}
+.breach-badge::before {
+  content:''; width:8px; height:8px; background:var(--breach);
+  border-radius:50%; animation:bpulse 1.2s infinite;
+}
+@keyframes bpulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+/* ── SCORE STRIP ── */
+.score-strip {
+  display:flex; flex-wrap:wrap;
+  background:var(--void2); border-bottom:1px solid var(--border);
+}
+.ss-cell {
+  flex:1; min-width:140px; padding:1.1rem 1.6rem;
+  border-right:1px solid var(--border);
+  display:flex; flex-direction:column; gap:.15rem;
+}
+.ss-cell:last-child { border-right:none; }
+.ss-label {
+  font-family:'Courier Prime',monospace; font-size:.56rem;
+  color:var(--t3); letter-spacing:.16em; text-transform:uppercase;
+}
+.ss-val {
+  font-family:'Courier Prime',monospace; font-weight:700;
+  font-size:1.7rem; line-height:1; letter-spacing:-.02em;
+}
+.ss-sub { font-family:'Courier Prime',monospace; font-size:.56rem; color:var(--t3); line-height:1.4; }
+.val-breach { color:var(--breach); }
+.val-amber  { color:var(--amber); }
+.val-glow   { color:var(--glow); }
+.val-warn   { color:var(--warn); }
+.val-red-up { color:var(--breach); }
+
+/* ── SCORE BAR ── */
+.score-bar-section {
+  padding:1.2rem 2rem 1.4rem;
+  border-bottom:1px solid var(--border);
+  background:var(--void2);
+}
+.sb-label-row {
+  display:flex; justify-content:space-between; align-items:baseline;
+  font-family:'Courier Prime',monospace; font-size:.56rem; color:var(--t3);
+  letter-spacing:.12em; text-transform:uppercase; margin-bottom:.5rem;
+}
+.sb-label-row span:last-child { color:var(--breach); font-size:.7rem; font-weight:700; }
+.sb-track {
+  height:5px; background:rgba(255,255,255,.06); border-radius:3px; overflow:hidden;
+  margin-bottom:.35rem;
+}
+[data-theme="light"] .sb-track { background:rgba(0,0,0,.08); }
+.sb-fill {
+  height:100%; width:0; border-radius:3px;
+  background:linear-gradient(90deg, rgba(240,48,48,.35), var(--breach));
+  transition:width 1.4s cubic-bezier(.4,0,.2,1);
+}
+.sb-scale {
+  display:flex; justify-content:space-between;
+  font-family:'Courier Prime',monospace; font-size:.52rem; color:var(--t3);
+}
+
+/* ── MAIN LAYOUT ── */
+.content-wrap {
+  display:grid; grid-template-columns:1fr 320px;
+}
+@media(max-width:900px) { .content-wrap { grid-template-columns:1fr; } }
+
+.content-main { padding:2.4rem 2rem; border-right:1px solid var(--border); }
+.content-sidebar { padding:2rem 1.6rem; background:var(--void2); }
+@media(max-width:900px) {
+  .content-main { border-right:none; border-bottom:1px solid var(--border); }
+}
+
+/* ── SECTION HEADING ── */
+.section-heading {
+  font-family:'Archivo Narrow',sans-serif; font-weight:800;
+  font-size:.8rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--t1); margin-bottom:1rem;
+  display:flex; align-items:center; gap:.6rem;
+}
+.section-heading::after { content:''; flex:1; height:1px; background:var(--border); }
+
+/* ── PLEDGE / REALITY ── */
+.pr-block { margin-bottom:2rem; }
+.pr-row {
+  display:flex; gap:.65rem; margin-bottom:.45rem; align-items:flex-start;
+}
+.pr-tag {
+  font-family:'Courier Prime',monospace; font-size:.54rem; letter-spacing:.1em;
+  text-transform:uppercase; flex-shrink:0; padding:.1rem .35rem;
+  border-radius:2px; margin-top:.15rem; line-height:1.2;
+}
+.tag-pledge { background:rgba(74,173,255,.08); color:#4AADFF; border:1px solid rgba(74,173,255,.25); }
+.tag-reality { background:var(--breach-bg); color:var(--breach); border:1px solid rgba(240,48,48,.25); }
+.pr-text { font-size:.82rem; color:var(--t1); line-height:1.65; }
+.pr-sub {
+  font-family:'Courier Prime',monospace; font-size:.58rem; color:var(--t3);
+  margin-left:calc(.35rem + 54px + .65rem); line-height:1.5; margin-top:-.15rem; margin-bottom:.6rem;
+}
+.pr-sub a { color:rgba(0,212,255,.4); text-decoration:none; }
+.pr-sub a:hover { color:var(--glow); }
+
+/* ── PROSE ── */
+.prose { font-size:.82rem; color:var(--t2); line-height:1.78; margin-bottom:1.8rem; }
+.prose p { margin-bottom:.9rem; }
+.prose p:last-child { margin-bottom:0; }
+.prose strong { color:var(--t1); font-weight:600; }
+.prose a { color:rgba(0,212,255,.5); text-decoration:none; }
+.prose a:hover { color:var(--glow); }
+.prose .highlight-breach { color:var(--breach); font-weight:700; }
+.prose .highlight-glow   { color:var(--glow); font-weight:600; }
+
+/* ── SCORE BREAKDOWN ── */
+.breakdown-block {
+  background:rgba(0,0,0,.22); border:1px solid var(--border2);
+  border-radius:2px; padding:.9rem 1rem; margin-bottom:1.8rem;
+}
+[data-theme="light"] .breakdown-block { background:rgba(0,0,0,.04); }
+.bd-row {
+  display:grid; grid-template-columns:1fr auto auto;
+  gap:.5rem; align-items:baseline;
+  padding:.32rem 0; border-bottom:1px solid var(--border2);
+  font-family:'Courier Prime',monospace; font-size:.62rem;
+}
+.bd-row:last-child { border-bottom:none; }
+.bd-factor { color:var(--t2); }
+.bd-weight { color:var(--t3); font-size:.54rem; }
+.bd-score { font-weight:700; text-align:right; min-width:40px; }
+.bd-score.pos { color:var(--glow); }
+.bd-score.neg { color:var(--breach); }
+.bd-total {
+  display:flex; justify-content:space-between;
+  padding:.4rem 0 0; margin-top:.2rem; border-top:1px solid var(--border);
+  font-family:'Courier Prime',monospace; font-size:.68rem;
+}
+.bd-total-label { color:var(--t1); font-weight:700; }
+.bd-total-score { color:var(--breach); font-weight:700; font-size:.82rem; }
+.bd-note {
+  font-family:'Courier Prime',monospace; font-size:.54rem; color:var(--t3);
+  margin-top:.5rem; padding-top:.4rem; border-top:1px solid var(--border2); line-height:1.5;
+}
+.bd-note a { color:rgba(0,212,255,.38); text-decoration:none; }
+.bd-note a:hover { color:var(--glow); }
+
+/* ── OPEN PROOF ── */
+.proof-block {
+  background:var(--breach-bg);
+  border:1px solid rgba(240,48,48,.2); border-radius:2px;
+  padding:1.1rem 1.2rem; margin-bottom:1.8rem;
+}
+.proof-header {
+  font-family:'Courier Prime',monospace; font-size:.58rem;
+  color:var(--breach); letter-spacing:.16em; text-transform:uppercase;
+  margin-bottom:.5rem; display:flex; align-items:center; gap:.4rem;
+}
+.proof-header::before {
+  content:''; width:5px; height:5px; background:var(--breach);
+  border-radius:50%; flex-shrink:0; animation:bpulse 1.2s infinite;
+}
+.proof-body { font-size:.76rem; color:var(--t2); line-height:1.65; }
+.proof-body a { color:rgba(0,212,255,.5); text-decoration:none; }
+.proof-body a:hover { color:var(--glow); }
+
+/* ── SIDEBAR COMPONENTS ── */
+.sidebar-block {
+  background:rgba(0,0,0,.2); border:1px solid var(--border2);
+  border-radius:2px; padding:.9rem 1rem; margin-bottom:1.2rem;
+}
+[data-theme="light"] .sidebar-block { background:rgba(0,0,0,.04); }
+.sidebar-label {
+  font-family:'Courier Prime',monospace; font-size:.56rem;
+  color:var(--t3); letter-spacing:.14em; text-transform:uppercase;
+  margin-bottom:.6rem;
+}
+.sval-row {
+  display:flex; justify-content:space-between; align-items:baseline;
+  padding:.28rem 0; border-bottom:1px solid var(--border2);
+  font-family:'Courier Prime',monospace; font-size:.62rem;
+}
+.sval-row:last-child { border-bottom:none; }
+.sval-label { color:var(--t2); }
+.sval-val { font-weight:700; text-align:right; }
+.sval-breach { color:var(--breach); }
+.sval-glow   { color:var(--glow); }
+.sval-warn   { color:var(--warn); }
+.sval-amber  { color:var(--amber); }
+.sval-neutral { color:var(--t2); }
+
+.nav-block {
+  border:1px solid var(--border); border-radius:2px; overflow:hidden;
+  margin-bottom:1.2rem;
+}
+.nb-header {
+  font-family:'Courier Prime',monospace; font-size:.54rem;
+  color:var(--t3); letter-spacing:.14em; text-transform:uppercase;
+  padding:.55rem .85rem; background:rgba(0,0,0,.22);
+  border-bottom:1px solid var(--border);
+}
+[data-theme="light"] .nb-header { background:rgba(0,0,0,.05); }
+.nb-row {
+  display:flex; justify-content:space-between; align-items:baseline;
+  padding:.5rem .85rem; border-bottom:1px solid var(--border2);
+  font-family:'Courier Prime',monospace; font-size:.6rem;
+  text-decoration:none; color:var(--t2); transition:background .15s;
+}
+.nb-row:last-child { border-bottom:none; }
+.nb-row:hover { background:rgba(0,212,255,.04); color:var(--t1); }
+.nb-issue { color:var(--t3); font-size:.54rem; }
+.nb-name  { flex:1; padding:0 .6rem; }
+.nb-score { font-weight:700; }
+.nb-breach { color:var(--breach); }
+.nb-warn   { color:var(--warn); }
+.nb-glow   { color:var(--glow); }
+.nb-current { background:rgba(240,48,48,.06); }
+.nb-upcoming { color:var(--t3); font-style:italic; }
+
+.source-block { margin-bottom:1.2rem; }
+.src-row {
+  display:flex; align-items:flex-start; gap:.5rem;
+  padding:.38rem 0; border-bottom:1px solid var(--border2);
+  font-family:'Courier Prime',monospace; font-size:.58rem;
+}
+.src-row:last-child { border-bottom:none; }
+.src-dot { width:4px; height:4px; border-radius:50%; flex-shrink:0; margin-top:.32rem; }
+.src-dot-live   { background:var(--glow); }
+.src-dot-static { background:var(--t3); }
+.src-name { color:var(--t2); line-height:1.45; }
+.src-name a { color:rgba(0,212,255,.4); text-decoration:none; }
+.src-name a:hover { color:var(--glow); }
+
+/* ── FOOTER ── */
+.record-footer {
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:1rem; padding:1.4rem 2rem;
+  border-top:1px solid var(--border);
+  background:var(--void2);
+}
+.footer-l { font-family:'Courier Prime',monospace; font-size:.6rem; color:var(--t3); line-height:1.8; }
+.footer-l a { color:rgba(0,212,255,.4); text-decoration:none; }
+.footer-l a:hover { color:var(--glow); }
+.footer-r { display:flex; gap:1.4rem; }
+.footer-r a {
+  font-family:'Courier Prime',monospace; font-size:.6rem;
+  color:rgba(0,212,255,.3); text-decoration:none; transition:color .18s;
+}
+.footer-r a:hover { color:var(--glow); }
+
+/* ── UTILS ── */
+.hidden { display:none!important; }
+@media(max-width:720px) {
+  html { font-size:16px!important; }
+  .nav { padding:0 .9rem; height:48px; }
+  .nav-links { display:none; }
+  .issue-header { padding:2rem .9rem 1.8rem; }
+  .content-main { padding:1.6rem .9rem; }
+  .content-sidebar { padding:1.6rem .9rem; }
+  .score-strip .ss-cell { min-width:45%; }
+  .record-footer { padding:1.2rem .9rem; }
+}
+@media(hover:none) { /* no magnifier */ }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
+  <ul class="nav-links">
+    <li><a href="https://vyrion.earth">CONSCIENCE</a></li>
+    <li><a href="https://vyrion.earth/atlas.html">ATLAS</a></li>
+    <li><a href="https://vyrion.earth/shield.html">SHIELD</a></li>
+    <li><a href="https://vyrion.earth/record" class="active">RECORD</a></li>
+    <li><a href="https://vyrion.earth/archive">ARCHIVE</a></li>
+  </ul>
+  <div class="nav-controls">
+    <button class="nc-theme" id="theme-btn" onclick="toggleTheme()">◐ DARK</button>
+    <div class="nc-sep"></div>
+    <button class="nc-sz" data-scale="0.88" onclick="setScale(this)">S</button>
+    <button class="nc-sz active" data-scale="1.0" onclick="setScale(this)">M</button>
+    <button class="nc-sz" data-scale="1.22" onclick="setScale(this)">L</button>
+  </div>
+  <div class="nav-dot"></div>
+</nav>
+
+<!-- ISSUE HEADER -->
+<header class="issue-header">
+  <div class="bg-word">SBUX</div>
+  <div class="eyebrow">The Record · Issue 005 · Wednesday April 15, 2026</div>
+  <div class="issue-kicker">NYSE: SBUX · CIK 0000829224 · Consumer Staples / Food & Beverage</div>
+  <div class="breach-badge">BREACH</div>
+  <h1 class="issue-title">THE RECORD — ISSUE 005</h1>
+  <div class="issue-company">Starbucks Corporation</div>
+  <p class="issue-sub">One company. Pledge vs. reality. Sourced. Scored. Published openly. CONSCIENCE Score: 29 / 100. Published: Wednesday, April 15, 2026.</p>
+</header>
+
+<!-- SCORE STRIP -->
+<div class="score-strip">
+  <div class="ss-cell">
+    <div class="ss-label">CONSCIENCE Score</div>
+    <div class="ss-val val-breach">29<span style="font-size:.9rem;color:var(--t3)">/100</span></div>
+    <div class="ss-sub">Band: BREACH · 0–30 range</div>
+  </div>
+  <div class="ss-cell">
+    <div class="ss-label">FY2024 Emissions vs Baseline</div>
+    <div class="ss-val val-breach">+3%</div>
+    <div class="ss-sub">vs FY2019 · Moving away from target</div>
+  </div>
+  <div class="ss-cell">
+    <div class="ss-label">Scope 3 Share</div>
+    <div class="ss-val val-amber">94%</div>
+    <div class="ss-sub">of total footprint · dairy + farming</div>
+  </div>
+  <div class="ss-cell">
+    <div class="ss-label">2030 Pledge Target</div>
+    <div class="ss-val val-glow">−50%</div>
+    <div class="ss-sub">Absolute Scope 1, 2 &amp; 3 vs FY2019</div>
+  </div>
+  <div class="ss-cell">
+    <div class="ss-label">Waste to Landfill</div>
+    <div class="ss-val val-breach">+6%</div>
+    <div class="ss-sub">vs FY2019 · Rising vs target</div>
+  </div>
+  <div class="ss-cell">
+    <div class="ss-label">SBTi Status</div>
+    <div class="ss-val" style="font-size:1.1rem;color:var(--amber);padding-top:.25rem">COMMITTED</div>
+    <div class="ss-sub">1.5°C pathway · Scope 1 &amp; 2 confirmed</div>
+  </div>
+</div>
+
+<!-- SCORE BAR -->
+<div class="score-bar-section">
+  <div class="sb-label-row">
+    <span>CONSCIENCE Score Position</span>
+    <span>29 / 100 — BREACH BAND</span>
+  </div>
+  <div class="sb-track">
+    <div class="sb-fill" id="score-bar" data-target="29"></div>
+  </div>
+  <div class="sb-scale">
+    <span>0 — BREACH</span>
+    <span style="color:var(--breach)">▲ 29/100</span>
+    <span>30</span>
+    <span>60</span>
+    <span style="color:var(--glow)">100 — ON TRACK</span>
+  </div>
+</div>
+
+<!-- MAIN CONTENT + SIDEBAR -->
+<div class="content-wrap">
+
+  <!-- MAIN -->
+  <div class="content-main">
+
+    <!-- PLEDGE VS REALITY -->
+    <div class="section-heading">Pledge vs. Reality</div>
+    <div class="pr-block">
+      <div class="pr-row">
+        <span class="pr-tag tag-pledge">PLEDGE</span>
+        <span class="pr-text">−50% absolute reduction in Scope 1, 2 &amp; 3 GHG emissions by 2030 (FY2019 baseline). Carbon positive by 2030. SBTi-confirmed alignment for Scope 1 &amp; 2 (1.5°C pathway).</span>
+      </div>
+      <div class="pr-sub">Starbucks FY2024 Global Environmental &amp; Social Impact Report (May 2025)</div>
+
+      <div class="pr-row">
+        <span class="pr-tag tag-reality">REALITY</span>
+        <span class="pr-text">FY2024 total emissions: <strong>+3.3% vs FY2019 baseline</strong> — moving away from target. Scope 3 represents <strong>94% of footprint</strong> — dairy and coffee farming are dominant drivers. Waste sent to landfill: <strong>+6% vs FY2019 baseline</strong>. Third-party verified by Burns &amp; McDonnell.</span>
+      </div>
+      <div class="pr-sub">Starbucks Fiscal 2024 Global Impact Report &amp; Data Tables (May 2025) · CDP 2023 · SEC 10-K 2024</div>
+    </div>
+
+    <!-- CONSCIENCE SCORE BREAKDOWN -->
+    <div class="section-heading">CONSCIENCE Score Breakdown</div>
+    <div class="breakdown-block">
+      <div class="bd-row">
+        <span class="bd-factor">Pledge Quality — SBTi committed; ambitious 2030 full-value-chain target</span>
+        <span class="bd-weight">30 max</span>
+        <span class="bd-score pos">+14</span>
+      </div>
+      <div class="bd-row">
+        <span class="bd-factor">CDP Performance — 2023 Disclosure Grade B</span>
+        <span class="bd-weight">25 max</span>
+        <span class="bd-score pos">+18</span>
+      </div>
+      <div class="bd-row">
+        <span class="bd-factor">InfluenceMap Lobbying Alignment — Grade C · moderate engagement</span>
+        <span class="bd-weight">25 max</span>
+        <span class="bd-score pos">+9</span>
+      </div>
+      <div class="bd-row">
+        <span class="bd-factor">Performance Divergence + Legal Exposure — rising absolute emissions; Scope 3 stall; Sabin Center monitoring</span>
+        <span class="bd-weight">20 max</span>
+        <span class="bd-score neg">−12</span>
+      </div>
+      <div class="bd-total">
+        <span class="bd-total-label">CONSCIENCE Score — Total</span>
+        <span class="bd-total-score">29 / 100 · BREACH</span>
+      </div>
+      <div class="bd-note">
+        Full derivation: <a href="https://github.com/dablerfrost/conscience/blob/main/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a> ·
+        Challenge any figure: <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a>
+      </div>
+    </div>
+
+    <!-- CAPITAL MARKETS SIGNAL -->
+    <div class="section-heading">Capital Markets Signal</div>
+    <div class="prose">
+      <p>Starbucks resides in the <strong class="highlight-breach">BREACH band</strong> — signaling measurable transition risk in a consumer-facing staple. Scope 3 dairy methane (≈6% of total Scope 3 in FY2024) and coffee supply chain remain concentrated vulnerabilities despite regenerative agriculture pilots and 90+ million climate-tolerant trees distributed.</p>
+
+      <p>Rising absolute emissions (<strong class="highlight-breach">+3.3%</strong>) against a steep 50% cut trajectory creates portfolio drag potential under tightening 1.5°C pathways, regulatory scrutiny, and shifting consumer preference for verifiable progress. The divergence gap — between a committed pledge and a moving-in-the-wrong-direction baseline — is the core signal.</p>
+
+      <p><strong>Investable Signal:</strong> Elevated boundary pressure in high-visibility retail. Opportunity cost versus higher-scoring regenerators executing faster unit-level decarbonization. <strong class="highlight-glow">Watch for:</strong> Dairy Methane Action Plan traction and verifiable Scope 3 inflection in upcoming filings.</p>
+
+      <p>VYRION converts these exact public data points into daily, auditable signals — the infrastructure layer between planetary science and disciplined capital deployment.</p>
+    </div>
+
+    <!-- OPEN PROOF PROTOCOL -->
+    <div class="proof-block">
+      <div class="proof-header">Open Proof Protocol — Active</div>
+      <div class="proof-body">
+        All data immutable. Every citation challengeable. Corrections published within 24 hours at <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a>. No deletions. Full methodology and raw datasets: <a href="https://vyrion.earth" target="_blank">vyrion.earth</a> + <a href="https://github.com/dablerfrost/conscience/blob/main/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a>.
+      </div>
+    </div>
+
+    <!-- PRIMARY SOURCES -->
+    <div class="section-heading">Primary Sources</div>
+    <div class="source-block">
+      <div class="src-row">
+        <div class="src-dot src-dot-static"></div>
+        <div class="src-name">Starbucks Fiscal 2024 Global Impact Report &amp; Data Tables (May 2025) — Third-party verified by Burns &amp; McDonnell · <a href="https://stories.starbucks.com/stories/sustainability/" target="_blank">stories.starbucks.com →</a></div>
+      </div>
+      <div class="src-row">
+        <div class="src-dot src-dot-static"></div>
+        <div class="src-name">CDP 2023 Public Response — Grade B · <a href="https://www.cdp.net/en/responses" target="_blank">cdp.net →</a></div>
+      </div>
+      <div class="src-row">
+        <div class="src-dot src-dot-static"></div>
+        <div class="src-name">InfluenceMap Corporate Lobbying Profile — Grade C · <a href="https://influencemap.org/company/Starbucks" target="_blank">influencemap.org →</a></div>
+      </div>
+      <div class="src-row">
+        <div class="src-dot src-dot-static"></div>
+        <div class="src-name">SBTi Registry — Committed status · 1.5°C pathway · <a href="https://sciencebasedtargets.org/companies-taking-action" target="_blank">sciencebasedtargets.org →</a></div>
+      </div>
+      <div class="src-row">
+        <div class="src-dot src-dot-live"></div>
+        <div class="src-name">SEC EDGAR — CIK 0000829224 · 10-K regulatory filings · <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000829224&type=10-K" target="_blank">sec.gov/edgar →</a></div>
+      </div>
+      <div class="src-row">
+        <div class="src-dot src-dot-static"></div>
+        <div class="src-name">Sabin Center for Climate Change Law — climate litigation monitoring · <a href="https://climatecasechart.com/case-list/?organization_name=starbucks" target="_blank">climatecasechart.com →</a></div>
+      </div>
+      <div class="src-row">
+        <div class="src-dot src-dot-static"></div>
+        <div class="src-name">VYRION CONSCIENCE-METHODOLOGY.md — full scoring derivation · <a href="https://github.com/dablerfrost/conscience/blob/main/CONSCIENCE-METHODOLOGY.md" target="_blank">github.com/dablerfrost/conscience →</a></div>
+      </div>
+    </div>
+
+  </div><!-- /content-main -->
+
+  <!-- SIDEBAR -->
+  <div class="content-sidebar">
+
+    <!-- KEY METRICS -->
+    <div class="sidebar-label">Key Indicators — FY2024</div>
+    <div class="sidebar-block">
+      <div class="sval-row">
+        <span class="sval-label">CONSCIENCE Score</span>
+        <span class="sval-val sval-breach">29 / 100</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">Band</span>
+        <span class="sval-val sval-breach">BREACH</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">Emissions vs FY2019</span>
+        <span class="sval-val sval-breach">+3.3%</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">2030 Target</span>
+        <span class="sval-val sval-glow">−50%</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">Scope 3 Share</span>
+        <span class="sval-val sval-amber">94%</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">Waste to Landfill</span>
+        <span class="sval-val sval-breach">+6% vs 2019</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">CDP Grade (2023)</span>
+        <span class="sval-val sval-amber">B</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">InfluenceMap Grade</span>
+        <span class="sval-val sval-warn">C</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">SBTi Status</span>
+        <span class="sval-val sval-amber">Committed</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">Active Lawsuits (Sabin)</span>
+        <span class="sval-val sval-glow">1</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">TPI Level</span>
+        <span class="sval-val sval-neutral">3 / 5</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">3rd-Party Verification</span>
+        <span class="sval-val sval-glow">Burns &amp; McDonnell</span>
+      </div>
+    </div>
+
+    <!-- RISK FLAGS -->
+    <div class="sidebar-label" style="margin-top:1.4rem">Transition Risk Flags</div>
+    <div class="sidebar-block">
+      <div class="sval-row">
+        <span class="sval-label">Scope 3 Dairy Methane</span>
+        <span class="sval-val sval-breach">Concentrated</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">Coffee Supply Chain</span>
+        <span class="sval-val sval-warn">Elevated</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">1.5°C Pathway Trajectory</span>
+        <span class="sval-val sval-breach">Diverging</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">Regen. Ag. Pilots</span>
+        <span class="sval-val sval-glow">Active</span>
+      </div>
+      <div class="sval-row">
+        <span class="sval-label">Climate Trees Distributed</span>
+        <span class="sval-val sval-glow">90M+</span>
+      </div>
+    </div>
+
+    <!-- RECORD NAVIGATION -->
+    <div class="sidebar-label" style="margin-top:1.4rem">The Record — All Issues</div>
+    <div class="nav-block">
+      <div class="nb-header">Issue History</div>
+      <a class="nb-row" href="../record/issue-001.html">
+        <span class="nb-issue">001</span>
+        <span class="nb-name">BP</span>
+        <span class="nb-score nb-breach">11/100</span>
+      </a>
+      <a class="nb-row" href="../record/issue-002.html">
+        <span class="nb-issue">002</span>
+        <span class="nb-name">ExxonMobil</span>
+        <span class="nb-score nb-breach">8/100</span>
+      </a>
+      <a class="nb-row" href="../record/issue-003.html">
+        <span class="nb-issue">003</span>
+        <span class="nb-name">Shell</span>
+        <span class="nb-score nb-breach">19/100</span>
+      </a>
+      <a class="nb-row" href="../record/issue-004.html">
+        <span class="nb-issue">004</span>
+        <span class="nb-name">Delta Air Lines</span>
+        <span class="nb-score nb-breach">14/100</span>
+      </a>
+      <div class="nb-row nb-current">
+        <span class="nb-issue">005</span>
+        <span class="nb-name" style="color:var(--breach)">Starbucks ←</span>
+        <span class="nb-score nb-breach">29/100</span>
+      </div>
+      <div class="nb-row nb-upcoming">
+        <span class="nb-issue">006</span>
+        <span class="nb-name">Walmart — Apr 22</span>
+        <span class="nb-score" style="color:var(--t3)">—</span>
+      </div>
+    </div>
+
+    <!-- PLATFORM LINKS -->
+    <div class="sidebar-label" style="margin-top:1.4rem">VYRION Platform</div>
+    <div class="sidebar-block">
+      <div class="sval-row">
+        <a href="https://vyrion.earth" style="color:rgba(0,212,255,.5);text-decoration:none;font-family:'Courier Prime',monospace;font-size:.6rem;" target="_blank">CONSCIENCE → All 11 Companies</a>
+      </div>
+      <div class="sval-row">
+        <a href="https://vyrion.earth/atlas.html" style="color:rgba(0,212,255,.5);text-decoration:none;font-family:'Courier Prime',monospace;font-size:.6rem;" target="_blank">ATLAS → Planetary Systems</a>
+      </div>
+      <div class="sval-row">
+        <a href="https://vyrion.earth/shield.html" style="color:rgba(0,212,255,.5);text-decoration:none;font-family:'Courier Prime',monospace;font-size:.6rem;" target="_blank">SHIELD → Disaster Early Warning</a>
+      </div>
+      <div class="sval-row">
+        <a href="https://vyrion.earth/record" style="color:rgba(0,212,255,.5);text-decoration:none;font-family:'Courier Prime',monospace;font-size:.6rem;" target="_blank">RECORD → Issue Archive</a>
+      </div>
+      <div class="sval-row" style="border-bottom:none">
+        <a href="https://github.com/dablerfrost/conscience" style="color:rgba(0,212,255,.4);text-decoration:none;font-family:'Courier Prime',monospace;font-size:.6rem;" target="_blank">GitHub → github.com/dablerfrost/conscience</a>
+      </div>
+    </div>
+
+  </div><!-- /content-sidebar -->
+
+</div><!-- /content-wrap -->
+
+<!-- FOOTER -->
+<footer class="record-footer">
+  <div class="footer-l">
+    THE RECORD — VYRION Issue 005 · Starbucks Corporation · Published April 15, 2026<br>
+    VYRION PBC · Tyler Frost · Hilo, Hawaii · <a href="https://vyrion.earth" target="_blank">vyrion.earth</a><br>
+    Methodology: <a href="https://github.com/dablerfrost/conscience/blob/main/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a> ·
+    Corrections: <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a> · Open Proof Protocol Active
+  </div>
+  <div class="footer-r">
+    <a href="https://vyrion.earth">CONSCIENCE →</a>
+    <a href="https://vyrion.earth/record">RECORD INDEX →</a>
+    <a href="https://vyrion.earth/archive">ARCHIVE →</a>
+  </div>
+</footer>
+
+<script>
+'use strict';
+
+// ── THEME ──
+function toggleTheme() {
+  const html = document.documentElement;
+  const isLight = html.getAttribute('data-theme') === 'light';
+  html.setAttribute('data-theme', isLight ? 'dark' : 'light');
+  document.getElementById('theme-btn').textContent = isLight ? '◐ DARK' : '◑ LIGHT';
+  try { localStorage.setItem('vc-theme', isLight ? 'dark' : 'light'); } catch(e) {}
+}
+(function(){
+  try {
+    const t = localStorage.getItem('vc-theme');
+    if (t === 'light') {
+      document.documentElement.setAttribute('data-theme','light');
+      const btn = document.getElementById('theme-btn');
+      if (btn) btn.textContent = '◑ LIGHT';
+    }
+  } catch(e) {}
+})();
+
+// ── FONT SCALE ──
+const SCALES = { '0.88':16, '1.0':18, '1.22':22 };
+function setScale(btn) {
+  const px = SCALES[btn.dataset.scale] || 18;
+  document.documentElement.style.fontSize = px + 'px';
+  document.querySelectorAll('.nc-sz').forEach(b => b.classList.toggle('active', b === btn));
+  try { localStorage.setItem('vc-scale', btn.dataset.scale); } catch(e) {}
+}
+(function(){
+  try {
+    const s = localStorage.getItem('vc-scale');
+    if (s && SCALES[s]) {
+      document.documentElement.style.fontSize = SCALES[s] + 'px';
+      requestAnimationFrame(() => {
+        document.querySelectorAll('.nc-sz').forEach(b =>
+          b.classList.toggle('active', b.dataset.scale === s));
+      });
+    }
+  } catch(e) {}
+})();
+
+// ── SCORE BAR ANIMATE ──
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    const bar = document.getElementById('score-bar');
+    if (bar) bar.style.width = bar.dataset.target + '%';
+  }, 200);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,547 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="THE RECORD — VYRION. Weekly corporate accountability reports. Pledge vs. reality. One company per week. Sourced. Scored. Published openly.">
+<meta property="og:title" content="THE RECORD — VYRION">
+<meta property="og:description" content="Weekly corporate accountability reports. Pledge vs. reality. One company per week. Sourced. Scored. Published openly.">
+<title>THE RECORD — VYRION</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&family=Archivo:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --void:#020912; --void2:#061624; --void3:#2d5866;
+  --glow:#00D4FF; --amber:#FFB84D; --breach:#F03030; --warn:#F09000;
+  --t1:#e4f2ff; --t2:#6a9ab8; --t3:#2d6080;
+  --border:rgba(0,212,255,.12); --border2:rgba(0,212,255,.07);
+  --nav-bg:rgba(2,9,18,.97); --scanline:rgba(0,212,255,.004);
+  --breach-bg:rgba(240,48,48,.07); --warn-bg:rgba(240,144,0,.07); --track-bg:rgba(0,212,255,.07);
+}
+[data-theme="light"] {
+  --void:#f0f5ff; --void2:#e4eeff; --void3:#2d5866;
+  --glow:#0066CC; --amber:#b07800; --breach:#b82020; --warn:#a05800;
+  --t1:#060e1e; --t2:#1e4a7a; --t3:#3a6090;
+  --border:rgba(0,102,204,.18); --border2:rgba(0,102,204,.10);
+  --nav-bg:rgba(240,245,255,.98); --scanline:transparent;
+  --breach-bg:rgba(184,32,32,.08); --warn-bg:rgba(160,88,0,.08); --track-bg:rgba(0,102,204,.08);
+}
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; font-size:18px; }
+body {
+  background:var(--void); color:var(--t1);
+  font-family:'Archivo',sans-serif; font-size:1rem;
+  line-height:1.65; min-height:100vh; overflow-x:hidden;
+}
+body::after {
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:990;
+  background:repeating-linear-gradient(0deg,transparent,transparent 3px,var(--scanline) 3px,var(--scanline) 4px);
+}
+
+/* ── NAV ── */
+.nav {
+  position:sticky; top:0; z-index:500; height:52px;
+  display:flex; align-items:center; gap:1.4rem; padding:0 1.8rem;
+  background:var(--nav-bg); border-bottom:1px solid var(--border);
+  backdrop-filter:blur(20px);
+}
+.nav-logo {
+  font-family:'Archivo Narrow',sans-serif; font-weight:800; font-size:.95rem;
+  color:var(--glow); letter-spacing:.15em; text-decoration:none; flex-shrink:0;
+  text-shadow:0 0 20px rgba(0,212,255,.3);
+}
+.nav-links { display:flex; gap:1.8rem; list-style:none; flex:1; }
+.nav-links a {
+  font-family:'Archivo Narrow',sans-serif; font-weight:700; font-size:.65rem;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:var(--t2); text-decoration:none; transition:color .2s; padding-bottom:2px;
+}
+.nav-links a:hover { color:var(--t1); }
+.nav-links a.active { color:var(--glow); border-bottom:1px solid rgba(0,212,255,.4); }
+.nav-controls { display:flex; align-items:center; gap:.35rem; flex-shrink:0; }
+.nc-sep { width:1px; height:16px; background:var(--border); }
+.nc-theme {
+  font-family:'Courier Prime',monospace; font-size:.58rem; font-weight:700;
+  letter-spacing:.12em; padding:.22rem .5rem; border-radius:2px;
+  border:1px solid var(--border); background:transparent;
+  color:var(--t2); cursor:pointer; transition:all .2s;
+}
+.nc-theme:hover { border-color:var(--glow); color:var(--glow); }
+.nc-sz {
+  font-family:'Courier Prime',monospace; font-size:.6rem; font-weight:700;
+  width:26px; height:26px; display:flex; align-items:center; justify-content:center;
+  border-radius:2px; border:1px solid var(--border);
+  background:transparent; color:var(--t3); cursor:pointer; transition:all .2s;
+}
+.nc-sz:hover { border-color:rgba(0,212,255,.4); color:var(--t1); }
+.nc-sz.active { background:rgba(0,212,255,.15); border-color:var(--glow); color:var(--glow); }
+.nav-dot { width:6px; height:6px; background:var(--glow); border-radius:50%; flex-shrink:0; animation:pdot 2.2s infinite; }
+@keyframes pdot { 0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,212,255,.5)} 50%{opacity:.4;box-shadow:0 0 0 7px rgba(0,212,255,0)} }
+
+/* ── HEADER ── */
+.page-header{
+  padding:3.5rem 2rem 2.8rem;border-bottom:1px solid var(--border);
+  position:relative;overflow:hidden;
+  background-image:url('https://okay-gold-oof5kipmvh.edgeone.app/Testing%20The%20Surface%20-%20Imgur.png');
+  background-size:cover;background-position:center 38%;
+}
+.page-header::before {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(ellipse 50% 60% at 80% 50%, rgba(0,212,255,.04) 0%, transparent 70%);
+  pointer-events:none;
+}
+.bg-word {
+  position:absolute; right:-1rem; top:50%; transform:translateY(-50%);
+  font-family:'Archivo Narrow',sans-serif; font-weight:800;
+  font-size:clamp(5rem,14vw,11rem);
+  color:rgba(0,212,255,.03); pointer-events:none; user-select:none; line-height:1;
+}
+.eyebrow {
+  font-family:'Courier Prime',monospace; font-size:.65rem; color:var(--glow);
+  letter-spacing:.24em; text-transform:uppercase; margin-bottom:.55rem;
+  display:flex; align-items:center; gap:.55rem; position:relative; z-index:1;
+}
+.eyebrow::before { content:''; width:18px; height:1px; background:var(--glow); opacity:.5; }
+.page-title {
+  font-family:'Archivo Narrow',sans-serif; font-weight:800;
+  font-size:clamp(2.4rem,5.5vw,3.8rem); color:var(--t1);
+  line-height:.95; letter-spacing:-.02em; margin-bottom:.65rem;
+  position:relative; z-index:1;
+}
+.page-sub {
+  font-size:.82rem; color:var(--t2); max-width:62ch; line-height:1.72;
+  position:relative; z-index:1;
+}
+
+/* ── STATS STRIP ── */
+.stats-strip {
+  display:flex; flex-wrap:wrap;
+  background:var(--void2); border-bottom:1px solid var(--border);
+}
+.stat-cell {
+  flex:1; min-width:120px; padding:.9rem 1.4rem;
+  border-right:1px solid var(--border);
+  display:flex; flex-direction:column; gap:.12rem;
+}
+.stat-cell:last-child { border-right:none; }
+.stat-label {
+  font-family:'Courier Prime',monospace; font-size:.54rem;
+  color:var(--t3); letter-spacing:.16em; text-transform:uppercase;
+}
+.stat-val {
+  font-family:'Courier Prime',monospace; font-weight:700;
+  font-size:1.5rem; line-height:1; letter-spacing:-.01em;
+}
+.stat-sub { font-family:'Courier Prime',monospace; font-size:.54rem; color:var(--t3); }
+.sv-breach { color:var(--breach); }
+.sv-warn   { color:var(--warn); }
+.sv-glow   { color:var(--glow); }
+.sv-amber  { color:var(--amber); }
+.sv-white  { color:var(--t1); }
+
+/* ── ISSUE LIST ── */
+.issues-section { padding:2.2rem 2rem; }
+.section-heading {
+  font-family:'Archivo Narrow',sans-serif; font-weight:800;
+  font-size:.8rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--t1); margin-bottom:1.4rem;
+  display:flex; align-items:center; gap:.6rem;
+}
+.section-heading::after { content:''; flex:1; height:1px; background:var(--border); }
+
+.issue-grid {
+  display:flex; flex-direction:column; gap:1px;
+  background:var(--border);
+  border:1px solid var(--border);
+  border-radius:2px; overflow:hidden;
+  margin-bottom:3rem;
+}
+
+.issue-row {
+  display:grid;
+  grid-template-columns:64px 1fr auto auto 180px 90px;
+  align-items:center; gap:0;
+  background:var(--void2);
+  transition:background .18s;
+  text-decoration:none; color:inherit;
+}
+.issue-row:hover { background:var(--void3); }
+.issue-row.upcoming { cursor:default; opacity:.55; }
+.issue-row.upcoming:hover { background:var(--void2); }
+
+.ir-num {
+  padding:.85rem 1rem .85rem 1.2rem;
+  font-family:'Courier Prime',monospace; font-size:.62rem;
+  color:var(--t3); font-weight:700; letter-spacing:.06em;
+  border-right:1px solid var(--border2);
+}
+.ir-main { padding:.85rem 1.2rem; }
+.ir-company {
+  font-family:'Archivo Narrow',sans-serif; font-weight:800;
+  font-size:1rem; color:var(--t1); letter-spacing:.02em; line-height:1.1;
+}
+.ir-meta {
+  font-family:'Courier Prime',monospace; font-size:.55rem;
+  color:var(--t3); margin-top:.14rem; letter-spacing:.06em;
+}
+.ir-date {
+  padding:.85rem 1rem;
+  font-family:'Courier Prime',monospace; font-size:.6rem;
+  color:var(--t3); white-space:nowrap;
+  border-left:1px solid var(--border2);
+}
+.ir-score {
+  padding:.85rem 1rem;
+  font-family:'Courier Prime',monospace; font-weight:700;
+  font-size:1.1rem; text-align:center;
+  border-left:1px solid var(--border2);
+}
+.ir-summary {
+  padding:.85rem 1.2rem;
+  font-size:.7rem; color:var(--t2); line-height:1.5;
+  border-left:1px solid var(--border2);
+}
+.ir-link {
+  padding:.85rem 1.2rem;
+  text-align:center;
+  border-left:1px solid var(--border2);
+}
+.read-btn {
+  font-family:'Courier Prime',monospace; font-size:.54rem; font-weight:700;
+  letter-spacing:.1em; text-transform:uppercase;
+  padding:.24rem .6rem; border-radius:2px;
+  border:1px solid var(--border); background:transparent;
+  color:var(--glow); text-decoration:none;
+  transition:all .18s; white-space:nowrap;
+}
+.read-btn:hover { border-color:var(--glow); background:rgba(0,212,255,.08); }
+
+/* BAND COLORS */
+.band-breach .ir-company { color:var(--breach); }
+.band-breach .ir-score   { color:var(--breach); }
+.band-breach .read-btn   { border-color:rgba(240,48,48,.3); color:var(--breach); }
+.band-breach .read-btn:hover { border-color:var(--breach); background:rgba(240,48,48,.07); }
+.band-warning .ir-company { color:var(--warn); }
+.band-warning .ir-score   { color:var(--warn); }
+.band-warning .read-btn   { border-color:rgba(240,144,0,.3); color:var(--warn); }
+.band-warning .read-btn:hover { border-color:var(--warn); background:rgba(240,144,0,.07); }
+.band-track .ir-company   { color:var(--glow); }
+.band-track .ir-score     { color:var(--glow); }
+
+.band-pill {
+  display:inline-block; font-family:'Courier Prime',monospace; font-size:.48rem;
+  letter-spacing:.12em; text-transform:uppercase; padding:.06rem .3rem;
+  border-radius:2px; margin-top:.2rem;
+}
+.pill-breach  { background:var(--breach-bg); color:var(--breach); border:1px solid rgba(240,48,48,.3); }
+.pill-warning { background:var(--warn-bg); color:var(--warn); border:1px solid rgba(240,144,0,.3); }
+.pill-track   { background:var(--track-bg); color:var(--glow); border:1px solid rgba(0,212,255,.3); }
+.pill-upcoming { background:rgba(45,96,128,.1); color:var(--t3); border:1px solid rgba(45,96,128,.3); }
+
+/* UPCOMING SEPARATOR */
+.upcoming-header {
+  padding:.55rem 1.2rem;
+  background:rgba(0,0,0,.3); border-top:1px solid var(--border);
+  font-family:'Courier Prime',monospace; font-size:.54rem;
+  color:var(--t3); letter-spacing:.14em; text-transform:uppercase;
+  grid-column:1/-1;
+}
+[data-theme="light"] .upcoming-header { background:rgba(0,0,0,.05); }
+
+/* ── METHODOLOGY STRIP ── */
+.method-strip {
+  border-top:1px solid var(--border);
+  padding:2rem;
+  background:var(--void2);
+}
+.method-title {
+  font-family:'Archivo Narrow',sans-serif; font-weight:800;
+  font-size:.8rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--t1); margin-bottom:.8rem;
+}
+.method-body { font-size:.76rem; color:var(--t2); line-height:1.75; max-width:72ch; }
+.method-body a { color:rgba(0,212,255,.5); text-decoration:none; }
+.method-body a:hover { color:var(--glow); }
+
+/* ── FOOTER ── */
+.record-footer {
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:1rem; padding:1.4rem 2rem;
+  border-top:1px solid var(--border);
+}
+.footer-l { font-family:'Courier Prime',monospace; font-size:.6rem; color:var(--t3); line-height:1.8; }
+.footer-l a { color:rgba(0,212,255,.4); text-decoration:none; }
+.footer-l a:hover { color:var(--glow); }
+.footer-r { display:flex; gap:1.4rem; }
+.footer-r a {
+  font-family:'Courier Prime',monospace; font-size:.6rem;
+  color:rgba(0,212,255,.3); text-decoration:none; transition:color .18s;
+}
+.footer-r a:hover { color:var(--glow); }
+
+@media(max-width:900px) {
+  html { font-size:16px!important; }
+  .nav { padding:0 .9rem; height:48px; }
+  .nav-links { display:none; }
+  .issue-row { grid-template-columns:50px 1fr auto; }
+  .ir-date, .ir-summary { display:none; }
+  .issues-section { padding:1.4rem .9rem; }
+  .page-header { padding:2rem .9rem 1.8rem; }
+  .bg-word { display:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
+  <ul class="nav-links">
+    <li><a href="https://vyrion.earth">CONSCIENCE</a></li>
+    <li><a href="https://vyrion.earth/shield.html">SHIELD</a></li>
+    <li><a href="https://vyrion.earth/atlas.html">ATLAS</a></li>
+    <li><a href="https://vyrion.earth/record" class="active">RECORD</a></li>
+    <li><a href="https://vyrion.earth/archive">ARCHIVE</a></li>
+    <li><a href="https://vyrion.earth/nexan.html">NEXAN</a></li>
+  </ul>
+  <div class="nav-controls">
+    <button class="nc-theme" id="theme-btn" onclick="toggleTheme()">◐ DARK</button>
+    <div class="nc-sep"></div>
+    <button class="nc-sz" data-scale="0.88" onclick="setScale(this)">S</button>
+    <button class="nc-sz active" data-scale="1.0" onclick="setScale(this)">M</button>
+    <button class="nc-sz" data-scale="1.22" onclick="setScale(this)">L</button>
+  </div>
+  <div class="nav-dot"></div>
+</nav>
+
+<!-- HEADER -->
+<header class="page-header">
+  <div class="bg-word">RECORD</div>
+  <div class="eyebrow">VYRION · Weekly Corporate Accountability</div>
+  <h1 class="page-title">THE RECORD</h1>
+  <p class="page-sub">One company per week. Pledge vs. reality. Every figure sourced from CDP disclosures, SEC filings, InfluenceMap, the Sabin Center, and the SBTi registry. Scored against Paris Agreement 1.5°C pathways. Published every Wednesday.</p>
+</header>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stat-cell">
+    <div class="stat-label">Issues Published</div>
+    <div class="stat-val sv-white">6</div>
+    <div class="stat-sub">Issues 001–006</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-label">Companies Scored</div>
+    <div class="stat-val sv-white">6</div>
+    <div class="stat-sub">of 11 tracked</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-label">Warning (31–49)</div>
+    <div class="stat-val sv-warn">1</div>
+    <div class="stat-sub">Walmart · 38/100</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-label">Avg Score (issued)</div>
+    <div class="stat-val sv-breach">19.8</div>
+    <div class="stat-sub">/ 100 · Breach zone</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-label">Latest Issue</div>
+    <div class="stat-val sv-amber" style="font-size:1.1rem;padding-top:.1rem">006</div>
+    <div class="stat-sub">Walmart · Apr 22, 2026</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-label">Next Issue</div>
+    <div class="stat-val sv-glow" style="font-size:1.1rem;padding-top:.1rem">007</div>
+    <div class="stat-sub">Meta · Apr 29, 2026</div>
+  </div>
+</div>
+
+<!-- ISSUES -->
+<div class="issues-section">
+  <div class="section-heading">Published Issues</div>
+
+  <div class="issue-grid">
+
+    <!-- 006 WALMART — LATEST -->
+    <a class="issue-row band-warning" href="issue-006.html">
+      <div class="ir-num">006</div>
+      <div class="ir-main">
+        <div class="ir-company">Walmart Inc.</div>
+        <div class="ir-meta">NYSE: WMT · CIK 0000104169 · Consumer Staples / Retail</div>
+        <div><span class="band-pill pill-warning">WARNING</span></div>
+      </div>
+      <div class="ir-date">Apr 22, 2026<br><span style="color:rgba(0,212,255,.4);font-size:.52rem">LATEST</span></div>
+      <div class="ir-score">38/100</div>
+      <div class="ir-summary">Zero emissions own ops by 2040. Project Gigaton: 1B tonnes by 2030. Scope 3 growing. Own ops ~35% renewable. Mixed Gigaton verification. 2 active lawsuits.</div>
+      <div class="ir-link"><span class="read-btn">READ →</span></div>
+    </a>
+
+    <!-- 005 STARBUCKS -->
+    <a class="issue-row band-breach" href="issue-005.html">
+      <div class="ir-num">005</div>
+      <div class="ir-main">
+        <div class="ir-company">Starbucks Corporation</div>
+        <div class="ir-meta">NYSE: SBUX · CIK 0000829224 · Consumer Staples / Food &amp; Beverage</div>
+        <div><span class="band-pill pill-breach">BREACH</span></div>
+      </div>
+      <div class="ir-date">Apr 15, 2026</div>
+      <div class="ir-score">29/100</div>
+      <div class="ir-summary">Pledged −50% by 2030. FY2024: +3.3% vs baseline. Scope 3 = 94% of footprint. Dairy and coffee farming dominant drivers. Waste to landfill +6%.</div>
+      <div class="ir-link"><span class="read-btn">READ →</span></div>
+    </a>
+
+    <!-- 004 DELTA -->
+    <a class="issue-row band-breach" href="issue-004.html">
+      <div class="ir-num">004</div>
+      <div class="ir-main">
+        <div class="ir-company">Delta Air Lines</div>
+        <div class="ir-meta">NYSE: DAL · CIK 0000027904 · Aviation</div>
+        <div><span class="band-pill pill-breach">BREACH</span></div>
+      </div>
+      <div class="ir-date">Apr 8, 2026</div>
+      <div class="ir-score">14/100</div>
+      <div class="ir-summary">Carbon neutral by 2030 via offsets and SAF. SAF remains &lt;1% of total fuel. Absolute emissions recovering to pre-pandemic levels. FTC inquiry into offset quality.</div>
+      <div class="ir-link"><span class="read-btn">READ →</span></div>
+    </a>
+
+    <!-- 003 SHELL -->
+    <a class="issue-row band-breach" href="issue-003.html">
+      <div class="ir-num">003</div>
+      <div class="ir-main">
+        <div class="ir-company">Shell</div>
+        <div class="ir-meta">NYSE: SHEL · CIK 0000806517 · Oil &amp; Gas</div>
+        <div><span class="band-pill pill-breach">BREACH</span></div>
+      </div>
+      <div class="ir-date">Apr 1, 2026</div>
+      <div class="ir-score">19/100</div>
+      <div class="ir-summary">Net zero by 2050 via intensity metric. Absolute emissions increased. Dutch court ordered faster cuts — Shell appealing. Intensity targets mask volume growth.</div>
+      <div class="ir-link"><span class="read-btn">READ →</span></div>
+    </a>
+
+    <!-- 002 EXXON -->
+    <a class="issue-row band-breach" href="issue-002.html">
+      <div class="ir-num">002</div>
+      <div class="ir-main">
+        <div class="ir-company">ExxonMobil</div>
+        <div class="ir-meta">NYSE: XOM · CIK 0000034088 · Oil &amp; Gas</div>
+        <div><span class="band-pill pill-breach">BREACH</span></div>
+      </div>
+      <div class="ir-date">Mar 25, 2026</div>
+      <div class="ir-score">8/100</div>
+      <div class="ir-summary">Scope 1 &amp; 2 net zero by 2050. No Scope 3 target — 99% of lifecycle emissions unaddressed. Production expanding through 2028. InfluenceMap grade: F.</div>
+      <div class="ir-link"><span class="read-btn">READ →</span></div>
+    </a>
+
+    <!-- 001 BP -->
+    <a class="issue-row band-breach" href="issue-001.html">
+      <div class="ir-num">001</div>
+      <div class="ir-main">
+        <div class="ir-company">BP</div>
+        <div class="ir-meta">NYSE: BP · CIK 0000313807 · Oil &amp; Gas</div>
+        <div><span class="band-pill pill-breach">BREACH</span></div>
+      </div>
+      <div class="ir-date">Mar 18, 2026</div>
+      <div class="ir-score">11/100</div>
+      <div class="ir-summary">Net zero by 2050. Reversed 2030 production cut targets under investor pressure. Upstream investment increasing. Production cut target reduced from −40% to −25%.</div>
+      <div class="ir-link"><span class="read-btn">READ →</span></div>
+    </a>
+
+    <!-- UPCOMING SEPARATOR -->
+    <div style="display:contents">
+      <div class="upcoming-header" style="padding:.55rem 1.2rem;background:rgba(0,0,0,.3);border-top:1px solid var(--border);font-family:'Courier Prime',monospace;font-size:.54rem;color:var(--t3);letter-spacing:.14em;text-transform:uppercase;">
+        Upcoming Issues · Published Every Wednesday
+      </div>
+    </div>
+
+    <!-- 007 META — UPCOMING -->
+    <div class="issue-row upcoming">
+      <div class="ir-num">007</div>
+      <div class="ir-main">
+        <div class="ir-company" style="color:var(--t3)">Meta</div>
+        <div class="ir-meta">NASDAQ: META · CIK 0001326801 · Technology</div>
+        <div><span class="band-pill pill-upcoming">UPCOMING</span></div>
+      </div>
+      <div class="ir-date">Apr 29, 2026</div>
+      <div class="ir-score" style="color:var(--t3)">43/100</div>
+      <div class="ir-summary" style="color:var(--t3)">Net zero across value chain by 2030. AI expansion driving 25%+ energy demand increase. New gas power plant agreements signed 2024.</div>
+      <div class="ir-link"><span class="read-btn" style="color:var(--t3);border-color:var(--border)">SOON</span></div>
+    </div>
+
+  </div><!-- /issue-grid -->
+
+  <!-- METHODOLOGY NOTE -->
+  <div class="section-heading">Scoring Methodology</div>
+  <div class="method-strip" style="border-radius:2px;border:1px solid var(--border)">
+    <div class="method-title">How CONSCIENCE Scores Are Derived</div>
+    <div class="method-body">
+      Each CONSCIENCE score is computed from four weighted public data sources, cross-referenced against Paris Agreement 1.5°C pathways and Science Based Targets initiative criteria:
+      <br><br>
+      <strong style="color:var(--t1)">Pledge Quality (30 pts)</strong> — Ambition level, scope coverage (1/2/3), deadline, third-party validation (SBTi status). ·
+      <strong style="color:var(--t1)">CDP Performance (25 pts)</strong> — A=25 · B=18 · C=10 · D=4. Independent annual assessment. ·
+      <strong style="color:var(--t1)">InfluenceMap Lobbying Alignment (25 pts)</strong> — A+=25 → F=0. Penalises companies lobbying against the policies their pledges require. ·
+      <strong style="color:var(--t1)">Legal Exposure (20 pts)</strong> — Base 20 − (0.5 × active Sabin Center cases); floor 0.
+      <br><br>
+      Open Proof Protocol: find an error → <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a> — corrections published within 24 hours.
+      Full derivation: <a href="https://github.com/dablerfrost/conscience/blob/main/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md →</a>
+    </div>
+  </div>
+
+</div><!-- /issues-section -->
+
+<!-- FOOTER -->
+<footer class="record-footer">
+  <div class="footer-l">
+    THE RECORD — VYRION · Published every Wednesday · <a href="https://vyrion.earth" target="_blank">vyrion.earth</a><br>
+    VYRION PBC · Tyler Frost · Hilo, Hawaii ·
+    Corrections: <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a> ·
+    <a href="https://github.com/dablerfrost/conscience" target="_blank">github.com/dablerfrost/conscience</a>
+  </div>
+  <div class="footer-r">
+    <a href="https://vyrion.earth">CONSCIENCE →</a>
+    <a href="https://vyrion.earth/atlas.html">ATLAS →</a>
+    <a href="https://vyrion.earth/archive">ARCHIVE →</a>
+  </div>
+</footer>
+
+<script>
+'use strict';
+function toggleTheme() {
+  const html = document.documentElement;
+  const isLight = html.getAttribute('data-theme') === 'light';
+  html.setAttribute('data-theme', isLight ? 'dark' : 'light');
+  document.getElementById('theme-btn').textContent = isLight ? '◐ DARK' : '◑ LIGHT';
+  try { localStorage.setItem('vc-theme', isLight ? 'dark' : 'light'); } catch(e) {}
+}
+(function(){
+  try {
+    const t = localStorage.getItem('vc-theme');
+    if (t === 'light') {
+      document.documentElement.setAttribute('data-theme','light');
+      const btn = document.getElementById('theme-btn');
+      if (btn) btn.textContent = '◑ LIGHT';
+    }
+  } catch(e) {}
+})();
+const SCALES = { '0.88':16, '1.0':18, '1.22':22 };
+function setScale(btn) {
+  const px = SCALES[btn.dataset.scale] || 18;
+  document.documentElement.style.fontSize = px + 'px';
+  document.querySelectorAll('.nc-sz').forEach(b => b.classList.toggle('active', b === btn));
+  try { localStorage.setItem('vc-scale', btn.dataset.scale); } catch(e) {}
+}
+(function(){
+  try {
+    const s = localStorage.getItem('vc-scale');
+    if (s && SCALES[s]) {
+      document.documentElement.style.fontSize = SCALES[s] + 'px';
+      requestAnimationFrame(() => {
+        document.querySelectorAll('.nc-sz').forEach(b =>
+          b.classList.toggle('active', b.dataset.scale === s));
+      });
+    }
+  } catch(e) {}
+})();
+</script>
+</body>
+</html>

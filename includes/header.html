@@ -1,0 +1,196 @@
+<!-- Universal header: nav, live ticker, and source strip -->
+<!-- NAV -->
+<nav class="nav">
+  <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
+  <ul class="nav-links">
+    <li><a href="https://vyrion.earth" class="active">CONSCIENCE</a></li>
+    <li><a href="https://vyrion.earth/shield.html">SHIELD</a></li>
+    <li><a href="https://vyrion.earth/atlas.html">ATLAS</a></li>
+    <li><a href="https://vyrion.earth/record/">RECORD</a></li>
+    <li><a href="https://vyrion.earth/archive">ARCHIVE</a></li>
+    <li><a href="https://vyrion.earth/nexan.html">NEXAN</a></li>
+  </ul>
+  <div class="nav-controls">
+    <button class="nc-theme active" id="theme-btn" onclick="toggleTheme()" title="Toggle light/dark mode">? DARK</button>
+    <div class="nc-sep"></div>
+    <button class="nc-sz" data-scale="0.88" onclick="setScale(this)" title="Small">S</button>
+    <button class="nc-sz active" data-scale="1.0" onclick="setScale(this)" title="Medium">M</button>
+    <button class="nc-sz" data-scale="1.22" onclick="setScale(this)" title="Large">L</button>
+  </div>
+
+<!-- FLOATING ORB NAVIGATOR (shared) -->
+<style>
+/* ?? 3. FLOATING ORB */
+#vyr-orb{position:fixed;bottom:28px;right:28px;z-index:8000;width:58px;height:58px}
+.oo-btn{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 36% 36%,rgba(0,212,255,0.35),rgba(0,60,140,0.7));border:1.5px solid rgba(0,212,255,0.45);display:flex;align-items:center;justify-content:center;cursor:pointer;animation:oOrbPulse 3s ease-in-out infinite;transition:transform .2s var(--ov-ease),border-color .2s;box-shadow:0 0 0 0 rgba(0,212,255,0.45)}
+.oo-btn:hover{transform:scale(1.12);animation:none;border-color:var(--glow);box-shadow:0 0 22px rgba(0,212,255,0.4)}
+@keyframes oOrbPulse{0%{box-shadow:0 0 0 0 rgba(0,212,255,.5)}65%{box-shadow:0 0 0 14px rgba(0,212,255,0)}100%{box-shadow:0 0 0 0 rgba(0,212,255,0)}}
+.oo-icon{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:1.1rem;color:var(--glow);transition:transform .3s var(--ov-ease);user-select:none}
+.oo-btn.open .oo-icon{transform:rotate(45deg)}
+.oo-tooltip{position:absolute;right:calc(100% + 10px);top:50%;transform:translateY(-50%);white-space:nowrap;background:rgba(2,9,18,0.94);border:1px solid var(--ov-border);border-radius:4px;padding:5px 11px;font-family:'Courier Prime',monospace;font-size:.62rem;letter-spacing:.07em;color:var(--t2);pointer-events:none;opacity:0;transition:opacity .18s}
+#vyr-orb:hover .oo-tooltip{opacity:1}
+.oo-panel{position:absolute;bottom:calc(100% + 10px);right:0;width:215px;background:rgba(2,9,18,0.96);backdrop-filter:blur(24px);border:1px solid var(--ov-border);border-radius:10px;padding:5px;opacity:0;transform:scale(.88) translateY(8px);transform-origin:bottom right;pointer-events:none;transition:opacity .22s var(--ov-ease),transform .22s var(--ov-ease);box-shadow:0 14px 44px rgba(0,0,0,.55)}
+.oo-panel.open{opacity:1;transform:scale(1) translateY(0);pointer-events:auto}
+.oo-panel-header{padding:9px 13px 7px;font-family:'Courier Prime',monospace;font-size:.56rem;letter-spacing:.2em;color:var(--glow);text-transform:uppercase;border-bottom:1px solid var(--ov-border);margin-bottom:4px}
+.oo-link{display:flex;align-items:center;gap:9px;padding:9px 13px;border-radius:6px;color:var(--t2);font-family:'Archivo',sans-serif;font-size:.78rem;transition:background .14s,color .14s;cursor:pointer;text-decoration:none}
+.oo-link:hover{background:rgba(0,212,255,.07);color:var(--t1)}
+.oo-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;background:var(--glow);box-shadow:0 0 5px var(--glow)}
+#vyr-backdrop{position:fixed;inset:0;z-index:7500;background:rgba(2,9,18,0.65);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .35s}
+#vyr-backdrop.open{opacity:1;pointer-events:auto}
+#vyr-panel{position:fixed;top:0;right:0;bottom:0;z-index:7600;width:min(360px,90vw);background:rgba(2,9,18,0.97);backdrop-filter:blur(30px);border-left:1px solid var(--ov-border);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .5s var(--ov-ease);overflow-y:auto;overflow-x:hidden}
+#vyr-panel.open{transform:translateX(0)}
+.op-header{padding:26px 26px 18px;border-bottom:1px solid var(--ov-border);display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+.op-logo{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:.14em;color:var(--glow)}
+.op-sub{font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--t3);margin-top:4px;letter-spacing:.08em}
+.op-close{width:32px;height:32px;border-radius:50%;background:transparent;border:1px solid var(--ov-border);color:var(--t2);font-size:.9rem;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:background .15s,color .15s,border-color .15s}
+.op-close:hover{background:rgba(0,212,255,.08);border-color:rgba(0,212,255,.3);color:var(--t1)}
+.op-section{padding:20px 26px;border-bottom:1px solid var(--ov-border)}
+.op-label{font-family:'Courier Prime',monospace;font-size:.56rem;letter-spacing:.2em;color:var(--t3);text-transform:uppercase;margin-bottom:13px}
+.op-desc{font-family:'Archivo',sans-serif;font-size:.82rem;color:var(--t2);line-height:1.75}
+</style>
+
+<!-- Orb + panel markup -->
+<div id="vyr-orb" aria-label="Quick navigation">
+  <div class="oo-btn" id="oo-btn" role="button" tabindex="0" aria-expanded="false" aria-controls="oo-panel">
+    <span class="oo-icon">?</span>
+  </div>
+  <span class="oo-tooltip">VYRION Index</span>
+  <div class="oo-panel" id="oo-panel" aria-hidden="true">
+    <div class="oo-panel-header">Quick Access</div>
+    <a class="oo-link" href="https://vyrion.earth" onclick="document.getElementById('oo-panel')?.classList.remove('open')">
+      <span class="oo-dot"></span> CONSCIENCE
+    </a>
+    <a class="oo-link" href="https://vyrion.earth/atlas.html" onclick="document.getElementById('oo-panel')?.classList.remove('open')">
+      <span class="oo-dot"></span> ATLAS
+    </a>
+    <a class="oo-link" href="https://vyrion.earth/shield.html" onclick="document.getElementById('oo-panel')?.classList.remove('open')">
+      <span class="oo-dot"></span> SHIELD
+    </a>
+    <a class="oo-link" href="https://vyrion.earth/archive" onclick="document.getElementById('oo-panel')?.classList.remove('open')">
+      <span class="oo-dot"></span> ARCHIVE
+    </a>
+    <a class="oo-link" href="https://vyrion.earth/nexan.html" onclick="document.getElementById('oo-panel')?.classList.remove('open')">
+      <span class="oo-dot"></span> NEXAN
+    </a>
+  </div>
+</div>
+
+<div id="vyr-backdrop" onclick="oPanelClose()" aria-hidden="true"></div>
+<nav id="vyr-panel" role="navigation" aria-label="VYRION navigation panel" aria-hidden="true">
+  <div class="op-header">
+    <div>
+      <div class="op-logo">VYRION</div>
+      <div class="op-sub">Planetary Accountability Infrastructure</div>
+    </div>
+    <button class="op-close" onclick="oPanelClose()" aria-label="Close panel">?</button>
+  </div>
+  <div class="op-section">
+    <p class="op-label">About</p>
+    <p class="op-desc">VYRION — planetary accountability, live modules, and corporate pledge verification. Open data, open methodology.</p>
+  </div>
+</nav>
+
+<script>
+// Minimal orb + panel behavior for pages that include this header
+(function(){
+  function byId(id){return document.getElementById(id)}
+  const ooBtn = byId('oo-btn');
+  const ooPanel = byId('oo-panel');
+  const backdrop = byId('vyr-backdrop');
+  const vyrPanel = byId('vyr-panel');
+
+  window.oOrbToggle = function(){
+    if (!ooBtn || !ooPanel) return;
+    const open = ooPanel.classList.toggle('open');
+    ooBtn.classList.toggle('open', open);
+    ooBtn.setAttribute('aria-expanded', open? 'true':'false');
+    ooPanel.setAttribute('aria-hidden', open? 'false':'true');
+  };
+
+  window.oOrbClose = function(){
+    if (!ooBtn || !ooPanel) return;
+    ooPanel.classList.remove('open');
+    ooBtn.classList.remove('open');
+    ooBtn.setAttribute('aria-expanded','false');
+    ooPanel.setAttribute('aria-hidden','true');
+  };
+
+  window.oPanelOpen = function(){
+    if (vyrPanel) vyrPanel.classList.add('open');
+    if (backdrop) backdrop.classList.add('open');
+  };
+  window.oPanelClose = function(){
+    if (vyrPanel) vyrPanel.classList.remove('open');
+    if (backdrop) backdrop.classList.remove('open');
+  };
+
+  // Wire click for orb button if present
+  if (ooBtn) ooBtn.addEventListener('click', window.oOrbToggle);
+  if (backdrop) backdrop.addEventListener('click', window.oPanelClose);
+})();
+</script>
+  <div class="nav-dot"></div>
+</nav>
+
+<!-- TICKER -->
+<div class="live-banner">
+  <div class="lb-cell" data-mag="co2">
+    <div class="lb-lbl"><span class="lb-dot"></span>Atmospheric CO?</div>
+    <div class="lb-val" id="co2-val"><span class="loading-pulse">—.—</span></div>
+    <div class="lb-sub" id="co2-sub">ppm · NOAA Mauna Loa · fetching…</div>
+  </div>
+  <div class="lb-cell" data-mag="index">
+    <div class="lb-lbl">VYRION Index</div>
+    <div class="lb-val amber" id="idx-val">41.2 <span style="font-size:.62rem;color:var(--t3)">± 1.8</span></div>
+    <div class="lb-sub" id="idx-sub">/ 100 · Day — · —</div>
+  </div>
+  <div class="lb-cell" data-mag="coverage">
+    <div class="lb-lbl">Companies Tracked</div>
+    <div class="lb-val white">11</div>
+    <div class="lb-sub">5 Breach · 3 Warning · 3 On Track</div>
+  </div>
+  <div class="lb-cell" data-mag="lawsuits">
+    <div class="lb-lbl">Active Lawsuits</div>
+    <div class="lb-val red">97</div>
+    <div class="lb-sub">Sabin Center · Columbia Law</div>
+  </div>
+  <div class="lb-cell" data-mag="refresh">
+    <div class="lb-lbl">Sources Checked</div>
+    <div class="lb-val" id="ts-val" style="font-size:.68rem;padding-top:.15rem"><span class="loading-pulse">—</span></div>
+    <div class="lb-sub">UTC · auto-refresh 15 min</div>
+  </div>
+</div>
+
+<!-- SOURCE STRIP -->
+<div class="source-strip">
+  <div class="src-badge" data-mag="src-cdp">
+    <div class="src-name"><span class="dot-static"></span>CDP</div>
+    <div class="src-status">2023 public responses · A–D grades</div>
+    <a class="src-link" href="https://www.cdp.net/en" target="_blank">cdp.net ?</a>
+  </div>
+  <div class="src-badge" data-mag="src-im">
+    <div class="src-name"><span class="dot-static"></span>InfluenceMap</div>
+    <div class="src-status">Lobbying grades A+–F · continuous</div>
+    <a class="src-link" href="https://influencemap.org/" target="_blank">influencemap.org ?</a>
+  </div>
+  <div class="src-badge" data-mag="src-sabin">
+    <div class="src-name"><span class="dot-static"></span>Sabin Center</div>
+    <div class="src-status">Climate litigation · Columbia Law</div>
+    <a class="src-link" href="https://climatecasechart.com/" target="_blank">climatecasechart.com ?</a>
+  </div>
+  <div class="src-badge" data-mag="src-sbti">
+    <div class="src-name"><span class="dot-static"></span>SBTi Registry</div>
+    <div class="src-status">Science Based Targets initiative</div>
+    <a class="src-link" href="https://sciencebasedtargets.org/companies-taking-action" target="_blank">sciencebasedtargets.org ?</a>
+  </div>
+  <div class="src-badge" data-mag="src-edgar">
+    <div class="src-name"><span class="dot-live"></span>SEC EDGAR</div>
+    <div class="src-status" id="edgar-status">Fetching filing dates…</div>
+    <a class="src-link" href="https://www.sec.gov/cgi-bin/browse-edgar" target="_blank">sec.gov/edgar ?</a>
+  </div>
+  <div class="src-badge" data-mag="src-tpi">
+    <div class="src-name"><span class="dot-static"></span>TPI</div>
+    <div class="src-status">Transition Pathway Initiative</div>
+    <a class="src-link" href="https://www.transitionpathwayinitiative.org/" target="_blank">tpi.org ?</a>
+  </div>
+</div>

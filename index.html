@@ -16,6 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&family=Archivo:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<script src="js/header-loader.js" defer></script>
 <style>
 /* ── THEME ─────────────────────────────────────────────── */
 :root{
@@ -1066,55 +1067,8 @@ body::after{
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="nav">
-  <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
-  <ul class="nav-links">
-    <li><a href="https://vyrion.earth" class="active">CONSCIENCE</a></li>
-    <li><a href="https://vyrion.earth/shield.html">SHIELD</a></li>
-    <li><a href="https://vyrion.earth/atlas.html">ATLAS</a></li>
-    <li><a href="https://vyrion.earth/record/">RECORD</a></li>
-    <li><a href="https://vyrion.earth/archive">ARCHIVE</a></li>
-    <li><a href="https://vyrion.earth/nexan.html">NEXAN</a></li>
-  </ul>
-  <div class="nav-controls">
-    <button class="nc-theme active" id="theme-btn" onclick="toggleTheme()" title="Toggle light/dark mode">◐ DARK</button>
-    <div class="nc-sep"></div>
-    <button class="nc-sz" data-scale="0.88" onclick="setScale(this)" title="Small">S</button>
-    <button class="nc-sz active" data-scale="1.0" onclick="setScale(this)" title="Medium">M</button>
-    <button class="nc-sz" data-scale="1.22" onclick="setScale(this)" title="Large">L</button>
-  </div>
-  <div class="nav-dot"></div>
-</nav>
-
-<!-- TICKER -->
-<div class="live-banner">
-  <div class="lb-cell" data-mag="co2">
-    <div class="lb-lbl"><span class="lb-dot"></span>Atmospheric CO₂</div>
-    <div class="lb-val" id="co2-val"><span class="loading-pulse">—.—</span></div>
-    <div class="lb-sub" id="co2-sub">ppm · NOAA Mauna Loa · fetching…</div>
-  </div>
-  <div class="lb-cell" data-mag="index">
-    <div class="lb-lbl">VYRION Index</div>
-    <div class="lb-val amber" id="idx-val">41.2 <span style="font-size:.62rem;color:var(--t3)">± 1.8</span></div>
-    <div class="lb-sub" id="idx-sub">/ 100 · Day — · —</div>
-  </div>
-  <div class="lb-cell" data-mag="coverage">
-    <div class="lb-lbl">Companies Tracked</div>
-    <div class="lb-val white">11</div>
-    <div class="lb-sub">5 Breach · 3 Warning · 3 On Track</div>
-  </div>
-  <div class="lb-cell" data-mag="lawsuits">
-    <div class="lb-lbl">Active Lawsuits</div>
-    <div class="lb-val red">97</div>
-    <div class="lb-sub">Sabin Center · Columbia Law</div>
-  </div>
-  <div class="lb-cell" data-mag="refresh">
-    <div class="lb-lbl">Sources Checked</div>
-    <div class="lb-val" id="ts-val" style="font-size:.68rem;padding-top:.15rem"><span class="loading-pulse">—</span></div>
-    <div class="lb-sub">UTC · auto-refresh 15 min</div>
-  </div>
-</div>
+<!-- Universal header placeholder (nav + ticker + sources) -->
+<div id="site-header-placeholder"></div>
 
 <!-- HEADER -->
 <header class="page-header">
@@ -1124,39 +1078,7 @@ body::after{
   <p class="page-sub">Pledge vs. reality for 11 major corporations. Scores derived from CDP disclosures, InfluenceMap lobbying grades, Sabin Center climate litigation, SBTi registry, and live SEC EDGAR filings — cross-referenced against Paris Agreement 1.5°C pathways. Find an error — we publish the correction.</p>
 </header>
 
-<!-- SOURCE STRIP -->
-<div class="source-strip">
-  <div class="src-badge" data-mag="src-cdp">
-    <div class="src-name"><span class="dot-static"></span>CDP</div>
-    <div class="src-status">2023 public responses · A–D grades</div>
-    <a class="src-link" href="https://www.cdp.net/en" target="_blank">cdp.net →</a>
-  </div>
-  <div class="src-badge" data-mag="src-im">
-    <div class="src-name"><span class="dot-static"></span>InfluenceMap</div>
-    <div class="src-status">Lobbying grades A+–F · continuous</div>
-    <a class="src-link" href="https://influencemap.org/" target="_blank">influencemap.org →</a>
-  </div>
-  <div class="src-badge" data-mag="src-sabin">
-    <div class="src-name"><span class="dot-static"></span>Sabin Center</div>
-    <div class="src-status">Climate litigation · Columbia Law</div>
-    <a class="src-link" href="https://climatecasechart.com/" target="_blank">climatecasechart.com →</a>
-  </div>
-  <div class="src-badge" data-mag="src-sbti">
-    <div class="src-name"><span class="dot-static"></span>SBTi Registry</div>
-    <div class="src-status">Science Based Targets initiative</div>
-    <a class="src-link" href="https://sciencebasedtargets.org/companies-taking-action" target="_blank">sciencebasedtargets.org →</a>
-  </div>
-  <div class="src-badge" data-mag="src-edgar">
-    <div class="src-name"><span class="dot-live"></span>SEC EDGAR</div>
-    <div class="src-status" id="edgar-status">Fetching filing dates…</div>
-    <a class="src-link" href="https://www.sec.gov/cgi-bin/browse-edgar" target="_blank">sec.gov/edgar →</a>
-  </div>
-  <div class="src-badge" data-mag="src-tpi">
-    <div class="src-name"><span class="dot-static"></span>TPI</div>
-    <div class="src-status">Transition Pathway Initiative</div>
-    <a class="src-link" href="https://www.transitionpathwayinitiative.org/" target="_blank">tpi.org →</a>
-  </div>
-</div>
+<!-- NOTE: header source strip is provided by the universal header include -->
 
 <!-- TOOLBAR: search + sort + sector + band filter + CSV export -->
 <div class="toolbar">
@@ -2832,8 +2754,7 @@ function updateStress() {
   document.getElementById('st-bar-track-pct').textContent  = trackPct + '%';
 }
 
-init();
-setInterval(init, 15 * 60 * 1000);
+// init is deferred until the universal header is loaded
 
 // ─── SORT + FILTER ENGINE ────────────────────────────────
 let activeBand = 'all';
@@ -2962,6 +2883,30 @@ function exportCSV() {
 }
 
 window.addEventListener('hashchange', checkHash);
+</script>
+
+<!-- Loader: inject universal header then start app -->
+<script>
+(async function(){
+  try {
+    const res = await fetch('includes/header.html');
+    if (res && res.ok) {
+      const html = await res.text();
+      const el = document.getElementById('site-header-placeholder');
+      if (el) el.innerHTML = html;
+    }
+  } catch(e){ /* ignore */ }
+  // Attach magnifier to header elements and reattach EDGAR info if available
+  try { if (typeof attachMag === 'function') attachMag(document); } catch(e){}
+  try { if (typeof reattachEdgar === 'function') reattachEdgar(); } catch(e){}
+  // Now start main init and schedule auto-refresh
+  try {
+    if (typeof init === 'function') {
+      init();
+      setInterval(init, 15 * 60 * 1000);
+    }
+  } catch(e){}
+})();
 </script>
 
 <!-- ── SYNTHEKAI PLAYER SCRIPT ────────────────────────────── -->
@@ -3172,3 +3117,93 @@ window.addEventListener('scroll', oScrollCheck, { passive: true });
 </script>
 </body>
 </html>
+<script>
+(function(){
+  'use strict';
+
+  // 1) Ensure all external links opened in new tabs are safe
+  try {
+    document.querySelectorAll('a[target="_blank"]').forEach(a => {
+      const existing = (a.getAttribute('rel') || '').split(/\s+/).filter(Boolean);
+      ['noopener', 'noreferrer'].forEach(v => { if (!existing.includes(v)) existing.push(v); });
+      if (existing.length) a.setAttribute('rel', existing.join(' '));
+    });
+  } catch (e) { /* fail silently */ }
+
+  // 2) Modal focus-trap helper and integration with existing onboarding code
+  function trapFocus(container){
+    if (!container) return function(){};
+    // CSS selector for commonly focusable elements
+    const selector = 'a[href],button,textarea,input,select,[tabindex]:not([tabindex="-1"])';
+    const list = Array.from(container.querySelectorAll(selector)).filter(el => !el.hasAttribute('disabled') && el.offsetParent !== null);
+    const first = list[0] || container;
+    const last  = list[list.length - 1] || container;
+    const prevActive = document.activeElement;
+    // move focus into dialog
+    try { (first.focus && first.focus()); } catch(e){}
+    function onKey(e){
+      if (e.key !== 'Tab') return;
+      if (list.length === 0) { e.preventDefault(); return; }
+      if (e.shiftKey) {
+        if (document.activeElement === first || container === document.activeElement) {
+          e.preventDefault(); last.focus();
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault(); first.focus();
+        }
+      }
+    }
+    function onFocusIn(e){
+      if (!container.contains(e.target)) {
+        (first.focus && first.focus());
+      }
+    }
+    document.addEventListener('keydown', onKey);
+    document.addEventListener('focusin', onFocusIn);
+    return function cleanup(){
+      document.removeEventListener('keydown', onKey);
+      document.removeEventListener('focusin', onFocusIn);
+      try { if (prevActive && prevActive.focus) prevActive.focus(); } catch(e){}
+    };
+  }
+
+  // Integrate with existing onboarding overlay (#vyr-welcome)
+  const oWelcomeEl = document.getElementById('vyr-welcome');
+  if (oWelcomeEl) {
+    // wrap existing oWelcomeDismiss to guarantee cleanup runs
+    const origDismiss = window.oWelcomeDismiss;
+    let cleanupFn = null;
+
+    window.oWelcomeDismiss = function(action){
+      try { if (cleanupFn) { cleanupFn(); cleanupFn = null; } } catch(e){}
+      if (typeof origDismiss === 'function') origDismiss(action);
+    };
+
+    // If overlay currently shown and not dismissed, trap focus now
+    if (getComputedStyle(oWelcomeEl).display !== 'none' && !oWelcomeEl.classList.contains('dismissed')) {
+      cleanupFn = trapFocus(oWelcomeEl);
+      oWelcomeEl._vyr_trap_cleanup = cleanupFn;
+    }
+
+    // Observe class changes so we can create/destroy trap if other code toggles the overlay
+    const mo = new MutationObserver(muts => {
+      muts.forEach(m => {
+        if (m.attributeName === 'class') {
+          if (oWelcomeEl.classList.contains('dismissed')) {
+            if (cleanupFn) { try { cleanupFn(); } catch(e){} cleanupFn = null; }
+          } else {
+            if (!cleanupFn) cleanupFn = trapFocus(oWelcomeEl);
+          }
+        }
+      });
+    });
+    mo.observe(oWelcomeEl, { attributes: true, attributeFilter: ['class'] });
+
+    // Ensure overlay has a visible first focusable control for keyboard users
+    // If none exist, ensure the "Enter" button is focusable
+    const firstFocusable = oWelcomeEl.querySelector('a,button,[tabindex]:not([tabindex="-1"])');
+    if (firstFocusable) firstFocusable.setAttribute('tabindex', firstFocusable.getAttribute('tabindex') || '0');
+  }
+})();
+</script>
