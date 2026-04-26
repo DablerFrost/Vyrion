@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VYRION MODULE 004 — ROOT | Soil Intelligence System</title>
+<style>
+/* ─── RESET ──────────────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+/* ─── VARIABLES ──────────────────────────────────────────────────── */
+:root{
+  --bg:#080c10;
+  --panel:#0f1620;
+  --panel2:#141d28;
+  --border:#1a2535;
+  --border2:#1f2e42;
+  --cyan:#7ee7ff;
+  --cyan2:rgba(126,231,255,0.12);
+  --green:#10b981;
+  --green2:rgba(16,185,129,0.12);
+  --amber:#f59e0b;
+  --breach:#ef4444;
+  --t1:#eef4ff;
+  --t2:rgba(220,235,255,0.58);
+  --t3:rgba(180,210,255,0.28);
+  --nav-w:200px;
+}
+
+body{
+  background:var(--bg);
+  color:var(--t1);
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:14px;
+  line-height:1.65;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* ─── SCANLINE ───────────────────────────────────────────────────── */
+body::after{
+  content:'';
+  position:fixed;inset:0;
+  background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(126,231,255,0.006) 3px,rgba(126,231,255,0.006) 4px);
+  pointer-events:none;z-index:9998;
+}
+
+/* ─── LAYOUT ─────────────────────────────────────────────────────── */
+.layout{display:flex;min-height:100vh}
+.main{
+  margin-left:var(--nav-w);
+  flex:1;
+  max-width:1080px;
+  padding:2.4rem 2.2rem 4rem;
+}
+
+/* ─── LEFT NAV ───────────────────────────────────────────────────── */
+.nav-rail{
+  position:fixed;top:0;left:0;bottom:0;
+  width:var(--nav-w);
+  background:rgba(8,12,16,0.98);
+  border-right:1px solid var(--border);
+  display:flex;flex-direction:column;
+  padding:1.8rem 0 1.4rem;
+  z-index:500;
+  backdrop-filter:blur(12px);
+}
+.nav-logo{
+  font-size:0.72rem;font-weight:700;letter-spacing:0.22em;
+  text-transform:uppercase;color:var(--cyan);
+  padding:0 1.3rem;margin-bottom:0.25rem;text-decoration:none;
+}
+.nav-sub{
+  font-size:0.56rem;letter-spacing:0.14em;color:var(--t3);
+  padding:0 1.3rem;margin-bottom:1.8rem;text-transform:uppercase;
+}
+.nav-label{
+  font-size:0.52rem;letter-spacing:0.2em;color:var(--t3);
+  text-transform:uppercase;padding:0 1.3rem;margin-bottom:0.5rem;
+}
+.nav-items{display:flex;flex-direction:column;flex:1}
+.nav-item{
+  display:flex;align-items:center;gap:0.5rem;
+  padding:0.48rem 1.3rem;
+  font-size:0.64rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--t3);text-decoration:none;
+  border-left:2px solid transparent;
+  transition:all 0.18s;position:relative;
+}
+.nav-item:hover{color:var(--t2);background:rgba(126,231,255,0.03)}
+.nav-item.active{
+  color:var(--cyan);
+  border-left-color:var(--cyan);
+  background:rgba(126,231,255,0.05);
+  font-weight:700;
+}
+.nav-item.active::after{
+  content:'';position:absolute;right:0;top:0;bottom:0;
+  width:1px;background:linear-gradient(180deg,transparent,var(--cyan),transparent);
+}
+.nav-mod-num{
+  font-size:0.5rem;color:var(--t3);
+  font-variant-numeric:tabular-nums;
+  min-width:18px;
+}
+.nav-item.active .nav-mod-num{color:var(--cyan)}
+.nav-footer-rail{
+  padding:0 1.3rem;
+  border-top:1px solid var(--border);
+  padding-top:1rem;margin-top:auto;
+}
+.nav-footer-rail p{
+  font-size:0.52rem;color:var(--t3);line-height:1.7;
+}
+.nav-footer-rail a{color:rgba(126,231,255,0.3);text-decoration:none}
+.nav-footer-rail a:hover{color:var(--cyan)}
+
+/* ─── SECTION HEADERS ────────────────────────────────────────────── */
+.section{margin-bottom:3rem}
+.section-eyebrow{
+  font-size:0.58rem;letter-spacing:0.24em;text-transform:uppercase;
+  color:var(--cyan);margin-bottom:0.4rem;
+  display:flex;align-items:center;gap:0.5rem;
+}
+.section-eyebrow::before{content:'';width:16px;height:1px;background:var(--cyan);opacity:0.5}
+.section-title{
+  font-size:1.1rem;font-weight:700;letter-spacing:0.06em;
+  color:var(--t1);margin-bottom:0.3rem;text-transform:uppercase;
+}
+.section-sub{font-size:0.72rem;color:var(--t2);max-width:72ch;line-height:1.7;margin-bottom:1.2rem}
+.divider{height:1px;background:var(--border);margin:2.2rem 0}
+
+/* ─── HERO ───────────────────────────────────────────────────────── */
+.hero{
+  padding:2.6rem 0 2rem;
+  border-bottom:1px solid var(--border);
+  margin-bottom:2.4rem;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'ROOT';
+  position:absolute;right:-1rem;top:50%;transform:translateY(-50%);
+  font-size:7rem;font-weight:800;letter-spacing:0.08em;
+  color:rgba(126,231,255,0.025);pointer-events:none;user-select:none;
+  line-height:1;text-transform:uppercase;
+}
+.hero-eyebrow{
+  font-size:0.6rem;letter-spacing:0.26em;text-transform:uppercase;
+  color:var(--green);margin-bottom:0.5rem;
+  display:flex;align-items:center;gap:0.5rem;
+}
+.hero-eyebrow::before{
+  content:'';width:5px;height:5px;border-radius:50%;
+  background:var(--green);
+  animation:live-pulse 2.2s infinite;flex-shrink:0;
+}
+@keyframes live-pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(16,185,129,0.5)}50%{opacity:0.5;box-shadow:0 0 0 6px rgba(16,185,129,0)}}
+.hero-title{
+  font-size:2.8rem;font-weight:800;letter-spacing:-0.02em;
+  color:var(--t1);line-height:1;margin-bottom:0.6rem;
+}
+.hero-title span{color:var(--cyan)}
+.hero-tagline{
+  font-size:0.88rem;color:var(--t2);max-width:60ch;line-height:1.7;margin-bottom:1.2rem;
+}
+.hero-tags{display:flex;flex-wrap:wrap;gap:0.4rem}
+.chip{
+  font-size:0.56rem;letter-spacing:0.12em;text-transform:uppercase;
+  padding:0.2rem 0.55rem;border-radius:2px;
+  display:inline-flex;align-items:center;gap:0.3rem;
+}
+.chip-cyan{background:var(--cyan2);color:var(--cyan);border:1px solid rgba(126,231,255,0.22)}
+.chip-green{background:var(--green2);color:var(--green);border:1px solid rgba(16,185,129,0.22)}
+.chip-amber{background:rgba(245,158,11,0.1);color:var(--amber);border:1px solid rgba(245,158,11,0.22)}
+.chip-muted{background:rgba(180,210,255,0.05);color:var(--t3);border:1px solid var(--border)}
+.chip-breach{background:rgba(239,68,68,0.08);color:var(--breach);border:1px solid rgba(239,68,68,0.22)}
+
+/* ─── METRICS PANEL ──────────────────────────────────────────────── */
+.metrics-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+.metric-card{
+  background:var(--panel);padding:1.4rem 1.3rem;
+  position:relative;overflow:hidden;
+  transition:background 0.2s;
+}
+.metric-card:hover{background:var(--panel2)}
+.metric-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:var(--mc-color,var(--cyan));
+  box-shadow:0 0 12px var(--mc-color,var(--cyan));
+}
+.metric-card::after{
+  content:attr(data-label);
+  position:absolute;right:0.8rem;bottom:0.4rem;
+  font-size:2.8rem;font-weight:800;letter-spacing:0.06em;
+  color:rgba(255,255,255,0.025);pointer-events:none;user-select:none;line-height:1;
+}
+.mc-code{
+  font-size:0.54rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--t3);margin-bottom:0.4rem;font-variant-numeric:tabular-nums;
+}
+.mc-name{
+  font-size:0.76rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
+  color:var(--t1);margin-bottom:0.8rem;line-height:1.2;
+}
+.mc-value{
+  font-size:2.4rem;font-weight:700;letter-spacing:-0.02em;
+  line-height:1;margin-bottom:0.18rem;
+}
+.mc-unit{font-size:0.62rem;color:var(--t3);margin-bottom:0.7rem}
+.mc-status{display:flex;align-items:center;gap:0.4rem;margin-top:0.6rem}
+.mc-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.mc-status-lbl{font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--t2)}
+
+/* ─── INDICATORS GRID ────────────────────────────────────────────── */
+.indicators-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+.ind-card{
+  background:var(--panel);
+  position:relative;overflow:hidden;
+  cursor:pointer;
+  transition:background 0.18s;
+}
+.ind-card:hover{background:var(--panel2)}
+.ind-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--cyan),transparent);
+  opacity:0;transition:opacity 0.2s;
+}
+.ind-card:hover::before{opacity:0.6}
+.ind-header{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  padding:1.1rem 1.1rem 0.8rem;
+  border-bottom:1px solid var(--border);
+}
+.ind-acronym{
+  font-size:1.1rem;font-weight:800;letter-spacing:0.04em;
+  color:var(--cyan);line-height:1;
+}
+.ind-num{font-size:0.52rem;color:var(--t3);letter-spacing:0.1em}
+.ind-toggle{
+  font-size:0.6rem;color:var(--t3);
+  transition:transform 0.22s;flex-shrink:0;margin-top:0.1rem;
+}
+.ind-card.open .ind-toggle{transform:rotate(180deg)}
+.ind-body{padding:0.9rem 1.1rem}
+.ind-name{
+  font-size:0.7rem;font-weight:700;letter-spacing:0.05em;
+  text-transform:uppercase;color:var(--t1);margin-bottom:0.18rem;
+}
+.ind-type{font-size:0.58rem;color:var(--t3);letter-spacing:0.08em;margin-bottom:0.6rem;font-style:italic}
+.ind-fn{font-size:0.68rem;color:var(--t2);line-height:1.6;margin-bottom:0.65rem}
+.ind-sources-label{
+  font-size:0.52rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--t3);margin-bottom:0.3rem;
+}
+.ind-sources{
+  list-style:none;display:flex;flex-direction:column;gap:0.18rem;
+  margin-bottom:0.65rem;
+}
+.ind-sources li{
+  font-size:0.6rem;color:var(--t2);
+  display:flex;gap:0.3rem;align-items:flex-start;
+}
+.ind-sources li::before{content:'›';color:var(--cyan);flex-shrink:0}
+.ind-output{
+  font-size:0.6rem;color:var(--cyan);
+  padding:0.3rem 0.5rem;
+  background:rgba(126,231,255,0.06);border:1px solid rgba(126,231,255,0.12);
+  border-radius:2px;margin-top:0.3rem;
+  font-family:'Courier New',monospace;
+  display:block;
+}
+.ind-collapse{display:none}
+.ind-card.open .ind-collapse{display:block}
+
+/* ─── PIPELINE ───────────────────────────────────────────────────── */
+.pipeline{display:flex;flex-direction:column;gap:0;align-items:stretch}
+.pipe-layer{
+  background:var(--panel);border:1px solid var(--border);
+  padding:1.4rem 1.6rem;position:relative;overflow:hidden;
+  transition:background 0.18s;
+}
+.pipe-layer:hover{background:var(--panel2)}
+.pipe-layer::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
+  background:var(--pl-color,var(--cyan));
+  box-shadow:0 0 10px var(--pl-color,var(--cyan));
+}
+.pipe-connector{
+  display:flex;align-items:center;justify-content:center;
+  padding:0.5rem 0;position:relative;
+}
+.pipe-connector::before{
+  content:'';position:absolute;top:0;bottom:0;left:50%;
+  width:1px;background:linear-gradient(180deg,var(--border),rgba(126,231,255,0.3),var(--border));
+}
+.pipe-arrow{
+  font-size:0.9rem;color:var(--cyan);z-index:1;
+  background:var(--bg);padding:0 0.4rem;
+  animation:pulse-arrow 2s ease-in-out infinite;
+}
+@keyframes pulse-arrow{0%,100%{opacity:0.4}50%{opacity:1}}
+.pipe-num{
+  font-size:0.52rem;letter-spacing:0.2em;color:var(--t3);
+  text-transform:uppercase;margin-bottom:0.35rem;
+}
+.pipe-title{
+  font-size:0.9rem;font-weight:700;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--t1);margin-bottom:0.25rem;
+}
+.pipe-desc{font-size:0.68rem;color:var(--t2);line-height:1.6;margin-bottom:0.7rem}
+.pipe-items{display:flex;flex-wrap:wrap;gap:0.3rem}
+.pipe-tag{
+  font-size:0.54rem;letter-spacing:0.08em;text-transform:uppercase;
+  padding:0.16rem 0.45rem;border-radius:2px;
+  color:var(--t2);background:rgba(255,255,255,0.04);border:1px solid var(--border2);
+}
+
+/* ─── API CONSOLE ────────────────────────────────────────────────── */
+.api-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+.api-card{
+  background:var(--panel);padding:1.1rem 1.2rem;
+  font-family:'Courier New',Courier,monospace;
+  transition:background 0.18s;position:relative;overflow:hidden;
+}
+.api-card:hover{background:var(--panel2)}
+.api-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:var(--border2);
+}
+.api-top{display:flex;align-items:center;gap:0.6rem;margin-bottom:0.6rem}
+.api-method{
+  font-size:0.6rem;font-weight:700;letter-spacing:0.1em;
+  padding:0.16rem 0.4rem;border-radius:2px;
+  background:rgba(16,185,129,0.12);color:var(--green);
+  border:1px solid rgba(16,185,129,0.22);
+}
+.api-path{
+  font-size:0.72rem;color:var(--cyan);letter-spacing:0.04em;
+}
+.api-status-row{
+  display:flex;align-items:center;gap:0.35rem;margin-bottom:0.5rem;
+}
+.api-status-dot{
+  width:5px;height:5px;border-radius:50%;flex-shrink:0;
+  animation:live-pulse 2.2s infinite;
+}
+.api-status-lbl{font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--green)}
+.api-status-lbl.locked{color:var(--t3)}
+.api-status-dot.locked{background:var(--t3);animation:none}
+.api-desc{font-size:0.64rem;color:var(--t2);line-height:1.5;font-family:system-ui,sans-serif}
+
+/* ─── DERIVED OUTPUTS ────────────────────────────────────────────── */
+.outputs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+.output-card{
+  background:var(--panel);padding:1.3rem 1.2rem;
+  position:relative;overflow:hidden;
+  transition:background 0.18s;
+}
+.output-card:hover{background:var(--panel2)}
+.output-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--oc-color,var(--cyan)),transparent);
+}
+.output-label{
+  font-size:0.54rem;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--t3);margin-bottom:0.3rem;
+}
+.output-name{
+  font-size:0.82rem;font-weight:700;letter-spacing:0.05em;
+  text-transform:uppercase;color:var(--t1);line-height:1.2;margin-bottom:0.6rem;
+}
+.output-question{
+  font-size:0.64rem;color:var(--cyan);margin-bottom:0.7rem;
+  font-style:italic;
+}
+.output-formula{
+  font-family:'Courier New',Courier,monospace;
+  font-size:0.6rem;color:var(--t2);
+  background:rgba(0,0,0,0.3);border:1px solid var(--border);
+  padding:0.5rem 0.6rem;border-radius:2px;margin-bottom:0.8rem;line-height:1.6;
+}
+.output-formula span{color:var(--cyan)}
+.score-bar-wrap{margin-bottom:0.6rem}
+.score-bar-label{
+  display:flex;justify-content:space-between;
+  font-size:0.54rem;color:var(--t3);margin-bottom:0.25rem;
+  font-family:'Courier New',Courier,monospace;
+}
+.score-bar-bg{
+  height:4px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden;
+}
+.score-bar-fill{
+  height:100%;border-radius:2px;
+  transition:width 1.4s cubic-bezier(0.4,0,0.2,1);
+}
+.inputs-label{
+  font-size:0.52rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--t3);margin-bottom:0.3rem;
+}
+.inputs-list{display:flex;flex-wrap:wrap;gap:0.25rem}
+.input-tag{
+  font-size:0.54rem;letter-spacing:0.06em;
+  padding:0.14rem 0.38rem;border-radius:2px;
+  background:rgba(126,231,255,0.06);color:var(--cyan);
+  border:1px solid rgba(126,231,255,0.14);
+  font-family:'Courier New',Courier,monospace;
+}
+
+/* ─── LICENSING ──────────────────────────────────────────────────── */
+.license-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+.lic-card{
+  background:var(--panel);padding:1.3rem 1.2rem;
+  position:relative;overflow:hidden;
+  transition:background 0.18s;
+}
+.lic-card:hover{background:var(--panel2)}
+.lic-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:var(--lc-color,var(--t3));
+}
+.lic-layer{
+  font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--t3);margin-bottom:0.4rem;
+}
+.lic-title{
+  font-size:0.8rem;font-weight:700;letter-spacing:0.05em;
+  text-transform:uppercase;color:var(--t1);margin-bottom:0.7rem;line-height:1.2;
+}
+.lic-items{list-style:none;display:flex;flex-direction:column;gap:0.28rem;margin-bottom:0.8rem}
+.lic-items li{
+  font-size:0.64rem;color:var(--t2);line-height:1.5;
+  display:flex;gap:0.3rem;align-items:flex-start;
+}
+.lic-items li::before{content:'›';flex-shrink:0;color:var(--t3)}
+
+/* ─── PRINCIPLE SECTION ──────────────────────────────────────────── */
+.principle-block{
+  background:var(--panel);border:1px solid var(--border);
+  padding:1.6rem 1.8rem;position:relative;overflow:hidden;
+}
+.principle-block::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--cyan),var(--green));
+}
+.principle-block p{
+  font-size:0.78rem;color:var(--t2);line-height:1.8;max-width:76ch;
+}
+.principle-block p + p{margin-top:0.8rem}
+.principle-block strong{color:var(--t1);font-weight:600}
+.canonical-statement{
+  margin-top:1.2rem;padding:1rem 1.4rem;
+  background:rgba(126,231,255,0.04);
+  border:1px solid rgba(126,231,255,0.14);
+  border-left:2px solid var(--cyan);
+  border-radius:2px;
+}
+.canonical-statement p{
+  font-size:0.72rem;color:var(--t1);line-height:1.8;max-width:80ch;
+}
+
+/* ─── FOOTER ─────────────────────────────────────────────────────── */
+.page-footer{
+  margin-top:3rem;padding-top:1.4rem;
+  border-top:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.8rem;
+}
+.footer-text{font-size:0.58rem;color:var(--t3);line-height:1.7}
+.footer-text a{color:rgba(126,231,255,0.35);text-decoration:none;transition:color 0.18s}
+.footer-text a:hover{color:var(--cyan)}
+.footer-links{display:flex;gap:1.2rem}
+.footer-links a{font-size:0.58rem;color:rgba(126,231,255,0.25);text-decoration:none;transition:color 0.18s;letter-spacing:0.06em}
+.footer-links a:hover{color:var(--cyan)}
+
+/* ─── FADE-IN ─────────────────────────────────────────────────────── */
+.fade-in{opacity:0;transform:translateY(10px);transition:opacity 0.55s ease,transform 0.55s ease}
+.fade-in.visible{opacity:1;transform:none}
+
+/* ─── RESPONSIVE ─────────────────────────────────────────────────── */
+@media(max-width:1000px){.nav-rail{display:none}.main{margin-left:0}}
+@media(max-width:820px){
+  .metrics-grid{grid-template-columns:1fr}
+  .indicators-grid{grid-template-columns:1fr 1fr}
+  .api-grid{grid-template-columns:1fr}
+  .outputs-grid{grid-template-columns:1fr}
+  .license-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .indicators-grid{grid-template-columns:1fr}
+  .main{padding:1.4rem 1rem 3rem}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<!-- ─── LEFT NAV RAIL ─────────────────────────────────────────────── -->
+<nav class="nav-rail">
+  <a href="https://dablerfrost.github.io/conscience" class="nav-logo">VYRION</a>
+  <div class="nav-sub">OS Module Layer</div>
+  <div class="nav-label">Modules</div>
+  <div class="nav-items">
+    <a href="atlas.html" class="nav-item">
+      <span class="nav-mod-num">001</span>ATLAS
+    </a>
+    <a href="https://dablerfrost.github.io/conscience" class="nav-item">
+      <span class="nav-mod-num">002</span>CONSCIENCE
+    </a>
+    <a href="shield.html" class="nav-item">
+      <span class="nav-mod-num">003</span>SHIELD
+    </a>
+    <a href="root.html" class="nav-item active">
+      <span class="nav-mod-num">004</span>ROOT
+    </a>
+    <a href="#" class="nav-item" style="opacity:0.35;pointer-events:none">
+      <span class="nav-mod-num">005</span>CANOPY
+    </a>
+    <a href="#" class="nav-item" style="opacity:0.35;pointer-events:none">
+      <span class="nav-mod-num">006</span>TIDE
+    </a>
+    <a href="#" class="nav-item" style="opacity:0.35;pointer-events:none">
+      <span class="nav-mod-num">007</span>LOOP
+    </a>
+    <a href="#" class="nav-item" style="opacity:0.35;pointer-events:none">
+      <span class="nav-mod-num">008</span>PULSE
+    </a>
+  </div>
+  <div class="nav-footer-rail">
+    <p>VYRION OS<br>
+    <a href="https://dablerfrost.github.io/conscience">dablerfrost.github.io</a><br>
+    <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a></p>
+  </div>
+</nav>
+
+<!-- ─── MAIN CONTENT ──────────────────────────────────────────────── -->
+<main class="main">
+
+  <!-- HERO ──────────────────────────────────────────────────────── -->
+  <section class="hero fade-in">
+    <div class="hero-eyebrow">Module 004 · Live System · Terrestrial Intelligence</div>
+    <h1 class="hero-title"><span>ROOT</span></h1>
+    <p style="font-size:0.8rem;color:var(--t3);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.5rem;font-weight:700">
+      Licensed Earth Data Transformation Engine
+    </p>
+    <p class="hero-tagline">
+      ROOT converts multi-source licensed Earth observation data into a verified, time-series model of soil stability, agricultural system behavior, land degradation velocity, water–soil interaction, and regenerative land recovery. ROOT does not store or redistribute raw Earth data. ROOT produces derived planetary intelligence only.
+    </p>
+    <div class="hero-tags">
+      <span class="chip chip-green">● Live System</span>
+      <span class="chip chip-cyan">Soil Intelligence Layer</span>
+      <span class="chip chip-cyan">Planetary Regeneration System</span>
+      <span class="chip chip-muted">6 Indicators</span>
+      <span class="chip chip-muted">3 Derived Outputs</span>
+      <span class="chip chip-muted">6 API Endpoints</span>
+    </div>
+  </section>
+
+  <!-- SECTION 1: PRIMARY METRICS ──────────────────────────────── -->
+  <section class="section fade-in">
+    <div class="section-eyebrow">Primary Metrics · Live System Cards</div>
+    <div class="section-title">System State Overview</div>
+    <div class="section-sub">Derived intelligence outputs computed across active indicator pipeline. Values represent normalized planetary soil intelligence, not raw source data.</div>
+    <div class="metrics-grid">
+
+      <div class="metric-card" style="--mc-color:var(--cyan)" data-label="SSI">
+        <div class="mc-code">OUTPUT A · SSI</div>
+        <div class="mc-name">Soil Stability Index</div>
+        <div class="mc-value" style="color:var(--cyan)">72.4</div>
+        <div class="mc-unit">/ 100 · Global Composite · ±1.2</div>
+        <div style="height:3px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden;margin-bottom:0.6rem">
+          <div style="height:100%;width:72.4%;background:linear-gradient(90deg,rgba(126,231,255,0.4),var(--cyan));border-radius:2px"></div>
+        </div>
+        <div class="mc-status">
+          <div class="mc-dot" style="background:var(--amber)"></div>
+          <span class="mc-status-lbl">Degrading — Subthreshold Warning</span>
+        </div>
+        <div style="margin-top:0.6rem;font-size:0.58rem;color:var(--t3)">SOC-D + LDVI + SWFI composite · Updated daily</div>
+      </div>
+
+      <div class="metric-card" style="--mc-color:var(--green)" data-label="RVM">
+        <div class="mc-code">OUTPUT B · RVM</div>
+        <div class="mc-name">Regeneration Velocity Map</div>
+        <div class="mc-value" style="color:var(--green)">0.41</div>
+        <div class="mc-unit">%/yr mean recovery rate · Global · ±0.04</div>
+        <div style="height:3px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden;margin-bottom:0.6rem">
+          <div style="height:100%;width:41%;background:linear-gradient(90deg,rgba(16,185,129,0.4),var(--green));border-radius:2px"></div>
+        </div>
+        <div class="mc-status">
+          <div class="mc-dot" style="background:var(--amber);animation:live-pulse 2s infinite"></div>
+          <span class="mc-status-lbl">Below Recovery Threshold</span>
+        </div>
+        <div style="margin-top:0.6rem;font-size:0.58rem;color:var(--t3)">ASSI + RPVS + ERBI composite · Updated daily</div>
+      </div>
+
+      <div class="metric-card" style="--mc-color:var(--breach)" data-label="CRSZ">
+        <div class="mc-code">OUTPUT C · CRSZ</div>
+        <div class="mc-name">Collapse Risk Soil Zones</div>
+        <div class="mc-value" style="color:var(--breach)">14.2%</div>
+        <div class="mc-unit">of monitored land area · Critical threshold &lt; 5%</div>
+        <div style="height:3px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden;margin-bottom:0.6rem">
+          <div style="height:100%;width:14.2%;background:linear-gradient(90deg,rgba(239,68,68,0.4),var(--breach));border-radius:2px"></div>
+        </div>
+        <div class="mc-status">
+          <div class="mc-dot" style="background:var(--breach);animation:live-pulse 1.2s infinite"></div>
+          <span class="mc-status-lbl" style="color:var(--breach)">Critical — Exceeds Safe Limit</span>
+        </div>
+        <div style="margin-top:0.6rem;font-size:0.58rem;color:var(--t3)">All 6 indicators composite · Updated daily</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2: INDICATORS ────────────────────────────────────── -->
+  <section class="section fade-in">
+    <div class="section-eyebrow">Section 02 · Canonical Set · Read-Only</div>
+    <div class="section-title">Core 6 Indicators</div>
+    <div class="section-sub">Canonical indicator set. No additional indicators permitted. Click any card to expand full specification.</div>
+    <div class="indicators-grid">
+
+      <!-- SOC-D -->
+      <div class="ind-card" onclick="toggleInd(this)">
+        <div class="ind-header">
+          <div>
+            <div class="ind-acronym">SOC-D</div>
+            <div class="ind-num">INDICATOR 01</div>
+          </div>
+          <div class="ind-toggle">▼</div>
+        </div>
+        <div class="ind-body">
+          <div class="ind-name">Soil Organic Carbon Dynamics</div>
+          <div class="ind-type">Biogeochemical State Indicator</div>
+          <div class="ind-collapse">
+            <div class="ind-fn">Tracks carbon storage change in soil systems, measuring the rate and direction of organic carbon accumulation or loss as a proxy for long-term soil health and climate feedback potential.</div>
+            <div class="ind-sources-label">Sources</div>
+            <ul class="ind-sources">
+              <li>FAO GSOCmap v1.6.1</li>
+              <li>IPCC AFOLU carbon accounting frameworks</li>
+              <li>NASA/ESA satellite-derived spectral proxies</li>
+              <li>Calibrated field sampling datasets</li>
+            </ul>
+            <code class="ind-output">Output: % SOC change/yr · stability variance curve</code>
+          </div>
+          <div style="margin-top:0.5rem"><span class="chip chip-muted">Biogeochemical</span></div>
+        </div>
+      </div>
+
+      <!-- LDVI -->
+      <div class="ind-card" onclick="toggleInd(this)">
+        <div class="ind-header">
+          <div>
+            <div class="ind-acronym">LDVI</div>
+            <div class="ind-num">INDICATOR 02</div>
+          </div>
+          <div class="ind-toggle">▼</div>
+        </div>
+        <div class="ind-body">
+          <div class="ind-name">Land Degradation Velocity Index</div>
+          <div class="ind-type">Surface Stability Indicator</div>
+          <div class="ind-collapse">
+            <div class="ind-fn">Quantifies the rate of land surface deterioration by measuring change velocity in vegetation cover, bare soil exposure, and erosion indicators across time-series satellite imagery.</div>
+            <div class="ind-sources-label">Sources</div>
+            <ul class="ind-sources">
+              <li>USGS Landsat Collection 2 (public domain)</li>
+              <li>ESA Copernicus Sentinel-2 MSI</li>
+              <li>MODIS Land Cover Change (NASA)</li>
+              <li>USDA NRCS soil erosion databases</li>
+            </ul>
+            <code class="ind-output">Output: Degradation velocity score 0–100 · spatial map</code>
+          </div>
+          <div style="margin-top:0.5rem"><span class="chip chip-muted">Surface Stability</span></div>
+        </div>
+      </div>
+
+      <!-- SWFI -->
+      <div class="ind-card" onclick="toggleInd(this)">
+        <div class="ind-header">
+          <div>
+            <div class="ind-acronym">SWFI</div>
+            <div class="ind-num">INDICATOR 03</div>
+          </div>
+          <div class="ind-toggle">▼</div>
+        </div>
+        <div class="ind-body">
+          <div class="ind-name">Soil–Water Functionality Index</div>
+          <div class="ind-type">Hydrological State Indicator</div>
+          <div class="ind-collapse">
+            <div class="ind-fn">Assesses the functional capacity of soil systems to absorb, retain, and regulate water flow — a critical determinant of both soil structural integrity and regional water cycle stability.</div>
+            <div class="ind-sources-label">Sources</div>
+            <ul class="ind-sources">
+              <li>OpenET evapotranspiration API (tiered access)</li>
+              <li>NASA SMAP soil moisture active/passive</li>
+              <li>ESA Copernicus Sentinel-1 SAR</li>
+              <li>USDA STATSGO2 soil texture database</li>
+            </ul>
+            <code class="ind-output">Output: Water retention index 0–100 · infiltration rate</code>
+          </div>
+          <div style="margin-top:0.5rem"><span class="chip chip-muted">Hydrological</span></div>
+        </div>
+      </div>
+
+      <!-- ASSI -->
+      <div class="ind-card" onclick="toggleInd(this)">
+        <div class="ind-header">
+          <div>
+            <div class="ind-acronym">ASSI</div>
+            <div class="ind-num">INDICATOR 04</div>
+          </div>
+          <div class="ind-toggle">▼</div>
+        </div>
+        <div class="ind-body">
+          <div class="ind-name">Agricultural System Structure Index</div>
+          <div class="ind-type">Agro-Ecological State Indicator</div>
+          <div class="ind-collapse">
+            <div class="ind-fn">Maps the structural configuration of agricultural systems at scale — monoculture density, crop rotation frequency, fallow patterns, and soil amendment practices — to classify system resilience against collapse risk.</div>
+            <div class="ind-sources-label">Sources</div>
+            <ul class="ind-sources">
+              <li>USDA NASS agricultural census layers</li>
+              <li>FAO GAEZ agro-ecological zone data (CC BY 4.0)</li>
+              <li>NASA Earthdata MODIS crop type</li>
+              <li>OpTIS agricultural monitoring (commercial license)</li>
+            </ul>
+            <code class="ind-output">Output: System structure score 0–100 · resilience band</code>
+          </div>
+          <div style="margin-top:0.5rem"><span class="chip chip-muted">Agro-Ecological</span></div>
+        </div>
+      </div>
+
+      <!-- RPVS -->
+      <div class="ind-card" onclick="toggleInd(this)">
+        <div class="ind-header">
+          <div>
+            <div class="ind-acronym">RPVS</div>
+            <div class="ind-num">INDICATOR 05</div>
+          </div>
+          <div class="ind-toggle">▼</div>
+        </div>
+        <div class="ind-body">
+          <div class="ind-name">Regenerative Practice Verification Score</div>
+          <div class="ind-type">Verification State Indicator</div>
+          <div class="ind-collapse">
+            <div class="ind-fn">Verifies implementation and measurable impact of declared regenerative agricultural practices using satellite-observable soil and vegetation signals — independent of self-reported corporate claims.</div>
+            <div class="ind-sources-label">Sources</div>
+            <ul class="ind-sources">
+              <li>ESA Copernicus Sentinel-2 vegetation indices</li>
+              <li>USDA conservation practice databases</li>
+              <li>NASA Earthdata NDVI/EVI time-series</li>
+              <li>FAO GAEZ temporal comparison layers</li>
+            </ul>
+            <code class="ind-output">Output: Verification score 0–100 · practice confidence band</code>
+          </div>
+          <div style="margin-top:0.5rem"><span class="chip chip-green">Verification</span></div>
+        </div>
+      </div>
+
+      <!-- ERBI -->
+      <div class="ind-card" onclick="toggleInd(this)">
+        <div class="ind-header">
+          <div>
+            <div class="ind-acronym">ERBI</div>
+            <div class="ind-num">INDICATOR 06</div>
+          </div>
+          <div class="ind-toggle">▼</div>
+        </div>
+        <div class="ind-body">
+          <div class="ind-name">Ecosystem Recovery &amp; Biomass Index</div>
+          <div class="ind-type">Biomass Recovery Indicator</div>
+          <div class="ind-collapse">
+            <div class="ind-fn">Measures rate and trajectory of ecosystem biomass recovery post-disturbance, quantifying whether degraded land areas are progressing toward ecological recovery or continuing in decline.</div>
+            <div class="ind-sources-label">Sources</div>
+            <ul class="ind-sources">
+              <li>NASA GEDI global ecosystem dynamics</li>
+              <li>ESA Copernicus Sentinel-2 LAI/FAPAR</li>
+              <li>USGS Landsat time-series spectral analysis</li>
+              <li>FAO FRA global forest resource assessment</li>
+            </ul>
+            <code class="ind-output">Output: Recovery velocity %/yr · biomass trajectory class</code>
+          </div>
+          <div style="margin-top:0.5rem"><span class="chip chip-cyan">Biomass Recovery</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3: INTELLIGENCE PIPELINE ───────────────────────── -->
+  <section class="section fade-in">
+    <div class="section-eyebrow">Section 03 · Structural Model</div>
+    <div class="section-title">Intelligence Pipeline</div>
+    <div class="section-sub">Three-layer transformation model. Source data enters Layer 1 under original licensing. VYRION transformation occurs exclusively in Layer 2. Derived intelligence exits in Layer 3 as proprietary output.</div>
+    <div class="pipeline">
+
+      <div class="pipe-layer" style="--pl-color:var(--t3)">
+        <div class="pipe-num">Layer 01</div>
+        <div class="pipe-title">Source Reality</div>
+        <div style="display:flex;gap:0.6rem;align-items:center;margin-bottom:0.5rem">
+          <span class="chip chip-muted">Open / Licensed</span>
+          <span style="font-size:0.58rem;color:var(--t3)">Non-owned · Original provider terms apply</span>
+        </div>
+        <div class="pipe-desc">Multi-source licensed Earth observation data ingested under original provider licensing terms. ROOT does not store or redistribute raw source data. All source provenance preserved per original EULA.</div>
+        <div class="pipe-items">
+          <span class="pipe-tag">NASA Earthdata · EULA</span>
+          <span class="pipe-tag">ESA Copernicus Sentinel · Open</span>
+          <span class="pipe-tag">USGS Landsat · Public Domain</span>
+          <span class="pipe-tag">FAO Datasets · CC BY 4.0</span>
+          <span class="pipe-tag">OpenET · Tiered API</span>
+          <span class="pipe-tag">USDA Agricultural · Open</span>
+          <span class="pipe-tag">OpTIS · Commercial License</span>
+        </div>
+      </div>
+
+      <div class="pipe-connector"><span class="pipe-arrow">↓</span></div>
+
+      <div class="pipe-layer" style="--pl-color:var(--cyan)">
+        <div class="pipe-num">Layer 02</div>
+        <div class="pipe-title">Transformation Engine</div>
+        <div style="display:flex;gap:0.6rem;align-items:center;margin-bottom:0.5rem">
+          <span class="chip chip-cyan">VYRION Core IP</span>
+          <span style="font-size:0.58rem;color:var(--t3)">Proprietary · This layer is VYRION's value layer</span>
+        </div>
+        <div class="pipe-desc">All computation occurs exclusively here. Multi-source signals are normalized, temporally aligned, and geospatially harmonized. ML inference classifies soil, vegetation, and water behavior patterns. Anomaly detection separates degradation signals from regeneration signals.</div>
+        <div class="pipe-items">
+          <span class="pipe-tag" style="color:var(--cyan);border-color:rgba(126,231,255,0.2)">Multi-Source Normalization</span>
+          <span class="pipe-tag" style="color:var(--cyan);border-color:rgba(126,231,255,0.2)">Geospatial Alignment</span>
+          <span class="pipe-tag" style="color:var(--cyan);border-color:rgba(126,231,255,0.2)">Temporal Resampling</span>
+          <span class="pipe-tag" style="color:var(--cyan);border-color:rgba(126,231,255,0.2)">ML Inference Layer</span>
+          <span class="pipe-tag" style="color:var(--cyan);border-color:rgba(126,231,255,0.2)">Anomaly Detection Engine</span>
+          <span class="pipe-tag" style="color:var(--cyan);border-color:rgba(126,231,255,0.2)">Degradation/Regeneration Classification</span>
+        </div>
+      </div>
+
+      <div class="pipe-connector"><span class="pipe-arrow">↓</span></div>
+
+      <div class="pipe-layer" style="--pl-color:var(--green)">
+        <div class="pipe-num">Layer 03</div>
+        <div class="pipe-title">Derived Intelligence</div>
+        <div style="display:flex;gap:0.6rem;align-items:center;margin-bottom:0.5rem">
+          <span class="chip chip-green">Proprietary Output</span>
+          <span style="font-size:0.58rem;color:var(--t3)">VYRION-owned · Licensable · No raw data included</span>
+        </div>
+        <div class="pipe-desc">ROOT outputs are derived intelligence products — normalized, scored, and time-series verified. They are not raw Earth observation data. These outputs are licensable under VYRION commercial terms independent of source provider licensing.</div>
+        <div class="pipe-items">
+          <span class="pipe-tag" style="color:var(--green);border-color:rgba(16,185,129,0.2)">SSI · Soil Stability Index</span>
+          <span class="pipe-tag" style="color:var(--green);border-color:rgba(16,185,129,0.2)">RVM · Regeneration Velocity Map</span>
+          <span class="pipe-tag" style="color:var(--green);border-color:rgba(16,185,129,0.2)">CRSZ · Collapse Risk Soil Zones</span>
+          <span class="pipe-tag" style="color:var(--green);border-color:rgba(16,185,129,0.2)">RPVS · Practice Verification Score</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 4: API CONSOLE ──────────────────────────────────── -->
+  <section class="section fade-in">
+    <div class="section-eyebrow">Section 04 · Output Layer Only</div>
+    <div class="section-title">API Console</div>
+    <div class="section-sub">Six output endpoints. Derived intelligence only — no raw source data accessible via API. Endpoints return VYRION-computed indices, not provider datasets.</div>
+    <div class="api-grid">
+
+      <div class="api-card">
+        <div class="api-top">
+          <span class="api-method">GET</span>
+          <code class="api-path">/soil-state</code>
+        </div>
+        <div class="api-status-row">
+          <div class="api-status-dot" style="background:var(--green)"></div>
+          <span class="api-status-lbl">LIVE · STREAMING</span>
+        </div>
+        <div class="api-desc">Returns SSI composite + moisture trend + carbon trajectory. Protected endpoint. Requires institutional API key.</div>
+      </div>
+
+      <div class="api-card">
+        <div class="api-top">
+          <span class="api-method">GET</span>
+          <code class="api-path">/regeneration-map</code>
+        </div>
+        <div class="api-status-row">
+          <div class="api-status-dot" style="background:var(--green)"></div>
+          <span class="api-status-lbl">LIVE · STREAMING</span>
+        </div>
+        <div class="api-desc">Returns RVM time-series output by region. ASSI + RPVS + ERBI composite. Geospatial bounding box supported.</div>
+      </div>
+
+      <div class="api-card">
+        <div class="api-top">
+          <span class="api-method">GET</span>
+          <code class="api-path">/collapse-risk</code>
+        </div>
+        <div class="api-status-row">
+          <div class="api-status-dot" style="background:var(--breach)"></div>
+          <span class="api-status-lbl" style="color:var(--breach)">LIVE · CRITICAL SIGNAL</span>
+        </div>
+        <div class="api-desc">Returns CRSZ alert layer. All 6 indicators composite. Flags zones exceeding collapse risk threshold. Priority routing for reinsurance and agriculture risk applications.</div>
+      </div>
+
+      <div class="api-card">
+        <div class="api-top">
+          <span class="api-method">GET</span>
+          <code class="api-path">/agriculture-behavior</code>
+        </div>
+        <div class="api-status-row">
+          <div class="api-status-dot" style="background:var(--green)"></div>
+          <span class="api-status-lbl">LIVE · DATA-ONLY</span>
+        </div>
+        <div class="api-desc">Returns ASSI output layer — agricultural system structure, resilience classification, and monoculture density mapping by region.</div>
+      </div>
+
+      <div class="api-card">
+        <div class="api-top">
+          <span class="api-method">GET</span>
+          <code class="api-path">/verification-layer</code>
+        </div>
+        <div class="api-status-row">
+          <div class="api-status-dot" style="background:var(--green)"></div>
+          <span class="api-status-lbl">LIVE · CONSCIENCE-LINKED</span>
+        </div>
+        <div class="api-desc">Returns RPVS output. Cross-referenced against CONSCIENCE corporate pledge registry. Verifies satellite-observable regenerative practice implementation vs. declared corporate commitments.</div>
+      </div>
+
+      <div class="api-card">
+        <div class="api-top">
+          <span class="api-method">GET</span>
+          <code class="api-path">/corporate-soil-exposure</code>
+        </div>
+        <div class="api-status-row">
+          <div class="api-status-dot locked" style="background:var(--amber)"></div>
+          <span class="api-status-lbl" style="color:var(--amber)">INSTITUTIONAL · CORPORATE API</span>
+        </div>
+        <div class="api-desc">Returns supply chain soil risk scoring by corporate entity. Links CRSZ collapse zones to specific corporate land-use footprints. Portfolio exposure quantification for institutional clients.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 5: DERIVED OUTPUT LOGIC ─────────────────────────── -->
+  <section class="section fade-in">
+    <div class="section-eyebrow">Section 05 · Formula Logic</div>
+    <div class="section-title">Derived Output Logic Panel</div>
+    <div class="section-sub">Three system outputs computed from canonical indicator set. CSS-scored 0–100. No libraries. No SVG charts. Indicator composition is locked.</div>
+    <div class="outputs-grid">
+
+      <div class="output-card" style="--oc-color:var(--cyan)">
+        <div class="output-label">Output A</div>
+        <div class="output-name">Soil Stability Index<br><span style="color:var(--cyan)">SSI</span></div>
+        <div class="output-question">Is this land physically stable or collapsing?</div>
+        <div class="output-formula">
+          SSI = <span>SOC-D</span> + <span>LDVI</span> + <span>SWFI</span><br>
+          Core physical stability layer · Carbon + Surface + Water
+        </div>
+        <div class="score-bar-wrap">
+          <div class="score-bar-label"><span>SSI CURRENT</span><span style="color:var(--cyan)">72.4 / 100</span></div>
+          <div class="score-bar-bg"><div class="score-bar-fill" data-w="72.4" style="width:72.4%;background:linear-gradient(90deg,rgba(126,231,255,0.4),var(--cyan))"></div></div>
+        </div>
+        <div class="inputs-label">Indicator Inputs</div>
+        <div class="inputs-list">
+          <span class="input-tag">SOC-D</span>
+          <span class="input-tag">LDVI</span>
+          <span class="input-tag">SWFI</span>
+        </div>
+        <div style="margin-top:0.7rem"><span class="chip chip-cyan">Core Physical</span></div>
+      </div>
+
+      <div class="output-card" style="--oc-color:var(--green)">
+        <div class="output-label">Output B</div>
+        <div class="output-name">Regeneration Velocity Map<br><span style="color:var(--green)">RVM</span></div>
+        <div class="output-question">Is this land recovering or continuing to decline?</div>
+        <div class="output-formula">
+          RVM = <span>ASSI</span> + <span>RPVS</span> + <span>ERBI</span><br>
+          Agro-structural + verified practice + biomass recovery
+        </div>
+        <div class="score-bar-wrap">
+          <div class="score-bar-label"><span>RVM CURRENT</span><span style="color:var(--green)">41.0 / 100</span></div>
+          <div class="score-bar-bg"><div class="score-bar-fill" data-w="41" style="width:41%;background:linear-gradient(90deg,rgba(16,185,129,0.4),var(--green))"></div></div>
+        </div>
+        <div class="inputs-label">Indicator Inputs</div>
+        <div class="inputs-list">
+          <span class="input-tag">ASSI</span>
+          <span class="input-tag">RPVS</span>
+          <span class="input-tag">ERBI</span>
+        </div>
+        <div style="margin-top:0.7rem"><span class="chip chip-green">Recovery</span></div>
+      </div>
+
+      <div class="output-card" style="--oc-color:var(--breach)">
+        <div class="output-label">Output C</div>
+        <div class="output-name">Collapse Risk Soil Zones<br><span style="color:var(--breach)">CRSZ</span></div>
+        <div class="output-question">Which land zones are at imminent collapse risk?</div>
+        <div class="output-formula">
+          CRSZ = <span>SOC-D</span> + <span>LDVI</span> + <span>SWFI</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span>ASSI</span> + <span>RPVS</span> + <span>ERBI</span><br>
+          All 6 indicators · Maximum sensitivity composite
+        </div>
+        <div class="score-bar-wrap">
+          <div class="score-bar-label"><span>RISK AREA</span><span style="color:var(--breach)">14.2% of monitored</span></div>
+          <div class="score-bar-bg"><div class="score-bar-fill" data-w="14.2" style="width:14.2%;background:linear-gradient(90deg,rgba(239,68,68,0.4),var(--breach))"></div></div>
+        </div>
+        <div class="inputs-label">Indicator Inputs</div>
+        <div class="inputs-list">
+          <span class="input-tag">SOC-D</span>
+          <span class="input-tag">LDVI</span>
+          <span class="input-tag">SWFI</span>
+          <span class="input-tag">ASSI</span>
+          <span class="input-tag">RPVS</span>
+          <span class="input-tag">ERBI</span>
+        </div>
+        <div style="margin-top:0.7rem"><span class="chip chip-breach">Critical Risk</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 6: LICENSING ────────────────────────────────────── -->
+  <section class="section fade-in">
+    <div class="section-eyebrow">Section 06 · Hard Separation Model</div>
+    <div class="section-title">Licensing Architecture</div>
+    <div class="section-sub">Three-layer licensing model with hard separation between source data (non-owned), VYRION intelligence (owned), and commercial outputs (licensable). No layer crosses into another.</div>
+    <div class="license-grid">
+
+      <div class="lic-card" style="--lc-color:var(--t3)">
+        <div class="lic-layer">Layer A</div>
+        <div class="lic-title">Source Data Layer<br><span style="color:var(--t3);font-weight:400;font-size:0.7rem">Non-Owned</span></div>
+        <ul class="lic-items">
+          <li>NASA Earthdata — dataset-specific EULA</li>
+          <li>ESA Copernicus — open redistribution permitted</li>
+          <li>USGS Landsat — public domain, no restriction</li>
+          <li>FAO datasets — CC BY 4.0, attribution required</li>
+          <li>OpenET — tiered API licensing model</li>
+          <li>USDA — open federal data standards</li>
+          <li>OpTIS — commercial license required</li>
+        </ul>
+        <span class="chip chip-muted">External / Licensed</span>
+      </div>
+
+      <div class="lic-card" style="--lc-color:var(--cyan)">
+        <div class="lic-layer">Layer B</div>
+        <div class="lic-title">VYRION Intelligence Layer<br><span style="color:var(--cyan);font-weight:400;font-size:0.7rem">Owned IP</span></div>
+        <ul class="lic-items">
+          <li>All 6 canonical indicators (SOC-D through ERBI)</li>
+          <li>All 3 derived indices (SSI, RVM, CRSZ)</li>
+          <li>All anomaly detection and prediction models</li>
+          <li>All normalization and scoring logic</li>
+          <li>All time-series alignment methodology</li>
+          <li>All geospatial harmonization processes</li>
+        </ul>
+        <span class="chip chip-cyan">VYRION Core IP</span>
+      </div>
+
+      <div class="lic-card" style="--lc-color:var(--green)">
+        <div class="lic-layer">Layer C</div>
+        <div class="lic-title">Commercial Layer<br><span style="color:var(--green);font-weight:400;font-size:0.7rem">Licensable Products</span></div>
+        <ul class="lic-items">
+          <li>API access — institutional data feeds</li>
+          <li>Enterprise dashboards — SaaS delivery</li>
+          <li>Supply chain soil risk scoring systems</li>
+          <li>Regeneration practice verification services</li>
+          <li>Portfolio exposure quantification</li>
+          <li>Corporate soil liability assessment</li>
+        </ul>
+        <span class="chip chip-green">Commercial / SaaS</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 7: PRINCIPLE + CANONICAL STATEMENT ──────────────── -->
+  <section class="section fade-in">
+    <div class="section-eyebrow">Section 07 · System Definition</div>
+    <div class="section-title">Core Design Principle</div>
+    <div class="principle-block">
+      <p><strong>ROOT is not a dataset system.</strong> ROOT is a licensed Earth-data transformation engine that converts soil, water, and agricultural signals into verified planetary intelligence products. The transformation is the product. The source data is an input under license. The derived intelligence is wholly owned.</p>
+      <p>ROOT maintains strict separation between source data licensing — governed by original provider terms — and VYRION's proprietary transformation layer, which produces the SSI, RVM, CRSZ, and RPVS outputs. No source data is stored, redistributed, or made accessible through ROOT's output layer.</p>
+
+      <div class="canonical-statement">
+        <div style="font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--t3);margin-bottom:0.4rem">Canonical Statement · Final</div>
+        <p>ROOT is a six-indicator terrestrial intelligence module within the VYRION OS that transforms licensed Earth observation and agricultural datasets into verified, time-series soil stability, regeneration velocity, and collapse risk intelligence products — while maintaining strict separation between source data licensing and proprietary derived planetary intelligence.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER ──────────────────────────────────────────────────── -->
+  <footer class="page-footer">
+    <div class="footer-text">
+      VYRION MODULE 004 — ROOT · v1.0<br>
+      Soil Intelligence System · Licensed Earth Data Transformation Engine<br>
+      <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a> ·
+      Source: <a href="https://dablerfrost.github.io/conscience">dablerfrost.github.io</a> ·
+      Route via <a href="https://www.vyrion.earth">www.vyrion.earth</a><br>
+      <a href="https://github.com/dablerfrost/conscience/blob/main/VYRION-METHODOLOGY-v1.0.md">VYRION-METHODOLOGY-v1.0.md</a>
+    </div>
+    <div class="footer-links">
+      <a href="https://dablerfrost.github.io/conscience">CONSCIENCE →</a>
+      <a href="shield.html">SHIELD →</a>
+      <a href="atlas.html">ATLAS →</a>
+      <a href="https://dablerfrost.github.io/conscience/archive">ARCHIVE →</a>
+    </div>
+  </footer>
+
+</main>
+</div>
+
+<script>
+// ─── INDICATOR TOGGLE ──────────────────────────────────────────────
+function toggleInd(card) {
+  card.classList.toggle('open');
+}
+
+// ─── FADE-IN OBSERVER ─────────────────────────────────────────────
+(function(){
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+})();
+
+// ─── SCORE BAR ANIMATION ──────────────────────────────────────────
+setTimeout(() => {
+  document.querySelectorAll('.score-bar-fill[data-w]').forEach(el => {
+    el.style.width = el.dataset.w + '%';
+  });
+}, 300);
+</script>
+
+</body>
+</html>
