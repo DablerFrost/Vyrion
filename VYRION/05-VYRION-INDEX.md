@@ -1,3 +1,4 @@
+[05-VYRION-INDEX.md](https://github.com/user-attachments/files/27096330/05-VYRION-INDEX.md)
 # 05 — VYRION INDEX
 ## The World's First Daily Investable Planetary Health Benchmark
 
