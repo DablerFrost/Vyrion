@@ -1,3 +1,4 @@
+[01-BRAND-ARCHITECTURE (2).md](https://github.com/user-attachments/files/27096281/01-BRAND-ARCHITECTURE.2.md)
 # 01 — VYRION BRAND ARCHITECTURE
 ## Name · Concept · Eight Modules · Design DNA
 
