@@ -1,3 +1,4 @@
+[03-DEFENSE-ARCHITECTURE.md](https://github.com/user-attachments/files/27096321/03-DEFENSE-ARCHITECTURE.md)
 # 03 — VYRION DEFENSE ARCHITECTURE
 ## 47 Threats · 3 Methodologies · The Unkillable Architecture
 
