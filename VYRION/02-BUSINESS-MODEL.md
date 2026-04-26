@@ -1,3 +1,4 @@
+[02-BUSINESS-MODEL.md](https://github.com/user-attachments/files/27096316/02-BUSINESS-MODEL.md)
 # 02 — VYRION BUSINESS MODEL
 ## Revenue Architecture · Licensing · Target Buyers · Financial Projections
 
