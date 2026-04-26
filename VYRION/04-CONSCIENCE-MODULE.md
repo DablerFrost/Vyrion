@@ -1,3 +1,4 @@
+[04-CONSCIENCE-MODULE.md](https://github.com/user-attachments/files/27096326/04-CONSCIENCE-MODULE.md)
 # 04 — VYRION CONSCIENCE
 ## Live Corporate Pledge Verification · Product Documentation
 
