@@ -3172,3 +3172,93 @@ window.addEventListener('scroll', oScrollCheck, { passive: true });
 </script>
 </body>
 </html>
+<script>
+(function(){
+  'use strict';
+
+  // 1) Ensure all external links opened in new tabs are safe
+  try {
+    document.querySelectorAll('a[target="_blank"]').forEach(a => {
+      const existing = (a.getAttribute('rel') || '').split(/\s+/).filter(Boolean);
+      ['noopener', 'noreferrer'].forEach(v => { if (!existing.includes(v)) existing.push(v); });
+      if (existing.length) a.setAttribute('rel', existing.join(' '));
+    });
+  } catch (e) { /* fail silently */ }
+
+  // 2) Modal focus-trap helper and integration with existing onboarding code
+  function trapFocus(container){
+    if (!container) return function(){};
+    // CSS selector for commonly focusable elements
+    const selector = 'a[href],button,textarea,input,select,[tabindex]:not([tabindex="-1"])';
+    const list = Array.from(container.querySelectorAll(selector)).filter(el => !el.hasAttribute('disabled') && el.offsetParent !== null);
+    const first = list[0] || container;
+    const last  = list[list.length - 1] || container;
+    const prevActive = document.activeElement;
+    // move focus into dialog
+    try { (first.focus && first.focus()); } catch(e){}
+    function onKey(e){
+      if (e.key !== 'Tab') return;
+      if (list.length === 0) { e.preventDefault(); return; }
+      if (e.shiftKey) {
+        if (document.activeElement === first || container === document.activeElement) {
+          e.preventDefault(); last.focus();
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault(); first.focus();
+        }
+      }
+    }
+    function onFocusIn(e){
+      if (!container.contains(e.target)) {
+        (first.focus && first.focus());
+      }
+    }
+    document.addEventListener('keydown', onKey);
+    document.addEventListener('focusin', onFocusIn);
+    return function cleanup(){
+      document.removeEventListener('keydown', onKey);
+      document.removeEventListener('focusin', onFocusIn);
+      try { if (prevActive && prevActive.focus) prevActive.focus(); } catch(e){}
+    };
+  }
+
+  // Integrate with existing onboarding overlay (#vyr-welcome)
+  const oWelcomeEl = document.getElementById('vyr-welcome');
+  if (oWelcomeEl) {
+    // wrap existing oWelcomeDismiss to guarantee cleanup runs
+    const origDismiss = window.oWelcomeDismiss;
+    let cleanupFn = null;
+
+    window.oWelcomeDismiss = function(action){
+      try { if (cleanupFn) { cleanupFn(); cleanupFn = null; } } catch(e){}
+      if (typeof origDismiss === 'function') origDismiss(action);
+    };
+
+    // If overlay currently shown and not dismissed, trap focus now
+    if (getComputedStyle(oWelcomeEl).display !== 'none' && !oWelcomeEl.classList.contains('dismissed')) {
+      cleanupFn = trapFocus(oWelcomeEl);
+      oWelcomeEl._vyr_trap_cleanup = cleanupFn;
+    }
+
+    // Observe class changes so we can create/destroy trap if other code toggles the overlay
+    const mo = new MutationObserver(muts => {
+      muts.forEach(m => {
+        if (m.attributeName === 'class') {
+          if (oWelcomeEl.classList.contains('dismissed')) {
+            if (cleanupFn) { try { cleanupFn(); } catch(e){} cleanupFn = null; }
+          } else {
+            if (!cleanupFn) cleanupFn = trapFocus(oWelcomeEl);
+          }
+        }
+      });
+    });
+    mo.observe(oWelcomeEl, { attributes: true, attributeFilter: ['class'] });
+
+    // Ensure overlay has a visible first focusable control for keyboard users
+    // If none exist, ensure the "Enter" button is focusable
+    const firstFocusable = oWelcomeEl.querySelector('a,button,[tabindex]:not([tabindex="-1"])');
+    if (firstFocusable) firstFocusable.setAttribute('tabindex', firstFocusable.getAttribute('tabindex') || '0');
+  }
+})();
+</script>
