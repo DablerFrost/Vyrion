@@ -151,10 +151,10 @@ body::after{
 
 /* ── HERO ───────────────────────────────────────────────────────── */
 .page-header{
-  position:relative;padding:3.6rem 2rem 2.8rem;
-  border-bottom:1px solid var(--border);overflow:hidden;
-  background-image:url('Vyrion_backsplash_image.jpg');
-  background-size:cover;background-position:center 40%;
+  padding:3.5rem 2rem 2.8rem;border-bottom:1px solid var(--border);
+  position:relative;overflow:hidden;
+  background-image:url('https://okay-gold-oof5kipmvh.edgeone.app/Testing%20The%20Surface%20-%20Imgur.png');
+  background-size:cover;background-position:center 38%;
   min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;
 }
 .page-header::before{
@@ -173,7 +173,8 @@ body::after{
 [data-theme="light"] #mycelium-canvas{opacity:.22}
 .page-header::after{
   content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
-  background:radial-gradient(ellipse 60% 55% at 70% 55%,rgba(0,212,255,.04) 0%,transparent 68%);
+  background:radial-gradient(ellipse 55% 80% at 80% 50%,
+    rgba(0,212,255,.04) 0%,transparent 70%);
   animation:hpulse 8s ease-in-out infinite alternate;
 }
 @keyframes hpulse{0%{opacity:.4;transform:scale(1)}100%{opacity:1;transform:scale(1.04)}}
