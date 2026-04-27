@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Floating Orb Component</title>
+    <style>
+        /* CSS for Floating Orb */
+        .floating-orb {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #007BFF;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .floating-orb:hover {
+            background-color: #0056b3;
+        }
+        .orb-panel {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 100;
+            width: 200px;
+        }
+        .orb-panel.active {
+            display: block;
+        }
+        @media (max-width: 600px) {
+            .floating-orb {
+                width: 50px;
+                height: 50px;
+            }
+            .orb-panel {
+                width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-orb" id="floating-orb">
+        <span>+</span>
+    </div>
+    <div class="orb-panel" id="orb-panel">
+        <h3>Quick Links</h3>
+        <ul id="link-list"></ul>
+    </div>
+    <script>
+        // JavaScript for Floating Orb Component
+
+        // Configuration object mapping pages to their specific links
+        const pageLinks = {
+            conscience: 'https://example.com/conscience',
+            shield: 'https://example.com/shield',
+            atlas: 'https://example.com/atlas',
+            record: 'https://example.com/record',
+            archive: 'https://example.com/archive',
+            nexan: 'https://example.com/nexan'
+        };
+
+        // Detect current page
+        // In practice, this might come from window.location or a route management
+        const currentPage = window.location.pathname.split('/').pop();
+
+        // Get link list element
+        const linkList = document.getElementById('link-list');
+
+        // Populate links based on the current page context
+        function populateLinks() {
+            if (pageLinks[currentPage]) {
+                const li = document.createElement('li');
+                li.innerHTML = `<a href='${pageLinks[currentPage]}'>Go to ${currentPage.charAt(0).toUpperCase() + currentPage.slice(1)}</a>`;
+                linkList.appendChild(li);
+            }
+        }
+
+        // Handle mobile-specific behavior
+        const floatingOrb = document.getElementById('floating-orb');
+        const orbPanel = document.getElementById('orb-panel');
+
+        floatingOrb.addEventListener('click', function() {
+            orbPanel.classList.toggle('active');
+        });
+
+        // Initialize component
+        populateLinks();
+    </script>
+</body>
+</html>
