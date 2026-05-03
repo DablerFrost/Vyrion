@@ -140,7 +140,7 @@
     width: 32px; height: 32px;
     position: relative;
   }
-  .nav-logo-icon svg { width: 32px; height: 32px; }
+  .nav-logo-icon ico { width: 32px; height: 32px; }
   .nav-logo-text {
     display: flex;
     flex-direction: column;
@@ -1030,7 +1030,7 @@
   /* ─── MOBILE LANDSCAPE: 480–639px ─── */
   @media (max-width: 639px) {
     nav { height: 44px; padding: 0 12px; }
-    .nav-logo-icon img, .nav-logo-icon svg { width: 34px; height: 34px; }
+    .nav-logo-icon img, .nav-logo-icon ico { width: 34px; height: 34px; }
     .nav-logo-name { font-size: 14px; letter-spacing: 0.15em; }
     .nav-right { gap: 8px; }
     .live-badge span { display: none; }
@@ -2013,7 +2013,9 @@
 <!-- ─── NAV ─── -->
 <nav>
   <a href="/" class="nav-logo">
-    <div class="nav-logo-icon" style="width:44px;height:44px;"><img src="assets/favicon.png" style="width:44px;height:44px;object-fit:contain;filter:drop-shadow(0 0 8px rgba(0,229,255,0.6));" alt="Vyrion Logo"></div>
+    <div class="nav-logo-icon" style="width:44px;height:44px;">
+      <img src="https://vyrion.earth/assets/favicon.ico" style="width:44px;height:44px;object-fit:contain;filter:drop-shadow(0 0 8px rgba(0,229,255,0.6));" alt="Vyrion Logo">
+     
     <div class="nav-logo-text">
       <span class="nav-logo-name">VYRION</span>
       <span class="nav-logo-sub">Planetary Intelligence</span>
