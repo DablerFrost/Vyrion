@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
 <title>VYRION — Planetary Intelligence</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -925,21 +925,218 @@
   .status-dot.cyan { background: var(--primary); box-shadow: 0 0 4px var(--primary); }
   .status-dot.warn { background: var(--warn); box-shadow: 0 0 4px var(--warn); }
 
-  /* ─── RESPONSIVE ─── */
-  @media (max-width: 1100px) {
-    .main-grid { grid-template-columns: 1fr 280px; }
-    .systems-grid { grid-template-columns: repeat(2, 1fr); }
-    .conscience-cards { grid-template-columns: repeat(2, 1fr); }
+  /* ═══════════════════════════════════════════════
+     RESPONSIVE SYSTEM — mobile / tablet / desktop
+     ═══════════════════════════════════════════════ */
+
+  /* ─── BASE: ensure box model & fluid images ─── */
+  img { max-width: 100%; }
+  canvas { max-width: 100%; }
+
+  /* ─── LARGE DESKTOP: 1400px+ ─── */
+  @media (min-width: 1400px) {
+    .page-wrapper { padding: 0 32px; }
+    .hero-score { font-size: 100px; }
   }
-  @media (max-width: 768px) {
-    .main-grid { grid-template-columns: 1fr; }
-    .systems-row { grid-template-columns: 1fr; }
-    .systems-grid { grid-template-columns: repeat(2, 1fr); }
-    .conscience-inner { grid-template-columns: 1fr; }
-    .conscience-cards { grid-template-columns: repeat(2, 1fr); }
+
+  /* ─── STANDARD DESKTOP: 1100–1399px (default, no overrides needed) ─── */
+
+  /* ─── SMALL DESKTOP / LARGE TABLET LANDSCAPE: 900–1099px ─── */
+  @media (max-width: 1099px) {
+    .main-grid {
+      grid-template-columns: 1fr 280px;
+      gap: 10px;
+    }
+    .hero-score { font-size: 72px; }
+    .systems-row {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .systems-grid {
+      grid-column: 1;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .signal-panel { grid-column: 1; }
+    .conscience-cards { grid-template-columns: repeat(4, 1fr); }
+    .xpl-cards { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  /* ─── TABLET PORTRAIT: 640–899px ─── */
+  @media (max-width: 899px) {
+    nav { padding: 0 16px; height: 48px; }
+    .nav-logo-name { font-size: 15px; }
+    .nav-logo-sub { display: none; }
     .nav-tabs { display: none; }
+    .nav-right { gap: 10px; }
+    .nav-time { font-size: 10px; }
+    .status-bar { display: none; }
+
+    .page-wrapper { padding: 0 12px; }
+
+    .main-grid {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .sidebar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .hero-score { font-size: 80px; }
+    .hero-panel { padding: 18px 20px; }
+    #trend-canvas { height: 100px; }
+
+    .systems-row {
+      grid-template-columns: 1fr;
+    }
+    .systems-grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-column: 1;
+    }
+    .signal-panel { grid-column: 1; }
+
+    .conscience-inner {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .conscience-title { font-size: 36px; }
+    .conscience-cards { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .corp-ring-wrap { width: 56px; height: 56px; }
+    .corp-ring-wrap svg { width: 56px; height: 56px; }
+    .corp-score-inside { font-size: 16px; }
+
+    .explainarium-teaser { gap: 14px; flex-wrap: nowrap; }
+    .explainarium-name { font-size: 18px; }
+
+    .xpl-cards { grid-template-columns: repeat(2, 1fr); }
+    .xpl-cards-2col { grid-template-columns: 1fr; }
+    .xpl-systems-grid { grid-template-columns: repeat(4, 1fr); }
+    .xpl-modal { max-width: 96vw; }
+    .xpl-body { padding: 16px; }
+
+    #drilldown-panel { width: 100vw; max-width: 100vw; }
+
+    .legend-pill { gap: 12px; padding: 6px 14px; }
+    .legend-pill .legend-item:last-child { display: none; }
+    .legend-item { font-size: 9px; }
+
     body { cursor: auto; }
     #cursor, #cursor-ring, #cursor-glow { display: none; }
+
+    .cinematic-line2 { font-size: 32px; }
+    .cinematic-globe { width: 120px; height: 120px; }
+  }
+
+  /* ─── MOBILE LANDSCAPE: 480–639px ─── */
+  @media (max-width: 639px) {
+    nav { height: 44px; padding: 0 12px; }
+    .nav-logo-icon img, .nav-logo-icon svg { width: 34px; height: 34px; }
+    .nav-logo-name { font-size: 14px; letter-spacing: 0.15em; }
+    .nav-right { gap: 8px; }
+    .live-badge span { display: none; }
+    .nav-divider { display: none; }
+    .nav-domain { display: none; }
+    .nav-time { font-size: 9px; letter-spacing: 0; }
+
+    .page-wrapper { padding: 0 8px; }
+    .main-grid { gap: 8px; }
+
+    .hero-panel { padding: 14px 16px; }
+    .hero-score { font-size: 68px; letter-spacing: -2px; }
+    .hero-delta { font-size: 13px; }
+    .hero-status { font-size: 14px; }
+    .hero-label { font-size: 11px; }
+    #trend-canvas { height: 88px; }
+
+    .sidebar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .earth-card { min-height: 120px !important; }
+
+    .systems-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .sys-score { font-size: 28px; }
+    .sys-name { font-size: 9px; }
+    .sys-status { font-size: 9px; }
+
+    .signal-panel { padding: 12px 14px; }
+    .signal-name { font-size: 10px; }
+    .signal-value { font-size: 9px; }
+
+    .conscience-section { padding: 16px; }
+    .conscience-title { font-size: 30px; }
+    .conscience-subtitle { font-size: 12px; }
+    .conscience-cards { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+    .explainarium-teaser { padding: 12px 14px; gap: 10px; flex-wrap: wrap; }
+    .explainarium-name { font-size: 16px; }
+    .explainarium-sub { display: none; }
+    .btn-explainarium { font-size: 9px; padding: 8px 12px; }
+    .explainarium-mascot { width: 40px; height: 40px; }
+
+    .xpl-cards { grid-template-columns: 1fr; }
+    .xpl-systems-grid { grid-template-columns: repeat(2, 1fr); }
+    .xpl-modal-heading { font-size: 18px; }
+    .xpl-big-score { font-size: 36px; }
+
+    .ticker-item { font-size: 10px; padding: 0 16px; }
+    .ticker-label { font-size: 9px; padding: 0 10px; }
+
+    .legend-pill {
+      gap: 8px;
+      padding: 5px 12px;
+      font-size: 8px;
+      bottom: 38px;
+    }
+    .legend-pill .legend-item:last-child { display: none; }
+
+    .cinematic-line2 { font-size: 26px; letter-spacing: 0.12em; }
+    .cinematic-line1 { font-size: 11px; }
+    .cinematic-globe { width: 100px; height: 100px; }
+
+    body { cursor: auto; }
+    #cursor, #cursor-ring, #cursor-glow { display: none; }
+  }
+
+  /* ─── MOBILE PORTRAIT: max 479px ─── */
+  @media (max-width: 479px) {
+    nav { height: 42px; }
+    .nav-logo-name { font-size: 13px; }
+
+    .hero-score { font-size: 58px; }
+    .hero-score-row { gap: 12px; }
+
+    .sidebar { grid-template-columns: 1fr; }
+    .earth-card { min-height: 100px !important; }
+
+    .systems-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+    .sys-card { padding: 10px 12px; }
+    .sys-icon { width: 22px; height: 22px; }
+    .sys-score { font-size: 26px; }
+
+    .conscience-section { padding: 14px; }
+    .conscience-title { font-size: 26px; }
+    .conscience-cards { grid-template-columns: repeat(2, 1fr); }
+    .corp-ring-wrap { width: 48px; height: 48px; }
+    .corp-ring-wrap svg { width: 48px; height: 48px; }
+    .corp-score-inside { font-size: 14px; }
+    .corp-logo { font-size: 10px; }
+    .corp-status { font-size: 8px; letter-spacing: 0.1em; }
+
+    .xpl-systems-grid { grid-template-columns: repeat(2, 1fr); }
+    .xpl-modal-heading { font-size: 16px; }
+    .xpl-score-example { flex-direction: column; gap: 10px; }
+
+    .legend-pill { flex-wrap: wrap; justify-content: center; gap: 6px 12px; }
+    .legend-pill .legend-sep { display: none; }
+
+    .explainarium-teaser { padding: 10px 12px; }
+    .btn-explainarium { width: 100%; justify-content: center; }
+
+    #drilldown-panel { border-radius: 12px 12px 0 0; top: auto; bottom: 0; height: 90vh; transform: translateY(100%); }
+    #drilldown-panel.open { transform: translateY(0); }
+    .dd-score-badge { font-size: 30px; }
   }
 
   /* ─── EXPLAINARIUM TEASER ─── */
@@ -1293,12 +1490,7 @@
   .xpl-fun-fact-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
   .xpl-fun-fact strong { color: var(--green); font-weight: 600; }
 
-  @media (max-width: 768px) {
-    .xpl-cards { grid-template-columns: 1fr; }
-    .xpl-systems-grid { grid-template-columns: repeat(2, 1fr); }
-    .xpl-cards-2col { grid-template-columns: 1fr; }
-    .explainarium-teaser { flex-wrap: wrap; }
-  }
+  /* xpl responsive — handled in main responsive block above */
 
 
   /* ─── LEGEND PILL (#5) ─── */
@@ -1760,9 +1952,7 @@
     pointer-events: all;
   }
 
-  @media (max-width: 768px) {
-    #drilldown-panel { width: 100vw; }
-  }
+  /* drilldown responsive — handled in main responsive block above */
 
 </style>
 </head>
@@ -1830,7 +2020,7 @@
     </div>
   </a>
 
-   <div class="nav-tabs">
+  <div class="nav-tabs">
     <a href="https://vyrion.earth/indexV2" class="nav-tab active">VYRION INDEX</a>
     <a href="https://vyrion.earth" class="nav-tab">CONSCIENCE</a>
     <a href="https://vyrion.earth/shield" class="nav-tab">SHIELD</a>
@@ -1955,7 +2145,7 @@
         </div>
       </div>
       <div id="signals-list"><!-- rendered by JS --></div>
-      <a href="/signals" class="signal-cta btn-outline" style="font-size:9px;padding:6px 10px;margin-top:8px;">VIEW ALL SIGNALS →</a>
+      <a href="https://vyrion.earth/atlas" class="signal-cta btn-outline" style="font-size:9px;padding:6px 10px;margin-top:8px;">VIEW THE ATLAS →</a>
     </div>
   </div>
 
@@ -1996,7 +2186,7 @@
         <div class="conscience-pretitle">Corporate Climate Pledge Verification</div>
         <div class="conscience-title">CONSCIENCE</div>
         <div class="conscience-subtitle">Pledge vs. reality for 11 major corporations. Verified against satellite and emissions data.</div>
-        <a href="/conscience" class="btn-primary">EXPLORE CONSCIENCE →</a>
+        <a href="https://vyrion.earth" class="btn-primary">EXPLORE CONSCIENCE →</a>
       </div>
       <div class="conscience-cards" id="corp-cards">
         <!-- rendered by JS -->
@@ -2893,19 +3083,8 @@ function init() {
     drawChart(DATA.index.trend7d, 'trend-canvas');
   }, 100);
 
-  const seen = localStorage.getItem(CINEMATIC_KEY);
-  if (seen) {
-    // Skip cinematic, go straight
-    document.getElementById('cinematic-overlay').style.display = 'none';
-    const targetScore = DATA.index.score;
-    document.getElementById('hero-score').textContent = '0.0';
-    setTimeout(() => runCountUp(targetScore), 300);
-    setTimeout(() => setInterval(updateIndex, 3000), 2700);
-    initEarthPulse();
-  } else {
-    // Run cinematic then init
-    runCinematic(postCinematicInit);
-  }
+  // Always play cinematic on every load
+  runCinematic(postCinematicInit);
 
   // Pulse direction tied to index updates
   const _origUpdateIndex = updateIndex;
@@ -3003,7 +3182,6 @@ function skipCinematic() {
 }
 
 function postCinematicInit() {
-  localStorage.setItem(CINEMATIC_KEY, '1');
   // count-up starts after cinematic
   const targetScore = DATA.index.score;
   document.getElementById('hero-score').textContent = '0.0';
@@ -3260,8 +3438,20 @@ function closeDrilldown() {
 
 // Escape key closes drilldown
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeDrilldown();
+  if (e.key === 'Escape') { closeDrilldown(); closeExplainarium({target:document.getElementById('xpl-overlay')}); }
 });
+
+// Mobile swipe-down to close drilldown panel
+(function() {
+  let startY = 0;
+  const panel = document.getElementById('drilldown-panel');
+  if (!panel) return;
+  panel.addEventListener('touchstart', e => { startY = e.touches[0].clientY; }, { passive: true });
+  panel.addEventListener('touchend', e => {
+    const dy = e.changedTouches[0].clientY - startY;
+    if (dy > 80) closeDrilldown();
+  }, { passive: true });
+})();
 
 
 </script>
