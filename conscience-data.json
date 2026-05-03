@@ -1,9 +1,9 @@
 {
   "meta": {
-    "generated": "2026-05-02T03:45:28.285Z",
-    "generated_date": "2026-05-02",
+    "generated": "2026-05-03T04:05:44.555Z",
+    "generated_date": "2026-05-03",
     "script_version": "1.0",
-    "runtime_ms": 782,
+    "runtime_ms": 1018,
     "sources": [
       "NOAA Global Monitoring Laboratory (CO₂)",
       "SEC EDGAR Public API (corporate filings)",
@@ -14,28 +14,28 @@
   },
   "atmosphere": {
     "co2": {
-      "ppm": 432.48,
-      "date": "2026-04-29",
+      "ppm": 433.95,
+      "date": "2026-05-01",
       "source": "NOAA Global Monitoring Laboratory — Mauna Loa Observatory",
       "url": "https://gml.noaa.gov/ccgg/trends/",
-      "retrieved": "2026-05-02T03:45:28.007Z"
+      "retrieved": "2026-05-03T04:05:43.899Z"
     },
     "global_temp_anomaly": null,
     "global_temp_era5": {
-      "sample_avg_celsius": 18.6,
-      "anomaly_vs_proxy": 10.1,
+      "sample_avg_celsius": 18.73,
+      "anomaly_vs_proxy": 10.23,
       "sample_coords": [
         "N.Europe",
         "N.America",
         "S.America",
         "SE.Asia"
       ],
-      "period": "2026-04-23 to 2026-04-30",
+      "period": "2026-04-24 to 2026-05-01",
       "baseline_note": "Proxy baseline from ERA5 sample mean — not IPCC global mean. Supplementary signal only.",
       "source": "Open-Meteo ERA5 Reanalysis (ECMWF)",
       "url": "https://open-meteo.com/",
       "license": "CC BY 4.0",
-      "retrieved": "2026-05-02T03:45:28.285Z"
+      "retrieved": "2026-05-03T04:05:44.555Z"
     }
   },
   "global_emissions": null,
@@ -82,7 +82,7 @@
             "items": "5.02"
           }
         ],
-        "retrieved": "2026-05-02T03:45:27.731Z"
+        "retrieved": "2026-05-03T04:05:43.826Z"
       }
     },
     "bp": {
@@ -100,7 +100,7 @@
         "latest_8k": null,
         "count_8k_90d": 0,
         "recent_8k_items": [],
-        "retrieved": "2026-05-02T03:45:27.728Z"
+        "retrieved": "2026-05-03T04:05:43.832Z"
       }
     },
     "shell": {
@@ -121,7 +121,7 @@
         },
         "count_8k_90d": 0,
         "recent_8k_items": [],
-        "retrieved": "2026-05-02T03:45:27.717Z"
+        "retrieved": "2026-05-03T04:05:43.823Z"
       }
     },
     "delta": {
@@ -159,7 +159,7 @@
             "items": "5.02"
           }
         ],
-        "retrieved": "2026-05-02T03:45:27.724Z"
+        "retrieved": "2026-05-03T04:05:43.836Z"
       }
     },
     "starbucks": {
@@ -193,7 +193,7 @@
             "items": "5.07"
           }
         ],
-        "retrieved": "2026-05-02T03:45:27.726Z"
+        "retrieved": "2026-05-03T04:05:43.849Z"
       }
     },
     "walmart": {
@@ -231,7 +231,7 @@
             "items": "2.02,9.01"
           }
         ],
-        "retrieved": "2026-05-02T03:45:27.722Z"
+        "retrieved": "2026-05-03T04:05:43.828Z"
       }
     },
     "meta": {
@@ -261,7 +261,7 @@
             "items": "5.02"
           }
         ],
-        "retrieved": "2026-05-02T03:45:27.721Z"
+        "retrieved": "2026-05-03T04:05:43.847Z"
       }
     },
     "amazon": {
@@ -303,7 +303,7 @@
             "items": "8.01,9.01"
           }
         ],
-        "retrieved": "2026-05-02T03:45:27.733Z"
+        "retrieved": "2026-05-03T04:05:43.842Z"
       }
     },
     "microsoft": {
@@ -329,7 +329,7 @@
             "items": "2.02,9.01"
           }
         ],
-        "retrieved": "2026-05-02T03:45:27.730Z"
+        "retrieved": "2026-05-03T04:05:43.830Z"
       }
     },
     "unilever": {
@@ -369,7 +369,7 @@
             "items": "5.07,9.01"
           }
         ],
-        "retrieved": "2026-05-02T03:45:27.752Z"
+        "retrieved": "2026-05-03T04:05:43.845Z"
       }
     }
   }
