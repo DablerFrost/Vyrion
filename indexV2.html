@@ -1300,6 +1300,144 @@
     .explainarium-teaser { flex-wrap: wrap; }
   }
 
+
+  /* ─── LEGEND PILL (#5) ─── */
+  .legend-pill {
+    position: fixed;
+    bottom: 42px; /* sits just above ticker */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: rgba(6,13,26,0.88);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(0,229,255,0.18);
+    border-radius: 30px;
+    padding: 7px 20px;
+    pointer-events: none;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,229,255,0.05);
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    white-space: nowrap;
+  }
+  .legend-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .legend-dot.green  { background: var(--green);  box-shadow: 0 0 6px var(--green); }
+  .legend-dot.cyan   { background: var(--primary); box-shadow: 0 0 6px var(--primary); }
+  .legend-dot.red    { background: var(--red);     box-shadow: 0 0 6px var(--red); }
+  .legend-sep {
+    width: 1px; height: 14px;
+    background: rgba(0,229,255,0.15);
+    flex-shrink: 0;
+  }
+  .legend-label-green { color: var(--green); }
+  .legend-label-cyan  { color: var(--primary); }
+  .legend-label-red   { color: var(--red); }
+
+  /* ─── HOTSPOT (#2) ─── */
+  .hotspot {
+    position: absolute;
+    z-index: 50;
+    pointer-events: all;
+    cursor: none;
+  }
+  .hotspot-ring {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: rgba(0,229,255,0.18);
+    border: 1.5px solid rgba(0,229,255,0.7);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--primary);
+    box-shadow: 0 0 0 0 rgba(0,229,255,0.4);
+    animation: hotspotPulse 2s ease-out infinite;
+    transition: transform 0.2s ease;
+  }
+  .hotspot:hover .hotspot-ring {
+    transform: scale(1.15);
+    background: rgba(0,229,255,0.3);
+  }
+  @keyframes hotspotPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(0,229,255,0.5); }
+    60%  { box-shadow: 0 0 0 10px rgba(0,229,255,0); }
+    100% { box-shadow: 0 0 0 0 rgba(0,229,255,0); }
+  }
+  .hotspot-tip {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(6,13,26,0.97);
+    border: 1px solid rgba(0,229,255,0.3);
+    border-radius: 6px;
+    padding: 9px 13px;
+    width: 200px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transform: translateX(-50%) translateY(4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  }
+  .hotspot:hover .hotspot-tip,
+  .hotspot.tip-open .hotspot-tip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  .hotspot-tip::after {
+    content: '';
+    position: absolute;
+    top: 100%; left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: rgba(0,229,255,0.3);
+  }
+  .hotspot-tip-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--primary);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .hotspot-tip-body {
+    font-family: var(--font-body);
+    font-size: 11px;
+    color: var(--text-dim);
+    line-height: 1.55;
+    font-weight: 300;
+  }
+  /* Hotspot fade out after 30s */
+  .hotspot.faded {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.5s ease;
+  }
+
+  /* ─── COUNT-UP FLASH (#3) ─── */
+  @keyframes scoreCountFlash {
+    0%   { text-shadow: 0 0 60px rgba(0,229,255,0.9), 0 0 120px rgba(0,229,255,0.4); }
+    100% { text-shadow: 0 0 40px var(--primary-glow), 0 0 80px rgba(0,229,255,0.15); }
+  }
+  .score-counting {
+    animation: none !important;
+    color: var(--primary) !important;
+  }
+
   /* ─── FADE IN ANIMATION ─── */
   .fade-in {
     animation: fadeInUp 0.6s ease forwards;
@@ -1393,6 +1531,14 @@
       <div class="corner-dec tr"></div>
       <div class="corner-dec bl"></div>
 
+      <!-- HOTSPOT: Index Score -->
+      <div class="hotspot" id="hs-score" style="top:12px; right:44px;">
+        <div class="hotspot-ring">?</div>
+        <div class="hotspot-tip">
+          <div class="hotspot-tip-title">The Vyrion Index</div>
+          <div class="hotspot-tip-body">A single score (0–100) measuring Earth's overall health right now, across 8 planetary systems.</div>
+        </div>
+      </div>
       <div class="hero-label">VYRION INDEX</div>
       <div class="hero-score-row">
         <div class="hero-score" id="hero-score">71.2</div>
@@ -1444,11 +1590,28 @@
 
   <!-- ─── SYSTEMS + SIGNALS ROW ─── -->
   <div class="systems-row fade-in delay-3">
-    <div class="systems-grid" id="systems-grid">
+    <div class="systems-grid" id="systems-grid" style="position:relative;">
+      <!-- HOTSPOT: System Cards -->
+      <div class="hotspot" id="hs-systems" style="top:-10px; left:-10px;">
+        <div class="hotspot-ring">?</div>
+        <div class="hotspot-tip" style="left:20px; transform:translateX(0);">
+          <div class="hotspot-tip-title">8 Earth Systems</div>
+          <div class="hotspot-tip-body">Each card tracks one planetary system. Score + direction shows where Earth is healing or under pressure.</div>
+        </div>
+      </div>
       <!-- Rendered by JS -->
     </div>
     <div class="signal-panel">
-      <div class="signal-panel-title">LATEST SIGNALS</div>
+      <div class="signal-panel-title" style="position:relative;">
+        LATEST SIGNALS
+        <div class="hotspot" id="hs-signals" style="top:-4px; right:-8px;">
+          <div class="hotspot-ring" style="width:18px;height:18px;font-size:9px;">?</div>
+          <div class="hotspot-tip" style="right:0; left:auto; transform:translateX(0); width:190px;">
+            <div class="hotspot-tip-title">Live Signal Feed</div>
+            <div class="hotspot-tip-body">Real sensor + satellite readings updated continuously. These raw data points feed into the Vyrion Index.</div>
+          </div>
+        </div>
+      </div>
       <div id="signals-list"><!-- rendered by JS --></div>
       <a href="/signals" class="signal-cta btn-outline" style="font-size:9px;padding:6px 10px;margin-top:8px;">VIEW ALL SIGNALS →</a>
     </div>
@@ -1701,6 +1864,29 @@
     </div><!-- /xpl-body -->
   </div><!-- /xpl-modal -->
 </div><!-- /xpl-overlay -->
+
+
+<!-- ─── LEGEND PILL ─── -->
+<div class="legend-pill" id="legend-pill">
+  <div class="legend-item">
+    <div class="legend-dot green"></div>
+    <span class="legend-label-green">IMPROVING</span>
+  </div>
+  <div class="legend-sep"></div>
+  <div class="legend-item">
+    <div class="legend-dot cyan"></div>
+    <span class="legend-label-cyan">STABLE</span>
+  </div>
+  <div class="legend-sep"></div>
+  <div class="legend-item">
+    <div class="legend-dot red"></div>
+    <span class="legend-label-red">DECLINING</span>
+  </div>
+  <div class="legend-sep"></div>
+  <div class="legend-item" style="color:var(--text-faint); font-size:9px; letter-spacing:0.1em;">
+    SCORE 0–100 = EARTH HEALTH
+  </div>
+</div>
 
 <!-- ─── TICKER ─── -->
 <div class="ticker-bar">
@@ -2262,18 +2448,74 @@ function updateIndex() {
   drawChart(DATA.index.trend7d, 'trend-canvas');
 }
 
+
+// ─── COUNT-UP ON LOAD (#3) ───
+function runCountUp(targetScore) {
+  const el = document.getElementById('hero-score');
+  const markerEl = document.getElementById('scale-marker');
+  const duration = 2200; // ms
+  const startTime = performance.now();
+  const startVal = 0;
+  el.classList.add('score-counting');
+
+  function easeOutExpo(t) {
+    return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+  }
+
+  function tick(now) {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = easeOutExpo(progress);
+    const current = startVal + (targetScore - startVal) * eased;
+    el.textContent = current.toFixed(1);
+    if (markerEl) markerEl.style.left = current + '%';
+    if (progress < 1) {
+      requestAnimationFrame(tick);
+    } else {
+      el.textContent = targetScore.toFixed(1);
+      el.classList.remove('score-counting');
+      el.classList.add('pulse-green');
+      setTimeout(() => el.classList.remove('pulse-green'), 900);
+    }
+  }
+  requestAnimationFrame(tick);
+}
+
+// ─── HOTSPOT AUTO-FADE (#2) ───
+function initHotspots() {
+  const hotspots = document.querySelectorAll('.hotspot');
+  // Touch support — tap to toggle tip
+  hotspots.forEach(hs => {
+    hs.addEventListener('click', e => {
+      e.stopPropagation();
+      hs.classList.toggle('tip-open');
+    });
+  });
+  // Auto-fade after 30 seconds
+  setTimeout(() => {
+    hotspots.forEach(hs => hs.classList.add('faded'));
+  }, 30000);
+}
+
 // ─── INIT ───
 function init() {
   renderSystems();
   renderSignals();
   renderCorpCards();
   updateTicker();
+  initHotspots();
+
+  // Count-up on load — show score building to current value
+  const targetScore = DATA.index.score;
+  document.getElementById('hero-score').textContent = '0.0';
+  setTimeout(() => runCountUp(targetScore), 400);
+
   setTimeout(() => {
     drawChart(DATA.index.trend7d, 'trend-canvas');
   }, 100);
 
-  // Live updates
-  setInterval(updateIndex, 3000);
+  // Live updates — start after count-up finishes
+  setTimeout(() => setInterval(updateIndex, 3000), 2800);
 
   // Sparkline refresh
   setInterval(() => {
