@@ -140,7 +140,7 @@
     width: 32px; height: 32px;
     position: relative;
   }
-  .nav-logo-icon ico { width: 32px; height: 32px; }
+  .nav-logo-icon svg { width: 32px; height: 32px; }
   .nav-logo-text {
     display: flex;
     flex-direction: column;
@@ -1030,7 +1030,7 @@
   /* ─── MOBILE LANDSCAPE: 480–639px ─── */
   @media (max-width: 639px) {
     nav { height: 44px; padding: 0 12px; }
-    .nav-logo-icon img, .nav-logo-icon ico { width: 34px; height: 34px; }
+    .nav-logo-icon img, .nav-logo-icon svg { width: 34px; height: 34px; }
     .nav-logo-name { font-size: 14px; letter-spacing: 0.15em; }
     .nav-right { gap: 8px; }
     .live-badge span { display: none; }
@@ -1989,9 +1989,9 @@
     <circle cx="24" cy="80" r="2" fill="rgba(0,229,255,0.6)"/>
     <circle cx="136" cy="80" r="2" fill="rgba(0,229,255,0.6)"/>
   </svg>
-  <div class="cinematic-line1" id="cin-line1">VYRION EARTH SYSTEMS</div>
-  <div class="cinematic-line2" id="cin-line2">EARTH.</div>
-  <div class="cinematic-line3" id="cin-line3">RIGHT NOW. LIVE. IN REAL TIME.</div>
+  <div class="cinematic-line1" id="cin-line1">VYRION PLANETARY INTELLIGENCE</div>
+  <div class="cinematic-line2" id="cin-line2">One score. Eight interconnected Earth systems. Planetary clarity.</div>
+  <div class="cinematic-line3" id="cin-line3">VY-REE-ON — Vibration. Root. Activated. Vyrion is always ON.</div>
   <div class="cinematic-skip" id="cin-skip" onclick="skipCinematic()">SKIP ›</div>
 </div>
 
@@ -2013,9 +2013,8 @@
 <!-- ─── NAV ─── -->
 <nav>
   <a href="/" class="nav-logo">
-    <div class="nav-logo-icon" style="width:32px;height:32px;">
-      <img src="https://vyrion.earth/assets/favicon.ico" style="width:32px;height:32px;object-fit:contain;filter:drop-shadow(0 0 8px rgba(0,229,255,0.6));" alt="Vyrion Logo">
-     <div class="nav-logo-text">
+    <div class="nav-logo-icon" style="width:44px;height:44px;"><img src="https://vyrion.earth/assets/favicon.ico" style="width:44px;height:44px;object-fit:contain;filter:drop-shadow(0 0 8px rgba(0,229,255,0.6));" alt="Vyrion Logo"></div>
+    <div class="nav-logo-text">
       <span class="nav-logo-name">VYRION</span>
       <span class="nav-logo-sub">Planetary Intelligence</span>
     </div>
@@ -2146,7 +2145,7 @@
         </div>
       </div>
       <div id="signals-list"><!-- rendered by JS --></div>
-      <a href="https://vyrion.earth/atlas" class="signal-cta btn-outline" style="font-size:9px;padding:6px 10px;margin-top:8px;">VIEW THE ATLAS →</a>
+      <a href="/signals" class="signal-cta btn-outline" style="font-size:9px;padding:6px 10px;margin-top:8px;">VIEW ALL SIGNALS →</a>
     </div>
   </div>
 
@@ -3194,7 +3193,7 @@ function postCinematicInit() {
     el.style.opacity = '0';
     el.style.transform = 'translateY(10px)';
     setTimeout(() => {
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      el.style.transition = 'opacity 0.9s ease, transform 0.9s ease';
       el.style.opacity = '1';
       el.style.transform = 'translateY(0)';
     }, i * 60);
