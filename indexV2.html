@@ -1461,9 +1461,350 @@
     opacity: 0.8;
   }
   .corp-logo-icon svg { width: 28px; height: 28px; }
+
+  /* ─── #1 EARTH PULSE ─── */
+  #earth-pulse {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 2s ease;
+  }
+  #earth-pulse.active { opacity: 1; }
+
+  /* ─── #4 CINEMATIC INTRO ─── */
+  #cinematic-overlay {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    pointer-events: all;
+  }
+  #cinematic-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.2s ease;
+  }
+  .cinematic-globe {
+    width: 160px; height: 160px;
+    opacity: 0;
+    transform: scale(0.85);
+    transition: opacity 1.4s ease, transform 1.4s ease;
+    filter: drop-shadow(0 0 40px rgba(0,229,255,0.5));
+  }
+  .cinematic-globe.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .cinematic-line1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 0.55em;
+    color: rgba(0,229,255,0.7);
+    text-transform: uppercase;
+    opacity: 0;
+    margin-top: 28px;
+    transition: opacity 1s ease;
+    text-align: center;
+  }
+  .cinematic-line1.visible { opacity: 1; }
+  .cinematic-line2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 42px;
+    letter-spacing: 0.18em;
+    color: #fff;
+    opacity: 0;
+    margin-top: 6px;
+    transition: opacity 1s ease;
+    text-align: center;
+    text-shadow: 0 0 60px rgba(0,229,255,0.3);
+  }
+  .cinematic-line2.visible { opacity: 1; }
+  .cinematic-line3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: rgba(0,229,255,0.45);
+    opacity: 0;
+    margin-top: 10px;
+    transition: opacity 0.8s ease;
+    text-align: center;
+  }
+  .cinematic-line3.visible { opacity: 1; }
+  .cinematic-skip {
+    position: absolute;
+    bottom: 32px; right: 32px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.25);
+    cursor: none;
+    transition: color 0.2s ease;
+    opacity: 0;
+    animation: skipFadeIn 0.5s ease 1.5s forwards;
+  }
+  @keyframes skipFadeIn { to { opacity: 1; } }
+  .cinematic-skip:hover { color: rgba(255,255,255,0.6); }
+
+  /* ─── #8 DRILL-DOWN PANEL ─── */
+  #drilldown-panel {
+    position: fixed;
+    top: 0; right: 0;
+    width: 420px;
+    height: 100vh;
+    background: rgba(6,10,22,0.97);
+    backdrop-filter: blur(28px);
+    border-left: 1px solid rgba(0,229,255,0.15);
+    z-index: 5000;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.32, 0, 0.15, 1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  #drilldown-panel.open {
+    transform: translateX(0);
+    box-shadow: -20px 0 60px rgba(0,0,0,0.6);
+  }
+  .dd-header {
+    padding: 20px 22px 16px;
+    border-bottom: 1px solid rgba(0,229,255,0.1);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .dd-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  }
+  .dd-header-left { display: flex; align-items: center; gap: 12px; }
+  .dd-icon {
+    width: 36px; height: 36px;
+    color: var(--primary);
+    opacity: 0.9;
+    flex-shrink: 0;
+  }
+  .dd-sys-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.12em;
+    color: var(--text);
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  .dd-sys-sub {
+    font-family: var(--font-body);
+    font-size: 11px;
+    color: var(--text-dim);
+    font-weight: 300;
+    margin-top: 3px;
+  }
+  .dd-score-badge {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1;
+    letter-spacing: -1px;
+    color: var(--primary);
+    text-shadow: 0 0 24px var(--primary-glow);
+    flex-shrink: 0;
+  }
+  .dd-close {
+    position: absolute;
+    top: 16px; right: 16px;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: rgba(0,229,255,0.08);
+    border: 1px solid rgba(0,229,255,0.2);
+    color: var(--text-dim);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+    cursor: none;
+    transition: all 0.2s ease;
+    font-family: monospace;
+  }
+  .dd-close:hover {
+    background: rgba(0,229,255,0.18);
+    color: var(--primary);
+  }
+  .dd-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 18px 22px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0,229,255,0.2) transparent;
+  }
+  .dd-section-label {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    color: var(--primary);
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 8px;
+    margin-top: 18px;
+  }
+  .dd-section-label:first-child { margin-top: 0; }
+  .dd-chart-wrap {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(0,229,255,0.08);
+    border-radius: 5px;
+    padding: 4px;
+    margin-bottom: 4px;
+  }
+  .dd-status-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    padding: 10px 14px;
+    background: rgba(0,229,255,0.04);
+    border: 1px solid rgba(0,229,255,0.08);
+    border-radius: 5px;
+  }
+  .dd-status-label {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .dd-delta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-dim);
+  }
+  .dd-signal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0,229,255,0.05);
+    gap: 8px;
+  }
+  .dd-signal:last-child { border-bottom: none; }
+  .dd-signal-name {
+    font-family: var(--font-body);
+    font-size: 11px;
+    color: var(--text-dim);
+    font-weight: 300;
+    flex: 1;
+  }
+  .dd-signal-val {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text);
+    white-space: nowrap;
+  }
+  .dd-brief {
+    font-family: var(--font-body);
+    font-size: 12px;
+    line-height: 1.75;
+    color: var(--text-dim);
+    font-weight: 300;
+    padding: 12px 14px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 5px;
+    margin-top: 2px;
+  }
+  .dd-brief strong { color: var(--text); font-weight: 500; }
+  .dd-trend-label {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: var(--text-faint);
+    margin-top: 4px;
+    padding: 0 2px;
+  }
+  /* Dim system cards not selected */
+  .systems-grid.has-selection .sys-card:not(.selected) {
+    opacity: 0.45;
+    transform: none !important;
+  }
+  .sys-card.selected {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 20px rgba(0,229,255,0.2) !important;
+  }
+  /* Drilldown backdrop */
+  #dd-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 4999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  #dd-backdrop.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  @media (max-width: 768px) {
+    #drilldown-panel { width: 100vw; }
+  }
+
 </style>
 </head>
 <body>
+
+<!-- ─── #4 CINEMATIC INTRO ─── -->
+<div id="cinematic-overlay">
+  <svg class="cinematic-globe" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Outer rings -->
+    <circle cx="80" cy="80" r="76" stroke="rgba(0,229,255,0.12)" stroke-width="0.75"/>
+    <circle cx="80" cy="80" r="68" stroke="rgba(0,229,255,0.18)" stroke-width="0.5"/>
+    <!-- Main globe -->
+    <circle cx="80" cy="80" r="58" fill="rgba(0,40,100,0.6)" stroke="#00e5ff" stroke-width="1.2" opacity="0.9"/>
+    <!-- Latitude lines -->
+    <ellipse cx="80" cy="80" rx="58" ry="18" stroke="rgba(0,229,255,0.15)" stroke-width="0.5"/>
+    <ellipse cx="80" cy="80" rx="58" ry="38" stroke="rgba(0,229,255,0.1)" stroke-width="0.5"/>
+    <!-- Meridian -->
+    <line x1="80" y1="22" x2="80" y2="138" stroke="rgba(0,229,255,0.12)" stroke-width="0.5"/>
+    <line x1="22" y1="80" x2="138" y2="80" stroke="rgba(0,229,255,0.12)" stroke-width="0.5"/>
+    <!-- Orbital ring -->
+    <ellipse cx="80" cy="80" rx="76" ry="22" stroke="#00e5ff" stroke-width="1.5" opacity="0.6" transform="rotate(-30 80 80)"/>
+    <!-- Satellite orb -->
+    <circle cx="128" cy="58" r="5" fill="#00e5ff" opacity="0.9"/>
+    <circle cx="128" cy="58" r="9" stroke="rgba(0,229,255,0.3)" stroke-width="1" fill="none"/>
+    <!-- Continent blobs -->
+    <path d="M60 60 Q68 50 78 55 Q85 58 82 68 Q78 76 68 74 Q58 70 60 60Z" fill="rgba(0,200,100,0.35)"/>
+    <path d="M88 52 Q96 48 102 55 Q106 62 100 70 Q94 74 88 68 Q84 60 88 52Z" fill="rgba(0,200,100,0.28)"/>
+    <path d="M56 80 Q62 76 68 82 Q70 90 62 93 Q55 90 56 80Z" fill="rgba(0,200,100,0.22)"/>
+    <!-- Core glow -->
+    <circle cx="80" cy="80" r="20" fill="rgba(0,229,255,0.08)"/>
+    <!-- Crosshair dots -->
+    <circle cx="80" cy="24" r="2" fill="rgba(0,229,255,0.6)"/>
+    <circle cx="80" cy="136" r="2" fill="rgba(0,229,255,0.6)"/>
+    <circle cx="24" cy="80" r="2" fill="rgba(0,229,255,0.6)"/>
+    <circle cx="136" cy="80" r="2" fill="rgba(0,229,255,0.6)"/>
+  </svg>
+  <div class="cinematic-line1" id="cin-line1">VYRION EARTH SYSTEMS</div>
+  <div class="cinematic-line2" id="cin-line2">EARTH.</div>
+  <div class="cinematic-line3" id="cin-line3">RIGHT NOW. LIVE. IN REAL TIME.</div>
+  <div class="cinematic-skip" id="cin-skip" onclick="skipCinematic()">SKIP ›</div>
+</div>
+
 
 <!-- Cursor Elements -->
 <div id="cursor"></div>
@@ -1489,7 +1830,7 @@
     </div>
   </a>
 
-  <div class="nav-tabs">
+   <div class="nav-tabs">
     <a href="https://vyrion.earth/indexV2" class="nav-tab active">VYRION INDEX</a>
     <a href="https://vyrion.earth" class="nav-tab">CONSCIENCE</a>
     <a href="https://vyrion.earth/shield" class="nav-tab">SHIELD</a>
@@ -1537,7 +1878,7 @@
         <div class="hotspot-ring">?</div>
         <div class="hotspot-tip">
           <div class="hotspot-tip-title">The Vyrion Index</div>
-          <div class="hotspot-tip-body">A single score (0–100) measuring Earth's overall health right now, across 48 indicators and 8 planetary systems.</div>
+          <div class="hotspot-tip-body">A single score (0–100) measuring Earth's overall health right now, across 8 planetary systems.</div>
         </div>
       </div>
       <div class="hero-label">VYRION INDEX</div>
@@ -1866,6 +2207,46 @@
   </div><!-- /xpl-modal -->
 </div><!-- /xpl-overlay -->
 
+
+
+<!-- ─── #1 EARTH PULSE ─── -->
+<canvas id="earth-pulse"></canvas>
+
+<!-- ─── #8 DRILLDOWN BACKDROP ─── -->
+<div id="dd-backdrop" onclick="closeDrilldown()"></div>
+
+<!-- ─── #8 DRILLDOWN PANEL ─── -->
+<div id="drilldown-panel">
+  <div class="dd-header">
+    <div class="dd-header-left">
+      <div class="dd-icon" id="dd-icon"></div>
+      <div>
+        <div class="dd-sys-name" id="dd-name">SYSTEM</div>
+        <div class="dd-sys-sub" id="dd-sub">Earth Systems Intelligence</div>
+      </div>
+    </div>
+    <div class="dd-score-badge" id="dd-score">—</div>
+    <div class="dd-close" onclick="closeDrilldown()">✕</div>
+  </div>
+  <div class="dd-body">
+    <div class="dd-status-row">
+      <div class="dd-status-label" id="dd-status">—</div>
+      <div class="dd-delta" id="dd-delta">—</div>
+    </div>
+    <div class="dd-section-label">30-DAY TREND</div>
+    <div class="dd-chart-wrap">
+      <canvas id="dd-chart" height="90" style="width:100%;display:block;"></canvas>
+    </div>
+    <div class="dd-trend-label">
+      <span id="dd-trend-start">30D AGO</span>
+      <span id="dd-trend-end">TODAY</span>
+    </div>
+    <div class="dd-section-label">KEY SIGNALS</div>
+    <div id="dd-signals"></div>
+    <div class="dd-section-label">WHAT'S DRIVING THIS</div>
+    <div class="dd-brief" id="dd-brief"></div>
+  </div>
+</div>
 
 <!-- ─── LEGEND PILL ─── -->
 <div class="legend-pill" id="legend-pill">
@@ -2319,13 +2700,15 @@ function renderSystems() {
     const card = document.createElement('div');
     card.className = 'sys-card fade-in';
     card.style.animationDelay = (0.3 + idx * 0.05) + 's';
+    card.dataset.sysId = sys.id;
+    card.addEventListener('click', () => openDrilldown(sys.id));
     card.innerHTML = `
       <div class="sys-card-header">
         <div class="sys-card-left">
           <div class="sys-icon">${ICONS[sys.icon]}</div>
           <div class="sys-name">${sys.name}</div>
         </div>
-        <div class="sys-arrow">→</div>
+        <div class="sys-arrow" style="color:var(--primary);opacity:0.5;font-size:12px;">↗</div>
       </div>
       <div class="sys-score">${sys.score}</div>
       <div class="sys-status ${col}">${arrow} ${sys.status}</div>
@@ -2506,17 +2889,33 @@ function init() {
   updateTicker();
   initHotspots();
 
-  // Count-up on load — show score building to current value
-  const targetScore = DATA.index.score;
-  document.getElementById('hero-score').textContent = '0.0';
-  setTimeout(() => runCountUp(targetScore), 400);
-
   setTimeout(() => {
     drawChart(DATA.index.trend7d, 'trend-canvas');
   }, 100);
 
-  // Live updates — start after count-up finishes
-  setTimeout(() => setInterval(updateIndex, 3000), 2800);
+  const seen = localStorage.getItem(CINEMATIC_KEY);
+  if (seen) {
+    // Skip cinematic, go straight
+    document.getElementById('cinematic-overlay').style.display = 'none';
+    const targetScore = DATA.index.score;
+    document.getElementById('hero-score').textContent = '0.0';
+    setTimeout(() => runCountUp(targetScore), 300);
+    setTimeout(() => setInterval(updateIndex, 3000), 2700);
+    initEarthPulse();
+  } else {
+    // Run cinematic then init
+    runCinematic(postCinematicInit);
+  }
+
+  // Pulse direction tied to index updates
+  const _origUpdateIndex = updateIndex;
+
+  // Update pulse direction on each index change
+  const _oi = updateIndex;
+  updateIndex = function() {
+    _oi();
+    setPulseDirection(DATA.index.status);
+  };
 
   // Sparkline refresh
   setInterval(() => {
@@ -2567,6 +2966,304 @@ window.addEventListener('resize', () => {
     });
       }, 100);
 });
+
+// ══════════════════════════════════════════════════════
+// #4 CINEMATIC INTRO
+// ══════════════════════════════════════════════════════
+const CINEMATIC_KEY = 'vyrion_intro_seen_v1';
+
+function runCinematic(onComplete) {
+  const overlay  = document.getElementById('cinematic-overlay');
+  const globe    = overlay.querySelector('.cinematic-globe');
+  const line1    = document.getElementById('cin-line1');
+  const line2    = document.getElementById('cin-line2');
+  const line3    = document.getElementById('cin-line3');
+
+  // sequence
+  setTimeout(() => globe.classList.add('visible'),  300);
+  setTimeout(() => line1.classList.add('visible'),  1100);
+  setTimeout(() => line2.classList.add('visible'),  1700);
+  setTimeout(() => line3.classList.add('visible'),  2400);
+  setTimeout(() => {
+    overlay.classList.add('hidden');
+    setTimeout(() => {
+      overlay.style.display = 'none';
+      onComplete();
+    }, 1200);
+  }, 4200);
+}
+
+function skipCinematic() {
+  const overlay = document.getElementById('cinematic-overlay');
+  overlay.classList.add('hidden');
+  setTimeout(() => {
+    overlay.style.display = 'none';
+    postCinematicInit();
+  }, 600);
+}
+
+function postCinematicInit() {
+  localStorage.setItem(CINEMATIC_KEY, '1');
+  // count-up starts after cinematic
+  const targetScore = DATA.index.score;
+  document.getElementById('hero-score').textContent = '0.0';
+  setTimeout(() => runCountUp(targetScore), 300);
+  setTimeout(() => setInterval(updateIndex, 3000), 2700);
+  initEarthPulse();
+  // fade in main content
+  document.querySelectorAll('.fade-in').forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(10px)';
+    setTimeout(() => {
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, i * 60);
+  });
+}
+
+// ══════════════════════════════════════════════════════
+// #1 EARTH PULSE
+// ══════════════════════════════════════════════════════
+let pulseT = 0;
+let pulseDir = 'stabilizing'; // improving | declining | stabilizing
+let pulseAnimId = null;
+
+function initEarthPulse() {
+  const canvas = document.getElementById('earth-pulse');
+  if (!canvas) return;
+  canvas.classList.add('active');
+  canvas.width  = 600;
+  canvas.height = 600;
+  animatePulse();
+}
+
+function setPulseDirection(status) {
+  pulseDir = status.toLowerCase();
+}
+
+function animatePulse() {
+  const canvas = document.getElementById('earth-pulse');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  pulseT += 0.012;
+
+  // Breathing cycle: sin wave 0→1→0, period ~4s at 60fps
+  const breathe = (Math.sin(pulseT) + 1) / 2; // 0 to 1
+
+  // Color based on direction
+  let r, g, b;
+  if (pulseDir === 'improving') { r=0;   g=255; b=136; }
+  else if (pulseDir === 'declining') { r=255; g=60;  b=60;  }
+  else { r=0; g=200; b=255; } // stabilizing — cyan
+
+  ctx.clearRect(0, 0, 600, 600);
+
+  // Outer breath ring
+  const outerAlpha = breathe * 0.06;
+  const innerAlpha = breathe * 0.12;
+  const midRadius  = 180 + breathe * 40;
+  const outerRadius = 280 + breathe * 20;
+
+  const grad = ctx.createRadialGradient(300,300, midRadius * 0.3, 300,300, outerRadius);
+  grad.addColorStop(0,   `rgba(${r},${g},${b},${innerAlpha})`);
+  grad.addColorStop(0.5, `rgba(${r},${g},${b},${outerAlpha})`);
+  grad.addColorStop(1,   `rgba(${r},${g},${b},0)`);
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, 600, 600);
+
+  // Pulse ring — expands and fades
+  const ringR = 120 + breathe * 160;
+  const ringAlpha = (1 - breathe) * 0.18;
+  ctx.beginPath();
+  ctx.arc(300, 300, ringR, 0, Math.PI * 2);
+  ctx.strokeStyle = `rgba(${r},${g},${b},${ringAlpha})`;
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+
+  pulseAnimId = requestAnimationFrame(animatePulse);
+}
+
+// ══════════════════════════════════════════════════════
+// #8 SYSTEM DRILL-DOWN
+// ══════════════════════════════════════════════════════
+const SYSTEM_DETAIL = {
+  atmosphere: {
+    sub: 'Atmospheric composition & pressure systems',
+    signals: [
+      { name: 'CO₂ concentration',      val: '430.2 ppm', dir: 'up' },
+      { name: 'Methane (CH₄)',           val: '1,923 ppb', dir: 'up' },
+      { name: 'Ozone layer integrity',   val: '94.2%',     dir: 'down' },
+      { name: 'Aerosol optical depth',   val: '0.18',      dir: 'up' },
+    ],
+    brief: `<strong>Fossil fuel combustion</strong> continues to push CO₂ beyond pre-industrial baselines. Methane from agriculture and leaking infrastructure is accelerating warming faster than CO₂ alone. The ozone layer shows partial recovery over the poles, but tropical zones remain under pressure from industrial aerosols.`
+  },
+  ocean: {
+    sub: 'Sea temperature, chemistry & circulation',
+    signals: [
+      { name: 'Global SST anomaly',      val: '+1.2°C',   dir: 'up' },
+      { name: 'Ocean heat content',      val: 'Record',   dir: 'up' },
+      { name: 'Ocean pH (acidity)',       val: '8.04',    dir: 'down' },
+      { name: 'AMOC strength',           val: '14.2 Sv',  dir: 'down' },
+    ],
+    brief: `The ocean has absorbed over <strong>90% of excess planetary heat</strong> since industrialization. Atlantic circulation (AMOC) is weakening, threatening to destabilize European weather patterns. Ocean acidification is accelerating coral dissolution at depth — affecting food chains from the base up.`
+  },
+  biosphere: {
+    sub: 'Ecosystem health & biodiversity index',
+    signals: [
+      { name: 'Forest cover',            val: '3.88B ha', dir: 'down' },
+      { name: 'Species extinction rate', val: '1,000×',   dir: 'up' },
+      { name: 'Primary productivity',    val: '-2.1%',    dir: 'down' },
+      { name: 'Wetland extent',          val: '−35% vs 1970', dir: 'down' },
+    ],
+    brief: `Biodiversity is declining at rates <strong>1,000 times faster</strong> than natural baselines. Amazon deforestation, though slowing, has pushed ~17% of the basin past ecological tipping points. Marine biosphere shows localized recovery where fishing exclusion zones are enforced.`
+  },
+  cryosphere: {
+    sub: 'Ice sheets, glaciers & permafrost systems',
+    signals: [
+      { name: 'Arctic sea ice extent',   val: '12.4M km²', dir: 'down' },
+      { name: 'Greenland mass loss',     val: '280 Gt/yr', dir: 'up' },
+      { name: 'Antarctic ice shelf',     val: 'Stable',    dir: 'stable' },
+      { name: 'Permafrost thaw depth',   val: '+18cm',     dir: 'up' },
+    ],
+    brief: `Arctic sea ice is at historically low September minimums. Greenland is losing <strong>280 billion tonnes</strong> of ice per year — contributing directly to sea level rise. Permafrost thaw is releasing stored methane, creating a dangerous feedback loop with atmospheric warming.`
+  },
+  land: {
+    sub: 'Land use, soil health & desertification',
+    signals: [
+      { name: 'Soil organic carbon',     val: '−1.4%/yr', dir: 'down' },
+      { name: 'Arable land per capita',  val: '0.18 ha',  dir: 'down' },
+      { name: 'Desertification front',   val: '+2.1M ha', dir: 'up' },
+      { name: 'Reforestation rate',      val: '+1.2M ha', dir: 'up' },
+    ],
+    brief: `Land degradation affects <strong>3.2 billion people</strong> globally. Intensive monoculture farming is depleting topsoil at rates that take centuries to reverse naturally. Positive signals: rewilding initiatives in Europe and reforestation programs in China are beginning to register in satellite data.`
+  },
+  energy: {
+    sub: 'Energy mix, emissions & transition velocity',
+    signals: [
+      { name: 'Renewable % (global)',    val: '32.7%',     dir: 'up' },
+      { name: 'Coal consumption',        val: '−1.8%',     dir: 'down' },
+      { name: 'Solar capacity added',    val: '340 GW/yr', dir: 'up' },
+      { name: 'Energy intensity GDP',    val: '−2.1%',     dir: 'down' },
+    ],
+    brief: `The energy transition is the <strong>brightest signal in the index</strong>. Solar additions exceeded all other energy sources combined in 2024. Coal is declining in Europe and North America, though Asian demand remains elevated. The transition is accelerating faster than most 2020 models predicted.`
+  },
+  industry: {
+    sub: 'Industrial emissions, waste & material flows',
+    signals: [
+      { name: 'Industrial CO₂ share',    val: '31%',      dir: 'stable' },
+      { name: 'Cement emissions',        val: '4.1 Gt',   dir: 'up' },
+      { name: 'Circular economy rate',   val: '8.6%',     dir: 'up' },
+      { name: 'Steel green share',       val: '2.1%',     dir: 'up' },
+    ],
+    brief: `Heavy industry — steel, cement, chemicals — accounts for <strong>nearly a third of global emissions</strong> and is the hardest to decarbonize. Green hydrogen and direct electrification show early promise in steel. Circular economy uptake is growing but from a very small base.`
+  },
+  human: {
+    sub: 'Population health, equity & resilience',
+    signals: [
+      { name: 'Climate displacement',    val: '21.5M/yr', dir: 'up' },
+      { name: 'Food insecurity',         val: '733M ppl', dir: 'up' },
+      { name: 'Clean water access',      val: '73%',      dir: 'up' },
+      { name: 'Climate policy index',    val: '+3 laws',  dir: 'up' },
+    ],
+    brief: `Human systems show a <strong>widening divergence</strong> between nations. Climate displacement is accelerating fastest in sub-Saharan Africa and South Asia. Meanwhile clean water access and climate policy adoption are both improving globally — signals of institutional response, even if lagging behind physical system changes.`
+  }
+};
+
+function generate30DayTrend(baseTrend, status) {
+  const trend = [];
+  let val = baseTrend[0] - (Math.random() * 4 + 2);
+  for (let i = 0; i < 30; i++) {
+    const noise = (Math.random() - 0.48) * 0.8;
+    const drift = status === 'IMPROVING' ? 0.08 : status === 'DECLINING' ? -0.09 : 0.01;
+    val = Math.max(30, Math.min(100, val + drift + noise));
+    trend.push(val);
+  }
+  // Blend toward actual current score at end
+  const last = baseTrend[baseTrend.length - 1];
+  trend[29] = last;
+  trend[28] = (trend[27] + last) / 2;
+  return trend;
+}
+
+function openDrilldown(sysId) {
+  const sys = DATA.systems.find(s => s.id === sysId);
+  if (!sys) return;
+  const detail = SYSTEM_DETAIL[sysId] || {};
+
+  // Header
+  document.getElementById('dd-name').textContent  = sys.name.toUpperCase();
+  document.getElementById('dd-sub').textContent   = detail.sub || '';
+  document.getElementById('dd-score').textContent = sys.score.toFixed(1);
+  document.getElementById('dd-icon').innerHTML    = ICONS[sys.icon] || '';
+
+  // Status
+  const col   = STATUS_COLOR[sys.status];
+  const arrow = STATUS_ARROW[sys.status];
+  const statusEl = document.getElementById('dd-status');
+  statusEl.textContent  = arrow + ' ' + sys.status;
+  statusEl.className    = 'dd-status-label ' + col;
+  document.getElementById('dd-delta').textContent =
+    '7D AVG: ' + (sys.trend.reduce((a,b)=>a+b,0)/sys.trend.length).toFixed(1);
+
+  // 30-day chart
+  const trend30 = generate30DayTrend(sys.trend, sys.status);
+  const ddCanvas = document.getElementById('dd-chart');
+  ddCanvas.width = ddCanvas.offsetWidth * (window.devicePixelRatio || 1);
+  ddCanvas.height = 90 * (window.devicePixelRatio || 1);
+  drawChart(trend30, 'dd-chart', SPARKLINE_COLOR[sys.status],
+    SPARKLINE_COLOR[sys.status].replace('#','rgba(').replace(/([0-9a-f]{2})/gi,
+      (m,p)=>parseInt(p,16)+',').replace(/,$/, '') + '0.08)');
+
+  // Trend date labels
+  const now = new Date();
+  const d30ago = new Date(now - 29*86400000);
+  document.getElementById('dd-trend-start').textContent =
+    d30ago.toLocaleDateString('en-US',{month:'short',day:'2-digit'});
+  document.getElementById('dd-trend-end').textContent   = 'TODAY';
+
+  // Signals
+  const sigHtml = (detail.signals || []).map(s => {
+    const arrowHtml = s.dir==='up'
+      ? `<span style="color:var(--red)">↑</span>`
+      : s.dir==='down'
+        ? `<span style="color:var(--green)">↓</span>`
+        : `<span style="color:var(--primary)">→</span>`;
+    return `<div class="dd-signal">
+      <div class="dd-signal-name">${s.name}</div>
+      <div class="dd-signal-val">${s.val}</div>
+      ${arrowHtml}
+    </div>`;
+  }).join('');
+  document.getElementById('dd-signals').innerHTML = sigHtml;
+
+  // Brief
+  document.getElementById('dd-brief').innerHTML = detail.brief || '';
+
+  // Open panel
+  document.getElementById('drilldown-panel').classList.add('open');
+  document.getElementById('dd-backdrop').classList.add('open');
+
+  // Dim other cards
+  document.getElementById('systems-grid').classList.add('has-selection');
+  document.querySelectorAll('.sys-card').forEach(c => {
+    c.classList.toggle('selected', c.dataset.sysId === sysId);
+  });
+}
+
+function closeDrilldown() {
+  document.getElementById('drilldown-panel').classList.remove('open');
+  document.getElementById('dd-backdrop').classList.remove('open');
+  document.getElementById('systems-grid').classList.remove('has-selection');
+  document.querySelectorAll('.sys-card').forEach(c => c.classList.remove('selected'));
+}
+
+// Escape key closes drilldown
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeDrilldown();
+});
+
+
 </script>
 </body>
 </html>
