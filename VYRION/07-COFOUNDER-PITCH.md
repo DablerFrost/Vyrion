@@ -111,7 +111,7 @@ If after reading this document you think someone built something real and is loo
 Tyler Frost · DablerFrost
 X: @DablerFrost
 Instagram: @dablerfrost
-Live product: dablerfrost.github.io/conscience
+Live product: dablerfrost.github.io/Vyrion
 
 *The planet has a score. Now it needs the right team.*
 
