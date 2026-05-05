@@ -4,7 +4,7 @@
 ## Per-Company Score Derivation · v1.0 · March 18, 2026
 ## VYRION PBC · Open Proof Protocol
 
-**Platform:** https://dablerfrost.github.io/conscience  
+**Platform:** https://dablerfrost.github.io/Vyrion  
 **Errors:** contact@vyrion.earth → correction published within 24 hours  
 **Prior art:** github.com/dablerfrost/conscience (timestamped March 18, 2026)
 
