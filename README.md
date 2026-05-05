@@ -1,94 +1,185 @@
-# VYRION CONSCIENCE  
-## System Architecture Specification · v2.8 · April 2026  
+VYRION CONSCIENCE
 
-Live system: https://www.vyrion.earth  
-Data interface: https://www.vyrion.earth/conscience-data.html  
-Raw ledger: https://dablerfrost.github.io/Vyrion/conscience-data.json  
-Contact: contact@vyrion.earth  
+System Architecture Specification · v3.0 · May 2026
 
-> Not activism. Not reporting. Infrastructure for verifiable climate accountability.
+Live system: https://www.vyrion.earth
+Data interface: https://www.vyrion.earth/conscience-data.html
+Raw ledger: https://dablerfrost.github.io/Vyrion/conscience-data.json
+Contact: contact@vyrion.earth
 
----
+> A planetary accountability operating system built on verifiable environmental and corporate data.
 
-# 1. System Overview
 
-CONSCIENCE is a planetary-scale verification system that measures the divergence between corporate climate commitments and observed real-world outcomes.
 
-It operates as an accountability infrastructure composed of four integrated layers:
-
-- Data Acquisition Layer  
-- Scoring & Interpretation Engine  
-- Publication Layer  
-- Interface Layer  
-
-Together, these form a continuously updating accountability operating system.
 
 ---
 
-# 2. System Architecture
+1. System Overview
 
-## 2.1 Data Acquisition Layer
+CONSCIENCE is a multi-layer civic intelligence system that measures the divergence between corporate climate commitments and real-world verified outcomes.
 
-This layer ingests structured and unstructured datasets from public, verifiable sources.
+It operates as a distributed architecture composed of five functional layers:
 
-### Primary Inputs
-- NOAA GML (atmospheric CO₂ trends)  
-- NSIDC (Arctic sea ice extent)  
-- NASA EONET (global hazard events)  
-- USGS (seismic activity)  
-- SEC EDGAR (8-K / 10-K filings)  
-- CDP disclosures (corporate climate responses)  
-- SBTi registry (target validation status)  
-- InfluenceMap (lobbying alignment scores)  
-- Sabin Center (climate litigation tracking)  
-- World Bank + Open-Meteo (environmental baselines)  
+Data Layer
 
-### Function
-- Normalize heterogeneous datasets  
-- Timestamp ingestion events  
-- Maintain full source traceability  
-- Feed scoring pipeline  
+Interface Layer
+
+Publication Layer
+
+Methodology Layer
+
+Automation Layer
+
+
 
 ---
 
-## 2.2 Scoring & Interpretation Engine
+2. System Architecture
 
-This engine converts multi-source environmental and corporate signals into a unified accountability score.
+2.1 Data Layer (/data)
 
-### Output
-- CONSCIENCE Score (0–100 per company)
+The system’s source-of-truth repository.
 
-### Bands
-- BREACH (0–30)  
-- WARNING (31–60)  
-- ON TRACK (61–100)  
+Contains:
 
-### Weighted Model
+conscience-data.json (primary ledger)
 
-| Dimension | Weight | Description |
-|----------|--------|-------------|
-| Pledge Integrity | 30% | Scope, ambition, validation, deadlines |
-| CDP Performance | 25% | Corporate emissions disclosures |
-| Lobbying Alignment | 25% | Policy behavior vs climate alignment |
-| Legal Exposure | 20% | Climate-related litigation load |
+normalized environmental + corporate signals
 
-### Principle
-Scores measure **alignment between stated commitments and verified reality**, not marketing claims.
+daily updated datasets
+
+
+Purpose:
+
+Maintain immutable structured truth
+
+Feed scoring + visualization systems
+
+
 
 ---
 
-## 2.3 VYRION Index Engine
+2.2 Interface Layer (/public)
 
-A planetary health index operating in parallel with corporate scoring.
+User-facing system interfaces.
 
-### Structure
-- 0–100 composite planetary health score  
-- 8 Earth system inputs:
-  - Atmosphere  
-  - Ocean  
-  - Cryosphere  
-  - Forest systems  
-  - Biodiversity  
+Entry Points:
+
+index.html → primary system dashboard
+
+conscience.html → core scoring interface
+
+atlas.html → analytical visualization system
+
+shield.html → planetary hazard monitoring system
+
+nexan.html → identity / meta layer
+
+root.html → system routing layer
+
+
+Purpose:
+
+Real-time data visualization
+
+Multi-node system navigation
+
+Public transparency interface
+
+
+
+---
+
+2.3 Publication Layer (/record)
+
+Investigative and narrative reporting system.
+
+Includes:
+
+corporate deep-dive reports
+
+structured climate accountability publications
+
+immutable issue-based reporting
+
+
+
+---
+
+2.4 Methodology Layer (/docs/system)
+
+System definition and scoring logic.
+
+Contains:
+
+CONSCIENCE scoring methodology
+
+VYRION Index definitions
+
+legal + investability disclaimers
+
+system changelog and evolution
+
+
+
+---
+
+2.5 Automation Layer (/.github/workflows)
+
+Continuous data processing system.
+
+Functions:
+
+daily data ingestion
+
+schema validation
+
+environmental signal updates
+
+
+
+---
+
+3. Data Flow
+
+External Data Sources
+→ Automation Layer
+→ Data Layer (/data)
+→ Scoring + Interpretation
+→ Interface Layer (/public)
+→ Publication Layer (/record)
+
+
+---
+
+4. Core Principles
+
+Verifiability over estimation
+
+Transparent methodology
+
+Immutable published records
+
+Timestamped data evolution
+
+Multi-source validation
+
+
+
+---
+
+5. System Identity
+
+CONSCIENCE is not a dashboard.
+
+It is a planetary accountability operating system.
+
+Built under:
+
+VYRION PBC
+Founder: Tyler Frost (DablerFrost)
+
+I want to edit and commit now - Is this current as of now without my making further changes.  - Biodiversity  
   - Freshwater  
   - Soil  
   - Corporate accountability layer  
