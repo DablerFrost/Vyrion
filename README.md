@@ -5,7 +5,7 @@
 Live links: www.vyrion.earth · www.vyrion.earth/atlas.html · www.vyrion.earth/shield.html
 Methodology link: methodology/VYRION-METHODOLOGY-v1.0.md
 Contact: contact@vyrion.earth 
-**Data feed viewer:** https://vyrion.earth/conscience-data.html)  
+**Data feed viewer:** https://vyrion.earth/conscience-data.html
 **Raw JSON:** [dablerfrost.github.io/Vyrion/conscience-data.json](https://dablerfrost.github.io/Vyrion/conscience-data.json)
 
 > Not activism. Not a nonprofit. Accountability infrastructure.
@@ -89,6 +89,11 @@ The world's first daily investable planetary health benchmark.
 | Corporate Accountability | 4% | Daily (SEC EDGAR 8-K) |
 
 Full methodology: [VYRION-METHODOLOGY-v1.0.md](VYRION-METHODOLOGY-v1.0.md) · Prior art timestamped March 20, 2026
+
+v1.0 = formal methodology spec (stable)
+v2.8 = product iteration (UI + system features)
+
+“Methodology is versioned independently from platform releases.
 
 ---
 
@@ -205,3 +210,8 @@ conscience/
 **X / Instagram:** @DablerFrost
 
 > The planet has a score. Now it has a daily number.
+
+## Source of Truth
+Primary production: vyrion.earth
+Public mirror: GitHub Pages
+Data ledger: conscience-data.json 
