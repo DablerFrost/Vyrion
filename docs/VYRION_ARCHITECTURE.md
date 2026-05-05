@@ -81,7 +81,7 @@ A live, public, satellite-verified corporate pledge tracker. Monitors corporate 
 
 **Why it's new:** No platform publishes a live, real-time, satellite-verified comparison of corporate promise vs. performance with an immutable public audit trail. The accountability is structural, not periodic.
 
-**Status: LIVE** — dablerfrost.github.io/conscience
+**Status: LIVE** — dablerfrost.github.io/Vyrion
 
 ### VYRION RELAY
 An open data translation protocol converting any nation's environmental data format into the VYRION standard — and back. The TCP/IP of environmental data. Network effects compound as more nations adopt it.
