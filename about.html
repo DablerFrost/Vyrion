@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="VYRION PBC — Hawaii-based planetary accountability infrastructure. Building the world's first daily investable planetary health benchmark. Founded April 2026.">
+<meta property="og:title" content="VYRION PBC — About">
+<meta property="og:description" content="Hawaii-based planetary accountability infrastructure. Daily investable planetary health benchmark. Open Proof Protocol.">
+<meta property="og:url" content="https://vyrion.earth/about">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="VYRION PBC — About">
+<meta name="twitter:description" content="Hawaii-based planetary accountability infrastructure. Daily investable planetary health benchmark.">
+<link rel="canonical" href="https://vyrion.earth/about">
+<title>VYRION PBC — About</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&family=Archivo:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#020912;--void2:#061624;--void3:#0b2035;
+  --glow:#00D4FF;--amber:#FFB84D;--breach:#F03030;
+  --t1:#e4f2ff;--t2:#6a9ab8;--t3:#2d6080;
+  --border:rgba(0,212,255,.12);--border2:rgba(0,212,255,.07);
+  --nav-bg:rgba(2,9,18,.97);
+  --scanline:rgba(0,212,255,.004);
+  --pad:2rem;
+}
+[data-theme="light"]{
+  --void:#f0f5ff;--void2:#e4eeff;--void3:#d5e5ff;
+  --glow:#0066CC;--amber:#b07800;--breach:#b82020;
+  --t1:#060e1e;--t2:#1e4a7a;--t3:#3a6090;
+  --border:rgba(0,102,204,.18);--border2:rgba(0,102,204,.10);
+  --nav-bg:rgba(240,245,255,.98);
+  --scanline:transparent;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:18px}
+body{
+  background:var(--void);color:var(--t1);
+  font-family:'Archivo',sans-serif;font-size:1rem;
+  line-height:1.65;min-height:100vh;overflow-x:hidden;
+  transition:background .3s,color .3s;
+}
+body::after{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:990;
+  background:repeating-linear-gradient(0deg,transparent,transparent 3px,var(--scanline) 3px,var(--scanline) 4px);
+}
+
+/* NAV (mirrors conscience.html) */
+.nav{position:sticky;top:0;z-index:500;height:52px;display:flex;align-items:center;gap:1rem;padding:0 1.8rem;background:var(--nav-bg);border-bottom:1px solid var(--border);backdrop-filter:blur(20px);transition:background .3s,border-color .3s}
+.nav-logo{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:.95rem;color:var(--glow);letter-spacing:.15em;text-decoration:none;flex-shrink:0}
+.nav-links{display:flex;gap:1.8rem;list-style:none;flex:1}
+.nav-links a{font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--t2);text-decoration:none;transition:color .2s;padding-bottom:2px}
+.nav-links a:hover{color:var(--t1)}
+.nav-links a.active{color:var(--glow);border-bottom:1px solid rgba(0,212,255,.4)}
+.nav-controls{display:flex;align-items:center;gap:.35rem;flex-shrink:0}
+.nc-sep{width:1px;height:16px;background:var(--border);margin:0 .15rem}
+.nc-theme{font-family:'Courier Prime',monospace;font-size:.56rem;font-weight:700;letter-spacing:.1em;padding:.2rem .45rem;border-radius:2px;border:1px solid var(--border);background:transparent;color:var(--t2);cursor:pointer;transition:all .2s;white-space:nowrap}
+.nc-theme:hover,.nc-theme.active{border-color:var(--glow);color:var(--glow);background:rgba(0,212,255,.07)}
+.nav-dot{width:6px;height:6px;background:var(--glow);border-radius:50%;flex-shrink:0;animation:pdot 2.2s infinite}
+@keyframes pdot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,212,255,.5)}50%{opacity:.4;box-shadow:0 0 0 7px rgba(0,212,255,0)}}
+
+/* HEADER */
+.about-header{
+  position:relative;padding:4.6rem var(--pad) 3.4rem;
+  border-bottom:1px solid var(--border);overflow:hidden;
+  background:linear-gradient(170deg,rgba(0,212,255,.045) 0%,rgba(255,184,77,.02) 50%,transparent 100%);
+}
+.about-header::before{
+  content:'VYRION';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-family:'Archivo Narrow',sans-serif;font-weight:800;
+  font-size:clamp(8rem,18vw,16rem);color:var(--t1);opacity:.025;
+  letter-spacing:.04em;pointer-events:none;white-space:nowrap;line-height:1;
+}
+.about-header>*{position:relative;z-index:2}
+.eyebrow{font-family:'Courier Prime',monospace;font-size:.7rem;font-weight:700;letter-spacing:.22em;color:var(--glow);text-transform:uppercase;margin-bottom:.6rem;display:flex;align-items:center;gap:.6rem}
+.eyebrow .dot{width:6px;height:6px;background:var(--glow);border-radius:50%;animation:pdot 2.2s infinite}
+.page-title{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:clamp(2.6rem,5.4vw,4.2rem);line-height:1.05;letter-spacing:-.01em;color:var(--t1);margin-bottom:1.2rem}
+.page-title em{font-family:'Archivo',sans-serif;font-style:italic;font-weight:500;color:var(--glow)}
+.page-lede{font-size:1.05rem;line-height:1.6;color:var(--t2);max-width:62ch}
+.page-lede strong{color:var(--t1);font-weight:600}
+
+/* META STRIP */
+.meta-strip{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  background:linear-gradient(90deg,rgba(0,212,255,.02) 0%,transparent 100%);
+}
+.meta-cell{
+  padding:1.4rem var(--pad);
+  border-right:1px solid var(--border2);
+}
+.meta-cell:last-child{border-right:none}
+.meta-lbl{font-family:'Courier Prime',monospace;font-size:.62rem;font-weight:700;letter-spacing:.18em;color:var(--t3);text-transform:uppercase;margin-bottom:.4rem}
+.meta-val{font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:1.1rem;color:var(--t1);letter-spacing:.01em}
+.meta-sub{font-family:'Courier Prime',monospace;font-size:.62rem;color:var(--t3);margin-top:.2rem}
+
+/* SECTIONS */
+.section{padding:3.4rem var(--pad);border-bottom:1px solid var(--border)}
+.section-title{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:1.6rem;letter-spacing:.01em;color:var(--t1);margin-bottom:.4rem}
+.section-eye{font-family:'Courier Prime',monospace;font-size:.65rem;font-weight:700;letter-spacing:.22em;color:var(--glow);text-transform:uppercase;margin-bottom:.5rem}
+.section-body{max-width:72ch;color:var(--t2);font-size:1rem;line-height:1.7}
+.section-body p{margin-bottom:1rem}
+.section-body strong{color:var(--t1);font-weight:600}
+.section-body a{color:var(--glow);text-decoration:none;border-bottom:1px solid rgba(0,212,255,.25);transition:border-color .2s}
+.section-body a:hover{border-bottom-color:var(--glow)}
+
+/* TEAM */
+.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-top:1.2rem}
+.team-card{
+  border:1px solid var(--border);border-radius:6px;
+  padding:1.6rem 1.4rem;background:linear-gradient(165deg,rgba(0,212,255,.03) 0%,transparent 60%);
+  transition:border-color .2s;
+}
+.team-card:hover{border-color:rgba(0,212,255,.3)}
+.team-name{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:1.15rem;color:var(--t1);margin-bottom:.2rem}
+.team-role{font-family:'Courier Prime',monospace;font-size:.7rem;font-weight:700;letter-spacing:.13em;color:var(--glow);text-transform:uppercase;margin-bottom:.6rem}
+.team-loc{font-family:'Courier Prime',monospace;font-size:.65rem;color:var(--t3);letter-spacing:.1em;margin-bottom:.9rem}
+.team-bio{font-size:.9rem;line-height:1.6;color:var(--t2)}
+.team-bio a{color:var(--t1);text-decoration:none;border-bottom:1px solid rgba(0,212,255,.25)}
+.team-bio a:hover{color:var(--glow)}
+
+/* STACK */
+.stack-list{margin-top:1.4rem;display:grid;gap:1rem}
+.stack-row{
+  display:grid;grid-template-columns:140px 1fr auto;gap:1.2rem;align-items:start;
+  padding:1.1rem 1.2rem;
+  border:1px solid var(--border);border-radius:5px;
+  background:rgba(0,212,255,.018);
+}
+.stack-name{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:1rem;color:var(--t1);letter-spacing:.04em}
+.stack-desc{font-size:.92rem;color:var(--t2);line-height:1.55}
+.stack-status{font-family:'Courier Prime',monospace;font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .55rem;border-radius:2px;white-space:nowrap}
+.st-live{background:rgba(0,212,255,.12);color:var(--glow);border:1px solid rgba(0,212,255,.28)}
+.st-build{background:rgba(255,184,77,.10);color:var(--amber);border:1px solid rgba(255,184,77,.25)}
+.st-arch{background:rgba(74,173,255,.07);color:#4AB8FF;border:1px solid rgba(74,173,255,.22)}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:1.4rem}
+.contact-card{
+  border:1px solid var(--border);border-radius:5px;padding:1.4rem 1.2rem;
+  background:linear-gradient(160deg,rgba(0,212,255,.025) 0%,transparent 70%);
+  transition:border-color .2s,transform .2s;
+}
+.contact-card:hover{border-color:rgba(0,212,255,.35);transform:translateY(-1px)}
+.contact-eye{font-family:'Courier Prime',monospace;font-size:.62rem;font-weight:700;letter-spacing:.18em;color:var(--t3);text-transform:uppercase;margin-bottom:.5rem}
+.contact-title{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:1rem;color:var(--t1);margin-bottom:.4rem}
+.contact-body{font-size:.86rem;color:var(--t2);line-height:1.55;margin-bottom:.8rem}
+.contact-cta{font-family:'Courier Prime',monospace;font-size:.7rem;font-weight:700;letter-spacing:.12em;color:var(--glow);text-decoration:none}
+.contact-cta:hover{text-decoration:underline}
+
+/* SYNTHEKAI SIDEBAR */
+.mythos-aside{
+  margin-top:2.4rem;padding:1.4rem 1.6rem;
+  border-left:2px solid rgba(255,184,77,.4);
+  background:linear-gradient(90deg,rgba(255,184,77,.04) 0%,transparent 70%);
+  border-radius:0 4px 4px 0;
+}
+.mythos-eye{font-family:'Courier Prime',monospace;font-size:.6rem;font-weight:700;letter-spacing:.2em;color:var(--amber);text-transform:uppercase;margin-bottom:.5rem}
+.mythos-title{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:1rem;color:var(--t1);margin-bottom:.45rem;letter-spacing:.02em}
+.mythos-body{font-size:.86rem;color:var(--t2);line-height:1.6;margin-bottom:.6rem}
+.mythos-body em{font-style:italic;color:var(--t1)}
+.mythos-link{font-family:'Courier Prime',monospace;font-size:.65rem;font-weight:700;letter-spacing:.12em;color:var(--amber);text-decoration:none}
+.mythos-link:hover{text-decoration:underline}
+
+/* FOOTER */
+.footer{
+  padding:2.4rem var(--pad) 2.6rem;
+  display:grid;grid-template-columns:2fr 1fr;gap:2rem;
+  background:var(--void2);border-top:1px solid var(--border);
+  font-size:.78rem;color:var(--t3);
+}
+.footer a{color:var(--t2);text-decoration:none;transition:color .2s}
+.footer a:hover{color:var(--glow)}
+.footer-r{display:flex;flex-direction:column;gap:.5rem;align-items:flex-end;font-family:'Courier Prime',monospace;font-size:.7rem;letter-spacing:.1em}
+
+/* RESPONSIVE */
+@media (max-width:900px){
+  :root{--pad:1.2rem}
+  .meta-strip{grid-template-columns:repeat(2,1fr)}
+  .meta-cell{border-right:none;border-bottom:1px solid var(--border2)}
+  .meta-cell:nth-child(odd){border-right:1px solid var(--border2)}
+  .team-grid{grid-template-columns:1fr}
+  .stack-row{grid-template-columns:1fr;gap:.5rem}
+  .stack-status{justify-self:start}
+  .contact-grid{grid-template-columns:1fr}
+  .footer{grid-template-columns:1fr}
+  .footer-r{align-items:flex-start}
+}
+@media (max-width:640px){
+  .nav-links{display:none}
+  .page-title{font-size:2.2rem}
+  .section{padding:2.4rem 1.2rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
+  <ul class="nav-links">
+    <li><a href="https://vyrion.earth/conscience">CONSCIENCE</a></li>
+    <li><a href="https://vyrion.earth/shield">SHIELD</a></li>
+    <li><a href="https://vyrion.earth/atlas">ATLAS</a></li>
+    <li><a href="https://vyrion.earth/root">ROOT</a></li>
+    <li><a href="https://vyrion.earth/record">RECORD</a></li>
+    <li><a href="https://vyrion.earth/archive">ARCHIVE</a></li>
+    <li><a href="https://vyrion.earth/nexan">NEXAN</a></li>
+    <li><a href="https://vyrion.earth/about" class="active">ABOUT</a></li>
+  </ul>
+  <div class="nav-controls">
+    <button class="nc-theme active" id="theme-btn" onclick="toggleTheme()" title="Toggle light/dark mode">◐ DARK</button>
+  </div>
+  <div class="nav-dot"></div>
+</nav>
+
+<!-- HEADER -->
+<header class="about-header">
+  <div class="eyebrow"><span class="dot"></span>VYRION PBC · About</div>
+  <h1 class="page-title">Accountability infrastructure for <em>planetary risk</em>.</h1>
+  <p class="page-lede"><strong>VYRION</strong> is a Hawaii-based public benefit company building the world's first daily investable planetary health benchmark. We translate planetary boundary science into source-cited, auditable signals for institutional capital — every score sourced from public data, every change permanently logged, every error corrected within 24 hours of report.</p>
+</header>
+
+<!-- META STRIP -->
+<div class="meta-strip">
+  <div class="meta-cell">
+    <div class="meta-lbl">Entity</div>
+    <div class="meta-val">VYRION PBC</div>
+    <div class="meta-sub">Public Benefit Company · Planned</div>
+  </div>
+  <div class="meta-cell">
+    <div class="meta-lbl">Headquartered</div>
+    <div class="meta-val">Hilo, Hawaii</div>
+    <div class="meta-sub">USA</div>
+  </div>
+  <div class="meta-cell">
+    <div class="meta-lbl">Founded</div>
+    <div class="meta-val">April 2026</div>
+    <div class="meta-sub">Prior art: March 18, 2026</div>
+  </div>
+  <div class="meta-cell">
+    <div class="meta-lbl">Stage</div>
+    <div class="meta-val">Pre-seed · Raising</div>
+    <div class="meta-sub">Institutional inquiries open</div>
+  </div>
+</div>
+
+<!-- THESIS -->
+<section class="section">
+  <div class="section-eye">01 · Thesis</div>
+  <h2 class="section-title">Not activism. Not a nonprofit. Accountability infrastructure.</h2>
+  <div class="section-body">
+    <p>Existing ESG ratings measure what companies <em>report</em>. ISS ESG covers more than 10,000 issuers; MSCI covers more than 16,000. Both products are dominated by self-reported disclosures, and both have been the subject of repeated academic and regulatory critique for measuring intention rather than impact.</p>
+    <p>VYRION measures the <strong>gap</strong> between what companies pledge and what verifiable public data shows they are doing — across CDP disclosures, InfluenceMap lobbying alignment grades, the Sabin Center climate litigation database, the Science Based Targets initiative registry, and live SEC EDGAR regulatory filings. Every score is source-cited, every correction is published within 24 hours, and every change is permanently logged. We call this the <strong>Open Proof Protocol</strong>.</p>
+    <p>The thesis is that institutional capital does not need a better ESG <em>survey</em>. It needs a real-time, source-cited <strong>benchmark</strong> — the kind of infrastructure that climate science has never built and that the financial markets have always required to price risk.</p>
+  </div>
+</section>
+
+<!-- STACK -->
+<section class="section">
+  <div class="section-eye">02 · The Stack</div>
+  <h2 class="section-title">Four layers, two live products.</h2>
+  <div class="section-body">
+    <p>VYRION ships in layers, each independently auditable.</p>
+    <div class="stack-list">
+      <div class="stack-row">
+        <div class="stack-name">CONSCIENCE</div>
+        <div class="stack-desc">Corporate climate pledge tracker. 11 companies scored 0–100 on a four-factor framework (Pledge Quality 30 · CDP 25 · Lobbying Alignment 25 · Legal Exposure 20). Methodology v1.1 locked.</div>
+        <div class="stack-status st-live">Live</div>
+      </div>
+      <div class="stack-row">
+        <div class="stack-name">VYRION Index</div>
+        <div class="stack-desc">Daily 0–100 planetary health benchmark anchored to a pre-industrial 1850–1900 baseline. 48 indicators across 8 Earth systems (Atmosphere, Ocean, Cryosphere, Forest, Biodiversity, Freshwater, Soil, Corporate Accountability). Source: NOAA, NASA, NSIDC, Copernicus, GBIF, FAO.</div>
+        <div class="stack-status st-live">Live</div>
+      </div>
+      <div class="stack-row">
+        <div class="stack-name">Bio-Digital Twin</div>
+        <div class="stack-desc">Causal attribution engine linking corporate Scope 1–3 emissions and supply chain activity to specific planetary boundary breaches. Per-company Liability Score grounded in Steffen et al. (2015), Richardson et al. (2023), and PIK Potsdam.</div>
+        <div class="stack-status st-build">Building</div>
+      </div>
+      <div class="stack-row">
+        <div class="stack-name">Boundary-Linked Instruments</div>
+        <div class="stack-desc">API layer for Boundary-Linked Bonds, Regenerative Credits, Earth Stability Credits, and Cross-Boundary Value-at-Risk. Smart-contract triggers tied to live boundary thresholds. Architecture defined; regulatory framework pending.</div>
+        <div class="stack-status st-arch">Architecture</div>
+      </div>
+    </div>
+    <p style="margin-top:1.4rem">Full architecture: <a href="https://vyrion.earth/conscience#terminal">vyrion.earth/conscience</a> · Methodology: <a href="https://github.com/DablerFrost/Vyrion/blob/main/methodology/CONSCIENCE-METHODOLOGY.md">CONSCIENCE-METHODOLOGY.md</a> · Source: <a href="https://github.com/DablerFrost/Vyrion">github.com/DablerFrost/Vyrion</a>.</p>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section">
+  <div class="section-eye">03 · Team</div>
+  <h2 class="section-title">Founding team.</h2>
+  <div class="section-body">
+    <p>Two founders, two continents, one operating thesis: rigorous public-data accountability is the missing financial infrastructure layer of the climate transition.</p>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-name">Tyler Frost</div>
+        <div class="team-role">Founder &amp; Lead Architect</div>
+        <div class="team-loc">Hilo, Hawaii · USA</div>
+        <div class="team-bio">Architect of the VYRION stack and lead author of the CONSCIENCE and VYRION Index methodologies. Prior creative work on transmedia and AI-coauthored storytelling published as <a href="https://synthekai.lovable.app/">The Synthekai Collective</a>. GitHub: <a href="https://github.com/DablerFrost">DablerFrost</a>.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-name">Samuel Chidubem</div>
+        <div class="team-role">Node Lead — Youth Energy Transition (Nigeria)</div>
+        <div class="team-loc">Abuja, Federal Capital Territory · Nigeria</div>
+        <div class="team-bio">Initiative-Lead at <a href="https://ng.linkedin.com/in/samuel-chidubem-24622321b">Y-JET</a> (Youth For Just Energy Transition), driving grassroots clean-energy advocacy and policy formulation across Nigerian rural communities. Brings on-the-ground just-transition expertise and the African policy network to VYRION's planetary accountability framework.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="section">
+  <div class="section-eye">04 · Method</div>
+  <h2 class="section-title">Open Proof Protocol.</h2>
+  <div class="section-body">
+    <p>Every score VYRION publishes is derived from public-domain or open-license data. Every source is linked from the live platform. The methodology is versioned and locked — any change increments the version number, is committed to a public Git history (<a href="https://github.com/DablerFrost/Vyrion">github.com/DablerFrost/Vyrion</a>), and is recorded in an on-page changelog that never deletes prior entries.</p>
+    <p>If you find an error in any score, source citation, or formula, report it to <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a>. We will publish a correction within 24 hours as a permanent, timestamped entry in the Score Changelog. Original entries are never deleted; they are superseded with full attribution and dated diff.</p>
+    <p>This is the institutional credibility primitive that legacy ESG products do not have.</p>
+  </div>
+</section>
+
+<!-- CONTACT / ASKS -->
+<section class="section">
+  <div class="section-eye">05 · Contact</div>
+  <h2 class="section-title">What we are looking for.</h2>
+  <div class="section-body">
+    <p>VYRION is currently raising. We are open to conversations with mission-aligned institutional capital, climate-finance specialists, and infrastructure-stage public-benefit investors. We are also actively recruiting partners across data licensing, regulatory engagement, and quantitative research.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-eye">Capital</div>
+        <div class="contact-title">Institutional Inquiries</div>
+        <div class="contact-body">Pre-seed round open. Strategic / mission-aligned LPs, climate-tech funds, and PBC-friendly institutional capital welcome.</div>
+        <a class="contact-cta" href="mailto:contact@vyrion.earth?subject=VYRION%20PBC%20Institutional%20Inquiry">→ contact@vyrion.earth</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-eye">Data</div>
+        <div class="contact-title">Licensing &amp; API</div>
+        <div class="contact-body">Daily JSON feed, score breakdown, source citation package, and CONSCIENCE-METHODOLOGY.md license available under standard institutional terms.</div>
+        <a class="contact-cta" href="mailto:contact@vyrion.earth?subject=VYRION%20Data%20Licensing%20Inquiry">→ Licensing inquiry</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-eye">Press</div>
+        <div class="contact-title">Press &amp; Corrections</div>
+        <div class="contact-body">All correction reports and press inquiries handled at the same address. Open Proof Protocol: errors published within 24 hours.</div>
+        <a class="contact-cta" href="mailto:contact@vyrion.earth?subject=VYRION%20Press%20Inquiry">→ Press &amp; corrections</a>
+      </div>
+    </div>
+
+    <!-- SYNTHEKAI SIDEBAR -->
+    <aside class="mythos-aside">
+      <div class="mythos-eye">Note · Cultural surface</div>
+      <div class="mythos-title">On the parallel project.</div>
+      <div class="mythos-body">VYRION's founder also stewards <em>The Synthekai Collective</em> — a transmedia music-and-mythos project exploring memory, ecological recovery, and human–AI co-authorship. Synthekai and VYRION share vocabulary (<em>nodes</em>, <em>signal</em>, <em>transmission</em>) but are operationally separate: VYRION is institutional accountability infrastructure; Synthekai is a creative practice. Both are listed here for transparency about the author's full body of work.</div>
+      <a class="mythos-link" href="https://synthekai.lovable.app/" target="_blank">→ synthekai.lovable.app</a>
+    </aside>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-l">
+    VYRION PBC · About · v1.0 · May 2026<br>
+    Hawaii-based planetary accountability infrastructure · Open Proof Protocol<br>
+    Methodology: <a href="https://github.com/DablerFrost/Vyrion/blob/main/methodology/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md (v1.1)</a> ·
+    <a href="https://github.com/DablerFrost/Vyrion" target="_blank">github.com/DablerFrost/Vyrion</a><br>
+    Tyler Frost / DablerFrost · Hilo, Hawaii · Samuel Chidubem · Abuja, Nigeria
+  </div>
+  <div class="footer-r">
+    <a href="https://vyrion.earth/conscience">CONSCIENCE →</a>
+    <a href="https://vyrion.earth/conscience#terminal">TERMINAL →</a>
+    <a href="https://vyrion.earth/conscience#licensing">LICENSING →</a>
+    <a href="mailto:contact@vyrion.earth">CONTACT →</a>
+  </div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const cur = document.documentElement.getAttribute('data-theme');
+  const next = cur === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  document.getElementById('theme-btn').textContent = next === 'dark' ? '◐ DARK' : '◑ LIGHT';
+  try { localStorage.setItem('vyr_theme', next); } catch (e) {}
+}
+(function(){
+  try {
+    const saved = localStorage.getItem('vyr_theme');
+    if (saved === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+      document.getElementById('theme-btn').textContent = '◑ LIGHT';
+    }
+  } catch (e) {}
+})();
+</script>
+
+</body>
+</html>
