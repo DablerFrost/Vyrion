@@ -9,7 +9,7 @@
 VYRION CONSCIENCE is a live, public, satellite-verified corporate climate pledge tracker. It monitors corporate environmental commitments against verified satellite data and public filings in real time. Every divergence between pledge and reality is logged to the public VYRION Ledger permanently — timestamped, hashed, and immutable.
 
 **Status: LIVE**
-**URL:** dablerfrost.github.io/conscience
+**URL:** dablerfrost.github.io/Vyrion
 **Launch date:** March 18, 2026
 
 ---
@@ -97,7 +97,7 @@ Every scan result, every data ingestion, every flag is written to the immutable 
 
 **Current (v1.4):** 11 companies · 18 pledges · 24 sources · Live ledger · Hover magnifier · Font controls · Official VYRION logo + favicon + OG meta · Synthekai music player embedded
 
-**v2.0 (Month 2–3):** Real-time ESA satellite API integration · Automated CDP data ingestion · Email alert system for breach events · Dedicated /archive page at dablerfrost.github.io/conscience/archive
+**v2.0 (Month 2–3):** Real-time ESA satellite API integration · Automated CDP data ingestion · Email alert system for breach events · Dedicated /archive page at dablerfrost.github.io/Vyrion/archive
 
 **v3.0 (Month 4–6):** 50 companies · API access · VYRION Verification Badge for compliant companies · Embeddable widget for media
 
