@@ -76,7 +76,7 @@ VYRION is a platform. These are its components:
 | CONSCIENCE | vyrion.earth | Live v2.8 |
 | ATLAS | vyrion.earth/atlas.html | Live |
 | SHIELD | vyrion.earth/shield.html | Live |
-| ARCHIVE | dablerfrost.github.io/conscience/archive | Live |
+| ARCHIVE | dablerfrost.github.io/Vyrion/archive | Live |
 | ROOT | — | Planned |
 | CANOPY | — | Planned |
 | TIDE | — | Planned |
