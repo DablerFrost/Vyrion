@@ -3794,7 +3794,7 @@ window.addEventListener('scroll',oScrollCheck,{passive:true});
     </h1>
     <p class="ov-sub">Corporate climate accountability, scored against Paris Agreement 1.5°C pathways. Data sourced from CDP, InfluenceMap, Sabin Center, SBTi, and SEC EDGAR. Find an error — we publish the correction.</p>
     <div class="ov-actions">
-      <button class="ov-btn-primary" id="ov-enter" onclick="oWelcomeDismiss('enter')">→ Enter CONSCIENCE</button>
+      <button class="ov-btn-primary" id="ov-enter" onclick="oWelcomeDismiss('enter')">Enter CONSCIENCE</button>
       <button class="ov-btn-ghost" id="ov-learn" onclick="oWelcomeDismiss('learn')">View Methodology</button>
     </div>
     <div class="ov-divider"></div>
@@ -5407,20 +5407,33 @@ window.addEventListener('scroll',oScrollCheck,{passive:true});
 function oWelcomeDismiss(mode) {
   console.log("Mode:", mode);
 
-  if (mode === "enter") {
-    window.location.href = "/conscience";
-  }
+  <script>
+function oWelcomeDismiss(mode) {
 
-  if (mode === "learn") {
-    window.location.href = "/methodology";
-  }
+  // 🔒 remember user has entered system
+  sessionStorage.setItem("vyrion_entered", "true");
+
+  const overlay = document.getElementById("vyr-welcome");
+  if (overlay) overlay.classList.add("dismissed");
+
+  setTimeout(() => {
+
+    if (mode === "enter") {
+      window.location.href = "https://vyrion.earth/conscience";
+    }
+
+    if (mode === "learn") {
+      window.location.href =
+        "https://github.com/DablerFrost/Vyrion/blob/main/methodology/CONSCIENCE-METHODOLOGY.md";
+    }
+
+  }, 500);
 }
 
-// Enter key support (global listener)
-document.addEventListener("keydown", function(event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    oWelcomeDismiss("enter");
+/* 🧠 prevent overlay from reappearing on return */
+window.addEventListener("load", () => {
+  if (sessionStorage.getItem("vyrion_entered") === "true") {
+    document.getElementById("vyr-welcome")?.remove();
   }
 });
 </script>
