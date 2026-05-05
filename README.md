@@ -14,7 +14,7 @@ Contact: contact@vyrion.earth
 
 ## What This Is
 
-CONSCIENCE measures the gap between what major corporations promise on climate and what the data shows they're actually doing. Every score is source-cited. Every source is linked. Every error is published as a correction within 24 hours.
+CONSCIENCE measures the gap between what major corporations promise on climate and what the data shows they're actually doing. Every score is source-cited. Every source is linked.
 
 This is not a coverage product. ISS ESG covers 10,000+ companies. MSCI covers 16,000+. They measure what companies report. CONSCIENCE measures what companies do — pledge vs. verified reality, publicly auditable, with corrections published as they happen.
 
