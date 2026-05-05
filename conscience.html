@@ -1086,6 +1086,7 @@ body::after{
     <li><a href="https://vyrion.earth/record">RECORD</a></li>
     <li><a href="https://vyrion.earth/archive">ARCHIVE</a></li>
     <li><a href="https://vyrion.earth/nexan">NEXAN</a></li>
+    <li><a href="https://vyrion.earth/about">ABOUT</a></li>
   </ul>
   <div class="nav-controls">
     <button class="nc-theme active" id="theme-btn" onclick="toggleTheme()" title="Toggle light/dark mode">◐ DARK</button>
@@ -1138,7 +1139,7 @@ body::after{
 <div class="source-strip">
   <div class="src-badge" data-mag="src-cdp">
     <div class="src-name"><span class="dot-static"></span>CDP</div>
-    <div class="src-status">2023 public responses · A–D grades</div>
+    <div class="src-status">2023 public responses · A–F · 9 tiers</div>
     <a class="src-link" href="https://www.cdp.net/en" target="_blank">cdp.net →</a>
   </div>
   <div class="src-badge" data-mag="src-im">
@@ -1235,6 +1236,12 @@ body::after{
         <td><span class="cl-pill cl-plat">PLATFORM</span></td>
         <td>v2.8: Band counts corrected to 5/3/3. Dynamic day counter from origin 2026-03-18. updateEdgar() defined; edgarCache populated in init(). checkHash() on DOMContentLoaded. --pad:2rem added to :root. sk-wrap position:fixed. Mag z-index 9500, welcome z-index 9999. ARCHIVE links → vyrion.earth. Boundary board right column → "Progress Tracked." Side panel breach count → 5. Ring animation in init(). No score values changed.</td>
         <td><a href="https://github.com/DablerFrost/Vyrion" target="_blank" style="color:rgba(0,212,255,.35);text-decoration:none">github.com/DablerFrost/Vyrion →</a></td>
+      </tr>
+      <tr>
+        <td>2026-05-05</td><td>Methodology</td><td>v1.0</td><td>v1.1</td>
+        <td><span class="cl-pill cl-plat">METHODOLOGY</span></td>
+        <td>CDP scale resolution upgrade. v1.0's documented 4-tier table (A/B/C/D) extended to CDP's full published 9-tier scale: A=25, A−=22, B=18, B−=14, C=10, C−=7, D=4, D−=2, F=0. Codifies the A−=22 interpolation already applied to Microsoft and Unilever in v1.0's per-company derivations but not derivable from the v1.0 table. Closes that disclosure gap. F replaces the v1.0 "No response = 0" label (same value, more accurate). Every baseline company score is preserved bit-for-bit. Adds /about page with VYRION PBC entity status, founding team, and contact. No company score values changed.</td>
+        <td><a href="https://github.com/DablerFrost/Vyrion/blob/main/methodology/CONSCIENCE-METHODOLOGY.md" target="_blank" style="color:rgba(0,212,255,.35);text-decoration:none">CONSCIENCE-METHODOLOGY.md →</a></td>
       </tr>
     </tbody>
   </table>
@@ -1535,7 +1542,7 @@ body::after{
     <thead><tr><th>Factor</th><th>Max</th><th>Source</th><th>How It's Scored</th></tr></thead>
     <tbody>
       <tr><td>Pledge Quality</td><td>30</td><td>Company filings · SBTi registry</td><td>Ambition, scope (1/2/3), deadline, third-party validation</td></tr>
-      <tr><td>CDP Performance</td><td>25</td><td>CDP 2023 public responses</td><td>A=25 · B=18 · C=10 · D=4</td></tr>
+      <tr><td>CDP Performance</td><td>25</td><td>CDP 2023 public responses</td><td>A=25 · A−=22 · B=18 · B−=14 · C=10 · C−=7 · D=4 · D−=2 · F=0</td></tr>
       <tr><td>Lobbying Alignment</td><td>25</td><td>InfluenceMap profiles</td><td>A+=25 → F=0; negative for obstruction</td></tr>
       <tr><td>Legal Exposure</td><td>20</td><td>Sabin Center litigation DB</td><td>Base 20 − (0.5 × active cases); floor 0</td></tr>
     </tbody>
@@ -1545,7 +1552,7 @@ body::after{
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-l">
-    VYRION CONSCIENCE · v2.8 · April 2026<br>
+    VYRION CONSCIENCE · v2.9 · May 2026 · Methodology v1.1<br>
     Data: CDP · InfluenceMap · Sabin Center · SBTi · SEC EDGAR · All public-domain or open-license sources<br>
     Methodology: <a href="https://github.com/DablerFrost/Vyrion/blob/main/methodology/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a> ·
     <a href="https://github.com/DablerFrost/Vyrion" target="_blank">github.com/DablerFrost/Vyrion</a> ·
@@ -1555,6 +1562,7 @@ body::after{
     <a href="#terminal">TERMINAL →</a>
     <a href="#licensing">LICENSING →</a>
     <a href="#changelog">CHANGELOG →</a>
+    <a href="https://vyrion.earth/about">ABOUT →</a>
     <a href="https://vyrion.earth/shield">SHIELD →</a>
     <a href="https://vyrion.earth/archive">ARCHIVE →</a>
   </div>
@@ -1709,7 +1717,7 @@ const MAG = {
   coverage:{t:'CONSCIENCE Coverage — 11 Companies',b:'11 major corporations tracked across Oil & Gas, Aviation, Food & Beverage, Retail, and Technology. Selected for material climate pledges and significant emissions footprints. Expansion planned. Full selection criteria in CONSCIENCE-METHODOLOGY.md.',s:'VYRION CONSCIENCE · v2.8'},
   lawsuits:{t:'Total Active Climate Lawsuits',b:'Aggregate active climate litigation against the 11 tracked companies, per Sabin Center for Climate Change Law at Columbia Law School. Legal exposure = one of the four CONSCIENCE scoring factors (20 pts max). Counts refreshed monthly.',s:'Sabin Center for Climate Change Law · climatecasechart.com · Columbia Law School'},
   refresh:{t:'Auto-Refresh — Live Data',b:'CONSCIENCE refreshes on page load and every 15 minutes. Live: NOAA GML CO₂ (direct API), SEC EDGAR filing dates (data.sec.gov). Static sources (CDP, InfluenceMap, SBTi, TPI) update when annual assessments publish.',s:'NOAA GML · data.sec.gov/submissions · 15 min interval'},
-  'src-cdp':{t:'CDP — Carbon Disclosure Project',b:'World\'s largest environmental disclosure system. Companies respond annually to standardised climate questionnaires. Grades: A (Leadership) → D (Disclosure only). A requires demonstrated governance, strategy, and action — not just reporting. CDP grades are independent; companies cannot buy a better score.',s:'CDP · cdp.net/en/responses · Annual cycle · 23,000+ companies'},
+  'src-cdp':{t:'CDP — Carbon Disclosure Project',b:'World\'s largest environmental disclosure system. Companies respond annually to standardised climate questionnaires. Full 9-tier grade scale: A, A−, B, B−, C, C−, D, D−, F. A (Leadership) requires demonstrated governance, strategy, and action — not just reporting. F = failure to provide sufficient information. CONSCIENCE v1.1 maps the full 9-tier scale to scoring points (A=25, A−=22, B=18, B−=14, C=10, C−=7, D=4, D−=2, F=0). CDP grades are independent; companies cannot buy a better score.',s:'CDP · cdp.net/en/responses · Annual cycle · 23,000+ companies'},
   'src-im':{t:'InfluenceMap — Corporate Lobbying',b:'Assesses corporate engagement with climate policy including direct lobbying and trade association affiliations. A+ = strongly supportive of Paris-aligned policy. F = actively lobbying against climate legislation. Lobbying misalignment is penalised heavily in CONSCIENCE — a company cannot claim net zero while blocking the laws needed to get there.',s:'InfluenceMap · influencemap.org · Continuous · Peer-reviewed'},
   'src-sabin':{t:'Sabin Center — Climate Litigation',b:'The world\'s most comprehensive climate litigation database, maintained by Columbia Law School. CONSCIENCE tracks active cases against monitored companies. High case counts signal a pledge-vs-reality gap large enough that third parties have found it legally actionable.',s:'Sabin Center for Climate Change Law · climatecasechart.com · Columbia Law'},
   'src-sbti':{t:'SBTi — Science Based Targets',b:'SBTi validates corporate emission targets against climate science. Approved 1.5°C = the highest tier: absolute reductions across all scopes, science-aligned. "Committed" = intent filed, not yet validated. "Not committed" = no SBTi engagement at all.',s:'SBTi · sciencebasedtargets.org/companies-taking-action · CDP/UNGC/WRI/WWF'},

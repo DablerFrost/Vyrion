@@ -1,7 +1,7 @@
 [CONSCIENCE-METHODOLOGY (2).md](https://github.com/user-attachments/files/26689101/CONSCIENCE-METHODOLOGY.2.md)
 [CONSCIENCE-METHODOLOGY (1).md](https://github.com/user-attachments/files/26479064/CONSCIENCE-METHODOLOGY.1.md)
 # CONSCIENCE-METHODOLOGY.md
-## Per-Company Score Derivation · v1.0 · March 18, 2026
+## Per-Company Score Derivation · v1.1 · May 5, 2026
 ## VYRION PBC · Open Proof Protocol
 
 **Platform:** https://dablerfrost.github.io/Vyrion  
@@ -17,7 +17,7 @@ CONSCIENCE scores use a 0–100 scale computed from four weighted factors, each 
 | Factor | Max Points | Source | Scoring Logic |
 |--------|-----------|--------|---------------|
 | **Pledge Quality** | 30 | Company sustainability filings · SBTi registry | Assessed on: (1) ambition level vs 1.5°C pathway, (2) scope coverage (1/2/3), (3) target deadline, (4) third-party validation status |
-| **CDP Performance** | 25 | CDP 2023 public responses | A = 25 · B = 18 · C = 10 · D = 4 · No response = 0 |
+| **CDP Performance** | 25 | CDP 2023 public responses | A = 25 · A− = 22 · B = 18 · B− = 14 · C = 10 · C− = 7 · D = 4 · D− = 2 · F = 0 |
 | **Lobbying Alignment** | 25 | InfluenceMap corporate profiles | A+ = 25 · A = 22 · B+ = 19 · B = 16 · B- = 13 · C+ = 11 · C = 9 · C- = 7 · D+ = 5 · D = 3 · D- = 2 · F = 0. Negative scores applied where lobbying actively obstructs climate legislation. |
 | **Legal Exposure** | 20 | Sabin Center for Climate Change Law · Columbia University | Formula: Base 20 − (0.5 × active cases). Floor = 0. Adjusted upward or downward for severity of pending rulings and FTC/regulatory actions. |
 
@@ -27,7 +27,7 @@ CONSCIENCE scores use a 0–100 scale computed from four weighted factors, each 
 - **ON TRACK:** 61–100 — Verified alignment with science-based 1.5°C trajectory
 
 **Basis:** Paris Agreement 1.5°C pathways · Science Based Targets initiative criteria  
-**Score version:** v1.0 · All scores established March 18, 2026  
+**Score version:** v1.1 · CDP scale upgraded May 5, 2026 · All baseline company scores unchanged from v1.0 (March 18, 2026)  
 **Update triggers:** CDP annual cycle · SBTi registry updates · Sabin Center litigation DB · SEC EDGAR annual filings · InfluenceMap reassessments
 
 ---
@@ -384,6 +384,32 @@ Scores are updated when material new information is published in: CDP annual res
 
 ---
 
+## Version History
+
+### v1.1 · May 5, 2026 — CDP scale resolution upgrade
+CDP Performance scoring extended from a 4-tier (A/B/C/D) scale to the full CDP 9-tier published scale (A, A−, B, B−, C, C−, D, D−, F). New point values:
+
+| Grade | Points | v1.0 → v1.1 |
+|-------|--------|-------------|
+| A | 25 | unchanged |
+| A− | 22 | new tier |
+| B | 18 | unchanged |
+| B− | 14 | new tier |
+| C | 10 | unchanged |
+| C− | 7 | new tier |
+| D | 4 | unchanged |
+| D− | 2 | new tier |
+| F | 0 | replaces v1.0 "No response = 0" label (same value) |
+
+**Migration impact:** Every v1.0 baseline company score is preserved exactly. Of the 11 companies established March 18, 2026, two (Microsoft, Unilever) hold CDP grade A− and were scored at 22 / 25 in v1.0 — a value that was not derivable from the v1.0 scoring table as written (which only listed A=25, B=18, C=10, D=4) but was applied in their per-company derivations. v1.1 codifies the A−=22 interpolation that v1.0 was already using in practice, and adds the remaining B−, C−, D− tiers for completeness. All other companies hold whole-letter grades (A, B, C, D) and their scores are bit-for-bit identical between v1.0 and v1.1. The relabel of "No response" to F is cosmetic — same point value, more accurate alignment with CDP's published terminology.
+
+**Why this exists:** CDP's published grade scale is A, A−, B, B−, C, C−, D, D−, F. The v1.0 scoring table documented only 4 tiers (A/B/C/D) but the v1.0 per-company derivations for Microsoft and Unilever cited grade A− and applied the value 22, leaving the interpolation rule undocumented at the table level. v1.1 closes that disclosure gap so the methodology table matches both the CDP source documentation and the values actually applied in v1.0's company score derivations. This change is published under the Open Proof Protocol — surfaced and corrected without prompt.
+
+### v1.0 · March 18, 2026 — Initial baseline
+First published methodology. CDP simplified to 4 tiers (A=25, B=18, C=10, D=4, No response = 0). InfluenceMap, Pledge Quality, Legal Exposure formulas as documented above. 11 companies scored against Paris Agreement 1.5°C pathways. Prior art timestamped: github.com/dablerfrost/conscience.
+
+---
+
 ## Open Proof Protocol
 
 Every score in this document is source-cited. Every source is linked. If any score, data point, or source citation is incorrect, report it to contact@vyrion.earth. VYRION will publish a correction within 24 hours as a permanent, timestamped entry in the Score Changelog. No original entries are ever deleted.
@@ -392,6 +418,6 @@ Find the error. We will publish the correction.
 
 ---
 
-*CONSCIENCE-METHODOLOGY.md · v1.0 · March 18, 2026*  
+*CONSCIENCE-METHODOLOGY.md · v1.1 · May 5, 2026*  
 *VYRION PBC · Tyler Frost / DablerFrost · Hilo, Hawaii*  
-*github.com/dablerfrost/conscience*
+*github.com/DablerFrost/Vyrion · About: vyrion.earth/about*
