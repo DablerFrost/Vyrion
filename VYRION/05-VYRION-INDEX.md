@@ -81,7 +81,7 @@ Score: [X] / 100
 [One key reading]
 
 The planet has a score. Now it has a daily number.
-→ dablerfrost.github.io/conscience
+→ dablerfrost.github.io/Vyrion
 #VYRIONIndex
 ```
 
