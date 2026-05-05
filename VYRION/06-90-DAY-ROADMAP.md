@@ -50,7 +50,7 @@
 - [ ] **Day 3** — LinkedIn profile rebuilt
 - [ ] **Day 7** — File provisional patent · USPTO · $320 · "patent pending" status
 - [ ] **Day 7** — Apply for NASA Earthdata API partnership (free)
-- [ ] **Day 10** — Build dedicated /archive page at dablerfrost.github.io/conscience/archive
+- [ ] **Day 10** — Build dedicated /archive page at dablerfrost.github.io/Vyrion/archive
 - [ ] **Day 14** — VYRION Index archive — 7+ entries now visible
 - [ ] **Day 20** — Publish VYRION RELAY data standard spec v0.1 on GitHub
 - [ ] **Day 28** — Contact Tuvalu / Maldives government for SHIELD free tier offer
