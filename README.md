@@ -6,7 +6,7 @@ Live links: www.vyrion.earth · www.vyrion.earth/atlas.html · www.vyrion.earth/
 Methodology link: methodology/VYRION-METHODOLOGY-v1.0.md
 Contact: contact@vyrion.earth 
 **Data feed viewer:** https://vyrion.earth/conscience-data.html)  
-**Raw JSON:** [dablerfrost.github.io/conscience/conscience-data.json](https://dablerfrost.github.io/conscience/conscience-data.json)
+**Raw JSON:** [dablerfrost.github.io/Vyrion/conscience-data.json](https://dablerfrost.github.io/Vyrion/conscience-data.json)
 
 > Not activism. Not a nonprofit. Accountability infrastructure.
 
@@ -109,9 +109,9 @@ Full methodology: [VYRION-METHODOLOGY-v1.0.md](VYRION-METHODOLOGY-v1.0.md) · Pr
 
 ## Data Feed
 
-Human-readable viewer: [dablerfrost.github.io/conscience/conscience-data.html](https://dablerfrost.github.io/conscience/conscience-data.html)
+Human-readable viewer: [dablerfrost.github.io/Vyrion/conscience-data.html](https://dablerfrost.github.io/Vyrion/conscience-data.html)
 
-Raw JSON: [dablerfrost.github.io/conscience/conscience-data.json](https://dablerfrost.github.io/conscience/conscience-data.json)
+Raw JSON: [dablerfrost.github.io/Vyrion/conscience-data.json](https://dablerfrost.github.io/Vyrion/conscience-data.json)
 
 Contains all 11 companies · scores · bands · factor breakdowns · source URLs · EDGAR CIK links · aggregate statistics · VYRION Index metadata.
 
