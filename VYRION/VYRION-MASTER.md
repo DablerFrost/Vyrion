@@ -26,7 +26,7 @@ VYRION is a planetary accountability infrastructure company — building the wor
 
 | Asset | Status | Location |
 |---|---|---|
-| VYRION CONSCIENCE v1.4 | ✅ LIVE | dablerfrost.github.io/conscience |
+| VYRION CONSCIENCE v1.4 | ✅ LIVE | dablerfrost.github.io/Vyrion |
 | Official VYRION Logo | ✅ LOCKED | 4 assets · March 19, 2026 |
 | VYRION Index Day 1 | ✅ PUBLISHED | 41.3/100 · March 18, 2026 |
 | VYRION Index Day 2 | ✅ PUBLISHED | 41.2/100 · March 19, 2026 |
@@ -89,7 +89,7 @@ VYRION is architecture without promises. The data speaks. The ledger records. Th
 **GitHub:** github.com/dablerfrost
 **X:** @DablerFrost
 **Instagram:** @dablerfrost
-**Live product:** dablerfrost.github.io/conscience
+**Live product:** dablerfrost.github.io/Vyrion
 
 ---
 
