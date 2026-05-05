@@ -65,7 +65,7 @@ The following are the intellectual property of VYRION PBC:
 - VYRION Index daily composite scores
 - CONSCIENCE company scores and band classifications
 - Factor breakdowns and derived analytics
-- Platform design, code, and presentation layer (dablerfrost.github.io/conscience)
+- Platform design, code, and presentation layer (dablerfrost.github.io/Vyrion)
 
 Prior art is established by GitHub commit timestamps beginning March 18, 2026.
 
