@@ -1,328 +1,247 @@
-VYRION CONSCIENCE
+[README (3).md](https://github.com/user-attachments/files/27416740/README.3.md)
+# VYRION CONSCIENCE
+**System Architecture Specification · v3.0 · May 2026**
 
-System Architecture Specification · v3.0 · May 2026
-
-Live system: https://www.vyrion.earth
-Data interface: https://www.vyrion.earth/conscience-data.html
-Raw ledger: https://dablerfrost.github.io/Vyrion/conscience-data.json
+Live system: https://www.vyrion.earth  
+Data interface: https://www.vyrion.earth/conscience-data.html  
+Raw ledger: https://dablerfrost.github.io/Vyrion/conscience-data.json  
 Contact: contact@vyrion.earth
 
 > A planetary accountability operating system built on verifiable environmental and corporate data.
 
-
-
-
 ---
 
-1. System Overview
+## 1. System Overview
 
 CONSCIENCE is a multi-layer civic intelligence system that measures the divergence between corporate climate commitments and real-world verified outcomes.
 
 It operates as a distributed architecture composed of five functional layers:
 
-Data Layer
-
-Interface Layer
-
-Publication Layer
-
-Methodology Layer
-
-Automation Layer
-
-
+1. Data Layer  
+2. Scoring & Index Layer  
+3. Publication Layer  
+4. Interface Layer  
+5. Automation Layer
 
 ---
 
-2. System Architecture
+## 2. System Architecture
 
-2.1 Data Layer (/data)
+### 2.1 Data Layer (`/data`)
 
-The system’s source-of-truth repository.
+The system's source-of-truth repository.
 
-Contains:
+**Contents:**
+- `conscience-data.json` — primary corporate accountability ledger
+- Normalized environmental and corporate signals
+- Daily-updated datasets from public-domain sources
 
-conscience-data.json (primary ledger)
-
-normalized environmental + corporate signals
-
-daily updated datasets
-
-
-Purpose:
-
-Maintain immutable structured truth
-
-Feed scoring + visualization systems
-
-
+**Purpose:**
+- Maintain immutable structured truth
+- Feed scoring, index, and visualization systems
 
 ---
 
-2.2 Interface Layer (/public)
+### 2.2 Scoring & Index Layer
 
-User-facing system interfaces.
+**CONSCIENCE — Corporate Accountability Engine**
 
-Entry Points:
+Scores 11 major corporations against Paris Agreement 1.5°C pathways.  
+Derived from four public data sources cross-referenced against independent registries:
 
-index.html → primary system dashboard
+| Factor | Max Points | Source |
+|---|---|---|
+| Pledge Quality | 30 | Company filings · SBTi registry |
+| CDP Performance | 25 | CDP annual public responses |
+| Lobbying Alignment | 25 | InfluenceMap public profiles |
+| Legal Exposure | 20 | Sabin Center · Columbia Law |
 
-conscience.html → core scoring interface
+**Band classification (locked vocabulary):**
 
-atlas.html → analytical visualization system
+| Band | Score Range |
+|---|---|
+| BREACH | 0 – 30 |
+| WARNING | 31 – 60 |
+| ON TRACK | 61 – 100 |
 
-shield.html → planetary hazard monitoring system
-
-nexan.html → identity / meta layer
-
-root.html → system routing layer
-
-
-Purpose:
-
-Real-time data visualization
-
-Multi-node system navigation
-
-Public transparency interface
-
-
+Current distribution: **5 BREACH · 3 WARNING · 3 ON TRACK**
 
 ---
 
-2.3 Publication Layer (/record)
+**VYRION Index — Planetary Health Benchmark**
 
-Investigative and narrative reporting system.
+The world's first daily investable planetary health score.  
+Computed across 8 Earth systems, 48 indicators, against a pre-industrial 1850–1900 baseline of 100/100.
 
-Includes:
+| Earth System | Weight |
+|---|---|
+| Atmosphere | 22% |
+| Ocean | 18% |
+| Ice | 14% |
+| Forest | 13% |
+| Biodiversity | 12% |
+| Freshwater | 10% |
+| Soil | 7% |
+| Corporate Accountability | 4% |
 
-corporate deep-dive reports
-
-structured climate accountability publications
-
-immutable issue-based reporting
-
-
-
----
-
-2.4 Methodology Layer (/docs/system)
-
-System definition and scoring logic.
-
-Contains:
-
-CONSCIENCE scoring methodology
-
-VYRION Index definitions
-
-legal + investability disclaimers
-
-system changelog and evolution
-
-
+**Formula:** `S_final = Σ(W_i × S_i)`  
+**Uncertainty:** ±1.8 points propagated. Minimum detectable change: ±0.5 points.  
+**Current score:** 41.2 ± 1.8 / 100
 
 ---
 
-2.5 Automation Layer (/.github/workflows)
-
-Continuous data processing system.
-
-Functions:
-
-daily data ingestion
-
-schema validation
-
-environmental signal updates
-
-
-
----
-
-3. Data Flow
-
-External Data Sources
-→ Automation Layer
-→ Data Layer (/data)
-→ Scoring + Interpretation
-→ Interface Layer (/public)
-→ Publication Layer (/record)
-
-
----
-
-4. Core Principles
-
-Verifiability over estimation
-
-Transparent methodology
-
-Immutable published records
-
-Timestamped data evolution
-
-Multi-source validation
-
-
-
----
-
-5. System Identity
-
-CONSCIENCE is not a dashboard.
-
-It is a planetary accountability operating system.
-
-Built under:
-
-VYRION PBC
-Founder: Tyler Frost (DablerFrost)
-
-I want to edit and commit now - Is this current as of now without my making further changes.  - Biodiversity  
-  - Freshwater  
-  - Soil  
-  - Corporate accountability layer  
-
-### Output
-- Daily planetary health score  
-- Uncertainty range (±)  
-- Trend delta over time  
-
----
-
-## 2.4 Publication Layer
+### 2.3 Publication Layer (`/record`)
 
 Converts structured outputs into forensic-grade reporting.
 
-### Components
+**The Record**
+- Weekly corporate deep-dive reports (published Wednesdays)
+- Evidence-backed narrative analysis
+- Source-linked findings
+- Immutable publication format — never overwritten, only appended
 
-#### The Record
-- Weekly corporate deep-dive reports  
-- Evidence-backed narrative analysis  
-- Source-linked findings  
-- Immutable publication format  
+**Archive System**
+- Time-series snapshots of VYRION Index
+- Daily historical logs via ATLAS
+- Reconstructable dataset history
 
-#### Archive System
-- Time-series snapshots of VYRION Index  
-- Daily historical logs  
-- Reconstructable dataset history  
-
-#### Methodology Layer
-- Versioned scoring definitions  
-- Indicator-level documentation  
-- System evolution tracking  
+**Methodology Layer (`/docs/system`)**
+- Versioned scoring definitions
+- Indicator-level documentation
+- System evolution tracking
 
 ---
 
-## 2.5 Interface Layer
+### 2.4 Interface Layer (`/public`)
 
 User-facing transparency and exploration system.
 
-### Interfaces
+| Interface | File | Purpose |
+|---|---|---|
+| CONSCIENCE Dashboard | `conscience.html` | Live scores, risk bands, portfolio analysis |
+| ATLAS | `atlas.html` | Daily planetary intelligence record. 8 Earth system cards, 5 live API feeds. The authoritative daily record. |
+| SHIELD | `shield.html` | 14-day global hazard monitoring — seismic, wildfire, flood, volcanic, severe storm |
+| ROOT | `root.html` | Core system routing and state orchestration layer — governs module navigation, session flow, and OS-level transitions |
+| NEXAN | `nexan.html` | Identity and context layer — manages system presence, entity mapping, and cross-module coherence within VYRION OS |
+| Data Viewer | `conscience-data.html` | Human-readable structured JSON feed |
+| Primary Entry | `index.html` | System dashboard and navigation |
 
-- CONSCIENCE Dashboard  
-  Live scores, risk bands, portfolio analysis  
+### 2.5 Automation Layer (`/.github/workflows`)
 
-- Data Viewer  
-  Human-readable structured JSON feed  
+Continuous data processing system.
 
-- SHIELD Module  
-  Earth hazard monitoring (seismic, wildfire, flood, volcanic)  
+**Schedules:**
+- `conscience-daily.yml` — runs `fetch-conscience-data.js`, triggers 00:00 and 12:00 UTC
+- `shield-update.yml` — runs `fetch-shield-data.js`, triggers 00:00 and 12:00 UTC
 
-- Index Viewer  
-  Planetary health tracking and trends  
-
----
-
-# 3. Data Flow
-
-External Data Sources  
-        ↓  
-Data Acquisition Layer  
-        ↓  
-Normalization + Timestamping  
-        ↓  
-Scoring & Index Engines  
-        ↓  
-Validated Outputs  
-        ↓  
-Publication Layer  
-        ↓  
-Interface Layer
+**Functions:**
+- Daily data ingestion from NOAA, NASA EONET, USGS, GBIF, Open-Meteo Marine
+- Schema validation and normalization
+- Environmental signal updates to `data/shield-snapshot.json` with live API fallback
 
 ---
 
-# 4. Core Principles
+## 3. Data Flow
 
-## 4.1 Verifiability First
-Every output must trace back to public, auditable sources.
-
-## 4.2 No Hidden Modelling
-All transformations are explicit and reproducible.
-
-## 4.3 Immutable Publication
-Published records are never overwritten—only appended with corrections.
-
-## 4.4 Dual-System Validation
-Corporate self-reporting is cross-referenced with independent datasets.
-
-## 4.5 Time-Aware Scoring
-All outputs are timestamped to reflect system state at time of computation.
-
----
-
-# 5. System Outputs
-
-### Primary Outputs
-- CONSCIENCE corporate scores  
-- VYRION planetary index  
-- Risk band classification  
-- Legal exposure mapping  
-- Capital allocation trajectory signals  
-
-### Secondary Outputs
-- Audit packs (source bundles)  
-- Change detection logs  
-- Portfolio risk aggregation  
-- Historical reconstruction archives  
+```
+External Data Sources (NOAA · NASA · USGS · GBIF · SEC EDGAR · CDP · InfluenceMap · Sabin)
+        ↓
+Automation Layer (GitHub Actions · 00:00 + 12:00 UTC)
+        ↓
+Data Layer (/data — conscience-data.json · shield-snapshot.json)
+        ↓
+Scoring & Index Engines (CONSCIENCE · VYRION Index)
+        ↓
+Validated Outputs (scores · bands · index · hazard levels)
+        ↓
+Publication Layer (/record — The Record · Archive · Methodology)
+        ↓
+Interface Layer (/public — CONSCIENCE · ATLAS · SHIELD · Data Viewer)
+```
 
 ---
 
-# 6. Repository Architecture (Conceptual)
+## 4. Core Principles
 
-This repository operates as a multi-layer system:
+**4.1 Verifiability First**  
+Every output traces back to public, auditable sources. No proprietary or estimated data enters the scoring pipeline.
 
-- `src/` → Core execution logic (pipelines, engines)  
-- `data/` → Raw + processed datasets  
-- `public/` → Interface layer (dashboards, UI)  
-- `record/` → Published investigative reports  
-- `archive/` → Historical time-series system  
-- `docs/` → Methodology + system specification  
+**4.2 No Hidden Modelling**  
+All transformations are explicit and reproducible. Full methodology published at `/docs/system`.
+
+**4.3 Immutable Publication**  
+Published records are never overwritten — only appended with corrections. Timestamps are preserved.
+
+**4.4 Dual-System Validation**  
+Corporate self-reporting is cross-referenced against independent datasets (CDP, InfluenceMap, Sabin Center, SBTi registry, SEC EDGAR).
+
+**4.5 Time-Aware Scoring**  
+All outputs are timestamped to reflect system state at time of computation. Day count computed dynamically from March 18, 2026 origin.
 
 ---
 
-# 7. Open Proof Protocol
+## 5. System Outputs
+
+**Primary Outputs**
+- CONSCIENCE corporate scores (0–100 · BREACH / WARNING / ON TRACK)
+- VYRION planetary index (daily · 0–100 · ±1.8 uncertainty)
+- Risk band classification
+- Legal exposure mapping (Sabin Center case counts)
+- Capital allocation trajectory signals
+
+**Secondary Outputs**
+- Audit packs (source bundles per company)
+- Change detection logs
+- Portfolio risk aggregation (stress tester)
+- Historical reconstruction archives
+
+---
+
+## 6. Repository Architecture
+
+```
+/
+├── public/          → Interface layer (dashboards, UI)
+│   ├── index.html
+│   ├── conscience.html
+│   ├── atlas.html
+│   └── shield.html
+├── data/            → Raw + processed datasets
+│   ├── conscience-data.json
+│   └── shield-snapshot.json
+├── record/          → Published investigative reports (The Record)
+├── archive/         → Historical time-series system
+├── docs/
+│   └── system/      → Methodology + system specification
+└── .github/
+    └── workflows/   → Automation layer (CI/CD + data pipelines)
+```
+
+**Backend intelligence layer:** [`vyrion-core`](https://github.com/dablerfrost/vyrion-core) — private scoring engine, data ingestion pipelines, and internal API.
+
+---
+
+## 7. Open Proof Protocol
 
 All outputs are continuously verifiable.
 
 If an error is identified:
+- It is publicly logged
+- A correction is appended (never overwritten)
+- Timestamp is preserved
+- Source trace is updated
 
-- It is publicly logged  
-- A correction is appended (never overwritten)  
-- Timestamp is preserved  
-- Source trace is updated  
-
-> “Find the error. The system will correct itself.”
+> "Find the error. We will publish the correction."
 
 ---
 
-# 8. System Identity
+## 8. System Identity
 
-CONSCIENCE is a real-time accountability infrastructure for climate-relevant corporate behavior.
+CONSCIENCE is not a dashboard.
 
-Built under:
+It is a real-time accountability infrastructure for climate-relevant corporate behavior — a planetary accountability operating system built on verifiable public data.
 
 **VYRION PBC**  
 Planetary Systems Intelligence Layer  
-Founder: Tyler Frost (DablerFrost)
+Founder: Tyler Frost / DablerFrost  
+Hilo, Hawaii · vyrion.earth
