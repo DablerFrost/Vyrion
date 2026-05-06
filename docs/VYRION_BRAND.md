@@ -72,15 +72,15 @@ VYRION is a platform. These are its components:
 | Module | URL | Status |
 |---|---|---|
 | CONSCIENCE | vyrion.earth | Live v2.8 | Corporate Climate Pledge Verification |
-| SHIELD | vyrion.earth/shield.html | Live | Module - 01 |
-| ATLAS | vyrion.earth/atlas.html | Live | Module - 02 |
-| ROOT | — | vyrion.earth/root.html | Live | Module - 03 |
-| FLUX | — | Planned | Live | Module - 04 |
-| CANOPY | — | Planned | Module - 05 |
-| TIDE | — | Planned | Module - 06 |
-| LOOP | — | Planned | Module - 07 |
-| PULSE | — | Planned | Module - 08 |
-| ARCHIVE | dablerfrost.github.io/Vyrion/archive | Live | Permanent Public Record |
+| SHIELD | vyrion.earth/shield | Live | Module - 01 |
+| ATLAS | vyrion.earth/atlas | Live | Module - 02 |
+| ROOT | vyrion.earth/root | Live | Module - 03 |
+| FLUX | Planned | Live | Module - 04 |
+| CANOPY | Planned | Module - 05 |
+| TIDE | Planned | Module - 06 |
+| LOOP | Planned | Module - 07 |
+| PULSE | Planned | Module - 08 |
+| ARCHIVE | vyrion.earth/archive | Live | Permanent Public Record |
 
 Social media is not a module. It is an external broadcast channel.
 
