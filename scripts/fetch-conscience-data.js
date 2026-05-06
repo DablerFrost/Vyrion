@@ -289,7 +289,8 @@ async function fetchWorldBankCO2() {
 // ─────────────────────────────────────────────────────────────────────────────
 async function fetchNOAAClimateContext() {
   // NOAA provides global temperature anomaly CSV
-  const url = 'https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/global/time-series/globe/land_ocean/ytd/1/2024.csv';
+ const currentYear = new Date().getFullYear();
+const url = `https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/global/time-series/globe/land_ocean/ytd/1/${currentYear}.csv`;
   const r = await safeFetch(url, 'NOAA Global Temp Anomaly');
   if (!r) return null;
 
