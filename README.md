@@ -1,10 +1,10 @@
-[README (4).md](https://github.com/user-attachments/files/27423035/README.4.md)
+[README (5).md](https://github.com/user-attachments/files/27423652/README.5.md)
 # VYRION CONSCIENCE
-**Planetary Accountability Infrastructure · v3.0 · May 2026**
+**Planetary Accountability Infrastructure · v3.1 · May 2026**
 
 Live platform: [vyrion.earth](https://www.vyrion.earth)  
 Data interface: [vyrion.earth/conscience-data.html](https://www.vyrion.earth/conscience-data.html)  
-Raw ledger: [conscience-data.json](https://dablerfrost.github.io/Vyrion/conscience-data.json)  
+Raw ledger: [conscience-data.json](https://www.vyrion.earth/conscience-data.json)  
 Contact: contact@vyrion.earth
 
 > The world's first daily investable planetary health benchmark.
@@ -15,12 +15,15 @@ Contact: contact@vyrion.earth
 
 VYRION is a planetary accountability operating system built on verifiable public data. It measures the divergence between corporate climate commitments and real-world verified outcomes, and publishes a daily 0–100 planetary health score computed across 8 Earth systems.
 
-This repository is the live infrastructure for two public-facing systems:
+This repository is the live infrastructure for five public-facing systems ( 8 to be total ):
 
 - **CONSCIENCE** — corporate pledge verification engine. 11 companies scored against Paris Agreement 1.5°C pathways.
 - **VYRION Index** — daily planetary health benchmark. 48 indicators. 8 Earth systems. Pre-industrial baseline = 100/100.
+- **SHIELD** — 14-day global hazard monitor. Seismic, wildfire, storm, flood, and volcanic event tracking.
+- **ATLAS** — The VYRION Index backbone. 8 Earth systems, 48 indicators, scored against the pre-industrial 1850–1900 baseline. This is where the number comes from.
+- **ROOT** — converts multi-source licensed Earth observation data into a verified, time-series model of soil stability, agricultural system behavior, land degradation velocity, water–soil interaction, and regenerative land recovery.
 
-Both are live and publicly accessible. Both update daily via automated pipelines.
+All three are live and publicly accessible. Data pipelines update daily via automated GitHub Actions.
 
 ---
 
@@ -28,35 +31,85 @@ Both are live and publicly accessible. Both update daily via automated pipelines
 
 ```
 /
-├── index.html              → CONSCIENCE dashboard (live · vyrion.earth)
+├── index.html              → System dashboard · primary entry point
+├── conscience.html         → CONSCIENCE corporate pledge tracker (live)
 ├── atlas.html              → ATLAS planetary intelligence record (live)
 ├── shield.html             → SHIELD 14-day hazard monitor (live)
+├── about.html              → About VYRION PBC
+├── nexan.html              → The Nexan Institute
+├── root.html               → ROOT module
+├── conscience-data.html    → Human-readable structured data viewer
 ├── conscience-data.json    → Primary corporate accountability ledger (live feed)
-├── conscience-data.html    → Human-readable data viewer (live)
+├── manifest.json           → PWA manifest
+├── package.json            → Node.js config · ESM ("type": "module")
+├── CNAME                   → Custom domain · vyrion.earth
 │
-├── archive/                → Time-series Index history. Immutable — never overwritten.
-│   └── index.html
+├── scripts/                → Data fetch scripts (executed by GitHub Actions)
+│   ├── fetch-conscience-data.js
+│   ├── fetch-shield-data.js
+│   └── validate-schema.js
 │
-├── record/                 → The Record. Weekly investigative reports.
+├── assets/                 → Static assets
+│   ├── logo.png
+│   ├── favicon.ico
+│   └── vyrion-config.js
+│
+├── includes/               → Shared UI components
+│   ├── header.html
+│   ├── floating-orb.html
+│   ├── floating-orb-styles.css
+│   ├── QUICK-START.md
+│   └── ORBRINTEGRATION-GUIDE.md
+│
+├── data/                   → Live data snapshots
+│   └── shield-snapshot.json    → SHIELD hazard cache · updated 00:10 + 12:10 UTC
+│
+├── archive/                → VYRION Index history · immutable · never overwritten
 │   ├── index.html
-│   ├── issue-001/          → BP
-│   ├── issue-002/          → ExxonMobil
-│   └── issue-003/          → Shell
+│   ├── 2026-03-20.md
+│   ├── 2026-03-21.md
+│   ├── 2026-03-22.md
+│   ├── 2026-03-23.md
+│   ├── 2026-03-24.md
+│   ├── 2026-03-25.md
+│   └── 2026-03-26.md
 │
-├── data/                   → Raw + processed datasets
-│   └── shield-snapshot.json
+├── record/                 → The Record · weekly investigative reports
+│   ├── index.html
+│   ├── issue-001.html      → BP
+│   ├── issue-002.html      → ExxonMobil
+│   ├── issue-003.html      → Shell
+│   ├── issue-004.html      → Delta Air Lines
+│   ├── issue-005.html      → Starbucks
+│   ├── issue-006.html      → Walmart
+│   └── issue-007.html      → Meta
 │
-├── docs/
-│   └── system/             → Methodology, scoring definitions, governance
-│       ├── VYRION-METHODOLOGY-v1.0.md
-│       ├── CONSCIENCE-METHODOLOGY.md
-│       ├── VYRION-MASTER.md
-│       └── VYRION-INDEX.md
+├── docs/                   → Documentation and governance
+│   ├── system/             → Methodology, scoring definitions, brand, legal
+│   │   ├── 01-BRAND-ARCHITECTURE.md
+│   │   ├── CHANGELOG.md
+│   │   ├── CONSCIENCE-METHODOLOGY.md
+│   │   ├── INVESTABLE-DISCLAIMER.md
+│   │   ├── METHODOLOGY-ENDORSEMENTS.md
+│   │   ├── VYRION-INDEX.md
+│   │   └── VYRION-METHODOLOGY-v1.0.md
+│   ├── VYRION_ARCHITECTURE.md
+│   ├── VYRION_BRAND.md
+│   └── VYRION_DAILY_TEMPLATE.md
+│
+├── VYRION/                 → Business architecture documents
+│   ├── VYRION-MASTER.md
+│   ├── 02-BUSINESS-MODEL.md
+│   ├── 03-DEFENSE-ARCHITECTURE.md
+│   ├── 04-CONSCIENCE-MODULE.md
+│   ├── 05-VYRION-INDEX.md
+│   ├── 06-90-DAY-ROADMAP.md
+│   └── 07-COFOUNDER-PITCH.md
 │
 └── .github/
     └── workflows/          → Automation layer
-        ├── conscience-daily.yml    → 00:00 + 12:00 UTC
-        └── shield-update.yml       → 00:00 + 12:00 UTC
+        ├── conscience-daily.yml    → 00:05 UTC daily
+        └── shield-update.yml       → 00:10 + 12:10 UTC daily
 ```
 
 ---
@@ -110,14 +163,37 @@ Full methodology: [`docs/system/VYRION-METHODOLOGY-v1.0.md`](docs/system/VYRION-
 
 ---
 
+## SHIELD
+
+14-day global hazard monitor. Five hazard categories tracked in real time.
+
+| Hazard | Source | Update Cadence |
+|---|---|---|
+| Seismic (M4.5+) | USGS Earthquake Hazards | Continuous |
+| Wildfire | NASA EONET | Continuous |
+| Severe Storm | NASA EONET | Continuous |
+| Flood | NASA EONET | Continuous |
+| Volcanic | NASA EONET | Continuous |
+
+**Threat Algorithm v1.1:** M4.5–5.4 excluded as background seismicity.  
+**Thresholds:** NOMINAL <2 · WATCH 2–6 · ELEVATED 7–14 · CRITICAL 15+
+
+Snapshot cached at `data/shield-snapshot.json` — updated twice daily by `shield-update.yml`. Live APIs are the primary source; snapshot serves as immediate-load fallback.
+
+---
+
 ## Automation
 
-Two GitHub Actions pipelines run on a fixed schedule:
+Two GitHub Actions pipelines run on fixed schedules.
 
 | Workflow | Schedule | Function |
 |---|---|---|
-| `conscience-daily.yml` | 00:00 + 12:00 UTC | Fetches NOAA, SEC EDGAR, CDP signals. Updates `conscience-data.json`. |
-| `shield-update.yml` | 00:00 + 12:00 UTC | Fetches USGS, NASA EONET. Updates `data/shield-snapshot.json` with live API fallback. |
+| `conscience-daily.yml` | 00:05 UTC daily | Fetches NOAA CO₂, SEC EDGAR (11 companies), Open-Meteo ERA5, World Bank emissions. Updates `conscience-data.json`. |
+| `shield-update.yml` | 00:10 + 12:10 UTC | Fetches USGS M4.5+ seismic feed, NASA EONET (wildfire, storm, flood, volcanic). Computes threat level. Updates `data/shield-snapshot.json`. |
+
+SHIELD runs twice daily — seismic and hazard data changes throughout the day.  
+CONSCIENCE runs once daily — source data (CDP, SBTi, InfluenceMap, EDGAR) does not update intraday.  
+On fetch failure, both scripts fall back to the previous snapshot rather than writing empty data.
 
 ---
 
@@ -132,6 +208,8 @@ Weekly investigative reports published every Wednesday. Each issue profiles one 
 | 003 | Shell | April 1, 2026 |
 | 004 | Delta Air Lines | April 8, 2026 |
 | 005 | Starbucks | April 15, 2026 |
+| 006 | Walmart | April 22, 2026 |
+| 007 | Meta | April 29, 2026 |
 
 ---
 
@@ -145,7 +223,8 @@ All data is public-domain or open-license. No proprietary data enters the scorin
 | NASA EONET | Live API | SHIELD · ATLAS |
 | USGS Earthquake Hazards | Live API | SHIELD |
 | GBIF | Live API | Index · Biodiversity |
-| Open-Meteo Marine | Live API | Index · Ocean |
+| Open-Meteo ERA5 | Live API | Index · Atmosphere |
+| World Bank Open Data | Annual API | Index · Emissions |
 | CDP | Annual public responses | CONSCIENCE |
 | InfluenceMap | Continuous public profiles | CONSCIENCE |
 | Sabin Center | Litigation database | CONSCIENCE |
@@ -156,13 +235,13 @@ All data is public-domain or open-license. No proprietary data enters the scorin
 
 ## Core Principles
 
-**Verifiability first.** Every output traces to a public, auditable source. Source links are embedded at the point of claim — not in footnotes.
+**Verifiability first.** Every output traces to a public, auditable source. Source links are embedded at the point of claim.
 
-**No hidden modelling.** All transformations are explicit and reproducible. Full methodology is published in `docs/system/`.
+**No hidden modelling.** All transformations are explicit and reproducible. Full methodology published in `docs/system/`.
 
 **Immutable publication.** Published records are never overwritten — only appended with corrections. Timestamps are preserved.
 
-**Open Proof Protocol.** Errors are reported to contact@vyrion.earth and published as corrections within 24 hours. Day 2 correction (Arctic sea ice) issued March 20, 2026 — publicly logged.
+**Open Proof Protocol.** Errors reported to contact@vyrion.earth are published as corrections within 24 hours.
 
 ---
 
@@ -174,7 +253,7 @@ VYRION PBC is a subsidiary of The Nexan Institute.
 
 Not financial advice. Scores are informational outputs derived from public data.
 
-Disclaimers: [`docs/system/LEGAL-DISCLAIMER.md`](docs/system/LEGAL-DISCLAIMER.md) · [`docs/system/INVESTABLE-DISCLAIMER.md`](docs/system/INVESTABLE-DISCLAIMER.md)
+Disclaimers: [`docs/system/INVESTABLE-DISCLAIMER.md`](docs/system/INVESTABLE-DISCLAIMER.md)
 
 ---
 
@@ -184,6 +263,6 @@ Disclaimers: [`docs/system/LEGAL-DISCLAIMER.md`](docs/system/LEGAL-DISCLAIMER.md
 Founder, VYRION PBC · The Nexan Institute  
 Hilo, Hawaii  
 contact@vyrion.earth  
-[x.com/DablerFrost](https://x.com/DablerFrost)  
+[x.com/DablerFrost](https://x.com/DablerFrost)
 
 > Find the error. We will publish the correction.
