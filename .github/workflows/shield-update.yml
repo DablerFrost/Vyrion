@@ -1,0 +1,46 @@
+name: SHIELD Data Refresh
+
+on:
+  schedule:
+    # Twice daily — SHIELD data changes throughout the day (seismic, wildfire, storms)
+    - cron: '10 0 * * *'    # 00:10 UTC — after conscience-daily at 00:05
+    - cron: '10 12 * * *'   # 12:10 UTC — midday refresh
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason for manual run'
+        required: false
+        default: 'Manual refresh'
+
+jobs:
+  fetch-shield-data:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # required to commit shield-snapshot.json back to repo
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch USGS + NASA EONET data
+        run: node scripts/fetch-shield-data.js
+
+      - name: Commit shield-snapshot.json if changed
+        run: |
+          git config user.name  "VYRION Data Bot"
+          git config user.email "data-bot@vyrion.earth"
+          git add data/shield-snapshot.json
+          # Only commit if something actually changed
+          if git diff --staged --quiet; then
+            echo "No data changes detected — skipping commit"
+          else
+            TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M UTC")
+            git commit -m "data: shield refresh ${TIMESTAMP}"
+            git push
+            echo "data/shield-snapshot.json updated and pushed"
+          fi
