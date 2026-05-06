@@ -1,11 +1,9 @@
-[VYRION_BRAND (1).md](https://github.com/user-attachments/files/26689373/VYRION_BRAND.1.md)
-[VYRION_BRAND.md](https://github.com/user-attachments/files/26648763/VYRION_BRAND.md)
-# VYRION Brand Identity
-## Last Updated: April 11, 2026
+ VYRION Brand Identity
+ Last Updated: May 6th, 2026
 
 ---
 
-## Color System — Unified Cyan (Confirmed April 2026)
+ Color System — Unified Cyan (Confirmed April 2026)
 
 --void:    #020912  (background — all platforms)
 --glow:    #00D4FF  (electric cyan — primary accent)
@@ -22,7 +20,7 @@ Previous green system (#030a05 / #00FF9D) is retired. Cyan is the single unified
 
 ---
 
-## Typography
+ Typography
 
 Condensed headings: Archivo Narrow 800
 Body: Archivo 400
@@ -31,7 +29,7 @@ Google Fonts embed: https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght
 
 ---
 
-## Logo — 4 Locked Assets
+ Logo — 4 Locked Assets
 
 1. Transparent PNG — use on any surface, headers, documents
 2. Dark background JPG — primary mark, social media (Slide 1 on all carousels when used)
@@ -42,7 +40,7 @@ Dark logo on dark background consistently outperforms other formats on social me
 
 ---
 
-## Voice & Tone
+ Voice & Tone
 
 - Factual before emotional
 - Satellite data before opinion
@@ -53,41 +51,42 @@ Dark logo on dark background consistently outperforms other formats on social me
 
 ---
 
-## The Defining Sentence
+ The Defining Sentence
 "The world's first daily investable planetary health benchmark."
 
-## The Closing Line
+ The Closing Line
 "The planet has a score. Now it has a daily number."
 
-## The Challenge Line
+ The Challenge Line
 "Find the error. We will publish the correction."
 
-## The Institutional Line
+ The Institutional Line
 "Not activism. Not a nonprofit. Accountability infrastructure."
 
 ---
 
-## Platform Architecture — What Lives Where
+ Platform Architecture — What Lives Where
 
 VYRION is a platform. These are its components:
 
 | Module | URL | Status |
 |---|---|---|
-| CONSCIENCE | vyrion.earth | Live v2.8 |
-| ATLAS | vyrion.earth/atlas.html | Live |
-| SHIELD | vyrion.earth/shield.html | Live |
-| ARCHIVE | dablerfrost.github.io/Vyrion/archive | Live |
-| ROOT | — | Planned |
-| CANOPY | — | Planned |
-| TIDE | — | Planned |
-| LOOP | — | Planned |
-| PULSE | — | Planned |
+| CONSCIENCE | vyrion.earth | Live v2.8 | Corporate Climate Pledge Verification |
+| SHIELD | vyrion.earth/shield.html | Live | Module - 01 |
+| ATLAS | vyrion.earth/atlas.html | Live | Module - 02 |
+| ROOT | — | vyrion.earth/root.html | Live | Module - 03 |
+| FLUX | — | Planned | Live | Module - 04 |
+| CANOPY | — | Planned | Module - 05 |
+| TIDE | — | Planned | Module - 06 |
+| LOOP | — | Planned | Module - 07 |
+| PULSE | — | Planned | Module - 08 |
+| ARCHIVE | dablerfrost.github.io/Vyrion/archive | Live | Permanent Public Record |
 
 Social media is not a module. It is an external broadcast channel.
 
 ---
 
-## Social Media — Role and Scope
+ Social Media — Role and Scope
 
 Social media accounts exist to amplify featured content from the platform. They are not part of VYRION's architecture. The platform is the product. Social media is a distribution tool used selectively.
 
@@ -113,7 +112,7 @@ The daily Index record lives at vyrion.earth/atlas.html — not on any social me
 
 ---
 
-## Tagging Strategy
+ Tagging Strategy
 
 Cite when tagging scientific sources: @NSIDC @NASAEarth @CarbonBrief
 Tag companies in Record issues: @BP_plc @ExxonMobil @Shell @Delta etc.
@@ -121,7 +120,7 @@ Do not tag: Swiss Re (active institutional outreach), Bloomberg, Verisk (too ear
 
 ---
 
-## Infrastructure
+ Infrastructure
 
 Domain: vyrion.earth (Porkbun · URL forwarded to GitHub Pages)
 Email: contact@vyrion.earth (active)
@@ -130,11 +129,11 @@ LinkedIn: linkedin.com/in/vyrion/
 X: @DablerFrost
 Instagram: @DablerFrost
 
-Carrd: retired. vyrion.earth is the live domain and primary entry point.
+vyrion.earth is the live domain and primary entry point.
 
 ---
 
-## Synthekai Music Integration
+ Synthekai Music Integration
 
 Bandcamp album ID: 692362963
 Album: Mycelium Bloom — Data Petals #1–12
@@ -142,8 +141,8 @@ Embedded in CONSCIENCE platform.
 
 ---
 
-## Backsplash Image
+ Backsplash Image
 
 Filename: Vyrion_backsplash_image.jpg
-Must be in conscience repo root alongside index.html.
+Must be in Vyrion repo root alongside index.html.
 Used as hero background in CONSCIENCE page header.
