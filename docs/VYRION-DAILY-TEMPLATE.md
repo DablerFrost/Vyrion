@@ -1,5 +1,3 @@
-[VYRION_DAILY_TEMPLATE (1).md](https://github.com/user-attachments/files/26689405/VYRION_DAILY_TEMPLATE.1.md)
-[VYRION_DAILY_TEMPLATE.md](https://github.com/user-attachments/files/26648760/VYRION_DAILY_TEMPLATE.md)
 # VYRION Daily Operations — Templates
 ## Last Updated: April 11, 2026
 
