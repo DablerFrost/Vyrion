@@ -1,0 +1,384 @@
+{
+  "meta": {
+    "generated": "2026-05-06T03:59:15.067Z",
+    "generated_date": "2026-05-06",
+    "script_version": "1.0",
+    "runtime_ms": 1270,
+    "sources": [
+      "NOAA Global Monitoring Laboratory (CO₂)",
+      "SEC EDGAR Public API (corporate filings)",
+      "Open-Meteo ERA5 Reanalysis (temperature)",
+      "World Bank Open Data (global emissions)",
+      "NOAA NCEI (global temperature anomaly)"
+    ]
+  },
+  "atmosphere": {
+    "co2": {
+      "ppm": 433.95,
+      "date": "2026-05-01",
+      "source": "NOAA Global Monitoring Laboratory — Mauna Loa Observatory",
+      "url": "https://gml.noaa.gov/ccgg/trends/",
+      "retrieved": "2026-05-06T03:59:14.120Z"
+    },
+    "global_temp_anomaly": null,
+    "global_temp_era5": {
+      "sample_avg_celsius": 18.77,
+      "anomaly_vs_proxy": 10.27,
+      "sample_coords": [
+        "N.Europe",
+        "N.America",
+        "S.America",
+        "SE.Asia"
+      ],
+      "period": "2026-04-27 to 2026-05-04",
+      "baseline_note": "Proxy baseline from ERA5 sample mean — not IPCC global mean. Supplementary signal only.",
+      "source": "Open-Meteo ERA5 Reanalysis (ECMWF)",
+      "url": "https://open-meteo.com/",
+      "license": "CC BY 4.0",
+      "retrieved": "2026-05-06T03:59:15.067Z"
+    }
+  },
+  "global_emissions": null,
+  "vyrion_index": {
+    "score": 41.2,
+    "uncertainty": 1.8,
+    "day": 12,
+    "date": "2026-03-29",
+    "note": "Updated manually by Tyler Frost / DablerFrost each morning"
+  },
+  "companies": {
+    "exxon": {
+      "name": "ExxonMobil",
+      "ticker": "XOM",
+      "cik": "34088",
+      "edgar": {
+        "ticker": "XOM",
+        "cik": "34088",
+        "annual_filing": {
+          "form": "10-K",
+          "date": "2026-02-18",
+          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=34088&type=10-K&dateb=&owner=include&count=5"
+        },
+        "latest_8k": {
+          "date": "2026-05-04",
+          "items": "5.02"
+        },
+        "count_8k_90d": 5,
+        "recent_8k_items": [
+          {
+            "date": "2026-05-04",
+            "items": "5.02"
+          },
+          {
+            "date": "2026-05-01",
+            "items": "2.02,7.01"
+          },
+          {
+            "date": "2026-04-08",
+            "items": "7.01"
+          },
+          {
+            "date": "2026-03-31",
+            "items": "8.01,9.01"
+          },
+          {
+            "date": "2026-02-20",
+            "items": "5.02"
+          }
+        ],
+        "retrieved": "2026-05-06T03:59:14.065Z"
+      }
+    },
+    "bp": {
+      "name": "BP",
+      "ticker": "BP",
+      "cik": "313807",
+      "edgar": {
+        "ticker": "BP",
+        "cik": "313807",
+        "annual_filing": {
+          "form": "20-F",
+          "date": "2026-03-06",
+          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=313807&type=20-F&dateb=&owner=include&count=5"
+        },
+        "latest_8k": null,
+        "count_8k_90d": 0,
+        "recent_8k_items": [],
+        "retrieved": "2026-05-06T03:59:14.387Z"
+      }
+    },
+    "shell": {
+      "name": "Shell",
+      "ticker": "SHEL",
+      "cik": "806517",
+      "edgar": {
+        "ticker": "SHEL",
+        "cik": "806517",
+        "annual_filing": {
+          "form": "10-K",
+          "date": "2025-03-24",
+          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=806517&type=10-K&dateb=&owner=include&count=5"
+        },
+        "latest_8k": {
+          "date": "2024-12-10",
+          "items": "8.01"
+        },
+        "count_8k_90d": 0,
+        "recent_8k_items": [],
+        "retrieved": "2026-05-06T03:59:14.061Z"
+      }
+    },
+    "delta": {
+      "name": "Delta Air Lines",
+      "ticker": "DAL",
+      "cik": "27904",
+      "edgar": {
+        "ticker": "DAL",
+        "cik": "27904",
+        "annual_filing": {
+          "form": "10-K",
+          "date": "2026-02-11",
+          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=27904&type=10-K&dateb=&owner=include&count=5"
+        },
+        "latest_8k": {
+          "date": "2026-04-08",
+          "items": "2.02,9.01"
+        },
+        "count_8k_90d": 4,
+        "recent_8k_items": [
+          {
+            "date": "2026-04-08",
+            "items": "2.02,9.01"
+          },
+          {
+            "date": "2026-03-17",
+            "items": "7.01,9.01"
+          },
+          {
+            "date": "2026-03-05",
+            "items": "5.02,9.01"
+          },
+          {
+            "date": "2026-02-13",
+            "items": "5.02"
+          }
+        ],
+        "retrieved": "2026-05-06T03:59:14.076Z"
+      }
+    },
+    "starbucks": {
+      "name": "Starbucks",
+      "ticker": "SBUX",
+      "cik": "829224",
+      "edgar": {
+        "ticker": "SBUX",
+        "cik": "829224",
+        "annual_filing": {
+          "form": "10-K",
+          "date": "2025-11-14",
+          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=829224&type=10-K&dateb=&owner=include&count=5"
+        },
+        "latest_8k": {
+          "date": "2026-04-28",
+          "items": "2.02,9.01"
+        },
+        "count_8k_90d": 3,
+        "recent_8k_items": [
+          {
+            "date": "2026-04-28",
+            "items": "2.02,9.01"
+          },
+          {
+            "date": "2026-04-02",
+            "items": "7.01,9.01"
+          },
+          {
+            "date": "2026-03-30",
+            "items": "5.07"
+          }
+        ],
+        "retrieved": "2026-05-06T03:59:14.067Z"
+      }
+    },
+    "walmart": {
+      "name": "Walmart",
+      "ticker": "WMT",
+      "cik": "104169",
+      "edgar": {
+        "ticker": "WMT",
+        "cik": "104169",
+        "annual_filing": {
+          "form": "10-K",
+          "date": "2026-03-13",
+          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=104169&type=10-K&dateb=&owner=include&count=5"
+        },
+        "latest_8k": {
+          "date": "2026-04-30",
+          "items": "8.01,9.01"
+        },
+        "count_8k_90d": 4,
+        "recent_8k_items": [
+          {
+            "date": "2026-04-30",
+            "items": "8.01,9.01"
+          },
+          {
+            "date": "2026-03-27",
+            "items": "8.01"
+          },
+          {
+            "date": "2026-03-13",
+            "items": "8.01"
+          },
+          {
+            "date": "2026-02-19",
+            "items": "2.02,9.01"
+          }
+        ],
+        "retrieved": "2026-05-06T03:59:14.378Z"
+      }
+    },
+    "meta": {
+      "name": "Meta",
+      "ticker": "META",
+      "cik": "1326801",
+      "edgar": {
+        "ticker": "META",
+        "cik": "1326801",
+        "annual_filing": {
+          "form": "10-K",
+          "date": "2026-01-29",
+          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1326801&type=10-K&dateb=&owner=include&count=5"
+        },
+        "latest_8k": {
+          "date": "2026-05-04",
+          "items": "8.01,9.01"
+        },
+        "count_8k_90d": 3,
+        "recent_8k_items": [
+          {
+            "date": "2026-05-04",
+            "items": "8.01,9.01"
+          },
+          {
+            "date": "2026-04-29",
+            "items": "2.02,9.01"
+          },
+          {
+            "date": "2026-04-14",
+            "items": "5.02"
+          }
+        ],
+        "retrieved": "2026-05-06T03:59:14.455Z"
+      }
+    },
+    "amazon": {
+      "name": "Amazon",
+      "ticker": "AMZN",
+      "cik": "1018724",
+      "edgar": {
+        "ticker": "AMZN",
+        "cik": "1018724",
+        "annual_filing": {
+          "form": "10-K",
+          "date": "2026-02-06",
+          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1018724&type=10-K&dateb=&owner=include&count=5"
+        },
+        "latest_8k": {
+          "date": "2026-04-29",
+          "items": "2.02,9.01"
+        },
+        "count_8k_90d": 7,
+        "recent_8k_items": [
+          {
+            "date": "2026-04-29",
+            "items": "2.02,9.01"
+          },
+          {
+            "date": "2026-04-14",
+            "items": "7.01,9.01"
+          },
+          {
+            "date": "2026-04-09",
+            "items": "7.01,9.01"
+          },
+          {
+            "date": "2026-03-16",
+            "items": "8.01,9.01"
+          },
+          {
+            "date": "2026-03-13",
+            "items": "8.01,9.01"
+          }
+        ],
+        "retrieved": "2026-05-06T03:59:14.070Z"
+      }
+    },
+    "microsoft": {
+      "name": "Microsoft",
+      "ticker": "MSFT",
+      "cik": "789019",
+      "edgar": {
+        "ticker": "MSFT",
+        "cik": "789019",
+        "annual_filing": {
+          "form": "10-K",
+          "date": "2025-07-30",
+          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=789019&type=10-K&dateb=&owner=include&count=5"
+        },
+        "latest_8k": {
+          "date": "2026-04-29",
+          "items": "2.02,9.01"
+        },
+        "count_8k_90d": 1,
+        "recent_8k_items": [
+          {
+            "date": "2026-04-29",
+            "items": "2.02,9.01"
+          }
+        ],
+        "retrieved": "2026-05-06T03:59:14.341Z"
+      }
+    },
+    "unilever": {
+      "name": "Unilever",
+      "ticker": "ULVR",
+      "cik": "49519",
+      "edgar": null
+    },
+    "apple": {
+      "name": "Apple",
+      "ticker": "AAPL",
+      "cik": "320193",
+      "edgar": {
+        "ticker": "AAPL",
+        "cik": "320193",
+        "annual_filing": {
+          "form": "10-K",
+          "date": "2025-10-31",
+          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=320193&type=10-K&dateb=&owner=include&count=5"
+        },
+        "latest_8k": {
+          "date": "2026-04-30",
+          "items": "2.02,9.01"
+        },
+        "count_8k_90d": 3,
+        "recent_8k_items": [
+          {
+            "date": "2026-04-30",
+            "items": "2.02,9.01"
+          },
+          {
+            "date": "2026-04-20",
+            "items": "5.02"
+          },
+          {
+            "date": "2026-02-24",
+            "items": "5.07,9.01"
+          }
+        ],
+        "retrieved": "2026-05-06T03:59:14.078Z"
+      }
+    }
+  }
+}
