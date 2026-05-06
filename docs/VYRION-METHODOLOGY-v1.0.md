@@ -1,7 +1,5 @@
-[VYRION-METHODOLOGY-v1.0 (4).md](https://github.com/user-attachments/files/26689080/VYRION-METHODOLOGY-v1.0.4.md)
-[VYRION-METHODOLOGY-v1.0.md](https://github.com/user-attachments/files/26490101/VYRION-METHODOLOGY-v1.0.md)
-# VYRION-METHODOLOGY-v1.0.md
-## The VYRION Index — Complete Scoring Methodology
+ VYRION-METHODOLOGY-v1.0.md
+ The VYRION Index — Complete Scoring Methodology
 
 ---
 
@@ -12,20 +10,17 @@ Changes are logged in CHANGELOG.md. Prior art timestamped: GitHub, March 20, 202
 **One-Line Definition:**
 *The VYRION Score is a weighted transparency index measuring deviation of planetary systems from pre-industrial baseline conditions.*
 
-**Legal Notice:**
-All VYRION Index scores are derived from publicly accessible sources including government monitoring agencies, open-license satellite datasets, and public institutional databases. VYRION does not reproduce, redistribute, or sublicense proprietary datasets. Scores represent VYRION's independent analytical assessment based on publicly available information. See LEGAL-DISCLAIMER.md for full terms.
-
 **Investment Notice:**
-The VYRION Index is an informational benchmark. It is not investment advice and does not constitute a recommendation to buy, sell, or hold any security. See INVESTABLE-DISCLAIMER.md for full terms.
+The VYRION Index is an informational benchmark. It is not investment advice and does not constitute a recommendation to buy, sell, or hold any security. See investable disclaimer: INVESTABLE-DISCLAIMER.md
 
 **Open Proof Protocol:**
 Find an error in any indicator, source, formula, or derivation — report it to contact@vyrion.earth. Corrections are published within 24 hours as permanent, timestamped entries in CHANGELOG.md. No original entries are ever deleted.
 
 ---
 
-## Part I — System Overview
+ Part I — System Overview
 
-### What VYRION Measures
+ What VYRION Measures
 
 The VYRION Index measures the current health of Earth's planetary systems relative to a pre-industrial baseline. A score of 100/100 represents the average conditions of the period 1850–1900 — before significant industrialization — across all eight monitored Earth systems. A score of 0 represents complete system collapse across all indicators.
 
@@ -41,9 +36,9 @@ The index does not predict the future. It measures the present state of document
 
 ---
 
-## Part II — Architecture
+ Part II — Architecture
 
-### Eight Systems and Weights
+ Eight Systems and Weights
 
 | System | Weight | Rationale |
 |--------|--------|-----------|
@@ -58,7 +53,7 @@ The index does not predict the future. It measures the present state of document
 
 **Weight Basis:** Weights are informed by the planetary boundaries framework (Steffen et al., 2015; Richardson et al., 2023) and reflect the relative contribution of each system to overall Earth system stability. Weights are locked at v1.0. Changes require v1.1 with full rationale documentation.
 
-### Master Formula
+ Master Formula
 
 ```
 S_final = Σ(W_i × S_i)
@@ -72,7 +67,7 @@ Where:
 
 **Baseline:** Pre-industrial average conditions, 1850–1900. Defined per indicator as the mean value during this period from the primary data source for that indicator. Baseline values are documented per indicator in Section IV.
 
-### Uncertainty Model
+ Uncertainty Model
 
 **Reported uncertainty: ±1.8 points (1σ)**
 
@@ -92,13 +87,13 @@ Sources of uncertainty include: instrumental measurement error (primary satellit
 
 ---
 
-## Part III — Indicators
+ Part III — Indicators
 
-### System 1: Atmosphere (22%)
+ System 1: Atmosphere (22%)
 
 Six indicators. Daily composite update anchored by NOAA GML CO₂.
 
-| # | Indicator | Source | Baseline (1850–1900) | Update |
+| Indicator | Source | Baseline (1850–1900) | Update |
 |---|-----------|--------|----------------------|--------|
 | A1 | Atmospheric CO₂ concentration (ppm) | NOAA GML Mauna Loa | ~280 ppm | Daily |
 | A2 | Global mean surface temperature anomaly (°C) | NASA GISS Surface Temperature Analysis | 0.0°C anomaly | Monthly |
@@ -111,11 +106,11 @@ Six indicators. Daily composite update anchored by NOAA GML CO₂.
 `S_A1 = max(0, min(100, 100 - ((CO₂_current - 280) / (450 - 280)) × 100))`
 Where 450 ppm represents the upper bound associated with >2°C warming scenarios.
 
-### System 2: Ocean (18%)
+ System 2: Ocean (18%)
 
 Six indicators. Daily composite update anchored by NOAA OISST sea surface temperature.
 
-| # | Indicator | Source | Baseline (1850–1900) | Update |
+| Indicator | Source | Baseline (1850–1900) | Update |
 |---|-----------|--------|----------------------|--------|
 | O1 | Global mean sea surface temperature anomaly (°C) | NOAA OISST v2.1 | 0.0°C anomaly | Daily |
 | O2 | Ocean heat content 0–700m (ZJ) | NOAA National Centers for Environmental Information | Pre-industrial mean | Monthly |
@@ -124,11 +119,11 @@ Six indicators. Daily composite update anchored by NOAA OISST sea surface temper
 | O5 | Atlantic Meridional Overturning Circulation strength (Sv) | RAPID array / model reconstruction | ~18–20 Sv | Monthly |
 | O6 | Coral reef bleaching extent (% of reef area affected) | NOAA Coral Reef Watch | <1% | Monthly |
 
-### System 3: Ice / Cryosphere (14%)
+ System 3: Ice / Cryosphere (14%)
 
 Six indicators. Daily composite update anchored by NSIDC Arctic sea ice extent.
 
-| # | Indicator | Source | Baseline (1850–1900) | Update |
+| Indicator | Source | Baseline (1850–1900) | Update |
 |---|-----------|--------|----------------------|--------|
 | C1 | Arctic sea ice extent (million km²) | NSIDC Sea Ice Index | ~14.5M km² (March max) / ~7.5M km² (Sept min) | Daily |
 | C2 | Antarctic sea ice extent (million km²) | NSIDC Sea Ice Index | Estimated pre-satellite baseline | Daily |
@@ -139,11 +134,11 @@ Six indicators. Daily composite update anchored by NSIDC Arctic sea ice extent.
 
 **Cadence note:** C1 and C2 update daily and anchor the cryosphere composite score. C3–C5 are held at last confirmed value between updates and are disclosed as such.
 
-### System 4: Forest (13%)
+ System 4: Forest (13%)
 
 Six indicators. Monthly composite refresh.
 
-| # | Indicator | Source | Baseline (1850–1900) | Update |
+| Indicator | Source | Baseline (1850–1900) | Update |
 |---|-----------|--------|----------------------|--------|
 | F1 | Global tree cover loss (Mha/yr) | Global Forest Watch / Hansen et al. | Estimated ~2–3 Mha/yr natural | Annual |
 | F2 | Tropical deforestation rate (Mha/yr) | Global Forest Watch | Near-zero anthropogenic | Annual |
@@ -154,11 +149,11 @@ Six indicators. Monthly composite refresh.
 
 **Note on F3:** Active wildfire count is available daily via NASA EONET and is used as the daily anchor for the Forest system composite. Annual indicators are held at last confirmed value between updates.
 
-### System 5: Biodiversity (12%)
+ System 5: Biodiversity (12%)
 
 Six indicators. Monthly composite refresh.
 
-| # | Indicator | Source | Baseline (1850–1900) | Update |
+| Indicator | Source | Baseline (1850–1900) | Update |
 |---|-----------|--------|----------------------|--------|
 | B1 | Living Planet Index (vertebrate population trends) | WWF / ZSL Living Planet Report | 1.0 (index = 1970 baseline, normalized to 1850) | Annual |
 | B2 | Species extinction rate (extinctions per million species-years) | IUCN Red List derived | ~0.1–1 E/MSY natural background | Annual |
@@ -167,11 +162,11 @@ Six indicators. Monthly composite refresh.
 | B5 | GBIF occurrence record density anomaly | Global Biodiversity Information Facility | Historical species density | Weekly |
 | B6 | Insect biomass index (proxy) | Literature synthesis / Hallmann et al. framework | Pre-1970 baseline | Annual |
 
-### System 6: Freshwater (10%)
+ System 6: Freshwater (10%)
 
 Six indicators. Daily composite update anchored by SPEI drought index.
 
-| # | Indicator | Source | Baseline (1850–1900) | Update |
+| Indicator | Source | Baseline (1850–1900) | Update |
 |---|-----------|--------|----------------------|--------|
 | W1 | Global drought index — SPEI (Standardized Precipitation Evapotranspiration Index) | SPEI Global Drought Monitor | 0.0 anomaly | Daily |
 | W2 | Global groundwater storage anomaly (km³) | GRACE-FO | Pre-depletion baseline | Monthly |
@@ -180,11 +175,11 @@ Six indicators. Daily composite update anchored by SPEI drought index.
 | W5 | Lake water level anomaly (% of monitored lakes below baseline) | HydroSat / Copernicus | 0% below baseline | Monthly |
 | W6 | Transboundary water stress index | Pacific Institute / FAO | Historical baseline | Annual |
 
-### System 7: Soil (7%)
+ System 7: Soil (7%)
 
 Six indicators. Monthly composite refresh.
 
-| # | Indicator | Source | Baseline (1850–1900) | Update |
+| Indicator | Source | Baseline (1850–1900) | Update |
 |---|-----------|--------|----------------------|--------|
 | S1 | Global soil organic carbon stock (GtC) | FAO GSOC map / ISRIC | Pre-agricultural baseline | Annual |
 | S2 | Land degradation index (% of productive land degraded) | FAO / UNCCD | Near-zero anthropogenic degradation | Annual |
@@ -193,13 +188,13 @@ Six indicators. Monthly composite refresh.
 | S5 | Topsoil depth loss rate (% of monitored sites declining) | Global Soil Partnership / FAO | Near-zero loss rate | Annual |
 | S6 | Nitrogen deposition anomaly (kg N/ha/yr above natural) | EMEP / IIASA | Pre-industrial ~1–2 kg N/ha/yr | Monthly |
 
-### System 8: Corporate Accountability (4%)
+ System 8: Corporate Accountability (4%)
 
 Six indicators. Daily composite update anchored by SEC EDGAR 8-K event monitoring.
 
 This system does not measure planetary health directly. It measures institutional human response to planetary degradation — the degree to which corporate governance and policy are aligned with scientific requirements for planetary stabilization.
 
-| # | Indicator | Source | Baseline | Update |
+| Indicator | Source | Baseline | Update |
 |---|-----------|--------|----------|--------|
 | CA1 | CDP disclosure quality — portfolio weighted average (A=100, D=0) | CDP public disclosure grades | A-list standard | Annual |
 | CA2 | SBTi 1.5°C approval rate — % of portfolio companies | SBTi public registry | 100% approved | Annual |
@@ -210,7 +205,7 @@ This system does not measure planetary health directly. It measures institutiona
 
 ---
 
-## Part IV — Data Sources
+ Part IV — Data Sources
 
 All VYRION Index scores are derived from publicly accessible sources. VYRION does not reproduce, redistribute, or sublicense proprietary datasets. Scores represent VYRION's independent analytical assessment based on publicly available information.
 
@@ -245,9 +240,9 @@ All VYRION Index scores are derived from publicly accessible sources. VYRION doe
 
 ---
 
-## Part V — Scoring Methodology Detail
+ Part V — Scoring Methodology Detail
 
-### Deviation-from-Baseline Approach
+ Deviation-from-Baseline Approach
 
 Each indicator is converted to a 0–100 score based on its deviation from the pre-industrial baseline. The general function is:
 
@@ -259,18 +254,18 @@ Where `threshold_i` is the indicator-specific value representing the outer bound
 
 **All individual scoring functions are bounded between 0 and 100 using min/max constraints.** No system score can fall below 0 or exceed 100.
 
-### Indicator Normalization
+ Indicator Normalization
 
 Indicators with different units and scales are normalized before aggregation. Normalization is linear within each indicator's defined range. Indicators where higher values represent better outcomes (e.g., forest cover remaining) are scored ascending. Indicators where higher values represent worse outcomes (e.g., CO₂ concentration) are scored descending.
 
-### Missing Data Protocol
+ Missing Data Protocol
 
 When a primary data source is unavailable:
 1. The most recent confirmed value is held for up to 7 days
 2. After 7 days, the indicator is flagged as "data gap" and the system uncertainty bounds are widened
 3. Data gaps are published openly in the daily archive
 
-### Update Cadence Summary
+ Update Cadence Summary
 
 | Cadence | Systems | Indicators |
 |---------|---------|------------|
@@ -283,9 +278,9 @@ When a primary data source is unavailable:
 
 ---
 
-## Part VI — Validation and Integrity
+ Part VI — Validation and Integrity
 
-### Scientific Basis
+ Scientific Basis
 
 The VYRION Index methodology is informed by:
 
@@ -294,7 +289,7 @@ The VYRION Index methodology is informed by:
 - IPCC AR6 Working Group I, II, and III reports (2021–2022).
 - Rockström, J. et al. (2009). "A safe operating space for humanity." *Nature*, 461, 472–475.
 
-### Reproducibility Standard
+ Reproducibility Standard
 
 Every indicator in this document has:
 - A named primary source with a URL
@@ -304,14 +299,14 @@ Every indicator in this document has:
 
 Anyone with access to the listed public sources can reproduce the VYRION Index score independently. This is the defining commitment of v1.0.
 
-### Limitations
+ Limitations
 
 1. **Annual indicator latency:** 20 of 48 indicators update annually. Their contribution to the composite is based on the most recently published data and may lag real-world conditions by up to 12 months.
 2. **Spatial averaging:** Global composites mask regional variation. A global average ocean temperature can be stable while a specific ocean basin is in crisis.
 3. **Model dependence:** Some indicators (AMOC strength, long-term glacier balance) rely on model reconstructions rather than direct observation. Uncertainty is higher for these indicators.
 4. **Corporate Accountability lag:** CDP grades, SBTi status, and litigation counts are point-in-time assessments that update on publication cycles, not continuously.
 
-### Planned Improvements (v1.1)
+ Planned Improvements (v1.1)
 
 - System Interaction Matrix: cascade and feedback coefficients between the 8 systems
 - Weighting Rationale appendix: full derivation of system weights from planetary boundaries literature
@@ -320,7 +315,7 @@ Anyone with access to the listed public sources can reproduce the VYRION Index s
 
 ---
 
-## Part VII — CONSCIENCE Corporate Layer
+ Part VII — CONSCIENCE Corporate Layer
 
 VYRION CONSCIENCE is documented in full in CONSCIENCE-METHODOLOGY.md. Summary for cross-reference:
 
@@ -337,17 +332,18 @@ ExxonMobil 8 · BP 11 · Delta 14 · Shell 19 · Starbucks 29 · Walmart 38 · M
 
 ---
 
-## Part VIII — Disclaimers
+ Part VIII — Disclaimers
 
-### Legal
+ Legal  
+All VYRION Index scores are derived from publicly accessible sources ... Full legal terms: LEGAL-DISCLAIMER.md
 
-All VYRION Index scores are derived from publicly accessible sources including government monitoring agencies, open-license satellite datasets, and public institutional databases. VYRION does not reproduce, redistribute, or sublicense proprietary datasets. Scores represent VYRION's independent analytical assessment based on publicly available information. Full legal terms: LEGAL-DISCLAIMER.md.
+All VYRION Index scores are derived from publicly accessible sources including government monitoring agencies, open-license satellite datasets, and public institutional databases. VYRION does not reproduce, redistribute, or sublicense proprietary datasets. Scores represent VYRION's independent analytical assessment based on publicly available information. Full legal terms: LEGAL-DISCLAIMER.md
 
-### Investment
+ Investment
 
-The VYRION Index is an informational benchmark. It is not investment advice and does not constitute a recommendation to buy, sell, or hold any security. Institutional users should conduct independent due diligence. Full investment terms: INVESTABLE-DISCLAIMER.md.
+The VYRION Index is an informational benchmark. It is not investment advice and does not constitute a recommendation to buy, sell, or hold any security. Institutional users should conduct independent due diligence. See investment terms: INVESTABLE-DISCLAIMER.md
 
-### Open Proof Protocol
+ Open Proof Protocol
 
 Find an error — contact@vyrion.earth. Correction published within 24 hours. No original entries deleted.
 
@@ -357,4 +353,4 @@ Find an error — contact@vyrion.earth. Correction published within 24 hours. No
 
 *VYRION-METHODOLOGY-v1.0.md · Locked March 20, 2026*
 *VYRION PBC · Tyler Frost / DablerFrost · Hilo, Hawaii*
-*github.com/dablerfrost/conscience · contact@vyrion.earth*
+*github.com/dablerfrost/Vyrion · contact@vyrion.earth*
