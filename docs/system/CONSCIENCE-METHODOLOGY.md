@@ -1,12 +1,10 @@
-[CONSCIENCE-METHODOLOGY (2).md](https://github.com/user-attachments/files/26689101/CONSCIENCE-METHODOLOGY.2.md)
-[CONSCIENCE-METHODOLOGY (1).md](https://github.com/user-attachments/files/26479064/CONSCIENCE-METHODOLOGY.1.md)
 # CONSCIENCE-METHODOLOGY.md
 ## Per-Company Score Derivation · v1.1 · May 5, 2026
 ## VYRION PBC · Open Proof Protocol
 
-**Platform:** https://dablerfrost.github.io/Vyrion  
+**Platform:** https://Vyrion.earth  
 **Errors:** contact@vyrion.earth → correction published within 24 hours  
-**Prior art:** github.com/dablerfrost/conscience (timestamped March 18, 2026)
+**Prior art:** github.com/dablerfrost/Vyrion (timestamped March 18, 2026)
 
 ---
 
@@ -406,7 +404,7 @@ CDP Performance scoring extended from a 4-tier (A/B/C/D) scale to the full CDP 9
 **Why this exists:** CDP's published grade scale is A, A−, B, B−, C, C−, D, D−, F. The v1.0 scoring table documented only 4 tiers (A/B/C/D) but the v1.0 per-company derivations for Microsoft and Unilever cited grade A− and applied the value 22, leaving the interpolation rule undocumented at the table level. v1.1 closes that disclosure gap so the methodology table matches both the CDP source documentation and the values actually applied in v1.0's company score derivations. This change is published under the Open Proof Protocol — surfaced and corrected without prompt.
 
 ### v1.0 · March 18, 2026 — Initial baseline
-First published methodology. CDP simplified to 4 tiers (A=25, B=18, C=10, D=4, No response = 0). InfluenceMap, Pledge Quality, Legal Exposure formulas as documented above. 11 companies scored against Paris Agreement 1.5°C pathways. Prior art timestamped: github.com/dablerfrost/conscience.
+First published methodology. CDP simplified to 4 tiers (A=25, B=18, C=10, D=4, No response = 0). InfluenceMap, Pledge Quality, Legal Exposure formulas as documented above. 11 companies scored against Paris Agreement 1.5°C pathways. Prior art timestamped: github.com/dablerfrost/Vyrion.
 
 ---
 
