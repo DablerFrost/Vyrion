@@ -6,6 +6,7 @@ Live platform: [vyrion.earth](https://www.vyrion.earth)
 Data interface: [vyrion.earth/conscience-data.html](https://www.vyrion.earth/conscience-data.html)  
 Raw ledger: [conscience-data.json](https://www.vyrion.earth/conscience-data.json)  
 Contact: contact@vyrion.earth
+About Vyrion: <li><a href="https://vyrion.earth/about">ABOUT</a></li>
 
 > The world's first daily investable planetary health benchmark.
 
