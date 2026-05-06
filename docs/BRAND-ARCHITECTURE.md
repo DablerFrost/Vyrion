@@ -1,4 +1,3 @@
-[01-BRAND-ARCHITECTURE (2).md](https://github.com/user-attachments/files/27096281/01-BRAND-ARCHITECTURE.2.md)
 # 01 — VYRION BRAND ARCHITECTURE
 ## Name · Concept · Eight Modules · Design DNA
 
@@ -71,6 +70,21 @@ Predictive AI system providing 2–14 day early warning for floods, wildfires, c
 **Impact Economy & Credit Marketplace**
 Tokenized marketplace for verified carbon, biodiversity, water, and soil credits. Corporations meet compliance. Governments monetize restoration.
 *Solves: All 10 Problems · Economic Engine · Global Incentive Layer*
+
+---
+
+**Components: | Module | URL | Status |
+|---|---|---| 
+| CONSCIENCE | vyrion.earth | Live v2.8 | Corporate Climate Pledge Verification | 
+| SHIELD | vyrion.earth/shield.html | Live | Module - 01 | 
+| ATLAS | vyrion.earth/atlas.html | Live | Module - 02 | 
+| ROOT | — | vyrion.earth/root.html | Live | Module - 03 | 
+| FLUX | — | Planned | Live | Module - 04 | 
+| CANOPY | — | Planned | Module - 05 | 
+| TIDE | — | Planned | Module - 06 | 
+| LOOP | — | Planned | Module - 07 | 
+| PULSE | — | Planned | Module - 08 | 
+| ARCHIVE | dablerfrost.github.io/Vyrion/archive | Live | Permanent Public Record |
 
 ---
 
