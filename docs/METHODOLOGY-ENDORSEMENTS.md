@@ -1,5 +1,3 @@
-[METHODOLOGY-ENDORSEMENTS (1).md](https://github.com/user-attachments/files/26689112/METHODOLOGY-ENDORSEMENTS.1.md)
-[METHODOLOGY-ENDORSEMENTS.md](https://github.com/user-attachments/files/26649522/METHODOLOGY-ENDORSEMENTS.md)
 # VYRION Methodology — Endorsements and Peer Review
 ## Open record · Updated continuously · github.com/DablerFrost/conscience
 
