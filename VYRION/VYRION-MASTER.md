@@ -1,46 +1,25 @@
-# VYRION — MASTER BUILD DOCUMENT
-## Complete Record of Everything Built · March 18, 2026
-### Created by DablerFrost · Synthekai Collective · Hilo, Hawaii
-
+# VYRION
+## Planetary Intelligence Infrastructure
+### System Overview · Original system architecture initiated in 2026
+Developed by Tyler Frost / DablerFrost
 ---
 
 > *"The planet has a score. Now it has a daily number."*
 
 ---
+## PURPOSE
+VYRION is designed as a public accountability infrastructure — not a closed scoring product.
 
-## WHAT THIS DOCUMENT IS
+This document provides an overview of the VYRION system architecture, live interfaces, methodology framework, and operational philosophy.
 
-This is the complete master record of VYRION — everything conceived, built, launched, and published on March 18, 2026. It serves as the authoritative reference for the founder, any future co-founders, partners, investors, or acquirers.
+It functions as a reference layer for collaborators, researchers, institutions, strategic partners, and future infrastructure contributors.
 
-Every file in this package is real. Every product referenced is live. Every number is sourced.
+Every file in this package reflects active system architecture, published methodologies, or operational interface development.
 
 ---
 
 ## THE ONE-SENTENCE DESCRIPTION
-
-VYRION is a planetary accountability infrastructure company — building the world's first open, transparent, satellite-verified system for measuring corporate environmental promises against verified reality, and publishing the planet's health as a daily investable benchmark.
-
----
-
-## WHAT IS LIVE — MARCH 18–19, 2026
-
-| Asset | Status | Location |
-|---|---|---|
-| VYRION CONSCIENCE v1.4 | ✅ LIVE | dablerfrost.github.io/Vyrion |
-| Official VYRION Logo | ✅ LOCKED | 4 assets · March 19, 2026 |
-| VYRION Index Day 1 | ✅ PUBLISHED | 41.3/100 · March 18, 2026 |
-| VYRION Index Day 2 | ✅ PUBLISHED | 41.2/100 · March 19, 2026 |
-| The Record Issue 001 — BP | ✅ PUBLISHED | X + Instagram · March 18, 2026 |
-| The Record Issue 002 — ExxonMobil | ✅ BUILT | Ready to publish March 25 |
-| Starbucks added as Company 11 | ✅ LIVE | Score 29/100 · Warning Trending Breach |
-| Swiss Re Institute outreach | ✅ SENT | institute@swissre.com · March 19, 2026 |
-| X Profile | ✅ UPDATED | @DablerFrost · 860 followers |
-| Instagram Profile | ✅ UPDATED | @dablerfrost · 1,336 followers |
-| Synthekai music player | ✅ BUILT | Embedded in CONSCIENCE |
-| Co-founder PDF | ✅ FINAL | VYRION-Introduction-v7.pdf · 9 pages |
-| Archive folder | ✅ BUILT | /archive · 6 files · templates ready |
-| Prior Art Timestamp | ✅ PERMANENT | GitHub · X · Instagram · March 18–19, 2026 |
-| Complete build documentation | ✅ COMMITTED | github.com/dablerfrost/conscience |
+VYRION operates as an interoperable system of public interfaces, verification methodologies, and planetary intelligence modules.
 
 ---
 
@@ -66,10 +45,11 @@ VYRION/
 
 **Founder:** Tyler Frost · DablerFrost
 **Location:** Hilo, Hawaii · Big Island
-**Background:** Creator, entrepreneur, visionary builder
-**Other ventures:** RainbowsGiggle (with Gin Frost) · Synthekai Collective · Nex-Us transmedia mythology universe
+**Background:** Systems design, transmedia worldbuilding, experimental interface architecture
+**Associated projects:** Synthekai Collective · Nex-Us mythology framework
+**Other ventures:** Synthekai Collective · Nex-Us transmedia mythology universe
 **Available commitment:** 40+ hours weekly
-**Build method:** Solo founder + AI assistance (Claude / Anthropic)
+**Build method:** System architecture developed through hybrid human-AI iterative design workflows.
 **Date of first public launch:** March 18, 2026
 
 ---
@@ -84,13 +64,15 @@ VYRION is architecture without promises. The data speaks. The ledger records. Th
 
 ---
 
+> *"Planetary intelligence in an always-on state."*
+
 ## CONTACT
 
 **GitHub:** github.com/dablerfrost
 **X:** @DablerFrost
 **Instagram:** @dablerfrost
-**Live product:** dablerfrost.github.io/Vyrion
+**Live product:** vyrion.earth
 
 ---
 
-*This document was created March 18, 2026. All intellectual property belongs to Tyler Frost / DablerFrost. Prior art established via public GitHub commit timestamped March 18, 2026.*
+*This document originated on March 18, 2026. Original architecture, methodologies, visual systems, and associated intellectual property were initiated in 2026 by Tyler Frost / DablerFrost.*
