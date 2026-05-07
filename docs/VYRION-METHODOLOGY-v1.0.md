@@ -304,7 +304,8 @@ Anyone with access to the listed public sources can reproduce the VYRION Index s
 1. **Annual indicator latency:** 20 of 48 indicators update annually. Their contribution to the composite is based on the most recently published data and may lag real-world conditions by up to 12 months.
 2. **Spatial averaging:** Global composites mask regional variation. A global average ocean temperature can be stable while a specific ocean basin is in crisis.
 3. **Model dependence:** Some indicators (AMOC strength, long-term glacier balance) rely on model reconstructions rather than direct observation. Uncertainty is higher for these indicators.
-4. **Corporate Accountability lag:** CDP grades, SBTi status, and litigation counts are point-in-time assessments that update on publication cycles, not continuously.
+4. **Signal stability weighting:** Indicator streams are assessed for signal stability prior to composite computation; sources exhibiting high variance, irregular update cadence, or sparse reporting are weighted with expanded uncertainty bounds, ensuring low-confidence data does not propagate as high-confidence signal into the Index.
+5. **Corporate Accountability lag:** CDP grades, SBTi status, and litigation counts are point-in-time assessments that update on publication cycles, not continuously.
 
  Planned Improvements (v1.1)
 
