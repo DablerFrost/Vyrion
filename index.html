@@ -2802,17 +2802,6 @@
         color: rgba(255, 255, 255, 0.35);
       }
 
-      /* PHASE 4 — Together */
-      .cin-together-label {
-        font-family: 'Rajdhani', sans-serif;
-        font-weight: 700;
-        font-size: clamp(22px, 1.4vw, 31px);
-        letter-spacing: 0.35em;
-        color: rgba(0, 229, 255, 0.4);
-        text-transform: uppercase;
-        margin-bottom: 14px;
-      }
-
       .cin-together-desc {
         font-family: 'Exo 2', sans-serif;
         font-weight: 300;
@@ -3210,7 +3199,7 @@
           <circle cx="136" cy="80" r="2" fill="rgba(0,229,255,0.5)" />
         </svg>
         <div class="cin-wordmark" id="cin-wordmark">VYRION</div>
-        <div class="cin-tagline" id="cin-tagline">A NAME BUILT ON PURPOSE. A SYSTEM BUILT TO STAY ACTIVE.</div>
+        <div class="cin-tagline" id="cin-tagline">PLANETARY INTELLIGENCE IN AN ALWAYS-ON STATE</div>
       </div>
       <!-- PHASE 2: Pronunciation -->
       <div class="cin-phase" id="cin-phase-2">
@@ -3224,7 +3213,7 @@
         <div class="cin-etymology-row" id="cin-etym-row">
           <div class="cin-syllable cin-vy" id="cin-vy">
             <div class="cin-syl-letter">VY</div>
-            <div class="cin-syl-word">VIBRATION</div>
+            <div class="cin-syl-word">Signal / Motion - Vibration · Vector · Flow</div>
             <div class="cin-syl-icon">
               <svg viewBox="0 0 80 40" fill="none">
                 <polyline points="0,20 10,20 15,5 20,35 25,10 30,30 35,15 40,25 45,20 80,20" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
@@ -3240,7 +3229,7 @@
           <div class="cin-plus" id="cin-plus1">+</div>
           <div class="cin-syllable cin-ri" id="cin-ri">
             <div class="cin-syl-letter">RI</div>
-            <div class="cin-syl-word">ROOT</div>
+            <div class="cin-syl-word">Core / Structure - Root Intelligence · Recursive Systems</div>
             <div class="cin-syl-icon">
               <svg viewBox="0 0 80 48" fill="none">
                 <line x1="40" y1="2" x2="40" y2="20" stroke="#a050ff" stroke-width="1.5" />
@@ -3262,7 +3251,7 @@
           <div class="cin-plus" id="cin-plus2">+</div>
           <div class="cin-syllable cin-on" id="cin-on">
             <div class="cin-syl-letter">ON</div>
-            <div class="cin-syl-word">ACTIVATED</div>
+            <div class="cin-syl-word">Activated State - Persistent · Live· Awareness</div>
             <div class="cin-syl-icon">
               <svg viewBox="0 0 80 80" fill="none">
                 <circle cx="40" cy="40" r="28" stroke="#00ff88" stroke-width="1.5" opacity="0.6" />
@@ -3281,19 +3270,6 @@
             </div>
           </div>
         </div>
-      </div>
-      <!-- PHASE 4: Together line + final beat -->
-      <div class="cin-phase" id="cin-phase-4">
-        <div class="cin-together-label">TOGETHER THEY FORM</div>
-        <div class="cin-together-desc">A continuously active, signal-based intelligence system <br>that observes, reasons, and updates in real time. </div>
-        <div class="cin-always-row" id="cin-always-row">
-          <span class="cin-always-item" id="cin-a1">Always scanning.</span>
-          <span class="cin-always-dot">·</span>
-          <span class="cin-always-item" id="cin-a2">Always updating.</span>
-          <span class="cin-always-dot">·</span>
-          <span class="cin-always-item" id="cin-a3">Always on.</span>
-        </div>
-        <div class="cin-final-line" id="cin-final-line">EARTH. RIGHT NOW.</div>
       </div>
       <div class="cinematic-skip" id="cin-skip" onclick="skipCinematic()">SKIP ›</div>
     </div>
@@ -4707,16 +4683,6 @@
             setTimeout(() => document.getElementById('cin-ri').classList.add('visible'), 600);
             setTimeout(() => document.getElementById('cin-on').classList.add('visible'), 1000);
           }, 3800);
-          // ── PHASE 4: Together (7.0 → 12.5s) ──
-          setTimeout(() => {
-            showPhase('cin-phase-4');
-            // Stagger "Always" items
-            setTimeout(() => document.getElementById('cin-a1').classList.add('visible'), 300);
-            setTimeout(() => document.getElementById('cin-a2').classList.add('visible'), 700);
-            setTimeout(() => document.getElementById('cin-a3').classList.add('visible'), 1100);
-            // Final "EARTH. RIGHT NOW." punch
-            setTimeout(() => document.getElementById('cin-final-line').classList.add('visible'), 1700);
-          }, 7000);
           // ── FADE OUT → Dashboard (12.5s) ──
           setTimeout(() => {
             overlay.classList.add('hidden');
