@@ -5,19 +5,19 @@
 
 ## THE NAME
 
-**VYRION** — never used, never registered, never spoken before March 18, 2026.
+**VYRION** — Planetary Health Intelligence.
 
 Derived from no single language. Invented whole. Built to carry weight across all languages, all cultures, all generations. It belongs to no country. It belongs to the planet.
 
-### Phonetic Architecture
+They were promises without architecture.
 
-| Component | Origin | Meaning |
-|---|---|---|
-| VYR | "veer" + "vir" (Latin) | To change direction · Life force · Vitality |
-| I | Intelligence · Intent · Integration | The eye that sees everything simultaneously |
-| ON | "ion" (charged particle) + "on" (active state) | Always running. Never silent. |
+VYRION is architecture without promises.
 
-**Combined meaning:** *A living force that redirects the energy of the world.*
+VY - Vibration · Vector · Flow Movement. Frequency & flow. SIGNAL VECTOR VELOCITY
++
+RI - Core / Structure - Root Intelligence Foundation. The origin of structure. ROOT REASON RECURSION
++
+ON - Activated State - Persistent Awareness On-state. Persistent Operation LIVE AWARE OPERATION
 
 ---
 
