@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>VYRION Intelligence Studio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Narrow:wght@500;700;800&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   VYRION Intelligence Studio
+   Concept Preview — May 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+:root{
+  --void:#020912;
+  --void2:#071421;
+  --void3:#0c1f31;
+
+  --cyan:#00D4FF;
+  --cyan2:#4AE8FF;
+
+  --text:#e4f2ff;
+  --text2:#6a9ab8;
+  --text3:#35506a;
+
+  --border:rgba(0,212,255,.12);
+  --border2:rgba(0,212,255,.05);
+
+  --green:#00FF9D;
+  --amber:#FFB84D;
+  --red:#F03030;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:
+    radial-gradient(circle at top left,
+    rgba(0,212,255,.06),
+    transparent 45%),
+
+    radial-gradient(circle at bottom right,
+    rgba(0,212,255,.04),
+    transparent 45%),
+
+    linear-gradient(to bottom,
+    #000,
+    var(--void));
+
+  color:var(--text);
+  font-family:'Archivo',sans-serif;
+  overflow-x:hidden;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   NAV
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:1000;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:18px 40px;
+
+  background:rgba(2,9,18,.82);
+  backdrop-filter:blur(18px);
+
+  border-bottom:1px solid var(--border);
+}
+
+.logo{
+  font-family:'Archivo Narrow',sans-serif;
+  font-weight:800;
+  letter-spacing:.18em;
+  font-size:.92rem;
+  color:var(--cyan);
+  text-transform:uppercase;
+}
+
+.nav-links{
+  display:flex;
+  gap:32px;
+}
+
+.nav-links a{
+  color:var(--text2);
+  text-decoration:none;
+
+  font-family:'Courier Prime',monospace;
+  font-size:.7rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+
+  transition:.25s;
+}
+
+.nav-links a:hover{
+  color:var(--cyan);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   HERO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.hero{
+  position:relative;
+
+  min-height:100vh;
+
+  display:flex;
+  align-items:center;
+
+  padding:120px 70px 80px;
+  overflow:hidden;
+}
+
+/* grid overlay */
+
+.hero::before{
+  content:'';
+
+  position:absolute;
+  inset:0;
+
+  background-image:
+    linear-gradient(rgba(0,212,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,.035) 1px, transparent 1px);
+
+  background-size:90px 90px;
+
+  mask-image:linear-gradient(to bottom,
+  rgba(0,0,0,.6),
+  transparent);
+
+  pointer-events:none;
+}
+
+/* glow orb */
+
+.hero::after{
+  content:'';
+
+  position:absolute;
+
+  width:900px;
+  height:900px;
+
+  right:-280px;
+  top:-220px;
+
+  background:
+    radial-gradient(circle,
+    rgba(0,212,255,.13),
+    transparent 65%);
+
+  animation:pulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes pulse{
+  from{
+    transform:scale(1);
+    opacity:.6;
+  }
+  to{
+    transform:scale(1.15);
+    opacity:1;
+  }
+}
+
+.hero-inner{
+  position:relative;
+  z-index:2;
+
+  max-width:760px;
+}
+
+/* eyebrow */
+
+.eyebrow{
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  margin-bottom:26px;
+
+  font-family:'Courier Prime',monospace;
+  font-size:.7rem;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+
+  color:var(--cyan);
+}
+
+.eyebrow::before{
+  content:'';
+  width:42px;
+  height:1px;
+  background:var(--cyan);
+}
+
+/* title */
+
+.hero-title{
+  font-family:'Archivo Narrow',sans-serif;
+  font-size:clamp(4rem,9vw,8rem);
+  line-height:.92;
+  font-weight:800;
+  letter-spacing:-.04em;
+
+  margin-bottom:30px;
+}
+
+.hero-title .glow{
+  color:var(--cyan);
+
+  text-shadow:
+    0 0 18px rgba(0,212,255,.65),
+    0 0 42px rgba(0,212,255,.25);
+}
+
+/* subtitle */
+
+.hero-sub{
+  font-size:1.15rem;
+  line-height:1.9;
+  color:var(--text2);
+
+  max-width:700px;
+
+  border-left:2px solid var(--cyan);
+  padding-left:24px;
+
+  margin-bottom:42px;
+}
+
+/* actions */
+
+.hero-actions{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:16px 24px;
+
+  text-decoration:none;
+
+  font-family:'Courier Prime',monospace;
+  font-size:.72rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+
+  border-radius:2px;
+
+  transition:.25s;
+}
+
+.btn-primary{
+  background:rgba(0,212,255,.12);
+  border:1px solid rgba(0,212,255,.3);
+  color:var(--cyan);
+}
+
+.btn-primary:hover{
+  background:rgba(0,212,255,.18);
+
+  box-shadow:
+    0 0 24px rgba(0,212,255,.12);
+}
+
+.btn-secondary{
+  border:1px solid var(--border);
+  color:var(--text2);
+}
+
+.btn-secondary:hover{
+  border-color:rgba(0,212,255,.25);
+  color:var(--text);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SIGNAL PANEL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.signal-panel{
+  margin-top:52px;
+
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+
+  border:1px solid var(--border);
+  background:rgba(7,20,33,.6);
+
+  backdrop-filter:blur(12px);
+
+  overflow:hidden;
+}
+
+.signal-cell{
+  padding:22px 26px;
+  border-right:1px solid var(--border);
+}
+
+.signal-cell:last-child{
+  border-right:none;
+}
+
+.signal-label{
+  font-family:'Courier Prime',monospace;
+  font-size:.58rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+
+  color:var(--text3);
+
+  margin-bottom:10px;
+}
+
+.signal-value{
+  font-family:'Courier Prime',monospace;
+  font-size:1.4rem;
+  font-weight:700;
+
+  color:var(--cyan);
+
+  margin-bottom:6px;
+}
+
+.signal-sub{
+  font-size:.72rem;
+  line-height:1.6;
+  color:var(--text2);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SECTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.section{
+  padding:100px 70px;
+}
+
+.section-head{
+  margin-bottom:50px;
+}
+
+.section-eye{
+  font-family:'Courier Prime',monospace;
+  font-size:.68rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+
+  color:var(--cyan);
+
+  margin-bottom:16px;
+}
+
+.section-title{
+  font-family:'Archivo Narrow',sans-serif;
+  font-size:clamp(2rem,5vw,4rem);
+  line-height:1;
+  font-weight:800;
+
+  margin-bottom:18px;
+}
+
+.section-sub{
+  max-width:760px;
+
+  color:var(--text2);
+  line-height:1.9;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SERVICES GRID
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:22px;
+}
+
+.card{
+  position:relative;
+
+  background:
+    linear-gradient(to bottom,
+    rgba(7,20,33,.85),
+    rgba(4,12,22,.95));
+
+  border:1px solid var(--border);
+
+  padding:34px;
+
+  min-height:300px;
+
+  overflow:hidden;
+
+  transition:.35s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+
+  border-color:rgba(0,212,255,.25);
+
+  box-shadow:
+    0 18px 50px rgba(0,0,0,.35);
+}
+
+.card::before{
+  content:'';
+
+  position:absolute;
+  inset:0;
+
+  background:
+    radial-gradient(circle at top left,
+    rgba(0,212,255,.08),
+    transparent 50%);
+
+  pointer-events:none;
+}
+
+.card-num{
+  font-family:'Courier Prime',monospace;
+  font-size:.65rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+
+  color:var(--cyan);
+
+  margin-bottom:18px;
+}
+
+.card-title{
+  font-family:'Archivo Narrow',sans-serif;
+  font-size:2rem;
+  line-height:1;
+  font-weight:800;
+
+  margin-bottom:20px;
+}
+
+.card-body{
+  color:var(--text2);
+  line-height:1.85;
+  font-size:.96rem;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   FEATURE STRIP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.feature-strip{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  border:1px solid var(--border);
+
+  overflow:hidden;
+}
+
+.feature-left{
+  padding:60px;
+
+  background:
+    linear-gradient(135deg,
+    rgba(0,212,255,.06),
+    rgba(0,0,0,0));
+}
+
+.feature-right{
+  padding:60px;
+  background:var(--void2);
+}
+
+.feature-kicker{
+  font-family:'Courier Prime',monospace;
+  font-size:.62rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+
+  color:var(--cyan);
+
+  margin-bottom:18px;
+}
+
+.feature-headline{
+  font-family:'Archivo Narrow',sans-serif;
+  font-size:3rem;
+  line-height:.95;
+  font-weight:800;
+
+  margin-bottom:22px;
+}
+
+.feature-copy{
+  color:var(--text2);
+  line-height:1.9;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   FOOTER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.footer{
+  border-top:1px solid var(--border);
+
+  padding:40px 70px;
+
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+.footer-left{
+  font-family:'Courier Prime',monospace;
+  font-size:.72rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+
+  color:var(--text3);
+}
+
+.footer-right{
+  font-family:'Courier Prime',monospace;
+  font-size:.72rem;
+
+  color:var(--cyan);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   RESPONSIVE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+@media(max-width:900px){
+
+  .hero,
+  .section{
+    padding-left:28px;
+    padding-right:28px;
+  }
+
+  .footer{
+    padding:32px 28px;
+  }
+
+  .signal-panel{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .feature-strip{
+    grid-template-columns:1fr;
+  }
+
+  .feature-left,
+  .feature-right{
+    padding:40px 32px;
+  }
+
+  .nav{
+    padding:16px 20px;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+}
+
+@media(max-width:640px){
+
+  .signal-panel{
+    grid-template-columns:1fr;
+  }
+
+  .signal-cell{
+    border-right:none;
+    border-bottom:1px solid var(--border);
+  }
+
+  .signal-cell:last-child{
+    border-bottom:none;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     NAV
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+
+<nav class="nav">
+
+  <div class="logo">
+    VYRION Intelligence Studio
+  </div>
+
+  <div class="nav-links">
+    <a href="#">Capabilities</a>
+    <a href="#">Reports</a>
+    <a href="#">Systems</a>
+    <a href="#">Signal</a>
+    <a href="#">Contact</a>
+  </div>
+
+</nav>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     HERO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+    <div class="eyebrow">
+      Applied Planetary Intelligence Infrastructure
+    </div>
+
+    <h1 class="hero-title">
+      Planetary Intelligence Systems
+      <span class="glow">for the Real World</span>
+    </h1>
+
+    <div class="hero-sub">
+      Operational environmental interfaces, intelligence reports,
+      monitoring systems, and institutional visualization infrastructure.
+      VYRION Intelligence Studio transforms planetary instability into
+      measurable, navigable, operational intelligence.
+    </div>
+
+    <div class="hero-actions">
+
+      <a href="#" class="btn btn-primary">
+        Request Intelligence Consultation
+      </a>
+
+      <a href="#" class="btn btn-secondary">
+        Explore Capabilities
+      </a>
+
+    </div>
+
+    <!-- SIGNAL PANEL -->
+
+    <div class="signal-panel">
+
+      <div class="signal-cell">
+        <div class="signal-label">Active Systems</div>
+        <div class="signal-value">12</div>
+        <div class="signal-sub">
+          Monitoring and intelligence frameworks currently in development.
+        </div>
+      </div>
+
+      <div class="signal-cell">
+        <div class="signal-label">Operational Focus</div>
+        <div class="signal-value">Earth</div>
+        <div class="signal-sub">
+          Environmental systems, accountability infrastructure, and planetary risk.
+        </div>
+      </div>
+
+      <div class="signal-cell">
+        <div class="signal-label">Signal Layer</div>
+        <div class="signal-value">LIVE</div>
+        <div class="signal-sub">
+          Real-time environmental awareness and operational visualization.
+        </div>
+      </div>
+
+      <div class="signal-cell">
+        <div class="signal-label">Studio State</div>
+        <div class="signal-value">ON</div>
+        <div class="signal-sub">
+          Planetary intelligence operating in continuous awareness.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     SERVICES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+
+<section class="section">
+
+  <div class="section-head">
+
+    <div class="section-eye">
+      Capabilities
+    </div>
+
+    <div class="section-title">
+      Applied Environmental Intelligence
+    </div>
+
+    <div class="section-sub">
+      VYRION Intelligence Studio develops operational systems that help organizations
+      visualize, interpret, and communicate planetary instability through
+      institutional-grade interfaces and intelligence architecture.
+    </div>
+
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+
+      <div class="card-num">
+        01 · Intelligence Reports
+      </div>
+
+      <div class="card-title">
+        Evidence Systems
+      </div>
+
+      <div class="card-body">
+        Cinematic institutional reports designed for environmental accountability,
+        climate communication, infrastructure analysis, and operational risk visibility.
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <div class="card-num">
+        02 · Monitoring Infrastructure
+      </div>
+
+      <div class="card-title">
+        Signal Interfaces
+      </div>
+
+      <div class="card-body">
+        Real-time environmental dashboards and monitoring systems for rainfall,
+        ocean temperature, wildfire escalation, atmospheric instability,
+        and ecological state tracking.
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <div class="card-num">
+        03 · Institutional Visualization
+      </div>
+
+      <div class="card-title">
+        Operational UX
+      </div>
+
+      <div class="card-body">
+        Advanced interface systems that translate scientific complexity into
+        navigable intelligence architecture for public platforms,
+        resilience organizations, and climate-tech systems.
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     FEATURE STRIP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+
+<section class="section">
+
+  <div class="feature-strip">
+
+    <div class="feature-left">
+
+      <div class="feature-kicker">
+        Strategic Direction
+      </div>
+
+      <div class="feature-headline">
+        Building the operational layer between
+        planetary data and human decision-making.
+      </div>
+
+    </div>
+
+    <div class="feature-right">
+
+      <div class="feature-copy">
+        VYRION Intelligence Studio exists to develop applied systems that
+        generate real-world environmental awareness infrastructure while
+        advancing the broader VYRION planetary intelligence network.
+        <br><br>
+        Every report, dashboard, visualization framework, and monitoring system
+        strengthens the larger mission:
+        transforming Earth-system instability into measurable operational intelligence.
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     FOOTER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+
+<footer class="footer">
+
+  <div class="footer-left">
+    VYRION EARTH · INTELLIGENCE STUDIO · 2026
+  </div>
+
+  <div class="footer-right">
+    Planetary Intelligence in an Always-On State
+  </div>
+
+</footer>
+
+</body>
+</html>
