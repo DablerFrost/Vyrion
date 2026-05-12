@@ -1,46 +1,171 @@
-name: CONSCIENCE Daily Data Refresh
+```yaml
+# ══════════════════════════════════════════════════════════════════
+#  VYRION · CONSCIENCE · Daily Intelligence Refresh
+#  File: .github/workflows/conscience-daily.yml
+#
+#  Schedule:
+#    00:05 UTC daily
+#
+#  Function:
+#    Fetches planetary intelligence feeds including:
+#    - NOAA CO₂
+#    - SEC EDGAR filings (11 companies)
+#    - Open-Meteo ERA5
+#    - NSIDC Sea Ice
+#    - NOAA OISST
+#    - NASA EONET
+#    - GBIF biodiversity
+#
+#    Computes the daily VYRION Index, validates schema integrity,
+#    blocks malformed data commits, and archives immutable daily state.
+#
+#  Outputs:
+#    - conscience-data.json
+#
+#  Validation:
+#    - scripts/validate-schema.js
+#
+#  Infrastructure:
+#    - Node.js 20
+#    - GitHub Actions
+#    - Immutable commit chain
+#
+#  VYRION PBC · Tyler Frost / DablerFrost · Hilo, Hawaii
+#  https://github.com/DablerFrost/Vyrion
+#  https://vyrion.earth
+# ══════════════════════════════════════════════════════════════════
+
+name: VYRION · CONSCIENCE · Daily Intelligence Refresh
 
 on:
   schedule:
-    # Runs every day at 00:05 UTC — after midnight, data sources have updated
+    # Runs daily at 00:05 UTC
+    # Positioned before downstream SHIELD operations
     - cron: '5 0 * * *'
+
   workflow_dispatch:
-    # Also allows manual trigger from GitHub Actions tab
-    inputs:
-      reason:
-        description: 'Reason for manual run'
-        required: false
-        default: 'Manual refresh'
+    # Allows manual execution from GitHub Actions UI
+
+# Required for automated commits/pushes
+permissions:
+  contents: write
+
+# Prevent overlapping executions
+concurrency:
+  group: conscience-refresh
+  cancel-in-progress: false
 
 jobs:
-  fetch-conscience-data:
+
+  refresh:
+
+    name: VYRION · CONSCIENCE · Intelligence Refresh
+
     runs-on: ubuntu-latest
-    permissions:
-      contents: write   # required to commit conscience-data.json back to repo
+
+    timeout-minutes: 15
 
     steps:
-      - name: Checkout repository
+
+      # ────────────────────────────────────────────────────────────
+      # STEP 1 · CHECKOUT REPOSITORY
+      # ────────────────────────────────────────────────────────────
+      - name: VYRION · Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js 20
+        with:
+          fetch-depth: 1
+
+      # ────────────────────────────────────────────────────────────
+      # STEP 2 · SETUP NODE.JS
+      # ────────────────────────────────────────────────────────────
+      - name: VYRION · Setup Node.js 20
         uses: actions/setup-node@v4
+
         with:
           node-version: '20'
+          cache: 'npm'
 
-      - name: Fetch all CONSCIENCE data sources
+      # ────────────────────────────────────────────────────────────
+      # STEP 3 · INSTALL DEPENDENCIES
+      # ────────────────────────────────────────────────────────────
+      - name: VYRION · Install Dependencies
+        run: npm ci
+
+      # ────────────────────────────────────────────────────────────
+      # STEP 4 · FETCH PLANETARY INTELLIGENCE FEEDS
+      # ────────────────────────────────────────────────────────────
+      - name: VYRION · Fetch CONSCIENCE Intelligence Feeds
+
         run: node scripts/fetch-conscience-data.js
 
-      - name: Commit conscience-data.json if changed
+        env:
+          NODE_ENV: production
+
+      # ────────────────────────────────────────────────────────────
+      # STEP 5 · VALIDATE OUTPUT SCHEMA
+      # ────────────────────────────────────────────────────────────
+      # Validation acts as a hard gate.
+      #
+      # If schema validation fails:
+      # - workflow exits non-zero
+      # - commit is blocked
+      # - corrupted planetary state is never archived
+      #
+      # Warnings may log without failing the workflow.
+      # ────────────────────────────────────────────────────────────
+      - name: VYRION · Validate CONSCIENCE Schema
+
+        run: node scripts/validate-schema.js
+
+      # ────────────────────────────────────────────────────────────
+      # STEP 6 · COMMIT DAILY SNAPSHOT
+      # ────────────────────────────────────────────────────────────
+      - name: VYRION · Commit Intelligence Refresh
+
         run: |
-          git config user.name  "VYRION Data Bot"
+
+          git config user.name "VYRION Data Bot"
           git config user.email "data-bot@vyrion.earth"
+
+          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+
+          echo "Preparing immutable daily snapshot..."
+
+          # Stage tracked intelligence outputs
           git add conscience-data.json
-          # Only commit if something actually changed
+
+          # Exit cleanly if no data changed
           if git diff --staged --quiet; then
-            echo "No data changes detected — skipping commit"
+
+            echo "No planetary state changes detected."
+            echo "Skipping commit."
+
           else
-            TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M UTC")
-            git commit -m "data: daily conscience refresh ${TIMESTAMP}"
+
+            git commit -m "vyrion[conscience]: intelligence refresh ${TIMESTAMP}"
+
             git push
-            echo "conscience-data.json updated and pushed"
+
+            echo "Daily intelligence snapshot committed."
+            echo "Timestamp: ${TIMESTAMP}"
+
           fi
+
+      # ────────────────────────────────────────────────────────────
+      # STEP 7 · FAILURE REPORTING
+      # ────────────────────────────────────────────────────────────
+      # Reserved for future:
+      # - Discord webhook
+      # - Slack notifications
+      # - SHIELD escalation
+      # - GitHub issue creation
+      # ────────────────────────────────────────────────────────────
+      - name: VYRION · Workflow Failure Notice
+
+        if: failure()
+
+        run: |
+          echo "VYRION CONSCIENCE refresh failed."
+          echo "Review GitHub Actions logs immediately."
+```
