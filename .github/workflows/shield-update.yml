@@ -1,46 +1,77 @@
-name: SHIELD Data Refresh
+# ══════════════════════════════════════════════════════════════════
+#  VYRION · SHIELD · Hazard Intelligence Refresh
+#  File: .github/workflows/shield-update.yml
+#
+#  Schedule: 00:10 + 12:10 UTC daily (twice daily)
+#  Function: Fetches USGS M4.5+ seismic feed and NASA EONET
+#            open hazard events (wildfire, storm, flood, volcanic).
+#            Computes threat level via algorithm v1.1.
+#            Falls back to previous snapshot on API failure —
+#            never writes empty data.
+#
+#  Output:   data/shield-snapshot.json
+#
+#  VYRION PBC · Tyler Frost / DablerFrost · Hilo, Hawaii
+#  github.com/DablerFrost/Vyrion · contact@vyrion.earth
+# ══════════════════════════════════════════════════════════════════
+
+name: VYRION · SHIELD · Hazard Intelligence Refresh
 
 on:
   schedule:
-    # Twice daily — SHIELD data changes throughout the day (seismic, wildfire, storms)
-    - cron: '10 0 * * *'    # 00:10 UTC — after conscience-daily at 00:05
-    - cron: '10 12 * * *'   # 12:10 UTC — midday refresh
+    # 00:10 UTC — after CONSCIENCE daily refresh at 00:05
+    - cron: '10 0 * * *'
+    # 12:10 UTC — midday refresh for intraday hazard changes
+    - cron: '10 12 * * *'
   workflow_dispatch:
-    inputs:
-      reason:
-        description: 'Reason for manual run'
-        required: false
-        default: 'Manual refresh'
+    # Allow manual trigger from GitHub Actions tab
 
 jobs:
-  fetch-shield-data:
+  refresh:
+    name: VYRION · SHIELD · Hazard Intelligence Refresh
     runs-on: ubuntu-latest
-    permissions:
-      contents: write   # required to commit shield-snapshot.json back to repo
+    timeout-minutes: 15
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
 
-      - name: Setup Node.js 20
+      # ── Step 1: Checkout ────────────────────────────────────────
+      - name: VYRION · Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      # ── Step 2: Node.js 20 ──────────────────────────────────────
+      - name: VYRION · Setup Node.js 20
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: Fetch USGS + NASA EONET data
+      # ── Step 3: Fetch SHIELD hazard feeds ───────────────────────
+      #    Sources: USGS Earthquake Hazards (M4.5+ seismic)
+      #             NASA EONET (wildfire · storm · flood · volcanic)
+      #    On failure: falls back to previous snapshot — never
+      #    writes empty data. Exits 1 only if both sources fail
+      #    AND no previous snapshot exists.
+      - name: VYRION · Fetch SHIELD Hazard Feeds
         run: node scripts/fetch-shield-data.js
+        env:
+          NODE_ENV: production
 
-      - name: Commit shield-snapshot.json if changed
+      # ── Step 4: Commit and push if data changed ──────────────────
+      - name: VYRION · Commit Hazard Refresh
         run: |
           git config user.name  "VYRION Data Bot"
           git config user.email "data-bot@vyrion.earth"
+
+          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+
           git add data/shield-snapshot.json
-          # Only commit if something actually changed
+
+          # Only commit if file actually changed
           if git diff --staged --quiet; then
-            echo "No data changes detected — skipping commit"
+            echo "shield-snapshot.json unchanged — no commit needed."
           else
-            TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M UTC")
-            git commit -m "data: shield refresh ${TIMESTAMP}"
+            git commit -m "vyrion[shield]: hazard refresh ${TIMESTAMP}"
             git push
-            echo "data/shield-snapshot.json updated and pushed"
+            echo "shield-snapshot.json committed and pushed at ${TIMESTAMP}"
           fi
