@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="THE RECORD — VYRION Issue 009: Microsoft. Carbon negative by 2030 and historical emissions removal by 2050. Emissions increased 29% since 2020 due to AI infrastructure expansion. CONSCIENCE Score: 61/100 ON TRACK.">
+    <meta property="og:title" content="THE RECORD — Issue 009: Microsoft · VYRION">
+    <meta property="og:description" content="Microsoft pledged carbon negative by 2030 and historical carbon removal by 2050. AI expansion increased emissions 29% since 2020. CONSCIENCE Score: 61/100.">
+    <meta property="og:type" content="article">
+    <title>THE RECORD — Issue 009: Microsoft · VYRION</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&family=Archivo:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --void: #020912;
+        --void2: #061624;
+        --void3: #0b2035;
+        --glow: #00D4FF;
+        --amber: #FFB84D;
+        --breach: #F03030;
+        --warn: #F09000;
+        --microsoft: #5AD7FF;
+        --microsoft-dim: rgba(90, 215, 255, .08);
+        --microsoft-border: rgba(90, 215, 255, .28);
+        --t1: #e4f2ff;
+        --t2: #6a9ab8;
+        --t3: #2d6080;
+        --border: rgba(0, 212, 255, .12);
+        --border2: rgba(0, 212, 255, .07);
+        --nav-bg: rgba(2, 9, 18, .97);
+        --scanline: rgba(0, 212, 255, .004);
+      }
+
+      [data-theme="light"] {
+        --void: #f0f5ff;
+        --void2: #e4eeff;
+        --void3: #d5e5ff;
+        --glow: #0066CC;
+        --microsoft: #0078D4;
+        --microsoft-dim: rgba(0, 120, 212, .08);
+        --microsoft-border: rgba(0, 120, 212, .24);
+        --t1: #06111d;
+        --t2: #1e4a7a;
+        --t3: #3a6090;
+        --border: rgba(0, 102, 204, .18);
+        --border2: rgba(0, 102, 204, .10);
+        --nav-bg: rgba(240, 245, 255, .98);
+        --scanline: transparent;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-size: 18px;
+      }
+
+      body {
+        background: var(--void);
+        color: var(--t1);
+        font-family: 'Archivo', sans-serif;
+        line-height: 1.65;
+        overflow-x: hidden;
+      }
+
+      body::after {
+        content: '';
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 990;
+        background: repeating-linear-gradient(0deg,
+            transparent,
+            transparent 3px,
+            var(--scanline) 3px,
+            var(--scanline) 4px);
+      }
+
+      /* NAV */
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 500;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        gap: 1.4rem;
+        padding: 0 1.8rem;
+        background: var(--nav-bg);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(20px);
+      }
+
+      .nav-logo {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: .95rem;
+        letter-spacing: .15em;
+        text-decoration: none;
+        color: var(--glow);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1.8rem;
+        list-style: none;
+        flex: 1;
+      }
+
+      .nav-links a {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-size: .65rem;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        color: var(--t2);
+        text-decoration: none;
+      }
+
+      .nav-links a.active {
+        color: var(--glow);
+        border-bottom: 1px solid rgba(0, 212, 255, .4);
+      }
+
+      .nav-dot {
+        width: 6px;
+        height: 6px;
+        background: var(--glow);
+        border-radius: 50%;
+        animation: pdot 2.2s infinite;
+      }
+
+      @keyframes pdot {
+
+        0%,
+        100% {
+          opacity: 1;
+          box-shadow: 0 0 0 0 rgba(0, 212, 255, .5);
+        }
+
+        50% {
+          opacity: .4;
+          box-shadow: 0 0 0 7px rgba(0, 212, 255, 0);
+        }
+      }
+
+      /* HERO */
+      .page-header {
+        padding: 3.5rem 2rem 2.8rem;
+        border-bottom: 1px solid var(--border);
+        position: relative;
+        overflow: hidden;
+        min-height: 340px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        background:
+          linear-gradient(125deg,
+            rgba(2, 9, 18, .96) 0%,
+            rgba(2, 9, 18, .76) 45%,
+            rgba(3, 16, 28, .95) 100%),
+          url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop');
+        background-size: cover;
+        background-position: center;
+      }
+
+      .bg-word {
+        position: absolute;
+        right: -1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: clamp(5rem, 13vw, 10rem);
+        color: rgba(90, 215, 255, .045);
+        pointer-events: none;
+        user-select: none;
+        letter-spacing: .04em;
+      }
+
+      .eyebrow {
+        font-family: 'Courier Prime', monospace;
+        font-size: .65rem;
+        color: var(--glow);
+        letter-spacing: .24em;
+        text-transform: uppercase;
+        margin-bottom: .4rem;
+      }
+
+      .issue-kicker {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        color: var(--t3);
+        letter-spacing: .18em;
+        text-transform: uppercase;
+        margin-bottom: .4rem;
+      }
+
+      .track-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        background: rgba(240, 144, 0, .08);
+        border: 1px solid rgba(240, 144, 0, .28);
+        color: var(--warn);
+        padding: .4rem 1rem;
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: 1rem;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        margin-bottom: 1.2rem;
+        width: fit-content;
+      }
+
+      .track-badge::before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        background: var(--warn);
+        border-radius: 50%;
+      }
+
+      .issue-title {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+        line-height: .95;
+        margin-bottom: .2rem;
+      }
+
+      .issue-company {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: clamp(1.4rem, 3vw, 2rem);
+        color: var(--microsoft);
+        margin-bottom: .5rem;
+      }
+
+      .issue-sub {
+        font-size: .82rem;
+        color: var(--t2);
+        max-width: 62ch;
+        line-height: 1.72;
+      }
+
+      /* SCORE STRIP */
+      .score-strip {
+        display: flex;
+        flex-wrap: wrap;
+        background: var(--void2);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .ss-cell {
+        flex: 1;
+        min-width: 140px;
+        padding: 1.1rem 1.6rem;
+        border-right: 1px solid var(--border);
+      }
+
+      .ss-label {
+        font-family: 'Courier Prime', monospace;
+        font-size: .56rem;
+        color: var(--t3);
+        letter-spacing: .16em;
+        text-transform: uppercase;
+      }
+
+      .ss-val {
+        font-family: 'Courier Prime', monospace;
+        font-size: 1.7rem;
+        font-weight: 700;
+        line-height: 1;
+        margin-top: .25rem;
+      }
+
+      .ss-sub {
+        font-family: 'Courier Prime', monospace;
+        font-size: .56rem;
+        color: var(--t3);
+        margin-top: .25rem;
+        line-height: 1.4;
+      }
+
+      .val-ms {
+        color: var(--microsoft);
+      }
+
+      .val-warn {
+        color: var(--warn);
+      }
+
+      .val-glow {
+        color: var(--glow);
+      }
+
+      /* SCORE BAR */
+      .score-bar-section {
+        padding: 1.2rem 2rem 1.4rem;
+        border-bottom: 1px solid var(--border);
+        background: var(--void2);
+      }
+
+      .sb-label-row {
+        display: flex;
+        justify-content: space-between;
+        font-family: 'Courier Prime', monospace;
+        font-size: .56rem;
+        color: var(--t3);
+        margin-bottom: .5rem;
+        text-transform: uppercase;
+      }
+
+      .sb-track {
+        height: 5px;
+        background: rgba(255, 255, 255, .06);
+        overflow: hidden;
+        border-radius: 3px;
+        margin-bottom: .35rem;
+      }
+
+      .sb-fill {
+        height: 100%;
+        width: 61%;
+        background: linear-gradient(90deg,
+            rgba(240, 144, 0, .4),
+            var(--warn));
+      }
+
+      .sb-scale {
+        display: flex;
+        justify-content: space-between;
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        color: var(--t3);
+      }
+
+      /* LAYOUT */
+      .content-wrap {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+      }
+
+      .content-main {
+        padding: 2.4rem 2rem;
+        border-right: 1px solid var(--border);
+      }
+
+      .content-sidebar {
+        padding: 2rem 1.6rem;
+        background: var(--void2);
+      }
+
+      /* SECTION */
+      .section-heading {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: .8rem;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: .6rem;
+      }
+
+      .section-heading::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: rgba(90, 215, 255, .14);
+      }
+
+      /* PLEDGE REALITY */
+      .pr-block {
+        margin-bottom: 2rem;
+      }
+
+      .pr-row {
+        display: flex;
+        gap: .65rem;
+        margin-bottom: .45rem;
+        align-items: flex-start;
+      }
+
+      .pr-tag {
+        font-family: 'Courier Prime', monospace;
+        font-size: .54rem;
+        letter-spacing: .1em;
+        padding: .1rem .35rem;
+        border-radius: 2px;
+        margin-top: .15rem;
+        flex-shrink: 0;
+      }
+
+      .tag-pledge {
+        background: rgba(74, 173, 255, .08);
+        border: 1px solid rgba(74, 173, 255, .25);
+        color: #4AADFF;
+      }
+
+      .tag-reality {
+        background: rgba(0, 212, 255, .06);
+        border: 1px solid rgba(0, 212, 255, .25);
+        color: var(--glow);
+      }
+
+      .pr-text {
+        font-size: .82rem;
+        line-height: 1.65;
+      }
+
+      .pr-sub {
+        font-family: 'Courier Prime', monospace;
+        font-size: .58rem;
+        color: var(--t3);
+        margin-left: 120px;
+        margin-bottom: .7rem;
+      }
+
+      /* PROSE */
+      .prose {
+        font-size: .82rem;
+        color: var(--t2);
+        line-height: 1.78;
+        margin-bottom: 1.8rem;
+      }
+
+      .prose p {
+        margin-bottom: 1rem;
+      }
+
+      .prose strong {
+        color: var(--t1);
+      }
+
+      .hl-ms {
+        color: var(--microsoft);
+        font-weight: 700;
+      }
+
+      .hl-warn {
+        color: var(--warn);
+        font-weight: 700;
+      }
+
+      /* BREAKDOWN */
+      .breakdown-block {
+        background: rgba(0, 0, 0, .22);
+        border: 1px solid var(--border2);
+        padding: .9rem 1rem;
+        margin-bottom: 1.8rem;
+      }
+
+      .bd-row {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        gap: .5rem;
+        padding: .35rem 0;
+        border-bottom: 1px solid var(--border2);
+        font-family: 'Courier Prime', monospace;
+        font-size: .62rem;
+      }
+
+      .bd-weight {
+        color: var(--t3);
+        font-size: .54rem;
+      }
+
+      .bd-score {
+        font-weight: 700;
+        min-width: 40px;
+        text-align: right;
+      }
+
+      .pos {
+        color: var(--glow);
+      }
+
+      .part {
+        color: var(--amber);
+      }
+
+      .mod {
+        color: var(--warn);
+      }
+
+      .bd-total {
+        display: flex;
+        justify-content: space-between;
+        padding-top: .6rem;
+        margin-top: .4rem;
+        border-top: 1px solid var(--border);
+        font-family: 'Courier Prime', monospace;
+      }
+
+      .bd-total-score {
+        color: var(--warn);
+        font-weight: 700;
+      }
+
+      /* SIDEBAR */
+      .sidebar-label {
+        font-family: 'Courier Prime', monospace;
+        font-size: .56rem;
+        color: var(--t3);
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        margin-bottom: .6rem;
+      }
+
+      .sidebar-block {
+        background: rgba(0, 0, 0, .2);
+        border: 1px solid var(--border2);
+        padding: .9rem 1rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .sval-row {
+        display: flex;
+        justify-content: space-between;
+        padding: .28rem 0;
+        border-bottom: 1px solid var(--border2);
+        font-family: 'Courier Prime', monospace;
+        font-size: .62rem;
+      }
+
+      .sval-label {
+        color: var(--t2);
+      }
+
+      .sval-val {
+        font-weight: 700;
+        text-align: right;
+      }
+
+      .sval-ms {
+        color: var(--microsoft);
+      }
+
+      .sval-warn {
+        color: var(--warn);
+      }
+
+      .sval-glow {
+        color: var(--glow);
+      }
+
+      /* FOOTER */
+      .record-footer {
+        padding: 1.4rem 2rem;
+        border-top: 1px solid var(--border);
+        background: var(--void2);
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        color: var(--t3);
+        line-height: 1.8;
+      }
+
+      /* RESPONSIVE */
+      @media(max-width:900px) {
+        .content-wrap {
+          grid-template-columns: 1fr;
+        }
+
+        .content-main {
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+        }
+      }
+
+      @media(max-width:720px) {
+        html {
+          font-size: 16px;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .page-header {
+          padding: 2rem 1rem;
+          min-height: 280px;
+        }
+
+        .content-main {
+          padding: 1.6rem 1rem;
+        }
+
+        .content-sidebar {
+          padding: 1.6rem 1rem;
+        }
+
+        .pr-sub {
+          margin-left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
+      <ul class="nav-links">
+        <li>
+          <a href="https://vyrion.earth/conscience">CONSCIENCE</a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/atlas">ATLAS</a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/shield">SHIELD</a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/root">ROOT</a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/record" class="active">RECORD</a>
+        </li>
+      </ul>
+      <div class="nav-dot"></div>
+    </nav>
+    <header class="page-header">
+      <div class="bg-word">MSFT</div>
+      <div class="eyebrow">The Record · Issue 009 · Wednesday May 13, 2026</div>
+      <div class="issue-kicker"> NASDAQ: MSFT · CIK 0000789019 · Technology </div>
+      <div class="track-badge">ON TRACK</div>
+      <h1 class="issue-title">THE RECORD — ISSUE 009</h1>
+      <div class="issue-company">Microsoft</div>
+      <p class="issue-sub"> One company. Pledge vs. reality. Sourced. Scored. Published openly. CONSCIENCE Score: 61 / 100. Published: Wednesday, May 13, 2026. </p>
+    </header>
+    <div class="score-strip">
+      <div class="ss-cell">
+        <div class="ss-label">CONSCIENCE Score</div>
+        <div class="ss-val val-warn">61 <span style="font-size:.9rem;color:var(--t3)">/100</span>
+        </div>
+        <div class="ss-sub">Band: ON TRACK · threshold entry</div>
+      </div>
+      <div class="ss-cell">
+        <div class="ss-label">Carbon Negative Target</div>
+        <div class="ss-val val-ms">2030</div>
+        <div class="ss-sub">Historical removal by 2050</div>
+      </div>
+      <div class="ss-cell">
+        <div class="ss-label">Emission Trend</div>
+        <div class="ss-val val-warn">+29%</div>
+        <div class="ss-sub">Since 2020 pledge baseline</div>
+      </div>
+      <div class="ss-cell">
+        <div class="ss-label">CDP Grade</div>
+        <div class="ss-val val-glow">A−</div>
+        <div class="ss-sub">Leadership tier disclosure</div>
+      </div>
+      <div class="ss-cell">
+        <div class="ss-label">InfluenceMap</div>
+        <div class="ss-val val-ms">B−</div>
+        <div class="ss-sub">Moderate policy alignment</div>
+      </div>
+      <div class="ss-cell">
+        <div class="ss-label">AI Infrastructure</div>
+        <div class="ss-val val-ms">EXPANDING</div>
+        <div class="ss-sub">Global data center buildout</div>
+      </div>
+    </div>
+    <div class="score-bar-section">
+      <div class="sb-label-row">
+        <span>CONSCIENCE Score Position</span>
+        <span style="color:var(--warn)">61 / 100 — ON TRACK BAND</span>
+      </div>
+      <div class="sb-track">
+        <div class="sb-fill"></div>
+      </div>
+      <div class="sb-scale">
+        <span>0 — BREACH</span>
+        <span>30</span>
+        <span>60</span>
+        <span style="color:var(--warn)">↑ 61/100</span>
+        <span style="color:var(--glow)">100 — ON TRACK</span>
+      </div>
+    </div>
+    <div class="content-wrap">
+      <div class="content-main">
+        <div class="section-heading">Pledge vs. Reality</div>
+        <div class="pr-block">
+          <div class="pr-row">
+            <span class="pr-tag tag-pledge">PLEDGE</span>
+            <span class="pr-text"> Microsoft pledged to become carbon negative by 2030 and remove all historical emissions by 2050. The company maintains SBTi-approved 1.5°C aligned targets and has committed to large-scale carbon removal procurement, renewable energy expansion, and next-generation clean infrastructure deployment. </span>
+          </div>
+          <div class="pr-sub"> Microsoft Sustainability Report 2024 · SBTi Registry · microsoft.com/sustainability </div>
+          <div class="pr-row">
+            <span class="pr-tag tag-reality">REALITY</span>
+            <span class="pr-text"> Microsoft disclosed that emissions increased <strong>29% since the 2020 baseline</strong>, primarily driven by AI infrastructure expansion and hyperscale data center construction. New natural gas agreements and rising Scope 3 emissions continue to pressure the carbon negative pathway, even as the company accelerates nuclear, renewable, and carbon removal investments. </span>
+          </div>
+          <div class="pr-sub"> Microsoft Environmental Sustainability Report 2024 · CDP 2023 · SEC 10-K · BloombergNEF </div>
+        </div>
+        <div class="section-heading">CONSCIENCE Score Breakdown</div>
+        <div class="breakdown-block">
+          <div class="bd-row">
+            <span>Pledge Quality — carbon negative by 2030; historical emissions removal by 2050; SBTi 1.5°C approved</span>
+            <span class="bd-weight">30 max</span>
+            <span class="bd-score pos">+26</span>
+          </div>
+          <div class="bd-row">
+            <span>CDP Performance — A− disclosure leadership tier</span>
+            <span class="bd-weight">25 max</span>
+            <span class="bd-score pos">+22</span>
+          </div>
+          <div class="bd-row">
+            <span>InfluenceMap Lobbying Alignment — Grade B−; mixed policy alignment signals</span>
+            <span class="bd-weight">25 max</span>
+            <span class="bd-score part">+13</span>
+          </div>
+          <div class="bd-row">
+            <span>Legal + operational exposure — disclosed emission increase linked to AI infrastructure scale expansion</span>
+            <span class="bd-weight">20 max</span>
+            <span class="bd-score mod">0</span>
+          </div>
+          <div class="bd-total">
+            <span>CONSCIENCE Score — Total</span>
+            <span class="bd-total-score">61 / 100 · ON TRACK</span>
+          </div>
+        </div>
+        <div class="section-heading">Key Findings</div>
+        <div class="prose">
+          <p>
+            <strong>Finding 01 — Microsoft has one of the strongest climate pledges in the technology sector.</strong> The commitment to become carbon negative by 2030 and erase all historical emissions by 2050 represents one of the most aggressive long-term climate targets publicly disclosed by a global corporation.
+          </p>
+          <p>
+            <strong>Finding 02 — AI expansion is materially increasing emissions.</strong>
+            <span class="hl-warn">Microsoft’s own reporting confirms that emissions increased 29% since the 2020 baseline due primarily to AI data center expansion and infrastructure growth.</span> This is one of the clearest examples yet of the collision between accelerated AI deployment and planetary resource constraints.
+          </p>
+          <p>
+            <strong>Finding 03 — The company remains operationally credible despite the increase.</strong> Microsoft maintains an A− CDP score, approved SBTi pathway, and large-scale renewable procurement strategy. Nuclear energy partnerships, carbon removal contracts, and clean energy offtakes indicate that the company is attempting to scale infrastructure and decarbonization simultaneously.
+          </p>
+          <p>
+            <strong>Finding 04 — Scope 3 remains the structural pressure point.</strong>
+            <span class="hl-ms">Construction materials, semiconductor manufacturing, cloud expansion, and hardware supply chains continue pushing Scope 3 emissions upward faster than operational reductions can offset them.</span> This is now the defining execution risk of Microsoft’s climate pathway.
+          </p>
+        </div>
+        <div class="section-heading">Capital Markets Signal</div>
+        <div class="prose">
+          <p> Microsoft enters the ON TRACK band at 61/100 — but only narrowly. The score reflects a company with exceptionally strong climate ambition and relatively high disclosure quality, offset by rapidly increasing emissions tied directly to AI infrastructure scaling. </p>
+          <p> The strategic signal is structural: Microsoft is attempting to build the next generation of global AI infrastructure while simultaneously maintaining a carbon negative pathway. Few companies at hyperscale have attempted both simultaneously. </p>
+          <p>
+            <span class="hl-warn">The key variable is whether clean energy deployment can outpace AI infrastructure expansion over the next four years.</span> If operational growth continues to exceed decarbonization velocity, the ON TRACK status becomes unstable.
+          </p>
+          <p>
+            <strong>Investable Signal:</strong> High disclosure quality. Strong target architecture. Rising execution pressure from hyperscale AI growth. Watch for: Scope 3 trajectory stabilization, nuclear deployment timelines, 2025 CDP disclosure changes, and updated SEC climate risk disclosures.
+          </p>
+        </div>
+        <div class="section-heading">Primary Sources</div>
+        <div class="prose">
+          <p> Microsoft Environmental Sustainability Report 2024 <br> CDP 2023 Public Disclosure <br> InfluenceMap Corporate Profile — Microsoft <br> SBTi Registry — Approved 1.5°C Targets <br> SEC EDGAR — CIK 0000789019 <br> Sabin Center Climate Litigation Database <br> Transition Pathway Initiative — Level 4/5 </p>
+        </div>
+      </div>
+      <div class="content-sidebar">
+        <div class="sidebar-label">Key Indicators</div>
+        <div class="sidebar-block">
+          <div class="sval-row">
+            <span class="sval-label">CONSCIENCE Score</span>
+            <span class="sval-val sval-warn">61 / 100</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label">Band</span>
+            <span class="sval-val sval-warn">ON TRACK</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label">Emissions Since 2020</span>
+            <span class="sval-val sval-warn">+29%</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label">Carbon Negative</span>
+            <span class="sval-val sval-ms">2030</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label">Historical Removal</span>
+            <span class="sval-val sval-ms">2050</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label">CDP Grade</span>
+            <span class="sval-val sval-glow">A−</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label">InfluenceMap</span>
+            <span class="sval-val sval-ms">B−</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label">SBTi Status</span>
+            <span class="sval-val sval-glow">Approved 1.5°C</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label">TPI Level</span>
+            <span class="sval-val sval-glow">4 / 5</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label">Active Lawsuits</span>
+            <span class="sval-val sval-warn">1</span>
+          </div>
+        </div>
+        <div class="sidebar-label">Issue Archive</div>
+        <div class="sidebar-block">
+          <div class="sval-row">
+            <span class="sval-label">001 · BP</span>
+            <span class="sval-val" style="color:#F03030">11/100</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label">002 · ExxonMobil</span>
+            <span class="sval-val" style="color:#F03030">8/100</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label">003 · Shell</span>
+            <span class="sval-val" style="color:#F03030">19/100</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label">004 · Delta</span>
+            <span class="sval-val" style="color:#F03030">14/100</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label">005 · Starbucks</span>
+            <span class="sval-val" style="color:#F03030">29/100</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label">006 · Walmart</span>
+            <span class="sval-val" style="color:#F09000">38/100</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label">007 · Meta</span>
+            <span class="sval-val" style="color:#F09000">43/100</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label">008 · Apple</span>
+            <span class="sval-val" style="color:#5AD7FF">84/100</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label" style="color:var(--microsoft)">009 · Microsoft</span>
+            <span class="sval-val sval-warn">61/100</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="record-footer"> THE RECORD — VYRION Issue 009 · Microsoft · Published May 13, 2026 <br> VYRION PBC · Tyler Frost · Hilo, Hawaii · vyrion.earth <br> Methodology: CONSCIENCE-METHODOLOGY.md · Corrections: contact@vyrion.earth · Open Proof Protocol Active </footer>
+  </body>
+</html>
