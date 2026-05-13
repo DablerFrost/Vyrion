@@ -227,6 +227,39 @@
         }
       }
 
+		/* ── NAV CONTROLS ───────────────────────────────────────── */
+.nav-controls{display:flex;align-items:center;gap:.35rem;flex-shrink:0}
+.nc-sep{width:1px;height:16px;background:var(--border);margin:0 .15rem}
+.nc-theme{
+  font-family:'Courier Prime',monospace;font-size:.58rem;font-weight:700;
+  letter-spacing:.12em;padding:.22rem .5rem;border-radius:2px;
+  border:1px solid var(--border);background:transparent;
+  color:var(--t2);cursor:pointer;transition:all .2s;white-space:nowrap;
+}
+.nc-theme:hover,.nc-theme.active{
+  border-color:var(--glow);color:var(--glow);
+  background:rgba(0,212,255,.08);box-shadow:0 0 8px rgba(0,212,255,.12);
+}
+[data-theme="light"] .nc-theme:hover,[data-theme="light"] .nc-theme.active{
+  border-color:var(--glow);color:var(--glow);background:rgba(0,136,68,.1);box-shadow:none;
+}
+.nc-sz{
+  font-family:'Courier Prime',monospace;font-size:.6rem;font-weight:700;
+  width:26px;height:26px;display:flex;align-items:center;justify-content:center;
+  border-radius:2px;border:1px solid var(--border);
+  background:transparent;color:var(--t3);cursor:pointer;transition:all .2s;
+}
+.nc-sz:hover{border-color:rgba(0,212,255,.4);color:var(--t1)}
+.nc-sz.active{
+  background:rgba(0,212,255,.15);
+  border-color:var(--glow);color:var(--glow);
+  box-shadow:0 0 8px rgba(0,212,255,.2);
+}
+[data-theme="light"] .nc-sz.active{
+  background:rgba(0,136,68,.12);border-color:var(--glow);
+  color:var(--glow);box-shadow:none;
+}
+
       /* HEADER */
       .atlas-header {
         position: relative;
