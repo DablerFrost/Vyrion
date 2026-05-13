@@ -227,38 +227,41 @@
         }
       }
 
-		/* ── NAV CONTROLS ───────────────────────────────────────── */
-.nav-controls{display:flex;align-items:center;gap:.35rem;flex-shrink:0}
-.nc-sep{width:1px;height:16px;background:var(--border);margin:0 .15rem}
-.nc-theme{
-  font-family:'Courier Prime',monospace;font-size:.58rem;font-weight:700;
-  letter-spacing:.12em;padding:.22rem .5rem;border-radius:2px;
-  border:1px solid var(--border);background:transparent;
-  color:var(--t2);cursor:pointer;transition:all .2s;white-space:nowrap;
-}
-.nc-theme:hover,.nc-theme.active{
-  border-color:var(--glow);color:var(--glow);
-  background:rgba(0,212,255,.08);box-shadow:0 0 8px rgba(0,212,255,.12);
-}
-[data-theme="light"] .nc-theme:hover,[data-theme="light"] .nc-theme.active{
-  border-color:var(--glow);color:var(--glow);background:rgba(0,136,68,.1);box-shadow:none;
-}
-.nc-sz{
-  font-family:'Courier Prime',monospace;font-size:.6rem;font-weight:700;
-  width:26px;height:26px;display:flex;align-items:center;justify-content:center;
-  border-radius:2px;border:1px solid var(--border);
-  background:transparent;color:var(--t3);cursor:pointer;transition:all .2s;
-}
-.nc-sz:hover{border-color:rgba(0,212,255,.4);color:var(--t1)}
-.nc-sz.active{
-  background:rgba(0,212,255,.15);
-  border-color:var(--glow);color:var(--glow);
-  box-shadow:0 0 8px rgba(0,212,255,.2);
-}
-[data-theme="light"] .nc-sz.active{
-  background:rgba(0,136,68,.12);border-color:var(--glow);
-  color:var(--glow);box-shadow:none;
-}
+      .nc-sz {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        font-weight: 700;
+        width: 26px;
+        height: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2px;
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--t3);
+        cursor: pointer;
+        transition: all .2s;
+      }
+
+      .nc-sz:hover {
+        border-color: rgba(0, 212, 255, .4);
+        color: var(--t1)
+      }
+
+      .nc-sz.active {
+        background: rgba(0, 212, 255, .15);
+        border-color: var(--glow);
+        color: var(--glow);
+        box-shadow: 0 0 8px rgba(0, 212, 255, .2);
+      }
+
+      [data-theme="light"] .nc-sz.active {
+        background: rgba(0, 136, 68, .12);
+        border-color: var(--glow);
+        color: var(--glow);
+        box-shadow: none;
+      }
 
       /* HEADER */
       .atlas-header {
@@ -1537,26 +1540,74 @@
   <body>
     <!-- NAV -->
     <nav class="nav">
-  <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
-  <ul class="nav-links">
-    <li><a href="https://vyrion.earth/conscience">CONSCIENCE</a></li>
-    <li><a href="https://vyrion.earth/shield">SHIELD</a></li>
-    <li><a href="https://vyrion.earth/atlas" class="active">ATLAS</a></li>
-    <li><a href="https://vyrion.earth/root">ROOT</a></li>
-    <li><a href="https://vyrion.earth/record">RECORD</a></li>
-    <li><a href="https://vyrion.earth/archive">ARCHIVE</a></li>
-    <li><a href="https://vyrion.earth/nexan">NEXAN</a></li>
-    <li><a href="https://vyrion.earth/about">ABOUT</a></li>
-  </ul>
+      <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
+      <ul class="nav-links">
+        <li>
+          <a href="https://vyrion.earth/conscience">CONSCIENCE</a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/shield">SHIELD</a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/atlas" class="active">ATLAS</a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/root">ROOT</a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/record">RECORD</a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/archive">ARCHIVE</a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/nexan">NEXAN</a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/about">ABOUT</a>
+        </li>
+      </ul>
       <div class="nav-controls">
-    <button class="nc-theme active" id="theme-btn" onclick="toggleTheme()" title="Toggle light/dark mode">◐ DARK</button>
-    <div class="nc-sep"></div>
-    <button class="nc-sz" data-scale="0.88" onclick="setScale(this)" title="Small">S</button>
-    <button class="nc-sz active" data-scale="1.0" onclick="setScale(this)" title="Medium">M</button>
-    <button class="nc-sz" data-scale="1.22" onclick="setScale(this)" title="Large">L</button>
-  </div>
-  <div class="nav-dot"></div>
-</nav>
+  <button
+    class="nc-theme"
+    id="theme-btn"
+    onclick="toggleTheme()"
+    title="Toggle light/dark mode"
+  >
+    ◐ DARK
+  </button>
+
+  <div class="nc-sep"></div>
+
+  <button
+    class="nc-sz"
+    data-scale="s"
+    onclick="setScale(this)"
+    title="Small"
+  >
+    S
+  </button>
+
+  <button
+    class="nc-sz active"
+    data-scale="m"
+    onclick="setScale(this)"
+    title="Medium"
+  >
+    M
+  </button>
+
+  <button
+    class="nc-sz"
+    data-scale="l"
+    onclick="setScale(this)"
+    title="Large"
+  >
+    L
+  </button>
+</div>
+      <div class="nav-dot"></div>
+    </nav>
     <!-- HEADER -->
     <header class="atlas-header">
       <div class="bg-word">ATLAS</div>
@@ -3055,7 +3106,7 @@
               t: 'Biosphere Integrity — BOUNDARY EXCEEDED',
               b: 'Safe:  < 10 E / MSY.Current: 100– 1000× above safe.Most severely transgressed boundary.The sixth mass extinction is the permanent loss of evolutionary potential.Irreversible on any human timescale.
               ',s:'
-              Steffen et al.2015· Barnosky et al.2011· IPBES 2019 '},
+              Steffen et al .2015· Barnosky et al .2011· IPBES 2019 '},
               'pb-land': {
                 t: 'Land System Change — BOUNDARY EXCEEDED',
                 b: 'Safe: ≥75% global forests intact. Currently below threshold. Amazon tipping point risk at 20–25% deforestation — currently ~17–18%. Congo Basin and SE Asian forests also degraded.',
@@ -3252,90 +3303,233 @@
               }
             }
             async function load() {
-                stamp();
-                /* All fetches in parallel */
-                const [co2r, firesr, tempr, edgarr] = await Promise.allSettled([
-                  fetchCO2(), fetchEONET(), fetchGlobalTemp(), fetchEDGAR8K()
-                ]);
-                /* CO₂ */
-                const co2 = co2r.status === 'fulfilled' ? co2r.value : null;
-                if (co2) {
-                  const ppm = parseFloat(co2.ppm);
-                  /* Update atmosphere card */
-                  const av = document.getElementById('atm-val');
-                  if (av) {
-                    av.innerHTML = `${co2.ppm}
-																<span class="sc-unit">ppm CO₂</span>`;
-                    av.style.color = 'var(--breach)';
-                  }
-                  const ad = document.getElementById('atm-desc');
-                  if (ad) ad.textContent = `NOAA Mauna Loa Observatory · ${co2.date} · Daily measurement`;
-                  const ap = document.getElementById('atm-ppm');
-                  if (ap) ap.textContent = co2.ppm;
-                  /* Dynamically update atmosphere system bar and score */
-                  const atmScore = Math.max(0, Math.min(100, 100 - ((ppm - 280) / (450 - 280)) * 100));
-                  const bar = document.getElementById('bar-atm');
-                  if (bar) bar.style.width = atmScore.toFixed(0) + '%';
-                  const sc = document.getElementById('sc-atm');
-                  if (sc) {
-                    sc.textContent = atmScore.toFixed(1);
-                    sc.style.color = atmScore < 31 ? 'var(--breach)' : 'var(--warn)';
-                  }
-                } else {
-                  const av = document.getElementById('atm-val');
-                  if (av) {
-                    av.innerHTML = '424.8 < span class = "sc-unit" > ppm CO₂ < /span>';av.style.color='var(--breach)';}
-                  }
-                  /* Fire count — Forest card only */
-                  const fires = firesr.status === 'fulfilled' ? firesr.value : null;
-                  if (fires !== null) {
-                    const fv = document.getElementById('fst-val');
-                    if (fv) {
-                      fv.innerHTML = `${fires}
-																	<span class="sc-unit">open fire events · 14d</span>`;
-                      fv.style.color = fires > 20 ? 'var(--breach)' : 'var(--warn)';
-                    }
-                    const fd = document.getElementById('fst-desc');
-                    if (fd) fd.textContent = `NASA EONET open wildfire events · Past 14 days · MODIS + VIIRS active fire detection`;
-                  } else {
-                    const fv = document.getElementById('fst-val');
-                    if (fv) fv.innerHTML = '— < span class = "sc-unit" > open fire events· 14 d < /span>';
-                  }
-                  /* Global temp anomaly — Freshwater card */
-                  const temp = tempr.status === 'fulfilled' ? tempr.value : null;
-                  if (temp !== null) {
-                    const fwv = document.getElementById('fw-val');
-                    const t = parseFloat(temp);
-                    if (fwv) {
-                      fwv.innerHTML = `${t>0?'+':''}${t}
-																	<span class="sc-unit">°C surface temp anomaly</span>`;
-                      fwv.style.color = Math.abs(t) > 1.2 ? 'var(--breach)' : Math.abs(t) > 0.8 ? 'var(--warn)' : 'var(--glow)';
-                    }
-                    const fd2 = document.getElementById('fw-desc');
-                    if (fd2) fd2.textContent = `ERA5 multi-latitude mean temp anomaly vs pre-industrial ~13.8°C baseline · Open-Meteo`;
-                  } else {
-                    const fwv = document.getElementById('fw-val');
-                    if (fwv) fwv.innerHTML = '+1.1 < span class = "sc-unit" > °C surface temp anomaly < /span>';
-                  }
-                  /* 8-K count — Corporate card */
-                  const k8 = edgarr.status === 'fulfilled' ? edgarr.value : null;
-                  if (k8 !== null) {
-                    const cv = document.getElementById('corp-val');
-                    if (cv) {
-                      cv.innerHTML = `${k8}
-																	<span class="sc-unit">8-K filings · 90d · 3 cos.</span>`;
-                      cv.style.color = k8 > 8 ? 'var(--breach)' : k8 > 4 ? 'var(--warn)' : 'var(--glow)';
-                    }
-                    const cd = document.getElementById('corp-desc');
-                    if (cd) cd.textContent = `SEC EDGAR 8-K regulatory event density · ExxonMobil, BP, Apple · Past 90 days`;
-                  } else {
-                    const cv = document.getElementById('corp-val');
-                    if (cv) cv.innerHTML = '— < span class = "sc-unit" > 8 - K filings· 90 d < /span>';
-                  }
-                  stamp();
+              stamp();
+              /* All fetches in parallel */
+              const [co2r, firesr, tempr, edgarr] = await Promise.allSettled([
+                fetchCO2(), fetchEONET(), fetchGlobalTemp(), fetchEDGAR8K()
+              ]);
+              /* CO₂ */
+              const co2 = co2r.status === 'fulfilled' ? co2r.value : null;
+              if (co2) {
+                const ppm = parseFloat(co2.ppm);
+                /* Update atmosphere card */
+                const av = document.getElementById('atm-val');
+                if (av) {
+                  av.innerHTML = `${co2.ppm}
+																
+														<span class="sc-unit">ppm CO₂</span>`;
+                  av.style.color = 'var(--breach)';
                 }
-                load();
-                setInterval(load, 15 * 60 * 1000);
+                const ad = document.getElementById('atm-desc');
+                if (ad) ad.textContent = `NOAA Mauna Loa Observatory · ${co2.date} · Daily measurement`;
+                const ap = document.getElementById('atm-ppm');
+                if (ap) ap.textContent = co2.ppm;
+                /* Dynamically update atmosphere system bar and score */
+                const atmScore = Math.max(0, Math.min(100, 100 - ((ppm - 280) / (450 - 280)) * 100));
+                const bar = document.getElementById('bar-atm');
+                if (bar) bar.style.width = atmScore.toFixed(0) + '%';
+                const sc = document.getElementById('sc-atm');
+                if (sc) {
+                  sc.textContent = atmScore.toFixed(1);
+                  sc.style.color = atmScore < 31 ? 'var(--breach)' : 'var(--warn)';
+                }
+              } else {
+                const av = document.getElementById('atm-val');
+                if (av) {
+                  av.innerHTML = '424.8 < span class = "sc-unit" > ppm CO₂ < /span>';
+                  av.style.color = 'var(--breach)';
+                }
+              }
+              /* Fire count — Forest card only */
+              const fires = firesr.status === 'fulfilled' ? firesr.value : null;
+              if (fires !== null) {
+                const fv = document.getElementById('fst-val');
+                if (fv) {
+                  fv.innerHTML = `${fires}
+																	
+														<span class="sc-unit">open fire events · 14d</span>`;
+                  fv.style.color = fires > 20 ? 'var(--breach)' : 'var(--warn)';
+                }
+                const fd = document.getElementById('fst-desc');
+                if (fd) fd.textContent = `NASA EONET open wildfire events · Past 14 days · MODIS + VIIRS active fire detection`;
+              } else {
+                const fv = document.getElementById('fst-val');
+                if (fv) fv.innerHTML = '— < span class = "sc-unit" > open fire events· 14 d < /span>';
+              }
+              /* Global temp anomaly — Freshwater card */
+              const temp = tempr.status === 'fulfilled' ? tempr.value : null;
+              if (temp !== null) {
+                const fwv = document.getElementById('fw-val');
+                const t = parseFloat(temp);
+                if (fwv) {
+                  fwv.innerHTML = `${t>0?'+':''}${t}
+																	
+														<span class="sc-unit">°C surface temp anomaly</span>`;
+                  fwv.style.color = Math.abs(t) > 1.2 ? 'var(--breach)' : Math.abs(t) > 0.8 ? 'var(--warn)' : 'var(--glow)';
+                }
+                const fd2 = document.getElementById('fw-desc');
+                if (fd2) fd2.textContent = `ERA5 multi-latitude mean temp anomaly vs pre-industrial ~13.8°C baseline · Open-Meteo`;
+              } else {
+                const fwv = document.getElementById('fw-val');
+                if (fwv) fwv.innerHTML = '+1.1 < span class = "sc-unit" > °C surface temp anomaly < /span>';
+              }
+              /* 8-K count — Corporate card */
+              const k8 = edgarr.status === 'fulfilled' ? edgarr.value : null;
+              if (k8 !== null) {
+                const cv = document.getElementById('corp-val');
+                if (cv) {
+                  cv.innerHTML = `${k8}
+																	
+														<span class="sc-unit">8-K filings · 90d · 3 cos.</span>`;
+                  cv.style.color = k8 > 8 ? 'var(--breach)' : k8 > 4 ? 'var(--warn)' : 'var(--glow)';
+                }
+                const cd = document.getElementById('corp-desc');
+                if (cd) cd.textContent = `SEC EDGAR 8-K regulatory event density · ExxonMobil, BP, Apple · Past 90 days`;
+              } else {
+                const cv = document.getElementById('corp-val');
+                if (cv) cv.innerHTML = '— < span class = "sc-unit" > 8 - K filings· 90 d < /span>';
+              }
+              stamp();
+            }
+            load();
+            setInterval(load, 15 * 60 * 1000);
     </script>
+<script>
+/* ─────────────────────────────────────────
+   VYRION UI CONTROLS
+───────────────────────────────────────── */
+
+const STORAGE_THEME = 'vyrion-theme';
+const STORAGE_SCALE = 'vyrion-scale';
+
+const FONT_SCALES = {
+  s: 16,
+  m: 18,
+  l: 22
+};
+
+/* THEME */
+
+function toggleTheme() {
+
+  const html = document.documentElement;
+
+  const current =
+    html.getAttribute('data-theme') || 'dark';
+
+  const next =
+    current === 'dark'
+      ? 'light'
+      : 'dark';
+
+  html.setAttribute('data-theme', next);
+
+  const btn =
+    document.getElementById('theme-btn');
+
+  if (btn) {
+    btn.textContent =
+      next === 'dark'
+        ? '◐ DARK'
+        : '◑ LIGHT';
+  }
+
+  try {
+    localStorage.setItem(
+      STORAGE_THEME,
+      next
+    );
+  } catch (e) {}
+}
+
+/* FONT SCALE */
+
+function setScale(btn) {
+
+  const scale =
+    btn.dataset.scale;
+
+  const px =
+    FONT_SCALES[scale] || 18;
+
+  document.documentElement.style.fontSize =
+    px + 'px';
+
+  document
+    .querySelectorAll('.nc-sz')
+    .forEach(el => {
+      el.classList.remove('active');
+    });
+
+  btn.classList.add('active');
+
+  try {
+    localStorage.setItem(
+      STORAGE_SCALE,
+      scale
+    );
+  } catch (e) {}
+}
+
+/* INIT */
+
+document.addEventListener(
+  'DOMContentLoaded',
+  () => {
+
+    /* THEME */
+
+    try {
+
+      const savedTheme =
+        localStorage.getItem(STORAGE_THEME)
+        || 'dark';
+
+      document.documentElement.setAttribute(
+        'data-theme',
+        savedTheme
+      );
+
+      const themeBtn =
+        document.getElementById('theme-btn');
+
+      if (themeBtn) {
+
+        themeBtn.textContent =
+          savedTheme === 'dark'
+            ? '◐ DARK'
+            : '◑ LIGHT';
+      }
+
+    } catch (e) {}
+
+    /* SCALE */
+
+    try {
+
+      const savedScale =
+        localStorage.getItem(STORAGE_SCALE)
+        || 'm';
+
+      const px =
+        FONT_SCALES[savedScale] || 18;
+
+      document.documentElement.style.fontSize =
+        px + 'px';
+
+      document
+        .querySelectorAll('.nc-sz')
+        .forEach(el => {
+
+          el.classList.toggle(
+            'active',
+            el.dataset.scale === savedScale
+          );
+        });
+
+    } catch (e) {}
+  }
+);
+</script>
   </body>
 </html>
