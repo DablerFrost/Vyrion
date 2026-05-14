@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="description" content="VYRION PBC — Hawaii-based planetary accountability infrastructure. Building the world's first daily investable planetary health benchmark. Founded April 2026.">
+<meta name="description" content="VYRION PBC — Hawaii-based planetary accountability infrastructure. Building the world's first daily investable planetary health benchmark. Founded March 18, 2026.">
 <meta property="og:title" content="VYRION PBC — About">
 <meta property="og:description" content="Hawaii-based planetary accountability infrastructure. Daily investable planetary health benchmark. Open Proof Protocol.">
 <meta property="og:url" content="https://vyrion.earth/about">
@@ -12,11 +12,12 @@
 <meta name="twitter:title" content="VYRION PBC — About">
 <meta name="twitter:description" content="Hawaii-based planetary accountability infrastructure. Daily investable planetary health benchmark.">
 <link rel="canonical" href="https://vyrion.earth/about">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/assets/favicon.ico">
 <title>VYRION PBC — About</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&family=Archivo:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
-<link rel="icon" href="/assets/favicon.ico">
 <style>
 :root{
   --void:#020912;--void2:#061624;--void3:#0b2035;
@@ -402,11 +403,11 @@ function toggleTheme(){
   const next = cur === 'dark' ? 'light' : 'dark';
   document.documentElement.setAttribute('data-theme', next);
   document.getElementById('theme-btn').textContent = next === 'dark' ? '◐ DARK' : '◑ LIGHT';
-  try { localStorage.setItem('vyr_theme', next); } catch (e) {}
+  try { localStorage.setItem('vc-theme', next); } catch (e) {}
 }
 (function(){
   try {
-    const saved = localStorage.getItem('vyr_theme');
+    const saved = localStorage.getItem('vc-theme');
     if (saved === 'light') {
       document.documentElement.setAttribute('data-theme', 'light');
       document.getElementById('theme-btn').textContent = '◑ LIGHT';
