@@ -1,6 +1,6 @@
 [README (5).md](https://github.com/user-attachments/files/27423652/README.5.md)
 # VYRION CONSCIENCE
-**Planetary Accountability Infrastructure · v3.1 · May 2026**
+**Planetary Accountability Infrastructure · V2.8 · May 2026**
 
 Live platform: [vyrion.earth](https://www.vyrion.earth)  
 Data interface: [vyrion.earth/conscience-data.html](https://www.vyrion.earth/conscience-data.html)  
@@ -76,7 +76,6 @@ All three are live and publicly accessible. Data pipelines update daily via auto
 │   └── 2026-03-26.md
 │
 ├── record/                 → The Record · weekly investigative reports
-│   ├── index.html
 │   ├── issue-001.html      → BP
 │   ├── issue-002.html      → ExxonMobil
 │   ├── issue-003.html      → Shell
@@ -84,6 +83,9 @@ All three are live and publicly accessible. Data pipelines update daily via auto
 │   ├── issue-005.html      → Starbucks
 │   ├── issue-006.html      → Walmart
 │   └── issue-007.html      → Meta
+│   └── issue-008.html      → Apple
+│   └── issue-009.html      → Microsoft
+│   ├── weekly.html
 │
 ├── docs/                   → Documentation and governance
 │   ├── system/             → Methodology, scoring definitions, brand, legal
@@ -211,6 +213,8 @@ Weekly investigative reports published every Wednesday. Each issue profiles one 
 | 005 | Starbucks | April 15, 2026 |
 | 006 | Walmart | April 22, 2026 |
 | 007 | Meta | April 29, 2026 |
+| 008 | Apple | May 06, 2026 |
+| 009 | Microsoft | May 13, 2026 |
 
 ---
 
