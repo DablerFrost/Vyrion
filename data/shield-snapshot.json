@@ -1,21 +1,37 @@
 {
   "meta": {
-    "generated": "2026-05-14T14:38:18.149Z",
-    "generated_date": "2026-05-14",
+    "generated": "2026-05-15T14:32:55.111Z",
+    "generated_date": "2026-05-15",
     "script_version": "1.1",
     "window_days": 14,
-    "window_start": "2026-04-30",
-    "window_end": "2026-05-14",
-    "runtime_ms": 2343,
+    "window_start": "2026-05-01",
+    "window_end": "2026-05-15",
+    "runtime_ms": 160,
     "seismic_live": true,
     "eonet_live": true
   },
   "threat": {
-    "level": "ELEVATED",
-    "score": 13.95
+    "level": "CRITICAL",
+    "score": 17.75
   },
   "seismic": {
     "events": [
+      {
+        "id": "us6000sxwq",
+        "magnitude": 6.7,
+        "place": "49 km ESE of Ōfunato, Japan",
+        "time": "2026-05-15T11:22:01.649Z",
+        "depth_km": 43.6,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sxwq"
+      },
+      {
+        "id": "us6000sxqf",
+        "magnitude": 6.2,
+        "place": "271 km WSW of Tual, Indonesia",
+        "time": "2026-05-14T17:53:14.710Z",
+        "depth_km": 146.1,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sxqf"
+      },
       {
         "id": "us7000si2z",
         "magnitude": 6,
@@ -65,28 +81,12 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sicu"
       },
       {
-        "id": "us7000shjp",
-        "magnitude": 5.8,
-        "place": "29 km ENE of Yilan, Taiwan",
-        "time": "2026-05-01T12:39:55.578Z",
-        "depth_km": 97.3,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000shjp"
-      },
-      {
         "id": "us6000sx9x",
         "magnitude": 5.7,
         "place": "275 km SW of Houma, Tonga",
         "time": "2026-05-12T21:19:36.870Z",
         "depth_km": 154,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sx9x"
-      },
-      {
-        "id": "us7000si51",
-        "magnitude": 5.7,
-        "place": "2 km SE of Zocoteaca de León, Mexico",
-        "time": "2026-05-04T15:19:26.467Z",
-        "depth_km": 22.2,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000si51"
       },
       {
         "id": "us7000shs2",
@@ -137,6 +137,22 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000svp9"
       },
       {
+        "id": "us7000si51",
+        "magnitude": 5.5,
+        "place": "0 km SW of San Juan Jicayán, Mexico",
+        "time": "2026-05-04T15:19:24.589Z",
+        "depth_km": 18,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000si51"
+      },
+      {
+        "id": "us6000sxu9",
+        "magnitude": 5.4,
+        "place": "119 km SSE of Lorengau, Papua New Guinea",
+        "time": "2026-05-15T01:13:58.659Z",
+        "depth_km": 10,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sxu9"
+      },
+      {
         "id": "us6000sxn9",
         "magnitude": 5.3,
         "place": "32 km WNW of Darien, Colombia",
@@ -185,6 +201,14 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000siat"
       },
       {
+        "id": "us6000sxnw",
+        "magnitude": 5.2,
+        "place": "Volcano Islands, Japan region",
+        "time": "2026-05-14T15:34:06.382Z",
+        "depth_km": 157.4,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sxnw"
+      },
+      {
         "id": "us6000swvm",
         "magnitude": 5.2,
         "place": "72 km NW of Malango, Solomon Islands",
@@ -223,14 +247,6 @@
         "time": "2026-05-02T10:27:06.738Z",
         "depth_km": 122.1,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000shsh"
-      },
-      {
-        "id": "nn00916980",
-        "magnitude": 5.2,
-        "place": "19 km SE of Silver Springs, Nevada",
-        "time": "2026-05-01T08:17:19.870Z",
-        "depth_km": 5,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nn00916980"
       },
       {
         "id": "us6000sxmm",
@@ -345,22 +361,6 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000shnl"
       },
       {
-        "id": "us7000shj5",
-        "magnitude": 5.1,
-        "place": "South Sandwich Islands region",
-        "time": "2026-05-01T11:04:39.548Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000shj5"
-      },
-      {
-        "id": "us7000shh1",
-        "magnitude": 5.1,
-        "place": "70 km ENE of Severo-Kuril’sk, Russia",
-        "time": "2026-05-01T04:03:16.561Z",
-        "depth_km": 76,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000shh1"
-      },
-      {
         "id": "us6000sxd4",
         "magnitude": 5,
         "place": "South Sandwich Islands region",
@@ -425,14 +425,6 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000swg6"
       },
       {
-        "id": "us7000shze",
-        "magnitude": 5,
-        "place": "190 km W of Neiafu, Tonga",
-        "time": "2026-05-03T16:36:14.963Z",
-        "depth_km": 292.3,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000shze"
-      },
-      {
         "id": "us7000shsi",
         "magnitude": 5,
         "place": "South Sandwich Islands region",
@@ -447,14 +439,6 @@
         "time": "2026-05-02T05:04:56.485Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000shps"
-      },
-      {
-        "id": "us7000shg3",
-        "magnitude": 5,
-        "place": "southern Mid-Atlantic Ridge",
-        "time": "2026-05-01T00:49:08.859Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000shg3"
       },
       {
         "id": "us6000sxh5",
@@ -579,9 +563,9 @@
       {
         "id": "us7000shza",
         "magnitude": 4.9,
-        "place": "57 km NNE of Yonakuni, Japan",
-        "time": "2026-05-03T16:18:53.661Z",
-        "depth_km": 131.4,
+        "place": "47 km NNE of Yonakuni, Japan",
+        "time": "2026-05-03T16:18:54.151Z",
+        "depth_km": 140.6,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000shza"
       },
       {
@@ -593,20 +577,20 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000shwv"
       },
       {
-        "id": "us7000shjt",
-        "magnitude": 4.9,
-        "place": "81 km ENE of Hasaki, Japan",
-        "time": "2026-05-01T13:00:41.190Z",
-        "depth_km": 35,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000shjt"
+        "id": "us6000sxx0",
+        "magnitude": 4.8,
+        "place": "Bonin Islands, Japan region",
+        "time": "2026-05-15T11:20:54.030Z",
+        "depth_km": 36,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sxx0"
       },
       {
-        "id": "us7000shiq",
-        "magnitude": 4.9,
-        "place": "14 km ESE of Ransiki, Indonesia",
-        "time": "2026-05-01T09:24:24.221Z",
+        "id": "us6000sxtg",
+        "magnitude": 4.8,
+        "place": "South Sandwich Islands region",
+        "time": "2026-05-14T22:14:05.512Z",
         "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000shiq"
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sxtg"
       },
       {
         "id": "us6000sxi7",
@@ -707,16 +691,16 @@
       {
         "id": "us7000si6f",
         "magnitude": 4.8,
-        "place": "86 km N of Noşratābād, Iran",
-        "time": "2026-05-04T16:47:47.610Z",
+        "place": "80 km N of Noşratābād, Iran",
+        "time": "2026-05-04T16:47:47.029Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000si6f"
       },
       {
         "id": "us7000si54",
         "magnitude": 4.8,
-        "place": "62 km SSE of Kangding, China",
-        "time": "2026-05-04T15:03:00.744Z",
+        "place": "56 km SSE of Kangding, China",
+        "time": "2026-05-04T15:03:00.555Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000si54"
       },
@@ -759,30 +743,6 @@
         "time": "2026-05-01T17:19:26.191Z",
         "depth_km": 48.7,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000shl7"
-      },
-      {
-        "id": "us7000shgu",
-        "magnitude": 4.8,
-        "place": "Nicobar Islands, India region",
-        "time": "2026-05-01T03:12:50.562Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000shgu"
-      },
-      {
-        "id": "us7000shfd",
-        "magnitude": 4.8,
-        "place": "85 km ESE of Kokopo, Papua New Guinea",
-        "time": "2026-04-30T22:58:41.560Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000shfd"
-      },
-      {
-        "id": "us7000shd3",
-        "magnitude": 4.8,
-        "place": "Mid-Indian Ridge",
-        "time": "2026-04-30T17:28:32.220Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000shd3"
       },
       {
         "id": "us6000sxm9",
@@ -977,6 +937,14 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sxcz"
       },
       {
+        "id": "us6000sxwc",
+        "magnitude": 4.6,
+        "place": "102 km SSE of Lorengau, Papua New Guinea",
+        "time": "2026-05-13T05:22:28.769Z",
+        "depth_km": 10,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sxwc"
+      },
+      {
         "id": "us6000sx3g",
         "magnitude": 4.6,
         "place": "131 km SE of Petropavlovsk-Kamchatsky, Russia",
@@ -1076,7 +1044,7 @@
         "id": "us6000sxdv",
         "magnitude": 4.6,
         "place": "Fiji region",
-        "time": "2026-05-07T13:57:40.205Z",
+        "time": "2026-05-07T13:57:40.198Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sxdv"
       },
@@ -1092,9 +1060,17 @@
         "id": "us6000svsx",
         "magnitude": 4.6,
         "place": "25 km NE of La Troncal, Ecuador",
-        "time": "2026-05-06T22:06:49.692Z",
-        "depth_km": 96.8,
+        "time": "2026-05-06T22:06:49.650Z",
+        "depth_km": 95.3,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000svsx"
+      },
+      {
+        "id": "us6000sxq3",
+        "magnitude": 4.6,
+        "place": "194 km ENE of Levuka, Fiji",
+        "time": "2026-05-06T21:17:07.426Z",
+        "depth_km": 576.5,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sxq3"
       },
       {
         "id": "us6000svma",
@@ -1131,8 +1107,8 @@
       {
         "id": "us7000si5h",
         "magnitude": 4.6,
-        "place": "55 km SSE of Kangding, China",
-        "time": "2026-05-04T16:03:03.672Z",
+        "place": "46 km SSE of Kangding, China",
+        "time": "2026-05-04T16:03:03.665Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000si5h"
       },
@@ -1179,10 +1155,18 @@
       {
         "id": "us7000shzi",
         "magnitude": 4.6,
-        "place": "82 km WNW of Ternate, Indonesia",
-        "time": "2026-05-03T16:51:55.609Z",
-        "depth_km": 58.4,
+        "place": "79 km WNW of Ternate, Indonesia",
+        "time": "2026-05-03T16:51:55.062Z",
+        "depth_km": 53.2,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000shzi"
+      },
+      {
+        "id": "us7000shze",
+        "magnitude": 4.6,
+        "place": "173 km W of Neiafu, Tonga",
+        "time": "2026-05-03T16:36:11.891Z",
+        "depth_km": 265.2,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000shze"
       },
       {
         "id": "us7000shup",
@@ -1239,6 +1223,14 @@
         "time": "2026-05-02T06:22:42.852Z",
         "depth_km": 115.9,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000shqp"
+      },
+      {
+        "id": "us6000sxx5",
+        "magnitude": 4.5,
+        "place": "southern Mid-Atlantic Ridge",
+        "time": "2026-05-14T23:09:28.238Z",
+        "depth_km": 10,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sxx5"
       },
       {
         "id": "us6000sxke",
@@ -1363,9 +1355,9 @@
       {
         "id": "us6000svh0",
         "magnitude": 4.5,
-        "place": "152 km E of Kokopo, Papua New Guinea",
-        "time": "2026-05-06T00:08:38.615Z",
-        "depth_km": 105.3,
+        "place": "157 km E of Kokopo, Papua New Guinea",
+        "time": "2026-05-06T00:08:38.308Z",
+        "depth_km": 105.8,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000svh0"
       },
       {
@@ -1457,11 +1449,19 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000si7l"
       },
       {
+        "id": "us6000sxga",
+        "magnitude": 4.5,
+        "place": "4 km S of San Antonio Tepetlapa, Mexico",
+        "time": "2026-05-04T15:30:01.993Z",
+        "depth_km": 35,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sxga"
+      },
+      {
         "id": "us7000si4v",
         "magnitude": 4.5,
-        "place": "58 km WSW of Masachapa, Nicaragua",
-        "time": "2026-05-04T13:50:44.282Z",
-        "depth_km": 50.4,
+        "place": "50 km WSW of Masachapa, Nicaragua",
+        "time": "2026-05-04T13:50:43.819Z",
+        "depth_km": 45.8,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000si4v"
       },
       {
@@ -1503,52 +1503,83 @@
         "time": "2026-05-01T14:40:45.676Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sw96"
-      },
-      {
-        "id": "us6000sw93",
-        "magnitude": 4.5,
-        "place": "74 km WSW of Basco, Philippines",
-        "time": "2026-05-01T13:36:23.235Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sw93"
-      },
-      {
-        "id": "us7000shhi",
-        "magnitude": 4.5,
-        "place": "48 km ESE of Sijunjung, Indonesia",
-        "time": "2026-05-01T05:17:26.022Z",
-        "depth_km": 197.7,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000shhi"
-      },
-      {
-        "id": "us7000sh91",
-        "magnitude": 4.5,
-        "place": "6 km ENE of Baganga, Philippines",
-        "time": "2026-04-30T15:01:35.606Z",
-        "depth_km": 70.1,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sh91"
       }
     ],
-    "count_total": 189,
-    "count_m55_plus": 15,
-    "count_m60_plus": 1,
+    "count_total": 186,
+    "count_m55_plus": 16,
+    "count_m60_plus": 3,
     "count_m70_plus": 0,
     "count_m80_plus": 0,
     "largest": {
-      "id": "us7000si2z",
-      "magnitude": 6,
-      "place": "5 km WNW of Nena, Philippines",
-      "time": "2026-05-04T06:09:50.058Z",
-      "depth_km": 73.3,
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000si2z"
+      "id": "us6000sxwq",
+      "magnitude": 6.7,
+      "place": "49 km ESE of Ōfunato, Japan",
+      "time": "2026-05-15T11:22:01.649Z",
+      "depth_km": 43.6,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sxwq"
     },
     "source": "USGS Earthquake Hazards Program",
     "url": "https://earthquake.usgs.gov/",
     "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-    "retrieved": "2026-05-14T14:38:16.055Z"
+    "retrieved": "2026-05-15T14:32:55.111Z"
   },
   "wildfire": {
     "events": [
+      {
+        "id": "EONET_20098",
+        "title": "Eagle Lake Fire Wildfire, Hancock, Iowa",
+        "type": "WILDFIRE",
+        "time": "2026-05-14T11:04:00.000Z",
+        "coords": [
+          -93.723,
+          43.113
+        ],
+        "closed": null
+      },
+      {
+        "id": "EONET_20095",
+        "title": "Ash Pole Wildfire, Dawes, Nebraska",
+        "type": "WILDFIRE",
+        "time": "2026-05-14T03:26:00.000Z",
+        "coords": [
+          -103.242,
+          42.626
+        ],
+        "closed": null
+      },
+      {
+        "id": "EONET_20094",
+        "title": "NEURALIA Wildfire, Kern, California",
+        "type": "WILDFIRE",
+        "time": "2026-05-13T20:02:00.000Z",
+        "coords": [
+          -117.986,
+          35.236
+        ],
+        "closed": null
+      },
+      {
+        "id": "EONET_20096",
+        "title": "Wild Horse Wildfire, Millard, Utah",
+        "type": "WILDFIRE",
+        "time": "2026-05-13T17:08:00.000Z",
+        "coords": [
+          -112.242,
+          39.466
+        ],
+        "closed": null
+      },
+      {
+        "id": "EONET_20099",
+        "title": "RX WINN BU 113 Prescribed Fire, Grant, Louisiana",
+        "type": "WILDFIRE",
+        "time": "2026-05-13T09:44:00.000Z",
+        "coords": [
+          -92.519,
+          31.746
+        ],
+        "closed": null
+      },
       {
         "id": "EONET_20061",
         "title": "rx-Young 1 Prescribed Fire, Jefferson, Wisconsin",
@@ -1590,6 +1621,17 @@
         "coords": [
           -95.041,
           32.759
+        ],
+        "closed": null
+      },
+      {
+        "id": "EONET_20101",
+        "title": "Peterson Road RX Prescribed Fire, Benzie, Michigan",
+        "type": "WILDFIRE",
+        "time": "2026-05-11T08:45:00.000Z",
+        "coords": [
+          -86.093,
+          44.72
         ],
         "closed": null
       },
@@ -1768,42 +1810,9 @@
           45.388
         ],
         "closed": null
-      },
-      {
-        "id": "EONET_20013",
-        "title": "Black Diamond 1B RX Prescribed Fire, Lewis and Clark, Montana",
-        "type": "WILDFIRE",
-        "time": "2026-04-30T18:33:00.000Z",
-        "coords": [
-          -112.51,
-          46.984
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_19934",
-        "title": "Buzzard Feather Wildfire, Roosevelt, Montana",
-        "type": "WILDFIRE",
-        "time": "2026-04-30T12:53:00.000Z",
-        "coords": [
-          -105.554,
-          48.529
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_19978",
-        "title": "Downing RX Prescribed Fire, Mahnomen, Minnesota",
-        "type": "WILDFIRE",
-        "time": "2026-04-30T10:25:00.000Z",
-        "coords": [
-          -95.991,
-          47.157
-        ],
-        "closed": null
       }
     ],
-    "count": 23
+    "count": 26
   },
   "storm": {
     "events": [
