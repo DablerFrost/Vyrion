@@ -4,9 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VYRION CONSCIENCE — Data Feed</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/assets/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&family=Archivo:wght@400;500&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
-<link rel="icon" href="/assets/favicon.ico">
 <style>
 :root{
   --void:#020912;--void2:#061624;--void3:#0b2035;
@@ -133,7 +134,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:900;ba
 </head>
 <body>
 <nav class="nav">
-  <a href="https://vyrion.earth/indexV2" class="nav-logo">VYRION</a>
+  <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
   <ul class="nav-links">
     <li><a href="https://vyrion.earth">CONSCIENCE</a></li>
     <li><a href="https://vyrion.earth/shield">SHIELD</a></li>
@@ -167,7 +168,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:900;ba
 </div>
 <div class="api-bar">
   <div class="api-label">RAW JSON</div>
-  <div class="api-url" onclick="copyURL()" title="Click to copy">https://dablerfrost.github.io/Vyrion/conscience-data.json</div>
+  <div class="api-url" onclick="copyURL()" title="Click to copy">https://vyrion.earth/conscience-data.json</div>
   <button class="api-copy" onclick="copyURL()" id="copy-btn">&#8862; COPY URL</button>
   <div class="api-note">No authentication required. CORS-open. Institutional licensing: <a href="mailto:contact@vyrion.earth" style="color:rgba(0,212,255,.45);text-decoration:none">contact@vyrion.earth</a></div>
 </div>
@@ -196,7 +197,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:900;ba
   <div class="idx-cell"><div class="idx-lbl">Baseline</div><div class="idx-val" style="color:var(--t1);font-size:.75rem">100 / 100</div><div class="idx-sub">Pre-industrial 1850&ndash;1900</div></div>
   <div class="idx-cell"><div class="idx-lbl">Indicators</div><div class="idx-val" style="color:var(--t1)">48</div><div class="idx-sub">Across 8 Earth systems</div></div>
   <div class="idx-cell"><div class="idx-lbl">Uncertainty</div><div class="idx-val" style="color:var(--t1);font-size:.82rem">&plusmn;1.8 pts</div><div class="idx-sub">Min detectable: &plusmn;0.5</div></div>
-  <div class="idx-cell"><div class="idx-lbl">Methodology</div><div class="idx-val" style="font-size:.65rem;line-height:1.3"><a href="https://github.com/dablerfrost/Vyrion/blob/main/VYRION-METHODOLOGY-v1.0.md" target="_blank" style="color:var(--glow);text-decoration:none">VYRION-METHODOLOGY-v1.0.md &rarr;</a></div></div>
+  <div class="idx-cell"><div class="idx-lbl">Methodology</div><div class="idx-val" style="font-size:.65rem;line-height:1.3"><a href="https://github.com/DablerFrost/Vyrion/blob/main/docs/VYRION-METHODOLOGY-V1.0.md" target="_blank" style="color:var(--glow);text-decoration:none">VYRION-METHODOLOGY-v1.0.md &rarr;</a></div></div>
 </div>
 <div class="section-head mt1"><div class="section-head-title">Indicator Update Cadences &middot; 8 Systems</div><div class="section-rule"></div></div>
 <div class="section-pad">
@@ -218,7 +219,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:900;ba
 <div class="license-block">
   <div class="license-title">License CONSCIENCE Score Data</div>
   <div class="license-body">CONSCIENCE scores are available for institutional licensing. The JSON feed above is the sample data set &mdash; full licensing agreements provide daily-updating feeds, expanded company coverage, factor-level data, and API integration support.<br><br>
-  Contact: <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a> &middot; Methodology: <a href="https://github.com/dablerfrost/Vyrion/blob/main/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a> &middot; Open Proof Protocol: errors corrected within 24 hours.</div>
+  Contact: <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a> &middot; Methodology: <a href="https://github.com/DablerFrost/Vyrion/blob/main/docs/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a> &middot; Open Proof Protocol: errors corrected within 24 hours.</div>
   <div class="license-tiers">
     <div class="lt">TIER 1 &middot; ESG Research &middot; $500&ndash;1,500/mo</div>
     <div class="lt">TIER 2 &middot; Reinsurance Analytics &middot; $2,000&ndash;5,000/mo</div>
@@ -227,8 +228,8 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:900;ba
 </div>
 <footer class="footer">
   <div class="footer-l">VYRION CONSCIENCE &middot; Data Feed &middot; v2.8 &middot; April 2026<br>
-  Methodology: <a href="https://github.com/dablerfrost/Vyrion/blob/main/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a> &middot;
-  <a href="https://github.com/dablerfrost/Vyrion" target="_blank">github.com/dablerfrost/Vyrion</a> &middot; Tyler Frost / DablerFrost &middot; Hilo, Hawaii</div>
+  Methodology: <a href="https://github.com/DablerFrost/Vyrion/blob/main/docs/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a> &middot;
+  <a href="https://github.com/DablerFrost/Vyrion" target="_blank">github.com/DablerFrost/Vyrion</a> &middot; Tyler Frost / DablerFrost &middot; Hilo, Hawaii</div>
   <div class="footer-r">
     <a href="https://vyrion.earth">&larr; CONSCIENCE</a>
     <a href="conscience-data.json" target="_blank">RAW JSON &rarr;</a>
@@ -237,7 +238,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:900;ba
 </footer>
 <script>
 'use strict';
-function copyURL(){const u='https://dablerfrost.github.io/Vyrion/conscience-data.json';if(navigator.clipboard){navigator.clipboard.writeText(u).then(()=>{const b=document.getElementById('copy-btn');if(b){const o=b.textContent;b.textContent='COPIED';setTimeout(()=>b.textContent=o,1800);}});}}
+function copyURL(){const u='https://vyrion.earth/conscience-data.json';if(navigator.clipboard){navigator.clipboard.writeText(u).then(()=>{const b=document.getElementById('copy-btn');if(b){const o=b.textContent;b.textContent='COPIED';setTimeout(()=>b.textContent=o,1800);}});}}
 function bandPill(b){const m={breach:['pill-breach','BREACH'],warning:['pill-warn','WARNING'],on_track:['pill-track','ON TRACK'],'on-track':['pill-track','ON TRACK']};const[c,l]=m[b]||['','--'];return'<span class="band-pill '+c+'">'+l+'</span>';}
 function scoreCls(b){return b==='breach'?'td-breach':b==='warning'?'td-warn':'td-track';}
 function factorColor(p,m){const r=p/m;if(r>=.75)return'var(--glow)';if(r>=.4)return'var(--amber)';if(p<0)return'var(--breach)';return'var(--warn)';}
@@ -259,7 +260,7 @@ function renderFactorGrid(cos){const g=document.getElementById('factor-grid');if
 renderScoresTable(D.companies);
 renderFactorGrid(D.companies);
 // Silent background fetch for live updates
-fetch('https://dablerfrost.github.io/Vyrion/conscience-data.json').then(r=>r.ok?r.json():null).then(data=>{if(data&&data.companies){renderScoresTable(data.companies);renderFactorGrid(data.companies);}}).catch(()=>{});
+fetch('https://vyrion.earth/conscience-data.json').then(r=>r.ok?r.json():null).then(data=>{if(data&&data.companies){renderScoresTable(data.companies);renderFactorGrid(data.companies);}}).catch(()=>{});
 // ── THEME TOGGLE
 function toggleTheme(){const h=document.documentElement;const l=h.getAttribute('data-theme')==='light';h.setAttribute('data-theme',l?'dark':'light');const b=document.getElementById('theme-btn');if(b)b.innerHTML=l?'&#9680; DARK':'&#9681; LIGHT';try{localStorage.setItem('vc-theme',l?'dark':'light');}catch(e){}}
 (function(){try{const t=localStorage.getItem('vc-theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');const b=document.getElementById('theme-btn');if(b)b.innerHTML='&#9681; LIGHT';}}catch(e){}})();
