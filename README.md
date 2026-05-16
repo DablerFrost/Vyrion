@@ -1,12 +1,10 @@
-[README (5).md](https://github.com/user-attachments/files/27423652/README.5.md)
 # VYRION CONSCIENCE
-**Planetary Accountability Infrastructure · V2.8 · May 2026**
+**Planetary Accountability Infrastructure · v3.1 · May 2026**
 
 Live platform: [vyrion.earth](https://www.vyrion.earth)  
 Data interface: [vyrion.earth/conscience-data.html](https://www.vyrion.earth/conscience-data.html)  
 Raw ledger: [conscience-data.json](https://www.vyrion.earth/conscience-data.json)  
 Contact: contact@vyrion.earth
-About Vyrion: <li><a href="https://vyrion.earth/about">ABOUT</a></li>
 
 > The world's first daily investable planetary health benchmark.
 
@@ -76,6 +74,7 @@ All three are live and publicly accessible. Data pipelines update daily via auto
 │   └── 2026-03-26.md
 │
 ├── record/                 → The Record · weekly investigative reports
+│   ├── index.html
 │   ├── issue-001.html      → BP
 │   ├── issue-002.html      → ExxonMobil
 │   ├── issue-003.html      → Shell
@@ -85,7 +84,6 @@ All three are live and publicly accessible. Data pipelines update daily via auto
 │   └── issue-007.html      → Meta
 │   └── issue-008.html      → Apple
 │   └── issue-009.html      → Microsoft
-│   ├── weekly.html
 │
 ├── docs/                   → Documentation and governance
 │   ├── system/             → Methodology, scoring definitions, brand, legal
@@ -138,7 +136,7 @@ All three are live and publicly accessible. Data pipelines update daily via auto
 
 Current distribution: **5 BREACH · 3 WARNING · 3 ON TRACK**
 
-Full derivation: [`docs/system/CONSCIENCE-METHODOLOGY.md`](docs/system/CONSCIENCE-METHODOLOGY.md)
+Full derivation: [`docs/CONSCIENCE-METHODOLOGY.md`](docs/CONSCIENCE-METHODOLOGY.md)
 
 ---
 
@@ -159,10 +157,10 @@ Daily 0–100 planetary health score. Pre-industrial 1850–1900 average = 100/1
 
 **Formula:** `S_final = Σ(W_i × S_i)`  
 **Uncertainty:** ±1.8 points propagated. Minimum detectable change: ±0.5.  
-**Current score:** 41.2 ± 1.8 / 100  
+**Current score:** 36.1 ± 1.8 / 100 · automated · daily computation  
 **Origin:** Day 1 — March 18, 2026 · 41.3 / 100
 
-Full methodology: [`docs/system/VYRION-METHODOLOGY-v1.0.md`](docs/system/VYRION-METHODOLOGY-v1.0.md)
+Full methodology: [`docs/VYRION-METHODOLOGY-V1.0.md`](docs/VYRION-METHODOLOGY-V1.0.md)
 
 ---
 
@@ -215,7 +213,6 @@ Weekly investigative reports published every Wednesday. Each issue profiles one 
 | 007 | Meta | April 29, 2026 |
 | 008 | Apple | May 06, 2026 |
 | 009 | Microsoft | May 13, 2026 |
-
 ---
 
 ## Data Sources
@@ -242,7 +239,7 @@ All data is public-domain or open-license. No proprietary data enters the scorin
 
 **Verifiability first.** Every output traces to a public, auditable source. Source links are embedded at the point of claim.
 
-**No hidden modelling.** All transformations are explicit and reproducible. Full methodology published in `docs/system/`.
+**No hidden modelling.** All transformations are explicit and reproducible. Full methodology published in `docs/`.
 
 **Immutable publication.** Published records are never overwritten — only appended with corrections. Timestamps are preserved.
 
@@ -258,7 +255,7 @@ VYRION PBC is a subsidiary of The Nexan Institute.
 
 Not financial advice. Scores are informational outputs derived from public data.
 
-Disclaimers: [`docs/system/INVESTABLE-DISCLAIMER.md`](docs/system/INVESTABLE-DISCLAIMER.md)
+Disclaimers: [`docs/INVESTABLE-DISCLAIMER.md`](docs/INVESTABLE-DISCLAIMER.md)
 
 ---
 
