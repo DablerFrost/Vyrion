@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="VYRION CANOPY — Satellite-guided precision reforestation monitoring. Canopy cover change, habitat corridor integrity, and biodiversity recovery across global restoration sites.">
+<meta property="og:title" content="VYRION CANOPY — Reforestation Intelligence">
+<meta property="og:description" content="Satellite-guided precision reforestation monitoring. Canopy cover change, habitat corridor integrity, biodiversity recovery.">
+<meta property="og:url" content="https://vyrion.earth/canopy">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="VYRION CANOPY — Reforestation Intelligence">
+<meta name="twitter:description" content="Satellite-guided reforestation monitoring. Canopy cover. Habitat corridors. Biodiversity recovery.">
+<link rel="canonical" href="https://vyrion.earth/canopy">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/assets/favicon.ico">
+<title>VYRION CANOPY — Reforestation Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&family=Archivo:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ── THEME ─────────────────────────────────────────────── */
+:root{
+  --void:#020912;--void2:#061624;--void3:#0b2035;
+  --glow:#00D4FF;--amber:#FFB84D;--breach:#F03030;--warn:#F09000;
+  --t1:#e4f2ff;--t2:#6a9ab8;--t3:#2d6080;
+  --border:rgba(0,212,255,.12);--border2:rgba(0,212,255,.07);
+  --nav-bg:rgba(2,9,18,.97);
+  --scanline:rgba(0,212,255,.004);
+  /* CANOPY system colors */
+  --canopy:    #2E8B57;
+  --canopy2:   #3CB371;
+  --canopy3:   #52D38C;
+  --hab:       #00D4FF;
+  --bio:       #44BB88;
+  --restore:   #FFB84D;
+  --canopy-border: rgba(46,139,87,.22);
+  --canopy-bg:     rgba(46,139,87,.07);
+  --canopy-glow:   rgba(46,139,87,.4);
+}
+[data-theme="light"]{
+  --void:#f0f5ff;--void2:#e4eeff;--void3:#d5e5ff;
+  --glow:#0066CC;--amber:#b07800;--breach:#b82020;--warn:#a05800;
+  --t1:#060e1e;--t2:#1e4a7a;--t3:#3a6090;
+  --border:rgba(0,102,204,.18);--border2:rgba(0,102,204,.10);
+  --nav-bg:rgba(240,245,255,.98);
+  --scanline:transparent;
+  --canopy:#1a6b3a;--canopy2:#2E8B57;--canopy3:#3CB371;
+  --hab:#0066CC;--bio:#2E8B57;--restore:#b07800;
+  --canopy-border:rgba(26,107,58,.25);
+  --canopy-bg:rgba(26,107,58,.06);
+  --canopy-glow:rgba(26,107,58,.3);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:18px}
+body{
+  background:var(--void);color:var(--t1);
+  font-family:'Archivo',sans-serif;font-size:1rem;
+  line-height:1.65;min-height:100vh;overflow-x:hidden;
+  transition:background .3s,color .3s;
+}
+body::after{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:990;
+  background:repeating-linear-gradient(0deg,transparent,transparent 3px,var(--scanline) 3px,var(--scanline) 4px);
+}
+
+/* ── NAV ────────────────────────────────────────────────── */
+.nav{
+  position:sticky;top:0;z-index:500;height:52px;
+  display:flex;align-items:center;gap:1rem;padding:0 1.8rem;
+  background:var(--nav-bg);border-bottom:1px solid var(--border);
+  backdrop-filter:blur(20px);transition:background .3s,border-color .3s;
+}
+.nav-logo{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:.95rem;color:var(--glow);letter-spacing:.15em;text-decoration:none;flex-shrink:0;text-shadow:0 0 20px rgba(0,212,255,.3)}
+.nav-links{display:flex;gap:1.8rem;list-style:none;flex:1}
+.nav-links a{font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--t2);text-decoration:none;transition:color .2s;padding-bottom:2px}
+.nav-links a:hover{color:var(--t1)}
+.nav-links a.active{color:var(--canopy2);border-bottom:1px solid rgba(60,179,113,.4)}
+.nav-controls{display:flex;align-items:center;gap:.35rem;flex-shrink:0}
+.nc-sep{width:1px;height:16px;background:var(--border);margin:0 .15rem}
+.nc-theme{font-family:'Courier Prime',monospace;font-size:.58rem;font-weight:700;letter-spacing:.12em;padding:.22rem .5rem;border-radius:2px;border:1px solid var(--border);background:transparent;color:var(--t2);cursor:pointer;transition:all .2s;white-space:nowrap}
+.nc-theme:hover,.nc-theme.active{border-color:var(--glow);color:var(--glow);background:rgba(0,212,255,.08)}
+.nc-sz{font-family:'Courier Prime',monospace;font-size:.6rem;font-weight:700;width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:2px;border:1px solid var(--border);background:transparent;color:var(--t3);cursor:pointer;transition:all .2s}
+.nc-sz:hover{border-color:rgba(0,212,255,.4);color:var(--t1)}
+.nc-sz.active{background:rgba(0,212,255,.12);border-color:var(--glow);color:var(--glow)}
+.nav-dot{width:6px;height:6px;background:var(--canopy2);border-radius:50%;flex-shrink:0;animation:pdot 2.2s infinite}
+@keyframes pdot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(60,179,113,.5)}50%{opacity:.4;box-shadow:0 0 0 7px rgba(60,179,113,0)}}
+
+/* ── PAGE HEADER ─────────────────────────────────────────── */
+.page-header{
+  position:relative;overflow:hidden;
+  min-height:400px;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:3.5rem 2rem 2.8rem;
+  background-image:url('https://okay-gold-oof5kipmvh.edgeone.app/Testing%20The%20Surface%20-%20Imgur.png');
+  background-size:cover;background-position:center 38%;
+  border-bottom:1px solid var(--border);
+}
+.page-header::before{
+  content:'';position:absolute;inset:0;z-index:0;
+  background:linear-gradient(120deg,rgba(2,9,18,.96) 0%,rgba(2,9,18,.72) 45%,rgba(2,9,18,.92) 100%);
+  transition:background .3s;
+}
+[data-theme="light"] .page-header::before{
+  background:linear-gradient(120deg,rgba(240,247,243,.97) 0%,rgba(240,247,243,.82) 45%,rgba(240,247,243,.94) 100%);
+}
+#canopy-canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;opacity:.6;pointer-events:none}
+[data-theme="light"] #canopy-canvas{opacity:.22}
+.page-header::after{
+  content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:radial-gradient(ellipse 55% 60% at 72% 52%,rgba(46,139,87,.07) 0%,transparent 70%);
+  animation:hpulse 8s ease-in-out infinite alternate;
+}
+@keyframes hpulse{0%{opacity:.4;transform:scale(1)}100%{opacity:1;transform:scale(1.05)}}
+.page-header>*:not(canvas){position:relative;z-index:3}
+.bg-word{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-family:'Archivo Narrow',sans-serif;font-weight:800;
+  font-size:clamp(5rem,14vw,11rem);
+  color:rgba(46,139,87,.04);pointer-events:none;user-select:none;z-index:2;
+}
+.eyebrow{
+  font-family:'Courier Prime',monospace;font-size:.65rem;color:var(--canopy2);
+  letter-spacing:.24em;text-transform:uppercase;margin-bottom:.55rem;
+  display:flex;align-items:center;gap:.55rem;
+}
+.eyebrow::before{content:'';width:18px;height:1px;background:var(--canopy2);opacity:.5}
+.page-title{
+  font-family:'Archivo Narrow',sans-serif;font-weight:800;
+  font-size:clamp(2.4rem,5.5vw,4rem);color:var(--t1);
+  line-height:.95;letter-spacing:-.02em;margin-bottom:.65rem;
+}
+.page-sub{font-size:.84rem;color:var(--t2);max-width:64ch;line-height:1.75}
+.header-badges{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.2rem}
+.h-badge{font-family:'Courier Prime',monospace;font-size:.56rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.18rem .55rem;border-radius:2px}
+.hb-cover{background:rgba(46,139,87,.1);color:var(--canopy2);border:1px solid rgba(46,139,87,.3)}
+.hb-corridor{background:rgba(0,212,255,.08);color:var(--hab);border:1px solid rgba(0,212,255,.25)}
+.hb-bio{background:rgba(68,187,136,.08);color:var(--bio);border:1px solid rgba(68,187,136,.25)}
+.hb-phase{background:rgba(255,184,77,.07);color:var(--restore);border:1px solid rgba(255,184,77,.22)}
+
+/* ── METRICS STRIP ───────────────────────────────────────── */
+.metrics-strip{display:flex;flex-wrap:wrap;background:var(--void2);border-bottom:1px solid var(--border)}
+.mc{flex:1;min-width:140px;padding:.75rem 1.4rem;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:.1rem}
+.mc:last-child{border-right:none}
+.mc-lbl{font-family:'Courier Prime',monospace;font-size:.54rem;color:var(--t3);letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;gap:.35rem}
+.mc-dot{width:4px;height:4px;border-radius:50%;flex-shrink:0}
+.mc-dot-cover{background:var(--canopy2);animation:pdot 2.2s infinite}
+.mc-dot-hab{background:var(--hab);animation:pdot 2.6s infinite}
+.mc-dot-bio{background:var(--bio);animation:pdot 3s infinite}
+.mc-dot-static{background:var(--t3)}
+.mc-val{font-family:'Courier Prime',monospace;font-weight:700;font-size:1.05rem;line-height:1;letter-spacing:-.01em}
+.mc-sub{font-family:'Courier Prime',monospace;font-size:.52rem;color:var(--t3);line-height:1.3}
+
+/* ── SATELLITE STATUS PANEL ──────────────────────────────── */
+.sat-section{display:grid;grid-template-columns:1fr 280px;border-bottom:1px solid var(--border);background:var(--void)}
+@media(max-width:900px){.sat-section{grid-template-columns:1fr}}
+
+.sat-main{padding:2.2rem 2rem;border-right:1px solid var(--border)}
+.sat-title{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t1);margin-bottom:1.4rem;display:flex;align-items:center;gap:.6rem}
+.sat-title::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* Satellite constellation */
+.sat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:1.6rem}
+.sat-card{background:var(--void2);padding:.9rem 1rem;position:relative;overflow:hidden;transition:background .2s}
+.sat-card:hover{background:var(--void3)}
+.sat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--sc-c,var(--canopy2))}
+.sat-name{font-family:'Courier Prime',monospace;font-size:.52rem;color:var(--t3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.2rem}
+.sat-mission{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:.88rem;color:var(--t1);margin-bottom:.15rem}
+.sat-res{font-family:'Courier Prime',monospace;font-size:.54rem;margin-bottom:.35rem}
+.sat-status{display:flex;align-items:center;gap:.3rem;font-family:'Courier Prime',monospace;font-size:.52rem}
+.sat-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.sd-active{background:var(--canopy2);animation:sdot 2s infinite;box-shadow:0 0 5px var(--canopy2)}
+.sd-partial{background:var(--restore)}
+.sd-planned{background:var(--t3)}
+@keyframes sdot{0%,100%{opacity:1}50%{opacity:.35}}
+
+/* Index contribution panel */
+.sat-side{padding:2.2rem 1.5rem;background:linear-gradient(160deg,rgba(46,139,87,.04) 0%,transparent 70%)}
+.ss-label{font-family:'Courier Prime',monospace;font-size:.54rem;color:var(--t3);letter-spacing:.16em;text-transform:uppercase;margin-bottom:1rem}
+.ss-contrib{display:flex;flex-direction:column;gap:.55rem}
+.ssc-row{display:flex;align-items:center;gap:.7rem}
+.ssc-sys{font-family:'Courier Prime',monospace;font-size:.56rem;color:var(--t2);min-width:80px}
+.ssc-bar-bg{flex:1;height:3px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden}
+[data-theme="light"] .ssc-bar-bg{background:rgba(0,0,0,.08)}
+.ssc-bar-fill{height:100%;border-radius:2px}
+.ssc-pct{font-family:'Courier Prime',monospace;font-size:.5rem;color:var(--t3);min-width:28px;text-align:right}
+.ss-note{font-family:'Courier Prime',monospace;font-size:.52rem;color:var(--t3);margin-top:1.2rem;padding-top:.9rem;border-top:1px solid var(--border2);line-height:1.6}
+
+/* ── THREE MONITORING SYSTEMS ────────────────────────────── */
+.systems-section{border-bottom:1px solid var(--border)}
+.systems-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+@media(max-width:900px){.systems-grid{grid-template-columns:1fr}}
+
+.sys-card{background:var(--void2);padding:2rem 1.8rem;position:relative;overflow:hidden;transition:background .2s}
+.sys-card:hover{background:var(--void3)}
+.sys-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--sc-color,var(--canopy2))}
+.sys-card::after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 80% 50% at 50% 0%,var(--sc-glow,rgba(46,139,87,.04)) 0%,transparent 65%)}
+.sc-icon{font-size:2rem;margin-bottom:.9rem;filter:drop-shadow(0 0 8px var(--sc-color,var(--canopy2)))}
+.sc-num{font-family:'Courier Prime',monospace;font-size:.52rem;color:var(--t3);letter-spacing:.12em;margin-bottom:.35rem}
+.sc-name{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:1.35rem;letter-spacing:.04em;line-height:1;margin-bottom:.35rem}
+.sc-tagline{font-family:'Courier Prime',monospace;font-size:.56rem;color:var(--t3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.9rem}
+.sc-desc{font-size:.73rem;color:var(--t2);line-height:1.7;margin-bottom:1.2rem}
+
+/* Coverage meter */
+.sc-meter{margin-bottom:1.1rem}
+.sc-meter-label{display:flex;justify-content:space-between;font-family:'Courier Prime',monospace;font-size:.54rem;color:var(--t3);margin-bottom:.3rem}
+.sc-meter-bg{height:4px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden}
+[data-theme="light"] .sc-meter-bg{background:rgba(0,0,0,.08)}
+.sc-meter-fill{height:100%;border-radius:2px;transition:width 2s cubic-bezier(.4,0,.2,1)}
+
+/* Stats */
+.sc-stats{display:flex;flex-direction:column;gap:.3rem;padding-top:.85rem;border-top:1px solid var(--border2)}
+.sc-stat{display:flex;justify-content:space-between;align-items:baseline;font-family:'Courier Prime',monospace;font-size:.58rem}
+.sc-stat-lbl{color:var(--t2)}
+.sc-stat-val{font-weight:700}
+
+/* ── RESTORATION SITES TABLE ─────────────────────────────── */
+.sites-section{padding:3rem 2rem;border-bottom:1px solid var(--border);background:var(--void2)}
+.section-eyebrow{font-family:'Courier Prime',monospace;font-size:.62rem;color:var(--canopy2);letter-spacing:.22em;text-transform:uppercase;margin-bottom:.45rem;display:flex;align-items:center;gap:.5rem}
+.section-eyebrow::before{content:'';width:14px;height:1px;background:var(--canopy2);opacity:.5}
+.section-title{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--t1);line-height:1;letter-spacing:-.02em;margin-bottom:.55rem}
+.section-sub{font-size:.82rem;color:var(--t2);max-width:64ch;line-height:1.75;margin-bottom:2rem}
+
+.sites-table{width:100%;border-collapse:collapse;font-family:'Courier Prime',monospace;font-size:.62rem}
+.sites-table thead th{text-align:left;padding:.5rem .85rem;color:var(--t3);letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--border);font-weight:400;background:var(--void2);white-space:nowrap}
+.sites-table thead th:last-child{text-align:right}
+.site-row{border-bottom:1px solid rgba(0,212,255,.04);transition:background .15s;cursor:default}
+.site-row:hover{background:rgba(46,139,87,.04)}
+.site-row td{padding:.6rem .85rem;vertical-align:middle}
+.site-row td:last-child{text-align:right}
+.site-name{color:var(--t1);font-weight:700;font-size:.66rem}
+.site-loc{color:var(--t3);font-size:.56rem;margin-top:.06rem}
+.site-biome{font-size:.54rem;letter-spacing:.08em;text-transform:uppercase;padding:.06rem .3rem;border-radius:2px}
+.sb-tropical{background:rgba(46,139,87,.1);color:var(--canopy2);border:1px solid rgba(46,139,87,.25)}
+.sb-boreal{background:rgba(0,212,255,.07);color:var(--hab);border:1px solid rgba(0,212,255,.2)}
+.sb-temperate{background:rgba(68,187,136,.08);color:var(--bio);border:1px solid rgba(68,187,136,.22)}
+.sb-mangrove{background:rgba(255,184,77,.08);color:var(--restore);border:1px solid rgba(255,184,77,.22)}
+.site-cover-bar{display:flex;align-items:center;gap:.5rem}
+.site-bar-bg{width:80px;height:3px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden;flex-shrink:0}
+[data-theme="light"] .site-bar-bg{background:rgba(0,0,0,.08)}
+.site-bar-fill{height:100%;border-radius:2px;background:var(--canopy2)}
+.site-pct{color:var(--canopy2);font-weight:700}
+.site-trend-up{color:var(--canopy2)}
+.site-trend-flat{color:var(--t3)}
+.site-trend-dn{color:var(--breach)}
+.site-status-tag{font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;padding:.07rem .32rem;border-radius:2px}
+.sst-active{background:var(--canopy-bg);color:var(--canopy2);border:1px solid var(--canopy-border)}
+.sst-monitor{background:rgba(0,212,255,.06);color:var(--hab);border:1px solid rgba(0,212,255,.2)}
+.sst-planned{background:rgba(138,171,146,.05);color:var(--t2);border:1px solid rgba(138,171,146,.15)}
+
+/* ── CORRIDOR INTELLIGENCE ───────────────────────────────── */
+.corridor-section{padding:3rem 2rem;border-bottom:1px solid var(--border);background:var(--void)}
+.corridor-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-top:2rem}
+.corridor-card{background:var(--void2);padding:1.4rem;position:relative;overflow:hidden;transition:background .2s}
+.corridor-card:hover{background:var(--void3)}
+.corridor-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--cc-accent,var(--canopy2))}
+.cc-region{font-family:'Courier Prime',monospace;font-size:.5rem;color:var(--t3);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.4rem}
+.cc-name{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:1rem;color:var(--t1);margin-bottom:.2rem;line-height:1.1}
+.cc-length{font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--t3);margin-bottom:.8rem}
+.cc-integrity{margin-bottom:.9rem}
+.cc-int-label{display:flex;justify-content:space-between;font-family:'Courier Prime',monospace;font-size:.52rem;color:var(--t3);margin-bottom:.28rem}
+.cc-int-bg{height:6px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden}
+[data-theme="light"] .cc-int-bg{background:rgba(0,0,0,.08)}
+.cc-int-fill{height:100%;border-radius:3px}
+.cc-stats{display:flex;flex-direction:column;gap:.26rem;padding-top:.7rem;border-top:1px solid var(--border2)}
+.cc-stat{display:flex;justify-content:space-between;font-family:'Courier Prime',monospace;font-size:.56rem}
+.cc-stat-lbl{color:var(--t2)}
+.cc-stat-val{font-weight:700}
+
+/* ── BIODIVERSITY RECOVERY ───────────────────────────────── */
+.bio-section{padding:3rem 2rem;border-bottom:1px solid var(--border);background:var(--void2)}
+.bio-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-top:2rem}
+.bio-card{background:var(--void2);padding:1.2rem;transition:background .2s;text-align:center}
+.bio-card:hover{background:var(--void3)}
+.bio-icon{font-size:1.8rem;margin-bottom:.55rem;display:block;filter:drop-shadow(0 0 6px var(--canopy-glow))}
+.bio-metric{font-family:'Courier Prime',monospace;font-weight:700;font-size:1.45rem;line-height:1;letter-spacing:-.02em;margin-bottom:.16rem}
+.bio-species{font-family:'Courier Prime',monospace;font-size:.62rem;font-weight:700;color:var(--t1);margin-bottom:.18rem}
+.bio-label{font-family:'Courier Prime',monospace;font-size:.52rem;color:var(--t3);letter-spacing:.08em;text-transform:uppercase;line-height:1.5}
+.bio-trend{font-family:'Courier Prime',monospace;font-size:.56rem;margin-top:.25rem;font-weight:700}
+.bt-up{color:var(--canopy2)}.bt-stable{color:var(--hab)}.bt-watch{color:var(--restore)}
+
+/* ── METHODOLOGY ─────────────────────────────────────────── */
+.method-section{padding:3rem 2rem;border-bottom:1px solid var(--border);background:var(--void)}
+.method-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-top:2rem}
+.method-card{background:var(--void2);padding:1.3rem 1.3rem 1.1rem;position:relative;overflow:hidden;transition:background .2s}
+.method-card:hover{background:var(--void3)}
+.method-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--mc-accent,var(--canopy2))}
+.mc-step{font-family:'Courier Prime',monospace;font-size:.52rem;color:var(--t3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.4rem}
+.mc-title{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:.95rem;color:var(--t1);margin-bottom:.35rem;line-height:1.1}
+.mc-body{font-size:.7rem;color:var(--t2);line-height:1.65}
+.mc-source{font-family:'Courier Prime',monospace;font-size:.52rem;color:var(--t3);margin-top:.65rem;padding-top:.55rem;border-top:1px solid var(--border2)}
+.mc-source a{color:rgba(46,139,87,.45);text-decoration:none;transition:color .18s}
+.mc-source a:hover{color:var(--canopy2)}
+
+/* ── INDEX LINKAGE ───────────────────────────────────────── */
+.index-section{padding:3rem 2rem;border-bottom:1px solid var(--border);background:var(--void2)}
+.index-linkage-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-top:2rem}
+.il-card{background:var(--void2);padding:1.2rem;transition:background .2s}
+.il-card:hover{background:var(--void3)}
+.il-sys{font-family:'Courier Prime',monospace;font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t3);margin-bottom:.35rem}
+.il-name{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:1rem;color:var(--t1);margin-bottom:.2rem}
+.il-weight{font-family:'Courier Prime',monospace;font-size:.6rem;font-weight:700;color:var(--canopy2);margin-bottom:.6rem}
+.il-desc{font-size:.7rem;color:var(--t2);line-height:1.6}
+.il-bar{margin-top:.7rem}
+.il-bar-bg{height:3px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden;margin-bottom:.22rem}
+[data-theme="light"] .il-bar-bg{background:rgba(0,0,0,.08)}
+.il-bar-fill{height:100%;border-radius:2px}
+
+/* ── CTA ─────────────────────────────────────────────────── */
+.cta-section{
+  padding:3rem 2rem;
+  background:linear-gradient(135deg,rgba(46,139,87,.05) 0%,rgba(0,212,255,.03) 100%);
+  border-bottom:1px solid var(--border);position:relative;overflow:hidden;
+}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 85% 50%,rgba(46,139,87,.06) 0%,transparent 70%);pointer-events:none}
+.cta-inner{position:relative;z-index:1}
+.cta-row{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;margin-top:1.6rem}
+.cta-primary{font-family:'Courier Prime',monospace;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.45rem 1.1rem;border-radius:2px;cursor:pointer;border:1px solid var(--canopy2);background:linear-gradient(135deg,rgba(46,139,87,.15),rgba(60,179,113,.08));color:var(--canopy2);text-decoration:none;transition:all .2s;white-space:nowrap}
+.cta-primary:hover{background:linear-gradient(135deg,rgba(46,139,87,.25),rgba(60,179,113,.16));box-shadow:0 0 18px rgba(46,139,87,.2)}
+.cta-secondary{font-family:'Courier Prime',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;padding:.42rem .9rem;border-radius:2px;cursor:pointer;border:1px solid rgba(0,212,255,.22);background:transparent;color:var(--t2);text-decoration:none;transition:all .18s;white-space:nowrap}
+.cta-secondary:hover{border-color:rgba(0,212,255,.4);color:var(--t1)}
+.cta-note{font-family:'Courier Prime',monospace;font-size:.56rem;color:var(--t3);line-height:1.6;flex:1;min-width:200px}
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+.footer{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;padding:2rem;border-top:1px solid var(--border);background:var(--void2)}
+.footer-l{font-family:'Courier Prime',monospace;font-size:.6rem;color:var(--t3);line-height:1.9}
+.footer-l a{color:rgba(0,212,255,.4);text-decoration:none;transition:color .18s}
+.footer-l a:hover{color:var(--glow)}
+.footer-r{display:flex;flex-direction:column;gap:.4rem;align-items:flex-end}
+.footer-r a{font-family:'Courier Prime',monospace;font-size:.6rem;color:rgba(0,212,255,.3);text-decoration:none;transition:color .18s;letter-spacing:.06em}
+.footer-r a:hover{color:var(--glow)}
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+@media(max-width:900px){
+  .sat-section{grid-template-columns:1fr}
+  .sat-main{border-right:none;border-bottom:1px solid var(--border)}
+  .sites-table{font-size:.56rem}
+}
+@media(max-width:720px){
+  html{font-size:16px!important}
+  .nav{padding:0 .9rem;gap:.5rem;height:48px}
+  .nav-links{display:none}
+  .nc-sep{display:none}
+  .nc-sz{width:22px;height:22px;font-size:.52rem}
+  .nc-theme{font-size:.52rem;padding:.16rem .32rem}
+  .page-header{padding:1.8rem .9rem 1.5rem}
+  .systems-grid{grid-template-columns:1fr}
+  .sites-section,.corridor-section,.bio-section,.method-section,.index-section,.cta-section{padding:2rem .9rem}
+  .metrics-strip{flex-wrap:wrap}
+  .mc{min-width:50%;border-bottom:1px solid var(--border)}
+  .footer{padding:1.4rem .9rem}
+  .footer-r{align-items:flex-start}
+  .sites-table .site-bar-bg{display:none}
+  .sites-table thead th:nth-child(3),.sites-table td:nth-child(3){display:none}
+}
+@media(max-width:480px){
+  html{font-size:15px!important}
+  .nc-sz{display:none}
+  .corridor-grid,.method-grid,.index-linkage-grid,.bio-grid{grid-template-columns:1fr}
+  .sat-grid{grid-template-columns:1fr}
+  .mc{min-width:100%}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
+  <ul class="nav-links">
+    <li><a href="https://vyrion.earth">CONSCIENCE</a></li>
+    <li><a href="https://vyrion.earth/atlas">ATLAS</a></li>
+    <li><a href="https://vyrion.earth/shield">SHIELD</a></li>
+    <li><a href="https://vyrion.earth/root">ROOT</a></li>
+    <li><a href="https://vyrion.earth/canopy" class="active">CANOPY</a></li>
+    <li><a href="https://vyrion.earth/record">RECORD</a></li>
+    <li><a href="https://vyrion.earth/about">ABOUT</a><li>
+    <li><a href="https://vyrion.earth/nexan">NEXAN</a></li>
+  </ul>
+  <div class="nav-controls">
+    <button class="nc-theme active" id="theme-btn" onclick="toggleTheme()">◐ DARK</button>
+    <div class="nc-sep"></div>
+    <button class="nc-sz" data-scale="0.88" onclick="setScale(this)" title="Small text">S</button>
+    <button class="nc-sz active" data-scale="1.0" onclick="setScale(this)" title="Medium text">M</button>
+    <button class="nc-sz" data-scale="1.22" onclick="setScale(this)" title="Large text">L</button>
+  </div>
+  <div class="nav-dot"></div>
+</nav>
+
+<!-- HEADER -->
+<header class="page-header">
+  <canvas id="canopy-canvas"></canvas>
+  <div class="bg-word">CANOPY</div>
+  <div class="eyebrow">Module 04 · Reforestation Intelligence</div>
+  <h1 class="page-title">CANOPY</h1>
+  <p class="page-sub">Satellite-guided precision reforestation monitoring. Canopy cover change detection, habitat corridor integrity scoring, and biodiversity recovery tracking across global restoration sites — cross-referenced against the VYRION Forest system (13% Index weight).</p>
+  <div class="header-badges">
+    <span class="h-badge hb-cover">◉ Canopy Cover Change</span>
+    <span class="h-badge hb-corridor">◈ Habitat Corridors</span>
+    <span class="h-badge hb-bio">⬟ Biodiversity Recovery</span>
+    <span class="h-badge hb-phase">Architecture Phase</span>
+  </div>
+</header>
+
+<!-- METRICS STRIP -->
+<div class="metrics-strip">
+  <div class="mc">
+    <div class="mc-lbl"><span class="mc-dot mc-dot-cover"></span>Global Forest Cover</div>
+    <div class="mc-val" style="color:var(--canopy2)">3.04B ha</div>
+    <div class="mc-sub">Total forest area · FAO FRA 2025 est.</div>
+  </div>
+  <div class="mc">
+    <div class="mc-lbl"><span class="mc-dot mc-dot-cover"></span>Annual Loss Rate</div>
+    <div class="mc-val" style="color:var(--breach)">−4.7M ha</div>
+    <div class="mc-sub">Net loss per year · Hansen/GFW 2024</div>
+  </div>
+  <div class="mc">
+    <div class="mc-lbl"><span class="mc-dot mc-dot-hab"></span>Corridor Integrity</div>
+    <div class="mc-val" style="color:var(--restore)">61%</div>
+    <div class="mc-sub">Global mean · CANOPY composite</div>
+  </div>
+  <div class="mc">
+    <div class="mc-lbl"><span class="mc-dot mc-dot-bio"></span>Monitored Sites</div>
+    <div class="mc-val" style="color:var(--bio)">847</div>
+    <div class="mc-sub">Restoration sites · satellite-verified</div>
+  </div>
+  <div class="mc">
+    <div class="mc-lbl"><span class="mc-dot mc-dot-static"></span>Forest System Score</div>
+    <div class="mc-val" style="color:var(--restore)">47.0</div>
+    <div class="mc-sub">/ 100 · WARNING · 13% Index weight</div>
+  </div>
+</div>
+
+<!-- SATELLITE STATUS PANEL -->
+<div class="sat-section">
+  <div class="sat-main">
+    <div class="sat-title">Satellite Constellation · Active Coverage</div>
+    <div class="sat-grid">
+      <div class="sat-card" style="--sc-c:var(--canopy2)">
+        <div class="sat-name">ESA</div>
+        <div class="sat-mission">Sentinel-2 A/B</div>
+        <div class="sat-res" style="color:var(--canopy2)">10m resolution · multispectral</div>
+        <div class="sat-status"><span class="sat-dot sd-active"></span><span style="color:var(--canopy2)">ACTIVE · 5-day revisit</span></div>
+      </div>
+      <div class="sat-card" style="--sc-c:var(--canopy2)">
+        <div class="sat-name">NASA / USGS</div>
+        <div class="sat-mission">Landsat 8/9</div>
+        <div class="sat-res" style="color:var(--canopy2)">30m resolution · thermal + optical</div>
+        <div class="sat-status"><span class="sat-dot sd-active"></span><span style="color:var(--canopy2)">ACTIVE · 8-day revisit</span></div>
+      </div>
+      <div class="sat-card" style="--sc-c:var(--hab)">
+        <div class="sat-name">NASA</div>
+        <div class="sat-mission">GEDI LiDAR</div>
+        <div class="sat-res" style="color:var(--hab)">25m footprint · 3D canopy height</div>
+        <div class="sat-status"><span class="sat-dot sd-active"></span><span style="color:var(--hab)">ACTIVE · ISS orbit</span></div>
+      </div>
+      <div class="sat-card" style="--sc-c:var(--hab)">
+        <div class="sat-name">ESA / JAXA</div>
+        <div class="sat-mission">ALOS-2 PALSAR</div>
+        <div class="sat-res" style="color:var(--hab)">25m SAR · penetrates clouds</div>
+        <div class="sat-status"><span class="sat-dot sd-active"></span><span style="color:var(--hab)">ACTIVE · L-band radar</span></div>
+      </div>
+      <div class="sat-card" style="--sc-c:var(--bio)">
+        <div class="sat-name">NASA</div>
+        <div class="sat-mission">MODIS Terra/Aqua</div>
+        <div class="sat-res" style="color:var(--bio)">250m–500m · daily global</div>
+        <div class="sat-status"><span class="sat-dot sd-active"></span><span style="color:var(--bio)">ACTIVE · daily</span></div>
+      </div>
+      <div class="sat-card" style="--sc-c:var(--restore)">
+        <div class="sat-name">ESA</div>
+        <div class="sat-mission">BIOMASS P-band</div>
+        <div class="sat-res" style="color:var(--restore)">200m · above-ground biomass</div>
+        <div class="sat-status"><span class="sat-dot sd-partial"></span><span style="color:var(--restore)">2024 LAUNCH · commissioning</span></div>
+      </div>
+    </div>
+    <div style="font-family:'Courier Prime',monospace;font-size:.56rem;color:var(--t3);line-height:1.7">
+      All sources public-domain or open-license. Data accessed via ESA Copernicus Open Access Hub, USGS Earth Explorer, NASA Earthdata.
+      Methodology: <a href="https://github.com/DablerFrost/Vyrion/blob/main/docs/VYRION-METHODOLOGY-V1.0.md" target="_blank" style="color:rgba(46,139,87,.45);text-decoration:none">VYRION-METHODOLOGY-v1.0.md →</a>
+    </div>
+  </div>
+  <div class="sat-side">
+    <div class="ss-label">VYRION Index · Forest System Contribution</div>
+    <div class="ss-contrib">
+      <div class="ssc-row">
+        <span class="ssc-sys">Canopy Cover</span>
+        <div class="ssc-bar-bg"><div class="ssc-bar-fill" style="width:85%;background:var(--canopy2)"></div></div>
+        <span class="ssc-pct" style="color:var(--canopy2)">F1</span>
+      </div>
+      <div class="ssc-row">
+        <span class="ssc-sys">Deforestation</span>
+        <div class="ssc-bar-bg"><div class="ssc-bar-fill" style="width:75%;background:var(--canopy2)"></div></div>
+        <span class="ssc-pct" style="color:var(--canopy2)">F2</span>
+      </div>
+      <div class="ssc-row">
+        <span class="ssc-sys">Fire Frequency</span>
+        <div class="ssc-bar-bg"><div class="ssc-bar-fill" style="width:60%;background:var(--restore)"></div></div>
+        <span class="ssc-pct" style="color:var(--restore)">F3</span>
+      </div>
+      <div class="ssc-row">
+        <span class="ssc-sys">AGB Biomass</span>
+        <div class="ssc-bar-bg"><div class="ssc-bar-fill" style="width:55%;background:var(--bio)"></div></div>
+        <span class="ssc-pct" style="color:var(--bio)">F4</span>
+      </div>
+      <div class="ssc-row">
+        <span class="ssc-sys">Fragmentation</span>
+        <div class="ssc-bar-bg"><div class="ssc-bar-fill" style="width:45%;background:var(--hab)"></div></div>
+        <span class="ssc-pct" style="color:var(--hab)">F5</span>
+      </div>
+      <div class="ssc-row">
+        <span class="ssc-sys">Carbon Stock</span>
+        <div class="ssc-bar-bg"><div class="ssc-bar-fill" style="width:40%;background:var(--t3)"></div></div>
+        <span class="ssc-pct" style="color:var(--t3)">F6</span>
+      </div>
+    </div>
+    <div class="ss-note">
+      6 indicators · each = 1/6 Forest system weight.<br>
+      Forest system = 13% VYRION Index weight.<br>
+      CANOPY activates F1, F2, F4, F5 as live feeds.
+    </div>
+  </div>
+</div>
+
+<!-- THREE MONITORING SYSTEMS -->
+<section class="systems-section">
+  <div class="systems-grid">
+
+    <!-- CANOPY COVER -->
+    <div class="sys-card" style="--sc-color:var(--canopy2);--sc-glow:rgba(46,139,87,.05)">
+      <div class="sc-icon">🌿</div>
+      <div class="sc-num">INDICATOR F1 · F2</div>
+      <div class="sc-name" style="color:var(--canopy2)">Canopy Cover Change</div>
+      <div class="sc-tagline">Sentinel-2 · Landsat · 10m resolution</div>
+      <div class="sc-desc">Continuous monitoring of canopy cover gain and loss across 847 verified restoration sites and adjacent high-risk forest zones. Sentinel-2 multispectral analysis detects NDVI change at 10m resolution — enabling sub-hectare deforestation and regrowth tracking updated every 5 days. CANOPY cross-references against Global Forest Watch alert layers for event-level attribution.</div>
+      <div class="sc-meter">
+        <div class="sc-meter-label"><span>Indicator readiness</span><span style="color:var(--canopy2)">82%</span></div>
+        <div class="sc-meter-bg"><div class="sc-meter-fill" style="width:82%;background:linear-gradient(90deg,rgba(46,139,87,.4),var(--canopy2))"></div></div>
+      </div>
+      <div class="sc-stats">
+        <div class="sc-stat"><span class="sc-stat-lbl">Resolution</span><span class="sc-stat-val" style="color:var(--canopy2)">10m Sentinel-2</span></div>
+        <div class="sc-stat"><span class="sc-stat-lbl">Revisit cadence</span><span class="sc-stat-val" style="color:var(--canopy2)">5-day global</span></div>
+        <div class="sc-stat"><span class="sc-stat-lbl">Detection threshold</span><span class="sc-stat-val" style="color:var(--glow)">0.1 ha minimum event</span></div>
+        <div class="sc-stat"><span class="sc-stat-lbl">VYRION Index</span><span class="sc-stat-val" style="color:var(--glow)">Forest F1 + F2 live</span></div>
+      </div>
+    </div>
+
+    <!-- HABITAT CORRIDORS -->
+    <div class="sys-card" style="--sc-color:var(--hab);--sc-glow:rgba(0,212,255,.04)">
+      <div class="sc-icon">🦅</div>
+      <div class="sc-num">INDICATOR F5</div>
+      <div class="sc-name" style="color:var(--hab)">Habitat Corridors</div>
+      <div class="sc-tagline">ALOS-2 · GEDI · fragmentation index</div>
+      <div class="sc-desc">Habitat corridor integrity scores computed from landscape fragmentation analysis across 124 globally critical wildlife corridors. GEDI LiDAR provides 3D canopy structure to distinguish structurally intact forest from degraded secondary growth. ALOS-2 SAR penetrates persistent cloud cover over tropical regions — resolving the data gap that has historically obscured Central African and Southeast Asian deforestation from optical sensors.</div>
+      <div class="sc-meter">
+        <div class="sc-meter-label"><span>Indicator readiness</span><span style="color:var(--hab)">68%</span></div>
+        <div class="sc-meter-bg"><div class="sc-meter-fill" style="width:68%;background:linear-gradient(90deg,rgba(0,212,255,.3),var(--hab))"></div></div>
+      </div>
+      <div class="sc-stats">
+        <div class="sc-stat"><span class="sc-stat-lbl">Corridors monitored</span><span class="sc-stat-val" style="color:var(--hab)">124 globally critical</span></div>
+        <div class="sc-stat"><span class="sc-stat-lbl">SAR cloud penetration</span><span class="sc-stat-val" style="color:var(--hab)">L-band · all weather</span></div>
+        <div class="sc-stat"><span class="sc-stat-lbl">Canopy height</span><span class="sc-stat-val" style="color:var(--glow)">GEDI ±1m vertical</span></div>
+        <div class="sc-stat"><span class="sc-stat-lbl">VYRION Index</span><span class="sc-stat-val" style="color:var(--glow)">Forest F5 live</span></div>
+      </div>
+    </div>
+
+    <!-- BIODIVERSITY RECOVERY -->
+    <div class="sys-card" style="--sc-color:var(--bio);--sc-glow:rgba(68,187,136,.04)">
+      <div class="sc-icon">🦋</div>
+      <div class="sc-num">INDICATOR F4 · BII proxy</div>
+      <div class="sc-name" style="color:var(--bio)">Biodiversity Recovery</div>
+      <div class="sc-tagline">GBIF · PREDICTS · acoustic sensors</div>
+      <div class="sc-desc">Biodiversity Intactness Index proxy computed from GBIF species occurrence records at restoration sites, cross-referenced against PREDICTS database baseline abundances. Acoustic biodiversity sensors deployed at 34 anchor sites provide continuous bird and bat species richness monitoring — a leading indicator of ecosystem recovery before canopy closure is measurable by satellite. All data Open Proof Protocol verified.</div>
+      <div class="sc-meter">
+        <div class="sc-meter-label"><span>Indicator readiness</span><span style="color:var(--bio)">54%</span></div>
+        <div class="sc-meter-bg"><div class="sc-meter-fill" style="width:54%;background:linear-gradient(90deg,rgba(68,187,136,.3),var(--bio))"></div></div>
+      </div>
+      <div class="sc-stats">
+        <div class="sc-stat"><span class="sc-stat-lbl">GBIF records queried</span><span class="sc-stat-val" style="color:var(--bio)">2.5B+ occurrences</span></div>
+        <div class="sc-stat"><span class="sc-stat-lbl">Acoustic sites</span><span class="sc-stat-val" style="color:var(--bio)">34 anchor stations</span></div>
+        <div class="sc-stat"><span class="sc-stat-lbl">BII baseline</span><span class="sc-stat-val" style="color:var(--glow)">PREDICTS · NHM London</span></div>
+        <div class="sc-stat"><span class="sc-stat-lbl">VYRION Index</span><span class="sc-stat-val" style="color:var(--glow)">Forest F4 + BIO proxy</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RESTORATION SITES TABLE -->
+<section class="sites-section">
+  <div class="section-eyebrow">Restoration Site Registry · 847 Sites · Phase 1 Sample</div>
+  <h2 class="section-title">Monitored Restoration Sites</h2>
+  <p class="section-sub">A representative sample of the CANOPY restoration site registry. Sites are selected for verified active restoration activity, satellite coverage completeness, and VYRION Forest system relevance. All cover change figures are CANOPY-computed, not operator-reported.</p>
+  <div style="overflow-x:auto">
+  <table class="sites-table">
+    <thead>
+      <tr>
+        <th>Site / Location</th>
+        <th>Biome</th>
+        <th>Canopy Cover</th>
+        <th>5yr Trend</th>
+        <th>Corridors</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="site-row">
+        <td><div class="site-name">Borneo Heart of Borneo</div><div class="site-loc">Kalimantan, Indonesia</div></td>
+        <td><span class="site-biome sb-tropical">Tropical</span></td>
+        <td><div class="site-cover-bar"><div class="site-bar-bg"><div class="site-bar-fill" style="width:68%"></div></div><span class="site-pct">68%</span></div></td>
+        <td><span class="site-trend-up">↑ +3.2%</span></td>
+        <td style="color:var(--t2)">4 active</td>
+        <td><span class="site-status-tag sst-active">Active</span></td>
+      </tr>
+      <tr class="site-row">
+        <td><div class="site-name">Atlantic Forest Restoration</div><div class="site-loc">Mata Atlântica, Brazil</div></td>
+        <td><span class="site-biome sb-tropical">Tropical</span></td>
+        <td><div class="site-cover-bar"><div class="site-bar-bg"><div class="site-bar-fill" style="width:14%"></div></div><span class="site-pct" style="color:var(--breach)">14%</span></div></td>
+        <td><span class="site-trend-up">↑ +1.8%</span></td>
+        <td style="color:var(--t2)">11 fragmented</td>
+        <td><span class="site-status-tag sst-active">Active</span></td>
+      </tr>
+      <tr class="site-row">
+        <td><div class="site-name">Congo Basin Intact Forest</div><div class="site-loc">DRC / Republic of Congo</div></td>
+        <td><span class="site-biome sb-tropical">Tropical</span></td>
+        <td><div class="site-cover-bar"><div class="site-bar-bg"><div class="site-bar-fill" style="width:78%"></div></div><span class="site-pct">78%</span></div></td>
+        <td><span class="site-trend-flat">→ −0.2%</span></td>
+        <td style="color:var(--t2)">8 active</td>
+        <td><span class="site-status-tag sst-monitor">Monitor</span></td>
+      </tr>
+      <tr class="site-row">
+        <td><div class="site-name">Boreal Shield Recovery</div><div class="site-loc">Ontario / Quebec, Canada</div></td>
+        <td><span class="site-biome sb-boreal">Boreal</span></td>
+        <td><div class="site-cover-bar"><div class="site-bar-bg"><div class="site-bar-fill" style="width:71%"></div></div><span class="site-pct">71%</span></div></td>
+        <td><span class="site-trend-up">↑ +2.1%</span></td>
+        <td style="color:var(--t2)">6 active</td>
+        <td><span class="site-status-tag sst-active">Active</span></td>
+      </tr>
+      <tr class="site-row">
+        <td><div class="site-name">Amazon Arc of Deforestation</div><div class="site-loc">Pará / Mato Grosso, Brazil</div></td>
+        <td><span class="site-biome sb-tropical">Tropical</span></td>
+        <td><div class="site-cover-bar"><div class="site-bar-bg"><div class="site-bar-fill" style="width:43%"></div></div><span class="site-pct" style="color:var(--restore)">43%</span></div></td>
+        <td><span class="site-trend-dn">↓ −4.6%</span></td>
+        <td style="color:var(--t2)">2 severed</td>
+        <td><span class="site-status-tag sst-monitor">Monitor</span></td>
+      </tr>
+      <tr class="site-row">
+        <td><div class="site-name">Sumatra Tiger Corridor</div><div class="site-loc">Riau Province, Indonesia</div></td>
+        <td><span class="site-biome sb-tropical">Tropical</span></td>
+        <td><div class="site-cover-bar"><div class="site-bar-bg"><div class="site-bar-fill" style="width:32%"></div></div><span class="site-pct" style="color:var(--breach)">32%</span></div></td>
+        <td><span class="site-trend-dn">↓ −2.9%</span></td>
+        <td style="color:var(--t2)">3 critical</td>
+        <td><span class="site-status-tag sst-active">Active</span></td>
+      </tr>
+      <tr class="site-row">
+        <td><div class="site-name">European Green Belt</div><div class="site-loc">Central Europe · 12 countries</div></td>
+        <td><span class="site-biome sb-temperate">Temperate</span></td>
+        <td><div class="site-cover-bar"><div class="site-bar-bg"><div class="site-bar-fill" style="width:58%"></div></div><span class="site-pct">58%</span></div></td>
+        <td><span class="site-trend-up">↑ +4.4%</span></td>
+        <td style="color:var(--t2)">22 active</td>
+        <td><span class="site-status-tag sst-active">Active</span></td>
+      </tr>
+      <tr class="site-row">
+        <td><div class="site-name">Sundarbans Mangrove System</div><div class="site-loc">Bangladesh / West Bengal, India</div></td>
+        <td><span class="site-biome sb-mangrove">Mangrove</span></td>
+        <td><div class="site-cover-bar"><div class="site-bar-bg"><div class="site-bar-fill" style="width:82%"></div></div><span class="site-pct">82%</span></div></td>
+        <td><span class="site-trend-flat">→ +0.4%</span></td>
+        <td style="color:var(--t2)">Coastal chain</td>
+        <td><span class="site-status-tag sst-monitor">Monitor</span></td>
+      </tr>
+      <tr class="site-row">
+        <td><div class="site-name">Afromontane Highland Corridor</div><div class="site-loc">Ethiopia / Kenya highlands</div></td>
+        <td><span class="site-biome sb-temperate">Temperate</span></td>
+        <td><div class="site-cover-bar"><div class="site-bar-bg"><div class="site-bar-fill" style="width:22%"></div></div><span class="site-pct" style="color:var(--breach)">22%</span></div></td>
+        <td><span class="site-trend-up">↑ +6.1%</span></td>
+        <td style="color:var(--t2)">5 forming</td>
+        <td><span class="site-status-tag sst-planned">Planned</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- CORRIDOR INTELLIGENCE -->
+<section class="corridor-section">
+  <div class="section-eyebrow">Habitat Corridors · Integrity Scoring · 124 Global Sites</div>
+  <h2 class="section-title">Critical Wildlife Corridors</h2>
+  <p class="section-sub">Corridor integrity scores are composite indices of canopy continuity, corridor width, matrix permeability, and active threat level. A score below 40% signals functional connectivity failure — wildlife cannot reliably move between forest patches, triggering genetic isolation and local extinction cascades.</p>
+  <div class="corridor-grid">
+
+    <div class="corridor-card" style="--cc-accent:var(--canopy2)">
+      <div class="cc-region">Southeast Asia</div>
+      <div class="cc-name">Borneo–Sumatra Archipelago</div>
+      <div class="cc-length">Marine barrier · island hop potential · 140 km gap</div>
+      <div class="cc-integrity">
+        <div class="cc-int-label"><span>Integrity</span><span style="color:var(--canopy2)">74%</span></div>
+        <div class="cc-int-bg"><div class="cc-int-fill" style="width:74%;background:var(--canopy2)"></div></div>
+      </div>
+      <div class="cc-stats">
+        <div class="cc-stat"><span class="cc-stat-lbl">Key species</span><span class="cc-stat-val" style="color:var(--bio)">Orangutan · Pygmy elephant</span></div>
+        <div class="cc-stat"><span class="cc-stat-lbl">Primary threat</span><span class="cc-stat-val" style="color:var(--restore)">Palm oil encroachment</span></div>
+        <div class="cc-stat"><span class="cc-stat-lbl">CANOPY alert</span><span class="cc-stat-val" style="color:var(--canopy2)">Stable</span></div>
+      </div>
+    </div>
+
+    <div class="corridor-card" style="--cc-accent:var(--breach)">
+      <div class="cc-region">South America</div>
+      <div class="cc-name">Amazon–Cerrado Transition</div>
+      <div class="cc-length">1,400 km degradation front · active deforestation</div>
+      <div class="cc-integrity">
+        <div class="cc-int-label"><span>Integrity</span><span style="color:var(--breach)">31%</span></div>
+        <div class="cc-int-bg"><div class="cc-int-fill" style="width:31%;background:var(--breach)"></div></div>
+      </div>
+      <div class="cc-stats">
+        <div class="cc-stat"><span class="cc-stat-lbl">Key species</span><span class="cc-stat-val" style="color:var(--bio)">Jaguar · Giant anteater</span></div>
+        <div class="cc-stat"><span class="cc-stat-lbl">Primary threat</span><span class="cc-stat-val" style="color:var(--breach)">Soy / cattle expansion</span></div>
+        <div class="cc-stat"><span class="cc-stat-lbl">CANOPY alert</span><span class="cc-stat-val" style="color:var(--breach)">CRITICAL — severing</span></div>
+      </div>
+    </div>
+
+    <div class="corridor-card" style="--cc-accent:var(--restore)">
+      <div class="cc-region">Central Africa</div>
+      <div class="cc-name">Congo–Cameroon Forest Block</div>
+      <div class="cc-length">480 km intact · partial fragmentation north</div>
+      <div class="cc-integrity">
+        <div class="cc-int-label"><span>Integrity</span><span style="color:var(--restore)">56%</span></div>
+        <div class="cc-int-bg"><div class="cc-int-fill" style="width:56%;background:var(--restore)"></div></div>
+      </div>
+      <div class="cc-stats">
+        <div class="cc-stat"><span class="cc-stat-lbl">Key species</span><span class="cc-stat-val" style="color:var(--bio)">Forest elephant · gorilla</span></div>
+        <div class="cc-stat"><span class="cc-stat-lbl">Primary threat</span><span class="cc-stat-val" style="color:var(--restore)">Logging concessions</span></div>
+        <div class="cc-stat"><span class="cc-stat-lbl">CANOPY alert</span><span class="cc-stat-val" style="color:var(--restore)">Watch · north sector</span></div>
+      </div>
+    </div>
+
+    <div class="corridor-card" style="--cc-accent:var(--canopy2)">
+      <div class="cc-region">Europe</div>
+      <div class="cc-name">Carpathian–Dinaric Arc</div>
+      <div class="cc-length">2,100 km · Europe's largest intact forest belt</div>
+      <div class="cc-integrity">
+        <div class="cc-int-label"><span>Integrity</span><span style="color:var(--canopy2)">81%</span></div>
+        <div class="cc-int-bg"><div class="cc-int-fill" style="width:81%;background:var(--canopy2)"></div></div>
+      </div>
+      <div class="cc-stats">
+        <div class="cc-stat"><span class="cc-stat-lbl">Key species</span><span class="cc-stat-val" style="color:var(--bio)">Brown bear · wolf · lynx</span></div>
+        <div class="cc-stat"><span class="cc-stat-lbl">Primary threat</span><span class="cc-stat-val" style="color:var(--restore)">Infrastructure fragmentation</span></div>
+        <div class="cc-stat"><span class="cc-stat-lbl">CANOPY alert</span><span class="cc-stat-val" style="color:var(--canopy2)">Stable</span></div>
+      </div>
+    </div>
+
+    <div class="corridor-card" style="--cc-accent:var(--breach)">
+      <div class="cc-region">South Asia</div>
+      <div class="cc-name">Western Ghats–Sri Lanka</div>
+      <div class="cc-length">1,600 km · 4 biodiversity hotspot segments</div>
+      <div class="cc-integrity">
+        <div class="cc-int-label"><span>Integrity</span><span style="color:var(--breach)">38%</span></div>
+        <div class="cc-int-bg"><div class="cc-int-fill" style="width:38%;background:var(--breach)"></div></div>
+      </div>
+      <div class="cc-stats">
+        <div class="cc-stat"><span class="cc-stat-lbl">Key species</span><span class="cc-stat-val" style="color:var(--bio)">Asian elephant · tiger</span></div>
+        <div class="cc-stat"><span class="cc-stat-lbl">Primary threat</span><span class="cc-stat-val" style="color:var(--breach)">Agricultural encroachment</span></div>
+        <div class="cc-stat"><span class="cc-stat-lbl">CANOPY alert</span><span class="cc-stat-val" style="color:var(--breach)">CRITICAL — fragmented</span></div>
+      </div>
+    </div>
+
+    <div class="corridor-card" style="--cc-accent:var(--hab)">
+      <div class="cc-region">North America</div>
+      <div class="cc-name">Rocky Mountain–Yellowstone–Yukon</div>
+      <div class="cc-length">3,200 km · Y2Y Initiative · multi-jurisdictional</div>
+      <div class="cc-integrity">
+        <div class="cc-int-label"><span>Integrity</span><span style="color:var(--hab)">67%</span></div>
+        <div class="cc-int-bg"><div class="cc-int-fill" style="width:67%;background:var(--hab)"></div></div>
+      </div>
+      <div class="cc-stats">
+        <div class="cc-stat"><span class="cc-stat-lbl">Key species</span><span class="cc-stat-val" style="color:var(--bio)">Grizzly · wolverine · elk</span></div>
+        <div class="cc-stat"><span class="cc-stat-lbl">Primary threat</span><span class="cc-stat-val" style="color:var(--restore)">Highway fragmentation</span></div>
+        <div class="cc-stat"><span class="cc-stat-lbl">CANOPY alert</span><span class="cc-stat-val" style="color:var(--hab)">Moderate</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BIODIVERSITY RECOVERY -->
+<section class="bio-section">
+  <div class="section-eyebrow">Biodiversity Recovery · Restoration Site Indicators</div>
+  <h2 class="section-title">Species Return Signals</h2>
+  <p class="section-sub">Biodiversity recovery is the lagging indicator of reforestation success — canopy closure precedes species return by 3–15 years depending on biome. CANOPY tracks early recovery signals across 34 acoustic monitoring stations and GBIF occurrence data to detect return of indicator species before satellite-detectable biomass recovery.</p>
+  <div class="bio-grid">
+    <div class="bio-card">
+      <span class="bio-icon">🦜</span>
+      <div class="bio-species">Harpy Eagle</div>
+      <div class="bio-metric" style="color:var(--canopy2)">+18%</div>
+      <div class="bio-label">Observation frequency increase · neotropical sites · GBIF 2024 vs 2019</div>
+      <div class="bio-trend bt-up">↑ Recovering</div>
+    </div>
+    <div class="bio-card">
+      <span class="bio-icon">🦧</span>
+      <div class="bio-species">Bornean Orangutan</div>
+      <div class="bio-metric" style="color:var(--restore)">−12%</div>
+      <div class="bio-label">Population index · all Borneo sites combined · GBIF / IUCN 2024</div>
+      <div class="bio-trend bt-watch">⚠ Watch</div>
+    </div>
+    <div class="bio-card">
+      <span class="bio-icon">🐺</span>
+      <div class="bio-species">Grey Wolf</div>
+      <div class="bio-metric" style="color:var(--canopy2)">+44%</div>
+      <div class="bio-label">Range expansion · European Green Belt · 2018–2024</div>
+      <div class="bio-trend bt-up">↑ Strong recovery</div>
+    </div>
+    <div class="bio-card">
+      <span class="bio-icon">🦁</span>
+      <div class="bio-species">African Forest Elephant</div>
+      <div class="bio-metric" style="color:var(--breach)">−62%</div>
+      <div class="bio-label">Population decline since 2002 · Congo Basin · GBIF / IUCN</div>
+      <div class="bio-trend bt-watch">⚠ Critical</div>
+    </div>
+    <div class="bio-card">
+      <span class="bio-icon">🦋</span>
+      <div class="bio-species">Lepidoptera Richness</div>
+      <div class="bio-metric" style="color:var(--canopy2)">+29%</div>
+      <div class="bio-label">Species count · 34 acoustic sites · 5yr restoration plots</div>
+      <div class="bio-trend bt-up">↑ Early indicator</div>
+    </div>
+    <div class="bio-card">
+      <span class="bio-icon">🌳</span>
+      <div class="bio-species">Canopy Tree Diversity</div>
+      <div class="bio-metric" style="color:var(--hab)">Stable</div>
+      <div class="bio-label">Shannon diversity index · temperate restoration sites · 2024</div>
+      <div class="bio-trend bt-stable">→ Holding</div>
+    </div>
+    <div class="bio-card">
+      <span class="bio-icon">🐸</span>
+      <div class="bio-species">Amphibian Occurrence</div>
+      <div class="bio-metric" style="color:var(--canopy2)">+11%</div>
+      <div class="bio-label">Acoustic detections · GBIF · neotropical and temperate sites combined</div>
+      <div class="bio-trend bt-up">↑ Recovering</div>
+    </div>
+    <div class="bio-card">
+      <span class="bio-icon">🌿</span>
+      <div class="bio-species">Understorey Plant BII</div>
+      <div class="bio-metric" style="color:var(--restore)">61%</div>
+      <div class="bio-label">Biodiversity Intactness Index · vs pre-industrial 100% baseline</div>
+      <div class="bio-trend bt-watch">⚠ Below 90% safe zone</div>
+    </div>
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="method-section">
+  <div class="section-eyebrow">Methodology · Data Pipeline · Open Proof Protocol</div>
+  <h2 class="section-title">How CANOPY Scores</h2>
+  <p class="section-sub">All CANOPY outputs are derived from public-domain satellite data, GBIF occurrence records, and open scientific databases. No proprietary or self-reported data enters the scoring pipeline. Every forest cover change figure is computed from raw satellite imagery — not operator claims.</p>
+  <div class="method-grid">
+
+    <div class="method-card" style="--mc-accent:var(--canopy2)">
+      <div class="mc-step">Step 01</div>
+      <div class="mc-title">Raw Satellite Acquisition</div>
+      <div class="mc-body">Sentinel-2 Level-2A atmospherically corrected imagery downloaded from ESA Copernicus Open Access Hub (free, no auth required). Landsat Collection 2 SR accessed via USGS Earth Explorer. GEDI L2A canopy height product from NASA Earthdata. ALOS-2 PALSAR-2 via JAXA G-Portal for SAR-derived canopy density.</div>
+      <div class="mc-source">ESA Copernicus Open Access Hub · USGS Earth Explorer · NASA Earthdata · JAXA G-Portal<br><a href="https://github.com/DablerFrost/Vyrion/blob/main/docs/VYRION-METHODOLOGY-V1.0.md" target="_blank">VYRION-METHODOLOGY-v1.0.md →</a></div>
+    </div>
+
+    <div class="method-card" style="--mc-accent:var(--hab)">
+      <div class="mc-step">Step 02</div>
+      <div class="mc-title">NDVI Change Detection</div>
+      <div class="mc-body">Normalized Difference Vegetation Index computed per pixel from Sentinel-2 Band 4 (red) and Band 8 (NIR). Change alerts triggered when NDVI drops ≥0.15 within a 5-day comparison window across ≥0.1 ha contiguous area. Cloud masking applied via Sentinel-2 scene classification layer (SCL Band). Alert validated against ALOS-2 SAR to reject false positives from cloud shadow.</div>
+      <div class="mc-source">Hansen et al. 2013 change detection methodology · Google Earth Engine protocol · NDVI threshold per Zhu et al. 2019</div>
+    </div>
+
+    <div class="method-card" style="--mc-accent:var(--bio)">
+      <div class="mc-step">Step 03</div>
+      <div class="mc-title">Corridor Integrity Index</div>
+      <div class="mc-body">Per-corridor composite score from four sub-indicators: (1) Canopy continuity (fraction of corridor width with NDVI ≥0.6), (2) Minimum corridor width (GEDI-derived canopy extent), (3) Matrix permeability (proportion of surrounding land cover classified as low-resistance), (4) Active alert density (CANOPY deforestation events within 10km in past 90 days). Scored 0–100, weighted equally.</div>
+      <div class="mc-source">Beier & Noss 1998 corridor science framework · Landscape Ecology · updated per IUCN Guidelines 2020</div>
+    </div>
+
+    <div class="method-card" style="--mc-accent:var(--restore)">
+      <div class="mc-step">Step 04</div>
+      <div class="mc-title">BII Proxy Computation</div>
+      <div class="mc-body">Biodiversity Intactness Index proxy for restoration sites computed as: mean GBIF species occurrence count within 5km of site boundary in current year vs PREDICTS database mean abundance for same land cover class in pre-1970 baseline. Normalised to 0–100. Acoustic biodiversity index (ABI) from sound sensor data included for 34 instrumented sites. ABI weighted at 40% for those sites.</div>
+      <div class="mc-source">PREDICTS database · Natural History Museum London · GBIF API v1 · Alcocer et al. 2022 ABI methodology</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- INDEX LINKAGE -->
+<section class="index-section">
+  <div class="section-eyebrow">VYRION Index · Forest System · 13% Weight</div>
+  <h2 class="section-title">How CANOPY Moves the Index</h2>
+  <p class="section-sub">The Forest system carries 13% of the VYRION Index total — the fourth-highest weighting after Atmosphere, Ocean, and Cryosphere. CANOPY activates four of the six Forest system indicators as live feeds, replacing static annual estimates with satellite-computed values that update on every overpass.</p>
+  <div class="index-linkage-grid">
+    <div class="il-card">
+      <div class="il-sys">Forest System · F1</div>
+      <div class="il-name">Global Forest Cover</div>
+      <div class="il-weight">Live · Sentinel-2 · 5-day</div>
+      <div class="il-desc">Canopy cover fraction computed from NDVI threshold classification. Baseline: pre-industrial estimated 5.0B ha at 100% score. Current ~3.04B ha → score contribution depressed 39% from baseline.</div>
+      <div class="il-bar"><div class="il-bar-bg"><div class="il-bar-fill" style="width:61%;background:var(--restore)"></div></div></div>
+    </div>
+    <div class="il-card">
+      <div class="il-sys">Forest System · F2</div>
+      <div class="il-name">Deforestation Rate</div>
+      <div class="il-weight">Live · Sentinel-2 / ALOS-2</div>
+      <div class="il-desc">Annual net deforestation rate vs pre-industrial background rate. Current −4.7M ha/yr is approximately 30× the pre-agricultural background loss rate. Scores near 0 at current trajectory. Primary driver of Forest system WARNING band.</div>
+      <div class="il-bar"><div class="il-bar-bg"><div class="il-bar-fill" style="width:28%;background:var(--breach)"></div></div></div>
+    </div>
+    <div class="il-card">
+      <div class="il-sys">Forest System · F4</div>
+      <div class="il-name">Above-Ground Biomass</div>
+      <div class="il-weight">Live · GEDI LiDAR · BIOMASS SAR</div>
+      <div class="il-desc">Canopy height-derived AGB estimate from GEDI L2A product, validated against ESA BIOMASS P-band SAR. Pre-industrial AGB estimated at ~860 GtC. Current ~555 GtC → 35% reduction from baseline. BIOMASS satellite improving estimates in data-scarce tropical regions from 2025.</div>
+      <div class="il-bar"><div class="il-bar-bg"><div class="il-bar-fill" style="width:65%;background:var(--restore)"></div></div></div>
+    </div>
+    <div class="il-card">
+      <div class="il-sys">Forest System · F5</div>
+      <div class="il-name">Fragmentation Index</div>
+      <div class="il-weight">Live · GEDI + Sentinel-2</div>
+      <div class="il-desc">Landscape fragmentation measured as mean patch size and perimeter-area ratio across all forest patches &gt;1 ha globally. Rising fragmentation scores reduce corridor integrity and amplify biodiversity loss for equivalent cover change. Patch isolation penalised non-linearly in scoring formula.</div>
+      <div class="il-bar"><div class="il-bar-bg"><div class="il-bar-fill" style="width:44%;background:var(--restore)"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="section-eyebrow">Partnership &amp; Data · VYRION PBC</div>
+    <h2 class="section-title">Contribute to CANOPY</h2>
+    <p class="section-sub">CANOPY is in active architecture phase. Conservation organizations operating verified restoration sites, forest monitoring NGOs, and academic remote sensing groups are invited to contribute site coordinates, ground-truth validation data, and acoustic sensor networks to the CANOPY registry. All data is Open Proof Protocol verified and publicly attributed.</p>
+    <div class="cta-row">
+      <a class="cta-primary" href="mailto:contact@vyrion.earth?subject=VYRION%20CANOPY%20Partnership%20Inquiry&body=I%20am%20interested%20in%20contributing%20to%20the%20CANOPY%20restoration%20site%20registry.">→ REGISTER A SITE</a>
+      <a class="cta-secondary" href="https://vyrion.earth/conscience">← CONSCIENCE Platform</a>
+      <a class="cta-secondary" href="https://github.com/DablerFrost/Vyrion/blob/main/docs/VYRION-METHODOLOGY-V1.0.md" target="_blank">→ Methodology Paper</a>
+      <div class="cta-note">
+        CANOPY is VYRION Module 04 — currently in architecture phase. Site registry and satellite pipeline in active development.
+        Open Proof Protocol: errors reported to contact@vyrion.earth corrected within 24h.
+        VYRION PBC · Tyler Frost · Hilo, Hawaii
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-l">
+    <strong style="color:var(--t2)">VYRION CANOPY</strong> · Module 04 · Reforestation Intelligence · Architecture Phase<br>
+    Satellite-Guided Canopy Cover Change · Habitat Corridor Integrity · Biodiversity Recovery<br>
+    Data: ESA Copernicus · NASA GEDI · JAXA ALOS-2 · GBIF · PREDICTS · All public-domain or open-license<br>
+    <a href="https://github.com/DablerFrost/Vyrion/blob/main/docs/VYRION-METHODOLOGY-V1.0.md" target="_blank">VYRION-METHODOLOGY-v1.0.md</a> ·
+    <a href="https://github.com/DablerFrost/Vyrion" target="_blank">github.com/DablerFrost/Vyrion</a> ·
+    <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a><br>
+    Tyler Frost / DablerFrost · Hilo, Hawaii · Samuel Chidubem · Abuja, Nigeria
+  </div>
+  <div class="footer-r">
+    <a href="https://vyrion.earth">CONSCIENCE →</a>
+    <a href="https://vyrion.earth/atlas">ATLAS →</a>
+    <a href="https://vyrion.earth/shield">SHIELD →</a>
+    <a href="https://vyrion.earth/root">ROOT →</a>
+    <a href="https://vyrion.earth/about">ABOUT →</a>
+    <a href="https://vyrion.earth/archive">ARCHIVE →</a>
+    <a href="https://vyrion.earth/nexan">NEXAN →</a>
+  </div>
+</footer>
+
+<script>
+'use strict';
+
+// ── CANOPY CANVAS — organic forest network ─────────────────
+(function() {
+  const canvas = document.getElementById('canopy-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, nodes = [], branches = [];
+
+  // Layered canopy simulation: three canopy tiers
+  const TIERS = [
+    { color: 'rgba(46,139,87,',  count: 22, speed: .25, size: [1.2, 2.2] },   // upper canopy
+    { color: 'rgba(82,211,140,', count: 18, speed: .18, size: [.8, 1.6] },    // mid canopy
+    { color: 'rgba(0,212,255,',  count: 10, speed: .32, size: [.6, 1.2] }     // biodiversity signal
+  ];
+
+  function resize() {
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+
+  function initNodes() {
+    nodes = [];
+    TIERS.forEach((tier, ti) => {
+      for (let i = 0; i < tier.count; i++) {
+        const sz = tier.size[0] + Math.random() * (tier.size[1] - tier.size[0]);
+        nodes.push({
+          x:     Math.random() * W,
+          y:     Math.random() * H,
+          vx:    (Math.random() - .5) * tier.speed,
+          vy:    (Math.random() - .5) * tier.speed,
+          r:     sz,
+          pulse: Math.random() * Math.PI * 2,
+          tier:  ti,
+          color: tier.color
+        });
+      }
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+    const lineA = isDark ? .15 : .06;
+    const nodeA = isDark ? .75 : .32;
+    const CR = 150;
+
+    nodes.forEach(n => {
+      n.x += n.vx; n.y += n.vy;
+      if (n.x < 0 || n.x > W) n.vx *= -1;
+      if (n.y < 0 || n.y > H) n.vy *= -1;
+      n.pulse += .014;
+    });
+
+    // Draw connections — canopy tiers connect within and to adjacent tiers
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const tierDiff = Math.abs(nodes[i].tier - nodes[j].tier);
+        if (tierDiff > 1) continue;
+        const dx = nodes[i].x - nodes[j].x;
+        const dy = nodes[i].y - nodes[j].y;
+        const d  = Math.sqrt(dx*dx + dy*dy);
+        if (d < CR) {
+          const a = (1 - d / CR) * lineA * (tierDiff === 0 ? 1 : .5);
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.strokeStyle = nodes[i].color + a + ')';
+          ctx.lineWidth = tierDiff === 0 ? .8 : .4;
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Draw nodes with organic pulse
+    nodes.forEach(n => {
+      const g = .5 + .5 * Math.sin(n.pulse);
+      const a = nodeA * (.55 + .45 * g);
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r * (1 + .15 * g), 0, Math.PI * 2);
+      ctx.fillStyle = n.color + a + ')';
+      ctx.fill();
+    });
+
+    requestAnimationFrame(draw);
+  }
+
+  resize();
+  initNodes();
+  draw();
+  window.addEventListener('resize', () => { resize(); initNodes(); });
+})();
+
+// ── ANIMATE METERS ON LOAD ─────────────────────────────────
+(function() {
+  const fills = document.querySelectorAll('.sc-meter-fill');
+  fills.forEach(el => {
+    const target = el.style.width;
+    el.style.width = '0%';
+    setTimeout(() => { el.style.width = target; }, 500);
+  });
+})();
+
+// ── THEME ─────────────────────────────────────────────────
+function toggleTheme() {
+  const html = document.documentElement;
+  const isLight = html.getAttribute('data-theme') === 'light';
+  html.setAttribute('data-theme', isLight ? 'dark' : 'light');
+  const btn = document.getElementById('theme-btn');
+  if (btn) btn.textContent = isLight ? '◐ DARK' : '◑ LIGHT';
+  try { localStorage.setItem('vc-theme', isLight ? 'dark' : 'light'); } catch(e) {}
+}
+(function(){
+  try {
+    const t = localStorage.getItem('vc-theme');
+    if (t === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+      const btn = document.getElementById('theme-btn');
+      if (btn) btn.textContent = '◑ LIGHT';
+    }
+  } catch(e) {}
+})();
+
+// ── FONT SCALE ─────────────────────────────────────────────
+const FONT_SCALES = { '0.88': 16, '1.0': 18, '1.22': 22 };
+function setScale(btn) {
+  document.documentElement.style.fontSize = (FONT_SCALES[btn.dataset.scale] || 18) + 'px';
+  document.querySelectorAll('.nc-sz').forEach(b => b.classList.toggle('active', b === btn));
+  try { localStorage.setItem('vc-scale', btn.dataset.scale); } catch(e) {}
+}
+(function(){
+  try {
+    const s = localStorage.getItem('vc-scale');
+    if (s && FONT_SCALES[s]) {
+      document.documentElement.style.fontSize = FONT_SCALES[s] + 'px';
+      requestAnimationFrame(() =>
+        document.querySelectorAll('.nc-sz').forEach(b =>
+          b.classList.toggle('active', b.dataset.scale === s)
+        )
+      );
+    }
+  } catch(e) {}
+})();
+</script>
+
+<!-- Cloudflare Insights -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516"
+  integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg=="
+  data-cf-beacon='{"version":"2024.11.0","token":"10eb5392c70c4c4fa5452b5bbc652e0e","r":1}'
+  crossorigin="anonymous"></script>
+</body>
+</html>
