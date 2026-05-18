@@ -21,8 +21,14 @@ on:
   schedule:
     # 00:05 UTC daily — after midnight UTC, before SHIELD at 00:10
     - cron: '5 0 * * *'
+
   workflow_dispatch:
     # Allow manual trigger from GitHub Actions tab
+
+# Prevent overlapping workflow collisions
+concurrency:
+  group: conscience-refresh
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -33,37 +39,49 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
+    # Future-proof GitHub Actions runtime
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
     steps:
 
       # ── Step 1: Checkout ────────────────────────────────────────
       - name: VYRION · Checkout Repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          # Required for git pull --rebase
+          fetch-depth: 0
 
-      # ── Step 2: Node.js 20 ──────────────────────────────────────
-      - name: VYRION · Setup Node.js 20
+      # ── Step 2: Node.js 24 ─────────────────────────────────────
+      - name: VYRION · Setup Node.js 24
         uses: actions/setup-node@v4
         with:
           node-version: '24'
+          cache: 'npm'
 
-      # ── Step 3: Fetch all CONSCIENCE intelligence feeds ─────────
+      # ── Step 2.5: Install Dependencies ────────────────────────
+      - name: VYRION · Install Dependencies
+        run: npm ci
+
+      # ── Step 3: Fetch all CONSCIENCE intelligence feeds ───────
       - name: VYRION · Fetch CONSCIENCE Intelligence Feeds
-        run: node scripts/fetch-conscience-data.js
+        run: |
+          node --version
+          node scripts/fetch-conscience-data.js
         env:
           NODE_ENV: production
 
-      # ── Step 4: Validate schema — pre-commit gate ────────────────
+      # ── Step 4: Validate schema — pre-commit gate ─────────────
       #    Runs validate-schema.js against the freshly generated
       #    conscience-data.json. Exits 1 on schema errors — blocks
       #    the commit. Warnings are logged but not blocking.
       - name: VYRION · Validate CONSCIENCE Schema
         run: node scripts/validate-schema.js
 
-      # ── Step 5: Commit and push if data changed ──────────────────
+      # ── Step 5: Commit and push if data changed ───────────────
       - name: VYRION · Commit Intelligence Refresh
         run: |
-          git config user.name  "VYRION Data Bot"
+          git config user.name "VYRION Data Bot"
           git config user.email "data-bot@vyrion.earth"
 
           TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
@@ -75,6 +93,12 @@ jobs:
             echo "conscience-data.json unchanged — no commit needed."
           else
             git commit -m "vyrion[conscience]: intelligence refresh ${TIMESTAMP}"
+
+            # Sync latest remote changes before push
+            git pull --rebase origin main
+
+            # Push updated intelligence snapshot
             git push
+
             echo "conscience-data.json committed and pushed at ${TIMESTAMP}"
           fi
