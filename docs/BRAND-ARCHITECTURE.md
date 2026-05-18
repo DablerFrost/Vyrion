@@ -31,40 +31,40 @@ Ten planetary crises are interconnected. Solving them in isolation has failed fo
 
 ## THE EIGHT MODULES
 
-### MODULE 1 — VYRION ATLAS
+### MODULE 1 — VYRION SHIELD
+**Disaster Intelligence & Early Warning**
+Predictive AI system providing 2–14 day early warning for floods, wildfires, cyclones, and drought onset. Free public tier for every nation on Earth.
+*Solves: Natural Disasters · Food Security · Climate Resilience*
+
+### MODULE 2 — VYRION ATLAS
 **Real-Time Planetary Intelligence**
 AI-powered environmental monitoring network. Tracks climate variables, air quality, water levels, soil health, and biodiversity indices across the planet in real time. The nervous system of VYRION. All other modules draw from ATLAS.
 *Solves: Climate · Air Pollution · Water · Disasters*
-
-### MODULE 2 — VYRION FLUX
-**Clean Energy Infrastructure**
-Modular clean energy deployment platform — licensing distributed solar, hydrogen, and atmospheric carbon capture systems to cities and industrial operators.
-*Solves: Climate · Air Pollution · Resource Depletion*
 
 ### MODULE 3 — VYRION ROOT
 **Regenerative Agriculture OS**
 AI-guided soil restoration, water-efficient farming protocols, and regenerative land management software. Turns degraded land into living carbon sinks.
 *Solves: Soil Degradation · Water Scarcity · Food Security*
 
-### MODULE 4 — VYRION TIDE
-**Ocean & Water Systems**
-Scalable ocean plastic remediation hardware + AI routing. Atmospheric and filter-based water purification. Ocean acidification mitigation protocols.
-*Solves: Ocean Pollution · Water Scarcity · Marine Biodiversity*
-
-### MODULE 5 — VYRION CANOPY
+### MODULE 4 — VYRION CANOPY
 **Reforestation & Habitat Restoration**
 Satellite-guided precision reforestation — AI identifies optimal planting sites, species mix, and climate compatibility. Biodiversity monitoring nodes track species recovery.
 *Solves: Deforestation · Species Extinction · Carbon Capture*
 
-### MODULE 6 — VYRION LOOP
+### MODULE 5 — VYRION FLUX
+**Clean Energy Infrastructure**
+Modular clean energy deployment platform — licensing distributed solar, hydrogen, and atmospheric carbon capture systems to cities and industrial operators.
+*Solves: Climate · Air Pollution · Resource Depletion*
+
+### MODULE 6 — VYRION TIDE
+**Ocean & Water Systems**
+Scalable ocean plastic remediation hardware + AI routing. Atmospheric and filter-based water purification. Ocean acidification mitigation protocols.
+*Solves: Ocean Pollution · Water Scarcity · Marine Biodiversity*
+
+### MODULE 7 — VYRION LOOP
 **Circular Waste Economy Platform**
 Enterprise and municipal circular economy software. Tracks materials through entire lifecycle, reroutes waste into manufacturing input streams.
 *Solves: Waste Management · Resource Depletion · Soil Contamination*
-
-### MODULE 7 — VYRION SHIELD
-**Disaster Intelligence & Early Warning**
-Predictive AI system providing 2–14 day early warning for floods, wildfires, cyclones, and drought onset. Free public tier for every nation on Earth.
-*Solves: Natural Disasters · Food Security · Climate Resilience*
 
 ### MODULE 8 — VYRION PULSE
 **Impact Economy & Credit Marketplace**
@@ -79,8 +79,8 @@ Tokenized marketplace for verified carbon, biodiversity, water, and soil credits
 | SHIELD | vyrion.earth/shield.html | Live | Module - 01 | 
 | ATLAS | vyrion.earth/atlas.html | Live | Module - 02 | 
 | ROOT | — | vyrion.earth/root.html | Live | Module - 03 | 
-| FLUX | — | Planned | Live | Module - 04 | 
-| CANOPY | — | Planned | Module - 05 | 
+| CANOPY | vyrion.earth/canopy.html| Live| Module - 04 |
+| FLUX | — | Planned | Module - 05 |  
 | TIDE | — | Planned | Module - 06 | 
 | LOOP | — | Planned | Module - 07 | 
 | PULSE | — | Planned | Module - 08 | 
