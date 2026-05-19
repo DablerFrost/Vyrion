@@ -61,7 +61,7 @@ jobs:
 
       # ── Step 2.5: Install Dependencies ────────────────────────
       - name: VYRION · Install Dependencies
-        run: npm ci
+        run: npm install
 
       # ── Step 3: Fetch all CONSCIENCE intelligence feeds ───────
       - name: VYRION · Fetch CONSCIENCE Intelligence Feeds
