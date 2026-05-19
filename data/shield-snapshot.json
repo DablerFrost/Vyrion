@@ -1,18 +1,18 @@
 {
   "meta": {
-    "generated": "2026-05-18T15:56:18.692Z",
-    "generated_date": "2026-05-18",
+    "generated": "2026-05-19T04:21:20.133Z",
+    "generated_date": "2026-05-19",
     "script_version": "1.1",
     "window_days": 14,
-    "window_start": "2026-05-04",
-    "window_end": "2026-05-18",
-    "runtime_ms": 898,
+    "window_start": "2026-05-05",
+    "window_end": "2026-05-19",
+    "runtime_ms": 588,
     "seismic_live": true,
     "eonet_live": true
   },
   "threat": {
     "level": "ELEVATED",
-    "score": 14.85
+    "score": 14.4
   },
   "seismic": {
     "events": [
@@ -79,6 +79,14 @@
         "time": "2026-05-05T06:44:51.479Z",
         "depth_km": 35.5,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sicu"
+      },
+      {
+        "id": "us6000synm",
+        "magnitude": 5.7,
+        "place": "51 km SSW of Port-Vila, Vanuatu",
+        "time": "2026-05-19T02:29:24.366Z",
+        "depth_km": 27,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000synm"
       },
       {
         "id": "us6000sy8k",
@@ -177,6 +185,14 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000svw1"
       },
       {
+        "id": "us6000sykw",
+        "magnitude": 5.3,
+        "place": "Bouvet Island region",
+        "time": "2026-05-18T18:50:00.309Z",
+        "depth_km": 10,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sykw"
+      },
+      {
         "id": "us6000sy7l",
         "magnitude": 5.3,
         "place": "94 km E of Port-Vila, Vanuatu",
@@ -215,14 +231,6 @@
         "time": "2026-05-09T20:39:49.843Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000swhy"
-      },
-      {
-        "id": "us7000siat",
-        "magnitude": 5.3,
-        "place": "Banda Sea",
-        "time": "2026-05-05T02:38:49.853Z",
-        "depth_km": 153.8,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000siat"
       },
       {
         "id": "us6000syh2",
@@ -279,14 +287,6 @@
         "time": "2026-05-06T09:43:13.683Z",
         "depth_km": 103.6,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000svm3"
-      },
-      {
-        "id": "us7000si9t",
-        "magnitude": 5.2,
-        "place": "103 km ENE of Miyako, Japan",
-        "time": "2026-05-04T23:54:05.742Z",
-        "depth_km": 24.7,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000si9t"
       },
       {
         "id": "us6000syik",
@@ -489,6 +489,14 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000swg6"
       },
       {
+        "id": "us6000sym0",
+        "magnitude": 4.9,
+        "place": "168 km E of Atka, Alaska",
+        "time": "2026-05-18T21:37:20.076Z",
+        "depth_km": 10,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sym0"
+      },
+      {
         "id": "us6000sy8u",
         "magnitude": 4.9,
         "place": "60 km ESE of Port-Vila, Vanuatu",
@@ -603,8 +611,8 @@
       {
         "id": "us6000svfc",
         "magnitude": 4.9,
-        "place": "32 km SSW of Sarpol-e Z̄ahāb, Iran",
-        "time": "2026-05-05T20:53:20.849Z",
+        "place": "36 km SSW of Sarpol-e Z̄ahāb, Iran",
+        "time": "2026-05-05T20:53:20.599Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000svfc"
       },
@@ -623,6 +631,14 @@
         "time": "2026-05-05T08:43:45.408Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sidy"
+      },
+      {
+        "id": "us6000synu",
+        "magnitude": 4.8,
+        "place": "83 km WNW of Kirakira, Solomon Islands",
+        "time": "2026-05-19T02:53:53.724Z",
+        "depth_km": 81.6,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000synu"
       },
       {
         "id": "us6000syfn",
@@ -751,22 +767,6 @@
         "time": "2026-05-06T03:03:49.136Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000svhx"
-      },
-      {
-        "id": "us7000si98",
-        "magnitude": 4.8,
-        "place": "125 km ENE of Miyako, Japan",
-        "time": "2026-05-04T21:42:00.864Z",
-        "depth_km": 18.4,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000si98"
-      },
-      {
-        "id": "us7000si6f",
-        "magnitude": 4.8,
-        "place": "80 km N of Noşratābād, Iran",
-        "time": "2026-05-04T16:47:47.029Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000si6f"
       },
       {
         "id": "us6000syhg",
@@ -977,12 +977,20 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000svmu"
       },
       {
-        "id": "us7000siar",
-        "magnitude": 4.7,
-        "place": "55 km SSE of Akutan, Alaska",
-        "time": "2026-05-05T02:38:47.990Z",
-        "depth_km": 57.8,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000siar"
+        "id": "us6000syp2",
+        "magnitude": 4.6,
+        "place": "211 km E of Levuka, Fiji",
+        "time": "2026-05-19T03:17:03.782Z",
+        "depth_km": 564.7,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000syp2"
+      },
+      {
+        "id": "us6000syk9",
+        "magnitude": 4.6,
+        "place": "113 km E of Miyako, Japan",
+        "time": "2026-05-18T17:04:31.928Z",
+        "depth_km": 35,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000syk9"
       },
       {
         "id": "us6000syfr",
@@ -1217,20 +1225,12 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000svgp"
       },
       {
-        "id": "us7000siaj",
-        "magnitude": 4.6,
-        "place": "east of the Kuril Islands",
-        "time": "2026-05-05T02:01:19.027Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000siaj"
-      },
-      {
-        "id": "us7000si5h",
-        "magnitude": 4.6,
-        "place": "46 km SSE of Kangding, China",
-        "time": "2026-05-04T16:03:03.665Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000si5h"
+        "id": "us6000sykj",
+        "magnitude": 4.5,
+        "place": "86 km ESE of Pondaguitan, Philippines",
+        "time": "2026-05-18T18:06:04.422Z",
+        "depth_km": 54.2,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sykj"
       },
       {
         "id": "us6000sydv",
@@ -1335,6 +1335,14 @@
         "time": "2026-05-11T23:16:35.604Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sx1u"
+      },
+      {
+        "id": "us6000swvu",
+        "magnitude": 4.5,
+        "place": "south of the Fiji Islands",
+        "time": "2026-05-10T22:51:05.005Z",
+        "depth_km": 517.4,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000swvu"
       },
       {
         "id": "us6000swr0",
@@ -1455,74 +1463,10 @@
         "time": "2026-05-05T09:37:39.829Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sie8"
-      },
-      {
-        "id": "us7000sibr",
-        "magnitude": 4.5,
-        "place": "95 km W of Myitkyina, Burma (Myanmar)",
-        "time": "2026-05-05T04:10:49.268Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sibr"
-      },
-      {
-        "id": "us7000sibq",
-        "magnitude": 4.5,
-        "place": "south of the Fiji Islands",
-        "time": "2026-05-05T04:08:41.987Z",
-        "depth_km": 578.7,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sibq"
-      },
-      {
-        "id": "nn00917635",
-        "magnitude": 4.5,
-        "place": "77 km NE of Tonopah, Nevada",
-        "time": "2026-05-05T02:39:52.449Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nn00917635"
-      },
-      {
-        "id": "us7000si9y",
-        "magnitude": 4.5,
-        "place": "85 km SSW of Yulara, Australia",
-        "time": "2026-05-05T00:16:51.631Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000si9y"
-      },
-      {
-        "id": "us6000sxgi",
-        "magnitude": 4.5,
-        "place": "Banda Sea",
-        "time": "2026-05-04T22:58:52.777Z",
-        "depth_km": 153.6,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sxgi"
-      },
-      {
-        "id": "us7000si8q",
-        "magnitude": 4.5,
-        "place": "57 km SW of Dārāb, Iran",
-        "time": "2026-05-04T20:39:33.292Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000si8q"
-      },
-      {
-        "id": "us7000si80",
-        "magnitude": 4.5,
-        "place": "234 km ESE of Attu Station, Alaska",
-        "time": "2026-05-04T19:14:25.180Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000si80"
-      },
-      {
-        "id": "us7000si7l",
-        "magnitude": 4.5,
-        "place": "136 km ESE of Kokopo, Papua New Guinea",
-        "time": "2026-05-04T17:38:27.636Z",
-        "depth_km": 80,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000si7l"
       }
     ],
-    "count_total": 188,
-    "count_m55_plus": 15,
+    "count_total": 181,
+    "count_m55_plus": 16,
     "count_m60_plus": 3,
     "count_m70_plus": 0,
     "count_m80_plus": 0,
@@ -1537,7 +1481,7 @@
     "source": "USGS Earthquake Hazards Program",
     "url": "https://earthquake.usgs.gov/",
     "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-    "retrieved": "2026-05-18T15:56:18.691Z"
+    "retrieved": "2026-05-19T04:21:19.629Z"
   },
   "wildfire": {
     "events": [
@@ -1749,31 +1693,9 @@
           36.289
         ],
         "closed": null
-      },
-      {
-        "id": "EONET_19972",
-        "title": "Black Rush Lake RX Prescribed Fire, Swift, Minnesota",
-        "type": "WILDFIRE",
-        "time": "2026-05-04T11:05:00.000Z",
-        "coords": [
-          -95.917,
-          45.327
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_19970",
-        "title": "32nd Avenue Wildfire, Rolette, North Dakota",
-        "type": "WILDFIRE",
-        "time": "2026-05-04T10:38:00.000Z",
-        "coords": [
-          -99.985,
-          48.857
-        ],
-        "closed": null
       }
     ],
-    "count": 21
+    "count": 19
   },
   "storm": {
     "events": [],
