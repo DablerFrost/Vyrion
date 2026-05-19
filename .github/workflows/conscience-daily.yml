@@ -2,30 +2,43 @@
 #  VYRION · CONSCIENCE · Daily Intelligence Refresh
 #  File: .github/workflows/conscience-daily.yml
 #
-#  Schedule: 00:05 UTC daily
-#  Function: Fetches NOAA CO₂, SEC EDGAR (11 companies),
-#            Open-Meteo ERA5, NSIDC Ice, NOAA OISST, NASA EONET,
-#            GBIF biodiversity — computes daily VYRION Index.
-#            Validates schema before committing. Blocks bad data.
+#  Schedule:
+#    Daily at 00:05 UTC
 #
-#  Output:   conscience-data.json (repo root)
-#  Validate: scripts/validate-schema.js (pre-commit gate)
+#  Purpose:
+#    Fetches planetary intelligence datasets and computes the
+#    VYRION CONSCIENCE index.
 #
-#  VYRION PBC · Tyler Frost / DablerFrost · Hilo, Hawaii
-#  github.com/DablerFrost/Vyrion · contact@vyrion.earth
+#  Data Sources:
+#    - NOAA CO₂
+#    - SEC EDGAR
+#    - Open-Meteo ERA5
+#    - NSIDC Ice
+#    - NOAA OISST
+#    - NASA EONET
+#    - GBIF Biodiversity
+#
+#  Outputs:
+#    conscience-data.json
+#
+#  Validation:
+#    scripts/validate-schema.js
+#
+#  Repository:
+#    github.com/DablerFrost/Vyrion
+#
 # ══════════════════════════════════════════════════════════════════
 
 name: VYRION · CONSCIENCE · Daily Intelligence Refresh
 
 on:
   schedule:
-    # 00:05 UTC daily — after midnight UTC, before SHIELD at 00:10
+    # 00:05 UTC daily
     - cron: '5 0 * * *'
 
   workflow_dispatch:
-    # Allow manual trigger from GitHub Actions tab
 
-# Prevent overlapping workflow collisions
+# Prevent overlapping executions
 concurrency:
   group: conscience-refresh
   cancel-in-progress: false
@@ -36,51 +49,72 @@ permissions:
 jobs:
   refresh:
     name: VYRION · CONSCIENCE · Intelligence Refresh
+
     runs-on: ubuntu-latest
+
     timeout-minutes: 15
 
-    # Future-proof GitHub Actions runtime
     env:
+      NODE_ENV: production
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: true
 
     steps:
 
-      # ── Step 1: Checkout ────────────────────────────────────────
-      - name: VYRION · Checkout Repository
+      # ──────────────────────────────────────────────────────────
+      # Checkout Repository
+      # ──────────────────────────────────────────────────────────
+      - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          # Required for git pull --rebase
           fetch-depth: 0
 
-      # ── Step 2: Node.js 24 ─────────────────────────────────────
-      - name: VYRION · Setup Node.js 20
+      # ──────────────────────────────────────────────────────────
+      # Setup Node.js
+      # ──────────────────────────────────────────────────────────
+      - name: Setup Node.js 20
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
 
-      # ── Step 2.5: Install Dependencies ────────────────────────
-      - name: VYRION · Install Dependencies
+      # ──────────────────────────────────────────────────────────
+      # Install Dependencies
+      # ──────────────────────────────────────────────────────────
+      # Uses npm install instead of npm ci to avoid failures
+      # if package-lock.json does not exist yet.
+      # ──────────────────────────────────────────────────────────
+      - name: Install Dependencies
         run: npm install
 
-      # ── Step 3: Fetch all CONSCIENCE intelligence feeds ───────
-      - name: VYRION · Fetch CONSCIENCE Intelligence Feeds
+      # ──────────────────────────────────────────────────────────
+      # Verify Runtime
+      # ──────────────────────────────────────────────────────────
+      - name: Verify Node Runtime
         run: |
+          echo "Node Version:"
           node --version
-          node scripts/fetch-conscience-data.js
-        env:
-          NODE_ENV: production
 
-      # ── Step 4: Validate schema — pre-commit gate ─────────────
-      #    Runs validate-schema.js against the freshly generated
-      #    conscience-data.json. Exits 1 on schema errors — blocks
-      #    the commit. Warnings are logged but not blocking.
-      - name: VYRION · Validate CONSCIENCE Schema
+          echo "NPM Version:"
+          npm --version
+
+      # ──────────────────────────────────────────────────────────
+      # Fetch Intelligence Feeds
+      # ──────────────────────────────────────────────────────────
+      - name: Fetch CONSCIENCE Intelligence Feeds
+        run: node scripts/fetch-conscience-data.js
+
+      # ──────────────────────────────────────────────────────────
+      # Validate Generated Schema
+      # Blocks commit if schema fails validation
+      # ──────────────────────────────────────────────────────────
+      - name: Validate CONSCIENCE Schema
         run: node scripts/validate-schema.js
 
-      # ── Step 5: Commit and push if data changed ───────────────
-      - name: VYRION · Commit Intelligence Refresh
+      # ──────────────────────────────────────────────────────────
+      # Commit Updated Data
+      # ──────────────────────────────────────────────────────────
+      - name: Commit Updated Intelligence Snapshot
         run: |
+
           git config user.name "VYRION Data Bot"
           git config user.email "data-bot@vyrion.earth"
 
@@ -88,17 +122,25 @@ jobs:
 
           git add conscience-data.json
 
-          # Only commit if file actually changed
+          # Exit early if nothing changed
           if git diff --staged --quiet; then
-            echo "conscience-data.json unchanged — no commit needed."
-          else
-            git commit -m "vyrion[conscience]: intelligence refresh ${TIMESTAMP}"
-
-            # Sync latest remote changes before push
-            git pull --rebase origin main
-
-            # Push updated intelligence snapshot
-            git push
-
-            echo "conscience-data.json committed and pushed at ${TIMESTAMP}"
+            echo "No changes detected."
+            exit 0
           fi
+
+          git commit -m "vyrion[conscience]: intelligence refresh ${TIMESTAMP}"
+
+          # Sync latest remote changes safely
+          git pull --rebase --autostash origin main || true
+
+          # Push latest snapshot
+          git push origin HEAD:main
+
+          echo "CONSCIENCE snapshot committed successfully."
+
+      # ──────────────────────────────────────────────────────────
+      # Workflow Complete
+      # ──────────────────────────────────────────────────────────
+      - name: Workflow Complete
+        run: |
+          echo "VYRION CONSCIENCE refresh completed successfully."
