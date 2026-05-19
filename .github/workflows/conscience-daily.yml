@@ -41,7 +41,7 @@ jobs:
 
     # Future-proof GitHub Actions runtime
     env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: true
 
     steps:
 
@@ -53,10 +53,10 @@ jobs:
           fetch-depth: 0
 
       # ── Step 2: Node.js 24 ─────────────────────────────────────
-      - name: VYRION · Setup Node.js 24
+      - name: VYRION · Setup Node.js 20
         uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '20'
           cache: 'npm'
 
       # ── Step 2.5: Install Dependencies ────────────────────────
