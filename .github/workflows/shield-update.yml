@@ -1,79 +1,193 @@
-# ══════════════════════════════════════════════════════════════════
-#  VYRION · SHIELD · Hazard Intelligence Refresh
-#  File: .github/workflows/shield-update.yml
+# ════════════════════════════════════════════════════════════════════════
+# VYRION · SHIELD · Hazard Intelligence Refresh
+# File: .github/workflows/shield-update.yml
 #
-#  Schedule: 00:10 + 12:10 UTC daily (twice daily)
-#  Function: Fetches USGS M4.5+ seismic feed and NASA EONET
-#            open hazard events (wildfire, storm, flood, volcanic).
-#            Computes threat level via algorithm v1.1.
-#            Falls back to previous snapshot on API failure —
-#            never writes empty data.
+# Purpose:
+#   Fetches live planetary hazard intelligence feeds:
 #
-#  Output:   data/shield-snapshot.json
+#   • USGS M4.5+ Seismic Activity
+#   • NASA EONET Hazard Events
 #
-#  VYRION PBC · Tyler Frost / DablerFrost · Hilo, Hawaii
-#  github.com/DablerFrost/Vyrion · contact@vyrion.earth
-# ══════════════════════════════════════════════════════════════════
+#   Computes VYRION SHIELD threat scoring via
+#   algorithm v1.1.
+#
+# Reliability:
+#   • Falls back to previous snapshot on API failure
+#   • Never writes empty datasets
+#   • Commits only validated changes
+#
+# Output:
+#   data/shield-snapshot.json
+#
+# Runtime:
+#   Node.js 22 LTS
+#   GitHub Actions Node24-compatible
+#
+# ════════════════════════════════════════════════════════════════════════
 
 name: VYRION · SHIELD · Hazard Intelligence Refresh
 
 on:
   schedule:
-    # 00:10 UTC — after CONSCIENCE daily refresh at 00:05
-    - cron: '10 0 * * *'
-    # 12:10 UTC — midday refresh for intraday hazard changes
-    - cron: '10 12 * * *'
+    # 00:10 UTC — after CONSCIENCE refresh
+    - cron: "10 0 * * *"
+
+    # 12:10 UTC — midday hazard refresh
+    - cron: "10 12 * * *"
+
   workflow_dispatch:
-    # Allow manual trigger from GitHub Actions tab
+
+# Prevent overlapping SHIELD executions
+concurrency:
+  group: vyrion-shield-refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+env:
+  NODE_ENV: production
+
+  # GitHub Actions future-proofing
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   refresh:
     name: VYRION · SHIELD · Hazard Intelligence Refresh
+
     runs-on: ubuntu-latest
+
     timeout-minutes: 15
-    permissions:
-      contents: write
+
+    defaults:
+      run:
+        shell: bash
 
     steps:
 
-      # ── Step 1: Checkout ────────────────────────────────────────
-      - name: VYRION · Checkout Repository
+      # ─────────────────────────────────────────────
+      # Checkout Repository
+      # ─────────────────────────────────────────────
+      - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          fetch-depth: 0
 
-      # ── Step 2: Node.js 20 ──────────────────────────────────────
-      - name: VYRION · Setup Node.js 20
+      # ─────────────────────────────────────────────
+      # Setup Node.js
+      # ─────────────────────────────────────────────
+      - name: Setup Node.js 22
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: "22"
+          cache: "npm"
 
-      # ── Step 3: Fetch SHIELD hazard feeds ───────────────────────
-      #    Sources: USGS Earthquake Hazards (M4.5+ seismic)
-      #             NASA EONET (wildfire · storm · flood · volcanic)
-      #    On failure: falls back to previous snapshot — never
-      #    writes empty data. Exits 1 only if both sources fail
-      #    AND no previous snapshot exists.
-      - name: VYRION · Fetch SHIELD Hazard Feeds
-        run: node scripts/fetch-shield-data.js
-        env:
-          NODE_ENV: production
-
-      # ── Step 4: Commit and push if data changed ──────────────────
-      - name: VYRION · Commit Hazard Refresh
+      # ─────────────────────────────────────────────
+      # Install Dependencies
+      # ─────────────────────────────────────────────
+      - name: Install Dependencies
         run: |
-          git config user.name  "VYRION Data Bot"
+          set -euo pipefail
+
+          if [ -f package-lock.json ]; then
+            echo "Detected package-lock.json"
+            npm ci
+          else
+            echo "No lockfile found — using npm install"
+            npm install
+          fi
+
+      # ─────────────────────────────────────────────
+      # Verify Runtime
+      # ─────────────────────────────────────────────
+      - name: Verify Runtime
+        run: |
+          set -euo pipefail
+
+          echo "Node Version:"
+          node --version
+
+          echo "NPM Version:"
+          npm --version
+
+      # ─────────────────────────────────────────────
+      # Fetch SHIELD Hazard Feeds
+      #
+      # Sources:
+      #   • USGS Earthquake Hazards
+      #   • NASA EONET Hazard Events
+      #
+      # Logic:
+      #   • Never writes empty snapshots
+      #   • Falls back to previous snapshot
+      #   • Exits only if total failure occurs
+      # ─────────────────────────────────────────────
+      - name: Fetch SHIELD Hazard Feeds
+        run: |
+          set -euo pipefail
+          node scripts/fetch-shield-data.js
+
+      # ─────────────────────────────────────────────
+      # Validate Snapshot Exists
+      # ─────────────────────────────────────────────
+      - name: Validate SHIELD Snapshot
+        run: |
+          set -euo pipefail
+
+          if [ ! -f data/shield-snapshot.json ]; then
+            echo "ERROR: shield-snapshot.json missing"
+            exit 1
+          fi
+
+          if [ ! -s data/shield-snapshot.json ]; then
+            echo "ERROR: shield-snapshot.json empty"
+            exit 1
+          fi
+
+          echo "Snapshot validation passed."
+
+      # ─────────────────────────────────────────────
+      # Upload Artifact Snapshot
+      # ─────────────────────────────────────────────
+      - name: Upload SHIELD Snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: shield-snapshot
+          path: data/shield-snapshot.json
+          retention-days: 30
+
+      # ─────────────────────────────────────────────
+      # Commit Updated Snapshot
+      # ─────────────────────────────────────────────
+      - name: Commit SHIELD Refresh
+        run: |
+          set -euo pipefail
+
+          git config user.name "VYRION Data Bot"
           git config user.email "data-bot@vyrion.earth"
 
           TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 
           git add data/shield-snapshot.json
 
-          # Only commit if file actually changed
+          # Exit cleanly if nothing changed
           if git diff --staged --quiet; then
-            echo "shield-snapshot.json unchanged — no commit needed."
-          else
-            git commit -m "vyrion[shield]: hazard refresh ${TIMESTAMP}"
-            git push
-            echo "shield-snapshot.json committed and pushed at ${TIMESTAMP}"
+            echo "shield-snapshot.json unchanged — no commit required."
+            exit 0
           fi
+
+          git commit -m "vyrion[shield]: hazard refresh ${TIMESTAMP}"
+
+          # Sync safely with latest remote state
+          git pull --rebase origin main
+
+          git push origin HEAD:main
+
+          echo "SHIELD snapshot committed successfully."
+
+      # ─────────────────────────────────────────────
+      # Workflow Complete
+      # ─────────────────────────────────────────────
+      - name: Workflow Complete
+        run: |
+          echo "VYRION SHIELD refresh completed successfully."
