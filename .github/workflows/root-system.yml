@@ -1,0 +1,221 @@
+# ════════════════════════════════════════════════════════════════════════
+# VYRION · ROOT · Infrastructure Integrity Monitor
+# File: .github/workflows/root-system.yml
+#
+# Purpose:
+#   Monitors operational integrity of the VYRION platform.
+#
+#   ROOT validates:
+#     • Workflow execution health
+#     • Dataset freshness
+#     • Repository integrity
+#     • Schema validity
+#     • Runtime consistency
+#     • Dependency state
+#     • Snapshot availability
+#
+#   ROOT functions as the core infrastructure
+#   verification layer of the VYRION system.
+#
+# Outputs:
+#   data/root-status.json
+#
+# Runtime:
+#   Node.js 22 LTS
+#   GitHub Actions Node24-compatible
+#
+# ════════════════════════════════════════════════════════════════════════
+
+name: VYRION · ROOT · Infrastructure Integrity Monitor
+
+on:
+  schedule:
+    # Daily system integrity verification
+    - cron: "40 0 * * *"
+
+    # Midday operational check
+    - cron: "40 12 * * *"
+
+  workflow_dispatch:
+
+# Prevent overlapping ROOT executions
+concurrency:
+  group: vyrion-root-monitor
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+env:
+  NODE_ENV: production
+
+  # GitHub Actions future-proofing
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  integrity:
+    name: VYRION · ROOT · Infrastructure Integrity
+
+    runs-on: ubuntu-latest
+
+    timeout-minutes: 15
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+
+      # ─────────────────────────────────────────────
+      # Checkout Repository
+      # ─────────────────────────────────────────────
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # ─────────────────────────────────────────────
+      # Setup Node.js
+      # ─────────────────────────────────────────────
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      # ─────────────────────────────────────────────
+      # Install Dependencies
+      # ─────────────────────────────────────────────
+      - name: Install Dependencies
+        run: |
+          set -euo pipefail
+
+          if [ -f package-lock.json ]; then
+            echo "Detected package-lock.json"
+            npm ci
+          else
+            echo "No lockfile found — using npm install"
+            npm install
+          fi
+
+      # ─────────────────────────────────────────────
+      # Verify Runtime Environment
+      # ─────────────────────────────────────────────
+      - name: Verify Runtime Environment
+        run: |
+          set -euo pipefail
+
+          echo "Node Version:"
+          node --version
+
+          echo "NPM Version:"
+          npm --version
+
+      # ─────────────────────────────────────────────
+      # Validate Required Data Files
+      # ─────────────────────────────────────────────
+      - name: Validate Core Datasets
+        run: |
+          set -euo pipefail
+
+          REQUIRED_FILES=(
+            "conscience-data.json"
+            "data/shield-snapshot.json"
+            "data/atlas-state.json"
+          )
+
+          for FILE in "${REQUIRED_FILES[@]}"; do
+
+            if [ ! -f "$FILE" ]; then
+              echo "ERROR: Missing required file -> $FILE"
+              exit 1
+            fi
+
+            if [ ! -s "$FILE" ]; then
+              echo "ERROR: Empty required file -> $FILE"
+              exit 1
+            fi
+
+            echo "Validated: $FILE"
+
+          done
+
+      # ─────────────────────────────────────────────
+      # Run ROOT Integrity Engine
+      #
+      # Responsibilities:
+      #   • Compute system health score
+      #   • Validate workflow freshness
+      #   • Detect stale datasets
+      #   • Check schema integrity
+      #   • Verify operational state
+      # ─────────────────────────────────────────────
+      - name: Generate ROOT Integrity Snapshot
+        run: |
+          set -euo pipefail
+          node scripts/generate-root-status.js
+
+      # ─────────────────────────────────────────────
+      # Validate ROOT Output
+      # ─────────────────────────────────────────────
+      - name: Validate ROOT Snapshot
+        run: |
+          set -euo pipefail
+
+          if [ ! -f data/root-status.json ]; then
+            echo "ERROR: root-status.json missing"
+            exit 1
+          fi
+
+          if [ ! -s data/root-status.json ]; then
+            echo "ERROR: root-status.json empty"
+            exit 1
+          fi
+
+          echo "ROOT validation passed."
+
+      # ─────────────────────────────────────────────
+      # Upload Artifact Snapshot
+      # ─────────────────────────────────────────────
+      - name: Upload ROOT Snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: root-status
+          path: data/root-status.json
+          retention-days: 30
+
+      # ─────────────────────────────────────────────
+      # Commit ROOT Snapshot
+      # ─────────────────────────────────────────────
+      - name: Commit ROOT Snapshot
+        run: |
+          set -euo pipefail
+
+          git config user.name "VYRION Data Bot"
+          git config user.email "data-bot@vyrion.earth"
+
+          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+
+          git add data/root-status.json
+
+          # Exit cleanly if nothing changed
+          if git diff --staged --quiet; then
+            echo "root-status.json unchanged — no commit required."
+            exit 0
+          fi
+
+          git commit -m "vyrion[root]: infrastructure integrity refresh ${TIMESTAMP}"
+
+          # Safely rebase against latest main
+          git pull --rebase origin main
+
+          git push origin HEAD:main
+
+          echo "ROOT snapshot committed successfully."
+
+      # ─────────────────────────────────────────────
+      # Workflow Complete
+      # ─────────────────────────────────────────────
+      - name: Workflow Complete
+        run: |
+          echo "VYRION ROOT integrity verification completed successfully."
