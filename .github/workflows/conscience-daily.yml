@@ -1,50 +1,44 @@
-# ══════════════════════════════════════════════════════════════════
-#  VYRION · CONSCIENCE · Daily Intelligence Refresh
-#  File: .github/workflows/conscience-daily.yml
+# ════════════════════════════════════════════════════════════════════════
+# VYRION · CONSCIENCE · Daily Intelligence Refresh
+# File: .github/workflows/conscience-daily.yml
 #
-#  Schedule:
-#    Daily at 00:05 UTC
+# Purpose:
+#   Fetches planetary intelligence datasets and computes the
+#   VYRION CONSCIENCE index.
 #
-#  Purpose:
-#    Fetches planetary intelligence datasets and computes the
-#    VYRION CONSCIENCE index.
+# Schedule:
+#   Daily at 00:05 UTC
 #
-#  Data Sources:
-#    - NOAA CO₂
-#    - SEC EDGAR
-#    - Open-Meteo ERA5
-#    - NSIDC Ice
-#    - NOAA OISST
-#    - NASA EONET
-#    - GBIF Biodiversity
+# Outputs:
+#   conscience-data.json
 #
-#  Outputs:
-#    conscience-data.json
+# Runtime:
+#   Node.js 22 LTS
+#   GitHub Actions Node24-compatible
 #
-#  Validation:
-#    scripts/validate-schema.js
-#
-#  Repository:
-#    github.com/DablerFrost/Vyrion
-#
-# ══════════════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════════════════════
 
 name: VYRION · CONSCIENCE · Daily Intelligence Refresh
 
 on:
   schedule:
-    # 00:05 UTC daily
-    - cron: '5 0 * * *'
+    - cron: "5 0 * * *"
 
   workflow_dispatch:
 
-# Prevent overlapping executions
+# Prevent overlapping runs
 concurrency:
-  group: conscience-refresh
+  group: vyrion-conscience-refresh
   cancel-in-progress: false
 
 permissions:
   contents: write
+
+env:
+  NODE_ENV: production
+
+  # GitHub Actions future-proofing
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   refresh:
@@ -54,66 +48,89 @@ jobs:
 
     timeout-minutes: 15
 
-    env:
-      NODE_ENV: production
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    defaults:
+      run:
+        shell: bash
 
     steps:
 
-      # ──────────────────────────────────────────────────────────
+      # ─────────────────────────────────────────────
       # Checkout Repository
-      # ──────────────────────────────────────────────────────────
+      # ─────────────────────────────────────────────
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # ──────────────────────────────────────────────────────────
+      # ─────────────────────────────────────────────
       # Setup Node.js
-      # ──────────────────────────────────────────────────────────
-      - name: Setup Node.js 20
+      # ─────────────────────────────────────────────
+      - name: Setup Node.js 22
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: "22"
+          cache: "npm"
 
-      # ──────────────────────────────────────────────────────────
+      # ─────────────────────────────────────────────
       # Install Dependencies
-      # ──────────────────────────────────────────────────────────
-      # Uses npm install instead of npm ci to avoid failures
-      # if package-lock.json does not exist yet.
-      # ──────────────────────────────────────────────────────────
+      # ─────────────────────────────────────────────
       - name: Install Dependencies
-        run: npm install
-
-      # ──────────────────────────────────────────────────────────
-      # Verify Runtime
-      # ──────────────────────────────────────────────────────────
-      - name: Verify Node Runtime
         run: |
+          set -euo pipefail
+
+          if [ -f package-lock.json ]; then
+            echo "Detected package-lock.json"
+            npm ci
+          else
+            echo "No lockfile found — using npm install"
+            npm install
+          fi
+
+      # ─────────────────────────────────────────────
+      # Verify Runtime
+      # ─────────────────────────────────────────────
+      - name: Verify Runtime
+        run: |
+          set -euo pipefail
+
           echo "Node Version:"
           node --version
 
           echo "NPM Version:"
           npm --version
 
-      # ──────────────────────────────────────────────────────────
+      # ─────────────────────────────────────────────
       # Fetch Intelligence Feeds
-      # ──────────────────────────────────────────────────────────
+      # ─────────────────────────────────────────────
       - name: Fetch CONSCIENCE Intelligence Feeds
-        run: node scripts/fetch-conscience-data.js
+        run: |
+          set -euo pipefail
+          node scripts/fetch-conscience-data.js
 
-      # ──────────────────────────────────────────────────────────
-      # Validate Generated Schema
-      # Blocks commit if schema fails validation
-      # ──────────────────────────────────────────────────────────
+      # ─────────────────────────────────────────────
+      # Validate Output Schema
+      # ─────────────────────────────────────────────
       - name: Validate CONSCIENCE Schema
-        run: node scripts/validate-schema.js
+        run: |
+          set -euo pipefail
+          node scripts/validate-schema.js
 
-      # ──────────────────────────────────────────────────────────
-      # Commit Updated Data
-      # ──────────────────────────────────────────────────────────
+      # ─────────────────────────────────────────────
+      # Upload Artifact Snapshot
+      # ─────────────────────────────────────────────
+      - name: Upload Intelligence Snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: conscience-data
+          path: conscience-data.json
+          retention-days: 30
+
+      # ─────────────────────────────────────────────
+      # Commit Updated Snapshot
+      # ─────────────────────────────────────────────
       - name: Commit Updated Intelligence Snapshot
         run: |
+          set -euo pipefail
 
           git config user.name "VYRION Data Bot"
           git config user.email "data-bot@vyrion.earth"
@@ -122,7 +139,6 @@ jobs:
 
           git add conscience-data.json
 
-          # Exit early if nothing changed
           if git diff --staged --quiet; then
             echo "No changes detected."
             exit 0
@@ -130,17 +146,16 @@ jobs:
 
           git commit -m "vyrion[conscience]: intelligence refresh ${TIMESTAMP}"
 
-          # Sync latest remote changes safely
-          git pull --rebase --autostash origin main || true
+          # Rebase safely against latest main
+          git pull --rebase origin main
 
-          # Push latest snapshot
           git push origin HEAD:main
 
           echo "CONSCIENCE snapshot committed successfully."
 
-      # ──────────────────────────────────────────────────────────
-      # Workflow Complete
-      # ──────────────────────────────────────────────────────────
+      # ─────────────────────────────────────────────
+      # Completion
+      # ─────────────────────────────────────────────
       - name: Workflow Complete
         run: |
           echo "VYRION CONSCIENCE refresh completed successfully."
