@@ -46,7 +46,7 @@ jobs:
       - name: VYRION · Setup Node.js 20
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       # ── Step 3: Fetch SHIELD hazard feeds ───────────────────────
       #    Sources: USGS Earthquake Hazards (M4.5+ seismic)
