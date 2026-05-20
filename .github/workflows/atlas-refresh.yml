@@ -1,0 +1,198 @@
+# ════════════════════════════════════════════════════════════════════════
+# VYRION · ATLAS · Planetary Systems Mapping
+# File: .github/workflows/atlas-refresh.yml
+#
+# Purpose:
+#   Computes the VYRION ATLAS planetary systems layer.
+#
+#   Aggregates:
+#     • Climate anomalies
+#     • Seismic density
+#     • Ocean heat
+#     • Cryosphere indicators
+#     • Atmospheric measurements
+#     • Planetary hazard topology
+#
+#   Produces a unified planetary-state snapshot
+#   intended for spatial intelligence mapping.
+#
+# Data Sources:
+#   • NOAA Climate
+#   • NOAA OISST
+#   • NSIDC Ice
+#   • NASA EONET
+#   • USGS Earthquake Hazards
+#   • Open-Meteo ERA5
+#
+# Output:
+#   data/atlas-state.json
+#
+# Runtime:
+#   Node.js 22 LTS
+#   GitHub Actions Node24-compatible
+#
+# ════════════════════════════════════════════════════════════════════════
+
+name: VYRION · ATLAS · Planetary Systems Mapping
+
+on:
+  schedule:
+    # Runs daily after SHIELD refresh
+    - cron: "25 0 * * *"
+
+    # Midday refresh
+    - cron: "25 12 * * *"
+
+  workflow_dispatch:
+
+# Prevent overlapping executions
+concurrency:
+  group: vyrion-atlas-refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+env:
+  NODE_ENV: production
+
+  # GitHub Actions future-proofing
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  refresh:
+    name: VYRION · ATLAS · Planetary Systems Mapping
+
+    runs-on: ubuntu-latest
+
+    timeout-minutes: 20
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+
+      # ─────────────────────────────────────────────
+      # Checkout Repository
+      # ─────────────────────────────────────────────
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # ─────────────────────────────────────────────
+      # Setup Node.js
+      # ─────────────────────────────────────────────
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      # ─────────────────────────────────────────────
+      # Install Dependencies
+      # ─────────────────────────────────────────────
+      - name: Install Dependencies
+        run: |
+          set -euo pipefail
+
+          if [ -f package-lock.json ]; then
+            echo "Detected package-lock.json"
+            npm ci
+          else
+            echo "No lockfile found — using npm install"
+            npm install
+          fi
+
+      # ─────────────────────────────────────────────
+      # Verify Runtime
+      # ─────────────────────────────────────────────
+      - name: Verify Runtime
+        run: |
+          set -euo pipefail
+
+          echo "Node Version:"
+          node --version
+
+          echo "NPM Version:"
+          npm --version
+
+      # ─────────────────────────────────────────────
+      # Generate ATLAS Planetary State
+      #
+      # Script Responsibilities:
+      #   • Aggregate planetary datasets
+      #   • Normalize signal topology
+      #   • Compute spatial intelligence layer
+      #   • Generate atlas-state.json
+      # ─────────────────────────────────────────────
+      - name: Generate ATLAS Planetary State
+        run: |
+          set -euo pipefail
+          node scripts/generate-atlas-state.js
+
+      # ─────────────────────────────────────────────
+      # Validate Output
+      # ─────────────────────────────────────────────
+      - name: Validate ATLAS State
+        run: |
+          set -euo pipefail
+
+          if [ ! -f data/atlas-state.json ]; then
+            echo "ERROR: atlas-state.json missing"
+            exit 1
+          fi
+
+          if [ ! -s data/atlas-state.json ]; then
+            echo "ERROR: atlas-state.json empty"
+            exit 1
+          fi
+
+          echo "ATLAS validation passed."
+
+      # ─────────────────────────────────────────────
+      # Upload Artifact
+      # ─────────────────────────────────────────────
+      - name: Upload ATLAS Snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: atlas-state
+          path: data/atlas-state.json
+          retention-days: 30
+
+      # ─────────────────────────────────────────────
+      # Commit Updated Snapshot
+      # ─────────────────────────────────────────────
+      - name: Commit ATLAS Snapshot
+        run: |
+          set -euo pipefail
+
+          git config user.name "VYRION Data Bot"
+          git config user.email "data-bot@vyrion.earth"
+
+          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+
+          git add data/atlas-state.json
+
+          # Exit cleanly if no changes occurred
+          if git diff --staged --quiet; then
+            echo "atlas-state.json unchanged — no commit required."
+            exit 0
+          fi
+
+          git commit -m "vyrion[atlas]: planetary state refresh ${TIMESTAMP}"
+
+          # Rebase safely against latest main
+          git pull --rebase origin main
+
+          git push origin HEAD:main
+
+          echo "ATLAS snapshot committed successfully."
+
+      # ─────────────────────────────────────────────
+      # Workflow Complete
+      # ─────────────────────────────────────────────
+      - name: Workflow Complete
+        run: |
+          echo "VYRION ATLAS planetary mapping completed successfully."
