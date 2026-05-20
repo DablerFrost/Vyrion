@@ -1,0 +1,223 @@
+# ════════════════════════════════════════════════════════════════════════
+# VYRION · CANOPY · Planetary Visualization Synthesis
+# File: .github/workflows/canopy-render.yml
+#
+# Purpose:
+#   Generates visualization-ready synthesis layers
+#   from VYRION planetary intelligence systems.
+#
+#   CANOPY aggregates:
+#     • CONSCIENCE state
+#     • SHIELD hazards
+#     • ATLAS topology
+#     • ROOT integrity metrics
+#
+#   Produces:
+#     • Dashboard-ready datasets
+#     • Visualization overlays
+#     • Public intelligence summaries
+#     • Planetary state synthesis
+#
+# Outputs:
+#   data/canopy-state.json
+#
+# Runtime:
+#   Node.js 22 LTS
+#   GitHub Actions Node24-compatible
+#
+# ════════════════════════════════════════════════════════════════════════
+
+name: VYRION · CANOPY · Planetary Visualization Synthesis
+
+on:
+  schedule:
+    # Runs after ROOT verification
+    - cron: "55 0 * * *"
+
+    # Midday synthesis refresh
+    - cron: "55 12 * * *"
+
+  workflow_dispatch:
+
+# Prevent overlapping CANOPY executions
+concurrency:
+  group: vyrion-canopy-render
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+env:
+  NODE_ENV: production
+
+  # GitHub Actions future-proofing
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  synthesize:
+    name: VYRION · CANOPY · Visualization Synthesis
+
+    runs-on: ubuntu-latest
+
+    timeout-minutes: 20
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+
+      # ─────────────────────────────────────────────
+      # Checkout Repository
+      # ─────────────────────────────────────────────
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # ─────────────────────────────────────────────
+      # Setup Node.js
+      # ─────────────────────────────────────────────
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      # ─────────────────────────────────────────────
+      # Install Dependencies
+      # ─────────────────────────────────────────────
+      - name: Install Dependencies
+        run: |
+          set -euo pipefail
+
+          if [ -f package-lock.json ]; then
+            echo "Detected package-lock.json"
+            npm ci
+          else
+            echo "No lockfile found — using npm install"
+            npm install
+          fi
+
+      # ─────────────────────────────────────────────
+      # Verify Runtime
+      # ─────────────────────────────────────────────
+      - name: Verify Runtime
+        run: |
+          set -euo pipefail
+
+          echo "Node Version:"
+          node --version
+
+          echo "NPM Version:"
+          npm --version
+
+      # ─────────────────────────────────────────────
+      # Validate Upstream Intelligence Layers
+      # ─────────────────────────────────────────────
+      - name: Validate Upstream Datasets
+        run: |
+          set -euo pipefail
+
+          REQUIRED_FILES=(
+            "conscience-data.json"
+            "data/shield-snapshot.json"
+            "data/atlas-state.json"
+            "data/root-status.json"
+          )
+
+          for FILE in "${REQUIRED_FILES[@]}"; do
+
+            if [ ! -f "$FILE" ]; then
+              echo "ERROR: Missing required dataset -> $FILE"
+              exit 1
+            fi
+
+            if [ ! -s "$FILE" ]; then
+              echo "ERROR: Empty required dataset -> $FILE"
+              exit 1
+            fi
+
+            echo "Validated: $FILE"
+
+          done
+
+      # ─────────────────────────────────────────────
+      # Generate CANOPY Visualization Layer
+      #
+      # Responsibilities:
+      #   • Aggregate intelligence layers
+      #   • Build visualization-ready topology
+      #   • Generate synthesis metrics
+      #   • Produce dashboard state
+      #   • Compute planetary summaries
+      # ─────────────────────────────────────────────
+      - name: Generate CANOPY Synthesis Layer
+        run: |
+          set -euo pipefail
+          node scripts/generate-canopy-state.js
+
+      # ─────────────────────────────────────────────
+      # Validate CANOPY Output
+      # ─────────────────────────────────────────────
+      - name: Validate CANOPY State
+        run: |
+          set -euo pipefail
+
+          if [ ! -f data/canopy-state.json ]; then
+            echo "ERROR: canopy-state.json missing"
+            exit 1
+          fi
+
+          if [ ! -s data/canopy-state.json ]; then
+            echo "ERROR: canopy-state.json empty"
+            exit 1
+          fi
+
+          echo "CANOPY validation passed."
+
+      # ─────────────────────────────────────────────
+      # Upload Artifact Snapshot
+      # ─────────────────────────────────────────────
+      - name: Upload CANOPY Snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: canopy-state
+          path: data/canopy-state.json
+          retention-days: 30
+
+      # ─────────────────────────────────────────────
+      # Commit Updated Snapshot
+      # ─────────────────────────────────────────────
+      - name: Commit CANOPY Snapshot
+        run: |
+          set -euo pipefail
+
+          git config user.name "VYRION Data Bot"
+          git config user.email "data-bot@vyrion.earth"
+
+          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+
+          git add data/canopy-state.json
+
+          # Exit cleanly if no changes occurred
+          if git diff --staged --quiet; then
+            echo "canopy-state.json unchanged — no commit required."
+            exit 0
+          fi
+
+          git commit -m "vyrion[canopy]: visualization synthesis refresh ${TIMESTAMP}"
+
+          # Safely rebase against latest main
+          git pull --rebase origin main
+
+          git push origin HEAD:main
+
+          echo "CANOPY snapshot committed successfully."
+
+      # ─────────────────────────────────────────────
+      # Workflow Complete
+      # ─────────────────────────────────────────────
+      - name: Workflow Complete
+        run: |
+          echo "VYRION CANOPY synthesis completed successfully."
