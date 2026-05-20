@@ -37,7 +37,7 @@ name: VYRION · ATLAS · Planetary Systems Mapping
 
 on:
   schedule:
-    # Runs daily after SHIELD refresh
+    # Daily refresh
     - cron: "25 0 * * *"
 
     # Midday refresh
@@ -56,7 +56,7 @@ permissions:
 env:
   NODE_ENV: production
 
-  # GitHub Actions future-proofing
+  # GitHub Actions runtime future-proofing
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
@@ -119,12 +119,6 @@ jobs:
 
       # ─────────────────────────────────────────────
       # Generate ATLAS Planetary State
-      #
-      # Script Responsibilities:
-      #   • Aggregate planetary datasets
-      #   • Normalize signal topology
-      #   • Compute spatial intelligence layer
-      #   • Generate atlas-state.json
       # ─────────────────────────────────────────────
       - name: Generate ATLAS Planetary State
         run: |
@@ -151,7 +145,7 @@ jobs:
           echo "ATLAS validation passed."
 
       # ─────────────────────────────────────────────
-      # Upload Artifact
+      # Upload Artifact Snapshot
       # ─────────────────────────────────────────────
       - name: Upload ATLAS Snapshot
         uses: actions/upload-artifact@v4
@@ -174,7 +168,7 @@ jobs:
 
           git add data/atlas-state.json
 
-          # Exit cleanly if no changes occurred
+          # Exit cleanly if nothing changed
           if git diff --staged --quiet; then
             echo "atlas-state.json unchanged — no commit required."
             exit 0
@@ -182,10 +176,10 @@ jobs:
 
           git commit -m "vyrion[atlas]: planetary state refresh ${TIMESTAMP}"
 
-          # Rebase safely against latest main
-          git pull --rebase origin main
+          # Safely sync latest remote changes
+          git pull --rebase origin ${GITHUB_REF_NAME} || true
 
-          git push origin HEAD:main
+          git push origin HEAD:${GITHUB_REF_NAME}
 
           echo "ATLAS snapshot committed successfully."
 
