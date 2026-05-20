@@ -1,0 +1,1011 @@
+```html
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="THE RECORD — VYRION Issue 010: Amazon. Net zero carbon by 2040 under the Climate Pledge. Emissions growth and AWS infrastructure expansion continue outpacing renewable procurement. CONSCIENCE Score: 47/100 WARNING.">
+
+<meta property="og:title" content="THE RECORD — Issue 010: Amazon · VYRION">
+<meta property="og:description" content="Amazon pledged net zero carbon by 2040. Emissions and infrastructure growth continue outpacing renewable procurement. CONSCIENCE Score: 47/100 WARNING.">
+<meta property="og:type" content="article">
+
+<title>THE RECORD — Issue 010: Amazon · VYRION</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&family=Archivo:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --void:#020912;
+  --void2:#061624;
+  --void3:#0b2035;
+
+  --glow:#00D4FF;
+  --amber:#FFB84D;
+  --breach:#F03030;
+  --warn:#F09000;
+
+  --amazon:#FF9900;
+  --amazon-dim:rgba(255,153,0,.08);
+  --amazon-border:rgba(255,153,0,.28);
+
+  --t1:#e4f2ff;
+  --t2:#6a9ab8;
+  --t3:#2d6080;
+
+  --border:rgba(0,212,255,.12);
+  --border2:rgba(0,212,255,.07);
+
+  --nav-bg:rgba(2,9,18,.97);
+  --scanline:rgba(0,212,255,.004);
+}
+
+[data-theme="light"]{
+  --void:#f0f5ff;
+  --void2:#e4eeff;
+  --void3:#d5e5ff;
+
+  --glow:#0066CC;
+
+  --amazon:#FF9900;
+  --amazon-dim:rgba(255,153,0,.08);
+  --amazon-border:rgba(255,153,0,.24);
+
+  --t1:#06111d;
+  --t2:#1e4a7a;
+  --t3:#3a6090;
+
+  --border:rgba(0,102,204,.18);
+  --border2:rgba(0,102,204,.10);
+
+  --nav-bg:rgba(240,245,255,.98);
+  --scanline:transparent;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+  font-size:18px;
+}
+
+body{
+  background:var(--void);
+  color:var(--t1);
+  font-family:'Archivo',sans-serif;
+  line-height:1.65;
+  overflow-x:hidden;
+}
+
+body::after{
+  content:'';
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:990;
+
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      var(--scanline) 3px,
+      var(--scanline) 4px
+    );
+}
+
+/* NAV */
+
+.nav{
+  position:sticky;
+  top:0;
+  z-index:500;
+
+  height:52px;
+
+  display:flex;
+  align-items:center;
+  gap:1.4rem;
+
+  padding:0 1.8rem;
+
+  background:var(--nav-bg);
+  border-bottom:1px solid var(--border);
+
+  backdrop-filter:blur(20px);
+}
+
+.nav-logo{
+  font-family:'Archivo Narrow',sans-serif;
+  font-weight:800;
+  font-size:.95rem;
+  letter-spacing:.15em;
+  text-decoration:none;
+  color:var(--glow);
+}
+
+.nav-links{
+  display:flex;
+  gap:1.8rem;
+  list-style:none;
+  flex:1;
+}
+
+.nav-links a{
+  font-family:'Archivo Narrow',sans-serif;
+  font-size:.65rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--t2);
+  text-decoration:none;
+}
+
+.nav-links a.active{
+  color:var(--glow);
+  border-bottom:1px solid rgba(0,212,255,.4);
+}
+
+.nav-dot{
+  width:6px;
+  height:6px;
+  background:var(--glow);
+  border-radius:50%;
+}
+
+/* HERO */
+
+.page-header{
+  padding:3.5rem 2rem 2.8rem;
+
+  border-bottom:1px solid var(--border);
+
+  position:relative;
+  overflow:hidden;
+
+  min-height:340px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+
+  background:
+    linear-gradient(
+      125deg,
+      rgba(2,9,18,.96) 0%,
+      rgba(2,9,18,.76) 45%,
+      rgba(3,16,28,.95) 100%
+    ),
+    url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1600&auto=format&fit=crop');
+
+  background-size:cover;
+  background-position:center;
+}
+
+.bg-word{
+  position:absolute;
+  right:-1rem;
+  top:50%;
+  transform:translateY(-50%);
+
+  font-family:'Archivo Narrow',sans-serif;
+  font-weight:800;
+  font-size:clamp(5rem,13vw,10rem);
+
+  color:rgba(255,153,0,.05);
+
+  pointer-events:none;
+  user-select:none;
+
+  letter-spacing:.04em;
+}
+
+.eyebrow{
+  font-family:'Courier Prime',monospace;
+  font-size:.65rem;
+  color:var(--glow);
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  margin-bottom:.4rem;
+}
+
+.issue-kicker{
+  font-family:'Courier Prime',monospace;
+  font-size:.6rem;
+  color:var(--t3);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  margin-bottom:.4rem;
+}
+
+.track-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+
+  background:rgba(240,144,0,.08);
+  border:1px solid rgba(240,144,0,.28);
+
+  color:var(--warn);
+
+  padding:.4rem 1rem;
+
+  font-family:'Archivo Narrow',sans-serif;
+  font-weight:800;
+  font-size:1rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+
+  margin-bottom:1.2rem;
+  width:fit-content;
+}
+
+.track-badge::before{
+  content:'';
+  width:8px;
+  height:8px;
+  background:var(--warn);
+  border-radius:50%;
+}
+
+.issue-title{
+  font-family:'Archivo Narrow',sans-serif;
+  font-weight:800;
+  font-size:clamp(2.4rem,5.5vw,3.8rem);
+  line-height:.95;
+  margin-bottom:.2rem;
+}
+
+.issue-company{
+  font-family:'Archivo Narrow',sans-serif;
+  font-weight:800;
+  font-size:clamp(1.4rem,3vw,2rem);
+  color:var(--amazon);
+  margin-bottom:.5rem;
+}
+
+.issue-sub{
+  font-size:.82rem;
+  color:var(--t2);
+  max-width:62ch;
+  line-height:1.72;
+}
+
+/* SCORE STRIP */
+
+.score-strip{
+  display:flex;
+  flex-wrap:wrap;
+  background:var(--void2);
+  border-bottom:1px solid var(--border);
+}
+
+.ss-cell{
+  flex:1;
+  min-width:140px;
+  padding:1.1rem 1.6rem;
+  border-right:1px solid var(--border);
+}
+
+.ss-label{
+  font-family:'Courier Prime',monospace;
+  font-size:.56rem;
+  color:var(--t3);
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+.ss-val{
+  font-family:'Courier Prime',monospace;
+  font-size:1.7rem;
+  font-weight:700;
+  line-height:1;
+  margin-top:.25rem;
+}
+
+.ss-sub{
+  font-family:'Courier Prime',monospace;
+  font-size:.56rem;
+  color:var(--t3);
+  margin-top:.25rem;
+  line-height:1.4;
+}
+
+.val-amazon{
+  color:var(--amazon);
+}
+
+.val-warn{
+  color:var(--warn);
+}
+
+.val-glow{
+  color:var(--glow);
+}
+
+/* SCORE BAR */
+
+.score-bar-section{
+  padding:1.2rem 2rem 1.4rem;
+  border-bottom:1px solid var(--border);
+  background:var(--void2);
+}
+
+.sb-label-row{
+  display:flex;
+  justify-content:space-between;
+  font-family:'Courier Prime',monospace;
+  font-size:.56rem;
+  color:var(--t3);
+  margin-bottom:.5rem;
+  text-transform:uppercase;
+}
+
+.sb-track{
+  height:5px;
+  background:rgba(255,255,255,.06);
+  overflow:hidden;
+  border-radius:3px;
+  margin-bottom:.35rem;
+}
+
+.sb-fill{
+  height:100%;
+  width:47%;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(240,144,0,.4),
+      var(--warn)
+    );
+}
+
+.sb-scale{
+  display:flex;
+  justify-content:space-between;
+
+  font-family:'Courier Prime',monospace;
+  font-size:.52rem;
+  color:var(--t3);
+}
+
+/* LAYOUT */
+
+.content-wrap{
+  display:grid;
+  grid-template-columns:1fr 320px;
+}
+
+.content-main{
+  padding:2.4rem 2rem;
+  border-right:1px solid var(--border);
+}
+
+.content-sidebar{
+  padding:2rem 1.6rem;
+  background:var(--void2);
+}
+
+/* SECTION */
+
+.section-heading{
+  font-family:'Archivo Narrow',sans-serif;
+  font-weight:800;
+  font-size:.8rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+
+  margin-bottom:1rem;
+
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+}
+
+.section-heading::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:rgba(255,153,0,.14);
+}
+
+/* PLEDGE */
+
+.pr-block{
+  margin-bottom:2rem;
+}
+
+.pr-row{
+  display:flex;
+  gap:.65rem;
+  margin-bottom:.45rem;
+  align-items:flex-start;
+}
+
+.pr-tag{
+  font-family:'Courier Prime',monospace;
+  font-size:.54rem;
+  letter-spacing:.1em;
+  padding:.1rem .35rem;
+  border-radius:2px;
+  margin-top:.15rem;
+  flex-shrink:0;
+}
+
+.tag-pledge{
+  background:rgba(255,153,0,.08);
+  border:1px solid rgba(255,153,0,.25);
+  color:var(--amazon);
+}
+
+.tag-reality{
+  background:rgba(0,212,255,.06);
+  border:1px solid rgba(0,212,255,.25);
+  color:var(--glow);
+}
+
+.pr-text{
+  font-size:.82rem;
+  line-height:1.65;
+}
+
+.pr-sub{
+  font-family:'Courier Prime',monospace;
+  font-size:.58rem;
+  color:var(--t3);
+  margin-left:120px;
+  margin-bottom:.7rem;
+}
+
+/* PROSE */
+
+.prose{
+  font-size:.82rem;
+  color:var(--t2);
+  line-height:1.78;
+  margin-bottom:1.8rem;
+}
+
+.prose p{
+  margin-bottom:1rem;
+}
+
+.prose strong{
+  color:var(--t1);
+}
+
+.hl-amazon{
+  color:var(--amazon);
+  font-weight:700;
+}
+
+.hl-warn{
+  color:var(--warn);
+  font-weight:700;
+}
+
+/* BREAKDOWN */
+
+.breakdown-block{
+  background:rgba(0,0,0,.22);
+  border:1px solid var(--border2);
+  padding:.9rem 1rem;
+  margin-bottom:1.8rem;
+}
+
+.bd-row{
+  display:grid;
+  grid-template-columns:1fr auto auto;
+  gap:.5rem;
+  padding:.35rem 0;
+  border-bottom:1px solid var(--border2);
+
+  font-family:'Courier Prime',monospace;
+  font-size:.62rem;
+}
+
+.bd-weight{
+  color:var(--t3);
+  font-size:.54rem;
+}
+
+.bd-score{
+  font-weight:700;
+  min-width:40px;
+  text-align:right;
+}
+
+.pos{
+  color:var(--glow);
+}
+
+.part{
+  color:var(--amber);
+}
+
+.mod{
+  color:var(--warn);
+}
+
+.bd-total{
+  display:flex;
+  justify-content:space-between;
+
+  padding-top:.6rem;
+  margin-top:.4rem;
+
+  border-top:1px solid var(--border);
+
+  font-family:'Courier Prime',monospace;
+}
+
+.bd-total-score{
+  color:var(--warn);
+  font-weight:700;
+}
+
+/* SIDEBAR */
+
+.sidebar-label{
+  font-family:'Courier Prime',monospace;
+  font-size:.56rem;
+  color:var(--t3);
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  margin-bottom:.6rem;
+}
+
+.sidebar-block{
+  background:rgba(0,0,0,.2);
+  border:1px solid var(--border2);
+  padding:.9rem 1rem;
+  margin-bottom:1.2rem;
+}
+
+.sval-row{
+  display:flex;
+  justify-content:space-between;
+  padding:.28rem 0;
+  border-bottom:1px solid var(--border2);
+
+  font-family:'Courier Prime',monospace;
+  font-size:.62rem;
+}
+
+.sval-label{
+  color:var(--t2);
+}
+
+.sval-val{
+  font-weight:700;
+  text-align:right;
+}
+
+.sval-amazon{
+  color:var(--amazon);
+}
+
+.sval-warn{
+  color:var(--warn);
+}
+
+.sval-glow{
+  color:var(--glow);
+}
+
+/* FOOTER */
+
+.record-footer{
+  padding:1.4rem 2rem;
+  border-top:1px solid var(--border);
+  background:var(--void2);
+
+  font-family:'Courier Prime',monospace;
+  font-size:.6rem;
+  color:var(--t3);
+  line-height:1.8;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+  .content-wrap{
+    grid-template-columns:1fr;
+  }
+
+  .content-main{
+    border-right:none;
+    border-bottom:1px solid var(--border);
+  }
+
+}
+
+@media(max-width:720px){
+
+  html{
+    font-size:16px;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .page-header{
+    padding:2rem 1rem;
+    min-height:280px;
+  }
+
+  .content-main{
+    padding:1.6rem 1rem;
+  }
+
+  .content-sidebar{
+    padding:1.6rem 1rem;
+  }
+
+  .pr-sub{
+    margin-left:0;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="nav">
+
+<a href="https://vyrion.earth" class="nav-logo">VYRION</a>
+
+<ul class="nav-links">
+<li><a href="https://vyrion.earth/conscience">CONSCIENCE</a></li>
+<li><a href="https://vyrion.earth/atlas">ATLAS</a></li>
+<li><a href="https://vyrion.earth/shield">SHIELD</a></li>
+<li><a href="https://vyrion.earth/root">ROOT</a></li>
+<li><a href="https://vyrion.earth/record" class="active">RECORD</a></li>
+</ul>
+
+<div class="nav-dot"></div>
+
+</nav>
+
+<header class="page-header">
+
+<div class="bg-word">AMZN</div>
+
+<div class="eyebrow">
+The Record · Issue 010 · Wednesday May 20, 2026
+</div>
+
+<div class="issue-kicker">
+NASDAQ: AMZN · CIK 1018724 · Tech / Retail
+</div>
+
+<div class="track-badge">WARNING</div>
+
+<h1 class="issue-title">
+THE RECORD — ISSUE 010
+</h1>
+
+<div class="issue-company">
+Amazon
+</div>
+
+<p class="issue-sub">
+One company. Pledge vs. reality. Sourced. Scored. Published openly. CONSCIENCE Score: 47 / 100. Published: Wednesday, May 20, 2026.
+</p>
+
+</header>
+
+<div class="score-strip">
+
+<div class="ss-cell">
+<div class="ss-label">CONSCIENCE Score</div>
+<div class="ss-val val-warn">
+47 <span style="font-size:.9rem;color:var(--t3)">/100</span>
+</div>
+<div class="ss-sub">Band: WARNING</div>
+</div>
+
+<div class="ss-cell">
+<div class="ss-label">Net Zero Target</div>
+<div class="ss-val val-amazon">2040</div>
+<div class="ss-sub">Climate Pledge pathway</div>
+</div>
+
+<div class="ss-cell">
+<div class="ss-label">Emission Trend</div>
+<div class="ss-val val-warn">+18%</div>
+<div class="ss-sub">2021–2022 disclosed increase</div>
+</div>
+
+<div class="ss-cell">
+<div class="ss-label">CDP Grade</div>
+<div class="ss-val val-glow">B</div>
+<div class="ss-sub">Disclosure grade</div>
+</div>
+
+<div class="ss-cell">
+<div class="ss-label">InfluenceMap</div>
+<div class="ss-val val-warn">C</div>
+<div class="ss-sub">Lobbying alignment</div>
+</div>
+
+<div class="ss-cell">
+<div class="ss-label">AWS Infrastructure</div>
+<div class="ss-val val-amazon">EXPANDING</div>
+<div class="ss-sub">Hyperscale growth pressure</div>
+</div>
+
+</div>
+
+<div class="score-bar-section">
+
+<div class="sb-label-row">
+<span>CONSCIENCE Score Position</span>
+<span style="color:var(--warn)">47 / 100 — WARNING BAND</span>
+</div>
+
+<div class="sb-track">
+<div class="sb-fill"></div>
+</div>
+
+<div class="sb-scale">
+<span>0 — BREACH</span>
+<span>30</span>
+<span style="color:var(--warn)">↑ 47/100</span>
+<span>60</span>
+<span style="color:var(--glow)">100 — ON TRACK</span>
+</div>
+
+</div>
+
+<div class="content-wrap">
+
+<div class="content-main">
+
+<div class="section-heading">
+Pledge vs. Reality
+</div>
+
+<div class="pr-block">
+
+<div class="pr-row">
+<span class="pr-tag tag-pledge">PLEDGE</span>
+
+<span class="pr-text">
+Amazon pledged to achieve net zero carbon emissions by 2040 through the Climate Pledge initiative and committed to reaching 100% renewable energy across operations by 2025. The company maintains active renewable procurement programs, electric logistics investments, and publicly disclosed sustainability reporting.
+</span>
+</div>
+
+<div class="pr-sub">
+Amazon Climate Pledge · Amazon Sustainability Report 2023
+</div>
+
+<div class="pr-row">
+<span class="pr-tag tag-reality">REALITY</span>
+
+<span class="pr-text">
+Amazon disclosed that emissions increased approximately <strong>18% between 2021 and 2022</strong>, while AWS expansion and global logistics growth continued outpacing renewable procurement deployment. The company missed its interim 2025 renewable milestone trajectory and continues facing pressure from data center scale expansion, freight dependency, and supply chain emissions growth.
+</span>
+</div>
+
+<div class="pr-sub">
+Amazon Sustainability Report 2023 · CDP 2023 · Bloomberg Green
+</div>
+
+</div>
+
+<div class="section-heading">
+CONSCIENCE Score Breakdown
+</div>
+
+<div class="breakdown-block">
+
+<div class="bd-row">
+<span>
+Pledge Quality — 2040 net zero commitment; missed 2025 interim renewable trajectory
+</span>
+<span class="bd-weight">30 max</span>
+<span class="bd-score pos">+20</span>
+</div>
+
+<div class="bd-row">
+<span>
+CDP Performance — Grade B disclosure quality
+</span>
+<span class="bd-weight">25 max</span>
+<span class="bd-score pos">+18</span>
+</div>
+
+<div class="bd-row">
+<span>
+InfluenceMap Lobbying Alignment — Grade C; mixed climate policy alignment
+</span>
+<span class="bd-weight">25 max</span>
+<span class="bd-score part">+9</span>
+</div>
+
+<div class="bd-row">
+<span>
+Legal + operational exposure — emissions growth tied to AWS and logistics expansion; 3 active climate-related cases
+</span>
+<span class="bd-weight">20 max</span>
+<span class="bd-score mod">0</span>
+</div>
+
+<div class="bd-total">
+<span>CONSCIENCE Score — Total</span>
+<span class="bd-total-score">47 / 100 · WARNING</span>
+</div>
+
+</div>
+
+<div class="section-heading">
+Key Findings
+</div>
+
+<div class="prose">
+
+<p>
+<strong>Finding 01 — Amazon’s climate ambition remains structurally significant.</strong>
+The Climate Pledge was one of the earliest large-scale corporate net zero commitments targeting 2040 rather than 2050. Amazon also became one of the world’s largest corporate renewable energy purchasers.
+</p>
+
+<p>
+<strong>Finding 02 — Operational growth continues exceeding decarbonization velocity.</strong>
+<span class="hl-warn">
+AWS expansion, freight logistics scaling, aviation dependency, and warehouse growth continue increasing energy demand faster than renewable deployment can offset emissions.
+</span>
+This creates persistent pressure against Amazon’s stated transition pathway.
+</p>
+
+<p>
+<strong>Finding 03 — Disclosure quality remains moderate rather than leadership tier.</strong>
+Amazon maintains public sustainability reporting and CDP participation, but the company remains below leadership-tier climate disclosure standards relative to higher-scoring technology peers.
+</p>
+
+<p>
+<strong>Finding 04 — Logistics remains the structural pressure point.</strong>
+<span class="hl-amazon">
+Last-mile delivery networks, aviation expansion, shipping dependency, packaging systems, and global supplier emissions continue making Scope 3 reduction materially difficult at Amazon’s operating scale.
+</span>
+</p>
+
+</div>
+
+<div class="section-heading">
+Capital Markets Signal
+</div>
+
+<div class="prose">
+
+<p>
+Amazon remains inside the WARNING band at 47/100. The score reflects meaningful climate commitments and renewable procurement activity offset by rising operational complexity, expanding infrastructure demand, and emissions growth tied directly to hyperscale logistics and cloud infrastructure.
+</p>
+
+<p>
+The structural signal is increasingly tied to AWS. Amazon is simultaneously scaling one of the largest global cloud infrastructure systems while attempting to decarbonize a planetary-scale logistics network.
+</p>
+
+<p>
+<span class="hl-warn">
+The primary execution variable is whether renewable deployment and supply-chain decarbonization can accelerate faster than AWS and logistics growth over the next five years.
+</span>
+If operational demand continues outpacing infrastructure transition, the WARNING classification may persist or deteriorate toward breach territory.
+</p>
+
+<p>
+<strong>Investable Signal:</strong>
+Moderate disclosure quality. Large-scale renewable procurement. High operational exposure. Watch for: AWS energy intensity disclosures, updated Scope 3 reporting, aviation transition investments, renewable procurement velocity, and future SEC climate-risk filings.
+</p>
+
+</div>
+
+<div class="section-heading">
+Primary Sources
+</div>
+
+<div class="prose">
+
+<p>
+Amazon Sustainability Report 2023<br>
+Amazon Climate Pledge<br>
+CDP 2023 Public Disclosure<br>
+InfluenceMap Corporate Profile — Amazon<br>
+SEC EDGAR — CIK 1018724<br>
+Sabin Center Climate Litigation Database<br>
+Transition Pathway Initiative — Level 3/5
+</p>
+
+</div>
+
+</div>
+
+<div class="content-sidebar">
+
+<div class="sidebar-label">
+Key Indicators
+</div>
+
+<div class="sidebar-block">
+
+<div class="sval-row">
+<span class="sval-label">CONSCIENCE Score</span>
+<span class="sval-val sval-warn">47 / 100</span>
+</div>
+
+<div class="sval-row">
+<span class="sval-label">Band</span>
+<span class="sval-val sval-warn">WARNING</span>
+</div>
+
+<div class="sval-row">
+<span class="sval-label">Emission Trend</span>
+<span class="sval-val sval-warn">+18%</span>
+</div>
+
+<div class="sval-row">
+<span class="sval-label">Net Zero Target</span>
+<span class="sval-val sval-amazon">2040</span>
+</div>
+
+<div class="sval-row">
+<span class="sval-label">Renewable Goal</span>
+<span class="sval-val sval-amazon">2025</span>
+</div>
+
+<div class="sval-row">
+<span class="sval-label">CDP Grade</span>
+<span class="sval-val sval-glow">B</span>
+</div>
+
+<div class="sval-row">
+<span class="sval-label">InfluenceMap</span>
+<span class="sval-val sval-warn">C</span>
+</div>
+
+<div class="sval-row">
+<span class="sval-label">SBTi Status</span>
+<span class="sval-val sval-glow">Committed</span>
+</div>
+
+<div class="sval-row">
+<span class="sval-label">TPI Level</span>
+<span class="sval-val sval-glow">3 / 5</span>
+</div>
+
+<div class="sval-row">
+<span class="sval-label">Active Lawsuits</span>
+<span class="sval-val sval-warn">3</span>
+</div>
+
+</div>
+
+</div>
+
+<footer class="record-footer">
+
+THE RECORD — VYRION Issue 010 · Amazon · Published May 20, 2026<br>
+
+VYRION PBC · Tyler Frost · Hilo, Hawaii · vyrion.earth<br>
+
+Methodology: CONSCIENCE-METHODOLOGY.md · Corrections: contact@vyrion.earth · Open Proof Protocol Active
+
+</footer>
+
+</body>
+</html>
+```
