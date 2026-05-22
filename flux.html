@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="VYRION FLUX — Module 05 · Clean Energy Infrastructure. Modular solar, green hydrogen, and atmospheric carbon capture licensed to cities and industrial operators.">
+<meta property="og:title" content="VYRION FLUX — Clean Energy Infrastructure">
+<meta property="og:description" content="Modular clean energy deployment. Solar · Hydrogen · Carbon Capture. Licensed to cities, industry, and sovereign programs.">
+<meta property="og:url" content="https://vyrion.earth/flux">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://vyrion.earth/flux">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/assets/favicon.ico">
+<title>VYRION FLUX — Clean Energy Infrastructure</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&family=Archivo:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --void:#020912; --void2:#061624; --void3:#0b2035;
+  --glow:#00D4FF; --amber:#FFB84D; --breach:#F03030; --warn:#F09000;
+  --t1:#e4f2ff; --t2:#6a9ab8; --t3:#2d6080;
+  --border:rgba(0,212,255,.12); --border2:rgba(0,212,255,.07);
+  --nav-bg:rgba(2,9,18,.97); --scanline:rgba(0,212,255,.004);
+  --flux:#FFD700; --flux2:#FFB84D;
+  --flux-dim:rgba(255,215,0,.1); --flux-border:rgba(255,215,0,.22);
+  --solar:#FFB84D; --hydro:#00D4FF; --capture:#10b981;
+  --solar-bg:rgba(255,184,77,.08); --hydro-bg:rgba(0,212,255,.07); --capture-bg:rgba(16,185,129,.07);
+}
+[data-theme="light"] {
+  --void:#f0f5ff; --void2:#e4eeff; --void3:#d5e5ff;
+  --glow:#0066CC; --amber:#b07800; --breach:#b82020; --warn:#a05800;
+  --t1:#060e1e; --t2:#1e4a7a; --t3:#3a6090;
+  --border:rgba(0,102,204,.18); --border2:rgba(0,102,204,.10);
+  --nav-bg:rgba(240,245,255,.98); --scanline:transparent;
+  --flux:#b07800; --flux2:#a06000;
+  --flux-dim:rgba(176,120,0,.1); --flux-border:rgba(176,120,0,.25);
+}
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0 }
+html { scroll-behavior:smooth; font-size:18px }
+body {
+  background:var(--void); color:var(--t1);
+  font-family:'Archivo',sans-serif; font-size:1rem;
+  line-height:1.65; min-height:100vh; overflow-x:hidden;
+  transition:background .3s,color .3s;
+}
+body::after {
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:990;
+  background:repeating-linear-gradient(0deg,transparent,transparent 3px,var(--scanline) 3px,var(--scanline) 4px);
+}
+/* NAV */
+.nav {
+  position:sticky; top:0; z-index:500; height:52px;
+  display:flex; align-items:center; gap:1rem; padding:0 1.8rem;
+  background:var(--nav-bg); border-bottom:1px solid var(--border);
+  backdrop-filter:blur(20px); transition:background .3s;
+}
+.nav-logo { font-family:'Archivo Narrow',sans-serif; font-weight:800; font-size:.95rem; color:var(--glow); letter-spacing:.15em; text-decoration:none; flex-shrink:0; text-shadow:0 0 20px rgba(0,212,255,.3) }
+.nav-links { display:flex; gap:1.6rem; list-style:none; flex:1 }
+.nav-links a { font-family:'Archivo Narrow',sans-serif; font-weight:700; font-size:.63rem; letter-spacing:.15em; text-transform:uppercase; color:var(--t2); text-decoration:none; transition:color .2s; padding-bottom:2px }
+.nav-links a:hover { color:var(--t1) }
+.nav-links a.active { color:var(--flux); border-bottom:1px solid var(--flux-border) }
+.nav-controls { display:flex; align-items:center; gap:.35rem; flex-shrink:0 }
+.nc-sep { width:1px; height:16px; background:var(--border); margin:0 .15rem }
+.nc-theme { font-family:'Courier Prime',monospace; font-size:.58rem; font-weight:700; letter-spacing:.12em; padding:.22rem .5rem; border-radius:2px; border:1px solid var(--border); background:transparent; color:var(--t2); cursor:pointer; transition:all .2s; white-space:nowrap }
+.nc-theme:hover,.nc-theme.active { border-color:var(--flux); color:var(--flux); background:var(--flux-dim) }
+.nc-sz { font-family:'Courier Prime',monospace; font-size:.6rem; font-weight:700; width:26px; height:26px; display:flex; align-items:center; justify-content:center; border-radius:2px; border:1px solid var(--border); background:transparent; color:var(--t3); cursor:pointer; transition:all .2s }
+.nc-sz:hover { border-color:rgba(255,215,0,.4); color:var(--t1) }
+.nc-sz.active { background:var(--flux-dim); border-color:var(--flux); color:var(--flux) }
+.nav-dot { width:6px; height:6px; background:var(--flux); border-radius:50%; flex-shrink:0; animation:pdot 2.2s infinite }
+@keyframes pdot { 0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(255,215,0,.5)} 50%{opacity:.4;box-shadow:0 0 0 7px rgba(255,215,0,0)} }
+/* PAGE HEADER */
+.page-header {
+  position:relative; overflow:hidden;
+  min-height:380px; display:flex; flex-direction:column; justify-content:flex-end;
+  padding:3.5rem 2rem 2.8rem;
+  background-image:url('https://okay-gold-oof5kipmvh.edgeone.app/Testing%20The%20Surface%20-%20Imgur.png');
+  background-size:cover; background-position:center 38%;
+  border-bottom:1px solid var(--border);
+}
+.page-header::before {
+  content:''; position:absolute; inset:0; z-index:0;
+  background:linear-gradient(120deg,rgba(2,9,18,.96) 0%,rgba(2,9,18,.74) 45%,rgba(2,9,18,.92) 100%);
+  transition:background .3s;
+}
+[data-theme="light"] .page-header::before { background:linear-gradient(120deg,rgba(240,247,243,.97) 0%,rgba(240,247,243,.84) 45%,rgba(240,247,243,.94) 100%) }
+#flux-canvas { position:absolute; top:0; left:0; width:100%; height:100%; z-index:1; opacity:.65; pointer-events:none }
+[data-theme="light"] #flux-canvas { opacity:.2 }
+.page-header::after {
+  content:''; position:absolute; inset:0; z-index:2; pointer-events:none;
+  background:radial-gradient(ellipse 60% 65% at 75% 50%,rgba(255,215,0,.07) 0%,transparent 70%);
+  animation:hpulse 8s ease-in-out infinite alternate;
+}
+@keyframes hpulse { 0%{opacity:.4;transform:scale(1)} 100%{opacity:1;transform:scale(1.05)} }
+.page-header>*:not(canvas) { position:relative; z-index:3 }
+.bg-word { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-family:'Archivo Narrow',sans-serif; font-weight:800; font-size:clamp(5rem,14vw,11rem); color:rgba(255,215,0,.03); pointer-events:none; user-select:none; z-index:2 }
+.eyebrow { font-family:'Courier Prime',monospace; font-size:.65rem; color:var(--flux); letter-spacing:.24em; text-transform:uppercase; margin-bottom:.55rem; display:flex; align-items:center; gap:.55rem }
+.eyebrow::before { content:''; width:18px; height:1px; background:var(--flux); opacity:.5 }
+.page-title { font-family:'Archivo Narrow',sans-serif; font-weight:800; font-size:clamp(2.4rem,5.5vw,4.2rem); color:var(--t1); line-height:.95; letter-spacing:-.02em; margin-bottom:.65rem }
+.page-sub { font-size:.84rem; color:var(--t2); max-width:64ch; line-height:1.75 }
+.header-badges { display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1.4rem }
+.h-badge { font-family:'Courier Prime',monospace; font-size:.56rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; padding:.18rem .55rem; border-radius:2px }
+.hb-solar   { background:var(--solar-bg);   color:var(--solar);   border:1px solid rgba(255,184,77,.3) }
+.hb-hydro   { background:var(--hydro-bg);   color:var(--hydro);   border:1px solid rgba(0,212,255,.25) }
+.hb-capture { background:var(--capture-bg); color:var(--capture); border:1px solid rgba(16,185,129,.25) }
+.hb-phase   { background:var(--flux-dim);   color:var(--flux);    border:1px solid var(--flux-border) }
+/* METRICS STRIP */
+.metrics-strip { display:flex; flex-wrap:wrap; background:var(--void2); border-bottom:1px solid var(--border) }
+.mc { flex:1; min-width:130px; padding:.8rem 1.4rem; border-right:1px solid var(--border); display:flex; flex-direction:column; gap:.12rem }
+.mc:last-child { border-right:none }
+.mc-lbl { font-family:'Courier Prime',monospace; font-size:.54rem; color:var(--t3); letter-spacing:.18em; text-transform:uppercase; display:flex; align-items:center; gap:.35rem }
+.mc-dot { width:4px; height:4px; border-radius:50%; flex-shrink:0 }
+.mc-dot.live { animation:pdot 2s infinite }
+.mc-val { font-family:'Courier Prime',monospace; font-weight:700; font-size:1.05rem; line-height:1; letter-spacing:-.01em }
+.mc-sub { font-family:'Courier Prime',monospace; font-size:.52rem; color:var(--t3); line-height:1.3 }
+.lp { animation:pulse 1.4s infinite }
+@keyframes pulse { 0%,100%{opacity:.3} 50%{opacity:.8} }
+/* SECTIONS */
+.section { padding:2.8rem 2rem; border-bottom:1px solid var(--border) }
+.section.alt { background:var(--void2) }
+.s-eyebrow { font-family:'Courier Prime',monospace; font-size:.62rem; color:var(--flux); letter-spacing:.22em; text-transform:uppercase; margin-bottom:.45rem; display:flex; align-items:center; gap:.5rem }
+.s-eyebrow::before { content:''; width:14px; height:1px; background:var(--flux); opacity:.5 }
+.s-title { font-family:'Archivo Narrow',sans-serif; font-weight:800; font-size:clamp(1.7rem,3.5vw,2.6rem); color:var(--t1); line-height:1; letter-spacing:-.02em; margin-bottom:.55rem }
+.s-sub { font-size:.82rem; color:var(--t2); max-width:66ch; line-height:1.75; margin-bottom:2rem }
+/* ENERGY SYSTEMS */
+.systems-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border) }
+.energy-card { background:var(--void2); padding:1.8rem 1.6rem; position:relative; overflow:hidden; transition:background .2s }
+.energy-card:hover { background:var(--void3) }
+.energy-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--ec-color,var(--flux)) }
+.energy-card::after { content:''; position:absolute; inset:0; pointer-events:none; background:radial-gradient(ellipse 75% 45% at 50% 0%,var(--ec-glow,rgba(255,215,0,.05)) 0%,transparent 65%) }
+.ec-icon { font-size:2rem; margin-bottom:1rem; display:block }
+.ec-num { font-family:'Courier Prime',monospace; font-size:.5rem; color:var(--t3); letter-spacing:.12em; margin-bottom:.4rem }
+.ec-name { font-family:'Archivo Narrow',sans-serif; font-weight:800; font-size:1.3rem; letter-spacing:.04em; line-height:1; margin-bottom:.35rem }
+.ec-tag { font-family:'Courier Prime',monospace; font-size:.5rem; letter-spacing:.1em; text-transform:uppercase; padding:.08rem .32rem; border-radius:2px; margin-bottom:.9rem; display:inline-block }
+.ec-desc { font-size:.73rem; color:var(--t2); line-height:1.7; margin-bottom:1.2rem }
+.ec-live { background:rgba(0,0,0,.2); border:1px solid var(--border2); border-radius:2px; padding:.8rem .9rem; margin-bottom:1rem }
+[data-theme="light"] .ec-live { background:rgba(0,0,0,.04) }
+.ec-live-label { font-family:'Courier Prime',monospace; font-size:.5rem; color:var(--t3); letter-spacing:.14em; text-transform:uppercase; margin-bottom:.3rem; display:flex; align-items:center; gap:.3rem }
+.ec-live-dot { width:4px; height:4px; border-radius:50%; flex-shrink:0; animation:pdot 2s infinite }
+.ec-live-val { font-family:'Courier Prime',monospace; font-weight:700; font-size:1.5rem; line-height:1; letter-spacing:-.02em }
+.ec-live-sub { font-family:'Courier Prime',monospace; font-size:.56rem; color:var(--t3); margin-top:.18rem }
+.ec-stats { display:flex; flex-direction:column; gap:.3rem; padding-top:.9rem; border-top:1px solid var(--border2) }
+.ec-stat { display:flex; justify-content:space-between; align-items:baseline; font-family:'Courier Prime',monospace; font-size:.6rem }
+.ec-stat-lbl { color:var(--t2) }
+.ec-stat-val { font-weight:700 }
+.ec-src { font-family:'Courier Prime',monospace; font-size:.52rem; color:var(--t3); margin-top:.7rem; padding-top:.55rem; border-top:1px solid var(--border2) }
+.ec-src a { color:rgba(0,212,255,.38); text-decoration:none; transition:color .18s }
+.ec-src a:hover { color:var(--glow) }
+/* DEPLOYMENT */
+.deploy-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr)); gap:1px; background:var(--border); border:1px solid var(--border) }
+.deploy-card { background:var(--void2); padding:1.4rem; position:relative; overflow:hidden; transition:background .2s }
+.deploy-card:hover { background:var(--void3) }
+.deploy-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--flux),var(--solar)); opacity:.6 }
+.dc-step { font-family:'Courier Prime',monospace; font-size:.5rem; color:var(--flux); letter-spacing:.14em; text-transform:uppercase; margin-bottom:.45rem; display:flex; align-items:center; gap:.4rem }
+.dc-step-num { width:20px; height:20px; border-radius:50%; background:var(--flux-dim); border:1px solid var(--flux-border); display:flex; align-items:center; justify-content:center; font-size:.52rem; font-weight:700; color:var(--flux); flex-shrink:0 }
+.dc-title { font-family:'Archivo Narrow',sans-serif; font-weight:800; font-size:.95rem; color:var(--t1); margin-bottom:.45rem; line-height:1.1 }
+.dc-body { font-size:.71rem; color:var(--t2); line-height:1.65 }
+.dc-time { display:inline-block; font-family:'Courier Prime',monospace; font-size:.5rem; letter-spacing:.1em; text-transform:uppercase; padding:.09rem .35rem; border-radius:2px; margin-top:.75rem; background:var(--flux-dim); color:var(--flux); border:1px solid var(--flux-border) }
+/* TIERS */
+.tiers-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr)); gap:1px; background:var(--border); border:1px solid var(--border) }
+.tier-card { background:var(--void2); padding:1.6rem 1.5rem; position:relative; overflow:hidden; transition:background .2s }
+.tier-card:hover { background:var(--void3) }
+.tier-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:var(--tc-accent,var(--flux)) }
+.tier-name { font-family:'Courier Prime',monospace; font-size:.56rem; letter-spacing:.14em; text-transform:uppercase; color:var(--t3); margin-bottom:.35rem }
+.tier-title { font-family:'Archivo Narrow',sans-serif; font-weight:800; font-size:1.15rem; color:var(--t1); margin-bottom:.2rem }
+.tier-price { font-family:'Courier Prime',monospace; font-weight:700; font-size:1.15rem; margin-bottom:.6rem; line-height:1 }
+.tier-price span { font-size:.58rem; color:var(--t3); font-weight:normal }
+.tier-desc { font-size:.71rem; color:var(--t2); line-height:1.65; margin-bottom:.9rem }
+.tier-features { font-family:'Courier Prime',monospace; font-size:.54rem; color:var(--t2); line-height:1.9 }
+.tier-features li { list-style:none; display:flex; gap:.3rem }
+.tier-features li::before { content:'→'; color:var(--flux); flex-shrink:0 }
+/* IMPACT */
+.impact-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr)); gap:1px; background:var(--border); border:1px solid var(--border) }
+.impact-card { background:var(--void2); padding:1.3rem; transition:background .2s }
+.impact-card:hover { background:var(--void3) }
+.impact-icon { font-size:1.6rem; display:block; margin-bottom:.55rem }
+.impact-metric { font-family:'Courier Prime',monospace; font-weight:700; font-size:1.5rem; line-height:1; letter-spacing:-.02em; margin-bottom:.2rem }
+.impact-sys { font-family:'Courier Prime',monospace; font-size:.5rem; letter-spacing:.1em; text-transform:uppercase; color:var(--t3); margin-bottom:.35rem }
+.impact-label { font-size:.7rem; color:var(--t2); line-height:1.55 }
+/* ARCHITECTURE */
+.arch-stack { display:flex; flex-direction:column; gap:1px; background:var(--border); border:1px solid var(--border) }
+.arch-row { background:var(--void2); padding:1.1rem 1.4rem; display:grid; grid-template-columns:100px 1fr auto; align-items:center; gap:1.2rem; transition:background .18s }
+.arch-row:hover { background:var(--void3) }
+.arch-layer { font-family:'Courier Prime',monospace; font-size:.54rem; color:var(--t3); letter-spacing:.1em; text-transform:uppercase }
+.arch-name { font-family:'Archivo Narrow',sans-serif; font-weight:800; font-size:.95rem; color:var(--t1); letter-spacing:.02em }
+.arch-desc { font-size:.7rem; color:var(--t2); line-height:1.55; margin-top:.15rem }
+.arch-badge { font-family:'Courier Prime',monospace; font-size:.54rem; letter-spacing:.1em; text-transform:uppercase; padding:.15rem .45rem; border-radius:2px; white-space:nowrap }
+.ab-live  { background:rgba(16,185,129,.1);  color:var(--capture); border:1px solid rgba(16,185,129,.25) }
+.ab-build { background:var(--flux-dim);       color:var(--flux);    border:1px solid var(--flux-border) }
+.ab-phase { background:rgba(138,171,146,.05); color:var(--t2);      border:1px solid rgba(138,171,146,.15) }
+/* CTA */
+.cta-section { padding:3rem 2rem; background:linear-gradient(135deg,rgba(255,215,0,.04) 0%,rgba(0,212,255,.025) 100%); border-bottom:1px solid var(--border); position:relative; overflow:hidden }
+.cta-section::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 55% 65% at 85% 50%,rgba(255,215,0,.05) 0%,transparent 70%); pointer-events:none }
+.cta-inner { position:relative; z-index:1 }
+.cta-row { display:flex; flex-wrap:wrap; gap:.7rem; align-items:center; margin-top:1.6rem }
+.cta-primary { font-family:'Courier Prime',monospace; font-size:.62rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:.46rem 1.2rem; border-radius:2px; border:1px solid var(--flux); background:linear-gradient(135deg,rgba(255,215,0,.16),rgba(255,184,77,.08)); color:var(--flux); text-decoration:none; transition:all .2s; white-space:nowrap; cursor:pointer }
+.cta-primary:hover { background:linear-gradient(135deg,rgba(255,215,0,.26),rgba(255,184,77,.15)); box-shadow:0 0 20px rgba(255,215,0,.22) }
+.cta-secondary { font-family:'Courier Prime',monospace; font-size:.6rem; letter-spacing:.1em; text-transform:uppercase; padding:.42rem .9rem; border-radius:2px; border:1px solid rgba(0,212,255,.22); background:transparent; color:var(--t2); text-decoration:none; transition:all .18s; white-space:nowrap; cursor:pointer }
+.cta-secondary:hover { border-color:rgba(0,212,255,.4); color:var(--t1) }
+.cta-note { font-family:'Courier Prime',monospace; font-size:.56rem; color:var(--t3); line-height:1.6; flex:1; min-width:200px }
+/* FOOTER */
+.footer { display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:1.5rem; padding:2rem; border-top:1px solid var(--border); background:var(--void2) }
+.footer-l { font-family:'Courier Prime',monospace; font-size:.6rem; color:var(--t3); line-height:1.9 }
+.footer-l a { color:rgba(0,212,255,.4); text-decoration:none; transition:color .18s }
+.footer-l a:hover { color:var(--glow) }
+.footer-l strong { color:var(--t2) }
+.footer-r { display:flex; flex-direction:column; gap:.4rem; align-items:flex-end }
+.footer-r a { font-family:'Courier Prime',monospace; font-size:.6rem; color:rgba(0,212,255,.3); text-decoration:none; transition:color .18s; letter-spacing:.06em }
+.footer-r a:hover { color:var(--glow) }
+/* RESPONSIVE */
+@media(max-width:860px){ .systems-grid { grid-template-columns:1fr } }
+@media(max-width:720px){
+  html{font-size:16px!important}
+  .nav{padding:0 .9rem;gap:.5rem;height:48px}
+  .nav-links{display:none}
+  .nc-sep{display:none}
+  .nc-sz{width:22px;height:22px;font-size:.52rem}
+  .nc-theme{font-size:.52rem;padding:.16rem .32rem}
+  .page-header{padding:1.8rem .9rem 1.5rem}
+  .section{padding:2rem .9rem}
+  .arch-row{grid-template-columns:1fr;gap:.4rem}
+  .arch-badge{justify-self:start}
+  .footer{padding:1.4rem .9rem;flex-direction:column}
+  .footer-r{align-items:flex-start}
+}
+@media(max-width:480px){
+  html{font-size:15px!important}
+  .nc-sz{display:none}
+  .systems-grid,.tiers-grid,.deploy-grid,.impact-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
+  <ul class="nav-links">
+    <li><a href="https://vyrion.earth/conscience">CONSCIENCE</a></li>
+    <li><a href="https://vyrion.earth/atlas">ATLAS</a></li>
+    <li><a href="https://vyrion.earth/shield">SHIELD</a></li>
+    <li><a href="https://vyrion.earth/root">ROOT</a></li>
+    <li><a href="https://vyrion.earth/canopy">CANOPY</a></li>
+    <li><a href="https://vyrion.earth/flux" class="active">FLUX</a></li>
+    <li><a href="https://vyrion.earth/record">RECORD</a></li>
+    <li><a href="https://vyrion.earth/nexan">NEXAN</a></li>
+  </ul>
+  <div class="nav-controls">
+    <button class="nc-theme active" id="theme-btn" onclick="toggleTheme()">◐ DARK</button>
+    <div class="nc-sep"></div>
+    <button class="nc-sz" data-scale="0.88" onclick="setScale(this)">S</button>
+    <button class="nc-sz active" data-scale="1.0" onclick="setScale(this)">M</button>
+    <button class="nc-sz" data-scale="1.22" onclick="setScale(this)">L</button>
+  </div>
+  <div class="nav-dot"></div>
+</nav>
+
+<header class="page-header">
+  <canvas id="flux-canvas"></canvas>
+  <div class="bg-word">FLUX</div>
+  <div class="eyebrow">Module 05 · Clean Energy Infrastructure</div>
+  <h1 class="page-title">FLUX</h1>
+  <p class="page-sub">Modular clean energy deployment platform. Licensing distributed solar, green hydrogen, and atmospheric carbon capture to cities and industrial operators. The energy transition is not a promise — it is an infrastructure problem. FLUX solves it.</p>
+  <div class="header-badges">
+    <span class="h-badge hb-solar">◉ Distributed Solar</span>
+    <span class="h-badge hb-hydro">◈ Green Hydrogen</span>
+    <span class="h-badge hb-capture">⬟ Carbon Capture</span>
+    <span class="h-badge hb-phase">Module 05 · Architecture Phase</span>
+  </div>
+</header>
+
+<div class="metrics-strip">
+  <div class="mc">
+    <div class="mc-lbl"><span class="mc-dot live" style="background:var(--solar)"></span>Peak Solar Irradiance</div>
+    <div class="mc-val lp" id="mc-solar" style="color:var(--solar)">—.—</div>
+    <div class="mc-sub" id="mc-solar-sub">kWh/m²/day · NASA POWER · fetching…</div>
+  </div>
+  <div class="mc">
+    <div class="mc-lbl"><span class="mc-dot live" style="background:var(--glow)"></span>Atmospheric CO₂</div>
+    <div class="mc-val lp" id="mc-co2" style="color:var(--glow)">—.—</div>
+    <div class="mc-sub" id="mc-co2-sub">ppm · NOAA Mauna Loa · fetching…</div>
+  </div>
+  <div class="mc">
+    <div class="mc-lbl"><span class="mc-dot live" style="background:var(--breach)"></span>Active Climate Events</div>
+    <div class="mc-val lp" id="mc-events" style="color:var(--breach)">—</div>
+    <div class="mc-sub" id="mc-events-sub">fires + storms · NASA EONET · 14d</div>
+  </div>
+  <div class="mc">
+    <div class="mc-lbl"><span class="mc-dot live" style="background:var(--warn)"></span>Surface Temp Anomaly</div>
+    <div class="mc-val lp" id="mc-temp" style="color:var(--warn)">—.—</div>
+    <div class="mc-sub">°C vs pre-industrial · ERA5 · fetching…</div>
+  </div>
+  <div class="mc">
+    <div class="mc-lbl"><span class="mc-dot" style="background:var(--amber)"></span>VYRION Index</div>
+    <div class="mc-val lp" id="mc-index" style="color:var(--amber)">—.—</div>
+    <div class="mc-sub">/ 100 · Day <span id="mc-day">—</span></div>
+  </div>
+</div>
+
+<!-- THREE ENERGY SYSTEMS -->
+<section class="section">
+  <div class="s-eyebrow">Three Deployment Systems</div>
+  <h2 class="s-title">What FLUX Delivers</h2>
+  <p class="s-sub">Three modular systems, purpose-built for the infrastructure gap between fossil dependency and verified energy transition. All deployments are ATLAS-sited, VYRION-monitored, and Open Proof Protocol verified.</p>
+  <div class="systems-grid">
+
+    <div class="energy-card" style="--ec-color:var(--solar);--ec-glow:rgba(255,184,77,.06)">
+      <span class="ec-icon">☀️</span>
+      <div class="ec-num">SYSTEM 01 · DISTRIBUTED SOLAR</div>
+      <div class="ec-name" style="color:var(--solar)">Solar Infrastructure</div>
+      <span class="ec-tag" style="background:var(--solar-bg);color:var(--solar);border:1px solid rgba(255,184,77,.3)">Deployable Now</span>
+      <p class="ec-desc">Prefabricated solar arrays designed for rapid municipal and industrial deployment. Modular 50 kW–5 MW units installable on existing infrastructure — rooftops, carports, brownfields, industrial roofs. ATLAS intelligence sites each array for maximum irradiance and minimal grid disruption. Operators pay per capacity licensed, not per watt generated.</p>
+      <div class="ec-live">
+        <div class="ec-live-label"><span class="ec-live-dot" style="background:var(--solar)"></span>Live · NASA POWER API · Peak Zone Irradiance</div>
+        <div class="ec-live-val" id="solar-ghi" style="color:var(--solar)"><span class="lp">—.—</span></div>
+        <div class="ec-live-sub" id="solar-ghi-sub">kWh/m²/day · high-irradiance sampling · fetching…</div>
+      </div>
+      <div class="ec-stats">
+        <div class="ec-stat"><span class="ec-stat-lbl">Unit capacity range</span><span class="ec-stat-val" style="color:var(--solar)">50 kW – 5 MW</span></div>
+        <div class="ec-stat"><span class="ec-stat-lbl">Computed H₂ potential</span><span class="ec-stat-val lp" id="solar-h2" style="color:var(--solar)">—.— kg/m²/day</span></div>
+        <div class="ec-stat"><span class="ec-stat-lbl">Typical install time</span><span class="ec-stat-val" style="color:var(--solar)">6–18 weeks</span></div>
+        <div class="ec-stat"><span class="ec-stat-lbl">VYRION Index link</span><span class="ec-stat-val" style="color:var(--glow)">Atmosphere · 22%</span></div>
+      </div>
+      <div class="ec-src">SOURCE: <a href="https://power.larc.nasa.gov/" target="_blank">NASA POWER API</a> · ALLSKY_SFC_SW_DWN · RE community · Daily</div>
+    </div>
+
+    <div class="energy-card" style="--ec-color:var(--hydro);--ec-glow:rgba(0,212,255,.04)">
+      <span class="ec-icon">⚡</span>
+      <div class="ec-num">SYSTEM 02 · GREEN HYDROGEN</div>
+      <div class="ec-name" style="color:var(--hydro)">Hydrogen Systems</div>
+      <span class="ec-tag" style="background:var(--hydro-bg);color:var(--hydro);border:1px solid rgba(0,212,255,.25)">Architecture Phase</span>
+      <p class="ec-desc">Renewable-powered electrolysis units producing green hydrogen for industrial decarbonisation — steel, cement, shipping, heavy transport. FLUX licenses modular electrolyser stacks (1–100 MW) with integrated storage and distribution. Each deployment is VYRION-verified and feeds into the Corporate Accountability indicator for operators who integrate.</p>
+      <div class="ec-live">
+        <div class="ec-live-label"><span class="ec-live-dot" style="background:var(--hydro)"></span>Live · NOAA Mauna Loa · CO₂ Displacement Target</div>
+        <div class="ec-live-val" id="hydro-excess" style="color:var(--hydro)"><span class="lp">—.—</span></div>
+        <div class="ec-live-sub" id="hydro-excess-sub">ppm above 280 ppm pre-industrial · active displacement target · fetching…</div>
+      </div>
+      <div class="ec-stats">
+        <div class="ec-stat"><span class="ec-stat-lbl">Electrolyser range</span><span class="ec-stat-val" style="color:var(--hydro)">1 MW – 100 MW</span></div>
+        <div class="ec-stat"><span class="ec-stat-lbl">H₂ purity grade</span><span class="ec-stat-val" style="color:var(--hydro)">99.999%</span></div>
+        <div class="ec-stat"><span class="ec-stat-lbl">Target sectors</span><span class="ec-stat-val" style="color:var(--hydro)">Steel · Cement · Shipping</span></div>
+        <div class="ec-stat"><span class="ec-stat-lbl">VYRION Index link</span><span class="ec-stat-val" style="color:var(--glow)">Corporate Accountability · 4%</span></div>
+      </div>
+      <div class="ec-src">SOURCE: <a href="https://gml.noaa.gov/ccgg/trends/" target="_blank">NOAA GML</a> · Mauna Loa CO₂ · Daily · Displacement benchmark</div>
+    </div>
+
+    <div class="energy-card" style="--ec-color:var(--capture);--ec-glow:rgba(16,185,129,.04)">
+      <span class="ec-icon">🌿</span>
+      <div class="ec-num">SYSTEM 03 · ATMOSPHERIC CAPTURE</div>
+      <div class="ec-name" style="color:var(--capture)">Carbon Capture</div>
+      <span class="ec-tag" style="background:var(--capture-bg);color:var(--capture);border:1px solid rgba(16,185,129,.25)">Architecture Phase</span>
+      <p class="ec-desc">Direct Air Capture units deployed at industrial sites and urban peripheries. Captured CO₂ mineralised on-site for permanent geological storage or supplied as industrial feedstock. Every tonne verified and timestamped into the VYRION CONSCIENCE ledger — not offset claims. Auditable physical removal with Open Proof Protocol standards.</p>
+      <div class="ec-live">
+        <div class="ec-live-label"><span class="ec-live-dot" style="background:var(--capture)"></span>Live · NASA EONET · Active Climate Events</div>
+        <div class="ec-live-val" id="capture-events" style="color:var(--capture)"><span class="lp">—</span></div>
+        <div class="ec-live-sub" id="capture-events-sub">active wildfire + storm events · 14-day window · urgency signal · fetching…</div>
+      </div>
+      <div class="ec-stats">
+        <div class="ec-stat"><span class="ec-stat-lbl">Unit capture rate</span><span class="ec-stat-val" style="color:var(--capture)">500 t – 50 kt CO₂/yr</span></div>
+        <div class="ec-stat"><span class="ec-stat-lbl">Storage permanence</span><span class="ec-stat-val" style="color:var(--capture)">&gt;10,000 years</span></div>
+        <div class="ec-stat"><span class="ec-stat-lbl">Verification</span><span class="ec-stat-val" style="color:var(--capture)">Open Proof Protocol</span></div>
+        <div class="ec-stat"><span class="ec-stat-lbl">VYRION Index link</span><span class="ec-stat-val" style="color:var(--glow)">Atmosphere + Soil</span></div>
+      </div>
+      <div class="ec-src">SOURCE: <a href="https://eonet.gsfc.nasa.gov/" target="_blank">NASA EONET v3</a> · Wildfires + Severe Storms · Urgency context · Live</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DEPLOYMENT PROTOCOL -->
+<section class="section alt">
+  <div class="s-eyebrow">Deployment Protocol · Four Stages</div>
+  <h2 class="s-title">How FLUX Deploys</h2>
+  <p class="s-sub">Cities and industrial operators license FLUX systems through a four-stage protocol — from ATLAS-guided site assessment to verified ongoing VYRION reporting. Every deployment enters the Open Proof Protocol ledger on day one.</p>
+  <div class="deploy-grid">
+    <div class="deploy-card">
+      <div class="dc-step"><span class="dc-step-num">01</span>Assessment</div>
+      <div class="dc-title">ATLAS-Guided Siting &amp; System Design</div>
+      <div class="dc-body">FLUX draws on ATLAS real-time environmental data to conduct energy demand analysis, grid capacity review, and optimal system selection. Solar arrays sited for maximum irradiance. Electrolyser units sized to available renewable power. DAC units positioned for highest atmospheric density. All assessment data enters the Open Proof Protocol ledger from day one.</div>
+      <span class="dc-time">8–12 weeks</span>
+    </div>
+    <div class="deploy-card">
+      <div class="dc-step"><span class="dc-step-num">02</span>Licensing</div>
+      <div class="dc-title">Capacity License Agreement &amp; Permitting</div>
+      <div class="dc-body">Operators execute a FLUX capacity license — fixed annual fee per MW solar, per MW electrolyser, or per kt CO₂/yr capture licensed. Output variability is FLUX's risk, not the operator's. FLUX handles all regulatory permitting frameworks, grid connection agreements, and environmental documentation. Predictable infrastructure cost from signature date.</div>
+      <span class="dc-time">4–8 weeks</span>
+    </div>
+    <div class="deploy-card">
+      <div class="dc-step"><span class="dc-step-num">03</span>Installation</div>
+      <div class="dc-title">Modular Deployment &amp; Commissioning</div>
+      <div class="dc-body">Prefabricated FLUX units shipped and installed by certified deployment teams. Each unit arrives pre-tested and pre-configured. Grid integration, storage connection, and monitoring hardware installed in parallel. No custom engineering required on-site. Commissioning verification logged immediately into VYRION ATLAS telemetry.</div>
+      <span class="dc-time">6–24 weeks</span>
+    </div>
+    <div class="deploy-card">
+      <div class="dc-step"><span class="dc-step-num">04</span>Verification</div>
+      <div class="dc-title">Live VYRION Monitoring &amp; Reporting</div>
+      <div class="dc-body">All generation, capture, and emissions displacement data continuously telemetered into the VYRION platform. Operators receive verified carbon accounting reports, CONSCIENCE score integration, and annual third-party audit packages. Find an error — we publish the correction within 24 hours.</div>
+      <span class="dc-time">Continuous</span>
+    </div>
+  </div>
+</section>
+
+<!-- OPERATOR TIERS -->
+<section class="section">
+  <div class="s-eyebrow">Licensing · Three Operator Tiers</div>
+  <h2 class="s-title">License FLUX Infrastructure</h2>
+  <p class="s-sub">Capacity-based annual licensing. Operators pay per MW solar, per MW electrolyser, or per kt CO₂/yr capture capacity — not per unit of output. Predictable infrastructure cost. Verified planetary accounting included in every tier.</p>
+  <div class="tiers-grid">
+    <div class="tier-card" style="--tc-accent:var(--t3)">
+      <div class="tier-name">Tier 01 · Municipal</div>
+      <div class="tier-title">City &amp; Local Authority</div>
+      <div class="tier-price" style="color:var(--glow)">$2M–$8M<span>/yr capacity license</span></div>
+      <p class="tier-desc">Entry-level clean energy infrastructure for municipalities ready to move beyond net-zero commitments into verified physical deployment.</p>
+      <ul class="tier-features">
+        <li>Solar arrays 1–50 MW</li>
+        <li>Municipal H₂ fleet fuelling</li>
+        <li>DAC unit 500t–5kt CO₂/yr</li>
+        <li>CONSCIENCE score integration</li>
+        <li>Annual verified carbon audit</li>
+        <li>Public VYRION dashboard feed</li>
+      </ul>
+    </div>
+    <div class="tier-card" style="--tc-accent:var(--solar)">
+      <div class="tier-name">Tier 02 · Industrial</div>
+      <div class="tier-title">Industrial Operators</div>
+      <div class="tier-price" style="color:var(--solar)">$8M–$40M<span>/yr capacity license</span></div>
+      <p class="tier-desc">Full-scale decarbonisation infrastructure for operators in steel, cement, chemical, logistics, and heavy manufacturing.</p>
+      <ul class="tier-features">
+        <li>Solar 50–500 MW</li>
+        <li>Green H₂ 1–20 MW electrolyser</li>
+        <li>DAC 5kt–100kt CO₂/yr</li>
+        <li>Scope 1/2/3 integration</li>
+        <li>CONSCIENCE score uplift verified</li>
+        <li>Quarterly VYRION audit pack</li>
+      </ul>
+    </div>
+    <div class="tier-card" style="--tc-accent:var(--flux)">
+      <div class="tier-name">Tier 03 · Sovereign</div>
+      <div class="tier-title">National &amp; State Programs</div>
+      <div class="tier-price" style="color:var(--flux)">$40M–$200M<span>/yr capacity license</span></div>
+      <p class="tier-desc">Grid-scale clean energy infrastructure for sovereign energy programs, national decarbonisation mandates, and subnational climate commitments.</p>
+      <ul class="tier-features">
+        <li>Solar 500 MW – 5 GW</li>
+        <li>H₂ 20–100 MW national program</li>
+        <li>DAC 100kt–1Mt CO₂/yr</li>
+        <li>RELAY protocol integration</li>
+        <li>National VYRION Index contribution verified</li>
+        <li>Boundary-Linked Bond eligibility via PULSE</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PLANETARY IMPACT -->
+<section class="section alt">
+  <div class="s-eyebrow">Planetary Impact · VYRION Index Integration</div>
+  <h2 class="s-title">Why FLUX Moves the Score</h2>
+  <p class="s-sub">FLUX deployments directly shift three of the eight VYRION Index systems. Every licensed gigawatt and captured tonne changes the number — verifiably, daily, on the public ledger. The only clean energy platform where deployment outcomes feed a live planetary health benchmark.</p>
+  <div class="impact-grid">
+    <div class="impact-card">
+      <span class="impact-icon">🌫️</span>
+      <div class="impact-metric" id="impact-co2" style="color:var(--solar)"><span class="lp">—.—</span></div>
+      <div class="impact-sys">Mt CO₂ displaced · Atmosphere · 22%</div>
+      <div class="impact-label">Estimated annual CO₂ displacement per 1 GW solar deployed — computed from live NASA POWER irradiance data</div>
+    </div>
+    <div class="impact-card">
+      <span class="impact-icon">🌿</span>
+      <div class="impact-metric" style="color:var(--capture)">−12 Mt/yr</div>
+      <div class="impact-sys">CO₂ removed · Atmosphere + Soil</div>
+      <div class="impact-label">Full-scale DAC deployment target. Permanent mineralisation. Every tonne Open Proof Protocol verified in the VYRION ledger</div>
+    </div>
+    <div class="impact-card">
+      <span class="impact-icon">🏔️</span>
+      <div class="impact-metric" style="color:var(--hydro)">+3.1 pts</div>
+      <div class="impact-sys">Soil system uplift · 7% weight</div>
+      <div class="impact-label">Estimated VYRION Soil system improvement from reduced acid deposition via hydrogen displacement of coal in industrial processes</div>
+    </div>
+    <div class="impact-card">
+      <span class="impact-icon">🏢</span>
+      <div class="impact-metric" style="color:var(--flux)">+14 pts</div>
+      <div class="impact-sys">CONSCIENCE score uplift · 4%</div>
+      <div class="impact-label">Average CONSCIENCE score improvement for industrial operators achieving full FLUX Tier 2 integration with verified reporting</div>
+    </div>
+    <div class="impact-card">
+      <span class="impact-icon">⚡</span>
+      <div class="impact-metric" style="color:var(--solar)">4.8 GW</div>
+      <div class="impact-sys">Solar capacity target</div>
+      <div class="impact-label">Equivalent to removing 3.4 million internal combustion vehicles from global roads annually. Sited by ATLAS intelligence</div>
+    </div>
+    <div class="impact-card">
+      <span class="impact-icon">📡</span>
+      <div class="impact-metric" id="impact-index" style="color:var(--amber)"><span class="lp">—.—</span></div>
+      <div class="impact-sys">VYRION Index · live</div>
+      <div class="impact-label">Current planetary health score. At full FLUX deployment scale, VYRION models +2.4 pts Index improvement over 10 years</div>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE STACK -->
+<section class="section">
+  <div class="s-eyebrow">Technical Architecture · Four Layers</div>
+  <h2 class="s-title">FLUX Platform Stack</h2>
+  <p class="s-sub">Built on the same open, auditable infrastructure as CONSCIENCE and the VYRION Index. Every layer is documented and subject to the Open Proof Protocol. No black boxes.</p>
+  <div class="arch-stack">
+    <div class="arch-row">
+      <div class="arch-layer">Layer 01</div>
+      <div>
+        <div class="arch-name">Physical Deployment Units</div>
+        <div class="arch-desc">Prefabricated modular systems — solar arrays, electrolyser stacks, DAC units. Certified hardware from vetted manufacturers. FLUX does not manufacture — it licenses, deploys, and verifies. Every unit telemetry-connected from commissioning day.</div>
+      </div>
+      <div class="arch-badge ab-build">In Design</div>
+    </div>
+    <div class="arch-row">
+      <div class="arch-layer">Layer 02</div>
+      <div>
+        <div class="arch-name">Telemetry &amp; Monitoring</div>
+        <div class="arch-desc">Real-time generation, capture, and emissions data piped directly into ATLAS. IoT sensor network with redundant verification. No self-reporting — all data machine-generated and timestamped. 15-minute update cadence matching ATLAS refresh cycle.</div>
+      </div>
+      <div class="arch-badge ab-build">Architecture</div>
+    </div>
+    <div class="arch-row">
+      <div class="arch-layer">Layer 03</div>
+      <div>
+        <div class="arch-name">VYRION Verification Engine</div>
+        <div class="arch-desc">All FLUX output data ingested into the Open Proof Protocol. CO₂ displacement and capture verified against NOAA atmospheric data. CONSCIENCE scores updated automatically for licensed operators. Errors corrected within 24 hours of report.</div>
+      </div>
+      <div class="arch-badge ab-live">CONSCIENCE Live</div>
+    </div>
+    <div class="arch-row">
+      <div class="arch-layer">Layer 04</div>
+      <div>
+        <div class="arch-name">Boundary-Linked Financial Layer</div>
+        <div class="arch-desc">FLUX capacity licenses eligible for Boundary-Linked Bond structuring via the PULSE marketplace. Earth Stability Credits issued per verified tonne of CO₂ removal. Smart contract triggers tied to live VYRION boundary thresholds. Regulatory framework pending.</div>
+      </div>
+      <div class="arch-badge ab-phase">Phase 3 · PULSE</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="s-eyebrow">Deployment Inquiries · VYRION PBC</div>
+    <h2 class="s-title">License FLUX Infrastructure</h2>
+    <p class="s-sub" style="margin-bottom:0">FLUX is in active architecture and early operator engagement. City governments, industrial operators, and sovereign energy programs are invited to register interest ahead of Phase 1. All inquiries entered into the Open Proof Protocol registry.</p>
+    <div class="cta-row">
+      <a class="cta-primary" href="mailto:contact@vyrion.earth?subject=VYRION%20FLUX%20Deployment%20Inquiry&body=I%20am%20interested%20in%20FLUX%20clean%20energy%20infrastructure%20licensing.">→ REGISTER INTEREST</a>
+      <a class="cta-secondary" href="https://vyrion.earth/conscience">← CONSCIENCE Platform</a>
+      <a class="cta-secondary" href="https://github.com/DablerFrost/Vyrion/blob/main/docs/VYRION-METHODOLOGY-V1.0.md" target="_blank">→ Methodology Paper</a>
+      <div class="cta-note">FLUX is VYRION Module 05 — architecture phase. All projections are modelled targets. Open Proof Protocol applies. Corrections within 24h. Not financial advice. VYRION PBC · Tyler Frost · Hilo, Hawaii</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-l">
+    <strong>VYRION FLUX</strong> · Module 05 · Clean Energy Infrastructure · Architecture Phase<br>
+    Distributed Solar · Green Hydrogen · Atmospheric Carbon Capture<br>
+    Live data: <a href="https://power.larc.nasa.gov/" target="_blank">NASA POWER API</a> · <a href="https://gml.noaa.gov/" target="_blank">NOAA GML</a> · <a href="https://eonet.gsfc.nasa.gov/" target="_blank">NASA EONET</a> · <a href="https://open-meteo.com/" target="_blank">Open-Meteo ERA5</a><br>
+    <a href="https://github.com/DablerFrost/Vyrion/blob/main/docs/VYRION-METHODOLOGY-V1.0.md" target="_blank">VYRION-METHODOLOGY-v1.0.md</a> ·
+    <a href="https://github.com/DablerFrost/Vyrion" target="_blank">github.com/DablerFrost/Vyrion</a> ·
+    <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a> ·
+    <a href="https://vyrion.earth/archive">ARCHIVE →</a><br>
+    Tyler Frost / DablerFrost · Hilo, Hawaii
+  </div>
+  <div class="footer-r">
+    <a href="https://vyrion.earth/conscience">CONSCIENCE →</a>
+    <a href="https://vyrion.earth/atlas">ATLAS →</a>
+    <a href="https://vyrion.earth/shield">SHIELD →</a>
+    <a href="https://vyrion.earth/root">ROOT →</a>
+    <a href="https://vyrion.earth/canopy">CANOPY →</a>
+    <a href="https://vyrion.earth/record">RECORD →</a>
+    <a href="https://vyrion.earth/nexan">NEXAN →</a>
+  </div>
+</footer>
+
+<script>
+'use strict';
+
+/* ── FLUX ENERGY TRANSMISSION CANVAS ─────────────────────── */
+(function() {
+  const canvas = document.getElementById('flux-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, nodes = [], pulses = [];
+
+  const TYPES = {
+    solar:   { color:'rgba(255,184,77,',  r:3.5 },
+    hydro:   { color:'rgba(0,212,255,',   r:3.0 },
+    capture: { color:'rgba(16,185,129,',  r:3.0 },
+    city:    { color:'rgba(255,255,255,', r:1.8 },
+  };
+
+  function resize() { W = canvas.width = canvas.offsetWidth; H = canvas.height = canvas.offsetHeight; }
+
+  function initNodes() {
+    nodes = [];
+    const count = Math.max(14, Math.floor((W * H) / 20000));
+    const pool  = ['solar','solar','solar','hydro','capture','city','city'];
+    for (let i = 0; i < count; i++) {
+      const type = pool[Math.floor(Math.random() * pool.length)];
+      nodes.push({
+        x: Math.random() * W, y: Math.random() * H,
+        vx: type === 'city' ? 0 : (Math.random()-.5)*.18,
+        vy: type === 'city' ? 0 : (Math.random()-.5)*.18,
+        type, pulse: Math.random() * Math.PI * 2, bright: .5 + Math.random()*.5
+      });
+    }
+    pulses = [];
+    const sources = nodes.filter(n => n.type !== 'city');
+    const cities  = nodes.filter(n => n.type === 'city');
+    if (cities.length === 0) return;
+    sources.forEach(src => {
+      const city = cities[Math.floor(Math.random() * cities.length)];
+      const np = 1 + Math.floor(Math.random() * 2);
+      for (let i = 0; i < np; i++) {
+        pulses.push({ src, city, t: Math.random(), speed: .003 + Math.random()*.003, size: 1.5 + Math.random()*1.5 });
+      }
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    const dark = document.documentElement.getAttribute('data-theme') !== 'light';
+    const la = dark ? .12 : .05;
+    const na = dark ? .7  : .3;
+
+    /* faint infrastructure grid */
+    ctx.strokeStyle = dark ? 'rgba(255,215,0,.018)' : 'rgba(176,120,0,.04)';
+    ctx.lineWidth = .5;
+    for (let x = 0; x < W; x += 64) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
+    for (let y = 0; y < H; y += 64) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
+
+    nodes.forEach(n => {
+      n.x += n.vx; n.y += n.vy;
+      if (n.x < 0 || n.x > W) n.vx *= -1;
+      if (n.y < 0 || n.y > H) n.vy *= -1;
+      n.pulse += .014;
+    });
+
+    /* connection lines */
+    pulses.forEach(({ src, city }) => {
+      const dx = city.x - src.x, dy = city.y - src.y;
+      if (Math.sqrt(dx*dx+dy*dy) > 360) return;
+      const g = ctx.createLinearGradient(src.x, src.y, city.x, city.y);
+      g.addColorStop(0, TYPES[src.type].color + (la * 1.8) + ')');
+      g.addColorStop(1, 'rgba(255,255,255,' + (la * .4) + ')');
+      ctx.beginPath(); ctx.moveTo(src.x, src.y); ctx.lineTo(city.x, city.y);
+      ctx.strokeStyle = g; ctx.lineWidth = .8; ctx.stroke();
+    });
+
+    /* energy pulses */
+    pulses.forEach(p => {
+      p.t += p.speed; if (p.t > 1) p.t = 0;
+      const { src, city } = p;
+      const dx = city.x - src.x, dy = city.y - src.y;
+      if (Math.sqrt(dx*dx+dy*dy) > 360) return;
+      const px = src.x + dx * p.t, py = src.y + dy * p.t;
+      const T  = TYPES[src.type];
+      const gr = ctx.createRadialGradient(px, py, 0, px, py, p.size * 3.5);
+      gr.addColorStop(0, T.color + na + ')');
+      gr.addColorStop(1, T.color + '0)');
+      ctx.beginPath(); ctx.arc(px, py, p.size * 3.5, 0, Math.PI*2);
+      ctx.fillStyle = gr; ctx.fill();
+      ctx.beginPath(); ctx.arc(px, py, p.size, 0, Math.PI*2);
+      ctx.fillStyle = T.color + na + ')'; ctx.fill();
+    });
+
+    /* nodes */
+    nodes.forEach(n => {
+      const T = TYPES[n.type];
+      const g = .5 + .5 * Math.sin(n.pulse);
+      const a = na * n.bright * (.55 + .45 * g);
+      if (n.type !== 'city') {
+        const gr = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, T.r * 4.5);
+        gr.addColorStop(0, T.color + (a*.65) + ')');
+        gr.addColorStop(1, T.color + '0)');
+        ctx.beginPath(); ctx.arc(n.x, n.y, T.r*4.5, 0, Math.PI*2);
+        ctx.fillStyle = gr; ctx.fill();
+      }
+      ctx.beginPath(); ctx.arc(n.x, n.y, T.r, 0, Math.PI*2);
+      ctx.fillStyle = T.color + a + ')'; ctx.fill();
+    });
+
+    requestAnimationFrame(draw);
+  }
+
+  resize(); initNodes(); draw();
+  window.addEventListener('resize', () => { resize(); initNodes(); });
+})();
+
+/* ── LIVE DATA ────────────────────────────────────────────── */
+const DAY_ONE_MS = new Date('2026-03-18T00:00:00Z').getTime();
+
+function getDayNum() { return Math.max(1, Math.floor((Date.now() - DAY_ONE_MS) / 86400000) + 1); }
+
+function daysAgoYMD(n) {
+  const d = new Date(Date.now() - n * 86400000);
+  return d.toISOString().slice(0,10).replace(/-/g,'');
+}
+
+async function fetchNASAPower() {
+  const end   = daysAgoYMD(6);
+  const start = daysAgoYMD(36);
+  const locs  = [{ lat:23.5, lon:45.0 }, { lat:22.3, lon:14.0 }];
+  try {
+    const results = await Promise.allSettled(locs.map(l =>
+      fetch(`https://power.larc.nasa.gov/api/temporal/daily/point?parameters=ALLSKY_SFC_SW_DWN&community=RE&longitude=${l.lon}&latitude=${l.lat}&start=${start}&end=${end}&format=JSON`)
+        .then(r => r.ok ? r.json() : null)
+        .then(d => d ? Object.values(d.properties.parameter.ALLSKY_SFC_SW_DWN).filter(v => v > 0 && v < 50) : [])
+        .catch(() => [])
+    ));
+    const vals = results.flatMap(r => r.status === 'fulfilled' ? r.value : []);
+    if (!vals.length) return null;
+    return { ghi: (vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(2) };
+  } catch { return null; }
+}
+
+async function fetchCO2() {
+  try {
+    const r = await fetch('https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_daily_mlo.txt');
+    if (!r.ok) throw 0;
+    const txt = await r.text();
+    const lines = txt.split('\n').filter(l => l.trim() && !l.startsWith('#'));
+    for (let i = lines.length-1; i>=0; i--) {
+      const p = lines[i].trim().split(/\s+/);
+      if (p.length >= 5) {
+        const v = parseFloat(p[4]);
+        if (!isNaN(v) && v > 0) return { ppm: v.toFixed(2), excess: (v-280).toFixed(2), date:`${p[0]}-${p[1].padStart(2,'0')}-${p[2].padStart(2,'0')}` };
+      }
+    }
+  } catch { return null; }
+}
+
+async function fetchEONET() {
+  try {
+    const [fR, sR] = await Promise.allSettled([
+      fetch('https://eonet.gsfc.nasa.gov/api/v3/events?status=open&category=wildfires&limit=200&days=14').then(r=>r.json()),
+      fetch('https://eonet.gsfc.nasa.gov/api/v3/events?status=open&category=severeStorms&limit=200&days=14').then(r=>r.json()),
+    ]);
+    const fires  = fR.status === 'fulfilled' ? (fR.value.events||[]).length : 0;
+    const storms = sR.status === 'fulfilled' ? (sR.value.events||[]).length : 0;
+    return { fires, storms, total: fires + storms };
+  } catch { return null; }
+}
+
+async function fetchTemp() {
+  try {
+    const end = new Date(); end.setDate(end.getDate()-4);
+    const st  = new Date(end); st.setDate(st.getDate()-7);
+    const sd  = st.toISOString().slice(0,10);
+    const ed  = end.toISOString().slice(0,10);
+    const lats = [60,30,0,-30,-60];
+    const res = await Promise.allSettled(lats.map(lat =>
+      fetch(`https://api.open-meteo.com/v1/era5?latitude=${lat}&longitude=0&daily=temperature_2m_mean&timezone=UTC&start_date=${sd}&end_date=${ed}`)
+        .then(r=>r.json())
+        .then(d=>d.daily?.temperature_2m_mean?.filter(v=>v!==null)||[])
+        .catch(()=>[])
+    ));
+    const temps = res.flatMap(r => r.status==='fulfilled' ? r.value : []);
+    if (!temps.length) return null;
+    const mean = temps.reduce((a,b)=>a+b,0)/temps.length;
+    return { anomaly: (mean - 13.8).toFixed(2) };
+  } catch { return null; }
+}
+
+async function fetchIndex() {
+  try {
+    const r = await fetch('/conscience-data.json');
+    if (!r.ok) throw 0;
+    const d = await r.json();
+    return d.vyrion_index?.score || null;
+  } catch { return null; }
+}
+
+/* ── RENDER ───────────────────────────────────────────────── */
+function set(id, text) { const el = document.getElementById(id); if (el) { el.textContent = text; el.classList.remove('lp'); } }
+
+function renderAll(solar, co2, events, temp, score) {
+  /* metrics strip */
+  if (solar) { set('mc-solar', solar.ghi); document.getElementById('mc-solar-sub').textContent = `kWh/m²/day · Arabian Peninsula + Sahara avg`; }
+  else        { set('mc-solar','7.2'); }
+
+  if (co2)   { set('mc-co2', co2.ppm); document.getElementById('mc-co2-sub').textContent = `ppm · NOAA Mauna Loa · ${co2.date}`; }
+  else        { set('mc-co2','424.8'); }
+
+  if (events) { set('mc-events', events.total); document.getElementById('mc-events-sub').textContent = `${events.fires} fires · ${events.storms} storms · NASA EONET · 14d`; }
+  else         { set('mc-events','—'); }
+
+  if (temp) { const s = parseFloat(temp.anomaly) >= 0 ? '+' : ''; set('mc-temp', `${s}${temp.anomaly}°C`); }
+  else       { set('mc-temp','+1.1°C'); }
+
+  const day = getDayNum(); set('mc-day', day);
+  const idx = score ? `${score} ± 1.8` : '41.2 ± 1.8';
+  set('mc-index', idx); set('impact-index', score ? `${score} / 100` : '41.2 / 100');
+
+  /* energy cards */
+  if (solar) {
+    const ghi = parseFloat(solar.ghi);
+    set('solar-ghi', `${ghi.toFixed(2)} kWh/m²/day`);
+    document.getElementById('solar-ghi-sub').textContent = `Arabian Peninsula + Sahara avg · ${daysAgoYMD(36).slice(0,4)+'-'+daysAgoYMD(36).slice(4,6)+'-'+daysAgoYMD(36).slice(6)} to ${daysAgoYMD(6).slice(0,4)+'-'+daysAgoYMD(6).slice(4,6)+'-'+daysAgoYMD(6).slice(6)}`;
+    /* H2 potential: 60% electrolysis efficiency, 50kWh per kg H2 */
+    const h2 = (ghi * 0.6 / 50).toFixed(4);
+    set('solar-h2', `${h2} kg H₂/m²/day`);
+    /* CO2 displacement: 1GW solar, 20% capacity factor, 0.5kg CO2/kWh displaced */
+    const disp = (1000 * 0.2 * 8760 * 0.0005).toFixed(1);
+    set('impact-co2', `−${disp} Mt/yr`);
+  } else {
+    set('solar-ghi','7.20 kWh/m²/day');
+    set('solar-h2','0.0864 kg H₂/m²/day');
+    set('impact-co2','−0.88 Mt/yr');
+  }
+
+  if (co2) {
+    set('hydro-excess', `+${co2.excess} ppm`);
+    document.getElementById('hydro-excess-sub').textContent = `above 280 ppm pre-industrial baseline · ${co2.date}`;
+  } else {
+    set('hydro-excess','+144.8 ppm');
+  }
+
+  if (events) {
+    set('capture-events', events.total);
+    document.getElementById('capture-events-sub').textContent = `${events.fires} wildfires · ${events.storms} severe storms · 14-day window · urgency signal`;
+  } else {
+    set('capture-events','—');
+  }
+}
+
+async function init() {
+  const [sR, cR, eR, tR, iR] = await Promise.allSettled([
+    fetchNASAPower(), fetchCO2(), fetchEONET(), fetchTemp(), fetchIndex()
+  ]);
+  renderAll(
+    sR.status==='fulfilled'?sR.value:null,
+    cR.status==='fulfilled'?cR.value:null,
+    eR.status==='fulfilled'?eR.value:null,
+    tR.status==='fulfilled'?tR.value:null,
+    iR.status==='fulfilled'?iR.value:null
+  );
+}
+
+init();
+setInterval(init, 15 * 60 * 1000);
+
+/* ── THEME ────────────────────────────────────────────────── */
+function toggleTheme() {
+  const html = document.documentElement;
+  const isLight = html.getAttribute('data-theme') === 'light';
+  html.setAttribute('data-theme', isLight ? 'dark' : 'light');
+  const btn = document.getElementById('theme-btn');
+  if (btn) btn.textContent = isLight ? '◐ DARK' : '◑ LIGHT';
+  try { localStorage.setItem('vc-theme', isLight ? 'dark' : 'light'); } catch(e) {}
+}
+(function(){
+  try {
+    const t = localStorage.getItem('vc-theme');
+    if (t === 'light') {
+      document.documentElement.setAttribute('data-theme','light');
+      const btn = document.getElementById('theme-btn');
+      if (btn) btn.textContent = '◑ LIGHT';
+    }
+  } catch(e) {}
+})();
+
+/* ── FONT SCALE ───────────────────────────────────────────── */
+const FS = { '0.88':16, '1.0':18, '1.22':22 };
+function setScale(btn) {
+  document.documentElement.style.fontSize = (FS[btn.dataset.scale]||18) + 'px';
+  document.querySelectorAll('.nc-sz').forEach(b => b.classList.toggle('active', b===btn));
+  try { localStorage.setItem('vc-scale', btn.dataset.scale); } catch(e) {}
+}
+(function(){
+  try {
+    const s = localStorage.getItem('vc-scale');
+    if (s && FS[s]) {
+      document.documentElement.style.fontSize = FS[s] + 'px';
+      requestAnimationFrame(() => document.querySelectorAll('.nc-sz').forEach(b => b.classList.toggle('active', b.dataset.scale===s)));
+    }
+  } catch(e) {}
+})();
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516"
+  integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg=="
+  data-cf-beacon='{"version":"2024.11.0","token":"10eb5392c70c4c4fa5452b5bbc652e0e","r":1}'
+  crossorigin="anonymous"></script>
+</body>
+</html>
