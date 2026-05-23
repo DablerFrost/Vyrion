@@ -1,9 +1,9 @@
 {
   "meta": {
-    "generated": "2026-05-21T04:39:53.947Z",
-    "generated_date": "2026-05-21",
+    "generated": "2026-05-23T04:04:25.881Z",
+    "generated_date": "2026-05-23",
     "script_version": "2.0",
-    "runtime_ms": 1092,
+    "runtime_ms": 1195,
     "sources": [
       "NOAA Global Monitoring Laboratory (CO₂) — gml.noaa.gov",
       "NOAA NCEI Global Temperature Anomaly — ncei.noaa.gov",
@@ -19,21 +19,21 @@
       "arctic": false,
       "antarctic": false,
       "wildfire": true,
-      "soilMoisture": true
+      "soilMoisture": false
     }
   },
   "vyrion_index": {
-    "score": 35.6,
+    "score": 35.3,
     "uncertainty": 1.8,
     "min_detectable": 0.5,
-    "dayNumber": 64,
-    "date": "2026-05-21",
+    "dayNumber": 66,
+    "date": "2026-05-23",
     "computed": true,
     "methodology": "https://github.com/DablerFrost/Vyrion/blob/main/docs/VYRION-METHODOLOGY-V1.0.md",
     "formula": "S_final = Σ(W_i × S_i)",
     "components": {
       "atmosphere": {
-        "score": 30.34,
+        "score": 30.25,
         "weight": 0.22,
         "note": "A1 CO₂ live · A2-A6 last-known"
       },
@@ -48,7 +48,7 @@
         "note": "C1+C2 ice extents live · C3-C6 last-known"
       },
       "forest": {
-        "score": 40.93,
+        "score": 38.9,
         "weight": 0.13,
         "note": "F3 wildfire count live · F1,F2,F4-F6 last-known"
       },
@@ -74,15 +74,15 @@
       }
     },
     "indicator_scores": {
-      "A1_co2": 10.83,
-      "F3_wildfire": 44.59,
+      "A1_co2": 10.26,
+      "F3_wildfire": 32.43,
       "W1_soil_moisture": 83.86
     },
     "indicator_status": {
       "A1_co2": {
         "live": true,
-        "value": 431.59,
-        "score": 10.83,
+        "value": 432.55,
+        "score": 10.26,
         "unit": "ppm",
         "source": "NOAA GML"
       },
@@ -103,8 +103,8 @@
       },
       "F3_wildfire": {
         "live": true,
-        "value": 47,
-        "score": 44.59,
+        "value": 56,
+        "score": 32.43,
         "unit": "active events",
         "source": "NASA EONET"
       },
@@ -114,12 +114,9 @@
         "source": "GBIF"
       },
       "W1_soil_moisture": {
-        "live": true,
-        "value": 0.2177,
+        "live": false,
         "score": 83.86,
-        "unit": "m³/m³",
-        "source": "Open-Meteo ERA5",
-        "note": "Proxy for SPEI drought index. Phase 3: SPEI Global Drought Monitor."
+        "note": "Using previous value"
       },
       "S_soil": {
         "live": false,
@@ -136,12 +133,12 @@
   },
   "atmosphere": {
     "co2": {
-      "ppm": 431.59,
-      "date": "2026-05-18",
-      "score_A1": 10.83,
+      "ppm": 432.55,
+      "date": "2026-05-21",
+      "score_A1": 10.26,
       "source": "NOAA Global Monitoring Laboratory — Mauna Loa Observatory",
       "url": "https://gml.noaa.gov/ccgg/trends/",
-      "retrieved": "2026-05-21T04:39:53.947Z"
+      "retrieved": "2026-05-23T04:04:25.881Z"
     },
     "global_temp_anomaly": null
   },
@@ -151,18 +148,18 @@
   },
   "forest": {
     "wildfire": {
-      "count": 47,
-      "score": 44.59,
+      "count": 56,
+      "score": 32.43,
       "sample": [
-        "Kress Wildfire, Swisher, Texas",
-        "Sailor Cap Wildfire, Owyhee, Idaho",
-        "SANDY Wildfire, Ventura, California",
-        "RIVER Wildfire, Kern, California",
-        "RX WINN BU 114 Prescribed Fire, Grant, L"
+        "DeSoto BB 8374 S RX Prescribed Fire, Har",
+        "Chickasawhay CPT 451 452 RX Prescribed F",
+        "CADDUGGEN Wildfire, Carteret, North Caro",
+        "Rifle Range Rd Wildfire, Collier, Florid",
+        "Foothill Wildfire, Santa Barbara, Califo"
       ],
       "source": "NASA EONET v3",
       "window": "14 days",
-      "retrieved": "2026-05-21T04:39:53.947Z"
+      "retrieved": "2026-05-23T04:04:25.881Z"
     }
   },
   "freshwater": {
@@ -180,11 +177,11 @@
   },
   "biodiversity": {
     "gbif": {
-      "total_occurrences": 3855132760,
+      "total_occurrences": 3856053642,
       "note": "Reference value — B5 scoring requires historical comparison. Phase 3.",
       "source": "GBIF.org",
       "license": "CC BY 4.0",
-      "retrieved": "2026-05-21T04:39:53.947Z"
+      "retrieved": "2026-05-23T04:04:25.881Z"
     }
   },
   "companies": {
@@ -203,7 +200,7 @@
           "date": "2026-05-04",
           "items": "5.02"
         },
-        "count_8k_90d": 5,
+        "count_8k_90d": 4,
         "recent_8k_items": [
           {
             "date": "2026-05-04",
@@ -220,13 +217,9 @@
           {
             "date": "2026-03-31",
             "items": "8.01,9.01"
-          },
-          {
-            "date": "2026-02-20",
-            "items": "5.02"
           }
         ],
-        "retrieved": "2026-05-21T04:39:53.383Z"
+        "retrieved": "2026-05-23T04:04:25.355Z"
       }
     },
     "bp": {
@@ -243,7 +236,7 @@
         "latest_8k": null,
         "count_8k_90d": 0,
         "recent_8k_items": [],
-        "retrieved": "2026-05-21T04:39:53.402Z"
+        "retrieved": "2026-05-23T04:04:25.338Z"
       }
     },
     "shell": {
@@ -260,7 +253,7 @@
         "latest_8k": null,
         "count_8k_90d": 0,
         "recent_8k_items": [],
-        "retrieved": "2026-05-21T04:39:53.389Z"
+        "retrieved": "2026-05-23T04:04:25.276Z"
       }
     },
     "delta": {
@@ -293,7 +286,7 @@
             "items": "5.02,9.01"
           }
         ],
-        "retrieved": "2026-05-21T04:39:53.472Z"
+        "retrieved": "2026-05-23T04:04:25.481Z"
       }
     },
     "starbucks": {
@@ -334,7 +327,7 @@
             "items": "5.07"
           }
         ],
-        "retrieved": "2026-05-21T04:39:53.344Z"
+        "retrieved": "2026-05-23T04:04:25.281Z"
       }
     },
     "walmart": {
@@ -349,11 +342,15 @@
           "date": "2026-03-13"
         },
         "latest_8k": {
-          "date": "2026-04-30",
-          "items": "8.01,9.01"
+          "date": "2026-05-21",
+          "items": "2.02,9.01"
         },
-        "count_8k_90d": 3,
+        "count_8k_90d": 4,
         "recent_8k_items": [
+          {
+            "date": "2026-05-21",
+            "items": "2.02,9.01"
+          },
           {
             "date": "2026-04-30",
             "items": "8.01,9.01"
@@ -367,7 +364,7 @@
             "items": "8.01"
           }
         ],
-        "retrieved": "2026-05-21T04:39:53.350Z"
+        "retrieved": "2026-05-23T04:04:25.337Z"
       }
     },
     "meta": {
@@ -400,7 +397,7 @@
             "items": "5.02"
           }
         ],
-        "retrieved": "2026-05-21T04:39:53.355Z"
+        "retrieved": "2026-05-23T04:04:25.279Z"
       }
     },
     "amazon": {
@@ -415,11 +412,15 @@
           "date": "2026-02-06"
         },
         "latest_8k": {
-          "date": "2026-04-29",
-          "items": "2.02,9.01"
+          "date": "2026-05-22",
+          "items": "5.07"
         },
-        "count_8k_90d": 6,
+        "count_8k_90d": 7,
         "recent_8k_items": [
+          {
+            "date": "2026-05-22",
+            "items": "5.07"
+          },
           {
             "date": "2026-04-29",
             "items": "2.02,9.01"
@@ -435,13 +436,9 @@
           {
             "date": "2026-03-16",
             "items": "8.01,9.01"
-          },
-          {
-            "date": "2026-03-13",
-            "items": "8.01,9.01"
           }
         ],
-        "retrieved": "2026-05-21T04:39:53.340Z"
+        "retrieved": "2026-05-23T04:04:25.359Z"
       }
     },
     "microsoft": {
@@ -470,7 +467,7 @@
             "items": "2.02,9.01"
           }
         ],
-        "retrieved": "2026-05-21T04:39:53.351Z"
+        "retrieved": "2026-05-23T04:04:25.321Z"
       }
     },
     "unilever": {
@@ -509,7 +506,7 @@
             "items": "5.07,9.01"
           }
         ],
-        "retrieved": "2026-05-21T04:39:53.343Z"
+        "retrieved": "2026-05-23T04:04:25.361Z"
       }
     }
   }
