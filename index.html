@@ -115,7 +115,10 @@
         min-height: 100vh;
         overflow-x: hidden;
         transition: background .3s, color .3s;
-        cursor: none;
+      }
+
+      @media(hover:hover) {
+        body { cursor: none; }
       }
 
       /* Ambient atmospheric glow */
@@ -3884,7 +3887,7 @@
           </div>
           <div class="ledger-challenge"> CORS-open · No authentication required · Machine-readable · Updates daily via GitHub Actions <br> "Find the error. We will publish the correction." → <a href="/cdn-cgi/l/email-protection#b2d1dddcc6d3d1c6f2c4cbc0dbdddc9cd7d3c0c6da">
               <span class="__cf_email__" data-cfemail="2a4945445e4b495e6a5c5358434544044f4b585e42">[email&#160;protected]</span>
-            </a> · <a href="https://github.com/DablerFrost/Vyrion/blob/main/docs/CHANGELOG.md" target="_blank">CHANGELOG.md →</a>
+            </a> · <a href="https://github.com/DablerFrost/Vyrion/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener noreferrer">CHANGELOG.md →</a>
           </div>
         </div>
       </section>
@@ -3895,10 +3898,10 @@
           <div class="proof-value">"Architecture without promises."</div>
           <div class="proof-sub"> Every algorithm is open. Every score is source-cited. Every prediction is timestamped before the event. Every correction is published publicly. Radical transparency is the structural defense, not a value statement. </div>
           <div class="proof-links">
-            <a class="proof-link" href="https://github.com/DablerFrost/Vyrion/blob/main/docs/VYRION-METHODOLOGY-V1.0.md" target="_blank">VYRION-METHODOLOGY-v1.0.md</a>
-            <a class="proof-link" href="https://github.com/DablerFrost/Vyrion/blob/main/docs/CONSCIENCE-METHODOLOGY.md" target="_blank">CONSCIENCE-METHODOLOGY.md</a>
-            <a class="proof-link" href="https://github.com/DablerFrost/Vyrion/blob/main/docs/CHANGELOG.md" target="_blank">CHANGELOG.md</a>
-            <a class="proof-link" href="https://github.com/DablerFrost/Vyrion/blob/main/docs/INVESTABLE-DISCLAIMER.md" target="_blank">INVESTABLE-DISCLAIMER.md</a>
+            <a class="proof-link" href="https://github.com/DablerFrost/Vyrion/blob/main/docs/VYRION-METHODOLOGY-V1.0.md" target="_blank" rel="noopener noreferrer">VYRION-METHODOLOGY-v1.0.md</a>
+            <a class="proof-link" href="https://github.com/DablerFrost/Vyrion/blob/main/docs/CONSCIENCE-METHODOLOGY.md" target="_blank" rel="noopener noreferrer">CONSCIENCE-METHODOLOGY.md</a>
+            <a class="proof-link" href="https://github.com/DablerFrost/Vyrion/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener noreferrer">CHANGELOG.md</a>
+            <a class="proof-link" href="https://github.com/DablerFrost/Vyrion/blob/main/docs/INVESTABLE-DISCLAIMER.md" target="_blank" rel="noopener noreferrer">INVESTABLE-DISCLAIMER.md</a>
           </div>
         </div>
         <div class="proof-block">
@@ -3922,9 +3925,9 @@
           <strong>VYRION PBC</strong> · Planetary Accountability Infrastructure · V2.0 · May 2026 <br> Founder: Tyler Frost / DablerFrost · Hilo, Hawaii <br>
           <a href="/cdn-cgi/l/email-protection#365559584257554276404f445f595818535744425e">
             <span class="__cf_email__" data-cfemail="03606c6d7762607743757a716a6c6d2d666271776b">[email&#160;protected]</span>
-          </a> · <a href="https://github.com/DablerFrost/Vyrion" target="_blank">github.com/DablerFrost/Vyrion</a>
+          </a> · <a href="https://github.com/DablerFrost/Vyrion" target="_blank" rel="noopener noreferrer">github.com/DablerFrost/Vyrion</a>
           <br> Not financial advice. Scores are informational outputs derived from public data. <br>
-          <a href="https://github.com/DablerFrost/Vyrion/blob/main/docs/INVESTABLE-DISCLAIMER.md" target="_blank">INVESTABLE-DISCLAIMER.md</a> · <a href="https://github.com/DablerFrost/Vyrion/blob/main/docs/VYRION-LEGAL-DISCLAIMER-v1.0.md" target="_blank">LEGAL-DISCLAIMER.md</a>
+          <a href="https://github.com/DablerFrost/Vyrion/blob/main/docs/INVESTABLE-DISCLAIMER.md" target="_blank" rel="noopener noreferrer">INVESTABLE-DISCLAIMER.md</a> · <a href="https://github.com/DablerFrost/Vyrion/blob/main/docs/VYRION-LEGAL-DISCLAIMER-v1.0.md" target="_blank" rel="noopener noreferrer">LEGAL-DISCLAIMER.md</a>
           <div class="footer-nexan"> A subsidiary of <a href="https://vyrion.earth/nexan">The Nexan Institute</a> · Behavioral infrastructure for human-AI cooperation </div>
         </div>
       </footer>
@@ -4331,8 +4334,13 @@
         })();
         // ── LIVE DATA FETCHES ──────────────────────────────────────────────────
         async function fetchCO2() {
+          // NOAA GML doesn't send CORS headers for browser requests, so we
+          // route through a CORS proxy. Replace the proxy URL with your own
+          // server-side endpoint (e.g. /api/co2) for production use.
+          const NOAA_URL = 'https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_daily_mlo.txt';
+          const PROXY_URL = 'https://corsproxy.io/?' + encodeURIComponent(NOAA_URL);
           try {
-            const r = await fetch('https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_daily_mlo.txt');
+            const r = await fetch(PROXY_URL);
             if (!r.ok) throw new Error();
             const txt = await r.text();
             const lines = txt.split('\n').filter(l => l.trim() && !l.startsWith('#'));
@@ -4412,17 +4420,13 @@
           const CIRC = 427.3; // 2π × 68
           document.getElementById('ring-score').textContent = s.toFixed(1);
           document.getElementById('ring-fill').style.strokeDashoffset = (CIRC * (1 - s / 100)).toFixed(1);
-          document.getElementById('idx-val').innerHTML = `${s.toFixed(1)} 
-																																												
-																																													<span style="font-size:.62rem;color:var(--t3)">± 1.8</span>`;
+          document.getElementById('idx-val').innerHTML = `${s.toFixed(1)} <span style="font-size:.62rem;color:var(--t3)">± 1.8</span>`;
           document.getElementById('hdr-score').textContent = `${s.toFixed(1)} / 100`;
           const day = getDayNumber();
           const date = getDateLabel();
           document.getElementById('idx-sub').textContent = `/ 100 · Day ${day} · ${date}`;
           document.getElementById('hdr-day').textContent = day;
-          document.getElementById('day-label').innerHTML = `Day ${day} · ${date}
-																																												
-																																													<br>Origin: March 18, 2026`;
+          document.getElementById('day-label').innerHTML = `Day ${day} · ${date}<br>Origin: March 18, 2026`;
           // Explainarium score sync
           const xplScore = document.getElementById('xpl-live-score');
           if (xplScore) xplScore.textContent = s.toFixed(1);
@@ -4623,7 +4627,6 @@
         });
       </script>
       <!-- Cloudflare Insights -->
-      <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"10eb5392c70c4c4fa5452b5bbc652e0e","r":1}' crossorigin="anonymous"></script>
       <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"10eb5392c70c4c4fa5452b5bbc652e0e","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
   </body>
 </html>
