@@ -1,9 +1,9 @@
 {
   "meta": {
-    "generated": "2026-05-23T04:04:25.881Z",
-    "generated_date": "2026-05-23",
+    "generated": "2026-05-24T04:24:52.650Z",
+    "generated_date": "2026-05-24",
     "script_version": "2.0",
-    "runtime_ms": 1195,
+    "runtime_ms": 2541,
     "sources": [
       "NOAA Global Monitoring Laboratory (CO₂) — gml.noaa.gov",
       "NOAA NCEI Global Temperature Anomaly — ncei.noaa.gov",
@@ -23,11 +23,11 @@
     }
   },
   "vyrion_index": {
-    "score": 35.3,
+    "score": 35.4,
     "uncertainty": 1.8,
     "min_detectable": 0.5,
-    "dayNumber": 66,
-    "date": "2026-05-23",
+    "dayNumber": 67,
+    "date": "2026-05-24",
     "computed": true,
     "methodology": "https://github.com/DablerFrost/Vyrion/blob/main/docs/VYRION-METHODOLOGY-V1.0.md",
     "formula": "S_final = Σ(W_i × S_i)",
@@ -48,7 +48,7 @@
         "note": "C1+C2 ice extents live · C3-C6 last-known"
       },
       "forest": {
-        "score": 38.9,
+        "score": 39.13,
         "weight": 0.13,
         "note": "F3 wildfire count live · F1,F2,F4-F6 last-known"
       },
@@ -74,15 +74,15 @@
       }
     },
     "indicator_scores": {
-      "A1_co2": 10.26,
-      "F3_wildfire": 32.43,
+      "A1_co2": 10.25,
+      "F3_wildfire": 33.78,
       "W1_soil_moisture": 83.86
     },
     "indicator_status": {
       "A1_co2": {
         "live": true,
-        "value": 432.55,
-        "score": 10.26,
+        "value": 432.58,
+        "score": 10.25,
         "unit": "ppm",
         "source": "NOAA GML"
       },
@@ -103,8 +103,8 @@
       },
       "F3_wildfire": {
         "live": true,
-        "value": 56,
-        "score": 32.43,
+        "value": 55,
+        "score": 33.78,
         "unit": "active events",
         "source": "NASA EONET"
       },
@@ -133,12 +133,12 @@
   },
   "atmosphere": {
     "co2": {
-      "ppm": 432.55,
-      "date": "2026-05-21",
-      "score_A1": 10.26,
+      "ppm": 432.58,
+      "date": "2026-05-22",
+      "score_A1": 10.25,
       "source": "NOAA Global Monitoring Laboratory — Mauna Loa Observatory",
       "url": "https://gml.noaa.gov/ccgg/trends/",
-      "retrieved": "2026-05-23T04:04:25.881Z"
+      "retrieved": "2026-05-24T04:24:52.650Z"
     },
     "global_temp_anomaly": null
   },
@@ -148,8 +148,8 @@
   },
   "forest": {
     "wildfire": {
-      "count": 56,
-      "score": 32.43,
+      "count": 55,
+      "score": 33.78,
       "sample": [
         "DeSoto BB 8374 S RX Prescribed Fire, Har",
         "Chickasawhay CPT 451 452 RX Prescribed F",
@@ -159,7 +159,7 @@
       ],
       "source": "NASA EONET v3",
       "window": "14 days",
-      "retrieved": "2026-05-23T04:04:25.881Z"
+      "retrieved": "2026-05-24T04:24:52.650Z"
     }
   },
   "freshwater": {
@@ -177,11 +177,11 @@
   },
   "biodiversity": {
     "gbif": {
-      "total_occurrences": 3856053642,
+      "total_occurrences": 3857368473,
       "note": "Reference value — B5 scoring requires historical comparison. Phase 3.",
       "source": "GBIF.org",
       "license": "CC BY 4.0",
-      "retrieved": "2026-05-23T04:04:25.881Z"
+      "retrieved": "2026-05-24T04:24:52.650Z"
     }
   },
   "companies": {
@@ -219,7 +219,7 @@
             "items": "8.01,9.01"
           }
         ],
-        "retrieved": "2026-05-23T04:04:25.355Z"
+        "retrieved": "2026-05-24T04:24:50.586Z"
       }
     },
     "bp": {
@@ -236,7 +236,7 @@
         "latest_8k": null,
         "count_8k_90d": 0,
         "recent_8k_items": [],
-        "retrieved": "2026-05-23T04:04:25.338Z"
+        "retrieved": "2026-05-24T04:24:50.607Z"
       }
     },
     "shell": {
@@ -253,7 +253,7 @@
         "latest_8k": null,
         "count_8k_90d": 0,
         "recent_8k_items": [],
-        "retrieved": "2026-05-23T04:04:25.276Z"
+        "retrieved": "2026-05-24T04:24:50.709Z"
       }
     },
     "delta": {
@@ -286,7 +286,7 @@
             "items": "5.02,9.01"
           }
         ],
-        "retrieved": "2026-05-23T04:04:25.481Z"
+        "retrieved": "2026-05-24T04:24:50.641Z"
       }
     },
     "starbucks": {
@@ -327,7 +327,7 @@
             "items": "5.07"
           }
         ],
-        "retrieved": "2026-05-23T04:04:25.281Z"
+        "retrieved": "2026-05-24T04:24:50.631Z"
       }
     },
     "walmart": {
@@ -364,7 +364,7 @@
             "items": "8.01"
           }
         ],
-        "retrieved": "2026-05-23T04:04:25.337Z"
+        "retrieved": "2026-05-24T04:24:50.588Z"
       }
     },
     "meta": {
@@ -397,7 +397,7 @@
             "items": "5.02"
           }
         ],
-        "retrieved": "2026-05-23T04:04:25.279Z"
+        "retrieved": "2026-05-24T04:24:50.620Z"
       }
     },
     "amazon": {
@@ -438,7 +438,7 @@
             "items": "8.01,9.01"
           }
         ],
-        "retrieved": "2026-05-23T04:04:25.359Z"
+        "retrieved": "2026-05-24T04:24:50.625Z"
       }
     },
     "microsoft": {
@@ -467,7 +467,7 @@
             "items": "2.02,9.01"
           }
         ],
-        "retrieved": "2026-05-23T04:04:25.321Z"
+        "retrieved": "2026-05-24T04:24:50.600Z"
       }
     },
     "unilever": {
@@ -506,7 +506,7 @@
             "items": "5.07,9.01"
           }
         ],
-        "retrieved": "2026-05-23T04:04:25.361Z"
+        "retrieved": "2026-05-24T04:24:50.595Z"
       }
     }
   }
