@@ -1,18 +1,18 @@
 {
   "meta": {
-    "generated": "2026-05-25T04:46:55.420Z",
+    "generated": "2026-05-25T15:27:55.754Z",
     "generated_date": "2026-05-25",
     "script_version": "1.1",
     "window_days": 14,
     "window_start": "2026-05-11",
     "window_end": "2026-05-25",
-    "runtime_ms": 376,
+    "runtime_ms": 129,
     "seismic_live": true,
     "eonet_live": true
   },
   "threat": {
     "level": "CRITICAL",
-    "score": 29.3
+    "score": 28.25
   },
   "seismic": {
     "events": [
@@ -297,14 +297,6 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sxnw"
       },
       {
-        "id": "us6000swvm",
-        "magnitude": 5.2,
-        "place": "72 km NW of Malango, Solomon Islands",
-        "time": "2026-05-11T09:48:51.604Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000swvm"
-      },
-      {
         "id": "us6000szjs",
         "magnitude": 5.1,
         "place": "296 km NW of Nagqu, China",
@@ -383,6 +375,22 @@
         "time": "2026-05-12T06:53:32.598Z",
         "depth_km": 26.3,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sx3h"
+      },
+      {
+        "id": "us6000t028",
+        "magnitude": 5,
+        "place": "104 km ESE of Kokopo, Papua New Guinea",
+        "time": "2026-05-25T15:00:31.611Z",
+        "depth_km": 66.8,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t028"
+      },
+      {
+        "id": "us6000t015",
+        "magnitude": 5,
+        "place": "south of Africa",
+        "time": "2026-05-25T09:25:39.358Z",
+        "depth_km": 10,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t015"
       },
       {
         "id": "us6000szzw",
@@ -479,6 +487,22 @@
         "time": "2026-05-12T03:45:42.646Z",
         "depth_km": 60.8,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sx2s"
+      },
+      {
+        "id": "us6000t019",
+        "magnitude": 4.9,
+        "place": "224 km NE of Lospalos, Timor Leste",
+        "time": "2026-05-25T10:23:56.038Z",
+        "depth_km": 139.2,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t019"
+      },
+      {
+        "id": "us6000t00w",
+        "magnitude": 4.9,
+        "place": "80 km SSE of Soe, Indonesia",
+        "time": "2026-05-25T07:57:06.214Z",
+        "depth_km": 10,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t00w"
       },
       {
         "id": "us6000szxs",
@@ -609,6 +633,22 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sx36"
       },
       {
+        "id": "us6000t00y",
+        "magnitude": 4.8,
+        "place": "50 km ENE of Noda, Japan",
+        "time": "2026-05-25T08:14:48.144Z",
+        "depth_km": 49.2,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t00y"
+      },
+      {
+        "id": "us6000t009",
+        "magnitude": 4.8,
+        "place": "175 km SW of Nikolski, Alaska",
+        "time": "2026-05-25T05:18:12.564Z",
+        "depth_km": 36.3,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t009"
+      },
+      {
         "id": "us6000szqs",
         "magnitude": 4.8,
         "place": "73 km WSW of Tobelo, Indonesia",
@@ -684,7 +724,7 @@
         "id": "us6000sxtg",
         "magnitude": 4.8,
         "place": "South Sandwich Islands region",
-        "time": "2026-05-14T22:14:05.512Z",
+        "time": "2026-05-14T22:14:05.848Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sxtg"
       },
@@ -1081,14 +1121,6 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sz00"
       },
       {
-        "id": "us6000swuu",
-        "magnitude": 4.6,
-        "place": "46 km WSW of San Pedro de Atacama, Chile",
-        "time": "2026-05-11T05:35:52.128Z",
-        "depth_km": 112.3,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000swuu"
-      },
-      {
         "id": "us6000szwl",
         "magnitude": 4.5,
         "place": "162 km SW of Nikolski, Alaska",
@@ -1361,7 +1393,7 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sx2w"
       }
     ],
-    "count_total": 168,
+    "count_total": 172,
     "count_m55_plus": 18,
     "count_m60_plus": 5,
     "count_m70_plus": 0,
@@ -1377,7 +1409,7 @@
     "source": "USGS Earthquake Hazards Program",
     "url": "https://earthquake.usgs.gov/",
     "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-    "retrieved": "2026-05-25T04:46:55.201Z"
+    "retrieved": "2026-05-25T15:27:55.738Z"
   },
   "wildfire": {
     "events": [
@@ -1930,42 +1962,9 @@
           25.96
         ],
         "closed": null
-      },
-      {
-        "id": "EONET_20060",
-        "title": "NIKE Wildfire, Grant, Washington",
-        "type": "WILDFIRE",
-        "time": "2026-05-11T09:33:00.000Z",
-        "coords": [
-          -119.59,
-          46.766
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20064",
-        "title": "Rx Upshur 3999 Prescribed Fire, Upshur, Texas",
-        "type": "WILDFIRE",
-        "time": "2026-05-11T09:09:00.000Z",
-        "coords": [
-          -95.041,
-          32.759
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20101",
-        "title": "Peterson Road RX Prescribed Fire, Benzie, Michigan",
-        "type": "WILDFIRE",
-        "time": "2026-05-11T08:45:00.000Z",
-        "coords": [
-          -86.093,
-          44.72
-        ],
-        "closed": null
       }
     ],
-    "count": 53
+    "count": 50
   },
   "storm": {
     "events": [],
