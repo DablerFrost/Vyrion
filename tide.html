@@ -1,0 +1,3527 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="VYRION TIDE — Ocean plastic remediation, water purification, and acidification mitigation intelligence. Module 06.">
+    <meta property="og:title" content="VYRION TIDE — Ocean Remediation Intelligence">
+    <meta property="og:description" content="Scalable ocean plastic remediation hardware + AI routing. Atmospheric and filter-based water purification. Ocean acidification mitigation protocols.">
+    <meta property="og:image" content="/assets/og-image.jpg">
+    <meta property="og:url" content="https://vyrion.earth/tide">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="VYRION TIDE — Ocean Remediation Intelligence">
+    <meta name="twitter:description" content="Scalable ocean plastic remediation hardware + AI routing. Module 06.">
+    <meta name="twitter:image" content="/assets/og-image.jpg">
+    <link rel="canonical" href="https://vyrion.earth/tide">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/assets/favicon.ico">
+    <title>VYRION TIDE — Ocean Remediation Intelligence · Module 06</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&family=Archivo:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      /* ══════════════════════════════════════════════════════════════════
+       VYRION TIDE — Module 06 · Ocean Remediation Intelligence
+       Accent: #0096C7 (--tide) · Built on VYRION Design System V2.0
+    ══════════════════════════════════════════════════════════════════ */
+      /* ── BRAND TOKENS ────────────────────────────────────────────────── */
+      :root {
+        --void: #020912;
+        --void2: #061624;
+        --void3: #0b2035;
+        --glow: #00D4FF;
+        --amber: #FFB84D;
+        --breach: #F03030;
+        --warn: #F09000;
+        --t1: #e4f2ff;
+        --t2: #6a9ab8;
+        --t3: #2d6080;
+        --border: rgba(0, 212, 255, .12);
+        --border2: rgba(0, 212, 255, .07);
+        --nav-bg: rgba(2, 9, 18, .97);
+        /* TIDE module accent — deep ocean blue */
+        --tide: #0096C7;
+        --tide-glow: rgba(0, 150, 199, .35);
+        --tide-dim: rgba(0, 150, 199, .08);
+        --tide2: #0077A8;
+        --tide3: #005880;
+        --acid: #FF6B35;
+        /* acidification alert */
+        --plastic: #F4A261;
+        /* plastic pollution */
+        --purify: #48CAE4;
+        /* purification positive */
+        /* shared module tokens */
+        --mod-conscience: #00D4FF;
+        --mod-shield: #F03030;
+        --mod-atlas: #00D4FF;
+        --mod-root: #10b981;
+        --mod-canopy: #2E8B57;
+        --mod-tide: #0096C7;
+        --mod-loop: #FFB84D;
+        --mod-flux: #FFD700;
+        --mod-pulse: #9C6FE4;
+        --evo-motion: 280ms cubic-bezier(.22, .61, .36, 1);
+        --green: #00CC66;
+        --red: #F03030;
+      }
+
+      [data-theme="light"] {
+        --void: #f0f5ff;
+        --void2: #e4eeff;
+        --void3: #d5e5ff;
+        --glow: #0066CC;
+        --amber: #b07800;
+        --breach: #b82020;
+        --warn: #a05800;
+        --t1: #060e1e;
+        --t2: #1e4a7a;
+        --t3: #3a6090;
+        --border: rgba(0, 102, 204, .18);
+        --border2: rgba(0, 102, 204, .10);
+        --nav-bg: rgba(240, 245, 255, .98);
+        --tide: #0077A8;
+        --tide-glow: rgba(0, 119, 168, .25);
+        --tide-dim: rgba(0, 119, 168, .07);
+        --purify: #0096C7;
+        --red: #b82020;
+        --green: #1a7a40;
+      }
+
+      /* ── RESET ───────────────────────────────────────────────────────── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-size: 18px
+      }
+
+      body {
+        background: var(--void);
+        color: var(--t1);
+        font-family: 'Archivo', sans-serif;
+        font-size: 1rem;
+        line-height: 1.65;
+        min-height: 100vh;
+        overflow-x: hidden;
+        transition: background .3s, color .3s;
+      }
+
+      @media(hover:hover) {
+        body {
+          cursor: none;
+        }
+      }
+
+      /* Atmospheric deep-ocean glow */
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        background:
+          radial-gradient(ellipse 70% 45% at 20% 0%, rgba(0, 150, 199, .024) 0%, transparent 65%),
+          radial-gradient(ellipse 55% 40% at 85% 100%, rgba(0, 150, 199, .016) 0%, transparent 65%),
+          radial-gradient(ellipse 40% 30% at 50% 50%, rgba(0, 80, 140, .012) 0%, transparent 70%);
+      }
+
+      /* Scanline overlay */
+      body::after {
+        content: '';
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 990;
+        background: repeating-linear-gradient(0deg, transparent, transparent 3px,
+            rgba(0, 150, 199, .004) 3px, rgba(0, 150, 199, .004) 4px);
+      }
+
+      /* ── CUSTOM CURSOR ───────────────────────────────────────────────── */
+      #cursor {
+        position: fixed;
+        width: 8px;
+        height: 8px;
+        background: var(--tide);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99999;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 8px var(--tide-glow);
+        transition: transform .08s ease, width .15s ease, height .15s ease, opacity .15s ease;
+        will-change: transform;
+      }
+
+      #cursor-ring {
+        position: fixed;
+        width: 32px;
+        height: 32px;
+        border: 1.5px solid rgba(0, 150, 199, .5);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99998;
+        transform: translate(-50%, -50%);
+        transition: transform .18s var(--evo-motion), width .2s ease, height .2s ease, border-color .2s ease;
+        will-change: transform;
+      }
+
+      #cursor-glow {
+        position: fixed;
+        width: 280px;
+        height: 280px;
+        background: radial-gradient(circle, rgba(0, 150, 199, .05) 0%, transparent 70%);
+        pointer-events: none;
+        z-index: 99990;
+        transform: translate(-50%, -50%);
+        transition: transform .35s ease;
+        will-change: transform;
+      }
+
+      @media(hover:none) {
+
+        #cursor,
+        #cursor-ring,
+        #cursor-glow {
+          display: none
+        }
+
+        body {
+          cursor: auto
+        }
+      }
+
+      /* ── NAV ─────────────────────────────────────────────────────────── */
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 500;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0 1.8rem;
+        background: var(--nav-bg);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        transition: background .3s, border-color .3s;
+        overflow: visible;
+      }
+
+      .nav-logo {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: .95rem;
+        color: var(--glow);
+        letter-spacing: .15em;
+        text-decoration: none;
+        flex-shrink: 0;
+        text-shadow: 0 0 24px rgba(0, 212, 255, .45);
+        transition: text-shadow var(--evo-motion);
+      }
+
+      .nav-logo:hover {
+        text-shadow: 0 0 40px rgba(0, 212, 255, .7)
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1.8rem;
+        list-style: none;
+        flex: 1;
+        overflow: visible;
+      }
+
+      .nav-links li {
+        overflow: visible;
+        position: relative;
+      }
+
+      .nav-links a {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 700;
+        font-size: .65rem;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        color: var(--t2);
+        text-decoration: none;
+        transition: color .2s;
+        padding-bottom: 2px;
+      }
+
+      .nav-links a:hover {
+        color: var(--t1)
+      }
+
+      .nav-links a.active {
+        color: var(--tide);
+        border-bottom: 1px solid rgba(0, 150, 199, .5);
+      }
+
+      /* Nav tooltip */
+      .nav-item {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .nav-tooltip {
+        position: absolute;
+        top: calc(100% + 14px);
+        left: 50%;
+        transform: translateX(-50%) translateY(-6px);
+        background: rgba(2, 9, 18, .97);
+        border: 1px solid rgba(0, 150, 199, .22);
+        border-radius: 3px;
+        padding: .35rem .65rem;
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: var(--tide);
+        white-space: nowrap;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .2s ease, transform .2s ease, visibility .2s;
+        z-index: 9999;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, .6), 0 0 14px rgba(0, 150, 199, .1);
+        backdrop-filter: blur(10px);
+      }
+
+      .nav-tooltip::before {
+        content: '';
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 5px solid transparent;
+        border-bottom-color: rgba(0, 150, 199, .28);
+      }
+
+      .nav-tooltip::after {
+        content: '';
+        position: absolute;
+        bottom: calc(100% - 1px);
+        left: 50%;
+        transform: translateX(-50%);
+        border: 4px solid transparent;
+        border-bottom-color: rgba(2, 9, 18, .97);
+      }
+
+      .nav-item:hover .nav-tooltip {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      .nav-controls {
+        display: flex;
+        align-items: center;
+        gap: .35rem;
+        flex-shrink: 0
+      }
+
+      .nc-sep {
+        width: 1px;
+        height: 16px;
+        background: var(--border);
+        margin: 0 .15rem
+      }
+
+      .nc-theme {
+        font-family: 'Courier Prime', monospace;
+        font-size: .58rem;
+        font-weight: 700;
+        letter-spacing: .12em;
+        padding: .22rem .5rem;
+        border-radius: 2px;
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--t2);
+        cursor: none;
+        transition: all .2s;
+        white-space: nowrap;
+      }
+
+      .nc-theme:hover,
+      .nc-theme.active {
+        border-color: var(--tide);
+        color: var(--tide);
+        background: var(--tide-dim);
+        box-shadow: 0 0 8px rgba(0, 150, 199, .12);
+      }
+
+      .nc-sz {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        font-weight: 700;
+        width: 26px;
+        height: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2px;
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--t3);
+        cursor: none;
+        transition: all .2s;
+      }
+
+      .nc-sz:hover {
+        border-color: rgba(0, 150, 199, .4);
+        color: var(--t1)
+      }
+
+      .nc-sz.active {
+        background: rgba(0, 150, 199, .12);
+        border-color: var(--tide);
+        color: var(--tide);
+        box-shadow: 0 0 8px rgba(0, 150, 199, .15);
+      }
+
+      .nav-dot {
+        width: 6px;
+        height: 6px;
+        background: var(--tide);
+        border-radius: 50%;
+        flex-shrink: 0;
+        animation: pdot 2.2s infinite;
+      }
+
+      @keyframes pdot {
+
+        0%,
+        100% {
+          opacity: 1;
+          box-shadow: 0 0 0 0 rgba(0, 150, 199, .5)
+        }
+
+        50% {
+          opacity: .4;
+          box-shadow: 0 0 0 7px rgba(0, 150, 199, 0)
+        }
+      }
+
+      /* ── FADE-IN SCROLL ──────────────────────────────────────────────── */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(22px);
+        transition: opacity .85s ease, transform .85s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0)
+      }
+
+      .delay-1 {
+        transition-delay: .1s
+      }
+
+      .delay-2 {
+        transition-delay: .2s
+      }
+
+      .delay-3 {
+        transition-delay: .3s
+      }
+
+      .delay-4 {
+        transition-delay: .45s
+      }
+
+      .delay-5 {
+        transition-delay: .6s
+      }
+
+      /* loading pulse */
+      .loading-pulse {
+        animation: pulse 1.4s infinite
+      }
+
+      @keyframes pulse {
+
+        0%,
+        100% {
+          opacity: .3
+        }
+
+        50% {
+          opacity: .75
+        }
+      }
+
+      /* ── PAGE HEADER ─────────────────────────────────────────────────── */
+      .page-header {
+        position: relative;
+        overflow: hidden;
+        min-height: clamp(300px, 45vh, 460px);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 3.5rem 2rem 2.8rem;
+        border-bottom: 1px solid var(--border);
+        background: #020912;
+        background-image: url('https://okay-gold-oof5kipmvh.edgeone.app/Testing%20The%20Surface%20-%20Imgur.png');
+        background-size: cover;
+      }
+
+      /* Ocean depth gradient background */
+      .page-header::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background:
+          linear-gradient(175deg, rgba(0, 20, 50, .98) 0%, rgba(0, 40, 80, .85) 35%, rgba(0, 80, 120, .7) 65%, rgba(0, 150, 199, .15) 100%),
+          linear-gradient(90deg, rgba(0, 10, 30, .6) 0%, transparent 50%, rgba(0, 10, 30, .4) 100%);
+        transition: background .3s;
+      }
+
+      [data-theme="light"] .page-header::before {
+        background: linear-gradient(120deg, rgba(224, 240, 255, .97) 0%, rgba(200, 230, 250, .85) 50%, rgba(180, 220, 245, .92) 100%);
+      }
+
+      /* Animated ocean sonar canvas */
+      #ocean-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: .65;
+        pointer-events: none;
+      }
+
+      [data-theme="light"] #ocean-canvas {
+        opacity: .25;
+      }
+
+      /* Tide color bar at top */
+      .page-header-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(0, 150, 199, .4) 20%,
+            rgba(72, 202, 228, .7) 50%,
+            rgba(0, 150, 199, .4) 80%,
+            transparent 100%);
+        z-index: 4;
+        pointer-events: none;
+      }
+
+      /* Depth vignette */
+      .page-header::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        pointer-events: none;
+        background:
+          radial-gradient(ellipse 60% 70% at 75% 45%, rgba(0, 150, 199, .09) 0%, transparent 70%),
+          radial-gradient(ellipse 35% 50% at 10% 70%, rgba(0, 40, 100, .12) 0%, transparent 60%);
+        animation: hpulse 10s ease-in-out infinite alternate;
+      }
+
+      @keyframes hpulse {
+        0% {
+          opacity: .5;
+          transform: scale(1)
+        }
+
+        100% {
+          opacity: 1;
+          transform: scale(1.04)
+        }
+      }
+
+      .page-header>*:not(canvas) {
+        position: relative;
+        z-index: 3;
+      }
+
+      /* ghost watermark */
+      .bg-word {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: clamp(4rem, 12vw, 9rem);
+        color: rgba(0, 150, 199, .04);
+        pointer-events: none;
+        user-select: none;
+        z-index: 2;
+        letter-spacing: .18em;
+      }
+
+      .eyebrow {
+        font-family: 'Courier Prime', monospace;
+        font-size: .82rem;
+        color: var(--tide);
+        letter-spacing: .24em;
+        text-transform: uppercase;
+        margin-bottom: .55rem;
+        display: flex;
+        align-items: center;
+        gap: .55rem;
+      }
+
+      .eyebrow::before {
+        content: '';
+        width: 18px;
+        height: 1px;
+        background: var(--tide);
+        opacity: .5
+      }
+
+      .page-title {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: clamp(2.8rem, 6vw, 4.6rem);
+        color: var(--t1);
+        line-height: .95;
+        letter-spacing: -.02em;
+        margin-bottom: .65rem;
+      }
+
+      .page-title span {
+        color: var(--tide)
+      }
+
+      .page-sub {
+        font-size: .88rem;
+        color: var(--t2);
+        max-width: 66ch;
+        line-height: 1.72;
+      }
+
+      .header-meta {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        margin-top: 1.4rem;
+      }
+
+      .hm-cell {
+        display: flex;
+        flex-direction: column;
+        gap: .1rem
+      }
+
+      .hm-label {
+        font-family: 'Courier Prime', monospace;
+        font-size: .55rem;
+        color: var(--t3);
+        letter-spacing: .18em;
+        text-transform: uppercase;
+      }
+
+      .hm-val {
+        font-family: 'Courier Prime', monospace;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: var(--tide);
+        line-height: 1;
+      }
+
+      .hm-val.amber {
+        color: var(--amber)
+      }
+
+      .hm-val.breach {
+        color: var(--breach)
+      }
+
+      .hm-val.purify {
+        color: var(--purify)
+      }
+
+      /* ── STATUS BANNER ───────────────────────────────────────────────── */
+      .status-banner {
+        display: flex;
+        flex-wrap: wrap;
+        background: var(--void2);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .sb-cell {
+        flex: 1;
+        min-width: 120px;
+        padding: .75rem 1.4rem;
+        border-right: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+        gap: .12rem;
+      }
+
+      .sb-cell:last-child {
+        border-right: none
+      }
+
+      .sb-lbl {
+        font-family: 'Courier Prime', monospace;
+        font-size: .55rem;
+        color: var(--t3);
+        letter-spacing: .18em;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: .35rem;
+      }
+
+      .sb-dot {
+        width: 4px;
+        height: 4px;
+        background: var(--tide);
+        border-radius: 50%;
+        animation: pdot 2s infinite;
+        flex-shrink: 0;
+      }
+
+      .sb-dot.warn {
+        background: var(--warn);
+        box-shadow: 0 0 4px var(--warn)
+      }
+
+      .sb-dot.breach {
+        background: var(--breach);
+        box-shadow: 0 0 4px var(--breach)
+      }
+
+      .sb-dot.purify {
+        background: var(--purify);
+        box-shadow: 0 0 4px var(--purify)
+      }
+
+      .sb-val {
+        font-family: 'Courier Prime', monospace;
+        font-weight: 700;
+        font-size: 1.05rem;
+        color: var(--tide);
+        line-height: 1;
+        letter-spacing: -.01em;
+      }
+
+      .sb-val.amber {
+        color: var(--amber)
+      }
+
+      .sb-val.red {
+        color: var(--breach)
+      }
+
+      .sb-val.white {
+        color: var(--t1)
+      }
+
+      .sb-val.purify {
+        color: var(--purify)
+      }
+
+      .sb-val.acid {
+        color: var(--acid)
+      }
+
+      .sb-sub {
+        font-family: 'Courier Prime', monospace;
+        font-size: .54rem;
+        color: var(--t3);
+        line-height: 1.3;
+      }
+
+      /* ── DEV PHASE BANNER ────────────────────────────────────────────── */
+      .dev-phase-bar {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: .7rem 2rem;
+        background: linear-gradient(90deg, rgba(0, 150, 199, .06) 0%, transparent 100%);
+        border-bottom: 1px solid var(--border);
+        flex-wrap: wrap;
+      }
+
+      .dev-phase-tag {
+        font-family: 'Courier Prime', monospace;
+        font-size: .58rem;
+        letter-spacing: .18em;
+        text-transform: uppercase;
+        padding: .18rem .55rem;
+        border-radius: 2px;
+        background: rgba(0, 150, 199, .08);
+        color: var(--tide);
+        border: 1px solid rgba(0, 150, 199, .3);
+        flex-shrink: 0;
+      }
+
+      .dev-phase-text {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        color: var(--t2);
+        line-height: 1.5;
+        flex: 1;
+      }
+
+      .dev-phase-text strong {
+        color: var(--t1)
+      }
+
+      /* ── SECTION CHROME ──────────────────────────────────────────────── */
+      .section-header {
+        padding: 2rem 2rem .8rem;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: .5rem;
+      }
+
+      .section-title {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: .85rem;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: var(--t1);
+        display: flex;
+        align-items: center;
+        gap: .6rem;
+        flex: 1;
+      }
+
+      .section-title::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: var(--border);
+      }
+
+      .section-sub {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        color: var(--t3);
+      }
+
+      .section-link {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        color: rgba(0, 150, 199, .4);
+        text-decoration: none;
+        letter-spacing: .08em;
+        transition: color .2s;
+        flex-shrink: 0;
+      }
+
+      .section-link:hover {
+        color: var(--tide)
+      }
+
+      /* ── MISSION BRIEF ───────────────────────────────────────────────── */
+      .mission-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1px;
+        background: var(--border);
+        margin: 0 2rem 2rem;
+        border: 1px solid var(--border);
+      }
+
+      @media(max-width:800px) {
+        .mission-grid {
+          grid-template-columns: 1fr 1fr
+        }
+      }
+
+      @media(max-width:520px) {
+        .mission-grid {
+          grid-template-columns: 1fr
+        }
+      }
+
+      .mission-card {
+        background: var(--void2);
+        padding: 1.4rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: .7rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .mission-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--mc-accent, var(--tide));
+      }
+
+      .mission-icon {
+        font-size: 1.6rem;
+        line-height: 1;
+      }
+
+      .mission-card-label {
+        font-family: 'Courier Prime', monospace;
+        font-size: .55rem;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        color: var(--t3);
+      }
+
+      .mission-card-title {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: 1.1rem;
+        letter-spacing: .04em;
+        color: var(--mc-color, var(--tide));
+        line-height: 1.1;
+      }
+
+      .mission-card-body {
+        font-size: .74rem;
+        color: var(--t2);
+        line-height: 1.68;
+      }
+
+      .mission-card-stat {
+        font-family: 'Courier Prime', monospace;
+        font-weight: 700;
+        font-size: 1.8rem;
+        line-height: 1;
+        color: var(--mc-color, var(--tide));
+        letter-spacing: -.02em;
+      }
+
+      .mission-card-stat-label {
+        font-family: 'Courier Prime', monospace;
+        font-size: .54rem;
+        color: var(--t3);
+        letter-spacing: .08em;
+        margin-top: .15rem;
+      }
+
+      /* ── OCEAN HEALTH PANEL ──────────────────────────────────────────── */
+      .ocean-health {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        border-bottom: 1px solid var(--border);
+        background: var(--void);
+      }
+
+      @media(max-width:900px) {
+        .ocean-health {
+          grid-template-columns: 1fr
+        }
+      }
+
+      .ocean-score-panel {
+        padding: 2.4rem 2.8rem;
+        border-right: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.2rem;
+        min-width: 260px;
+        background: linear-gradient(160deg, rgba(0, 150, 199, .06) 0%, var(--void) 100%);
+      }
+
+      @media(max-width:900px) {
+        .ocean-score-panel {
+          min-width: 0;
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+          padding: 1.8rem;
+        }
+      }
+
+      .score-ring-wrap {
+        position: relative;
+        width: 160px;
+        height: 160px;
+        flex-shrink: 0;
+      }
+
+      .score-ring-wrap svg {
+        position: absolute;
+        inset: 0;
+        transform: rotate(-90deg);
+      }
+
+      .ring-track {
+        fill: none;
+        stroke: rgba(255, 255, 255, .06);
+        stroke-width: 8
+      }
+
+      [data-theme="light"] .ring-track {
+        stroke: rgba(0, 0, 0, .08)
+      }
+
+      .ring-fill {
+        fill: none;
+        stroke: var(--tide);
+        stroke-width: 8;
+        stroke-linecap: round;
+        transition: stroke-dashoffset 2s cubic-bezier(.4, 0, .2, 1);
+        filter: drop-shadow(0 0 8px rgba(0, 150, 199, .5));
+      }
+
+      .ring-inner {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .ring-score {
+        font-family: 'Courier Prime', monospace;
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 1;
+        letter-spacing: -.03em;
+        color: var(--tide);
+      }
+
+      .ring-denom {
+        font-family: 'Courier Prime', monospace;
+        font-size: .58rem;
+        color: var(--t3);
+        margin-top: .12rem
+      }
+
+      .ring-label {
+        font-family: 'Courier Prime', monospace;
+        font-size: .5rem;
+        color: rgba(0, 150, 199, .5);
+        margin-top: .08rem
+      }
+
+      .ocean-index-badge {
+        display: inline-block;
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        padding: .2rem .6rem;
+        border-radius: 2px;
+        background: rgba(0, 150, 199, .08);
+        color: var(--tide);
+        border: 1px solid rgba(0, 150, 199, .3);
+        margin-bottom: .4rem;
+      }
+
+      .ocean-day-label {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        color: var(--t3);
+        line-height: 1.6;
+        text-align: center;
+      }
+
+      /* Ocean health indicators table */
+      .ocean-indicators-panel {
+        padding: 2rem 2.4rem
+      }
+
+      .ind-header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        margin-bottom: 1.4rem;
+        flex-wrap: wrap;
+        gap: .5rem;
+      }
+
+      .ind-title {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: .82rem;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: var(--t1);
+      }
+
+      .ind-sub {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        color: var(--t3)
+      }
+
+      .ind-rows {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem
+      }
+
+      .ind-row {
+        display: grid;
+        grid-template-columns: 8px 160px 1fr 72px 78px;
+        align-items: center;
+        gap: .6rem;
+        padding: .4rem 0;
+        border-bottom: 1px solid var(--border2);
+      }
+
+      .ind-row:last-child {
+        border-bottom: none
+      }
+
+      .ind-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        flex-shrink: 0
+      }
+
+      .ind-name {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 700;
+        font-size: .78rem;
+        letter-spacing: .06em;
+        color: var(--t1);
+        text-transform: uppercase;
+      }
+
+      .ind-bar-bg {
+        height: 4px;
+        background: rgba(255, 255, 255, .06);
+        border-radius: 2px;
+        overflow: hidden;
+      }
+
+      [data-theme="light"] .ind-bar-bg {
+        background: rgba(0, 0, 0, .08)
+      }
+
+      .ind-bar-fill {
+        height: 100%;
+        border-radius: 2px;
+        width: 0;
+        transition: width 1.6s cubic-bezier(.4, 0, .2, 1);
+      }
+
+      .ind-val {
+        font-family: 'Courier Prime', monospace;
+        font-weight: 700;
+        font-size: .72rem;
+        text-align: right;
+      }
+
+      .ind-badge {
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        padding: .1rem .38rem;
+        border-radius: 2px;
+        text-align: center;
+      }
+
+      .b-cr {
+        background: rgba(240, 48, 48, .08);
+        color: var(--breach);
+        border: 1px solid rgba(240, 48, 48, .25)
+      }
+
+      .b-wa {
+        background: rgba(240, 144, 0, .08);
+        color: var(--warn);
+        border: 1px solid rgba(240, 144, 0, .25)
+      }
+
+      .b-ot {
+        background: rgba(0, 150, 199, .08);
+        color: var(--tide);
+        border: 1px solid rgba(0, 150, 199, .25)
+      }
+
+      .b-pr {
+        background: rgba(72, 202, 228, .08);
+        color: var(--purify);
+        border: 1px solid rgba(72, 202, 228, .25)
+      }
+
+      @media(max-width:600px) {
+        .ind-row {
+          grid-template-columns: 6px 110px 1fr 56px;
+        }
+
+        .ind-badge {
+          display: none
+        }
+      }
+
+      @media(max-width:400px) {
+        .ind-row {
+          grid-template-columns: 6px 90px 1fr 50px;
+        }
+      }
+
+      /* ── OPERATIONS GRID ─────────────────────────────────────────────── */
+      .ops-section {
+        border-top: 1px solid var(--border);
+        background: var(--void2);
+      }
+
+      .ops-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1px;
+        background: var(--border);
+        margin: 0 2rem 2rem;
+        border: 1px solid var(--border);
+      }
+
+      .op-card {
+        background: var(--void2);
+        padding: 1.4rem 1.4rem 1.2rem;
+        position: relative;
+        overflow: hidden;
+        transition: background .2s;
+      }
+
+      .op-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--oc-accent, var(--tide));
+      }
+
+      .op-card:hover {
+        background: var(--void3)
+      }
+
+      .op-card-num {
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        color: var(--t3);
+        letter-spacing: .1em;
+        margin-bottom: .5rem;
+      }
+
+      .op-card-name {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: .95rem;
+        letter-spacing: .06em;
+        margin-bottom: .3rem;
+        line-height: 1.1;
+      }
+
+      .op-card-tag {
+        display: inline-block;
+        font-family: 'Courier Prime', monospace;
+        font-size: .5rem;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        padding: .08rem .32rem;
+        border-radius: 2px;
+        margin-bottom: .65rem;
+      }
+
+      .tag-design {
+        background: rgba(0, 150, 199, .08);
+        color: var(--tide);
+        border: 1px solid rgba(0, 150, 199, .25);
+      }
+
+      .tag-research {
+        background: rgba(255, 107, 53, .07);
+        color: var(--acid);
+        border: 1px solid rgba(255, 107, 53, .22);
+      }
+
+      .tag-proto {
+        background: rgba(72, 202, 228, .07);
+        color: var(--purify);
+        border: 1px solid rgba(72, 202, 228, .22);
+      }
+
+      .op-card-body {
+        font-size: .72rem;
+        color: var(--t2);
+        line-height: 1.68;
+      }
+
+      .op-card-metric {
+        display: flex;
+        gap: 1.4rem;
+        flex-wrap: wrap;
+        margin-top: .9rem;
+      }
+
+      .op-metric {
+        display: flex;
+        flex-direction: column;
+        gap: .08rem;
+      }
+
+      .op-metric-val {
+        font-family: 'Courier Prime', monospace;
+        font-weight: 700;
+        font-size: 1rem;
+        color: var(--oc-accent, var(--tide));
+        line-height: 1;
+      }
+
+      .op-metric-lbl {
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        color: var(--t3);
+        letter-spacing: .06em;
+      }
+
+      .op-status {
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        margin-top: .75rem;
+        display: flex;
+        align-items: center;
+        gap: .3rem;
+      }
+
+      .op-dot {
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        flex-shrink: 0
+      }
+
+      .s-design .op-dot {
+        background: var(--tide)
+      }
+
+      .s-research .op-dot {
+        background: var(--acid)
+      }
+
+      .s-proto .op-dot {
+        background: var(--purify);
+        animation: pdot 2s infinite
+      }
+
+      .s-design .op-status {
+        color: var(--tide)
+      }
+
+      .s-research .op-status {
+        color: var(--acid)
+      }
+
+      .s-proto .op-status {
+        color: var(--purify)
+      }
+
+      /* ── THREAT MAP / HOTSPOT SECTION ────────────────────────────────── */
+      .hotspot-section {
+        border-top: 1px solid var(--border);
+        background: var(--void);
+      }
+
+      .hotspot-inner {
+        padding: 2rem
+      }
+
+      .hotspot-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        margin-bottom: 1.4rem;
+      }
+
+      @media(max-width:700px) {
+        .hotspot-grid {
+          grid-template-columns: 1fr
+        }
+      }
+
+      .hotspot-card {
+        background: var(--void2);
+        padding: 1.3rem 1.4rem;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+      }
+
+      .hotspot-region {
+        display: flex;
+        align-items: center;
+        gap: .7rem;
+      }
+
+      .hotspot-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+
+      .hotspot-name {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: .88rem;
+        letter-spacing: .06em;
+        color: var(--t1);
+      }
+
+      .hotspot-type {
+        font-family: 'Courier Prime', monospace;
+        font-size: .56rem;
+        color: var(--t3);
+        letter-spacing: .1em;
+        text-transform: uppercase;
+      }
+
+      .hotspot-body {
+        font-size: .72rem;
+        color: var(--t2);
+        line-height: 1.65;
+      }
+
+      .hotspot-stats {
+        display: flex;
+        gap: 1.2rem;
+        flex-wrap: wrap;
+        margin-top: .3rem;
+      }
+
+      .hs-stat {
+        display: flex;
+        flex-direction: column;
+        gap: .06rem
+      }
+
+      .hs-stat-val {
+        font-family: 'Courier Prime', monospace;
+        font-weight: 700;
+        font-size: .9rem;
+        line-height: 1;
+      }
+
+      .hs-stat-lbl {
+        font-family: 'Courier Prime', monospace;
+        font-size: .5rem;
+        color: var(--t3);
+        letter-spacing: .06em;
+      }
+
+      /* Ocean map canvas */
+      .ocean-map-wrap {
+        position: relative;
+        height: 220px;
+        background: linear-gradient(180deg, rgba(0, 20, 60, .9) 0%, rgba(0, 40, 100, .7) 100%);
+        border: 1px solid var(--border);
+        overflow: hidden;
+        margin-bottom: 1.4rem;
+      }
+
+      #map-canvas {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .map-label {
+        position: absolute;
+        bottom: .7rem;
+        left: .9rem;
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        color: rgba(0, 150, 199, .5);
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        z-index: 2;
+      }
+
+      .map-legend {
+        position: absolute;
+        bottom: .7rem;
+        right: .9rem;
+        display: flex;
+        gap: 1rem;
+        z-index: 2;
+      }
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: .3rem;
+        font-family: 'Courier Prime', monospace;
+        font-size: .5rem;
+        color: var(--t3);
+        letter-spacing: .06em;
+      }
+
+      .legend-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%
+      }
+
+      /* ── TECHNOLOGY ARCHITECTURE ─────────────────────────────────────── */
+      .tech-section {
+        border-top: 1px solid var(--border);
+        background: var(--void2);
+      }
+
+      .tech-inner {
+        padding: 2rem
+      }
+
+      .tech-flow {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        margin-bottom: 1.6rem;
+      }
+
+      .tech-cell {
+        background: var(--void2);
+        padding: 1.1rem 1.3rem;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+      }
+
+      .tech-step {
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        color: var(--t3);
+        letter-spacing: .12em;
+        text-transform: uppercase;
+      }
+
+      .tech-title {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: .88rem;
+        letter-spacing: .06em;
+        color: var(--t1);
+      }
+
+      .tech-arrow {
+        font-family: 'Courier Prime', monospace;
+        font-size: .56rem;
+        color: rgba(0, 150, 199, .35);
+        letter-spacing: .06em;
+      }
+
+      .tech-output {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        color: var(--tide);
+      }
+
+      .tech-specs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        margin-bottom: 1rem;
+      }
+
+      @media(max-width:600px) {
+        .tech-specs {
+          grid-template-columns: 1fr
+        }
+      }
+
+      .spec-block {
+        background: var(--void2);
+        padding: 1.1rem 1.3rem;
+        display: flex;
+        flex-direction: column;
+        gap: .4rem;
+      }
+
+      .spec-label {
+        font-family: 'Courier Prime', monospace;
+        font-size: .56rem;
+        color: var(--t3);
+        letter-spacing: .14em;
+        text-transform: uppercase;
+      }
+
+      .spec-value {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: 1rem;
+        color: var(--t1);
+        line-height: 1.2;
+      }
+
+      .spec-detail {
+        font-size: .7rem;
+        color: var(--t2);
+        line-height: 1.55;
+      }
+
+      /* ── DATA RELAY SECTION ──────────────────────────────────────────── */
+      .relay-section {
+        border-top: 1px solid var(--border);
+        background: linear-gradient(160deg, rgba(0, 150, 199, .022) 0%, var(--void) 60%);
+      }
+
+      .relay-inner {
+        padding: 2rem
+      }
+
+      .relay-eyebrow {
+        font-family: 'Courier Prime', monospace;
+        font-size: .62rem;
+        color: var(--tide);
+        letter-spacing: .22em;
+        text-transform: uppercase;
+        margin-bottom: .45rem;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+      }
+
+      .relay-eyebrow::before {
+        content: '';
+        width: 14px;
+        height: 1px;
+        background: var(--tide);
+        opacity: .5;
+      }
+
+      .relay-title {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+        color: var(--t1);
+        line-height: 1;
+        letter-spacing: -.02em;
+        margin-bottom: .55rem;
+      }
+
+      .relay-sub {
+        font-size: .82rem;
+        color: var(--t2);
+        max-width: 64ch;
+        line-height: 1.75;
+        margin-bottom: 1.4rem;
+      }
+
+      .data-sources-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        margin-bottom: 1.4rem;
+      }
+
+      .ds-cell {
+        background: var(--void2);
+        padding: 1rem 1.2rem;
+        display: flex;
+        flex-direction: column;
+        gap: .4rem;
+      }
+
+      .ds-source {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: .8rem;
+        letter-spacing: .07em;
+        color: var(--t1);
+      }
+
+      .ds-type {
+        font-family: 'Courier Prime', monospace;
+        font-size: .56rem;
+        color: rgba(0, 150, 199, .55);
+        letter-spacing: .06em;
+      }
+
+      .ds-detail {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        color: var(--t2);
+      }
+
+      .ds-status {
+        display: flex;
+        align-items: center;
+        gap: .3rem;
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        margin-top: .3rem;
+      }
+
+      .ds-dot {
+        width: 4px;
+        height: 4px;
+        border-radius: 50%
+      }
+
+      .ds-live .ds-dot {
+        background: var(--purify);
+        animation: pdot 2s infinite
+      }
+
+      .ds-plan .ds-dot {
+        background: var(--tide)
+      }
+
+      .ds-arch .ds-dot {
+        background: var(--t3)
+      }
+
+      .ds-live .ds-status {
+        color: var(--purify)
+      }
+
+      .ds-plan .ds-status {
+        color: var(--tide)
+      }
+
+      .ds-arch .ds-status {
+        color: var(--t3)
+      }
+
+      .relay-status-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: .4rem;
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        padding: .2rem .6rem;
+        border-radius: 2px;
+        background: rgba(0, 150, 199, .06);
+        color: var(--t2);
+        border: 1px solid rgba(0, 150, 199, .18);
+      }
+
+      /* ── LEDGER / PROOF ──────────────────────────────────────────────── */
+      .ledger-section {
+        border-top: 1px solid var(--border);
+        background: var(--void2);
+      }
+
+      .ledger-inner {
+        padding: 2rem
+      }
+
+      .ledger-eyebrow {
+        font-family: 'Courier Prime', monospace;
+        font-size: .62rem;
+        color: var(--tide);
+        letter-spacing: .22em;
+        text-transform: uppercase;
+        margin-bottom: .45rem;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+      }
+
+      .ledger-eyebrow::before {
+        content: '';
+        width: 14px;
+        height: 1px;
+        background: var(--tide);
+        opacity: .5;
+      }
+
+      .ledger-title {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+        color: var(--t1);
+        line-height: 1;
+        letter-spacing: -.02em;
+        margin-bottom: .55rem;
+      }
+
+      .ledger-sub {
+        font-size: .82rem;
+        color: var(--t2);
+        max-width: 64ch;
+        line-height: 1.75;
+      }
+
+      .ledger-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0
+      }
+
+      .ledger-table thead th {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        color: var(--t3);
+        font-weight: 400;
+        padding: .6rem 1rem;
+        border-bottom: 1px solid var(--border);
+        text-align: left;
+        background: var(--void2);
+      }
+
+      .ledger-table thead th:first-child {
+        padding-left: 0
+      }
+
+      .ledger-row {
+        border-bottom: 1px solid rgba(0, 150, 199, .04);
+        transition: background .15s;
+      }
+
+      .ledger-row:hover {
+        background: var(--void3)
+      }
+
+      .ledger-row td {
+        padding: .65rem 1rem;
+        font-family: 'Courier Prime', monospace;
+        font-size: .68rem;
+        vertical-align: middle;
+      }
+
+      .ledger-row td:first-child {
+        padding-left: 0
+      }
+
+      .ledger-type {
+        display: inline-flex;
+        align-items: center;
+        gap: .3rem;
+        font-size: .58rem;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        padding: .1rem .42rem;
+        border-radius: 2px;
+      }
+
+      .lt-arch {
+        background: rgba(0, 150, 199, .07);
+        color: var(--tide);
+        border: 1px solid rgba(0, 150, 199, .2);
+      }
+
+      .lt-data {
+        background: rgba(72, 202, 228, .07);
+        color: var(--purify);
+        border: 1px solid rgba(72, 202, 228, .2);
+      }
+
+      .lt-method {
+        background: rgba(138, 171, 146, .05);
+        color: var(--t2);
+        border: 1px solid rgba(138, 171, 146, .15);
+      }
+
+      .lt-alert {
+        background: rgba(255, 107, 53, .07);
+        color: var(--acid);
+        border: 1px solid rgba(255, 107, 53, .2);
+      }
+
+      .ledger-event {
+        color: var(--t1)
+      }
+
+      .ledger-source {
+        color: var(--t2);
+        font-size: .64rem
+      }
+
+      .ledger-ts {
+        color: var(--t3);
+        font-size: .62rem;
+        white-space: nowrap;
+        text-align: right
+      }
+
+      /* ── PROOF SECTION ───────────────────────────────────────────────── */
+      .proof-section {
+        border-top: 1px solid var(--border);
+        padding: 2rem;
+        background: var(--void);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+
+      @media(max-width:700px) {
+        .proof-section {
+          grid-template-columns: 1fr
+        }
+      }
+
+      .proof-block {
+        display: flex;
+        flex-direction: column;
+        gap: .6rem
+      }
+
+      .proof-label {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        letter-spacing: .18em;
+        text-transform: uppercase;
+        color: var(--t3);
+      }
+
+      .proof-value {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: 1.1rem;
+        color: var(--t1);
+        line-height: 1.3;
+      }
+
+      .proof-sub {
+        font-size: .72rem;
+        color: var(--t2);
+        line-height: 1.6
+      }
+
+      .proof-sub a {
+        color: rgba(0, 150, 199, .45);
+        text-decoration: none
+      }
+
+      .proof-sub a:hover {
+        color: var(--tide)
+      }
+
+      .proof-links {
+        display: flex;
+        flex-direction: column;
+        gap: .3rem;
+        margin-top: .6rem
+      }
+
+      .proof-link {
+        font-family: 'Courier Prime', monospace;
+        font-size: .62rem;
+        color: rgba(0, 150, 199, .4);
+        text-decoration: none;
+        letter-spacing: .06em;
+        transition: color .18s;
+        display: flex;
+        align-items: center;
+        gap: .4rem;
+      }
+
+      .proof-link::before {
+        content: '→';
+        opacity: .5
+      }
+
+      .proof-link:hover {
+        color: var(--tide)
+      }
+
+      .proof-link:hover::before {
+        opacity: 1
+      }
+
+      /* ── FOOTER ──────────────────────────────────────────────────────── */
+      .footer {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        padding: 2rem;
+        border-top: 1px solid var(--border);
+        background: var(--void2);
+      }
+
+      .footer-l {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        color: var(--t3);
+        line-height: 1.9;
+      }
+
+      .footer-l a {
+        color: rgba(0, 150, 199, .4);
+        text-decoration: none;
+        transition: color .18s
+      }
+
+      .footer-l a:hover {
+        color: var(--tide)
+      }
+
+      .footer-l strong {
+        color: var(--t2);
+        font-weight: 700
+      }
+
+      .footer-nexan {
+        font-family: 'Courier Prime', monospace;
+        font-size: .56rem;
+        color: var(--t3);
+        margin-top: .5rem;
+      }
+
+      .footer-nexan a {
+        color: rgba(0, 150, 199, .3);
+        text-decoration: none;
+        transition: color .18s
+      }
+
+      .footer-nexan a:hover {
+        color: var(--tide)
+      }
+
+      /* ── FLOATING ORB ────────────────────────────────────────────────── */
+      #vyr-orb {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        z-index: 8000;
+        width: 58px;
+        height: 58px;
+      }
+
+      .oo-btn {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: radial-gradient(circle at 36% 36%, rgba(0, 150, 199, .35), rgba(0, 40, 100, .7));
+        border: 1.5px solid rgba(0, 150, 199, .45);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: none;
+        animation: orbPulse 3s ease-in-out infinite;
+        transition: transform .2s var(--evo-motion), border-color .2s;
+      }
+
+      .oo-btn:hover {
+        transform: scale(1.12);
+        animation: none;
+        border-color: var(--tide);
+        box-shadow: 0 0 22px rgba(0, 150, 199, .4);
+      }
+
+      @keyframes orbPulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(0, 150, 199, .5)
+        }
+
+        65% {
+          box-shadow: 0 0 0 14px rgba(0, 150, 199, 0)
+        }
+
+        100% {
+          box-shadow: 0 0 0 0 rgba(0, 150, 199, 0)
+        }
+      }
+
+      .oo-icon {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: 1.2rem;
+        color: var(--tide);
+        user-select: none;
+        transition: transform .3s var(--evo-motion);
+      }
+
+      .oo-btn.open .oo-icon {
+        transform: rotate(45deg)
+      }
+
+      .oo-tooltip {
+        position: absolute;
+        right: calc(100% + 10px);
+        top: 50%;
+        transform: translateY(-50%);
+        white-space: nowrap;
+        background: rgba(2, 9, 18, .94);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        padding: 5px 11px;
+        font-family: 'Courier Prime', monospace;
+        font-size: .62rem;
+        letter-spacing: .07em;
+        color: var(--t2);
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity .18s;
+      }
+
+      #vyr-orb:hover .oo-tooltip {
+        opacity: 1
+      }
+
+      .oo-panel {
+        position: absolute;
+        bottom: calc(100% + 10px);
+        right: 0;
+        width: 215px;
+        background: rgba(2, 9, 18, .97);
+        backdrop-filter: blur(24px);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 5px;
+        opacity: 0;
+        transform: scale(.88) translateY(8px);
+        transform-origin: bottom right;
+        pointer-events: none;
+        transition: opacity .22s var(--evo-motion), transform .22s var(--evo-motion);
+        box-shadow: 0 14px 44px rgba(0, 0, 0, .55);
+      }
+
+      .oo-panel.open {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        pointer-events: auto
+      }
+
+      .oo-panel-header {
+        padding: 9px 13px 7px;
+        font-family: 'Courier Prime', monospace;
+        font-size: .56rem;
+        letter-spacing: .2em;
+        color: var(--tide);
+        text-transform: uppercase;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 4px;
+      }
+
+      .oo-link {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        padding: 9px 13px;
+        border-radius: 6px;
+        color: var(--t2);
+        font-family: 'Archivo', sans-serif;
+        font-size: .78rem;
+        transition: background .14s, color .14s;
+        cursor: none;
+        text-decoration: none;
+      }
+
+      .oo-link:hover {
+        background: rgba(0, 150, 199, .07);
+        color: var(--t1)
+      }
+
+      .oo-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        background: var(--tide);
+        box-shadow: 0 0 5px var(--tide)
+      }
+
+      /* ── RESPONSIVE ──────────────────────────────────────────────────── */
+      @media(max-width:720px) {
+        html {
+          font-size: 16px !important
+        }
+
+        .nav {
+          padding: 0 .9rem;
+          gap: .5rem;
+          height: 48px
+        }
+
+        .nav-links {
+          display: none
+        }
+
+        .nc-sep {
+          display: none
+        }
+
+        .nc-sz {
+          width: 22px;
+          height: 22px;
+          font-size: .52rem
+        }
+
+        .nc-theme {
+          font-size: .52rem;
+          padding: .16rem .32rem
+        }
+
+        .page-header {
+          padding: 1.8rem .9rem 1.5rem
+        }
+
+        .relay-inner,
+        .ledger-inner,
+        .tech-inner,
+        .hotspot-inner {
+          padding: 1.4rem .9rem
+        }
+
+        .proof-section {
+          padding: 1.4rem .9rem;
+          gap: 1.2rem
+        }
+
+        .footer {
+          padding: 1.4rem .9rem;
+          gap: 1rem
+        }
+
+        .mission-grid {
+          margin: 0 .9rem 1.4rem
+        }
+
+        .ops-grid,
+        .data-sources-grid {
+          margin: 0 .9rem 1.4rem
+        }
+
+        .section-header {
+          padding: 1.4rem .9rem .6rem
+        }
+
+        .dev-phase-bar {
+          padding: .7rem .9rem
+        }
+
+        .sb-cell {
+          min-width: 50%;
+          border-bottom: 1px solid var(--border)
+        }
+      }
+
+      @media(max-width:400px) {
+        .nc-sz {
+          display: none
+        }
+
+        .ops-grid {
+          grid-template-columns: 1fr
+        }
+      }
+
+      @media(hover:none) {
+        #vyr-orb .oo-tooltip {
+          display: none
+        }
+
+        #cursor,
+        #cursor-ring,
+        #cursor-glow {
+          display: none
+        }
+
+        body {
+          cursor: auto
+        }
+
+        .nc-theme,
+        .nc-sz,
+        .oo-btn,
+        .oo-link,
+        .op-card,
+        .op-close {
+          cursor: pointer
+        }
+      }
+
+      @media(prefers-reduced-motion:reduce) {
+
+        *,
+        *::before,
+        *::after {
+          animation-duration: .01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: .01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ── CUSTOM CURSOR ──────────────────────────────────────────────────── -->
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+    <div id="cursor-glow"></div>
+    <!-- ── NAV ───────────────────────────────────────────────────────────── -->
+    <nav class="nav">
+      <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
+      <ul class="nav-links">
+        <li>
+          <a href="https://vyrion.earth/conscience" class="nav-item">CONSCIENCE <span class="nav-tooltip">Corporate Climate Pledge Verification</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/shield" class="nav-item">SHIELD <span class="nav-tooltip">Global Disaster Early Warning</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/atlas" class="nav-item">ATLAS <span class="nav-tooltip">Planetary Intelligence Backbone</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/root" class="nav-item">ROOT <span class="nav-tooltip">Terrestrial Intelligence &amp; Soil Health</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/canopy" class="nav-item">CANOPY <span class="nav-tooltip">Reforestation Intelligence</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/flux" class="nav-item">FLUX <span class="nav-tooltip">Clean Energy Infrastructure</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/tide" class="nav-item active">TIDE <span class="nav-tooltip">Ocean Remediation Intelligence</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/record" class="nav-item">RECORD <span class="nav-tooltip">Weekly Intelligence Reports</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/about" class="nav-item">ABOUT <span class="nav-tooltip">Mission &amp; Open Methodology</span>
+          </a>
+        </li>
+      </ul>
+      <div class="nav-controls">
+        <button class="nc-theme active" id="theme-btn" onclick="toggleTheme()" title="Toggle light/dark mode">◐ DARK</button>
+        <div class="nc-sep"></div>
+        <button class="nc-sz" data-scale="0.88" onclick="setScale(this)" title="Small text">S</button>
+        <button class="nc-sz active" data-scale="1.0" onclick="setScale(this)" title="Medium text">M</button>
+        <button class="nc-sz" data-scale="1.22" onclick="setScale(this)" title="Large text">L</button>
+      </div>
+      <div class="nav-dot"></div>
+    </nav>
+    <!-- ── PAGE HEADER ────────────────────────────────────────────────────── -->
+    <header class="page-header">
+      <div class="page-header-bar"></div>
+      <canvas id="ocean-canvas"></canvas>
+      <div class="bg-word">TIDE</div>
+      <div class="eyebrow fade-in">Module 06 · Ocean Remediation Intelligence · Architecture Phase</div>
+      <h1 class="page-title fade-in delay-1">The Ocean <br>Needs a <span>System.</span>
+      </h1>
+      <p class="page-sub fade-in delay-2">VYRION TIDE is a scalable ocean remediation intelligence platform — AI-routed plastic capture hardware, atmospheric and filter-based water purification, and acidification mitigation protocols. Where planetary data meets ocean-scale action.</p>
+      <div class="header-meta fade-in delay-3">
+        <div class="hm-cell">
+          <div class="hm-label">Ocean Health Index</div>
+          <div class="hm-val">34.0 / 100</div>
+        </div>
+        <div class="hm-cell">
+          <div class="hm-label">Surface pH</div>
+          <div class="hm-val breach">8.08</div>
+        </div>
+        <div class="hm-cell">
+          <div class="hm-label">Plastic Gyres</div>
+          <div class="hm-val amber">5 Active</div>
+        </div>
+        <div class="hm-cell">
+          <div class="hm-label">Module Status</div>
+          <div class="hm-val purify">Architecture Phase</div>
+        </div>
+      </div>
+    </header>
+    <!-- ── STATUS BANNER ──────────────────────────────────────────────────── -->
+    <div class="status-banner fade-in">
+      <div class="sb-cell">
+        <div class="sb-lbl">
+          <span class="sb-dot breach"></span>Ocean Acidification
+        </div>
+        <div class="sb-val acid">pH 8.08</div>
+        <div class="sb-sub">↓ 0.1 since 1850 · NOAA HOT</div>
+      </div>
+      <div class="sb-cell">
+        <div class="sb-lbl">
+          <span class="sb-dot warn"></span>Ocean Plastic Load
+        </div>
+        <div class="sb-val amber">170T tonnes</div>
+        <div class="sb-sub">Floating + microplastic · IUCN 2024</div>
+      </div>
+      <div class="sb-cell">
+        <div class="sb-lbl">
+          <span class="sb-dot breach"></span>Dead Zones
+        </div>
+        <div class="sb-val red">700+</div>
+        <div class="sb-sub">Oxygen-depleted zones · WRI Atlas</div>
+      </div>
+      <div class="sb-cell">
+        <div class="sb-lbl">
+          <span class="sb-dot purify"></span>Water Access Deficit
+        </div>
+        <div class="sb-val purify">2.2B</div>
+        <div class="sb-sub">People without safe water · WHO 2024</div>
+      </div>
+      <div class="sb-cell">
+        <div class="sb-lbl">
+          <span class="sb-dot"></span>TIDE Phase
+        </div>
+        <div class="sb-val white">Architecture</div>
+        <div class="sb-sub">Protocol design · Hardware spec</div>
+      </div>
+    </div>
+    <!-- ── DEV PHASE BANNER ───────────────────────────────────────────────── -->
+    <div class="dev-phase-bar fade-in">
+      <span class="dev-phase-tag">MODULE 06 · IN DEVELOPMENT</span>
+      <div class="dev-phase-text">
+        <strong>Architecture Defined.</strong> TIDE's three core systems — plastic capture routing, water purification, and acidification mitigation — are in protocol design phase. Hardware specifications are being finalized. ATLAS ocean data integration is architecture-complete. Open methodology published.
+      </div>
+    </div>
+    <!-- ── MISSION BRIEF ──────────────────────────────────────────────────── -->
+    <section style="border-top:1px solid var(--border);background:var(--void)">
+      <div class="section-header">
+        <div class="section-title">Three Ocean Systems · One Platform</div>
+        <div class="section-sub">Architecture Phase · V1.0</div>
+      </div>
+      <div class="mission-grid fade-in">
+        <div class="mission-card" style="--mc-accent:var(--tide);--mc-color:var(--tide)">
+          <div class="mission-icon">🌊</div>
+          <div class="mission-card-label">System 01 · Plastic Capture</div>
+          <div class="mission-card-title">Ocean Plastic Remediation</div>
+          <div class="mission-card-body">Scalable hardware arrays with AI-optimized routing. TIDE uses current-modeling and ATLAS satellite data to position interception hardware at maximum efficiency — targeting the five major gyres plus emerging accumulation zones.</div>
+          <div class="mission-card-stat">5</div>
+          <div class="mission-card-stat-label">Major gyre targets identified</div>
+        </div>
+        <div class="mission-card" style="--mc-accent:var(--purify);--mc-color:var(--purify)">
+          <div class="mission-icon">💧</div>
+          <div class="mission-card-label">System 02 · Water Purification</div>
+          <div class="mission-card-title">Atmospheric &amp; Filter Purification</div>
+          <div class="mission-card-body">Dual-mode water purification combining atmospheric water generation (AWG) in arid regions with advanced membrane filtration for contaminated sources. Deployable as modular units from 500L/day to municipal scale at 10M+L/day.</div>
+          <div class="mission-card-stat">2.2B</div>
+          <div class="mission-card-stat-label">People in addressable deficit</div>
+        </div>
+        <div class="mission-card" style="--mc-accent:var(--acid);--mc-color:var(--acid)">
+          <div class="mission-icon">⚗️</div>
+          <div class="mission-card-label">System 03 · Acidification Mitigation</div>
+          <div class="mission-card-title">pH Restoration Protocols</div>
+          <div class="mission-card-body">Targeted alkalinity enhancement in critical reef and fishery zones. TIDE protocols use electrochemical ocean alkalinity enhancement (OAE) to locally restore pH, protecting high-biodiversity zones while atmospheric CO₂ reduction remains slow.</div>
+          <div class="mission-card-stat">700+</div>
+          <div class="mission-card-stat-label">Dead zones mapped via ATLAS</div>
+        </div>
+      </div>
+    </section>
+    <!-- ── OCEAN HEALTH PANEL ──────────────────────────────────────────────── -->
+    <section class="ocean-health fade-in">
+      <div class="ocean-score-panel">
+        <div class="score-ring-wrap">
+          <svg viewBox="0 0 160 160" width="160" height="160">
+            <circle class="ring-track" cx="80" cy="80" r="68" />
+            <circle class="ring-fill" id="ring-fill" cx="80" cy="80" r="68" stroke-dasharray="427.3" stroke-dashoffset="427.3" />
+          </svg>
+          <div class="ring-inner">
+            <div class="ring-score">34.0</div>
+            <div class="ring-denom">/100</div>
+            <div class="ring-label">ocean system</div>
+          </div>
+        </div>
+        <div style="text-align:center">
+          <div class="ocean-index-badge">CRITICAL ZONE · VYRION ATLAS</div>
+          <div class="ocean-day-label">Pre-industrial baseline: 100 / 100 <br>Surface pH ↓ 0.1 · Plastic ↑ 8,000% </div>
+        </div>
+        <a class="proof-link" href="https://vyrion.earth/atlas" style="font-size:.6rem">Full ocean breakdown → ATLAS</a>
+      </div>
+      <div class="ocean-indicators-panel fade-in delay-1">
+        <div class="ind-header">
+          <div class="ind-title">Ocean Health Indicators</div>
+          <div class="ind-sub">Pre-industrial 1850–1900 baseline = 100 · 7 tracked variables</div>
+        </div>
+        <div class="ind-rows">
+          <div class="ind-row">
+            <div class="ind-dot" style="background:#F03030;box-shadow:0 0 5px #F03030"></div>
+            <div class="ind-name">Surface Acidity</div>
+            <div class="ind-bar-bg">
+              <div class="ind-bar-fill" style="background:#F03030" data-pct="19"></div>
+            </div>
+            <div class="ind-val" style="color:#F03030">19.0</div>
+            <div class="ind-badge b-cr">CRITICAL</div>
+          </div>
+          <div class="ind-row">
+            <div class="ind-dot" style="background:#F03030;box-shadow:0 0 5px #F03030"></div>
+            <div class="ind-name">Plastic Pollution</div>
+            <div class="ind-bar-bg">
+              <div class="ind-bar-fill" style="background:#F03030" data-pct="12"></div>
+            </div>
+            <div class="ind-val" style="color:#F03030">12.0</div>
+            <div class="ind-badge b-cr">CRITICAL</div>
+          </div>
+          <div class="ind-row">
+            <div class="ind-dot" style="background:#F09000;box-shadow:0 0 5px #F09000"></div>
+            <div class="ind-name">Dead Zone Coverage</div>
+            <div class="ind-bar-bg">
+              <div class="ind-bar-fill" style="background:#F09000" data-pct="38"></div>
+            </div>
+            <div class="ind-val" style="color:#F09000">38.0</div>
+            <div class="ind-badge b-wa">WARNING</div>
+          </div>
+          <div class="ind-row">
+            <div class="ind-dot" style="background:#F09000;box-shadow:0 0 5px #F09000"></div>
+            <div class="ind-name">Sea Surface Temp</div>
+            <div class="ind-bar-bg">
+              <div class="ind-bar-fill" style="background:#F09000" data-pct="42"></div>
+            </div>
+            <div class="ind-val" style="color:#F09000">42.0</div>
+            <div class="ind-badge b-wa">WARNING</div>
+          </div>
+          <div class="ind-row">
+            <div class="ind-dot" style="background:#F03030;box-shadow:0 0 5px #F03030"></div>
+            <div class="ind-name">Coral Cover</div>
+            <div class="ind-bar-bg">
+              <div class="ind-bar-fill" style="background:#F03030" data-pct="28"></div>
+            </div>
+            <div class="ind-val" style="color:#F03030">28.0</div>
+            <div class="ind-badge b-cr">CRITICAL</div>
+          </div>
+          <div class="ind-row">
+            <div class="ind-dot" style="background:#F09000;box-shadow:0 0 5px #F09000"></div>
+            <div class="ind-name">Marine Biodiversity</div>
+            <div class="ind-bar-bg">
+              <div class="ind-bar-fill" style="background:#F09000" data-pct="49"></div>
+            </div>
+            <div class="ind-val" style="color:#F09000">49.0</div>
+            <div class="ind-badge b-wa">WARNING</div>
+          </div>
+          <div class="ind-row">
+            <div class="ind-dot" style="background:#48CAE4;box-shadow:0 0 5px #48CAE4"></div>
+            <div class="ind-name">Thermohaline Circulation</div>
+            <div class="ind-bar-bg">
+              <div class="ind-bar-fill" style="background:#48CAE4" data-pct="55"></div>
+            </div>
+            <div class="ind-val" style="color:#48CAE4">55.0</div>
+            <div class="ind-badge b-ot">MONITOR</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ── OPERATIONS ARCHITECTURE ────────────────────────────────────────── -->
+    <section class="ops-section">
+      <div class="section-header">
+        <div class="section-title">TIDE Operations Architecture</div>
+        <div class="section-sub">Three hardware/software systems · Architecture phase</div>
+      </div>
+      <div class="ops-grid fade-in">
+        <!-- System 01 — Plastic Capture -->
+        <div class="op-card s-design" style="--oc-accent:var(--tide)">
+          <div class="op-card-num">SYSTEM 01 · PLASTIC CAPTURE</div>
+          <div class="op-card-name" style="color:var(--tide)">GYRE INTERCEPT ARRAY</div>
+          <div class="op-card-tag tag-design">Architecture Defined</div>
+          <div class="op-card-body">Modular floating capture arrays deployed via AI current-modeling. ATLAS feeds real-time surface current, wind, and plastic density data into TIDE's routing engine to maximize interception per unit deployed. Arrays are solar-powered, GPS-anchored, and transmit haul weight back to TIDE HQ in real time.</div>
+          <div class="op-card-metric">
+            <div class="op-metric">
+              <div class="op-metric-val">100km²</div>
+              <div class="op-metric-lbl">Target coverage / array</div>
+            </div>
+            <div class="op-metric">
+              <div class="op-metric-val">5</div>
+              <div class="op-metric-lbl">Priority gyre zones</div>
+            </div>
+            <div class="op-metric">
+              <div class="op-metric-val">24hr</div>
+              <div class="op-metric-lbl">AI routing refresh</div>
+            </div>
+          </div>
+          <div class="op-status">
+            <span class="op-dot"></span>Architecture Defined · Hardware Spec In Progress
+          </div>
+        </div>
+        <!-- System 01b — AI Router -->
+        <div class="op-card s-design" style="--oc-accent:var(--tide)">
+          <div class="op-card-num">SYSTEM 01B · AI ROUTING ENGINE</div>
+          <div class="op-card-name" style="color:var(--tide)">CURRENT-PREDICTIVE DISPATCH</div>
+          <div class="op-card-tag tag-design">Architecture Defined</div>
+          <div class="op-card-body">Neural network trained on 30 years of NOAA surface current data, satellite-tracked plastic trajectories (CLEO, OSPAR), and wind models. Outputs 14-day optimal array positioning recommendations. Integrates ATLAS live feed for daily recalibration. Open weights published on release.</div>
+          <div class="op-card-metric">
+            <div class="op-metric">
+              <div class="op-metric-val">14-day</div>
+              <div class="op-metric-lbl">Predictive horizon</div>
+            </div>
+            <div class="op-metric">
+              <div class="op-metric-val">30yr</div>
+              <div class="op-metric-lbl">Training data</div>
+            </div>
+          </div>
+          <div class="op-status">
+            <span class="op-dot"></span>Model Architecture Defined · Training Pipeline Specced
+          </div>
+        </div>
+        <!-- System 02 — AWG -->
+        <div class="op-card s-research" style="--oc-accent:var(--purify)">
+          <div class="op-card-num">SYSTEM 02A · WATER PURIFICATION</div>
+          <div class="op-card-name" style="color:var(--purify)">ATMOSPHERIC WATER GENERATION</div>
+          <div class="op-card-tag tag-proto">Research Phase</div>
+          <div class="op-card-body">Condensation-based AWG units target arid and semi-arid regions with humidity ≥ 30%. TIDE AWG-M1 (modular, 500L/day) and AWG-M10 (municipal, 10,000L/day) form the hardware stack. Solar-powered. Salt-tolerant membranes allow coastal deployment. Integrates with TIDE purification data API.</div>
+          <div class="op-card-metric">
+            <div class="op-metric">
+              <div class="op-metric-val" style="color:var(--purify)">500L</div>
+              <div class="op-metric-lbl">M1 unit / day</div>
+            </div>
+            <div class="op-metric">
+              <div class="op-metric-val" style="color:var(--purify)">10,000L</div>
+              <div class="op-metric-lbl">M10 unit / day</div>
+            </div>
+          </div>
+          <div class="op-status s-research">
+            <span class="op-dot"></span>Research Phase · Prototype Partners Being Identified
+          </div>
+        </div>
+        <!-- System 02b — Membrane -->
+        <div class="op-card s-research" style="--oc-accent:var(--purify)">
+          <div class="op-card-num">SYSTEM 02B · WATER PURIFICATION</div>
+          <div class="op-card-name" style="color:var(--purify)">MEMBRANE FILTRATION NETWORK</div>
+          <div class="op-card-tag tag-proto">Research Phase</div>
+          <div class="op-card-body">Graphene-oxide enhanced reverse osmosis membranes targeting heavy metals, PFAS, biological pathogens, and microplastics. Designed for rapid deployment in post-disaster water access scenarios. TIDE filter network publishes water quality data to the ATLAS open API in real time — every filtered litre is a data point.</div>
+          <div class="op-card-metric">
+            <div class="op-metric">
+              <div class="op-metric-val" style="color:var(--purify)">&lt;0.1μm</div>
+              <div class="op-metric-lbl">Filtration threshold</div>
+            </div>
+            <div class="op-metric">
+              <div class="op-metric-val" style="color:var(--purify)">99.99%</div>
+              <div class="op-metric-lbl">Pathogen removal spec</div>
+            </div>
+          </div>
+          <div class="op-status s-research">
+            <span class="op-dot"></span>Research Phase · Material Partnerships Active
+          </div>
+        </div>
+        <!-- System 03 — OAE -->
+        <div class="op-card s-design" style="--oc-accent:var(--acid)">
+          <div class="op-card-num">SYSTEM 03 · ACIDIFICATION MITIGATION</div>
+          <div class="op-card-name" style="color:var(--acid)">OCEAN ALKALINITY ENHANCEMENT</div>
+          <div class="op-card-tag tag-research">Research Phase</div>
+          <div class="op-card-body">Electrochemical ocean alkalinity enhancement (OAE) selectively raises pH in high-biodiversity zones — coral reefs, commercial fisheries, marine nurseries. TIDE OAE-K1 units are buoy-mounted, powered by wave energy converters, and monitored via ATLAS sensor network. Reversible. No chemical additives.</div>
+          <div class="op-card-metric">
+            <div class="op-metric">
+              <div class="op-metric-val" style="color:var(--acid)">+0.3</div>
+              <div class="op-metric-lbl">Target pH delta</div>
+            </div>
+            <div class="op-metric">
+              <div class="op-metric-val" style="color:var(--acid)">50km²</div>
+              <div class="op-metric-lbl">Unit coverage radius</div>
+            </div>
+          </div>
+          <div class="op-status s-design">
+            <span class="op-dot"></span>Protocol Research Phase · Awaiting Field Trial Partners
+          </div>
+        </div>
+        <!-- System 03b — Monitoring -->
+        <div class="op-card s-proto" style="--oc-accent:var(--purify)">
+          <div class="op-card-num">SYSTEM 03B · ATLAS INTEGRATION</div>
+          <div class="op-card-name" style="color:var(--purify)">OCEAN SENSOR NETWORK</div>
+          <div class="op-card-tag tag-proto">ATLAS Live</div>
+          <div class="op-card-body">TIDE draws pH, temperature, dissolved oxygen, salinity, and plastic density data from the ATLAS global sensor network. 24/7 monitoring of remediation site effectiveness. All TIDE operational data flows back to ATLAS, making every TIDE deployment a permanent addition to the planetary intelligence record.</div>
+          <div class="op-card-metric">
+            <div class="op-metric">
+              <div class="op-metric-val" style="color:var(--purify)">15min</div>
+              <div class="op-metric-lbl">ATLAS data refresh</div>
+            </div>
+            <div class="op-metric">
+              <div class="op-metric-val" style="color:var(--purify)">7</div>
+              <div class="op-metric-lbl">Tracked ocean variables</div>
+            </div>
+          </div>
+          <div class="op-status s-proto">
+            <span class="op-dot"></span>Architecture Live via ATLAS · Integration Ready
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ── PLASTIC HOTSPOT MAP ─────────────────────────────────────────────── -->
+    <section class="hotspot-section">
+      <div class="hotspot-inner">
+        <div class="section-header" style="padding:0 0 1rem">
+          <div class="section-title">Priority Deployment Zones</div>
+          <div class="section-sub">5 Gyres · High-Density Accumulation Targets</div>
+        </div>
+        <!-- Animated ocean map -->
+        <div class="ocean-map-wrap fade-in">
+          <canvas id="map-canvas"></canvas>
+          <div class="map-label">TIDE TARGET ZONES · ATLAS OCEAN INTELLIGENCE · ARCHITECTURE PHASE</div>
+          <div class="map-legend">
+            <div class="legend-item">
+              <div class="legend-dot" style="background:var(--tide)"></div>TIDE Target
+            </div>
+            <div class="legend-item">
+              <div class="legend-dot" style="background:var(--breach)"></div>Critical pH
+            </div>
+            <div class="legend-item">
+              <div class="legend-dot" style="background:var(--purify)"></div>Purification Zone
+            </div>
+          </div>
+        </div>
+        <div class="hotspot-grid fade-in delay-1">
+          <div class="hotspot-card">
+            <div class="hotspot-region">
+              <div class="hotspot-dot" style="background:var(--breach);box-shadow:0 0 6px var(--breach)"></div>
+              <div>
+                <div class="hotspot-name">Great Pacific Garbage Patch</div>
+                <div class="hotspot-type">North Pacific Subtropical Gyre · Priority 1</div>
+              </div>
+            </div>
+            <div class="hotspot-body">1.6 million km² of plastic accumulation between Hawaii and California. Estimated 80,000 tonnes of floating plastic — 46% discarded fishing nets. TIDE GIA-01 array concept targets north-eastern sector using Kuroshio-driven current modeling.</div>
+            <div class="hotspot-stats">
+              <div class="hs-stat">
+                <div class="hs-stat-val" style="color:var(--breach)">1.6M km²</div>
+                <div class="hs-stat-lbl">Surface area</div>
+              </div>
+              <div class="hs-stat">
+                <div class="hs-stat-val" style="color:var(--amber)">80,000T</div>
+                <div class="hs-stat-lbl">Floating mass</div>
+              </div>
+              <div class="hs-stat">
+                <div class="hs-stat-val" style="color:var(--tide)">GIA-01</div>
+                <div class="hs-stat-lbl">TIDE array code</div>
+              </div>
+            </div>
+          </div>
+          <div class="hotspot-card">
+            <div class="hotspot-region">
+              <div class="hotspot-dot" style="background:var(--breach);box-shadow:0 0 6px var(--breach)"></div>
+              <div>
+                <div class="hotspot-name">North Atlantic Garbage Patch</div>
+                <div class="hotspot-type">North Atlantic Subtropical Gyre · Priority 2</div>
+              </div>
+            </div>
+            <div class="hotspot-body">Located between 22°N–38°N, 30°W–70°W. Dense concentration of microplastics — surface samples average 200,000 particles/km². High overlap with critical Atlantic Meridional Overturning Circulation monitoring zone.</div>
+            <div class="hotspot-stats">
+              <div class="hs-stat">
+                <div class="hs-stat-val" style="color:var(--breach)">700km²</div>
+                <div class="hs-stat-lbl">Dense core zone</div>
+              </div>
+              <div class="hs-stat">
+                <div class="hs-stat-val" style="color:var(--amber)">200K/km²</div>
+                <div class="hs-stat-lbl">Particle density</div>
+              </div>
+              <div class="hs-stat">
+                <div class="hs-stat-val" style="color:var(--tide)">GIA-02</div>
+                <div class="hs-stat-lbl">TIDE array code</div>
+              </div>
+            </div>
+          </div>
+          <div class="hotspot-card">
+            <div class="hotspot-region">
+              <div class="hotspot-dot" style="background:var(--warn);box-shadow:0 0 6px var(--warn)"></div>
+              <div>
+                <div class="hotspot-name">Indian Ocean Gyre Complex</div>
+                <div class="hotspot-type">South Indian Subtropical Gyre · Priority 3</div>
+              </div>
+            </div>
+            <div class="hotspot-body">Less studied than Pacific gyres but growing rapidly. High overlap with coral reef systems in Maldives, Seychelles, and Mascarene Plateau — making this zone a combined plastic capture + OAE acidification target for TIDE System 03.</div>
+            <div class="hotspot-stats">
+              <div class="hs-stat">
+                <div class="hs-stat-val" style="color:var(--warn)">5M km²</div>
+                <div class="hs-stat-lbl">Gyre extent</div>
+              </div>
+              <div class="hs-stat">
+                <div class="hs-stat-val" style="color:var(--acid)">pH 8.09</div>
+                <div class="hs-stat-lbl">Surface pH</div>
+              </div>
+              <div class="hs-stat">
+                <div class="hs-stat-val" style="color:var(--tide)">GIA-03</div>
+                <div class="hs-stat-lbl">TIDE array code</div>
+              </div>
+            </div>
+          </div>
+          <div class="hotspot-card">
+            <div class="hotspot-region">
+              <div class="hotspot-dot" style="background:var(--acid);box-shadow:0 0 6px var(--acid)"></div>
+              <div>
+                <div class="hotspot-name">Great Barrier Reef Acidification Zone</div>
+                <div class="hotspot-type">Coral Sea · OAE Priority 1</div>
+              </div>
+            </div>
+            <div class="hotspot-body">The GBR has experienced 50% coral loss since 1995. TIDE OAE-K1 units are designed for exactly this scenario — localized pH restoration to protect surviving reef structure while global CO₂ reduction efforts scale. First OAE field trial candidate.</div>
+            <div class="hotspot-stats">
+              <div class="hs-stat">
+                <div class="hs-stat-val" style="color:var(--acid)">-50%</div>
+                <div class="hs-stat-lbl">Coral cover since 1995</div>
+              </div>
+              <div class="hs-stat">
+                <div class="hs-stat-val" style="color:var(--acid)">pH 8.06</div>
+                <div class="hs-stat-lbl">Local surface pH</div>
+              </div>
+              <div class="hs-stat">
+                <div class="hs-stat-val" style="color:var(--tide)">OAE-01</div>
+                <div class="hs-stat-lbl">TIDE unit code</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ── TECHNOLOGY ARCHITECTURE ────────────────────────────────────────── -->
+    <section class="tech-section">
+      <div class="tech-inner">
+        <div class="section-header" style="padding:0 0 1.2rem">
+          <div class="section-title">Technology Stack</div>
+          <div class="section-sub">Hardware · AI · Data · Protocol</div>
+        </div>
+        <div class="tech-flow fade-in">
+          <div class="tech-cell">
+            <div class="tech-step">01 · Sense</div>
+            <div class="tech-title">ATLAS Ocean Sensors</div>
+            <div class="tech-arrow">→ feeds TIDE router →</div>
+            <div class="tech-output">pH · temp · plastic density · currents</div>
+          </div>
+          <div class="tech-cell">
+            <div class="tech-step">02 · Route</div>
+            <div class="tech-title">AI Dispatch Engine</div>
+            <div class="tech-arrow">→ positions hardware →</div>
+            <div class="tech-output">14-day optimized array coordinates</div>
+          </div>
+          <div class="tech-cell">
+            <div class="tech-step">03 · Act</div>
+            <div class="tech-title">Hardware Deployment</div>
+            <div class="tech-arrow">→ captures / purifies / restores →</div>
+            <div class="tech-output">Plastic haul · clean water · pH delta</div>
+          </div>
+          <div class="tech-cell">
+            <div class="tech-step">04 · Record</div>
+            <div class="tech-title">TIDE Data API</div>
+            <div class="tech-arrow">→ logs to ATLAS ledger →</div>
+            <div class="tech-output">Open · timestamped · immutable</div>
+          </div>
+          <div class="tech-cell">
+            <div class="tech-step">05 · Verify</div>
+            <div class="tech-title">VYRION Public Ledger</div>
+            <div class="tech-arrow">→ permanent record →</div>
+            <div class="tech-output">Every tonne · every litre · auditable</div>
+          </div>
+        </div>
+        <div class="tech-specs fade-in delay-1">
+          <div class="spec-block">
+            <div class="spec-label">Hardware Philosophy</div>
+            <div class="spec-value">Modular · Solar · Self-reporting</div>
+            <div class="spec-detail">All TIDE hardware units are designed around three principles: modularity (stackable capacity from village to city scale), solar-only power, and autonomous telemetry. Every unit publishes its operational data to ATLAS every 15 minutes.</div>
+          </div>
+          <div class="spec-block">
+            <div class="spec-label">AI Architecture</div>
+            <div class="spec-value">Open-weights · ATLAS-native · Auditable</div>
+            <div class="spec-detail">TIDE's routing and optimization models are built on open-weights architecture. Every routing decision is logged with the input data that produced it. No black-box scoring. Full methodology available at VYRION-TIDE-METHODOLOGY-v1.0.md.</div>
+          </div>
+          <div class="spec-block">
+            <div class="spec-label">Water Purification Spec</div>
+            <div class="spec-value">AWG · RO · Graphene-oxide membrane</div>
+            <div class="spec-detail">Dual system: atmospheric water generation for arid deployment, reverse osmosis with graphene-oxide enhanced membranes for contaminated source water. PFAS, heavy metal, and microplastic removal to WHO drinking water standards.</div>
+          </div>
+          <div class="spec-block">
+            <div class="spec-label">OAE Safety Protocol</div>
+            <div class="spec-value">Electrochemical · Reversible · Monitored</div>
+            <div class="spec-detail">Ocean alkalinity enhancement via electrochemical splitting — no chemical additives, no irreversible processes. Every OAE unit operates within a continuous ATLAS-monitored safety envelope. Operations halt automatically if pH drift exceeds protocol bounds.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ── DATA SOURCES ───────────────────────────────────────────────────── -->
+    <section class="relay-section">
+      <div class="relay-inner fade-in">
+        <div class="relay-eyebrow">Data Intelligence Layer · Source Attribution</div>
+        <h2 class="relay-title">TIDE Data Architecture</h2>
+        <p class="relay-sub">Every TIDE indicator, routing decision, and hardware deployment record is sourced from named, public, auditable datasets. No proprietary data enters the scoring pipeline. All sources are machine-readable via the ATLAS CORS-open API.</p>
+        <div class="data-sources-grid">
+          <div class="ds-cell ds-live">
+            <div class="ds-source">NOAA Hawaii Ocean Time-series</div>
+            <div class="ds-type">→ Ocean pH · Temperature · CO₂</div>
+            <div class="ds-detail">Monthly ocean chemistry since 1988 · Station ALOHA · HOT program</div>
+            <div class="ds-status">
+              <span class="ds-dot"></span>
+              <span style="color:var(--purify)">Live via ATLAS</span>
+            </div>
+          </div>
+          <div class="ds-cell ds-live">
+            <div class="ds-source">NOAA CoralWatch / UNEP-WCMC</div>
+            <div class="ds-type">→ Coral Coverage · Bleaching Events</div>
+            <div class="ds-detail">Global coral reef monitoring · ReefBase · GCRMN</div>
+            <div class="ds-status">
+              <span class="ds-dot"></span>
+              <span style="color:var(--purify)">Live via ATLAS</span>
+            </div>
+          </div>
+          <div class="ds-cell ds-live">
+            <div class="ds-source">OSPAR Commission · CLEO Float Network</div>
+            <div class="ds-type">→ Plastic Trajectories · Density Maps</div>
+            <div class="ds-detail">Surface drifter tracks · Regional seas conventions · WMO</div>
+            <div class="ds-status">
+              <span class="ds-dot"></span>
+              <span style="color:var(--purify)">Live via ATLAS</span>
+            </div>
+          </div>
+          <div class="ds-cell ds-live">
+            <div class="ds-source">NASA PACE / Copernicus Marine Service</div>
+            <div class="ds-type">→ SST · Chlorophyll · Ocean Color</div>
+            <div class="ds-detail">Satellite ocean sensing · CMEMS ERA reanalysis · 15-min refresh</div>
+            <div class="ds-status">
+              <span class="ds-dot"></span>
+              <span style="color:var(--purify)">Live via ATLAS</span>
+            </div>
+          </div>
+          <div class="ds-cell ds-plan">
+            <div class="ds-source">WHO / UNICEF Joint Water Monitoring</div>
+            <div class="ds-type">→ Water Access Deficit · Contamination</div>
+            <div class="ds-detail">JMP database · Country-level WASH data · Annual</div>
+            <div class="ds-status">
+              <span class="ds-dot"></span>
+              <span style="color:var(--tide)">Planned Integration</span>
+            </div>
+          </div>
+          <div class="ds-cell ds-plan">
+            <div class="ds-source">World Resources Institute · Aqueduct</div>
+            <div class="ds-type">→ Water Stress · Risk Mapping</div>
+            <div class="ds-detail">Global water risk atlas · Basin-level scores · Open data</div>
+            <div class="ds-status">
+              <span class="ds-dot"></span>
+              <span style="color:var(--tide)">Planned Integration</span>
+            </div>
+          </div>
+          <div class="ds-cell ds-plan">
+            <div class="ds-source">IUCN Ocean Plastic Reports</div>
+            <div class="ds-type">→ Plastic Load Estimates · Species Impact</div>
+            <div class="ds-detail">Annual marine plastic inventory · Peer-reviewed methodology</div>
+            <div class="ds-status">
+              <span class="ds-dot"></span>
+              <span style="color:var(--tide)">Planned Integration</span>
+            </div>
+          </div>
+          <div class="ds-cell ds-arch">
+            <div class="ds-source">TIDE Hardware Telemetry API</div>
+            <div class="ds-type">→ Real-time haul · pH delta · Water output</div>
+            <div class="ds-detail">Future: TIDE unit network · CORS-open · Feeds ATLAS</div>
+            <div class="ds-status">
+              <span class="ds-dot"></span>
+              <span style="color:var(--t3)">Architecture Defined</span>
+            </div>
+          </div>
+        </div>
+        <div class="relay-status-tag">
+          <span style="color:var(--tide)">◉</span> Architecture Defined · Data Pipeline Specced · Source Attribution Complete
+        </div>
+      </div>
+    </section>
+    <!-- ── PUBLIC LEDGER ──────────────────────────────────────────────────── -->
+    <section class="ledger-section">
+      <div class="ledger-inner fade-in">
+        <div class="ledger-eyebrow">Open Proof Protocol · TIDE Development Log</div>
+        <h2 class="ledger-title">TIDE Public Ledger</h2>
+        <p class="ledger-sub">Every architectural decision, data source adoption, specification revision, and field trial milestone permanently logged. The structural basis for TIDE's institutional credibility before a single unit is deployed.</p>
+        <table class="ledger-table">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Event</th>
+              <th>Source</th>
+              <th style="text-align:right">Timestamp</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="ledger-row">
+              <td>
+                <span class="ledger-type lt-data">DATA</span>
+              </td>
+              <td class="ledger-event">Ocean System Score — 34.0 / 100 · pH 8.08 · Coral cover 28/100 · Established baseline</td>
+              <td class="ledger-source">NOAA HOT · GCRMN · OSPAR · ATLAS v2.0</td>
+              <td class="ledger-ts">2026-05-09 · 00:00 UTC</td>
+            </tr>
+            <tr class="ledger-row">
+              <td>
+                <span class="ledger-type lt-arch">ARCH</span>
+              </td>
+              <td class="ledger-event">TIDE System 01 (Gyre Intercept Array) — Hardware spec v0.1 · AI router architecture defined · 5 priority zones confirmed</td>
+              <td class="ledger-source">TIDE-ARCHITECTURE-v0.1.md · DablerFrost/Vyrion</td>
+              <td class="ledger-ts">2026-05-06 · 00:00 UTC</td>
+            </tr>
+            <tr class="ledger-row">
+              <td>
+                <span class="ledger-type lt-arch">ARCH</span>
+              </td>
+              <td class="ledger-event">TIDE System 02 (Water Purification) — AWG-M1 / AWG-M10 specs drafted · Graphene-oxide membrane research initiated</td>
+              <td class="ledger-source">TIDE-ARCHITECTURE-v0.1.md · WHO water standards reference</td>
+              <td class="ledger-ts">2026-05-06 · 00:00 UTC</td>
+            </tr>
+            <tr class="ledger-row">
+              <td>
+                <span class="ledger-type lt-arch">ARCH</span>
+              </td>
+              <td class="ledger-event">TIDE System 03 (OAE Protocol) — Electrochemical alkalinity enhancement protocol v0.1 · Safety bounds defined · No-additives constraint locked</td>
+              <td class="ledger-source">TIDE-OAE-PROTOCOL-v0.1.md · Princeton OAE review reference</td>
+              <td class="ledger-ts">2026-05-04 · 00:00 UTC</td>
+            </tr>
+            <tr class="ledger-row">
+              <td>
+                <span class="ledger-type lt-data">DATA</span>
+              </td>
+              <td class="ledger-event">ATLAS ocean sensor integration confirmed — pH, SST, dissolved O₂, plastic density feeds active · 15-min refresh live</td>
+              <td class="ledger-source">ATLAS v2.0 · NOAA PACE · Copernicus Marine</td>
+              <td class="ledger-ts">2026-04-20 · 00:00 UTC</td>
+            </tr>
+            <tr class="ledger-row">
+              <td>
+                <span class="ledger-type lt-alert">ALERT</span>
+              </td>
+              <td class="ledger-event">GBR bleaching event confirmed — fourth mass bleaching since 2016 · OAE-01 field trial zone elevated to Priority 1</td>
+              <td class="ledger-source">ARC Centre of Excellence · GBRMPA · ATLAS</td>
+              <td class="ledger-ts">2026-04-14 · public</td>
+            </tr>
+            <tr class="ledger-row">
+              <td>
+                <span class="ledger-type lt-method">METHODOLOGY</span>
+              </td>
+              <td class="ledger-event">VYRION-TIDE-METHODOLOGY-v0.1.md — Ocean scoring indicators · 7 variables · Weights defined · Prior art established</td>
+              <td class="ledger-source">GitHub commit · DablerFrost/Vyrion</td>
+              <td class="ledger-ts">2026-03-20 · 00:00 UTC</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <!-- ── PROOF SECTION ──────────────────────────────────────────────────── -->
+    <section class="proof-section fade-in">
+      <div class="proof-block">
+        <div class="proof-label">Methodology</div>
+        <div class="proof-value">"The data exists. The technology exists. The routing intelligence is what's missing."</div>
+        <div class="proof-sub">TIDE's architecture is built on the same open-proof principles as every VYRION module: named sources, open weights, timestamped decisions, public ledger. No deployment happens without the data to validate it. No claim is made without the methodology to back it.</div>
+        <div class="proof-links">
+          <a class="proof-link" href="https://github.com/DablerFrost/Vyrion/blob/main/docs/VYRION-TIDE-METHODOLOGY-v0.1.md" target="_blank" rel="noopener noreferrer">VYRION-TIDE-METHODOLOGY-v0.1.md</a>
+          <a class="proof-link" href="https://github.com/DablerFrost/Vyrion/blob/main/docs/TIDE-OAE-PROTOCOL-v0.1.md" target="_blank" rel="noopener noreferrer">TIDE-OAE-PROTOCOL-v0.1.md</a>
+          <a class="proof-link" href="https://github.com/DablerFrost/Vyrion/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener noreferrer">CHANGELOG.md</a>
+          <a class="proof-link" href="https://vyrion.earth/atlas">ATLAS Ocean Intelligence →</a>
+        </div>
+      </div>
+      <div class="proof-block">
+        <div class="proof-label">Data Sources</div>
+        <div class="proof-value">All public. All ocean-verified.</div>
+        <div class="proof-sub">NOAA HOT · NOAA CoralWatch · UNEP-WCMC · OSPAR · CLEO Float Network · NASA PACE · Copernicus Marine Service · WHO/UNICEF JMP · WRI Aqueduct · IUCN Ocean Plastic Reports · ARC Centre of Excellence (GBR) <br>
+          <br>No proprietary data enters the TIDE scoring pipeline. Every source is named, linked, and licensed in methodology documentation. ATLAS serves as the live data backbone for all TIDE operations.
+        </div>
+        <div class="proof-links">
+          <a class="proof-link" href="https://vyrion.earth/atlas">ATLAS Data Platform →</a>
+          <a class="proof-link" href="https://vyrion.earth/about">About VYRION PBC →</a>
+          <a class="proof-link" href="https://vyrion.earth">VYRION Earth Index →</a>
+        </div>
+      </div>
+    </section>
+    <!-- ── FOOTER ─────────────────────────────────────────────────────────── -->
+    <footer class="footer">
+      <div class="footer-l">
+        <strong>VYRION TIDE</strong> · Module 06 · Ocean Remediation Intelligence · Architecture Phase · May 2026 <br>
+        <strong>VYRION PBC</strong> · Planetary Accountability Infrastructure · V2.0 <br> Founder: Tyler Frost / DablerFrost · Hilo, Hawaii <br>
+        <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a> · <a href="https://github.com/DablerFrost/Vyrion" target="_blank" rel="noopener noreferrer">github.com/DablerFrost/Vyrion</a>
+        <br> Not financial advice. Scores are informational outputs derived from public data. <br>
+        <a href="https://github.com/DablerFrost/Vyrion/blob/main/docs/INVESTABLE-DISCLAIMER.md" target="_blank" rel="noopener noreferrer">INVESTABLE-DISCLAIMER.md</a> · <a href="https://github.com/DablerFrost/Vyrion/blob/main/docs/VYRION-LEGAL-DISCLAIMER-v1.0.md" target="_blank" rel="noopener noreferrer">LEGAL-DISCLAIMER.md</a>
+        <div class="footer-nexan">A subsidiary of <a href="https://vyrion.earth/nexan">The Nexan Institute</a> · Behavioral infrastructure for human-AI cooperation </div>
+      </div>
+    </footer>
+    <!-- ── FLOATING ORB ────────────────────────────────────────────────────── -->
+    <div id="vyr-orb" aria-label="Quick navigation">
+      <div class="oo-btn" id="oo-btn" role="button" tabindex="0" aria-expanded="false" aria-controls="oo-panel">
+        <span class="oo-icon">+</span>
+      </div>
+      <span class="oo-tooltip">Navigate VYRION</span>
+      <div class="oo-panel" id="oo-panel" aria-hidden="true">
+        <div class="oo-panel-header">Quick Access</div>
+        <a class="oo-link" href="https://vyrion.earth" onclick="oOrbClose()">
+          <span class="oo-dot"></span> HOME </a>
+        <a class="oo-link" href="https://vyrion.earth/conscience" onclick="oOrbClose()">
+          <span class="oo-dot"></span> CONSCIENCE </a>
+        <a class="oo-link" href="https://vyrion.earth/atlas" onclick="oOrbClose()">
+          <span class="oo-dot"></span> ATLAS </a>
+        <a class="oo-link" href="https://vyrion.earth/shield" onclick="oOrbClose()">
+          <span class="oo-dot"></span> SHIELD </a>
+        <a class="oo-link" href="https://vyrion.earth/root" onclick="oOrbClose()">
+          <span class="oo-dot"></span> ROOT </a>
+        <a class="oo-link" href="https://vyrion.earth/canopy" onclick="oOrbClose()">
+          <span class="oo-dot"></span> CANOPY </a>
+        <a class="oo-link" href="https://vyrion.earth/flux" onclick="oOrbClose()">
+          <span class="oo-dot"></span> FLUX </a>
+        <a class="oo-link" href="https://vyrion.earth/record" onclick="oOrbClose()">
+          <span class="oo-dot"></span> RECORD </a>
+        <a class="oo-link" href="https://vyrion.earth/about" onclick="oOrbClose()">
+          <span class="oo-dot"></span> ABOUT </a>
+      </div>
+    </div>
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <script>
+      'use strict';
+      /* ── THEME ──────────────────────────────────────────────────────────── */
+      function toggleTheme() {
+        const html = document.documentElement;
+        const isLight = html.getAttribute('data-theme') === 'light';
+        html.setAttribute('data-theme', isLight ? 'dark' : 'light');
+        const btn = document.getElementById('theme-btn');
+        if (btn) btn.textContent = isLight ? '◐ DARK' : '◑ LIGHT';
+        try {
+          localStorage.setItem('vc-theme', isLight ? 'dark' : 'light');
+        } catch (e) {}
+      }
+      (function() {
+        try {
+          const t = localStorage.getItem('vc-theme');
+          if (t === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            const btn = document.getElementById('theme-btn');
+            if (btn) btn.textContent = '◑ LIGHT';
+          }
+        } catch (e) {}
+      })();
+      /* ── FONT SCALE ─────────────────────────────────────────────────────── */
+      const FONT_SCALES = {
+        '0.88': 16,
+        '1.0': 18,
+        '1.22': 22
+      };
+
+      function setScale(btn) {
+        document.documentElement.style.fontSize = (FONT_SCALES[btn.dataset.scale] || 18) + 'px';
+        document.querySelectorAll('.nc-sz').forEach(b => b.classList.toggle('active', b === btn));
+        try {
+          localStorage.setItem('vc-scale', btn.dataset.scale);
+        } catch (e) {}
+      }
+      (function() {
+        try {
+          const s = localStorage.getItem('vc-scale');
+          if (s && FONT_SCALES[s]) {
+            document.documentElement.style.fontSize = FONT_SCALES[s] + 'px';
+            requestAnimationFrame(() => document.querySelectorAll('.nc-sz').forEach(b => b.classList.toggle('active', b.dataset.scale === s)));
+          }
+        } catch (e) {}
+      })();
+      /* ── CUSTOM CURSOR ───────────────────────────────────────────────────── */
+      (function() {
+        const cur = document.getElementById('cursor');
+        const ring = document.getElementById('cursor-ring');
+        const glow = document.getElementById('cursor-glow');
+        if (!cur || !ring || !glow) return;
+        let mx = 0,
+          my = 0,
+          rx = 0,
+          ry = 0;
+        document.addEventListener('mousemove', e => {
+          mx = e.clientX;
+          my = e.clientY;
+          cur.style.left = mx + 'px';
+          cur.style.top = my + 'px';
+          glow.style.left = mx + 'px';
+          glow.style.top = my + 'px';
+        });
+
+        function animateRing() {
+          rx += (mx - rx) * .15;
+          ry += (my - ry) * .15;
+          ring.style.left = rx + 'px';
+          ring.style.top = ry + 'px';
+          requestAnimationFrame(animateRing);
+        }
+        animateRing();
+        document.addEventListener('mouseover', e => {
+          const t = e.target.closest('a,button,[role="button"],.op-card,.oo-link,.hotspot-card,.ds-cell');
+          if (t) {
+            ring.style.width = '44px';
+            ring.style.height = '44px';
+            ring.style.borderColor = 'rgba(0,150,199,.9)';
+            cur.style.width = '5px';
+            cur.style.height = '5px';
+          }
+        });
+        document.addEventListener('mouseout', e => {
+          const t = e.target.closest('a,button,[role="button"],.op-card,.oo-link,.hotspot-card,.ds-cell');
+          if (t) {
+            ring.style.width = '32px';
+            ring.style.height = '32px';
+            ring.style.borderColor = 'rgba(0,150,199,.5)';
+            cur.style.width = '8px';
+            cur.style.height = '8px';
+          }
+        });
+      })();
+      /* ── OCEAN HEADER CANVAS — sonar rings + particle field ─────────────── */
+      (function() {
+        const canvas = document.getElementById('ocean-canvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let W, H, rings = [],
+          particles = [];
+        const PARTICLE_COUNT = 60;
+
+        function resize() {
+          W = canvas.width = canvas.offsetWidth;
+          H = canvas.height = canvas.offsetHeight;
+        }
+        /* sonar rings */
+        function spawnRing() {
+          rings.push({
+            x: W * (.3 + Math.random() * .5),
+            y: H * (.2 + Math.random() * .6),
+            r: 0,
+            maxR: 80 + Math.random() * 120,
+            alpha: .35,
+            speed: .4 + Math.random() * .5
+          });
+        }
+        setInterval(spawnRing, 1800);
+        spawnRing();
+        spawnRing();
+        /* ambient particles (plankton / debris) */
+        function initParticles() {
+          particles = Array.from({
+            length: PARTICLE_COUNT
+          }, () => ({
+            x: Math.random() * W,
+            y: Math.random() * H,
+            vx: (Math.random() - .5) * .22,
+            vy: (Math.random() - .5) * .18,
+            r: .8 + Math.random() * 1.4,
+            alpha: .15 + Math.random() * .45,
+            hue: Math.random() < .65 ? 196 : 180,
+            /* cyan vs teal */
+            pulse: Math.random() * Math.PI * 2
+          }));
+        }
+
+        function draw() {
+          ctx.clearRect(0, 0, W, H);
+          const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+          const base = isDark ? 1 : .4;
+          /* sonar rings */
+          rings.forEach((r, i) => {
+            r.r += r.speed;
+            r.alpha = r.alpha * .993;
+            const prog = r.r / r.maxR;
+            ctx.beginPath();
+            ctx.arc(r.x, r.y, r.r, 0, Math.PI * 2);
+            ctx.strokeStyle = `rgba(0,150,199,${r.alpha * base * (1-prog*.6)})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+            if (r.r >= r.maxR) rings.splice(i, 1);
+          });
+          /* depth grid lines */
+          ctx.strokeStyle = `rgba(0,80,140,${.04*base})`;
+          ctx.lineWidth = .5;
+          for (let y = 0; y < H; y += 40) {
+            ctx.beginPath();
+            ctx.moveTo(0, y);
+            ctx.lineTo(W, y);
+            ctx.stroke();
+          }
+          for (let x = 0; x < W; x += 60) {
+            ctx.beginPath();
+            ctx.moveTo(x, 0);
+            ctx.lineTo(x, H);
+            ctx.stroke();
+          }
+          /* particles */
+          particles.forEach(p => {
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.x < -5) p.x = W + 5;
+            if (p.x > W + 5) p.x = -5;
+            if (p.y < -5) p.y = H + 5;
+            if (p.y > H + 5) p.y = -5;
+            p.pulse += .02;
+            const g = .6 + .4 * Math.sin(p.pulse);
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = `hsla(${p.hue},100%,65%,${p.alpha*g*base})`;
+            ctx.fill();
+          });
+          requestAnimationFrame(draw);
+        }
+        resize();
+        initParticles();
+        draw();
+        window.addEventListener('resize', () => {
+          resize();
+          initParticles();
+        });
+      })();
+      /* ── OCEAN HOTSPOT MAP CANVAS ────────────────────────────────────────── */
+      (function() {
+        const canvas = document.getElementById('map-canvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let W, H;
+        /* Approximate gyre positions as normalised [x,y] fractions */
+        const GYRES = [{
+          x: .75,
+          y: .35,
+          label: 'GPGP',
+          color: '#F03030',
+          r: 22,
+          type: 'plastic'
+        }, {
+          x: .27,
+          y: .32,
+          label: 'NAGP',
+          color: '#F03030',
+          r: 16,
+          type: 'plastic'
+        }, {
+          x: .55,
+          y: .55,
+          label: 'SATG',
+          color: '#F09000',
+          r: 14,
+          type: 'plastic'
+        }, {
+          x: .62,
+          y: .48,
+          label: 'NIOGG',
+          color: '#F09000',
+          r: 12,
+          type: 'plastic'
+        }, {
+          x: .18,
+          y: .52,
+          label: 'SAGP',
+          color: '#F09000',
+          r: 11,
+          type: 'plastic'
+        }, {
+          x: .78,
+          y: .58,
+          label: 'GBR',
+          color: '#FF6B35',
+          r: 10,
+          type: 'oae'
+        }, {
+          x: .35,
+          y: .62,
+          label: 'H₂O·1',
+          color: '#48CAE4',
+          r: 8,
+          type: 'water'
+        }, {
+          x: .48,
+          y: .45,
+          label: 'H₂O·2',
+          color: '#48CAE4',
+          r: 7,
+          type: 'water'
+        }, ];
+        let pulse = 0;
+
+        function resize() {
+          W = canvas.width = canvas.offsetWidth;
+          H = canvas.height = canvas.offsetHeight;
+        }
+
+        function drawWorldOutline() {
+          /* simplified continental silhouettes as paths */
+          ctx.strokeStyle = 'rgba(0,150,199,.12)';
+          ctx.lineWidth = .8;
+          /* North America */
+          ctx.beginPath();
+          ctx.moveTo(W * .08, H * .18);
+          ctx.lineTo(W * .28, H * .15);
+          ctx.lineTo(W * .30, H * .28);
+          ctx.lineTo(W * .22, H * .45);
+          ctx.lineTo(W * .16, H * .52);
+          ctx.lineTo(W * .10, H * .42);
+          ctx.closePath();
+          ctx.stroke();
+          /* South America */
+          ctx.beginPath();
+          ctx.moveTo(W * .19, H * .55);
+          ctx.lineTo(W * .28, H * .52);
+          ctx.lineTo(W * .28, H * .75);
+          ctx.lineTo(W * .21, H * .85);
+          ctx.lineTo(W * .16, H * .72);
+          ctx.closePath();
+          ctx.stroke();
+          /* Europe */
+          ctx.beginPath();
+          ctx.moveTo(W * .42, H * .15);
+          ctx.lineTo(W * .52, H * .13);
+          ctx.lineTo(W * .54, H * .28);
+          ctx.lineTo(W * .44, H * .30);
+          ctx.closePath();
+          ctx.stroke();
+          /* Africa */
+          ctx.beginPath();
+          ctx.moveTo(W * .44, H * .32);
+          ctx.lineTo(W * .55, H * .30);
+          ctx.lineTo(W * .57, H * .65);
+          ctx.lineTo(W * .48, H * .78);
+          ctx.lineTo(W * .42, H * .65);
+          ctx.closePath();
+          ctx.stroke();
+          /* Asia */
+          ctx.beginPath();
+          ctx.moveTo(W * .54, H * .13);
+          ctx.lineTo(W * .82, H * .12);
+          ctx.lineTo(W * .88, H * .30);
+          ctx.lineTo(W * .78, H * .40);
+          ctx.lineTo(W * .65, H * .42);
+          ctx.lineTo(W * .58, H * .32);
+          ctx.closePath();
+          ctx.stroke();
+          /* Australia */
+          ctx.beginPath();
+          ctx.moveTo(W * .75, H * .55);
+          ctx.lineTo(W * .87, H * .52);
+          ctx.lineTo(W * .88, H * .68);
+          ctx.lineTo(W * .78, H * .72);
+          ctx.lineTo(W * .72, H * .62);
+          ctx.closePath();
+          ctx.stroke();
+        }
+
+        function draw() {
+          ctx.clearRect(0, 0, W, H);
+          pulse += .03;
+          const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+          const a = isDark ? 1 : .55;
+          /* grid */
+          ctx.strokeStyle = `rgba(0,80,120,${.06*a})`;
+          ctx.lineWidth = .5;
+          for (let y = 0; y < H; y += H / 6) {
+            ctx.beginPath();
+            ctx.moveTo(0, y);
+            ctx.lineTo(W, y);
+            ctx.stroke();
+          }
+          for (let x = 0; x < W; x += W / 8) {
+            ctx.beginPath();
+            ctx.moveTo(x, 0);
+            ctx.lineTo(x, H);
+            ctx.stroke();
+          }
+          drawWorldOutline();
+          /* gyre hotspots */
+          GYRES.forEach(g => {
+            const gx = g.x * W,
+              gy = g.y * H;
+            const pr = .5 + .5 * Math.sin(pulse + g.x * 3);
+            /* outer pulse ring */
+            ctx.beginPath();
+            ctx.arc(gx, gy, g.r + 4 + pr * 8, 0, Math.PI * 2);
+            const c = g.color.replace('#', '');
+            const rgb = [
+              parseInt(c.slice(0, 2), 16),
+              parseInt(c.slice(2, 4), 16),
+              parseInt(c.slice(4, 6), 16)
+            ];
+            ctx.strokeStyle = `rgba(${rgb},${.25*a*(1-pr*.5)})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+            /* filled dot */
+            ctx.beginPath();
+            ctx.arc(gx, gy, g.r * .55, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(${rgb},.18)`;
+            ctx.fill();
+            ctx.strokeStyle = `rgba(${rgb},${.6*a})`;
+            ctx.lineWidth = 1.2;
+            ctx.stroke();
+            /* label */
+            ctx.fillStyle = `rgba(${rgb},${.7*a})`;
+            ctx.font = `${Math.max(9, W/90)}px 'Courier Prime', monospace`;
+            ctx.fillText(g.label, gx + g.r * .7, gy - g.r * .3);
+          });
+          requestAnimationFrame(draw);
+        }
+        resize();
+        draw();
+        window.addEventListener('resize', resize);
+      })();
+      /* ── RING + BARS ANIMATE ─────────────────────────────────────────────── */
+      function animateTide() {
+        setTimeout(() => {
+          /* indicator bars */
+          document.querySelectorAll('.ind-bar-fill').forEach(el => {
+            el.style.width = (parseFloat(el.dataset.pct) || 0) + '%';
+          });
+          /* score ring */
+          const fill = document.getElementById('ring-fill');
+          if (fill) fill.style.strokeDashoffset = (427.3 * (1 - 34 / 100)).toFixed(1);
+        }, 350);
+      }
+      /* ── SCROLL FADE-IN ──────────────────────────────────────────────────── */
+      (function() {
+        const obs = new IntersectionObserver(entries => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add('visible');
+              obs.unobserve(e.target);
+            }
+          });
+        }, {
+          threshold: .07
+        });
+        document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+      })();
+      animateTide();
+      /* ── ORB NAV ─────────────────────────────────────────────────────────── */
+      (function() {
+        const ooBtn = document.getElementById('oo-btn');
+        const ooPanel = document.getElementById('oo-panel');
+        window.oOrbToggle = function() {
+          if (!ooBtn || !ooPanel) return;
+          const open = ooPanel.classList.toggle('open');
+          ooBtn.classList.toggle('open', open);
+          ooBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          ooPanel.setAttribute('aria-hidden', open ? 'false' : 'true');
+        };
+        window.oOrbClose = function() {
+          if (!ooPanel) return;
+          ooPanel.classList.remove('open');
+          if (ooBtn) ooBtn.classList.remove('open');
+          if (ooBtn) ooBtn.setAttribute('aria-expanded', 'false');
+          ooPanel.setAttribute('aria-hidden', 'true');
+        };
+        if (ooBtn) ooBtn.addEventListener('click', window.oOrbToggle);
+        document.addEventListener('click', e => {
+          const orb = document.getElementById('vyr-orb');
+          if (orb && !orb.contains(e.target)) window.oOrbClose();
+        });
+        if (ooBtn) ooBtn.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            window.oOrbToggle();
+          }
+          if (e.key === 'Escape') window.oOrbClose();
+        });
+      })();
+      /* ── TIMESTAMP ───────────────────────────────────────────────────────── */
+      (function() {
+        const el = document.getElementById('ts-val');
+        if (el) el.textContent = new Date().toUTCString().replace(' GMT', '') + ' UTC';
+      })();
+    </script>
+    <!-- Cloudflare Insights -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"10eb5392c70c4c4fa5452b5bbc652e0e","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+  </body>
+</html>
