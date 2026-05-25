@@ -1,9 +1,9 @@
 {
   "meta": {
-    "generated": "2026-05-24T04:24:52.650Z",
-    "generated_date": "2026-05-24",
+    "generated": "2026-05-25T04:46:53.536Z",
+    "generated_date": "2026-05-25",
     "script_version": "2.0",
-    "runtime_ms": 2541,
+    "runtime_ms": 764,
     "sources": [
       "NOAA Global Monitoring Laboratory (CO₂) — gml.noaa.gov",
       "NOAA NCEI Global Temperature Anomaly — ncei.noaa.gov",
@@ -19,15 +19,15 @@
       "arctic": false,
       "antarctic": false,
       "wildfire": true,
-      "soilMoisture": false
+      "soilMoisture": true
     }
   },
   "vyrion_index": {
     "score": 35.4,
     "uncertainty": 1.8,
     "min_detectable": 0.5,
-    "dayNumber": 67,
-    "date": "2026-05-24",
+    "dayNumber": 68,
+    "date": "2026-05-25",
     "computed": true,
     "methodology": "https://github.com/DablerFrost/Vyrion/blob/main/docs/VYRION-METHODOLOGY-V1.0.md",
     "formula": "S_final = Σ(W_i × S_i)",
@@ -48,7 +48,7 @@
         "note": "C1+C2 ice extents live · C3-C6 last-known"
       },
       "forest": {
-        "score": 39.13,
+        "score": 39.58,
         "weight": 0.13,
         "note": "F3 wildfire count live · F1,F2,F4-F6 last-known"
       },
@@ -58,7 +58,7 @@
         "note": "No daily indicator in v2.0 · all last-known"
       },
       "freshwater": {
-        "score": 30.48,
+        "score": 30.55,
         "weight": 0.1,
         "note": "W1 soil moisture proxy live · W2-W6 last-known"
       },
@@ -75,8 +75,8 @@
     },
     "indicator_scores": {
       "A1_co2": 10.25,
-      "F3_wildfire": 33.78,
-      "W1_soil_moisture": 83.86
+      "F3_wildfire": 36.49,
+      "W1_soil_moisture": 84.3
     },
     "indicator_status": {
       "A1_co2": {
@@ -103,8 +103,8 @@
       },
       "F3_wildfire": {
         "live": true,
-        "value": 55,
-        "score": 33.78,
+        "value": 53,
+        "score": 36.49,
         "unit": "active events",
         "source": "NASA EONET"
       },
@@ -114,9 +114,12 @@
         "source": "GBIF"
       },
       "W1_soil_moisture": {
-        "live": false,
-        "score": 83.86,
-        "note": "Using previous value"
+        "live": true,
+        "value": 0.2186,
+        "score": 84.3,
+        "unit": "m³/m³",
+        "source": "Open-Meteo ERA5",
+        "note": "Proxy for SPEI drought index. Phase 3: SPEI Global Drought Monitor."
       },
       "S_soil": {
         "live": false,
@@ -134,11 +137,11 @@
   "atmosphere": {
     "co2": {
       "ppm": 432.58,
-      "date": "2026-05-22",
+      "date": "2026-05-23",
       "score_A1": 10.25,
       "source": "NOAA Global Monitoring Laboratory — Mauna Loa Observatory",
       "url": "https://gml.noaa.gov/ccgg/trends/",
-      "retrieved": "2026-05-24T04:24:52.650Z"
+      "retrieved": "2026-05-25T04:46:53.536Z"
     },
     "global_temp_anomaly": null
   },
@@ -148,8 +151,8 @@
   },
   "forest": {
     "wildfire": {
-      "count": 55,
-      "score": 33.78,
+      "count": 53,
+      "score": 36.49,
       "sample": [
         "DeSoto BB 8374 S RX Prescribed Fire, Har",
         "Chickasawhay CPT 451 452 RX Prescribed F",
@@ -159,29 +162,29 @@
       ],
       "source": "NASA EONET v3",
       "window": "14 days",
-      "retrieved": "2026-05-24T04:24:52.650Z"
+      "retrieved": "2026-05-25T04:46:53.536Z"
     }
   },
   "freshwater": {
     "soil_moisture": {
-      "moisture_avg_m3": 0.2177,
-      "period": "2026-05-11 to 2026-05-18",
+      "moisture_avg_m3": 0.2186,
+      "period": "2026-05-15 to 2026-05-22",
       "sample_count": 48,
       "baseline_m3": 0.25,
       "baseline_note": "Proxy baseline — ERA5 global optimal estimate. Phase 3: SPEI direct.",
-      "score": 83.86,
+      "score": 84.3,
       "source": "Open-Meteo ERA5 Reanalysis (ECMWF)",
       "license": "CC BY 4.0",
-      "retrieved": "2026-05-21T04:39:53.947Z"
+      "retrieved": "2026-05-25T04:46:53.536Z"
     }
   },
   "biodiversity": {
     "gbif": {
-      "total_occurrences": 3857368473,
+      "total_occurrences": 3857507377,
       "note": "Reference value — B5 scoring requires historical comparison. Phase 3.",
       "source": "GBIF.org",
       "license": "CC BY 4.0",
-      "retrieved": "2026-05-24T04:24:52.650Z"
+      "retrieved": "2026-05-25T04:46:53.536Z"
     }
   },
   "companies": {
@@ -219,7 +222,7 @@
             "items": "8.01,9.01"
           }
         ],
-        "retrieved": "2026-05-24T04:24:50.586Z"
+        "retrieved": "2026-05-25T04:46:53.160Z"
       }
     },
     "bp": {
@@ -236,7 +239,7 @@
         "latest_8k": null,
         "count_8k_90d": 0,
         "recent_8k_items": [],
-        "retrieved": "2026-05-24T04:24:50.607Z"
+        "retrieved": "2026-05-25T04:46:53.152Z"
       }
     },
     "shell": {
@@ -253,7 +256,7 @@
         "latest_8k": null,
         "count_8k_90d": 0,
         "recent_8k_items": [],
-        "retrieved": "2026-05-24T04:24:50.709Z"
+        "retrieved": "2026-05-25T04:46:53.135Z"
       }
     },
     "delta": {
@@ -286,7 +289,7 @@
             "items": "5.02,9.01"
           }
         ],
-        "retrieved": "2026-05-24T04:24:50.641Z"
+        "retrieved": "2026-05-25T04:46:53.126Z"
       }
     },
     "starbucks": {
@@ -327,7 +330,7 @@
             "items": "5.07"
           }
         ],
-        "retrieved": "2026-05-24T04:24:50.631Z"
+        "retrieved": "2026-05-25T04:46:53.154Z"
       }
     },
     "walmart": {
@@ -364,7 +367,7 @@
             "items": "8.01"
           }
         ],
-        "retrieved": "2026-05-24T04:24:50.588Z"
+        "retrieved": "2026-05-25T04:46:53.166Z"
       }
     },
     "meta": {
@@ -397,7 +400,7 @@
             "items": "5.02"
           }
         ],
-        "retrieved": "2026-05-24T04:24:50.620Z"
+        "retrieved": "2026-05-25T04:46:53.162Z"
       }
     },
     "amazon": {
@@ -438,7 +441,7 @@
             "items": "8.01,9.01"
           }
         ],
-        "retrieved": "2026-05-24T04:24:50.625Z"
+        "retrieved": "2026-05-25T04:46:53.137Z"
       }
     },
     "microsoft": {
@@ -467,7 +470,7 @@
             "items": "2.02,9.01"
           }
         ],
-        "retrieved": "2026-05-24T04:24:50.600Z"
+        "retrieved": "2026-05-25T04:46:53.146Z"
       }
     },
     "unilever": {
@@ -506,7 +509,7 @@
             "items": "5.07,9.01"
           }
         ],
-        "retrieved": "2026-05-24T04:24:50.595Z"
+        "retrieved": "2026-05-25T04:46:53.187Z"
       }
     }
   }
