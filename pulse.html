@@ -1,0 +1,1988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>VYRION PULSE — Impact Economy & Credit Marketplace · Module 08</title>
+<meta name="description" content="VYRION PULSE — Module 08. Tokenized marketplace for verified carbon, biodiversity, water, and soil credits. Corporations meet compliance. Governments monetize restoration.">
+<meta property="og:title" content="VYRION PULSE — Impact Economy & Credit Marketplace">
+<meta property="og:description" content="Tokenized marketplace for verified carbon, biodiversity, water, and soil credits. The economic engine of the VYRION ecosystem.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vyrion.earth/pulse">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Archivo:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════
+   VYRION PULSE · Module 08 · Impact Economy
+   Planetary Intelligence Network · V1.0 · 2026
+   ═══════════════════════════════════════════════════ */
+
+:root {
+  --void:   #020912;
+  --void2:  #061624;
+  --void3:  #0b2035;
+  --glow:   #00D4FF;
+  --cyan:   #4AEDFF;
+  --green:  #00FF9D;
+  --amber:  #FFB84D;
+  --warn:   #F09000;
+  --breach: #F03030;
+  --t1:     #e4f2ff;
+  --t2:     #6a9ab8;
+  --t3:     #2d6080;
+  --border: rgba(0,212,255,0.12);
+  --border-s: rgba(0,212,255,0.25);
+  --glass:  rgba(6,22,36,0.8);
+  --nav-h:  64px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--void);
+  color: var(--t1);
+  font-family: 'Archivo', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--void); }
+::-webkit-scrollbar-thumb { background: var(--t3); border-radius: 2px; }
+
+/* ── Scanlines ── */
+.scanlines {
+  position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px,
+    rgba(0,0,0,0.025) 2px, rgba(0,0,0,0.025) 4px);
+}
+
+/* ═══════════════════
+   NAVIGATION
+   ═══════════════════ */
+.nav {
+  position: sticky; top: 0; z-index: 200;
+  height: var(--nav-h);
+  background: rgba(2,9,18,0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: 1440px; margin: 0 auto; height: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2rem; gap: 1.5rem; position: relative;
+}
+.nav-logo {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 1.3rem; font-weight: 700;
+  letter-spacing: 0.28em; color: var(--green);
+  text-decoration: none; text-transform: uppercase; flex-shrink: 0;
+}
+.nav-links {
+  display: flex; align-items: center; gap: 0;
+  flex: 1; justify-content: center;
+}
+.nav-links a {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.68rem; letter-spacing: 0.12em;
+  color: var(--t2); text-decoration: none;
+  padding: 0.4rem 0.85rem; transition: color 0.2s;
+  text-transform: uppercase; white-space: nowrap;
+  border-bottom: 1px solid transparent;
+}
+.nav-links a:hover { color: var(--cyan); }
+.nav-links a.active {
+  color: var(--glow);
+  border-bottom-color: var(--glow);
+}
+.nav-right {
+  display: flex; align-items: center; gap: 1rem; flex-shrink: 0;
+}
+.nav-live {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.62rem; letter-spacing: 0.1em; color: var(--t3);
+}
+.live-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green); box-shadow: 0 0 8px var(--green);
+  animation: blink 2s ease-in-out infinite;
+}
+@keyframes blink {
+  0%,100% { opacity:1; box-shadow: 0 0 6px var(--green); }
+  50%      { opacity:.3; box-shadow: 0 0 2px var(--green); }
+}
+.nav-toggle {
+  display: none; background: none;
+  border: 1px solid var(--border); color: var(--t2);
+  padding: 0.4rem 0.7rem; cursor: pointer;
+  font-family: 'Courier Prime', monospace; font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+@media (max-width: 920px) {
+  .nav-links {
+    display: none; position: absolute;
+    top: var(--nav-h); left: 0; right: 0;
+    background: rgba(2,9,18,0.98);
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem 2rem;
+    flex-direction: column; align-items: flex-start; gap: 0.25rem;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 0.6rem 0; width: 100%; }
+  .nav-toggle { display: block; }
+}
+
+/* ═══════════════════
+   HERO
+   ═══════════════════ */
+.hero {
+  position: relative; min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  overflow: hidden; padding: 0 2rem 5rem;
+}
+#heroCanvas {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+}
+.hero-grid {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(0,212,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  animation: grid-move 28s linear infinite;
+}
+@keyframes grid-move {
+  0%   { transform: translate(0,0); }
+  100% { transform: translate(64px,64px); }
+}
+.hero-rings {
+  position: absolute;
+  top: 42%; right: -5%;
+  transform: translateY(-50%);
+  width: 760px; height: 760px;
+  pointer-events: none;
+}
+.hero-ring {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  border: 1px solid rgba(0,212,255,0.07);
+  animation: ring-breathe 5s ease-in-out infinite;
+}
+.hero-ring:nth-child(1){ width:130px; height:130px; animation-delay:0s; }
+.hero-ring:nth-child(2){ width:260px; height:260px; animation-delay:.4s; }
+.hero-ring:nth-child(3){ width:400px; height:400px; animation-delay:.8s; border-color:rgba(0,212,255,0.05); }
+.hero-ring:nth-child(4){ width:540px; height:540px; animation-delay:1.2s; border-color:rgba(0,212,255,0.04); }
+.hero-ring:nth-child(5){ width:700px; height:700px; animation-delay:1.6s; border-color:rgba(0,212,255,0.025); }
+@keyframes ring-breathe {
+  0%,100%{ opacity:.9; }
+  50%    { opacity:.2; }
+}
+.hero-sweep-wrap {
+  position: absolute; top: 50%; left: 50%;
+  width: 400px; height: 400px;
+  transform: translate(-50%,-50%);
+  pointer-events: none;
+}
+.hero-sweep {
+  position: absolute; top: 50%; left: 50%;
+  width: 380px; height: 1px;
+  transform-origin: left center;
+  background: linear-gradient(90deg, rgba(0,212,255,0.55) 0%, transparent 100%);
+  animation: radar-sweep 7s linear infinite;
+}
+@keyframes radar-sweep {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.hero-vignette {
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 80% 80% at 50% 50%, transparent 20%, var(--void) 75%);
+}
+.hero-glow {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 55% 55% at 20% 60%, rgba(0,212,255,0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 35% 35% at 75% 25%, rgba(0,255,157,0.03) 0%, transparent 60%);
+}
+.hero-content {
+  position: relative; z-index: 2;
+  max-width: 1440px; margin: 0 auto; width: 100%;
+  padding-top: calc(var(--nav-h) + 3rem);
+}
+.hero-eyebrow {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.7rem; letter-spacing: 0.22em;
+  color: var(--t3); text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+.hero-title {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: clamp(6rem, 18vw, 16rem);
+  font-weight: 700; letter-spacing: 0.04em;
+  line-height: 0.88; text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--t1) 0%, var(--glow) 55%, var(--cyan) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.68rem; letter-spacing: 0.15em;
+  color: var(--amber); text-transform: uppercase;
+  padding: 0.35rem 1rem;
+  border: 1px solid rgba(255,184,77,0.3);
+  background: rgba(255,184,77,0.05);
+  margin-bottom: 1.5rem;
+}
+.badge-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--amber); box-shadow: 0 0 6px var(--amber);
+  animation: blink 2s ease-in-out infinite;
+}
+.hero-subtitle {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.82rem; letter-spacing: 0.14em;
+  color: var(--glow); text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+.hero-desc {
+  font-size: 1.05rem; line-height: 1.72;
+  color: var(--t2); font-weight: 300;
+  max-width: 580px; margin-bottom: 2.5rem;
+}
+.hero-ctas {
+  display: flex; gap: 0.75rem; flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.4rem;
+  border: 1px solid rgba(0,212,255,0.38);
+  color: var(--t1);
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.74rem; letter-spacing: 0.1em;
+  text-decoration: none; text-transform: uppercase;
+  transition: all 0.25s; background: rgba(0,212,255,0.04);
+  cursor: pointer; white-space: nowrap;
+}
+.btn:hover {
+  background: rgba(0,212,255,0.1);
+  border-color: var(--glow); color: var(--cyan);
+  box-shadow: 0 0 22px rgba(0,212,255,0.14);
+}
+.btn-green {
+  border-color: rgba(0,255,157,0.38);
+  color: var(--green);
+  background: rgba(0,255,157,0.04);
+}
+.btn-green:hover {
+  background: rgba(0,255,157,0.1);
+  border-color: var(--green); color: var(--green);
+  box-shadow: 0 0 22px rgba(0,255,157,0.14);
+}
+.btn-amber {
+  border-color: rgba(255,184,77,0.38);
+  color: var(--amber);
+  background: rgba(255,184,77,0.04);
+}
+.btn-amber:hover {
+  background: rgba(255,184,77,0.1);
+  border-color: var(--amber); color: var(--amber);
+  box-shadow: 0 0 22px rgba(255,184,77,0.14);
+}
+
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--border); gap: 1px;
+  border: 1px solid var(--border);
+  max-width: 860px;
+}
+.hero-metric {
+  background: rgba(2,9,18,0.9);
+  padding: 1.35rem 1.5rem;
+  backdrop-filter: blur(8px);
+}
+.hm-label {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.6rem; letter-spacing: 0.14em;
+  color: var(--t3); text-transform: uppercase; margin-bottom: 0.5rem;
+}
+.hm-val {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 1.75rem; font-weight: 700;
+  color: var(--t1); line-height: 1; margin-bottom: 0.25rem;
+}
+.hm-sub {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.58rem; color: var(--t3); letter-spacing: 0.07em;
+}
+@media (max-width: 640px) {
+  .hero-metrics { grid-template-columns: repeat(2,1fr); }
+  .hero { padding-bottom: 3rem; }
+}
+
+/* ═══════════════════
+   LIVE STRIP
+   ═══════════════════ */
+.live-strip {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--void2); overflow: hidden;
+}
+.live-strip-inner {
+  max-width: 1440px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+.ls-card {
+  padding: 1.25rem 1.4rem;
+  border-right: 1px solid var(--border);
+  transition: background 0.25s;
+}
+.ls-card:last-child { border-right: none; }
+.ls-card:hover { background: rgba(0,212,255,0.03); }
+.ls-lbl {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.58rem; letter-spacing: 0.12em;
+  color: var(--t3); text-transform: uppercase; margin-bottom: 0.6rem;
+}
+.ls-val {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 1.45rem; font-weight: 700;
+  color: var(--t1); line-height: 1; margin-bottom: 0.3rem;
+  transition: color 0.4s;
+}
+.ls-val.g { color: var(--green); }
+.ls-val.c { color: var(--cyan); }
+.ls-val.a { color: var(--amber); }
+.ls-trend {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.58rem; letter-spacing: 0.07em; color: var(--t3);
+}
+.up   { color: var(--green); }
+.dn   { color: var(--breach); }
+.flat { color: var(--amber); }
+@media (max-width: 1100px) {
+  .live-strip-inner { grid-template-columns: repeat(4,1fr); }
+  .ls-card:nth-child(4) { border-right: none; }
+  .ls-card:nth-child(5) { border-top: 1px solid var(--border); }
+  .ls-card:nth-child(6) { border-top: 1px solid var(--border); }
+  .ls-card:nth-child(7) { border-top: 1px solid var(--border); }
+  .ls-card:nth-child(8) { border-top: 1px solid var(--border); }
+}
+@media (max-width: 640px) {
+  .live-strip-inner { grid-template-columns: repeat(2,1fr); }
+}
+
+/* ═══════════════════
+   SHARED SECTION
+   ═══════════════════ */
+.section { padding: 6rem 2rem; }
+.section-inner { max-width: 1440px; margin: 0 auto; }
+.section-eyebrow {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.67rem; letter-spacing: 0.2em;
+  color: var(--t3); text-transform: uppercase;
+  display: flex; align-items: center; gap: 0.75rem;
+  margin-bottom: 1.1rem;
+}
+.section-eyebrow::before {
+  content: ''; width: 22px; height: 1px; background: var(--t3);
+}
+.section-title {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.75rem);
+  font-weight: 700; letter-spacing: 0.03em;
+  line-height: 1.05; text-transform: uppercase;
+  color: var(--t1); margin-bottom: 1.1rem;
+}
+.section-title em { font-style: normal; color: var(--glow); }
+.section-desc {
+  font-size: 0.98rem; line-height: 1.75;
+  color: var(--t2); font-weight: 300; max-width: 580px;
+}
+
+/* ═══════════════════
+   IDENTITY
+   ═══════════════════ */
+.identity { background: var(--void2); border-bottom: 1px solid var(--border); }
+.identity-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 6rem; align-items: start; margin-top: 1rem;
+}
+.id-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.63rem; letter-spacing: 0.15em;
+  color: var(--amber); text-transform: uppercase;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid rgba(255,184,77,0.28);
+  background: rgba(255,184,77,0.05); margin-bottom: 2rem;
+}
+.id-badge-dot {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: var(--amber); animation: blink 2s ease-in-out infinite;
+}
+.id-points { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 3rem; }
+.id-point { display: flex; gap: 1.25rem; align-items: flex-start; }
+.ip-icon {
+  width: 38px; height: 38px; flex-shrink: 0;
+  border: 1px solid var(--border); background: var(--void3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; color: var(--glow); margin-top: 0.1rem;
+}
+.ip-body h4 {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 0.85rem; font-weight: 600;
+  letter-spacing: 0.09em; text-transform: uppercase;
+  color: var(--t1); margin-bottom: 0.35rem;
+}
+.ip-body p { font-size: 0.87rem; line-height: 1.65; color: var(--t2); font-weight: 300; }
+
+.id-stats {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1px; border: 1px solid var(--border);
+  background: var(--border);
+}
+.id-stat { background: var(--void); padding: 2.25rem; }
+.is-val {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 3.2rem; font-weight: 700;
+  color: var(--glow); line-height: 1; margin-bottom: 0.6rem;
+}
+.is-label {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.63rem; letter-spacing: 0.11em;
+  color: var(--t3); text-transform: uppercase; line-height: 1.55;
+}
+@media (max-width: 860px) {
+  .identity-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+}
+
+/* ═══════════════════
+   CREDIT MARKETS
+   ═══════════════════ */
+.credits { background: var(--void); border-top: 1px solid var(--border); }
+.credits-header {
+  display: flex; align-items: flex-end;
+  justify-content: space-between; flex-wrap: wrap;
+  gap: 2rem; margin-bottom: 4rem;
+}
+.credits-grid {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 1px; border: 1px solid var(--border);
+  background: var(--border);
+}
+.cc {
+  background: var(--void); padding: 2.5rem;
+  position: relative; overflow: hidden;
+  transition: background 0.25s;
+}
+.cc::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+}
+.cc.carbon::before        { background: var(--glow); }
+.cc.biodiversity::before  { background: var(--green); }
+.cc.water::before         { background: var(--cyan); }
+.cc.soil::before          { background: var(--amber); }
+.cc:hover { background: var(--void2); }
+.cc-glyph {
+  width: 44px; height: 44px;
+  border: 1px solid var(--border); background: var(--void3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; margin-bottom: 1.5rem;
+}
+.cc.carbon .cc-glyph        { color: var(--glow);  border-color: rgba(0,212,255,0.25); }
+.cc.biodiversity .cc-glyph  { color: var(--green); border-color: rgba(0,255,157,0.25); }
+.cc.water .cc-glyph         { color: var(--cyan);  border-color: rgba(74,237,255,0.25); }
+.cc.soil .cc-glyph          { color: var(--amber); border-color: rgba(255,184,77,0.25); }
+.cc-type {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.62rem; letter-spacing: 0.2em;
+  text-transform: uppercase; margin-bottom: 0.7rem;
+}
+.cc.carbon .cc-type        { color: var(--glow); }
+.cc.biodiversity .cc-type  { color: var(--green); }
+.cc.water .cc-type         { color: var(--cyan); }
+.cc.soil .cc-type          { color: var(--amber); }
+.cc-name {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 1.3rem; font-weight: 700;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--t1); margin-bottom: 1rem; line-height: 1.2;
+}
+.cc-desc {
+  font-size: 0.86rem; line-height: 1.67;
+  color: var(--t2); margin-bottom: 1.75rem; font-weight: 300;
+}
+.cc-meta {
+  display: flex; flex-direction: column; gap: 0.55rem;
+  padding-top: 1.5rem; border-top: 1px solid var(--border);
+}
+.cm-row { display: flex; justify-content: space-between; align-items: center; }
+.cm-lbl {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.58rem; letter-spacing: 0.1em;
+  color: var(--t3); text-transform: uppercase;
+}
+.cm-v {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.68rem; font-weight: 700;
+  color: var(--t1); letter-spacing: 0.04em;
+}
+@media (max-width: 1100px) {
+  .credits-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 640px) {
+  .credits-grid { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════
+   ENGINE
+   ═══════════════════ */
+.engine { background: var(--void2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.engine-layout {
+  display: grid; grid-template-columns: 1.1fr 1fr;
+  gap: 5rem; align-items: start; margin-top: 4rem;
+}
+.engine-canvas-wrap {
+  border: 1px solid var(--border); background: var(--void);
+  position: relative; overflow: hidden;
+}
+.ecw-header {
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.ecw-label {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.62rem; letter-spacing: 0.14em;
+  color: var(--t3); text-transform: uppercase;
+}
+.ecw-live {
+  display: flex; align-items: center; gap: 0.4rem;
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.6rem; letter-spacing: 0.1em; color: var(--green);
+}
+.ecw-live-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--green); animation: blink 1.5s ease-in-out infinite;
+}
+#ekgCanvas { display: block; width: 100%; }
+.engine-steps { display: flex; flex-direction: column; }
+.engine-step {
+  display: flex; gap: 1.5rem; align-items: flex-start;
+  padding: 1.75rem 0; border-bottom: 1px solid var(--border);
+}
+.engine-step:last-child { border-bottom: none; }
+.es-num {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.62rem; letter-spacing: 0.12em;
+  color: var(--t3); flex-shrink: 0; padding-top: 0.2rem; width: 22px;
+}
+.es-body h4 {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 0.92rem; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--t1); margin-bottom: 0.4rem;
+}
+.es-body p { font-size: 0.86rem; line-height: 1.65; color: var(--t2); font-weight: 300; }
+@media (max-width: 900px) {
+  .engine-layout { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+/* ═══════════════════
+   STAKEHOLDERS
+   ═══════════════════ */
+.stakeholders { background: var(--void); }
+.sh-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 1px; border: 1px solid var(--border);
+  background: var(--border); margin-top: 4rem;
+}
+.sh-card { background: var(--void); padding: 2.5rem; }
+.sh-num {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.6rem; letter-spacing: 0.16em;
+  color: var(--t3); text-transform: uppercase; margin-bottom: 1.5rem;
+}
+.sh-title {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 1.65rem; font-weight: 700;
+  letter-spacing: 0.07em; text-transform: uppercase;
+  color: var(--t1); margin-bottom: 0.4rem;
+}
+.sh-sub {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.68rem; letter-spacing: 0.11em;
+  color: var(--t3); text-transform: uppercase; margin-bottom: 1.5rem;
+}
+.sh-desc {
+  font-size: 0.87rem; line-height: 1.67;
+  color: var(--t2); margin-bottom: 2rem; font-weight: 300;
+}
+.sh-benefits {
+  display: flex; flex-direction: column; gap: 0.55rem;
+  padding-top: 1.5rem; border-top: 1px solid var(--border);
+}
+.sh-b {
+  display: flex; align-items: flex-start; gap: 0.7rem;
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.68rem; letter-spacing: 0.04em;
+  color: var(--t2); line-height: 1.5;
+}
+.sh-b::before { content: '→'; color: var(--glow); flex-shrink: 0; }
+@media (max-width: 860px) {
+  .sh-grid { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════
+   INCENTIVE LAYER
+   ═══════════════════ */
+.incentive { background: var(--void2); border-top: 1px solid var(--border); }
+.incentive-layout {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: start; margin-top: 4rem;
+}
+.flow-chain {
+  border: 1px solid var(--border); display: flex; flex-direction: column;
+}
+.flow-node {
+  padding: 1.35rem 1.75rem;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 1.25rem;
+  transition: background 0.2s; cursor: default;
+}
+.flow-node:last-child { border-bottom: none; }
+.flow-node:hover { background: rgba(0,212,255,0.03); }
+.fn-glyph {
+  width: 30px; height: 30px; flex-shrink: 0;
+  border: 1px solid var(--border); background: var(--void3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; color: var(--glow);
+}
+.fn-lbl {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.58rem; letter-spacing: 0.12em;
+  color: var(--t3); text-transform: uppercase; margin-bottom: 0.2rem;
+}
+.fn-txt {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 0.9rem; font-weight: 600;
+  letter-spacing: 0.05em; color: var(--t1); text-transform: uppercase;
+}
+.fn-arrow { margin-left: auto; color: var(--glow); font-size: 0.85rem; }
+
+.inc-right { display: flex; flex-direction: column; gap: 2.25rem; }
+.inc-quote {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 1.7rem; font-weight: 500;
+  line-height: 1.42; color: var(--t1);
+  font-style: italic; letter-spacing: 0.015em;
+}
+.inc-quote em { font-style: normal; color: var(--glow); }
+.inc-body { font-size: 0.9rem; line-height: 1.72; color: var(--t2); font-weight: 300; }
+.inc-links { display: flex; flex-direction: column; gap: 0.65rem; }
+@media (max-width: 860px) {
+  .incentive-layout { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+/* ═══════════════════
+   ARCHITECTURE
+   ═══════════════════ */
+.architecture { background: var(--void); border-top: 1px solid var(--border); }
+.arch-grid {
+  display: grid; grid-template-columns: repeat(6,1fr);
+  gap: 1px; border: 1px solid var(--border);
+  background: var(--border); margin-top: 3rem;
+}
+.arch-cell { background: var(--void); padding: 1.75rem 1.5rem; text-align: center; }
+.ac-lbl {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.6rem; letter-spacing: 0.13em;
+  color: var(--t3); text-transform: uppercase; margin-bottom: 0.7rem;
+}
+.ac-status {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 0.85rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+.defined { color: var(--amber); }
+.specified { color: var(--glow); }
+.building { color: var(--cyan); }
+.live-st { color: var(--green); }
+
+.arch-cta { margin-top: 4rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+.arch-note {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.7rem; letter-spacing: 0.07em;
+  color: var(--t3); line-height: 1.6; max-width: 500px;
+}
+@media (max-width: 1100px) {
+  .arch-grid { grid-template-columns: repeat(3,1fr); }
+}
+@media (max-width: 640px) {
+  .arch-grid { grid-template-columns: repeat(2,1fr); }
+}
+
+/* ═══════════════════
+   CTA BAND
+   ═══════════════════ */
+.cta-band {
+  background: var(--void2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 6rem 2rem; text-align: center;
+}
+.cta-inner {
+  max-width: 720px; margin: 0 auto;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 1.5rem;
+}
+.cta-eyebrow {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.65rem; letter-spacing: 0.2em;
+  color: var(--t3); text-transform: uppercase;
+}
+.cta-title {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  font-weight: 700; letter-spacing: 0.05em;
+  text-transform: uppercase; line-height: 1.05;
+  color: var(--t1);
+}
+.cta-title em { font-style: normal; color: var(--glow); }
+.cta-desc { font-size: 0.95rem; line-height: 1.75; color: var(--t2); font-weight: 300; }
+.cta-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; margin-top: 0.5rem; }
+
+/* ═══════════════════
+   FOOTER
+   ═══════════════════ */
+/* ═══════════════════
+   PLANETARY MONITOR
+   ═══════════════════ */
+.planetary { background: var(--void); border-bottom: 1px solid var(--border); }
+.pm-top {
+  display: flex; align-items: flex-end;
+  justify-content: space-between; flex-wrap: wrap;
+  gap: 2rem; margin-bottom: 4rem;
+}
+.pm-grid {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 1px; border: 1px solid var(--border); background: var(--border);
+}
+.pm-card {
+  background: var(--void); padding: 1.75rem;
+  position: relative; overflow: hidden; transition: background 0.25s;
+}
+.pm-card:hover { background: var(--void2); }
+.pm-card::after {
+  content: ''; position: absolute;
+  bottom: 0; left: 0; right: 0; height: 2px; opacity: 0.55;
+}
+.pm-card.breach::after   { background: var(--breach); }
+.pm-card.critical::after { background: var(--warn); }
+.pm-card.warning::after  { background: var(--amber); }
+.pm-card.stable::after   { background: var(--green); }
+.pm-domain {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.6rem; letter-spacing: 0.15em;
+  color: var(--t3); text-transform: uppercase; margin-bottom: 0.7rem;
+}
+.pm-score-row {
+  display: flex; align-items: baseline; gap: 0.3rem; margin-bottom: 0.55rem;
+}
+.pm-score-val {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 2.6rem; font-weight: 700; line-height: 1; color: var(--t1);
+  transition: color 0.4s;
+}
+.pm-score-unit {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.62rem; color: var(--t3); letter-spacing: 0.04em;
+}
+.pm-status {
+  display: inline-block;
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.57rem; letter-spacing: 0.15em; text-transform: uppercase;
+  padding: 0.2rem 0.5rem; border: 1px solid currentColor; margin-bottom: 1rem;
+}
+.pm-card.breach .pm-status   { color: var(--breach); background: rgba(240,48,48,0.06); }
+.pm-card.critical .pm-status { color: var(--warn);   background: rgba(240,144,0,0.06); }
+.pm-card.warning .pm-status  { color: var(--amber);  background: rgba(255,184,77,0.06); }
+.pm-card.stable .pm-status   { color: var(--green);  background: rgba(0,255,157,0.06); }
+.pm-bar-bg { height: 2px; background: rgba(0,212,255,0.1); margin-bottom: 0.85rem; }
+.pm-bar-fill { height: 100%; transition: width 1.4s ease; }
+.pm-card.breach .pm-bar-fill   { background: var(--breach); }
+.pm-card.critical .pm-bar-fill { background: var(--warn); }
+.pm-card.warning .pm-bar-fill  { background: var(--amber); }
+.pm-card.stable .pm-bar-fill   { background: var(--green); }
+.pm-footer {
+  display: flex; justify-content: space-between;
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.56rem; letter-spacing: 0.06em; color: var(--t3);
+}
+.pm-footer .up   { color: var(--green); }
+.pm-footer .dn   { color: var(--breach); }
+.pm-footer .flat { color: var(--amber); }
+@media (max-width: 1100px) { .pm-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 560px)  { .pm-grid { grid-template-columns: 1fr; } }
+
+/* ═══════════════════
+   TEN PROBLEMS
+   ═══════════════════ */
+.problems { background: var(--void2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.prob-header {
+  display: flex; align-items: flex-end;
+  justify-content: space-between; flex-wrap: wrap; gap: 2rem; margin-bottom: 4rem;
+}
+.problems-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1px; border: 1px solid var(--border); background: var(--border);
+}
+.prob-item {
+  background: var(--void2); padding: 2rem;
+  display: flex; gap: 1.25rem; align-items: flex-start;
+  transition: background 0.2s;
+}
+.prob-item:hover { background: rgba(0,212,255,0.025); }
+.prob-num {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 1.7rem; font-weight: 700; line-height: 1.1;
+  color: var(--t3); flex-shrink: 0; width: 34px; margin-top: 0.1rem;
+}
+.prob-title {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 0.95rem; font-weight: 600;
+  letter-spacing: 0.07em; text-transform: uppercase;
+  color: var(--t1); margin-bottom: 0.3rem;
+}
+.prob-tag {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.57rem; letter-spacing: 0.11em;
+  color: var(--glow); text-transform: uppercase; margin-bottom: 0.45rem;
+}
+.prob-desc { font-size: 0.83rem; line-height: 1.6; color: var(--t2); font-weight: 300; }
+@media (max-width: 768px) { .problems-grid { grid-template-columns: 1fr; } }
+
+/* ═══════════════════
+   MODULE ECOSYSTEM
+   ═══════════════════ */
+.ecosystem { background: var(--void2); border-top: 1px solid var(--border); }
+.eco-grid {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 1px; border: 1px solid var(--border); background: var(--border); margin-top: 4rem;
+}
+.eco-card {
+  background: var(--void); padding: 2rem;
+  display: flex; flex-direction: column; gap: 0.7rem; transition: background 0.2s;
+}
+.eco-card:hover { background: var(--void2); }
+.eco-mod {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.58rem; letter-spacing: 0.15em;
+  color: var(--t3); text-transform: uppercase;
+}
+.eco-name {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 1.3rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--t1);
+}
+.eco-role { font-size: 0.83rem; line-height: 1.62; color: var(--t2); font-weight: 300; }
+.eco-link {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.63rem; letter-spacing: 0.1em;
+  color: var(--glow); text-transform: uppercase;
+  text-decoration: none; margin-top: auto; transition: color 0.2s;
+}
+.eco-link:hover { color: var(--cyan); }
+@media (max-width: 860px) { .eco-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 480px) { .eco-grid { grid-template-columns: 1fr; } }
+
+/* ── General ── */
+footer {
+  background: var(--void);
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 2rem;
+}
+.footer-inner {
+  max-width: 1440px; margin: 0 auto;
+  display: flex; align-items: center;
+  justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;
+}
+.footer-logo {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 1.1rem; font-weight: 700;
+  letter-spacing: 0.28em; color: var(--green);
+  text-decoration: none; text-transform: uppercase;
+}
+.footer-nav { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+.footer-nav a {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.62rem; letter-spacing: 0.12em;
+  color: var(--t3); text-decoration: none;
+  text-transform: uppercase; transition: color 0.2s;
+}
+.footer-nav a:hover { color: var(--t2); }
+.footer-meta {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.58rem; letter-spacing: 0.08em;
+  color: var(--t3); text-transform: uppercase;
+}
+</style>
+</head>
+<body>
+
+<div class="scanlines"></div>
+
+<!-- ══════════ NAVIGATION ══════════ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
+    <div class="nav-links" id="navLinks">
+      <a href="https://vyrion.earth/conscience">CONSCIENCE</a>
+      <a href="https://vyrion.earth/atlas">ATLAS</a>
+      <a href="https://vyrion.earth/shield">SHIELD</a>
+      <a href="https://vyrion.earth/root">ROOT</a>
+      <a href="https://vyrion.earth/flux">FLUX</a>
+      <a href="https://vyrion.earth/tide">TIDE</a>
+      <a href="#" class="active">PULSE</a>
+    </div>
+    <div class="nav-right">
+      <div class="nav-live"><span class="live-dot"></span>LIVE</div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">☰ MENU</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-rings" aria-hidden="true">
+    <div class="hero-ring"></div>
+    <div class="hero-ring"></div>
+    <div class="hero-ring"></div>
+    <div class="hero-ring"></div>
+    <div class="hero-ring"></div>
+    <div class="hero-sweep-wrap">
+      <div class="hero-sweep"></div>
+    </div>
+  </div>
+  <div class="hero-vignette" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">MODULE 08 · IMPACT ECONOMY & CREDIT MARKETPLACE · VYRION PLANETARY INTELLIGENCE</p>
+    <h1 class="hero-title">PULSE</h1>
+    <div class="hero-badge"><span class="badge-dot"></span>ARCHITECTURE DEFINED · IN DEVELOPMENT</div>
+    <p class="hero-subtitle">Impact Economy &amp; Credit Marketplace</p>
+    <p class="hero-desc">Tokenized marketplace for verified carbon credits, biodiversity credits, water stewardship credits, and soil health credits. Corporations meet compliance. Governments monetize restoration. Citizens earn for conscious action.</p>
+    <div class="hero-ctas">
+      <a href="#problems" class="btn">All 10 Problems</a>
+      <a href="#engine" class="btn">Economic Engine</a>
+      <a href="#incentive" class="btn btn-green">Global Incentive Layer</a>
+    </div>
+    <div class="hero-metrics">
+      <div class="hero-metric">
+        <div class="hm-label">Credit Types</div>
+        <div class="hm-val">4</div>
+        <div class="hm-sub">Carbon · Bio · Water · Soil</div>
+      </div>
+      <div class="hero-metric">
+        <div class="hm-label">Stakeholders</div>
+        <div class="hm-val">3</div>
+        <div class="hm-sub">Corps · Govts · Citizens</div>
+      </div>
+      <div class="hero-metric">
+        <div class="hm-label">Module Number</div>
+        <div class="hm-val">08</div>
+        <div class="hm-sub">VYRION Architecture</div>
+      </div>
+      <div class="hero-metric">
+        <div class="hm-label">VYRION Links</div>
+        <div class="hm-val">8</div>
+        <div class="hm-sub">Platform integrations</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ LIVE STRIP ══════════ -->
+<div class="live-strip" role="region" aria-label="Live market data">
+  <div class="live-strip-inner">
+    <div class="ls-card">
+      <div class="ls-lbl">Carbon Price · VCU</div>
+      <div class="ls-val g" id="ls1">$18.40</div>
+      <div class="ls-trend"><span class="up">↑</span> +2.3% · 24h</div>
+    </div>
+    <div class="ls-card">
+      <div class="ls-lbl">Biodiversity · BDU</div>
+      <div class="ls-val c" id="ls2">$34.20</div>
+      <div class="ls-trend"><span class="up">↑</span> +1.1% · 24h</div>
+    </div>
+    <div class="ls-card">
+      <div class="ls-lbl">Water Credits · HEC</div>
+      <div class="ls-val" id="ls3">$12.80</div>
+      <div class="ls-trend"><span class="flat">→</span> +0.2% · 24h</div>
+    </div>
+    <div class="ls-card">
+      <div class="ls-lbl">Soil Health · SHU</div>
+      <div class="ls-val a" id="ls4">$9.60</div>
+      <div class="ls-trend"><span class="dn">↓</span> −0.8% · 24h</div>
+    </div>
+    <div class="ls-card">
+      <div class="ls-lbl">Verified Tonnes</div>
+      <div class="ls-val" id="ls5">4.2M</div>
+      <div class="ls-trend"><span class="up">↑</span> CO₂e · Active</div>
+    </div>
+    <div class="ls-card">
+      <div class="ls-lbl">Corp. Demand</div>
+      <div class="ls-val g">HIGH</div>
+      <div class="ls-trend"><span class="up">↑</span> CSRD · SEC pressure</div>
+    </div>
+    <div class="ls-card">
+      <div class="ls-lbl">VYRION Earth Score</div>
+      <div class="ls-val" id="ls7">41.3</div>
+      <div class="ls-trend"><span class="flat">→</span> /100 · Day 68</div>
+    </div>
+    <div class="ls-card">
+      <div class="ls-lbl">Market Status</div>
+      <div class="ls-val a">ARCH</div>
+      <div class="ls-trend"><span class="flat">→</span> In Development</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ PLANETARY SIGNAL MONITOR ══════════ -->
+<section class="section planetary" id="monitor">
+  <div class="section-inner">
+    <div class="pm-top">
+      <div>
+        <div class="section-eyebrow">Live System Telemetry · ATLAS-Sourced</div>
+        <h2 class="section-title">Planetary<br><em>Signal</em><br>Monitor</h2>
+      </div>
+      <p class="section-desc">Eight Earth System health indicators tracked continuously by VYRION ATLAS. PULSE credit market demand correlates directly with these scores — the worse the signal, the greater the economic urgency to act.</p>
+    </div>
+    <div class="pm-grid">
+
+      <div class="pm-card critical">
+        <div class="pm-domain">Atmosphere</div>
+        <div class="pm-score-row">
+          <span class="pm-score-val" data-pm="atm">31.0</span>
+          <span class="pm-score-unit">/100</span>
+        </div>
+        <div class="pm-status">CRITICAL</div>
+        <div class="pm-bar-bg"><div class="pm-bar-fill" style="width:31%"></div></div>
+        <div class="pm-footer"><span>Weight 22%</span><span class="dn">↓ −0.4 · 30d</span></div>
+      </div>
+
+      <div class="pm-card critical">
+        <div class="pm-domain">Ocean Health</div>
+        <div class="pm-score-row">
+          <span class="pm-score-val" data-pm="ocn">34.0</span>
+          <span class="pm-score-unit">/100</span>
+        </div>
+        <div class="pm-status">CRITICAL</div>
+        <div class="pm-bar-bg"><div class="pm-bar-fill" style="width:34%"></div></div>
+        <div class="pm-footer"><span>Weight 18%</span><span class="dn">↓ −0.6 · 30d</span></div>
+      </div>
+
+      <div class="pm-card critical">
+        <div class="pm-domain">Ice &amp; Cryosphere</div>
+        <div class="pm-score-row">
+          <span class="pm-score-val" data-pm="ice">38.0</span>
+          <span class="pm-score-unit">/100</span>
+        </div>
+        <div class="pm-status">CRITICAL</div>
+        <div class="pm-bar-bg"><div class="pm-bar-fill" style="width:38%"></div></div>
+        <div class="pm-footer"><span>Weight 14%</span><span class="dn">↓ −1.1 · 30d</span></div>
+      </div>
+
+      <div class="pm-card warning">
+        <div class="pm-domain">Forest Integrity</div>
+        <div class="pm-score-row">
+          <span class="pm-score-val" data-pm="fst">47.0</span>
+          <span class="pm-score-unit">/100</span>
+        </div>
+        <div class="pm-status">WARNING</div>
+        <div class="pm-bar-bg"><div class="pm-bar-fill" style="width:47%"></div></div>
+        <div class="pm-footer"><span>Weight 13%</span><span class="dn">↓ −0.2 · 30d</span></div>
+      </div>
+
+      <div class="pm-card warning">
+        <div class="pm-domain">Biodiversity Index</div>
+        <div class="pm-score-row">
+          <span class="pm-score-val" data-pm="bio">44.0</span>
+          <span class="pm-score-unit">/100</span>
+        </div>
+        <div class="pm-status">WARNING</div>
+        <div class="pm-bar-bg"><div class="pm-bar-fill" style="width:44%"></div></div>
+        <div class="pm-footer"><span>Weight 12%</span><span class="dn">↓ −0.3 · 30d</span></div>
+      </div>
+
+      <div class="pm-card breach">
+        <div class="pm-domain">Freshwater Health</div>
+        <div class="pm-score-row">
+          <span class="pm-score-val" data-pm="fw">29.0</span>
+          <span class="pm-score-unit">/100</span>
+        </div>
+        <div class="pm-status">BREACH</div>
+        <div class="pm-bar-bg"><div class="pm-bar-fill" style="width:29%"></div></div>
+        <div class="pm-footer"><span>Weight 10%</span><span class="dn">↓ −0.8 · 30d</span></div>
+      </div>
+
+      <div class="pm-card breach">
+        <div class="pm-domain">Soil Vitality</div>
+        <div class="pm-score-row">
+          <span class="pm-score-val" data-pm="sol">33.0</span>
+          <span class="pm-score-unit">/100</span>
+        </div>
+        <div class="pm-status">BREACH</div>
+        <div class="pm-bar-bg"><div class="pm-bar-fill" style="width:33%"></div></div>
+        <div class="pm-footer"><span>Weight 7%</span><span class="flat">→ +0.1 · 30d</span></div>
+      </div>
+
+      <div class="pm-card warning">
+        <div class="pm-domain">Corp. Accountability</div>
+        <div class="pm-score-row">
+          <span class="pm-score-val" data-pm="corp">38.6</span>
+          <span class="pm-score-unit">/100</span>
+        </div>
+        <div class="pm-status">WARNING</div>
+        <div class="pm-bar-bg"><div class="pm-bar-fill" style="width:38.6%"></div></div>
+        <div class="pm-footer"><span>Weight 4%</span><span class="up">↑ +0.3 · 30d</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TEN PROBLEMS ══════════ -->
+<section class="section problems" id="problems">
+  <div class="section-inner">
+    <div class="prob-header">
+      <div>
+        <div class="section-eyebrow">What PULSE Addresses</div>
+        <h2 class="section-title">The 10<br><em>Core</em><br>Problems</h2>
+      </div>
+      <p class="section-desc">Ten interconnected planetary and systemic problems that the PULSE credit marketplace is architected to help solve — by converting environmental repair into economic incentive.</p>
+    </div>
+    <div class="problems-grid">
+
+      <div class="prob-item">
+        <div class="prob-num">01</div>
+        <div>
+          <div class="prob-title">Atmospheric CO₂ Overload</div>
+          <div class="prob-tag">Carbon Credits · VYRION Atmosphere · 22%</div>
+          <p class="prob-desc">CO₂ at 424+ ppm above the 280 ppm pre-industrial baseline. PULSE Carbon Credits create direct market incentive for verified removal and avoidance — not accounting offsets.</p>
+        </div>
+      </div>
+
+      <div class="prob-item">
+        <div class="prob-num">02</div>
+        <div>
+          <div class="prob-title">Ocean Acidification &amp; Warming</div>
+          <div class="prob-tag">Water Credits · VYRION Ocean · 18%</div>
+          <p class="prob-desc">Ocean pH declining, coral collapse accelerating. Water Stewardship Credits fund verified ocean protection and coastal restoration programs with ATLAS telemetry verification.</p>
+        </div>
+      </div>
+
+      <div class="prob-item">
+        <div class="prob-num">03</div>
+        <div>
+          <div class="prob-title">Cryosphere Retreat</div>
+          <div class="prob-tag">Carbon Credits · VYRION Ice &amp; Cryosphere · 14%</div>
+          <p class="prob-desc">Arctic sea ice and glacial systems in sustained decline. Carbon removal credits fund upstream emissions reduction that directly decelerates melt trajectories.</p>
+        </div>
+      </div>
+
+      <div class="prob-item">
+        <div class="prob-num">04</div>
+        <div>
+          <div class="prob-title">Tropical Deforestation</div>
+          <div class="prob-tag">Biodiversity Credits · VYRION Forest · 13%</div>
+          <p class="prob-desc">10M+ hectares of tropical forest lost annually. Biodiversity Credits reward verified forest protection and CANOPY satellite-monitored reforestation with real revenue.</p>
+        </div>
+      </div>
+
+      <div class="prob-item">
+        <div class="prob-num">05</div>
+        <div>
+          <div class="prob-title">Biodiversity Collapse</div>
+          <div class="prob-tag">Biodiversity Credits · VYRION Biodiversity · 12%</div>
+          <p class="prob-desc">1M+ species under extinction threat. PULSE Biodiversity Credits fund ecosystem recovery, habitat restoration, and species monitoring with GBIF-verified outcomes.</p>
+        </div>
+      </div>
+
+      <div class="prob-item">
+        <div class="prob-num">06</div>
+        <div>
+          <div class="prob-title">Freshwater Depletion</div>
+          <div class="prob-tag">Water Credits · VYRION Freshwater · 10%</div>
+          <p class="prob-desc">Aquifer depletion and river system degradation threatening billions. Water Credits create direct revenue for verified watershed protection and USGS-monitored aquifer recharge.</p>
+        </div>
+      </div>
+
+      <div class="prob-item">
+        <div class="prob-num">07</div>
+        <div>
+          <div class="prob-title">Soil Degradation</div>
+          <div class="prob-tag">Soil Health Credits · VYRION Soil · 7%</div>
+          <p class="prob-desc">24B+ tonnes of topsoil lost annually. Soil Health Credits reward regenerative land management and soil carbon sequestration — measured by ROOT, verified by NASA SMAP.</p>
+        </div>
+      </div>
+
+      <div class="prob-item">
+        <div class="prob-num">08</div>
+        <div>
+          <div class="prob-title">Corporate Greenwashing</div>
+          <div class="prob-tag">All Credits · VYRION CONSCIENCE · 4%</div>
+          <p class="prob-desc">Net-zero pledges without verified action. PULSE forces compliance into market transactions logged on the Open Proof Protocol — timestamped, immutable, and publicly auditable forever.</p>
+        </div>
+      </div>
+
+      <div class="prob-item">
+        <div class="prob-num">09</div>
+        <div>
+          <div class="prob-title">Climate Finance Gap</div>
+          <div class="prob-tag">All Credits · VYRION Economic Layer</div>
+          <p class="prob-desc">$4T/yr needed for climate transition — under $1T currently deployed. PULSE routes corporate compliance capital directly to verified restoration through transparent market infrastructure.</p>
+        </div>
+      </div>
+
+      <div class="prob-item">
+        <div class="prob-num">10</div>
+        <div>
+          <div class="prob-title">Systemic Incentive Misalignment</div>
+          <div class="prob-tag">Architecture · VYRION Global Incentive Layer</div>
+          <p class="prob-desc">No unified system makes planetary repair economically rational for all actors simultaneously. PULSE is that architecture — the missing incentive layer that makes Earth repair the rational economic choice.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section identity" id="identity">
+  <div class="section-inner">
+    <div class="identity-grid">
+      <div>
+        <div class="id-badge"><span class="id-badge-dot"></span>◉ Architecture Defined · Module 08</div>
+        <div class="section-eyebrow">What Is PULSE</div>
+        <h2 class="section-title">The Economic<br><em>Engine</em><br>of Earth Repair</h2>
+        <p class="section-desc" style="margin-bottom:2.5rem;">PULSE is the financial layer that converts planetary restoration into measurable, tradeable, and verifiable economic value. Every tree planted, every aquifer protected, every soil restored becomes a PULSE credit — verified by VYRION, tradeable on PULSE, auditable forever.</p>
+        <div class="id-points">
+          <div class="id-point">
+            <div class="ip-icon">◈</div>
+            <div class="ip-body">
+              <h4>Verified by ATLAS</h4>
+              <p>Every credit backed by real-time environmental telemetry from VYRION ATLAS. No phantom offsets. No unverified claims. Every tonne physically traced.</p>
+            </div>
+          </div>
+          <div class="id-point">
+            <div class="ip-icon">⬟</div>
+            <div class="ip-body">
+              <h4>Logged to Open Proof Protocol</h4>
+              <p>Every transaction timestamped into the VYRION immutable ledger. Publicly auditable. Institutionally credible. Architecture without promises.</p>
+            </div>
+          </div>
+          <div class="id-point">
+            <div class="ip-icon">◉</div>
+            <div class="ip-body">
+              <h4>Linked to CONSCIENCE</h4>
+              <p>Corporate compliance purchases update CONSCIENCE scores in real time. Pledge accountability and verified market action in a single system.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="id-stats">
+        <div class="id-stat">
+          <div class="is-val">4</div>
+          <div class="is-label">Credit categories<br>Carbon · Biodiversity · Water · Soil</div>
+        </div>
+        <div class="id-stat">
+          <div class="is-val">3</div>
+          <div class="is-label">Stakeholder tiers<br>Corporations · Governments · Citizens</div>
+        </div>
+        <div class="id-stat">
+          <div class="is-val">100%</div>
+          <div class="is-label">Open Proof Protocol<br>No hidden transactions</div>
+        </div>
+        <div class="id-stat">
+          <div class="is-val">∞</div>
+          <div class="is-label">Permanent ledger record<br>Every trade · Every credit · Every tonne</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CREDIT MARKETS ══════════ -->
+<section class="section credits" id="credits">
+  <div class="section-inner">
+    <div class="credits-header">
+      <div>
+        <div class="section-eyebrow">The Four Credit Markets</div>
+        <h2 class="section-title">Verified<br><em>Environmental</em><br>Capital</h2>
+      </div>
+      <p class="section-desc">Each PULSE credit type maps directly to a verified VYRION Earth System indicator. Real-world measurement. Real-world value. Open methodology.</p>
+    </div>
+    <div class="credits-grid">
+
+      <!-- CARBON -->
+      <div class="cc carbon">
+        <div class="cc-glyph">⬟</div>
+        <div class="cc-type">Credit Type 01</div>
+        <div class="cc-name">Carbon Credits</div>
+        <p class="cc-desc">Verified carbon removal and avoidance credits. Each unit represents one tonne of CO₂ equivalent removed from the atmosphere or prevented from entering it — verified by ATLAS atmospheric telemetry and NOAA source data. Not offsets. Physical removal.</p>
+        <div class="cc-meta">
+          <div class="cm-row"><span class="cm-lbl">Verification</span><span class="cm-v">ATLAS · NOAA GML</span></div>
+          <div class="cm-row"><span class="cm-lbl">Unit</span><span class="cm-v">1 VCU = 1 tonne CO₂e</span></div>
+          <div class="cm-row"><span class="cm-lbl">Earth System</span><span class="cm-v">Atmosphere · 22%</span></div>
+          <div class="cm-row"><span class="cm-lbl">Protocol</span><span class="cm-v">Open Proof · Immutable</span></div>
+        </div>
+      </div>
+
+      <!-- BIODIVERSITY -->
+      <div class="cc biodiversity">
+        <div class="cc-glyph">◈</div>
+        <div class="cc-type">Credit Type 02</div>
+        <div class="cc-name">Biodiversity Credits</div>
+        <p class="cc-desc">Habitat restoration and species protection credits. Valued against biodiversity index scores tracked by VYRION CANOPY and ROOT modules. Satellite-verified ecosystem health improvement with species recovery monitoring at every site.</p>
+        <div class="cc-meta">
+          <div class="cm-row"><span class="cm-lbl">Verification</span><span class="cm-v">CANOPY · ROOT · GBIF</span></div>
+          <div class="cm-row"><span class="cm-lbl">Unit</span><span class="cm-v">BDU · Biodiversity Unit</span></div>
+          <div class="cm-row"><span class="cm-lbl">Earth System</span><span class="cm-v">Biodiversity · 12%</span></div>
+          <div class="cm-row"><span class="cm-lbl">Update Rate</span><span class="cm-v">Satellite · 15-min</span></div>
+        </div>
+      </div>
+
+      <!-- WATER -->
+      <div class="cc water">
+        <div class="cc-glyph">◉</div>
+        <div class="cc-type">Credit Type 03</div>
+        <div class="cc-name">Water Stewardship Credits</div>
+        <p class="cc-desc">Freshwater restoration, aquifer recharge, and watershed protection credits. Valued against VYRION Freshwater Earth System indicators. Each credit represents a verified improvement in water availability, quality, or flow restoration at measured locations.</p>
+        <div class="cc-meta">
+          <div class="cm-row"><span class="cm-lbl">Verification</span><span class="cm-v">ATLAS · USGS · GRDC</span></div>
+          <div class="cm-row"><span class="cm-lbl">Unit</span><span class="cm-v">HEC · Hydrological Unit</span></div>
+          <div class="cm-row"><span class="cm-lbl">Earth System</span><span class="cm-v">Freshwater · 10%</span></div>
+          <div class="cm-row"><span class="cm-lbl">Module Link</span><span class="cm-v">TIDE integration</span></div>
+        </div>
+      </div>
+
+      <!-- SOIL -->
+      <div class="cc soil">
+        <div class="cc-glyph">▲</div>
+        <div class="cc-type">Credit Type 04</div>
+        <div class="cc-name">Soil Health Credits</div>
+        <p class="cc-desc">Regenerative land management and soil carbon sequestration credits. Verified against VYRION ROOT soil health indicators. Rewards farmers, land managers, and restoration practitioners for measurable soil improvement and carbon sink creation.</p>
+        <div class="cc-meta">
+          <div class="cm-row"><span class="cm-lbl">Verification</span><span class="cm-v">ROOT · NASA SMAP</span></div>
+          <div class="cm-row"><span class="cm-lbl">Unit</span><span class="cm-v">SHU · Soil Health Unit</span></div>
+          <div class="cm-row"><span class="cm-lbl">Earth System</span><span class="cm-v">Soil Health · 7%</span></div>
+          <div class="cm-row"><span class="cm-lbl">Module Link</span><span class="cm-v">ROOT · 6 indicators</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ECONOMIC ENGINE ══════════ -->
+<section class="section engine" id="engine">
+  <div class="section-inner">
+    <div class="section-eyebrow">Protocol Architecture</div>
+    <h2 class="section-title">The<br><em>Economic</em><br>Engine</h2>
+    <div class="engine-layout">
+      <div>
+        <div class="engine-canvas-wrap">
+          <div class="ecw-header">
+            <span class="ecw-label">EKG · PULSE SIGNAL · LIVE TELEMETRY</span>
+            <span class="ecw-live"><span class="ecw-live-dot"></span>LIVE</span>
+          </div>
+          <canvas id="ekgCanvas" height="220"></canvas>
+        </div>
+        <div style="border:1px solid var(--border);border-top:none;padding:1.5rem 1.75rem;background:var(--void);">
+          <p style="font-family:'Courier Prime',monospace;font-size:0.68rem;letter-spacing:0.07em;color:var(--t3);line-height:1.7;">
+            The PULSE signal represents the aggregate market activity across all four credit types — carbon, biodiversity, water, and soil. Every verified environmental action creates a measurable signal. PULSE reads the planet's economic heartbeat.
+          </p>
+        </div>
+      </div>
+      <div class="engine-steps">
+        <div class="engine-step">
+          <div class="es-num">01</div>
+          <div class="es-body">
+            <h4>Environmental Action Measured</h4>
+            <p>Land managers, governments, and restoration practitioners implement verified environmental actions. VYRION ATLAS monitors outcomes continuously. No verified measurement, no credit generated.</p>
+          </div>
+        </div>
+        <div class="engine-step">
+          <div class="es-num">02</div>
+          <div class="es-body">
+            <h4>Credits Generated &amp; Verified</h4>
+            <p>PULSE generates credits proportional to verified environmental impact. Every unit logged into the Open Proof Protocol with source data, timestamp, and VYRION Earth System linkage. Immutable from day one.</p>
+          </div>
+        </div>
+        <div class="engine-step">
+          <div class="es-num">03</div>
+          <div class="es-body">
+            <h4>Marketplace Listing</h4>
+            <p>Verified credits listed on the PULSE marketplace. Discoverable by corporations, government procurement programs, and citizen participants. Transparent pricing. Open methodology. No hidden liquidity.</p>
+          </div>
+        </div>
+        <div class="engine-step">
+          <div class="es-num">04</div>
+          <div class="es-body">
+            <h4>Compliance &amp; CONSCIENCE Integration</h4>
+            <p>Corporate purchases feed directly into CONSCIENCE pledge verification scores. Compliance is no longer a promise — it is a purchase, logged and publicly auditable forever via the VYRION ledger.</p>
+          </div>
+        </div>
+        <div class="engine-step">
+          <div class="es-num">05</div>
+          <div class="es-body">
+            <h4>Revenue Returns to Restoration</h4>
+            <p>Market revenue flows directly to practitioners, ecosystems, and sovereign restoration funds. A self-reinforcing cycle: healthier planet → more credits → more value → more restoration.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ STAKEHOLDERS ══════════ -->
+<section class="section stakeholders">
+  <div class="section-inner">
+    <div class="section-eyebrow">Three Stakeholder Tiers</div>
+    <h2 class="section-title">Who <em>PULSE</em><br>Serves</h2>
+    <div class="sh-grid">
+
+      <div class="sh-card">
+        <div class="sh-num">TIER 01</div>
+        <div class="sh-title">Corporations</div>
+        <div class="sh-sub">Compliance meets accountability</div>
+        <p class="sh-desc">Corporations face mandatory climate disclosure under CSRD, SEC rules, and SBTi frameworks. PULSE converts compliance obligation into verified environmental action — not accounting. Every credit purchase updates CONSCIENCE score in real time. Auditable. Institutional-grade.</p>
+        <div class="sh-benefits">
+          <div class="sh-b">Verified CONSCIENCE score improvement</div>
+          <div class="sh-b">CSRD · SEC · SBTi disclosure support</div>
+          <div class="sh-b">Auditable credit portfolio · Open Proof</div>
+          <div class="sh-b">Real-time ATLAS verification backbone</div>
+          <div class="sh-b">Annual third-party audit package included</div>
+        </div>
+      </div>
+
+      <div class="sh-card">
+        <div class="sh-num">TIER 02</div>
+        <div class="sh-title">Governments</div>
+        <div class="sh-sub">Monetize national restoration</div>
+        <p class="sh-desc">Nations and regional governments can list verified restoration credits from sovereign land management programs. Protected national parks, wetland restoration, and reforestation programs become economic assets — not budget line items. Sovereign credibility built-in.</p>
+        <div class="sh-benefits">
+          <div class="sh-b">Sovereign credit listing and market pricing</div>
+          <div class="sh-b">National restoration fund integration</div>
+          <div class="sh-b">VYRION RELAY data protocol support</div>
+          <div class="sh-b">Bilateral and multilateral trading</div>
+          <div class="sh-b">Paris Agreement accounting linkage</div>
+        </div>
+      </div>
+
+      <div class="sh-card">
+        <div class="sh-num">TIER 03</div>
+        <div class="sh-title">Citizens</div>
+        <div class="sh-sub">Earn for conscious action</div>
+        <p class="sh-desc">Individuals participating in verified environmental actions — regenerative farming, community reforestation, citizen science monitoring — earn PULSE credits. Conscious action becomes economic participation in planetary repair. Everyone has a stake in the outcome.</p>
+        <div class="sh-benefits">
+          <div class="sh-b">Individual action credit earning</div>
+          <div class="sh-b">Community restoration program access</div>
+          <div class="sh-b">PULSE citizen wallet and dashboard</div>
+          <div class="sh-b">Direct marketplace participation</div>
+          <div class="sh-b">Transparent personal impact accounting</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ GLOBAL INCENTIVE LAYER ══════════ -->
+<section class="section incentive" id="incentive">
+  <div class="section-inner">
+    <div class="section-eyebrow">System Architecture</div>
+    <h2 class="section-title">The Global<br><em>Incentive</em><br>Layer</h2>
+    <div class="incentive-layout">
+      <div class="flow-chain">
+        <div class="flow-node">
+          <div class="fn-glyph">◈</div>
+          <div>
+            <div class="fn-lbl">Foundation</div>
+            <div class="fn-txt">ATLAS · Real-Time Environmental Telemetry</div>
+          </div>
+          <div class="fn-arrow">↓</div>
+        </div>
+        <div class="flow-node">
+          <div class="fn-glyph">⬟</div>
+          <div>
+            <div class="fn-lbl">Verification</div>
+            <div class="fn-txt">Open Proof Protocol · Immutable Ledger</div>
+          </div>
+          <div class="fn-arrow">↓</div>
+        </div>
+        <div class="flow-node">
+          <div class="fn-glyph">◉</div>
+          <div>
+            <div class="fn-lbl">Generation</div>
+            <div class="fn-txt">PULSE Credit Issuance · 4 Verified Types</div>
+          </div>
+          <div class="fn-arrow">↓</div>
+        </div>
+        <div class="flow-node">
+          <div class="fn-glyph">▲</div>
+          <div>
+            <div class="fn-lbl">Market</div>
+            <div class="fn-txt">PULSE Marketplace · Corp · Gov · Citizen</div>
+          </div>
+          <div class="fn-arrow">↓</div>
+        </div>
+        <div class="flow-node">
+          <div class="fn-glyph">✦</div>
+          <div>
+            <div class="fn-lbl">Accountability</div>
+            <div class="fn-txt">CONSCIENCE · Score · Compliance · Audit</div>
+          </div>
+          <div class="fn-arrow">↓</div>
+        </div>
+        <div class="flow-node">
+          <div class="fn-glyph">↺</div>
+          <div>
+            <div class="fn-lbl">Return Loop</div>
+            <div class="fn-txt">Revenue → Restoration → More Credits</div>
+          </div>
+          <div class="fn-arrow">∞</div>
+        </div>
+      </div>
+      <div class="inc-right">
+        <blockquote class="inc-quote">
+          "Every act of planetary repair becomes a <em>tradeable asset.</em> Every dollar of compliance becomes <em>verified action.</em> PULSE closes the loop."
+        </blockquote>
+        <p class="inc-body">PULSE is the economic infrastructure layer VYRION has been building toward — the mechanism that converts environmental intelligence into capital flows, and capital flows into planetary repair. The planet gets a financial system that rewards healing it. Architecture defined. Building.</p>
+        <div class="inc-links">
+          <a href="https://vyrion.earth/conscience" class="btn">→ CONSCIENCE · Pledge Accountability</a>
+          <a href="https://vyrion.earth/atlas" class="btn">→ ATLAS · Environmental Intelligence</a>
+          <a href="https://vyrion.earth/root" class="btn">→ ROOT · Soil &amp; Land Health</a>
+          <a href="https://vyrion.earth/record" class="btn btn-green">→ RECORD · Weekly Intelligence</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ARCHITECTURE ══════════ -->
+<section class="section architecture" id="architecture">
+  <div class="section-inner">
+    <div class="section-eyebrow">Module Status · V1.0</div>
+    <h2 class="section-title">Architecture<br><em>Defined</em></h2>
+    <p class="section-desc" style="margin-bottom:0;">MODULE 08 · PULSE is in active architecture phase. Core protocol design, credit verification methodology, and VYRION integration architecture are fully defined. Marketplace engine build phase begins Q3 2026.</p>
+    <div class="arch-grid">
+      <div class="arch-cell">
+        <div class="ac-lbl">Protocol Design</div>
+        <div class="ac-status defined">Defined</div>
+      </div>
+      <div class="arch-cell">
+        <div class="ac-lbl">Credit Methodology</div>
+        <div class="ac-status defined">Defined</div>
+      </div>
+      <div class="arch-cell">
+        <div class="ac-lbl">ATLAS Integration</div>
+        <div class="ac-status specified">Specified</div>
+      </div>
+      <div class="arch-cell">
+        <div class="ac-lbl">CONSCIENCE Link</div>
+        <div class="ac-status specified">Specified</div>
+      </div>
+      <div class="arch-cell">
+        <div class="ac-lbl">Marketplace Engine</div>
+        <div class="ac-status building">Building</div>
+      </div>
+      <div class="arch-cell">
+        <div class="ac-lbl">Open Proof Protocol</div>
+        <div class="ac-status live-st">Live · VYRION-wide</div>
+      </div>
+    </div>
+    <div class="arch-cta">
+      <a href="https://github.com/DablerFrost/Vyrion/blob/main/docs/VYRION-METHODOLOGY-V1.0.md" class="btn" target="_blank" rel="noopener">VYRION-METHODOLOGY-v1.0.md</a>
+      <a href="https://github.com/DablerFrost/Vyrion/blob/main/docs/CHANGELOG.md" class="btn" target="_blank" rel="noopener">CHANGELOG.md</a>
+      <p class="arch-note">"Architecture without promises." Every algorithm open. Every score source-cited. Every correction published publicly. Radical transparency is the structural defense.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ MODULE ECOSYSTEM ══════════ -->
+<section class="section ecosystem">
+  <div class="section-inner">
+    <div class="section-eyebrow">Connected Intelligence · VYRION Platform</div>
+    <h2 class="section-title">PULSE<br><em>Connects</em><br>Everything</h2>
+    <p class="section-desc" style="margin-bottom:0;">PULSE draws from and feeds back into every active VYRION module. The credit marketplace is the economic closure of the planetary intelligence loop.</p>
+    <div class="eco-grid">
+
+      <div class="eco-card">
+        <div class="eco-mod">Module 02 · Live</div>
+        <div class="eco-name">ATLAS</div>
+        <p class="eco-role">Provides the real-time environmental telemetry that verifies every PULSE credit. The data foundation of the entire credit system — without ATLAS, no credit can be issued.</p>
+        <a href="https://vyrion.earth/atlas" class="eco-link">→ ATLAS</a>
+      </div>
+
+      <div class="eco-card">
+        <div class="eco-mod">Core Platform · Live</div>
+        <div class="eco-name">CONSCIENCE</div>
+        <p class="eco-role">Receives PULSE credit purchase data to update corporate accountability scores in real time. The loop from market transaction to verified pledge accountability — closed.</p>
+        <a href="https://vyrion.earth/conscience" class="eco-link">→ CONSCIENCE</a>
+      </div>
+
+      <div class="eco-card">
+        <div class="eco-mod">Module 03 · Live</div>
+        <div class="eco-name">ROOT</div>
+        <p class="eco-role">Generates verified Soil Health Credit issuance data. Every PULSE Soil Credit traces back to ROOT-measured regenerative land restoration with open methodology and NASA SMAP verification.</p>
+        <a href="https://vyrion.earth/root" class="eco-link">→ ROOT</a>
+      </div>
+
+      <div class="eco-card">
+        <div class="eco-mod">Module 04 · Live</div>
+        <div class="eco-name">CANOPY</div>
+        <p class="eco-role">Generates verified Biodiversity Credit issuance data through satellite-monitored reforestation programs. Species recovery tracking provides the baseline for credit valuation.</p>
+        <a href="https://vyrion.earth/canopy" class="eco-link">→ CANOPY</a>
+      </div>
+
+      <div class="eco-card">
+        <div class="eco-mod">Module 05 · Arch Phase</div>
+        <div class="eco-name">FLUX</div>
+        <p class="eco-role">Clean energy deployment generates verified Carbon Credits. FLUX operators earn Carbon Credit income as a core revenue stream — PULSE is built into the FLUX economics model.</p>
+        <a href="https://vyrion.earth/flux" class="eco-link">→ FLUX</a>
+      </div>
+
+      <div class="eco-card">
+        <div class="eco-mod">Module 06 · Dev</div>
+        <div class="eco-name">TIDE</div>
+        <p class="eco-role">Ocean remediation and water purification programs generate Water Stewardship Credits. TIDE operations are partially funded by PULSE market revenue — a self-financing restoration loop.</p>
+        <a href="https://vyrion.earth/tide" class="eco-link">→ TIDE</a>
+      </div>
+
+      <div class="eco-card">
+        <div class="eco-mod">Module 01 · Live</div>
+        <div class="eco-name">SHIELD</div>
+        <p class="eco-role">Disaster early warning data informs PULSE risk pricing models. Disaster-prone zones create higher credit urgency — rewarding proactive restoration in the most vulnerable ecosystems.</p>
+        <a href="https://vyrion.earth/shield" class="eco-link">→ SHIELD</a>
+      </div>
+
+      <div class="eco-card">
+        <div class="eco-mod">Intelligence Reports · Live</div>
+        <div class="eco-name">RECORD</div>
+        <p class="eco-role">Weekly VYRION Intelligence Reports include PULSE market analysis, credit price trends, and Earth System signal changes that affect market conditions and credit valuations.</p>
+        <a href="https://vyrion.earth/record" class="eco-link">→ RECORD</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CTA BAND ══════════ -->
+<section class="cta-band">
+  <div class="cta-inner">
+    <div class="cta-eyebrow">Early Access · Register Interest</div>
+    <h2 class="cta-title">Be First<br>on <em>PULSE</em></h2>
+    <p class="cta-desc">Corporations, governments, and land managers can register interest for early access to the PULSE marketplace. Architecture defined. Building begins Q3 2026. The economic engine of planetary repair is almost ready.</p>
+    <div class="cta-btns">
+      <a href="mailto:pulse@vyrion.earth" class="btn btn-green">Register Interest · Corporations</a>
+      <a href="mailto:pulse@vyrion.earth" class="btn">Register Interest · Governments</a>
+      <a href="https://vyrion.earth" class="btn btn-amber">Return to VYRION</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <div class="footer-inner">
+    <a href="https://vyrion.earth" class="footer-logo">VYRION</a>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="https://vyrion.earth/conscience">CONSCIENCE</a>
+      <a href="https://vyrion.earth/atlas">ATLAS</a>
+      <a href="https://vyrion.earth/shield">SHIELD</a>
+      <a href="https://vyrion.earth/root">ROOT</a>
+      <a href="https://vyrion.earth/canopy">CANOPY</a>
+      <a href="https://vyrion.earth/flux">FLUX</a>
+      <a href="https://vyrion.earth/tide">TIDE</a>
+      <a href="https://vyrion.earth/record">RECORD</a>
+      <a href="#">PULSE</a>
+    </nav>
+    <div class="footer-meta">VYRION · MODULE 08 · PULSE · V1.0 · ARCHITECTURE PHASE · MAY 2026</div>
+  </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════
+     VYRION PULSE · JAVASCRIPT
+     ═══════════════════════════════════════ -->
+<script>
+/* ── Mobile nav ── */
+const navToggle = document.getElementById('navToggle');
+const navLinks  = document.getElementById('navLinks');
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+}
+
+/* ── Hero Particle Canvas ── */
+(function() {
+  const canvas = document.getElementById('heroCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, pts = [], frame = 0;
+
+  function resize() {
+    W = canvas.width  = canvas.offsetWidth  || window.innerWidth;
+    H = canvas.height = canvas.offsetHeight || window.innerHeight;
+    pts = Array.from({length: 110}, spawnPt);
+  }
+
+  function spawnPt() {
+    return {
+      x:  Math.random() * W,
+      y:  Math.random() * H,
+      r:  Math.random() * 1.4 + 0.3,
+      vx: (Math.random() - 0.5) * 0.35,
+      vy: (Math.random() - 0.5) * 0.35,
+      a:  Math.random() * 0.45 + 0.08
+    };
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    frame++;
+
+    /* particles */
+    pts.forEach(p => {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < -5) p.x = W + 5;
+      if (p.x > W + 5) p.x = -5;
+      if (p.y < -5) p.y = H + 5;
+      if (p.y > H + 5) p.y = -5;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(0,212,255,${p.a})`;
+      ctx.fill();
+    });
+
+    /* connections */
+    ctx.lineWidth = 0.5;
+    for (let i = 0; i < pts.length; i++) {
+      for (let j = i + 1; j < pts.length; j++) {
+        const dx = pts[i].x - pts[j].x;
+        const dy = pts[i].y - pts[j].y;
+        const d  = Math.sqrt(dx * dx + dy * dy);
+        if (d < 95) {
+          ctx.beginPath();
+          ctx.moveTo(pts[i].x, pts[i].y);
+          ctx.lineTo(pts[j].x, pts[j].y);
+          ctx.strokeStyle = `rgba(0,212,255,${(1 - d / 95) * 0.07})`;
+          ctx.stroke();
+        }
+      }
+    }
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+
+/* ── EKG Canvas ── */
+(function() {
+  const canvas = document.getElementById('ekgCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  const H = 220;
+  let dataQ = [], t = 0;
+
+  function ekgVal(t) {
+    const c = ((t % 100) + 100) % 100;
+    if (c < 3)  return Math.sin((c / 3) * Math.PI) * 7;
+    if (c < 7)  return 0;
+    if (c < 9)  return -14;
+    if (c < 11) return 85;   // QRS spike
+    if (c < 13) return -22;
+    if (c < 16) return 12;
+    if (c < 24) return Math.sin(((c - 16) / 8) * Math.PI) * 22; // T-wave
+    return (Math.random() - 0.5) * 2.5;
+  }
+
+  function resize() {
+    const W = canvas.offsetWidth || 500;
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width  = W * dpr;
+    canvas.height = H * dpr;
+    canvas.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  function draw() {
+    const W = canvas.offsetWidth || 500;
+    ctx.clearRect(0, 0, W, H);
+
+    /* bg */
+    ctx.fillStyle = '#020912';
+    ctx.fillRect(0, 0, W, H);
+
+    /* grid */
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = 'rgba(0,212,255,0.04)';
+    for (let x = 0; x <= W; x += 40) {
+      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+    }
+    for (let y = 0; y <= H; y += 40) {
+      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+    }
+    /* center rule */
+    ctx.strokeStyle = 'rgba(0,212,255,0.07)';
+    ctx.beginPath(); ctx.moveTo(0, H/2); ctx.lineTo(W, H/2); ctx.stroke();
+
+    /* push sample */
+    t++;
+    dataQ.push(ekgVal(t));
+    if (dataQ.length > W) dataQ.shift();
+
+    /* trace shadow */
+    ctx.save();
+    ctx.shadowBlur = 12;
+    ctx.shadowColor = '#00D4FF';
+    ctx.strokeStyle = '#00D4FF';
+    ctx.lineWidth = 1.5;
+    ctx.lineJoin = 'round';
+    ctx.beginPath();
+    dataQ.forEach((v, i) => {
+      const px = i;
+      const py = H / 2 - v;
+      i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
+    });
+    ctx.stroke();
+
+    /* bright head */
+    if (dataQ.length) {
+      const lx = dataQ.length - 1;
+      const ly = H / 2 - dataQ[dataQ.length - 1];
+      ctx.shadowBlur = 18;
+      ctx.beginPath(); ctx.arc(lx, ly, 3.5, 0, Math.PI * 2);
+      ctx.fillStyle = '#00D4FF'; ctx.fill();
+    }
+    ctx.restore();
+
+    /* timestamp */
+    const ts = new Date().toISOString().slice(11, 19) + ' UTC';
+    ctx.fillStyle = 'rgba(45,96,128,0.7)';
+    ctx.font = '10px "Courier Prime", monospace';
+    ctx.fillText('LIVE · ' + ts, 14, H - 10);
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+
+/* ── Live strip tick ── */
+(function() {
+  const prices = [
+    { id: 'ls1', base: 18.40 },
+    { id: 'ls2', base: 34.20 },
+    { id: 'ls3', base: 12.80 },
+    { id: 'ls4', base:  9.60 },
+  ];
+
+  function tick() {
+    prices.forEach(p => {
+      const el = document.getElementById(p.id);
+      if (!el) return;
+      p.base = p.base * (1 + (Math.random() - 0.5) * 0.004);
+      el.textContent = '$' + p.base.toFixed(2);
+    });
+    const idx = document.getElementById('ls7');
+    if (idx) {
+      const cur = parseFloat(idx.textContent) || 41.3;
+      idx.textContent = (cur + (Math.random() - 0.5) * 0.08).toFixed(1);
+    }
+  }
+
+  setInterval(tick, 2800);
+})();
+
+
+/* ── Planetary Monitor live updates ── */
+(function() {
+  const fields = [
+    { sel: '[data-pm="atm"]',  val: 31.0, drift: -0.52 },
+    { sel: '[data-pm="ocn"]',  val: 34.0, drift: -0.53 },
+    { sel: '[data-pm="ice"]',  val: 38.0, drift: -0.54 },
+    { sel: '[data-pm="fst"]',  val: 47.0, drift: -0.51 },
+    { sel: '[data-pm="bio"]',  val: 44.0, drift: -0.51 },
+    { sel: '[data-pm="fw"]',   val: 29.0, drift: -0.54 },
+    { sel: '[data-pm="sol"]',  val: 33.0, drift: -0.50 },
+    { sel: '[data-pm="corp"]', val: 38.6, drift: -0.49 },
+  ];
+
+  function pmTick() {
+    fields.forEach(f => {
+      const el = document.querySelector(f.sel);
+      if (!el) return;
+      f.val = f.val + (Math.random() - f.drift) * 0.06;
+      f.val = Math.max(5, Math.min(95, f.val));
+      el.textContent = f.val.toFixed(1);
+      const card = el.closest('.pm-card');
+      if (card) {
+        const bar = card.querySelector('.pm-bar-fill');
+        if (bar) bar.style.width = f.val.toFixed(1) + '%';
+      }
+    });
+  }
+  setInterval(pmTick, 4200);
+})();
+
+
+/* ── Scroll-fade-in ── */
+(function() {
+  const style = document.createElement('style');
+  style.textContent = `
+    .fade-in { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  `;
+  document.head.appendChild(style);
+
+  const targets = document.querySelectorAll(
+    '.id-stat, .cc, .sh-card, .engine-step, .flow-node, .arch-cell, .hero-metric, .pm-card, .prob-item, .eco-card'
+  );
+  targets.forEach(el => el.classList.add('fade-in'));
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+
+  targets.forEach(el => obs.observe(el));
+})();
+</script>
+</body>
+</html>
