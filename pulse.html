@@ -1,1037 +1,583 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>VYRION PULSE — Impact Economy & Credit Marketplace · Module 08</title>
-<meta name="description" content="VYRION PULSE — Module 08. Tokenized marketplace for verified carbon, biodiversity, water, and soil credits. Corporations meet compliance. Governments monetize restoration.">
-<meta property="og:title" content="VYRION PULSE — Impact Economy & Credit Marketplace">
-<meta property="og:description" content="Tokenized marketplace for verified carbon, biodiversity, water, and soil credits. The economic engine of the VYRION ecosystem.">
-<meta property="og:type" content="website">
+<meta name="description" content="VYRION PULSE — Module 08. Tokenized marketplace for verified carbon, biodiversity, water, and soil credits. The economic engine of planetary repair.">
+<meta property="og:title" content="VYRION PULSE — Impact Economy &amp; Credit Marketplace">
+<meta property="og:description" content="Tokenized marketplace for verified carbon, biodiversity, water, and soil credits. Corporations meet compliance. Governments monetize restoration.">
 <meta property="og:url" content="https://vyrion.earth/pulse">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="VYRION PULSE — Impact Economy &amp; Credit Marketplace">
+<meta name="twitter:description" content="The economic engine of planetary repair. Verified environmental credits. Open methodology.">
+<link rel="canonical" href="https://vyrion.earth/pulse">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/assets/favicon.ico">
+<title>VYRION PULSE — Impact Economy &amp; Credit Marketplace · Module 08</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Archivo:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&family=Archivo:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <style>
-/* ═══════════════════════════════════════════════════
-   VYRION PULSE · Module 08 · Impact Economy
-   Planetary Intelligence Network · V1.0 · 2026
-   ═══════════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════════════
+   VYRION PULSE · Module 08 · Impact Economy & Credit Marketplace
+   Unified Cyan System · Satellite Hero · v1.1 · May 2026
+   ══════════════════════════════════════════════════════════════ */
 
 :root {
-  --void:   #020912;
-  --void2:  #061624;
-  --void3:  #0b2035;
-  --glow:   #00D4FF;
-  --cyan:   #4AEDFF;
-  --green:  #00FF9D;
-  --amber:  #FFB84D;
-  --warn:   #F09000;
-  --breach: #F03030;
-  --t1:     #e4f2ff;
-  --t2:     #6a9ab8;
-  --t3:     #2d6080;
-  --border: rgba(0,212,255,0.12);
-  --border-s: rgba(0,212,255,0.25);
-  --glass:  rgba(6,22,36,0.8);
-  --nav-h:  64px;
+  --void:    #020912;
+  --void2:   #061624;
+  --void3:   #0b2035;
+  --glow:    #00D4FF;
+  --amber:   #FFB84D;
+  --breach:  #F03030;
+  --warn:    #F09000;
+  --t1:      #e4f2ff;
+  --t2:      #6a9ab8;
+  --t3:      #2d6080;
+  --border:  rgba(0,212,255,.12);
+  --border2: rgba(0,212,255,.07);
+  --breach-bg: rgba(240,48,48,.07);
+  --warn-bg:   rgba(240,144,0,.07);
+  --track-bg:  rgba(0,212,255,.07);
+  --nav-bg:  rgba(2,9,18,.97);
+  --scanline:rgba(0,212,255,.004);
+  /* PULSE module accent */
+  --pulse:         #9C6FE4;
+  --pulse-border:  rgba(156,111,228,.22);
+  --pulse-bg:      rgba(156,111,228,.08);
+  /* Credit type accents */
+  --carbon:  #00D4FF;
+  --bio:     #10b981;
+  --water:   #4AADFF;
+  --soil:    #FFB84D;
+}
+[data-theme="light"] {
+  --void:    #f0f5ff;
+  --void2:   #e4eeff;
+  --void3:   #d5e5ff;
+  --glow:    #0066CC;
+  --amber:   #b07800;
+  --breach:  #b82020;
+  --warn:    #a05800;
+  --t1:      #060e1e;
+  --t2:      #1e4a7a;
+  --t3:      #3a6090;
+  --border:  rgba(0,102,204,.18);
+  --border2: rgba(0,102,204,.10);
+  --nav-bg:  rgba(240,245,255,.98);
+  --scanline:transparent;
+  --pulse:   #7c4fd4;
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { scroll-behavior: smooth; }
-
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0 }
+html { scroll-behavior:smooth; font-size:18px }
 body {
-  background: var(--void);
-  color: var(--t1);
-  font-family: 'Archivo', sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  overflow-x: hidden;
+  background:var(--void); color:var(--t1);
+  font-family:"Archivo",sans-serif; font-size:1rem;
+  line-height:1.65; min-height:100vh; overflow-x:hidden;
+  transition:background .3s,color .3s;
+}
+body::after {
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:990;
+  background:repeating-linear-gradient(0deg,transparent,transparent 3px,var(--scanline) 3px,var(--scanline) 4px);
 }
 
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--void); }
-::-webkit-scrollbar-thumb { background: var(--t3); border-radius: 2px; }
-
-/* ── Scanlines ── */
-.scanlines {
-  position: fixed; inset: 0; pointer-events: none; z-index: 9999;
-  background: repeating-linear-gradient(0deg, transparent, transparent 2px,
-    rgba(0,0,0,0.025) 2px, rgba(0,0,0,0.025) 4px);
-}
-
-/* ═══════════════════
-   NAVIGATION
-   ═══════════════════ */
+/* ── NAV ───────────────────────────────────────────────────── */
 .nav {
-  position: sticky; top: 0; z-index: 200;
-  height: var(--nav-h);
-  background: rgba(2,9,18,0.88);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid var(--border);
-}
-.nav-inner {
-  max-width: 1440px; margin: 0 auto; height: 100%;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 2rem; gap: 1.5rem; position: relative;
+  position:sticky; top:0; z-index:500; height:52px;
+  display:flex; align-items:center; gap:1rem; padding:0 1.8rem;
+  background:var(--nav-bg); border-bottom:1px solid var(--border);
+  backdrop-filter:blur(20px); transition:background .3s,border-color .3s;
 }
 .nav-logo {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-size: 1.3rem; font-weight: 700;
-  letter-spacing: 0.28em; color: var(--green);
-  text-decoration: none; text-transform: uppercase; flex-shrink: 0;
+  font-family:"Archivo Narrow",sans-serif; font-weight:800; font-size:.95rem;
+  color:var(--glow); letter-spacing:.15em; text-decoration:none; flex-shrink:0;
+  text-shadow:0 0 20px rgba(0,212,255,.3);
 }
-.nav-links {
-  display: flex; align-items: center; gap: 0;
-  flex: 1; justify-content: center;
-}
+.nav-links { display:flex; gap:0; list-style:none; flex:1; position:relative; }
+.nav-links li { position:relative; }
 .nav-links a {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.68rem; letter-spacing: 0.12em;
-  color: var(--t2); text-decoration: none;
-  padding: 0.4rem 0.85rem; transition: color 0.2s;
-  text-transform: uppercase; white-space: nowrap;
-  border-bottom: 1px solid transparent;
+  font-family:"Archivo Narrow",sans-serif; font-weight:700; font-size:.65rem;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:var(--t2); text-decoration:none; transition:color .2s;
+  padding:.2rem .85rem; display:block; white-space:nowrap;
 }
-.nav-links a:hover { color: var(--cyan); }
-.nav-links a.active {
-  color: var(--glow);
-  border-bottom-color: var(--glow);
+.nav-links a:hover { color:var(--t1); }
+.nav-links a.active { color:var(--pulse); border-bottom:1px solid var(--pulse-border); }
+
+/* Tooltip */
+.nav-links a[data-tip]::after {
+  content:attr(data-tip);
+  position:absolute; bottom:-2.1rem; left:50%;
+  transform:translateX(-50%) translateY(4px);
+  background:rgba(2,9,18,.96); border:1px solid var(--border);
+  border-radius:3px; padding:.22rem .6rem;
+  font-family:"Courier Prime",monospace; font-size:.52rem;
+  letter-spacing:.08em; white-space:nowrap; color:var(--t2);
+  opacity:0; pointer-events:none;
+  transition:opacity .14s,transform .14s;
+  z-index:600;
 }
-.nav-right {
-  display: flex; align-items: center; gap: 1rem; flex-shrink: 0;
+.nav-links a[data-tip]:hover::after { opacity:1; transform:translateX(-50%) translateY(0); }
+
+.nav-controls { display:flex; align-items:center; gap:.35rem; flex-shrink:0; }
+.nc-sep { width:1px; height:16px; background:var(--border); margin:0 .15rem; }
+.nc-theme {
+  font-family:"Courier Prime",monospace; font-size:.58rem; font-weight:700;
+  letter-spacing:.12em; padding:.22rem .5rem; border-radius:2px;
+  border:1px solid var(--border); background:transparent;
+  color:var(--t2); cursor:pointer; transition:all .2s; white-space:nowrap;
 }
-.nav-live {
-  display: flex; align-items: center; gap: 0.5rem;
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.62rem; letter-spacing: 0.1em; color: var(--t3);
+.nc-theme:hover,.nc-theme.active { border-color:var(--glow); color:var(--glow); background:rgba(0,212,255,.08); }
+.nc-sz {
+  font-family:"Courier Prime",monospace; font-size:.6rem; font-weight:700;
+  width:26px; height:26px; display:flex; align-items:center; justify-content:center;
+  border-radius:2px; border:1px solid var(--border);
+  background:transparent; color:var(--t3); cursor:pointer; transition:all .2s;
 }
-.live-dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--green); box-shadow: 0 0 8px var(--green);
-  animation: blink 2s ease-in-out infinite;
+.nc-sz:hover { border-color:rgba(0,212,255,.4); color:var(--t1); }
+.nc-sz.active { background:rgba(0,212,255,.12); border-color:var(--glow); color:var(--glow); }
+.nav-dot {
+  width:6px; height:6px; background:var(--pulse); border-radius:50%; flex-shrink:0;
+  animation:pdot 2.2s infinite;
 }
-@keyframes blink {
-  0%,100% { opacity:1; box-shadow: 0 0 6px var(--green); }
-  50%      { opacity:.3; box-shadow: 0 0 2px var(--green); }
-}
-.nav-toggle {
-  display: none; background: none;
-  border: 1px solid var(--border); color: var(--t2);
-  padding: 0.4rem 0.7rem; cursor: pointer;
-  font-family: 'Courier Prime', monospace; font-size: 0.72rem;
-  letter-spacing: 0.08em;
-}
-@media (max-width: 920px) {
-  .nav-links {
-    display: none; position: absolute;
-    top: var(--nav-h); left: 0; right: 0;
-    background: rgba(2,9,18,0.98);
-    border-bottom: 1px solid var(--border);
-    padding: 1.25rem 2rem;
-    flex-direction: column; align-items: flex-start; gap: 0.25rem;
-  }
-  .nav-links.open { display: flex; }
-  .nav-links a { padding: 0.6rem 0; width: 100%; }
-  .nav-toggle { display: block; }
+@keyframes pdot {
+  0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(156,111,228,.5)}
+  50%{opacity:.4;box-shadow:0 0 0 7px rgba(156,111,228,0)}
 }
 
-/* ═══════════════════
-   HERO
-   ═══════════════════ */
-.hero {
-  position: relative; min-height: 100vh;
-  display: flex; flex-direction: column; justify-content: flex-end;
-  overflow: hidden; padding: 0 2rem 5rem;
+/* ── PAGE HEADER — LOCKED SATELLITE SPEC ─────────────────── */
+.page-header {
+  position:relative; overflow:hidden;
+  min-height:400px;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  padding:3.5rem 2rem 2.8rem;
+  background-image:url("https://okay-gold-oof5kipmvh.edgeone.app/Testing%20The%20Surface%20-%20Imgur.png");
+  background-size:cover; background-position:center 38%;
+  border-bottom:1px solid var(--border);
 }
-#heroCanvas {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
+.page-header::before {
+  content:""; position:absolute; inset:0; z-index:0;
+  background:linear-gradient(120deg,rgba(2,9,18,.96) 0%,rgba(2,9,18,.72) 45%,rgba(2,9,18,.92) 100%);
+  transition:background .3s;
 }
-.hero-grid {
-  position: absolute; inset: 0; pointer-events: none;
-  background-image:
-    linear-gradient(rgba(0,212,255,0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,212,255,0.035) 1px, transparent 1px);
-  background-size: 64px 64px;
-  animation: grid-move 28s linear infinite;
+[data-theme="light"] .page-header::before {
+  background:linear-gradient(120deg,rgba(240,245,255,.97) 0%,rgba(240,245,255,.84) 45%,rgba(240,245,255,.94) 100%);
 }
-@keyframes grid-move {
-  0%   { transform: translate(0,0); }
-  100% { transform: translate(64px,64px); }
+#pulse-canvas {
+  position:absolute; top:0; left:0;
+  width:100%; height:100%;
+  z-index:1; opacity:.6; pointer-events:none;
 }
-.hero-rings {
-  position: absolute;
-  top: 42%; right: -5%;
-  transform: translateY(-50%);
-  width: 760px; height: 760px;
-  pointer-events: none;
+[data-theme="light"] #pulse-canvas { opacity:.2; }
+.page-header::after {
+  content:""; position:absolute; inset:0; z-index:2; pointer-events:none;
+  background:radial-gradient(ellipse 55% 60% at 72% 52%,rgba(156,111,228,.07) 0%,transparent 70%);
+  animation:hpulse 8s ease-in-out infinite alternate;
 }
-.hero-ring {
-  position: absolute; top: 50%; left: 50%;
-  transform: translate(-50%,-50%);
-  border-radius: 50%;
-  border: 1px solid rgba(0,212,255,0.07);
-  animation: ring-breathe 5s ease-in-out infinite;
+@keyframes hpulse { 0%{opacity:.4;transform:scale(1)} 100%{opacity:1;transform:scale(1.05)} }
+.page-header>*:not(canvas) { position:relative; z-index:3; }
+.bg-word {
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  font-family:"Archivo Narrow",sans-serif; font-weight:800;
+  font-size:clamp(5rem,14vw,11rem);
+  color:rgba(156,111,228,.04); pointer-events:none; user-select:none; z-index:2;
 }
-.hero-ring:nth-child(1){ width:130px; height:130px; animation-delay:0s; }
-.hero-ring:nth-child(2){ width:260px; height:260px; animation-delay:.4s; }
-.hero-ring:nth-child(3){ width:400px; height:400px; animation-delay:.8s; border-color:rgba(0,212,255,0.05); }
-.hero-ring:nth-child(4){ width:540px; height:540px; animation-delay:1.2s; border-color:rgba(0,212,255,0.04); }
-.hero-ring:nth-child(5){ width:700px; height:700px; animation-delay:1.6s; border-color:rgba(0,212,255,0.025); }
-@keyframes ring-breathe {
-  0%,100%{ opacity:.9; }
-  50%    { opacity:.2; }
+.eyebrow {
+  font-family:"Courier Prime",monospace; font-size:.65rem; color:var(--pulse);
+  letter-spacing:.24em; text-transform:uppercase; margin-bottom:.55rem;
+  display:flex; align-items:center; gap:.55rem;
 }
-.hero-sweep-wrap {
-  position: absolute; top: 50%; left: 50%;
-  width: 400px; height: 400px;
-  transform: translate(-50%,-50%);
-  pointer-events: none;
+.eyebrow::before { content:""; width:18px; height:1px; background:var(--pulse); opacity:.5; }
+.page-title {
+  font-family:"Archivo Narrow",sans-serif; font-weight:800;
+  font-size:clamp(2.4rem,5.5vw,4rem); color:var(--t1);
+  line-height:.95; letter-spacing:-.02em; margin-bottom:.65rem;
 }
-.hero-sweep {
-  position: absolute; top: 50%; left: 50%;
-  width: 380px; height: 1px;
-  transform-origin: left center;
-  background: linear-gradient(90deg, rgba(0,212,255,0.55) 0%, transparent 100%);
-  animation: radar-sweep 7s linear infinite;
+.page-sub { font-size:.84rem; color:var(--t2); max-width:64ch; line-height:1.75; }
+.header-badges { display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1.2rem; }
+.h-badge {
+  font-family:"Courier Prime",monospace; font-size:.56rem; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase;
+  padding:.18rem .55rem; border-radius:2px;
 }
-@keyframes radar-sweep {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-.hero-vignette {
-  position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(ellipse 80% 80% at 50% 50%, transparent 20%, var(--void) 75%);
-}
-.hero-glow {
-  position: absolute; inset: 0; pointer-events: none;
-  background:
-    radial-gradient(ellipse 55% 55% at 20% 60%, rgba(0,212,255,0.04) 0%, transparent 70%),
-    radial-gradient(ellipse 35% 35% at 75% 25%, rgba(0,255,157,0.03) 0%, transparent 60%);
-}
-.hero-content {
-  position: relative; z-index: 2;
-  max-width: 1440px; margin: 0 auto; width: 100%;
-  padding-top: calc(var(--nav-h) + 3rem);
-}
-.hero-eyebrow {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.7rem; letter-spacing: 0.22em;
-  color: var(--t3); text-transform: uppercase;
-  margin-bottom: 1.5rem;
-}
-.hero-title {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-size: clamp(6rem, 18vw, 16rem);
-  font-weight: 700; letter-spacing: 0.04em;
-  line-height: 0.88; text-transform: uppercase;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, var(--t1) 0%, var(--glow) 55%, var(--cyan) 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.hero-badge {
-  display: inline-flex; align-items: center; gap: 0.6rem;
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.68rem; letter-spacing: 0.15em;
-  color: var(--amber); text-transform: uppercase;
-  padding: 0.35rem 1rem;
-  border: 1px solid rgba(255,184,77,0.3);
-  background: rgba(255,184,77,0.05);
-  margin-bottom: 1.5rem;
-}
-.badge-dot {
-  width: 5px; height: 5px; border-radius: 50%;
-  background: var(--amber); box-shadow: 0 0 6px var(--amber);
-  animation: blink 2s ease-in-out infinite;
-}
-.hero-subtitle {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.82rem; letter-spacing: 0.14em;
-  color: var(--glow); text-transform: uppercase;
-  margin-bottom: 1.25rem;
-}
-.hero-desc {
-  font-size: 1.05rem; line-height: 1.72;
-  color: var(--t2); font-weight: 300;
-  max-width: 580px; margin-bottom: 2.5rem;
-}
-.hero-ctas {
-  display: flex; gap: 0.75rem; flex-wrap: wrap;
-  margin-bottom: 4rem;
-}
+.hb-pulse  { background:var(--pulse-bg); color:var(--pulse); border:1px solid var(--pulse-border); }
+.hb-carbon { background:rgba(0,212,255,.08); color:var(--carbon); border:1px solid rgba(0,212,255,.25); }
+.hb-bio    { background:rgba(16,185,129,.07); color:var(--bio); border:1px solid rgba(16,185,129,.22); }
+.hb-soil   { background:rgba(255,184,77,.07); color:var(--soil); border:1px solid rgba(255,184,77,.2); }
 
-/* ── Buttons ── */
-.btn {
-  display: inline-block;
-  padding: 0.65rem 1.4rem;
-  border: 1px solid rgba(0,212,255,0.38);
-  color: var(--t1);
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.74rem; letter-spacing: 0.1em;
-  text-decoration: none; text-transform: uppercase;
-  transition: all 0.25s; background: rgba(0,212,255,0.04);
-  cursor: pointer; white-space: nowrap;
-}
-.btn:hover {
-  background: rgba(0,212,255,0.1);
-  border-color: var(--glow); color: var(--cyan);
-  box-shadow: 0 0 22px rgba(0,212,255,0.14);
-}
-.btn-green {
-  border-color: rgba(0,255,157,0.38);
-  color: var(--green);
-  background: rgba(0,255,157,0.04);
-}
-.btn-green:hover {
-  background: rgba(0,255,157,0.1);
-  border-color: var(--green); color: var(--green);
-  box-shadow: 0 0 22px rgba(0,255,157,0.14);
-}
-.btn-amber {
-  border-color: rgba(255,184,77,0.38);
-  color: var(--amber);
-  background: rgba(255,184,77,0.04);
-}
-.btn-amber:hover {
-  background: rgba(255,184,77,0.1);
-  border-color: var(--amber); color: var(--amber);
-  box-shadow: 0 0 22px rgba(255,184,77,0.14);
-}
-
-.hero-metrics {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  background: var(--border); gap: 1px;
-  border: 1px solid var(--border);
-  max-width: 860px;
-}
-.hero-metric {
-  background: rgba(2,9,18,0.9);
-  padding: 1.35rem 1.5rem;
-  backdrop-filter: blur(8px);
-}
-.hm-label {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.6rem; letter-spacing: 0.14em;
-  color: var(--t3); text-transform: uppercase; margin-bottom: 0.5rem;
-}
-.hm-val {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-size: 1.75rem; font-weight: 700;
-  color: var(--t1); line-height: 1; margin-bottom: 0.25rem;
-}
-.hm-sub {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.58rem; color: var(--t3); letter-spacing: 0.07em;
-}
-@media (max-width: 640px) {
-  .hero-metrics { grid-template-columns: repeat(2,1fr); }
-  .hero { padding-bottom: 3rem; }
-}
-
-/* ═══════════════════
-   LIVE STRIP
-   ═══════════════════ */
-.live-strip {
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  background: var(--void2); overflow: hidden;
-}
-.live-strip-inner {
-  max-width: 1440px; margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
+/* ── LIVE STRIP ────────────────────────────────────────────── */
+.live-strip { background:var(--void2); border-bottom:1px solid var(--border); overflow:hidden; }
+.ls-inner {
+  display:grid; grid-template-columns:repeat(8,1fr);
 }
 .ls-card {
-  padding: 1.25rem 1.4rem;
-  border-right: 1px solid var(--border);
-  transition: background 0.25s;
+  padding:1rem 1.2rem; border-right:1px solid var(--border);
+  transition:background .2s;
 }
-.ls-card:last-child { border-right: none; }
-.ls-card:hover { background: rgba(0,212,255,0.03); }
-.ls-lbl {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.58rem; letter-spacing: 0.12em;
-  color: var(--t3); text-transform: uppercase; margin-bottom: 0.6rem;
-}
-.ls-val {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-size: 1.45rem; font-weight: 700;
-  color: var(--t1); line-height: 1; margin-bottom: 0.3rem;
-  transition: color 0.4s;
-}
-.ls-val.g { color: var(--green); }
-.ls-val.c { color: var(--cyan); }
-.ls-val.a { color: var(--amber); }
-.ls-trend {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.58rem; letter-spacing: 0.07em; color: var(--t3);
-}
-.up   { color: var(--green); }
-.dn   { color: var(--breach); }
-.flat { color: var(--amber); }
-@media (max-width: 1100px) {
-  .live-strip-inner { grid-template-columns: repeat(4,1fr); }
-  .ls-card:nth-child(4) { border-right: none; }
-  .ls-card:nth-child(5) { border-top: 1px solid var(--border); }
-  .ls-card:nth-child(6) { border-top: 1px solid var(--border); }
-  .ls-card:nth-child(7) { border-top: 1px solid var(--border); }
-  .ls-card:nth-child(8) { border-top: 1px solid var(--border); }
-}
-@media (max-width: 640px) {
-  .live-strip-inner { grid-template-columns: repeat(2,1fr); }
-}
+.ls-card:last-child { border-right:none; }
+.ls-card:hover { background:rgba(0,212,255,.03); }
+.ls-lbl { font-family:"Courier Prime",monospace; font-size:.52rem; letter-spacing:.12em; color:var(--t3); text-transform:uppercase; margin-bottom:.45rem; }
+.ls-val { font-family:"Archivo Narrow",sans-serif; font-size:1.3rem; font-weight:800; color:var(--t1); line-height:1; margin-bottom:.25rem; transition:color .4s; }
+.ls-val.g  { color:var(--bio); }
+.ls-val.c  { color:var(--glow); }
+.ls-val.a  { color:var(--amber); }
+.ls-val.p  { color:var(--pulse); }
+.ls-trend { font-family:"Courier Prime",monospace; font-size:.52rem; letter-spacing:.06em; color:var(--t3); }
+.up   { color:var(--bio); }
+.dn   { color:var(--breach); }
+.flat { color:var(--amber); }
+@media(max-width:1100px){ .ls-inner{grid-template-columns:repeat(4,1fr);} .ls-card:nth-child(4){border-right:none} .ls-card:nth-child(n+5){border-top:1px solid var(--border)} }
+@media(max-width:640px){ .ls-inner{grid-template-columns:repeat(2,1fr);} }
 
-/* ═══════════════════
-   SHARED SECTION
-   ═══════════════════ */
-.section { padding: 6rem 2rem; }
-.section-inner { max-width: 1440px; margin: 0 auto; }
+/* ── SHARED SECTION ─────────────────────────────────────────── */
+.section { padding:5rem 2rem; }
+.section-inner { max-width:1440px; margin:0 auto; }
 .section-eyebrow {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.67rem; letter-spacing: 0.2em;
-  color: var(--t3); text-transform: uppercase;
-  display: flex; align-items: center; gap: 0.75rem;
-  margin-bottom: 1.1rem;
+  font-family:"Courier Prime",monospace; font-size:.62rem; letter-spacing:.2em;
+  color:var(--t3); text-transform:uppercase;
+  display:flex; align-items:center; gap:.7rem; margin-bottom:1rem;
 }
-.section-eyebrow::before {
-  content: ''; width: 22px; height: 1px; background: var(--t3);
-}
+.section-eyebrow::before { content:""; width:18px; height:1px; background:var(--t3); }
 .section-title {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-size: clamp(2.2rem, 4.5vw, 3.75rem);
-  font-weight: 700; letter-spacing: 0.03em;
-  line-height: 1.05; text-transform: uppercase;
-  color: var(--t1); margin-bottom: 1.1rem;
+  font-family:"Archivo Narrow",sans-serif; font-weight:800;
+  font-size:clamp(2rem,4.5vw,3.4rem);
+  letter-spacing:-.01em; line-height:1.05; color:var(--t1); margin-bottom:1rem;
 }
-.section-title em { font-style: normal; color: var(--glow); }
-.section-desc {
-  font-size: 0.98rem; line-height: 1.75;
-  color: var(--t2); font-weight: 300; max-width: 580px;
-}
+.section-title em { font-style:normal; color:var(--pulse); }
+.section-desc { font-size:.86rem; line-height:1.78; color:var(--t2); max-width:580px; }
 
-/* ═══════════════════
-   IDENTITY
-   ═══════════════════ */
-.identity { background: var(--void2); border-bottom: 1px solid var(--border); }
-.identity-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 6rem; align-items: start; margin-top: 1rem;
-}
-.id-badge {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.63rem; letter-spacing: 0.15em;
-  color: var(--amber); text-transform: uppercase;
-  padding: 0.3rem 0.8rem;
-  border: 1px solid rgba(255,184,77,0.28);
-  background: rgba(255,184,77,0.05); margin-bottom: 2rem;
-}
-.id-badge-dot {
-  width: 4px; height: 4px; border-radius: 50%;
-  background: var(--amber); animation: blink 2s ease-in-out infinite;
-}
-.id-points { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 3rem; }
-.id-point { display: flex; gap: 1.25rem; align-items: flex-start; }
-.ip-icon {
-  width: 38px; height: 38px; flex-shrink: 0;
-  border: 1px solid var(--border); background: var(--void3);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.1rem; color: var(--glow); margin-top: 0.1rem;
-}
-.ip-body h4 {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-size: 0.85rem; font-weight: 600;
-  letter-spacing: 0.09em; text-transform: uppercase;
-  color: var(--t1); margin-bottom: 0.35rem;
-}
-.ip-body p { font-size: 0.87rem; line-height: 1.65; color: var(--t2); font-weight: 300; }
-
-.id-stats {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 1px; border: 1px solid var(--border);
-  background: var(--border);
-}
-.id-stat { background: var(--void); padding: 2.25rem; }
-.is-val {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-size: 3.2rem; font-weight: 700;
-  color: var(--glow); line-height: 1; margin-bottom: 0.6rem;
-}
-.is-label {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.63rem; letter-spacing: 0.11em;
-  color: var(--t3); text-transform: uppercase; line-height: 1.55;
-}
-@media (max-width: 860px) {
-  .identity-grid { grid-template-columns: 1fr; gap: 3.5rem; }
-}
-
-/* ═══════════════════
-   CREDIT MARKETS
-   ═══════════════════ */
-.credits { background: var(--void); border-top: 1px solid var(--border); }
-.credits-header {
-  display: flex; align-items: flex-end;
-  justify-content: space-between; flex-wrap: wrap;
-  gap: 2rem; margin-bottom: 4rem;
-}
-.credits-grid {
-  display: grid; grid-template-columns: repeat(4,1fr);
-  gap: 1px; border: 1px solid var(--border);
-  background: var(--border);
-}
-.cc {
-  background: var(--void); padding: 2.5rem;
-  position: relative; overflow: hidden;
-  transition: background 0.25s;
-}
-.cc::before {
-  content: ''; position: absolute;
-  top: 0; left: 0; right: 0; height: 2px;
-}
-.cc.carbon::before        { background: var(--glow); }
-.cc.biodiversity::before  { background: var(--green); }
-.cc.water::before         { background: var(--cyan); }
-.cc.soil::before          { background: var(--amber); }
-.cc:hover { background: var(--void2); }
-.cc-glyph {
-  width: 44px; height: 44px;
-  border: 1px solid var(--border); background: var(--void3);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.3rem; margin-bottom: 1.5rem;
-}
-.cc.carbon .cc-glyph        { color: var(--glow);  border-color: rgba(0,212,255,0.25); }
-.cc.biodiversity .cc-glyph  { color: var(--green); border-color: rgba(0,255,157,0.25); }
-.cc.water .cc-glyph         { color: var(--cyan);  border-color: rgba(74,237,255,0.25); }
-.cc.soil .cc-glyph          { color: var(--amber); border-color: rgba(255,184,77,0.25); }
-.cc-type {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.62rem; letter-spacing: 0.2em;
-  text-transform: uppercase; margin-bottom: 0.7rem;
-}
-.cc.carbon .cc-type        { color: var(--glow); }
-.cc.biodiversity .cc-type  { color: var(--green); }
-.cc.water .cc-type         { color: var(--cyan); }
-.cc.soil .cc-type          { color: var(--amber); }
-.cc-name {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-size: 1.3rem; font-weight: 700;
-  letter-spacing: 0.04em; text-transform: uppercase;
-  color: var(--t1); margin-bottom: 1rem; line-height: 1.2;
-}
-.cc-desc {
-  font-size: 0.86rem; line-height: 1.67;
-  color: var(--t2); margin-bottom: 1.75rem; font-weight: 300;
-}
-.cc-meta {
-  display: flex; flex-direction: column; gap: 0.55rem;
-  padding-top: 1.5rem; border-top: 1px solid var(--border);
-}
-.cm-row { display: flex; justify-content: space-between; align-items: center; }
-.cm-lbl {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.58rem; letter-spacing: 0.1em;
-  color: var(--t3); text-transform: uppercase;
-}
-.cm-v {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.68rem; font-weight: 700;
-  color: var(--t1); letter-spacing: 0.04em;
-}
-@media (max-width: 1100px) {
-  .credits-grid { grid-template-columns: repeat(2,1fr); }
-}
-@media (max-width: 640px) {
-  .credits-grid { grid-template-columns: 1fr; }
-}
-
-/* ═══════════════════
-   ENGINE
-   ═══════════════════ */
-.engine { background: var(--void2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.engine-layout {
-  display: grid; grid-template-columns: 1.1fr 1fr;
-  gap: 5rem; align-items: start; margin-top: 4rem;
-}
-.engine-canvas-wrap {
-  border: 1px solid var(--border); background: var(--void);
-  position: relative; overflow: hidden;
-}
-.ecw-header {
-  padding: 0.85rem 1.25rem;
-  border-bottom: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: space-between;
-}
-.ecw-label {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.62rem; letter-spacing: 0.14em;
-  color: var(--t3); text-transform: uppercase;
-}
-.ecw-live {
-  display: flex; align-items: center; gap: 0.4rem;
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.6rem; letter-spacing: 0.1em; color: var(--green);
-}
-.ecw-live-dot {
-  width: 5px; height: 5px; border-radius: 50%;
-  background: var(--green); animation: blink 1.5s ease-in-out infinite;
-}
-#ekgCanvas { display: block; width: 100%; }
-.engine-steps { display: flex; flex-direction: column; }
-.engine-step {
-  display: flex; gap: 1.5rem; align-items: flex-start;
-  padding: 1.75rem 0; border-bottom: 1px solid var(--border);
-}
-.engine-step:last-child { border-bottom: none; }
-.es-num {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.62rem; letter-spacing: 0.12em;
-  color: var(--t3); flex-shrink: 0; padding-top: 0.2rem; width: 22px;
-}
-.es-body h4 {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-size: 0.92rem; font-weight: 600;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--t1); margin-bottom: 0.4rem;
-}
-.es-body p { font-size: 0.86rem; line-height: 1.65; color: var(--t2); font-weight: 300; }
-@media (max-width: 900px) {
-  .engine-layout { grid-template-columns: 1fr; gap: 3rem; }
-}
-
-/* ═══════════════════
-   STAKEHOLDERS
-   ═══════════════════ */
-.stakeholders { background: var(--void); }
-.sh-grid {
-  display: grid; grid-template-columns: repeat(3,1fr);
-  gap: 1px; border: 1px solid var(--border);
-  background: var(--border); margin-top: 4rem;
-}
-.sh-card { background: var(--void); padding: 2.5rem; }
-.sh-num {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.6rem; letter-spacing: 0.16em;
-  color: var(--t3); text-transform: uppercase; margin-bottom: 1.5rem;
-}
-.sh-title {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-size: 1.65rem; font-weight: 700;
-  letter-spacing: 0.07em; text-transform: uppercase;
-  color: var(--t1); margin-bottom: 0.4rem;
-}
-.sh-sub {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.68rem; letter-spacing: 0.11em;
-  color: var(--t3); text-transform: uppercase; margin-bottom: 1.5rem;
-}
-.sh-desc {
-  font-size: 0.87rem; line-height: 1.67;
-  color: var(--t2); margin-bottom: 2rem; font-weight: 300;
-}
-.sh-benefits {
-  display: flex; flex-direction: column; gap: 0.55rem;
-  padding-top: 1.5rem; border-top: 1px solid var(--border);
-}
-.sh-b {
-  display: flex; align-items: flex-start; gap: 0.7rem;
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.68rem; letter-spacing: 0.04em;
-  color: var(--t2); line-height: 1.5;
-}
-.sh-b::before { content: '→'; color: var(--glow); flex-shrink: 0; }
-@media (max-width: 860px) {
-  .sh-grid { grid-template-columns: 1fr; }
-}
-
-/* ═══════════════════
-   INCENTIVE LAYER
-   ═══════════════════ */
-.incentive { background: var(--void2); border-top: 1px solid var(--border); }
-.incentive-layout {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 5rem; align-items: start; margin-top: 4rem;
-}
-.flow-chain {
-  border: 1px solid var(--border); display: flex; flex-direction: column;
-}
-.flow-node {
-  padding: 1.35rem 1.75rem;
-  border-bottom: 1px solid var(--border);
-  display: flex; align-items: center; gap: 1.25rem;
-  transition: background 0.2s; cursor: default;
-}
-.flow-node:last-child { border-bottom: none; }
-.flow-node:hover { background: rgba(0,212,255,0.03); }
-.fn-glyph {
-  width: 30px; height: 30px; flex-shrink: 0;
-  border: 1px solid var(--border); background: var(--void3);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.85rem; color: var(--glow);
-}
-.fn-lbl {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.58rem; letter-spacing: 0.12em;
-  color: var(--t3); text-transform: uppercase; margin-bottom: 0.2rem;
-}
-.fn-txt {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-size: 0.9rem; font-weight: 600;
-  letter-spacing: 0.05em; color: var(--t1); text-transform: uppercase;
-}
-.fn-arrow { margin-left: auto; color: var(--glow); font-size: 0.85rem; }
-
-.inc-right { display: flex; flex-direction: column; gap: 2.25rem; }
-.inc-quote {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-size: 1.7rem; font-weight: 500;
-  line-height: 1.42; color: var(--t1);
-  font-style: italic; letter-spacing: 0.015em;
-}
-.inc-quote em { font-style: normal; color: var(--glow); }
-.inc-body { font-size: 0.9rem; line-height: 1.72; color: var(--t2); font-weight: 300; }
-.inc-links { display: flex; flex-direction: column; gap: 0.65rem; }
-@media (max-width: 860px) {
-  .incentive-layout { grid-template-columns: 1fr; gap: 3rem; }
-}
-
-/* ═══════════════════
-   ARCHITECTURE
-   ═══════════════════ */
-.architecture { background: var(--void); border-top: 1px solid var(--border); }
-.arch-grid {
-  display: grid; grid-template-columns: repeat(6,1fr);
-  gap: 1px; border: 1px solid var(--border);
-  background: var(--border); margin-top: 3rem;
-}
-.arch-cell { background: var(--void); padding: 1.75rem 1.5rem; text-align: center; }
-.ac-lbl {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.6rem; letter-spacing: 0.13em;
-  color: var(--t3); text-transform: uppercase; margin-bottom: 0.7rem;
-}
-.ac-status {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-size: 0.85rem; font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase;
-}
-.defined { color: var(--amber); }
-.specified { color: var(--glow); }
-.building { color: var(--cyan); }
-.live-st { color: var(--green); }
-
-.arch-cta { margin-top: 4rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
-.arch-note {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.7rem; letter-spacing: 0.07em;
-  color: var(--t3); line-height: 1.6; max-width: 500px;
-}
-@media (max-width: 1100px) {
-  .arch-grid { grid-template-columns: repeat(3,1fr); }
-}
-@media (max-width: 640px) {
-  .arch-grid { grid-template-columns: repeat(2,1fr); }
-}
-
-/* ═══════════════════
-   CTA BAND
-   ═══════════════════ */
-.cta-band {
-  background: var(--void2);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 6rem 2rem; text-align: center;
-}
-.cta-inner {
-  max-width: 720px; margin: 0 auto;
-  display: flex; flex-direction: column;
-  align-items: center; gap: 1.5rem;
-}
-.cta-eyebrow {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.65rem; letter-spacing: 0.2em;
-  color: var(--t3); text-transform: uppercase;
-}
-.cta-title {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-size: clamp(2.2rem, 5.5vw, 4rem);
-  font-weight: 700; letter-spacing: 0.05em;
-  text-transform: uppercase; line-height: 1.05;
-  color: var(--t1);
-}
-.cta-title em { font-style: normal; color: var(--glow); }
-.cta-desc { font-size: 0.95rem; line-height: 1.75; color: var(--t2); font-weight: 300; }
-.cta-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; margin-top: 0.5rem; }
-
-/* ═══════════════════
-   FOOTER
-   ═══════════════════ */
-/* ═══════════════════
-   PLANETARY MONITOR
-   ═══════════════════ */
-.planetary { background: var(--void); border-bottom: 1px solid var(--border); }
-.pm-top {
-  display: flex; align-items: flex-end;
-  justify-content: space-between; flex-wrap: wrap;
-  gap: 2rem; margin-bottom: 4rem;
-}
+/* ── PLANETARY SIGNAL MONITOR ────────────────────────────────── */
+.planetary { background:var(--void); border-bottom:1px solid var(--border); }
+.pm-top { display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:2rem; margin-bottom:3.5rem; }
 .pm-grid {
-  display: grid; grid-template-columns: repeat(4,1fr);
-  gap: 1px; border: 1px solid var(--border); background: var(--border);
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:1px; border:1px solid var(--border); background:var(--border);
 }
 .pm-card {
-  background: var(--void); padding: 1.75rem;
-  position: relative; overflow: hidden; transition: background 0.25s;
+  background:var(--void); padding:1.6rem;
+  position:relative; overflow:hidden; transition:background .25s;
 }
-.pm-card:hover { background: var(--void2); }
-.pm-card::after {
-  content: ''; position: absolute;
-  bottom: 0; left: 0; right: 0; height: 2px; opacity: 0.55;
-}
-.pm-card.breach::after   { background: var(--breach); }
-.pm-card.critical::after { background: var(--warn); }
-.pm-card.warning::after  { background: var(--amber); }
-.pm-card.stable::after   { background: var(--green); }
-.pm-domain {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.6rem; letter-spacing: 0.15em;
-  color: var(--t3); text-transform: uppercase; margin-bottom: 0.7rem;
-}
-.pm-score-row {
-  display: flex; align-items: baseline; gap: 0.3rem; margin-bottom: 0.55rem;
-}
-.pm-score-val {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-size: 2.6rem; font-weight: 700; line-height: 1; color: var(--t1);
-  transition: color 0.4s;
-}
-.pm-score-unit {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.62rem; color: var(--t3); letter-spacing: 0.04em;
-}
+.pm-card:hover { background:var(--void2); }
+.pm-card::after { content:""; position:absolute; bottom:0; left:0; right:0; height:2px; opacity:.6; }
+.pm-card.breach::after   { background:var(--breach); }
+.pm-card.critical::after { background:var(--warn); }
+.pm-card.warning::after  { background:var(--amber); }
+.pm-card.stable::after   { background:var(--bio); }
+.pm-domain { font-family:"Courier Prime",monospace; font-size:.58rem; letter-spacing:.14em; color:var(--t3); text-transform:uppercase; margin-bottom:.6rem; }
+.pm-score-row { display:flex; align-items:baseline; gap:.28rem; margin-bottom:.5rem; }
+.pm-score-val { font-family:"Archivo Narrow",sans-serif; font-size:2.4rem; font-weight:800; line-height:1; color:var(--t1); transition:color .4s; }
+.pm-score-unit { font-family:"Courier Prime",monospace; font-size:.6rem; color:var(--t3); }
 .pm-status {
-  display: inline-block;
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.57rem; letter-spacing: 0.15em; text-transform: uppercase;
-  padding: 0.2rem 0.5rem; border: 1px solid currentColor; margin-bottom: 1rem;
+  display:inline-block; font-family:"Courier Prime",monospace; font-size:.54rem;
+  letter-spacing:.14em; text-transform:uppercase; padding:.18rem .45rem;
+  border:1px solid currentColor; margin-bottom:.9rem;
 }
-.pm-card.breach .pm-status   { color: var(--breach); background: rgba(240,48,48,0.06); }
-.pm-card.critical .pm-status { color: var(--warn);   background: rgba(240,144,0,0.06); }
-.pm-card.warning .pm-status  { color: var(--amber);  background: rgba(255,184,77,0.06); }
-.pm-card.stable .pm-status   { color: var(--green);  background: rgba(0,255,157,0.06); }
-.pm-bar-bg { height: 2px; background: rgba(0,212,255,0.1); margin-bottom: 0.85rem; }
-.pm-bar-fill { height: 100%; transition: width 1.4s ease; }
-.pm-card.breach .pm-bar-fill   { background: var(--breach); }
-.pm-card.critical .pm-bar-fill { background: var(--warn); }
-.pm-card.warning .pm-bar-fill  { background: var(--amber); }
-.pm-card.stable .pm-bar-fill   { background: var(--green); }
-.pm-footer {
-  display: flex; justify-content: space-between;
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.56rem; letter-spacing: 0.06em; color: var(--t3);
-}
-.pm-footer .up   { color: var(--green); }
-.pm-footer .dn   { color: var(--breach); }
-.pm-footer .flat { color: var(--amber); }
-@media (max-width: 1100px) { .pm-grid { grid-template-columns: repeat(2,1fr); } }
-@media (max-width: 560px)  { .pm-grid { grid-template-columns: 1fr; } }
+.pm-card.breach .pm-status   { color:var(--breach); background:rgba(240,48,48,.06); }
+.pm-card.critical .pm-status { color:var(--warn); background:rgba(240,144,0,.06); }
+.pm-card.warning .pm-status  { color:var(--amber); background:rgba(255,184,77,.06); }
+.pm-card.stable .pm-status   { color:var(--bio); background:rgba(16,185,129,.06); }
+.pm-bar-bg { height:2px; background:rgba(0,212,255,.1); margin-bottom:.8rem; }
+.pm-bar-fill { height:100%; transition:width 1.4s ease; }
+.pm-card.breach .pm-bar-fill   { background:var(--breach); }
+.pm-card.critical .pm-bar-fill { background:var(--warn); }
+.pm-card.warning .pm-bar-fill  { background:var(--amber); }
+.pm-card.stable .pm-bar-fill   { background:var(--bio); }
+.pm-footer { display:flex; justify-content:space-between; font-family:"Courier Prime",monospace; font-size:.54rem; letter-spacing:.05em; color:var(--t3); }
+.pm-footer .up   { color:var(--bio); }
+.pm-footer .dn   { color:var(--breach); }
+.pm-footer .flat { color:var(--amber); }
+@media(max-width:1100px){ .pm-grid{grid-template-columns:repeat(2,1fr)} }
+@media(max-width:560px) { .pm-grid{grid-template-columns:1fr} }
 
-/* ═══════════════════
-   TEN PROBLEMS
-   ═══════════════════ */
-.problems { background: var(--void2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.prob-header {
-  display: flex; align-items: flex-end;
-  justify-content: space-between; flex-wrap: wrap; gap: 2rem; margin-bottom: 4rem;
-}
-.problems-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 1px; border: 1px solid var(--border); background: var(--border);
-}
+/* ── TEN PROBLEMS ───────────────────────────────────────────── */
+.problems { background:var(--void2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.prob-header { display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:2rem; margin-bottom:3.5rem; }
+.problems-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; border:1px solid var(--border); background:var(--border); }
 .prob-item {
-  background: var(--void2); padding: 2rem;
-  display: flex; gap: 1.25rem; align-items: flex-start;
-  transition: background 0.2s;
+  background:var(--void2); padding:1.75rem;
+  display:flex; gap:1.2rem; align-items:flex-start; transition:background .2s;
 }
-.prob-item:hover { background: rgba(0,212,255,0.025); }
-.prob-num {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-size: 1.7rem; font-weight: 700; line-height: 1.1;
-  color: var(--t3); flex-shrink: 0; width: 34px; margin-top: 0.1rem;
-}
-.prob-title {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-size: 0.95rem; font-weight: 600;
-  letter-spacing: 0.07em; text-transform: uppercase;
-  color: var(--t1); margin-bottom: 0.3rem;
-}
-.prob-tag {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.57rem; letter-spacing: 0.11em;
-  color: var(--glow); text-transform: uppercase; margin-bottom: 0.45rem;
-}
-.prob-desc { font-size: 0.83rem; line-height: 1.6; color: var(--t2); font-weight: 300; }
-@media (max-width: 768px) { .problems-grid { grid-template-columns: 1fr; } }
+.prob-item:hover { background:rgba(156,111,228,.03); }
+.prob-num { font-family:"Archivo Narrow",sans-serif; font-size:1.6rem; font-weight:800; line-height:1.1; color:var(--t3); flex-shrink:0; width:34px; margin-top:.1rem; }
+.prob-title { font-family:"Archivo Narrow",sans-serif; font-size:.92rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--t1); margin-bottom:.25rem; }
+.prob-tag { font-family:"Courier Prime",monospace; font-size:.56rem; letter-spacing:.1em; color:var(--pulse); text-transform:uppercase; margin-bottom:.38rem; }
+.prob-desc { font-size:.8rem; line-height:1.62; color:var(--t2); }
+@media(max-width:768px){ .problems-grid{grid-template-columns:1fr} }
 
-/* ═══════════════════
-   MODULE ECOSYSTEM
-   ═══════════════════ */
-.ecosystem { background: var(--void2); border-top: 1px solid var(--border); }
+/* ── IDENTITY ───────────────────────────────────────────────── */
+.identity { background:var(--void2); border-top:1px solid var(--border); }
+.identity-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start; margin-top:.5rem; }
+.id-badge {
+  display:inline-flex; align-items:center; gap:.5rem;
+  font-family:"Courier Prime",monospace; font-size:.6rem; letter-spacing:.15em;
+  color:var(--pulse); text-transform:uppercase;
+  padding:.28rem .75rem; border:1px solid var(--pulse-border);
+  background:var(--pulse-bg); margin-bottom:1.8rem;
+}
+.id-badge-dot { width:4px; height:4px; border-radius:50%; background:var(--pulse); animation:pdot 2s infinite; }
+.id-points { display:flex; flex-direction:column; gap:1.4rem; margin-top:2.5rem; }
+.id-point { display:flex; gap:1.2rem; align-items:flex-start; }
+.ip-icon {
+  width:36px; height:36px; flex-shrink:0; border:1px solid var(--border);
+  background:var(--void3); display:flex; align-items:center; justify-content:center;
+  font-size:1rem; color:var(--pulse); margin-top:.1rem;
+}
+.ip-body h4 { font-family:"Archivo Narrow",sans-serif; font-size:.84rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--t1); margin-bottom:.3rem; }
+.ip-body p  { font-size:.8rem; line-height:1.65; color:var(--t2); }
+.id-stats   { display:grid; grid-template-columns:1fr 1fr; gap:1px; border:1px solid var(--border); background:var(--border); }
+.id-stat    { background:var(--void); padding:2rem; }
+.is-val     { font-family:"Archivo Narrow",sans-serif; font-size:3rem; font-weight:800; color:var(--pulse); line-height:1; margin-bottom:.5rem; }
+.is-label   { font-family:"Courier Prime",monospace; font-size:.6rem; letter-spacing:.1em; color:var(--t3); text-transform:uppercase; line-height:1.55; }
+@media(max-width:860px){ .identity-grid{grid-template-columns:1fr;gap:3rem} }
+
+/* ── CREDIT MARKETS ─────────────────────────────────────────── */
+.credits { background:var(--void); border-top:1px solid var(--border); }
+.credits-header { display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:2rem; margin-bottom:3.5rem; }
+.credits-grid {
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:1px; border:1px solid var(--border); background:var(--border);
+}
+.cc {
+  background:var(--void); padding:2.2rem;
+  position:relative; overflow:hidden; transition:background .25s;
+}
+.cc::before { content:""; position:absolute; top:0; left:0; right:0; height:2px; }
+.cc.carbon::before        { background:var(--carbon); }
+.cc.biodiversity::before  { background:var(--bio); }
+.cc.water::before         { background:var(--water); }
+.cc.soil::before          { background:var(--soil); }
+.cc:hover { background:var(--void2); }
+.cc-glyph {
+  width:42px; height:42px; border:1px solid var(--border); background:var(--void3);
+  display:flex; align-items:center; justify-content:center; font-size:1.2rem; margin-bottom:1.4rem;
+}
+.cc.carbon .cc-glyph        { color:var(--carbon); border-color:rgba(0,212,255,.25); }
+.cc.biodiversity .cc-glyph  { color:var(--bio);    border-color:rgba(16,185,129,.25); }
+.cc.water .cc-glyph         { color:var(--water);  border-color:rgba(74,173,255,.25); }
+.cc.soil .cc-glyph          { color:var(--soil);   border-color:rgba(255,184,77,.25); }
+.cc-type { font-family:"Courier Prime",monospace; font-size:.58rem; letter-spacing:.18em; text-transform:uppercase; margin-bottom:.6rem; }
+.cc.carbon .cc-type        { color:var(--carbon); }
+.cc.biodiversity .cc-type  { color:var(--bio); }
+.cc.water .cc-type         { color:var(--water); }
+.cc.soil .cc-type          { color:var(--soil); }
+.cc-name { font-family:"Archivo Narrow",sans-serif; font-size:1.2rem; font-weight:800; letter-spacing:.04em; text-transform:uppercase; color:var(--t1); margin-bottom:.9rem; line-height:1.2; }
+.cc-desc { font-size:.78rem; line-height:1.68; color:var(--t2); margin-bottom:1.6rem; }
+.cc-meta { display:flex; flex-direction:column; gap:.5rem; padding-top:1.3rem; border-top:1px solid var(--border2); }
+.cm-row { display:flex; justify-content:space-between; align-items:center; }
+.cm-lbl { font-family:"Courier Prime",monospace; font-size:.56rem; letter-spacing:.1em; color:var(--t3); text-transform:uppercase; }
+.cm-v   { font-family:"Courier Prime",monospace; font-size:.64rem; font-weight:700; color:var(--t1); }
+@media(max-width:1100px){ .credits-grid{grid-template-columns:repeat(2,1fr)} }
+@media(max-width:640px){ .credits-grid{grid-template-columns:1fr} }
+
+/* ── ENGINE ─────────────────────────────────────────────────── */
+.engine { background:var(--void2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.engine-layout { display:grid; grid-template-columns:1.1fr 1fr; gap:4.5rem; align-items:start; margin-top:3.5rem; }
+.engine-canvas-wrap { border:1px solid var(--border); background:var(--void); position:relative; overflow:hidden; }
+.ecw-header { padding:.8rem 1.2rem; border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; }
+.ecw-label  { font-family:"Courier Prime",monospace; font-size:.6rem; letter-spacing:.14em; color:var(--t3); text-transform:uppercase; }
+.ecw-live   { display:flex; align-items:center; gap:.4rem; font-family:"Courier Prime",monospace; font-size:.58rem; letter-spacing:.1em; color:var(--pulse); }
+.ecw-live-dot { width:5px; height:5px; border-radius:50%; background:var(--pulse); animation:pdot 1.5s ease-in-out infinite; }
+#ekgCanvas { display:block; width:100%; }
+.engine-steps { display:flex; flex-direction:column; }
+.engine-step { display:flex; gap:1.4rem; align-items:flex-start; padding:1.6rem 0; border-bottom:1px solid var(--border); }
+.engine-step:last-child { border-bottom:none; }
+.es-num { font-family:"Courier Prime",monospace; font-size:.6rem; letter-spacing:.12em; color:var(--t3); flex-shrink:0; padding-top:.18rem; width:22px; }
+.es-body h4 { font-family:"Archivo Narrow",sans-serif; font-size:.9rem; font-weight:800; letter-spacing:.07em; text-transform:uppercase; color:var(--t1); margin-bottom:.35rem; }
+.es-body p  { font-size:.78rem; line-height:1.65; color:var(--t2); }
+@media(max-width:900px){ .engine-layout{grid-template-columns:1fr;gap:3rem} }
+
+/* ── STAKEHOLDERS ────────────────────────────────────────────── */
+.stakeholders { background:var(--void); }
+.sh-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; border:1px solid var(--border); background:var(--border); margin-top:3.5rem; }
+.sh-card { background:var(--void); padding:2.2rem; }
+.sh-num  { font-family:"Courier Prime",monospace; font-size:.58rem; letter-spacing:.16em; color:var(--t3); text-transform:uppercase; margin-bottom:1.3rem; }
+.sh-title{ font-family:"Archivo Narrow",sans-serif; font-size:1.5rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--t1); margin-bottom:.3rem; }
+.sh-sub  { font-family:"Courier Prime",monospace; font-size:.64rem; letter-spacing:.1em; color:var(--pulse); text-transform:uppercase; margin-bottom:1.3rem; }
+.sh-desc { font-size:.8rem; line-height:1.68; color:var(--t2); margin-bottom:1.8rem; }
+.sh-benefits { display:flex; flex-direction:column; gap:.5rem; padding-top:1.3rem; border-top:1px solid var(--border); }
+.sh-b { display:flex; align-items:flex-start; gap:.65rem; font-family:"Courier Prime",monospace; font-size:.64rem; letter-spacing:.04em; color:var(--t2); line-height:1.5; }
+.sh-b::before { content:"→"; color:var(--pulse); flex-shrink:0; }
+@media(max-width:860px){ .sh-grid{grid-template-columns:1fr} }
+
+/* ── INCENTIVE LAYER ─────────────────────────────────────────── */
+.incentive { background:var(--void2); border-top:1px solid var(--border); }
+.incentive-layout { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start; margin-top:3.5rem; }
+.flow-chain { border:1px solid var(--border); display:flex; flex-direction:column; }
+.flow-node { padding:1.2rem 1.6rem; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:1.2rem; transition:background .2s; }
+.flow-node:last-child { border-bottom:none; }
+.flow-node:hover { background:rgba(156,111,228,.03); }
+.fn-glyph { width:28px; height:28px; flex-shrink:0; border:1px solid var(--border); background:var(--void3); display:flex; align-items:center; justify-content:center; font-size:.82rem; color:var(--pulse); }
+.fn-lbl { font-family:"Courier Prime",monospace; font-size:.55rem; letter-spacing:.12em; color:var(--t3); text-transform:uppercase; margin-bottom:.18rem; }
+.fn-txt { font-family:"Archivo Narrow",sans-serif; font-size:.88rem; font-weight:700; letter-spacing:.04em; color:var(--t1); text-transform:uppercase; }
+.fn-arrow { margin-left:auto; color:var(--pulse); font-size:.82rem; }
+.inc-right { display:flex; flex-direction:column; gap:2rem; }
+.inc-quote { font-family:"Archivo Narrow",sans-serif; font-size:1.6rem; font-weight:700; line-height:1.42; color:var(--t1); letter-spacing:.01em; font-style:italic; }
+.inc-quote em { font-style:normal; color:var(--pulse); }
+.inc-body { font-size:.82rem; line-height:1.75; color:var(--t2); }
+.inc-links { display:flex; flex-direction:column; gap:.6rem; }
+@media(max-width:860px){ .incentive-layout{grid-template-columns:1fr;gap:3rem} }
+
+/* ── ARCHITECTURE ────────────────────────────────────────────── */
+.architecture { background:var(--void); border-top:1px solid var(--border); }
+.arch-grid {
+  display:grid; grid-template-columns:repeat(6,1fr);
+  gap:1px; border:1px solid var(--border); background:var(--border); margin-top:3rem;
+}
+.arch-cell { background:var(--void); padding:1.6rem 1.4rem; text-align:center; }
+.ac-lbl { font-family:"Courier Prime",monospace; font-size:.58rem; letter-spacing:.12em; color:var(--t3); text-transform:uppercase; margin-bottom:.65rem; }
+.ac-status { font-family:"Archivo Narrow",sans-serif; font-size:.82rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+.st-defined   { color:var(--amber); }
+.st-specified { color:var(--glow); }
+.st-building  { color:var(--pulse); }
+.st-live      { color:var(--bio); }
+.arch-cta { margin-top:3.5rem; display:flex; gap:1rem; flex-wrap:wrap; align-items:center; }
+.arch-note { font-family:"Courier Prime",monospace; font-size:.66rem; letter-spacing:.06em; color:var(--t3); line-height:1.65; max-width:500px; }
+@media(max-width:1100px){ .arch-grid{grid-template-columns:repeat(3,1fr)} }
+@media(max-width:640px) { .arch-grid{grid-template-columns:repeat(2,1fr)} }
+
+/* ── MODULE ECOSYSTEM ────────────────────────────────────────── */
+.ecosystem { background:var(--void2); border-top:1px solid var(--border); }
 .eco-grid {
-  display: grid; grid-template-columns: repeat(4,1fr);
-  gap: 1px; border: 1px solid var(--border); background: var(--border); margin-top: 4rem;
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:1px; border:1px solid var(--border); background:var(--border); margin-top:3.5rem;
 }
-.eco-card {
-  background: var(--void); padding: 2rem;
-  display: flex; flex-direction: column; gap: 0.7rem; transition: background 0.2s;
-}
-.eco-card:hover { background: var(--void2); }
-.eco-mod {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.58rem; letter-spacing: 0.15em;
-  color: var(--t3); text-transform: uppercase;
-}
-.eco-name {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-size: 1.3rem; font-weight: 700;
-  letter-spacing: 0.08em; text-transform: uppercase; color: var(--t1);
-}
-.eco-role { font-size: 0.83rem; line-height: 1.62; color: var(--t2); font-weight: 300; }
-.eco-link {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.63rem; letter-spacing: 0.1em;
-  color: var(--glow); text-transform: uppercase;
-  text-decoration: none; margin-top: auto; transition: color 0.2s;
-}
-.eco-link:hover { color: var(--cyan); }
-@media (max-width: 860px) { .eco-grid { grid-template-columns: repeat(2,1fr); } }
-@media (max-width: 480px) { .eco-grid { grid-template-columns: 1fr; } }
+.eco-card { background:var(--void); padding:1.8rem; display:flex; flex-direction:column; gap:.65rem; transition:background .2s; }
+.eco-card:hover { background:var(--void2); }
+.eco-mod { font-family:"Courier Prime",monospace; font-size:.56rem; letter-spacing:.14em; color:var(--t3); text-transform:uppercase; }
+.eco-name { font-family:"Archivo Narrow",sans-serif; font-size:1.2rem; font-weight:800; letter-spacing:.07em; text-transform:uppercase; color:var(--t1); }
+.eco-role { font-size:.78rem; line-height:1.65; color:var(--t2); }
+.eco-link { font-family:"Courier Prime",monospace; font-size:.62rem; letter-spacing:.1em; color:var(--pulse); text-transform:uppercase; text-decoration:none; margin-top:auto; transition:color .2s; }
+.eco-link:hover { color:var(--glow); }
+@media(max-width:860px){ .eco-grid{grid-template-columns:repeat(2,1fr)} }
+@media(max-width:480px){ .eco-grid{grid-template-columns:1fr} }
 
-/* ── General ── */
-footer {
-  background: var(--void);
-  border-top: 1px solid var(--border);
-  padding: 2.5rem 2rem;
+/* ── BUTTONS ─────────────────────────────────────────────────── */
+.btn {
+  display:inline-block; padding:.55rem 1.2rem;
+  border:1px solid rgba(0,212,255,.32); color:var(--t1);
+  font-family:"Courier Prime",monospace; font-size:.7rem; letter-spacing:.1em;
+  text-decoration:none; text-transform:uppercase;
+  transition:all .22s; background:rgba(0,212,255,.04); cursor:pointer;
 }
-.footer-inner {
-  max-width: 1440px; margin: 0 auto;
-  display: flex; align-items: center;
-  justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;
+.btn:hover { background:rgba(0,212,255,.1); border-color:var(--glow); color:var(--glow); box-shadow:0 0 18px rgba(0,212,255,.12); }
+.btn-pulse { border-color:var(--pulse-border); color:var(--pulse); background:var(--pulse-bg); }
+.btn-pulse:hover { background:rgba(156,111,228,.14); border-color:var(--pulse); color:var(--pulse); box-shadow:0 0 18px rgba(156,111,228,.15); }
+.btn-amber { border-color:rgba(255,184,77,.32); color:var(--amber); background:rgba(255,184,77,.05); }
+.btn-amber:hover { background:rgba(255,184,77,.12); border-color:var(--amber); color:var(--amber); }
+
+/* ── CTA BAND ────────────────────────────────────────────────── */
+.cta-band {
+  background:linear-gradient(135deg,rgba(156,111,228,.06) 0%,rgba(0,212,255,.03) 100%);
+  border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+  padding:5rem 2rem; text-align:center; position:relative; overflow:hidden;
 }
-.footer-logo {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-size: 1.1rem; font-weight: 700;
-  letter-spacing: 0.28em; color: var(--green);
-  text-decoration: none; text-transform: uppercase;
+.cta-band::before {
+  content:""; position:absolute; inset:0;
+  background:radial-gradient(ellipse 60% 70% at 80% 50%,rgba(156,111,228,.05) 0%,transparent 70%);
+  pointer-events:none;
 }
-.footer-nav { display: flex; flex-wrap: wrap; gap: 1.25rem; }
-.footer-nav a {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.62rem; letter-spacing: 0.12em;
-  color: var(--t3); text-decoration: none;
-  text-transform: uppercase; transition: color 0.2s;
+.cta-inner-wrap { max-width:720px; margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:1.4rem; position:relative; z-index:1; }
+.cta-eyebrow { font-family:"Courier Prime",monospace; font-size:.62rem; letter-spacing:.22em; color:var(--t3); text-transform:uppercase; }
+.cta-title { font-family:"Archivo Narrow",sans-serif; font-size:clamp(2.2rem,5.5vw,3.8rem); font-weight:800; letter-spacing:-.01em; text-transform:uppercase; line-height:1.05; color:var(--t1); }
+.cta-title em { font-style:normal; color:var(--pulse); }
+.cta-desc { font-size:.86rem; line-height:1.75; color:var(--t2); }
+.cta-btns { display:flex; gap:.7rem; flex-wrap:wrap; justify-content:center; margin-top:.5rem; }
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+.footer {
+  display:flex; align-items:flex-start; justify-content:space-between;
+  flex-wrap:wrap; gap:1.5rem; padding:2rem;
+  border-top:1px solid var(--border); background:var(--void2);
 }
-.footer-nav a:hover { color: var(--t2); }
-.footer-meta {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.58rem; letter-spacing: 0.08em;
-  color: var(--t3); text-transform: uppercase;
+.footer-l { font-family:"Courier Prime",monospace; font-size:.6rem; color:var(--t3); line-height:1.9; }
+.footer-l strong { color:var(--t2); font-weight:700; }
+.footer-l a { color:rgba(0,212,255,.4); text-decoration:none; transition:color .18s; }
+.footer-l a:hover { color:var(--glow); }
+.footer-r { display:flex; flex-direction:column; gap:.4rem; align-items:flex-end; }
+.footer-r a { font-family:"Courier Prime",monospace; font-size:.6rem; color:rgba(0,212,255,.3); text-decoration:none; transition:color .18s; letter-spacing:.06em; }
+.footer-r a:hover { color:var(--glow); }
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+@media(max-width:720px){
+  html{font-size:16px!important}
+  .nav{padding:0 .9rem;gap:.5rem;height:48px}
+  .nav-links{display:none}
+  .nc-sep{display:none}
+  .nc-sz{width:22px;height:22px;font-size:.52rem}
+  .nc-theme{font-size:.52rem;padding:.16rem .32rem}
+  .page-header{padding:1.8rem .9rem 1.5rem}
+  .section{padding:3rem .9rem}
+  .footer{padding:1.4rem .9rem}
+  .footer-r{align-items:flex-start}
+  .bg-word{display:none}
+}
+@media(max-width:480px){
+  html{font-size:15px!important}
+  .nc-sz{display:none}
+  .credits-grid,.sh-grid,.eco-grid{grid-template-columns:1fr}
+  .arch-grid{grid-template-columns:repeat(2,1fr)}
+  .problems-grid{grid-template-columns:1fr}
+}
+@media(max-width:360px){
+  html{font-size:14px!important}
+  .cta-band{padding:3rem .9rem}
 }
 </style>
 </head>
 <body>
 
-<div class="scanlines"></div>
-
-<!-- ══════════ NAVIGATION ══════════ -->
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
-    <div class="nav-links" id="navLinks">
-      <a href="https://vyrion.earth/conscience">CONSCIENCE</a>
-      <a href="https://vyrion.earth/atlas">ATLAS</a>
-      <a href="https://vyrion.earth/shield">SHIELD</a>
-      <a href="https://vyrion.earth/root">ROOT</a>
-      <a href="https://vyrion.earth/flux">FLUX</a>
-      <a href="https://vyrion.earth/tide">TIDE</a>
-      <a href="#" class="active">PULSE</a>
-    </div>
-    <div class="nav-right">
-      <div class="nav-live"><span class="live-dot"></span>LIVE</div>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu">☰ MENU</button>
-    </div>
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="VYRION navigation">
+  <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
+  <ul class="nav-links">
+    <li><a href="https://vyrion.earth/conscience" data-tip="Corporate Climate Pledge Verification">CONSCIENCE</a></li>
+    <li><a href="https://vyrion.earth/atlas"     data-tip="Planetary Intelligence Backbone">ATLAS</a></li>
+    <li><a href="https://vyrion.earth/shield"    data-tip="Global Disaster Early Warning">SHIELD</a></li>
+    <li><a href="https://vyrion.earth/root"      data-tip="Terrestrial Intelligence">ROOT</a></li>
+    <li><a href="https://vyrion.earth/canopy"    data-tip="Reforestation Intelligence">CANOPY</a></li>
+    <li><a href="https://vyrion.earth/flux"      data-tip="Clean Energy Infrastructure">FLUX</a></li>
+    <li><a href="https://vyrion.earth/record"    data-tip="Weekly Investigative Reports">RECORD</a></li>
+    <li><a href="https://vyrion.earth/nexan"     data-tip="AI-Human Alignment Infrastructure">NEXAN</a></li>
+    <li><a href="#" class="active"               data-tip="Impact Economy &amp; Credit Marketplace">PULSE</a></li>
+  </ul>
+  <div class="nav-controls">
+    <button class="nc-theme active" id="theme-btn" onclick="toggleTheme()" title="Toggle light/dark">◐ DARK</button>
+    <div class="nc-sep"></div>
+    <button class="nc-sz" data-scale="0.88" onclick="setScale(this)" title="Small text">S</button>
+    <button class="nc-sz active" data-scale="1.0" onclick="setScale(this)" title="Medium text">M</button>
+    <button class="nc-sz" data-scale="1.22" onclick="setScale(this)" title="Large text">L</button>
   </div>
+  <div class="nav-dot"></div>
 </nav>
 
-<!-- ══════════ HERO ══════════ -->
-<section class="hero">
-  <canvas id="heroCanvas" aria-hidden="true"></canvas>
-  <div class="hero-grid" aria-hidden="true"></div>
-  <div class="hero-rings" aria-hidden="true">
-    <div class="hero-ring"></div>
-    <div class="hero-ring"></div>
-    <div class="hero-ring"></div>
-    <div class="hero-ring"></div>
-    <div class="hero-ring"></div>
-    <div class="hero-sweep-wrap">
-      <div class="hero-sweep"></div>
-    </div>
+<!-- SATELLITE HERO HEADER -->
+<header class="page-header">
+  <canvas id="pulse-canvas" aria-hidden="true"></canvas>
+  <div class="bg-word" aria-hidden="true">PULSE</div>
+  <div class="eyebrow">Module 08 · Impact Economy &amp; Credit Marketplace</div>
+  <h1 class="page-title">PULSE</h1>
+  <p class="page-sub">Tokenized marketplace for verified carbon, biodiversity, water, and soil credits. Corporations meet compliance. Governments monetize restoration. Citizens earn for conscious action. The economic engine of planetary repair.</p>
+  <div class="header-badges">
+    <span class="h-badge hb-pulse">Architecture Defined · In Development</span>
+    <span class="h-badge hb-carbon">◉ Carbon Credits</span>
+    <span class="h-badge hb-bio">◈ Biodiversity Credits</span>
+    <span class="h-badge hb-soil">▲ Soil Credits</span>
   </div>
-  <div class="hero-vignette" aria-hidden="true"></div>
-  <div class="hero-glow" aria-hidden="true"></div>
+</header>
 
-  <div class="hero-content">
-    <p class="hero-eyebrow">MODULE 08 · IMPACT ECONOMY & CREDIT MARKETPLACE · VYRION PLANETARY INTELLIGENCE</p>
-    <h1 class="hero-title">PULSE</h1>
-    <div class="hero-badge"><span class="badge-dot"></span>ARCHITECTURE DEFINED · IN DEVELOPMENT</div>
-    <p class="hero-subtitle">Impact Economy &amp; Credit Marketplace</p>
-    <p class="hero-desc">Tokenized marketplace for verified carbon credits, biodiversity credits, water stewardship credits, and soil health credits. Corporations meet compliance. Governments monetize restoration. Citizens earn for conscious action.</p>
-    <div class="hero-ctas">
-      <a href="#problems" class="btn">All 10 Problems</a>
-      <a href="#engine" class="btn">Economic Engine</a>
-      <a href="#incentive" class="btn btn-green">Global Incentive Layer</a>
-    </div>
-    <div class="hero-metrics">
-      <div class="hero-metric">
-        <div class="hm-label">Credit Types</div>
-        <div class="hm-val">4</div>
-        <div class="hm-sub">Carbon · Bio · Water · Soil</div>
-      </div>
-      <div class="hero-metric">
-        <div class="hm-label">Stakeholders</div>
-        <div class="hm-val">3</div>
-        <div class="hm-sub">Corps · Govts · Citizens</div>
-      </div>
-      <div class="hero-metric">
-        <div class="hm-label">Module Number</div>
-        <div class="hm-val">08</div>
-        <div class="hm-sub">VYRION Architecture</div>
-      </div>
-      <div class="hero-metric">
-        <div class="hm-label">VYRION Links</div>
-        <div class="hm-val">8</div>
-        <div class="hm-sub">Platform integrations</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ LIVE STRIP ══════════ -->
-<div class="live-strip" role="region" aria-label="Live market data">
-  <div class="live-strip-inner">
+<!-- LIVE STRIP -->
+<div class="live-strip" role="region" aria-label="Live credit market data">
+  <div class="ls-inner">
     <div class="ls-card">
-      <div class="ls-lbl">Carbon Price · VCU</div>
-      <div class="ls-val g" id="ls1">$18.40</div>
+      <div class="ls-lbl">Carbon · VCU</div>
+      <div class="ls-val c" id="ls1">$18.40</div>
       <div class="ls-trend"><span class="up">↑</span> +2.3% · 24h</div>
     </div>
     <div class="ls-card">
       <div class="ls-lbl">Biodiversity · BDU</div>
-      <div class="ls-val c" id="ls2">$34.20</div>
+      <div class="ls-val g" id="ls2">$34.20</div>
       <div class="ls-trend"><span class="up">↑</span> +1.1% · 24h</div>
     </div>
     <div class="ls-card">
@@ -1046,7 +592,7 @@ footer {
     </div>
     <div class="ls-card">
       <div class="ls-lbl">Verified Tonnes</div>
-      <div class="ls-val" id="ls5">4.2M</div>
+      <div class="ls-val p">4.2M</div>
       <div class="ls-trend"><span class="up">↑</span> CO₂e · Active</div>
     </div>
     <div class="ls-card">
@@ -1055,134 +601,100 @@ footer {
       <div class="ls-trend"><span class="up">↑</span> CSRD · SEC pressure</div>
     </div>
     <div class="ls-card">
-      <div class="ls-lbl">VYRION Earth Score</div>
-      <div class="ls-val" id="ls7">41.3</div>
-      <div class="ls-trend"><span class="flat">→</span> /100 · Day 68</div>
+      <div class="ls-lbl">VYRION Index</div>
+      <div class="ls-val a" id="ls7">41.2</div>
+      <div class="ls-trend"><span class="flat">→</span> /100 · ±1.8</div>
     </div>
     <div class="ls-card">
       <div class="ls-lbl">Market Status</div>
-      <div class="ls-val a">ARCH</div>
-      <div class="ls-trend"><span class="flat">→</span> In Development</div>
+      <div class="ls-val p">ARCH</div>
+      <div class="ls-trend"><span class="flat">→</span> Q3 2026 Build</div>
     </div>
   </div>
 </div>
 
-<!-- ══════════ PLANETARY SIGNAL MONITOR ══════════ -->
+<!-- PLANETARY SIGNAL MONITOR -->
 <section class="section planetary" id="monitor">
   <div class="section-inner">
     <div class="pm-top">
       <div>
         <div class="section-eyebrow">Live System Telemetry · ATLAS-Sourced</div>
-        <h2 class="section-title">Planetary<br><em>Signal</em><br>Monitor</h2>
+        <h2 class="section-title">Planetary <em>Signal</em> Monitor</h2>
       </div>
       <p class="section-desc">Eight Earth System health indicators tracked continuously by VYRION ATLAS. PULSE credit market demand correlates directly with these scores — the worse the signal, the greater the economic urgency to act.</p>
     </div>
     <div class="pm-grid">
-
       <div class="pm-card critical">
         <div class="pm-domain">Atmosphere</div>
-        <div class="pm-score-row">
-          <span class="pm-score-val" data-pm="atm">31.0</span>
-          <span class="pm-score-unit">/100</span>
-        </div>
+        <div class="pm-score-row"><span class="pm-score-val" data-pm="atm">31.0</span><span class="pm-score-unit">/100</span></div>
         <div class="pm-status">CRITICAL</div>
         <div class="pm-bar-bg"><div class="pm-bar-fill" style="width:31%"></div></div>
         <div class="pm-footer"><span>Weight 22%</span><span class="dn">↓ −0.4 · 30d</span></div>
       </div>
-
       <div class="pm-card critical">
         <div class="pm-domain">Ocean Health</div>
-        <div class="pm-score-row">
-          <span class="pm-score-val" data-pm="ocn">34.0</span>
-          <span class="pm-score-unit">/100</span>
-        </div>
+        <div class="pm-score-row"><span class="pm-score-val" data-pm="ocn">34.0</span><span class="pm-score-unit">/100</span></div>
         <div class="pm-status">CRITICAL</div>
         <div class="pm-bar-bg"><div class="pm-bar-fill" style="width:34%"></div></div>
         <div class="pm-footer"><span>Weight 18%</span><span class="dn">↓ −0.6 · 30d</span></div>
       </div>
-
       <div class="pm-card critical">
         <div class="pm-domain">Ice &amp; Cryosphere</div>
-        <div class="pm-score-row">
-          <span class="pm-score-val" data-pm="ice">38.0</span>
-          <span class="pm-score-unit">/100</span>
-        </div>
+        <div class="pm-score-row"><span class="pm-score-val" data-pm="ice">38.0</span><span class="pm-score-unit">/100</span></div>
         <div class="pm-status">CRITICAL</div>
         <div class="pm-bar-bg"><div class="pm-bar-fill" style="width:38%"></div></div>
         <div class="pm-footer"><span>Weight 14%</span><span class="dn">↓ −1.1 · 30d</span></div>
       </div>
-
       <div class="pm-card warning">
         <div class="pm-domain">Forest Integrity</div>
-        <div class="pm-score-row">
-          <span class="pm-score-val" data-pm="fst">47.0</span>
-          <span class="pm-score-unit">/100</span>
-        </div>
+        <div class="pm-score-row"><span class="pm-score-val" data-pm="fst">47.0</span><span class="pm-score-unit">/100</span></div>
         <div class="pm-status">WARNING</div>
         <div class="pm-bar-bg"><div class="pm-bar-fill" style="width:47%"></div></div>
         <div class="pm-footer"><span>Weight 13%</span><span class="dn">↓ −0.2 · 30d</span></div>
       </div>
-
       <div class="pm-card warning">
         <div class="pm-domain">Biodiversity Index</div>
-        <div class="pm-score-row">
-          <span class="pm-score-val" data-pm="bio">44.0</span>
-          <span class="pm-score-unit">/100</span>
-        </div>
+        <div class="pm-score-row"><span class="pm-score-val" data-pm="bio">44.0</span><span class="pm-score-unit">/100</span></div>
         <div class="pm-status">WARNING</div>
         <div class="pm-bar-bg"><div class="pm-bar-fill" style="width:44%"></div></div>
         <div class="pm-footer"><span>Weight 12%</span><span class="dn">↓ −0.3 · 30d</span></div>
       </div>
-
       <div class="pm-card breach">
         <div class="pm-domain">Freshwater Health</div>
-        <div class="pm-score-row">
-          <span class="pm-score-val" data-pm="fw">29.0</span>
-          <span class="pm-score-unit">/100</span>
-        </div>
+        <div class="pm-score-row"><span class="pm-score-val" data-pm="fw">29.0</span><span class="pm-score-unit">/100</span></div>
         <div class="pm-status">BREACH</div>
         <div class="pm-bar-bg"><div class="pm-bar-fill" style="width:29%"></div></div>
         <div class="pm-footer"><span>Weight 10%</span><span class="dn">↓ −0.8 · 30d</span></div>
       </div>
-
       <div class="pm-card breach">
         <div class="pm-domain">Soil Vitality</div>
-        <div class="pm-score-row">
-          <span class="pm-score-val" data-pm="sol">33.0</span>
-          <span class="pm-score-unit">/100</span>
-        </div>
+        <div class="pm-score-row"><span class="pm-score-val" data-pm="sol">33.0</span><span class="pm-score-unit">/100</span></div>
         <div class="pm-status">BREACH</div>
         <div class="pm-bar-bg"><div class="pm-bar-fill" style="width:33%"></div></div>
         <div class="pm-footer"><span>Weight 7%</span><span class="flat">→ +0.1 · 30d</span></div>
       </div>
-
       <div class="pm-card warning">
         <div class="pm-domain">Corp. Accountability</div>
-        <div class="pm-score-row">
-          <span class="pm-score-val" data-pm="corp">38.6</span>
-          <span class="pm-score-unit">/100</span>
-        </div>
+        <div class="pm-score-row"><span class="pm-score-val" data-pm="corp">38.6</span><span class="pm-score-unit">/100</span></div>
         <div class="pm-status">WARNING</div>
         <div class="pm-bar-bg"><div class="pm-bar-fill" style="width:38.6%"></div></div>
         <div class="pm-footer"><span>Weight 4%</span><span class="up">↑ +0.3 · 30d</span></div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ══════════ TEN PROBLEMS ══════════ -->
+<!-- TEN PROBLEMS -->
 <section class="section problems" id="problems">
   <div class="section-inner">
     <div class="prob-header">
       <div>
         <div class="section-eyebrow">What PULSE Addresses</div>
-        <h2 class="section-title">The 10<br><em>Core</em><br>Problems</h2>
+        <h2 class="section-title">The 10 <em>Core</em> Problems</h2>
       </div>
       <p class="section-desc">Ten interconnected planetary and systemic problems that the PULSE credit marketplace is architected to help solve — by converting environmental repair into economic incentive.</p>
     </div>
     <div class="problems-grid">
-
       <div class="prob-item">
         <div class="prob-num">01</div>
         <div>
@@ -1191,7 +703,6 @@ footer {
           <p class="prob-desc">CO₂ at 424+ ppm above the 280 ppm pre-industrial baseline. PULSE Carbon Credits create direct market incentive for verified removal and avoidance — not accounting offsets.</p>
         </div>
       </div>
-
       <div class="prob-item">
         <div class="prob-num">02</div>
         <div>
@@ -1200,7 +711,6 @@ footer {
           <p class="prob-desc">Ocean pH declining, coral collapse accelerating. Water Stewardship Credits fund verified ocean protection and coastal restoration programs with ATLAS telemetry verification.</p>
         </div>
       </div>
-
       <div class="prob-item">
         <div class="prob-num">03</div>
         <div>
@@ -1209,7 +719,6 @@ footer {
           <p class="prob-desc">Arctic sea ice and glacial systems in sustained decline. Carbon removal credits fund upstream emissions reduction that directly decelerates melt trajectories.</p>
         </div>
       </div>
-
       <div class="prob-item">
         <div class="prob-num">04</div>
         <div>
@@ -1218,7 +727,6 @@ footer {
           <p class="prob-desc">10M+ hectares of tropical forest lost annually. Biodiversity Credits reward verified forest protection and CANOPY satellite-monitored reforestation with real revenue.</p>
         </div>
       </div>
-
       <div class="prob-item">
         <div class="prob-num">05</div>
         <div>
@@ -1227,7 +735,6 @@ footer {
           <p class="prob-desc">1M+ species under extinction threat. PULSE Biodiversity Credits fund ecosystem recovery, habitat restoration, and species monitoring with GBIF-verified outcomes.</p>
         </div>
       </div>
-
       <div class="prob-item">
         <div class="prob-num">06</div>
         <div>
@@ -1236,7 +743,6 @@ footer {
           <p class="prob-desc">Aquifer depletion and river system degradation threatening billions. Water Credits create direct revenue for verified watershed protection and USGS-monitored aquifer recharge.</p>
         </div>
       </div>
-
       <div class="prob-item">
         <div class="prob-num">07</div>
         <div>
@@ -1245,7 +751,6 @@ footer {
           <p class="prob-desc">24B+ tonnes of topsoil lost annually. Soil Health Credits reward regenerative land management and soil carbon sequestration — measured by ROOT, verified by NASA SMAP.</p>
         </div>
       </div>
-
       <div class="prob-item">
         <div class="prob-num">08</div>
         <div>
@@ -1254,7 +759,6 @@ footer {
           <p class="prob-desc">Net-zero pledges without verified action. PULSE forces compliance into market transactions logged on the Open Proof Protocol — timestamped, immutable, and publicly auditable forever.</p>
         </div>
       </div>
-
       <div class="prob-item">
         <div class="prob-num">09</div>
         <div>
@@ -1263,7 +767,6 @@ footer {
           <p class="prob-desc">$4T/yr needed for climate transition — under $1T currently deployed. PULSE routes corporate compliance capital directly to verified restoration through transparent market infrastructure.</p>
         </div>
       </div>
-
       <div class="prob-item">
         <div class="prob-num">10</div>
         <div>
@@ -1272,20 +775,19 @@ footer {
           <p class="prob-desc">No unified system makes planetary repair economically rational for all actors simultaneously. PULSE is that architecture — the missing incentive layer that makes Earth repair the rational economic choice.</p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-
+<!-- IDENTITY -->
 <section class="section identity" id="identity">
   <div class="section-inner">
     <div class="identity-grid">
       <div>
         <div class="id-badge"><span class="id-badge-dot"></span>◉ Architecture Defined · Module 08</div>
         <div class="section-eyebrow">What Is PULSE</div>
-        <h2 class="section-title">The Economic<br><em>Engine</em><br>of Earth Repair</h2>
-        <p class="section-desc" style="margin-bottom:2.5rem;">PULSE is the financial layer that converts planetary restoration into measurable, tradeable, and verifiable economic value. Every tree planted, every aquifer protected, every soil restored becomes a PULSE credit — verified by VYRION, tradeable on PULSE, auditable forever.</p>
+        <h2 class="section-title">The Economic <em>Engine</em> of Earth Repair</h2>
+        <p class="section-desc" style="margin-bottom:2rem">PULSE is the financial layer that converts planetary restoration into measurable, tradeable, and verifiable economic value. Every tree planted, every aquifer protected, every soil restored becomes a PULSE credit — verified by VYRION, tradeable on PULSE, auditable forever.</p>
         <div class="id-points">
           <div class="id-point">
             <div class="ip-icon">◈</div>
@@ -1311,40 +813,26 @@ footer {
         </div>
       </div>
       <div class="id-stats">
-        <div class="id-stat">
-          <div class="is-val">4</div>
-          <div class="is-label">Credit categories<br>Carbon · Biodiversity · Water · Soil</div>
-        </div>
-        <div class="id-stat">
-          <div class="is-val">3</div>
-          <div class="is-label">Stakeholder tiers<br>Corporations · Governments · Citizens</div>
-        </div>
-        <div class="id-stat">
-          <div class="is-val">100%</div>
-          <div class="is-label">Open Proof Protocol<br>No hidden transactions</div>
-        </div>
-        <div class="id-stat">
-          <div class="is-val">∞</div>
-          <div class="is-label">Permanent ledger record<br>Every trade · Every credit · Every tonne</div>
-        </div>
+        <div class="id-stat"><div class="is-val">4</div><div class="is-label">Credit categories<br>Carbon · Biodiversity · Water · Soil</div></div>
+        <div class="id-stat"><div class="is-val">3</div><div class="is-label">Stakeholder tiers<br>Corporations · Governments · Citizens</div></div>
+        <div class="id-stat"><div class="is-val">100%</div><div class="is-label">Open Proof Protocol<br>No hidden transactions</div></div>
+        <div class="id-stat"><div class="is-val">∞</div><div class="is-label">Permanent ledger record<br>Every trade · Every credit · Every tonne</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ CREDIT MARKETS ══════════ -->
+<!-- CREDIT MARKETS -->
 <section class="section credits" id="credits">
   <div class="section-inner">
     <div class="credits-header">
       <div>
         <div class="section-eyebrow">The Four Credit Markets</div>
-        <h2 class="section-title">Verified<br><em>Environmental</em><br>Capital</h2>
+        <h2 class="section-title">Verified <em>Environmental</em> Capital</h2>
       </div>
       <p class="section-desc">Each PULSE credit type maps directly to a verified VYRION Earth System indicator. Real-world measurement. Real-world value. Open methodology.</p>
     </div>
     <div class="credits-grid">
-
-      <!-- CARBON -->
       <div class="cc carbon">
         <div class="cc-glyph">⬟</div>
         <div class="cc-type">Credit Type 01</div>
@@ -1357,8 +845,6 @@ footer {
           <div class="cm-row"><span class="cm-lbl">Protocol</span><span class="cm-v">Open Proof · Immutable</span></div>
         </div>
       </div>
-
-      <!-- BIODIVERSITY -->
       <div class="cc biodiversity">
         <div class="cc-glyph">◈</div>
         <div class="cc-type">Credit Type 02</div>
@@ -1371,8 +857,6 @@ footer {
           <div class="cm-row"><span class="cm-lbl">Update Rate</span><span class="cm-v">Satellite · 15-min</span></div>
         </div>
       </div>
-
-      <!-- WATER -->
       <div class="cc water">
         <div class="cc-glyph">◉</div>
         <div class="cc-type">Credit Type 03</div>
@@ -1385,8 +869,6 @@ footer {
           <div class="cm-row"><span class="cm-lbl">Module Link</span><span class="cm-v">TIDE integration</span></div>
         </div>
       </div>
-
-      <!-- SOIL -->
       <div class="cc soil">
         <div class="cc-glyph">▲</div>
         <div class="cc-type">Credit Type 04</div>
@@ -1399,16 +881,15 @@ footer {
           <div class="cm-row"><span class="cm-lbl">Module Link</span><span class="cm-v">ROOT · 6 indicators</span></div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ══════════ ECONOMIC ENGINE ══════════ -->
+<!-- ECONOMIC ENGINE -->
 <section class="section engine" id="engine">
   <div class="section-inner">
     <div class="section-eyebrow">Protocol Architecture</div>
-    <h2 class="section-title">The<br><em>Economic</em><br>Engine</h2>
+    <h2 class="section-title">The <em>Economic</em> Engine</h2>
     <div class="engine-layout">
       <div>
         <div class="engine-canvas-wrap">
@@ -1418,9 +899,9 @@ footer {
           </div>
           <canvas id="ekgCanvas" height="220"></canvas>
         </div>
-        <div style="border:1px solid var(--border);border-top:none;padding:1.5rem 1.75rem;background:var(--void);">
-          <p style="font-family:'Courier Prime',monospace;font-size:0.68rem;letter-spacing:0.07em;color:var(--t3);line-height:1.7;">
-            The PULSE signal represents the aggregate market activity across all four credit types — carbon, biodiversity, water, and soil. Every verified environmental action creates a measurable signal. PULSE reads the planet's economic heartbeat.
+        <div style="border:1px solid var(--border);border-top:none;padding:1.3rem 1.6rem;background:var(--void)">
+          <p style="font-family:\'Courier Prime\',monospace;font-size:.66rem;letter-spacing:.07em;color:var(--t3);line-height:1.7">
+            The PULSE signal represents aggregate market activity across all four credit types. Every verified environmental action creates a measurable signal. PULSE reads the planet\'s economic heartbeat.
           </p>
         </div>
       </div>
@@ -1465,13 +946,12 @@ footer {
   </div>
 </section>
 
-<!-- ══════════ STAKEHOLDERS ══════════ -->
+<!-- STAKEHOLDERS -->
 <section class="section stakeholders">
   <div class="section-inner">
     <div class="section-eyebrow">Three Stakeholder Tiers</div>
-    <h2 class="section-title">Who <em>PULSE</em><br>Serves</h2>
+    <h2 class="section-title">Who <em>PULSE</em> Serves</h2>
     <div class="sh-grid">
-
       <div class="sh-card">
         <div class="sh-num">TIER 01</div>
         <div class="sh-title">Corporations</div>
@@ -1485,7 +965,6 @@ footer {
           <div class="sh-b">Annual third-party audit package included</div>
         </div>
       </div>
-
       <div class="sh-card">
         <div class="sh-num">TIER 02</div>
         <div class="sh-title">Governments</div>
@@ -1499,7 +978,6 @@ footer {
           <div class="sh-b">Paris Agreement accounting linkage</div>
         </div>
       </div>
-
       <div class="sh-card">
         <div class="sh-num">TIER 03</div>
         <div class="sh-title">Citizens</div>
@@ -1513,114 +991,51 @@ footer {
           <div class="sh-b">Transparent personal impact accounting</div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ══════════ GLOBAL INCENTIVE LAYER ══════════ -->
+<!-- GLOBAL INCENTIVE LAYER -->
 <section class="section incentive" id="incentive">
   <div class="section-inner">
     <div class="section-eyebrow">System Architecture</div>
-    <h2 class="section-title">The Global<br><em>Incentive</em><br>Layer</h2>
+    <h2 class="section-title">The Global <em>Incentive</em> Layer</h2>
     <div class="incentive-layout">
       <div class="flow-chain">
-        <div class="flow-node">
-          <div class="fn-glyph">◈</div>
-          <div>
-            <div class="fn-lbl">Foundation</div>
-            <div class="fn-txt">ATLAS · Real-Time Environmental Telemetry</div>
-          </div>
-          <div class="fn-arrow">↓</div>
-        </div>
-        <div class="flow-node">
-          <div class="fn-glyph">⬟</div>
-          <div>
-            <div class="fn-lbl">Verification</div>
-            <div class="fn-txt">Open Proof Protocol · Immutable Ledger</div>
-          </div>
-          <div class="fn-arrow">↓</div>
-        </div>
-        <div class="flow-node">
-          <div class="fn-glyph">◉</div>
-          <div>
-            <div class="fn-lbl">Generation</div>
-            <div class="fn-txt">PULSE Credit Issuance · 4 Verified Types</div>
-          </div>
-          <div class="fn-arrow">↓</div>
-        </div>
-        <div class="flow-node">
-          <div class="fn-glyph">▲</div>
-          <div>
-            <div class="fn-lbl">Market</div>
-            <div class="fn-txt">PULSE Marketplace · Corp · Gov · Citizen</div>
-          </div>
-          <div class="fn-arrow">↓</div>
-        </div>
-        <div class="flow-node">
-          <div class="fn-glyph">✦</div>
-          <div>
-            <div class="fn-lbl">Accountability</div>
-            <div class="fn-txt">CONSCIENCE · Score · Compliance · Audit</div>
-          </div>
-          <div class="fn-arrow">↓</div>
-        </div>
-        <div class="flow-node">
-          <div class="fn-glyph">↺</div>
-          <div>
-            <div class="fn-lbl">Return Loop</div>
-            <div class="fn-txt">Revenue → Restoration → More Credits</div>
-          </div>
-          <div class="fn-arrow">∞</div>
-        </div>
+        <div class="flow-node"><div class="fn-glyph">◈</div><div><div class="fn-lbl">Foundation</div><div class="fn-txt">ATLAS · Real-Time Environmental Telemetry</div></div><div class="fn-arrow">↓</div></div>
+        <div class="flow-node"><div class="fn-glyph">⬟</div><div><div class="fn-lbl">Verification</div><div class="fn-txt">Open Proof Protocol · Immutable Ledger</div></div><div class="fn-arrow">↓</div></div>
+        <div class="flow-node"><div class="fn-glyph">◉</div><div><div class="fn-lbl">Generation</div><div class="fn-txt">PULSE Credit Issuance · 4 Verified Types</div></div><div class="fn-arrow">↓</div></div>
+        <div class="flow-node"><div class="fn-glyph">▲</div><div><div class="fn-lbl">Market</div><div class="fn-txt">PULSE Marketplace · Corp · Gov · Citizen</div></div><div class="fn-arrow">↓</div></div>
+        <div class="flow-node"><div class="fn-glyph">✦</div><div><div class="fn-lbl">Accountability</div><div class="fn-txt">CONSCIENCE · Score · Compliance · Audit</div></div><div class="fn-arrow">↓</div></div>
+        <div class="flow-node"><div class="fn-glyph">↺</div><div><div class="fn-lbl">Return Loop</div><div class="fn-txt">Revenue → Restoration → More Credits</div></div><div class="fn-arrow">∞</div></div>
       </div>
       <div class="inc-right">
-        <blockquote class="inc-quote">
-          "Every act of planetary repair becomes a <em>tradeable asset.</em> Every dollar of compliance becomes <em>verified action.</em> PULSE closes the loop."
-        </blockquote>
+        <blockquote class="inc-quote">"Every act of planetary repair becomes a <em>tradeable asset.</em> Every dollar of compliance becomes <em>verified action.</em> PULSE closes the loop."</blockquote>
         <p class="inc-body">PULSE is the economic infrastructure layer VYRION has been building toward — the mechanism that converts environmental intelligence into capital flows, and capital flows into planetary repair. The planet gets a financial system that rewards healing it. Architecture defined. Building.</p>
         <div class="inc-links">
           <a href="https://vyrion.earth/conscience" class="btn">→ CONSCIENCE · Pledge Accountability</a>
-          <a href="https://vyrion.earth/atlas" class="btn">→ ATLAS · Environmental Intelligence</a>
-          <a href="https://vyrion.earth/root" class="btn">→ ROOT · Soil &amp; Land Health</a>
-          <a href="https://vyrion.earth/record" class="btn btn-green">→ RECORD · Weekly Intelligence</a>
+          <a href="https://vyrion.earth/atlas"     class="btn">→ ATLAS · Environmental Intelligence</a>
+          <a href="https://vyrion.earth/root"      class="btn">→ ROOT · Soil &amp; Land Health</a>
+          <a href="https://vyrion.earth/record"    class="btn btn-pulse">→ RECORD · Weekly Intelligence</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ ARCHITECTURE ══════════ -->
+<!-- ARCHITECTURE -->
 <section class="section architecture" id="architecture">
   <div class="section-inner">
     <div class="section-eyebrow">Module Status · V1.0</div>
-    <h2 class="section-title">Architecture<br><em>Defined</em></h2>
-    <p class="section-desc" style="margin-bottom:0;">MODULE 08 · PULSE is in active architecture phase. Core protocol design, credit verification methodology, and VYRION integration architecture are fully defined. Marketplace engine build phase begins Q3 2026.</p>
+    <h2 class="section-title">Architecture <em>Defined</em></h2>
+    <p class="section-desc">MODULE 08 · PULSE is in active architecture phase. Core protocol design, credit verification methodology, and VYRION integration architecture are fully defined. Marketplace engine build phase begins Q3 2026.</p>
     <div class="arch-grid">
-      <div class="arch-cell">
-        <div class="ac-lbl">Protocol Design</div>
-        <div class="ac-status defined">Defined</div>
-      </div>
-      <div class="arch-cell">
-        <div class="ac-lbl">Credit Methodology</div>
-        <div class="ac-status defined">Defined</div>
-      </div>
-      <div class="arch-cell">
-        <div class="ac-lbl">ATLAS Integration</div>
-        <div class="ac-status specified">Specified</div>
-      </div>
-      <div class="arch-cell">
-        <div class="ac-lbl">CONSCIENCE Link</div>
-        <div class="ac-status specified">Specified</div>
-      </div>
-      <div class="arch-cell">
-        <div class="ac-lbl">Marketplace Engine</div>
-        <div class="ac-status building">Building</div>
-      </div>
-      <div class="arch-cell">
-        <div class="ac-lbl">Open Proof Protocol</div>
-        <div class="ac-status live-st">Live · VYRION-wide</div>
-      </div>
+      <div class="arch-cell"><div class="ac-lbl">Protocol Design</div><div class="ac-status st-defined">Defined</div></div>
+      <div class="arch-cell"><div class="ac-lbl">Credit Methodology</div><div class="ac-status st-defined">Defined</div></div>
+      <div class="arch-cell"><div class="ac-lbl">ATLAS Integration</div><div class="ac-status st-specified">Specified</div></div>
+      <div class="arch-cell"><div class="ac-lbl">CONSCIENCE Link</div><div class="ac-status st-specified">Specified</div></div>
+      <div class="arch-cell"><div class="ac-lbl">Marketplace Engine</div><div class="ac-status st-building">Building</div></div>
+      <div class="arch-cell"><div class="ac-lbl">Open Proof Protocol</div><div class="ac-status st-live">Live · VYRION-wide</div></div>
     </div>
     <div class="arch-cta">
       <a href="https://github.com/DablerFrost/Vyrion/blob/main/docs/VYRION-METHODOLOGY-V1.0.md" class="btn" target="_blank" rel="noopener">VYRION-METHODOLOGY-v1.0.md</a>
@@ -1630,192 +1045,195 @@ footer {
   </div>
 </section>
 
-<!-- ══════════ MODULE ECOSYSTEM ══════════ -->
+<!-- MODULE ECOSYSTEM -->
 <section class="section ecosystem">
   <div class="section-inner">
     <div class="section-eyebrow">Connected Intelligence · VYRION Platform</div>
-    <h2 class="section-title">PULSE<br><em>Connects</em><br>Everything</h2>
-    <p class="section-desc" style="margin-bottom:0;">PULSE draws from and feeds back into every active VYRION module. The credit marketplace is the economic closure of the planetary intelligence loop.</p>
+    <h2 class="section-title">PULSE <em>Connects</em> Everything</h2>
+    <p class="section-desc">PULSE draws from and feeds back into every active VYRION module. The credit marketplace is the economic closure of the planetary intelligence loop.</p>
     <div class="eco-grid">
-
-      <div class="eco-card">
-        <div class="eco-mod">Module 02 · Live</div>
-        <div class="eco-name">ATLAS</div>
-        <p class="eco-role">Provides the real-time environmental telemetry that verifies every PULSE credit. The data foundation of the entire credit system — without ATLAS, no credit can be issued.</p>
-        <a href="https://vyrion.earth/atlas" class="eco-link">→ ATLAS</a>
-      </div>
-
-      <div class="eco-card">
-        <div class="eco-mod">Core Platform · Live</div>
-        <div class="eco-name">CONSCIENCE</div>
-        <p class="eco-role">Receives PULSE credit purchase data to update corporate accountability scores in real time. The loop from market transaction to verified pledge accountability — closed.</p>
-        <a href="https://vyrion.earth/conscience" class="eco-link">→ CONSCIENCE</a>
-      </div>
-
-      <div class="eco-card">
-        <div class="eco-mod">Module 03 · Live</div>
-        <div class="eco-name">ROOT</div>
-        <p class="eco-role">Generates verified Soil Health Credit issuance data. Every PULSE Soil Credit traces back to ROOT-measured regenerative land restoration with open methodology and NASA SMAP verification.</p>
-        <a href="https://vyrion.earth/root" class="eco-link">→ ROOT</a>
-      </div>
-
-      <div class="eco-card">
-        <div class="eco-mod">Module 04 · Live</div>
-        <div class="eco-name">CANOPY</div>
-        <p class="eco-role">Generates verified Biodiversity Credit issuance data through satellite-monitored reforestation programs. Species recovery tracking provides the baseline for credit valuation.</p>
-        <a href="https://vyrion.earth/canopy" class="eco-link">→ CANOPY</a>
-      </div>
-
-      <div class="eco-card">
-        <div class="eco-mod">Module 05 · Arch Phase</div>
-        <div class="eco-name">FLUX</div>
-        <p class="eco-role">Clean energy deployment generates verified Carbon Credits. FLUX operators earn Carbon Credit income as a core revenue stream — PULSE is built into the FLUX economics model.</p>
-        <a href="https://vyrion.earth/flux" class="eco-link">→ FLUX</a>
-      </div>
-
-      <div class="eco-card">
-        <div class="eco-mod">Module 06 · Dev</div>
-        <div class="eco-name">TIDE</div>
-        <p class="eco-role">Ocean remediation and water purification programs generate Water Stewardship Credits. TIDE operations are partially funded by PULSE market revenue — a self-financing restoration loop.</p>
-        <a href="https://vyrion.earth/tide" class="eco-link">→ TIDE</a>
-      </div>
-
-      <div class="eco-card">
-        <div class="eco-mod">Module 01 · Live</div>
-        <div class="eco-name">SHIELD</div>
-        <p class="eco-role">Disaster early warning data informs PULSE risk pricing models. Disaster-prone zones create higher credit urgency — rewarding proactive restoration in the most vulnerable ecosystems.</p>
-        <a href="https://vyrion.earth/shield" class="eco-link">→ SHIELD</a>
-      </div>
-
-      <div class="eco-card">
-        <div class="eco-mod">Intelligence Reports · Live</div>
-        <div class="eco-name">RECORD</div>
-        <p class="eco-role">Weekly VYRION Intelligence Reports include PULSE market analysis, credit price trends, and Earth System signal changes that affect market conditions and credit valuations.</p>
-        <a href="https://vyrion.earth/record" class="eco-link">→ RECORD</a>
-      </div>
-
+      <div class="eco-card"><div class="eco-mod">Module 02 · Live</div><div class="eco-name">ATLAS</div><p class="eco-role">Provides the real-time environmental telemetry that verifies every PULSE credit. The data foundation of the entire credit system — without ATLAS, no credit can be issued.</p><a href="https://vyrion.earth/atlas" class="eco-link">→ ATLAS</a></div>
+      <div class="eco-card"><div class="eco-mod">Core Platform · Live</div><div class="eco-name">CONSCIENCE</div><p class="eco-role">Receives PULSE credit purchase data to update corporate accountability scores in real time. The loop from market transaction to verified pledge accountability — closed.</p><a href="https://vyrion.earth/conscience" class="eco-link">→ CONSCIENCE</a></div>
+      <div class="eco-card"><div class="eco-mod">Module 03 · Live</div><div class="eco-name">ROOT</div><p class="eco-role">Generates verified Soil Health Credit issuance data. Every PULSE Soil Credit traces back to ROOT-measured regenerative land restoration with open methodology and NASA SMAP verification.</p><a href="https://vyrion.earth/root" class="eco-link">→ ROOT</a></div>
+      <div class="eco-card"><div class="eco-mod">Module 04 · Live</div><div class="eco-name">CANOPY</div><p class="eco-role">Generates verified Biodiversity Credit issuance data through satellite-monitored reforestation programs. Species recovery tracking provides the baseline for credit valuation.</p><a href="https://vyrion.earth/canopy" class="eco-link">→ CANOPY</a></div>
+      <div class="eco-card"><div class="eco-mod">Module 05 · Arch Phase</div><div class="eco-name">FLUX</div><p class="eco-role">Clean energy deployment generates verified Carbon Credits. FLUX operators earn Carbon Credit income as a core revenue stream — PULSE is built into the FLUX economics model.</p><a href="https://vyrion.earth/flux" class="eco-link">→ FLUX</a></div>
+      <div class="eco-card"><div class="eco-mod">Module 06 · Dev</div><div class="eco-name">TIDE</div><p class="eco-role">Ocean remediation and water purification programs generate Water Stewardship Credits. TIDE operations are partially funded by PULSE market revenue — a self-financing restoration loop.</p><a href="https://vyrion.earth/tide" class="eco-link">→ TIDE</a></div>
+      <div class="eco-card"><div class="eco-mod">Module 01 · Live</div><div class="eco-name">SHIELD</div><p class="eco-role">Disaster early warning data informs PULSE risk pricing models. Disaster-prone zones create higher credit urgency — rewarding proactive restoration in the most vulnerable ecosystems.</p><a href="https://vyrion.earth/shield" class="eco-link">→ SHIELD</a></div>
+      <div class="eco-card"><div class="eco-mod">Intelligence Reports · Live</div><div class="eco-name">RECORD</div><p class="eco-role">Weekly VYRION Intelligence Reports include PULSE market analysis, credit price trends, and Earth System signal changes that affect market conditions and credit valuations.</p><a href="https://vyrion.earth/record" class="eco-link">→ RECORD</a></div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ CTA BAND ══════════ -->
+<!-- CTA BAND -->
 <section class="cta-band">
-  <div class="cta-inner">
+  <div class="cta-inner-wrap">
     <div class="cta-eyebrow">Early Access · Register Interest</div>
-    <h2 class="cta-title">Be First<br>on <em>PULSE</em></h2>
+    <h2 class="cta-title">Be First on <em>PULSE</em></h2>
     <p class="cta-desc">Corporations, governments, and land managers can register interest for early access to the PULSE marketplace. Architecture defined. Building begins Q3 2026. The economic engine of planetary repair is almost ready.</p>
     <div class="cta-btns">
-      <a href="mailto:pulse@vyrion.earth" class="btn btn-green">Register Interest · Corporations</a>
+      <a href="mailto:pulse@vyrion.earth" class="btn btn-pulse">Register Interest · Corporations</a>
       <a href="mailto:pulse@vyrion.earth" class="btn">Register Interest · Governments</a>
       <a href="https://vyrion.earth" class="btn btn-amber">Return to VYRION</a>
     </div>
   </div>
 </section>
 
-<!-- ══════════ FOOTER ══════════ -->
-<footer>
-  <div class="footer-inner">
-    <a href="https://vyrion.earth" class="footer-logo">VYRION</a>
-    <nav class="footer-nav" aria-label="Footer navigation">
-      <a href="https://vyrion.earth/conscience">CONSCIENCE</a>
-      <a href="https://vyrion.earth/atlas">ATLAS</a>
-      <a href="https://vyrion.earth/shield">SHIELD</a>
-      <a href="https://vyrion.earth/root">ROOT</a>
-      <a href="https://vyrion.earth/canopy">CANOPY</a>
-      <a href="https://vyrion.earth/flux">FLUX</a>
-      <a href="https://vyrion.earth/tide">TIDE</a>
-      <a href="https://vyrion.earth/record">RECORD</a>
-      <a href="#">PULSE</a>
-    </nav>
-    <div class="footer-meta">VYRION · MODULE 08 · PULSE · V1.0 · ARCHITECTURE PHASE · MAY 2026</div>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-l">
+    <strong>VYRION PULSE</strong> · Module 08 · Impact Economy &amp; Credit Marketplace · Architecture Phase · May 2026<br>
+    Verified credits: Carbon · Biodiversity · Water Stewardship · Soil Health<br>
+    <a href="https://github.com/DablerFrost/Vyrion/blob/main/docs/VYRION-METHODOLOGY-V1.0.md" target="_blank">VYRION-METHODOLOGY-v1.0.md</a> ·
+    <a href="https://github.com/DablerFrost/Vyrion" target="_blank">github.com/DablerFrost/Vyrion</a> ·
+    <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a><br>
+    Tyler Frost / DablerFrost · Hilo, Hawaii · Samuel Chidubem · Abuja, Nigeria
+  </div>
+  <div class="footer-r">
+    <a href="https://vyrion.earth">CONSCIENCE →</a>
+    <a href="https://vyrion.earth/atlas">ATLAS →</a>
+    <a href="https://vyrion.earth/shield">SHIELD →</a>
+    <a href="https://vyrion.earth/root">ROOT →</a>
+    <a href="https://vyrion.earth/canopy">CANOPY →</a>
+    <a href="https://vyrion.earth/flux">FLUX →</a>
+    <a href="https://vyrion.earth/record">RECORD →</a>
+    <a href="https://vyrion.earth/nexan">NEXAN →</a>
+    <a href="https://vyrion.earth/archive">ARCHIVE →</a>
   </div>
 </footer>
 
-
-<!-- ═══════════════════════════════════════
-     VYRION PULSE · JAVASCRIPT
-     ═══════════════════════════════════════ -->
 <script>
-/* ── Mobile nav ── */
-const navToggle = document.getElementById('navToggle');
-const navLinks  = document.getElementById('navLinks');
-if (navToggle && navLinks) {
-  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-}
+\'use strict\';
 
-/* ── Hero Particle Canvas ── */
+/* ── THEME ─────────────────────────────────────────────── */
+function toggleTheme() {
+  const html = document.documentElement;
+  const isLight = html.getAttribute(\'data-theme\') === \'light\';
+  html.setAttribute(\'data-theme\', isLight ? \'dark\' : \'light\');
+  const btn = document.getElementById(\'theme-btn\');
+  if (btn) btn.textContent = isLight ? \'◐ DARK\' : \'◑ LIGHT\';
+  try { localStorage.setItem(\'vc-theme\', isLight ? \'dark\' : \'light\'); } catch(e) {}
+}
 (function() {
-  const canvas = document.getElementById('heroCanvas');
+  try {
+    const t = localStorage.getItem(\'vc-theme\');
+    if (t === \'light\') {
+      document.documentElement.setAttribute(\'data-theme\', \'light\');
+      const btn = document.getElementById(\'theme-btn\');
+      if (btn) btn.textContent = \'◑ LIGHT\';
+    }
+  } catch(e) {}
+})();
+
+/* ── FONT SCALE ─────────────────────────────────────────── */
+const FONT_SCALES = { \'0.88\': 16, \'1.0\': 18, \'1.22\': 22 };
+function setScale(btn) {
+  document.documentElement.style.fontSize = (FONT_SCALES[btn.dataset.scale] || 18) + \'px\';
+  document.querySelectorAll(\'.nc-sz\').forEach(b => b.classList.toggle(\'active\', b === btn));
+  try { localStorage.setItem(\'vc-scale\', btn.dataset.scale); } catch(e) {}
+}
+(function() {
+  try {
+    const s = localStorage.getItem(\'vc-scale\');
+    if (s && FONT_SCALES[s]) {
+      document.documentElement.style.fontSize = FONT_SCALES[s] + \'px\';
+      requestAnimationFrame(() =>
+        document.querySelectorAll(\'.nc-sz\').forEach(b =>
+          b.classList.toggle(\'active\', b.dataset.scale === s)
+        )
+      );
+    }
+  } catch(e) {}
+})();
+
+/* ── PULSE HEADER CANVAS (purple particle field) ─────────── */
+(function() {
+  const canvas = document.getElementById(\'pulse-canvas\');
   if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let W, H, pts = [], frame = 0;
+  const ctx = canvas.getContext(\'2d\');
+  let W, H, nodes = [];
+
+  const STREAMS = [
+    { r: 156, g: 111, b: 228, count: 22 }, // purple
+    { r:   0, g: 212, b: 255, count: 14 }, // cyan accent
+    { r: 255, g: 184, b:  77, count:  8 }, // amber accent
+  ];
 
   function resize() {
-    W = canvas.width  = canvas.offsetWidth  || window.innerWidth;
-    H = canvas.height = canvas.offsetHeight || window.innerHeight;
-    pts = Array.from({length: 110}, spawnPt);
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
   }
 
-  function spawnPt() {
-    return {
-      x:  Math.random() * W,
-      y:  Math.random() * H,
-      r:  Math.random() * 1.4 + 0.3,
-      vx: (Math.random() - 0.5) * 0.35,
-      vy: (Math.random() - 0.5) * 0.35,
-      a:  Math.random() * 0.45 + 0.08
-    };
+  function initNodes() {
+    nodes = [];
+    STREAMS.forEach((s, si) => {
+      for (let i = 0; i < s.count; i++) {
+        nodes.push({
+          x: Math.random() * W, y: Math.random() * H,
+          vx: (Math.random() - .5) * .38, vy: (Math.random() - .5) * .38,
+          r: 1.1 + Math.random() * 1.5,
+          pulse: Math.random() * Math.PI * 2,
+          s: si, rgb: s
+        });
+      }
+    });
   }
-
-  window.addEventListener('resize', resize);
-  resize();
 
   function draw() {
     ctx.clearRect(0, 0, W, H);
-    frame++;
+    const isDark = document.documentElement.getAttribute(\'data-theme\') !== \'light\';
+    const la = isDark ? .12 : .05;
+    const na = isDark ? .7  : .28;
+    const CONN = 125;
 
-    /* particles */
-    pts.forEach(p => {
-      p.x += p.vx; p.y += p.vy;
-      if (p.x < -5) p.x = W + 5;
-      if (p.x > W + 5) p.x = -5;
-      if (p.y < -5) p.y = H + 5;
-      if (p.y > H + 5) p.y = -5;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(0,212,255,${p.a})`;
-      ctx.fill();
+    nodes.forEach(n => {
+      n.x += n.vx; n.y += n.vy;
+      if (n.x < 0 || n.x > W) n.vx *= -1;
+      if (n.y < 0 || n.y > H) n.vy *= -1;
+      n.pulse += .017;
     });
 
-    /* connections */
-    ctx.lineWidth = 0.5;
-    for (let i = 0; i < pts.length; i++) {
-      for (let j = i + 1; j < pts.length; j++) {
-        const dx = pts[i].x - pts[j].x;
-        const dy = pts[i].y - pts[j].y;
-        const d  = Math.sqrt(dx * dx + dy * dy);
-        if (d < 95) {
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        if (nodes[i].s !== nodes[j].s) continue;
+        const dx = nodes[i].x - nodes[j].x;
+        const dy = nodes[i].y - nodes[j].y;
+        const d  = Math.sqrt(dx*dx + dy*dy);
+        if (d < CONN) {
+          const {r,g,b} = nodes[i].rgb;
           ctx.beginPath();
-          ctx.moveTo(pts[i].x, pts[i].y);
-          ctx.lineTo(pts[j].x, pts[j].y);
-          ctx.strokeStyle = `rgba(0,212,255,${(1 - d / 95) * 0.07})`;
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.strokeStyle = `rgba(${r},${g},${b},${(1 - d/CONN) * la})`;
+          ctx.lineWidth = .65;
           ctx.stroke();
         }
       }
     }
 
+    nodes.forEach(n => {
+      const g = .5 + .5 * Math.sin(n.pulse);
+      const a = na * (.55 + .45 * g);
+      const {r,g:gv,b} = n.rgb;
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${r},${gv},${b},${a})`;
+      ctx.fill();
+    });
+
     requestAnimationFrame(draw);
   }
+
+  resize();
+  initNodes();
   draw();
+  window.addEventListener(\'resize\', () => { resize(); initNodes(); });
 })();
 
-
-/* ── EKG Canvas ── */
+/* ── EKG CANVAS ─────────────────────────────────────────── */
 (function() {
-  const canvas = document.getElementById('ekgCanvas');
+  const canvas = document.getElementById(\'ekgCanvas\');
   if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-
+  const ctx = canvas.getContext(\'2d\');
   const H = 220;
   let dataQ = [], t = 0;
 
@@ -1824,164 +1242,148 @@ if (navToggle && navLinks) {
     if (c < 3)  return Math.sin((c / 3) * Math.PI) * 7;
     if (c < 7)  return 0;
     if (c < 9)  return -14;
-    if (c < 11) return 85;   // QRS spike
+    if (c < 11) return 85;
     if (c < 13) return -22;
     if (c < 16) return 12;
-    if (c < 24) return Math.sin(((c - 16) / 8) * Math.PI) * 22; // T-wave
-    return (Math.random() - 0.5) * 2.5;
+    if (c < 24) return Math.sin(((c-16)/8)*Math.PI) * 22;
+    return (Math.random() - .5) * 2.5;
   }
 
   function resize() {
-    const W = canvas.offsetWidth || 500;
+    const W   = canvas.offsetWidth || 500;
     const dpr = window.devicePixelRatio || 1;
     canvas.width  = W * dpr;
     canvas.height = H * dpr;
-    canvas.style.height = H + 'px';
+    canvas.style.height = H + \'px\';
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
   resize();
-  window.addEventListener('resize', resize);
+  window.addEventListener(\'resize\', resize);
 
   function draw() {
     const W = canvas.offsetWidth || 500;
     ctx.clearRect(0, 0, W, H);
-
-    /* bg */
-    ctx.fillStyle = '#020912';
+    ctx.fillStyle = \'#020912\';
     ctx.fillRect(0, 0, W, H);
 
-    /* grid */
+    // Grid
     ctx.lineWidth = 1;
-    ctx.strokeStyle = 'rgba(0,212,255,0.04)';
-    for (let x = 0; x <= W; x += 40) {
-      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
-    }
-    for (let y = 0; y <= H; y += 40) {
-      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
-    }
-    /* center rule */
-    ctx.strokeStyle = 'rgba(0,212,255,0.07)';
-    ctx.beginPath(); ctx.moveTo(0, H/2); ctx.lineTo(W, H/2); ctx.stroke();
+    ctx.strokeStyle = \'rgba(156,111,228,0.05)\';
+    for (let x = 0; x <= W; x += 40) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
+    for (let y = 0; y <= H; y += 40) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
+    ctx.strokeStyle = \'rgba(156,111,228,0.09)\';
+    ctx.beginPath(); ctx.moveTo(0,H/2); ctx.lineTo(W,H/2); ctx.stroke();
 
-    /* push sample */
     t++;
     dataQ.push(ekgVal(t));
     if (dataQ.length > W) dataQ.shift();
 
-    /* trace shadow */
     ctx.save();
-    ctx.shadowBlur = 12;
-    ctx.shadowColor = '#00D4FF';
-    ctx.strokeStyle = '#00D4FF';
+    ctx.shadowBlur = 14;
+    ctx.shadowColor = \'#9C6FE4\';
+    ctx.strokeStyle = \'#9C6FE4\';
     ctx.lineWidth = 1.5;
-    ctx.lineJoin = 'round';
+    ctx.lineJoin = \'round\';
     ctx.beginPath();
     dataQ.forEach((v, i) => {
-      const px = i;
-      const py = H / 2 - v;
-      i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
+      const py = H/2 - v;
+      i === 0 ? ctx.moveTo(i, py) : ctx.lineTo(i, py);
     });
     ctx.stroke();
 
-    /* bright head */
     if (dataQ.length) {
       const lx = dataQ.length - 1;
-      const ly = H / 2 - dataQ[dataQ.length - 1];
-      ctx.shadowBlur = 18;
-      ctx.beginPath(); ctx.arc(lx, ly, 3.5, 0, Math.PI * 2);
-      ctx.fillStyle = '#00D4FF'; ctx.fill();
+      const ly = H/2 - dataQ[dataQ.length - 1];
+      ctx.shadowBlur = 20;
+      ctx.beginPath(); ctx.arc(lx, ly, 3.5, 0, Math.PI*2);
+      ctx.fillStyle = \'#9C6FE4\'; ctx.fill();
     }
     ctx.restore();
 
-    /* timestamp */
-    const ts = new Date().toISOString().slice(11, 19) + ' UTC';
-    ctx.fillStyle = 'rgba(45,96,128,0.7)';
-    ctx.font = '10px "Courier Prime", monospace';
-    ctx.fillText('LIVE · ' + ts, 14, H - 10);
+    const ts = new Date().toISOString().slice(11,19) + \' UTC\';
+    ctx.fillStyle = \'rgba(45,96,128,0.65)\';
+    ctx.font = \'10px "Courier Prime", monospace\';
+    ctx.fillText(\'LIVE · \' + ts, 14, H - 10);
 
     requestAnimationFrame(draw);
   }
   draw();
 })();
 
-
-/* ── Live strip tick ── */
+/* ── LIVE STRIP TICK ─────────────────────────────────────── */
 (function() {
   const prices = [
-    { id: 'ls1', base: 18.40 },
-    { id: 'ls2', base: 34.20 },
-    { id: 'ls3', base: 12.80 },
-    { id: 'ls4', base:  9.60 },
+    { id: \'ls1\', base: 18.40 },
+    { id: \'ls2\', base: 34.20 },
+    { id: \'ls3\', base: 12.80 },
+    { id: \'ls4\', base:  9.60 },
   ];
 
   function tick() {
     prices.forEach(p => {
       const el = document.getElementById(p.id);
       if (!el) return;
-      p.base = p.base * (1 + (Math.random() - 0.5) * 0.004);
-      el.textContent = '$' + p.base.toFixed(2);
+      p.base = p.base * (1 + (Math.random() - .5) * 0.004);
+      el.textContent = \'$\' + p.base.toFixed(2);
     });
-    const idx = document.getElementById('ls7');
+    const idx = document.getElementById(\'ls7\');
     if (idx) {
-      const cur = parseFloat(idx.textContent) || 41.3;
-      idx.textContent = (cur + (Math.random() - 0.5) * 0.08).toFixed(1);
+      const cur = parseFloat(idx.textContent) || 41.2;
+      idx.textContent = (cur + (Math.random() - .5) * 0.06).toFixed(1);
     }
   }
-
   setInterval(tick, 2800);
 })();
 
-
-/* ── Planetary Monitor live updates ── */
+/* ── PLANETARY MONITOR LIVE UPDATES ─────────────────────── */
 (function() {
   const fields = [
-    { sel: '[data-pm="atm"]',  val: 31.0, drift: -0.52 },
-    { sel: '[data-pm="ocn"]',  val: 34.0, drift: -0.53 },
-    { sel: '[data-pm="ice"]',  val: 38.0, drift: -0.54 },
-    { sel: '[data-pm="fst"]',  val: 47.0, drift: -0.51 },
-    { sel: '[data-pm="bio"]',  val: 44.0, drift: -0.51 },
-    { sel: '[data-pm="fw"]',   val: 29.0, drift: -0.54 },
-    { sel: '[data-pm="sol"]',  val: 33.0, drift: -0.50 },
-    { sel: '[data-pm="corp"]', val: 38.6, drift: -0.49 },
+    { sel: \'[data-pm="atm"]\',  val: 31.0, drift: -0.52 },
+    { sel: \'[data-pm="ocn"]\',  val: 34.0, drift: -0.53 },
+    { sel: \'[data-pm="ice"]\',  val: 38.0, drift: -0.54 },
+    { sel: \'[data-pm="fst"]\',  val: 47.0, drift: -0.51 },
+    { sel: \'[data-pm="bio"]\',  val: 44.0, drift: -0.51 },
+    { sel: \'[data-pm="fw"]\',   val: 29.0, drift: -0.54 },
+    { sel: \'[data-pm="sol"]\',  val: 33.0, drift: -0.50 },
+    { sel: \'[data-pm="corp"]\', val: 38.6, drift: -0.49 },
   ];
 
   function pmTick() {
     fields.forEach(f => {
       const el = document.querySelector(f.sel);
       if (!el) return;
-      f.val = f.val + (Math.random() - f.drift) * 0.06;
-      f.val = Math.max(5, Math.min(95, f.val));
+      f.val = Math.max(5, Math.min(95, f.val + (Math.random() - f.drift) * 0.06));
       el.textContent = f.val.toFixed(1);
-      const card = el.closest('.pm-card');
+      const card = el.closest(\'.pm-card\');
       if (card) {
-        const bar = card.querySelector('.pm-bar-fill');
-        if (bar) bar.style.width = f.val.toFixed(1) + '%';
+        const bar = card.querySelector(\'.pm-bar-fill\');
+        if (bar) bar.style.width = f.val.toFixed(1) + \'%\';
       }
     });
   }
   setInterval(pmTick, 4200);
 })();
 
-
-/* ── Scroll-fade-in ── */
+/* ── SCROLL FADE-IN ──────────────────────────────────────── */
 (function() {
-  const style = document.createElement('style');
-  style.textContent = `
-    .fade-in { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
-  `;
-  document.head.appendChild(style);
-
-  const targets = document.querySelectorAll(
-    '.id-stat, .cc, .sh-card, .engine-step, .flow-node, .arch-cell, .hero-metric, .pm-card, .prob-item, .eco-card'
+  const els = document.querySelectorAll(
+    \'.id-stat,.cc,.sh-card,.engine-step,.flow-node,.arch-cell,.pm-card,.prob-item,.eco-card\'
   );
-  targets.forEach(el => el.classList.add('fade-in'));
-
+  els.forEach(el => {
+    el.style.opacity = \'0\';
+    el.style.transform = \'translateY(16px)\';
+    el.style.transition = \'opacity .65s ease, transform .65s ease\';
+  });
   const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0.1 });
-
-  targets.forEach(el => obs.observe(el));
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = \'1\';
+        e.target.style.transform = \'translateY(0)\';
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  els.forEach(el => obs.observe(el));
 })();
 </script>
 </body>
