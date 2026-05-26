@@ -1,7 +1,7 @@
 # VYRION
 **Planetary Intelligence Network · v3.1 · May 2026**
 
-Live platform: [vyrion.earth](https://www.vyrion.earth)
+Live platform: [www.vyrion.earth](https://www.vyrion.earth)
 Data interface: [vyrion.earth/conscience-data.html](https://www.vyrion.earth/conscience-data.html)
 Raw ledger: [conscience-data.json](https://www.vyrion.earth/conscience-data.json)
 Contact: contact@vyrion.earth
