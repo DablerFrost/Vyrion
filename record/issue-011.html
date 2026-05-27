@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="THE RECORD — VYRION Issue 011: Unilever. Net zero across value chain by 2039. SBTi 1.5°C approved. Operational emissions down 23% since 2015. CONSCIENCE Score: 72/100 ON TRACK.">
+    <meta property="og:title" content="THE RECORD — Issue 011: Unilever · VYRION">
+    <meta property="og:description" content="Unilever pledged net zero across its value chain by 2039. Operational emissions down 23%. SBTi 1.5°C approved. CONSCIENCE Score: 72/100 ON TRACK.">
+    <meta property="og:type" content="article">
+    <title>THE RECORD — Issue 011: Unilever · VYRION</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="/assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&family=Archivo:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --void: #020912;
+        --void2: #061624;
+        --void3: #0b2035;
+        --glow: #00EEFF;
+        --glow-bright: #44FAFF;
+        --glow-dim: rgba(0, 238, 255, .18);
+        --glow-halo: rgba(0, 238, 255, .06);
+        --amber: #FFB84D;
+        --breach: #F03030;
+        --warn: #F09000;
+        --on-track: #00C47A;
+        --on-track-bright: #00F090;
+        --ulvr: #1A72D9;
+        --ulvr-dim: rgba(26, 114, 217, .08);
+        --ulvr-border: rgba(26, 114, 217, .28);
+        --t1: #eaf6ff;
+        --t2: #6ab8d8;
+        --t3: #2d6080;
+        --border: rgba(0, 238, 255, .14);
+        --border2: rgba(0, 238, 255, .08);
+        --glass-bg: rgba(4, 14, 28, .55);
+        --glass-border: rgba(0, 238, 255, .13);
+        --glass-shine: rgba(255, 255, 255, .04);
+        --nav-bg: rgba(2, 9, 18, .72);
+        --scanline: rgba(0, 238, 255, .005);
+      }
+
+      [data-theme="light"] {
+        --void: #f0f5ff;
+        --void2: #e4eeff;
+        --void3: #d5e5ff;
+        --glow: #0066CC;
+        --on-track: #007A4C;
+        --ulvr: #1565C0;
+        --ulvr-dim: rgba(21, 101, 192, .08);
+        --ulvr-border: rgba(21, 101, 192, .24);
+        --t1: #06111d;
+        --t2: #1e4a7a;
+        --t3: #3a6090;
+        --border: rgba(0, 102, 204, .18);
+        --border2: rgba(0, 102, 204, .10);
+        --nav-bg: rgba(240, 245, 255, .98);
+        --scanline: transparent;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-size: 18px;
+      }
+
+      body {
+        background: var(--void);
+        color: var(--t1);
+        font-family: 'Archivo', sans-serif;
+        line-height: 1.65;
+        overflow-x: hidden;
+      }
+
+      body::after {
+        content: '';
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 990;
+        background:
+          repeating-linear-gradient(0deg,
+            transparent,
+            transparent 3px,
+            var(--scanline) 3px,
+            var(--scanline) 4px);
+      }
+
+      /* ═══════════════════════════════════════════
+   CINEMATIC KEYFRAMES
+═══════════════════════════════════════════ */
+      @keyframes aurora-drift {
+        0% {
+          transform: translate(0%, 0%) scale(1);
+          opacity: .55;
+        }
+
+        33% {
+          transform: translate(4%, -6%) scale(1.08);
+          opacity: .7;
+        }
+
+        66% {
+          transform: translate(-3%, 4%) scale(.96);
+          opacity: .5;
+        }
+
+        100% {
+          transform: translate(0%, 0%) scale(1);
+          opacity: .55;
+        }
+      }
+
+      @keyframes aurora-drift-b {
+        0% {
+          transform: translate(0%, 0%) scale(1);
+          opacity: .35;
+        }
+
+        40% {
+          transform: translate(-5%, 5%) scale(1.1);
+          opacity: .5;
+        }
+
+        80% {
+          transform: translate(6%, -3%) scale(.93);
+          opacity: .3;
+        }
+
+        100% {
+          transform: translate(0%, 0%) scale(1);
+          opacity: .35;
+        }
+      }
+
+      @keyframes aurora-drift-c {
+        0% {
+          transform: translate(0%, 0%) scale(1.05);
+          opacity: .25;
+        }
+
+        50% {
+          transform: translate(7%, 6%) scale(.9);
+          opacity: .4;
+        }
+
+        100% {
+          transform: translate(0%, 0%) scale(1.05);
+          opacity: .25;
+        }
+      }
+
+      @keyframes pulse-ring {
+        0% {
+          box-shadow: 0 0 0 0 rgba(0, 238, 255, .45);
+        }
+
+        70% {
+          box-shadow: 0 0 0 8px rgba(0, 238, 255, 0);
+        }
+
+        100% {
+          box-shadow: 0 0 0 0 rgba(0, 238, 255, 0);
+        }
+      }
+
+      @keyframes pulse-ring-green {
+        0% {
+          box-shadow: 0 0 0 0 rgba(0, 196, 122, .5);
+        }
+
+        70% {
+          box-shadow: 0 0 0 8px rgba(0, 196, 122, 0);
+        }
+
+        100% {
+          box-shadow: 0 0 0 0 rgba(0, 196, 122, 0);
+        }
+      }
+
+      @keyframes glow-flicker {
+
+        0%,
+        100% {
+          opacity: 1;
+          text-shadow: 0 0 18px rgba(0, 238, 255, .6), 0 0 40px rgba(0, 238, 255, .2);
+        }
+
+        45% {
+          opacity: .88;
+          text-shadow: 0 0 10px rgba(0, 238, 255, .3);
+        }
+
+        50% {
+          opacity: 1;
+          text-shadow: 0 0 22px rgba(0, 238, 255, .7), 0 0 55px rgba(0, 238, 255, .25);
+        }
+      }
+
+      @keyframes bar-fill-in {
+        from {
+          width: 0;
+          opacity: 0;
+        }
+
+        to {
+          width: 72%;
+          opacity: 1;
+        }
+      }
+
+      @keyframes scan-sweep {
+        0% {
+          top: -4px;
+          opacity: 0;
+        }
+
+        5% {
+          opacity: .7;
+        }
+
+        95% {
+          opacity: .7;
+        }
+
+        100% {
+          top: 100%;
+          opacity: 0;
+        }
+      }
+
+      @keyframes float-up {
+        0% {
+          transform: translateY(0) scale(1);
+          opacity: .7;
+        }
+
+        50% {
+          transform: translateY(-18px) scale(1.15);
+          opacity: .4;
+        }
+
+        100% {
+          transform: translateY(0) scale(1);
+          opacity: .7;
+        }
+      }
+
+      @keyframes float-up-b {
+        0% {
+          transform: translateY(0) scale(1);
+          opacity: .5;
+        }
+
+        60% {
+          transform: translateY(-12px) scale(.9);
+          opacity: .25;
+        }
+
+        100% {
+          transform: translateY(0) scale(1);
+          opacity: .5;
+        }
+      }
+
+      @keyframes badge-breathe {
+
+        0%,
+        100% {
+          box-shadow: 0 0 0 0 rgba(0, 196, 122, .0), inset 0 1px 0 rgba(255, 255, 255, .06);
+        }
+
+        50% {
+          box-shadow: 0 0 14px 3px rgba(0, 196, 122, .22), inset 0 1px 0 rgba(255, 255, 255, .06);
+        }
+      }
+
+      @keyframes logo-glow {
+
+        0%,
+        100% {
+          text-shadow: 0 0 12px rgba(0, 238, 255, .5);
+        }
+
+        50% {
+          text-shadow: 0 0 24px rgba(68, 250, 255, .8), 0 0 48px rgba(0, 238, 255, .3);
+        }
+      }
+
+      @keyframes card-shimmer {
+        0% {
+          background-position: 200% center;
+        }
+
+        100% {
+          background-position: -200% center;
+        }
+      }
+
+      /* ═══════════════════════════════════════════
+   NAV */
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 500;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        gap: 1.4rem;
+        padding: 0 1.8rem;
+        background: rgba(2, 9, 18, .6);
+        border-bottom: 1px solid var(--glass-border);
+        backdrop-filter: blur(28px) saturate(180%);
+        -webkit-backdrop-filter: blur(28px) saturate(180%);
+        box-shadow: 0 1px 0 rgba(0, 238, 255, .06), 0 4px 32px rgba(0, 0, 0, .5);
+      }
+
+      .nav::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg,
+            rgba(0, 238, 255, .03) 0%,
+            transparent 40%,
+            transparent 80%,
+            rgba(26, 114, 217, .03) 100%);
+        pointer-events: none;
+      }
+
+      .nav-logo {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: .95rem;
+        letter-spacing: .15em;
+        text-decoration: none;
+        color: var(--glow-bright);
+        animation: logo-glow 4s ease-in-out infinite;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1.8rem;
+        list-style: none;
+        flex: 1;
+      }
+
+      .nav-links a {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-size: .65rem;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        color: var(--t2);
+        text-decoration: none;
+        transition: color .2s;
+      }
+
+      .nav-links a:hover {
+        color: var(--glow);
+      }
+
+      .nav-links a.active {
+        color: var(--glow-bright);
+        border-bottom: 1px solid rgba(0, 238, 255, .5);
+        text-shadow: 0 0 10px rgba(0, 238, 255, .4);
+      }
+
+      .nav-dot {
+        width: 7px;
+        height: 7px;
+        background: var(--glow-bright);
+        border-radius: 50%;
+        box-shadow: 0 0 8px 3px rgba(0, 238, 255, .55);
+        animation: pulse-ring 2.4s ease-out infinite;
+      }
+
+      /* HERO */
+      .page-header {
+        padding: 3.5rem 2rem 2.8rem;
+        border-bottom: 1px solid rgba(0, 238, 255, .18);
+        position: relative;
+        overflow: hidden;
+        min-height: 380px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        background:
+          linear-gradient(160deg,
+            rgba(2, 9, 18, .97) 0%,
+            rgba(2, 9, 18, .68) 42%,
+            rgba(3, 16, 28, .96) 100%),
+          url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1600&auto=format&fit=crop');
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* aurora blob A — cyan */
+      .page-header::before {
+        content: '';
+        position: absolute;
+        width: 700px;
+        height: 500px;
+        top: -100px;
+        right: -120px;
+        border-radius: 50%;
+        background: radial-gradient(ellipse at center,
+            rgba(0, 238, 255, .22) 0%,
+            rgba(0, 180, 255, .08) 45%,
+            transparent 72%);
+        animation: aurora-drift 18s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      /* aurora blob B — blue */
+      .page-header::after {
+        content: '';
+        position: absolute;
+        width: 600px;
+        height: 400px;
+        bottom: -80px;
+        left: -80px;
+        border-radius: 50%;
+        background: radial-gradient(ellipse at center,
+            rgba(26, 114, 217, .2) 0%,
+            rgba(26, 114, 217, .06) 50%,
+            transparent 72%);
+        animation: aurora-drift-b 22s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      /* scan sweep line */
+      .hero-scan {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(0, 238, 255, .35) 30%,
+            rgba(0, 238, 255, .6) 50%,
+            rgba(0, 238, 255, .35) 70%,
+            transparent 100%);
+        animation: scan-sweep 6s linear infinite;
+        pointer-events: none;
+        z-index: 2;
+      }
+
+      /* aurora blob C — green tinge */
+      .hero-aurora-c {
+        position: absolute;
+        width: 400px;
+        height: 350px;
+        top: 20%;
+        left: 35%;
+        border-radius: 50%;
+        background: radial-gradient(ellipse at center,
+            rgba(0, 196, 122, .1) 0%,
+            rgba(0, 196, 122, .03) 50%,
+            transparent 72%);
+        animation: aurora-drift-c 26s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      /* floating particles */
+      .hero-particle {
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+      }
+
+      .hp-1 {
+        width: 3px;
+        height: 3px;
+        background: var(--glow-bright);
+        box-shadow: 0 0 6px 2px rgba(0, 238, 255, .5);
+        top: 22%;
+        left: 15%;
+        animation: float-up 5.5s ease-in-out infinite;
+      }
+
+      .hp-2 {
+        width: 2px;
+        height: 2px;
+        background: rgba(68, 250, 255, .7);
+        box-shadow: 0 0 4px 1px rgba(0, 238, 255, .4);
+        top: 40%;
+        left: 55%;
+        animation: float-up-b 7s ease-in-out infinite 1.2s;
+      }
+
+      .hp-3 {
+        width: 2px;
+        height: 2px;
+        background: rgba(0, 196, 122, .8);
+        box-shadow: 0 0 5px 1px rgba(0, 196, 122, .4);
+        top: 60%;
+        left: 30%;
+        animation: float-up 8.2s ease-in-out infinite 2.5s;
+      }
+
+      .hp-4 {
+        width: 3px;
+        height: 3px;
+        background: rgba(26, 114, 217, .9);
+        box-shadow: 0 0 6px 2px rgba(26, 114, 217, .4);
+        top: 30%;
+        left: 75%;
+        animation: float-up-b 6.8s ease-in-out infinite .8s;
+      }
+
+      .hp-5 {
+        width: 2px;
+        height: 2px;
+        background: rgba(68, 250, 255, .5);
+        top: 70%;
+        left: 68%;
+        animation: float-up 9s ease-in-out infinite 3s;
+      }
+
+      .bg-word {
+        position: absolute;
+        right: -1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: clamp(5rem, 13vw, 10rem);
+        background: linear-gradient(135deg,
+            rgba(26, 114, 217, .12) 0%,
+            rgba(0, 238, 255, .07) 50%,
+            rgba(26, 114, 217, .04) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        pointer-events: none;
+        user-select: none;
+        letter-spacing: .04em;
+        filter: blur(.3px);
+      }
+
+      .eyebrow {
+        font-family: 'Courier Prime', monospace;
+        font-size: .65rem;
+        color: var(--glow-bright);
+        letter-spacing: .24em;
+        text-transform: uppercase;
+        margin-bottom: .4rem;
+        text-shadow: 0 0 12px rgba(0, 238, 255, .5);
+        position: relative;
+        z-index: 3;
+      }
+
+      .issue-kicker {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        color: var(--t3);
+        letter-spacing: .18em;
+        text-transform: uppercase;
+        margin-bottom: .4rem;
+        position: relative;
+        z-index: 3;
+      }
+
+      .track-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        background: rgba(0, 196, 122, .08);
+        border: 1px solid rgba(0, 240, 144, .35);
+        color: var(--on-track-bright);
+        padding: .4rem 1rem;
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: 1rem;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        margin-bottom: 1.2rem;
+        width: fit-content;
+        position: relative;
+        z-index: 3;
+        backdrop-filter: blur(8px);
+        animation: badge-breathe 3s ease-in-out infinite;
+      }
+
+      .track-badge::before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        background: var(--on-track-bright);
+        border-radius: 50%;
+        box-shadow: 0 0 6px 2px rgba(0, 240, 144, .6);
+        animation: pulse-ring-green 2s ease-out infinite;
+      }
+
+      .issue-title {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+        line-height: .95;
+        margin-bottom: .2rem;
+        position: relative;
+        z-index: 3;
+        text-shadow: 0 2px 24px rgba(0, 0, 0, .6);
+      }
+
+      .issue-company {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: clamp(1.4rem, 3vw, 2rem);
+        color: var(--ulvr);
+        margin-bottom: .5rem;
+        position: relative;
+        z-index: 3;
+        text-shadow: 0 0 20px rgba(26, 114, 217, .4);
+      }
+
+      .issue-sub {
+        font-size: .82rem;
+        color: var(--t2);
+        max-width: 62ch;
+        line-height: 1.72;
+        position: relative;
+        z-index: 3;
+      }
+
+      /* SCORE STRIP */
+      .score-strip {
+        display: flex;
+        flex-wrap: wrap;
+        background: rgba(4, 14, 28, .7);
+        border-bottom: 1px solid var(--glass-border);
+        backdrop-filter: blur(20px) saturate(160%);
+        -webkit-backdrop-filter: blur(20px) saturate(160%);
+      }
+
+      .ss-cell {
+        flex: 1;
+        min-width: 140px;
+        padding: 1.1rem 1.6rem;
+        border-right: 1px solid rgba(0, 238, 255, .08);
+        position: relative;
+        overflow: hidden;
+        transition: background .3s;
+      }
+
+      .ss-cell:hover {
+        background: rgba(0, 238, 255, .04);
+      }
+
+      .ss-cell::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg,
+            transparent,
+            rgba(0, 238, 255, .2),
+            transparent);
+      }
+
+      .ss-label {
+        font-family: 'Courier Prime', monospace;
+        font-size: .56rem;
+        color: var(--t3);
+        letter-spacing: .16em;
+        text-transform: uppercase;
+      }
+
+      .ss-val {
+        font-family: 'Courier Prime', monospace;
+        font-size: 1.7rem;
+        font-weight: 700;
+        line-height: 1;
+        margin-top: .25rem;
+      }
+
+      .ss-sub {
+        font-family: 'Courier Prime', monospace;
+        font-size: .56rem;
+        color: var(--t3);
+        margin-top: .25rem;
+        line-height: 1.4;
+      }
+
+      .val-ulvr {
+        color: var(--ulvr);
+        text-shadow: 0 0 14px rgba(26, 114, 217, .4);
+      }
+
+      .val-warn {
+        color: var(--warn);
+        text-shadow: 0 0 12px rgba(240, 144, 0, .3);
+      }
+
+      .val-glow {
+        color: var(--glow-bright);
+        text-shadow: 0 0 16px rgba(0, 238, 255, .5);
+        animation: glow-flicker 5s ease-in-out infinite;
+      }
+
+      .val-on-track {
+        color: var(--on-track-bright);
+        text-shadow: 0 0 14px rgba(0, 240, 144, .4);
+      }
+
+      /* SCORE BAR */
+      .score-bar-section {
+        padding: 1.2rem 2rem 1.4rem;
+        border-bottom: 1px solid var(--glass-border);
+        background: rgba(4, 14, 28, .6);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+      }
+
+      .sb-label-row {
+        display: flex;
+        justify-content: space-between;
+        font-family: 'Courier Prime', monospace;
+        font-size: .56rem;
+        color: var(--t3);
+        margin-bottom: .5rem;
+        text-transform: uppercase;
+      }
+
+      .sb-track {
+        height: 6px;
+        background: rgba(255, 255, 255, .05);
+        border-radius: 3px;
+        margin-bottom: .35rem;
+        overflow: visible;
+        position: relative;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, .4);
+      }
+
+      .sb-fill {
+        height: 100%;
+        width: 0;
+        background: linear-gradient(90deg,
+            rgba(0, 196, 122, .4) 0%,
+            var(--on-track) 60%,
+            var(--on-track-bright) 100%);
+        border-radius: 3px;
+        animation: bar-fill-in 1.8s cubic-bezier(.25, .46, .45, .94) .3s forwards;
+        position: relative;
+        box-shadow: 0 0 10px 1px rgba(0, 196, 122, .4);
+      }
+
+      .sb-fill::after {
+        content: '';
+        position: absolute;
+        right: -1px;
+        top: -3px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--on-track-bright);
+        box-shadow: 0 0 10px 4px rgba(0, 240, 144, .5);
+      }
+
+      .sb-scale {
+        display: flex;
+        justify-content: space-between;
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        color: var(--t3);
+      }
+
+      /* LAYOUT */
+      .content-wrap {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+      }
+
+      .content-main {
+        padding: 2.4rem 2rem;
+        border-right: 1px solid var(--glass-border);
+      }
+
+      .content-sidebar {
+        padding: 2rem 1.6rem;
+        background: rgba(4, 14, 28, .5);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+      }
+
+      /* SECTION */
+      .section-heading {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: .8rem;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: .6rem;
+      }
+
+      .section-heading::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: rgba(21, 101, 192, .2);
+      }
+
+      /* PLEDGE */
+      .pr-block {
+        margin-bottom: 2rem;
+      }
+
+      .pr-row {
+        display: flex;
+        gap: .65rem;
+        margin-bottom: .45rem;
+        align-items: flex-start;
+      }
+
+      .pr-tag {
+        font-family: 'Courier Prime', monospace;
+        font-size: .54rem;
+        letter-spacing: .1em;
+        padding: .1rem .35rem;
+        border-radius: 2px;
+        margin-top: .15rem;
+        flex-shrink: 0;
+      }
+
+      .tag-pledge {
+        background: rgba(21, 101, 192, .08);
+        border: 1px solid rgba(21, 101, 192, .3);
+        color: var(--ulvr);
+      }
+
+      .tag-reality {
+        background: rgba(0, 212, 255, .06);
+        border: 1px solid rgba(0, 212, 255, .25);
+        color: var(--glow);
+      }
+
+      .pr-text {
+        font-size: .82rem;
+        line-height: 1.65;
+      }
+
+      .pr-sub {
+        font-family: 'Courier Prime', monospace;
+        font-size: .58rem;
+        color: var(--t3);
+        margin-left: 120px;
+        margin-bottom: .7rem;
+      }
+
+      /* PROSE */
+      .prose {
+        font-size: .82rem;
+        color: var(--t2);
+        line-height: 1.78;
+        margin-bottom: 1.8rem;
+      }
+
+      .prose p {
+        margin-bottom: 1rem;
+      }
+
+      .prose strong {
+        color: var(--t1);
+      }
+
+      .hl-ulvr {
+        color: var(--ulvr);
+        font-weight: 700;
+      }
+
+      .hl-on-track {
+        color: var(--on-track);
+        font-weight: 700;
+      }
+
+      .hl-warn {
+        color: var(--warn);
+        font-weight: 700;
+      }
+
+      /* KEY FINDINGS — NEWSLETTER LAYOUT */
+      .findings-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        margin-bottom: 2rem;
+        border: 1px solid var(--glass-border);
+        border-radius: 2px;
+        overflow: hidden;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+
+      .finding-card {
+        padding: 1.1rem 1.2rem 1.2rem;
+        border-right: 1px solid rgba(0, 238, 255, .07);
+        border-bottom: 1px solid rgba(0, 238, 255, .07);
+        position: relative;
+        overflow: hidden;
+        background: rgba(4, 14, 28, .55);
+        transition: background .35s, box-shadow .35s;
+      }
+
+      .finding-card::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg,
+            var(--glass-shine) 0%,
+            transparent 60%);
+        pointer-events: none;
+      }
+
+      .finding-card:hover {
+        background: rgba(0, 238, 255, .04);
+        box-shadow: inset 0 0 0 1px rgba(0, 238, 255, .12);
+      }
+
+      .finding-card:nth-child(even) {
+        border-right: none;
+      }
+
+      .finding-card:nth-child(3),
+      .finding-card:nth-child(4) {
+        border-bottom: none;
+      }
+
+      .finding-rule {
+        height: 2px;
+        width: 100%;
+        margin-bottom: .85rem;
+      }
+
+      .rule-pos {
+        background: linear-gradient(90deg, var(--on-track), var(--on-track-bright), transparent);
+        box-shadow: 0 0 8px 0 rgba(0, 240, 144, .3);
+      }
+
+      .rule-warn {
+        background: linear-gradient(90deg, var(--warn), rgba(240, 144, 0, .4), transparent);
+        box-shadow: 0 0 8px 0 rgba(240, 144, 0, .25);
+      }
+
+      .rule-ulvr {
+        background: linear-gradient(90deg, var(--ulvr), rgba(26, 114, 217, .4), transparent);
+        box-shadow: 0 0 8px 0 rgba(26, 114, 217, .3);
+      }
+
+      .rule-glow {
+        background: linear-gradient(90deg, var(--glow-bright), rgba(0, 238, 255, .4), transparent);
+        box-shadow: 0 0 8px 0 rgba(0, 238, 255, .3);
+      }
+
+      .finding-num {
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        letter-spacing: .2em;
+        color: var(--t3);
+        text-transform: uppercase;
+        margin-bottom: .4rem;
+      }
+
+      .finding-headline {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: .88rem;
+        line-height: 1.25;
+        color: var(--t1);
+        margin-bottom: .6rem;
+        letter-spacing: .01em;
+      }
+
+      .finding-body {
+        font-size: .75rem;
+        color: var(--t2);
+        line-height: 1.72;
+      }
+
+      .finding-signal {
+        display: inline-block;
+        margin-top: .65rem;
+        font-family: 'Courier Prime', monospace;
+        font-size: .5rem;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        padding: .15rem .5rem;
+        border-radius: 2px;
+      }
+
+      .signal-pos {
+        background: rgba(0, 196, 122, .07);
+        border: 1px solid rgba(0, 196, 122, .22);
+        color: var(--on-track);
+      }
+
+      .signal-warn {
+        background: rgba(240, 144, 0, .07);
+        border: 1px solid rgba(240, 144, 0, .22);
+        color: var(--warn);
+      }
+
+      .signal-ulvr {
+        background: rgba(21, 101, 192, .07);
+        border: 1px solid rgba(21, 101, 192, .22);
+        color: var(--ulvr);
+      }
+
+      .signal-glow {
+        background: rgba(0, 212, 255, .06);
+        border: 1px solid rgba(0, 212, 255, .2);
+        color: var(--glow);
+      }
+
+      .findings-pullquote {
+        border: 1px solid rgba(0, 238, 255, .1);
+        border-radius: 2px;
+        padding: 1.2rem 1.4rem;
+        margin-bottom: 2rem;
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        background: rgba(0, 196, 122, .04);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        box-shadow:
+          inset 0 1px 0 rgba(0, 240, 144, .1),
+          0 4px 24px rgba(0, 0, 0, .3),
+          0 0 0 1px rgba(0, 238, 255, .05);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .findings-pullquote::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg,
+            transparent,
+            rgba(0, 240, 144, .4),
+            transparent);
+      }
+
+      .pq-mark {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-size: 2.8rem;
+        line-height: .7;
+        color: var(--on-track-bright);
+        opacity: .5;
+        flex-shrink: 0;
+        margin-top: .2rem;
+        text-shadow: 0 0 20px rgba(0, 240, 144, .4);
+      }
+
+      .pq-text {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-size: .92rem;
+        font-weight: 700;
+        line-height: 1.45;
+        color: var(--t1);
+        letter-spacing: .01em;
+      }
+
+      .pq-attr {
+        font-family: 'Courier Prime', monospace;
+        font-size: .54rem;
+        color: var(--t3);
+        margin-top: .5rem;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+      }
+
+      @media(max-width:720px) {
+        .findings-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .finding-card {
+          border-right: none;
+        }
+
+        .finding-card:nth-child(3) {
+          border-bottom: 1px solid var(--border2);
+        }
+      }
+
+      /* BREAKDOWN */
+      .breakdown-block {
+        background: rgba(4, 14, 28, .65);
+        border: 1px solid var(--glass-border);
+        padding: .9rem 1rem;
+        margin-bottom: 1.8rem;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        box-shadow: inset 0 1px 0 var(--glass-shine), 0 4px 20px rgba(0, 0, 0, .3);
+      }
+
+      .bd-row {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        gap: .5rem;
+        padding: .35rem 0;
+        border-bottom: 1px solid var(--border2);
+        font-family: 'Courier Prime', monospace;
+        font-size: .62rem;
+      }
+
+      .bd-weight {
+        color: var(--t3);
+        font-size: .54rem;
+      }
+
+      .bd-score {
+        font-weight: 700;
+        min-width: 40px;
+        text-align: right;
+      }
+
+      .pos {
+        color: var(--glow);
+      }
+
+      .strong-pos {
+        color: var(--on-track);
+      }
+
+      .part {
+        color: var(--amber);
+      }
+
+      .mod {
+        color: var(--warn);
+      }
+
+      .bd-total {
+        display: flex;
+        justify-content: space-between;
+        padding-top: .6rem;
+        margin-top: .4rem;
+        border-top: 1px solid var(--border);
+        font-family: 'Courier Prime', monospace;
+      }
+
+      .bd-total-score {
+        color: var(--on-track);
+        font-weight: 700;
+      }
+
+      /* SIDEBAR */
+      .sidebar-label {
+        font-family: 'Courier Prime', monospace;
+        font-size: .56rem;
+        color: var(--t3);
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        margin-bottom: .6rem;
+      }
+
+      .sidebar-block {
+        background: rgba(4, 14, 28, .65);
+        border: 1px solid var(--glass-border);
+        padding: .9rem 1rem;
+        margin-bottom: 1.2rem;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, .04),
+          inset 1px 0 0 rgba(0, 238, 255, .04),
+          0 4px 16px rgba(0, 0, 0, .25);
+        transition: box-shadow .3s;
+      }
+
+      .sidebar-block:hover {
+        box-shadow:
+          inset 0 1px 0 rgba(0, 238, 255, .1),
+          inset 1px 0 0 rgba(0, 238, 255, .06),
+          0 4px 24px rgba(0, 0, 0, .3),
+          0 0 0 1px rgba(0, 238, 255, .08);
+      }
+
+      .sval-row {
+        display: flex;
+        justify-content: space-between;
+        padding: .28rem 0;
+        border-bottom: 1px solid var(--border2);
+        font-family: 'Courier Prime', monospace;
+        font-size: .62rem;
+      }
+
+      .sval-label {
+        color: var(--t2);
+      }
+
+      .sval-val {
+        font-weight: 700;
+        text-align: right;
+      }
+
+      .sval-ulvr {
+        color: var(--ulvr);
+      }
+
+      .sval-warn {
+        color: var(--warn);
+      }
+
+      .sval-glow {
+        color: var(--glow);
+      }
+
+      .sval-on-track {
+        color: var(--on-track);
+      }
+
+      /* FOOTER */
+      .record-footer {
+        padding: 1.4rem 2rem;
+        border-top: 1px solid rgba(0, 238, 255, .15);
+        background: rgba(2, 9, 18, .8);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        color: var(--t3);
+        line-height: 1.8;
+        box-shadow: inset 0 1px 0 rgba(0, 238, 255, .08);
+        position: relative;
+      }
+
+      .record-footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(0, 238, 255, .35) 30%,
+            rgba(0, 238, 255, .6) 50%,
+            rgba(0, 238, 255, .35) 70%,
+            transparent 100%);
+      }
+
+      /* RESPONSIVE */
+      @media(max-width:900px) {
+        .content-wrap {
+          grid-template-columns: 1fr;
+        }
+
+        .content-main {
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+        }
+      }
+
+      @media(max-width:720px) {
+        html {
+          font-size: 16px;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .page-header {
+          padding: 2rem 1rem;
+          min-height: 280px;
+        }
+
+        .content-main {
+          padding: 1.6rem 1rem;
+        }
+
+        .content-sidebar {
+          padding: 1.6rem 1rem;
+        }
+
+        .pr-sub {
+          margin-left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
+      <ul class="nav-links">
+        <li>
+          <a href="https://vyrion.earth/conscience">CONSCIENCE</a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/shield">SHIELD</a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/atlas">ATLAS</a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/root">ROOT</a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/canopy">CANOPY</a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/flux">FLUX</a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/record" class="active">RECORD</a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/about">ABOUT</a>
+        </li>
+        <li>
+          <a href="https://vyrion.earth/nexan">NEXAN</a>
+        </li>
+      </ul>
+      <div class="nav-dot"></div>
+    </nav>
+    <header class="page-header">
+      <div class="hero-scan"></div>
+      <div class="hero-aurora-c"></div>
+      <div class="hero-particle hp-1"></div>
+      <div class="hero-particle hp-2"></div>
+      <div class="hero-particle hp-3"></div>
+      <div class="hero-particle hp-4"></div>
+      <div class="hero-particle hp-5"></div>
+      <div class="bg-word">ULVR</div>
+      <div class="eyebrow"> The Record · Issue 011 · Wednesday May 27, 2026 </div>
+      <div class="issue-kicker"> LSE: ULVR · CIK 49519 · Consumer Goods </div>
+      <div class="track-badge">ON TRACK</div>
+      <h1 class="issue-title"> THE RECORD — ISSUE 011 </h1>
+      <div class="issue-company"> Unilever </div>
+      <p class="issue-sub"> One company. Pledge vs. reality. Sourced. Scored. Published openly. CONSCIENCE Score: 72 / 100. Published: Wednesday, May 27, 2026. </p>
+    </header>
+    <div class="score-strip">
+      <div class="ss-cell">
+        <div class="ss-label">CONSCIENCE Score</div>
+        <div class="ss-val val-on-track"> 72 <span style="font-size:.9rem;color:var(--t3)">/100</span>
+        </div>
+        <div class="ss-sub">Band: ON TRACK</div>
+      </div>
+      <div class="ss-cell">
+        <div class="ss-label">Net Zero Target</div>
+        <div class="ss-val val-ulvr">2039</div>
+        <div class="ss-sub">Full value chain pathway</div>
+      </div>
+      <div class="ss-cell">
+        <div class="ss-label">Ops Emission Trend</div>
+        <div class="ss-val val-on-track">−23%</div>
+        <div class="ss-sub">Reduction since 2015</div>
+      </div>
+      <div class="ss-cell">
+        <div class="ss-label">CDP Grade</div>
+        <div class="ss-val val-glow">A−</div>
+        <div class="ss-sub">Disclosure grade</div>
+      </div>
+      <div class="ss-cell">
+        <div class="ss-label">InfluenceMap</div>
+        <div class="ss-val val-on-track">B</div>
+        <div class="ss-sub">Lobbying alignment</div>
+      </div>
+      <div class="ss-cell">
+        <div class="ss-label">SBTi Status</div>
+        <div class="ss-val val-on-track">1.5°C</div>
+        <div class="ss-sub">Approved science target</div>
+      </div>
+    </div>
+    <div class="score-bar-section">
+      <div class="sb-label-row">
+        <span>CONSCIENCE Score Position</span>
+        <span style="color:var(--on-track)">72 / 100 — ON TRACK BAND</span>
+      </div>
+      <div class="sb-track">
+        <div class="sb-fill"></div>
+      </div>
+      <div class="sb-scale">
+        <span>0 — BREACH</span>
+        <span>30</span>
+        <span>60</span>
+        <span style="color:var(--on-track)">↑ 72/100</span>
+        <span style="color:var(--glow)">100 — ON TRACK</span>
+      </div>
+    </div>
+    <div class="content-wrap">
+      <div class="content-main">
+        <div class="section-heading"> Pledge vs. Reality </div>
+        <div class="pr-block">
+          <div class="pr-row">
+            <span class="pr-tag tag-pledge">PLEDGE</span>
+            <span class="pr-text"> Unilever has committed to net zero emissions across its full value chain by 2039 — eleven years ahead of the Paris Agreement's 2050 benchmark. The company has pledged zero deforestation across its supply chain and a 50% reduction in absolute operational emissions by 2030 from a 2015 baseline. These targets are science-aligned and formally approved by the Science Based Targets initiative at the 1.5°C pathway. </span>
+          </div>
+          <div class="pr-sub"> Unilever Climate Transition Action Plan 2023 · SBTi Approved Targets · Annual Report 2024 </div>
+          <div class="pr-row">
+            <span class="pr-tag tag-reality">REALITY</span>
+            <span class="pr-text"> Unilever has achieved a verified <strong>23% reduction in absolute operational emissions since 2015</strong>, placing it materially ahead of many consumer goods peers. Scope 3 emissions — which represent the majority of Unilever's footprint across agriculture, ingredients, and consumer use — are improving at a measured but slower pace. Palm oil supply chain traceability remains an active concern, with residual deforestation risk exposure acknowledged in third-party assessments. One active climate-related lawsuit is recorded in the Sabin Center database. </span>
+          </div>
+          <div class="pr-sub"> Unilever Annual Report 2024 · CDP 2023 · Supply Chain Due Diligence Disclosures · Sabin Center Database </div>
+        </div>
+        <div class="section-heading"> CONSCIENCE Score Breakdown </div>
+        <div class="breakdown-block">
+          <div class="bd-row">
+            <span> Pledge Quality — 2039 net zero; SBTi 1.5°C approved; interim 2030 ops target; zero deforestation commitment </span>
+            <span class="bd-weight">30 max</span>
+            <span class="bd-score strong-pos">+28</span>
+          </div>
+          <div class="bd-row">
+            <span> CDP Performance — Grade A− disclosure quality; near-leadership tier transparency </span>
+            <span class="bd-weight">25 max</span>
+            <span class="bd-score pos">+22</span>
+          </div>
+          <div class="bd-row">
+            <span> InfluenceMap Lobbying Alignment — Grade B; generally constructive climate policy engagement </span>
+            <span class="bd-weight">25 max</span>
+            <span class="bd-score pos">+16</span>
+          </div>
+          <div class="bd-row">
+            <span> Legal + Operational Exposure — 1 active case; residual palm oil deforestation risk in Scope 3 supply chain </span>
+            <span class="bd-weight">20 max</span>
+            <span class="bd-score part">+6</span>
+          </div>
+          <div class="bd-total">
+            <span>CONSCIENCE Score — Total</span>
+            <span class="bd-total-score">72 / 100 · ON TRACK</span>
+          </div>
+        </div>
+        <div class="section-heading"> Key Findings </div>
+        <div class="findings-grid">
+          <div class="finding-card">
+            <div class="finding-rule rule-pos"></div>
+            <div class="finding-num">F — 01 · Pledge Architecture</div>
+            <div class="finding-headline">Unilever holds one of the strongest pledge architectures in consumer goods</div>
+            <div class="finding-body">A 2039 net zero commitment covering the full value chain, SBTi-approved at 1.5°C, with formal interim targets through 2030. This is a structurally credible, independently validated climate pathway — distinguishing Unilever from peers whose targets remain unvalidated or limited to operational scope alone.</div>
+            <div class="finding-signal signal-pos">Strength Signal</div>
+          </div>
+          <div class="finding-card">
+            <div class="finding-rule rule-pos"></div>
+            <div class="finding-num">F — 02 · Emissions Progress</div>
+            <div class="finding-headline">Operational progress is real, absolute, and verified</div>
+            <div class="finding-body">The 23% reduction in absolute operational emissions since 2015 reflects genuine infrastructure investment across energy efficiency, renewable procurement, and manufacturing decarbonization. This is not a relative intensity metric — it is verified absolute reduction at global operating scale.</div>
+            <div class="finding-signal signal-pos">Verified Progress</div>
+          </div>
+          <div class="finding-card">
+            <div class="finding-rule rule-warn"></div>
+            <div class="finding-num">F — 03 · Structural Risk</div>
+            <div class="finding-headline">Scope 3 remains the execution pressure point</div>
+            <div class="finding-body">Agricultural supply chain inputs, consumer product use-phase, and disposal dominate Unilever's emissions footprint — categories where direct corporate control is inherently limited. Palm oil traceability continues generating third-party risk flags. Scope 3 improvement must materially accelerate to honor the 2039 pathway.</div>
+            <div class="finding-signal signal-warn">Watch Closely</div>
+          </div>
+          <div class="finding-card">
+            <div class="finding-rule rule-ulvr"></div>
+            <div class="finding-num">F — 04 · Disclosure & Policy</div>
+            <div class="finding-headline">Disclosure quality and lobbying coherence reach near-leadership tier</div>
+            <div class="finding-body">A CDP grade of A− reflects comprehensive, high-quality climate data output. An InfluenceMap grade of B indicates Unilever's policy engagement is broadly aligned with its stated climate positions — a rare institutional signal, and a meaningful separator from peers whose lobbying contradicts their public commitments.</div>
+            <div class="finding-signal signal-ulvr">Institutional Signal</div>
+          </div>
+        </div>
+        <div class="findings-pullquote">
+          <div class="pq-mark">"</div>
+          <div>
+            <div class="pq-text">Pledge architecture is strong. Operational reduction is verified. The only variable that determines whether this record holds is Scope 3 — and that answer lives in the supply chain, not the boardroom.</div>
+            <div class="pq-attr">CONSCIENCE Analysis · Issue 011 · May 27, 2026</div>
+          </div>
+        </div>
+        <div class="section-heading"> Capital Markets Signal </div>
+        <div class="prose">
+          <p> Unilever sits inside the ON TRACK band at 72/100 — the highest score published in The Record series to date. The score reflects a company that has built credible climate infrastructure: a science-validated target, near-leadership disclosure quality, constructive policy engagement, and measurable operational progress. </p>
+          <p> The primary execution variable is Scope 3. Agricultural commodity sourcing, palm oil supply chains, and consumer use-phase emissions represent the majority of Unilever's climate footprint and the zone of greatest execution risk. Pledge architecture is strong; downstream delivery is the test. </p>
+          <p>
+            <span class="hl-on-track"> At current trajectory, Unilever's operational emissions pathway is credible. Scope 3 convergence before 2039 is feasible but not yet verified — it depends on supplier engagement at scale, land-use transition, and ingredient reformulation across a portfolio of hundreds of consumer brands. </span>
+          </p>
+          <p>
+            <strong>Investable Signal:</strong> High pledge quality. Near-leadership disclosure. Constructive lobbying posture. Low legal exposure. Primary risk: Scope 3 supply chain execution and palm oil deforestation residuals. Watch for: updated Scope 3 trajectories, CDP 2024 response, SBTi interim milestone progress, and deforestation-free supply chain verification reports.
+          </p>
+        </div>
+        <div class="section-heading"> Primary Sources </div>
+        <div class="prose">
+          <p> Unilever Climate Transition Action Plan 2023 <br> Unilever Annual Report 2024 <br> CDP 2023 Public Disclosure — Grade A− <br> InfluenceMap Corporate Profile — Unilever — Grade B <br> Science Based Targets initiative — Approved 1.5°C Pathway <br> Transition Pathway Initiative — Level 4/5 <br> Sabin Center Climate Litigation Database — 1 active case <br> SEC EDGAR — CIK 49519 <br> Supply Chain Due Diligence Disclosures </p>
+        </div>
+      </div>
+      <div class="content-sidebar">
+        <div class="sidebar-label"> Key Indicators </div>
+        <div class="sidebar-block">
+          <div class="sval-row">
+            <span class="sval-label">CONSCIENCE Score</span>
+            <span class="sval-val sval-on-track">72 / 100</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label">Band</span>
+            <span class="sval-val sval-on-track">ON TRACK</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label">Ops Emission Trend</span>
+            <span class="sval-val sval-on-track">−23%</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label">Net Zero Target</span>
+            <span class="sval-val sval-ulvr">2039</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label">Interim Ops Target</span>
+            <span class="sval-val sval-ulvr">−50% by 2030</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label">CDP Grade</span>
+            <span class="sval-val sval-glow">A−</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label">InfluenceMap</span>
+            <span class="sval-val sval-on-track">B</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label">SBTi Status</span>
+            <span class="sval-val sval-on-track">Approved 1.5°C</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label">TPI Level</span>
+            <span class="sval-val sval-glow">4 / 5</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label">Active Lawsuits</span>
+            <span class="sval-val sval-warn">1</span>
+          </div>
+          <div class="sval-row">
+            <span class="sval-label">Palm Oil Risk</span>
+            <span class="sval-val sval-warn">RESIDUAL</span>
+          </div>
+        </div>
+      </div>
+      <footer class="record-footer"> THE RECORD — VYRION Issue 011 · Unilever · Published May 27, 2026 <br> VYRION PBC · Tyler Frost · Hilo, Hawaii · vyrion.earth <br> Methodology: CONSCIENCE-METHODOLOGY.md · Corrections: contact@vyrion.earth · Open Proof Protocol Active </footer>
+  </body>
+</html>
