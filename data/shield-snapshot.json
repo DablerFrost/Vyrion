@@ -1,18 +1,18 @@
 {
   "meta": {
-    "generated": "2026-05-28T04:24:52.711Z",
+    "generated": "2026-05-28T16:32:39.664Z",
     "generated_date": "2026-05-28",
     "script_version": "1.1",
     "window_days": 14,
     "window_start": "2026-05-14",
     "window_end": "2026-05-28",
-    "runtime_ms": 353,
+    "runtime_ms": 717,
     "seismic_live": true,
     "eonet_live": true
   },
   "threat": {
     "level": "CRITICAL",
-    "score": 35.3
+    "score": 33.55
   },
   "seismic": {
     "events": [
@@ -260,7 +260,7 @@
         "id": "us6000sykw",
         "magnitude": 5.3,
         "place": "Bouvet Island region",
-        "time": "2026-05-18T18:50:00.309Z",
+        "time": "2026-05-18T18:50:00.193Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sykw"
       },
@@ -271,14 +271,6 @@
         "time": "2026-05-16T12:59:30.857Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sy7l"
-      },
-      {
-        "id": "us6000sxn9",
-        "magnitude": 5.3,
-        "place": "32 km WNW of Darien, Colombia",
-        "time": "2026-05-14T12:48:22.202Z",
-        "depth_km": 117.1,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sxn9"
       },
       {
         "id": "us7000snz9",
@@ -327,14 +319,6 @@
         "time": "2026-05-16T14:07:54.607Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sy7u"
-      },
-      {
-        "id": "us6000sxnw",
-        "magnitude": 5.2,
-        "place": "Volcano Islands, Japan region",
-        "time": "2026-05-14T15:34:04.551Z",
-        "depth_km": 139.5,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sxnw"
       },
       {
         "id": "us7000snzn",
@@ -407,14 +391,6 @@
         "time": "2026-05-18T13:44:26.120Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000syik"
-      },
-      {
-        "id": "us6000sxmm",
-        "magnitude": 5.1,
-        "place": "South Sandwich Islands region",
-        "time": "2026-05-14T09:55:47.289Z",
-        "depth_km": 52.4,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sxmm"
       },
       {
         "id": "us7000snpf",
@@ -519,6 +495,14 @@
         "time": "2026-05-16T06:48:55.360Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sy5x"
+      },
+      {
+        "id": "us7000sp29",
+        "magnitude": 4.9,
+        "place": "133 km SW of Tual, Indonesia",
+        "time": "2026-05-28T12:35:40.163Z",
+        "depth_km": 10,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sp29"
       },
       {
         "id": "us7000snps",
@@ -785,6 +769,22 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sxtg"
       },
       {
+        "id": "us7000sp1m",
+        "magnitude": 4.7,
+        "place": "124 km WSW of Isangel, Vanuatu",
+        "time": "2026-05-28T09:41:10.963Z",
+        "depth_km": 10,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sp1m"
+      },
+      {
+        "id": "us7000snzw",
+        "magnitude": 4.7,
+        "place": "242 km NNW of Qamdo, China",
+        "time": "2026-05-28T02:37:50.460Z",
+        "depth_km": 10,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000snzw"
+      },
+      {
         "id": "us7000sntm",
         "magnitude": 4.7,
         "place": "199 km E of Ozernovskiy, Russia",
@@ -937,20 +937,20 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sy3u"
       },
       {
-        "id": "us6000sxm9",
-        "magnitude": 4.7,
-        "place": "27 km NNW of Bardsīr, Iran",
-        "time": "2026-05-14T07:47:44.884Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sxm9"
-      },
-      {
         "id": "us7000snyb",
         "magnitude": 4.6,
         "place": "South Sandwich Islands region",
         "time": "2026-05-27T21:37:38.918Z",
         "depth_km": 98.8,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000snyb"
+      },
+      {
+        "id": "us7000snv8",
+        "magnitude": 4.6,
+        "place": "Izu Islands, Japan region",
+        "time": "2026-05-27T11:49:28.286Z",
+        "depth_km": 65.3,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000snv8"
       },
       {
         "id": "us7000snud",
@@ -1091,9 +1091,9 @@
       {
         "id": "us6000syk9",
         "magnitude": 4.6,
-        "place": "113 km E of Miyako, Japan",
-        "time": "2026-05-18T17:04:31.928Z",
-        "depth_km": 35,
+        "place": "126 km E of Miyako, Japan",
+        "time": "2026-05-18T17:04:28.767Z",
+        "depth_km": 17.1,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000syk9"
       },
       {
@@ -1153,6 +1153,14 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000snwp"
       },
       {
+        "id": "us7000snvc",
+        "magnitude": 4.5,
+        "place": "38 km W of Ollagüe, Chile",
+        "time": "2026-05-27T12:23:38.505Z",
+        "depth_km": 120.6,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000snvc"
+      },
+      {
         "id": "us7000snrw",
         "magnitude": 4.5,
         "place": "Fiji region",
@@ -1191,6 +1199,14 @@
         "time": "2026-05-26T06:27:45.435Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t06f"
+      },
+      {
+        "id": "us6000t03v",
+        "magnitude": 4.5,
+        "place": "100 km NE of Manokwari, Indonesia",
+        "time": "2026-05-25T16:48:12.996Z",
+        "depth_km": 10,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t03v"
       },
       {
         "id": "us6000szwl",
@@ -1329,14 +1345,6 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000syq4"
       },
       {
-        "id": "us6000sykj",
-        "magnitude": 4.5,
-        "place": "86 km ESE of Pondaguitan, Philippines",
-        "time": "2026-05-18T18:06:04.422Z",
-        "depth_km": 54.2,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sykj"
-      },
-      {
         "id": "us6000syfr",
         "magnitude": 4.5,
         "place": "62 km WNW of Abra Pampa, Argentina",
@@ -1417,7 +1425,7 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sxx5"
       }
     ],
-    "count_total": 175,
+    "count_total": 176,
     "count_m55_plus": 20,
     "count_m60_plus": 8,
     "count_m70_plus": 0,
@@ -1433,7 +1441,7 @@
     "source": "USGS Earthquake Hazards Program",
     "url": "https://earthquake.usgs.gov/",
     "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-    "retrieved": "2026-05-28T04:24:52.711Z"
+    "retrieved": "2026-05-28T16:32:39.319Z"
   },
   "wildfire": {
     "events": [
@@ -2019,64 +2027,9 @@
           43.113
         ],
         "closed": null
-      },
-      {
-        "id": "EONET_20204",
-        "title": "DeSoto BB 8366 RX Prescribed Fire, Harrison, Mississippi",
-        "type": "WILDFIRE",
-        "time": "2026-05-14T09:54:00.000Z",
-        "coords": [
-          -88.996,
-          30.673
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20206",
-        "title": "Chickasawhay CPT 439 441 RX Prescribed Fire, Wayne, Mississippi",
-        "type": "WILDFIRE",
-        "time": "2026-05-14T09:35:00.000Z",
-        "coords": [
-          -88.677,
-          31.482
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20156",
-        "title": "SEVEN CABINS Wildfire, Lincoln, New Mexico",
-        "type": "WILDFIRE",
-        "time": "2026-05-14T07:42:00.000Z",
-        "coords": [
-          -105.358,
-          33.606
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20095",
-        "title": "Ash Pole Wildfire, Dawes, Nebraska",
-        "type": "WILDFIRE",
-        "time": "2026-05-14T03:26:00.000Z",
-        "coords": [
-          -103.242,
-          42.626
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20189",
-        "title": "Rochelle 2 Wildfire, Converse, Wyoming",
-        "type": "WILDFIRE",
-        "time": "2026-05-13T22:52:00.000Z",
-        "coords": [
-          -105.218,
-          43.492
-        ],
-        "closed": null
       }
     ],
-    "count": 58
+    "count": 53
   },
   "storm": {
     "events": [],
