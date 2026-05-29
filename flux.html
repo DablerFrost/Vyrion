@@ -766,7 +766,7 @@ async function fetchTemp() {
 
 async function fetchIndex() {
   try {
-    const r = await fetch('/conscience-data.json');
+    const r = await fetch('/data/conscience-data.json');
     if (!r.ok) throw 0;
     const d = await r.json();
     return d.vyrion_index?.score || null;
