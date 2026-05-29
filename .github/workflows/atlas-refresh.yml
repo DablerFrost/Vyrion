@@ -55,8 +55,6 @@ permissions:
 
 env:
   NODE_ENV: production
-
-  # GitHub Actions runtime future-proofing
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
@@ -90,37 +88,20 @@ jobs:
           node-version: "22"
 
       # ─────────────────────────────────────────────
-      # Install Dependencies
-      # ─────────────────────────────────────────────
-      - name: Install Dependencies
-        run: |
-          set -euo pipefail
-
-          if [ -f package-lock.json ]; then
-            echo "Detected package-lock.json"
-            npm ci
-          else
-            echo "No lockfile found — using npm install"
-            npm install
-          fi
-
-      # ─────────────────────────────────────────────
       # Verify Runtime
       # ─────────────────────────────────────────────
       - name: Verify Runtime
         run: |
           set -euo pipefail
-
-          echo "Node Version:"
-          node --version
-
-          echo "NPM Version:"
-          npm --version
+          echo "Node Version: $(node --version)"
+          echo "NPM Version:  $(npm --version)"
 
       # ─────────────────────────────────────────────
       # Generate ATLAS Planetary State
       # ─────────────────────────────────────────────
       - name: Generate ATLAS Planetary State
+        env:
+          NOAA_API_TOKEN: ${{ secrets.NOAA_API_TOKEN }}
         run: |
           set -euo pipefail
           node scripts/generate-atlas-state.js
@@ -176,7 +157,7 @@ jobs:
 
           git commit -m "vyrion[atlas]: planetary state refresh ${TIMESTAMP}"
 
-          # Safely sync latest remote changes
+          # Safely sync latest remote changes before push
           git pull --rebase origin ${GITHUB_REF_NAME} || true
 
           git push origin HEAD:${GITHUB_REF_NAME}
