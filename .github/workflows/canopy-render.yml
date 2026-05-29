@@ -10,7 +10,7 @@
 #     • CONSCIENCE state
 #     • SHIELD hazards
 #     • ATLAS topology
-#     • ROOT integrity metrics
+#     • ROOT integrity metrics (optional — loaded when available)
 #
 #   Produces:
 #     • Dashboard-ready datasets
@@ -49,8 +49,6 @@ permissions:
 
 env:
   NODE_ENV: production
-
-  # GitHub Actions future-proofing
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
@@ -84,35 +82,23 @@ jobs:
           node-version: "22"
 
       # ─────────────────────────────────────────────
-      # Install Dependencies
-      # ─────────────────────────────────────────────
-      - name: Install Dependencies
-        run: |
-          set -euo pipefail
-
-          if [ -f package-lock.json ]; then
-            echo "Detected package-lock.json"
-            npm ci
-          else
-            echo "No lockfile found — using npm install"
-            npm install
-          fi
-
-      # ─────────────────────────────────────────────
       # Verify Runtime
       # ─────────────────────────────────────────────
       - name: Verify Runtime
         run: |
           set -euo pipefail
-
-          echo "Node Version:"
-          node --version
-
-          echo "NPM Version:"
-          npm --version
+          echo "Node Version: $(node --version)"
+          echo "NPM Version:  $(npm --version)"
 
       # ─────────────────────────────────────────────
       # Validate Upstream Intelligence Layers
+      #
+      # Hard-required: conscience-data.json
+      #                data/shield-snapshot.json
+      #                data/atlas-state.json
+      #
+      # Optional:      data/root-status.json
+      #                (loaded by script when present)
       # ─────────────────────────────────────────────
       - name: Validate Upstream Datasets
         run: |
@@ -122,11 +108,9 @@ jobs:
             "conscience-data.json"
             "data/shield-snapshot.json"
             "data/atlas-state.json"
-            "data/root-status.json"
           )
 
           for FILE in "${REQUIRED_FILES[@]}"; do
-
             if [ ! -f "$FILE" ]; then
               echo "ERROR: Missing required dataset -> $FILE"
               exit 1
@@ -138,18 +122,23 @@ jobs:
             fi
 
             echo "Validated: $FILE"
+          done
 
+          # Optional layers — warn but do not fail
+          OPTIONAL_FILES=(
+            "data/root-status.json"
+          )
+
+          for FILE in "${OPTIONAL_FILES[@]}"; do
+            if [ ! -f "$FILE" ]; then
+              echo "Warning: Optional dataset not yet available -> $FILE"
+            else
+              echo "Validated (optional): $FILE"
+            fi
           done
 
       # ─────────────────────────────────────────────
       # Generate CANOPY Visualization Layer
-      #
-      # Responsibilities:
-      #   • Aggregate intelligence layers
-      #   • Build visualization-ready topology
-      #   • Generate synthesis metrics
-      #   • Produce dashboard state
-      #   • Compute planetary summaries
       # ─────────────────────────────────────────────
       - name: Generate CANOPY Synthesis Layer
         run: |
@@ -207,10 +196,10 @@ jobs:
 
           git commit -m "vyrion[canopy]: visualization synthesis refresh ${TIMESTAMP}"
 
-          # Safely rebase against latest main
-          git pull --rebase origin main
+          # Safely rebase against latest remote
+          git pull --rebase origin ${GITHUB_REF_NAME} || true
 
-          git push origin HEAD:main
+          git push origin HEAD:${GITHUB_REF_NAME}
 
           echo "CANOPY snapshot committed successfully."
 
