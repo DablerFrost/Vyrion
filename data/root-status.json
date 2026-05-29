@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "generatedAt": "2026-05-29T23:35:42.788Z"
+  },
+  "health": {
+    "score": 90,
+    "grade": "excellent",
+    "issues": [
+      "Schema error in: data/conscience-data.json",
+      "Schema error in: data/shield-snapshot.json"
+    ]
+  },
+  "checks": {
+    "datasets": [
+      {
+        "label": "CONSCIENCE",
+        "path": "data/conscience-data.json",
+        "exists": true,
+        "empty": false,
+        "ageHours": 0,
+        "stale": false,
+        "schemaValid": false,
+        "missingFields": [
+          "generatedAt"
+        ],
+        "status": "schema_error"
+      },
+      {
+        "label": "SHIELD",
+        "path": "data/shield-snapshot.json",
+        "exists": true,
+        "empty": false,
+        "ageHours": 0,
+        "stale": false,
+        "schemaValid": false,
+        "missingFields": [
+          "generatedAt"
+        ],
+        "status": "schema_error"
+      },
+      {
+        "label": "ATLAS",
+        "path": "data/atlas-state.json",
+        "exists": true,
+        "empty": false,
+        "ageHours": 0,
+        "stale": false,
+        "schemaValid": true,
+        "missingFields": [],
+        "status": "ok"
+      }
+    ],
+    "runtime": {
+      "nodeVersion": "v22.22.3",
+      "nodeMajor": 22,
+      "nodeSupported": true,
+      "platform": "linux",
+      "arch": "x64",
+      "status": "ok"
+    },
+    "workflows": [
+      {
+        "workflow": "conscience-daily.yml",
+        "exists": true,
+        "status": "ok"
+      },
+      {
+        "workflow": "shield-update.yml",
+        "exists": true,
+        "status": "ok"
+      },
+      {
+        "workflow": "atlas-refresh.yml",
+        "exists": true,
+        "status": "ok"
+      },
+      {
+        "workflow": "root-system.yml",
+        "exists": true,
+        "status": "ok"
+      },
+      {
+        "workflow": "canopy-render.yml",
+        "exists": true,
+        "status": "ok"
+      }
+    ],
+    "scripts": [
+      {
+        "script": "fetch-conscience-data.js",
+        "exists": true,
+        "status": "ok"
+      },
+      {
+        "script": "fetch-shield-data.js",
+        "exists": true,
+        "status": "ok"
+      },
+      {
+        "script": "generate-atlas-state.js",
+        "exists": true,
+        "status": "ok"
+      },
+      {
+        "script": "generate-root-status.js",
+        "exists": true,
+        "status": "ok"
+      },
+      {
+        "script": "generate-canopy-state.js",
+        "exists": true,
+        "status": "ok"
+      }
+    ]
+  }
+}
