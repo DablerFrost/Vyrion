@@ -121,7 +121,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: conscience-data
-          path: conscience-data.json
+          path: data/conscience-data.json
           retention-days: 30
 
       # ─────────────────────────────────────────────
