@@ -3892,7 +3892,7 @@
           </table>
           <div class="ledger-api-bar">
             <span class="api-label">Open API</span>
-            <span class="api-url">https://vyrion.earth/conscience-data.json</span>
+            <span class="api-url">https://vyrion.earth/data/conscience-data.json</span>
             <button class="api-copy" onclick="copyApiUrl()">COPY URL</button>
           </div>
           <div class="ledger-challenge"> CORS-open · No authentication required · Machine-readable · Updates daily via GitHub Actions <br> "Find the error. We will publish the correction." → <a href="/cdn-cgi/l/email-protection#b2d1dddcc6d3d1c6f2c4cbc0dbdddc9cd7d3c0c6da">
@@ -4379,7 +4379,7 @@
         }
         async function fetchIndexData() {
           try {
-            const r = await fetch('/conscience-data.json');
+            const r = await fetch('/data/conscience-data.json');
             if (!r.ok) throw new Error();
             return await r.json();
           } catch (e) {}
@@ -4463,7 +4463,7 @@
         }
         // ── COPY API URL ───────────────────────────────────────────────────────
         function copyApiUrl() {
-          const url = 'https://vyrion.earth/conscience-data.json';
+          const url = 'https://vyrion.earth/data/conscience-data.json';
           if (navigator.clipboard) {
             navigator.clipboard.writeText(url).then(() => {
               const btn = document.querySelector('.api-copy');
