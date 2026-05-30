@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-05-30T04:30:29.032Z",
+    "generatedAt": "2026-05-30T14:08:23.721Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -133,13 +133,13 @@
       "totalActive": 50,
       "byCategory": {
         "Severe Storms": 1,
-        "Wildfires": 48,
-        "Sea and Lake Ice": 1
+        "Wildfires": 47,
+        "Sea and Lake Ice": 2
       },
       "events": [
         {
           "id": "EONET_20279",
-          "title": "Tropical Storm Jangmi",
+          "title": "Typhoon Jangmi",
           "categories": [
             "Severe Storms"
           ],
@@ -147,13 +147,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 50,
+            "magnitudeValue": 65,
             "magnitudeUnit": "kts",
-            "date": "2026-05-29T18:00:00Z",
+            "date": "2026-05-30T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              130.8,
-              16.7
+              129.6,
+              18.3
             ]
           }
         },
@@ -458,6 +458,46 @@
           }
         },
         {
+          "id": "EONET_6320",
+          "title": "Iceberg A81",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 700,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-05-21T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -54.54,
+              -63.9
+            ]
+          }
+        },
+        {
+          "id": "EONET_6510",
+          "title": "Iceberg D33C",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 105,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-05-21T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -56.29,
+              -64.84
+            ]
+          }
+        },
+        {
           "id": "EONET_20230",
           "title": "DeSoto BB 8374 S RX Prescribed Fire, Harrison, Mississippi",
           "categories": [
@@ -696,46 +736,6 @@
               34.38652018
             ]
           }
-        },
-        {
-          "id": "EONET_20157",
-          "title": "SANDY Wildfire, Ventura, California",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1385,
-            "magnitudeUnit": "acres",
-            "date": "2026-05-18T13:21:00Z",
-            "type": "Point",
-            "coordinates": [
-              -118.743684,
-              34.250088
-            ]
-          }
-        },
-        {
-          "id": "EONET_20159",
-          "title": "RIVER Wildfire, Kern, California",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 2535,
-            "magnitudeUnit": "acres",
-            "date": "2026-05-18T12:05:00Z",
-            "type": "Point",
-            "coordinates": [
-              -118.7891667,
-              35.4458333
-            ]
-          }
         }
       ]
     },
@@ -745,52 +745,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -2.2,
-          "surface_pressure": 1014.9,
-          "wind_speed_10m": 5.98,
-          "relative_humidity_2m": 88
+          "temperature_2m": -2,
+          "surface_pressure": 1014.8,
+          "wind_speed_10m": 9.86,
+          "relative_humidity_2m": 85
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 11.7,
-          "surface_pressure": 1004.7,
-          "wind_speed_10m": 9.67,
+          "temperature_2m": 11.9,
+          "surface_pressure": 1007,
+          "wind_speed_10m": 7.38,
           "relative_humidity_2m": 90
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 20.2,
-          "surface_pressure": 914.9,
-          "wind_speed_10m": 0.68,
-          "relative_humidity_2m": 100
+          "temperature_2m": 21.8,
+          "surface_pressure": 917.4,
+          "wind_speed_10m": 0.89,
+          "relative_humidity_2m": 97
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 30.5,
-          "surface_pressure": 1011.5,
-          "wind_speed_10m": 1.15,
-          "relative_humidity_2m": 64
+          "temperature_2m": 31,
+          "surface_pressure": 1010.7,
+          "wind_speed_10m": 3.05,
+          "relative_humidity_2m": 71
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": 0.2,
-          "surface_pressure": 983.1,
-          "wind_speed_10m": 12.86,
-          "relative_humidity_2m": 83
+          "temperature_2m": -0.9,
+          "surface_pressure": 976.9,
+          "wind_speed_10m": 13.96,
+          "relative_humidity_2m": 75
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "error": "fetch_failed"
+          "temperature_2m": -49.7,
+          "surface_pressure": 713.5,
+          "wind_speed_10m": 9.2,
+          "relative_humidity_2m": 64
         }
       ]
     },
