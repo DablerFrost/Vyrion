@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-05-31T05:11:38.612Z",
+    "generatedAt": "2026-05-31T14:22:47.752Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -13,20 +13,20 @@
   },
   "synthesis": {
     "hazardSummary": {
-      "totalEvents": 60,
+      "totalEvents": 59,
       "categories": {
         "Severe Storms": 1,
         "Wildfires": 47,
         "Sea and Lake Ice": 2
       },
-      "seismicCount": 10,
+      "seismicCount": 9,
       "maxMagnitude": 6.9
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 0.9,
-      "minTemperature_2m": -51.1,
-      "maxTemperature_2m": 29.9
+      "avgTemperature_2m": 2.37,
+      "minTemperature_2m": -50.5,
+      "maxTemperature_2m": 31.4
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -40,19 +40,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-05-31T04:47:01.432Z",
+        "generated": "2026-05-31T14:09:21.827Z",
         "generated_date": "2026-05-31",
         "script_version": "1.1",
         "window_days": 14,
         "window_start": "2026-05-17",
         "window_end": "2026-05-31",
-        "runtime_ms": 181,
+        "runtime_ms": 130,
         "seismic_live": true,
-        "eonet_live": false
+        "eonet_live": true
       },
       "threat": {
-        "level": "ELEVATED",
-        "score": 10.25
+        "level": "CRITICAL",
+        "score": 23.75
       },
       "seismic": {
         "events": [
@@ -209,14 +209,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000syg1"
           },
           {
-            "id": "us6000syc2",
-            "magnitude": 5.4,
-            "place": "89 km E of Severo-Kuril’sk, Russia",
-            "time": "2026-05-17T08:04:17.327Z",
-            "depth_km": 44,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000syc2"
-          },
-          {
             "id": "us7000sp82",
             "magnitude": 5.3,
             "place": "106 km SW of Turpan, China",
@@ -265,6 +257,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000szx2"
           },
           {
+            "id": "us6000szq3",
+            "magnitude": 5.3,
+            "place": "82 km SW of Pagar Alam, Indonesia",
+            "time": "2026-05-23T12:40:28.190Z",
+            "depth_km": 68.5,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000szq3"
+          },
+          {
             "id": "us6000szk5",
             "magnitude": 5.3,
             "place": "156 km W of Lata, Solomon Islands",
@@ -303,14 +303,6 @@
             "time": "2026-05-28T00:25:21.947Z",
             "depth_km": 58.3,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000snz9"
-          },
-          {
-            "id": "us6000szq3",
-            "magnitude": 5.2,
-            "place": "100 km SSE of Bengkulu, Indonesia",
-            "time": "2026-05-23T12:40:25.493Z",
-            "depth_km": 47.7,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000szq3"
           },
           {
             "id": "us6000syy1",
@@ -537,14 +529,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sye4"
           },
           {
-            "id": "us6000syby",
-            "magnitude": 5,
-            "place": "112 km SSE of Lorengau, Papua New Guinea",
-            "time": "2026-05-17T07:51:56.759Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000syby"
-          },
-          {
             "id": "us7000spl8",
             "magnitude": 4.9,
             "place": "271 km SW of Grindavík, Iceland",
@@ -659,9 +643,9 @@
           {
             "id": "us6000szp8",
             "magnitude": 4.9,
-            "place": "70 km SW of Nikolski, Alaska",
-            "time": "2026-05-23T09:03:09.674Z",
-            "depth_km": 29.6,
+            "place": "92 km SSW of Nikolski, Alaska",
+            "time": "2026-05-23T09:03:06.406Z",
+            "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000szp8"
           },
           {
@@ -977,6 +961,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000syhg"
           },
           {
+            "id": "us7000spn5",
+            "magnitude": 4.6,
+            "place": "117 km SW of Jiquilillo, Nicaragua",
+            "time": "2026-05-31T10:51:46.961Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spn5"
+          },
+          {
             "id": "us7000spj5",
             "magnitude": 4.6,
             "place": "63 km W of Catuday, Philippines",
@@ -1113,6 +1105,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spcn"
           },
           {
+            "id": "us7000spci",
+            "magnitude": 4.6,
+            "place": "34 km ENE of La Paz, Philippines",
+            "time": "2026-05-24T08:24:15.305Z",
+            "depth_km": 9.9,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spci"
+          },
+          {
             "id": "us6000szvg",
             "magnitude": 4.6,
             "place": "64 km WNW of Corral, Chile",
@@ -1217,12 +1217,20 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000syfn"
           },
           {
-            "id": "us6000syd2",
-            "magnitude": 4.6,
-            "place": "266 km ESE of Port Blair, India",
-            "time": "2026-05-17T09:38:20.685Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000syd2"
+            "id": "us7000spnj",
+            "magnitude": 4.5,
+            "place": "66 km SW of Atocha, Bolivia",
+            "time": "2026-05-31T12:37:12.170Z",
+            "depth_km": 226.1,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spnj"
+          },
+          {
+            "id": "us7000spmd",
+            "magnitude": 4.5,
+            "place": "48 km S of Castro Barros, Argentina",
+            "time": "2026-05-31T05:50:06.141Z",
+            "depth_km": 181.9,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spmd"
           },
           {
             "id": "us7000spjc",
@@ -1339,17 +1347,17 @@
           {
             "id": "us6000szw2",
             "magnitude": 4.5,
-            "place": "64 km E of Nemuro, Japan",
-            "time": "2026-05-24T06:51:36.264Z",
-            "depth_km": 74.5,
+            "place": "74 km ESE of Nemuro, Japan",
+            "time": "2026-05-24T06:51:34.656Z",
+            "depth_km": 66,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000szw2"
           },
           {
             "id": "us6000szvr",
             "magnitude": 4.5,
-            "place": "Banda Sea",
-            "time": "2026-05-24T06:01:24.159Z",
-            "depth_km": 135.8,
+            "place": "296 km WSW of Tual, Indonesia",
+            "time": "2026-05-24T06:01:25.110Z",
+            "depth_km": 152.1,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000szvr"
           },
           {
@@ -1479,25 +1487,9 @@
             "time": "2026-05-17T23:23:57.246Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000szjf"
-          },
-          {
-            "id": "us6000sydk",
-            "magnitude": 4.5,
-            "place": "102 km NNW of San Antonio de los Cobres, Argentina",
-            "time": "2026-05-17T13:28:25.625Z",
-            "depth_km": 200.9,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sydk"
-          },
-          {
-            "id": "us6000sydj",
-            "magnitude": 4.5,
-            "place": "174 km W of Neiafu, Tonga",
-            "time": "2026-05-17T13:16:27.182Z",
-            "depth_km": 275.1,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sydj"
           }
         ],
-        "count_total": 180,
+        "count_total": 179,
         "count_m55_plus": 16,
         "count_m60_plus": 5,
         "count_m70_plus": 0,
@@ -1513,23 +1505,444 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-05-31T04:47:01.431Z"
+        "retrieved": "2026-05-31T14:09:21.811Z"
       },
-      "wildfire": null,
-      "storm": null,
-      "flood": null,
-      "volcanic": null
+      "wildfire": {
+        "events": [
+          {
+            "id": "EONET_20254",
+            "title": "Black Ridge Wildfire, Lincoln, Idaho",
+            "type": "WILDFIRE",
+            "time": "2026-05-25T20:50:00.000Z",
+            "coords": [
+              -113.936,
+              43.05
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20251",
+            "title": "Dewoff Wildfire, Blaine, Idaho",
+            "type": "WILDFIRE",
+            "time": "2026-05-25T20:35:00.000Z",
+            "coords": [
+              -113.248,
+              42.67
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20252",
+            "title": "0231 ZEN Wildfire, Wasco, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-05-25T19:11:00.000Z",
+            "coords": [
+              -120.438,
+              44.856
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20257",
+            "title": "Egberts Wildfire, Elko, Nevada",
+            "type": "WILDFIRE",
+            "time": "2026-05-25T17:55:00.000Z",
+            "coords": [
+              -115.056,
+              40.965
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20250",
+            "title": "Summit Creek Wildfire, Cassia, Idaho",
+            "type": "WILDFIRE",
+            "time": "2026-05-25T16:59:00.000Z",
+            "coords": [
+              -113.731,
+              42.176
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20258",
+            "title": "Kinyon Springs Wildfire, Owyhee, Idaho",
+            "type": "WILDFIRE",
+            "time": "2026-05-25T16:44:00.000Z",
+            "coords": [
+              -115.245,
+              42.735
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20259",
+            "title": "MILE MARKER 44 FIRE - BROWARD Wildfire, Broward, Florida",
+            "type": "WILDFIRE",
+            "time": "2026-05-23T21:26:00.000Z",
+            "coords": [
+              -80.779,
+              26.099
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20253",
+            "title": "COUNTRY MEADOW Wildfire, Benton, Washington",
+            "type": "WILDFIRE",
+            "time": "2026-05-23T17:39:00.000Z",
+            "coords": [
+              -119.337,
+              46.165
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20263",
+            "title": "340 Wildfire, Wakulla, Florida",
+            "type": "WILDFIRE",
+            "time": "2026-05-23T16:29:00.000Z",
+            "coords": [
+              -84.566,
+              30.053
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20249",
+            "title": "Mile Marker 44 Wildfire, Broward, Florida",
+            "type": "WILDFIRE",
+            "time": "2026-05-23T15:44:00.000Z",
+            "coords": [
+              -80.767,
+              26.15
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20260",
+            "title": "Quartz Wildfire, Pershing, Nevada",
+            "type": "WILDFIRE",
+            "time": "2026-05-23T15:06:00.000Z",
+            "coords": [
+              -118.014,
+              40.71
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20262",
+            "title": "Thousand Wildfire, Northwest Arctic, Alaska",
+            "type": "WILDFIRE",
+            "time": "2026-05-23T11:59:00.000Z",
+            "coords": [
+              -159.287,
+              66.435
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20256",
+            "title": "WaWa 2 Wildfire, Highlands, Florida",
+            "type": "WILDFIRE",
+            "time": "2026-05-23T09:28:00.000Z",
+            "coords": [
+              -81.26,
+              27.645
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20264",
+            "title": "Shell Wildfire, Lake, Florida",
+            "type": "WILDFIRE",
+            "time": "2026-05-22T10:24:00.000Z",
+            "coords": [
+              -81.507,
+              29.074
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20261",
+            "title": "Trigg Wildfire, San Miguel, New Mexico",
+            "type": "WILDFIRE",
+            "time": "2026-05-21T23:07:00.000Z",
+            "coords": [
+              -103.949,
+              35.53
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20230",
+            "title": "DeSoto BB 8374 S RX Prescribed Fire, Harrison, Mississippi",
+            "type": "WILDFIRE",
+            "time": "2026-05-20T11:12:00.000Z",
+            "coords": [
+              -89.035,
+              30.673
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20229",
+            "title": "Chickasawhay CPT 451 452 RX Prescribed Fire, Greene, Mississippi",
+            "type": "WILDFIRE",
+            "time": "2026-05-20T09:22:00.000Z",
+            "coords": [
+              -88.66,
+              31.415
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20231",
+            "title": "CADDUGGEN Wildfire, Carteret, North Carolina",
+            "type": "WILDFIRE",
+            "time": "2026-05-20T07:59:00.000Z",
+            "coords": [
+              -76.385,
+              34.926
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20236",
+            "title": "Rifle Range Rd Wildfire, Collier, Florida",
+            "type": "WILDFIRE",
+            "time": "2026-05-19T22:10:00.000Z",
+            "coords": [
+              -81.637,
+              26.116
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20232",
+            "title": "Foothill Wildfire, Santa Barbara, California",
+            "type": "WILDFIRE",
+            "time": "2026-05-19T19:16:00.000Z",
+            "coords": [
+              -119.604,
+              34.83
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20238",
+            "title": "MTZ/SDU/TUSIL Wildfire, San Diego, California",
+            "type": "WILDFIRE",
+            "time": "2026-05-19T16:17:00.000Z",
+            "coords": [
+              -116.363,
+              32.733
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20234",
+            "title": "VERONA Wildfire, Riverside, California",
+            "type": "WILDFIRE",
+            "time": "2026-05-19T15:21:00.000Z",
+            "coords": [
+              -117.084,
+              33.763
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20233",
+            "title": "BAIN Wildfire, Riverside, California",
+            "type": "WILDFIRE",
+            "time": "2026-05-19T15:16:00.000Z",
+            "coords": [
+              -117.506,
+              33.975
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20241",
+            "title": "DeSoto BB 7310 S RX Prescribed Fire, Perry, Mississippi",
+            "type": "WILDFIRE",
+            "time": "2026-05-19T10:02:00.000Z",
+            "coords": [
+              -88.858,
+              31.024
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20240",
+            "title": "Chickasawhay CPT 366 RX Prescribed Fire, Wayne, Mississippi",
+            "type": "WILDFIRE",
+            "time": "2026-05-19T09:35:00.000Z",
+            "coords": [
+              -88.934,
+              31.462
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20242",
+            "title": "RX WINN BU  24 Prescribed Fire, Winn, Louisiana",
+            "type": "WILDFIRE",
+            "time": "2026-05-19T08:51:00.000Z",
+            "coords": [
+              -92.841,
+              32.057
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20153",
+            "title": "Kress Wildfire, Swisher, Texas",
+            "type": "WILDFIRE",
+            "time": "2026-05-18T19:06:00.000Z",
+            "coords": [
+              -101.781,
+              34.387
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20157",
+            "title": "SANDY Wildfire, Ventura, California",
+            "type": "WILDFIRE",
+            "time": "2026-05-18T13:21:00.000Z",
+            "coords": [
+              -118.744,
+              34.25
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20159",
+            "title": "RIVER Wildfire, Kern, California",
+            "type": "WILDFIRE",
+            "time": "2026-05-18T12:05:00.000Z",
+            "coords": [
+              -118.789,
+              35.446
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20239",
+            "title": "Chickasawhay CPT 400 RX Prescribed Fire, Wayne, Mississippi",
+            "type": "WILDFIRE",
+            "time": "2026-05-18T09:55:00.000Z",
+            "coords": [
+              -88.802,
+              31.519
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20172",
+            "title": "RX WINN BU 114 Prescribed Fire, Grant, Louisiana",
+            "type": "WILDFIRE",
+            "time": "2026-05-18T08:58:00.000Z",
+            "coords": [
+              -92.483,
+              31.75
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20152",
+            "title": "Stinky Wildfire, Potter, Texas",
+            "type": "WILDFIRE",
+            "time": "2026-05-17T18:24:00.000Z",
+            "coords": [
+              -102.017,
+              35.225
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20162",
+            "title": "Sharpe Wildfire, Baca, Colorado",
+            "type": "WILDFIRE",
+            "time": "2026-05-17T15:37:00.000Z",
+            "coords": [
+              -102.624,
+              36.997
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20167",
+            "title": "Proffitt Lake Wildfire, Meade, Kansas",
+            "type": "WILDFIRE",
+            "time": "2026-05-17T15:00:00.000Z",
+            "coords": [
+              -100.114,
+              37.216
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20151",
+            "title": "Axtell Anceney Rd and Cottontail Rd Wildfire, Gallatin, Montana",
+            "type": "WILDFIRE",
+            "time": "2026-05-17T14:05:00.000Z",
+            "coords": [
+              -111.283,
+              45.602
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20194",
+            "title": "APQ Area 13 RX 0516 Prescribed Fire, Highlands, Florida",
+            "type": "WILDFIRE",
+            "time": "2026-05-17T09:52:00.000Z",
+            "coords": [
+              -81.327,
+              27.622
+            ],
+            "closed": null
+          }
+        ],
+        "count": 36
+      },
+      "storm": {
+        "events": [
+          {
+            "id": "EONET_20279",
+            "title": "Typhoon Jangmi",
+            "type": "STORM",
+            "time": "2026-05-28T06:00:00.000Z",
+            "coords": [
+              135.9,
+              13.1
+            ],
+            "closed": null
+          }
+        ],
+        "count": 1
+      },
+      "flood": {
+        "events": [],
+        "count": 0
+      },
+      "volcanic": {
+        "events": [],
+        "count": 0
+      }
     },
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-05-31T04:56:34.602Z",
+        "generatedAt": "2026-05-31T14:13:46.451Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
       "layers": {
         "seismic": {
-          "count": 10,
+          "count": 9,
           "maxMagnitude": 6.9,
           "events": [
             {
@@ -1648,19 +2061,6 @@
               ],
               "tsunami": false,
               "significance": 600
-            },
-            {
-              "id": "nn00916980",
-              "magnitude": 5.17,
-              "place": "19 km SE of Silver Springs, Nevada",
-              "time": "2026-05-01T08:17:19.870Z",
-              "coordinates": [
-                -119.0467,
-                39.3066,
-                5
-              ],
-              "tsunami": false,
-              "significance": 961
             }
           ]
         },
@@ -1684,11 +2084,11 @@
               "geometry": {
                 "magnitudeValue": 70,
                 "magnitudeUnit": "kts",
-                "date": "2026-05-31T00:00:00Z",
+                "date": "2026-05-31T06:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  128.1,
-                  20.9
+                  127.8,
+                  21.8
                 ]
               }
             },
@@ -2280,55 +2680,55 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": -3,
-              "surface_pressure": 1013.1,
-              "wind_speed_10m": 7.42,
-              "relative_humidity_2m": 98
+              "temperature_2m": -0.9,
+              "surface_pressure": 1009.1,
+              "wind_speed_10m": 5.77,
+              "relative_humidity_2m": 91
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 11.8,
-              "surface_pressure": 1005.8,
-              "wind_speed_10m": 5.3,
+              "temperature_2m": 12.9,
+              "surface_pressure": 1001.6,
+              "wind_speed_10m": 8.37,
               "relative_humidity_2m": 94
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 19.3,
-              "surface_pressure": 915.7,
-              "wind_speed_10m": 1.38,
-              "relative_humidity_2m": 100
+              "temperature_2m": 24,
+              "surface_pressure": 918.2,
+              "wind_speed_10m": 1.05,
+              "relative_humidity_2m": 83
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 29.9,
-              "surface_pressure": 1010.6,
-              "wind_speed_10m": 0.67,
-              "relative_humidity_2m": 71
+              "temperature_2m": 31.4,
+              "surface_pressure": 1011.2,
+              "wind_speed_10m": 3.87,
+              "relative_humidity_2m": 67
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": -1.5,
-              "surface_pressure": 973.6,
-              "wind_speed_10m": 8.43,
-              "relative_humidity_2m": 79
+              "temperature_2m": -2.7,
+              "surface_pressure": 975.8,
+              "wind_speed_10m": 14.95,
+              "relative_humidity_2m": 73
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -51.1,
-              "surface_pressure": 709.8,
-              "wind_speed_10m": 9.23,
-              "relative_humidity_2m": 60
+              "temperature_2m": -50.5,
+              "surface_pressure": 712.4,
+              "wind_speed_10m": 10.04,
+              "relative_humidity_2m": 59
             }
           ]
         },
@@ -2346,7 +2746,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-05-31T05:08:10.931Z"
+        "generatedAt": "2026-05-31T14:21:25.403Z"
       },
       "health": {
         "score": 90,
