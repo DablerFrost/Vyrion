@@ -1,15 +1,28 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-05-30T14:08:23.721Z",
+    "generatedAt": "2026-05-31T04:56:34.602Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 9,
+      "count": 10,
       "maxMagnitude": 6.9,
       "events": [
+        {
+          "id": "us7000spjy",
+          "magnitude": null,
+          "place": "Sonic Boom - Eastern Massachusetts",
+          "time": "2026-05-30T18:05:00.000Z",
+          "coordinates": [
+            -70.9,
+            42.8,
+            0
+          ],
+          "tsunami": false,
+          "significance": 600
+        },
         {
           "id": "us7000sp6m",
           "magnitude": null,
@@ -147,13 +160,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 65,
+            "magnitudeValue": 70,
             "magnitudeUnit": "kts",
-            "date": "2026-05-30T06:00:00Z",
+            "date": "2026-05-31T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              129.6,
-              18.3
+              128.1,
+              20.9
             ]
           }
         },
@@ -469,11 +482,11 @@
           "geometry": {
             "magnitudeValue": 700,
             "magnitudeUnit": "NM^2",
-            "date": "2026-05-21T00:00:00Z",
+            "date": "2026-05-29T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -54.54,
-              -63.9
+              -53.69,
+              -63.61
             ]
           }
         },
@@ -745,55 +758,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -2,
-          "surface_pressure": 1014.8,
-          "wind_speed_10m": 9.86,
-          "relative_humidity_2m": 85
+          "temperature_2m": -3,
+          "surface_pressure": 1013.1,
+          "wind_speed_10m": 7.42,
+          "relative_humidity_2m": 98
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 11.9,
-          "surface_pressure": 1007,
-          "wind_speed_10m": 7.38,
-          "relative_humidity_2m": 90
+          "temperature_2m": 11.8,
+          "surface_pressure": 1005.8,
+          "wind_speed_10m": 5.3,
+          "relative_humidity_2m": 94
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 21.8,
-          "surface_pressure": 917.4,
-          "wind_speed_10m": 0.89,
-          "relative_humidity_2m": 97
+          "temperature_2m": 19.3,
+          "surface_pressure": 915.7,
+          "wind_speed_10m": 1.38,
+          "relative_humidity_2m": 100
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 31,
-          "surface_pressure": 1010.7,
-          "wind_speed_10m": 3.05,
+          "temperature_2m": 29.9,
+          "surface_pressure": 1010.6,
+          "wind_speed_10m": 0.67,
           "relative_humidity_2m": 71
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -0.9,
-          "surface_pressure": 976.9,
-          "wind_speed_10m": 13.96,
-          "relative_humidity_2m": 75
+          "temperature_2m": -1.5,
+          "surface_pressure": 973.6,
+          "wind_speed_10m": 8.43,
+          "relative_humidity_2m": 79
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -49.7,
-          "surface_pressure": 713.5,
-          "wind_speed_10m": 9.2,
-          "relative_humidity_2m": 64
+          "temperature_2m": -51.1,
+          "surface_pressure": 709.8,
+          "wind_speed_10m": 9.23,
+          "relative_humidity_2m": 60
         }
       ]
     },
