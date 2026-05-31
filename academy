@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VYRION EXPLAINARIUM — Planetary Intelligence Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&family=Archivo:ital,wght@0,400;0,500;0,600;1,400&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#020912;--void2:#061624;--void3:#0b2035;--void4:#112544;
+  --glow:#00D4FF;--amber:#FFB84D;--breach:#F03030;--warn:#F09000;
+  --t1:#e4f2ff;--t2:#6a9ab8;--t3:#2d6080;
+  --border:rgba(0,212,255,.12);--border2:rgba(0,212,255,.06);
+  --vib:#0ff5d0;--vib2:#7c3aed;--vib3:#c084fc;--vib4:#14b8a6;
+  --mush:#a855f7;--green:#10b981;--red:#F03030;
+  --atm:#00CCFF;--ocn:#0077BB;--ice:#88DDFF;--fst:#10b981;
+  --bio:#44BB88;--fw:#33AAFF;--sol:#CC9944;--corp:#FFB84D;
+  --xp-fill:#0ff5d0;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{background:var(--void);color:var(--t1);font-family:'Archivo',sans-serif;overflow-x:hidden;cursor:none;min-height:100vh}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9990;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(15,245,208,.003) 3px,rgba(15,245,208,.003) 4px)}
+
+/* ═══════════════════════════════════════════════════
+   CURSOR
+═══════════════════════════════════════════════════ */
+#cur{position:fixed;width:8px;height:8px;background:var(--vib);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);box-shadow:0 0 12px rgba(15,245,208,.9);transition:width .1s,height .1s}
+#cur-r{position:fixed;width:30px;height:30px;border:1.5px solid rgba(15,245,208,.45);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:all .2s cubic-bezier(.22,.61,.36,1)}
+#cur-mag{position:fixed;width:130px;height:130px;border-radius:50%;pointer-events:none;z-index:99997;transform:translate(-50%,-50%);border:2px solid rgba(15,245,208,.6);box-shadow:0 0 0 1px rgba(15,245,208,.2),0 0 28px rgba(15,245,208,.12),inset 0 0 40px rgba(2,9,18,.65);display:none;background:rgba(2,9,18,.35);backdrop-filter:brightness(1.4) contrast(1.1)}
+#cur-mag::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(15,245,208,.22);transform:translateX(-50%)}
+#cur-mag::after{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:rgba(15,245,208,.22);transform:translateY(-50%)}
+#cur-mag.on{display:block}
+body.mag-on #cur{width:3px;height:3px}
+body.mag-on #cur-r{width:138px;height:138px;border-color:rgba(15,245,208,.5)}
+@media(hover:none){#cur,#cur-r,#cur-mag{display:none!important}body{cursor:auto}}
+
+/* ═══════════════════════════════════════════════════
+   NAV
+═══════════════════════════════════════════════════ */
+#nav{position:fixed;top:0;left:0;right:0;z-index:800;height:54px;display:flex;align-items:center;gap:.8rem;padding:0 1.4rem;background:rgba(2,9,18,.96);border-bottom:1px solid var(--border);backdrop-filter:blur(24px)}
+.nav-logo{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:.9rem;color:var(--glow);letter-spacing:.15em;text-decoration:none;flex-shrink:0}
+.nav-chip{font-family:'Courier Prime',monospace;font-size:.55rem;letter-spacing:.16em;text-transform:uppercase;padding:.14rem .48rem;border-radius:2px;background:rgba(15,245,208,.1);color:var(--vib);border:1px solid rgba(15,245,208,.25);flex-shrink:0}
+#xp-bar-wrap{flex:1;max-width:200px;height:6px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden;position:relative}
+#xp-bar-fill{height:100%;background:linear-gradient(90deg,var(--vib4),var(--vib));border-radius:3px;width:0%;transition:width .8s cubic-bezier(.4,0,.2,1)}
+#xp-label{font-family:'Courier Prime',monospace;font-size:.55rem;color:var(--t3);letter-spacing:.1em;white-space:nowrap}
+#badge-count{font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--amber);display:flex;align-items:center;gap:.3rem}
+.nav-back{margin-left:auto;font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--t3);text-decoration:none;letter-spacing:.08em;transition:color .2s;white-space:nowrap}
+.nav-back:hover{color:var(--glow)}
+.nav-dot{width:5px;height:5px;background:var(--vib);border-radius:50%;animation:ndot 2s infinite;box-shadow:0 0 5px rgba(15,245,208,.6);flex-shrink:0}
+@keyframes ndot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(15,245,208,.4)}50%{opacity:.4;box-shadow:0 0 0 6px rgba(15,245,208,0)}}
+
+/* MAG TOGGLE */
+#mag-btn{position:fixed;bottom:24px;left:24px;z-index:8000;display:flex;align-items:center;gap:.55rem;padding:.42rem .9rem .42rem .6rem;background:rgba(2,9,18,.94);border:1px solid rgba(15,245,208,.22);border-radius:50px;backdrop-filter:blur(20px);font-family:'Courier Prime',monospace;font-size:.56rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--t2);cursor:none;transition:all .2s;box-shadow:0 4px 20px rgba(0,0,0,.4)}
+#mag-btn:hover{border-color:rgba(15,245,208,.45);color:var(--t1)}
+#mag-btn.on{border-color:rgba(15,245,208,.5);color:var(--vib);background:rgba(15,245,208,.07)}
+.mag-sw{width:26px;height:14px;border-radius:7px;background:rgba(255,255,255,.08);border:1px solid rgba(15,245,208,.2);position:relative;transition:all .2s;flex-shrink:0}
+.mag-sw::after{content:'';position:absolute;top:2px;left:2px;width:8px;height:8px;border-radius:50%;background:var(--t3);transition:all .2s}
+#mag-btn.on .mag-sw{background:rgba(15,245,208,.18);border-color:rgba(15,245,208,.4)}
+#mag-btn.on .mag-sw::after{left:14px;background:var(--vib);box-shadow:0 0 5px var(--vib)}
+
+/* ═══════════════════════════════════════════════════
+   SCREENS / PAGES
+═══════════════════════════════════════════════════ */
+.screen{display:none;min-height:100vh;padding-top:54px}
+.screen.active{display:block}
+
+/* ═══════════════════════════════════════════════════
+   HERO SCREEN
+═══════════════════════════════════════════════════ */
+#screen-hero{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;overflow:hidden;padding:54px 1.5rem 2rem}
+#hero-bg{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hero-inner{position:relative;z-index:2;max-width:760px}
+.vib-wrap{position:relative;width:220px;height:220px;margin:0 auto 2rem;cursor:none}
+.vib-img{position:absolute;inset:0;width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center 15%;z-index:2;box-shadow:0 0 0 2px rgba(15,245,208,.4),0 0 30px rgba(15,245,208,.28),0 0 60px rgba(124,58,237,.18);transition:box-shadow .3s,transform .3s}
+.vib-wrap:hover .vib-img{box-shadow:0 0 0 3px rgba(15,245,208,.7),0 0 55px rgba(15,245,208,.5),0 0 90px rgba(124,58,237,.3);transform:scale(1.04)}
+.vib-ring{position:absolute;border-radius:50%;border:1px solid rgba(15,245,208,.18);animation:vring 4s ease-in-out infinite}
+.vib-ring:nth-child(1){inset:-14px;animation-delay:0s}
+.vib-ring:nth-child(2){inset:-28px;border-color:rgba(124,58,237,.12);animation-delay:.9s;animation-duration:5.2s}
+.vib-ring:nth-child(3){inset:-44px;border-color:rgba(15,245,208,.06);animation-delay:1.8s;animation-duration:6.5s}
+@keyframes vring{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.04);opacity:1}}
+#orbit-canvas{position:absolute;inset:-65px;z-index:0;pointer-events:none;width:calc(100% + 130px);height:calc(100% + 130px)}
+.vib-bubble{position:absolute;top:-68px;right:-60px;max-width:195px;background:rgba(2,9,18,.92);border:1px solid rgba(15,245,208,.28);border-radius:12px 12px 12px 2px;padding:.6rem .82rem;font-size:.73rem;color:var(--t1);line-height:1.5;backdrop-filter:blur(20px);box-shadow:0 8px 30px rgba(0,0,0,.5);animation:bubbleIn 1s 1.8s both;z-index:10}
+@keyframes bubbleIn{from{opacity:0;transform:scale(.92) translateY(6px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.hero-eye{font-family:'Courier Prime',monospace;font-size:.66rem;letter-spacing:.26em;color:var(--vib);text-transform:uppercase;margin-bottom:.6rem;display:flex;align-items:center;justify-content:center;gap:.55rem}
+.hero-eye::before,.hero-eye::after{content:'';width:28px;height:1px;background:linear-gradient(90deg,transparent,rgba(15,245,208,.5))}
+.hero-eye::after{transform:scaleX(-1)}
+.hero-h1{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:clamp(2.6rem,6.5vw,4.6rem);line-height:.92;letter-spacing:-.02em;color:var(--t1);margin-bottom:.85rem}
+.hero-h1 .v{color:var(--vib);text-shadow:0 0 38px rgba(15,245,208,.38)}
+.hero-h1 .p{color:var(--glow)}
+.hero-sub{font-size:.95rem;color:var(--t2);line-height:1.7;max-width:54ch;margin:0 auto 2.4rem}
+.hero-tracks{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
+.track-btn{display:flex;flex-direction:column;align-items:center;gap:.35rem;padding:.85rem 1.1rem;border:1px solid var(--border);border-radius:8px;background:var(--void2);cursor:none;transition:all .22s;width:130px}
+.track-btn:hover{border-color:rgba(15,245,208,.35);background:var(--void3);transform:translateY(-2px)}
+.track-btn.selected{border-color:rgba(15,245,208,.6);background:rgba(15,245,208,.07);box-shadow:0 0 18px rgba(15,245,208,.12)}
+.track-icon{font-size:1.8rem}
+.track-name{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--t1)}
+.track-desc{font-family:'Courier Prime',monospace;font-size:.52rem;color:var(--t3);text-align:center;line-height:1.4}
+.hero-start{display:inline-flex;align-items:center;gap:.5rem;padding:.78rem 2rem;border-radius:4px;background:linear-gradient(135deg,rgba(15,245,208,.16),rgba(124,58,237,.2));border:1px solid rgba(15,245,208,.45);color:var(--vib);font-family:'Courier Prime',monospace;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;cursor:none;transition:all .22s;box-shadow:0 0 22px rgba(15,245,208,.14)}
+.hero-start:hover{box-shadow:0 0 40px rgba(15,245,208,.32);transform:scale(1.04)}
+
+/* ═══════════════════════════════════════════════════
+   ACADEMY SCREEN
+═══════════════════════════════════════════════════ */
+#screen-academy{padding-top:54px}
+.academy-layout{display:grid;grid-template-columns:260px 1fr;min-height:calc(100vh - 54px)}
+
+/* Sidebar */
+.sidebar{background:var(--void2);border-right:1px solid var(--border);padding:1.2rem .8rem;position:sticky;top:54px;height:calc(100vh - 54px);overflow-y:auto;display:flex;flex-direction:column;gap:.25rem}
+.sidebar::-webkit-scrollbar{width:3px}
+.sidebar::-webkit-scrollbar-thumb{background:rgba(0,212,255,.15);border-radius:2px}
+.sidebar-section{font-family:'Courier Prime',monospace;font-size:.52rem;letter-spacing:.16em;text-transform:uppercase;color:var(--t3);padding:.4rem .6rem;margin-top:.6rem}
+.lesson-btn{display:flex;align-items:center;gap:.6rem;padding:.55rem .7rem;border-radius:4px;cursor:none;transition:all .16s;border:1px solid transparent;width:100%}
+.lesson-btn:hover{background:var(--void3);border-color:var(--border2)}
+.lesson-btn.active{background:rgba(15,245,208,.07);border-color:rgba(15,245,208,.22)}
+.lesson-btn.done .lb-num{background:var(--green);color:var(--void);box-shadow:none}
+.lesson-btn.locked{opacity:.4;pointer-events:none}
+.lb-num{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);font-family:'Courier Prime',monospace;font-size:.56rem;font-weight:700;color:var(--t3);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.lesson-btn.active .lb-num{background:rgba(15,245,208,.2);border-color:rgba(15,245,208,.4);color:var(--vib)}
+.lb-info{flex:1;min-width:0}
+.lb-name{font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:.76rem;letter-spacing:.04em;color:var(--t1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lb-type{font-family:'Courier Prime',monospace;font-size:.5rem;color:var(--t3)}
+.lb-icon{font-size:.85rem;flex-shrink:0}
+.sidebar-xp{margin-top:auto;padding:.8rem;background:rgba(15,245,208,.05);border:1px solid rgba(15,245,208,.12);border-radius:4px}
+.sxp-label{font-family:'Courier Prime',monospace;font-size:.54rem;color:var(--t3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.4rem}
+.sxp-bar{height:4px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden;margin-bottom:.3rem}
+.sxp-fill{height:100%;background:linear-gradient(90deg,var(--vib4),var(--vib));border-radius:2px;transition:width .8s cubic-bezier(.4,0,.2,1)}
+.sxp-pts{font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--vib);font-weight:700}
+
+/* Lesson area */
+.lesson-area{padding:2rem 2.2rem;max-width:900px}
+.lesson-header{margin-bottom:1.8rem;padding-bottom:1.2rem;border-bottom:1px solid var(--border)}
+.lesson-eyebrow{font-family:'Courier Prime',monospace;font-size:.6rem;color:var(--vib);letter-spacing:.22em;text-transform:uppercase;margin-bottom:.4rem;display:flex;align-items:center;gap:.45rem}
+.lesson-eyebrow::before{content:'';width:14px;height:1px;background:var(--vib);opacity:.5}
+.lesson-h1{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:clamp(1.8rem,3.5vw,2.6rem);color:var(--t1);line-height:1;letter-spacing:-.02em;margin-bottom:.45rem}
+.lesson-tagline{font-size:.84rem;color:var(--t2);line-height:1.65;max-width:58ch}
+.lesson-meta{display:flex;gap:1rem;margin-top:.8rem;flex-wrap:wrap}
+.l-badge{font-family:'Courier Prime',monospace;font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;padding:.1rem .38rem;border-radius:2px;background:rgba(15,245,208,.07);color:var(--vib);border:1px solid rgba(15,245,208,.18)}
+
+/* Content blocks */
+.content-block{margin-bottom:2rem;animation:blockIn .4s ease}
+@keyframes blockIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+/* Info card */
+.info-card{background:var(--void2);border:1px solid var(--border);border-radius:6px;padding:1.4rem;position:relative;overflow:hidden}
+.info-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--ic-accent,var(--vib))}
+.ic-title{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:1rem;color:var(--t1);margin-bottom:.5rem;display:flex;align-items:center;gap:.5rem}
+.ic-body{font-size:.82rem;color:var(--t2);line-height:1.72}
+.ic-body strong{color:var(--t1)}
+.ic-body .highlight{background:rgba(15,245,208,.1);color:var(--vib);padding:.02rem .22rem;border-radius:2px;font-family:'Courier Prime',monospace;font-size:.82em}
+.ic-mascot{position:absolute;right:1.2rem;top:1rem;width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center 15%;border:2px solid rgba(15,245,208,.25);box-shadow:0 0 12px rgba(15,245,208,.2)}
+
+/* Interactive score slider */
+.score-explorer{background:var(--void2);border:1px solid var(--border);border-radius:6px;padding:1.4rem}
+.se-title{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:.95rem;color:var(--t1);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+.se-body{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:center}
+.se-ring-wrap{position:relative;width:160px;height:160px;margin:0 auto}
+.se-ring-wrap svg{position:absolute;inset:0;transform:rotate(-90deg)}
+.se-track{fill:none;stroke:rgba(255,255,255,.06);stroke-width:9}
+.se-fill{fill:none;stroke-width:9;stroke-linecap:round;transition:stroke-dashoffset .6s cubic-bezier(.4,0,.2,1)}
+.se-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.se-num{font-family:'Courier Prime',monospace;font-weight:700;font-size:2.4rem;line-height:1;letter-spacing:-.03em;transition:color .3s}
+.se-den{font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--t3);margin-top:.06rem}
+.se-band{font-family:'Courier Prime',monospace;font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;margin-top:.2rem;transition:color .3s}
+.se-controls label{font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--t3);letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.5rem}
+input[type=range]{width:100%;accent-color:var(--vib);cursor:none;height:4px;border-radius:2px}
+.se-desc{font-size:.76rem;color:var(--t2);line-height:1.6;margin-top:.8rem;min-height:60px;transition:all .3s}
+.se-desc strong{color:var(--t1)}
+
+/* Earth system visualizer */
+.systems-viz{background:var(--void2);border:1px solid var(--border);border-radius:6px;overflow:hidden}
+.sviz-header{padding:1rem 1.4rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.sviz-title{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:.95rem;color:var(--t1)}
+.sviz-hint{font-family:'Courier Prime',monospace;font-size:.54rem;color:var(--t3)}
+.sviz-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
+.sys-tile{background:var(--void2);padding:1.1rem .9rem;cursor:none;transition:background .18s;position:relative;overflow:hidden}
+.sys-tile:hover{background:var(--void3)}
+.sys-tile.active{background:var(--void4)}
+.sys-tile::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--st-color,var(--glow))}
+.st-icon{font-size:1.4rem;margin-bottom:.35rem;display:block}
+.st-name{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--t1)}
+.st-score{font-family:'Courier Prime',monospace;font-weight:700;font-size:.95rem;margin-top:.18rem;line-height:1;transition:color .2s}
+.st-bar{height:2px;background:rgba(255,255,255,.06);border-radius:1px;overflow:hidden;margin-top:.4rem}
+.st-bar-fill{height:100%;border-radius:1px;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+.sviz-detail{padding:1.4rem;border-top:1px solid var(--border);min-height:120px;background:var(--void3);display:none}
+.sviz-detail.show{display:block;animation:blockIn .3s ease}
+.svd-name{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:1.1rem;color:var(--t1);margin-bottom:.35rem;display:flex;align-items:center;gap:.6rem}
+.svd-body{font-size:.78rem;color:var(--t2);line-height:1.7;max-width:72ch}
+.svd-body strong{color:var(--t1)}
+.svd-indicators{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.7rem}
+.svd-ind{font-family:'Courier Prime',monospace;font-size:.52rem;padding:.08rem .32rem;border-radius:2px;background:rgba(0,212,255,.07);color:var(--t2);border:1px solid rgba(0,212,255,.15)}
+
+/* Quiz */
+.quiz-block{background:var(--void2);border:1px solid var(--border);border-radius:6px;padding:1.4rem;position:relative;overflow:hidden}
+.quiz-block::before{content:'✦ QUIZ';position:absolute;top:.7rem;right:1rem;font-family:'Courier Prime',monospace;font-size:.5rem;letter-spacing:.14em;color:rgba(255,184,77,.4)}
+.quiz-q{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:1rem;color:var(--t1);margin-bottom:1rem;line-height:1.3}
+.quiz-opts{display:flex;flex-direction:column;gap:.5rem}
+.quiz-opt{display:flex;align-items:center;gap:.7rem;padding:.65rem .85rem;border:1px solid var(--border);border-radius:4px;cursor:none;transition:all .18s;font-size:.78rem;color:var(--t2)}
+.quiz-opt:hover{border-color:rgba(15,245,208,.35);color:var(--t1);background:rgba(15,245,208,.04)}
+.quiz-opt.correct{border-color:var(--green);background:rgba(16,185,129,.1);color:var(--green)}
+.quiz-opt.wrong{border-color:var(--breach);background:rgba(240,48,48,.08);color:var(--breach)}
+.quiz-opt.disabled{pointer-events:none}
+.quiz-opt-icon{width:18px;height:18px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.6rem;flex-shrink:0;transition:all .2s}
+.quiz-opt.correct .quiz-opt-icon{background:var(--green);border-color:var(--green);color:white}
+.quiz-opt.wrong .quiz-opt-icon{background:var(--breach);border-color:var(--breach);color:white}
+.quiz-feedback{margin-top:1rem;padding:.8rem;border-radius:4px;font-size:.76rem;line-height:1.6;display:none;animation:blockIn .3s ease}
+.quiz-feedback.correct{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);color:var(--t1)}
+.quiz-feedback.wrong{background:rgba(240,48,48,.07);border:1px solid rgba(240,48,48,.2);color:var(--t1)}
+.quiz-feedback.show{display:block}
+.qf-title{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:.88rem;margin-bottom:.3rem}
+.xp-gained{display:inline-flex;align-items:center;gap:.3rem;font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--amber);margin-top:.5rem}
+
+/* Drag-to-match */
+.dtm-wrap{background:var(--void2);border:1px solid var(--border);border-radius:6px;padding:1.4rem}
+.dtm-title{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:.95rem;color:var(--t1);margin-bottom:1.2rem;display:flex;align-items:center;gap:.5rem}
+.dtm-layout{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.dtm-col-label{font-family:'Courier Prime',monospace;font-size:.54rem;letter-spacing:.14em;color:var(--t3);text-transform:uppercase;margin-bottom:.5rem}
+.dtm-items{display:flex;flex-direction:column;gap:.4rem}
+.dtm-item{padding:.55rem .75rem;border-radius:4px;font-size:.76rem;color:var(--t1);border:1px solid var(--border);cursor:grab;background:var(--void3);transition:all .18s;display:flex;align-items:center;gap:.5rem;user-select:none}
+.dtm-item:hover{border-color:rgba(15,245,208,.35);background:var(--void4)}
+.dtm-item.dragging{opacity:.5;cursor:grabbing}
+.dtm-item.matched{border-color:var(--green);background:rgba(16,185,129,.1);cursor:default;pointer-events:none}
+.dtm-item.wrong-match{border-color:var(--breach);animation:shake .4s ease}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.dtm-drop{padding:.55rem .75rem;border-radius:4px;border:1px dashed rgba(15,245,208,.2);background:rgba(15,245,208,.03);font-size:.76rem;color:var(--t3);min-height:42px;transition:all .18s;display:flex;align-items:center;gap:.5rem}
+.dtm-drop.drag-over{border-color:rgba(15,245,208,.5);background:rgba(15,245,208,.07)}
+.dtm-drop.matched{border-color:var(--green);background:rgba(16,185,129,.08);color:var(--t1);border-style:solid}
+.dtm-status{margin-top:1rem;font-family:'Courier Prime',monospace;font-size:.62rem;color:var(--t3);text-align:center}
+
+/* Fill-in-blank */
+.fib-wrap{background:var(--void2);border:1px solid var(--border);border-radius:6px;padding:1.4rem}
+.fib-title{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:.95rem;color:var(--t1);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+.fib-sentence{font-size:.88rem;color:var(--t1);line-height:2.1;margin-bottom:1rem}
+.fib-input{background:transparent;border:none;border-bottom:1.5px solid rgba(15,245,208,.4);color:var(--vib);font-family:'Courier Prime',monospace;font-size:.88rem;font-weight:700;min-width:90px;outline:none;padding:.1rem .2rem;cursor:none;transition:border-color .2s;letter-spacing:.04em}
+.fib-input:focus{border-bottom-color:var(--vib);box-shadow:0 2px 0 rgba(15,245,208,.15)}
+.fib-input.correct{border-bottom-color:var(--green);color:var(--green)}
+.fib-input.wrong{border-bottom-color:var(--breach);color:var(--breach)}
+.fib-check{display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .9rem;border-radius:4px;background:rgba(15,245,208,.1);border:1px solid rgba(15,245,208,.3);color:var(--vib);font-family:'Courier Prime',monospace;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:none;transition:all .18s}
+.fib-check:hover{background:rgba(15,245,208,.2);border-color:rgba(15,245,208,.5)}
+
+/* CONSCIENCE sim */
+.conscience-sim{background:var(--void2);border:1px solid var(--border);border-radius:6px;overflow:hidden}
+.csim-header{padding:1rem 1.4rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.csim-title{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:.95rem;color:var(--t1)}
+.csim-badge{font-family:'Courier Prime',monospace;font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;padding:.1rem .38rem;border-radius:2px}
+.csim-body{padding:1.4rem}
+.csim-company{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:1.2rem;color:var(--t1);margin-bottom:.3rem}
+.csim-ticker{font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--t3);margin-bottom:1rem}
+.csim-factors{display:flex;flex-direction:column;gap:.7rem}
+.csim-factor{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:.7rem}
+.csim-f-label{font-size:.76rem;color:var(--t2)}
+.csim-f-max{font-family:'Courier Prime',monospace;font-size:.54rem;color:var(--t3)}
+.csim-slider-wrap{display:flex;align-items:center;gap:.5rem;width:100%}
+.csim-slider-wrap input{flex:1;accent-color:var(--vib)}
+.csim-f-val{font-family:'Courier Prime',monospace;font-weight:700;font-size:.78rem;color:var(--vib);min-width:28px;text-align:right}
+.csim-result{margin-top:1.2rem;padding:1rem;background:var(--void3);border-radius:4px;display:flex;align-items:center;gap:1.2rem}
+.csim-score-big{font-family:'Courier Prime',monospace;font-weight:700;font-size:2.2rem;line-height:1;transition:color .3s,all .4s}
+.csim-band-label{font-family:'Courier Prime',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;transition:color .3s}
+.csim-feedback{font-size:.74rem;color:var(--t2);line-height:1.6;flex:1}
+.csim-feedback strong{color:var(--t1)}
+
+/* Lesson nav */
+.lesson-nav{display:flex;justify-content:space-between;align-items:center;margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--border)}
+.l-nav-btn{display:flex;align-items:center;gap:.5rem;padding:.5rem 1rem;border:1px solid var(--border);border-radius:4px;font-family:'Courier Prime',monospace;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--t2);cursor:none;transition:all .18s;background:transparent}
+.l-nav-btn:hover{border-color:rgba(15,245,208,.35);color:var(--t1)}
+.l-nav-btn.primary{background:rgba(15,245,208,.1);border-color:rgba(15,245,208,.35);color:var(--vib)}
+.l-nav-btn.primary:hover{background:rgba(15,245,208,.2);border-color:rgba(15,245,208,.55)}
+.l-nav-btn:disabled{opacity:.35;pointer-events:none}
+.lesson-progress{font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--t3);text-align:center}
+
+/* ═══════════════════════════════════════════════════
+   ACHIEVEMENT POPUP
+═══════════════════════════════════════════════════ */
+#achievement-popup{position:fixed;top:70px;right:24px;z-index:9000;max-width:280px;background:rgba(2,9,18,.96);border:1px solid rgba(255,184,77,.35);border-radius:8px;padding:.9rem 1.1rem;box-shadow:0 8px 40px rgba(0,0,0,.6),0 0 20px rgba(255,184,77,.08);transform:translateX(320px);transition:transform .5s cubic-bezier(.22,.61,.36,1);display:flex;align-items:center;gap:.7rem}
+#achievement-popup.show{transform:translateX(0)}
+.ap-icon{font-size:1.8rem;flex-shrink:0}
+.ap-title{font-family:'Courier Prime',monospace;font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:.2rem}
+.ap-name{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:.9rem;color:var(--t1);margin-bottom:.12rem}
+.ap-desc{font-size:.68rem;color:var(--t2);line-height:1.4}
+
+/* ═══════════════════════════════════════════════════
+   BADGES SCREEN
+═══════════════════════════════════════════════════ */
+#screen-badges{padding:54px 2rem 3rem}
+.badges-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-top:2rem;max-width:900px}
+.badge-card{background:var(--void2);border:1px solid var(--border);border-radius:8px;padding:1.4rem;text-align:center;transition:all .22s;cursor:none}
+.badge-card:hover{border-color:rgba(15,245,208,.3);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.3)}
+.badge-card.earned{border-color:rgba(255,184,77,.3);background:rgba(255,184,77,.04)}
+.badge-card.locked{opacity:.4;filter:grayscale(.8)}
+.badge-icon{font-size:2.8rem;margin-bottom:.7rem;display:block;filter:drop-shadow(0 0 8px rgba(255,184,77,.3))}
+.badge-card.locked .badge-icon{filter:grayscale(1)}
+.badge-name{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:.88rem;color:var(--t1);margin-bottom:.25rem}
+.badge-desc{font-size:.68rem;color:var(--t2);line-height:1.5}
+.badge-earned-label{font-family:'Courier Prime',monospace;font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-top:.5rem}
+
+/* ═══════════════════════════════════════════════════
+   SHARED UTILS
+═══════════════════════════════════════════════════ */
+.sec-eye{font-family:'Courier Prime',monospace;font-size:.62rem;color:var(--vib);letter-spacing:.22em;text-transform:uppercase;margin-bottom:.4rem;display:flex;align-items:center;gap:.45rem}
+.sec-eye::before{content:'';width:14px;height:1px;background:var(--vib);opacity:.5}
+.sec-h2{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:clamp(1.8rem,3.5vw,2.4rem);color:var(--t1);line-height:1;letter-spacing:-.02em;margin-bottom:.5rem}
+.tip-box{background:rgba(15,245,208,.05);border:1px solid rgba(15,245,208,.14);border-radius:4px;padding:.85rem 1rem;margin-top:1rem;font-size:.76rem;color:var(--t2);line-height:1.65;display:flex;gap:.7rem;align-items:flex-start}
+.tip-icon{flex-shrink:0;font-size:1rem;margin-top:.05rem}
+.tip-box strong{color:var(--t1)}
+@media(max-width:800px){
+  .academy-layout{grid-template-columns:1fr}
+  .sidebar{display:none}
+  .se-body,.dtm-layout{grid-template-columns:1fr}
+  .sviz-grid{grid-template-columns:repeat(2,1fr)}
+  .csim-factor{grid-template-columns:1fr auto}
+}
+@media(max-width:500px){
+  .sviz-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-tracks{gap:.5rem}
+  .track-btn{width:110px;padding:.7rem .8rem}
+}
+</style>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div id="cur"></div>
+<div id="cur-r"></div>
+<div id="cur-mag"></div>
+
+<!-- MAG TOGGLE -->
+<button id="mag-btn" onclick="toggleMag()">
+  <span class="mag-sw"></span>
+  <span>🔬</span>
+  <span id="mag-label">MAGNIFIER</span>
+</button>
+
+<!-- ACHIEVEMENT POPUP -->
+<div id="achievement-popup">
+  <span class="ap-icon" id="ap-icon">🏆</span>
+  <div>
+    <div class="ap-title">Achievement Unlocked!</div>
+    <div class="ap-name" id="ap-name">—</div>
+    <div class="ap-desc" id="ap-desc">—</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo" onclick="showScreen('hero')">VYRION</a>
+  <span class="nav-chip">EXPLAINARIUM</span>
+  <div id="xp-bar-wrap" title="Learning XP"><div id="xp-bar-fill"></div></div>
+  <span id="xp-label">0 XP</span>
+  <span id="badge-count">🏅 <span id="badge-num">0</span></span>
+  <a href="#" class="nav-back" onclick="showScreen('badges')">Badges →</a>
+  <div class="nav-dot"></div>
+</nav>
+
+<!-- ══════ SCREEN: HERO ══════ -->
+<section class="screen active" id="screen-hero">
+  <canvas id="hero-bg"></canvas>
+  <div class="hero-inner">
+    <div class="vib-wrap" id="vib-wrap">
+      <canvas id="orbit-canvas"></canvas>
+      <div class="vib-ring"></div><div class="vib-ring"></div><div class="vib-ring"></div>
+      <img class="vib-img" src="/mnt/user-data/uploads/Screenshot_2026-04-25_124400.png" alt="Vi'brant">
+      <div class="vib-bubble">Hey! 🍄 Ready to learn the whole VYRION universe? Pick your path!</div>
+    </div>
+    <div class="hero-eye">Planetary Intelligence Academy</div>
+    <h1 class="hero-h1"><span class="v">EXPLAINARIUM</span><br>The <span class="p">Planet</span> Goes to School.</h1>
+    <p class="hero-sub">Interactive lessons, quizzes, simulations, and badges — guided by Vi'brant. Learn how Earth is scored, why companies fail, and what every number means.</p>
+    <p style="font-family:'Courier Prime',monospace;font-size:.6rem;color:var(--t3);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.9rem">Choose your learning path</p>
+    <div class="hero-tracks">
+      <div class="track-btn" onclick="selectTrack('explorer')" id="track-explorer">
+        <span class="track-icon">🌍</span>
+        <span class="track-name">Explorer</span>
+        <span class="track-desc">Start from zero. Every concept explained simply.</span>
+      </div>
+      <div class="track-btn" onclick="selectTrack('analyst')" id="track-analyst">
+        <span class="track-icon">📊</span>
+        <span class="track-name">Analyst</span>
+        <span class="track-desc">Dive into data sources, formulas & methodology.</span>
+      </div>
+      <div class="track-btn" onclick="selectTrack('advocate')" id="track-advocate">
+        <span class="track-icon">🔬</span>
+        <span class="track-name">Advocate</span>
+        <span class="track-desc">Corporate accountability & the CONSCIENCE system.</span>
+      </div>
+    </div>
+    <button class="hero-start" id="start-btn" onclick="startAcademy()" style="opacity:.5;pointer-events:none">Select a path to begin →</button>
+  </div>
+</section>
+
+<!-- ══════ SCREEN: ACADEMY ══════ -->
+<section class="screen" id="screen-academy">
+  <div class="academy-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar"></aside>
+    <!-- Lesson -->
+    <main class="lesson-area" id="lesson-area"></main>
+  </div>
+</section>
+
+<!-- ══════ SCREEN: BADGES ══════ -->
+<section class="screen" id="screen-badges">
+  <div style="max-width:900px;margin:0 auto">
+    <div style="margin-bottom:1.5rem;padding-top:1rem">
+      <div class="sec-eye">Your Collection</div>
+      <h2 class="sec-h2">Badges & Achievements</h2>
+      <p style="font-size:.82rem;color:var(--t2)">Complete lessons and quizzes to earn badges. Each badge represents mastery of a VYRION concept.</p>
+    </div>
+    <div class="badges-grid" id="badges-grid"></div>
+    <div style="margin-top:1.5rem"><button class="l-nav-btn primary" onclick="showScreen('academy')">← Back to Academy</button></div>
+  </div>
+</section>
+
+<script>
+'use strict';
+
+/* ─────────────────────────────────────────────────────────
+   CURSOR
+───────────────────────────────────────────────────────── */
+const $cur = document.getElementById('cur');
+const $ring = document.getElementById('cur-r');
+const $mag = document.getElementById('cur-mag');
+let cx=0,cy=0,rx=0,ry=0,magActive=false;
+
+document.addEventListener('mousemove',e=>{
+  cx=e.clientX;cy=e.clientY;
+  $cur.style.left=cx+'px';$cur.style.top=cy+'px';
+  if(magActive){$mag.style.left=cx+'px';$mag.style.top=cy+'px';}
+});
+(function animR(){rx+=(cx-rx)*.14;ry+=(cy-ry)*.14;$ring.style.left=rx+'px';$ring.style.top=ry+'px';requestAnimationFrame(animR)})();
+
+function toggleMag(){
+  magActive=!magActive;
+  const btn=document.getElementById('mag-btn');
+  const lbl=document.getElementById('mag-label');
+  btn.classList.toggle('on',magActive);
+  document.body.classList.toggle('mag-on',magActive);
+  $mag.classList.toggle('on',magActive);
+  lbl.textContent=magActive?'MAG ON':'MAGNIFIER';
+  if(magActive){$mag.style.left=cx+'px';$mag.style.top=cy+'px';}
+}
+
+/* ─────────────────────────────────────────────────────────
+   HERO BACKGROUND CANVAS
+───────────────────────────────────────────────────────── */
+(function(){
+  const c=document.getElementById('hero-bg');
+  if(!c)return;
+  const ctx=c.getContext('2d');
+  let W,H,stars=[],auroras=[];
+  function resize(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight;stars=Array.from({length:180},()=>({x:Math.random()*W,y:Math.random()*H,r:.2+Math.random()*.9,a:Math.random(),s:.0004+Math.random()*.001}));auroras=[{y:H*.4,a:90,f:.003,p:0,s:.0007,c:'rgba(15,245,208,'},{y:H*.56,a:65,f:.004,p:2,s:.0005,c:'rgba(124,58,237,'},{y:H*.33,a:50,f:.0025,p:4.5,s:.0004,c:'rgba(20,184,166,'}];}
+  function draw(){ctx.clearRect(0,0,W,H);auroras.forEach(a=>{a.p+=a.s;const g=ctx.createLinearGradient(0,a.y-a.a,0,a.y+a.a);g.addColorStop(0,a.c+'0)');g.addColorStop(.5,a.c+'.04)');g.addColorStop(1,a.c+'0)');ctx.beginPath();ctx.moveTo(0,a.y);for(let x=0;x<=W;x+=4)ctx.lineTo(x,a.y+Math.sin(x*a.f+a.p)*a.a);ctx.lineTo(W,H);ctx.lineTo(0,H);ctx.closePath();ctx.fillStyle=g;ctx.fill();});stars.forEach(s=>{s.a+=s.s;ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle=`rgba(255,255,255,${.15+.35*Math.abs(Math.sin(s.a))})`;ctx.fill();});requestAnimationFrame(draw);}
+  resize();draw();window.addEventListener('resize',resize);
+})();
+
+/* ─────────────────────────────────────────────────────────
+   VI'BRANT ORBIT
+───────────────────────────────────────────────────────── */
+(function(){
+  const c=document.getElementById('orbit-canvas');if(!c)return;
+  const ctx=c.getContext('2d');
+  c.width=380;c.height=380;const cx=190,cy=190;
+  const COLS=[[15,245,208],[124,58,237],[192,132,252],[20,184,166],[255,184,77]];
+  const pts=Array.from({length:75},()=>({angle:Math.random()*Math.PI*2,dist:55+Math.random()*80,r:.5+Math.random()*2,spd:(.004+Math.random()*.012)*(Math.random()>.5?1:-1),phase:Math.random()*Math.PI*2,ps:.018+Math.random()*.04,col:COLS[Math.floor(Math.random()*COLS.length)],trail:[],op:.3+Math.random()*.7}));
+  let excited=false;
+  const wrap=document.getElementById('vib-wrap');
+  if(wrap){wrap.addEventListener('mouseenter',()=>excited=true);wrap.addEventListener('mouseleave',()=>excited=false);}
+  function draw(){ctx.clearRect(0,0,380,380);pts.forEach(p=>{p.angle+=p.spd*(excited?1.8:1);p.phase+=p.ps;const w=Math.sin(p.phase)*7;const px=cx+Math.cos(p.angle)*(p.dist+w);const py=cy+Math.sin(p.angle)*(p.dist*.62+w*.5);p.trail.push({x:px,y:py});if(p.trail.length>6)p.trail.shift();const[r,g,b]=p.col;const al=p.op*(.5+.5*Math.sin(p.phase));if(p.trail.length>1){for(let i=1;i<p.trail.length;i++){const a=(i/p.trail.length)*al*.3;ctx.beginPath();ctx.moveTo(p.trail[i-1].x,p.trail[i-1].y);ctx.lineTo(p.trail[i].x,p.trail[i].y);ctx.strokeStyle=`rgba(${r},${g},${b},${a})`;ctx.lineWidth=p.r*.6;ctx.stroke();}}ctx.beginPath();ctx.arc(px,py,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(${r},${g},${b},${al})`;ctx.fill();});requestAnimationFrame(draw);}
+  draw();
+})();
+
+/* ─────────────────────────────────────────────────────────
+   STATE
+───────────────────────────────────────────────────────── */
+let state={xp:0,track:'',currentLesson:0,completedLessons:new Set(),quizAnswered:new Set(),badges:new Set(),matchComplete:false};
+
+const ALL_BADGES=[
+  {id:'first_step',icon:'👣',name:'First Step',desc:'Started your first lesson'},
+  {id:'quiz_ace',icon:'🎯',name:'Quiz Ace',desc:'Answered a quiz correctly'},
+  {id:'score_master',icon:'🌍',name:'Score Master',desc:'Explored the VYRION Index score'},
+  {id:'systems_scholar',icon:'🔭',name:'Systems Scholar',desc:'Learned all 8 Earth systems'},
+  {id:'conscience_judge',icon:'⚖️',name:'Conscience Judge',desc:'Used the CONSCIENCE simulator'},
+  {id:'match_maker',icon:'🧩',name:'Match Maker',desc:'Completed a drag-to-match exercise'},
+  {id:'half_way',icon:'🍄',name:'Mycelium Mind',desc:'Earned 200 XP'},
+  {id:'champion',icon:'🏆',name:'Planet Champion',desc:'Earned 500 XP'},
+];
+
+function addXP(pts){
+  state.xp+=pts;
+  updateXPBar();
+  if(state.xp>=200&&!state.badges.has('half_way')){unlockBadge('half_way');}
+  if(state.xp>=500&&!state.badges.has('champion')){unlockBadge('champion');}
+}
+
+function updateXPBar(){
+  const pct=Math.min(100,(state.xp/600)*100);
+  document.getElementById('xp-bar-fill').style.width=pct+'%';
+  document.getElementById('xp-bar-fill').style.width=pct+'%';
+  document.querySelectorAll('#xp-bar-fill,.sxp-fill').forEach(el=>el.style.width=pct+'%');
+  document.getElementById('xp-label').textContent=state.xp+' XP';
+  const sxp=document.getElementById('sxp-pts');
+  if(sxp)sxp.textContent=state.xp+' / 600 XP';
+}
+
+let achTimer=null;
+function unlockBadge(id){
+  if(state.badges.has(id))return;
+  state.badges.add(id);
+  document.getElementById('badge-num').textContent=state.badges.size;
+  const b=ALL_BADGES.find(x=>x.id===id);
+  if(b){
+    document.getElementById('ap-icon').textContent=b.icon;
+    document.getElementById('ap-name').textContent=b.name;
+    document.getElementById('ap-desc').textContent=b.desc;
+    const popup=document.getElementById('achievement-popup');
+    popup.classList.add('show');
+    clearTimeout(achTimer);
+    achTimer=setTimeout(()=>popup.classList.remove('show'),3500);
+  }
+  renderBadges();
+}
+
+function renderBadges(){
+  const grid=document.getElementById('badges-grid');
+  if(!grid)return;
+  grid.innerHTML=ALL_BADGES.map(b=>{
+    const earned=state.badges.has(b.id);
+    return`<div class="badge-card ${earned?'earned':'locked'}">
+      <span class="badge-icon">${b.icon}</span>
+      <div class="badge-name">${b.name}</div>
+      <div class="badge-desc">${b.desc}</div>
+      ${earned?'<div class="badge-earned-label">✓ Earned</div>':''}
+    </div>`;
+  }).join('');
+}
+
+/* ─────────────────────────────────────────────────────────
+   SCREENS
+───────────────────────────────────────────────────────── */
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById('screen-'+id).classList.add('active');
+  window.scrollTo(0,0);
+  if(id==='badges')renderBadges();
+}
+
+/* ─────────────────────────────────────────────────────────
+   TRACK SELECTION
+───────────────────────────────────────────────────────── */
+function selectTrack(t){
+  state.track=t;
+  document.querySelectorAll('.track-btn').forEach(b=>b.classList.remove('selected'));
+  document.getElementById('track-'+t).classList.add('selected');
+  const btn=document.getElementById('start-btn');
+  btn.style.opacity='1';btn.style.pointerEvents='auto';
+}
+
+function startAcademy(){
+  if(!state.track)return;
+  showScreen('academy');
+  buildSidebar();
+  loadLesson(0);
+  if(!state.badges.has('first_step')){unlockBadge('first_step');addXP(10);}
+}
+
+/* ─────────────────────────────────────────────────────────
+   LESSONS DATA
+───────────────────────────────────────────────────────── */
+const LESSONS=[
+  {id:'intro',name:"What Is VYRION?",type:'lesson',icon:'🌍',group:'Foundation'},
+  {id:'score',name:"The Score Explained",type:'interactive',icon:'🔢',group:'Foundation'},
+  {id:'systems',name:"8 Earth Systems",type:'interactive',icon:'🌐',group:'Foundation'},
+  {id:'quiz1',name:"Foundation Quiz",type:'quiz',icon:'❓',group:'Foundation'},
+  {id:'atmosphere',name:"Atmosphere Deep Dive",type:'lesson',icon:'🌫️',group:'Systems'},
+  {id:'ocean',name:"Ocean Intelligence",type:'lesson',icon:'🌊',group:'Systems'},
+  {id:'conscience',name:"CONSCIENCE Explained",type:'interactive',icon:'⚖️',group:'CONSCIENCE'},
+  {id:'sim',name:"Score Simulator",type:'simulation',icon:'🎛️',group:'CONSCIENCE'},
+  {id:'quiz2',name:"CONSCIENCE Quiz",type:'quiz',icon:'❓',group:'CONSCIENCE'},
+  {id:'proof',name:"Open Proof Protocol",type:'lesson',icon:'🔓',group:'Proof'},
+  {id:'match',name:"Match the Sources",type:'activity',icon:'🧩',group:'Proof'},
+  {id:'fib',name:"Fill in the Numbers",type:'activity',icon:'✏️',group:'Proof'},
+];
+
+/* ─────────────────────────────────────────────────────────
+   SIDEBAR
+───────────────────────────────────────────────────────── */
+function buildSidebar(){
+  const el=document.getElementById('sidebar');
+  const groups=[...new Set(LESSONS.map(l=>l.group))];
+  let html='';
+  groups.forEach(g=>{
+    html+=`<div class="sidebar-section">${g}</div>`;
+    LESSONS.filter(l=>l.group===g).forEach((l,i)=>{
+      const idx=LESSONS.indexOf(l);
+      const done=state.completedLessons.has(l.id);
+      const active=idx===state.currentLesson;
+      const locked=idx>0&&!state.completedLessons.has(LESSONS[idx-1].id)&&!done&&!active;
+      html+=`<button class="lesson-btn ${done?'done':''} ${active?'active':''} ${locked?'locked':''}" onclick="loadLesson(${idx})">
+        <span class="lb-num">${done?'✓':(idx+1)}</span>
+        <span class="lb-info"><span class="lb-name">${l.name}</span><span class="lb-type">${l.type}</span></span>
+        <span class="lb-icon">${l.icon}</span>
+      </button>`;
+    });
+  });
+  html+=`<div class="sidebar-xp">
+    <div class="sxp-label">Your Progress</div>
+    <div class="sxp-bar"><div class="sxp-fill" style="width:${Math.min(100,(state.xp/600)*100)}%"></div></div>
+    <div class="sxp-pts" id="sxp-pts">${state.xp} / 600 XP</div>
+  </div>`;
+  el.innerHTML=html;
+}
+
+/* ─────────────────────────────────────────────────────────
+   LESSON RENDERER
+───────────────────────────────────────────────────────── */
+function loadLesson(idx){
+  state.currentLesson=idx;
+  const lesson=LESSONS[idx];
+  buildSidebar();
+  const area=document.getElementById('lesson-area');
+  area.innerHTML='';
+  const fns={intro:lessonIntro,score:lessonScore,systems:lessonSystems,quiz1:lessonQuiz1,atmosphere:lessonAtmosphere,ocean:lessonOcean,conscience:lessonConscience,sim:lessonSim,quiz2:lessonQuiz2,proof:lessonProof,match:lessonMatch,fib:lessonFib};
+  if(fns[lesson.id])fns[lesson.id](area,lesson,idx);
+  addXP(5);
+  window.scrollTo(0,0);
+}
+
+function lessonHeader(area,l,idx,tagline,meta=[]){
+  const typeColors={lesson:'var(--vib)',interactive:'var(--amber)',quiz:'var(--breach)',simulation:'var(--mush)',activity:'var(--green)'};
+  area.innerHTML=`
+  <div class="lesson-header">
+    <div class="lesson-eyebrow">Lesson ${idx+1} of ${LESSONS.length} · ${l.group}</div>
+    <h1 class="lesson-h1">${l.name}</h1>
+    <p class="lesson-tagline">${tagline}</p>
+    <div class="lesson-meta">
+      <span class="l-badge" style="background:rgba(15,245,208,.07);color:${typeColors[l.type]||'var(--vib)'}">✦ ${l.type}</span>
+      ${meta.map(m=>`<span class="l-badge">${m}</span>`).join('')}
+    </div>
+  </div>`;
+}
+
+function lessonNav(area,idx){
+  const prev=idx>0;
+  const next=idx<LESSONS.length-1;
+  const div=document.createElement('div');
+  div.className='lesson-nav';
+  div.innerHTML=`
+    <button class="l-nav-btn" onclick="loadLesson(${idx-1})" ${prev?'':'disabled'}>← Previous</button>
+    <div class="lesson-progress">Lesson ${idx+1} / ${LESSONS.length}</div>
+    <button class="l-nav-btn primary" onclick="completeLesson(${idx})" id="next-btn-${idx}">Next Lesson →</button>`;
+  area.appendChild(div);
+}
+
+function completeLesson(idx){
+  const l=LESSONS[idx];
+  state.completedLessons.add(l.id);
+  addXP(15);
+  buildSidebar();
+  if(idx<LESSONS.length-1)loadLesson(idx+1);
+}
+
+function infoCard(color,title,body,hasMascot=false){
+  return`<div class="content-block"><div class="info-card" style="--ic-accent:${color}">
+    <div class="ic-title">${title}${hasMascot?`<img class="ic-mascot" src="/mnt/user-data/uploads/Screenshot_2026-04-25_124400.png" alt="Vi'brant">`:''}
+    </div>
+    <div class="ic-body">${body}</div>
+  </div></div>`;
+}
+
+/* ─────────────────────────────────────────────────────────
+   LESSON: INTRO
+───────────────────────────────────────────────────────── */
+function lessonIntro(area,l,idx){
+  lessonHeader(area,l,idx,"VYRION is the world's first daily investable planetary health benchmark — built on open data, verifiable sources, and a number that updates every single day.",['~5 min','Foundational']);
+  area.innerHTML+=`
+  ${infoCard('var(--vib)',"🌍 What is VYRION?",`
+    VYRION is planetary accountability infrastructure. Not activism. Not a nonprofit. Not a dashboard.
+    <br><br>It scores Earth's health <strong>the same way you'd score a company's finances</strong> — with open public data, auditable methodology, and a number that updates daily.
+    <br><br>Think of it as a <span class="highlight">Bloomberg Terminal for the planet</span>.
+  `,true)}
+
+  ${infoCard('var(--glow)',"📡 Three Core Products",`
+    <strong>VYRION Index</strong> — a daily 0–100 planetary health score. Pre-industrial Earth = 100/100. Today: 41.2/100.<br><br>
+    <strong>CONSCIENCE</strong> — corporate climate pledge verification. 11 companies tracked. Score derived from CDP, InfluenceMap, Sabin Center, SBTi, and live SEC EDGAR filings.<br><br>
+    <strong>8 Modules</strong> — SHIELD (disaster early warning), ATLAS (planetary intelligence), ROOT (soil), CANOPY (reforestation), FLUX (clean energy), and more.
+  `)}
+
+  <div class="content-block"><div class="tip-box">
+    <span class="tip-icon">🍄</span>
+    <div><strong>Vi'brant says:</strong> Every claim VYRION makes is source-cited at the point of the claim. If you see a number, you can click through to the data behind it. That's the <strong>Open Proof Protocol</strong> — and you'll learn all about it in Lesson 10.</div>
+  </div></div>
+
+  ${infoCard('var(--amber)',"🔢 The Key Numbers",`
+    <span class="highlight">41.2 / 100</span> — Current VYRION Index score (Day 1: March 18, 2026)<br>
+    <span class="highlight">±1.8</span> — Propagated uncertainty across all 48 indicators<br>
+    <span class="highlight">±0.5</span> — Minimum detectable change (anything smaller is noise)<br>
+    <span class="highlight">11</span> — Companies tracked in CONSCIENCE<br>
+    <span class="highlight">48</span> — Total indicators across 8 Earth systems<br>
+    <span class="highlight">97</span> — Active climate lawsuits across the portfolio (Sabin Center)
+  `)}`;
+  lessonNav(area,idx);
+}
+
+/* ─────────────────────────────────────────────────────────
+   LESSON: SCORE EXPLORER
+───────────────────────────────────────────────────────── */
+function lessonScore(area,l,idx){
+  lessonHeader(area,l,idx,"Drag the slider to explore what different planetary health scores mean — and why 41.2 is where we are today.",['Interactive','Score System']);
+  area.innerHTML+=`
+  ${infoCard('var(--amber)',"📖 The Baseline System",`
+    The VYRION Index uses a <strong>pre-industrial baseline of 100/100</strong>. This represents Earth's average condition between 1850 and 1900 — before large-scale industrial carbon emissions began.
+    <br><br>Every point below 100 represents measurable degradation from that baseline. The score is computed as:
+    <br><br><span class="highlight">S_final = Σ(Wᵢ × Sᵢ)</span> — a weighted sum across 8 Earth systems, 48 indicators.
+  `)}
+
+  <div class="content-block"><div class="score-explorer">
+    <div class="se-title">🎛️ Score Explorer — Drag to Explore <span style="font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--t3);font-weight:400">What does each score zone mean?</span></div>
+    <div class="se-body">
+      <div class="se-ring-wrap">
+        <svg viewBox="0 0 160 160" width="160" height="160">
+          <circle class="se-track" cx="80" cy="80" r="68"/>
+          <circle class="se-fill" id="se-fill" cx="80" cy="80" r="68" stroke-dasharray="427.3" stroke-dashoffset="427.3"/>
+        </svg>
+        <div class="se-inner"><div class="se-num" id="se-num">41</div><div class="se-den">/100</div><div class="se-band" id="se-band">CRITICAL</div></div>
+      </div>
+      <div class="se-controls">
+        <label>Drag to explore score zones</label>
+        <input type="range" min="0" max="100" value="41" id="score-slider" oninput="updateScoreExplorer(this.value)">
+        <div class="se-desc" id="se-desc"></div>
+      </div>
+    </div>
+  </div></div>
+
+  <div class="content-block"><div class="tip-box">
+    <span class="tip-icon">🍄</span>
+    <div><strong>Vi'brant says:</strong> Try dragging to 100 to see pre-industrial Earth, then drag all the way down to 0. Now drag to exactly 41.2 — that's where we are today. The goal isn't 100; it's stopping the slide before we cross irreversible tipping points.</div>
+  </div></div>`;
+
+  lessonNav(area,idx);
+  updateScoreExplorer(41);
+  if(!state.badges.has('score_master')){unlockBadge('score_master');addXP(20);}
+}
+
+function updateScoreExplorer(v){
+  v=parseInt(v);
+  const circumference=427.3;
+  const offset=circumference*(1-v/100);
+  const fill=document.getElementById('se-fill');
+  const num=document.getElementById('se-num');
+  const band=document.getElementById('se-band');
+  const desc=document.getElementById('se-desc');
+  if(!fill)return;
+  fill.style.strokeDashoffset=offset;
+  num.textContent=v;
+  let color,bandText,descText;
+  if(v>=80){color='#10b981';bandText='EXCELLENT';descText='<strong>Earth is thriving.</strong> Pre-industrial conditions largely intact. Biodiversity rich, atmosphere stable, ice sheets healthy. This is the goal zone — where Earth was before 1850.'}
+  else if(v>=60){color='var(--glow)';bandText='HEALTHY';descText='<strong>Manageable stress.</strong> Some systems degraded but within recoverable range. Atmospheric CO₂ elevated but ecosystems still largely intact. Most biodiversity stable.'}
+  else if(v>=41){color='var(--amber)';bandText='WARNING';descText='<strong>Multiple boundaries stressed.</strong> Measurable degradation across most systems. Some feedbacks may be activating. Reversible with strong coordinated action. This includes where Earth was just 30 years ago.'}
+  else if(v>=25){color='var(--warn)';bandText='CRITICAL — Current Zone';descText='<strong>We are here: '+v+'/100.</strong> Five planetary boundaries exceeded. Ice, ocean, atmosphere, biodiversity all in breach or critical status. Time-sensitive window for intervention before irreversible tipping points.'}
+  else{color='var(--breach)';bandText='EMERGENCY';descText='<strong>Catastrophic degradation.</strong> Multiple tipping points crossed. Self-reinforcing feedback loops active. Mass extinction accelerating. Sea level rise threatening coastal populations globally.'}
+  fill.style.stroke=color;
+  num.style.color=color;
+  band.style.color=color;
+  band.textContent=bandText;
+  desc.innerHTML=descText;
+}
+
+/* ─────────────────────────────────────────────────────────
+   LESSON: 8 EARTH SYSTEMS
+───────────────────────────────────────────────────────── */
+const SYSTEMS_DATA=[
+  {name:'Atmosphere',icon:'🌫️',weight:22,score:38.2,status:'CRITICAL',color:'#00CCFF',glow:'rgba(0,204,255,.05)',desc:'The climate system. CO₂ is the primary indicator — currently 424+ ppm vs 280 ppm pre-industrial. Also tracks methane, N₂O, aerosol optical depth, radiative forcing, and global temperature anomaly.',indicators:['CO₂ concentration','CH₄ concentration','N₂O concentration','Temperature anomaly','Aerosol optical depth','Radiative forcing'],source:'NOAA GML · NASA GISS · IPCC AR6',bar:38},
+  {name:'Ocean',icon:'🌊',weight:18,score:40.1,status:'BREACH',color:'#0077BB',glow:'rgba(0,119,187,.04)',desc:'The ocean stores 90% of excess planetary heat. 14th consecutive monthly SST record as of 2026. Tracks sea surface temperature, ocean heat content, pH/acidification, dissolved oxygen, salinity, and sea level rise.',indicators:['SST anomaly','Ocean heat content','pH / Acidification','Dissolved oxygen','Salinity','Sea level rise'],source:'NOAA OISST · Copernicus Marine · Argo floats',bar:40},
+  {name:'Ice / Cryo',icon:'❄️',weight:14,score:33.4,status:'CRITICAL',color:'#88DDFF',glow:'rgba(136,221,255,.03)',desc:'The most degraded system. 2026 Arctic maximum was among the lowest in 47 years of satellite records. Tracks Arctic extent, Antarctic extent, Greenland mass, glacier volume, permafrost extent, and polar albedo.',indicators:['Arctic sea ice extent','Antarctic sea ice extent','Greenland ice mass','Global glacier volume','Permafrost extent','Polar albedo'],source:'NSIDC Sea Ice Index · GRACE-FO · WGMS',bar:33},
+  {name:'Forest',icon:'🌿',weight:13,score:44.3,status:'WARNING',color:'#10b981',glow:'rgba(16,185,129,.03)',desc:'Amazon deforestation ~10,400 km²/yr. NASA FIRMS tracks active fires daily via MODIS/VIIRS. Covers fire frequency, forest cover, deforestation rate, above-ground biomass, fragmentation, and carbon stock.',indicators:['Fire frequency (live)','Forest cover','Deforestation rate','Above-ground biomass','Fragmentation index','Carbon stock'],source:'NASA FIRMS · Global Forest Watch · FAO FRA',bar:44},
+  {name:'Biodiversity',icon:'🦋',weight:12,score:36.8,status:'BREACH',color:'#44BB88',glow:'rgba(68,187,136,.03)',desc:'The sixth mass extinction is confirmed. E/MSY rate (extinctions per million species-years) is 100–1000× above safe levels. Tracks extinction rate, Biodiversity Intactness Index, threatened species, habitat loss, invasives, and genetic diversity.',indicators:['E/MSY extinction rate','Biodiversity Intactness Index','Threatened species count','Habitat loss area','Invasive species spread','Genetic diversity proxy'],source:'IUCN Red List · GBIF · IPBES Global Assessment',bar:37},
+  {name:'Freshwater',icon:'💧',weight:10,score:51.2,status:'WARNING',color:'#33AAFF',glow:'rgba(51,170,255,.03)',desc:'Green water boundary exceeded (Richardson et al. 2023). SPEI drought index tracked daily. Monitors blue water consumption, green water alteration, drought index, groundwater depletion, wetland area, and runoff anomaly.',indicators:['Blue water consumption','Green water alteration','Drought index (SPEI)','Groundwater depletion','Wetland area','Global runoff anomaly'],source:'Open-Meteo ERA5 · GRACE-FO · SPEI Monitor',bar:51},
+  {name:'Soil',icon:'🏔️',weight:7,score:48.1,status:'WARNING',color:'#CC9944',glow:'rgba(204,153,68,.03)',desc:'~2 billion hectares degraded globally. 133 GtC soil carbon lost since agriculture began. Covers erosion rate, soil organic carbon, degradation area, salinization, compaction index, and soil biodiversity.',indicators:['Soil erosion rate','Soil organic carbon','Land degradation area','Salinization','Compaction index','Soil biodiversity proxy'],source:'FAO GAEZ v4 · SoilGrids · ISRIC · ESA CCI',bar:48},
+  {name:'Corp. Accountability',icon:'🏢',weight:4,score:35.1,status:'BREACH',color:'#FFB84D',glow:'rgba(255,184,77,.03)',desc:'The only system measuring human institutional response. Daily live signal via SEC EDGAR 8-K filings. Full CONSCIENCE framework: pledges vs reality, CDP grades, InfluenceMap lobbying, Sabin Center litigation.',indicators:['SEC 8-K event density','Lobbying alignment grade','Climate litigation exposure','SBTi adoption rate','CDP disclosure quality','CONSCIENCE portfolio score'],source:'SEC EDGAR · CDP · InfluenceMap · Sabin Center',bar:35},
+];
+
+function lessonSystems(area,l,idx){
+  lessonHeader(area,l,idx,"Click any Earth system tile to explore what VYRION tracks, why it matters, and where the data comes from.",['Interactive','8 Systems','48 Indicators']);
+  area.innerHTML+=`
+  ${infoCard('var(--glow)',"🌐 The Formula",`
+    The VYRION Index is computed as <span class="highlight">S_final = Σ(Wᵢ × Sᵢ)</span> — a weighted sum across 8 Earth systems. Each system has a weight based on how much it governs planetary stability.
+    <br><br>Each system contains <strong>6 indicators</strong>. Live indicators update daily. Fixed indicators (annual datasets like FAO soil data) hold at last-known until their source updates.
+    <br><br>Baseline = 100/100 (pre-industrial 1850–1900). Current = 41.2/100.
+  `)}
+
+  <div class="content-block"><div class="systems-viz">
+    <div class="sviz-header"><span class="sviz-title">🌐 Earth Systems — Click to Explore</span><span class="sviz-hint">Each system · 6 indicators · 1 weight</span></div>
+    <div class="sviz-grid" id="sys-viz-grid"></div>
+    <div class="sviz-detail" id="sviz-detail"></div>
+  </div></div>
+
+  <div class="content-block"><div class="tip-box">
+    <span class="tip-icon">🍄</span>
+    <div><strong>Vi'brant says:</strong> Notice the weights — Atmosphere (22%) carries the most. Corporate Accountability (4%) carries the least. But it's the only system humans can change quickly. One company changing course won't move the score much, but an entire sector shifting would.</div>
+  </div></div>`;
+
+  lessonNav(area,idx);
+  renderSysVizGrid();
+  if(!state.badges.has('systems_scholar')){unlockBadge('systems_scholar');addXP(25);}
+}
+
+function renderSysVizGrid(){
+  const grid=document.getElementById('sys-viz-grid');
+  if(!grid)return;
+  grid.innerHTML=SYSTEMS_DATA.map((s,i)=>`
+    <div class="sys-tile" style="--st-color:${s.color}" onclick="showSysDetail(${i})" id="st-${i}">
+      <span class="st-icon">${s.icon}</span>
+      <div class="st-name">${s.name}</div>
+      <div class="st-score" style="color:${s.status==='WARNING'?'var(--warn)':'var(--breach)'}">${s.score}</div>
+      <div class="st-bar"><div class="st-bar-fill" style="width:0%;background:${s.color}" data-target="${s.bar}"></div></div>
+    </div>`).join('');
+  setTimeout(()=>{
+    document.querySelectorAll('.st-bar-fill').forEach(b=>b.style.width=b.dataset.target+'%');
+  },200);
+}
+
+function showSysDetail(i){
+  document.querySelectorAll('.sys-tile').forEach(t=>t.classList.remove('active'));
+  document.getElementById('st-'+i).classList.add('active');
+  const s=SYSTEMS_DATA[i];
+  const det=document.getElementById('sviz-detail');
+  det.className='sviz-detail show';
+  det.innerHTML=`
+    <div class="svd-name" style="color:${s.color}">${s.icon} ${s.name} <span style="font-family:'Courier Prime',monospace;font-weight:400;font-size:.65rem;color:var(--t3)">${s.weight}% weight · Score: ${s.score}/100 · ${s.status}</span></div>
+    <div class="svd-body">${s.desc}<br><br><strong>Data source:</strong> ${s.source}</div>
+    <div class="svd-indicators">${s.indicators.map(ind=>`<span class="svd-ind">${ind}</span>`).join('')}</div>`;
+  addXP(2);
+}
+
+/* ─────────────────────────────────────────────────────────
+   LESSON: QUIZ 1
+───────────────────────────────────────────────────────── */
+const Q1=[
+  {q:"What does the VYRION Index score of 41.2 mean?",opts:["Earth is 41.2% polluted","Earth has degraded 58.8 points from its pre-industrial baseline of 100","41.2 countries are meeting climate targets","It scores 41.2 out of a possible 50"],correct:1,explain:"The VYRION Index uses a pre-industrial baseline of 100/100. A score of 41.2 means Earth has degraded 58.8 points from that healthy baseline. The score isn't out of 50 — it's out of 100, where 100 = Earth's health in 1850–1900."},
+  {q:"Which Earth system carries the highest weight in the VYRION Index?",opts:["Ocean (18%)","Biodiversity (12%)","Atmosphere (22%)","Corporate Accountability (4%)"],correct:2,explain:"Atmosphere carries 22% of the total weight — the highest of all 8 systems. This is because atmospheric CO₂ is the primary driver of climate change, which cascades into all other Earth systems."},
+  {q:"What is the minimum detectable change in the VYRION Index?",opts:["±1.8 points","±0.5 points","±5 points","±0.01 points"],correct:1,explain:"The minimum detectable change is ±0.5 points. Changes smaller than this are within measurement uncertainty and VYRION won't describe them as significant. The ±1.8 is the full propagated uncertainty — not the detection threshold."},
+  {q:"What does CONSCIENCE verify?",opts:["Whether companies donate to environmental causes","Whether corporate climate pledges match verified public data","Whether CEOs personally recycle","Whether companies are profitable"],correct:1,explain:"CONSCIENCE is a pledge verification engine. It cross-checks what companies say (their climate pledges) against what the data actually shows — using CDP disclosures, SEC filings, InfluenceMap lobbying grades, Sabin Center litigation, and SBTi registry data."},
+];
+
+function lessonQuiz1(area,l,idx){
+  lessonHeader(area,l,idx,"Test what you've learned in Lessons 1–3. Each correct answer earns XP.",['4 Questions','XP Rewarded']);
+  const qHtml=Q1.map((q,qi)=>buildQuiz(q,qi,'q1')).join('');
+  area.innerHTML+=`<div class="content-block">${qHtml}</div>`;
+  lessonNav(area,idx);
+  if(!state.badges.has('quiz_ace'))state._pendingQuizBadge='q1';
+}
+
+function buildQuiz(q,qi,prefix){
+  const id=prefix+'_'+qi;
+  return`<div class="quiz-block" id="qblock-${id}" style="margin-bottom:1rem">
+    <div class="quiz-q">${qi+1}. ${q.q}</div>
+    <div class="quiz-opts">${q.opts.map((opt,oi)=>`
+      <div class="quiz-opt" id="qopt-${id}-${oi}" onclick="answerQuiz('${id}',${oi},${q.correct},'${encodeURIComponent(q.explain)}')">
+        <span class="quiz-opt-icon">${String.fromCharCode(65+oi)}</span>
+        ${opt}
+      </div>`).join('')}
+    </div>
+    <div class="quiz-feedback" id="qfb-${id}"></div>
+  </div>`;
+}
+
+function answerQuiz(id,chosen,correct,explainEnc){
+  if(state.quizAnswered.has(id))return;
+  state.quizAnswered.add(id);
+  const explain=decodeURIComponent(explainEnc);
+  const isCorrect=chosen===correct;
+  document.querySelectorAll(`[id^="qopt-${id}"]`).forEach(el=>el.classList.add('disabled'));
+  document.getElementById(`qopt-${id}-${chosen}`).classList.add(isCorrect?'correct':'wrong');
+  if(!isCorrect)document.getElementById(`qopt-${id}-${correct}`).classList.add('correct');
+  const fb=document.getElementById(`qfb-${id}`);
+  fb.className='quiz-feedback '+(isCorrect?'correct':'wrong')+' show';
+  fb.innerHTML=`<div class="qf-title">${isCorrect?'✓ Correct!':'✗ Not quite'}</div>${explain}${isCorrect?'<div class="xp-gained">+20 XP ✦</div>':'<div class="xp-gained">+5 XP for trying ✦</div>'}`;
+  addXP(isCorrect?20:5);
+  if(isCorrect&&!state.badges.has('quiz_ace')){unlockBadge('quiz_ace');}
+}
+
+/* ─────────────────────────────────────────────────────────
+   LESSON: ATMOSPHERE
+───────────────────────────────────────────────────────── */
+function lessonAtmosphere(area,l,idx){
+  lessonHeader(area,l,idx,"The Atmosphere system carries 22% of the VYRION Index weight — the highest of all 8 systems. Here's what that means.",['Deep Dive','22% Weight','Daily Live Data']);
+  area.innerHTML+=`
+  ${infoCard('var(--atm)',"🌫️ Why Atmosphere Leads",`
+    The Atmosphere is weighted highest because it is the <strong>primary driver of all other system degradations</strong>. CO₂ and other greenhouse gases warm the ocean, melt the ice, dry the soil, shift precipitation — and cause everything else to degrade in cascade.
+    <br><br>Current CO₂: <span class="highlight">~424 ppm</span><br>
+    Pre-industrial CO₂: <span class="highlight">~280 ppm</span><br>
+    Safe planetary boundary: <span class="highlight">&lt;350 ppm</span> (Steffen et al. 2015)<br>
+    High-risk threshold: <span class="highlight">450 ppm</span>
+  `,true)}
+
+  ${infoCard('var(--glow)',"📊 6 Atmosphere Indicators",`
+    <strong>A1: CO₂ Concentration</strong> — Mauna Loa, daily. The anchor indicator. Scored as 100 − ((CO₂ − 280) / (450 − 280)) × 100.<br><br>
+    <strong>A2: CH₄ Concentration</strong> — Methane. 86× more potent than CO₂ over 20 years. Currently ~1,930 ppb vs 722 ppb pre-industrial.<br><br>
+    <strong>A3: N₂O Concentration</strong> — Nitrous oxide. 265× more potent than CO₂ over 100 years. Primary source: synthetic nitrogen fertilizers.<br><br>
+    <strong>A4: Global Temperature Anomaly</strong> — Monthly. Currently +1.2°C above pre-industrial. Paris Agreement limits: 1.5°C and 2.0°C.<br><br>
+    <strong>A5: Aerosol Optical Depth</strong> — Monthly via NASA AERONET and MODIS. Both cooling and warming effects.<br><br>
+    <strong>A6: Radiative Forcing</strong> — Annual via NOAA AGGI. Currently +2.72 W/m² (IPCC AR6).
+  `)}
+
+  <div class="content-block"><div class="tip-box">
+    <span class="tip-icon">🍄</span>
+    <div><strong>Vi'brant says:</strong> Earth's atmosphere is thinner, proportionally, than the skin of an apple. All the air we breathe — that thin layer — is what we're tracking. Every ppm of CO₂ above 350 means the blanket gets a little thicker and Earth gets a little warmer. We're at 424.</div>
+  </div></div>`;
+  lessonNav(area,idx);
+}
+
+/* ─────────────────────────────────────────────────────────
+   LESSON: OCEAN
+───────────────────────────────────────────────────────── */
+function lessonOcean(area,l,idx){
+  lessonHeader(area,l,idx,"The ocean covers 71% of Earth and absorbs 90% of excess planetary heat. Understanding ocean health is understanding climate risk.",['Deep Dive','18% Weight']);
+  area.innerHTML+=`
+  ${infoCard('var(--ocn)',"🌊 The Ocean as Climate Buffer",`
+    The ocean has been protecting us for decades by absorbing both CO₂ and heat. But this comes at a cost:
+    <br><br><strong>Ocean heat content</strong> is at record highs. The 2026 SST anomaly: <span class="highlight">+0.9°C</span> above baseline — the 14th consecutive monthly record.<br><br>
+    <strong>Ocean acidification:</strong> pH has dropped from <span class="highlight">8.18</span> pre-industrial to <span class="highlight">8.05</span> today — a 30% increase in H⁺ ion concentration. At pH 7.95, coral skeletons begin to dissolve.
+  `,true)}
+
+  ${infoCard('var(--glow)',"📊 6 Ocean Indicators",`
+    <strong>O1: Sea Surface Temperature Anomaly</strong> — Daily via NOAA OISST v2.1. Primary live indicator.<br><br>
+    <strong>O2: Ocean Heat Content (0–700m)</strong> — Monthly via NOAA NCEI and Argo floats (~4,000 globally).<br><br>
+    <strong>O3: Ocean pH / Acidification</strong> — Monthly via SOCAT, Hawaii Ocean Time-series (HOT), Bermuda.<br><br>
+    <strong>O4: Dissolved Oxygen</strong> — Annual via World Ocean Atlas. Dead zones have expanded 4× since 1960.<br><br>
+    <strong>O5: Ocean Salinity</strong> — Monthly via Argo floats and ESA SMOS. Reflects water cycle amplification.<br><br>
+    <strong>O6: Mean Sea Level Rise</strong> — Monthly via AVISO and Copernicus. Currently +110mm since 1993, accelerating.
+  `)}
+
+  ${infoCard('var(--amber)',"⚠️ The Hurricane Connection",`
+    Elevated sea surface temperatures are a direct hurricane intensification driver. The 2026 Atlantic pre-season SST anomaly suggests an above-normal hurricane season probability.
+    <br><br>This is why SHIELD (the disaster early warning module) is directly connected to ocean monitoring in ATLAS — the two modules share real-time SST data.
+  `)}`;
+  lessonNav(area,idx);
+}
+
+/* ─────────────────────────────────────────────────────────
+   LESSON: CONSCIENCE
+───────────────────────────────────────────────────────── */
+function lessonConscience(area,l,idx){
+  lessonHeader(area,l,idx,"CONSCIENCE cross-checks what companies say against what the public data shows — across four independently verified data sources.",['Interactive','4 Factors','11 Companies']);
+  area.innerHTML+=`
+  ${infoCard('var(--vib)',"⚖️ Pledge vs. Reality",`
+    Companies publish climate pledges in press releases and sustainability reports. CONSCIENCE doesn't take them at their word. It cross-checks four independent public data sources:
+    <br><br>
+    <strong>Pledge Quality (30 pts)</strong> — Scope coverage, deadline ambition, SBTi registration<br>
+    <strong>CDP Performance (25 pts)</strong> — A=25, A−=22, B=18, B−=14, C=10, C−=7, D=4, D−=2, F=0<br>
+    <strong>Lobbying Alignment (25 pts)</strong> — InfluenceMap A+ to F grade<br>
+    <strong>Legal Exposure (20 pts)</strong> — Base 20 − (0.5 × active Sabin Center cases); floor 0
+  `,true)}
+
+  ${infoCard('var(--breach)',"Example: ExxonMobil",`
+    <strong>Pledge:</strong> "Net zero Scope 1 & 2 emissions by 2050. Paris alignment claimed."<br><br>
+    <strong>Reality:</strong><br>
+    • No Scope 3 target — 99% of total lifecycle emissions unaddressed<br>
+    • Production expansion through 2028<br>
+    • Lobbying spend vs. climate policy: $7M+ (2023)<br>
+    • CDP Grade: D → 4 pts<br>
+    • InfluenceMap: F → 0 pts<br>
+    • 27 active climate lawsuits → 1 pt<br>
+    • Pledge Quality: 3 pts<br>
+    <strong>Total: 8/100 · BREACH</strong>
+  `)}
+
+  ${infoCard('var(--green)',"Example: Apple",`
+    <strong>Pledge:</strong> "Carbon neutral across all products and supply chain by 2030."<br><br>
+    <strong>Verified Reality:</strong><br>
+    • 62% emission reduction since 2015 — verified<br>
+    • 100% renewable energy since 2018<br>
+    • Supplier Clean Energy Program: >80% of manufacturing energy clean<br>
+    • CDP Grade: A → 25 pts<br>
+    • InfluenceMap: B+ → 19 pts<br>
+    • 0 active lawsuits → 10 pts<br>
+    • Pledge Quality: 30 pts<br>
+    <strong>Total: 84/100 · ON TRACK</strong>
+  `)}`;
+  lessonNav(area,idx);
+}
+
+/* ─────────────────────────────────────────────────────────
+   LESSON: CONSCIENCE SIMULATOR
+───────────────────────────────────────────────────────── */
+function lessonSim(area,l,idx){
+  lessonHeader(area,l,idx,"Build a CONSCIENCE score yourself — adjust the four factor sliders and watch the band classification change in real time.",['Simulation','Score Builder','Earn XP']);
+  area.innerHTML+=`
+  <div class="content-block"><div class="conscience-sim">
+    <div class="csim-header">
+      <span class="csim-title">⚖️ CONSCIENCE Score Simulator</span>
+      <span class="csim-badge" id="csim-band-badge" style="background:rgba(240,48,48,.1);color:var(--breach);border:1px solid rgba(240,48,48,.25)">BREACH</span>
+    </div>
+    <div class="csim-body">
+      <div class="csim-company" id="csim-company">Custom Company</div>
+      <div class="csim-ticker" id="csim-ticker">Drag the sliders to build a score</div>
+      <div class="csim-factors">
+        <div class="csim-factor">
+          <span class="csim-f-label">Pledge Quality</span>
+          <span class="csim-f-max">/30</span>
+          <div class="csim-slider-wrap"><input type="range" min="0" max="30" value="3" id="sim-f1" oninput="updateSim()"><span class="csim-f-val" id="sv1">3</span></div>
+        </div>
+        <div class="csim-factor">
+          <span class="csim-f-label">CDP Performance</span>
+          <span class="csim-f-max">/25</span>
+          <div class="csim-slider-wrap"><input type="range" min="0" max="25" value="4" id="sim-f2" oninput="updateSim()"><span class="csim-f-val" id="sv2">4</span></div>
+        </div>
+        <div class="csim-factor">
+          <span class="csim-f-label">Lobbying Alignment</span>
+          <span class="csim-f-max">/25</span>
+          <div class="csim-slider-wrap"><input type="range" min="-10" max="25" value="0" id="sim-f3" oninput="updateSim()"><span class="csim-f-val" id="sv3">0</span></div>
+        </div>
+        <div class="csim-factor">
+          <span class="csim-f-label">Legal Exposure</span>
+          <span class="csim-f-max">/20</span>
+          <div class="csim-slider-wrap"><input type="range" min="-5" max="20" value="1" id="sim-f4" oninput="updateSim()"><span class="csim-f-val" id="sv4">1</span></div>
+        </div>
+      </div>
+      <div class="csim-result">
+        <div class="csim-score-big" id="csim-score">8</div>
+        <div>
+          <div class="csim-band-label" id="csim-band">BREACH</div>
+          <div class="csim-feedback" id="csim-feedback"><strong>Pledge exists but is not credible.</strong> Major gaps in scope, lobbying obstruction, or litigation exposure undermine the stated commitment.</div>
+        </div>
+      </div>
+    </div>
+  </div></div>
+
+  <div class="content-block"><div class="tip-box">
+    <span class="tip-icon">🍄</span>
+    <div><strong>Vi'brant says:</strong> Try to build a score that reaches ON TRACK (61+). It requires all four factors to perform well simultaneously — which is exactly why so few companies achieve it. Notice how a high pledge score doesn't save you if lobbying alignment is negative.</div>
+  </div></div>`;
+  lessonNav(area,idx);
+  updateSim();
+  if(!state.badges.has('conscience_judge')){unlockBadge('conscience_judge');addXP(30);}
+}
+
+function updateSim(){
+  const f1=parseInt(document.getElementById('sim-f1').value);
+  const f2=parseInt(document.getElementById('sim-f2').value);
+  const f3=parseInt(document.getElementById('sim-f3').value);
+  const f4=parseInt(document.getElementById('sim-f4').value);
+  ['sv1','sv2','sv3','sv4'].forEach((id,i)=>{document.getElementById(id).textContent=[f1,f2,f3,f4][i];});
+  const total=Math.max(0,Math.min(100,f1+f2+f3+f4));
+  const scoreEl=document.getElementById('csim-score');
+  const bandEl=document.getElementById('csim-band');
+  const fbEl=document.getElementById('csim-feedback');
+  const badgeEl=document.getElementById('csim-band-badge');
+  scoreEl.textContent=total;
+  let color,band,fb;
+  if(total>=61){color='var(--glow)';band='ON TRACK';fb='<strong>Credible and science-aligned.</strong> Pledge quality verified, CDP leadership tier, lobbying supports climate policy, minimal legal exposure. This company\'s actions match its words.';}
+  else if(total>=31){color='var(--warn)';band='WARNING';fb='<strong>Pledge exists but trajectory or verification is weak.</strong> One or more factors is pulling the score down. Material concerns remain even if the overall direction is positive.';}
+  else{color='var(--breach)';band='BREACH';fb='<strong>Pledge is not credible against verified data.</strong> Major gaps in scope coverage, active obstruction of climate policy, or significant legal exposure undermine the commitment.';}
+  scoreEl.style.color=color;bandEl.style.color=color;bandEl.textContent=band;
+  badgeEl.textContent=band;badgeEl.style.color=color;
+  fbEl.innerHTML=fb;
+}
+
+/* ─────────────────────────────────────────────────────────
+   LESSON: QUIZ 2
+───────────────────────────────────────────────────────── */
+const Q2=[
+  {q:"ExxonMobil scores 8/100. What is the PRIMARY reason its score is so low?",opts:["They use too much plastic","No Scope 3 target covers 99% of emissions; CDP Grade D; InfluenceMap Grade F; 27 active lawsuits","They haven't signed the Paris Agreement","Their renewable energy percentage is low"],correct:1,explain:"ExxonMobil's BREACH score stems from: no Scope 3 target (missing 99% of lifecycle emissions), CDP Grade D (4 pts), InfluenceMap Grade F for active lobbying against climate policy (0 pts), and 27 active climate lawsuits that reduce legal exposure score to near zero."},
+  {q:"What is the maximum score for 'Lobbying Alignment' in CONSCIENCE?",opts:["30 points","20 points","25 points","10 points"],correct:2,explain:"Lobbying Alignment is worth a maximum of 25 points, sourced from InfluenceMap's public corporate engagement grades. A+ = 25 pts, F = 0 pts. Notably, lobbying obstruction can push this component negative, reducing the total score."},
+  {q:"Which three companies are currently ON TRACK in the CONSCIENCE portfolio?",opts:["ExxonMobil, Apple, Walmart","Microsoft, Unilever, Apple","Shell, Unilever, Amazon","BP, Microsoft, Meta"],correct:1,explain:"Only 3 of 11 companies are ON TRACK (score 61–100): Microsoft (61), Unilever (72), and Apple (84). 5 are in BREACH, 3 are in WARNING. Apple's 84/100 is the highest score in the portfolio."},
+  {q:"What does CDP Grade 'A' score in the CONSCIENCE system (v1.1)?",opts:["20 points","25 points","30 points","15 points"],correct:1,explain:"In CONSCIENCE Methodology v1.1, CDP Grade A = 25 points out of a maximum 25. The full 9-tier scale runs: A=25, A−=22, B=18, B−=14, C=10, C−=7, D=4, D−=2, F=0. This v1.1 upgrade from v1.0 closed a disclosure gap around A− interpolation."},
+];
+
+function lessonQuiz2(area,l,idx){
+  lessonHeader(area,l,idx,"CONSCIENCE deep-dive quiz. Four questions covering pledge verification, scoring factors, and band classification.",['4 Questions','XP Rewarded']);
+  area.innerHTML+=`<div class="content-block">${Q2.map((q,qi)=>buildQuiz(q,qi,'q2')).join('')}</div>`;
+  lessonNav(area,idx);
+}
+
+/* ─────────────────────────────────────────────────────────
+   LESSON: OPEN PROOF PROTOCOL
+───────────────────────────────────────────────────────── */
+function lessonProof(area,l,idx){
+  lessonHeader(area,l,idx,"Every VYRION output is designed to be verifiable, correctable, and permanently timestamped. This isn't a value claim — it's a structural design.",['Foundation','Core Principle']);
+  area.innerHTML+=`
+  ${infoCard('var(--vib)',"🔓 What is the Open Proof Protocol?",`
+    Three rules govern everything VYRION publishes:
+    <br><br><strong>Rule 1: Source-cited at the point of claim.</strong> Every data point has a source link embedded right where the claim is made — not buried in appendices. You can verify anything without leaving the page.
+    <br><br><strong>Rule 2: Errors published within 24 hours.</strong> If anyone finds an error, they report it to contact@vyrion.earth. VYRION publishes the correction as a permanent, timestamped changelog entry. The original entry is never deleted — only annotated.
+    <br><br><strong>Rule 3: No financial relationship to scored entities.</strong> VYRION operates as a Public Benefit Corporation (PBC) with zero financial relationship to any company it scores. No company pays for a better score.
+  `,true)}
+
+  ${infoCard('var(--amber)',"📋 The Day 2 Correction — How It Works in Practice",`
+    On March 19, 2026 (Day 2), VYRION published a social post describing the Arctic sea ice level as a <strong>"new daily low."</strong>
+    <br><br>This was incorrect. March is the annual <em>maximum</em> for Arctic sea ice — the minimum occurs in September. The error was caught through community review.
+    <br><br>Within 12 hours, VYRION published a public correction. The original post was not deleted. The correction was timestamped and added to the public changelog on GitHub. This is the Open Proof Protocol working exactly as designed.
+    <br><br>Quote from the correction: <em>"Correction to Day 2: Arctic sea ice extent of 14.22M km² represents the 2026 annual maximum — among the lowest March peaks in 47 years of satellite records. Minimums occur in September."</em>
+  `)}
+
+  ${infoCard('var(--glow)',"🏛️ Why This Matters Institutionally",`
+    Legacy ESG ratings from ISS, MSCI, and Sustainalytics are dominated by self-reported company disclosures. Independent verification is rare and slow.
+    <br><br>VYRION's credibility rests entirely on the Open Proof Protocol. Institutional investors (reinsurance, index funds, pension managers) need to know that what VYRION claims is auditable before they rely on it.
+    <br><br><em>"Find the error. We will publish the correction."</em> — VYRION Open Proof Protocol
+  `)}`;
+  lessonNav(area,idx);
+}
+
+/* ─────────────────────────────────────────────────────────
+   LESSON: DRAG TO MATCH
+───────────────────────────────────────────────────────── */
+const MATCH_PAIRS=[
+  {item:'NOAA GML',target:'CO₂ concentration data'},
+  {item:'NSIDC',target:'Arctic sea ice extent'},
+  {item:'InfluenceMap',target:'Corporate lobbying grades'},
+  {item:'Sabin Center',target:'Climate litigation database'},
+  {item:'SEC EDGAR',target:'Corporate regulatory filings'},
+  {item:'NASA EONET',target:'Wildfire & hazard events'},
+];
+
+function lessonMatch(area,l,idx){
+  lessonHeader(area,l,idx,"Match each VYRION data source to what it provides. Drag from the left column to the right column.",['Drag & Drop Activity','Source Mapping']);
+  area.innerHTML+=`
+  <div class="content-block"><div class="dtm-wrap">
+    <div class="dtm-title">🧩 Match the Sources — Drag to Connect</div>
+    <div class="dtm-layout">
+      <div>
+        <div class="dtm-col-label">Data Sources</div>
+        <div class="dtm-items" id="dtm-sources"></div>
+      </div>
+      <div>
+        <div class="dtm-col-label">What They Provide</div>
+        <div class="dtm-items" id="dtm-targets"></div>
+      </div>
+    </div>
+    <div class="dtm-status" id="dtm-status">Drag sources to match — 0 / ${MATCH_PAIRS.length} matched</div>
+  </div></div>
+
+  <div class="content-block"><div class="tip-box">
+    <span class="tip-icon">🍄</span>
+    <div><strong>Vi'brant says:</strong> Every one of these sources is public, open, and free. VYRION never pays for proprietary data — every number comes from government agencies, academic institutions, or open-license repositories. That's what makes the Open Proof Protocol possible.</div>
+  </div></div>`;
+
+  lessonNav(area,idx);
+  renderDTM();
+}
+
+function renderDTM(){
+  const sources=document.getElementById('dtm-sources');
+  const targets=document.getElementById('dtm-targets');
+  if(!sources||!targets)return;
+
+  const shuffledTargets=[...MATCH_PAIRS].sort(()=>Math.random()-.5);
+
+  sources.innerHTML=MATCH_PAIRS.map((p,i)=>`
+    <div class="dtm-item" id="dtm-src-${i}" draggable="true" data-idx="${i}" ondragstart="dtmDragStart(event,${i})">
+      <span>📊</span>${p.item}
+    </div>`).join('');
+
+  targets.innerHTML=shuffledTargets.map((p,i)=>{
+    const origIdx=MATCH_PAIRS.findIndex(x=>x.target===p.target);
+    return`<div class="dtm-drop" id="dtm-drop-${origIdx}" data-target="${origIdx}" ondragover="event.preventDefault();this.classList.add('drag-over')" ondragleave="this.classList.remove('drag-over')" ondrop="dtmDrop(event,${origIdx})">
+      <span style="color:var(--t3)">→</span><span>${p.target}</span>
+    </div>`;
+  }).join('');
+}
+
+let dtmDragging=null;
+let dtmMatched=0;
+function dtmDragStart(e,idx){dtmDragging=idx;e.target.classList.add('dragging');}
+function dtmDrop(e,targetIdx){
+  e.preventDefault();
+  const drop=e.currentTarget;drop.classList.remove('drag-over');
+  const src=document.getElementById('dtm-src-'+dtmDragging);
+  if(!src)return;
+  src.classList.remove('dragging');
+  if(dtmDragging===targetIdx){
+    src.classList.add('matched');
+    drop.classList.add('matched');
+    drop.innerHTML=`<span>✓</span><span>${MATCH_PAIRS[targetIdx].item} → ${MATCH_PAIRS[targetIdx].target}</span>`;
+    dtmMatched++;
+    addXP(10);
+    document.getElementById('dtm-status').textContent=`✓ ${dtmMatched} / ${MATCH_PAIRS.length} matched`;
+    if(dtmMatched===MATCH_PAIRS.length){
+      document.getElementById('dtm-status').innerHTML='<span style="color:var(--green)">✓ All matched! Well done. +'+MATCH_PAIRS.length*10+' XP</span>';
+      if(!state.badges.has('match_maker')){unlockBadge('match_maker');addXP(20);}
+    }
+  } else {
+    src.classList.add('wrong-match');
+    setTimeout(()=>src.classList.remove('wrong-match'),500);
+    addXP(2);
+  }
+  dtmDragging=null;
+}
+
+/* ─────────────────────────────────────────────────────────
+   LESSON: FILL IN THE BLANK
+───────────────────────────────────────────────────────── */
+const FIBS=[
+  {before:"The VYRION Index pre-industrial baseline is ",answer:"100",after:"/100 — representing Earth's average condition from 1850 to 1900.",hint:"A perfect score"},
+  {before:"The current VYRION Index score is ",answer:"41.2",after:"± 1.8 / 100, meaning Earth has degraded 58.8 points from baseline.",hint:"Day 1 value, March 18 2026"},
+  {before:"CONSCIENCE factor 'Pledge Quality' is worth a maximum of ",answer:"30",after:" points out of 100 total.",hint:"The highest single factor"},
+  {before:"ExxonMobil has ",answer:"27",after:" active climate lawsuits (Sabin Center), contributing to its score of 8/100.",hint:"The most lawsuits in the portfolio"},
+  {before:"The Cryosphere (ice) system scores ",answer:"33.4",after:"/100 — the most degraded system in the entire VYRION Index.",hint:"Most degraded · 14% weight"},
+];
+
+function lessonFib(area,l,idx){
+  lessonHeader(area,l,idx,"Fill in the missing numbers from memory. Use what you've learned across all the lessons.",['Fill in the Blank','Memory Test']);
+  const fibHtml=FIBS.map((f,i)=>`
+    <div class="fib-sentence" id="fib-${i}">
+      ${f.before}<input class="fib-input" id="fibi-${i}" type="text" size="${f.answer.length+2}" placeholder="${'_'.repeat(f.answer.length)}" oninput="checkFib(${i})"> ${f.after}
+      <span style="font-family:'Courier Prime',monospace;font-size:.56rem;color:var(--t3);margin-left:.5rem">(hint: ${f.hint})</span>
+    </div>`).join('');
+
+  area.innerHTML+=`
+  ${infoCard('var(--vib)',"✏️ Fill in the Numbers",`These five sentences each have a key VYRION number missing. Type the correct number in each blank. Your answers will be checked automatically as you type.`)}
+
+  <div class="content-block"><div class="fib-wrap">
+    <div class="fib-title">✏️ Complete These Sentences</div>
+    ${fibHtml}
+    <div class="tip-box" style="margin-top:1rem">
+      <span class="tip-icon">🍄</span>
+      <div><strong>Vi'brant says:</strong> These are all real numbers from the VYRION system. If you've gone through the lessons, you've seen every one of them. Trust the mycelium network — it remembers.</div>
+    </div>
+  </div></div>`;
+  lessonNav(area,idx);
+}
+
+function checkFib(i){
+  const input=document.getElementById('fibi-'+i);
+  if(!input)return;
+  const val=input.value.trim();
+  const correct=FIBS[i].answer;
+  if(val===correct){
+    input.classList.remove('wrong');input.classList.add('correct');
+    const key='fib_'+i;
+    if(!state.quizAnswered.has(key)){state.quizAnswered.add(key);addXP(15);}
+  } else if(val.length>=correct.length){
+    input.classList.remove('correct');input.classList.add('wrong');
+  } else {
+    input.classList.remove('correct','wrong');
+  }
+}
+
+/* ─────────────────────────────────────────────────────────
+   INIT
+───────────────────────────────────────────────────────── */
+renderBadges();
+updateXPBar();
+</script>
+</body>
+</html>
