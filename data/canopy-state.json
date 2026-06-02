@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-06-01T18:30:56.169Z",
+    "generatedAt": "2026-06-02T05:19:51.675Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -13,20 +13,20 @@
   },
   "synthesis": {
     "hazardSummary": {
-      "totalEvents": 60,
+      "totalEvents": 61,
       "categories": {
-        "Severe Storms": 1,
         "Wildfires": 47,
+        "Severe Storms": 1,
         "Sea and Lake Ice": 2
       },
-      "seismicCount": 10,
+      "seismicCount": 11,
       "maxMagnitude": 6.9
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 2.07,
-      "minTemperature_2m": -47.6,
-      "maxTemperature_2m": 29.2
+      "avgTemperature_2m": 2.13,
+      "minTemperature_2m": -46.8,
+      "maxTemperature_2m": 27.5
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -40,27 +40,27 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-06-01T18:15:18.321Z",
-        "generated_date": "2026-06-01",
+        "generated": "2026-06-02T04:56:55.604Z",
+        "generated_date": "2026-06-02",
         "script_version": "1.1",
         "window_days": 14,
-        "window_start": "2026-05-18",
-        "window_end": "2026-06-01",
-        "runtime_ms": 275,
+        "window_start": "2026-05-19",
+        "window_end": "2026-06-02",
+        "runtime_ms": 287,
         "seismic_live": true,
         "eonet_live": true
       },
       "threat": {
         "level": "CRITICAL",
-        "score": 23.05
+        "score": 24.3
       },
       "seismic": {
         "events": [
           {
             "id": "us6000t04s",
             "magnitude": 6.9,
-            "place": "29 km ENE of Calama, Chile",
-            "time": "2026-05-25T21:52:20.043Z",
+            "place": "33 km ENE of Calama, Chile",
+            "time": "2026-05-25T21:52:20.035Z",
             "depth_km": 109,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t04s"
           },
@@ -71,6 +71,14 @@
             "time": "2026-05-20T17:43:01.910Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sz1d"
+          },
+          {
+            "id": "us7000spxm",
+            "magnitude": 6.2,
+            "place": "22 km WSW of Scarcelli, Italy",
+            "time": "2026-06-01T22:12:36.284Z",
+            "depth_km": 243,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spxm"
           },
           {
             "id": "us7000spqc",
@@ -161,14 +169,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sz3x"
           },
           {
-            "id": "us6000synm",
-            "magnitude": 5.7,
-            "place": "51 km SSW of Port-Vila, Vanuatu",
-            "time": "2026-05-19T02:29:24.366Z",
-            "depth_km": 27,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000synm"
-          },
-          {
             "id": "us7000spkc",
             "magnitude": 5.6,
             "place": "137 km SSE of Oistins, Barbados",
@@ -199,6 +199,14 @@
             "time": "2026-05-24T16:48:41.017Z",
             "depth_km": 34,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000szxz"
+          },
+          {
+            "id": "us7000spya",
+            "magnitude": 5.4,
+            "place": "207 km WNW of Abepura, Indonesia",
+            "time": "2026-06-01T23:01:17.102Z",
+            "depth_km": 29.6,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spya"
           },
           {
             "id": "us7000snpe",
@@ -287,14 +295,6 @@
             "time": "2026-05-22T19:30:38.517Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000szk5"
-          },
-          {
-            "id": "us6000sykw",
-            "magnitude": 5.3,
-            "place": "Bouvet Island region",
-            "time": "2026-05-18T18:50:00.193Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sykw"
           },
           {
             "id": "us7000spfj",
@@ -465,11 +465,19 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000snpf"
           },
           {
+            "id": "us6000t02k",
+            "magnitude": 5,
+            "place": "South Sandwich Islands region",
+            "time": "2026-05-25T16:12:47.277Z",
+            "depth_km": 35,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t02k"
+          },
+          {
             "id": "us6000t028",
             "magnitude": 5,
-            "place": "104 km ESE of Kokopo, Papua New Guinea",
-            "time": "2026-05-25T15:00:31.611Z",
-            "depth_km": 66.8,
+            "place": "114 km ESE of Kokopo, Papua New Guinea",
+            "time": "2026-05-25T15:00:30.276Z",
+            "depth_km": 55.9,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t028"
           },
           {
@@ -513,12 +521,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000syx0"
           },
           {
-            "id": "us6000syu7",
-            "magnitude": 5,
-            "place": "35 km WNW of Gazli, Uzbekistan",
-            "time": "2026-05-19T20:40:43.474Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000syu7"
+            "id": "us7000spz7",
+            "magnitude": 4.9,
+            "place": "278 km WNW of Houma, Tonga",
+            "time": "2026-06-02T00:49:50.226Z",
+            "depth_km": 543.7,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spz7"
           },
           {
             "id": "us7000spti",
@@ -596,17 +604,9 @@
             "id": "us6000t04u",
             "magnitude": 4.9,
             "place": "177 km WSW of Nabire, Indonesia",
-            "time": "2026-05-25T22:03:41.946Z",
+            "time": "2026-05-25T22:03:41.905Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t04u"
-          },
-          {
-            "id": "us6000t02k",
-            "magnitude": 4.9,
-            "place": "South Sandwich Islands region",
-            "time": "2026-05-25T16:12:57.904Z",
-            "depth_km": 131.7,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t02k"
           },
           {
             "id": "us6000t019",
@@ -689,12 +689,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000syy7"
           },
           {
-            "id": "us6000sym0",
+            "id": "us6000syu7",
             "magnitude": 4.9,
-            "place": "169 km E of Atka, Alaska",
-            "time": "2026-05-18T21:37:20.028Z",
+            "place": "37 km NW of Gazli, Uzbekistan",
+            "time": "2026-05-19T20:40:43.549Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sym0"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000syu7"
           },
           {
             "id": "us7000spqh",
@@ -743,14 +743,6 @@
             "time": "2026-05-27T09:33:34.993Z",
             "depth_km": 75.9,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000snup"
-          },
-          {
-            "id": "us6000t04w",
-            "magnitude": 4.8,
-            "place": "10 km E of Calama, Chile",
-            "time": "2026-05-25T22:03:22.702Z",
-            "depth_km": 114.8,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t04w"
           },
           {
             "id": "us6000t00y",
@@ -817,12 +809,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/aka2026jvukrx"
           },
           {
-            "id": "us6000synu",
-            "magnitude": 4.8,
-            "place": "83 km WNW of Kirakira, Solomon Islands",
-            "time": "2026-05-19T02:53:53.724Z",
-            "depth_km": 81.6,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000synu"
+            "id": "us7000spzq",
+            "magnitude": 4.7,
+            "place": "48 km E of Farkhār, Afghanistan",
+            "time": "2026-06-02T04:02:45.853Z",
+            "depth_km": 200.2,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spzq"
           },
           {
             "id": "us7000sppz",
@@ -903,6 +895,14 @@
             "time": "2026-05-27T00:41:51.514Z",
             "depth_km": 94.6,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000snrd"
+          },
+          {
+            "id": "us6000t04w",
+            "magnitude": 4.7,
+            "place": "10 km E of Calama, Chile",
+            "time": "2026-05-25T22:03:22.711Z",
+            "depth_km": 114.8,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t04w"
           },
           {
             "id": "us6000t047",
@@ -991,6 +991,14 @@
             "time": "2026-05-19T13:20:24.077Z",
             "depth_km": 60.4,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000syqy"
+          },
+          {
+            "id": "us7000spz4",
+            "magnitude": 4.6,
+            "place": "69 km WNW of Macabuboni, Philippines",
+            "time": "2026-06-02T00:33:51.038Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spz4"
           },
           {
             "id": "us7000sput",
@@ -1137,12 +1145,28 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000snly"
           },
           {
+            "id": "us7000spw7",
+            "magnitude": 4.6,
+            "place": "128 km NNE of Hihifo, Tonga",
+            "time": "2026-05-25T23:36:18.544Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spw7"
+          },
+          {
             "id": "us6000t059",
             "magnitude": 4.6,
-            "place": "75 km ENE of Petropavlovsk-Kamchatsky, Russia",
-            "time": "2026-05-25T23:31:55.698Z",
-            "depth_km": 79.6,
+            "place": "73 km ENE of Petropavlovsk-Kamchatsky, Russia",
+            "time": "2026-05-25T23:31:56.366Z",
+            "depth_km": 86.7,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t059"
+          },
+          {
+            "id": "us7000spw6",
+            "magnitude": 4.6,
+            "place": "148 km W of Neiafu, Tonga",
+            "time": "2026-05-25T22:14:49.305Z",
+            "depth_km": 218.6,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spw6"
           },
           {
             "id": "us7000sntn",
@@ -1247,14 +1271,6 @@
             "time": "2026-05-19T09:58:03.191Z",
             "depth_km": 589.8,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sypz"
-          },
-          {
-            "id": "us6000syp2",
-            "magnitude": 4.6,
-            "place": "211 km E of Levuka, Fiji",
-            "time": "2026-05-19T03:17:03.782Z",
-            "depth_km": 564.7,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000syp2"
           },
           {
             "id": "us7000spqf",
@@ -1385,10 +1401,18 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t06f"
           },
           {
+            "id": "us6000t04x",
+            "magnitude": 4.5,
+            "place": "15 km ENE of Calama, Chile",
+            "time": "2026-05-25T22:11:40.958Z",
+            "depth_km": 123.3,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t04x"
+          },
+          {
             "id": "us6000t03v",
             "magnitude": 4.5,
-            "place": "100 km NE of Manokwari, Indonesia",
-            "time": "2026-05-25T16:48:12.996Z",
+            "place": "104 km NNE of Manokwari, Indonesia",
+            "time": "2026-05-25T16:48:12.753Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t03v"
           },
@@ -1465,14 +1489,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sz0k"
           },
           {
-            "id": "us6000syyi",
-            "magnitude": 4.5,
-            "place": "Fiji region",
-            "time": "2026-05-20T13:51:40.023Z",
-            "depth_km": 590.3,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000syyi"
-          },
-          {
             "id": "us6000syxi",
             "magnitude": 4.5,
             "place": "65 km SE of Kuqa, China",
@@ -1521,26 +1537,59 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000syq4"
           }
         ],
-        "count_total": 183,
+        "count_total": 185,
         "count_m55_plus": 18,
-        "count_m60_plus": 6,
+        "count_m60_plus": 7,
         "count_m70_plus": 0,
         "count_m80_plus": 0,
         "largest": {
           "id": "us6000t04s",
           "magnitude": 6.9,
-          "place": "29 km ENE of Calama, Chile",
-          "time": "2026-05-25T21:52:20.043Z",
+          "place": "33 km ENE of Calama, Chile",
+          "time": "2026-05-25T21:52:20.035Z",
           "depth_km": 109,
           "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t04s"
         },
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-06-01T18:15:18.169Z"
+        "retrieved": "2026-06-02T04:56:55.604Z"
       },
       "wildfire": {
         "events": [
+          {
+            "id": "EONET_20287",
+            "title": "HAYSTACK BUTTE Wildfire, Klickitat, Washington",
+            "type": "WILDFIRE",
+            "time": "2026-05-30T20:21:00.000Z",
+            "coords": [
+              -120.93,
+              45.665
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20286",
+            "title": "BRANTLEY 2 Wildfire, Eddy, New Mexico",
+            "type": "WILDFIRE",
+            "time": "2026-05-30T12:20:00.000Z",
+            "coords": [
+              -104.356,
+              32.612
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20290",
+            "title": "KALKASKA-RX 61150021 Fletcher Unit 2 Prescribed Fire, Kalkaska, Michigan",
+            "type": "WILDFIRE",
+            "time": "2026-05-28T15:33:00.000Z",
+            "coords": [
+              -84.921,
+              44.519
+            ],
+            "closed": null
+          },
           {
             "id": "EONET_20254",
             "title": "Black Ridge Wildfire, Lincoln, Idaho",
@@ -1549,17 +1598,6 @@
             "coords": [
               -113.936,
               43.05
-            ],
-            "closed": null
-          },
-          {
-            "id": "EONET_20251",
-            "title": "Dewoff Wildfire, Blaine, Idaho",
-            "type": "WILDFIRE",
-            "time": "2026-05-25T20:35:00.000Z",
-            "coords": [
-              -113.248,
-              42.67
             ],
             "closed": null
           },
@@ -1795,6 +1833,17 @@
             "closed": null
           },
           {
+            "id": "EONET_20289",
+            "title": "Sunfish Rx Prescribed Fire, Cook, Minnesota",
+            "type": "WILDFIRE",
+            "time": "2026-05-19T12:05:00.000Z",
+            "coords": [
+              -90.152,
+              47.989
+            ],
+            "closed": null
+          },
+          {
             "id": "EONET_20241",
             "title": "DeSoto BB 7310 S RX Prescribed Fire, Perry, Mississippi",
             "type": "WILDFIRE",
@@ -1824,39 +1873,6 @@
             "coords": [
               -92.841,
               32.057
-            ],
-            "closed": null
-          },
-          {
-            "id": "EONET_20153",
-            "title": "Kress Wildfire, Swisher, Texas",
-            "type": "WILDFIRE",
-            "time": "2026-05-18T19:06:00.000Z",
-            "coords": [
-              -101.781,
-              34.387
-            ],
-            "closed": null
-          },
-          {
-            "id": "EONET_20157",
-            "title": "SANDY Wildfire, Ventura, California",
-            "type": "WILDFIRE",
-            "time": "2026-05-18T13:21:00.000Z",
-            "coords": [
-              -118.744,
-              34.25
-            ],
-            "closed": null
-          },
-          {
-            "id": "EONET_20159",
-            "title": "RIVER Wildfire, Kern, California",
-            "type": "WILDFIRE",
-            "time": "2026-05-18T12:05:00.000Z",
-            "coords": [
-              -118.789,
-              35.446
             ],
             "closed": null
           }
@@ -1891,15 +1907,28 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-06-01T18:18:09.783Z",
+        "generatedAt": "2026-06-02T05:03:48.367Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
       "layers": {
         "seismic": {
-          "count": 10,
+          "count": 11,
           "maxMagnitude": 6.9,
           "events": [
+            {
+              "id": "us7000spxm",
+              "magnitude": 6.2,
+              "place": "22 km WSW of Scarcelli, Italy",
+              "time": "2026-06-01T22:12:36.284Z",
+              "coordinates": [
+                15.7796,
+                39.325,
+                243
+              ],
+              "tsunami": false,
+              "significance": 608
+            },
             {
               "id": "us7000spqc",
               "magnitude": 6,
@@ -1911,7 +1940,7 @@
                 25
               ],
               "tsunami": false,
-              "significance": 644
+              "significance": 645
             },
             {
               "id": "us7000spjy",
@@ -1942,11 +1971,11 @@
             {
               "id": "us6000t04s",
               "magnitude": 6.9,
-              "place": "29 km ENE of Calama, Chile",
-              "time": "2026-05-25T21:52:20.043Z",
+              "place": "33 km ENE of Calama, Chile",
+              "time": "2026-05-25T21:52:20.035Z",
               "coordinates": [
-                -68.6422,
-                -22.3883,
+                -68.611,
+                -22.385,
                 109
               ],
               "tsunami": false,
@@ -2035,11 +2064,71 @@
         "hazards": {
           "totalActive": 50,
           "byCategory": {
-            "Severe Storms": 1,
             "Wildfires": 47,
+            "Severe Storms": 1,
             "Sea and Lake Ice": 2
           },
           "events": [
+            {
+              "id": "EONET_20287",
+              "title": "HAYSTACK BUTTE Wildfire, Klickitat, Washington",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 620,
+                "magnitudeUnit": "acres",
+                "date": "2026-05-30T20:21:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -120.930004,
+                  45.665397
+                ]
+              }
+            },
+            {
+              "id": "EONET_20286",
+              "title": "BRANTLEY 2 Wildfire, Eddy, New Mexico",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 712,
+                "magnitudeUnit": "acres",
+                "date": "2026-05-30T12:20:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -104.3555,
+                  32.611733
+                ]
+              }
+            },
+            {
+              "id": "EONET_20290",
+              "title": "KALKASKA-RX 61150021 Fletcher Unit 2 Prescribed Fire, Kalkaska, Michigan",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 539,
+                "magnitudeUnit": "acres",
+                "date": "2026-05-28T15:33:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -84.92062679,
+                  44.51933255
+                ]
+              }
+            },
             {
               "id": "EONET_20279",
               "title": "Typhoon Jangmi",
@@ -2050,13 +2139,13 @@
                 "JTWC"
               ],
               "geometry": {
-                "magnitudeValue": 55,
+                "magnitudeValue": 50,
                 "magnitudeUnit": "kts",
-                "date": "2026-06-01T12:00:00Z",
+                "date": "2026-06-02T00:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  127.5,
-                  26.7
+                  128.5,
+                  29.1
                 ]
               }
             },
@@ -2077,26 +2166,6 @@
                 "coordinates": [
                   -113.935667,
                   43.050333
-                ]
-              }
-            },
-            {
-              "id": "EONET_20251",
-              "title": "Dewoff Wildfire, Blaine, Idaho",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 2078,
-                "magnitudeUnit": "acres",
-                "date": "2026-05-25T20:35:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -113.248133,
-                  42.67045
                 ]
               }
             },
@@ -2561,6 +2630,26 @@
               }
             },
             {
+              "id": "EONET_20289",
+              "title": "Sunfish Rx Prescribed Fire, Cook, Minnesota",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 775,
+                "magnitudeUnit": "acres",
+                "date": "2026-05-19T12:05:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -90.152327,
+                  47.989121
+                ]
+              }
+            },
+            {
               "id": "EONET_20241",
               "title": "DeSoto BB 7310 S RX Prescribed Fire, Perry, Mississippi",
               "categories": [
@@ -2579,66 +2668,6 @@
                   31.024444
                 ]
               }
-            },
-            {
-              "id": "EONET_20240",
-              "title": "Chickasawhay CPT 366 RX Prescribed Fire, Wayne, Mississippi",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 1772,
-                "magnitudeUnit": "acres",
-                "date": "2026-05-19T09:35:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -88.9338,
-                  31.4618
-                ]
-              }
-            },
-            {
-              "id": "EONET_20242",
-              "title": "RX WINN BU  24 Prescribed Fire, Winn, Louisiana",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 2610,
-                "magnitudeUnit": "acres",
-                "date": "2026-05-19T08:51:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -92.841389,
-                  32.056667
-                ]
-              }
-            },
-            {
-              "id": "EONET_20153",
-              "title": "Kress Wildfire, Swisher, Texas",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 1500,
-                "magnitudeUnit": "acres",
-                "date": "2026-05-18T19:06:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -101.7812159,
-                  34.38652018
-                ]
-              }
             }
           ]
         },
@@ -2648,55 +2677,55 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": -4.8,
-              "surface_pressure": 1007.1,
-              "wind_speed_10m": 5.37,
-              "relative_humidity_2m": 93
+              "temperature_2m": -1.5,
+              "surface_pressure": 1003.6,
+              "wind_speed_10m": 7.6,
+              "relative_humidity_2m": 97
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 11.1,
-              "surface_pressure": 1014.2,
-              "wind_speed_10m": 3.79,
-              "relative_humidity_2m": 83
+              "temperature_2m": 12.5,
+              "surface_pressure": 1004.5,
+              "wind_speed_10m": 8.33,
+              "relative_humidity_2m": 95
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 24.3,
-              "surface_pressure": 915.5,
-              "wind_speed_10m": 0.1,
-              "relative_humidity_2m": 80
+              "temperature_2m": 19.3,
+              "surface_pressure": 915.6,
+              "wind_speed_10m": 2,
+              "relative_humidity_2m": 98
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 29.2,
-              "surface_pressure": 1010.8,
-              "wind_speed_10m": 5.42,
-              "relative_humidity_2m": 76
+              "temperature_2m": 27.5,
+              "surface_pressure": 1011,
+              "wind_speed_10m": 2.51,
+              "relative_humidity_2m": 82
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": 0.2,
-              "surface_pressure": 1000,
-              "wind_speed_10m": 12.03,
-              "relative_humidity_2m": 89
+              "temperature_2m": 1.8,
+              "surface_pressure": 1000.6,
+              "wind_speed_10m": 12.87,
+              "relative_humidity_2m": 93
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -47.6,
-              "surface_pressure": 708,
-              "wind_speed_10m": 8.2,
-              "relative_humidity_2m": 73
+              "temperature_2m": -46.8,
+              "surface_pressure": 713,
+              "wind_speed_10m": 8.53,
+              "relative_humidity_2m": 68
             }
           ]
         },
@@ -2714,7 +2743,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-06-01T18:27:28.323Z"
+        "generatedAt": "2026-06-02T05:15:14.672Z"
       },
       "health": {
         "score": 90,
