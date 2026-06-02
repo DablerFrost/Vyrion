@@ -3470,7 +3470,7 @@
           </div>
         </div>
         <div class="index-label-block">
-          <div class="index-status-badge">CRITICAL ZONE · 40–54</div>
+          <div class="index-status-badge">CRITICAL ZONE </div>
           <div class="index-day-label" id="day-label">Day — · — <br>Origin: March 18, 2026 </div>
         </div>
         <a class="index-link" href="https://vyrion.earth/atlas">Full system breakdown → ATLAS</a>
@@ -4018,8 +4018,8 @@
             <div class="xpl-section-title">🔢 The Big Number — What is the VYRION EARTH?</div>
             <div class="xpl-score-bar">
               <div class="xpl-score-example">
-                <div class="xpl-big-score" id="xpl-live-score">41.2</div>
-                <div class="xpl-score-speech">Think of Earth like a <strong>patient at the doctor's office.</strong> The VYRION EARTH is Earth's <strong>health score</strong> — out of 100. Right now it says <strong>41.2</strong>, which means Earth is in the <em>critical zone</em>. That's why we built VYRION — to make sure the whole world can see it, every single day. 📋 </div>
+                <div class="xpl-big-score" id="xpl-live-score">35.6</div>
+                <div class="xpl-score-speech">Think of Earth like a <strong>patient at the doctor's office.</strong> The VYRION EARTH is Earth's <strong>health score</strong> — out of 100. Right now it says <strong>35.6</strong>, which means Earth is in the <em>critical zone</em>. That's why we built VYRION — to make sure the whole world can see it, every single day. 📋 </div>
               </div>
               <div class="xpl-health-bar-wrap">
                 <div class="xpl-health-labels">
@@ -4028,7 +4028,7 @@
                   <span style="color:var(--green)">100 — Super Healthy 🌟</span>
                 </div>
                 <div class="xpl-health-bar">
-                  <div class="xpl-health-marker" id="xpl-health-marker" style="left:41.2%"></div>
+                  <div class="xpl-health-marker" id="xpl-health-marker" style="left:35.6%"></div>
                 </div>
                 <div class="xpl-health-zones">
                   <span class="xpl-zone" style="color:var(--breach)">❌ Danger Zone</span>
@@ -4426,7 +4426,7 @@
         }
         // ── RENDER INDEX ───────────────────────────────────────────────────────
         function renderIndex(score) {
-          const s = score || 41.2;
+          const s = score || 35.6;
           const CIRC = 427.3; // 2π × 68
           document.getElementById('ring-score').textContent = s.toFixed(1);
           document.getElementById('ring-fill').style.strokeDashoffset = (CIRC * (1 - s / 100)).toFixed(1);
@@ -4451,7 +4451,7 @@
             });
             const fill = document.getElementById('ring-fill');
             if (fill) {
-              const score = parseFloat(document.getElementById('ring-score').textContent) || 41.2;
+              const score = parseFloat(document.getElementById('ring-score').textContent) || 35.6;
               fill.style.strokeDashoffset = (427.3 * (1 - score / 100)).toFixed(1);
             }
           }, 300);
@@ -4501,7 +4501,7 @@
           // SHIELD
           renderShield(shield);
           // Index
-          const score = idx?.vyrion_index?.score || 41.2;
+          const score = idx?.vyrion_index?.score || 35.6;
           renderIndex(score);
           animateBars();
           stamp();
@@ -4600,7 +4600,7 @@
           overlay.classList.add('open');
           document.body.style.overflow = 'hidden';
           // Sync current score into explainarium
-          const score = parseFloat(document.getElementById('ring-score').textContent) || 41.2;
+          const score = parseFloat(document.getElementById('ring-score').textContent) || 35.6;
           const xplScore = document.getElementById('xpl-live-score');
           if (xplScore) xplScore.textContent = score.toFixed(1);
           const xplMarker = document.getElementById('xpl-health-marker');
