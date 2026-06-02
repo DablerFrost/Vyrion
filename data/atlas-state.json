@@ -1,15 +1,28 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-06-01T18:18:09.783Z",
+    "generatedAt": "2026-06-02T05:03:48.367Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 10,
+      "count": 11,
       "maxMagnitude": 6.9,
       "events": [
+        {
+          "id": "us7000spxm",
+          "magnitude": 6.2,
+          "place": "22 km WSW of Scarcelli, Italy",
+          "time": "2026-06-01T22:12:36.284Z",
+          "coordinates": [
+            15.7796,
+            39.325,
+            243
+          ],
+          "tsunami": false,
+          "significance": 608
+        },
         {
           "id": "us7000spqc",
           "magnitude": 6,
@@ -21,7 +34,7 @@
             25
           ],
           "tsunami": false,
-          "significance": 644
+          "significance": 645
         },
         {
           "id": "us7000spjy",
@@ -52,11 +65,11 @@
         {
           "id": "us6000t04s",
           "magnitude": 6.9,
-          "place": "29 km ENE of Calama, Chile",
-          "time": "2026-05-25T21:52:20.043Z",
+          "place": "33 km ENE of Calama, Chile",
+          "time": "2026-05-25T21:52:20.035Z",
           "coordinates": [
-            -68.6422,
-            -22.3883,
+            -68.611,
+            -22.385,
             109
           ],
           "tsunami": false,
@@ -145,11 +158,71 @@
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Severe Storms": 1,
         "Wildfires": 47,
+        "Severe Storms": 1,
         "Sea and Lake Ice": 2
       },
       "events": [
+        {
+          "id": "EONET_20287",
+          "title": "HAYSTACK BUTTE Wildfire, Klickitat, Washington",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 620,
+            "magnitudeUnit": "acres",
+            "date": "2026-05-30T20:21:00Z",
+            "type": "Point",
+            "coordinates": [
+              -120.930004,
+              45.665397
+            ]
+          }
+        },
+        {
+          "id": "EONET_20286",
+          "title": "BRANTLEY 2 Wildfire, Eddy, New Mexico",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 712,
+            "magnitudeUnit": "acres",
+            "date": "2026-05-30T12:20:00Z",
+            "type": "Point",
+            "coordinates": [
+              -104.3555,
+              32.611733
+            ]
+          }
+        },
+        {
+          "id": "EONET_20290",
+          "title": "KALKASKA-RX 61150021 Fletcher Unit 2 Prescribed Fire, Kalkaska, Michigan",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 539,
+            "magnitudeUnit": "acres",
+            "date": "2026-05-28T15:33:00Z",
+            "type": "Point",
+            "coordinates": [
+              -84.92062679,
+              44.51933255
+            ]
+          }
+        },
         {
           "id": "EONET_20279",
           "title": "Typhoon Jangmi",
@@ -160,13 +233,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 55,
+            "magnitudeValue": 50,
             "magnitudeUnit": "kts",
-            "date": "2026-06-01T12:00:00Z",
+            "date": "2026-06-02T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              127.5,
-              26.7
+              128.5,
+              29.1
             ]
           }
         },
@@ -187,26 +260,6 @@
             "coordinates": [
               -113.935667,
               43.050333
-            ]
-          }
-        },
-        {
-          "id": "EONET_20251",
-          "title": "Dewoff Wildfire, Blaine, Idaho",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 2078,
-            "magnitudeUnit": "acres",
-            "date": "2026-05-25T20:35:00Z",
-            "type": "Point",
-            "coordinates": [
-              -113.248133,
-              42.67045
             ]
           }
         },
@@ -671,6 +724,26 @@
           }
         },
         {
+          "id": "EONET_20289",
+          "title": "Sunfish Rx Prescribed Fire, Cook, Minnesota",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 775,
+            "magnitudeUnit": "acres",
+            "date": "2026-05-19T12:05:00Z",
+            "type": "Point",
+            "coordinates": [
+              -90.152327,
+              47.989121
+            ]
+          }
+        },
+        {
           "id": "EONET_20241",
           "title": "DeSoto BB 7310 S RX Prescribed Fire, Perry, Mississippi",
           "categories": [
@@ -689,66 +762,6 @@
               31.024444
             ]
           }
-        },
-        {
-          "id": "EONET_20240",
-          "title": "Chickasawhay CPT 366 RX Prescribed Fire, Wayne, Mississippi",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1772,
-            "magnitudeUnit": "acres",
-            "date": "2026-05-19T09:35:00Z",
-            "type": "Point",
-            "coordinates": [
-              -88.9338,
-              31.4618
-            ]
-          }
-        },
-        {
-          "id": "EONET_20242",
-          "title": "RX WINN BU  24 Prescribed Fire, Winn, Louisiana",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 2610,
-            "magnitudeUnit": "acres",
-            "date": "2026-05-19T08:51:00Z",
-            "type": "Point",
-            "coordinates": [
-              -92.841389,
-              32.056667
-            ]
-          }
-        },
-        {
-          "id": "EONET_20153",
-          "title": "Kress Wildfire, Swisher, Texas",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1500,
-            "magnitudeUnit": "acres",
-            "date": "2026-05-18T19:06:00Z",
-            "type": "Point",
-            "coordinates": [
-              -101.7812159,
-              34.38652018
-            ]
-          }
         }
       ]
     },
@@ -758,55 +771,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -4.8,
-          "surface_pressure": 1007.1,
-          "wind_speed_10m": 5.37,
-          "relative_humidity_2m": 93
+          "temperature_2m": -1.5,
+          "surface_pressure": 1003.6,
+          "wind_speed_10m": 7.6,
+          "relative_humidity_2m": 97
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 11.1,
-          "surface_pressure": 1014.2,
-          "wind_speed_10m": 3.79,
-          "relative_humidity_2m": 83
+          "temperature_2m": 12.5,
+          "surface_pressure": 1004.5,
+          "wind_speed_10m": 8.33,
+          "relative_humidity_2m": 95
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 24.3,
-          "surface_pressure": 915.5,
-          "wind_speed_10m": 0.1,
-          "relative_humidity_2m": 80
+          "temperature_2m": 19.3,
+          "surface_pressure": 915.6,
+          "wind_speed_10m": 2,
+          "relative_humidity_2m": 98
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 29.2,
-          "surface_pressure": 1010.8,
-          "wind_speed_10m": 5.42,
-          "relative_humidity_2m": 76
+          "temperature_2m": 27.5,
+          "surface_pressure": 1011,
+          "wind_speed_10m": 2.51,
+          "relative_humidity_2m": 82
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": 0.2,
-          "surface_pressure": 1000,
-          "wind_speed_10m": 12.03,
-          "relative_humidity_2m": 89
+          "temperature_2m": 1.8,
+          "surface_pressure": 1000.6,
+          "wind_speed_10m": 12.87,
+          "relative_humidity_2m": 93
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -47.6,
-          "surface_pressure": 708,
-          "wind_speed_10m": 8.2,
-          "relative_humidity_2m": 73
+          "temperature_2m": -46.8,
+          "surface_pressure": 713,
+          "wind_speed_10m": 8.53,
+          "relative_humidity_2m": 68
         }
       ]
     },
