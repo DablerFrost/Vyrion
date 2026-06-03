@@ -1,15 +1,28 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-06-02T16:57:37.425Z",
+    "generatedAt": "2026-06-03T05:21:13.413Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 11,
+      "count": 12,
       "maxMagnitude": 6.9,
       "events": [
+        {
+          "id": "hv74975297",
+          "magnitude": 4.57,
+          "place": "6 km WNW of Kahaluu-Keauhou, Hawaii",
+          "time": "2026-06-03T03:58:53.210Z",
+          "coordinates": [
+            -156.016333333333,
+            19.5881666666667,
+            34.01
+          ],
+          "tsunami": false,
+          "significance": 667
+        },
         {
           "id": "us7000spxm",
           "magnitude": 6.2,
@@ -21,7 +34,7 @@
             243
           ],
           "tsunami": false,
-          "significance": 614
+          "significance": 615
         },
         {
           "id": "us7000spqc",
@@ -235,11 +248,11 @@
           "geometry": {
             "magnitudeValue": 50,
             "magnitudeUnit": "kts",
-            "date": "2026-06-02T06:00:00Z",
+            "date": "2026-06-02T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              130.7,
-              30.7
+              135,
+              33.3
             ]
           }
         },
@@ -771,55 +784,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": 0.2,
-          "surface_pressure": 1002.1,
-          "wind_speed_10m": 6.75,
-          "relative_humidity_2m": 95
+          "temperature_2m": -1.1,
+          "surface_pressure": 1004.2,
+          "wind_speed_10m": 3.44,
+          "relative_humidity_2m": 86
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 12.1,
-          "surface_pressure": 999.6,
+          "temperature_2m": 10.3,
+          "surface_pressure": 1010.1,
           "wind_speed_10m": 14.67,
-          "relative_humidity_2m": 87
+          "relative_humidity_2m": 79
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 25.1,
-          "surface_pressure": 916.2,
-          "wind_speed_10m": 1.7,
-          "relative_humidity_2m": 73
+          "temperature_2m": 19.5,
+          "surface_pressure": 915.2,
+          "wind_speed_10m": 1.52,
+          "relative_humidity_2m": 100
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 28.5,
-          "surface_pressure": 1011.6,
-          "wind_speed_10m": 2.23,
-          "relative_humidity_2m": 78
+          "temperature_2m": 28.4,
+          "surface_pressure": 1009.4,
+          "wind_speed_10m": 4.25,
+          "relative_humidity_2m": 85
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": 2,
-          "surface_pressure": 989.8,
-          "wind_speed_10m": 16.85,
-          "relative_humidity_2m": 92
+          "temperature_2m": 2.1,
+          "surface_pressure": 986.9,
+          "wind_speed_10m": 12.79,
+          "relative_humidity_2m": 91
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -45.6,
-          "surface_pressure": 720.2,
-          "wind_speed_10m": 8.42,
-          "relative_humidity_2m": 68
+          "temperature_2m": -44.3,
+          "surface_pressure": 725,
+          "wind_speed_10m": 8.01,
+          "relative_humidity_2m": 71
         }
       ]
     },
