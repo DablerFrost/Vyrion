@@ -1732,10 +1732,16 @@
 
       .snap-band-companies {
         font-family: 'Courier Prime', monospace;
-        font-size: .58rem;
+        font-size: .52rem;
         color: var(--t2);
-        line-height: 1.7
+        line-height: 1.75;
+        max-height: 130px;
+        overflow-y: auto;
+        padding-right: 4px;
+        word-break: break-word;
       }
+      .snap-band-companies::-webkit-scrollbar { width: 3px }
+      .snap-band-companies::-webkit-scrollbar-thumb { background: rgba(0,212,255,.15); border-radius: 2px }
 
       .snap-dot {
         width: 5px;
@@ -3413,8 +3419,8 @@
       </div>
       <div class="lb-cell">
         <div class="lb-lbl">Companies Tracked</div>
-        <div class="lb-val white">11</div>
-        <div class="lb-sub">5 Breach · 3 Warning · 3 On Track</div>
+        <div class="lb-val white">111</div>
+        <div class="lb-sub">25 Breach · 51 Warning · 35 On Track</div>
       </div>
       <div class="lb-cell">
         <div class="lb-lbl">Active Lawsuits</div>
@@ -3576,10 +3582,10 @@
           <div class="mod-num">CORE PLATFORM</div>
           <div class="mod-name" style="color:var(--glow)">CONSCIENCE</div>
           <div class="mod-tag tag-live">Live · v2.8</div>
-          <div class="mod-body">Corporate climate pledge verification. 11 companies scored against Paris Agreement 1.5°C pathways. CDP · InfluenceMap · Sabin Center · SBTi · SEC EDGAR.</div>
+          <div class="mod-body">Corporate climate pledge verification. 111 companies scored against Paris Agreement 1.5°C pathways. CDP · InfluenceMap · Sabin Center · SBTi · SEC EDGAR.</div>
           <div class="mod-status">
             <span class="mod-dot"></span>
-            <span style="color:var(--glow)">11 Companies · 5B · 3W · 3T</span>
+            <span style="color:var(--glow)">111 Companies · 25B · 51W · 35T</span>
           </div>
         </a>
         <a class="mod-card s-live" href="https://vyrion.earth/shield" style="--mc-accent:var(--mod-shield)">
@@ -3685,22 +3691,22 @@
             <div class="snap-band-label">
               <span class="snap-dot"></span>Breach · 0–30
             </div>
-            <div class="snap-band-count">5</div>
-            <div class="snap-band-companies">ExxonMobil · BP · Shell <br>Delta Air Lines · Starbucks </div>
+            <div class="snap-band-count">25</div>
+            <div class="snap-band-companies">ExxonMobil · BP · Shell · Delta Air Lines · Starbucks · Chevron · ConocoPhillips · Marathon Oil · Valero Energy · Phillips 66 · Peabody Energy · Arch Resources · Halliburton · SLB · Baker Hughes · Devon Energy · Pioneer Natural Resources · Coterra Energy · Occidental Petroleum · Diamondback Energy · Southwest Airlines · American Airlines · United Airlines · JBS SA · Alpha Metallurgical</div>
           </div>
           <div class="snap-band sb-warn">
             <div class="snap-band-label">
               <span class="snap-dot"></span>Warning · 31–60
             </div>
-            <div class="snap-band-count">3</div>
-            <div class="snap-band-companies">Walmart <br>Meta Platforms <br>Amazon </div>
+            <div class="snap-band-count">51</div>
+            <div class="snap-band-companies">Walmart · Meta Platforms · Amazon · Ford Motor · General Motors · Stellantis · Toyota Motor · Volkswagen AG · Honda Motor · Nissan Motor · Hyundai Motor · FedEx · UPS · DHL Group · Maersk · CMA CGM · Rio Tinto · Glencore · Anglo American · Freeport-McMoRan · Alcoa · Nucor · U.S. Steel · ArcelorMittal · BASF · Dow Inc. · DuPont · 3M · Honeywell · General Electric · Siemens AG · Caterpillar · Deere & Company · Raytheon Technologies · Lockheed Martin · Boeing · JPMorgan Chase · Bank of America · Citigroup · Wells Fargo · Goldman Sachs · Morgan Stanley · BlackRock · Vanguard Group · Berkshire Hathaway · Cargill · Tyson Foods · McDonald's · Coca-Cola · PepsiCo · Nestlé</div>
           </div>
           <div class="snap-band sb-track">
             <div class="snap-band-label">
               <span class="snap-dot"></span>On Track · 61–100
             </div>
-            <div class="snap-band-count">3</div>
-            <div class="snap-band-companies">Microsoft <br>Unilever <br>Apple </div>
+            <div class="snap-band-count">35</div>
+            <div class="snap-band-companies">Microsoft · Unilever · Apple · Google (Alphabet) · Salesforce · Adobe · SAP SE · Schneider Electric · Vestas Wind Systems · Ørsted · Iberdrola · Enel SpA · NextEra Energy · Xylem · Waste Management · Republic Services · Veolia Environnement · Danaher · Thermo Fisher · Philips · IKEA Group · H&M Group · Puma SE · Adidas · Patagonia · Interface Inc. · Autodesk · Nvidia · ASML Holding · Ericsson · Best Buy · Suez · Siemens Energy · Neste Oyj · Signify</div>
           </div>
         </div>
       </section>
@@ -3844,7 +3850,7 @@
                 <td>
                   <span class="ledger-type lt-ingest">DATA INGEST</span>
                 </td>
-                <td class="ledger-event">SEC EDGAR — 11 companies · 8-K density updated · ExxonMobil 5 events/90d</td>
+                <td class="ledger-event">SEC EDGAR — 111 companies · 8-K density updated · ExxonMobil 5 events/90d</td>
                 <td class="ledger-source">SEC EDGAR · data.sec.gov</td>
                 <td class="ledger-ts">2026-05-09 · 03:50 UTC</td>
               </tr>
@@ -4018,8 +4024,8 @@
             <div class="xpl-section-title">🔢 The Big Number — What is the VYRION EARTH?</div>
             <div class="xpl-score-bar">
               <div class="xpl-score-example">
-                <div class="xpl-big-score" id="xpl-live-score">35.6 </div>
-                <div class="xpl-score-speech">Think of Earth like a <strong>patient at the doctor's office.</strong> The VYRION EARTH is Earth's <strong>health score</strong> — out of 100. Right now it says <strong>35.6 </strong>, which means Earth is in the <em>critical zone</em>. That's why we built VYRION — to make sure the whole world can see it, every single day. 📋 </div>
+                <div class="xpl-big-score" id="xpl-live-score">35.6</div>
+                <div class="xpl-score-speech">Think of Earth like a <strong>patient at the doctor's office.</strong> The VYRION EARTH is Earth's <strong>health score</strong> — out of 100. Right now it says <strong>35.6</strong>, which means Earth is in the <em>critical zone</em>. That's why we built VYRION — to make sure the whole world can see it, every single day. 📋 </div>
               </div>
               <div class="xpl-health-bar-wrap">
                 <div class="xpl-health-labels">
