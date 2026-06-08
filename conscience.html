@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VYRION CONSCIENCE">
-<meta name="twitter:description" content="Corporate climate pledge accountability. 11 companies scored against Paris Agreement 1.5°C pathways.">
+<meta name="twitter:description" content="Corporate climate pledge accountability. 36 companies scored against Paris Agreement 1.5°C pathways.">
 <link rel="canonical" href="https://vyrion.earth/">
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/assets/favicon.ico">
@@ -231,11 +231,16 @@ body::after{
 }
 
 /* ── COMPANY CARD ────────────────────────────────────────── */
+@keyframes card-in{
+  from{opacity:0;transform:translateY(11px)}
+  to{opacity:1;transform:none}
+}
 .c-card{
   background:var(--void2);padding:1.35rem;
   display:flex;flex-direction:column;
   position:relative;overflow:hidden;
-  transition:background .2s,transform .2s;
+  transition:background .2s, transform .5s cubic-bezier(.15,1,.3,1), opacity .28s, filter .28s;
+  animation:card-in .38s cubic-bezier(.35,0,.2,1) both;
 }
 .c-card::before{
   content:'';position:absolute;top:0;left:0;right:0;height:2px;
@@ -243,9 +248,33 @@ body::after{
   transition:opacity .2s;
 }
 .c-card:hover{background:var(--void3)}
-.c-card[data-band="breach"]{--card-accent:var(--breach)}
-.c-card[data-band="warning"]{--card-accent:var(--warn)}
-.c-card[data-band="on-track"]{--card-accent:var(--glow)}
+
+/* ── SECTOR IDENTITY WATERMARKS ─────────────────────────── */
+.c-sector-glyph{
+  position:absolute;top:-14px;right:-14px;
+  width:136px;height:136px;
+  opacity:.058;pointer-events:none;
+  transition:opacity .4s;
+}
+.c-card:hover .c-sector-glyph{opacity:.12}
+.c-sector-glyph path,
+.c-sector-glyph polygon,
+.c-sector-glyph circle{
+  fill:none;
+  stroke:var(--card-accent);
+  stroke-width:2.5;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+/* ── GRID SPOTLIGHT MODE ─────────────────────────────────── */
+.company-grid:has(.c-card:hover) .c-card:not(:hover){
+  opacity:.46;
+  filter:brightness(.6) saturate(.65);
+}
+.c-card[data-band="breach"]{--card-accent:var(--breach);--card-glow:rgba(240,48,48,.11)}
+.c-card[data-band="warning"]{--card-accent:var(--warn);--card-glow:rgba(240,144,0,.10)}
+.c-card[data-band="on-track"]{--card-accent:var(--glow);--card-glow:rgba(0,212,255,.08)}
 .c-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:.8rem;gap:.8rem}
 .c-head-left{flex:1;min-width:0}
 .c-name{
@@ -264,6 +293,35 @@ body::after{
   letter-spacing:.14em;text-transform:uppercase;
   margin-top:.08rem;text-align:right;padding:.09rem .38rem;border-radius:2px;
   display:inline-block;
+}
+/* c-band-pill: base styles + dot slot */
+.c-band-pill{
+  font-family:'Courier Prime',monospace;font-size:.54rem;
+  letter-spacing:.14em;text-transform:uppercase;
+  padding:.09rem .38rem .09rem 1.32rem;border-radius:2px;
+  display:inline-block;position:relative;
+}
+.band-breach .c-band-pill{background:var(--breach-bg);color:var(--breach);border:1px solid rgba(240,48,48,.3)}
+.band-warning .c-band-pill{background:var(--warn-bg);color:var(--warn);border:1px solid rgba(240,144,0,.3)}
+/* pulse dot */
+.c-band-pill::before{
+  content:'';position:absolute;left:.4rem;top:50%;transform:translateY(-50%);
+  width:5px;height:5px;border-radius:50%;
+}
+.band-breach .c-band-pill::before{background:var(--breach);animation:dot-breach 2.6s ease-in-out infinite}
+.band-warning .c-band-pill::before{background:var(--warn);animation:dot-warn 1.9s ease-in-out infinite}
+.band-track .c-band-pill::before{background:var(--glow);animation:dot-track 1.1s ease-in-out infinite}
+@keyframes dot-breach{
+  0%,100%{box-shadow:0 0 0 0 rgba(240,48,48,.7);opacity:1}
+  55%{box-shadow:0 0 0 5px rgba(240,48,48,0);opacity:.55}
+}
+@keyframes dot-warn{
+  0%,100%{box-shadow:0 0 0 0 rgba(240,144,0,.7);opacity:1}
+  55%{box-shadow:0 0 0 5px rgba(240,144,0,0);opacity:.6}
+}
+@keyframes dot-track{
+  0%,100%{box-shadow:0 0 0 0 rgba(0,212,255,.75);opacity:1}
+  50%{box-shadow:0 0 0 6px rgba(0,212,255,0);opacity:.7}
 }
 .band-breach .c-score-num{color:var(--breach)}
 .band-breach .c-band{background:var(--breach-bg);color:var(--breach);border:1px solid rgba(240,48,48,.3)}
@@ -1033,8 +1091,8 @@ body::after{
 .band-track .ring-score{color:var(--glow)}
 .c-card::after{
   content:'';position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse 80% 40% at 50% 0%,rgba(0,212,255,.025) 0%,transparent 70%);
-  opacity:0;transition:opacity .3s;
+  background:radial-gradient(ellipse 85% 55% at 50% 0%, var(--card-glow, rgba(0,212,255,.05)) 0%, transparent 72%);
+  opacity:0;transition:opacity .4s;
 }
 .c-card:hover::after{opacity:1}
 .band-track .score-bar-fill{
@@ -1042,7 +1100,7 @@ body::after{
   box-shadow:0 0 8px rgba(0,212,255,.3);
 }
 .nav-logo{text-shadow:0 0 20px rgba(0,212,255,.3)}
-.band-track .c-band-pill{background:rgba(0,212,255,.1);color:var(--glow);border:1px solid rgba(0,212,255,.35);box-shadow:0 0 8px rgba(0,212,255,.1);}
+.band-track .c-band-pill{background:rgba(0,212,255,.1);color:var(--glow);border:1px solid rgba(0,212,255,.35);box-shadow:0 0 8px rgba(0,212,255,.1);padding-left:1.32rem;}
 
 /* ── SYNTHEKAI PLAYER ────────────────────────────────────── */
 #sk-wrap{
@@ -1196,6 +1254,15 @@ body::after{
     <option value="Aviation">Aviation</option>
     <option value="Food &amp; Beverage">Food &amp; Beverage</option>
     <option value="Consumer Goods">Consumer Goods</option>
+    <option value="Automotive">Automotive</option>
+    <option value="Mining">Mining</option>
+    <option value="Finance">Finance</option>
+    <option value="Chemicals">Chemicals</option>
+    <option value="Apparel">Apparel</option>
+    <option value="Shipping">Shipping</option>
+    <option value="Utilities">Utilities</option>
+    <option value="Real Estate">Real Estate</option>
+    <option value="Healthcare">Healthcare</option>
   </select>
   <div class="filter-btns">
     <button class="f-btn active"    data-band="all">All</button>
@@ -1203,7 +1270,7 @@ body::after{
     <button class="f-btn fb-warn"   data-band="warning">Warning</button>
     <button class="f-btn fb-track"  data-band="on-track">On Track</button>
   </div>
-  <span class="result-count" id="result-count"><b id="vis-count">11</b> / 11</span>
+  <span class="result-count" id="result-count"><b id="vis-count">36</b> / 36</span>
   <button class="btn-export" onclick="exportCSV()" title="Download all data as CSV">↓ CSV</button>
 </div>
 
@@ -1245,6 +1312,12 @@ body::after{
         <td><span class="cl-pill cl-plat">METHODOLOGY</span></td>
         <td>CDP scale resolution upgrade. v1.0's documented 4-tier table (A/B/C/D) extended to CDP's full published 9-tier scale: A=25, A−=22, B=18, B−=14, C=10, C−=7, D=4, D−=2, F=0. Codifies the A−=22 interpolation already applied to Microsoft and Unilever in v1.0's per-company derivations but not derivable from the v1.0 table. Closes that disclosure gap. F replaces the v1.0 "No response = 0" label (same value, more accurate). Every baseline company score is preserved bit-for-bit. Adds /about page with VYRION PBC entity status, founding team, and contact. No company score values changed.</td>
         <td><a href="https://github.com/DablerFrost/Vyrion/blob/main/docs/CONSCIENCE-METHODOLOGY.md" target="_blank" style="color:rgba(0,212,255,.35);text-decoration:none">CONSCIENCE-METHODOLOGY.md →</a></td>
+      </tr>
+      <tr>
+        <td>2026-06-05</td><td>25 new companies</td><td>—</td><td>Established</td>
+        <td><span class="cl-pill cl-new">NEW</span></td>
+        <td>v2.9: Coverage expanded 11 → 36 companies. New entries: Chevron, TotalEnergies, ConocoPhillips, Glencore, Toyota, JPMorgan Chase, United Airlines, Duke Energy, BASF, BlackRock, Coca-Cola (BREACH); Volkswagen, Ford, Nestlé, H&M, Rio Tinto, BHP, Procter &amp; Gamble, Nike, Maersk, Alphabet, Johnson &amp; Johnson, CBRE (WARNING); NextEra Energy, Salesforce (ON TRACK). New sectors: Automotive, Mining, Finance, Chemicals, Apparel, Shipping, Utilities, Real Estate, Healthcare. Band totals 16/15/5. Sabin total 135. VYRION Index recalculated to 35.7.</td>
+        <td><a href="https://github.com/DablerFrost/Vyrion" target="_blank" style="color:rgba(0,212,255,.35);text-decoration:none">github.com/DablerFrost/Vyrion →</a></td>
       </tr>
     </tbody>
   </table>
@@ -1404,7 +1477,7 @@ body::after{
       <div class="sc-label">Multi-Modal Data Ingestion</div>
       <div class="sc-tag" style="background:var(--track-bg);color:var(--glow);border:1px solid rgba(0,212,255,.25)">Live</div>
       <div class="sc-body">Daily atmospheric CO₂ via NOAA GML Mauna Loa. Corporate regulatory filings via SEC EDGAR submissions API. Annual CDP responses, InfluenceMap lobbying grades, Sabin Center climate litigation database, SBTi registry. All sources public-domain or open-license. Every data point source-cited and linked.<br><br><strong style="color:var(--t1)">Roadmap:</strong> Sentinel-6 satellite deforestation proxy, GBIF biodiversity indicators, Copernicus Marine SST, Open-Meteo ERA5 surface temperature.</div>
-      <div class="sc-status"><div class="sc-dot sc-dot-live"></div><span class="sc-live">CONSCIENCE v2.8 · 11 companies · 6 sources · Live</span></div>
+      <div class="sc-status"><div class="sc-dot sc-dot-live"></div><span class="sc-live">CONSCIENCE v2.9 · 36 companies · 6 sources · Live</span></div>
     </div>
     <div class="stack-card" style="--sc-accent:var(--amber)">
       <div class="sc-num">LAYER 02</div>
@@ -1438,10 +1511,10 @@ body::after{
     <div class="bside bside-breach">
       <div class="bside-title">⬟ Boundary Breakers</div>
       <div class="bcompany"><span class="bc-name">ExxonMobil</span><span class="bc-score" style="color:var(--breach)">8/100</span><span class="bc-tag" style="background:var(--breach-bg);color:var(--breach);border:1px solid rgba(255,46,85,.22)">BREACH</span></div>
+      <div class="bcompany"><span class="bc-name">Chevron</span><span class="bc-score" style="color:var(--breach)">8/100</span><span class="bc-tag" style="background:var(--breach-bg);color:var(--breach);border:1px solid rgba(255,46,85,.22)">BREACH</span></div>
+      <div class="bcompany"><span class="bc-name">Glencore</span><span class="bc-score" style="color:var(--breach)">10/100</span><span class="bc-tag" style="background:var(--breach-bg);color:var(--breach);border:1px solid rgba(255,46,85,.22)">BREACH</span></div>
       <div class="bcompany"><span class="bc-name">BP</span><span class="bc-score" style="color:var(--breach)">11/100</span><span class="bc-tag" style="background:var(--breach-bg);color:var(--breach);border:1px solid rgba(255,46,85,.22)">BREACH</span></div>
-      <div class="bcompany"><span class="bc-name">Delta Air Lines</span><span class="bc-score" style="color:var(--breach)">14/100</span><span class="bc-tag" style="background:var(--breach-bg);color:var(--breach);border:1px solid rgba(255,46,85,.22)">BREACH</span></div>
-      <div class="bcompany"><span class="bc-name">Shell</span><span class="bc-score" style="color:var(--breach)">19/100</span><span class="bc-tag" style="background:var(--breach-bg);color:var(--breach);border:1px solid rgba(255,46,85,.22)">BREACH</span></div>
-      <div class="bcompany"><span class="bc-name">Starbucks</span><span class="bc-score" style="color:var(--breach)">29/100</span><span class="bc-tag" style="background:var(--breach-bg);color:var(--breach);border:1px solid rgba(255,46,85,.22)">BREACH</span></div>
+      <div class="bcompany"><span class="bc-name">JPMorgan Chase</span><span class="bc-score" style="color:var(--breach)">11/100</span><span class="bc-tag" style="background:var(--breach-bg);color:var(--breach);border:1px solid rgba(255,46,85,.22)">BREACH</span></div>
       <div class="attr-bars">
         <div class="attr-title">ExxonMobil — Boundary Attribution Proxy</div>
         <div class="attr-row"><span class="attr-lbl">Climate · Atmos.</span><div class="attr-bar-bg"><div class="attr-bar-fill" style="width:94%;background:var(--breach)"></div></div><span class="attr-pct">94%</span></div>
@@ -1455,9 +1528,9 @@ body::after{
       <div class="bside-title">◈ Progress Tracked.</div>
       <div class="bcompany"><span class="bc-name">Apple</span><span class="bc-score" style="color:var(--glow)">84/100</span><span class="bc-tag" style="background:var(--track-bg);color:var(--glow);border:1px solid rgba(0,212,255,.22)">ON TRACK</span></div>
       <div class="bcompany"><span class="bc-name">Unilever</span><span class="bc-score" style="color:var(--glow)">72/100</span><span class="bc-tag" style="background:var(--track-bg);color:var(--glow);border:1px solid rgba(0,212,255,.22)">ON TRACK</span></div>
+      <div class="bcompany"><span class="bc-name">NextEra Energy</span><span class="bc-score" style="color:var(--glow)">67/100</span><span class="bc-tag" style="background:var(--track-bg);color:var(--glow);border:1px solid rgba(0,212,255,.22)">ON TRACK</span></div>
+      <div class="bcompany"><span class="bc-name">Salesforce</span><span class="bc-score" style="color:var(--glow)">66/100</span><span class="bc-tag" style="background:var(--track-bg);color:var(--glow);border:1px solid rgba(0,212,255,.22)">ON TRACK</span></div>
       <div class="bcompany"><span class="bc-name">Microsoft</span><span class="bc-score" style="color:var(--glow)">61/100</span><span class="bc-tag" style="background:var(--track-bg);color:var(--glow);border:1px solid rgba(0,212,255,.22)">ON TRACK</span></div>
-      <div class="bcompany"><span class="bc-name">Amazon</span><span class="bc-score" style="color:var(--warn)">47/100</span><span class="bc-tag" style="background:var(--warn-bg);color:var(--warn);border:1px solid rgba(255,140,0,.22)">WARNING</span></div>
-      <div class="bcompany"><span class="bc-name">Meta</span><span class="bc-score" style="color:var(--warn)">43/100</span><span class="bc-tag" style="background:var(--warn-bg);color:var(--warn);border:1px solid rgba(255,140,0,.22)">WARNING</span></div>
       <div class="attr-bars">
         <div class="attr-title">Apple — Boundary Alignment Proxy</div>
         <div class="attr-row"><span class="attr-lbl">Climate · Atmos.</span><div class="attr-bar-bg"><div class="attr-bar-fill" style="width:78%;background:var(--glow)"></div></div><span class="attr-pct">78%</span></div>
@@ -1509,7 +1582,7 @@ body::after{
         <div class="lt-tier">Tier 1 · ESG Research</div>
         <div class="lt-buyer">ESG Data Firms</div>
         <div class="lt-price">$500–$1,500<span>/month</span></div>
-        <ul class="lt-features"><li>Daily JSON feed — 11 companies</li><li>Score + band + 4 factor breakdown</li><li>CDP, InfluenceMap, SBTi, Sabin data</li><li>EDGAR filing dates live</li><li>Source citation package</li><li>CONSCIENCE-METHODOLOGY.md license</li></ul>
+        <ul class="lt-features"><li>Daily JSON feed — 36 companies</li><li>Score + band + 4 factor breakdown</li><li>CDP, InfluenceMap, SBTi, Sabin data</li><li>EDGAR filing dates live</li><li>Source citation package</li><li>CONSCIENCE-METHODOLOGY.md license</li></ul>
       </div>
       <div class="lt-card" style="--lt-accent:var(--amber)">
         <div class="lt-tier">Tier 2 · Reinsurance</div>
@@ -1641,10 +1714,10 @@ body::after{
   <div class="op-section">
     <p class="op-label">Live Metrics</p>
     <div class="op-stats">
-      <div class="op-stat"><div class="op-stat-num">11</div><div class="op-stat-lbl">Companies</div></div>
-      <div class="op-stat"><div class="op-stat-num amber">35.6</div><div class="op-stat-lbl">VYRION Index</div></div>
-      <div class="op-stat"><div class="op-stat-num" style="color:var(--breach)">5</div><div class="op-stat-lbl">In Breach</div></div>
-      <div class="op-stat"><div class="op-stat-num">97</div><div class="op-stat-lbl">Active Lawsuits</div></div>
+      <div class="op-stat"><div class="op-stat-num">36</div><div class="op-stat-lbl">Companies</div></div>
+      <div class="op-stat"><div class="op-stat-num amber">35.7</div><div class="op-stat-lbl">VYRION Index</div></div>
+      <div class="op-stat"><div class="op-stat-num" style="color:var(--breach)">16</div><div class="op-stat-lbl">In Breach</div></div>
+      <div class="op-stat"><div class="op-stat-num">135</div><div class="op-stat-lbl">Active Lawsuits</div></div>
     </div>
   </div>
   <div class="op-section">
@@ -1677,7 +1750,7 @@ body::after{
 <!-- MAGNIFIER -->
 <div id="mag">
   <div class="mag-box">
-    <div class="mag-brand">VYRION · CONSCIENCE · v2.8</div>
+    <div class="mag-brand">VYRION · CONSCIENCE · v2.9</div>
     <div class="mag-title" id="mag-t"></div>
     <div class="mag-body"  id="mag-b"></div>
     <div class="mag-src"   id="mag-s"></div>
@@ -1709,7 +1782,7 @@ if (_idxSub) _idxSub.textContent = '/ 100 \u00b7 Day ' + _dayNum + ' \u00b7 ' + 
 const MAG = {
   co2:{t:'Atmospheric CO₂ — NOAA Mauna Loa Observatory',b:'Real-time CO₂ concentration from NOAA\'s Global Monitoring Laboratory. Mauna Loa has the world\'s longest continuous atmospheric CO₂ record, running since 1958. Pre-industrial baseline ≈ 280 ppm. VYRION uses this as one of 6 Atmosphere indicators (22% weight in the Index).',s:'NOAA GML · gml.noaa.gov/ccgg/trends · Daily · Fetched live'},
   index:{t:'VYRION Index — Daily Planetary Health Benchmark',b:'The world\'s first daily investable planetary health benchmark. Score of 35.6 ± 1.8 / 100 against a pre-industrial 1850–1900 baseline of 100. Computed across 8 Earth systems: Atmosphere 22%, Ocean 18%, Ice 14%, Forest 13%, Biodiversity 12%, Freshwater 10%, Soil 7%, Corporate Accountability 4%. Changes <±0.5 are within measurement error.',s:'VYRION-METHODOLOGY-v1.0.md · github.com/DablerFrost/Vyrion · Dynamic day counter · Origin: 2026-03-18'},
-  coverage:{t:'CONSCIENCE Coverage — 11 Companies',b:'11 major corporations tracked across Oil & Gas, Aviation, Food & Beverage, Retail, and Technology. Selected for material climate pledges and significant emissions footprints. Expansion planned. Full selection criteria in CONSCIENCE-METHODOLOGY.md.',s:'VYRION CONSCIENCE · v2.8'},
+  coverage:{t:'CONSCIENCE Coverage — 36 Companies',b:'36 major corporations tracked across Oil & Gas, Aviation, Food & Beverage, Retail, Technology, Automotive, Mining, Finance, Chemicals, Apparel, Shipping, Utilities, Real Estate, and Healthcare. Selected for material climate pledges and significant emissions footprints. Full selection criteria in CONSCIENCE-METHODOLOGY.md.',s:'VYRION CONSCIENCE · v2.9'},
   lawsuits:{t:'Total Active Climate Lawsuits',b:'Aggregate active climate litigation against the 11 tracked companies, per Sabin Center for Climate Change Law at Columbia Law School. Legal exposure = one of the four CONSCIENCE scoring factors (20 pts max). Counts refreshed monthly.',s:'Sabin Center for Climate Change Law · climatecasechart.com · Columbia Law School'},
   refresh:{t:'Auto-Refresh — Live Data',b:'CONSCIENCE refreshes on page load and every 15 minutes. Live: NOAA GML CO₂ (direct API), SEC EDGAR filing dates (data.sec.gov). Static sources (CDP, InfluenceMap, SBTi, TPI) update when annual assessments publish.',s:'NOAA GML · data.sec.gov/submissions · 15 min interval'},
   'src-cdp':{t:'CDP — Carbon Disclosure Project',b:'World\'s largest environmental disclosure system. Companies respond annually to standardised climate questionnaires. Full 9-tier grade scale: A, A−, B, B−, C, C−, D, D−, F. A (Leadership) requires demonstrated governance, strategy, and action — not just reporting. F = failure to provide sufficient information. CONSCIENCE v1.1 maps the full 9-tier scale to scoring points (A=25, A−=22, B=18, B−=14, C=10, C−=7, D=4, D−=2, F=0). CDP grades are independent; companies cannot buy a better score.',s:'CDP · cdp.net/en/responses · Annual cycle · 23,000+ companies'},
@@ -1803,7 +1876,183 @@ const COMPANIES = [
    cdpGrade:'A',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'B+',imUrl:'https://influencemap.org/company/Apple',
    sabin:0,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=apple',sbti:'Approved 1.5°C',sbtiClass:'sbti-yes',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
    tpi:'Level 5/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
-   sb:[{f:'Pledge Quality — 2030 full value chain; SBTi 1.5°C; interim met',w:'30 max',p:30},{f:'CDP Grade A — Leadership tier',w:'25 max',p:25},{f:'InfluenceMap Grade B+',w:'25 max',p:19},{f:'Legal Exposure — 0 cases',w:'20 max',p:10}]}
+   sb:[{f:'Pledge Quality — 2030 full value chain; SBTi 1.5°C; interim met',w:'30 max',p:30},{f:'CDP Grade A — Leadership tier',w:'25 max',p:25},{f:'InfluenceMap Grade B+',w:'25 max',p:19},{f:'Legal Exposure — 0 cases',w:'20 max',p:10}]},
+  // ── WAVE 2 · 25 NEW COMPANIES · v2.9 ───────────────────────────────
+  {id:'chevron',name:'Chevron',ticker:'CVX',sector:'Oil & Gas',cik:'0000093410',score:8,band:'breach',bandLabel:'BREACH',
+   pledge:'Net zero Scope 1 & 2 operational emissions by 2050. Paris alignment claimed through lower carbon intensity targets.',pledgeSrc:'Chevron Climate Report 2023',pledgeUrl:'https://www.chevron.com/sustainability',
+   reality:'No Scope 3 target — 90%+ of total lifecycle emissions unaddressed. Upstream production expansion through 2027. $3M+ lobbying against U.S. climate legislation (2023). Hess acquisition deepens fossil fuel lock-in.',realitySrc:'CDP 2023 · SEC 10-K 2024 · InfluenceMap · Sabin Center',realityClass:'',
+   cdpGrade:'D',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'F',imUrl:'https://influencemap.org/company/Chevron',
+   sabin:8,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=chevron',sbti:'Not committed',sbtiClass:'sbti-no',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
+   tpi:'Level 2/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
+   sb:[{f:'Pledge Quality — Scope 1&2 only, no Scope 3',w:'30 max',p:3},{f:'CDP Grade D',w:'25 max',p:4},{f:'InfluenceMap Grade F',w:'25 max',p:0},{f:'Legal Exposure — 8 active cases',w:'20 max',p:1}]},
+  {id:'totalenergies',name:'TotalEnergies',ticker:'TTE',sector:'Oil & Gas',cik:'0000879764',score:20,band:'breach',bandLabel:'BREACH',
+   pledge:'Net zero by 2050 across all products sold and operations. Renewables capacity to 100GW by 2030.',pledgeSrc:'TotalEnergies Climate & Energy Ambition 2023',pledgeUrl:'https://totalenergies.com/sustainability/climate',
+   reality:'Oil & gas production growing through 2028. Net zero definition includes selling natural gas to third parties — Scope 3 excluded from targets. Significant LNG expansion underway.',realitySrc:'CDP 2023 · TotalEnergies Annual Report 2024 · InfluenceMap',realityClass:'',
+   cdpGrade:'C',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'D',imUrl:'https://influencemap.org/company/Total',
+   sabin:5,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=total',sbti:'Not committed',sbtiClass:'sbti-no',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
+   tpi:'Level 3/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
+   sb:[{f:'Pledge Quality — intensity target; Scope 3 excluded',w:'30 max',p:8},{f:'CDP Grade C',w:'25 max',p:10},{f:'InfluenceMap Grade D',w:'25 max',p:3},{f:'Legal Exposure — 5 active cases',w:'20 max',p:-1}]},
+  {id:'conocophillips',name:'ConocoPhillips',ticker:'COP',sector:'Oil & Gas',cik:'0001163165',score:13,band:'breach',bandLabel:'BREACH',
+   pledge:'Net zero Scope 1 & 2 by 2050. GHG intensity target: −35% by 2030 vs 2016. Paris-aligned operational emissions reductions.',pledgeSrc:'ConocoPhillips 2023 Sustainability Report',pledgeUrl:'https://www.conocophillips.com/sustainability/',
+   reality:'No Scope 3 target — upstream oil covers only ~5% of lifecycle emissions. Sustained exploration and production expansion. No SBTi engagement.',realitySrc:'CDP 2023 · SEC 10-K 2024 · InfluenceMap · ConocoPhillips Sustainability Report',realityClass:'',
+   cdpGrade:'C',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'D-',imUrl:'https://influencemap.org/company/ConocoPhillips',
+   sabin:4,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=conocophillips',sbti:'Not committed',sbtiClass:'sbti-no',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
+   tpi:'Level 2/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
+   sb:[{f:'Pledge Quality — Scope 1&2 intensity only; no Scope 3',w:'30 max',p:4},{f:'CDP Grade C',w:'25 max',p:10},{f:'InfluenceMap Grade D−',w:'25 max',p:2},{f:'Legal Exposure — 4 active cases',w:'20 max',p:-3}]},
+  {id:'glencore',name:'Glencore',ticker:'GLEN',sector:'Mining',cik:'N/A',score:10,band:'breach',bandLabel:'BREACH',
+   pledge:'Net zero by 2050. Paris-aligned pathway. Managed wind-down of coal through the energy transition.',pledgeSrc:'Glencore Climate Report 2023',pledgeUrl:'https://www.glencore.com/sustainability/climate-change',
+   reality:'World\'s largest thermal coal trader — 90M+ tonnes annually. Coal wind-down timeline indefinite. Scope 3 from coal sales excluded from net zero target. Active coal asset acquisition as late as 2022.',realitySrc:'CDP 2023 · Glencore Annual Report 2024 · InfluenceMap · Sabin Center',realityClass:'',
+   cdpGrade:'D',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'D',imUrl:'https://influencemap.org/company/Glencore',
+   sabin:6,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=glencore',sbti:'Not committed',sbtiClass:'sbti-no',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
+   tpi:'Level 2/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
+   sb:[{f:'Pledge Quality — no absolute target; coal wind-down undefined',w:'30 max',p:3},{f:'CDP Grade D',w:'25 max',p:4},{f:'InfluenceMap Grade D',w:'25 max',p:3},{f:'Legal Exposure — 6 active cases',w:'20 max',p:0}]},
+  {id:'toyota',name:'Toyota',ticker:'TM',sector:'Automotive',cik:'0001094517',score:14,band:'breach',bandLabel:'BREACH',
+   pledge:'Carbon neutral by 2050. Multi-pathway approach: hybrids, hydrogen, and BEV. 3.5M EV and fuel-cell vehicle sales by 2030.',pledgeSrc:'Toyota Environmental Challenge 2050',pledgeUrl:'https://www.toyota-global.com/sustainability/environment/',
+   reality:'InfluenceMap ranked Toyota the most aggressive global auto lobbyist against EV mandates. BEV sales <1% of 2023 global fleet. Hybrid strategy functionally delays full electrification. No SBTi commitment.',realitySrc:'InfluenceMap Automotive Report 2023 · CDP 2023 · Toyota Annual Report 2024',realityClass:'',
+   cdpGrade:'C',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'D',imUrl:'https://influencemap.org/company/Toyota',
+   sabin:2,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=toyota',sbti:'Not committed',sbtiClass:'sbti-no',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
+   tpi:'Level 3/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
+   sb:[{f:'Pledge Quality — hybrid-first; weak BEV commitment',w:'30 max',p:4},{f:'CDP Grade C',w:'25 max',p:10},{f:'InfluenceMap Grade D — #1 EV mandate lobbyist',w:'25 max',p:3},{f:'Legal Exposure — 2 active cases',w:'20 max',p:-3}]},
+  {id:'jpmorgan',name:'JPMorgan Chase',ticker:'JPM',sector:'Finance',cik:'0000019617',score:11,band:'breach',bandLabel:'BREACH',
+   pledge:'Paris-aligned financing portfolio by 2030. Net zero financed emissions by 2050.',pledgeSrc:'JPMorgan Chase ESG Report 2023',pledgeUrl:'https://www.jpmorganchase.com/about/sustainability',
+   reality:'Largest global fossil fuel financier — $434B since Paris Agreement (2016–2023). Withdrew from Net-Zero Banking Alliance in January 2025. Climate Action 100+ participation suspended.',realitySrc:'Banking on Climate Chaos 2024 · CDP 2023 · Reuters',realityClass:'',
+   cdpGrade:'D',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'D',imUrl:'https://influencemap.org/company/JPMorgan-Chase',
+   sabin:3,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=jpmorgan',sbti:'Not committed',sbtiClass:'sbti-no',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
+   tpi:'Level 2/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
+   sb:[{f:'Pledge Quality — portfolio alignment pledged; NZBA exit',w:'30 max',p:3},{f:'CDP Grade D',w:'25 max',p:4},{f:'InfluenceMap Grade D',w:'25 max',p:4},{f:'Legal Exposure — 3 active cases',w:'20 max',p:0}]},
+  {id:'united',name:'United Airlines',ticker:'UAL',sector:'Aviation',cik:'0000100517',score:15,band:'breach',bandLabel:'BREACH',
+   pledge:'Net zero by 2050 via SAF, efficiency, and carbon removal. Green bonds issued for fleet renewal.',pledgeSrc:'United Airlines Eco-Skies Alliance · Sustainability Report 2023',pledgeUrl:'https://crreport.united.com/',
+   reality:'SAF at <1% of total fuel. Absolute emissions recovering to pre-pandemic levels. No SBTi commitment. 2050 net zero relies on unproven carbon removal at scale.',realitySrc:'CDP 2023 · United Airlines 10-K 2024 · InfluenceMap',realityClass:'',
+   cdpGrade:'C',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'D',imUrl:'https://influencemap.org/company/United-Airlines',
+   sabin:2,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=united+airlines',sbti:'Not committed',sbtiClass:'sbti-no',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
+   tpi:'Level 2/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
+   sb:[{f:'Pledge Quality — offset & SAF dependent; <1% SAF today',w:'30 max',p:4},{f:'CDP Grade C',w:'25 max',p:10},{f:'InfluenceMap Grade D',w:'25 max',p:4},{f:'Legal Exposure + rising absolute emissions',w:'20 max',p:-3}]},
+  {id:'duke',name:'Duke Energy',ticker:'DUK',sector:'Utilities',cik:'0001326160',score:24,band:'breach',bandLabel:'BREACH',
+   pledge:'Net zero by 2050. 50% carbon reduction from electricity generation by 2030 vs 2005. 40% clean energy by 2030.',pledgeSrc:'Duke Energy 2030 Climate Report',pledgeUrl:'https://sustainabilityreport.duke-energy.com/',
+   reality:'Second-largest U.S. coal operator. 2030 interim target trajectory insufficient under current pace. Grid-scale battery and solar build underway but inadequate. Active lobbying against accelerated emissions mandates.',realitySrc:'CDP 2023 · Duke Energy 10-K 2024 · Sierra Club · InfluenceMap',realityClass:'',
+   cdpGrade:'C',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'C-',imUrl:'https://influencemap.org/company/Duke-Energy',
+   sabin:3,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=duke+energy',sbti:'Not committed',sbtiClass:'sbti-no',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
+   tpi:'Level 3/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
+   sb:[{f:'Pledge Quality — interim 2030 target; no SBTi',w:'30 max',p:9},{f:'CDP Grade C',w:'25 max',p:10},{f:'InfluenceMap Grade C−',w:'25 max',p:7},{f:'Legal Exposure — 3 active cases',w:'20 max',p:-2}]},
+  {id:'basf',name:'BASF',ticker:'BAS',sector:'Chemicals',cik:'N/A',score:27,band:'breach',bandLabel:'BREACH',
+   pledge:'Net zero by 2050. 25% Scope 1 & 2 reduction by 2030 vs 2018. Carbon-neutral product portfolio roadmap in development.',pledgeSrc:'BASF Sustainability Report 2023',pledgeUrl:'https://www.basf.com/global/en/who-we-are/sustainability/environment/climate-protection.html',
+   reality:'World\'s largest chemical company by revenue — process emissions extremely high. 2030 targets cover Scope 1&2 only. No Scope 3 lifecycle commitment for product sales. Pathway depends on carbon capture at scale.',realitySrc:'CDP 2023 · BASF Annual Report 2024 · InfluenceMap',realityClass:'',
+   cdpGrade:'C',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'C-',imUrl:'https://influencemap.org/company/BASF',
+   sabin:1,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=basf',sbti:'Not committed',sbtiClass:'sbti-no',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
+   tpi:'Level 3/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
+   sb:[{f:'Pledge Quality — Scope 1&2 target only; no Scope 3',w:'30 max',p:10},{f:'CDP Grade C',w:'25 max',p:10},{f:'InfluenceMap Grade C−',w:'25 max',p:7},{f:'Legal Exposure — 1 active case',w:'20 max',p:0}]},
+  {id:'blackrock',name:'BlackRock',ticker:'BLK',sector:'Finance',cik:'0001364742',score:29,band:'breach',bandLabel:'BREACH',
+   pledge:'Net zero across investment portfolio by 2050. TCFD-aligned disclosure. Climate risk integration across all investment processes.',pledgeSrc:'BlackRock Investment Stewardship Report 2023',pledgeUrl:'https://www.blackrock.com/corporate/responsibility/blackrock-investment-stewardship',
+   reality:'$10T+ AUM includes major fossil fuel holdings. Voted against majority of climate shareholder resolutions in 2023. Withdrew from Climate Action 100+ in 2024. Net Zero Asset Managers initiative exit signaled.',realitySrc:'BlackRock Proxy Voting Records 2023 · Reuters · Bloomberg Green',realityClass:'',
+   cdpGrade:'B',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'C-',imUrl:'https://influencemap.org/company/BlackRock',
+   sabin:4,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=blackrock',sbti:'Not committed',sbtiClass:'sbti-no',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
+   tpi:'Level 3/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
+   sb:[{f:'Pledge Quality — portfolio alignment pledged; CA100+ exit',w:'30 max',p:10},{f:'CDP Grade B',w:'25 max',p:18},{f:'InfluenceMap Grade C−',w:'25 max',p:7},{f:'Legal Exposure — 4 cases + stewardship reversal',w:'20 max',p:-6}]},
+  {id:'cocacola',name:'Coca-Cola',ticker:'KO',sector:'Food & Beverage',cik:'0000021344',score:30,band:'breach',bandLabel:'BREACH',
+   pledge:'30% absolute emission reduction across full value chain by 2030 vs 2015. Net zero by 2050.',pledgeSrc:'Coca-Cola ESG Report 2023',pledgeUrl:'https://www.coca-colacompany.com/sustainability',
+   reality:'Scope 3 = 90%+ of total footprint. Ranked world\'s largest plastic polluter by Break Free From Plastic audits. Emissions trajectory improving only marginally. Active lobbying against extended producer responsibility legislation.',realitySrc:'CDP 2023 · Coca-Cola 10-K 2024 · Break Free From Plastic · InfluenceMap',realityClass:'',
+   cdpGrade:'B',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'C-',imUrl:'https://influencemap.org/company/Coca-Cola',
+   sabin:3,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=coca-cola',sbti:'Committed',sbtiClass:'sbti-commit',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
+   tpi:'Level 3/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
+   sb:[{f:'Pledge Quality — value chain scope; SBTi committed',w:'30 max',p:11},{f:'CDP Grade B',w:'25 max',p:18},{f:'InfluenceMap Grade C−',w:'25 max',p:7},{f:'Legal Exposure + plastic pollution liability',w:'20 max',p:-6}]},
+  {id:'volkswagen',name:'Volkswagen',ticker:'VOW3',sector:'Automotive',cik:'N/A',score:31,band:'warning',bandLabel:'WARNING',
+   pledge:'Climate neutral by 2050. 55% CO2 reduction across fleet lifecycle by 2030 vs 2018. 70% BEV sales mix in Europe by 2030.',pledgeSrc:'Volkswagen Group Sustainability Report 2023',pledgeUrl:'https://www.volkswagenag.com/en/sustainability.html',
+   reality:'Dieselgate legacy: 11M defeat devices, $30B+ settlements. EU CAFE fine exposure from 2025. EV transition genuine but below target pace. InfluenceMap documents continued lobbying against stringent EU emission standards.',realitySrc:'CDP 2023 · VW Annual Report 2024 · InfluenceMap · EU CAFE data',realityClass:'warn',
+   cdpGrade:'B',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'C-',imUrl:'https://influencemap.org/company/Volkswagen',
+   sabin:5,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=volkswagen',sbti:'Committed',sbtiClass:'sbti-commit',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
+   tpi:'Level 3/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
+   sb:[{f:'Pledge Quality — SBTi committed; 2030 BEV target',w:'30 max',p:12},{f:'CDP Grade B',w:'25 max',p:18},{f:'InfluenceMap Grade C−',w:'25 max',p:7},{f:'Dieselgate legacy — 5 active cases',w:'20 max',p:-6}]},
+  {id:'ford',name:'Ford',ticker:'F',sector:'Automotive',cik:'0000037996',score:34,band:'warning',bandLabel:'WARNING',
+   pledge:'Carbon neutral globally by 2050. 100% zero-emission vehicle sales in Europe by 2030. 40–50% global EV mix by 2030.',pledgeSrc:'Ford Integrated Sustainability & Financial Report 2023',pledgeUrl:'https://corporate.ford.com/operations/sustainability.html',
+   reality:'Ford Model e EV unit posted $5.1B loss in 2024. Production targets reduced. ICE and hybrid revenue cross-subsidizing EV pivot. SBTi committed but 2030 milestone trajectory uncertain.',realitySrc:'Ford 10-K 2024 · CDP 2023 · Bloomberg · InfluenceMap',realityClass:'warn',
+   cdpGrade:'B',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'C',imUrl:'https://influencemap.org/company/Ford',
+   sabin:2,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=ford',sbti:'Committed',sbtiClass:'sbti-commit',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
+   tpi:'Level 3/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
+   sb:[{f:'Pledge Quality — SBTi committed; EV transition underway',w:'30 max',p:13},{f:'CDP Grade B',w:'25 max',p:18},{f:'InfluenceMap Grade C',w:'25 max',p:9},{f:'EV unit losses threaten transition pace',w:'20 max',p:-6}]},
+  {id:'nestle',name:'Nestlé',ticker:'NESN',sector:'Food & Beverage',cik:'0000792990',score:33,band:'warning',bandLabel:'WARNING',
+   pledge:'Net zero by 2050. 20% absolute emission reduction by 2025 (Scope 1&2). SBTi 1.5°C committed across full value chain.',pledgeSrc:'Nestlé Net Zero Roadmap 2023',pledgeUrl:'https://www.nestle.com/sustainability/climate-change',
+   reality:'Scope 3 from agriculture = 95% of total footprint — improvement slow. Deforestation-free supply chain target missed 2020 deadline. Palm oil sourcing compliance patchy per Forest500. Water extraction under escalating scrutiny.',realitySrc:'CDP 2023 · Forest500 Report 2023 · Nestlé Annual Report 2024 · InfluenceMap',realityClass:'warn',
+   cdpGrade:'B',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'C-',imUrl:'https://influencemap.org/company/Nestle',
+   sabin:4,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=nestle',sbti:'Committed',sbtiClass:'sbti-commit',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
+   tpi:'Level 3/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
+   sb:[{f:'Pledge Quality — SBTi committed; deforestation target missed',w:'30 max',p:14},{f:'CDP Grade B',w:'25 max',p:18},{f:'InfluenceMap Grade C−',w:'25 max',p:7},{f:'Legal Exposure — 4 cases + supply chain risk',w:'20 max',p:-6}]},
+  {id:'hm',name:'H&M Group',ticker:'HMB',sector:'Apparel',cik:'N/A',score:36,band:'warning',bandLabel:'WARNING',
+   pledge:'56% absolute emission reduction by 2030 vs 2019. Net zero by 2040. SBTi 1.5°C committed.',pledgeSrc:'H&M Group Sustainability Disclosure 2023',pledgeUrl:'https://hmgroup.com/sustainability/',
+   reality:'Fast fashion business model — overproduction structurally incompatible with emission reduction targets. Greenwashing lawsuit in Netherlands (2022) over Conscious Collection. Scope 3 supply chain emissions growing with volume.',realitySrc:'CDP 2023 · ClientEarth Report 2023 · H&M Annual Report 2024 · InfluenceMap',realityClass:'warn',
+   cdpGrade:'B',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'C-',imUrl:'https://influencemap.org/company/HM-Group',
+   sabin:3,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=h%26m',sbti:'Committed',sbtiClass:'sbti-commit',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
+   tpi:'Level 3/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
+   sb:[{f:'Pledge Quality — SBTi committed; 2040 net zero',w:'30 max',p:14},{f:'CDP Grade B',w:'25 max',p:18},{f:'InfluenceMap Grade C−',w:'25 max',p:7},{f:'Greenwashing litigation — 3 active cases',w:'20 max',p:-3}]},
+  {id:'riotinto',name:'Rio Tinto',ticker:'RIO',sector:'Mining',cik:'0000863064',score:38,band:'warning',bandLabel:'WARNING',
+   pledge:'Net zero Scope 1 & 2 by 2050. 50% absolute Scope 1&2 reduction by 2030 vs 2018. Scope 3 reduction ambition stated.',pledgeSrc:'Rio Tinto Climate Change Report 2023',pledgeUrl:'https://www.riotinto.com/en/sustainability/climate-change',
+   reality:'Iron ore, bauxite, and copper extraction drive enormous Scope 3 downstream emissions from steel and aluminium production. Juukan Gorge heritage destruction (2020) exposed systemic ESG governance failures. Scope 3 = 97%+ of total footprint.',realitySrc:'CDP 2023 · Rio Tinto Annual Report 2024 · InfluenceMap',realityClass:'warn',
+   cdpGrade:'B',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'C',imUrl:'https://influencemap.org/company/Rio-Tinto',
+   sabin:2,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=rio+tinto',sbti:'Committed',sbtiClass:'sbti-commit',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
+   tpi:'Level 3/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
+   sb:[{f:'Pledge Quality — 2030 Scope 1&2 target; SBTi committed',w:'30 max',p:15},{f:'CDP Grade B',w:'25 max',p:18},{f:'InfluenceMap Grade C',w:'25 max',p:9},{f:'Legal Exposure — 2 cases; Scope 3 trajectory',w:'20 max',p:-4}]},
+  {id:'bhp',name:'BHP',ticker:'BHP',sector:'Mining',cik:'0000811809',score:41,band:'warning',bandLabel:'WARNING',
+   pledge:'Net zero by 2050. 30% absolute Scope 1&2 reduction by FY2030 vs FY2020. Customer Scope 3 decarbonisation support programme.',pledgeSrc:'BHP Climate Transition Action Plan 2024',pledgeUrl:'https://www.bhp.com/sustainability/climate-change',
+   reality:'Major metallurgical coal and iron ore exporter — downstream steel Scope 3 emissions enormous. BHP Petroleum spin-off into Woodside (2022) removed some emissions while maintaining aggregate production. Scope 3 = 96%+ of footprint.',realitySrc:'CDP 2023 · BHP Annual Report 2024 · InfluenceMap',realityClass:'warn',
+   cdpGrade:'B',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'C',imUrl:'https://influencemap.org/company/BHP',
+   sabin:2,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=bhp',sbti:'Committed',sbtiClass:'sbti-commit',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
+   tpi:'Level 4/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
+   sb:[{f:'Pledge Quality — CTAP published; 2030 interim target',w:'30 max',p:16},{f:'CDP Grade B',w:'25 max',p:18},{f:'InfluenceMap Grade C',w:'25 max',p:9},{f:'Legal Exposure — 2 cases; Scope 3 risk',w:'20 max',p:-2}]},
+  {id:'pg',name:'Procter & Gamble',ticker:'PG',sector:'Consumer Goods',cik:'0000080424',score:40,band:'warning',bandLabel:'WARNING',
+   pledge:'Net zero emissions by 2040. 50% absolute Scope 1&2 reduction by 2030 vs 2010. Responsible deforestation policy across supply chain.',pledgeSrc:'P&G FY2024 Citizenship Report',pledgeUrl:'https://pgsustainability.com/',
+   reality:'Scope 3 = 95%+ of emissions — palm oil and wood pulp from deforestation-linked Indonesian suppliers. Forest500 compliance on zero-deforestation commitments below stated levels. Product-use emissions dominant in home care.',realitySrc:'CDP 2023 · Forest500 2023 · P&G Annual Report 2024 · InfluenceMap',realityClass:'warn',
+   cdpGrade:'B',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'C',imUrl:'https://influencemap.org/company/Procter-Gamble',
+   sabin:2,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=procter+gamble',sbti:'Committed',sbtiClass:'sbti-commit',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
+   tpi:'Level 3/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
+   sb:[{f:'Pledge Quality — SBTi committed; 2040 net zero',w:'30 max',p:16},{f:'CDP Grade B',w:'25 max',p:18},{f:'InfluenceMap Grade C',w:'25 max',p:9},{f:'Legal Exposure — 2 cases; deforestation risk',w:'20 max',p:-3}]},
+  {id:'nike',name:'Nike',ticker:'NKE',sector:'Consumer Goods',cik:'0000320187',score:46,band:'warning',bandLabel:'WARNING',
+   pledge:'70% absolute Scope 1&2 reduction by 2030. Move to Zero platform. Scope 3 reduction targets via supplier engagement.',pledgeSrc:'Nike FY2023 Impact Report',pledgeUrl:'https://about.nike.com/en/impact',
+   reality:'Scope 3 from contract manufacturing = 90%+ of footprint. Supply chain emission growth outpacing Scope 1&2 reductions. Sustainable materials scaling from a very small base. No approved SBTi target yet.',realitySrc:'CDP 2023 · Nike FY2024 Impact Report · InfluenceMap',realityClass:'warn',
+   cdpGrade:'B',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'C',imUrl:'https://influencemap.org/company/Nike',
+   sabin:1,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=nike',sbti:'Committed',sbtiClass:'sbti-commit',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
+   tpi:'Level 3/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
+   sb:[{f:'Pledge Quality — SBTi committed; supply chain ambition',w:'30 max',p:18},{f:'CDP Grade B',w:'25 max',p:18},{f:'InfluenceMap Grade C',w:'25 max',p:9},{f:'Legal Exposure — 1 case; Scope 3 gap',w:'20 max',p:1}]},
+  {id:'maersk',name:'Maersk',ticker:'MAERSK-B',sector:'Shipping',cik:'N/A',score:54,band:'warning',bandLabel:'WARNING',
+   pledge:'Net zero by 2040 — 10 years ahead of Paris Agreement. First commercial green methanol vessel deployed 2023. 25% of ocean fleet on green fuel by 2030.',pledgeSrc:'Maersk Sustainability Report 2023',pledgeUrl:'https://www.maersk.com/sustainability',
+   reality:'~2% of fleet on green fuel today vs 25% target by 2030. Green methanol production supply severely constrained. Significant capital committed across fleet and fuel sourcing. On trajectory but rapid scaling at risk.',realitySrc:'CDP 2023 · Maersk Annual Report 2024 · InfluenceMap · IMO',realityClass:'warn',
+   cdpGrade:'B',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'B-',imUrl:'https://influencemap.org/company/Maersk',
+   sabin:0,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=maersk',sbti:'Approved 1.5°C',sbtiClass:'sbti-yes',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
+   tpi:'Level 4/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
+   sb:[{f:'Pledge Quality — SBTi 1.5°C approved; 2040 net zero leader',w:'30 max',p:22},{f:'CDP Grade B',w:'25 max',p:18},{f:'InfluenceMap Grade B−',w:'25 max',p:14},{f:'Legal Exposure — 0 cases; green fuel scaling risk',w:'20 max',p:0}]},
+  {id:'alphabet',name:'Alphabet',ticker:'GOOGL',sector:'Technology',cik:'0001652044',score:60,band:'warning',bandLabel:'WARNING',
+   pledge:'Net zero across operations and value chain by 2030. 24/7 carbon-free energy at every data center globally by 2030.',pledgeSrc:'Google Environmental Report 2024',pledgeUrl:'https://sustainability.google/',
+   reality:'AI-driven energy demand pushed GHG emissions +48% from 2019 to 2024 — disclosed in own report. Missed 2020 carbon-free energy milestones. Advanced nuclear and 24/7 CFE partnerships expanding rapidly but 2030 target increasingly difficult.',realitySrc:'Google Environmental Report 2024 · CDP 2023 · Bloomberg · InfluenceMap',realityClass:'warn',
+   cdpGrade:'A-',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'B',imUrl:'https://influencemap.org/company/Alphabet-Google',
+   sabin:1,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=google',sbti:'Approved 1.5°C',sbtiClass:'sbti-yes',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
+   tpi:'Level 4/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
+   sb:[{f:'Pledge Quality — SBTi 1.5°C approved; 24/7 CFE target',w:'30 max',p:24},{f:'CDP Grade A−',w:'25 max',p:22},{f:'InfluenceMap Grade B',w:'25 max',p:16},{f:'AI emissions surge — +48% since 2019',w:'20 max',p:-2}]},
+  {id:'jnj',name:'Johnson & Johnson',ticker:'JNJ',sector:'Healthcare',cik:'0000200406',score:57,band:'warning',bandLabel:'WARNING',
+   pledge:'Carbon neutral in own operations by 2030. Net zero across full value chain by 2045. 100% renewable electricity globally by 2025.',pledgeSrc:'Johnson & Johnson ESG Performance Summary 2023',pledgeUrl:'https://www.jnj.com/latest-news/johnson-johnson-releases-2023-esg-performance-summary',
+   reality:'~70% renewable electricity achieved. Scope 3 pharmaceutical supply chain improving. Own operations emissions down ~35% since 2016. On track vs near-term milestones. Kenvue spin-off narrowed operational scope.',realitySrc:'CDP 2023 · J&J ESG Report 2024 · SBTi Registry · InfluenceMap',realityClass:'warn',
+   cdpGrade:'A-',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'B-',imUrl:'https://influencemap.org/company/Johnson-Johnson',
+   sabin:1,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=johnson+johnson',sbti:'Approved 1.5°C',sbtiClass:'sbti-yes',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
+   tpi:'Level 4/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
+   sb:[{f:'Pledge Quality — SBTi 1.5°C; 2030 ops carbon neutral',w:'30 max',p:22},{f:'CDP Grade A−',w:'25 max',p:22},{f:'InfluenceMap Grade B−',w:'25 max',p:14},{f:'Legal Exposure — 1 case; Scope 3 supply chain gap',w:'20 max',p:-1}]},
+  {id:'cbre',name:'CBRE Group',ticker:'CBRE',sector:'Real Estate',cik:'0001138118',score:55,band:'warning',bandLabel:'WARNING',
+   pledge:'Net zero Scope 1, 2, and 3 by 2040. SBTi 1.5°C approved. 100% renewable electricity in own operations by 2025.',pledgeSrc:'CBRE 2023 Corporate Responsibility Report',pledgeUrl:'https://www.cbre.com/about-us/corporate-responsibility',
+   reality:'Building management is dominant footprint. Managed portfolio emission reductions require client cooperation — Scope 3 not fully within CBRE\'s operational control. Strong own-operations performance. Sustainable certification pipeline expanding.',realitySrc:'CDP 2023 · CBRE Annual Report 2024 · SBTi Registry · InfluenceMap',realityClass:'warn',
+   cdpGrade:'A-',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'B-',imUrl:'https://influencemap.org/company/CBRE',
+   sabin:1,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=cbre',sbti:'Approved 1.5°C',sbtiClass:'sbti-yes',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
+   tpi:'Level 4/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
+   sb:[{f:'Pledge Quality — SBTi 1.5°C; full value chain scope',w:'30 max',p:21},{f:'CDP Grade A−',w:'25 max',p:22},{f:'InfluenceMap Grade B−',w:'25 max',p:13},{f:'Legal Exposure — 1 case; Scope 3 client dependency',w:'20 max',p:-1}]},
+  {id:'nextera',name:'NextEra Energy',ticker:'NEE',sector:'Utilities',cik:'0000753308',score:67,band:'on-track',bandLabel:'ON TRACK',
+   pledge:'Real Zero by 2045 — no carbon dioxide from operations. Leading U.S. renewable energy developer. 100% clean energy generation in own operations.',pledgeSrc:'NextEra Energy Sustainability Report 2023',pledgeUrl:'https://www.nexteraenergy.com/sustainability.html',
+   reality:'America\'s largest renewable energy company — 67GW+ clean capacity. Some natural gas peaker plants still operating. Grid interconnection delays limiting expansion pace. Lobbying on transmission rules occasionally misaligned with maximum climate impact.',realitySrc:'CDP 2023 · NextEra Annual Report 2024 · FERC filings · InfluenceMap',realityClass:'ok',
+   cdpGrade:'B',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'B-',imUrl:'https://influencemap.org/company/NextEra-Energy',
+   sabin:0,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=nextera',sbti:'Approved 1.5°C',sbtiClass:'sbti-yes',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
+   tpi:'Level 4/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
+   sb:[{f:'Pledge Quality — Real Zero 2045; renewable market leader',w:'30 max',p:25},{f:'CDP Grade B',w:'25 max',p:18},{f:'InfluenceMap Grade B−',w:'25 max',p:14},{f:'Legal Exposure — 0 cases; clean energy focus',w:'20 max',p:10}]},
+  {id:'salesforce',name:'Salesforce',ticker:'CRM',sector:'Technology',cik:'0001108524',score:66,band:'on-track',bandLabel:'ON TRACK',
+   pledge:'Net zero by 2040. 100% renewable energy by 2022 (achieved). Full Scope 3 supply chain decarbonisation commitment.',pledgeSrc:'Salesforce FY2024 Stakeholder Impact Report',pledgeUrl:'https://www.salesforce.com/company/sustainability/',
+   reality:'Own operations 100% renewable since 2022. Scope 3 Purchased Goods & Services = ~85% of total footprint — harder to control. SBTi 1.5°C approved. Strong climate policy advocacy. AI infrastructure growth tracked.',realitySrc:'CDP 2023 · Salesforce Sustainability Report 2024 · SBTi Registry · InfluenceMap',realityClass:'ok',
+   cdpGrade:'A-',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'B',imUrl:'https://influencemap.org/company/Salesforce',
+   sabin:0,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=salesforce',sbti:'Approved 1.5°C',sbtiClass:'sbti-yes',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
+   tpi:'Level 4/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
+   sb:[{f:'Pledge Quality — SBTi 1.5°C; 100% renewable achieved 2022',w:'30 max',p:24},{f:'CDP Grade A−',w:'25 max',p:22},{f:'InfluenceMap Grade B',w:'25 max',p:16},{f:'Legal Exposure — 0 cases; Scope 3 supply chain gap',w:'20 max',p:4}]}
 ];
 
 // ─────────────────────────────────────────────────────────
@@ -1835,12 +2084,64 @@ function cdpCls(g){return g?g.startsWith('A')?'cdp-A':g.startsWith('B')?'cdp-B':
 function imCls(g){return g?g.startsWith('A')?'im-A':g.startsWith('B')?'im-B':g.startsWith('C')?'im-C':'im-F':'im-F'}
 function lawCls(n){return n===0?'law-0':n<=3?'law-low':n<=12?'law-mid':'law-high'}
 
-function renderCard(co) {
+// ── SECTOR IDENTITY GLYPHS ───────────────────────────────
+const SECTOR_GLYPHS = {
+  'Oil & Gas':
+    `<path d="M50 8C34 22 14 44 14 62C14 80 30 92 50 92C70 92 86 80 86 62C86 44 66 22 50 8Z"/>`,
+  'Aviation':
+    `<path d="M6 74L52 26L94 18L90 36C64 42 36 58 14 78Z"/>`,
+  'Mining':
+    `<polygon points="50,6 84,25 84,63 50,82 16,63 16,25"/>
+     <path d="M50 6V82M16 25L84 63M84 25L16 63"/>`,
+  'Finance':
+    `<path d="M12 88V36H27V88M38 88V18H53V88M63 88V52H78V88"/>`,
+  'Technology':
+    `<circle cx="50" cy="50" r="22"/>
+     <circle cx="50" cy="50" r="38"/>
+     <path d="M50 6V12M50 88V94M6 50H12M88 50H94M22 22L27 27M78 22L73 27M22 78L27 73M78 78L73 73"/>`,
+  'Automotive':
+    `<circle cx="50" cy="50" r="36"/>
+     <circle cx="50" cy="50" r="9"/>
+     <path d="M50 14V41M27 67L42 57M73 67L58 57"/>`,
+  'Food & Beverage':
+    `<path d="M50 90C50 90 10 72 10 40C10 16 28 6 50 6C72 6 90 16 90 40C90 72 50 90 50 90Z"/>
+     <path d="M50 6V90"/>`,
+  'Chemicals':
+    `<polygon points="50,16 74,30 74,58 50,72 26,58 26,30"/>
+     <path d="M50 16V4M74 30L84 24M74 58L84 64M50 72V84M26 58L16 64M26 30L16 24"/>`,
+  'Apparel':
+    `<path d="M22 18L8 44L28 50V88H72V50L92 44L78 18C78 18 65 30 50 28C35 30 22 18 22 18Z"/>`,
+  'Healthcare':
+    `<path d="M36 10H64V36H90V64H64V90H36V64H10V36H36Z"/>`,
+  'Shipping':
+    `<path d="M4 46Q20 32 36 46Q52 60 68 46Q84 32 96 46"/>
+     <path d="M4 62Q20 48 36 62Q52 76 68 62Q84 48 96 62"/>`,
+  'Utilities':
+    `<path d="M60 4L26 54H52L34 96L78 42H52Z"/>`,
+  'Real Estate':
+    `<path d="M8 88V46L50 12L92 46V88Z"/>
+     <path d="M32 88V60H68V88"/>`,
+  'Consumer Goods':
+    `<circle cx="50" cy="50" r="40"/>
+     <path d="M10 50H90"/>
+     <path d="M50 10C32 18 24 36 24 50C24 64 32 82 50 90C68 82 76 64 76 50C76 36 68 18 50 10"/>`,
+  'Retail':
+    `<path d="M26 34H74L84 86H16Z"/>
+     <path d="M36 34C36 20 64 20 64 34"/>`,
+  'Tech / Retail':
+    `<path d="M50 10L90 50L50 90L10 50Z"/>
+     <path d="M50 2V10M50 90V98M2 50H10M90 50H98"/>`,
+};
+
+function renderCard(co, idx) {
+  const delay = Math.min((idx || 0) * 28, 560);
   const bc = co.band==='breach'?'band-breach':co.band==='warning'?'band-warning':'band-track';
   const sbRows = co.sb.map(r=>`<div class="sb-row"><span class="sb-f">${r.f}</span><span class="sb-w">${r.w}</span><span class="sb-p">${r.p>0?'+':''}${r.p}</span></div>`).join('');
   const total = co.sb.reduce((a,r)=>a+r.p,0);
+  const glyph = SECTOR_GLYPHS[co.sector] ? `<svg class="c-sector-glyph" viewBox="0 0 100 100" aria-hidden="true">${SECTOR_GLYPHS[co.sector]}</svg>` : '';
   return `
-<div class="c-card ${bc}" id="co-${co.id}" data-band="${co.band}" data-id="${co.id}" data-score="${co.score}" data-name="${co.name.toLowerCase()}" data-ticker="${co.ticker.toLowerCase()}" data-sabin="${co.sabin}">
+<div class="c-card ${bc}" id="co-${co.id}" data-band="${co.band}" data-id="${co.id}" data-score="${co.score}" data-name="${co.name.toLowerCase()}" data-ticker="${co.ticker.toLowerCase()}" data-sabin="${co.sabin}" style="animation-delay:${delay}ms">
+  ${glyph}
   <div class="c-head">
     <div class="c-head-left">
       <div class="c-name">${co.name}<a class="c-anchor" href="#co-${co.id}" onclick="copyAnchor(event,'${co.id}')" title="Copy link to card">⧉</a></div>
@@ -1852,7 +2153,7 @@ function renderCard(co) {
         <circle class="ring-track" cx="36" cy="36" r="30"/>
         <circle class="ring-fill" cx="36" cy="36" r="30" stroke-dasharray="188.5" stroke-dashoffset="188.5" data-filled="${(188.5*(1-co.score/100)).toFixed(1)}"/>
       </svg>
-      <div class="ring-inner"><div class="ring-score">${co.score}</div><div class="ring-denom">/100</div></div>
+      <div class="ring-inner"><div class="ring-score" data-count="${co.score}">0</div><div class="ring-denom">/100</div></div>
     </div>
   </div>
   <div class="score-bar-wrap">
@@ -2090,8 +2391,8 @@ async function init() {
   grid.innerHTML = getSorted().map(renderCard).join('');
 
   requestAnimationFrame(() => setTimeout(() => {
-    grid.querySelectorAll('.score-bar-fill').forEach(el => { el.style.width = el.dataset.target + '%'; });
-    grid.querySelectorAll('.ring-fill').forEach(el => { el.style.strokeDashoffset = el.dataset.filled; });
+    animateBars(grid);
+    attachTiltListeners(grid);
   }, 120));
 
   document.getElementById('ts-val').textContent =
@@ -2132,6 +2433,32 @@ const STRESS_DATA = [
   {id:'microsoft',name:'Microsoft',score:61,band:'track',sabin:1,sbti:true},
   {id:'unilever',name:'Unilever',score:72,band:'track',sabin:1,sbti:true},
   {id:'apple',name:'Apple',score:84,band:'track',sabin:0,sbti:true},
+  // ── WAVE 2 · v2.9 ────────────────────────────────────────────────────
+  {id:'chevron',name:'Chevron',score:8,band:'breach',sabin:8,sbti:false},
+  {id:'totalenergies',name:'TotalEnergies',score:20,band:'breach',sabin:5,sbti:false},
+  {id:'conocophillips',name:'ConocoPhillips',score:13,band:'breach',sabin:4,sbti:false},
+  {id:'glencore',name:'Glencore',score:10,band:'breach',sabin:6,sbti:false},
+  {id:'toyota',name:'Toyota',score:14,band:'breach',sabin:2,sbti:false},
+  {id:'jpmorgan',name:'JPMorgan Chase',score:11,band:'breach',sabin:3,sbti:false},
+  {id:'united',name:'United Airlines',score:15,band:'breach',sabin:2,sbti:false},
+  {id:'duke',name:'Duke Energy',score:24,band:'breach',sabin:3,sbti:false},
+  {id:'basf',name:'BASF',score:27,band:'breach',sabin:1,sbti:false},
+  {id:'blackrock',name:'BlackRock',score:29,band:'breach',sabin:4,sbti:false},
+  {id:'cocacola',name:'Coca-Cola',score:30,band:'breach',sabin:3,sbti:true},
+  {id:'volkswagen',name:'Volkswagen',score:31,band:'warning',sabin:5,sbti:true},
+  {id:'ford',name:'Ford',score:34,band:'warning',sabin:2,sbti:true},
+  {id:'nestle',name:'Nestlé',score:33,band:'warning',sabin:4,sbti:true},
+  {id:'hm',name:'H&M Group',score:36,band:'warning',sabin:3,sbti:true},
+  {id:'riotinto',name:'Rio Tinto',score:38,band:'warning',sabin:2,sbti:true},
+  {id:'bhp',name:'BHP',score:41,band:'warning',sabin:2,sbti:true},
+  {id:'pg',name:'P&G',score:40,band:'warning',sabin:2,sbti:true},
+  {id:'nike',name:'Nike',score:46,band:'warning',sabin:1,sbti:true},
+  {id:'maersk',name:'Maersk',score:54,band:'warning',sabin:0,sbti:true},
+  {id:'alphabet',name:'Alphabet',score:60,band:'warning',sabin:1,sbti:true},
+  {id:'jnj',name:'J&J',score:57,band:'warning',sabin:1,sbti:true},
+  {id:'cbre',name:'CBRE',score:55,band:'warning',sabin:1,sbti:true},
+  {id:'nextera',name:'NextEra Energy',score:67,band:'track',sabin:0,sbti:true},
+  {id:'salesforce',name:'Salesforce',score:66,band:'track',sabin:0,sbti:true},
 ];
 
 function buildStressCheckboxes() {
@@ -2205,6 +2532,7 @@ function applyFilters() {
   const grid = document.getElementById('grid');
   grid.innerHTML = sorted.map(renderCard).join('');
   animateBars(grid);
+  attachTiltListeners(grid);
   reattachEdgar();
   let vis = 0;
   sorted.forEach(co => {
@@ -2251,11 +2579,49 @@ function clearFilters() {
   applyFilters();
 }
 
+// ── 3D MAGNETIC TILT ─────────────────────────────────────
+function handleTilt(e) {
+  const card = this;
+  const rect = card.getBoundingClientRect();
+  const x = (e.clientX - rect.left)  / rect.width  - 0.5;
+  const y = (e.clientY - rect.top)   / rect.height - 0.5;
+  const mag = card.dataset.band === 'breach' ? 6 : card.dataset.band === 'warning' ? 5 : 4;
+  card.style.transition = 'background .2s, transform .06s, opacity .28s, filter .28s';
+  card.style.transform = `perspective(900px) rotateX(${(-y*mag).toFixed(2)}deg) rotateY(${(x*mag).toFixed(2)}deg)`;
+}
+function resetTilt() {
+  this.style.transition = 'background .2s, transform .55s cubic-bezier(.12,1,.3,1), opacity .28s, filter .28s';
+  this.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg)';
+}
+function attachTiltListeners(root) {
+  if (!window.matchMedia('(hover:hover)').matches) return;
+  (root || document).querySelectorAll('.c-card').forEach(card => {
+    card.removeEventListener('mousemove', handleTilt);
+    card.removeEventListener('mouseleave', resetTilt);
+    card.addEventListener('mousemove', handleTilt);
+    card.addEventListener('mouseleave', resetTilt);
+  });
+}
+
 function animateBars(root) {
   requestAnimationFrame(() => setTimeout(() => {
     const r = root || document;
     r.querySelectorAll('.score-bar-fill').forEach(el => { el.style.width = el.dataset.target+'%'; });
     r.querySelectorAll('.ring-fill').forEach(el => { el.style.strokeDashoffset = el.dataset.filled; });
+    // Score counter: count up from 0 to target
+    r.querySelectorAll('.ring-score[data-count]').forEach(el => {
+      const target = parseInt(el.dataset.count, 10);
+      const duration = 700 + target * 9; // low scores resolve faster; high scores build up drama
+      const startTime = performance.now();
+      function tick(now) {
+        const t = Math.min((now - startTime) / duration, 1);
+        const ease = 1 - Math.pow(1 - t, 3); // cubic ease-out
+        el.textContent = Math.round(ease * target);
+        if (t < 1) requestAnimationFrame(tick);
+        else el.textContent = target;
+      }
+      requestAnimationFrame(tick);
+    });
   }, 80));
 }
 
