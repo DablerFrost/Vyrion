@@ -1,15 +1,28 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-06-10T04:52:45.246Z",
-    "sourcesResolved": 3,
+    "generatedAt": "2026-06-10T16:11:01.112Z",
+    "sourcesResolved": 2,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 15,
+      "count": 16,
       "maxMagnitude": 7.8,
       "events": [
+        {
+          "id": "hv74978947",
+          "magnitude": 4.71,
+          "place": "23 km E of Pāpa‘ikou, Hawaii",
+          "time": "2026-06-10T08:37:40.490Z",
+          "coordinates": [
+            -154.866166666667,
+            19.7843333333333,
+            39.18
+          ],
+          "tsunami": false,
+          "significance": 706
+        },
         {
           "id": "us7000srjx",
           "magnitude": 6.1,
@@ -208,618 +221,7 @@
       ]
     },
     "hazards": {
-      "totalActive": 50,
-      "byCategory": {
-        "Severe Storms": 3,
-        "Wildfires": 37,
-        "Volcanoes": 3,
-        "Sea and Lake Ice": 7
-      },
-      "events": [
-        {
-          "id": "EONET_20412",
-          "title": "Tropical Storm Cristina",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "JTWC",
-            "NOAA_NHC"
-          ],
-          "geometry": {
-            "magnitudeValue": 35,
-            "magnitudeUnit": "kts",
-            "date": "2026-06-09T18:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -87.7,
-              12.7
-            ]
-          }
-        },
-        {
-          "id": "EONET_20382",
-          "title": "Tropical Storm Boris",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "JTWC",
-            "NOAA_NHC"
-          ],
-          "geometry": {
-            "magnitudeValue": 30,
-            "magnitudeUnit": "kts",
-            "date": "2026-06-09T12:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -98.6,
-              16.7
-            ]
-          }
-        },
-        {
-          "id": "EONET_20387",
-          "title": "Tower Wildfire, Millard, Utah",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1287,
-            "magnitudeUnit": "acres",
-            "date": "2026-06-07T15:24:00Z",
-            "type": "Point",
-            "coordinates": [
-              -112.164042,
-              39.205895
-            ]
-          }
-        },
-        {
-          "id": "EONET_20388",
-          "title": "Raven Creek Wildfire, Weston, Wyoming",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 3789,
-            "magnitudeUnit": "acres",
-            "date": "2026-06-06T20:44:00Z",
-            "type": "Point",
-            "coordinates": [
-              -105.04695,
-              44.084633
-            ]
-          }
-        },
-        {
-          "id": "EONET_20389",
-          "title": "CHESTNUT Wildfire, Chelan, Washington",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1508,
-            "magnitudeUnit": "acres",
-            "date": "2026-06-06T14:14:00Z",
-            "type": "Point",
-            "coordinates": [
-              -120.018153,
-              47.793631
-            ]
-          }
-        },
-        {
-          "id": "EONET_20385",
-          "title": "WALTZ Wildfire, Mariposa, California",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1644,
-            "magnitudeUnit": "acres",
-            "date": "2026-06-05T15:51:00Z",
-            "type": "Point",
-            "coordinates": [
-              -120.245512,
-              37.378149
-            ]
-          }
-        },
-        {
-          "id": "EONET_20386",
-          "title": "Kopshesut Wildfire, Northwest Arctic, Alaska",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1447.6,
-            "magnitudeUnit": "acres",
-            "date": "2026-06-04T18:04:00Z",
-            "type": "Point",
-            "coordinates": [
-              -157.928717,
-              67.092467
-            ]
-          }
-        },
-        {
-          "id": "EONET_20391",
-          "title": "MOXEE ORCHARD Wildfire, Yakima, Washington",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 5918,
-            "magnitudeUnit": "acres",
-            "date": "2026-06-04T17:25:00Z",
-            "type": "Point",
-            "coordinates": [
-              -120.077137,
-              46.52368
-            ]
-          }
-        },
-        {
-          "id": "EONET_20299",
-          "title": "Tropical Storm Amanda",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "JTWC"
-          ],
-          "geometry": {
-            "magnitudeValue": 25,
-            "magnitudeUnit": "kts",
-            "date": "2026-06-08T00:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -136,
-              11.3
-            ]
-          }
-        },
-        {
-          "id": "EONET_20287",
-          "title": "HAYSTACK BUTTE Wildfire, Klickitat, Washington",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 620,
-            "magnitudeUnit": "acres",
-            "date": "2026-05-30T20:21:00Z",
-            "type": "Point",
-            "coordinates": [
-              -120.930004,
-              45.665397
-            ]
-          }
-        },
-        {
-          "id": "EONET_20286",
-          "title": "BRANTLEY 2 Wildfire, Eddy, New Mexico",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 712,
-            "magnitudeUnit": "acres",
-            "date": "2026-05-30T12:20:00Z",
-            "type": "Point",
-            "coordinates": [
-              -104.3555,
-              32.611733
-            ]
-          }
-        },
-        {
-          "id": "EONET_20409",
-          "title": "Telica Volcano, Nicaragua",
-          "categories": [
-            "Volcanoes"
-          ],
-          "sources": [
-            "SIVolcano"
-          ],
-          "geometry": {
-            "magnitudeValue": null,
-            "magnitudeUnit": null,
-            "date": "2026-05-30T00:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -86.84,
-              12.606
-            ]
-          }
-        },
-        {
-          "id": "EONET_20392",
-          "title": "Ivao Group Volcano, Russia",
-          "categories": [
-            "Volcanoes"
-          ],
-          "sources": [
-            "SIVolcano"
-          ],
-          "geometry": {
-            "magnitudeValue": null,
-            "magnitudeUnit": null,
-            "date": "2026-05-29T00:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              149.6762,
-              45.7593
-            ]
-          }
-        },
-        {
-          "id": "EONET_20290",
-          "title": "KALKASKA-RX 61150021 Fletcher Unit 2 Prescribed Fire, Kalkaska, Michigan",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 539,
-            "magnitudeUnit": "acres",
-            "date": "2026-05-28T15:33:00Z",
-            "type": "Point",
-            "coordinates": [
-              -84.92062679,
-              44.51933255
-            ]
-          }
-        },
-        {
-          "id": "EONET_20395",
-          "title": "Titan Ridge Volcano, Papua New Guinea",
-          "categories": [
-            "Volcanoes"
-          ],
-          "sources": [
-            "EO",
-            "SIVolcano"
-          ],
-          "geometry": {
-            "magnitudeValue": null,
-            "magnitudeUnit": null,
-            "date": "2026-05-28T00:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              147.78,
-              -3.03
-            ]
-          }
-        },
-        {
-          "id": "EONET_20301",
-          "title": "Bradshaw Wildfire, Powder River, Montana",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 2689,
-            "magnitudeUnit": "acres",
-            "date": "2026-05-26T23:30:00Z",
-            "type": "Point",
-            "coordinates": [
-              -105.96236,
-              45.0612
-            ]
-          }
-        },
-        {
-          "id": "EONET_20254",
-          "title": "Black Ridge Wildfire, Lincoln, Idaho",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1500,
-            "magnitudeUnit": "acres",
-            "date": "2026-05-25T20:50:00Z",
-            "type": "Point",
-            "coordinates": [
-              -113.935667,
-              43.050333
-            ]
-          }
-        },
-        {
-          "id": "EONET_20252",
-          "title": "0231 ZEN Wildfire, Wasco, Oregon",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1500,
-            "magnitudeUnit": "acres",
-            "date": "2026-05-25T19:11:00Z",
-            "type": "Point",
-            "coordinates": [
-              -120.43789,
-              44.85563
-            ]
-          }
-        },
-        {
-          "id": "EONET_20257",
-          "title": "Egberts Wildfire, Elko, Nevada",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 654,
-            "magnitudeUnit": "acres",
-            "date": "2026-05-25T17:55:00Z",
-            "type": "Point",
-            "coordinates": [
-              -115.0565,
-              40.9655
-            ]
-          }
-        },
-        {
-          "id": "EONET_20250",
-          "title": "Summit Creek Wildfire, Cassia, Idaho",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1273,
-            "magnitudeUnit": "acres",
-            "date": "2026-05-25T16:59:00Z",
-            "type": "Point",
-            "coordinates": [
-              -113.73075,
-              42.17555
-            ]
-          }
-        },
-        {
-          "id": "EONET_20258",
-          "title": "Kinyon Springs Wildfire, Owyhee, Idaho",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 3000,
-            "magnitudeUnit": "acres",
-            "date": "2026-05-25T16:44:00Z",
-            "type": "Point",
-            "coordinates": [
-              -115.244683,
-              42.734717
-            ]
-          }
-        },
-        {
-          "id": "EONET_20259",
-          "title": "MILE MARKER 44 FIRE - BROWARD Wildfire, Broward, Florida",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1200,
-            "magnitudeUnit": "acres",
-            "date": "2026-05-23T21:26:00Z",
-            "type": "Point",
-            "coordinates": [
-              -80.7791667,
-              26.0994444
-            ]
-          }
-        },
-        {
-          "id": "EONET_20253",
-          "title": "COUNTRY MEADOW Wildfire, Benton, Washington",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 2000,
-            "magnitudeUnit": "acres",
-            "date": "2026-05-23T17:39:00Z",
-            "type": "Point",
-            "coordinates": [
-              -119.33745,
-              46.16526
-            ]
-          }
-        },
-        {
-          "id": "EONET_20263",
-          "title": "340 Wildfire, Wakulla, Florida",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1500,
-            "magnitudeUnit": "acres",
-            "date": "2026-05-23T16:29:00Z",
-            "type": "Point",
-            "coordinates": [
-              -84.565664,
-              30.053136
-            ]
-          }
-        },
-        {
-          "id": "EONET_20249",
-          "title": "Mile Marker 44 Wildfire, Broward, Florida",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1200,
-            "magnitudeUnit": "acres",
-            "date": "2026-05-23T15:44:00Z",
-            "type": "Point",
-            "coordinates": [
-              -80.766667,
-              26.15
-            ]
-          }
-        },
-        {
-          "id": "EONET_20260",
-          "title": "Quartz Wildfire, Pershing, Nevada",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 2448,
-            "magnitudeUnit": "acres",
-            "date": "2026-05-23T15:06:00Z",
-            "type": "Point",
-            "coordinates": [
-              -118.014333,
-              40.709867
-            ]
-          }
-        },
-        {
-          "id": "EONET_20262",
-          "title": "Thousand Wildfire, Northwest Arctic, Alaska",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 600,
-            "magnitudeUnit": "acres",
-            "date": "2026-05-23T11:59:00Z",
-            "type": "Point",
-            "coordinates": [
-              -159.286667,
-              66.435
-            ]
-          }
-        },
-        {
-          "id": "EONET_20256",
-          "title": "WaWa 2 Wildfire, Highlands, Florida",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 6275,
-            "magnitudeUnit": "acres",
-            "date": "2026-05-23T09:28:00Z",
-            "type": "Point",
-            "coordinates": [
-              -81.2598,
-              27.644633
-            ]
-          }
-        },
-        {
-          "id": "EONET_20264",
-          "title": "Shell Wildfire, Lake, Florida",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 800,
-            "magnitudeUnit": "acres",
-            "date": "2026-05-22T10:24:00Z",
-            "type": "Point",
-            "coordinates": [
-              -81.507167,
-              29.073833
-            ]
-          }
-        },
-        {
-          "id": "EONET_20261",
-          "title": "Trigg Wildfire, San Miguel, New Mexico",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 2000,
-            "magnitudeUnit": "acres",
-            "date": "2026-05-21T23:07:00Z",
-            "type": "Point",
-            "coordinates": [
-              -103.948693,
-              35.53034
-            ]
-          }
-        }
-      ]
+      "error": "[NASA EONET] fetch failed"
     },
     "atmospheric": {
       "referencePoints": [
@@ -827,55 +229,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": 0.7,
-          "surface_pressure": 1010,
-          "wind_speed_10m": 3.05,
-          "relative_humidity_2m": 99
+          "temperature_2m": 0.1,
+          "surface_pressure": 1011.3,
+          "wind_speed_10m": 6.07,
+          "relative_humidity_2m": 98
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 13.6,
-          "surface_pressure": 1010.5,
-          "wind_speed_10m": 12.74,
-          "relative_humidity_2m": 97
+          "temperature_2m": 13.7,
+          "surface_pressure": 1007.7,
+          "wind_speed_10m": 13.82,
+          "relative_humidity_2m": 94
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 19.1,
-          "surface_pressure": 915.4,
-          "wind_speed_10m": 2,
-          "relative_humidity_2m": 100
+          "temperature_2m": 25.8,
+          "surface_pressure": 916.8,
+          "wind_speed_10m": 1.77,
+          "relative_humidity_2m": 66
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 28.1,
-          "surface_pressure": 1012.1,
-          "wind_speed_10m": 2.41,
-          "relative_humidity_2m": 81
+          "temperature_2m": 29.2,
+          "surface_pressure": 1012.9,
+          "wind_speed_10m": 3.51,
+          "relative_humidity_2m": 80
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": 0.6,
-          "surface_pressure": 981.3,
-          "wind_speed_10m": 14.01,
-          "relative_humidity_2m": 93
+          "temperature_2m": -0.7,
+          "surface_pressure": 984.3,
+          "wind_speed_10m": 16.64,
+          "relative_humidity_2m": 82
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -45.2,
-          "surface_pressure": 717.3,
-          "wind_speed_10m": 6.42,
-          "relative_humidity_2m": 71
+          "temperature_2m": -43.4,
+          "surface_pressure": 719,
+          "wind_speed_10m": 9.03,
+          "relative_humidity_2m": 62
         }
       ]
     },
