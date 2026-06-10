@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-06-09T15:29:49.890Z",
+    "generatedAt": "2026-06-10T04:52:45.246Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -13,10 +13,10 @@
         {
           "id": "us7000srjx",
           "magnitude": 6.1,
-          "place": "104 km WNW of Mantua, Cuba",
-          "time": "2026-06-08T18:00:27.786Z",
+          "place": "102 km WNW of Mantua, Cuba",
+          "time": "2026-06-08T18:00:27.508Z",
           "coordinates": [
-            -85.1501,
+            -85.1254,
             22.7854,
             26
           ],
@@ -34,7 +34,7 @@
             69.004
           ],
           "tsunami": false,
-          "significance": 651
+          "significance": 650
         },
         {
           "id": "us7000srb1",
@@ -47,7 +47,7 @@
             55.193
           ],
           "tsunami": false,
-          "significance": 1141
+          "significance": 1147
         },
         {
           "id": "nn00919749",
@@ -210,12 +210,33 @@
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Severe Storms": 2,
-        "Wildfires": 40,
-        "Volcanoes": 1,
+        "Severe Storms": 3,
+        "Wildfires": 37,
+        "Volcanoes": 3,
         "Sea and Lake Ice": 7
       },
       "events": [
+        {
+          "id": "EONET_20412",
+          "title": "Tropical Storm Cristina",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC",
+            "NOAA_NHC"
+          ],
+          "geometry": {
+            "magnitudeValue": 35,
+            "magnitudeUnit": "kts",
+            "date": "2026-06-09T18:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -87.7,
+              12.7
+            ]
+          }
+        },
         {
           "id": "EONET_20382",
           "title": "Tropical Storm Boris",
@@ -223,16 +244,17 @@
             "Severe Storms"
           ],
           "sources": [
-            "JTWC"
+            "JTWC",
+            "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 35,
+            "magnitudeValue": 30,
             "magnitudeUnit": "kts",
-            "date": "2026-06-09T06:00:00Z",
+            "date": "2026-06-09T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              -98.3,
-              16.2
+              -98.6,
+              16.7
             ]
           }
         },
@@ -417,6 +439,26 @@
           }
         },
         {
+          "id": "EONET_20409",
+          "title": "Telica Volcano, Nicaragua",
+          "categories": [
+            "Volcanoes"
+          ],
+          "sources": [
+            "SIVolcano"
+          ],
+          "geometry": {
+            "magnitudeValue": null,
+            "magnitudeUnit": null,
+            "date": "2026-05-30T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -86.84,
+              12.606
+            ]
+          }
+        },
+        {
           "id": "EONET_20392",
           "title": "Ivao Group Volcano, Russia",
           "categories": [
@@ -453,6 +495,27 @@
             "coordinates": [
               -84.92062679,
               44.51933255
+            ]
+          }
+        },
+        {
+          "id": "EONET_20395",
+          "title": "Titan Ridge Volcano, Papua New Guinea",
+          "categories": [
+            "Volcanoes"
+          ],
+          "sources": [
+            "EO",
+            "SIVolcano"
+          ],
+          "geometry": {
+            "magnitudeValue": null,
+            "magnitudeUnit": null,
+            "date": "2026-05-28T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              147.78,
+              -3.03
             ]
           }
         },
@@ -755,66 +818,6 @@
               35.53034
             ]
           }
-        },
-        {
-          "id": "EONET_6288",
-          "title": "Iceberg D32",
-          "categories": [
-            "Sea and Lake Ice"
-          ],
-          "sources": [
-            "NATICE"
-          ],
-          "geometry": {
-            "magnitudeValue": 54,
-            "magnitudeUnit": "NM^2",
-            "date": "2026-06-05T00:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -45.99,
-              -63.86
-            ]
-          }
-        },
-        {
-          "id": "EONET_6320",
-          "title": "Iceberg A81",
-          "categories": [
-            "Sea and Lake Ice"
-          ],
-          "sources": [
-            "NATICE"
-          ],
-          "geometry": {
-            "magnitudeValue": 700,
-            "magnitudeUnit": "NM^2",
-            "date": "2026-05-29T00:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -53.69,
-              -63.61
-            ]
-          }
-        },
-        {
-          "id": "EONET_6424",
-          "title": "Iceberg D33B",
-          "categories": [
-            "Sea and Lake Ice"
-          ],
-          "sources": [
-            "NATICE"
-          ],
-          "geometry": {
-            "magnitudeValue": 252,
-            "magnitudeUnit": "NM^2",
-            "date": "2026-06-05T00:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -54,
-              -64.14
-            ]
-          }
         }
       ]
     },
@@ -824,55 +827,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": 1.1,
-          "surface_pressure": 1013.5,
-          "wind_speed_10m": 4.84,
-          "relative_humidity_2m": 98
+          "temperature_2m": 0.7,
+          "surface_pressure": 1010,
+          "wind_speed_10m": 3.05,
+          "relative_humidity_2m": 99
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 12.5,
-          "surface_pressure": 1016.9,
-          "wind_speed_10m": 7.07,
-          "relative_humidity_2m": 96
+          "temperature_2m": 13.6,
+          "surface_pressure": 1010.5,
+          "wind_speed_10m": 12.74,
+          "relative_humidity_2m": 97
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 23.9,
-          "surface_pressure": 918.3,
-          "wind_speed_10m": 2.55,
-          "relative_humidity_2m": 70
+          "temperature_2m": 19.1,
+          "surface_pressure": 915.4,
+          "wind_speed_10m": 2,
+          "relative_humidity_2m": 100
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 29.4,
-          "surface_pressure": 1012.4,
-          "wind_speed_10m": 0.25,
-          "relative_humidity_2m": 74
+          "temperature_2m": 28.1,
+          "surface_pressure": 1012.1,
+          "wind_speed_10m": 2.41,
+          "relative_humidity_2m": 81
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -0.2,
-          "surface_pressure": 989.2,
-          "wind_speed_10m": 12.49,
-          "relative_humidity_2m": 86
+          "temperature_2m": 0.6,
+          "surface_pressure": 981.3,
+          "wind_speed_10m": 14.01,
+          "relative_humidity_2m": 93
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -42.3,
-          "surface_pressure": 719.2,
-          "wind_speed_10m": 4.47,
-          "relative_humidity_2m": 70
+          "temperature_2m": -45.2,
+          "surface_pressure": 717.3,
+          "wind_speed_10m": 6.42,
+          "relative_humidity_2m": 71
         }
       ]
     },
