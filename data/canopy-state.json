@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-06-14T05:22:43.169Z",
+    "generatedAt": "2026-06-14T15:00:32.149Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -13,21 +13,21 @@
   },
   "synthesis": {
     "hazardSummary": {
-      "totalEvents": 66,
+      "totalEvents": 65,
       "categories": {
-        "Sea and Lake Ice": 8,
-        "Wildfires": 37,
+        "Sea and Lake Ice": 13,
+        "Wildfires": 32,
         "Severe Storms": 2,
         "Volcanoes": 3
       },
-      "seismicCount": 16,
+      "seismicCount": 15,
       "maxMagnitude": 7.8
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 2.38,
-      "minTemperature_2m": -45.4,
-      "maxTemperature_2m": 26.8
+      "avgTemperature_2m": 3.1,
+      "minTemperature_2m": -46.9,
+      "maxTemperature_2m": 27.7
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -41,19 +41,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-06-14T05:02:15.157Z",
+        "generated": "2026-06-14T14:26:20.312Z",
         "generated_date": "2026-06-14",
         "script_version": "1.1",
         "window_days": 14,
         "window_start": "2026-05-31",
         "window_end": "2026-06-14",
-        "runtime_ms": 264,
+        "runtime_ms": 512,
         "seismic_live": true,
         "eonet_live": true
       },
       "threat": {
         "level": "CRITICAL",
-        "score": 26.2
+        "score": 25.85
       },
       "seismic": {
         "events": [
@@ -668,8 +668,8 @@
           {
             "id": "us7000sq7x",
             "magnitude": 5.1,
-            "place": "76 km S of Daroot-Korgon, Kyrgyzstan",
-            "time": "2026-06-03T06:58:56.791Z",
+            "place": "71 km SE of Karakenja, Tajikistan",
+            "time": "2026-06-03T06:58:56.787Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sq7x"
           },
@@ -964,8 +964,8 @@
           {
             "id": "us7000sqlk",
             "magnitude": 4.9,
-            "place": "57 km NNW of Huocheng, China",
-            "time": "2026-06-04T16:19:39.611Z",
+            "place": "56 km NNW of Huocheng, China",
+            "time": "2026-06-04T16:19:39.461Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sqlk"
           },
@@ -1396,9 +1396,9 @@
           {
             "id": "us7000sq8i",
             "magnitude": 4.7,
-            "place": "142 km SSE of Vilyuchinsk, Russia",
-            "time": "2026-06-03T08:42:53.174Z",
-            "depth_km": 61.9,
+            "place": "161 km SSE of Vilyuchinsk, Russia",
+            "time": "2026-06-03T08:42:49.568Z",
+            "depth_km": 32.5,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sq8i"
           },
           {
@@ -1778,14 +1778,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spqe"
           },
           {
-            "id": "us7000spn5",
-            "magnitude": 4.6,
-            "place": "117 km SW of Jiquilillo, Nicaragua",
-            "time": "2026-05-31T10:51:46.961Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spn5"
-          },
-          {
             "id": "us7000ssns",
             "magnitude": 4.5,
             "place": "75 km E of Hualien City, Taiwan",
@@ -2072,33 +2064,9 @@
             "time": "2026-05-31T14:26:40.593Z",
             "depth_km": 522.2,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spp3"
-          },
-          {
-            "id": "us7000spnj",
-            "magnitude": 4.5,
-            "place": "66 km SW of Atocha, Bolivia",
-            "time": "2026-05-31T12:37:12.170Z",
-            "depth_km": 226.1,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spnj"
-          },
-          {
-            "id": "us7000spmh",
-            "magnitude": 4.5,
-            "place": "21 km E of Aras-asan, Philippines",
-            "time": "2026-05-31T05:57:11.048Z",
-            "depth_km": 56.7,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spmh"
-          },
-          {
-            "id": "us7000spmd",
-            "magnitude": 4.5,
-            "place": "44 km S of Castro Barros, Argentina",
-            "time": "2026-05-31T05:50:06.102Z",
-            "depth_km": 180.7,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spmd"
           }
         ],
-        "count_total": 255,
+        "count_total": 251,
         "count_m55_plus": 25,
         "count_m60_plus": 9,
         "count_m70_plus": 1,
@@ -2114,7 +2082,7 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-06-14T05:02:15.071Z"
+        "retrieved": "2026-06-14T14:26:20.044Z"
       },
       "wildfire": {
         "events": [
@@ -2260,20 +2228,9 @@
               35.482
             ],
             "closed": null
-          },
-          {
-            "id": "EONET_20287",
-            "title": "HAYSTACK BUTTE Wildfire, Klickitat, Washington",
-            "type": "WILDFIRE",
-            "time": "2026-05-30T20:21:00.000Z",
-            "coords": [
-              -120.93,
-              45.665
-            ],
-            "closed": null
           }
         ],
-        "count": 14
+        "count": 13
       },
       "storm": {
         "events": [
@@ -2314,13 +2271,13 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-06-14T05:12:37.457Z",
+        "generatedAt": "2026-06-14T14:33:36.000Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
       "layers": {
         "seismic": {
-          "count": 16,
+          "count": 15,
           "maxMagnitude": 7.8,
           "events": [
             {
@@ -2373,7 +2330,7 @@
                 55.193
               ],
               "tsunami": false,
-              "significance": 1157
+              "significance": 1170
             },
             {
               "id": "nn00919749",
@@ -2517,27 +2474,14 @@
               ],
               "tsunami": false,
               "significance": 642
-            },
-            {
-              "id": "us6000sxwq",
-              "magnitude": 6.7,
-              "place": "44 km ESE of Ōfunato, Japan",
-              "time": "2026-05-15T11:22:01.566Z",
-              "coordinates": [
-                142.1826,
-                38.9095,
-                42
-              ],
-              "tsunami": false,
-              "significance": 753
             }
           ]
         },
         "hazards": {
           "totalActive": 50,
           "byCategory": {
-            "Sea and Lake Ice": 8,
-            "Wildfires": 37,
+            "Sea and Lake Ice": 13,
+            "Wildfires": 32,
             "Severe Storms": 2,
             "Volcanoes": 3
           },
@@ -2925,6 +2869,27 @@
               }
             },
             {
+              "id": "EONET_2736",
+              "title": "Iceberg B22A",
+              "categories": [
+                "Sea and Lake Ice"
+              ],
+              "sources": [
+                "BYU_ICE",
+                "NATICE"
+              ],
+              "geometry": {
+                "magnitudeValue": 725,
+                "magnitudeUnit": "NM^2",
+                "date": "2026-06-12T00:00:00Z",
+                "type": "Point",
+                "coordinates": [
+                  175.86,
+                  -69.97
+                ]
+              }
+            },
+            {
               "id": "EONET_20392",
               "title": "Ivao Group Volcano, Russia",
               "categories": [
@@ -3124,26 +3089,6 @@
                   26.0994444
                 ]
               }
-            },
-            {
-              "id": "EONET_20253",
-              "title": "COUNTRY MEADOW Wildfire, Benton, Washington",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 2000,
-                "magnitudeUnit": "acres",
-                "date": "2026-05-23T17:39:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -119.33745,
-                  46.16526
-                ]
-              }
             }
           ]
         },
@@ -3153,55 +3098,55 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": -0.1,
-              "surface_pressure": 1022.1,
-              "wind_speed_10m": 7.09,
-              "relative_humidity_2m": 85
+              "temperature_2m": 0.1,
+              "surface_pressure": 1023.3,
+              "wind_speed_10m": 7.68,
+              "relative_humidity_2m": 87
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 12,
-              "surface_pressure": 1001.5,
-              "wind_speed_10m": 2.02,
-              "relative_humidity_2m": 82
+              "temperature_2m": 11.8,
+              "surface_pressure": 1000.1,
+              "wind_speed_10m": 9.4,
+              "relative_humidity_2m": 79
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 20.3,
-              "surface_pressure": 914.6,
-              "wind_speed_10m": 1.1,
-              "relative_humidity_2m": 100
+              "temperature_2m": 25.7,
+              "surface_pressure": 918.2,
+              "wind_speed_10m": 1.65,
+              "relative_humidity_2m": 69
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 26.8,
-              "surface_pressure": 1012.7,
-              "wind_speed_10m": 0.65,
-              "relative_humidity_2m": 81
+              "temperature_2m": 27.7,
+              "surface_pressure": 1012.9,
+              "wind_speed_10m": 2.53,
+              "relative_humidity_2m": 82
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": 0.7,
-              "surface_pressure": 1003.7,
-              "wind_speed_10m": 10.73,
-              "relative_humidity_2m": 84
+              "temperature_2m": 0.2,
+              "surface_pressure": 1000.3,
+              "wind_speed_10m": 15.02,
+              "relative_humidity_2m": 91
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -45.4,
-              "surface_pressure": 717,
-              "wind_speed_10m": 8.52,
-              "relative_humidity_2m": 55
+              "temperature_2m": -46.9,
+              "surface_pressure": 716.4,
+              "wind_speed_10m": 7.18,
+              "relative_humidity_2m": 68
             }
           ]
         },
@@ -3219,7 +3164,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-06-14T05:19:20.635Z"
+        "generatedAt": "2026-06-14T14:58:14.373Z"
       },
       "health": {
         "score": 90,
