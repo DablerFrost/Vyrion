@@ -36,7 +36,7 @@
         --warn: #F09000;
         --t1: #e4f2ff;
         --t2: #6a9ab8;
-        --t3: #f3ffe4;
+        --t3: #2d6080;
         --border: rgba(0, 212, 255, .12);
         --border2: rgba(0, 212, 255, .07);
         --nav-bg: rgba(2, 9, 18, .97);
@@ -2153,6 +2153,191 @@
         box-shadow: 0 0 5px var(--tide)
       }
 
+      /* ── PWA INSTALL BANNER ──────────────────────────────────────────── */
+      #pwa-banner {
+        position: fixed;
+        bottom: 102px;
+        right: 24px;
+        z-index: 7000;
+        width: 296px;
+        background: rgba(2, 9, 18, .97);
+        border: 1px solid rgba(0, 150, 199, .38);
+        border-radius: 12px;
+        padding: 1rem 1.1rem;
+        backdrop-filter: blur(28px);
+        -webkit-backdrop-filter: blur(28px);
+        box-shadow: 0 14px 44px rgba(0, 0, 0, .65), 0 0 0 1px rgba(0, 150, 199, .06), 0 0 32px rgba(0, 150, 199, .06);
+        transform: translateY(16px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .4s ease, transform .4s ease;
+      }
+
+      #pwa-banner.visible {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      #pwa-banner::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        border-radius: 12px 12px 0 0;
+        background: linear-gradient(90deg, rgba(0, 150, 199, .6), rgba(0, 150, 199, .2), transparent);
+      }
+
+      .pwa-eyebrow {
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        letter-spacing: .22em;
+        text-transform: uppercase;
+        color: var(--tide);
+        margin-bottom: .4rem;
+        display: flex;
+        align-items: center;
+        gap: .45rem;
+      }
+
+      .pwa-eyebrow-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--tide);
+        box-shadow: 0 0 6px var(--tide);
+        animation: pdot 2.2s infinite;
+        flex-shrink: 0;
+      }
+
+      .pwa-title {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: 1rem;
+        color: var(--t1);
+        margin-bottom: .22rem;
+        line-height: 1.1;
+      }
+
+      .pwa-sub {
+        font-family: 'Courier Prime', monospace;
+        font-size: .58rem;
+        color: var(--t2);
+        line-height: 1.58;
+        margin-bottom: .8rem;
+      }
+
+      .pwa-btns {
+        display: flex;
+        gap: .5rem;
+      }
+
+      .pwa-install-btn {
+        flex: 1;
+        padding: .48rem .7rem;
+        border-radius: 6px;
+        background: rgba(0, 150, 199, .10);
+        border: 1px solid rgba(0, 150, 199, .4);
+        color: var(--tide);
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background .2s, box-shadow .2s;
+        white-space: nowrap;
+      }
+
+      .pwa-install-btn:hover {
+        background: rgba(0, 150, 199, .2);
+        box-shadow: 0 0 14px rgba(0, 150, 199, .28);
+      }
+
+      .pwa-dismiss-btn {
+        padding: .48rem .65rem;
+        border-radius: 6px;
+        background: transparent;
+        border: 1px solid var(--border);
+        color: var(--t3);
+        font-family: 'Courier Prime', monospace;
+        font-size: .7rem;
+        cursor: pointer;
+        transition: border-color .2s, color .2s;
+        line-height: 1;
+      }
+
+      .pwa-dismiss-btn:hover {
+        border-color: var(--t2);
+        color: var(--t2);
+      }
+
+      @media(max-width:380px) {
+        #pwa-banner {
+          width: calc(100vw - 32px);
+          right: 16px;
+        }
+      }
+
+      /* ── ORB INSTALL ITEM ────────────────────────────────────────────── */
+      .oo-divider {
+        height: 1px;
+        background: var(--border);
+        margin: 4px 8px;
+      }
+
+      .oo-install-item {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        padding: 9px 13px;
+        border-radius: 6px;
+        color: var(--tide);
+        font-family: 'Archivo', sans-serif;
+        font-size: .78rem;
+        transition: background .14s;
+        cursor: pointer;
+        width: 100%;
+        background: rgba(0, 150, 199, .05);
+        border: 1px solid rgba(0, 150, 199, .14);
+        margin: 3px 0;
+        text-align: left;
+        letter-spacing: .02em;
+      }
+
+      .oo-install-item:hover {
+        background: rgba(0, 150, 199, .12);
+        border-color: rgba(0, 150, 199, .32);
+      }
+
+      .oo-install-item .oo-install-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        background: var(--tide);
+        box-shadow: 0 0 5px var(--tide);
+        animation: pdot 2.2s infinite;
+      }
+
+      .oo-install-item[data-state="installed"] {
+        color: var(--t3);
+        border-color: transparent;
+        background: transparent;
+        pointer-events: none;
+      }
+
+      .oo-install-item[data-state="installed"] .oo-install-dot {
+        background: var(--t3);
+        box-shadow: none;
+        animation: none;
+      }
+
+      .oo-install-item.pwa-unavailable {
+        display: none !important;
+      }
+
       /* ── RESPONSIVE ──────────────────────────────────────────────────── */
       @media(max-width:720px) {
         html {
@@ -2320,6 +2505,10 @@
           <a href="https://vyrion.earth/about" class="nav-item">ABOUT <span class="nav-tooltip">Mission &amp; Open Methodology</span>
           </a>
         </li>
+        <li>
+          <a href="https://vyrion.earth/nexan" class="nav-item">NEXAN <span class="nav-tooltip">Research &amp; Validation Institute</span>
+          </a>
+        </li>
       </ul>
       <div class="nav-controls">
         <button class="nc-theme active" id="theme-btn" onclick="toggleTheme()" title="Toggle light/dark mode">◐ DARK</button>
@@ -2342,7 +2531,7 @@
       <div class="header-meta fade-in delay-3">
         <div class="hm-cell">
           <div class="hm-label">Ocean Health Index</div>
-          <div class="hm-val">34.0 / 100</div>
+          <div class="hm-val amber">34.0 / 100</div>
         </div>
         <div class="hm-cell">
           <div class="hm-label">Surface pH</div>
@@ -3071,6 +3260,26 @@
           <span class="oo-dot"></span> RECORD </a>
         <a class="oo-link" href="https://vyrion.earth/about" onclick="oOrbClose()">
           <span class="oo-dot"></span> ABOUT </a>
+        <a class="oo-link" href="https://vyrion.earth/nexan" onclick="oOrbClose()">
+          <span class="oo-dot"></span> NEXAN </a>
+        <div class="oo-divider"></div>
+        <button class="oo-install-item" id="oo-install-item" onclick="pwaInstall()">
+          <span class="oo-install-dot"></span>
+          INSTALL APP
+        </button>
+      </div>
+    </div>
+    <!-- ── PWA INSTALL BANNER ──────────────────────────────────────────────── -->
+    <div id="pwa-banner" role="complementary" aria-label="Install VYRION app" aria-live="polite">
+      <div class="pwa-eyebrow">
+        <span class="pwa-eyebrow-dot"></span>
+        Install Available
+      </div>
+      <div class="pwa-title">Add VYRION to Home Screen</div>
+      <div class="pwa-sub">Live ocean intelligence. Always-on monitoring.<br>One tap access. No browser chrome.</div>
+      <div class="pwa-btns">
+        <button class="pwa-install-btn" id="pwa-install-btn" onclick="pwaInstall()">⊕ INSTALL APP</button>
+        <button class="pwa-dismiss-btn" id="pwa-dismiss-btn" onclick="pwaDismiss()" aria-label="Dismiss install prompt">✕</button>
       </div>
     </div>
     <!-- ══════════════════════════════════════════════════════════════════ -->
@@ -3519,6 +3728,124 @@
       (function() {
         const el = document.getElementById('ts-val');
         if (el) el.textContent = new Date().toUTCString().replace(' GMT', '') + ' UTC';
+      })();
+      /* ── PWA INSTALL ─────────────────────────────────────────────────────── */
+      (function() {
+        'use strict';
+        var deferredPrompt = null;
+
+        var banner = document.getElementById('pwa-banner');
+        var orbItem = document.getElementById('oo-install-item');
+
+        function isInstalled() {
+          return (
+            window.matchMedia('(display-mode: standalone)').matches ||
+            window.matchMedia('(display-mode: fullscreen)').matches ||
+            window.navigator.standalone === true
+          );
+        }
+
+        if (isInstalled()) {
+          if (orbItem) {
+            orbItem.setAttribute('data-state', 'installed');
+            orbItem.textContent = '✓ INSTALLED';
+          }
+          return;
+        }
+
+        function wasDismissed() {
+          try {
+            return sessionStorage.getItem('vc-pwa-dismissed') === '1';
+          } catch (e) {
+            return false;
+          }
+        }
+
+        function showBanner() {
+          if (wasDismissed()) return;
+          if (!deferredPrompt) return;
+          if (!banner) return;
+          banner.classList.add('visible');
+          if (orbItem) orbItem.classList.remove('pwa-unavailable');
+        }
+
+        function hideBanner() {
+          if (banner) banner.classList.remove('visible');
+        }
+
+        window.addEventListener('beforeinstallprompt', function(e) {
+          e.preventDefault();
+          deferredPrompt = e;
+          // No cinematic intro on this page — short settle delay only
+          setTimeout(showBanner, 2200);
+          if (orbItem) orbItem.classList.remove('pwa-unavailable');
+        });
+
+        window.pwaInstall = async function() {
+          if (!deferredPrompt) {
+            var ua = navigator.userAgent.toLowerCase();
+            var msg;
+            if (/iphone|ipad|ipod/.test(ua)) {
+              msg = 'Safari on iOS:\n1. Tap the Share button (⬆)\n2. Scroll down and tap "Add to Home Screen"\n3. Tap "Add" to confirm';
+            } else if (/android/.test(ua)) {
+              msg = 'On Android:\n1. Tap the browser menu (⋮ or ···)\n2. Tap "Add to Home screen" or "Install app"\n3. Confirm';
+            } else {
+              msg = 'To install VYRION:\n• Chrome/Edge: click the install icon (⊕) in the address bar, or Menu → "Install VYRION"\n• Firefox: Menu → "Install"\n• Safari: Share (⬆) → "Add to Home Screen"';
+            }
+            alert(msg);
+            return;
+          }
+
+          hideBanner();
+          deferredPrompt.prompt();
+
+          var choice = await deferredPrompt.userChoice;
+          if (choice.outcome === 'accepted') {
+            deferredPrompt = null;
+            hideBanner();
+            if (orbItem) {
+              orbItem.setAttribute('data-state', 'installed');
+              orbItem.innerHTML = '<span class="oo-install-dot"></span> INSTALLED ✓';
+              orbItem.style.pointerEvents = 'none';
+            }
+            try {
+              localStorage.setItem('vc-installed', '1');
+            } catch (e) {}
+          } else {
+            try {
+              sessionStorage.setItem('vc-pwa-dismissed', '0');
+            } catch (e) {}
+            setTimeout(showBanner, 120000);
+          }
+        };
+
+        window.pwaDismiss = function() {
+          hideBanner();
+          try {
+            sessionStorage.setItem('vc-pwa-dismissed', '1');
+          } catch (e) {}
+          setTimeout(function() {
+            try {
+              sessionStorage.removeItem('vc-pwa-dismissed');
+            } catch (e) {}
+            showBanner();
+          }, 300000);
+        };
+
+        window.addEventListener('appinstalled', function() {
+          deferredPrompt = null;
+          hideBanner();
+          if (orbItem) {
+            orbItem.setAttribute('data-state', 'installed');
+            orbItem.innerHTML = '<span class="oo-install-dot"></span> INSTALLED ✓';
+            orbItem.style.pointerEvents = 'none';
+          }
+          try {
+            localStorage.setItem('vc-installed', '1');
+          } catch (e) {}
+        });
+
+        if (orbItem) orbItem.classList.add('pwa-unavailable');
       })();
     </script>
     <!-- Cloudflare Insights -->
