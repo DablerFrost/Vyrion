@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-06-13T14:54:14.872Z",
+    "generatedAt": "2026-06-14T05:22:43.169Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -15,19 +15,19 @@
     "hazardSummary": {
       "totalEvents": 66,
       "categories": {
-        "Wildfires": 38,
+        "Sea and Lake Ice": 8,
+        "Wildfires": 37,
         "Severe Storms": 2,
-        "Volcanoes": 3,
-        "Sea and Lake Ice": 7
+        "Volcanoes": 3
       },
       "seismicCount": 16,
       "maxMagnitude": 7.8
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 3.53,
-      "minTemperature_2m": -44,
-      "maxTemperature_2m": 30.1
+      "avgTemperature_2m": 2.38,
+      "minTemperature_2m": -45.4,
+      "maxTemperature_2m": 26.8
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -41,19 +41,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-06-13T14:23:07.061Z",
-        "generated_date": "2026-06-13",
+        "generated": "2026-06-14T05:02:15.157Z",
+        "generated_date": "2026-06-14",
         "script_version": "1.1",
         "window_days": 14,
-        "window_start": "2026-05-30",
-        "window_end": "2026-06-13",
-        "runtime_ms": 4083,
+        "window_start": "2026-05-31",
+        "window_end": "2026-06-14",
+        "runtime_ms": 264,
         "seismic_live": true,
         "eonet_live": true
       },
       "threat": {
         "level": "CRITICAL",
-        "score": 26.8
+        "score": 26.2
       },
       "seismic": {
         "events": [
@@ -210,14 +210,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sq90"
           },
           {
-            "id": "us7000spkc",
-            "magnitude": 5.6,
-            "place": "137 km SSE of Oistins, Barbados",
-            "time": "2026-05-30T21:27:25.699Z",
-            "depth_km": 35,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spkc"
-          },
-          {
             "id": "us7000ss82",
             "magnitude": 5.5,
             "place": "128 km NW of Vallenar, Chile",
@@ -280,6 +272,14 @@
             "time": "2026-06-10T23:30:45.857Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ss4s"
+          },
+          {
+            "id": "us7000ss1g",
+            "magnitude": 5.4,
+            "place": "155 km ESE of Petropavlovsk-Kamchatsky, Russia",
+            "time": "2026-06-10T13:45:25.060Z",
+            "depth_km": 8,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ss1g"
           },
           {
             "id": "us7000srpu",
@@ -418,14 +418,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ss5y"
           },
           {
-            "id": "us7000ss1g",
-            "magnitude": 5.2,
-            "place": "156 km ESE of Petropavlovsk-Kamchatsky, Russia",
-            "time": "2026-06-10T13:45:26.037Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ss1g"
-          },
-          {
             "id": "us7000srvv",
             "magnitude": 5.2,
             "place": "163 km ESE of Petropavlovsk-Kamchatsky, Russia",
@@ -504,6 +496,14 @@
             "time": "2026-06-03T17:21:25.301Z",
             "depth_km": 150.1,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sqcu"
+          },
+          {
+            "id": "us7000ssq9",
+            "magnitude": 5.1,
+            "place": "2 km S of Cerro de Piedra, Mexico",
+            "time": "2026-06-13T18:20:42.423Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ssq9"
           },
           {
             "id": "us7000ssp2",
@@ -674,6 +674,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sq7x"
           },
           {
+            "id": "us7000ssqy",
+            "magnitude": 5,
+            "place": "33 km ESE of Sarangani, Philippines",
+            "time": "2026-06-13T20:51:55.063Z",
+            "depth_km": 35,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ssqy"
+          },
+          {
             "id": "us7000ssp1",
             "magnitude": 5,
             "place": "24 km W of Ovalle, Chile",
@@ -792,22 +800,6 @@
             "time": "2026-05-31T19:15:39.354Z",
             "depth_km": 107.6,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sppt"
-          },
-          {
-            "id": "us7000splm",
-            "magnitude": 5,
-            "place": "71 km NW of Port-Vila, Vanuatu",
-            "time": "2026-05-31T02:48:01.177Z",
-            "depth_km": 35,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000splm"
-          },
-          {
-            "id": "us7000spkp",
-            "magnitude": 5,
-            "place": "81 km SE of Lae, Papua New Guinea",
-            "time": "2026-05-30T22:45:51.647Z",
-            "depth_km": 68.9,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spkp"
           },
           {
             "id": "us7000ssjl",
@@ -1042,28 +1034,20 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spqg"
           },
           {
-            "id": "us7000splv",
-            "magnitude": 4.9,
-            "place": "south of the Fiji Islands",
-            "time": "2026-05-31T03:57:05.570Z",
-            "depth_km": 481.6,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000splv"
+            "id": "us7000ssrp",
+            "magnitude": 4.8,
+            "place": "6 km ESE of Butulan, Philippines",
+            "time": "2026-06-13T23:28:45.829Z",
+            "depth_km": 71.8,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ssrp"
           },
           {
-            "id": "us7000spl8",
-            "magnitude": 4.9,
-            "place": "271 km SW of Grindavík, Iceland",
-            "time": "2026-05-31T00:54:00.462Z",
+            "id": "us7000ssqq",
+            "magnitude": 4.8,
+            "place": "120 km WNW of Höfn, Iceland",
+            "time": "2026-06-13T20:14:14.013Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spl8"
-          },
-          {
-            "id": "us7000spkb",
-            "magnitude": 4.9,
-            "place": "24 km NNW of Murghob, Tajikistan",
-            "time": "2026-05-30T21:15:59.807Z",
-            "depth_km": 131.8,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spkb"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ssqq"
           },
           {
             "id": "us7000ssfk",
@@ -1458,6 +1442,22 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sppi"
           },
           {
+            "id": "us7000ssq3",
+            "magnitude": 4.6,
+            "place": "52 km NE of Santa Marina Salina, Italy",
+            "time": "2026-06-13T17:28:12.010Z",
+            "depth_km": 219.8,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ssq3"
+          },
+          {
+            "id": "us7000sspm",
+            "magnitude": 4.6,
+            "place": "40 km SW of Sarangani, Philippines",
+            "time": "2026-06-13T15:45:48.911Z",
+            "depth_km": 35,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sspm"
+          },
+          {
             "id": "us7000ssnf",
             "magnitude": 4.6,
             "place": "28 km SW of Sarangani, Philippines",
@@ -1516,18 +1516,10 @@
           {
             "id": "us7000ss28",
             "magnitude": 4.6,
-            "place": "25 km ENE of Sibolga, Indonesia",
-            "time": "2026-06-10T16:30:55.456Z",
-            "depth_km": 127.7,
+            "place": "28 km ENE of Sibolga, Indonesia",
+            "time": "2026-06-10T16:30:55.485Z",
+            "depth_km": 127.3,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ss28"
-          },
-          {
-            "id": "us7000ss21",
-            "magnitude": 4.6,
-            "place": "165 km SE of Petropavlovsk-Kamchatsky, Russia",
-            "time": "2026-06-10T15:23:08.309Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ss21"
           },
           {
             "id": "us7000srxm",
@@ -1882,6 +1874,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ssav"
           },
           {
+            "id": "us7000ss21",
+            "magnitude": 4.5,
+            "place": "175 km SE of Petropavlovsk-Kamchatsky, Russia",
+            "time": "2026-06-10T15:23:07.738Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ss21"
+          },
+          {
             "id": "us7000srzd",
             "magnitude": 4.5,
             "place": "113 km E of Miyako, Japan",
@@ -2096,34 +2096,10 @@
             "time": "2026-05-31T05:50:06.102Z",
             "depth_km": 180.7,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spmd"
-          },
-          {
-            "id": "us7000sqw9",
-            "magnitude": 4.5,
-            "place": "3 km S of Aritao, Philippines",
-            "time": "2026-05-31T03:58:44.733Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sqw9"
-          },
-          {
-            "id": "us7000spsk",
-            "magnitude": 4.5,
-            "place": "Chagos Archipelago region",
-            "time": "2026-05-30T16:05:27.336Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spsk"
-          },
-          {
-            "id": "us7000spjc",
-            "magnitude": 4.5,
-            "place": "26 km SE of Ashoro, Japan",
-            "time": "2026-05-30T14:34:14.372Z",
-            "depth_km": 116.7,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spjc"
           }
         ],
-        "count_total": 258,
-        "count_m55_plus": 26,
+        "count_total": 255,
+        "count_m55_plus": 25,
         "count_m60_plus": 9,
         "count_m70_plus": 1,
         "count_m80_plus": 0,
@@ -2138,7 +2114,7 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-06-13T14:23:07.060Z"
+        "retrieved": "2026-06-14T05:02:15.071Z"
       },
       "wildfire": {
         "events": [
@@ -2295,20 +2271,9 @@
               45.665
             ],
             "closed": null
-          },
-          {
-            "id": "EONET_20286",
-            "title": "BRANTLEY 2 Wildfire, Eddy, New Mexico",
-            "type": "WILDFIRE",
-            "time": "2026-05-30T12:20:00.000Z",
-            "coords": [
-              -104.356,
-              32.612
-            ],
-            "closed": null
           }
         ],
-        "count": 15
+        "count": 14
       },
       "storm": {
         "events": [
@@ -2349,7 +2314,7 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-06-13T14:30:51.998Z",
+        "generatedAt": "2026-06-14T05:12:37.457Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
@@ -2408,7 +2373,7 @@
                 55.193
               ],
               "tsunami": false,
-              "significance": 1156
+              "significance": 1157
             },
             {
               "id": "nn00919749",
@@ -2571,12 +2536,32 @@
         "hazards": {
           "totalActive": 50,
           "byCategory": {
-            "Wildfires": 38,
+            "Sea and Lake Ice": 8,
+            "Wildfires": 37,
             "Severe Storms": 2,
-            "Volcanoes": 3,
-            "Sea and Lake Ice": 7
+            "Volcanoes": 3
           },
           "events": [
+            {
+              "id": "EONET_10212",
+              "title": "Iceberg B22F",
+              "categories": [
+                "Sea and Lake Ice"
+              ],
+              "sources": [
+                "NATICE"
+              ],
+              "geometry": {
+                "magnitudeValue": 98,
+                "magnitudeUnit": "NM^2",
+                "date": "2026-06-12T00:00:00Z",
+                "type": "Point",
+                "coordinates": [
+                  177.7,
+                  -67.6
+                ]
+              }
+            },
             {
               "id": "EONET_20446",
               "title": "Little Schloss RX Prescribed Fire, Shenandoah, Virginia",
@@ -3159,26 +3144,6 @@
                   46.16526
                 ]
               }
-            },
-            {
-              "id": "EONET_20263",
-              "title": "340 Wildfire, Wakulla, Florida",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 1500,
-                "magnitudeUnit": "acres",
-                "date": "2026-05-23T16:29:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -84.565664,
-                  30.053136
-                ]
-              }
             }
           ]
         },
@@ -3188,55 +3153,55 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": -1.9,
+              "temperature_2m": -0.1,
               "surface_pressure": 1022.1,
-              "wind_speed_10m": 3.77,
-              "relative_humidity_2m": 74
+              "wind_speed_10m": 7.09,
+              "relative_humidity_2m": 85
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 12.9,
-              "surface_pressure": 1006.7,
-              "wind_speed_10m": 10.31,
-              "relative_humidity_2m": 86
+              "temperature_2m": 12,
+              "surface_pressure": 1001.5,
+              "wind_speed_10m": 2.02,
+              "relative_humidity_2m": 82
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 23.4,
-              "surface_pressure": 917.6,
-              "wind_speed_10m": 2.11,
-              "relative_humidity_2m": 77
+              "temperature_2m": 20.3,
+              "surface_pressure": 914.6,
+              "wind_speed_10m": 1.1,
+              "relative_humidity_2m": 100
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 30.1,
-              "surface_pressure": 1011.9,
-              "wind_speed_10m": 2.63,
-              "relative_humidity_2m": 69
+              "temperature_2m": 26.8,
+              "surface_pressure": 1012.7,
+              "wind_speed_10m": 0.65,
+              "relative_humidity_2m": 81
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
               "temperature_2m": 0.7,
-              "surface_pressure": 997.2,
-              "wind_speed_10m": 14.62,
-              "relative_humidity_2m": 96
+              "surface_pressure": 1003.7,
+              "wind_speed_10m": 10.73,
+              "relative_humidity_2m": 84
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -44,
-              "surface_pressure": 718,
-              "wind_speed_10m": 11.51,
-              "relative_humidity_2m": 52
+              "temperature_2m": -45.4,
+              "surface_pressure": 717,
+              "wind_speed_10m": 8.52,
+              "relative_humidity_2m": 55
             }
           ]
         },
@@ -3254,7 +3219,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-06-13T14:52:38.483Z"
+        "generatedAt": "2026-06-14T05:19:20.635Z"
       },
       "health": {
         "score": 90,
