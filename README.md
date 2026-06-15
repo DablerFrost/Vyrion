@@ -9,7 +9,7 @@
 🌍 Platform: https://vyrion.earth
 📡 Intelligence Network: https://vyrion.earth
 📧 Contact: [contact@vyrion.earth](mailto:contact@vyrion.earth)
-
+<img width="1190" height="367" alt="Screenshot 2026-05-23 143641" src="https://github.com/user-attachments/assets/e9206299-7a1f-4774-95c1-093a5ef7a9c6" />
 ---
 
 ## What Is VYRION?
