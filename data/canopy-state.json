@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-06-15T06:11:57.882Z",
+    "generatedAt": "2026-06-15T17:46:18.123Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -20,9 +20,9 @@
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 1.5,
-      "minTemperature_2m": -49.7,
-      "maxTemperature_2m": 28.4
+      "avgTemperature_2m": 1.7,
+      "minTemperature_2m": -50.4,
+      "maxTemperature_2m": 29.2
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -36,19 +36,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-06-15T05:23:04.926Z",
+        "generated": "2026-06-15T17:26:47.011Z",
         "generated_date": "2026-06-15",
         "script_version": "1.1",
         "window_days": 14,
         "window_start": "2026-06-01",
         "window_end": "2026-06-15",
-        "runtime_ms": 536,
+        "runtime_ms": 551,
         "seismic_live": true,
         "eonet_live": true
       },
       "threat": {
         "level": "CRITICAL",
-        "score": 23.2
+        "score": 24.95
       },
       "seismic": {
         "events": [
@@ -67,6 +67,14 @@
             "time": "2026-06-08T00:55:11.958Z",
             "depth_km": 69,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000srcg"
+          },
+          {
+            "id": "us7000st1c",
+            "magnitude": 6.2,
+            "place": "67 km ESE of Pondaguitan, Philippines",
+            "time": "2026-06-15T09:18:38.846Z",
+            "depth_km": 111.9,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000st1c"
           },
           {
             "id": "us7000spxm",
@@ -187,6 +195,14 @@
             "time": "2026-06-03T10:20:37.618Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sq90"
+          },
+          {
+            "id": "us7000st48",
+            "magnitude": 5.5,
+            "place": "5 km SSW of Pangyan, Philippines",
+            "time": "2026-06-15T15:30:24.374Z",
+            "depth_km": 72.3,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000st48"
           },
           {
             "id": "us7000ss82",
@@ -989,12 +1005,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spz7"
           },
           {
-            "id": "us7000spti",
-            "magnitude": 4.9,
-            "place": "Macquarie Island region",
-            "time": "2026-06-01T10:32:50.126Z",
+            "id": "us7000st12",
+            "magnitude": 4.8,
+            "place": "northern Mid-Atlantic Ridge",
+            "time": "2026-06-15T08:02:35.178Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spti"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000st12"
           },
           {
             "id": "us7000ssrp",
@@ -1373,14 +1389,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sqyp"
           },
           {
-            "id": "us7000spt1",
-            "magnitude": 4.7,
-            "place": "189 km ESE of Alo, Wallis and Futuna",
-            "time": "2026-06-01T06:26:16.415Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spt1"
-          },
-          {
             "id": "us7000ssw7",
             "magnitude": 4.6,
             "place": "69 km SSW of Tambolaka, Indonesia",
@@ -1725,12 +1733,20 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000spz4"
           },
           {
-            "id": "us7000sput",
-            "magnitude": 4.6,
-            "place": "101 km WSW of Jiquilillo, Nicaragua",
-            "time": "2026-06-01T15:58:58.626Z",
-            "depth_km": 35,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sput"
+            "id": "us7000st0n",
+            "magnitude": 4.5,
+            "place": "34 km NNE of Komodo, Indonesia",
+            "time": "2026-06-15T06:58:32.374Z",
+            "depth_km": 172.6,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000st0n"
+          },
+          {
+            "id": "us7000st08",
+            "magnitude": 4.5,
+            "place": "123 km SE of Ollagüe, Chile",
+            "time": "2026-06-15T05:24:51.203Z",
+            "depth_km": 184.4,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000st08"
           },
           {
             "id": "us7000sstv",
@@ -1997,9 +2013,9 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sri3"
           }
         ],
-        "count_total": 243,
-        "count_m55_plus": 23,
-        "count_m60_plus": 8,
+        "count_total": 245,
+        "count_m55_plus": 25,
+        "count_m60_plus": 9,
         "count_m70_plus": 1,
         "count_m80_plus": 0,
         "largest": {
@@ -2013,7 +2029,7 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-06-15T05:23:04.732Z"
+        "retrieved": "2026-06-15T17:26:46.775Z"
       },
       "wildfire": {
         "events": [
@@ -2191,7 +2207,7 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-06-15T05:31:32.756Z",
+        "generatedAt": "2026-06-15T17:28:10.628Z",
         "sourcesResolved": 2,
         "sourcesTotal": 6
       },
@@ -2200,6 +2216,19 @@
           "count": 15,
           "maxMagnitude": 7.8,
           "events": [
+            {
+              "id": "us7000st41",
+              "magnitude": 2.4,
+              "place": "8 km NE of Bel Air North, Maryland",
+              "time": "2026-06-15T15:02:24.147Z",
+              "coordinates": [
+                -76.3097,
+                39.6174,
+                5
+              ],
+              "tsunami": false,
+              "significance": 600
+            },
             {
               "id": "hv74978947",
               "magnitude": 4.71,
@@ -2250,7 +2279,7 @@
                 55.193
               ],
               "tsunami": false,
-              "significance": 1171
+              "significance": 1184
             },
             {
               "id": "nn00919749",
@@ -2381,19 +2410,6 @@
               ],
               "tsunami": false,
               "significance": 1006
-            },
-            {
-              "id": "us6000sy84",
-              "magnitude": 6,
-              "place": "61 km ESE of Codrington, Antigua and Barbuda",
-              "time": "2026-05-16T14:50:05.533Z",
-              "coordinates": [
-                -61.2882,
-                17.4228,
-                47
-              ],
-              "tsunami": false,
-              "significance": 642
             }
           ]
         },
@@ -2406,55 +2422,55 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": -1.2,
-              "surface_pressure": 1021.8,
-              "wind_speed_10m": 8.74,
-              "relative_humidity_2m": 90
+              "temperature_2m": -0.2,
+              "surface_pressure": 1019.2,
+              "wind_speed_10m": 7.64,
+              "relative_humidity_2m": 93
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 11.6,
-              "surface_pressure": 1001.6,
-              "wind_speed_10m": 10.85,
-              "relative_humidity_2m": 74
+              "temperature_2m": 11.2,
+              "surface_pressure": 1002.1,
+              "wind_speed_10m": 6.01,
+              "relative_humidity_2m": 84
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 19.2,
-              "surface_pressure": 915.6,
-              "wind_speed_10m": 1.3,
-              "relative_humidity_2m": 100
+              "temperature_2m": 20.5,
+              "surface_pressure": 916.5,
+              "wind_speed_10m": 0.86,
+              "relative_humidity_2m": 99
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 28.4,
-              "surface_pressure": 1011.4,
-              "wind_speed_10m": 1.85,
-              "relative_humidity_2m": 77
+              "temperature_2m": 29.2,
+              "surface_pressure": 1012.5,
+              "wind_speed_10m": 3.44,
+              "relative_humidity_2m": 75
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": 0.7,
-              "surface_pressure": 990.1,
-              "wind_speed_10m": 12.01,
-              "relative_humidity_2m": 88
+              "temperature_2m": -0.1,
+              "surface_pressure": 989.8,
+              "wind_speed_10m": 7.93,
+              "relative_humidity_2m": 76
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -49.7,
-              "surface_pressure": 712.8,
-              "wind_speed_10m": 7.36,
-              "relative_humidity_2m": 67
+              "temperature_2m": -50.4,
+              "surface_pressure": 709.5,
+              "wind_speed_10m": 7.13,
+              "relative_humidity_2m": 66
             }
           ]
         },
@@ -2472,7 +2488,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-06-15T06:06:45.220Z"
+        "generatedAt": "2026-06-15T17:34:26.431Z"
       },
       "health": {
         "score": 90,
