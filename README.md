@@ -18,6 +18,8 @@ VYRION is a planetary intelligence platform designed to measure, verify, and com
 
 The platform combines public data, scientific research, environmental monitoring, and accountability frameworks into a unified intelligence network designed to make complex realities more visible, understandable, and actionable.
 
+<img width="938" height="935" alt="Screenshot 2026-05-23 103509" src="https://github.com/user-attachments/assets/f72d336d-00d9-4160-93d3-d91c59a76310" />
+
 VYRION exists to help answer a simple question:
 
 > What is actually happening, and how do we know?
@@ -188,3 +190,5 @@ Trust Evidence Over Narrative.
 Verification Over Speculation.
 
 https://vyrion.earth
+
+<img width="1815" height="363" alt="Screenshot 2026-05-23 103542" src="https://github.com/user-attachments/assets/0179197c-6c41-47fb-9c86-2482d6aa8a77" />
