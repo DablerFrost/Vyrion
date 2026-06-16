@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-06-16T06:20:18.909Z",
+    "generatedAt": "2026-06-16T17:51:03.668Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -13,21 +13,20 @@
   },
   "synthesis": {
     "hazardSummary": {
-      "totalEvents": 66,
+      "totalEvents": 67,
       "categories": {
         "Wildfires": 41,
-        "Sea and Lake Ice": 5,
-        "Severe Storms": 1,
+        "Sea and Lake Ice": 6,
         "Volcanoes": 3
       },
-      "seismicCount": 16,
+      "seismicCount": 17,
       "maxMagnitude": 7.8
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 1.17,
-      "minTemperature_2m": -49.6,
-      "maxTemperature_2m": 29.7
+      "avgTemperature_2m": 3.02,
+      "minTemperature_2m": -47.1,
+      "maxTemperature_2m": 28.5
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -41,19 +40,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-06-16T05:26:23.960Z",
+        "generated": "2026-06-16T17:19:38.820Z",
         "generated_date": "2026-06-16",
         "script_version": "1.1",
         "window_days": 14,
         "window_start": "2026-06-02",
         "window_end": "2026-06-16",
-        "runtime_ms": 419,
+        "runtime_ms": 491,
         "seismic_live": true,
         "eonet_live": false
       },
       "threat": {
         "level": "CRITICAL",
-        "score": 19.5
+        "score": 21.25
       },
       "seismic": {
         "events": [
@@ -80,6 +79,14 @@
             "time": "2026-06-08T00:55:11.958Z",
             "depth_km": 69,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000srcg"
+          },
+          {
+            "id": "us7000stbz",
+            "magnitude": 6.3,
+            "place": "260 km SSE of Dunhuang, China",
+            "time": "2026-06-16T09:06:55.226Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000stbz"
           },
           {
             "id": "us7000st1c",
@@ -202,6 +209,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sq90"
           },
           {
+            "id": "us7000std7",
+            "magnitude": 5.5,
+            "place": "4 km NW of Noda, Japan",
+            "time": "2026-06-16T10:46:34.658Z",
+            "depth_km": 71.8,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000std7"
+          },
+          {
             "id": "us7000st48",
             "magnitude": 5.5,
             "place": "5 km SSW of Pangyan, Philippines",
@@ -256,6 +271,14 @@
             "time": "2026-06-07T14:53:56.180Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sr8v"
+          },
+          {
+            "id": "us7000stcs",
+            "magnitude": 5.4,
+            "place": "277 km S of Dunhuang, China",
+            "time": "2026-06-16T09:45:26.434Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000stcs"
           },
           {
             "id": "us7000ss6g",
@@ -376,6 +399,14 @@
             "time": "2026-06-05T13:40:20.252Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000squw"
+          },
+          {
+            "id": "us7000std2",
+            "magnitude": 5.2,
+            "place": "242 km SSE of Dunhuang, China",
+            "time": "2026-06-16T09:42:35.214Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000std2"
           },
           {
             "id": "us7000st96",
@@ -690,6 +721,22 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sq7x"
           },
           {
+            "id": "us7000stdb",
+            "magnitude": 5,
+            "place": "261 km SSE of Dunhuang, China",
+            "time": "2026-06-16T11:14:17.721Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000stdb"
+          },
+          {
+            "id": "us7000stbp",
+            "magnitude": 5,
+            "place": "49 km ESE of Palu, Indonesia",
+            "time": "2026-06-16T08:04:46.472Z",
+            "depth_km": 48.9,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000stbp"
+          },
+          {
             "id": "us7000st5e",
             "magnitude": 5,
             "place": "southeast of the Loyalty Islands",
@@ -808,6 +855,14 @@
             "time": "2026-06-05T22:22:02.934Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sr0g"
+          },
+          {
+            "id": "us7000ste2",
+            "magnitude": 4.9,
+            "place": "256 km SSE of Dunhuang, China",
+            "time": "2026-06-16T13:27:36.651Z",
+            "depth_km": 12.5,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ste2"
           },
           {
             "id": "us7000st9r",
@@ -1050,12 +1105,44 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sq6g"
           },
           {
+            "id": "us7000stdz",
+            "magnitude": 4.8,
+            "place": "65 km S of Kokopo, Papua New Guinea",
+            "time": "2026-06-16T13:03:41.301Z",
+            "depth_km": 66.5,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000stdz"
+          },
+          {
+            "id": "us7000stdg",
+            "magnitude": 4.8,
+            "place": "52 km SE of Palu, Indonesia",
+            "time": "2026-06-16T11:03:52.442Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000stdg"
+          },
+          {
+            "id": "us7000std4",
+            "magnitude": 4.8,
+            "place": "90 km WSW of Ternate, Indonesia",
+            "time": "2026-06-16T10:23:50.862Z",
+            "depth_km": 52.5,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000std4"
+          },
+          {
             "id": "us7000st5m",
             "magnitude": 4.8,
             "place": "southeast of the Loyalty Islands",
             "time": "2026-06-15T18:45:33.883Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000st5m"
+          },
+          {
+            "id": "us7000st24",
+            "magnitude": 4.8,
+            "place": "Izu Islands, Japan region",
+            "time": "2026-06-15T09:40:52.670Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000st24"
           },
           {
             "id": "us7000st12",
@@ -1258,6 +1345,22 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sq6f"
           },
           {
+            "id": "us7000std9",
+            "magnitude": 4.7,
+            "place": "248 km SSE of Dunhuang, China",
+            "time": "2026-06-16T11:01:02.008Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000std9"
+          },
+          {
+            "id": "us7000staz",
+            "magnitude": 4.7,
+            "place": "14 km SSW of Balangonan, Philippines",
+            "time": "2026-06-16T05:44:05.058Z",
+            "depth_km": 92.9,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000staz"
+          },
+          {
             "id": "us7000st94",
             "magnitude": 4.7,
             "place": "Izu Islands, Japan region",
@@ -1440,6 +1543,14 @@
             "time": "2026-06-03T08:42:49.568Z",
             "depth_km": 32.5,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sq8i"
+          },
+          {
+            "id": "us7000stbw",
+            "magnitude": 4.6,
+            "place": "17 km SE of Viqueque, Timor Leste",
+            "time": "2026-06-16T09:03:43.900Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000stbw"
           },
           {
             "id": "us7000st8y",
@@ -1770,14 +1881,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74975297"
           },
           {
-            "id": "us7000sq2c",
-            "magnitude": 4.6,
-            "place": "232 km E of Levuka, Fiji",
-            "time": "2026-06-02T13:57:47.568Z",
-            "depth_km": 617.8,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sq2c"
-          },
-          {
             "id": "us7000st0n",
             "magnitude": 4.5,
             "place": "34 km NNE of Komodo, Indonesia",
@@ -2024,35 +2127,11 @@
             "time": "2026-06-03T13:11:35.310Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc75370191"
-          },
-          {
-            "id": "us7000sq0v",
-            "magnitude": 4.5,
-            "place": "30 km SW of Tennant Creek, Australia",
-            "time": "2026-06-02T08:18:53.668Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sq0v"
-          },
-          {
-            "id": "us7000sq0j",
-            "magnitude": 4.5,
-            "place": "30 km WNW of Titahi Bay, New Zealand",
-            "time": "2026-06-02T06:38:08.128Z",
-            "depth_km": 66.7,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sq0j"
-          },
-          {
-            "id": "us7000sq0g",
-            "magnitude": 4.5,
-            "place": "68 km NNE of La Serena, Chile",
-            "time": "2026-06-02T06:13:42.141Z",
-            "depth_km": 66.9,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sq0g"
           }
         ],
-        "count_total": 249,
-        "count_m55_plus": 25,
-        "count_m60_plus": 9,
+        "count_total": 259,
+        "count_m55_plus": 27,
+        "count_m60_plus": 10,
         "count_m70_plus": 1,
         "count_m80_plus": 0,
         "largest": {
@@ -2066,7 +2145,7 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-06-16T05:26:23.882Z"
+        "retrieved": "2026-06-16T17:19:38.613Z"
       },
       "wildfire": null,
       "storm": null,
@@ -2076,15 +2155,28 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-06-16T05:39:22.551Z",
+        "generatedAt": "2026-06-16T17:24:58.586Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
       "layers": {
         "seismic": {
-          "count": 16,
+          "count": 17,
           "maxMagnitude": 7.8,
           "events": [
+            {
+              "id": "us7000stbz",
+              "magnitude": 6.3,
+              "place": "260 km SSE of Dunhuang, China",
+              "time": "2026-06-16T09:06:55.226Z",
+              "coordinates": [
+                95.4028,
+                37.8888,
+                10
+              ],
+              "tsunami": false,
+              "significance": 1000
+            },
             {
               "id": "us7000st95",
               "magnitude": 6.7,
@@ -2096,7 +2188,7 @@
                 10
               ],
               "tsunami": false,
-              "significance": 694
+              "significance": 695
             },
             {
               "id": "us7000st41",
@@ -2161,7 +2253,7 @@
                 55.193
               ],
               "tsunami": false,
-              "significance": 1185
+              "significance": 1186
             },
             {
               "id": "nn00919749",
@@ -2291,7 +2383,7 @@
                 10
               ],
               "tsunami": false,
-              "significance": 1006
+              "significance": 1007
             }
           ]
         },
@@ -2299,8 +2391,7 @@
           "totalActive": 50,
           "byCategory": {
             "Wildfires": 41,
-            "Sea and Lake Ice": 5,
-            "Severe Storms": 1,
+            "Sea and Lake Ice": 6,
             "Volcanoes": 3
           },
           "events": [
@@ -2625,27 +2716,6 @@
               }
             },
             {
-              "id": "EONET_20412",
-              "title": "Tropical Storm Cristina",
-              "categories": [
-                "Severe Storms"
-              ],
-              "sources": [
-                "JTWC",
-                "NOAA_NHC"
-              ],
-              "geometry": {
-                "magnitudeValue": 30,
-                "magnitudeUnit": "kts",
-                "date": "2026-06-11T00:00:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -89.1,
-                  12.8
-                ]
-              }
-            },
-            {
               "id": "EONET_20387",
               "title": "Tower Wildfire, Millard, Utah",
               "categories": [
@@ -2905,6 +2975,26 @@
                   45.7593
                 ]
               }
+            },
+            {
+              "id": "EONET_20290",
+              "title": "KALKASKA-RX 61150021 Fletcher Unit 2 Prescribed Fire, Kalkaska, Michigan",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 539,
+                "magnitudeUnit": "acres",
+                "date": "2026-05-28T15:33:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -84.92062679,
+                  44.51933255
+                ]
+              }
             }
           ]
         },
@@ -2914,55 +3004,55 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": -0.4,
-              "surface_pressure": 1022.2,
-              "wind_speed_10m": 5.98,
-              "relative_humidity_2m": 89
+              "temperature_2m": -0.3,
+              "surface_pressure": 1023.2,
+              "wind_speed_10m": 3.35,
+              "relative_humidity_2m": 95
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 11,
-              "surface_pressure": 1002.2,
-              "wind_speed_10m": 13,
-              "relative_humidity_2m": 76
+              "temperature_2m": 11.4,
+              "surface_pressure": 1004.8,
+              "wind_speed_10m": 9.12,
+              "relative_humidity_2m": 87
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 16.8,
-              "surface_pressure": 914.4,
-              "wind_speed_10m": 0.74,
-              "relative_humidity_2m": 99
+              "temperature_2m": 26.4,
+              "surface_pressure": 916.6,
+              "wind_speed_10m": 1.73,
+              "relative_humidity_2m": 56
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 29.7,
-              "surface_pressure": 1011.5,
-              "wind_speed_10m": 3.26,
-              "relative_humidity_2m": 70
+              "temperature_2m": 28.5,
+              "surface_pressure": 1013,
+              "wind_speed_10m": 2.83,
+              "relative_humidity_2m": 78
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": -0.5,
-              "surface_pressure": 1000.1,
-              "wind_speed_10m": 10.7,
-              "relative_humidity_2m": 73
+              "temperature_2m": -0.8,
+              "surface_pressure": 999.1,
+              "wind_speed_10m": 9.07,
+              "relative_humidity_2m": 82
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -49.6,
-              "surface_pressure": 709.8,
-              "wind_speed_10m": 7.85,
-              "relative_humidity_2m": 66
+              "temperature_2m": -47.1,
+              "surface_pressure": 712,
+              "wind_speed_10m": 8.69,
+              "relative_humidity_2m": 67
             }
           ]
         },
@@ -2980,7 +3070,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-06-16T06:14:54.792Z"
+        "generatedAt": "2026-06-16T17:48:22.690Z"
       },
       "health": {
         "score": 90,
