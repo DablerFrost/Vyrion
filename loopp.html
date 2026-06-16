@@ -1,0 +1,2923 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="VYRION LOOP — Enterprise and municipal circular economy software. Material lifecycle tracking. Waste rerouting intelligence. Module 07.">
+    <meta property="og:title" content="VYRION LOOP — Circular Economy Intelligence">
+    <meta property="og:description" content="Enterprise and municipal circular economy software. Tracks materials through entire lifecycle, reroutes waste into manufacturing input streams.">
+    <meta property="og:image" content="/assets/og-image.jpg">
+    <meta property="og:url" content="https://vyrion.earth/loop">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="VYRION LOOP — Circular Economy Intelligence">
+    <meta name="twitter:description" content="Enterprise and municipal circular economy software. Tracks materials through entire lifecycle, reroutes waste into manufacturing input streams. Module 07.">
+    <meta name="twitter:image" content="/assets/og-image.jpg">
+    <link rel="canonical" href="https://vyrion.earth/loop">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/assets/favicon.ico">
+    <title>VYRION LOOP — Circular Economy Intelligence · Module 07</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&family=Archivo:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      /* ══════════════════════════════════════════════════════════════════
+         VYRION LOOP — Module 07 · Circular Economy Intelligence
+         Accent: #FFB84D (--loop) · Built on VYRION Design System V2.0
+      ══════════════════════════════════════════════════════════════════ */
+
+      /* ── BRAND TOKENS ────────────────────────────────────────────────── */
+      :root {
+        --void: #020912;
+        --void2: #061624;
+        --void3: #0b2035;
+        --glow: #00D4FF;
+        --amber: #FFB84D;
+        --breach: #F03030;
+        --warn: #F09000;
+        --t1: #e4f2ff;
+        --t2: #6a9ab8;
+        --t3: #2d6080;
+        --border: rgba(0, 212, 255, .12);
+        --border2: rgba(0, 212, 255, .07);
+        --nav-bg: rgba(2, 9, 18, .97);
+        /* LOOP module accent — amber / gold */
+        --loop: #FFB84D;
+        --loop-glow: rgba(255, 184, 77, .4);
+        --loop-dim: rgba(255, 184, 77, .08);
+        --loop2: #E09A30;
+        --loop3: #A87020;
+        --loop-border: rgba(255, 184, 77, .28);
+        /* circular economy semantic colors */
+        --waste: #F03030;       /* waste crisis */
+        --recycle: #00CC66;     /* circularity / positive flow */
+        --material: #48CAE4;    /* material tracking / cyan */
+        --recovery: #9C6FE4;    /* resource recovery */
+        /* shared module tokens */
+        --mod-conscience: #00D4FF;
+        --mod-shield: #F03030;
+        --mod-atlas: #00D4FF;
+        --mod-root: #10b981;
+        --mod-canopy: #2E8B57;
+        --mod-tide: #0096C7;
+        --mod-loop: #FFB84D;
+        --mod-flux: #FFD700;
+        --mod-pulse: #9C6FE4;
+        --evo-motion: 280ms cubic-bezier(.22, .61, .36, 1);
+        --green: #00CC66;
+        --red: #F03030;
+      }
+
+      [data-theme="light"] {
+        --void: #f0f5ff;
+        --void2: #e4eeff;
+        --void3: #d5e5ff;
+        --glow: #0066CC;
+        --amber: #b07800;
+        --breach: #b82020;
+        --warn: #a05800;
+        --t1: #060e1e;
+        --t2: #1e4a7a;
+        --t3: #3a6090;
+        --border: rgba(0, 102, 204, .18);
+        --border2: rgba(0, 102, 204, .10);
+        --nav-bg: rgba(240, 245, 255, .98);
+        --loop: #b07800;
+        --loop-glow: rgba(176, 120, 0, .25);
+        --loop-dim: rgba(176, 120, 0, .07);
+        --loop-border: rgba(176, 120, 0, .28);
+        --recycle: #1a7a40;
+        --material: #0077A8;
+        --recovery: #7040b0;
+        --red: #b82020;
+        --green: #1a7a40;
+      }
+
+      /* ── RESET ───────────────────────────────────────────────────────── */
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html { scroll-behavior: smooth; font-size: 18px; }
+
+      body {
+        background: var(--void);
+        color: var(--t1);
+        font-family: 'Archivo', sans-serif;
+        font-size: 1rem;
+        line-height: 1.65;
+        min-height: 100vh;
+        overflow-x: hidden;
+        transition: background .3s, color .3s;
+      }
+
+      @media(hover:hover) { body { cursor: none; } }
+
+      /* Ambient amber-gold atmospheric glow */
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        background:
+          radial-gradient(ellipse 70% 45% at 20% 0%,  rgba(255, 184, 77, .018) 0%, transparent 65%),
+          radial-gradient(ellipse 55% 40% at 85% 100%, rgba(255, 184, 77, .012) 0%, transparent 65%),
+          radial-gradient(ellipse 40% 30% at 50% 50%,  rgba(180, 120, 30, .010) 0%, transparent 70%);
+      }
+
+      /* Scanline */
+      body::after {
+        content: '';
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 990;
+        background: repeating-linear-gradient(0deg, transparent, transparent 3px,
+          rgba(255, 184, 77, .003) 3px, rgba(255, 184, 77, .003) 4px);
+      }
+
+      /* ── CUSTOM CURSOR ───────────────────────────────────────────────── */
+      #cursor {
+        position: fixed;
+        width: 8px;
+        height: 8px;
+        background: var(--loop);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99999;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 8px var(--loop-glow);
+        transition: transform .08s ease, width .15s ease, height .15s ease, opacity .15s ease;
+        will-change: transform;
+      }
+
+      #cursor-ring {
+        position: fixed;
+        width: 32px;
+        height: 32px;
+        border: 1.5px solid rgba(255, 184, 77, .5);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99998;
+        transform: translate(-50%, -50%);
+        transition: transform .18s var(--evo-motion), width .2s ease, height .2s ease, border-color .2s ease;
+        will-change: transform;
+      }
+
+      #cursor-glow {
+        position: fixed;
+        width: 280px;
+        height: 280px;
+        background: radial-gradient(circle, rgba(255, 184, 77, .05) 0%, transparent 70%);
+        pointer-events: none;
+        z-index: 99990;
+        transform: translate(-50%, -50%);
+        transition: transform .35s ease;
+        will-change: transform;
+      }
+
+      @media(hover:none) {
+        #cursor, #cursor-ring, #cursor-glow { display: none; }
+        body { cursor: auto; }
+      }
+
+      /* ── NAV ─────────────────────────────────────────────────────────── */
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 500;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0 1.8rem;
+        background: var(--nav-bg);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        transition: background .3s, border-color .3s;
+        overflow: visible;
+      }
+
+      .nav-logo {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: .95rem;
+        color: var(--glow);
+        letter-spacing: .15em;
+        text-decoration: none;
+        flex-shrink: 0;
+        text-shadow: 0 0 24px rgba(0, 212, 255, .45);
+        transition: text-shadow var(--evo-motion);
+      }
+
+      .nav-logo:hover { text-shadow: 0 0 40px rgba(0, 212, 255, .7); }
+
+      .nav-links {
+        display: flex;
+        gap: 1.8rem;
+        list-style: none;
+        flex: 1;
+        overflow: visible;
+      }
+
+      .nav-links li { overflow: visible; position: relative; }
+
+      .nav-links a {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 700;
+        font-size: .65rem;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        color: var(--t2);
+        text-decoration: none;
+        transition: color .2s;
+        padding-bottom: 2px;
+      }
+
+      .nav-links a:hover { color: var(--t1); }
+      .nav-links a.active {
+        color: var(--loop);
+        border-bottom: 1px solid rgba(255, 184, 77, .5);
+      }
+
+      .nav-item { position: relative; display: inline-flex; align-items: center; }
+
+      .nav-tooltip {
+        position: absolute;
+        top: calc(100% + 14px);
+        left: 50%;
+        transform: translateX(-50%) translateY(-6px);
+        background: rgba(2, 9, 18, .97);
+        border: 1px solid rgba(255, 184, 77, .22);
+        border-radius: 3px;
+        padding: .35rem .65rem;
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: var(--loop);
+        white-space: nowrap;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .2s ease, transform .2s ease, visibility .2s;
+        z-index: 9999;
+        box-shadow: 0 6px 24px rgba(0,0,0,.6), 0 0 14px rgba(255,184,77,.1);
+        backdrop-filter: blur(10px);
+      }
+
+      .nav-tooltip::before {
+        content: '';
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 5px solid transparent;
+        border-bottom-color: rgba(255, 184, 77, .28);
+      }
+
+      .nav-tooltip::after {
+        content: '';
+        position: absolute;
+        bottom: calc(100% - 1px);
+        left: 50%;
+        transform: translateX(-50%);
+        border: 4px solid transparent;
+        border-bottom-color: rgba(2, 9, 18, .97);
+      }
+
+      .nav-item:hover .nav-tooltip { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+
+      .nav-controls {
+        display: flex;
+        align-items: center;
+        gap: .35rem;
+        flex-shrink: 0;
+      }
+
+      .nc-sep { width: 1px; height: 16px; background: var(--border); margin: 0 .15rem; }
+
+      .nc-theme {
+        font-family: 'Courier Prime', monospace;
+        font-size: .58rem;
+        font-weight: 700;
+        letter-spacing: .12em;
+        padding: .22rem .5rem;
+        border-radius: 2px;
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--t2);
+        cursor: none;
+        transition: all .2s;
+        white-space: nowrap;
+      }
+
+      .nc-theme:hover, .nc-theme.active {
+        border-color: var(--loop);
+        color: var(--loop);
+        background: var(--loop-dim);
+        box-shadow: 0 0 8px rgba(255, 184, 77, .12);
+      }
+
+      .nc-sz {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        font-weight: 700;
+        width: 26px;
+        height: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2px;
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--t3);
+        cursor: none;
+        transition: all .2s;
+      }
+
+      .nc-sz:hover { border-color: rgba(255, 184, 77, .4); color: var(--t1); }
+      .nc-sz.active {
+        background: rgba(255, 184, 77, .12);
+        border-color: var(--loop);
+        color: var(--loop);
+        box-shadow: 0 0 8px rgba(255, 184, 77, .15);
+      }
+
+      .nav-dot {
+        width: 6px;
+        height: 6px;
+        background: var(--loop);
+        border-radius: 50%;
+        flex-shrink: 0;
+        animation: pdot 2.2s infinite;
+      }
+
+      @keyframes pdot {
+        0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(255, 184, 77, .5); }
+        50%       { opacity: .4; box-shadow: 0 0 0 7px rgba(255, 184, 77, 0); }
+      }
+
+      /* ── FADE-IN SCROLL ──────────────────────────────────────────────── */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(22px);
+        transition: opacity .85s ease, transform .85s ease;
+      }
+      .fade-in.visible { opacity: 1; transform: translateY(0); }
+      .delay-1 { transition-delay: .1s; }
+      .delay-2 { transition-delay: .2s; }
+      .delay-3 { transition-delay: .3s; }
+      .delay-4 { transition-delay: .45s; }
+      .delay-5 { transition-delay: .6s; }
+
+      .loading-pulse { animation: pulse 1.4s infinite; }
+      @keyframes pulse {
+        0%, 100% { opacity: .3; }
+        50% { opacity: .75; }
+      }
+
+      /* ── PAGE HEADER ─────────────────────────────────────────────────── */
+      .page-header {
+        position: relative;
+        overflow: hidden;
+        min-height: clamp(300px, 45vh, 460px);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 3.5rem 2rem 2.8rem;
+        border-bottom: 1px solid var(--border);
+        background: #020912;
+        background-image: url('https://okay-gold-oof5kipmvh.edgeone.app/Testing%20The%20Surface%20-%20Imgur.png');
+        background-size: cover;
+      }
+
+      /* Deep amber-toned gradient — industrial warmth */
+      .page-header::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background:
+          linear-gradient(170deg, rgba(18, 10, 2, .98) 0%, rgba(40, 24, 4, .88) 35%, rgba(60, 36, 6, .72) 65%, rgba(255, 184, 77, .12) 100%),
+          linear-gradient(90deg, rgba(10, 6, 2, .6) 0%, transparent 50%, rgba(10, 6, 2, .4) 100%);
+        transition: background .3s;
+      }
+
+      [data-theme="light"] .page-header::before {
+        background: linear-gradient(120deg, rgba(255, 248, 235, .97) 0%, rgba(255, 238, 205, .85) 50%, rgba(255, 232, 190, .92) 100%);
+      }
+
+      /* Loop canvas — material flow nodes */
+      #loop-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: .62;
+        pointer-events: none;
+      }
+
+      [data-theme="light"] #loop-canvas { opacity: .22; }
+
+      /* Amber-gold bar at top */
+      .page-header-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg,
+          transparent 0%,
+          rgba(255, 184, 77, .4) 25%,
+          rgba(255, 220, 120, .7) 50%,
+          rgba(255, 184, 77, .4) 75%,
+          transparent 100%);
+        z-index: 4;
+        pointer-events: none;
+      }
+
+      /* Warm radial pulse */
+      .page-header::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        pointer-events: none;
+        background:
+          radial-gradient(ellipse 60% 70% at 72% 48%, rgba(255, 184, 77, .07) 0%, transparent 70%),
+          radial-gradient(ellipse 35% 50% at 8%  65%, rgba(180, 100, 20, .10) 0%, transparent 60%);
+        animation: hpulse 10s ease-in-out infinite alternate;
+      }
+
+      @keyframes hpulse {
+        0%   { opacity: .5; transform: scale(1); }
+        100% { opacity: 1;  transform: scale(1.04); }
+      }
+
+      .page-header > *:not(canvas) { position: relative; z-index: 3; }
+
+      .bg-word {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: clamp(4rem, 12vw, 9rem);
+        color: rgba(255, 184, 77, .04);
+        pointer-events: none;
+        user-select: none;
+        z-index: 2;
+        letter-spacing: .18em;
+      }
+
+      .eyebrow {
+        font-family: 'Courier Prime', monospace;
+        font-size: .82rem;
+        color: var(--loop);
+        letter-spacing: .24em;
+        text-transform: uppercase;
+        margin-bottom: .55rem;
+        display: flex;
+        align-items: center;
+        gap: .55rem;
+      }
+
+      .eyebrow::before {
+        content: '';
+        width: 18px;
+        height: 1px;
+        background: var(--loop);
+        opacity: .5;
+      }
+
+      .page-title {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: clamp(2.8rem, 6vw, 4.6rem);
+        color: var(--t1);
+        line-height: .95;
+        letter-spacing: -.02em;
+        margin-bottom: .65rem;
+      }
+
+      .page-title span { color: var(--loop); }
+
+      .page-sub {
+        font-size: .88rem;
+        color: var(--t2);
+        max-width: 66ch;
+        line-height: 1.72;
+      }
+
+      .header-meta {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        margin-top: 1.4rem;
+      }
+
+      .hm-cell { display: flex; flex-direction: column; gap: .1rem; }
+
+      .hm-label {
+        font-family: 'Courier Prime', monospace;
+        font-size: .55rem;
+        color: var(--t3);
+        letter-spacing: .18em;
+        text-transform: uppercase;
+      }
+
+      .hm-val {
+        font-family: 'Courier Prime', monospace;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: var(--loop);
+        line-height: 1;
+      }
+
+      .hm-val.amber  { color: var(--amber); }
+      .hm-val.breach { color: var(--breach); }
+      .hm-val.green  { color: var(--recycle); }
+
+      /* ── STATUS BANNER ───────────────────────────────────────────────── */
+      .status-banner {
+        display: flex;
+        flex-wrap: wrap;
+        background: var(--void2);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .sb-cell {
+        flex: 1;
+        min-width: 120px;
+        padding: .75rem 1.4rem;
+        border-right: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+        gap: .12rem;
+      }
+
+      .sb-cell:last-child { border-right: none; }
+
+      .sb-lbl {
+        font-family: 'Courier Prime', monospace;
+        font-size: .55rem;
+        color: var(--t3);
+        letter-spacing: .18em;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: .35rem;
+      }
+
+      .sb-dot {
+        width: 4px;
+        height: 4px;
+        background: var(--loop);
+        border-radius: 50%;
+        animation: pdot 2s infinite;
+        flex-shrink: 0;
+      }
+
+      .sb-dot.warn    { background: var(--warn);    box-shadow: 0 0 4px var(--warn); }
+      .sb-dot.breach  { background: var(--breach);  box-shadow: 0 0 4px var(--breach); }
+      .sb-dot.green   { background: var(--recycle); box-shadow: 0 0 4px var(--recycle); }
+      .sb-dot.recover { background: var(--recovery); box-shadow: 0 0 4px var(--recovery); }
+
+      .sb-val {
+        font-family: 'Courier Prime', monospace;
+        font-weight: 700;
+        font-size: 1.05rem;
+        color: var(--loop);
+        line-height: 1;
+        letter-spacing: -.01em;
+      }
+
+      .sb-val.amber   { color: var(--amber); }
+      .sb-val.red     { color: var(--breach); }
+      .sb-val.white   { color: var(--t1); }
+      .sb-val.green   { color: var(--recycle); }
+      .sb-val.recover { color: var(--recovery); }
+
+      .sb-sub {
+        font-family: 'Courier Prime', monospace;
+        font-size: .54rem;
+        color: var(--t3);
+        line-height: 1.3;
+      }
+
+      /* ── DEV PHASE BANNER ────────────────────────────────────────────── */
+      .dev-phase-bar {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: .7rem 2rem;
+        background: linear-gradient(90deg, rgba(255, 184, 77, .05) 0%, transparent 100%);
+        border-bottom: 1px solid var(--border);
+        flex-wrap: wrap;
+      }
+
+      .dev-phase-tag {
+        font-family: 'Courier Prime', monospace;
+        font-size: .58rem;
+        letter-spacing: .18em;
+        text-transform: uppercase;
+        padding: .18rem .55rem;
+        border-radius: 2px;
+        background: rgba(255, 184, 77, .08);
+        color: var(--loop);
+        border: 1px solid rgba(255, 184, 77, .3);
+        flex-shrink: 0;
+      }
+
+      .dev-phase-text {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        color: var(--t2);
+        line-height: 1.5;
+        flex: 1;
+      }
+
+      .dev-phase-text strong { color: var(--t1); }
+
+      /* ── SECTION CHROME ──────────────────────────────────────────────── */
+      .section-header {
+        padding: 2rem 2rem .8rem;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: .5rem;
+      }
+
+      .section-title {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: .85rem;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: var(--t1);
+        display: flex;
+        align-items: center;
+        gap: .6rem;
+        flex: 1;
+      }
+
+      .section-title::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: var(--border);
+      }
+
+      .section-sub {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        color: var(--t3);
+      }
+
+      .section-link {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        color: rgba(255, 184, 77, .4);
+        text-decoration: none;
+        letter-spacing: .08em;
+        transition: color .2s;
+        flex-shrink: 0;
+      }
+
+      .section-link:hover { color: var(--loop); }
+
+      /* ── MISSION CARDS ───────────────────────────────────────────────── */
+      .mission-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1px;
+        background: var(--border);
+        margin: 0 2rem 2rem;
+        border: 1px solid var(--border);
+      }
+
+      @media(max-width:800px) { .mission-grid { grid-template-columns: 1fr 1fr; } }
+      @media(max-width:520px) { .mission-grid { grid-template-columns: 1fr; } }
+
+      .mission-card {
+        background: var(--void2);
+        padding: 1.4rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: .7rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .mission-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 2px;
+        background: var(--mc-accent, var(--loop));
+      }
+
+      .mission-icon      { font-size: 1.6rem; line-height: 1; }
+      .mission-card-label {
+        font-family: 'Courier Prime', monospace;
+        font-size: .55rem;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        color: var(--t3);
+      }
+
+      .mission-card-title {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: 1.1rem;
+        letter-spacing: .04em;
+        color: var(--mc-color, var(--loop));
+        line-height: 1.1;
+      }
+
+      .mission-card-body {
+        font-size: .74rem;
+        color: var(--t2);
+        line-height: 1.68;
+      }
+
+      .mission-card-stat {
+        font-family: 'Courier Prime', monospace;
+        font-weight: 700;
+        font-size: 1.8rem;
+        line-height: 1;
+        color: var(--mc-color, var(--loop));
+        letter-spacing: -.02em;
+      }
+
+      .mission-card-stat-label {
+        font-family: 'Courier Prime', monospace;
+        font-size: .54rem;
+        color: var(--t3);
+        letter-spacing: .08em;
+        margin-top: .15rem;
+      }
+
+      /* ── CIRCULARITY INDEX PANEL ─────────────────────────────────────── */
+      .circ-master {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        border-bottom: 1px solid var(--border);
+        background: var(--void);
+      }
+
+      @media(max-width:900px) { .circ-master { grid-template-columns: 1fr; } }
+
+      .circ-score-panel {
+        padding: 2.4rem 2.8rem;
+        border-right: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.2rem;
+        min-width: 260px;
+        background: linear-gradient(160deg, rgba(255, 184, 77, .05) 0%, var(--void) 100%);
+      }
+
+      @media(max-width:900px) {
+        .circ-score-panel {
+          min-width: 0;
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+          padding: 1.8rem;
+        }
+      }
+
+      .score-ring-wrap {
+        position: relative;
+        width: 160px;
+        height: 160px;
+        flex-shrink: 0;
+      }
+
+      .score-ring-wrap svg {
+        position: absolute;
+        inset: 0;
+        transform: rotate(-90deg);
+      }
+
+      .ring-track {
+        fill: none;
+        stroke: rgba(255, 255, 255, .06);
+        stroke-width: 8;
+      }
+
+      [data-theme="light"] .ring-track { stroke: rgba(0, 0, 0, .08); }
+
+      .ring-fill {
+        fill: none;
+        stroke: var(--loop);
+        stroke-width: 8;
+        stroke-linecap: round;
+        transition: stroke-dashoffset 2s cubic-bezier(.4, 0, .2, 1);
+        filter: drop-shadow(0 0 8px rgba(255, 184, 77, .45));
+      }
+
+      .ring-inner {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .ring-score {
+        font-family: 'Courier Prime', monospace;
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 1;
+        letter-spacing: -.03em;
+        color: var(--loop);
+      }
+
+      .ring-denom {
+        font-family: 'Courier Prime', monospace;
+        font-size: .58rem;
+        color: var(--t3);
+        margin-top: .12rem;
+      }
+
+      .ring-label {
+        font-family: 'Courier Prime', monospace;
+        font-size: .5rem;
+        color: rgba(255, 184, 77, .5);
+        margin-top: .08rem;
+      }
+
+      .circ-index-badge {
+        display: inline-block;
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        padding: .2rem .6rem;
+        border-radius: 2px;
+        background: rgba(255, 184, 77, .08);
+        color: var(--loop);
+        border: 1px solid rgba(255, 184, 77, .3);
+        margin-bottom: .4rem;
+      }
+
+      .circ-day-label {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        color: var(--t3);
+        line-height: 1.6;
+        text-align: center;
+      }
+
+      /* Material circularity indicators */
+      .circ-indicators-panel { padding: 2rem 2.4rem; }
+
+      .ind-header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        margin-bottom: 1.4rem;
+        flex-wrap: wrap;
+        gap: .5rem;
+      }
+
+      .ind-title {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: .82rem;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: var(--t1);
+      }
+
+      .ind-sub {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        color: var(--t3);
+      }
+
+      .ind-rows { display: flex; flex-direction: column; gap: .5rem; }
+
+      .ind-row {
+        display: grid;
+        grid-template-columns: 8px 185px 1fr 72px 80px;
+        align-items: center;
+        gap: .6rem;
+        padding: .4rem 0;
+        border-bottom: 1px solid var(--border2);
+      }
+
+      .ind-row:last-child { border-bottom: none; }
+
+      .ind-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+      .ind-name {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 700;
+        font-size: .78rem;
+        letter-spacing: .06em;
+        color: var(--t1);
+        text-transform: uppercase;
+      }
+
+      .ind-bar-bg {
+        height: 4px;
+        background: rgba(255, 255, 255, .06);
+        border-radius: 2px;
+        overflow: hidden;
+      }
+
+      [data-theme="light"] .ind-bar-bg { background: rgba(0,0,0,.08); }
+
+      .ind-bar-fill {
+        height: 100%;
+        border-radius: 2px;
+        width: 0;
+        transition: width 1.6s cubic-bezier(.4, 0, .2, 1);
+      }
+
+      .ind-val {
+        font-family: 'Courier Prime', monospace;
+        font-weight: 700;
+        font-size: .72rem;
+        text-align: right;
+      }
+
+      .ind-badge {
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        padding: .1rem .38rem;
+        border-radius: 2px;
+        text-align: center;
+      }
+
+      .b-cr { background: rgba(240,48,48,.08);   color: var(--breach);  border: 1px solid rgba(240,48,48,.25); }
+      .b-wa { background: rgba(240,144,0,.08);   color: var(--warn);    border: 1px solid rgba(240,144,0,.25); }
+      .b-ot { background: rgba(255,184,77,.08);  color: var(--loop);    border: 1px solid rgba(255,184,77,.25); }
+      .b-gr { background: rgba(0,204,102,.08);   color: var(--recycle); border: 1px solid rgba(0,204,102,.25); }
+
+      @media(max-width:600px) {
+        .ind-row { grid-template-columns: 6px 120px 1fr 56px; }
+        .ind-badge { display: none; }
+      }
+
+      @media(max-width:400px) {
+        .ind-row { grid-template-columns: 6px 100px 1fr 50px; }
+      }
+
+      /* ── OPERATIONS GRID ─────────────────────────────────────────────── */
+      .ops-section {
+        border-top: 1px solid var(--border);
+        background: var(--void2);
+      }
+
+      .ops-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1px;
+        background: var(--border);
+        margin: 0 2rem 2rem;
+        border: 1px solid var(--border);
+      }
+
+      .op-card {
+        background: var(--void2);
+        padding: 1.4rem 1.4rem 1.2rem;
+        position: relative;
+        overflow: hidden;
+        transition: background .2s;
+      }
+
+      .op-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 2px;
+        background: var(--oc-accent, var(--loop));
+      }
+
+      .op-card:hover { background: var(--void3); }
+
+      .op-card-num {
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        color: var(--t3);
+        letter-spacing: .1em;
+        margin-bottom: .5rem;
+      }
+
+      .op-card-name {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: .95rem;
+        letter-spacing: .06em;
+        margin-bottom: .3rem;
+        line-height: 1.1;
+      }
+
+      .op-card-tag {
+        display: inline-block;
+        font-family: 'Courier Prime', monospace;
+        font-size: .5rem;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        padding: .08rem .32rem;
+        border-radius: 2px;
+        margin-bottom: .65rem;
+      }
+
+      .tag-design {
+        background: rgba(255, 184, 77, .08);
+        color: var(--loop);
+        border: 1px solid rgba(255, 184, 77, .25);
+      }
+
+      .tag-research {
+        background: rgba(156, 111, 228, .07);
+        color: var(--recovery);
+        border: 1px solid rgba(156, 111, 228, .22);
+      }
+
+      .tag-proto {
+        background: rgba(0, 204, 102, .07);
+        color: var(--recycle);
+        border: 1px solid rgba(0, 204, 102, .22);
+      }
+
+      .op-card-body {
+        font-size: .72rem;
+        color: var(--t2);
+        line-height: 1.68;
+      }
+
+      .op-card-metric {
+        display: flex;
+        gap: 1.4rem;
+        flex-wrap: wrap;
+        margin-top: .9rem;
+      }
+
+      .op-metric { display: flex; flex-direction: column; gap: .08rem; }
+
+      .op-metric-val {
+        font-family: 'Courier Prime', monospace;
+        font-weight: 700;
+        font-size: 1rem;
+        color: var(--oc-accent, var(--loop));
+        line-height: 1;
+      }
+
+      .op-metric-lbl {
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        color: var(--t3);
+        letter-spacing: .06em;
+      }
+
+      .op-status {
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        margin-top: .75rem;
+        display: flex;
+        align-items: center;
+        gap: .3rem;
+      }
+
+      .op-dot { width: 4px; height: 4px; border-radius: 50%; flex-shrink: 0; }
+      .s-design  .op-dot { background: var(--loop); }
+      .s-research .op-dot { background: var(--recovery); }
+      .s-proto   .op-dot { background: var(--recycle); animation: pdot 2s infinite; }
+      .s-design  .op-status { color: var(--loop); }
+      .s-research .op-status { color: var(--recovery); }
+      .s-proto   .op-status { color: var(--recycle); }
+
+      /* ── MATERIAL FLOW MAP ───────────────────────────────────────────── */
+      .flow-section { border-top: 1px solid var(--border); background: var(--void); }
+      .flow-inner { padding: 2rem; }
+
+      .flow-map-wrap {
+        position: relative;
+        height: 220px;
+        background: linear-gradient(180deg, rgba(18, 10, 2, .9) 0%, rgba(36, 20, 4, .7) 100%);
+        border: 1px solid var(--border);
+        overflow: hidden;
+        margin-bottom: 1.4rem;
+      }
+
+      #map-canvas {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .map-label {
+        position: absolute;
+        bottom: .7rem;
+        left: .9rem;
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        color: rgba(255, 184, 77, .5);
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        z-index: 2;
+      }
+
+      .map-legend {
+        position: absolute;
+        bottom: .7rem;
+        right: .9rem;
+        display: flex;
+        gap: 1rem;
+        z-index: 2;
+      }
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: .3rem;
+        font-family: 'Courier Prime', monospace;
+        font-size: .5rem;
+        color: var(--t3);
+        letter-spacing: .06em;
+      }
+
+      .legend-dot { width: 6px; height: 6px; border-radius: 50%; }
+
+      /* Industrial hotspot cards */
+      .hotspot-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        margin-bottom: 1.4rem;
+      }
+
+      @media(max-width:700px) { .hotspot-grid { grid-template-columns: 1fr; } }
+
+      .hotspot-card {
+        background: var(--void2);
+        padding: 1.3rem 1.4rem;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+      }
+
+      .hotspot-region { display: flex; align-items: center; gap: .7rem; }
+      .hotspot-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+      .hotspot-name { font-family: 'Archivo Narrow', sans-serif; font-weight: 800; font-size: .88rem; letter-spacing: .06em; color: var(--t1); }
+      .hotspot-type { font-family: 'Courier Prime', monospace; font-size: .56rem; color: var(--t3); letter-spacing: .1em; text-transform: uppercase; }
+      .hotspot-body { font-size: .72rem; color: var(--t2); line-height: 1.65; }
+
+      .hotspot-stats { display: flex; gap: 1.2rem; flex-wrap: wrap; margin-top: .3rem; }
+      .hs-stat { display: flex; flex-direction: column; gap: .06rem; }
+      .hs-stat-val { font-family: 'Courier Prime', monospace; font-weight: 700; font-size: .9rem; line-height: 1; }
+      .hs-stat-lbl { font-family: 'Courier Prime', monospace; font-size: .5rem; color: var(--t3); letter-spacing: .06em; }
+
+      /* ── TECHNOLOGY ARCHITECTURE ─────────────────────────────────────── */
+      .tech-section { border-top: 1px solid var(--border); background: var(--void2); }
+      .tech-inner { padding: 2rem; }
+
+      .tech-flow {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        margin-bottom: 1.6rem;
+      }
+
+      .tech-cell { background: var(--void2); padding: 1.1rem 1.3rem; display: flex; flex-direction: column; gap: .5rem; }
+      .tech-step { font-family: 'Courier Prime', monospace; font-size: .52rem; color: var(--t3); letter-spacing: .12em; text-transform: uppercase; }
+      .tech-title { font-family: 'Archivo Narrow', sans-serif; font-weight: 800; font-size: .88rem; letter-spacing: .06em; color: var(--t1); }
+      .tech-arrow { font-family: 'Courier Prime', monospace; font-size: .56rem; color: rgba(255, 184, 77, .35); letter-spacing: .06em; }
+      .tech-output { font-family: 'Courier Prime', monospace; font-size: .6rem; color: var(--loop); }
+
+      .tech-specs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        margin-bottom: 1rem;
+      }
+
+      @media(max-width:600px) { .tech-specs { grid-template-columns: 1fr; } }
+
+      .spec-block { background: var(--void2); padding: 1.1rem 1.3rem; display: flex; flex-direction: column; gap: .4rem; }
+      .spec-label { font-family: 'Courier Prime', monospace; font-size: .56rem; color: var(--t3); letter-spacing: .14em; text-transform: uppercase; }
+      .spec-value { font-family: 'Archivo Narrow', sans-serif; font-weight: 800; font-size: 1rem; color: var(--t1); line-height: 1.2; }
+      .spec-detail { font-size: .7rem; color: var(--t2); line-height: 1.55; }
+
+      /* ── DATA RELAY SECTION ──────────────────────────────────────────── */
+      .relay-section {
+        border-top: 1px solid var(--border);
+        background: linear-gradient(160deg, rgba(255, 184, 77, .018) 0%, var(--void) 60%);
+      }
+
+      .relay-inner { padding: 2rem; }
+
+      .relay-eyebrow {
+        font-family: 'Courier Prime', monospace;
+        font-size: .62rem;
+        color: var(--loop);
+        letter-spacing: .22em;
+        text-transform: uppercase;
+        margin-bottom: .45rem;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+      }
+
+      .relay-eyebrow::before {
+        content: '';
+        width: 14px;
+        height: 1px;
+        background: var(--loop);
+        opacity: .5;
+      }
+
+      .relay-title {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+        color: var(--t1);
+        line-height: 1;
+        letter-spacing: -.02em;
+        margin-bottom: .55rem;
+      }
+
+      .relay-sub {
+        font-size: .82rem;
+        color: var(--t2);
+        max-width: 64ch;
+        line-height: 1.75;
+        margin-bottom: 1.4rem;
+      }
+
+      .data-sources-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        margin-bottom: 1.4rem;
+      }
+
+      .ds-cell { background: var(--void2); padding: 1rem 1.2rem; display: flex; flex-direction: column; gap: .4rem; }
+      .ds-source { font-family: 'Archivo Narrow', sans-serif; font-weight: 800; font-size: .8rem; letter-spacing: .07em; color: var(--t1); }
+      .ds-type   { font-family: 'Courier Prime', monospace; font-size: .56rem; color: rgba(255,184,77,.55); letter-spacing: .06em; }
+      .ds-detail { font-family: 'Courier Prime', monospace; font-size: .6rem; color: var(--t2); }
+
+      .ds-status {
+        display: flex;
+        align-items: center;
+        gap: .3rem;
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        margin-top: .3rem;
+      }
+
+      .ds-dot { width: 4px; height: 4px; border-radius: 50%; }
+      .ds-live  .ds-dot { background: var(--recycle); animation: pdot 2s infinite; }
+      .ds-plan  .ds-dot { background: var(--loop); }
+      .ds-arch  .ds-dot { background: var(--t3); }
+      .ds-live  .ds-status { color: var(--recycle); }
+      .ds-plan  .ds-status { color: var(--loop); }
+      .ds-arch  .ds-status { color: var(--t3); }
+
+      .relay-status-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: .4rem;
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        padding: .2rem .6rem;
+        border-radius: 2px;
+        background: rgba(255, 184, 77, .06);
+        color: var(--t2);
+        border: 1px solid rgba(255, 184, 77, .18);
+      }
+
+      /* ── PUBLIC LEDGER ───────────────────────────────────────────────── */
+      .ledger-section { border-top: 1px solid var(--border); background: var(--void2); }
+      .ledger-inner { padding: 2rem; }
+
+      .ledger-eyebrow {
+        font-family: 'Courier Prime', monospace;
+        font-size: .62rem;
+        color: var(--loop);
+        letter-spacing: .22em;
+        text-transform: uppercase;
+        margin-bottom: .45rem;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+      }
+
+      .ledger-eyebrow::before {
+        content: '';
+        width: 14px;
+        height: 1px;
+        background: var(--loop);
+        opacity: .5;
+      }
+
+      .ledger-title {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+        color: var(--t1);
+        line-height: 1;
+        letter-spacing: -.02em;
+        margin-bottom: .55rem;
+      }
+
+      .ledger-sub { font-size: .82rem; color: var(--t2); max-width: 64ch; line-height: 1.75; }
+
+      .ledger-table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; }
+
+      .ledger-table thead th {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        color: var(--t3);
+        font-weight: 400;
+        padding: .6rem 1rem;
+        border-bottom: 1px solid var(--border);
+        text-align: left;
+        background: var(--void2);
+      }
+
+      .ledger-table thead th:first-child { padding-left: 0; }
+
+      .ledger-row {
+        border-bottom: 1px solid rgba(255, 184, 77, .04);
+        transition: background .15s;
+      }
+
+      .ledger-row:hover { background: var(--void3); }
+
+      .ledger-row td {
+        padding: .65rem 1rem;
+        font-family: 'Courier Prime', monospace;
+        font-size: .68rem;
+        vertical-align: middle;
+      }
+
+      .ledger-row td:first-child { padding-left: 0; }
+
+      .ledger-type {
+        display: inline-flex;
+        align-items: center;
+        gap: .3rem;
+        font-size: .58rem;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        padding: .1rem .42rem;
+        border-radius: 2px;
+      }
+
+      .lt-arch   { background: rgba(255,184,77,.07);  color: var(--loop);     border: 1px solid rgba(255,184,77,.2); }
+      .lt-data   { background: rgba(0,204,102,.07);   color: var(--recycle);  border: 1px solid rgba(0,204,102,.2); }
+      .lt-method { background: rgba(138,171,146,.05); color: var(--t2);       border: 1px solid rgba(138,171,146,.15); }
+      .lt-alert  { background: rgba(156,111,228,.07); color: var(--recovery); border: 1px solid rgba(156,111,228,.2); }
+
+      .ledger-event  { color: var(--t1); }
+      .ledger-source { color: var(--t2); font-size: .64rem; }
+      .ledger-ts     { color: var(--t3); font-size: .62rem; white-space: nowrap; text-align: right; }
+
+      /* ── PROOF SECTION ───────────────────────────────────────────────── */
+      .proof-section {
+        border-top: 1px solid var(--border);
+        padding: 2rem;
+        background: var(--void);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+
+      @media(max-width:700px) { .proof-section { grid-template-columns: 1fr; } }
+
+      .proof-block { display: flex; flex-direction: column; gap: .6rem; }
+      .proof-label { font-family: 'Courier Prime', monospace; font-size: .6rem; letter-spacing: .18em; text-transform: uppercase; color: var(--t3); }
+      .proof-value { font-family: 'Archivo Narrow', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--t1); line-height: 1.3; }
+      .proof-sub   { font-size: .72rem; color: var(--t2); line-height: 1.6; }
+      .proof-sub a { color: rgba(255, 184, 77, .45); text-decoration: none; }
+      .proof-sub a:hover { color: var(--loop); }
+
+      .proof-links { display: flex; flex-direction: column; gap: .3rem; margin-top: .6rem; }
+
+      .proof-link {
+        font-family: 'Courier Prime', monospace;
+        font-size: .62rem;
+        color: rgba(255, 184, 77, .4);
+        text-decoration: none;
+        letter-spacing: .06em;
+        transition: color .18s;
+        display: flex;
+        align-items: center;
+        gap: .4rem;
+      }
+
+      .proof-link::before { content: '→'; opacity: .5; }
+      .proof-link:hover { color: var(--loop); }
+      .proof-link:hover::before { opacity: 1; }
+
+      /* ── FOOTER ──────────────────────────────────────────────────────── */
+      .footer {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        padding: 2rem;
+        border-top: 1px solid var(--border);
+        background: var(--void2);
+      }
+
+      .footer-l {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        color: var(--t3);
+        line-height: 1.9;
+      }
+
+      .footer-l a { color: rgba(255,184,77,.4); text-decoration: none; transition: color .18s; }
+      .footer-l a:hover { color: var(--loop); }
+      .footer-l strong { color: var(--t2); font-weight: 700; }
+
+      .footer-nexan { font-family: 'Courier Prime', monospace; font-size: .56rem; color: var(--t3); margin-top: .5rem; }
+      .footer-nexan a { color: rgba(255,184,77,.3); text-decoration: none; transition: color .18s; }
+      .footer-nexan a:hover { color: var(--loop); }
+
+      /* ── FLOATING ORB ────────────────────────────────────────────────── */
+      #vyr-orb {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        z-index: 8000;
+        width: 58px;
+        height: 58px;
+      }
+
+      .oo-btn {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: radial-gradient(circle at 36% 36%, rgba(255,184,77,.35), rgba(100,60,0,.7));
+        border: 1.5px solid rgba(255,184,77,.45);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: none;
+        animation: orbPulse 3s ease-in-out infinite;
+        transition: transform .2s var(--evo-motion), border-color .2s;
+      }
+
+      .oo-btn:hover {
+        transform: scale(1.12);
+        animation: none;
+        border-color: var(--loop);
+        box-shadow: 0 0 22px rgba(255, 184, 77, .4);
+      }
+
+      @keyframes orbPulse {
+        0%  { box-shadow: 0 0 0 0  rgba(255,184,77,.5); }
+        65% { box-shadow: 0 0 0 14px rgba(255,184,77,0); }
+        100%{ box-shadow: 0 0 0 0  rgba(255,184,77,0); }
+      }
+
+      .oo-icon { font-family: 'Archivo Narrow', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--loop); user-select: none; transition: transform .3s var(--evo-motion); }
+      .oo-btn.open .oo-icon { transform: rotate(45deg); }
+
+      .oo-tooltip {
+        position: absolute;
+        right: calc(100% + 10px);
+        top: 50%;
+        transform: translateY(-50%);
+        white-space: nowrap;
+        background: rgba(2,9,18,.94);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        padding: 5px 11px;
+        font-family: 'Courier Prime', monospace;
+        font-size: .62rem;
+        letter-spacing: .07em;
+        color: var(--t2);
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity .18s;
+      }
+
+      #vyr-orb:hover .oo-tooltip { opacity: 1; }
+
+      .oo-panel {
+        position: absolute;
+        bottom: calc(100% + 10px);
+        right: 0;
+        width: 215px;
+        background: rgba(2,9,18,.97);
+        backdrop-filter: blur(24px);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 5px;
+        opacity: 0;
+        transform: scale(.88) translateY(8px);
+        transform-origin: bottom right;
+        pointer-events: none;
+        transition: opacity .22s var(--evo-motion), transform .22s var(--evo-motion);
+        box-shadow: 0 14px 44px rgba(0,0,0,.55);
+      }
+
+      .oo-panel.open { opacity: 1; transform: scale(1) translateY(0); pointer-events: auto; }
+
+      .oo-panel-header {
+        padding: 9px 13px 7px;
+        font-family: 'Courier Prime', monospace;
+        font-size: .56rem;
+        letter-spacing: .2em;
+        color: var(--loop);
+        text-transform: uppercase;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 4px;
+      }
+
+      .oo-link {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        padding: 9px 13px;
+        border-radius: 6px;
+        color: var(--t2);
+        font-family: 'Archivo', sans-serif;
+        font-size: .78rem;
+        transition: background .14s, color .14s;
+        cursor: none;
+        text-decoration: none;
+      }
+
+      .oo-link:hover { background: rgba(255,184,77,.07); color: var(--t1); }
+      .oo-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; background: var(--loop); box-shadow: 0 0 5px var(--loop); }
+      .oo-divider { height: 1px; background: var(--border); margin: 4px 8px; }
+
+      .oo-install-item {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        padding: 9px 13px;
+        border-radius: 6px;
+        color: var(--loop);
+        font-family: 'Archivo', sans-serif;
+        font-size: .78rem;
+        transition: background .14s;
+        cursor: pointer;
+        width: 100%;
+        background: rgba(255,184,77,.05);
+        border: 1px solid rgba(255,184,77,.14);
+        margin: 3px 0;
+        text-align: left;
+        letter-spacing: .02em;
+      }
+
+      .oo-install-item:hover { background: rgba(255,184,77,.12); border-color: rgba(255,184,77,.32); }
+      .oo-install-item .oo-install-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; background: var(--loop); box-shadow: 0 0 5px var(--loop); animation: pdot 2.2s infinite; }
+      .oo-install-item[data-state="installed"] { color: var(--t3); border-color: transparent; background: transparent; pointer-events: none; }
+      .oo-install-item[data-state="installed"] .oo-install-dot { background: var(--t3); box-shadow: none; animation: none; }
+      .oo-install-item.pwa-unavailable { display: none !important; }
+
+      /* ── PWA BANNER ──────────────────────────────────────────────────── */
+      #pwa-banner {
+        position: fixed;
+        bottom: 102px;
+        right: 24px;
+        z-index: 7000;
+        width: 296px;
+        background: rgba(2,9,18,.97);
+        border: 1px solid rgba(255,184,77,.38);
+        border-radius: 12px;
+        padding: 1rem 1.1rem;
+        backdrop-filter: blur(28px);
+        -webkit-backdrop-filter: blur(28px);
+        box-shadow: 0 14px 44px rgba(0,0,0,.65), 0 0 0 1px rgba(255,184,77,.06), 0 0 32px rgba(255,184,77,.06);
+        transform: translateY(16px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .4s ease, transform .4s ease;
+      }
+
+      #pwa-banner.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+
+      #pwa-banner::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 2px;
+        border-radius: 12px 12px 0 0;
+        background: linear-gradient(90deg, rgba(255,184,77,.6), rgba(255,184,77,.2), transparent);
+      }
+
+      .pwa-eyebrow { font-family: 'Courier Prime', monospace; font-size: .52rem; letter-spacing: .22em; text-transform: uppercase; color: var(--loop); margin-bottom: .4rem; display: flex; align-items: center; gap: .45rem; }
+      .pwa-eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--loop); box-shadow: 0 0 6px var(--loop); animation: pdot 2.2s infinite; flex-shrink: 0; }
+      .pwa-title { font-family: 'Archivo Narrow', sans-serif; font-weight: 800; font-size: 1rem; color: var(--t1); margin-bottom: .22rem; line-height: 1.1; }
+      .pwa-sub { font-family: 'Courier Prime', monospace; font-size: .58rem; color: var(--t2); line-height: 1.58; margin-bottom: .8rem; }
+      .pwa-btns { display: flex; gap: .5rem; }
+
+      .pwa-install-btn {
+        flex: 1;
+        padding: .48rem .7rem;
+        border-radius: 6px;
+        background: rgba(255,184,77,.10);
+        border: 1px solid rgba(255,184,77,.4);
+        color: var(--loop);
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background .2s, box-shadow .2s;
+        white-space: nowrap;
+      }
+
+      .pwa-install-btn:hover { background: rgba(255,184,77,.2); box-shadow: 0 0 14px rgba(255,184,77,.28); }
+
+      .pwa-dismiss-btn {
+        padding: .48rem .65rem;
+        border-radius: 6px;
+        background: transparent;
+        border: 1px solid var(--border);
+        color: var(--t3);
+        font-family: 'Courier Prime', monospace;
+        font-size: .7rem;
+        cursor: pointer;
+        transition: border-color .2s, color .2s;
+        line-height: 1;
+      }
+
+      .pwa-dismiss-btn:hover { border-color: var(--t2); color: var(--t2); }
+
+      /* ── RESPONSIVE ──────────────────────────────────────────────────── */
+      @media(max-width:720px) {
+        html { font-size: 16px !important; }
+        .nav { padding: 0 .9rem; gap: .5rem; height: 48px; }
+        .nav-links { display: none; }
+        .nc-sep { display: none; }
+        .nc-sz { width: 22px; height: 22px; font-size: .52rem; }
+        .nc-theme { font-size: .52rem; padding: .16rem .32rem; }
+        .page-header { padding: 1.8rem .9rem 1.5rem; }
+        .relay-inner, .ledger-inner, .tech-inner, .flow-inner { padding: 1.4rem .9rem; }
+        .proof-section { padding: 1.4rem .9rem; gap: 1.2rem; }
+        .footer { padding: 1.4rem .9rem; gap: 1rem; }
+        .mission-grid, .ops-grid, .data-sources-grid { margin: 0 .9rem 1.4rem; }
+        .section-header { padding: 1.4rem .9rem .6rem; }
+        .dev-phase-bar { padding: .7rem .9rem; }
+        .sb-cell { min-width: 50%; border-bottom: 1px solid var(--border); }
+      }
+
+      @media(max-width:400px) {
+        .nc-sz { display: none; }
+        .ops-grid { grid-template-columns: 1fr; }
+      }
+
+      @media(hover:none) {
+        #vyr-orb .oo-tooltip { display: none; }
+        #cursor, #cursor-ring, #cursor-glow { display: none; }
+        body { cursor: auto; }
+        .nc-theme, .nc-sz, .oo-btn, .oo-link, .op-card, .pwa-install-btn, .pwa-dismiss-btn { cursor: pointer; }
+      }
+
+      @media(prefers-reduced-motion:reduce) {
+        *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- ── CUSTOM CURSOR ──────────────────────────────────────────────────── -->
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+    <div id="cursor-glow"></div>
+
+    <!-- ── NAV ───────────────────────────────────────────────────────────── -->
+    <nav class="nav">
+      <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
+      <ul class="nav-links">
+        <li><a href="https://vyrion.earth/conscience" class="nav-item">CONSCIENCE <span class="nav-tooltip">Corporate Climate Pledge Verification</span></a></li>
+        <li><a href="https://vyrion.earth/shield"     class="nav-item">SHIELD     <span class="nav-tooltip">Global Disaster Early Warning</span></a></li>
+        <li><a href="https://vyrion.earth/atlas"      class="nav-item">ATLAS      <span class="nav-tooltip">Planetary Intelligence Backbone</span></a></li>
+        <li><a href="https://vyrion.earth/root"       class="nav-item">ROOT       <span class="nav-tooltip">Terrestrial Intelligence &amp; Soil Health</span></a></li>
+        <li><a href="https://vyrion.earth/canopy"     class="nav-item">CANOPY     <span class="nav-tooltip">Reforestation Intelligence</span></a></li>
+        <li><a href="https://vyrion.earth/flux"       class="nav-item">FLUX       <span class="nav-tooltip">Clean Energy Infrastructure</span></a></li>
+        <li><a href="https://vyrion.earth/tide"       class="nav-item">TIDE       <span class="nav-tooltip">Ocean Remediation Intelligence</span></a></li>
+        <li><a href="https://vyrion.earth/loop"       class="nav-item active">LOOP <span class="nav-tooltip">Circular Economy Intelligence</span></a></li>
+        <li><a href="https://vyrion.earth/record"     class="nav-item">RECORD     <span class="nav-tooltip">Weekly Intelligence Reports</span></a></li>
+        <li><a href="https://vyrion.earth/about"      class="nav-item">ABOUT      <span class="nav-tooltip">Mission &amp; Open Methodology</span></a></li>
+        <li><a href="https://vyrion.earth/nexan"      class="nav-item">NEXAN      <span class="nav-tooltip">Research &amp; Validation Institute</span></a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="nc-theme active" id="theme-btn" onclick="toggleTheme()" title="Toggle light/dark mode">◐ DARK</button>
+        <div class="nc-sep"></div>
+        <button class="nc-sz"        data-scale="0.88" onclick="setScale(this)" title="Small text">S</button>
+        <button class="nc-sz active" data-scale="1.0"  onclick="setScale(this)" title="Medium text">M</button>
+        <button class="nc-sz"        data-scale="1.22" onclick="setScale(this)" title="Large text">L</button>
+      </div>
+      <div class="nav-dot"></div>
+    </nav>
+
+    <!-- ── PAGE HEADER ────────────────────────────────────────────────────── -->
+    <header class="page-header">
+      <div class="page-header-bar"></div>
+      <canvas id="loop-canvas"></canvas>
+      <div class="bg-word">LOOP</div>
+      <div class="eyebrow fade-in">Module 07 · Circular Economy Intelligence · Architecture Phase</div>
+      <h1 class="page-title fade-in delay-1">Waste is a<br><span>Design Failure.</span></h1>
+      <p class="page-sub fade-in delay-2">VYRION LOOP is enterprise and municipal circular economy software — tracking every material through its full lifecycle, rerouting what industry calls waste back into manufacturing input streams. Every kilogram that re-enters the loop is a kilogram that never hits a landfill, incinerator, or ocean.</p>
+      <div class="header-meta fade-in delay-3">
+        <div class="hm-cell">
+          <div class="hm-label">Global Circularity Rate</div>
+          <div class="hm-val breach">7.2%</div>
+        </div>
+        <div class="hm-cell">
+          <div class="hm-label">Annual Waste Generated</div>
+          <div class="hm-val amber">2.01B tonnes</div>
+        </div>
+        <div class="hm-cell">
+          <div class="hm-label">Plastic Recycled</div>
+          <div class="hm-val breach">9%</div>
+        </div>
+        <div class="hm-cell">
+          <div class="hm-label">Module Status</div>
+          <div class="hm-val green">Architecture Phase</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ── STATUS BANNER ──────────────────────────────────────────────────── -->
+    <div class="status-banner fade-in">
+      <div class="sb-cell">
+        <div class="sb-lbl"><span class="sb-dot breach"></span>Global Circularity</div>
+        <div class="sb-val red">7.2%</div>
+        <div class="sb-sub">Of all materials cycled back · CGR 2024</div>
+      </div>
+      <div class="sb-cell">
+        <div class="sb-lbl"><span class="sb-dot warn"></span>E-Waste Generated</div>
+        <div class="sb-val amber">62M tonnes</div>
+        <div class="sb-sub">2023 global total · UN Global E-Waste Monitor</div>
+      </div>
+      <div class="sb-cell">
+        <div class="sb-lbl"><span class="sb-dot breach"></span>Food Wasted</div>
+        <div class="sb-val red">1.3B tonnes/yr</div>
+        <div class="sb-sub">One third of all food produced · FAO</div>
+      </div>
+      <div class="sb-cell">
+        <div class="sb-lbl"><span class="sb-dot green"></span>Circular Economy Value</div>
+        <div class="sb-val green">$4.5T</div>
+        <div class="sb-sub">Annual opportunity by 2030 · Ellen MacArthur</div>
+      </div>
+      <div class="sb-cell">
+        <div class="sb-lbl"><span class="sb-dot"></span>LOOP Phase</div>
+        <div class="sb-val white">Architecture</div>
+        <div class="sb-sub">Protocol design · Software specification</div>
+      </div>
+    </div>
+
+    <!-- ── DEV PHASE BANNER ───────────────────────────────────────────────── -->
+    <div class="dev-phase-bar fade-in">
+      <span class="dev-phase-tag">MODULE 07 · IN DEVELOPMENT</span>
+      <div class="dev-phase-text">
+        <strong>Architecture Defined.</strong> LOOP's three core systems — material passporting, waste rerouting intelligence, and circularity scoring — are in protocol design phase. Enterprise and municipal API specifications are being finalized. ATLAS material flow integration is architecture-complete. Open methodology published.
+      </div>
+    </div>
+
+    <!-- ── MISSION BRIEF ──────────────────────────────────────────────────── -->
+    <section style="border-top:1px solid var(--border);background:var(--void)">
+      <div class="section-header">
+        <div class="section-title">Three Circular Systems · One Platform</div>
+        <div class="section-sub">Architecture Phase · V1.0</div>
+      </div>
+      <div class="mission-grid fade-in">
+        <div class="mission-card" style="--mc-accent:var(--loop);--mc-color:var(--loop)">
+          <div class="mission-icon">🔄</div>
+          <div class="mission-card-label">System 01 · Material Passport</div>
+          <div class="mission-card-title">Lifecycle Tracking Intelligence</div>
+          <div class="mission-card-body">Digital material passports assign every product, component, and raw material a unique identifier that follows it from extraction through manufacture, use, and end-of-life. LOOP knows where every kilogram is — and where it should go next.</div>
+          <div class="mission-card-stat">100%</div>
+          <div class="mission-card-stat-label">Traceability target per material stream</div>
+        </div>
+        <div class="mission-card" style="--mc-accent:var(--recycle);--mc-color:var(--recycle)">
+          <div class="mission-icon">♻️</div>
+          <div class="mission-card-label">System 02 · Waste Rerouting</div>
+          <div class="mission-card-title">Waste-to-Input Exchange Network</div>
+          <div class="mission-card-body">AI-powered matching engine connects waste outputs from one facility to raw material inputs at another. Industrial symbiosis at planetary scale — transforming what one company calls waste into another's feedstock, routed in real time with verified quality and quantity data.</div>
+          <div class="mission-card-stat">93%</div>
+          <div class="mission-card-stat-label">Of materials not yet circularly managed</div>
+        </div>
+        <div class="mission-card" style="--mc-accent:var(--recovery);--mc-color:var(--recovery)">
+          <div class="mission-icon">📊</div>
+          <div class="mission-card-label">System 03 · Circularity Scoring</div>
+          <div class="mission-card-title">Enterprise Circularity Intelligence</div>
+          <div class="mission-card-body">Real-time circularity rate scoring for enterprises and municipalities. LOOP quantifies material efficiency, waste diversion rates, and resource productivity — feeding directly into CONSCIENCE for corporate accountability verification. What gets measured, gets managed.</div>
+          <div class="mission-card-stat">4,800+</div>
+          <div class="mission-card-stat-label">Cities eligible for municipal integration</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CIRCULARITY INDEX PANEL ─────────────────────────────────────────── -->
+    <section class="circ-master fade-in">
+      <div class="circ-score-panel">
+        <div class="score-ring-wrap">
+          <svg viewBox="0 0 160 160" width="160" height="160">
+            <circle class="ring-track" cx="80" cy="80" r="68"/>
+            <circle class="ring-fill"  id="ring-fill" cx="80" cy="80" r="68" stroke-dasharray="427.3" stroke-dashoffset="427.3"/>
+          </svg>
+          <div class="ring-inner">
+            <div class="ring-score">7.2</div>
+            <div class="ring-denom">/ 100</div>
+            <div class="ring-label">circularity</div>
+          </div>
+        </div>
+        <div style="text-align:center">
+          <div class="circ-index-badge">CRITICAL ZONE · VYRION ATLAS</div>
+          <div class="circ-day-label">Pre-industrial circular baseline: 100 / 100<br>Linear economy captures 92.8% of all materials</div>
+        </div>
+        <a class="proof-link" href="https://vyrion.earth/atlas" style="font-size:.6rem">Full material breakdown → ATLAS</a>
+      </div>
+      <div class="circ-indicators-panel fade-in delay-1">
+        <div class="ind-header">
+          <div class="ind-title">Material Circularity Indicators</div>
+          <div class="ind-sub">Global circular economy baseline · 8 tracked material streams</div>
+        </div>
+        <div class="ind-rows">
+          <div class="ind-row">
+            <div class="ind-dot" style="background:#F03030;box-shadow:0 0 5px #F03030"></div>
+            <div class="ind-name">Plastic Circularity</div>
+            <div class="ind-bar-bg"><div class="ind-bar-fill" style="background:#F03030" data-pct="9"></div></div>
+            <div class="ind-val" style="color:#F03030">9.0</div>
+            <div class="ind-badge b-cr">CRITICAL</div>
+          </div>
+          <div class="ind-row">
+            <div class="ind-dot" style="background:#F03030;box-shadow:0 0 5px #F03030"></div>
+            <div class="ind-name">E-Waste Recovery</div>
+            <div class="ind-bar-bg"><div class="ind-bar-fill" style="background:#F03030" data-pct="22"></div></div>
+            <div class="ind-val" style="color:#F03030">22.0</div>
+            <div class="ind-badge b-cr">CRITICAL</div>
+          </div>
+          <div class="ind-row">
+            <div class="ind-dot" style="background:#F09000;box-shadow:0 0 5px #F09000"></div>
+            <div class="ind-name">Food Waste Diversion</div>
+            <div class="ind-bar-bg"><div class="ind-bar-fill" style="background:#F09000" data-pct="34"></div></div>
+            <div class="ind-val" style="color:#F09000">34.0</div>
+            <div class="ind-badge b-wa">WARNING</div>
+          </div>
+          <div class="ind-row">
+            <div class="ind-dot" style="background:#FFB84D;box-shadow:0 0 5px #FFB84D"></div>
+            <div class="ind-name">Steel Circularity</div>
+            <div class="ind-bar-bg"><div class="ind-bar-fill" style="background:#FFB84D" data-pct="52"></div></div>
+            <div class="ind-val" style="color:#FFB84D">52.0</div>
+            <div class="ind-badge b-ot">MODERATE</div>
+          </div>
+          <div class="ind-row">
+            <div class="ind-dot" style="background:#F09000;box-shadow:0 0 5px #F09000"></div>
+            <div class="ind-name">Textile Recovery</div>
+            <div class="ind-bar-bg"><div class="ind-bar-fill" style="background:#F09000" data-pct="12"></div></div>
+            <div class="ind-val" style="color:#F09000">12.0</div>
+            <div class="ind-badge b-wa">WARNING</div>
+          </div>
+          <div class="ind-row">
+            <div class="ind-dot" style="background:#00CC66;box-shadow:0 0 5px #00CC66"></div>
+            <div class="ind-name">Aluminium Circularity</div>
+            <div class="ind-bar-bg"><div class="ind-bar-fill" style="background:#00CC66" data-pct="73"></div></div>
+            <div class="ind-val" style="color:#00CC66">73.0</div>
+            <div class="ind-badge b-gr">TRACK</div>
+          </div>
+          <div class="ind-row">
+            <div class="ind-dot" style="background:#F03030;box-shadow:0 0 5px #F03030"></div>
+            <div class="ind-name">Construction Waste</div>
+            <div class="ind-bar-bg"><div class="ind-bar-fill" style="background:#F03030" data-pct="19"></div></div>
+            <div class="ind-val" style="color:#F03030">19.0</div>
+            <div class="ind-badge b-cr">CRITICAL</div>
+          </div>
+          <div class="ind-row">
+            <div class="ind-dot" style="background:#9C6FE4;box-shadow:0 0 5px #9C6FE4"></div>
+            <div class="ind-name">Chemical Recovery</div>
+            <div class="ind-bar-bg"><div class="ind-bar-fill" style="background:#9C6FE4" data-pct="31"></div></div>
+            <div class="ind-val" style="color:#9C6FE4">31.0</div>
+            <div class="ind-badge b-wa">WARNING</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── OPERATIONS ARCHITECTURE ────────────────────────────────────────── -->
+    <section class="ops-section">
+      <div class="section-header">
+        <div class="section-title">LOOP Operations Architecture</div>
+        <div class="section-sub">Three software systems · Architecture phase</div>
+      </div>
+      <div class="ops-grid fade-in">
+
+        <!-- System 01 — Material Passport -->
+        <div class="op-card s-design" style="--oc-accent:var(--loop)">
+          <div class="op-card-num">SYSTEM 01A · MATERIAL PASSPORT</div>
+          <div class="op-card-name" style="color:var(--loop)">DIGITAL MATERIAL LEDGER</div>
+          <div class="op-card-tag tag-design">Architecture Defined</div>
+          <div class="op-card-body">Every material stream entering a LOOP-integrated facility receives a tamper-proof digital passport: composition, origin, quality metrics, regulatory status, and LOOP circularity grade. Passports persist through the full lifecycle — manufacture, use, repair, disassembly — enabling verified secondary material markets where traceability has previously been impossible.</div>
+          <div class="op-card-metric">
+            <div class="op-metric">
+              <div class="op-metric-val">42+</div>
+              <div class="op-metric-lbl">Material data fields tracked</div>
+            </div>
+            <div class="op-metric">
+              <div class="op-metric-val">API</div>
+              <div class="op-metric-lbl">Open · CORS-accessible</div>
+            </div>
+            <div class="op-metric">
+              <div class="op-metric-val">GS1</div>
+              <div class="op-metric-lbl">Barcode standard aligned</div>
+            </div>
+          </div>
+          <div class="op-status">
+            <span class="op-dot"></span>Architecture Defined · Schema in Specification
+          </div>
+        </div>
+
+        <!-- System 01b — Chain of Custody -->
+        <div class="op-card s-design" style="--oc-accent:var(--loop)">
+          <div class="op-card-num">SYSTEM 01B · MATERIAL PASSPORT</div>
+          <div class="op-card-name" style="color:var(--loop)">CHAIN OF CUSTODY ENGINE</div>
+          <div class="op-card-tag tag-design">Architecture Defined</div>
+          <div class="op-card-body">Every custody transfer — manufacturer to logistics to retailer to consumer to recycler — is timestamped and appended to the material passport. Mass balance verification ensures quantities match at each handoff. LOOP's chain-of-custody engine makes greenwashing mathematically impossible: every claim is backed by a passport hash, not a press release.</div>
+          <div class="op-card-metric">
+            <div class="op-metric">
+              <div class="op-metric-val">Hash</div>
+              <div class="op-metric-lbl">Passport integrity per transfer</div>
+            </div>
+            <div class="op-metric">
+              <div class="op-metric-val">Mass</div>
+              <div class="op-metric-lbl">Balance verified at each node</div>
+            </div>
+          </div>
+          <div class="op-status">
+            <span class="op-dot"></span>Protocol Architecture Defined · Integration Spec In Progress
+          </div>
+        </div>
+
+        <!-- System 02a — Waste Exchange -->
+        <div class="op-card s-research" style="--oc-accent:var(--recovery)">
+          <div class="op-card-num">SYSTEM 02A · WASTE REROUTING</div>
+          <div class="op-card-name" style="color:var(--recovery)">INDUSTRIAL SYMBIOSIS NETWORK</div>
+          <div class="op-card-tag tag-research">Research Phase</div>
+          <div class="op-card-body">AI-powered matching engine aligning waste outputs to raw material inputs across facilities, sectors, and geographies. LOOP ISN analyzes material type, quality grade, quantity, transportation distance, and regulatory compliance in real time — then surfaces verified matches. One facility's combustion ash becomes another's cement additive. Closed. Automatic. Profitable.</div>
+          <div class="op-card-metric">
+            <div class="op-metric">
+              <div class="op-metric-val" style="color:var(--recovery)">Real-time</div>
+              <div class="op-metric-lbl">Matching frequency</div>
+            </div>
+            <div class="op-metric">
+              <div class="op-metric-val" style="color:var(--recovery)">500km</div>
+              <div class="op-metric-lbl">Default routing radius</div>
+            </div>
+          </div>
+          <div class="op-status s-research">
+            <span class="op-dot"></span>Algorithm Research Phase · Pilot Partners Being Identified
+          </div>
+        </div>
+
+        <!-- System 02b — Municipal -->
+        <div class="op-card s-research" style="--oc-accent:var(--recovery)">
+          <div class="op-card-num">SYSTEM 02B · WASTE REROUTING</div>
+          <div class="op-card-name" style="color:var(--recovery)">MUNICIPAL WASTE INTELLIGENCE</div>
+          <div class="op-card-tag tag-research">Research Phase</div>
+          <div class="op-card-body">City-scale waste stream analysis and diversion routing. LOOP MWI ingests municipal collection data, characterizes mixed waste composition via spectroscopic AI, and automatically routes streams to the highest-value recovery pathway — composting, anaerobic digestion, mechanical recycling, or energy recovery — based on material quality and market conditions in real time.</div>
+          <div class="op-card-metric">
+            <div class="op-metric">
+              <div class="op-metric-val" style="color:var(--recovery)">4,800+</div>
+              <div class="op-metric-lbl">Eligible cities globally</div>
+            </div>
+            <div class="op-metric">
+              <div class="op-metric-val" style="color:var(--recovery)">NIR</div>
+              <div class="op-metric-lbl">Spectroscopic AI grade</div>
+            </div>
+          </div>
+          <div class="op-status s-research">
+            <span class="op-dot"></span>Research Phase · Specification Active
+          </div>
+        </div>
+
+        <!-- System 03a — Circularity Score -->
+        <div class="op-card s-proto" style="--oc-accent:var(--recycle)">
+          <div class="op-card-num">SYSTEM 03A · CIRCULARITY SCORING</div>
+          <div class="op-card-name" style="color:var(--recycle)">ENTERPRISE CIRCULARITY RATE</div>
+          <div class="op-card-tag tag-proto">CONSCIENCE Integrated</div>
+          <div class="op-card-body">A single, auditable circularity rate (0–100) for any enterprise. LOOP ECR quantifies material input efficiency, waste diversion rate, recycled content percentage, and product longevity score — then flows directly into the CONSCIENCE Corporate Accountability module as a verified data signal. No self-reporting. No estimates. Passport-verified rates only.</div>
+          <div class="op-card-metric">
+            <div class="op-metric">
+              <div class="op-metric-val" style="color:var(--recycle)">0–100</div>
+              <div class="op-metric-lbl">Circularity rate scale</div>
+            </div>
+            <div class="op-metric">
+              <div class="op-metric-val" style="color:var(--recycle)">CSRD</div>
+              <div class="op-metric-lbl">EU reporting aligned</div>
+            </div>
+          </div>
+          <div class="op-status s-proto">
+            <span class="op-dot"></span>CONSCIENCE Integration Architecture Live · Scoring Model In Design
+          </div>
+        </div>
+
+        <!-- System 03b — ATLAS Feed -->
+        <div class="op-card s-proto" style="--oc-accent:var(--recycle)">
+          <div class="op-card-num">SYSTEM 03B · ATLAS INTEGRATION</div>
+          <div class="op-card-name" style="color:var(--recycle)">MATERIAL FLOW INTELLIGENCE</div>
+          <div class="op-card-tag tag-proto">ATLAS Live</div>
+          <div class="op-card-body">LOOP feeds verified material circularity data back to ATLAS, making every tracked kilogram a permanent contribution to the planetary intelligence record. LOOP's Corporate Accountability score (currently 38.6/100 in the Vyrion Index) becomes dynamically updatable as real enterprise circularity rates replace estimated averages — tightening the planetary picture over time.</div>
+          <div class="op-card-metric">
+            <div class="op-metric">
+              <div class="op-metric-val" style="color:var(--recycle)">Daily</div>
+              <div class="op-metric-lbl">ATLAS data refresh</div>
+            </div>
+            <div class="op-metric">
+              <div class="op-metric-val" style="color:var(--recycle)">8</div>
+              <div class="op-metric-lbl">Material stream variables</div>
+            </div>
+          </div>
+          <div class="op-status s-proto">
+            <span class="op-dot"></span>Architecture Live via ATLAS · Integration Pathway Defined
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── MATERIAL FLOW MAP ───────────────────────────────────────────────── -->
+    <section class="flow-section">
+      <div class="flow-inner">
+        <div class="section-header" style="padding:0 0 1rem">
+          <div class="section-title">Priority Material Streams &amp; Industrial Clusters</div>
+          <div class="section-sub">Highest-impact circular economy intervention zones</div>
+        </div>
+
+        <!-- Animated loop canvas -->
+        <div class="flow-map-wrap fade-in">
+          <canvas id="map-canvas"></canvas>
+          <div class="map-label">LOOP MATERIAL FLOW INTELLIGENCE · ATLAS INTEGRATION · ARCHITECTURE PHASE</div>
+          <div class="map-legend">
+            <div class="legend-item"><div class="legend-dot" style="background:var(--loop)"></div>High Volume</div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--breach)"></div>Critical Loss</div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--recycle)"></div>Recovery Node</div>
+          </div>
+        </div>
+
+        <div class="hotspot-grid fade-in delay-1">
+          <div class="hotspot-card">
+            <div class="hotspot-region">
+              <div class="hotspot-dot" style="background:var(--breach);box-shadow:0 0 6px var(--breach)"></div>
+              <div>
+                <div class="hotspot-name">Global Plastic Manufacturing Belt</div>
+                <div class="hotspot-type">Southeast Asia · China · Priority 1 · Plastic Stream</div>
+              </div>
+            </div>
+            <div class="hotspot-body">China, Indonesia, the Philippines, Vietnam, and Thailand account for the majority of global plastic waste mismanaged into waterways. LOOP targets the manufacturing entry point — material passporting at production facilities transforms virgin plastic accountability before it enters the distribution chain.</div>
+            <div class="hotspot-stats">
+              <div class="hs-stat"><div class="hs-stat-val" style="color:var(--breach)">8M T/yr</div><div class="hs-stat-lbl">Plastic into oceans</div></div>
+              <div class="hs-stat"><div class="hs-stat-val" style="color:var(--amber)">60%</div><div class="hs-stat-lbl">From 5 countries</div></div>
+              <div class="hs-stat"><div class="hs-stat-val" style="color:var(--loop)">MPS-01</div><div class="hs-stat-lbl">LOOP passport zone</div></div>
+            </div>
+          </div>
+          <div class="hotspot-card">
+            <div class="hotspot-region">
+              <div class="hotspot-dot" style="background:var(--breach);box-shadow:0 0 6px var(--breach)"></div>
+              <div>
+                <div class="hotspot-name">Global E-Waste Trade Corridor</div>
+                <div class="hotspot-type">West Africa · South Asia · Priority 2 · Electronics Stream</div>
+              </div>
+            </div>
+            <div class="hotspot-body">Agbogbloshie (Ghana) and Guiyu (China) represent the informal endpoints of a $62B global e-waste flow where 80% of collected electronics disappear into untracked, toxic disassembly. LOOP's digital passport intercepts at collection — making every device traceable before it enters the grey market.</div>
+            <div class="hotspot-stats">
+              <div class="hs-stat"><div class="hs-stat-val" style="color:var(--breach)">62M T</div><div class="hs-stat-lbl">E-waste 2023</div></div>
+              <div class="hs-stat"><div class="hs-stat-val" style="color:var(--amber)">78%</div><div class="hs-stat-lbl">Untracked fate</div></div>
+              <div class="hs-stat"><div class="hs-stat-val" style="color:var(--loop)">MPS-02</div><div class="hs-stat-lbl">LOOP passport zone</div></div>
+            </div>
+          </div>
+          <div class="hotspot-card">
+            <div class="hotspot-region">
+              <div class="hotspot-dot" style="background:var(--warn);box-shadow:0 0 6px var(--warn)"></div>
+              <div>
+                <div class="hotspot-name">European Fast Fashion Cluster</div>
+                <div class="hotspot-type">EU + UK · Priority 3 · Textile Stream</div>
+              </div>
+            </div>
+            <div class="hotspot-body">The EU generates 12.6 million tonnes of textile waste annually — the second-most resource-intensive sector after food. The EU ESPR regulation creates an immediate market for LOOP's textile passport system. LOOP ISN connects fashion brands' surplus inventory and post-consumer returns to verified fibre-to-fibre recyclers in real time.</div>
+            <div class="hotspot-stats">
+              <div class="hs-stat"><div class="hs-stat-val" style="color:var(--warn)">12.6M T</div><div class="hs-stat-lbl">EU textile waste/yr</div></div>
+              <div class="hs-stat"><div class="hs-stat-val" style="color:var(--loop)">1%</div><div class="hs-stat-lbl">Fiber-to-fiber recycled</div></div>
+              <div class="hs-stat"><div class="hs-stat-val" style="color:var(--loop)">ISN-01</div><div class="hs-stat-lbl">LOOP ISN zone</div></div>
+            </div>
+          </div>
+          <div class="hotspot-card">
+            <div class="hotspot-region">
+              <div class="hotspot-dot" style="background:var(--recycle);box-shadow:0 0 6px var(--recycle)"></div>
+              <div>
+                <div class="hotspot-name">US Industrial Midwest Symbiosis Corridor</div>
+                <div class="hotspot-type">Great Lakes Region · Priority 4 · Industrial Exchange</div>
+              </div>
+            </div>
+            <div class="hotspot-body">The US Midwest — Ohio, Michigan, Indiana, Illinois — represents one of the world's highest-density concentrations of co-located manufacturing, steel, chemicals, and food processing. LOOP ISN's industrial symbiosis algorithm is designed for exactly this geography: high proximity, diverse material outputs, verified exchange potential ready to unlock.</div>
+            <div class="hotspot-stats">
+              <div class="hs-stat"><div class="hs-stat-val" style="color:var(--recycle)">8,000+</div><div class="hs-stat-lbl">Industrial facilities</div></div>
+              <div class="hs-stat"><div class="hs-stat-val" style="color:var(--recycle)">$2.3B</div><div class="hs-stat-lbl">Recoverable waste value</div></div>
+              <div class="hs-stat"><div class="hs-stat-val" style="color:var(--loop)">ISN-02</div><div class="hs-stat-lbl">LOOP ISN zone</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TECHNOLOGY ARCHITECTURE ────────────────────────────────────────── -->
+    <section class="tech-section">
+      <div class="tech-inner">
+        <div class="section-header" style="padding:0 0 1.2rem">
+          <div class="section-title">Technology Stack</div>
+          <div class="section-sub">Passport · AI · Exchange · Score · Verify</div>
+        </div>
+        <div class="tech-flow fade-in">
+          <div class="tech-cell">
+            <div class="tech-step">01 · Identify</div>
+            <div class="tech-title">Material Passport Issue</div>
+            <div class="tech-arrow">→ tags every input →</div>
+            <div class="tech-output">Hash · Origin · Grade · Mass</div>
+          </div>
+          <div class="tech-cell">
+            <div class="tech-step">02 · Track</div>
+            <div class="tech-title">Chain of Custody Engine</div>
+            <div class="tech-arrow">→ follows every transfer →</div>
+            <div class="tech-output">Mass-balanced · Timestamped · Verified</div>
+          </div>
+          <div class="tech-cell">
+            <div class="tech-step">03 · Match</div>
+            <div class="tech-title">ISN Routing AI</div>
+            <div class="tech-arrow">→ connects waste to input →</div>
+            <div class="tech-output">Real-time · Quality-graded · Compliant</div>
+          </div>
+          <div class="tech-cell">
+            <div class="tech-step">04 · Score</div>
+            <div class="tech-title">Circularity Rate Engine</div>
+            <div class="tech-arrow">→ computes ECR per entity →</div>
+            <div class="tech-output">0–100 · Passport-verified · CSRD aligned</div>
+          </div>
+          <div class="tech-cell">
+            <div class="tech-step">05 · Publish</div>
+            <div class="tech-title">ATLAS + CONSCIENCE Feed</div>
+            <div class="tech-arrow">→ feeds planetary record →</div>
+            <div class="tech-output">Open · Immutable · CORS-accessible</div>
+          </div>
+        </div>
+        <div class="tech-specs fade-in delay-1">
+          <div class="spec-block">
+            <div class="spec-label">Passport Architecture</div>
+            <div class="spec-value">GS1 · ISO 14040 · EU ESPR Aligned</div>
+            <div class="spec-detail">LOOP material passports are built on GS1 digital link standards for supply chain interoperability, ISO 14040 lifecycle assessment methodology for verified impact claims, and the EU Ecodesign for Sustainable Products Regulation (ESPR) digital passport specification — the emerging global standard, implemented now.</div>
+          </div>
+          <div class="spec-block">
+            <div class="spec-label">AI Matching Architecture</div>
+            <div class="spec-value">Open-weights · ATLAS-native · Auditable</div>
+            <div class="spec-detail">LOOP's industrial symbiosis matching model is open-weights architecture trained on verified industrial waste exchange datasets. Every match recommendation is logged with the material passport hashes and quality parameters that produced it. No proprietary algorithm opaqueness — every routing decision is reproducible and disputable.</div>
+          </div>
+          <div class="spec-block">
+            <div class="spec-label">Enterprise Integration</div>
+            <div class="spec-value">REST API · ERP-native · Zero-friction Onboarding</div>
+            <div class="spec-detail">LOOP connects to existing enterprise ERP systems (SAP, Oracle, Microsoft Dynamics) via REST API — no new software stacks required. Municipal integration runs through standardized waste management platform APIs. A facility can be passport-issuing within one billing cycle. Complexity is LOOP's problem, not the client's.</div>
+          </div>
+          <div class="spec-block">
+            <div class="spec-label">CONSCIENCE Integration</div>
+            <div class="spec-value">Verified Circularity → Corporate Score</div>
+            <div class="spec-detail">LOOP ECR scores flow directly into CONSCIENCE's corporate accountability methodology as a verified data signal, replacing estimated sector averages with passport-verified circularity rates. Companies that close the loop see their CONSCIENCE score reflect it — in real time, not annually. This is the circularity-to-accountability bridge the market has been missing.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DATA SOURCES ────────────────────────────────────────────────────── -->
+    <section class="relay-section">
+      <div class="relay-inner fade-in">
+        <div class="relay-eyebrow">Data Intelligence Layer · Source Attribution</div>
+        <h2 class="relay-title">LOOP Data Architecture</h2>
+        <p class="relay-sub">Every LOOP indicator, circularity benchmark, and material flow model is sourced from named, public, auditable datasets. No proprietary data enters the scoring pipeline. All sources are machine-readable via the ATLAS CORS-open API.</p>
+        <div class="data-sources-grid">
+          <div class="ds-cell ds-live">
+            <div class="ds-source">Ellen MacArthur Foundation · Circulytics</div>
+            <div class="ds-type">→ Enterprise Circularity Benchmarks</div>
+            <div class="ds-detail">Global circularity rate baselines · Sector-level performance data · Annual</div>
+            <div class="ds-status"><span class="ds-dot"></span><span style="color:var(--recycle)">Benchmark Reference · Live</span></div>
+          </div>
+          <div class="ds-cell ds-live">
+            <div class="ds-source">UN Global E-Waste Monitor</div>
+            <div class="ds-type">→ Electronic Waste Volumes · Recovery Rates</div>
+            <div class="ds-detail">Annual global e-waste inventory · Country-level collection data · ITU/WHO/UNEP</div>
+            <div class="ds-status"><span class="ds-dot"></span><span style="color:var(--recycle)">Live via ATLAS</span></div>
+          </div>
+          <div class="ds-cell ds-live">
+            <div class="ds-source">World Bank WHAT-A-WASTE 2.0</div>
+            <div class="ds-type">→ Municipal Solid Waste · Composition</div>
+            <div class="ds-detail">City-level waste generation · 217 countries · Composition breakdown by material</div>
+            <div class="ds-status"><span class="ds-dot"></span><span style="color:var(--recycle)">Live via ATLAS</span></div>
+          </div>
+          <div class="ds-cell ds-live">
+            <div class="ds-source">OECD Global Plastics Outlook</div>
+            <div class="ds-type">→ Plastic Production · Waste Fates</div>
+            <div class="ds-detail">Plastic lifecycle tracking · Recycling, incineration, landfill, mismanagement rates</div>
+            <div class="ds-status"><span class="ds-dot"></span><span style="color:var(--recycle)">Live via ATLAS</span></div>
+          </div>
+          <div class="ds-cell ds-plan">
+            <div class="ds-source">EPA RCRAInfo · RCRA Biennial Reports</div>
+            <div class="ds-type">→ Hazardous Waste Generation · Tracking</div>
+            <div class="ds-detail">US facility-level hazardous waste data · Treatment, storage, disposal tracking</div>
+            <div class="ds-status"><span class="ds-dot"></span><span style="color:var(--loop)">Planned Integration</span></div>
+          </div>
+          <div class="ds-cell ds-plan">
+            <div class="ds-source">EU Eurostat Waste Statistics</div>
+            <div class="ds-type">→ EU Material Flows · Sector Waste</div>
+            <div class="ds-detail">NACE sector-level waste generation · NUTS regional breakdown · Annual</div>
+            <div class="ds-status"><span class="ds-dot"></span><span style="color:var(--loop)">Planned Integration</span></div>
+          </div>
+          <div class="ds-cell ds-plan">
+            <div class="ds-source">FAO Food Loss & Waste Platform</div>
+            <div class="ds-type">→ Food Waste Volumes · Supply Chain Stage</div>
+            <div class="ds-detail">Food systems waste quantification · FLW Standard methodology</div>
+            <div class="ds-status"><span class="ds-dot"></span><span style="color:var(--loop)">Planned Integration</span></div>
+          </div>
+          <div class="ds-cell ds-arch">
+            <div class="ds-source">LOOP Passport Telemetry API</div>
+            <div class="ds-type">→ Real-time material tracking · ECR scores</div>
+            <div class="ds-detail">Future: LOOP enterprise network · CORS-open · Feeds CONSCIENCE + ATLAS</div>
+            <div class="ds-status"><span class="ds-dot"></span><span style="color:var(--t3)">Architecture Defined</span></div>
+          </div>
+        </div>
+        <div class="relay-status-tag">
+          <span style="color:var(--loop)">◉</span> Architecture Defined · Data Pipeline Specced · Source Attribution Complete
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PUBLIC LEDGER ──────────────────────────────────────────────────── -->
+    <section class="ledger-section">
+      <div class="ledger-inner fade-in">
+        <div class="ledger-eyebrow">Open Proof Protocol · LOOP Development Log</div>
+        <h2 class="ledger-title">LOOP Public Ledger</h2>
+        <p class="ledger-sub">Every architectural decision, data source adoption, specification revision, and integration milestone permanently logged. The structural basis for LOOP's institutional credibility before a single material passport is issued.</p>
+        <table class="ledger-table">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Event</th>
+              <th>Source</th>
+              <th style="text-align:right">Timestamp</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="ledger-row">
+              <td><span class="ledger-type lt-data">DATA</span></td>
+              <td class="ledger-event">Global Circularity Rate — 7.2% confirmed · 8 material stream baselines established · Ellen MacArthur CGR 2024</td>
+              <td class="ledger-source">CGR 2024 · OECD · World Bank WHAT-A-WASTE · ATLAS v2.0</td>
+              <td class="ledger-ts">2026-05-12 · 00:00 UTC</td>
+            </tr>
+            <tr class="ledger-row">
+              <td><span class="ledger-type lt-arch">ARCH</span></td>
+              <td class="ledger-event">LOOP System 01 (Digital Material Passport) — Schema v0.1 · GS1 standard alignment confirmed · ISO 14040 reference locked · 42 data fields specified</td>
+              <td class="ledger-source">LOOP-ARCHITECTURE-v0.1.md · DablerFrost/Vyrion</td>
+              <td class="ledger-ts">2026-05-08 · 00:00 UTC</td>
+            </tr>
+            <tr class="ledger-row">
+              <td><span class="ledger-type lt-arch">ARCH</span></td>
+              <td class="ledger-event">LOOP System 02 (Industrial Symbiosis Network) — AI matching architecture defined · 500km default routing radius · Mass balance verification protocol locked</td>
+              <td class="ledger-source">LOOP-ARCHITECTURE-v0.1.md · Kalundborg Symbiosis reference</td>
+              <td class="ledger-ts">2026-05-08 · 00:00 UTC</td>
+            </tr>
+            <tr class="ledger-row">
+              <td><span class="ledger-type lt-arch">ARCH</span></td>
+              <td class="ledger-event">LOOP System 03 (Enterprise Circularity Rate) — Scoring formula v0.1 · CSRD alignment confirmed · CONSCIENCE feed architecture live</td>
+              <td class="ledger-source">LOOP-ECR-METHODOLOGY-v0.1.md · EU ESPR DPP reference</td>
+              <td class="ledger-ts">2026-05-06 · 00:00 UTC</td>
+            </tr>
+            <tr class="ledger-row">
+              <td><span class="ledger-type lt-alert">SIGNAL</span></td>
+              <td class="ledger-event">EU ESPR Digital Product Passport regulation confirmed — mandatory for 30+ product categories by 2027 · LOOP passport schema pre-aligned · First-mover compliance window opens</td>
+              <td class="ledger-source">European Commission · OJ 2024/1781 · LOOP compliance layer</td>
+              <td class="ledger-ts">2026-04-22 · public</td>
+            </tr>
+            <tr class="ledger-row">
+              <td><span class="ledger-type lt-data">DATA</span></td>
+              <td class="ledger-event">ATLAS material circularity integration confirmed — 8 material stream variables active · Daily refresh · Corporate Accountability score (38.6/100) designated for dynamic LOOP update</td>
+              <td class="ledger-source">ATLAS v2.0 · OECD · World Bank · UN E-Waste Monitor</td>
+              <td class="ledger-ts">2026-04-18 · 00:00 UTC</td>
+            </tr>
+            <tr class="ledger-row">
+              <td><span class="ledger-type lt-method">METHODOLOGY</span></td>
+              <td class="ledger-event">VYRION-LOOP-METHODOLOGY-v0.1.md — Circularity scoring · 8 material streams · Passport schema · ISN algorithm architecture · Prior art established</td>
+              <td class="ledger-source">GitHub commit · DablerFrost/Vyrion</td>
+              <td class="ledger-ts">2026-03-20 · 00:00 UTC</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ── PROOF SECTION ──────────────────────────────────────────────────── -->
+    <section class="proof-section fade-in">
+      <div class="proof-block">
+        <div class="proof-label">Methodology</div>
+        <div class="proof-value">"The linear economy is not a law of nature. It is a design choice — and a reversible one."</div>
+        <div class="proof-sub">LOOP's architecture is built on the same open-proof principles as every VYRION module: named sources, open weights, timestamped decisions, public ledger. Every circularity claim is passport-backed, not self-reported. The first enterprise to integrate LOOP makes greenwashing in their supply chain mathematically difficult to sustain.</div>
+        <div class="proof-links">
+          <a class="proof-link" href="https://github.com/DablerFrost/Vyrion/blob/main/docs/VYRION-LOOP-METHODOLOGY-v0.1.md" target="_blank" rel="noopener noreferrer">VYRION-LOOP-METHODOLOGY-v0.1.md</a>
+          <a class="proof-link" href="https://github.com/DablerFrost/Vyrion/blob/main/docs/LOOP-ECR-METHODOLOGY-v0.1.md" target="_blank" rel="noopener noreferrer">LOOP-ECR-METHODOLOGY-v0.1.md</a>
+          <a class="proof-link" href="https://github.com/DablerFrost/Vyrion/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener noreferrer">CHANGELOG.md</a>
+          <a class="proof-link" href="https://vyrion.earth/conscience">CONSCIENCE Integration →</a>
+        </div>
+      </div>
+      <div class="proof-block">
+        <div class="proof-label">Data Sources</div>
+        <div class="proof-value">All public. All material-verified.</div>
+        <div class="proof-sub">Ellen MacArthur Foundation Circulytics · UN Global E-Waste Monitor · World Bank WHAT-A-WASTE 2.0 · OECD Global Plastics Outlook · EPA RCRAInfo · Eurostat Waste Statistics · FAO Food Loss &amp; Waste Platform · EU ESPR DPP Reference · GS1 Digital Link Standard · ISO 14040 LCA Standard<br><br>No proprietary data enters the LOOP scoring pipeline. Every source is named, linked, and licensed in methodology documentation. ATLAS serves as the live data backbone for all LOOP circularity intelligence.
+        </div>
+        <div class="proof-links">
+          <a class="proof-link" href="https://vyrion.earth/atlas">ATLAS Data Platform →</a>
+          <a class="proof-link" href="https://vyrion.earth/conscience">CONSCIENCE Platform →</a>
+          <a class="proof-link" href="https://vyrion.earth/about">About VYRION PBC →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FOOTER ─────────────────────────────────────────────────────────── -->
+    <footer class="footer">
+      <div class="footer-l">
+        <strong>VYRION LOOP</strong> · Module 07 · Circular Economy Intelligence · Architecture Phase · May 2026<br>
+        <strong>VYRION PBC</strong> · Planetary Accountability Infrastructure · V2.0<br>
+        Founder: Tyler Frost / DablerFrost · Hilo, Hawaii<br>
+        <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a> · <a href="https://github.com/DablerFrost/Vyrion" target="_blank" rel="noopener noreferrer">github.com/DablerFrost/Vyrion</a><br>
+        Not financial advice. Scores are informational outputs derived from public data.<br>
+        <a href="https://github.com/DablerFrost/Vyrion/blob/main/docs/INVESTABLE-DISCLAIMER.md" target="_blank" rel="noopener noreferrer">INVESTABLE-DISCLAIMER.md</a> · <a href="https://github.com/DablerFrost/Vyrion/blob/main/docs/VYRION-LEGAL-DISCLAIMER-v1.0.md" target="_blank" rel="noopener noreferrer">LEGAL-DISCLAIMER.md</a>
+        <div class="footer-nexan">A subsidiary of <a href="https://vyrion.earth/nexan">The Nexan Institute</a> · Behavioral infrastructure for human-AI cooperation</div>
+      </div>
+    </footer>
+
+    <!-- ── FLOATING ORB ────────────────────────────────────────────────────── -->
+    <div id="vyr-orb" aria-label="Quick navigation">
+      <div class="oo-btn" id="oo-btn" role="button" tabindex="0" aria-expanded="false" aria-controls="oo-panel">
+        <span class="oo-icon">+</span>
+      </div>
+      <span class="oo-tooltip">Navigate VYRION</span>
+      <div class="oo-panel" id="oo-panel" aria-hidden="true">
+        <div class="oo-panel-header">Quick Access</div>
+        <a class="oo-link" href="https://vyrion.earth"           onclick="oOrbClose()"><span class="oo-dot"></span> HOME </a>
+        <a class="oo-link" href="https://vyrion.earth/conscience" onclick="oOrbClose()"><span class="oo-dot"></span> CONSCIENCE </a>
+        <a class="oo-link" href="https://vyrion.earth/atlas"      onclick="oOrbClose()"><span class="oo-dot"></span> ATLAS </a>
+        <a class="oo-link" href="https://vyrion.earth/shield"     onclick="oOrbClose()"><span class="oo-dot"></span> SHIELD </a>
+        <a class="oo-link" href="https://vyrion.earth/root"       onclick="oOrbClose()"><span class="oo-dot"></span> ROOT </a>
+        <a class="oo-link" href="https://vyrion.earth/canopy"     onclick="oOrbClose()"><span class="oo-dot"></span> CANOPY </a>
+        <a class="oo-link" href="https://vyrion.earth/flux"       onclick="oOrbClose()"><span class="oo-dot"></span> FLUX </a>
+        <a class="oo-link" href="https://vyrion.earth/tide"       onclick="oOrbClose()"><span class="oo-dot"></span> TIDE </a>
+        <a class="oo-link" href="https://vyrion.earth/record"     onclick="oOrbClose()"><span class="oo-dot"></span> RECORD </a>
+        <a class="oo-link" href="https://vyrion.earth/about"      onclick="oOrbClose()"><span class="oo-dot"></span> ABOUT </a>
+        <a class="oo-link" href="https://vyrion.earth/nexan"      onclick="oOrbClose()"><span class="oo-dot"></span> NEXAN </a>
+        <div class="oo-divider"></div>
+        <button class="oo-install-item" id="oo-install-item" onclick="pwaInstall()">
+          <span class="oo-install-dot"></span>INSTALL APP
+        </button>
+      </div>
+    </div>
+
+    <!-- ── PWA INSTALL BANNER ──────────────────────────────────────────────── -->
+    <div id="pwa-banner" role="complementary" aria-label="Install VYRION app" aria-live="polite">
+      <div class="pwa-eyebrow"><span class="pwa-eyebrow-dot"></span>Install Available</div>
+      <div class="pwa-title">Add VYRION to Home Screen</div>
+      <div class="pwa-sub">Circular economy intelligence. Always-on material tracking.<br>One tap access. No browser chrome.</div>
+      <div class="pwa-btns">
+        <button class="pwa-install-btn" id="pwa-install-btn" onclick="pwaInstall()">⊕ INSTALL APP</button>
+        <button class="pwa-dismiss-btn" id="pwa-dismiss-btn" onclick="pwaDismiss()" aria-label="Dismiss install prompt">✕</button>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <script>
+      'use strict';
+
+      /* ── THEME ──────────────────────────────────────────────────────────── */
+      function toggleTheme() {
+        const html = document.documentElement;
+        const isLight = html.getAttribute('data-theme') === 'light';
+        html.setAttribute('data-theme', isLight ? 'dark' : 'light');
+        const btn = document.getElementById('theme-btn');
+        if (btn) btn.textContent = isLight ? '◐ DARK' : '◑ LIGHT';
+        try { localStorage.setItem('vc-theme', isLight ? 'dark' : 'light'); } catch(e) {}
+      }
+
+      (function() {
+        try {
+          const t = localStorage.getItem('vc-theme');
+          if (t === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            const btn = document.getElementById('theme-btn');
+            if (btn) btn.textContent = '◑ LIGHT';
+          }
+        } catch(e) {}
+      })();
+
+      /* ── FONT SCALE ─────────────────────────────────────────────────────── */
+      const FONT_SCALES = { '0.88': 16, '1.0': 18, '1.22': 22 };
+
+      function setScale(btn) {
+        document.documentElement.style.fontSize = (FONT_SCALES[btn.dataset.scale] || 18) + 'px';
+        document.querySelectorAll('.nc-sz').forEach(b => b.classList.toggle('active', b === btn));
+        try { localStorage.setItem('vc-scale', btn.dataset.scale); } catch(e) {}
+      }
+
+      (function() {
+        try {
+          const s = localStorage.getItem('vc-scale');
+          if (s && FONT_SCALES[s]) {
+            document.documentElement.style.fontSize = FONT_SCALES[s] + 'px';
+            requestAnimationFrame(() =>
+              document.querySelectorAll('.nc-sz').forEach(b =>
+                b.classList.toggle('active', b.dataset.scale === s)));
+          }
+        } catch(e) {}
+      })();
+
+      /* ── CUSTOM CURSOR ───────────────────────────────────────────────────── */
+      (function() {
+        const cur  = document.getElementById('cursor');
+        const ring = document.getElementById('cursor-ring');
+        const glow = document.getElementById('cursor-glow');
+        if (!cur || !ring || !glow) return;
+
+        let mx = 0, my = 0, rx = 0, ry = 0;
+        document.addEventListener('mousemove', e => {
+          mx = e.clientX; my = e.clientY;
+          cur.style.left  = mx + 'px'; cur.style.top  = my + 'px';
+          glow.style.left = mx + 'px'; glow.style.top = my + 'px';
+        });
+
+        function animateRing() {
+          rx += (mx - rx) * .15;
+          ry += (my - ry) * .15;
+          ring.style.left = rx + 'px';
+          ring.style.top  = ry + 'px';
+          requestAnimationFrame(animateRing);
+        }
+        animateRing();
+
+        document.addEventListener('mouseover', e => {
+          const t = e.target.closest('a,button,[role="button"],.op-card,.oo-link,.hotspot-card,.ds-cell');
+          if (t) { ring.style.width = '44px'; ring.style.height = '44px'; ring.style.borderColor = 'rgba(255,184,77,.9)'; cur.style.width = '5px'; cur.style.height = '5px'; }
+        });
+        document.addEventListener('mouseout', e => {
+          const t = e.target.closest('a,button,[role="button"],.op-card,.oo-link,.hotspot-card,.ds-cell');
+          if (t) { ring.style.width = '32px'; ring.style.height = '32px'; ring.style.borderColor = 'rgba(255,184,77,.5)'; cur.style.width = '8px'; cur.style.height = '8px'; }
+        });
+      })();
+
+      /* ── LOOP HEADER CANVAS — circular material flow nodes ──────────────── */
+      (function() {
+        const canvas = document.getElementById('loop-canvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let W, H;
+
+        /* Material cycle nodes arranged in circular clusters */
+        const NODE_TYPES = [
+          { label: 'RAW',   color: '#FFB84D', size: 5 },
+          { label: 'MFG',   color: '#00CC66', size: 5 },
+          { label: 'USE',   color: '#48CAE4', size: 5 },
+          { label: 'WASTE', color: '#F03030', size: 4 },
+          { label: 'REC',   color: '#9C6FE4', size: 4 },
+        ];
+
+        let clusters = [];
+        const CLUSTER_COUNT = 4;
+        const NODES_PER_CLUSTER = 5;
+        let particles = [];
+        const PARTICLE_COUNT = 55;
+
+        function resize() {
+          W = canvas.width = canvas.offsetWidth;
+          H = canvas.height = canvas.offsetHeight;
+        }
+
+        function initClusters() {
+          clusters = Array.from({ length: CLUSTER_COUNT }, (_, ci) => {
+            const cx = W * (.18 + ci * .22);
+            const cy = H * (.3 + (ci % 2) * .35);
+            const r  = Math.min(W, H) * .09;
+            const rot = Math.random() * Math.PI * 2;
+            return NODE_TYPES.map((nt, ni) => ({
+              cx, cy,
+              angle:  rot + (ni / NODES_PER_CLUSTER) * Math.PI * 2,
+              radius: r,
+              angV:   (Math.random() - .5) * .003,
+              color:  nt.color,
+              size:   nt.size,
+              pulse:  Math.random() * Math.PI * 2,
+            }));
+          });
+        }
+
+        function initParticles() {
+          particles = Array.from({ length: PARTICLE_COUNT }, () => ({
+            x: Math.random() * W,
+            y: Math.random() * H,
+            vx: (Math.random() - .5) * .3,
+            vy: (Math.random() - .5) * .24,
+            r: .7 + Math.random() * 1.2,
+            alpha: .12 + Math.random() * .35,
+            hue:  [40, 120, 195, 0, 275][Math.floor(Math.random() * 5)],
+            pulse: Math.random() * Math.PI * 2,
+          }));
+        }
+
+        function draw() {
+          ctx.clearRect(0, 0, W, H);
+          const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+          const base   = isDark ? 1 : .4;
+
+          /* subtle grid */
+          ctx.strokeStyle = `rgba(120,80,20,${.04 * base})`;
+          ctx.lineWidth   = .5;
+          for (let y = 0; y < H; y += 44) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
+          for (let x = 0; x < W; x += 60) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
+
+          /* update + draw clusters */
+          clusters.forEach(cluster => {
+            /* advance all node angles */
+            cluster.forEach(n => { n.angle += n.angV; n.pulse += .02; });
+
+            const positions = cluster.map(n => ({
+              x: n.cx + Math.cos(n.angle) * n.radius,
+              y: n.cy + Math.sin(n.angle) * n.radius,
+            }));
+
+            /* draw loop edges */
+            const rgb = (hex) => {
+              const c = hex.replace('#','');
+              return [parseInt(c.slice(0,2),16), parseInt(c.slice(2,4),16), parseInt(c.slice(4,6),16)];
+            };
+
+            for (let i = 0; i < positions.length; i++) {
+              const next = (i + 1) % positions.length;
+              const p1   = positions[i];
+              const p2   = positions[next];
+              const r1   = rgb(cluster[i].color);
+
+              /* gradient edge */
+              const grad = ctx.createLinearGradient(p1.x, p1.y, p2.x, p2.y);
+              grad.addColorStop(0,   `rgba(${r1},${ .18 * base})`);
+              grad.addColorStop(1,   `rgba(${r1},${ .06 * base})`);
+
+              ctx.beginPath();
+              ctx.moveTo(p1.x, p1.y);
+              /* slight curve for organic feel */
+              const mx2 = (p1.x + p2.x) / 2 + (Math.random() - .5) * 8;
+              const my2 = (p1.y + p2.y) / 2 + (Math.random() - .5) * 8;
+              ctx.quadraticCurveTo(mx2, my2, p2.x, p2.y);
+              ctx.strokeStyle = grad;
+              ctx.lineWidth   = .8;
+              ctx.stroke();
+            }
+
+            /* draw nodes */
+            positions.forEach((pos, ni) => {
+              const n   = cluster[ni];
+              const g   = .5 + .5 * Math.sin(n.pulse);
+              const r   = rgb(n.color);
+              const sz  = n.size;
+
+              /* outer glow ring */
+              ctx.beginPath();
+              ctx.arc(pos.x, pos.y, sz + 3 + g * 3, 0, Math.PI * 2);
+              ctx.strokeStyle = `rgba(${r},${ .2 * base * (1 - g * .5) })`;
+              ctx.lineWidth   = 1;
+              ctx.stroke();
+
+              /* filled dot */
+              ctx.beginPath();
+              ctx.arc(pos.x, pos.y, sz * .6, 0, Math.PI * 2);
+              ctx.fillStyle   = `rgba(${r},.18)`;
+              ctx.fill();
+              ctx.strokeStyle = `rgba(${r},${.65 * base})`;
+              ctx.lineWidth   = 1.2;
+              ctx.stroke();
+            });
+          });
+
+          /* ambient particles */
+          particles.forEach(p => {
+            p.x += p.vx; p.y += p.vy;
+            if (p.x < -5) p.x = W + 5;
+            if (p.x > W+5) p.x = -5;
+            if (p.y < -5) p.y = H + 5;
+            if (p.y > H+5) p.y = -5;
+            p.pulse += .02;
+            const g = .6 + .4 * Math.sin(p.pulse);
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = `hsla(${p.hue},70%,65%,${p.alpha * g * base})`;
+            ctx.fill();
+          });
+
+          requestAnimationFrame(draw);
+        }
+
+        resize(); initClusters(); initParticles(); draw();
+        window.addEventListener('resize', () => { resize(); initClusters(); initParticles(); });
+      })();
+
+      /* ── MATERIAL FLOW MAP CANVAS ────────────────────────────────────────── */
+      (function() {
+        const canvas = document.getElementById('map-canvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let W, H;
+
+        const ZONES = [
+          { x:.72, y:.35, label:'SE Asia Plastic', color:'#F03030', r:20, type:'loss'     },
+          { x:.60, y:.28, label:'China E-Waste',   color:'#F03030', r:16, type:'loss'     },
+          { x:.45, y:.30, label:'EU Textile',      color:'#F09000', r:14, type:'loss'     },
+          { x:.27, y:.35, label:'US Midwest ISN',  color:'#00CC66', r:16, type:'recovery' },
+          { x:.42, y:.48, label:'Africa E-Waste',  color:'#F03030', r:12, type:'loss'     },
+          { x:.22, y:.55, label:'Brazil Agri Waste',color:'#F09000',r:11, type:'loss'     },
+          { x:.78, y:.60, label:'AU Aluminium',    color:'#FFB84D', r:10, type:'loop'     },
+          { x:.50, y:.55, label:'MENA Plastics',   color:'#F09000', r:9,  type:'loss'     },
+        ];
+
+        let pulse = 0;
+
+        function resize() {
+          W = canvas.width = canvas.offsetWidth;
+          H = canvas.height = canvas.offsetHeight;
+        }
+
+        function drawBase() {
+          /* subtle continent outlines */
+          const pairs = [
+            /* North America */
+            [[.08,.18],[.28,.15],[.30,.28],[.22,.45],[.16,.52],[.10,.42]],
+            /* South America */
+            [[.19,.55],[.28,.52],[.28,.75],[.21,.85],[.16,.72]],
+            /* Europe */
+            [[.42,.15],[.52,.13],[.54,.28],[.44,.30]],
+            /* Africa */
+            [[.44,.32],[.55,.30],[.57,.65],[.48,.78],[.42,.65]],
+            /* Asia */
+            [[.54,.13],[.82,.12],[.88,.30],[.78,.40],[.65,.42],[.58,.32]],
+            /* Australia */
+            [[.75,.55],[.87,.52],[.88,.68],[.78,.72],[.72,.62]],
+          ];
+          const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+          ctx.strokeStyle = `rgba(180,120,40,${.10 * (isDark ? 1 : .4)})`;
+          ctx.lineWidth   = .8;
+          pairs.forEach(pts => {
+            ctx.beginPath();
+            pts.forEach(([fx,fy],i) => i===0 ? ctx.moveTo(fx*W,fy*H) : ctx.lineTo(fx*W,fy*H));
+            ctx.closePath();
+            ctx.stroke();
+          });
+        }
+
+        function draw() {
+          ctx.clearRect(0, 0, W, H);
+          pulse += .03;
+          const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+          const a = isDark ? 1 : .55;
+
+          /* grid */
+          ctx.strokeStyle = `rgba(100,60,20,${.06*a})`; ctx.lineWidth = .5;
+          for (let y = 0; y < H; y += H/6) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
+          for (let x = 0; x < W; x += W/8) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
+
+          drawBase();
+
+          /* draw flow arcs between zones */
+          for (let i = 0; i < ZONES.length; i++) {
+            const z1 = ZONES[i];
+            const z2 = ZONES[(i + 2) % ZONES.length];
+            const x1 = z1.x * W, y1 = z1.y * H;
+            const x2 = z2.x * W, y2 = z2.y * H;
+            const cp = { x: (x1+x2)/2, y: (y1+y2)/2 - 30 };
+
+            const progress = (Math.sin(pulse + i * .7) + 1) / 2;
+            const t = progress;
+            const px = (1-t)*(1-t)*x1 + 2*(1-t)*t*cp.x + t*t*x2;
+            const py = (1-t)*(1-t)*y1 + 2*(1-t)*t*cp.y + t*t*y2;
+
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.quadraticCurveTo(cp.x, cp.y, x2, y2);
+            ctx.strokeStyle = `rgba(255,184,77,${.06*a})`;
+            ctx.lineWidth   = .6;
+            ctx.stroke();
+
+            /* moving dot on arc */
+            ctx.beginPath();
+            ctx.arc(px, py, 2.5, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255,184,77,${.5*a})`;
+            ctx.fill();
+          }
+
+          /* zones */
+          ZONES.forEach((z, zi) => {
+            const gx = z.x * W, gy = z.y * H;
+            const pr = .5 + .5 * Math.sin(pulse + zi * .9);
+
+            const c   = z.color.replace('#','');
+            const rgb = [parseInt(c.slice(0,2),16), parseInt(c.slice(2,4),16), parseInt(c.slice(4,6),16)];
+
+            ctx.beginPath();
+            ctx.arc(gx, gy, z.r + 4 + pr * 7, 0, Math.PI * 2);
+            ctx.strokeStyle = `rgba(${rgb},${ .22*a*(1-pr*.5) })`;
+            ctx.lineWidth   = 1;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(gx, gy, z.r * .55, 0, Math.PI * 2);
+            ctx.fillStyle   = `rgba(${rgb},.18)`;
+            ctx.fill();
+            ctx.strokeStyle = `rgba(${rgb},${ .6*a })`;
+            ctx.lineWidth   = 1.2;
+            ctx.stroke();
+
+            ctx.fillStyle = `rgba(${rgb},${ .65*a })`;
+            ctx.font = `${Math.max(9, W/95)}px 'Courier Prime', monospace`;
+            ctx.fillText(z.label, gx + z.r * .75, gy - z.r * .3);
+          });
+
+          requestAnimationFrame(draw);
+        }
+
+        resize(); draw();
+        window.addEventListener('resize', resize);
+      })();
+
+      /* ── RING + BARS ANIMATE ─────────────────────────────────────────────── */
+      function animateLoop() {
+        setTimeout(() => {
+          document.querySelectorAll('.ind-bar-fill').forEach(el => {
+            el.style.width = (parseFloat(el.dataset.pct) || 0) + '%';
+          });
+          const fill = document.getElementById('ring-fill');
+          if (fill) fill.style.strokeDashoffset = (427.3 * (1 - 7.2 / 100)).toFixed(1);
+        }, 350);
+      }
+
+      /* ── SCROLL FADE-IN ──────────────────────────────────────────────────── */
+      (function() {
+        const obs = new IntersectionObserver(entries => {
+          entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+          });
+        }, { threshold: .07 });
+        document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+      })();
+
+      animateLoop();
+
+      /* ── ORB NAV ─────────────────────────────────────────────────────────── */
+      (function() {
+        const ooBtn   = document.getElementById('oo-btn');
+        const ooPanel = document.getElementById('oo-panel');
+
+        window.oOrbToggle = function() {
+          if (!ooBtn || !ooPanel) return;
+          const open = ooPanel.classList.toggle('open');
+          ooBtn.classList.toggle('open', open);
+          ooBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          ooPanel.setAttribute('aria-hidden', open ? 'false' : 'true');
+        };
+
+        window.oOrbClose = function() {
+          if (!ooPanel) return;
+          ooPanel.classList.remove('open');
+          if (ooBtn) { ooBtn.classList.remove('open'); ooBtn.setAttribute('aria-expanded', 'false'); }
+          ooPanel.setAttribute('aria-hidden', 'true');
+        };
+
+        if (ooBtn) ooBtn.addEventListener('click', window.oOrbToggle);
+        document.addEventListener('click', e => {
+          const orb = document.getElementById('vyr-orb');
+          if (orb && !orb.contains(e.target)) window.oOrbClose();
+        });
+        if (ooBtn) ooBtn.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.oOrbToggle(); }
+          if (e.key === 'Escape') window.oOrbClose();
+        });
+      })();
+
+      /* ── PWA INSTALL ─────────────────────────────────────────────────────── */
+      (function() {
+        'use strict';
+        var deferredPrompt = null;
+        var banner   = document.getElementById('pwa-banner');
+        var orbItem  = document.getElementById('oo-install-item');
+
+        function isInstalled() {
+          return window.matchMedia('(display-mode: standalone)').matches
+              || window.matchMedia('(display-mode: fullscreen)').matches
+              || window.navigator.standalone === true;
+        }
+
+        if (isInstalled()) {
+          if (orbItem) { orbItem.setAttribute('data-state','installed'); orbItem.textContent = '✓ INSTALLED'; }
+          return;
+        }
+
+        function wasDismissed() {
+          try { return sessionStorage.getItem('vc-pwa-dismissed') === '1'; } catch(e) { return false; }
+        }
+
+        function showBanner() {
+          if (wasDismissed()) return;
+          if (!deferredPrompt) return;
+          if (!banner) return;
+          banner.classList.add('visible');
+          if (orbItem) orbItem.classList.remove('pwa-unavailable');
+        }
+
+        function hideBanner() { if (banner) banner.classList.remove('visible'); }
+
+        window.addEventListener('beforeinstallprompt', function(e) {
+          e.preventDefault();
+          deferredPrompt = e;
+          setTimeout(showBanner, 2200);
+          if (orbItem) orbItem.classList.remove('pwa-unavailable');
+        });
+
+        window.pwaInstall = async function() {
+          if (!deferredPrompt) {
+            const ua = navigator.userAgent.toLowerCase();
+            let msg;
+            if (/iphone|ipad|ipod/.test(ua)) msg = 'Safari on iOS:\n1. Tap Share (⬆)\n2. "Add to Home Screen"\n3. Tap "Add"';
+            else if (/android/.test(ua)) msg = 'Android:\n1. Browser menu (⋮)\n2. "Add to Home screen"\n3. Confirm';
+            else msg = 'Install VYRION:\n• Chrome/Edge: install icon (⊕) in address bar\n• Firefox: Menu → "Install"\n• Safari: Share (⬆) → "Add to Home Screen"';
+            alert(msg);
+            return;
+          }
+          hideBanner();
+          deferredPrompt.prompt();
+          const choice = await deferredPrompt.userChoice;
+          if (choice.outcome === 'accepted') {
+            deferredPrompt = null;
+            hideBanner();
+            if (orbItem) { orbItem.setAttribute('data-state','installed'); orbItem.innerHTML = '<span class="oo-install-dot"></span> INSTALLED ✓'; orbItem.style.pointerEvents = 'none'; }
+            try { localStorage.setItem('vc-installed','1'); } catch(e) {}
+          } else {
+            try { sessionStorage.setItem('vc-pwa-dismissed','0'); } catch(e) {}
+            setTimeout(showBanner, 120000);
+          }
+        };
+
+        window.pwaDismiss = function() {
+          hideBanner();
+          try { sessionStorage.setItem('vc-pwa-dismissed','1'); } catch(e) {}
+          setTimeout(function() {
+            try { sessionStorage.removeItem('vc-pwa-dismissed'); } catch(e) {}
+            showBanner();
+          }, 300000);
+        };
+
+        window.addEventListener('appinstalled', function() {
+          deferredPrompt = null; hideBanner();
+          if (orbItem) { orbItem.setAttribute('data-state','installed'); orbItem.innerHTML = '<span class="oo-install-dot"></span> INSTALLED ✓'; orbItem.style.pointerEvents = 'none'; }
+          try { localStorage.setItem('vc-installed','1'); } catch(e) {}
+        });
+
+        if (orbItem) orbItem.classList.add('pwa-unavailable');
+      })();
+    </script>
+
+    <!-- Cloudflare Insights -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"10eb5392c70c4c4fa5452b5bbc652e0e","r":1}' crossorigin="anonymous"></script>
+  </body>
+</html>
