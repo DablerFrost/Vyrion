@@ -1,15 +1,28 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-06-16T05:39:22.551Z",
+    "generatedAt": "2026-06-16T17:24:58.586Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 16,
+      "count": 17,
       "maxMagnitude": 7.8,
       "events": [
+        {
+          "id": "us7000stbz",
+          "magnitude": 6.3,
+          "place": "260 km SSE of Dunhuang, China",
+          "time": "2026-06-16T09:06:55.226Z",
+          "coordinates": [
+            95.4028,
+            37.8888,
+            10
+          ],
+          "tsunami": false,
+          "significance": 1000
+        },
         {
           "id": "us7000st95",
           "magnitude": 6.7,
@@ -21,7 +34,7 @@
             10
           ],
           "tsunami": false,
-          "significance": 694
+          "significance": 695
         },
         {
           "id": "us7000st41",
@@ -86,7 +99,7 @@
             55.193
           ],
           "tsunami": false,
-          "significance": 1185
+          "significance": 1186
         },
         {
           "id": "nn00919749",
@@ -216,7 +229,7 @@
             10
           ],
           "tsunami": false,
-          "significance": 1006
+          "significance": 1007
         }
       ]
     },
@@ -224,8 +237,7 @@
       "totalActive": 50,
       "byCategory": {
         "Wildfires": 41,
-        "Sea and Lake Ice": 5,
-        "Severe Storms": 1,
+        "Sea and Lake Ice": 6,
         "Volcanoes": 3
       },
       "events": [
@@ -550,27 +562,6 @@
           }
         },
         {
-          "id": "EONET_20412",
-          "title": "Tropical Storm Cristina",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "JTWC",
-            "NOAA_NHC"
-          ],
-          "geometry": {
-            "magnitudeValue": 30,
-            "magnitudeUnit": "kts",
-            "date": "2026-06-11T00:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -89.1,
-              12.8
-            ]
-          }
-        },
-        {
           "id": "EONET_20387",
           "title": "Tower Wildfire, Millard, Utah",
           "categories": [
@@ -830,6 +821,26 @@
               45.7593
             ]
           }
+        },
+        {
+          "id": "EONET_20290",
+          "title": "KALKASKA-RX 61150021 Fletcher Unit 2 Prescribed Fire, Kalkaska, Michigan",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 539,
+            "magnitudeUnit": "acres",
+            "date": "2026-05-28T15:33:00Z",
+            "type": "Point",
+            "coordinates": [
+              -84.92062679,
+              44.51933255
+            ]
+          }
         }
       ]
     },
@@ -839,55 +850,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -0.4,
-          "surface_pressure": 1022.2,
-          "wind_speed_10m": 5.98,
-          "relative_humidity_2m": 89
+          "temperature_2m": -0.3,
+          "surface_pressure": 1023.2,
+          "wind_speed_10m": 3.35,
+          "relative_humidity_2m": 95
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 11,
-          "surface_pressure": 1002.2,
-          "wind_speed_10m": 13,
-          "relative_humidity_2m": 76
+          "temperature_2m": 11.4,
+          "surface_pressure": 1004.8,
+          "wind_speed_10m": 9.12,
+          "relative_humidity_2m": 87
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 16.8,
-          "surface_pressure": 914.4,
-          "wind_speed_10m": 0.74,
-          "relative_humidity_2m": 99
+          "temperature_2m": 26.4,
+          "surface_pressure": 916.6,
+          "wind_speed_10m": 1.73,
+          "relative_humidity_2m": 56
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 29.7,
-          "surface_pressure": 1011.5,
-          "wind_speed_10m": 3.26,
-          "relative_humidity_2m": 70
+          "temperature_2m": 28.5,
+          "surface_pressure": 1013,
+          "wind_speed_10m": 2.83,
+          "relative_humidity_2m": 78
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -0.5,
-          "surface_pressure": 1000.1,
-          "wind_speed_10m": 10.7,
-          "relative_humidity_2m": 73
+          "temperature_2m": -0.8,
+          "surface_pressure": 999.1,
+          "wind_speed_10m": 9.07,
+          "relative_humidity_2m": 82
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -49.6,
-          "surface_pressure": 709.8,
-          "wind_speed_10m": 7.85,
-          "relative_humidity_2m": 66
+          "temperature_2m": -47.1,
+          "surface_pressure": 712,
+          "wind_speed_10m": 8.69,
+          "relative_humidity_2m": 67
         }
       ]
     },
