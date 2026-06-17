@@ -1,0 +1,2929 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="VYRION PULSE — Tokenized marketplace for verified carbon, biodiversity, water, and soil credits. Corporations meet compliance. Governments monetize restoration. Module 08.">
+    <meta property="og:title" content="VYRION PULSE — Environmental Credit Marketplace">
+    <meta property="og:description" content="Tokenized marketplace for verified carbon, biodiversity, water, and soil credits. The economic engine of the VYRION ecosystem.">
+    <meta property="og:image" content="/assets/og-image.jpg">
+    <meta property="og:url" content="https://vyrion.earth/pulse">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="VYRION PULSE — Environmental Credit Marketplace">
+    <meta name="twitter:description" content="Tokenized marketplace for verified carbon, biodiversity, water, and soil credits. Module 08.">
+    <meta name="twitter:image" content="/assets/og-image.jpg">
+    <link rel="canonical" href="https://vyrion.earth/pulse">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/assets/favicon.ico">
+    <title>VYRION PULSE — Environmental Credit Marketplace · Module 08</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&family=Archivo:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      /* ══════════════════════════════════════════════════════════════════
+         VYRION PULSE — Module 08 · Environmental Credit Marketplace
+         Accent: #9C6FE4 (--pulse) · Built on VYRION Design System V2.0
+      ══════════════════════════════════════════════════════════════════ */
+
+      /* ── BRAND TOKENS ────────────────────────────────────────────────── */
+      :root {
+        --void: #020912;
+        --void2: #061624;
+        --void3: #0b2035;
+        --glow: #00D4FF;
+        --amber: #FFB84D;
+        --breach: #F03030;
+        --warn: #F09000;
+        --t1: #e4f2ff;
+        --t2: #6a9ab8;
+        --t3: #2d6080;
+        --border: rgba(0, 212, 255, .12);
+        --border2: rgba(0, 212, 255, .07);
+        --nav-bg: rgba(2, 9, 18, .97);
+        /* PULSE module accent — violet / purple */
+        --pulse: #9C6FE4;
+        --pulse-glow: rgba(156, 111, 228, .4);
+        --pulse-dim: rgba(156, 111, 228, .08);
+        --pulse2: #7A4EC8;
+        --pulse3: #5A30A0;
+        --pulse-border: rgba(156, 111, 228, .28);
+        /* credit type semantic colors */
+        --carbon: #00CC66;    /* carbon credits — green */
+        --biodiv: #48CAE4;    /* biodiversity credits — cyan */
+        --water:  #0096C7;    /* water credits — blue */
+        --soil:   #CC9944;    /* soil credits — gold */
+        --retire: #F03030;    /* credit retirement / breach */
+        /* shared module tokens */
+        --mod-conscience: #00D4FF;
+        --mod-shield: #F03030;
+        --mod-atlas: #00D4FF;
+        --mod-root: #10b981;
+        --mod-canopy: #2E8B57;
+        --mod-tide: #0096C7;
+        --mod-loop: #FFB84D;
+        --mod-flux: #FFD700;
+        --mod-pulse: #9C6FE4;
+        --evo-motion: 280ms cubic-bezier(.22, .61, .36, 1);
+        --green: #00CC66;
+        --red: #F03030;
+      }
+
+      [data-theme="light"] {
+        --void: #f0f5ff;
+        --void2: #e4eeff;
+        --void3: #d5e5ff;
+        --glow: #0066CC;
+        --amber: #b07800;
+        --breach: #b82020;
+        --warn: #a05800;
+        --t1: #060e1e;
+        --t2: #1e4a7a;
+        --t3: #3a6090;
+        --border: rgba(0, 102, 204, .18);
+        --border2: rgba(0, 102, 204, .10);
+        --nav-bg: rgba(240, 245, 255, .98);
+        --pulse: #7040b0;
+        --pulse-glow: rgba(112, 64, 176, .25);
+        --pulse-dim: rgba(112, 64, 176, .07);
+        --pulse-border: rgba(112, 64, 176, .28);
+        --carbon: #1a7a40;
+        --biodiv: #0077A8;
+        --water: #005880;
+        --soil: #8a6010;
+        --red: #b82020;
+        --green: #1a7a40;
+      }
+
+      /* ── RESET ───────────────────────────────────────────────────────── */
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html { scroll-behavior: smooth; font-size: 18px; }
+
+      body {
+        background: var(--void);
+        color: var(--t1);
+        font-family: 'Archivo', sans-serif;
+        font-size: 1rem;
+        line-height: 1.65;
+        min-height: 100vh;
+        overflow-x: hidden;
+        transition: background .3s, color .3s;
+      }
+
+      @media(hover:hover) { body { cursor: none; } }
+
+      /* Ambient violet atmospheric glow */
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        background:
+          radial-gradient(ellipse 70% 45% at 20% 0%,  rgba(156, 111, 228, .018) 0%, transparent 65%),
+          radial-gradient(ellipse 55% 40% at 85% 100%, rgba(156, 111, 228, .012) 0%, transparent 65%),
+          radial-gradient(ellipse 40% 30% at 50% 50%,  rgba(100, 60, 200, .010) 0%, transparent 70%);
+      }
+
+      /* Scanline */
+      body::after {
+        content: '';
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 990;
+        background: repeating-linear-gradient(0deg, transparent, transparent 3px,
+          rgba(156, 111, 228, .003) 3px, rgba(156, 111, 228, .003) 4px);
+      }
+
+      /* ── CUSTOM CURSOR ───────────────────────────────────────────────── */
+      #cursor {
+        position: fixed;
+        width: 8px;
+        height: 8px;
+        background: var(--pulse);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99999;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 8px var(--pulse-glow);
+        transition: transform .08s ease, width .15s ease, height .15s ease, opacity .15s ease;
+        will-change: transform;
+      }
+
+      #cursor-ring {
+        position: fixed;
+        width: 32px;
+        height: 32px;
+        border: 1.5px solid rgba(156, 111, 228, .5);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99998;
+        transform: translate(-50%, -50%);
+        transition: transform .18s var(--evo-motion), width .2s ease, height .2s ease, border-color .2s ease;
+        will-change: transform;
+      }
+
+      #cursor-glow {
+        position: fixed;
+        width: 280px;
+        height: 280px;
+        background: radial-gradient(circle, rgba(156, 111, 228, .05) 0%, transparent 70%);
+        pointer-events: none;
+        z-index: 99990;
+        transform: translate(-50%, -50%);
+        transition: transform .35s ease;
+        will-change: transform;
+      }
+
+      @media(hover:none) {
+        #cursor, #cursor-ring, #cursor-glow { display: none; }
+        body { cursor: auto; }
+      }
+
+      /* ── NAV ─────────────────────────────────────────────────────────── */
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 500;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0 1.8rem;
+        background: var(--nav-bg);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        transition: background .3s, border-color .3s;
+        overflow: visible;
+      }
+
+      .nav-logo {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: .95rem;
+        color: var(--glow);
+        letter-spacing: .15em;
+        text-decoration: none;
+        flex-shrink: 0;
+        text-shadow: 0 0 24px rgba(0, 212, 255, .45);
+        transition: text-shadow var(--evo-motion);
+      }
+
+      .nav-logo:hover { text-shadow: 0 0 40px rgba(0, 212, 255, .7); }
+
+      .nav-links {
+        display: flex;
+        gap: 1.8rem;
+        list-style: none;
+        flex: 1;
+        overflow: visible;
+      }
+
+      .nav-links li { overflow: visible; position: relative; }
+
+      .nav-links a {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 700;
+        font-size: .65rem;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        color: var(--t2);
+        text-decoration: none;
+        transition: color .2s;
+        padding-bottom: 2px;
+      }
+
+      .nav-links a:hover { color: var(--t1); }
+      .nav-links a.active {
+        color: var(--pulse);
+        border-bottom: 1px solid rgba(156, 111, 228, .5);
+      }
+
+      .nav-item { position: relative; display: inline-flex; align-items: center; }
+
+      .nav-tooltip {
+        position: absolute;
+        top: calc(100% + 14px);
+        left: 50%;
+        transform: translateX(-50%) translateY(-6px);
+        background: rgba(2, 9, 18, .97);
+        border: 1px solid rgba(156, 111, 228, .22);
+        border-radius: 3px;
+        padding: .35rem .65rem;
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: var(--pulse);
+        white-space: nowrap;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .2s ease, transform .2s ease, visibility .2s;
+        z-index: 9999;
+        box-shadow: 0 6px 24px rgba(0,0,0,.6), 0 0 14px rgba(156,111,228,.1);
+        backdrop-filter: blur(10px);
+      }
+
+      .nav-tooltip::before {
+        content: '';
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 5px solid transparent;
+        border-bottom-color: rgba(156, 111, 228, .28);
+      }
+
+      .nav-tooltip::after {
+        content: '';
+        position: absolute;
+        bottom: calc(100% - 1px);
+        left: 50%;
+        transform: translateX(-50%);
+        border: 4px solid transparent;
+        border-bottom-color: rgba(2, 9, 18, .97);
+      }
+
+      .nav-item:hover .nav-tooltip { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+
+      .nav-controls {
+        display: flex;
+        align-items: center;
+        gap: .35rem;
+        flex-shrink: 0;
+      }
+
+      .nc-sep { width: 1px; height: 16px; background: var(--border); margin: 0 .15rem; }
+
+      .nc-theme {
+        font-family: 'Courier Prime', monospace;
+        font-size: .58rem;
+        font-weight: 700;
+        letter-spacing: .12em;
+        padding: .22rem .5rem;
+        border-radius: 2px;
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--t2);
+        cursor: none;
+        transition: all .2s;
+        white-space: nowrap;
+      }
+
+      .nc-theme:hover, .nc-theme.active {
+        border-color: var(--pulse);
+        color: var(--pulse);
+        background: var(--pulse-dim);
+        box-shadow: 0 0 8px rgba(156, 111, 228, .12);
+      }
+
+      .nc-sz {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        font-weight: 700;
+        width: 26px;
+        height: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2px;
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--t3);
+        cursor: none;
+        transition: all .2s;
+      }
+
+      .nc-sz:hover { border-color: rgba(156, 111, 228, .4); color: var(--t1); }
+      .nc-sz.active {
+        background: rgba(156, 111, 228, .12);
+        border-color: var(--pulse);
+        color: var(--pulse);
+        box-shadow: 0 0 8px rgba(156, 111, 228, .15);
+      }
+
+      .nav-dot {
+        width: 6px;
+        height: 6px;
+        background: var(--pulse);
+        border-radius: 50%;
+        flex-shrink: 0;
+        animation: pdot 2.2s infinite;
+      }
+
+      @keyframes pdot {
+        0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(156, 111, 228, .5); }
+        50%       { opacity: .4; box-shadow: 0 0 0 7px rgba(156, 111, 228, 0); }
+      }
+
+      /* ── FADE-IN SCROLL ──────────────────────────────────────────────── */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(22px);
+        transition: opacity .85s ease, transform .85s ease;
+      }
+      .fade-in.visible { opacity: 1; transform: translateY(0); }
+      .delay-1 { transition-delay: .1s; }
+      .delay-2 { transition-delay: .2s; }
+      .delay-3 { transition-delay: .3s; }
+      .delay-4 { transition-delay: .45s; }
+      .delay-5 { transition-delay: .6s; }
+
+      .loading-pulse { animation: pulse 1.4s infinite; }
+      @keyframes pulse {
+        0%, 100% { opacity: .3; }
+        50% { opacity: .75; }
+      }
+
+      /* ── PAGE HEADER ─────────────────────────────────────────────────── */
+      .page-header {
+        position: relative;
+        overflow: hidden;
+        min-height: clamp(300px, 45vh, 460px);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 3.5rem 2rem 2.8rem;
+        border-bottom: 1px solid var(--border);
+        background: #020912;
+        background-image: url('https://okay-gold-oof5kipmvh.edgeone.app/Testing%20The%20Surface%20-%20Imgur.png');
+        background-size: cover;
+      }
+
+      /* Deep violet-toned gradient — market intelligence */
+      .page-header::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background:
+          linear-gradient(170deg, rgba(8, 4, 18, .98) 0%, rgba(30, 15, 60, .88) 35%, rgba(50, 25, 100, .72) 65%, rgba(156, 111, 228, .12) 100%),
+          linear-gradient(90deg, rgba(6, 3, 14, .6) 0%, transparent 50%, rgba(6, 3, 14, .4) 100%);
+        transition: background .3s;
+      }
+
+      [data-theme="light"] .page-header::before {
+        background: linear-gradient(120deg, rgba(248, 244, 255, .97) 0%, rgba(235, 225, 255, .85) 50%, rgba(225, 210, 255, .92) 100%);
+      }
+
+      /* Pulse canvas — token trading nodes */
+      #pulse-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: .65;
+        pointer-events: none;
+      }
+
+      [data-theme="light"] #pulse-canvas { opacity: .22; }
+
+      /* Violet accent bar at top */
+      .page-header-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg,
+          transparent 0%,
+          rgba(156, 111, 228, .4) 25%,
+          rgba(200, 160, 255, .7) 50%,
+          rgba(156, 111, 228, .4) 75%,
+          transparent 100%);
+        z-index: 4;
+        pointer-events: none;
+      }
+
+      /* Violet radial pulse */
+      .page-header::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        pointer-events: none;
+        background:
+          radial-gradient(ellipse 60% 70% at 72% 48%, rgba(156, 111, 228, .09) 0%, transparent 70%),
+          radial-gradient(ellipse 35% 50% at 8%  65%, rgba(80, 40, 160, .10) 0%, transparent 60%);
+        animation: hpulse 10s ease-in-out infinite alternate;
+      }
+
+      @keyframes hpulse {
+        0%   { opacity: .5; transform: scale(1); }
+        100% { opacity: 1;  transform: scale(1.04); }
+      }
+
+      .page-header > *:not(canvas) { position: relative; z-index: 3; }
+
+      .bg-word {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: clamp(4rem, 12vw, 9rem);
+        color: rgba(156, 111, 228, .04);
+        pointer-events: none;
+        user-select: none;
+        z-index: 2;
+        letter-spacing: .18em;
+      }
+
+      .eyebrow {
+        font-family: 'Courier Prime', monospace;
+        font-size: .82rem;
+        color: var(--pulse);
+        letter-spacing: .24em;
+        text-transform: uppercase;
+        margin-bottom: .55rem;
+        display: flex;
+        align-items: center;
+        gap: .55rem;
+      }
+
+      .eyebrow::before {
+        content: '';
+        width: 18px;
+        height: 1px;
+        background: var(--pulse);
+        opacity: .5;
+      }
+
+      .page-title {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: clamp(2.8rem, 6vw, 4.6rem);
+        color: var(--t1);
+        line-height: .95;
+        letter-spacing: -.02em;
+        margin-bottom: .65rem;
+      }
+
+      .page-title span { color: var(--pulse); }
+
+      .page-sub {
+        font-size: .88rem;
+        color: var(--t2);
+        max-width: 66ch;
+        line-height: 1.72;
+      }
+
+      .header-meta {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        margin-top: 1.4rem;
+      }
+
+      .hm-cell { display: flex; flex-direction: column; gap: .1rem; }
+
+      .hm-label {
+        font-family: 'Courier Prime', monospace;
+        font-size: .55rem;
+        color: var(--t3);
+        letter-spacing: .18em;
+        text-transform: uppercase;
+      }
+
+      .hm-val {
+        font-family: 'Courier Prime', monospace;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: var(--pulse);
+        line-height: 1;
+      }
+
+      .hm-val.amber  { color: var(--amber); }
+      .hm-val.breach { color: var(--breach); }
+      .hm-val.green  { color: var(--carbon); }
+      .hm-val.cyan   { color: var(--biodiv); }
+
+      /* ── STATUS BANNER ───────────────────────────────────────────────── */
+      .status-banner {
+        display: flex;
+        flex-wrap: wrap;
+        background: var(--void2);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .sb-cell {
+        flex: 1;
+        min-width: 120px;
+        padding: .75rem 1.4rem;
+        border-right: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+        gap: .12rem;
+      }
+
+      .sb-cell:last-child { border-right: none; }
+
+      .sb-lbl {
+        font-family: 'Courier Prime', monospace;
+        font-size: .55rem;
+        color: var(--t3);
+        letter-spacing: .18em;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: .35rem;
+      }
+
+      .sb-dot {
+        width: 4px;
+        height: 4px;
+        background: var(--pulse);
+        border-radius: 50%;
+        animation: pdot 2s infinite;
+        flex-shrink: 0;
+      }
+
+      .sb-dot.warn   { background: var(--warn);   box-shadow: 0 0 4px var(--warn); }
+      .sb-dot.breach { background: var(--breach);  box-shadow: 0 0 4px var(--breach); }
+      .sb-dot.green  { background: var(--carbon); box-shadow: 0 0 4px var(--carbon); }
+      .sb-dot.cyan   { background: var(--biodiv); box-shadow: 0 0 4px var(--biodiv); }
+      .sb-dot.blue   { background: var(--water);  box-shadow: 0 0 4px var(--water); }
+
+      .sb-val {
+        font-family: 'Courier Prime', monospace;
+        font-weight: 700;
+        font-size: 1.05rem;
+        color: var(--pulse);
+        line-height: 1;
+        letter-spacing: -.01em;
+      }
+
+      .sb-val.amber  { color: var(--amber); }
+      .sb-val.red    { color: var(--breach); }
+      .sb-val.white  { color: var(--t1); }
+      .sb-val.green  { color: var(--carbon); }
+      .sb-val.cyan   { color: var(--biodiv); }
+
+      .sb-sub {
+        font-family: 'Courier Prime', monospace;
+        font-size: .54rem;
+        color: var(--t3);
+        line-height: 1.3;
+      }
+
+      /* ── DEV PHASE BANNER ────────────────────────────────────────────── */
+      .dev-phase-bar {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: .7rem 2rem;
+        background: linear-gradient(90deg, rgba(156, 111, 228, .05) 0%, transparent 100%);
+        border-bottom: 1px solid var(--border);
+        flex-wrap: wrap;
+      }
+
+      .dev-phase-tag {
+        font-family: 'Courier Prime', monospace;
+        font-size: .58rem;
+        letter-spacing: .18em;
+        text-transform: uppercase;
+        padding: .18rem .55rem;
+        border-radius: 2px;
+        background: rgba(156, 111, 228, .08);
+        color: var(--pulse);
+        border: 1px solid rgba(156, 111, 228, .3);
+        flex-shrink: 0;
+      }
+
+      .dev-phase-text {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        color: var(--t2);
+        line-height: 1.5;
+        flex: 1;
+      }
+
+      .dev-phase-text strong { color: var(--t1); }
+
+      /* ── SECTION CHROME ──────────────────────────────────────────────── */
+      .section-header {
+        padding: 2rem 2rem .8rem;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: .5rem;
+      }
+
+      .section-title {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: .85rem;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: var(--t1);
+        display: flex;
+        align-items: center;
+        gap: .6rem;
+        flex: 1;
+      }
+
+      .section-title::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: var(--border);
+      }
+
+      .section-sub {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        color: var(--t3);
+      }
+
+      .section-link {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        color: rgba(156, 111, 228, .4);
+        text-decoration: none;
+        letter-spacing: .08em;
+        transition: color .2s;
+        flex-shrink: 0;
+      }
+
+      .section-link:hover { color: var(--pulse); }
+
+      /* ── MISSION CARDS ───────────────────────────────────────────────── */
+      .mission-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1px;
+        background: var(--border);
+        margin: 0 2rem 2rem;
+        border: 1px solid var(--border);
+      }
+
+      @media(max-width:800px) { .mission-grid { grid-template-columns: 1fr 1fr; } }
+      @media(max-width:520px) { .mission-grid { grid-template-columns: 1fr; } }
+
+      .mission-card {
+        background: var(--void2);
+        padding: 1.4rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: .7rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .mission-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 2px;
+        background: var(--mc-accent, var(--pulse));
+      }
+
+      .mission-icon      { font-size: 1.6rem; line-height: 1; }
+      .mission-card-label {
+        font-family: 'Courier Prime', monospace;
+        font-size: .55rem;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        color: var(--t3);
+      }
+
+      .mission-card-title {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: 1.1rem;
+        letter-spacing: .04em;
+        color: var(--mc-color, var(--pulse));
+        line-height: 1.1;
+      }
+
+      .mission-card-body {
+        font-size: .74rem;
+        color: var(--t2);
+        line-height: 1.68;
+      }
+
+      .mission-card-stat {
+        font-family: 'Courier Prime', monospace;
+        font-weight: 700;
+        font-size: 1.8rem;
+        line-height: 1;
+        color: var(--mc-color, var(--pulse));
+        letter-spacing: -.02em;
+      }
+
+      .mission-card-stat-label {
+        font-family: 'Courier Prime', monospace;
+        font-size: .54rem;
+        color: var(--t3);
+        letter-spacing: .08em;
+        margin-top: .15rem;
+      }
+
+      /* ── MARKET INDEX PANEL ──────────────────────────────────────────── */
+      .market-master {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        border-bottom: 1px solid var(--border);
+        background: var(--void);
+      }
+
+      @media(max-width:900px) { .market-master { grid-template-columns: 1fr; } }
+
+      .market-score-panel {
+        padding: 2.4rem 2.8rem;
+        border-right: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.2rem;
+        min-width: 260px;
+        background: linear-gradient(160deg, rgba(156, 111, 228, .06) 0%, var(--void) 100%);
+      }
+
+      @media(max-width:900px) {
+        .market-score-panel {
+          min-width: 0;
+          border-right: none;
+          border-bottom: 1px solid var(--border);
+          padding: 1.8rem;
+        }
+      }
+
+      .score-ring-wrap {
+        position: relative;
+        width: 160px;
+        height: 160px;
+        flex-shrink: 0;
+      }
+
+      .score-ring-wrap svg {
+        position: absolute;
+        inset: 0;
+        transform: rotate(-90deg);
+      }
+
+      .ring-track {
+        fill: none;
+        stroke: rgba(255, 255, 255, .06);
+        stroke-width: 8;
+      }
+
+      [data-theme="light"] .ring-track { stroke: rgba(0, 0, 0, .08); }
+
+      .ring-fill {
+        fill: none;
+        stroke: var(--pulse);
+        stroke-width: 8;
+        stroke-linecap: round;
+        transition: stroke-dashoffset 2s cubic-bezier(.4, 0, .2, 1);
+        filter: drop-shadow(0 0 8px rgba(156, 111, 228, .45));
+      }
+
+      .ring-inner {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .ring-score {
+        font-family: 'Courier Prime', monospace;
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 1;
+        letter-spacing: -.03em;
+        color: var(--pulse);
+      }
+
+      .ring-denom {
+        font-family: 'Courier Prime', monospace;
+        font-size: .58rem;
+        color: var(--t3);
+        margin-top: .12rem;
+      }
+
+      .ring-label {
+        font-family: 'Courier Prime', monospace;
+        font-size: .5rem;
+        color: rgba(156, 111, 228, .5);
+        margin-top: .08rem;
+      }
+
+      .market-index-badge {
+        display: inline-block;
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        padding: .2rem .6rem;
+        border-radius: 2px;
+        background: rgba(156, 111, 228, .08);
+        color: var(--pulse);
+        border: 1px solid rgba(156, 111, 228, .3);
+        margin-bottom: .4rem;
+      }
+
+      .market-day-label {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        color: var(--t3);
+        line-height: 1.6;
+        text-align: center;
+      }
+
+      /* Credit type indicators */
+      .market-indicators-panel { padding: 2rem 2.4rem; }
+
+      .ind-header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        margin-bottom: 1.4rem;
+        flex-wrap: wrap;
+        gap: .5rem;
+      }
+
+      .ind-title {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: .82rem;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: var(--t1);
+      }
+
+      .ind-sub {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        color: var(--t3);
+      }
+
+      .ind-rows { display: flex; flex-direction: column; gap: .5rem; }
+
+      .ind-row {
+        display: grid;
+        grid-template-columns: 8px 185px 1fr 80px 90px;
+        align-items: center;
+        gap: .6rem;
+        padding: .4rem 0;
+        border-bottom: 1px solid var(--border2);
+      }
+
+      .ind-row:last-child { border-bottom: none; }
+
+      .ind-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+      .ind-name {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 700;
+        font-size: .78rem;
+        letter-spacing: .06em;
+        color: var(--t1);
+        text-transform: uppercase;
+      }
+
+      .ind-bar-bg {
+        height: 4px;
+        background: rgba(255, 255, 255, .06);
+        border-radius: 2px;
+        overflow: hidden;
+      }
+
+      [data-theme="light"] .ind-bar-bg { background: rgba(0,0,0,.08); }
+
+      .ind-bar-fill {
+        height: 100%;
+        border-radius: 2px;
+        width: 0;
+        transition: width 1.6s cubic-bezier(.4, 0, .2, 1);
+      }
+
+      .ind-val {
+        font-family: 'Courier Prime', monospace;
+        font-weight: 700;
+        font-size: .72rem;
+        text-align: right;
+      }
+
+      .ind-badge {
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        padding: .1rem .38rem;
+        border-radius: 2px;
+        text-align: center;
+      }
+
+      .b-cr { background: rgba(240,48,48,.08);    color: var(--breach);  border: 1px solid rgba(240,48,48,.25); }
+      .b-wa { background: rgba(240,144,0,.08);    color: var(--warn);    border: 1px solid rgba(240,144,0,.25); }
+      .b-ot { background: rgba(156,111,228,.08);  color: var(--pulse);   border: 1px solid rgba(156,111,228,.25); }
+      .b-gr { background: rgba(0,204,102,.08);    color: var(--carbon);  border: 1px solid rgba(0,204,102,.25); }
+      .b-cy { background: rgba(72,202,228,.08);   color: var(--biodiv);  border: 1px solid rgba(72,202,228,.25); }
+
+      @media(max-width:600px) {
+        .ind-row { grid-template-columns: 6px 120px 1fr 60px; }
+        .ind-badge { display: none; }
+      }
+
+      /* ── OPERATIONS GRID ─────────────────────────────────────────────── */
+      .ops-section {
+        border-top: 1px solid var(--border);
+        background: var(--void2);
+      }
+
+      .ops-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1px;
+        background: var(--border);
+        margin: 0 2rem 2rem;
+        border: 1px solid var(--border);
+      }
+
+      .op-card {
+        background: var(--void2);
+        padding: 1.4rem 1.4rem 1.2rem;
+        position: relative;
+        overflow: hidden;
+        transition: background .2s;
+      }
+
+      .op-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 2px;
+        background: var(--oc-accent, var(--pulse));
+      }
+
+      .op-card:hover { background: var(--void3); }
+
+      .op-card-num {
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        color: var(--t3);
+        letter-spacing: .1em;
+        margin-bottom: .5rem;
+      }
+
+      .op-card-name {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: .95rem;
+        letter-spacing: .06em;
+        margin-bottom: .3rem;
+        line-height: 1.1;
+      }
+
+      .op-card-tag {
+        display: inline-block;
+        font-family: 'Courier Prime', monospace;
+        font-size: .5rem;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        padding: .08rem .32rem;
+        border-radius: 2px;
+        margin-bottom: .65rem;
+      }
+
+      .tag-design {
+        background: rgba(156, 111, 228, .08);
+        color: var(--pulse);
+        border: 1px solid rgba(156, 111, 228, .25);
+      }
+
+      .tag-research {
+        background: rgba(0, 204, 102, .07);
+        color: var(--carbon);
+        border: 1px solid rgba(0, 204, 102, .22);
+      }
+
+      .tag-proto {
+        background: rgba(72, 202, 228, .07);
+        color: var(--biodiv);
+        border: 1px solid rgba(72, 202, 228, .22);
+      }
+
+      .op-card-body {
+        font-size: .72rem;
+        color: var(--t2);
+        line-height: 1.68;
+      }
+
+      .op-card-metric {
+        display: flex;
+        gap: 1.4rem;
+        flex-wrap: wrap;
+        margin-top: .9rem;
+      }
+
+      .op-metric { display: flex; flex-direction: column; gap: .08rem; }
+
+      .op-metric-val {
+        font-family: 'Courier Prime', monospace;
+        font-weight: 700;
+        font-size: 1rem;
+        color: var(--oc-accent, var(--pulse));
+        line-height: 1;
+      }
+
+      .op-metric-lbl {
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        color: var(--t3);
+        letter-spacing: .06em;
+      }
+
+      .op-status {
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        margin-top: .75rem;
+        display: flex;
+        align-items: center;
+        gap: .3rem;
+      }
+
+      .op-dot { width: 4px; height: 4px; border-radius: 50%; flex-shrink: 0; }
+      .s-design  .op-dot { background: var(--pulse); }
+      .s-research .op-dot { background: var(--carbon); animation: pdot 2s infinite; }
+      .s-proto   .op-dot { background: var(--biodiv); animation: pdot 2s infinite; }
+      .s-design  .op-status { color: var(--pulse); }
+      .s-research .op-status { color: var(--carbon); }
+      .s-proto   .op-status { color: var(--biodiv); }
+
+      /* ── MARKET MAP ──────────────────────────────────────────────────── */
+      .market-section { border-top: 1px solid var(--border); background: var(--void); }
+      .market-inner { padding: 2rem; }
+
+      .market-map-wrap {
+        position: relative;
+        height: 220px;
+        background: linear-gradient(180deg, rgba(8, 4, 18, .9) 0%, rgba(30, 15, 60, .7) 100%);
+        border: 1px solid var(--border);
+        overflow: hidden;
+        margin-bottom: 1.4rem;
+      }
+
+      #map-canvas {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .map-label {
+        position: absolute;
+        bottom: .7rem;
+        left: .9rem;
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        color: rgba(156, 111, 228, .5);
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        z-index: 2;
+      }
+
+      .map-legend {
+        position: absolute;
+        bottom: .7rem;
+        right: .9rem;
+        display: flex;
+        gap: 1rem;
+        z-index: 2;
+      }
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: .3rem;
+        font-family: 'Courier Prime', monospace;
+        font-size: .5rem;
+        color: var(--t3);
+        letter-spacing: .06em;
+      }
+
+      .legend-dot { width: 6px; height: 6px; border-radius: 50%; }
+
+      /* Market hotspot cards */
+      .hotspot-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        margin-bottom: 1.4rem;
+      }
+
+      @media(max-width:700px) { .hotspot-grid { grid-template-columns: 1fr; } }
+
+      .hotspot-card {
+        background: var(--void2);
+        padding: 1.3rem 1.4rem;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+      }
+
+      .hotspot-region { display: flex; align-items: center; gap: .7rem; }
+      .hotspot-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+      .hotspot-name { font-family: 'Archivo Narrow', sans-serif; font-weight: 800; font-size: .88rem; letter-spacing: .06em; color: var(--t1); }
+      .hotspot-type { font-family: 'Courier Prime', monospace; font-size: .56rem; color: var(--t3); letter-spacing: .1em; text-transform: uppercase; }
+      .hotspot-body { font-size: .72rem; color: var(--t2); line-height: 1.65; }
+
+      .hotspot-stats { display: flex; gap: 1.2rem; flex-wrap: wrap; margin-top: .3rem; }
+      .hs-stat { display: flex; flex-direction: column; gap: .06rem; }
+      .hs-stat-val { font-family: 'Courier Prime', monospace; font-weight: 700; font-size: .9rem; line-height: 1; }
+      .hs-stat-lbl { font-family: 'Courier Prime', monospace; font-size: .5rem; color: var(--t3); letter-spacing: .06em; }
+
+      /* ── TECHNOLOGY ARCHITECTURE ─────────────────────────────────────── */
+      .tech-section { border-top: 1px solid var(--border); background: var(--void2); }
+      .tech-inner { padding: 2rem; }
+
+      .tech-flow {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        margin-bottom: 1.6rem;
+      }
+
+      .tech-cell { background: var(--void2); padding: 1.1rem 1.3rem; display: flex; flex-direction: column; gap: .5rem; }
+      .tech-step { font-family: 'Courier Prime', monospace; font-size: .52rem; color: var(--t3); letter-spacing: .12em; text-transform: uppercase; }
+      .tech-title { font-family: 'Archivo Narrow', sans-serif; font-weight: 800; font-size: .88rem; letter-spacing: .06em; color: var(--t1); }
+      .tech-arrow { font-family: 'Courier Prime', monospace; font-size: .56rem; color: rgba(156, 111, 228, .35); letter-spacing: .06em; }
+      .tech-output { font-family: 'Courier Prime', monospace; font-size: .6rem; color: var(--pulse); }
+
+      .tech-specs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        margin-bottom: 1rem;
+      }
+
+      @media(max-width:600px) { .tech-specs { grid-template-columns: 1fr; } }
+
+      .spec-block { background: var(--void2); padding: 1.1rem 1.3rem; display: flex; flex-direction: column; gap: .4rem; }
+      .spec-label { font-family: 'Courier Prime', monospace; font-size: .56rem; color: var(--t3); letter-spacing: .14em; text-transform: uppercase; }
+      .spec-value { font-family: 'Archivo Narrow', sans-serif; font-weight: 800; font-size: 1rem; color: var(--t1); line-height: 1.2; }
+      .spec-detail { font-size: .7rem; color: var(--t2); line-height: 1.55; }
+
+      /* ── DATA RELAY SECTION ──────────────────────────────────────────── */
+      .relay-section {
+        border-top: 1px solid var(--border);
+        background: linear-gradient(160deg, rgba(156, 111, 228, .018) 0%, var(--void) 60%);
+      }
+
+      .relay-inner { padding: 2rem; }
+
+      .relay-eyebrow {
+        font-family: 'Courier Prime', monospace;
+        font-size: .62rem;
+        color: var(--pulse);
+        letter-spacing: .22em;
+        text-transform: uppercase;
+        margin-bottom: .45rem;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+      }
+
+      .relay-eyebrow::before {
+        content: '';
+        width: 14px;
+        height: 1px;
+        background: var(--pulse);
+        opacity: .5;
+      }
+
+      .relay-title {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+        color: var(--t1);
+        line-height: 1;
+        letter-spacing: -.02em;
+        margin-bottom: .55rem;
+      }
+
+      .relay-sub {
+        font-size: .82rem;
+        color: var(--t2);
+        max-width: 64ch;
+        line-height: 1.75;
+        margin-bottom: 1.4rem;
+      }
+
+      .data-sources-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        margin-bottom: 1.4rem;
+      }
+
+      .ds-cell { background: var(--void2); padding: 1rem 1.2rem; display: flex; flex-direction: column; gap: .4rem; }
+      .ds-source { font-family: 'Archivo Narrow', sans-serif; font-weight: 800; font-size: .8rem; letter-spacing: .07em; color: var(--t1); }
+      .ds-type   { font-family: 'Courier Prime', monospace; font-size: .56rem; color: rgba(156,111,228,.55); letter-spacing: .06em; }
+      .ds-detail { font-family: 'Courier Prime', monospace; font-size: .6rem; color: var(--t2); }
+
+      .ds-status {
+        display: flex;
+        align-items: center;
+        gap: .3rem;
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        margin-top: .3rem;
+      }
+
+      .ds-dot { width: 4px; height: 4px; border-radius: 50%; }
+      .ds-live  .ds-dot { background: var(--carbon); animation: pdot 2s infinite; }
+      .ds-plan  .ds-dot { background: var(--pulse); }
+      .ds-arch  .ds-dot { background: var(--t3); }
+      .ds-live  .ds-status { color: var(--carbon); }
+      .ds-plan  .ds-status { color: var(--pulse); }
+      .ds-arch  .ds-status { color: var(--t3); }
+
+      .relay-status-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: .4rem;
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        padding: .2rem .6rem;
+        border-radius: 2px;
+        background: rgba(156, 111, 228, .06);
+        color: var(--t2);
+        border: 1px solid rgba(156, 111, 228, .18);
+      }
+
+      /* ── PUBLIC LEDGER ───────────────────────────────────────────────── */
+      .ledger-section { border-top: 1px solid var(--border); background: var(--void2); }
+      .ledger-inner { padding: 2rem; }
+
+      .ledger-eyebrow {
+        font-family: 'Courier Prime', monospace;
+        font-size: .62rem;
+        color: var(--pulse);
+        letter-spacing: .22em;
+        text-transform: uppercase;
+        margin-bottom: .45rem;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+      }
+
+      .ledger-eyebrow::before {
+        content: '';
+        width: 14px;
+        height: 1px;
+        background: var(--pulse);
+        opacity: .5;
+      }
+
+      .ledger-title {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+        color: var(--t1);
+        line-height: 1;
+        letter-spacing: -.02em;
+        margin-bottom: .55rem;
+      }
+
+      .ledger-sub { font-size: .82rem; color: var(--t2); max-width: 64ch; line-height: 1.75; }
+
+      .ledger-table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; }
+
+      .ledger-table thead th {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        color: var(--t3);
+        font-weight: 400;
+        padding: .6rem 1rem;
+        border-bottom: 1px solid var(--border);
+        text-align: left;
+        background: var(--void2);
+      }
+
+      .ledger-table thead th:first-child { padding-left: 0; }
+
+      .ledger-row {
+        border-bottom: 1px solid rgba(156, 111, 228, .04);
+        transition: background .15s;
+      }
+
+      .ledger-row:hover { background: var(--void3); }
+
+      .ledger-row td {
+        padding: .65rem 1rem;
+        font-family: 'Courier Prime', monospace;
+        font-size: .68rem;
+        vertical-align: middle;
+      }
+
+      .ledger-row td:first-child { padding-left: 0; }
+
+      .ledger-type {
+        display: inline-flex;
+        align-items: center;
+        gap: .3rem;
+        font-size: .58rem;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        padding: .1rem .42rem;
+        border-radius: 2px;
+      }
+
+      .lt-arch   { background: rgba(156,111,228,.07);  color: var(--pulse);   border: 1px solid rgba(156,111,228,.2); }
+      .lt-data   { background: rgba(0,204,102,.07);    color: var(--carbon);  border: 1px solid rgba(0,204,102,.2); }
+      .lt-method { background: rgba(138,171,146,.05);  color: var(--t2);      border: 1px solid rgba(138,171,146,.15); }
+      .lt-market { background: rgba(72,202,228,.07);   color: var(--biodiv);  border: 1px solid rgba(72,202,228,.2); }
+
+      .ledger-event  { color: var(--t1); }
+      .ledger-source { color: var(--t2); font-size: .64rem; }
+      .ledger-ts     { color: var(--t3); font-size: .62rem; white-space: nowrap; text-align: right; }
+
+      /* ── PROOF SECTION ───────────────────────────────────────────────── */
+      .proof-section {
+        border-top: 1px solid var(--border);
+        padding: 2rem;
+        background: var(--void);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+
+      @media(max-width:700px) { .proof-section { grid-template-columns: 1fr; } }
+
+      .proof-block { display: flex; flex-direction: column; gap: .6rem; }
+      .proof-label { font-family: 'Courier Prime', monospace; font-size: .6rem; letter-spacing: .18em; text-transform: uppercase; color: var(--t3); }
+      .proof-value { font-family: 'Archivo Narrow', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--t1); line-height: 1.3; }
+      .proof-sub   { font-size: .72rem; color: var(--t2); line-height: 1.6; }
+      .proof-sub a { color: rgba(156, 111, 228, .45); text-decoration: none; }
+      .proof-sub a:hover { color: var(--pulse); }
+
+      .proof-links { display: flex; flex-direction: column; gap: .3rem; margin-top: .6rem; }
+
+      .proof-link {
+        font-family: 'Courier Prime', monospace;
+        font-size: .62rem;
+        color: rgba(156, 111, 228, .4);
+        text-decoration: none;
+        letter-spacing: .06em;
+        transition: color .18s;
+        display: flex;
+        align-items: center;
+        gap: .4rem;
+      }
+
+      .proof-link::before { content: '→'; opacity: .5; }
+      .proof-link:hover { color: var(--pulse); }
+      .proof-link:hover::before { opacity: 1; }
+
+      /* ── FOOTER ──────────────────────────────────────────────────────── */
+      .footer {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        padding: 2rem;
+        border-top: 1px solid var(--border);
+        background: var(--void2);
+      }
+
+      .footer-l {
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        color: var(--t3);
+        line-height: 1.9;
+      }
+
+      .footer-l a { color: rgba(156,111,228,.4); text-decoration: none; transition: color .18s; }
+      .footer-l a:hover { color: var(--pulse); }
+      .footer-l strong { color: var(--t2); font-weight: 700; }
+
+      .footer-nexan { font-family: 'Courier Prime', monospace; font-size: .56rem; color: var(--t3); margin-top: .5rem; }
+      .footer-nexan a { color: rgba(156,111,228,.3); text-decoration: none; transition: color .18s; }
+      .footer-nexan a:hover { color: var(--pulse); }
+
+      /* ── FLOATING ORB ────────────────────────────────────────────────── */
+      #vyr-orb {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        z-index: 8000;
+        width: 58px;
+        height: 58px;
+      }
+
+      .oo-btn {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: radial-gradient(circle at 36% 36%, rgba(156,111,228,.35), rgba(50,20,100,.7));
+        border: 1.5px solid rgba(156,111,228,.45);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: none;
+        animation: orbPulse 3s ease-in-out infinite;
+        transition: transform .2s var(--evo-motion), border-color .2s;
+      }
+
+      .oo-btn:hover {
+        transform: scale(1.12);
+        animation: none;
+        border-color: var(--pulse);
+        box-shadow: 0 0 22px rgba(156, 111, 228, .4);
+      }
+
+      @keyframes orbPulse {
+        0%  { box-shadow: 0 0 0 0  rgba(156,111,228,.5); }
+        65% { box-shadow: 0 0 0 14px rgba(156,111,228,0); }
+        100%{ box-shadow: 0 0 0 0  rgba(156,111,228,0); }
+      }
+
+      .oo-icon { font-family: 'Archivo Narrow', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--pulse); user-select: none; transition: transform .3s var(--evo-motion); }
+      .oo-btn.open .oo-icon { transform: rotate(45deg); }
+
+      .oo-tooltip {
+        position: absolute;
+        right: calc(100% + 10px);
+        top: 50%;
+        transform: translateY(-50%);
+        white-space: nowrap;
+        background: rgba(2,9,18,.94);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        padding: 5px 11px;
+        font-family: 'Courier Prime', monospace;
+        font-size: .62rem;
+        letter-spacing: .07em;
+        color: var(--t2);
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity .18s;
+      }
+
+      #vyr-orb:hover .oo-tooltip { opacity: 1; }
+
+      .oo-panel {
+        position: absolute;
+        bottom: calc(100% + 10px);
+        right: 0;
+        width: 215px;
+        background: rgba(2,9,18,.97);
+        backdrop-filter: blur(24px);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 5px;
+        opacity: 0;
+        transform: scale(.88) translateY(8px);
+        transform-origin: bottom right;
+        pointer-events: none;
+        transition: opacity .22s var(--evo-motion), transform .22s var(--evo-motion);
+        box-shadow: 0 14px 44px rgba(0,0,0,.55);
+      }
+
+      .oo-panel.open { opacity: 1; transform: scale(1) translateY(0); pointer-events: auto; }
+
+      .oo-panel-header {
+        padding: 9px 13px 7px;
+        font-family: 'Courier Prime', monospace;
+        font-size: .56rem;
+        letter-spacing: .2em;
+        color: var(--pulse);
+        text-transform: uppercase;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 4px;
+      }
+
+      .oo-link {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        padding: 9px 13px;
+        border-radius: 6px;
+        color: var(--t2);
+        font-family: 'Archivo', sans-serif;
+        font-size: .78rem;
+        transition: background .14s, color .14s;
+        cursor: none;
+        text-decoration: none;
+      }
+
+      .oo-link:hover { background: rgba(156,111,228,.07); color: var(--t1); }
+      .oo-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; background: var(--pulse); box-shadow: 0 0 5px var(--pulse); }
+      .oo-divider { height: 1px; background: var(--border); margin: 4px 8px; }
+
+      .oo-install-item {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        padding: 9px 13px;
+        border-radius: 6px;
+        color: var(--pulse);
+        font-family: 'Archivo', sans-serif;
+        font-size: .78rem;
+        transition: background .14s;
+        cursor: pointer;
+        width: 100%;
+        background: rgba(156,111,228,.05);
+        border: 1px solid rgba(156,111,228,.14);
+        margin: 3px 0;
+        text-align: left;
+        letter-spacing: .02em;
+      }
+
+      .oo-install-item:hover { background: rgba(156,111,228,.12); border-color: rgba(156,111,228,.32); }
+      .oo-install-item .oo-install-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; background: var(--pulse); box-shadow: 0 0 5px var(--pulse); animation: pdot 2.2s infinite; }
+      .oo-install-item[data-state="installed"] { color: var(--t3); border-color: transparent; background: transparent; pointer-events: none; }
+      .oo-install-item[data-state="installed"] .oo-install-dot { background: var(--t3); box-shadow: none; animation: none; }
+      .oo-install-item.pwa-unavailable { display: none !important; }
+
+      /* ── PWA BANNER ──────────────────────────────────────────────────── */
+      #pwa-banner {
+        position: fixed;
+        bottom: 102px;
+        right: 24px;
+        z-index: 7000;
+        width: 296px;
+        background: rgba(2,9,18,.97);
+        border: 1px solid rgba(156,111,228,.38);
+        border-radius: 12px;
+        padding: 1rem 1.1rem;
+        backdrop-filter: blur(28px);
+        -webkit-backdrop-filter: blur(28px);
+        box-shadow: 0 14px 44px rgba(0,0,0,.65), 0 0 0 1px rgba(156,111,228,.06), 0 0 32px rgba(156,111,228,.06);
+        transform: translateY(16px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .4s ease, transform .4s ease;
+      }
+
+      #pwa-banner.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+
+      #pwa-banner::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 2px;
+        border-radius: 12px 12px 0 0;
+        background: linear-gradient(90deg, rgba(156,111,228,.6), rgba(156,111,228,.2), transparent);
+      }
+
+      .pwa-eyebrow { font-family: 'Courier Prime', monospace; font-size: .52rem; letter-spacing: .22em; text-transform: uppercase; color: var(--pulse); margin-bottom: .4rem; display: flex; align-items: center; gap: .45rem; }
+      .pwa-eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--pulse); box-shadow: 0 0 6px var(--pulse); animation: pdot 2.2s infinite; flex-shrink: 0; }
+      .pwa-title { font-family: 'Archivo Narrow', sans-serif; font-weight: 800; font-size: 1rem; color: var(--t1); margin-bottom: .22rem; line-height: 1.1; }
+      .pwa-sub { font-family: 'Courier Prime', monospace; font-size: .58rem; color: var(--t2); line-height: 1.58; margin-bottom: .8rem; }
+      .pwa-btns { display: flex; gap: .5rem; }
+
+      .pwa-install-btn {
+        flex: 1;
+        padding: .48rem .7rem;
+        border-radius: 6px;
+        background: rgba(156,111,228,.10);
+        border: 1px solid rgba(156,111,228,.4);
+        color: var(--pulse);
+        font-family: 'Courier Prime', monospace;
+        font-size: .6rem;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background .2s, box-shadow .2s;
+        white-space: nowrap;
+      }
+
+      .pwa-install-btn:hover { background: rgba(156,111,228,.2); box-shadow: 0 0 14px rgba(156,111,228,.28); }
+
+      .pwa-dismiss-btn {
+        padding: .48rem .65rem;
+        border-radius: 6px;
+        background: transparent;
+        border: 1px solid var(--border);
+        color: var(--t3);
+        font-family: 'Courier Prime', monospace;
+        font-size: .7rem;
+        cursor: pointer;
+        transition: border-color .2s, color .2s;
+        line-height: 1;
+      }
+
+      .pwa-dismiss-btn:hover { border-color: var(--t2); color: var(--t2); }
+
+      /* ── RESPONSIVE ──────────────────────────────────────────────────── */
+      @media(max-width:720px) {
+        html { font-size: 16px !important; }
+        .nav { padding: 0 .9rem; gap: .5rem; height: 48px; }
+        .nav-links { display: none; }
+        .nc-sep { display: none; }
+        .nc-sz { width: 22px; height: 22px; font-size: .52rem; }
+        .nc-theme { font-size: .52rem; padding: .16rem .32rem; }
+        .page-header { padding: 1.8rem .9rem 1.5rem; }
+        .relay-inner, .ledger-inner, .tech-inner, .market-inner { padding: 1.4rem .9rem; }
+        .proof-section { padding: 1.4rem .9rem; gap: 1.2rem; }
+        .footer { padding: 1.4rem .9rem; gap: 1rem; }
+        .mission-grid, .ops-grid, .data-sources-grid { margin: 0 .9rem 1.4rem; }
+        .section-header { padding: 1.4rem .9rem .6rem; }
+        .dev-phase-bar { padding: .7rem .9rem; }
+        .sb-cell { min-width: 50%; border-bottom: 1px solid var(--border); }
+      }
+
+      @media(max-width:400px) {
+        .nc-sz { display: none; }
+        .ops-grid { grid-template-columns: 1fr; }
+      }
+
+      @media(hover:none) {
+        #vyr-orb .oo-tooltip { display: none; }
+        #cursor, #cursor-ring, #cursor-glow { display: none; }
+        body { cursor: auto; }
+        .nc-theme, .nc-sz, .oo-btn, .oo-link, .op-card, .pwa-install-btn, .pwa-dismiss-btn { cursor: pointer; }
+      }
+
+      @media(prefers-reduced-motion:reduce) {
+        *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- ── CUSTOM CURSOR ──────────────────────────────────────────────────── -->
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+    <div id="cursor-glow"></div>
+
+    <!-- ── NAV ───────────────────────────────────────────────────────────── -->
+    <nav class="nav">
+      <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
+      <ul class="nav-links">
+        <li><a href="https://vyrion.earth/conscience" class="nav-item">CONSCIENCE <span class="nav-tooltip">Corporate Climate Pledge Verification</span></a></li>
+        <li><a href="https://vyrion.earth/shield"     class="nav-item">SHIELD     <span class="nav-tooltip">Global Disaster Early Warning</span></a></li>
+        <li><a href="https://vyrion.earth/atlas"      class="nav-item">ATLAS      <span class="nav-tooltip">Planetary Intelligence Backbone</span></a></li>
+        <li><a href="https://vyrion.earth/root"       class="nav-item">ROOT       <span class="nav-tooltip">Terrestrial Intelligence &amp; Soil Health</span></a></li>
+        <li><a href="https://vyrion.earth/canopy"     class="nav-item">CANOPY     <span class="nav-tooltip">Reforestation Intelligence</span></a></li>
+        <li><a href="https://vyrion.earth/flux"       class="nav-item">FLUX       <span class="nav-tooltip">Clean Energy Infrastructure</span></a></li>
+        <li><a href="https://vyrion.earth/tide"       class="nav-item">TIDE       <span class="nav-tooltip">Ocean Remediation Intelligence</span></a></li>
+        <li><a href="https://vyrion.earth/loop"       class="nav-item">LOOP       <span class="nav-tooltip">Circular Economy Intelligence</span></a></li>
+        <li><a href="https://vyrion.earth/pulse"      class="nav-item active">PULSE <span class="nav-tooltip">Environmental Credit Marketplace</span></a></li>
+        <li><a href="https://vyrion.earth/record"     class="nav-item">RECORD     <span class="nav-tooltip">Weekly Intelligence Reports</span></a></li>
+        <li><a href="https://vyrion.earth/about"      class="nav-item">ABOUT      <span class="nav-tooltip">Mission &amp; Open Methodology</span></a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="nc-theme active" id="theme-btn" onclick="toggleTheme()" title="Toggle light/dark mode">◐ DARK</button>
+        <div class="nc-sep"></div>
+        <button class="nc-sz"        data-scale="0.88" onclick="setScale(this)" title="Small text">S</button>
+        <button class="nc-sz active" data-scale="1.0"  onclick="setScale(this)" title="Medium text">M</button>
+        <button class="nc-sz"        data-scale="1.22" onclick="setScale(this)" title="Large text">L</button>
+      </div>
+      <div class="nav-dot"></div>
+    </nav>
+
+    <!-- ── PAGE HEADER ────────────────────────────────────────────────────── -->
+    <header class="page-header">
+      <div class="page-header-bar"></div>
+      <canvas id="pulse-canvas"></canvas>
+      <div class="bg-word">PULSE</div>
+      <div class="eyebrow fade-in">Module 08 · Environmental Credit Marketplace · Architecture Phase</div>
+      <h1 class="page-title fade-in delay-1">Make Restoration<br><span>Economically Inevitable.</span></h1>
+      <p class="page-sub fade-in delay-2">VYRION PULSE is a tokenized marketplace for verified carbon, biodiversity, water, and soil credits. Corporations meet compliance obligations at verified quality. Governments monetize land and sea restoration. The economic engine that turns planetary accountability into planetary investment — at scale.</p>
+      <div class="header-meta fade-in delay-3">
+        <div class="hm-cell">
+          <div class="hm-label">Voluntary Carbon Market</div>
+          <div class="hm-val">$2.4B · 2023</div>
+        </div>
+        <div class="hm-cell">
+          <div class="hm-label">Compliance Carbon Markets</div>
+          <div class="hm-val amber">$909B · 2023</div>
+        </div>
+        <div class="hm-cell">
+          <div class="hm-label">Nature Credit Opportunity</div>
+          <div class="hm-val green">$1T+ by 2050</div>
+        </div>
+        <div class="hm-cell">
+          <div class="hm-label">Module Status</div>
+          <div class="hm-val cyan">Architecture Phase</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ── STATUS BANNER ──────────────────────────────────────────────────── -->
+    <div class="status-banner fade-in">
+      <div class="sb-cell">
+        <div class="sb-lbl"><span class="sb-dot green"></span>Carbon Credit Market</div>
+        <div class="sb-val green">$909B</div>
+        <div class="sb-sub">Compliance + voluntary · REFINITIV 2023</div>
+      </div>
+      <div class="sb-cell">
+        <div class="sb-lbl"><span class="sb-dot cyan"></span>Nature Credit Gap</div>
+        <div class="sb-val cyan">$700B/yr</div>
+        <div class="sb-sub">Finance needed for nature · UNEP 2023</div>
+      </div>
+      <div class="sb-cell">
+        <div class="sb-lbl"><span class="sb-dot warn"></span>VCM Quality Crisis</div>
+        <div class="sb-val amber">90%+</div>
+        <div class="sb-sub">Of carbon credits fail verification · Science 2023</div>
+      </div>
+      <div class="sb-cell">
+        <div class="sb-lbl"><span class="sb-dot"></span>Biodiversity Credits</div>
+        <div class="sb-val white">Emerging</div>
+        <div class="sb-sub">No unified global standard yet · TNFD 2024</div>
+      </div>
+      <div class="sb-cell">
+        <div class="sb-lbl"><span class="sb-dot"></span>PULSE Phase</div>
+        <div class="sb-val white">Architecture</div>
+        <div class="sb-sub">Protocol design · Tokenization spec</div>
+      </div>
+    </div>
+
+    <!-- ── DEV PHASE BANNER ───────────────────────────────────────────────── -->
+    <div class="dev-phase-bar fade-in">
+      <span class="dev-phase-tag">MODULE 08 · IN DEVELOPMENT</span>
+      <div class="dev-phase-text">
+        <strong>Architecture Defined.</strong> PULSE's four credit streams — carbon, biodiversity, water, and soil — are in tokenization design phase. The ATLAS verification backbone is architecture-complete. CONSCIENCE integration is live as the demand-side accountability layer. Open methodology published. The integrity infrastructure that the voluntary carbon market has never had.
+      </div>
+    </div>
+
+    <!-- ── MISSION BRIEF ──────────────────────────────────────────────────── -->
+    <section style="border-top:1px solid var(--border);background:var(--void)">
+      <div class="section-header">
+        <div class="section-title">Four Credit Streams · One Verified Marketplace</div>
+        <div class="section-sub">Architecture Phase · V1.0</div>
+      </div>
+      <div class="mission-grid fade-in">
+        <div class="mission-card" style="--mc-accent:var(--carbon);--mc-color:var(--carbon)">
+          <div class="mission-icon">🌿</div>
+          <div class="mission-card-label">Credit Stream 01 · Carbon</div>
+          <div class="mission-card-title">Verified Carbon Credits</div>
+          <div class="mission-card-body">PULSE issues carbon credits only for ATLAS-verified, satellite-confirmed carbon sequestration. No self-reporting. Every tonne is satellite-measured against a dynamic baseline — and every credit's geospatial proof hash is published to the VYRION Public Ledger before issuance. The credit the voluntary carbon market has always claimed to offer but never delivered.</div>
+          <div class="mission-card-stat">$909B</div>
+          <div class="mission-card-stat-label">Global carbon market 2023 · addressable</div>
+        </div>
+        <div class="mission-card" style="--mc-accent:var(--biodiv);--mc-color:var(--biodiv)">
+          <div class="mission-icon">🦋</div>
+          <div class="mission-card-label">Credit Stream 02 · Biodiversity</div>
+          <div class="mission-card-title">Nature Credit Units</div>
+          <div class="mission-card-body">Biodiversity credits backed by GBIF species abundance data, ATLAS habitat monitoring, and CANOPY reforestation verification. PULSE NCUs quantify species recovery in standardized biodiversity units — making the first tradeable, satellite-verified biodiversity credit market the world has attempted to build.</div>
+          <div class="mission-card-stat">$5B</div>
+          <div class="mission-card-stat-label">Biodiversity credit market projected 2030</div>
+        </div>
+        <div class="mission-card" style="--mc-accent:var(--water);--mc-color:var(--water)">
+          <div class="mission-icon">💧</div>
+          <div class="mission-card-label">Credit Stream 03 · Water</div>
+          <div class="mission-card-title">Water Stewardship Credits</div>
+          <div class="mission-card-body">Water stewardship credits issued for verified watershed restoration, aquifer recharge, and agricultural water efficiency. TIDE and ATLAS provide the live measurement infrastructure. PULSE converts verified litre-equivalents into standardized water stewardship units — tradeable across basins, sectors, and compliance jurisdictions.</div>
+          <div class="mission-card-stat">2.2B</div>
+          <div class="mission-card-stat-label">People in water deficit · addressable market</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── MARKET INDEX PANEL ──────────────────────────────────────────────── -->
+    <section class="market-master fade-in">
+      <div class="market-score-panel">
+        <div class="score-ring-wrap">
+          <svg viewBox="0 0 160 160" width="160" height="160">
+            <circle class="ring-track" cx="80" cy="80" r="68"/>
+            <circle class="ring-fill"  id="ring-fill" cx="80" cy="80" r="68" stroke-dasharray="427.3" stroke-dashoffset="427.3"/>
+          </svg>
+          <div class="ring-inner">
+            <div class="ring-score">38.6</div>
+            <div class="ring-denom">/ 100</div>
+            <div class="ring-label">corp. acct.</div>
+          </div>
+        </div>
+        <div style="text-align:center">
+          <div class="market-index-badge">WARNING · VYRION CONSCIENCE</div>
+          <div class="market-day-label">Corporate Accountability Score<br>PULSE demand layer — drives credit uptake</div>
+        </div>
+        <a class="proof-link" href="https://vyrion.earth/conscience" style="font-size:.6rem">Corporate accountability → CONSCIENCE</a>
+      </div>
+      <div class="market-indicators-panel fade-in delay-1">
+        <div class="ind-header">
+          <div class="ind-title">Credit Market Health Indicators</div>
+          <div class="ind-sub">Voluntary + compliance market readiness · 7 tracked variables</div>
+        </div>
+        <div class="ind-rows">
+          <div class="ind-row">
+            <div class="ind-dot" style="background:#F03030;box-shadow:0 0 5px #F03030"></div>
+            <div class="ind-name">VCM Credit Integrity</div>
+            <div class="ind-bar-bg"><div class="ind-bar-fill" style="background:#F03030" data-pct="8"></div></div>
+            <div class="ind-val" style="color:#F03030">8.0</div>
+            <div class="ind-badge b-cr">CRITICAL</div>
+          </div>
+          <div class="ind-row">
+            <div class="ind-dot" style="background:#F09000;box-shadow:0 0 5px #F09000"></div>
+            <div class="ind-name">Biodiversity Market Readiness</div>
+            <div class="ind-bar-bg"><div class="ind-bar-fill" style="background:#F09000" data-pct="18"></div></div>
+            <div class="ind-val" style="color:#F09000">18.0</div>
+            <div class="ind-badge b-wa">WARNING</div>
+          </div>
+          <div class="ind-row">
+            <div class="ind-dot" style="background:#F03030;box-shadow:0 0 5px #F03030"></div>
+            <div class="ind-name">Water Credit Standards</div>
+            <div class="ind-bar-bg"><div class="ind-bar-fill" style="background:#F03030" data-pct="14"></div></div>
+            <div class="ind-val" style="color:#F03030">14.0</div>
+            <div class="ind-badge b-cr">CRITICAL</div>
+          </div>
+          <div class="ind-row">
+            <div class="ind-dot" style="background:#F09000;box-shadow:0 0 5px #F09000"></div>
+            <div class="ind-name">Corporate Demand Signal</div>
+            <div class="ind-bar-bg"><div class="ind-bar-fill" style="background:#F09000" data-pct="42"></div></div>
+            <div class="ind-val" style="color:#F09000">42.0</div>
+            <div class="ind-badge b-wa">WARNING</div>
+          </div>
+          <div class="ind-row">
+            <div class="ind-dot" style="background:#CC9944;box-shadow:0 0 5px #CC9944"></div>
+            <div class="ind-name">Soil Carbon Verification</div>
+            <div class="ind-bar-bg"><div class="ind-bar-fill" style="background:#CC9944" data-pct="22"></div></div>
+            <div class="ind-val" style="color:#CC9944">22.0</div>
+            <div class="ind-badge b-wa">WARNING</div>
+          </div>
+          <div class="ind-row">
+            <div class="ind-dot" style="background:#9C6FE4;box-shadow:0 0 5px #9C6FE4"></div>
+            <div class="ind-name">Compliance Market Growth</div>
+            <div class="ind-bar-bg"><div class="ind-bar-fill" style="background:#9C6FE4" data-pct="58"></div></div>
+            <div class="ind-val" style="color:#9C6FE4">58.0</div>
+            <div class="ind-badge b-ot">GROWING</div>
+          </div>
+          <div class="ind-row">
+            <div class="ind-dot" style="background:#00CC66;box-shadow:0 0 5px #00CC66"></div>
+            <div class="ind-name">SBTN Corporate Commitments</div>
+            <div class="ind-bar-bg"><div class="ind-bar-fill" style="background:#00CC66" data-pct="35"></div></div>
+            <div class="ind-val" style="color:#00CC66">35.0</div>
+            <div class="ind-badge b-gr">RISING</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── OPERATIONS ARCHITECTURE ────────────────────────────────────────── -->
+    <section class="ops-section">
+      <div class="section-header">
+        <div class="section-title">PULSE Operations Architecture</div>
+        <div class="section-sub">Four credit streams · Verification · Tokenization · Exchange</div>
+      </div>
+      <div class="ops-grid fade-in">
+
+        <!-- Credit 01 — Carbon Issuance -->
+        <div class="op-card s-design" style="--oc-accent:var(--carbon)">
+          <div class="op-card-num">CREDIT STREAM 01 · CARBON</div>
+          <div class="op-card-name" style="color:var(--carbon)">SATELLITE CARBON REGISTRY</div>
+          <div class="op-card-tag tag-design">Architecture Defined</div>
+          <div class="op-card-body">PULSE-C issues carbon credits only when ATLAS TROPOMI satellite methane and CO₂ data, combined with CANOPY forest biomass monitoring, confirms verified sequestration against a dynamic satellite baseline. No methodology consulting firm required. No auditor conflict of interest. The satellite is the auditor. Every credit carries its geospatial proof hash — traceable to the square metre, to the date.</div>
+          <div class="op-card-metric">
+            <div class="op-metric">
+              <div class="op-metric-val">tCO₂e</div>
+              <div class="op-metric-lbl">Credit denomination unit</div>
+            </div>
+            <div class="op-metric">
+              <div class="op-metric-val">±2%</div>
+              <div class="op-metric-lbl">Target measurement uncertainty</div>
+            </div>
+            <div class="op-metric">
+              <div class="op-metric-val">CORSIA</div>
+              <div class="op-metric-lbl">Compliance standard aligned</div>
+            </div>
+          </div>
+          <div class="op-status">
+            <span class="op-dot"></span>Registry Architecture Defined · ATLAS Feed Live
+          </div>
+        </div>
+
+        <!-- Credit 02 — Biodiversity -->
+        <div class="op-card s-design" style="--oc-accent:var(--biodiv)">
+          <div class="op-card-num">CREDIT STREAM 02 · BIODIVERSITY</div>
+          <div class="op-card-name" style="color:var(--biodiv)">NATURE CREDIT UNIT REGISTRY</div>
+          <div class="op-card-tag tag-design">Architecture Defined</div>
+          <div class="op-card-body">PULSE-B issues Nature Credit Units (NCUs) backed by GBIF species abundance verification, ATLAS habitat patch mapping, and CANOPY reforestation species composition data. NCUs are denominated in standardised biodiversity units (SBUs) — accounting for species richness, endemic value, and recovery trajectory — and expire if ATLAS detects habitat reversal. Every living NCU is a live satellite signal.</div>
+          <div class="op-card-metric">
+            <div class="op-metric">
+              <div class="op-metric-val" style="color:var(--biodiv)">SBU</div>
+              <div class="op-metric-lbl">Standardised biodiversity unit</div>
+            </div>
+            <div class="op-metric">
+              <div class="op-metric-val" style="color:var(--biodiv)">TNFD</div>
+              <div class="op-metric-lbl">Reporting framework aligned</div>
+            </div>
+          </div>
+          <div class="op-status">
+            <span class="op-dot"></span>Schema Architecture Defined · GBIF Integration Specced
+          </div>
+        </div>
+
+        <!-- Credit 03 — Water -->
+        <div class="op-card s-research" style="--oc-accent:var(--water)">
+          <div class="op-card-num">CREDIT STREAM 03 · WATER</div>
+          <div class="op-card-name" style="color:var(--water)">WATER STEWARDSHIP REGISTRY</div>
+          <div class="op-card-tag tag-research">Research Phase</div>
+          <div class="op-card-body">PULSE-W issues water stewardship units (WSUs) for verified watershed restoration, aquifer recharge programs, and agricultural water efficiency projects measured against basin-specific baselines. TIDE and ATLAS provide the live measurement backbone — soil moisture satellite data, streamflow sensors, and atmospheric water model outputs converge on a single verified figure per project site.</div>
+          <div class="op-card-metric">
+            <div class="op-metric">
+              <div class="op-metric-val" style="color:var(--water)">WSU</div>
+              <div class="op-metric-lbl">Water stewardship unit</div>
+            </div>
+            <div class="op-metric">
+              <div class="op-metric-val" style="color:var(--water)">AWS</div>
+              <div class="op-metric-lbl">Alliance for Water Stewardship</div>
+            </div>
+          </div>
+          <div class="op-status s-research">
+            <span class="op-dot"></span>Research Phase · Basin Methodology Under Development
+          </div>
+        </div>
+
+        <!-- Credit 04 — Soil -->
+        <div class="op-card s-research" style="--oc-accent:var(--soil)">
+          <div class="op-card-num">CREDIT STREAM 04 · SOIL</div>
+          <div class="op-card-name" style="color:var(--soil)">SOIL CARBON + HEALTH REGISTRY</div>
+          <div class="op-card-tag tag-research">Research Phase</div>
+          <div class="op-card-body">PULSE-S issues soil carbon + soil health units verified through a combination of ROOT module soil sensor networks, satellite-derived soil organic carbon proxies (Sentinel-2 derived NDVI correlation), and in-situ sampling protocols. Soil credits account for permanence risk explicitly — sequestration is credited over a 10-year rolling window with automatic decay if ROOT detects degradation.</div>
+          <div class="op-card-metric">
+            <div class="op-metric">
+              <div class="op-metric-val" style="color:var(--soil)">SCU</div>
+              <div class="op-metric-lbl">Soil carbon unit</div>
+            </div>
+            <div class="op-metric">
+              <div class="op-metric-val" style="color:var(--soil)">10yr</div>
+              <div class="op-metric-lbl">Permanence window</div>
+            </div>
+          </div>
+          <div class="op-status s-research">
+            <span class="op-dot"></span>Research Phase · ROOT Module Integration Specced
+          </div>
+        </div>
+
+        <!-- Exchange Engine -->
+        <div class="op-card s-proto" style="--oc-accent:var(--pulse)">
+          <div class="op-card-num">EXCHANGE · PULSE MARKETPLACE</div>
+          <div class="op-card-name" style="color:var(--pulse)">VERIFIED CREDIT EXCHANGE</div>
+          <div class="op-card-tag tag-proto">CONSCIENCE Integrated</div>
+          <div class="op-card-body">The PULSE exchange matches corporate buyers to verified credit sellers — prioritizing credit quality tiers (satellite-verified &gt; registry-verified &gt; self-reported), geographic proximity, co-benefits alignment, and compliance deadline urgency. Every transaction is permanent on the VYRION Public Ledger. Retired credits generate CONSCIENCE score adjustment signals in real time. No double-counting. No phantom tonnes.</div>
+          <div class="op-card-metric">
+            <div class="op-metric">
+              <div class="op-metric-val" style="color:var(--pulse)">T+0</div>
+              <div class="op-metric-lbl">Settlement ledger entry</div>
+            </div>
+            <div class="op-metric">
+              <div class="op-metric-val" style="color:var(--pulse)">ICVCM</div>
+              <div class="op-metric-lbl">Core Carbon Principles aligned</div>
+            </div>
+          </div>
+          <div class="op-status s-proto">
+            <span class="op-dot"></span>CONSCIENCE Integration Live · Exchange Architecture Defined
+          </div>
+        </div>
+
+        <!-- Government Finance -->
+        <div class="op-card s-proto" style="--oc-accent:var(--pulse)">
+          <div class="op-card-num">SOVEREIGN LAYER · GOVERNMENT</div>
+          <div class="op-card-name" style="color:var(--pulse)">SOVEREIGN RESTORATION FINANCE</div>
+          <div class="op-card-tag tag-proto">ATLAS Live</div>
+          <div class="op-card-body">Governments monetize national restoration commitments through PULSE's sovereign issuance layer — NDC-backed carbon and biodiversity credits verified by ATLAS satellite monitoring. PULSE SRF turns biodiversity-rich nations' comparative advantage into a financeable asset class: protected rainforest becomes not just a carbon sink but a verified, tradeable economic resource that strengthens national accounts without extraction.</div>
+          <div class="op-card-metric">
+            <div class="op-metric">
+              <div class="op-metric-val" style="color:var(--pulse)">NDC</div>
+              <div class="op-metric-lbl">National contribution backed</div>
+            </div>
+            <div class="op-metric">
+              <div class="op-metric-val" style="color:var(--pulse)">Article 6</div>
+              <div class="op-metric-lbl">Paris Agreement aligned</div>
+            </div>
+          </div>
+          <div class="op-status s-proto">
+            <span class="op-dot"></span>Architecture Live via ATLAS · Sovereign Protocol In Design
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── MARKET GEOGRAPHY ────────────────────────────────────────────────── -->
+    <section class="market-section">
+      <div class="market-inner">
+        <div class="section-header" style="padding:0 0 1rem">
+          <div class="section-title">Priority Credit Generation &amp; Demand Zones</div>
+          <div class="section-sub">Where verified credits will be issued · Where corporate demand is concentrated</div>
+        </div>
+
+        <div class="flow-map-wrap fade-in" style="position:relative;height:220px;background:linear-gradient(180deg,rgba(8,4,18,.9) 0%,rgba(30,15,60,.7) 100%);border:1px solid var(--border);overflow:hidden;margin-bottom:1.4rem;">
+          <canvas id="map-canvas"></canvas>
+          <div class="map-label">PULSE CREDIT GEOGRAPHY · ATLAS VERIFICATION ZONES · ARCHITECTURE PHASE</div>
+          <div class="map-legend">
+            <div class="legend-item"><div class="legend-dot" style="background:var(--carbon)"></div>Carbon Gen.</div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--biodiv)"></div>Biodiversity</div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--pulse)"></div>Demand Hub</div>
+          </div>
+        </div>
+
+        <div class="hotspot-grid fade-in delay-1">
+          <div class="hotspot-card">
+            <div class="hotspot-region">
+              <div class="hotspot-dot" style="background:var(--carbon);box-shadow:0 0 6px var(--carbon)"></div>
+              <div>
+                <div class="hotspot-name">Amazon Basin Carbon Corridor</div>
+                <div class="hotspot-type">Brazil · Peru · Colombia · Priority 1 · Carbon + Biodiversity</div>
+              </div>
+            </div>
+            <div class="hotspot-body">The Amazon holds 150–200 billion tonnes of carbon in standing forest — the single largest verified carbon credit issuance opportunity on Earth. PULSE-C will issue credits against ATLAS-verified deforestation avoidance and active reforestation, replacing the unverifiable REDD+ methodology with real-time satellite confirmation. Every tonne issued traces to a satellite timestamp.</div>
+            <div class="hotspot-stats">
+              <div class="hs-stat"><div class="hs-stat-val" style="color:var(--carbon)">200Gt</div><div class="hs-stat-lbl">Carbon stored</div></div>
+              <div class="hs-stat"><div class="hs-stat-val" style="color:var(--biodiv)">10%</div><div class="hs-stat-lbl">Global biodiversity</div></div>
+              <div class="hs-stat"><div class="hs-stat-val" style="color:var(--pulse)">PLS-C01</div><div class="hs-stat-lbl">PULSE zone code</div></div>
+            </div>
+          </div>
+          <div class="hotspot-card">
+            <div class="hotspot-region">
+              <div class="hotspot-dot" style="background:var(--pulse);box-shadow:0 0 6px var(--pulse)"></div>
+              <div>
+                <div class="hotspot-name">EU Corporate Compliance Demand Hub</div>
+                <div class="hotspot-type">European Union · Priority 1 · Carbon + Biodiversity Demand</div>
+              </div>
+            </div>
+            <div class="hotspot-body">The EU Emissions Trading System (EU ETS) is the world's largest compliance carbon market — and the EU Nature Restoration Law creates the first binding biodiversity credit demand signal in history. PULSE's EU demand layer connects the bloc's corporate compliance obligations directly to verified credit supply from ATLAS-monitored projects in partner nations.</div>
+            <div class="hotspot-stats">
+              <div class="hs-stat"><div class="hs-stat-val" style="color:var(--pulse)">€830B</div><div class="hs-stat-lbl">EU ETS value 2023</div></div>
+              <div class="hs-stat"><div class="hs-stat-val" style="color:var(--biodiv)">30x30</div><div class="hs-stat-lbl">EU nature target</div></div>
+              <div class="hs-stat"><div class="hs-stat-val" style="color:var(--pulse)">PLS-D01</div><div class="hs-stat-lbl">PULSE demand zone</div></div>
+            </div>
+          </div>
+          <div class="hotspot-card">
+            <div class="hotspot-region">
+              <div class="hotspot-dot" style="background:var(--carbon);box-shadow:0 0 6px var(--carbon)"></div>
+              <div>
+                <div class="hotspot-name">Central Africa Forest + Biodiversity Zone</div>
+                <div class="hotspot-type">DRC · Cameroon · Gabon · Priority 2 · Carbon + Biodiversity</div>
+              </div>
+            </div>
+            <div class="hotspot-body">The Congo Basin is the world's second lung — 155 billion tonnes of carbon in the world's second largest tropical forest, currently underrepresented in the voluntary carbon market due to sovereign complexity and verification opacity. PULSE's satellite-first methodology removes the verification opacity. ATLAS monitors deforestation in real time; PULSE issues credits when the data is clean.</div>
+            <div class="hotspot-stats">
+              <div class="hs-stat"><div class="hs-stat-val" style="color:var(--carbon)">155Gt</div><div class="hs-stat-lbl">Carbon stored</div></div>
+              <div class="hs-stat"><div class="hs-stat-val" style="color:var(--biodiv)">8,000+</div><div class="hs-stat-lbl">Plant species</div></div>
+              <div class="hs-stat"><div class="hs-stat-val" style="color:var(--pulse)">PLS-C02</div><div class="hs-stat-lbl">PULSE zone code</div></div>
+            </div>
+          </div>
+          <div class="hotspot-card">
+            <div class="hotspot-region">
+              <div class="hotspot-dot" style="background:var(--water);box-shadow:0 0 6px var(--water)"></div>
+              <div>
+                <div class="hotspot-name">Southeast Asia Water Stewardship Belt</div>
+                <div class="hotspot-type">Mekong · Irrawaddy · Ganges Basins · Priority 2 · Water Credits</div>
+              </div>
+            </div>
+            <div class="hotspot-body">Southeast Asia's major river basins face compounding water stress — groundwater depletion, saltwater intrusion, industrial contamination, and agricultural over-extraction. The region's corporate supply chain density creates immediate demand for water stewardship credits as regulatory pressure intensifies. PULSE-W targets the largest water-stress corridors first, backed by TIDE sensor networks and ATLAS basin mapping.</div>
+            <div class="hotspot-stats">
+              <div class="hs-stat"><div class="hs-stat-val" style="color:var(--water)">700M</div><div class="hs-stat-lbl">People in stressed basins</div></div>
+              <div class="hs-stat"><div class="hs-stat-val" style="color:var(--water)">HIGH</div><div class="hs-stat-lbl">ATLAS water stress</div></div>
+              <div class="hs-stat"><div class="hs-stat-val" style="color:var(--pulse)">PLS-W01</div><div class="hs-stat-lbl">PULSE zone code</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TECHNOLOGY ARCHITECTURE ────────────────────────────────────────── -->
+    <section class="tech-section">
+      <div class="tech-inner">
+        <div class="section-header" style="padding:0 0 1.2rem">
+          <div class="section-title">Technology Stack</div>
+          <div class="section-sub">Verify · Issue · Trade · Retire · Score</div>
+        </div>
+        <div class="tech-flow fade-in">
+          <div class="tech-cell">
+            <div class="tech-step">01 · Verify</div>
+            <div class="tech-title">ATLAS Satellite Confirmation</div>
+            <div class="tech-arrow">→ confirms sequestration →</div>
+            <div class="tech-output">Geospatial hash · Baseline delta · Uncertainty bound</div>
+          </div>
+          <div class="tech-cell">
+            <div class="tech-step">02 · Issue</div>
+            <div class="tech-title">Credit Registry Engine</div>
+            <div class="tech-arrow">→ mints verified credit →</div>
+            <div class="tech-output">tCO₂e · SBU · WSU · SCU · Provenance hash</div>
+          </div>
+          <div class="tech-cell">
+            <div class="tech-step">03 · Trade</div>
+            <div class="tech-title">PULSE Exchange</div>
+            <div class="tech-arrow">→ matches buyer to seller →</div>
+            <div class="tech-output">Quality-ranked · Compliance-aligned · Instant</div>
+          </div>
+          <div class="tech-cell">
+            <div class="tech-step">04 · Retire</div>
+            <div class="tech-title">Public Ledger Settlement</div>
+            <div class="tech-arrow">→ permanent retirement record →</div>
+            <div class="tech-output">Timestamped · Immutable · Non-reversible</div>
+          </div>
+          <div class="tech-cell">
+            <div class="tech-step">05 · Score</div>
+            <div class="tech-title">CONSCIENCE Signal Update</div>
+            <div class="tech-arrow">→ adjusts corporate score →</div>
+            <div class="tech-output">Real-time · Verified · Publicly displayed</div>
+          </div>
+        </div>
+        <div class="tech-specs fade-in delay-1">
+          <div class="spec-block">
+            <div class="spec-label">Verification Architecture</div>
+            <div class="spec-value">Satellite-first · No self-reporting · ATLAS native</div>
+            <div class="spec-detail">Every PULSE credit is verified against ATLAS satellite data before issuance. The voluntary carbon market's systemic failure was delegating verification to auditors with inherent conflicts of interest. PULSE removes the auditor. ESA Sentinel-2, TROPOMI, and Landsat data are the auditors — open, reproducible, and non-negotiable.</div>
+          </div>
+          <div class="spec-block">
+            <div class="spec-label">Tokenization Architecture</div>
+            <div class="spec-value">Open standard · Non-custodial · VYRION Ledger</div>
+            <div class="spec-detail">PULSE credits are issued as open-standard tokens on the VYRION Public Ledger — not locked to any proprietary blockchain. The ledger is designed for institutional interoperability: PULSE credits can be held in compliance registries, custodied by standard financial institutions, or presented directly as evidence of retirement in CONSCIENCE reports.</div>
+          </div>
+          <div class="spec-block">
+            <div class="spec-label">Market Integrity Layer</div>
+            <div class="spec-value">Double-counting prevention · Additionality proof · Permanence monitoring</div>
+            <div class="spec-detail">PULSE's market integrity layer addresses all three structural failures of the voluntary carbon market simultaneously: double-counting (impossible — each credit has a unique satellite-verified hash), additionality (ATLAS dynamic baselines, not static estimates), and permanence (continuous ATLAS monitoring; credits auto-decay if reversal is detected).</div>
+          </div>
+          <div class="spec-block">
+            <div class="spec-label">CONSCIENCE Demand Layer</div>
+            <div class="spec-value">Real-time retirement → corporate score signal</div>
+            <div class="spec-detail">Corporate credit retirement in PULSE generates an immediate CONSCIENCE score update — removing the annual reporting lag that makes current corporate ESG claims unverifiable in real time. A company that retires 10,000 tCO₂e in PULSE sees its CONSCIENCE score update the same day. Accountability and action on the same clock.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DATA SOURCES ────────────────────────────────────────────────────── -->
+    <section class="relay-section">
+      <div class="relay-inner fade-in">
+        <div class="relay-eyebrow">Data Intelligence Layer · Source Attribution</div>
+        <h2 class="relay-title">PULSE Data Architecture</h2>
+        <p class="relay-sub">Every PULSE credit issuance is backed by named, satellite-verified, publicly auditable data sources. No proprietary baseline. No consultant methodology. All measurement is reproducible from publicly available satellite archives and open science data.</p>
+        <div class="data-sources-grid">
+          <div class="ds-cell ds-live">
+            <div class="ds-source">ESA Sentinel-2 · Sentinel-5P TROPOMI</div>
+            <div class="ds-type">→ Carbon · Methane · Forest Cover · Biomass</div>
+            <div class="ds-detail">10m resolution forest mapping · 7km methane column · 5-day revisit</div>
+            <div class="ds-status"><span class="ds-dot"></span><span style="color:var(--carbon)">Live via ATLAS</span></div>
+          </div>
+          <div class="ds-cell ds-live">
+            <div class="ds-source">GBIF · Global Biodiversity Information Facility</div>
+            <div class="ds-type">→ Species Occurrence · Abundance · Recovery</div>
+            <div class="ds-detail">2.4B species occurrence records · Open access · Peer-reviewed</div>
+            <div class="ds-status"><span class="ds-dot"></span><span style="color:var(--carbon)">Live via ATLAS</span></div>
+          </div>
+          <div class="ds-cell ds-live">
+            <div class="ds-source">Global Forest Watch · Hansen-UMD</div>
+            <div class="ds-type">→ Tree Cover Loss · Deforestation Alerts</div>
+            <div class="ds-detail">Annual global tree cover · GLAD weekly alerts · 30m resolution</div>
+            <div class="ds-status"><span class="ds-dot"></span><span style="color:var(--carbon)">Live via ATLAS</span></div>
+          </div>
+          <div class="ds-cell ds-live">
+            <div class="ds-source">NOAA / NASA GRACE-FO</div>
+            <div class="ds-type">→ Groundwater · Basin Water Storage</div>
+            <div class="ds-detail">Monthly terrestrial water storage anomalies · Basin scale · Open science</div>
+            <div class="ds-status"><span class="ds-dot"></span><span style="color:var(--carbon)">Live via ATLAS</span></div>
+          </div>
+          <div class="ds-cell ds-plan">
+            <div class="ds-source">Ecosystem Marketplace · REFINITIV</div>
+            <div class="ds-type">→ VCM Price Discovery · Transaction Volume</div>
+            <div class="ds-detail">Global carbon credit pricing · Market benchmark data</div>
+            <div class="ds-status"><span class="ds-dot"></span><span style="color:var(--pulse)">Planned Integration</span></div>
+          </div>
+          <div class="ds-cell ds-plan">
+            <div class="ds-source">Verra Registry · Gold Standard</div>
+            <div class="ds-type">→ Existing Credit Registry Interop</div>
+            <div class="ds-detail">Bridge layer for legacy VCM credit quality scoring</div>
+            <div class="ds-status"><span class="ds-dot"></span><span style="color:var(--pulse)">Planned Integration</span></div>
+          </div>
+          <div class="ds-cell ds-plan">
+            <div class="ds-source">SBTN · Science Based Targets for Nature</div>
+            <div class="ds-type">→ Corporate Nature Commitments · Demand Signal</div>
+            <div class="ds-detail">Corporate biodiversity target registrations · Sector pathways</div>
+            <div class="ds-status"><span class="ds-dot"></span><span style="color:var(--pulse)">Planned Integration</span></div>
+          </div>
+          <div class="ds-cell ds-arch">
+            <div class="ds-source">PULSE Credit Ledger API</div>
+            <div class="ds-type">→ Real-time issuance · Retirement · Pricing</div>
+            <div class="ds-detail">Future: PULSE exchange · CORS-open · Feeds CONSCIENCE + ATLAS</div>
+            <div class="ds-status"><span class="ds-dot"></span><span style="color:var(--t3)">Architecture Defined</span></div>
+          </div>
+        </div>
+        <div class="relay-status-tag">
+          <span style="color:var(--pulse)">◉</span> Architecture Defined · Verification Pipeline Specced · Source Attribution Complete
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PUBLIC LEDGER ──────────────────────────────────────────────────── -->
+    <section class="ledger-section">
+      <div class="ledger-inner fade-in">
+        <div class="ledger-eyebrow">Open Proof Protocol · PULSE Development Log</div>
+        <h2 class="ledger-title">PULSE Public Ledger</h2>
+        <p class="ledger-sub">Every architectural decision, market standard alignment, and integration milestone permanently logged. The structural basis for PULSE's market integrity claim before a single credit is issued.</p>
+        <table class="ledger-table">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Event</th>
+              <th>Source</th>
+              <th style="text-align:right">Timestamp</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="ledger-row">
+              <td><span class="ledger-type lt-data">DATA</span></td>
+              <td class="ledger-event">Global carbon market baseline — $909B compliance · $2.4B voluntary · 7 credit market health indicators established · REFINITIV 2023</td>
+              <td class="ledger-source">REFINITIV · Ecosystem Marketplace · ATLAS v2.0</td>
+              <td class="ledger-ts">2026-06-01 · 00:00 UTC</td>
+            </tr>
+            <tr class="ledger-row">
+              <td><span class="ledger-type lt-arch">ARCH</span></td>
+              <td class="ledger-event">PULSE-C (Carbon Registry) — Satellite-first verification protocol v0.1 · TROPOMI + Sentinel-2 pipeline · CORSIA alignment confirmed · Geospatial hash standard defined</td>
+              <td class="ledger-source">PULSE-ARCHITECTURE-v0.1.md · DablerFrost/Vyrion</td>
+              <td class="ledger-ts">2026-05-26 · 00:00 UTC</td>
+            </tr>
+            <tr class="ledger-row">
+              <td><span class="ledger-type lt-arch">ARCH</span></td>
+              <td class="ledger-event">PULSE-B (Biodiversity Registry) — SBU denomination standard v0.1 · GBIF integration specced · TNFD alignment confirmed · NCU expiry protocol on habitat reversal defined</td>
+              <td class="ledger-source">PULSE-ARCHITECTURE-v0.1.md · TNFD LEAP Framework reference</td>
+              <td class="ledger-ts">2026-05-22 · 00:00 UTC</td>
+            </tr>
+            <tr class="ledger-row">
+              <td><span class="ledger-type lt-arch">ARCH</span></td>
+              <td class="ledger-event">PULSE Exchange architecture — ICVCM Core Carbon Principles alignment · Double-counting prevention protocol · T+0 CONSCIENCE score update pipeline defined</td>
+              <td class="ledger-source">PULSE-EXCHANGE-v0.1.md · ICVCM CCPs reference</td>
+              <td class="ledger-ts">2026-05-18 · 00:00 UTC</td>
+            </tr>
+            <tr class="ledger-row">
+              <td><span class="ledger-type lt-market">MARKET</span></td>
+              <td class="ledger-event">Science (journal) publishes analysis — 90%+ of rainforest carbon credits issued by major certifiers fail additionality test · PULSE satellite-first methodology validated as structural solution</td>
+              <td class="ledger-source">West et al., Science 2023 · PULSE methodology alignment confirmed</td>
+              <td class="ledger-ts">2023-09-18 · public</td>
+            </tr>
+            <tr class="ledger-row">
+              <td><span class="ledger-type lt-data">DATA</span></td>
+              <td class="ledger-event">ATLAS verification backbone confirmed — TROPOMI, Sentinel-2, GBIF, GRACE-FO feeds active · PULSE credit verification pipeline architecture-complete</td>
+              <td class="ledger-source">ATLAS v2.0 · ESA · NASA · GBIF</td>
+              <td class="ledger-ts">2026-04-18 · 00:00 UTC</td>
+            </tr>
+            <tr class="ledger-row">
+              <td><span class="ledger-type lt-method">METHODOLOGY</span></td>
+              <td class="ledger-event">VYRION-PULSE-METHODOLOGY-v0.1.md — Four credit streams · Satellite verification standard · Exchange architecture · CONSCIENCE integration pathway · Prior art established</td>
+              <td class="ledger-source">GitHub commit · DablerFrost/Vyrion</td>
+              <td class="ledger-ts">2026-03-20 · 00:00 UTC</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ── PROOF SECTION ──────────────────────────────────────────────────── -->
+    <section class="proof-section fade-in">
+      <div class="proof-block">
+        <div class="proof-label">Methodology</div>
+        <div class="proof-value">"The satellite doesn't negotiate. That is precisely the point."</div>
+        <div class="proof-sub">PULSE's architecture is built on a single non-negotiable constraint: no credit is issued without satellite confirmation. The voluntary carbon market failed because it allowed self-reported baselines and consultant-verified additionality. PULSE removes both. ATLAS is the auditor. The credit integrity problem is a measurement problem — and measurement is what VYRION was built to solve.</div>
+        <div class="proof-links">
+          <a class="proof-link" href="https://github.com/DablerFrost/Vyrion/blob/main/docs/VYRION-PULSE-METHODOLOGY-v0.1.md" target="_blank" rel="noopener noreferrer">VYRION-PULSE-METHODOLOGY-v0.1.md</a>
+          <a class="proof-link" href="https://github.com/DablerFrost/Vyrion/blob/main/docs/PULSE-EXCHANGE-v0.1.md" target="_blank" rel="noopener noreferrer">PULSE-EXCHANGE-v0.1.md</a>
+          <a class="proof-link" href="https://github.com/DablerFrost/Vyrion/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener noreferrer">CHANGELOG.md</a>
+          <a class="proof-link" href="https://vyrion.earth/conscience">CONSCIENCE Demand Layer →</a>
+        </div>
+      </div>
+      <div class="proof-block">
+        <div class="proof-label">Data Sources</div>
+        <div class="proof-value">All satellite. All public. All reproducible.</div>
+        <div class="proof-sub">ESA Sentinel-2 · Sentinel-5P TROPOMI · Landsat-8/9 (USGS/NASA) · GBIF · Global Forest Watch · Hansen-UMD · NOAA GRACE-FO · Ecosystem Marketplace · REFINITIV Carbon · Verra Registry · Gold Standard · SBTN · TNFD LEAP Framework · ICVCM Core Carbon Principles · Paris Agreement Article 6<br><br>No proprietary baseline enters the PULSE verification pipeline. Every measurement is reproducible from public satellite archives. Every credit can be independently verified by any party with ATLAS API access.
+        </div>
+        <div class="proof-links">
+          <a class="proof-link" href="https://vyrion.earth/atlas">ATLAS Verification Backbone →</a>
+          <a class="proof-link" href="https://vyrion.earth/conscience">CONSCIENCE Corporate Demand →</a>
+          <a class="proof-link" href="https://vyrion.earth/about">About VYRION PBC →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FOOTER ─────────────────────────────────────────────────────────── -->
+    <footer class="footer">
+      <div class="footer-l">
+        <strong>VYRION PULSE</strong> · Module 08 · Environmental Credit Marketplace · Architecture Phase · June 2026<br>
+        <strong>VYRION PBC</strong> · Planetary Accountability Infrastructure · V2.0<br>
+        Founder: Tyler Frost / DablerFrost · Hilo, Hawaii<br>
+        <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a> · <a href="https://github.com/DablerFrost/Vyrion" target="_blank" rel="noopener noreferrer">github.com/DablerFrost/Vyrion</a><br>
+        Not financial advice. Credit values and market data are informational outputs derived from public sources.<br>
+        <a href="https://github.com/DablerFrost/Vyrion/blob/main/docs/INVESTABLE-DISCLAIMER.md" target="_blank" rel="noopener noreferrer">INVESTABLE-DISCLAIMER.md</a> · <a href="https://github.com/DablerFrost/Vyrion/blob/main/docs/VYRION-LEGAL-DISCLAIMER-v1.0.md" target="_blank" rel="noopener noreferrer">LEGAL-DISCLAIMER.md</a>
+        <div class="footer-nexan">A subsidiary of <a href="https://vyrion.earth/nexan">The Nexan Institute</a> · Behavioral infrastructure for human-AI cooperation</div>
+      </div>
+    </footer>
+
+    <!-- ── FLOATING ORB ────────────────────────────────────────────────────── -->
+    <div id="vyr-orb" aria-label="Quick navigation">
+      <div class="oo-btn" id="oo-btn" role="button" tabindex="0" aria-expanded="false" aria-controls="oo-panel">
+        <span class="oo-icon">+</span>
+      </div>
+      <span class="oo-tooltip">Navigate VYRION</span>
+      <div class="oo-panel" id="oo-panel" aria-hidden="true">
+        <div class="oo-panel-header">Quick Access</div>
+        <a class="oo-link" href="https://vyrion.earth"           onclick="oOrbClose()"><span class="oo-dot"></span> HOME </a>
+        <a class="oo-link" href="https://vyrion.earth/conscience" onclick="oOrbClose()"><span class="oo-dot"></span> CONSCIENCE </a>
+        <a class="oo-link" href="https://vyrion.earth/atlas"      onclick="oOrbClose()"><span class="oo-dot"></span> ATLAS </a>
+        <a class="oo-link" href="https://vyrion.earth/shield"     onclick="oOrbClose()"><span class="oo-dot"></span> SHIELD </a>
+        <a class="oo-link" href="https://vyrion.earth/root"       onclick="oOrbClose()"><span class="oo-dot"></span> ROOT </a>
+        <a class="oo-link" href="https://vyrion.earth/canopy"     onclick="oOrbClose()"><span class="oo-dot"></span> CANOPY </a>
+        <a class="oo-link" href="https://vyrion.earth/flux"       onclick="oOrbClose()"><span class="oo-dot"></span> FLUX </a>
+        <a class="oo-link" href="https://vyrion.earth/tide"       onclick="oOrbClose()"><span class="oo-dot"></span> TIDE </a>
+        <a class="oo-link" href="https://vyrion.earth/loop"       onclick="oOrbClose()"><span class="oo-dot"></span> LOOP </a>
+        <a class="oo-link" href="https://vyrion.earth/record"     onclick="oOrbClose()"><span class="oo-dot"></span> RECORD </a>
+        <a class="oo-link" href="https://vyrion.earth/about"      onclick="oOrbClose()"><span class="oo-dot"></span> ABOUT </a>
+        <div class="oo-divider"></div>
+        <button class="oo-install-item" id="oo-install-item" onclick="pwaInstall()">
+          <span class="oo-install-dot"></span>INSTALL APP
+        </button>
+      </div>
+    </div>
+
+    <!-- ── PWA INSTALL BANNER ──────────────────────────────────────────────── -->
+    <div id="pwa-banner" role="complementary" aria-label="Install VYRION app" aria-live="polite">
+      <div class="pwa-eyebrow"><span class="pwa-eyebrow-dot"></span>Install Available</div>
+      <div class="pwa-title">Add VYRION to Home Screen</div>
+      <div class="pwa-sub">Live credit market intelligence. Always-on verification.<br>One tap access. No browser chrome.</div>
+      <div class="pwa-btns">
+        <button class="pwa-install-btn" id="pwa-install-btn" onclick="pwaInstall()">⊕ INSTALL APP</button>
+        <button class="pwa-dismiss-btn" id="pwa-dismiss-btn" onclick="pwaDismiss()" aria-label="Dismiss install prompt">✕</button>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <script>
+      'use strict';
+
+      /* ── THEME ──────────────────────────────────────────────────────────── */
+      function toggleTheme() {
+        const html = document.documentElement;
+        const isLight = html.getAttribute('data-theme') === 'light';
+        html.setAttribute('data-theme', isLight ? 'dark' : 'light');
+        const btn = document.getElementById('theme-btn');
+        if (btn) btn.textContent = isLight ? '◐ DARK' : '◑ LIGHT';
+        try { localStorage.setItem('vc-theme', isLight ? 'dark' : 'light'); } catch(e) {}
+      }
+
+      (function() {
+        try {
+          const t = localStorage.getItem('vc-theme');
+          if (t === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            const btn = document.getElementById('theme-btn');
+            if (btn) btn.textContent = '◑ LIGHT';
+          }
+        } catch(e) {}
+      })();
+
+      /* ── FONT SCALE ─────────────────────────────────────────────────────── */
+      const FONT_SCALES = { '0.88': 16, '1.0': 18, '1.22': 22 };
+
+      function setScale(btn) {
+        document.documentElement.style.fontSize = (FONT_SCALES[btn.dataset.scale] || 18) + 'px';
+        document.querySelectorAll('.nc-sz').forEach(b => b.classList.toggle('active', b === btn));
+        try { localStorage.setItem('vc-scale', btn.dataset.scale); } catch(e) {}
+      }
+
+      (function() {
+        try {
+          const s = localStorage.getItem('vc-scale');
+          if (s && FONT_SCALES[s]) {
+            document.documentElement.style.fontSize = FONT_SCALES[s] + 'px';
+            requestAnimationFrame(() =>
+              document.querySelectorAll('.nc-sz').forEach(b =>
+                b.classList.toggle('active', b.dataset.scale === s)));
+          }
+        } catch(e) {}
+      })();
+
+      /* ── CUSTOM CURSOR ───────────────────────────────────────────────────── */
+      (function() {
+        const cur  = document.getElementById('cursor');
+        const ring = document.getElementById('cursor-ring');
+        const glow = document.getElementById('cursor-glow');
+        if (!cur || !ring || !glow) return;
+
+        let mx = 0, my = 0, rx = 0, ry = 0;
+        document.addEventListener('mousemove', e => {
+          mx = e.clientX; my = e.clientY;
+          cur.style.left  = mx + 'px'; cur.style.top  = my + 'px';
+          glow.style.left = mx + 'px'; glow.style.top = my + 'px';
+        });
+
+        function animateRing() {
+          rx += (mx - rx) * .15; ry += (my - ry) * .15;
+          ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+          requestAnimationFrame(animateRing);
+        }
+        animateRing();
+
+        document.addEventListener('mouseover', e => {
+          const t = e.target.closest('a,button,[role="button"],.op-card,.oo-link,.hotspot-card,.ds-cell');
+          if (t) { ring.style.width = '44px'; ring.style.height = '44px'; ring.style.borderColor = 'rgba(156,111,228,.9)'; cur.style.width = '5px'; cur.style.height = '5px'; }
+        });
+        document.addEventListener('mouseout', e => {
+          const t = e.target.closest('a,button,[role="button"],.op-card,.oo-link,.hotspot-card,.ds-cell');
+          if (t) { ring.style.width = '32px'; ring.style.height = '32px'; ring.style.borderColor = 'rgba(156,111,228,.5)'; cur.style.width = '8px'; cur.style.height = '8px'; }
+        });
+      })();
+
+      /* ── PULSE HEADER CANVAS — token marketplace flow ──────────────────── */
+      (function() {
+        const canvas = document.getElementById('pulse-canvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let W, H;
+
+        /* Credit token types */
+        const TOKEN_TYPES = [
+          { color: '#00CC66', label: 'C' },   /* carbon */
+          { color: '#48CAE4', label: 'B' },   /* biodiversity */
+          { color: '#0096C7', label: 'W' },   /* water */
+          { color: '#CC9944', label: 'S' },   /* soil */
+          { color: '#9C6FE4', label: '₮' },   /* pulse token */
+        ];
+
+        let tokens = [];
+        let nodes  = [];
+        let particles = [];
+        const TOKEN_COUNT    = 28;
+        const NODE_COUNT     = 6;
+        const PARTICLE_COUNT = 40;
+
+        function resize() {
+          W = canvas.width  = canvas.offsetWidth;
+          H = canvas.height = canvas.offsetHeight;
+        }
+
+        function initNodes() {
+          /* marketplace exchange nodes — fixed positions */
+          nodes = [
+            { x: W*.15, y: H*.35 },
+            { x: W*.38, y: H*.22 },
+            { x: W*.62, y: H*.22 },
+            { x: W*.85, y: H*.35 },
+            { x: W*.72, y: H*.70 },
+            { x: W*.28, y: H*.70 },
+          ];
+        }
+
+        function initTokens() {
+          tokens = Array.from({ length: TOKEN_COUNT }, (_, i) => {
+            const type = TOKEN_TYPES[i % TOKEN_TYPES.length];
+            const fromNode = nodes[Math.floor(Math.random() * nodes.length)];
+            const toNode   = nodes[Math.floor(Math.random() * nodes.length)];
+            return {
+              x: fromNode.x + (Math.random() - .5) * 60,
+              y: fromNode.y + (Math.random() - .5) * 60,
+              tx: toNode.x  + (Math.random() - .5) * 60,
+              ty: toNode.y  + (Math.random() - .5) * 60,
+              progress: Math.random(),
+              speed: .002 + Math.random() * .003,
+              color: type.color,
+              label: type.label,
+              size: 5 + Math.random() * 3,
+              pulse: Math.random() * Math.PI * 2,
+            };
+          });
+        }
+
+        function initParticles() {
+          particles = Array.from({ length: PARTICLE_COUNT }, () => ({
+            x: Math.random() * W,
+            y: Math.random() * H,
+            vx: (Math.random() - .5) * .25,
+            vy: (Math.random() - .5) * .2,
+            r: .6 + Math.random() * 1.1,
+            alpha: .1 + Math.random() * .3,
+            hue:  [275, 120, 195, 40, 35][Math.floor(Math.random() * 5)],
+            pulse: Math.random() * Math.PI * 2,
+          }));
+        }
+
+        function hexToRgb(hex) {
+          const c = hex.replace('#','');
+          return [parseInt(c.slice(0,2),16), parseInt(c.slice(2,4),16), parseInt(c.slice(4,6),16)];
+        }
+
+        function draw() {
+          ctx.clearRect(0, 0, W, H);
+          const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+          const base   = isDark ? 1 : .4;
+
+          /* grid — faint hex-like structure */
+          ctx.strokeStyle = `rgba(80,40,160,${.04 * base})`;
+          ctx.lineWidth   = .5;
+          for (let y = 0; y < H; y += 40) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
+          for (let x = 0; x < W; x += 56) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
+
+          /* draw node-to-node flow lines */
+          for (let i = 0; i < nodes.length; i++) {
+            for (let j = i + 1; j < nodes.length; j++) {
+              ctx.beginPath();
+              ctx.moveTo(nodes[i].x, nodes[i].y);
+              ctx.lineTo(nodes[j].x, nodes[j].y);
+              ctx.strokeStyle = `rgba(156,111,228,${.06 * base})`;
+              ctx.lineWidth   = .6;
+              ctx.stroke();
+            }
+          }
+
+          /* draw marketplace nodes */
+          nodes.forEach((n, ni) => {
+            const typeColor = TOKEN_TYPES[ni % TOKEN_TYPES.length].color;
+            const rgb = hexToRgb(typeColor);
+
+            /* outer ring */
+            ctx.beginPath();
+            ctx.arc(n.x, n.y, 16, 0, Math.PI * 2);
+            ctx.strokeStyle = `rgba(${rgb},${ .18 * base })`;
+            ctx.lineWidth   = 1;
+            ctx.stroke();
+
+            /* filled node */
+            ctx.beginPath();
+            ctx.arc(n.x, n.y, 8, 0, Math.PI * 2);
+            ctx.fillStyle   = `rgba(${rgb},.12)`;
+            ctx.fill();
+            ctx.strokeStyle = `rgba(${rgb},${.55 * base})`;
+            ctx.lineWidth   = 1.2;
+            ctx.stroke();
+          });
+
+          /* update + draw tokens flowing between nodes */
+          tokens.forEach(tk => {
+            tk.progress += tk.speed;
+            tk.pulse    += .025;
+
+            if (tk.progress >= 1) {
+              /* re-assign to new route */
+              tk.x  = tk.tx; tk.y = tk.ty;
+              const toNode = nodes[Math.floor(Math.random() * nodes.length)];
+              tk.tx = toNode.x + (Math.random() - .5) * 60;
+              tk.ty = toNode.y + (Math.random() - .5) * 60;
+              tk.progress = 0;
+            }
+
+            const t  = tk.progress;
+            const cx = (tk.x + tk.tx) / 2 + (Math.random() - .5) * 20;
+            const cy = (tk.y + tk.ty) / 2 - 20;
+            const px = (1-t)*(1-t)*tk.x + 2*(1-t)*t*cx + t*t*tk.tx;
+            const py = (1-t)*(1-t)*tk.y + 2*(1-t)*t*cy + t*t*tk.ty;
+
+            const g   = .6 + .4 * Math.sin(tk.pulse);
+            const rgb = hexToRgb(tk.color);
+
+            /* token glow */
+            ctx.beginPath();
+            ctx.arc(px, py, tk.size + 3 * g, 0, Math.PI * 2);
+            ctx.strokeStyle = `rgba(${rgb},${ .15 * base * g })`;
+            ctx.lineWidth   = 1;
+            ctx.stroke();
+
+            /* token body */
+            ctx.beginPath();
+            ctx.arc(px, py, tk.size * .7, 0, Math.PI * 2);
+            ctx.fillStyle   = `rgba(${rgb},.15)`;
+            ctx.fill();
+            ctx.strokeStyle = `rgba(${rgb},${.6 * base})`;
+            ctx.lineWidth   = 1;
+            ctx.stroke();
+          });
+
+          /* ambient particles */
+          particles.forEach(p => {
+            p.x += p.vx; p.y += p.vy;
+            if (p.x < -5) p.x = W + 5; if (p.x > W+5) p.x = -5;
+            if (p.y < -5) p.y = H + 5; if (p.y > H+5) p.y = -5;
+            p.pulse += .02;
+            const g = .6 + .4 * Math.sin(p.pulse);
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = `hsla(${p.hue},70%,65%,${p.alpha * g * base})`;
+            ctx.fill();
+          });
+
+          requestAnimationFrame(draw);
+        }
+
+        resize(); initNodes(); initTokens(); initParticles(); draw();
+        window.addEventListener('resize', () => { resize(); initNodes(); initTokens(); initParticles(); });
+      })();
+
+      /* ── MARKET MAP CANVAS — credit generation vs demand zones ─────────── */
+      (function() {
+        const canvas = document.getElementById('map-canvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let W, H, pulse = 0;
+
+        const ZONES = [
+          { x:.20, y:.52, label:'Amazon C+B',    color:'#00CC66', r:22, type:'supply'  },
+          { x:.45, y:.55, label:'Congo C+B',     color:'#00CC66', r:18, type:'supply'  },
+          { x:.47, y:.22, label:'EU Demand Hub', color:'#9C6FE4', r:18, type:'demand'  },
+          { x:.72, y:.35, label:'SE Asia Water', color:'#0096C7', r:14, type:'water'   },
+          { x:.27, y:.30, label:'N.Am Demand',   color:'#9C6FE4', r:16, type:'demand'  },
+          { x:.62, y:.58, label:'Mekong Water',  color:'#0096C7', r:12, type:'water'   },
+          { x:.80, y:.60, label:'AU Biodiv',     color:'#48CAE4', r:10, type:'biodiv'  },
+          { x:.55, y:.42, label:'Africa Soil',   color:'#CC9944', r:11, type:'soil'    },
+        ];
+
+        function hexToRgb(hex) {
+          const c = hex.replace('#','');
+          return [parseInt(c.slice(0,2),16), parseInt(c.slice(2,4),16), parseInt(c.slice(4,6),16)];
+        }
+
+        function resize() {
+          W = canvas.width = canvas.offsetWidth;
+          H = canvas.height = canvas.offsetHeight;
+        }
+
+        function drawContinents() {
+          const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+          ctx.strokeStyle = `rgba(120,80,200,${.09 * (isDark ? 1 : .4)})`;
+          ctx.lineWidth   = .8;
+          const shapes = [
+            [[.08,.18],[.28,.15],[.30,.28],[.22,.45],[.16,.52],[.10,.42]],
+            [[.19,.55],[.28,.52],[.28,.75],[.21,.85],[.16,.72]],
+            [[.42,.15],[.52,.13],[.54,.28],[.44,.30]],
+            [[.44,.32],[.55,.30],[.57,.65],[.48,.78],[.42,.65]],
+            [[.54,.13],[.82,.12],[.88,.30],[.78,.40],[.65,.42],[.58,.32]],
+            [[.75,.55],[.87,.52],[.88,.68],[.78,.72],[.72,.62]],
+          ];
+          shapes.forEach(pts => {
+            ctx.beginPath();
+            pts.forEach(([fx,fy],i) => i===0 ? ctx.moveTo(fx*W,fy*H) : ctx.lineTo(fx*W,fy*H));
+            ctx.closePath();
+            ctx.stroke();
+          });
+        }
+
+        function draw() {
+          ctx.clearRect(0, 0, W, H);
+          pulse += .03;
+          const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+          const a = isDark ? 1 : .55;
+
+          /* grid */
+          ctx.strokeStyle = `rgba(80,40,160,${.05*a})`; ctx.lineWidth = .5;
+          for (let y = 0; y < H; y += H/6) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
+          for (let x = 0; x < W; x += W/8) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
+
+          drawContinents();
+
+          /* supply-to-demand flow arcs */
+          const supply = ZONES.filter(z => z.type === 'supply');
+          const demand = ZONES.filter(z => z.type === 'demand');
+          supply.forEach((s, si) => {
+            demand.forEach((d, di) => {
+              const x1 = s.x*W, y1 = s.y*H;
+              const x2 = d.x*W, y2 = d.y*H;
+              const cp = { x: (x1+x2)/2, y: (y1+y2)/2 - 35 };
+              const t  = (Math.sin(pulse + si*.8 + di*.5) + 1) / 2;
+              const px = (1-t)*(1-t)*x1 + 2*(1-t)*t*cp.x + t*t*x2;
+              const py = (1-t)*(1-t)*y1 + 2*(1-t)*t*cp.y + t*t*y2;
+
+              ctx.beginPath();
+              ctx.moveTo(x1, y1);
+              ctx.quadraticCurveTo(cp.x, cp.y, x2, y2);
+              ctx.strokeStyle = `rgba(156,111,228,${.07*a})`;
+              ctx.lineWidth   = .6;
+              ctx.stroke();
+
+              ctx.beginPath();
+              ctx.arc(px, py, 2.8, 0, Math.PI * 2);
+              ctx.fillStyle = `rgba(156,111,228,${.55*a})`;
+              ctx.fill();
+            });
+          });
+
+          /* zones */
+          ZONES.forEach((z, zi) => {
+            const gx = z.x*W, gy = z.y*H;
+            const pr = .5 + .5*Math.sin(pulse + zi*.9);
+            const rgb = hexToRgb(z.color);
+
+            ctx.beginPath();
+            ctx.arc(gx, gy, z.r + 4 + pr*7, 0, Math.PI*2);
+            ctx.strokeStyle = `rgba(${rgb},${ .22*a*(1-pr*.5) })`;
+            ctx.lineWidth = 1; ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(gx, gy, z.r*.55, 0, Math.PI*2);
+            ctx.fillStyle = `rgba(${rgb},.18)`; ctx.fill();
+            ctx.strokeStyle = `rgba(${rgb},${.6*a})`; ctx.lineWidth = 1.2; ctx.stroke();
+
+            ctx.fillStyle = `rgba(${rgb},${.65*a})`;
+            ctx.font = `${Math.max(9, W/95)}px 'Courier Prime', monospace`;
+            ctx.fillText(z.label, gx + z.r*.75, gy - z.r*.3);
+          });
+
+          requestAnimationFrame(draw);
+        }
+
+        resize(); draw();
+        window.addEventListener('resize', resize);
+      })();
+
+      /* ── RING + BARS ANIMATE ─────────────────────────────────────────────── */
+      function animatePulse() {
+        setTimeout(() => {
+          document.querySelectorAll('.ind-bar-fill').forEach(el => {
+            el.style.width = (parseFloat(el.dataset.pct) || 0) + '%';
+          });
+          const fill = document.getElementById('ring-fill');
+          if (fill) fill.style.strokeDashoffset = (427.3 * (1 - 38.6 / 100)).toFixed(1);
+        }, 350);
+      }
+
+      /* ── SCROLL FADE-IN ──────────────────────────────────────────────────── */
+      (function() {
+        const obs = new IntersectionObserver(entries => {
+          entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+          });
+        }, { threshold: .07 });
+        document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+      })();
+
+      animatePulse();
+
+      /* ── ORB NAV ─────────────────────────────────────────────────────────── */
+      (function() {
+        const ooBtn   = document.getElementById('oo-btn');
+        const ooPanel = document.getElementById('oo-panel');
+
+        window.oOrbToggle = function() {
+          if (!ooBtn || !ooPanel) return;
+          const open = ooPanel.classList.toggle('open');
+          ooBtn.classList.toggle('open', open);
+          ooBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          ooPanel.setAttribute('aria-hidden', open ? 'false' : 'true');
+        };
+
+        window.oOrbClose = function() {
+          if (!ooPanel) return;
+          ooPanel.classList.remove('open');
+          if (ooBtn) { ooBtn.classList.remove('open'); ooBtn.setAttribute('aria-expanded', 'false'); }
+          ooPanel.setAttribute('aria-hidden', 'true');
+        };
+
+        if (ooBtn) ooBtn.addEventListener('click', window.oOrbToggle);
+        document.addEventListener('click', e => {
+          const orb = document.getElementById('vyr-orb');
+          if (orb && !orb.contains(e.target)) window.oOrbClose();
+        });
+        if (ooBtn) ooBtn.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.oOrbToggle(); }
+          if (e.key === 'Escape') window.oOrbClose();
+        });
+      })();
+
+      /* ── PWA INSTALL ─────────────────────────────────────────────────────── */
+      (function() {
+        'use strict';
+        var deferredPrompt = null;
+        var banner  = document.getElementById('pwa-banner');
+        var orbItem = document.getElementById('oo-install-item');
+
+        function isInstalled() {
+          return window.matchMedia('(display-mode: standalone)').matches
+              || window.matchMedia('(display-mode: fullscreen)').matches
+              || window.navigator.standalone === true;
+        }
+
+        if (isInstalled()) {
+          if (orbItem) { orbItem.setAttribute('data-state','installed'); orbItem.textContent = '✓ INSTALLED'; }
+          return;
+        }
+
+        function wasDismissed() {
+          try { return sessionStorage.getItem('vc-pwa-dismissed') === '1'; } catch(e) { return false; }
+        }
+
+        function showBanner() {
+          if (wasDismissed() || !deferredPrompt || !banner) return;
+          banner.classList.add('visible');
+          if (orbItem) orbItem.classList.remove('pwa-unavailable');
+        }
+
+        function hideBanner() { if (banner) banner.classList.remove('visible'); }
+
+        window.addEventListener('beforeinstallprompt', function(e) {
+          e.preventDefault();
+          deferredPrompt = e;
+          setTimeout(showBanner, 2200);
+          if (orbItem) orbItem.classList.remove('pwa-unavailable');
+        });
+
+        window.pwaInstall = async function() {
+          if (!deferredPrompt) {
+            const ua = navigator.userAgent.toLowerCase();
+            let msg;
+            if (/iphone|ipad|ipod/.test(ua)) msg = 'Safari on iOS:\n1. Tap Share (⬆)\n2. "Add to Home Screen"\n3. Tap "Add"';
+            else if (/android/.test(ua)) msg = 'Android:\n1. Browser menu (⋮)\n2. "Add to Home screen"\n3. Confirm';
+            else msg = 'Install VYRION:\n• Chrome/Edge: install icon (⊕) in address bar\n• Firefox: Menu → "Install"\n• Safari: Share (⬆) → "Add to Home Screen"';
+            alert(msg);
+            return;
+          }
+          hideBanner();
+          deferredPrompt.prompt();
+          const choice = await deferredPrompt.userChoice;
+          if (choice.outcome === 'accepted') {
+            deferredPrompt = null; hideBanner();
+            if (orbItem) { orbItem.setAttribute('data-state','installed'); orbItem.innerHTML = '<span class="oo-install-dot"></span> INSTALLED ✓'; orbItem.style.pointerEvents = 'none'; }
+            try { localStorage.setItem('vc-installed','1'); } catch(e) {}
+          } else {
+            try { sessionStorage.setItem('vc-pwa-dismissed','0'); } catch(e) {}
+            setTimeout(showBanner, 120000);
+          }
+        };
+
+        window.pwaDismiss = function() {
+          hideBanner();
+          try { sessionStorage.setItem('vc-pwa-dismissed','1'); } catch(e) {}
+          setTimeout(function() {
+            try { sessionStorage.removeItem('vc-pwa-dismissed'); } catch(e) {}
+            showBanner();
+          }, 300000);
+        };
+
+        window.addEventListener('appinstalled', function() {
+          deferredPrompt = null; hideBanner();
+          if (orbItem) { orbItem.setAttribute('data-state','installed'); orbItem.innerHTML = '<span class="oo-install-dot"></span> INSTALLED ✓'; orbItem.style.pointerEvents = 'none'; }
+          try { localStorage.setItem('vc-installed','1'); } catch(e) {}
+        });
+
+        if (orbItem) orbItem.classList.add('pwa-unavailable');
+      })();
+    </script>
+
+    <!-- Cloudflare Insights -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"10eb5392c70c4c4fa5452b5bbc652e0e","r":1}' crossorigin="anonymous"></script>
+  </body>
+</html>
