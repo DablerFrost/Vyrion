@@ -1,14 +1,15 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-06-17T16:27:18.178Z"
+    "generatedAt": "2026-06-18T05:22:32.010Z"
   },
   "health": {
-    "score": 90,
-    "grade": "excellent",
+    "score": 87,
+    "grade": "good",
     "issues": [
       "Schema error in: data/conscience-data.json",
-      "Schema error in: data/shield-snapshot.json"
+      "Schema error in: data/shield-snapshot.json",
+      "Script missing: fetch-conscience-data.js"
     ]
   },
   "checks": {
@@ -89,8 +90,8 @@
     "scripts": [
       {
         "script": "fetch-conscience-data.js",
-        "exists": true,
-        "status": "ok"
+        "exists": false,
+        "status": "missing"
       },
       {
         "script": "fetch-shield-data.js",
