@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VYRION — Board Room · NEXAN INSTITUTE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:  #060d1a;
+      --bg2: #0a1428;
+      --bg3: #0d1e36;
+      --primary: #00e5ff;
+      --primary-dim: rgba(0,229,255,0.08);
+      --primary-glow: rgba(0,229,255,0.3);
+      --green: #00ff88;
+      --green-dim: rgba(0,255,136,0.1);
+      --amber: #ffb020;
+      --red: #ff4d4f;
+      --text: #cde8ff;
+      --text-dim: rgba(205,232,255,0.5);
+      --text-faint: rgba(205,232,255,0.22);
+      --border: rgba(0,229,255,0.09);
+      --border-bright: rgba(0,229,255,0.25);
+      --font-d: 'Rajdhani', sans-serif;
+      --font-m: 'Space Mono', monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; overflow: hidden; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-m);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── SCANLINES ── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.015) 2px, rgba(0,0,0,0.015) 4px);
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ── HEADER ── */
+    .hdr {
+      height: 50px;
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border-bright);
+      display: flex;
+      align-items: center;
+      padding: 0 18px;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+    .hdr-live { width: 6px; height: 6px; background: var(--green); border-radius: 50%; box-shadow: 0 0 8px var(--green); animation: blink 1.8s ease-in-out infinite; }
+    .hdr-logo { font-family: var(--font-d); font-weight: 700; font-size: 17px; letter-spacing: 0.28em; color: var(--primary); text-shadow: 0 0 20px var(--primary-glow); }
+    .hdr-sep { width: 1px; height: 18px; background: var(--border-bright); }
+    .hdr-label { font-family: var(--font-d); font-size: 10px; letter-spacing: 0.18em; color: var(--text-dim); text-transform: uppercase; }
+    .hdr-right { margin-left: auto; display: flex; align-items: center; gap: 16px; }
+    .conscience-badge { display: flex; align-items: baseline; gap: 6px; }
+    .conscience-badge .lbl { font-family: var(--font-d); font-size: 9px; letter-spacing: 0.2em; color: var(--text-faint); text-transform: uppercase; }
+    .conscience-badge .val { font-family: var(--font-d); font-weight: 700; font-size: 24px; color: var(--primary); text-shadow: 0 0 16px var(--primary-glow); }
+    .members-badge { font-family: var(--font-d); font-size: 10px; letter-spacing: 0.12em; color: var(--green); }
+    .clock { font-size: 11px; color: var(--text-dim); letter-spacing: 0.06em; font-family: var(--font-m); }
+
+    /* ── MAIN GRID ── */
+    .main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 290px;
+      grid-template-rows: 1fr 1fr;
+      gap: 7px;
+      padding: 7px;
+      overflow: hidden;
+      min-height: 0;
+    }
+    .right-col {
+      grid-row: 1 / 3;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      min-height: 0;
+    }
+
+    /* ── TERMINAL ── */
+    .term {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+      min-height: 0;
+      transition: border-color 0.4s ease;
+    }
+    .term:hover { border-color: var(--border-bright); }
+    .term::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      opacity: 0.35;
+    }
+    .term-hdr {
+      padding: 7px 12px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      flex-shrink: 0;
+    }
+    .act-dot { width: 5px; height: 5px; background: var(--green); border-radius: 50%; box-shadow: 0 0 5px var(--green); animation: blink 2.2s ease-in-out infinite; flex-shrink: 0; }
+    .m-num { font-family: var(--font-d); font-size: 10px; font-weight: 700; letter-spacing: 0.15em; color: var(--primary); background: var(--primary-dim); padding: 1px 7px; border-radius: 2px; flex-shrink: 0; }
+    .m-name { font-family: var(--font-d); font-weight: 700; font-size: 12px; letter-spacing: 0.08em; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .m-role { font-family: var(--font-d); font-size: 9px; letter-spacing: 0.1em; color: var(--text-faint); margin-left: auto; flex-shrink: 0; }
+    .log-area {
+      flex: 1;
+      overflow: hidden;
+      padding: 6px 12px 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 0;
+      min-height: 0;
+    }
+    .log-line { font-size: 10px; line-height: 1.7; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; animation: fadeUp 0.35s ease; }
+    .log-line .pr { color: var(--primary); opacity: 0.5; }
+    .log-line .lt { color: var(--text-dim); }
+    .log-line.ok .lt { color: var(--green); }
+    .log-line.warn .lt { color: var(--amber); }
+    .log-line.err .lt { color: var(--red); }
+
+    /* ── CONSCIENCE PANEL ── */
+    .conscience-panel {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 14px 16px;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .conscience-panel::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      opacity: 0.5;
+    }
+    .p-title { font-family: var(--font-d); font-size: 9px; font-weight: 700; letter-spacing: 0.22em; color: var(--primary); text-transform: uppercase; margin-bottom: 8px; }
+    .big-num { font-family: var(--font-d); font-weight: 700; font-size: 54px; line-height: 1; color: var(--primary); text-shadow: 0 0 30px var(--primary-glow); letter-spacing: -2px; }
+    .idx-status { font-family: var(--font-d); font-weight: 700; font-size: 11px; letter-spacing: 0.15em; color: var(--amber); margin: 4px 0 12px; }
+    .sys-bars { display: flex; flex-direction: column; gap: 4px; }
+    .sys-row { display: flex; align-items: center; gap: 6px; }
+    .sys-name { font-size: 8px; color: var(--text-faint); width: 68px; flex-shrink: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .bar-track { flex: 1; height: 3px; background: rgba(255,255,255,0.05); border-radius: 2px; }
+    .bar-fill { height: 100%; border-radius: 2px; transition: width 1s ease; }
+    .bar-num { font-size: 8px; width: 22px; text-align: right; flex-shrink: 0; }
+
+    /* ── BOARD FEED ── */
+    .feed-panel {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+      min-height: 0;
+    }
+    .feed-panel::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      opacity: 0.35;
+    }
+    .feed-hdr { font-family: var(--font-d); font-size: 9px; font-weight: 700; letter-spacing: 0.22em; color: var(--primary); padding: 9px 14px 7px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+    .feed-body { flex: 1; padding: 8px 14px; display: flex; flex-direction: column; gap: 5px; overflow: hidden; justify-content: flex-end; min-height: 0; }
+    .feed-item { font-size: 10px; line-height: 1.5; color: var(--text-dim); animation: fadeUp 0.4s ease; }
+    .feed-item .fsender { color: var(--primary); opacity: 0.8; }
+    .feed-ts { font-size: 8px; color: var(--text-faint); margin-right: 4px; }
+
+    /* ── SHIELD FOOTER ── */
+    .shield-bar {
+      height: 32px;
+      background: var(--bg2);
+      border-top: 1px solid var(--border-bright);
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .shield-lbl {
+      flex-shrink: 0;
+      padding: 0 14px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      border-right: 1px solid var(--border-bright);
+      font-family: var(--font-d);
+      font-weight: 700;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      color: var(--red);
+    }
+    .shield-rdot { width: 5px; height: 5px; background: var(--red); border-radius: 50%; animation: blink 1s ease-in-out infinite; }
+    .shield-track { flex: 1; overflow: hidden; height: 100%; display: flex; align-items: center; }
+    .shield-scroll { white-space: nowrap; font-size: 10px; color: var(--text-dim); animation: scroll 40s linear infinite; }
+    .ev { display: inline; padding: 0 24px; }
+    .ev .et { color: var(--amber); }
+    .ev .esep { color: var(--border-bright); padding: 0 6px; }
+
+    /* ── KEYFRAMES ── */
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(3px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes scroll { 0%{transform:translateX(100%)} 100%{transform:translateX(-100%)} }
+  </style>
+</head>
+<body>
+
+  <header class="hdr">
+    <div class="hdr-live"></div>
+    <div class="hdr-logo">VYRION</div>
+    <div class="hdr-sep"></div>
+    <div class="hdr-label">Board Room · NEXAN INSTITUTE · Hilo, Hawaii HST</div>
+    <div class="hdr-right">
+      <div class="conscience-badge">
+        <span class="lbl">Conscience</span>
+        <span class="val">48.2</span>
+      </div>
+      <div class="hdr-sep"></div>
+      <div class="members-badge">6/6 Active</div>
+      <div class="hdr-sep"></div>
+      <div class="clock" id="clk">UTC 00:00:00</div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="term" id="t01">
+      <div class="term-hdr">
+        <div class="act-dot"></div>
+        <span class="m-num">01</span>
+        <span class="m-name">Dr. Amara Diallo-Osei</span>
+        <span class="m-role">CCIO</span>
+      </div>
+      <div class="log-area" id="log-01"></div>
+    </div>
+
+    <div class="term" id="t02">
+      <div class="term-hdr">
+        <div class="act-dot"></div>
+        <span class="m-num">02</span>
+        <span class="m-name">Riku Tanaka</span>
+        <span class="m-role">CVIO</span>
+      </div>
+      <div class="log-area" id="log-02"></div>
+    </div>
+
+    <div class="term" id="t03">
+      <div class="term-hdr">
+        <div class="act-dot"></div>
+        <span class="m-num">03</span>
+        <span class="m-name">Valentina Cruz-Hargreaves</span>
+        <span class="m-role">CLO</span>
+      </div>
+      <div class="log-area" id="log-03"></div>
+    </div>
+
+    <div class="right-col">
+      <div class="conscience-panel">
+        <div class="p-title">Conscience Index</div>
+        <div class="big-num">48.2</div>
+        <div class="idx-status">⚠ Under Pressure</div>
+        <div class="sys-bars" id="sys-bars"></div>
+      </div>
+      <div class="feed-panel">
+        <div class="feed-hdr">Board Feed</div>
+        <div class="feed-body" id="board-feed"></div>
+      </div>
+    </div>
+
+    <div class="term" id="t04">
+      <div class="term-hdr">
+        <div class="act-dot"></div>
+        <span class="m-num">04</span>
+        <span class="m-name">Solomon Brandt</span>
+        <span class="m-role">CPRO</span>
+      </div>
+      <div class="log-area" id="log-04"></div>
+    </div>
+
+    <div class="term" id="t05">
+      <div class="term-hdr">
+        <div class="act-dot"></div>
+        <span class="m-num">05</span>
+        <span class="m-name">Dr. Priya Vasquez-Nair</span>
+        <span class="m-role">CEIO</span>
+      </div>
+      <div class="log-area" id="log-05"></div>
+    </div>
+
+    <div class="term" id="t06">
+      <div class="term-hdr">
+        <div class="act-dot"></div>
+        <span class="m-num">06</span>
+        <span class="m-name">Marcus Chen-Webb</span>
+        <span class="m-role">CSCO</span>
+      </div>
+      <div class="log-area" id="log-06"></div>
+    </div>
+
+  </main>
+
+  <footer class="shield-bar">
+    <div class="shield-lbl"><div class="shield-rdot"></div> Shield Live</div>
+    <div class="shield-track"><div class="shield-scroll" id="sticker"></div></div>
+  </footer>
+
+<script>
+const $ = id => document.getElementById(id);
+
+// CLOCK
+(function tick() {
+  const n = new Date();
+  const p = v => String(v).padStart(2,'0');
+  $('clk').textContent = `UTC ${p(n.getUTCHours())}:${p(n.getUTCMinutes())}:${p(n.getUTCSeconds())}`;
+  setTimeout(tick, 1000);
+})();
+
+// SYSTEMS
+const SYSTEMS = [
+  { n:'Atmospheric', v:41, c:'#ff4d4f' },
+  { n:'Ocean',       v:44, c:'#ffb020' },
+  { n:'Freshwater',  v:52, c:'#ffb020' },
+  { n:'Biodiversity',v:38, c:'#ff4d4f' },
+  { n:'Land Use',    v:55, c:'#ffb020' },
+  { n:'Cryosphere',  v:39, c:'#ff4d4f' },
+  { n:'Pollution',   v:58, c:'#ffb020' },
+  { n:'Energy',      v:62, c:'#00ff88' },
+];
+const sb = $('sys-bars');
+SYSTEMS.forEach(s => {
+  const r = document.createElement('div');
+  r.className = 'sys-row';
+  r.innerHTML = `<span class="sys-name">${s.n}</span><div class="bar-track"><div class="bar-fill" style="width:${s.v}%;background:${s.c}"></div></div><span class="bar-num" style="color:${s.c}">${s.v}</span>`;
+  sb.appendChild(r);
+});
+
+// MEMBER LOGS
+const LOGS = {
+  '01': [
+    { t:'ATLAS · CO₂ 424.7ppm · Mauna Loa feed verified ✓', c:'ok' },
+    { t:'Planetary boundaries · 6 of 9 breached · narrative queued', c:'warn' },
+    { t:'Ocean pH 8.08 · below 1990 baseline · weight +0.3 applied', c:'' },
+    { t:'Cryosphere 31.4 · Greenland melt +2.1% vs Q1 · flagging', c:'warn' },
+    { t:'Freshwater stress → GRACE-FO satellite · source updated', c:'' },
+    { t:'Arctic sea ice 3.8M km² · below 81-2010 avg · flagging', c:'warn' },
+    { t:'CONSCIENCE weights · atmospheric carbon +2pts · signed', c:'ok' },
+    { t:'Richardson 2023 alignment · all 48 indicators mapped ✓', c:'ok' },
+    { t:'Biodiversity subscore 38.1 · IUCN Red List update absorbed', c:'warn' },
+    { t:'ATLAS indicator #31 · SO₂ aerosol load · source change queued', c:'' },
+    { t:'Methodology white paper · section 2 draft · 1,240 words', c:'' },
+    { t:'M6.1 CHILE · seismic cascade check on atmospheric indicators', c:'warn' },
+  ],
+  '02': [
+    { t:'corner-dec.br · border-right bug · patched · committed', c:'ok' },
+    { t:'backdrop-filter audit · 4 cards → GPU composite layer', c:'' },
+    { t:'WCAG contrast: text-dim/bg2 · 4.8:1 · AA pass ✓', c:'ok' },
+    { t:'Storybook · SystemCard.stories.tsx · draft 1 complete', c:'ok' },
+    { t:'Token audit · --primary opacity · 3 inconsistencies resolved', c:'' },
+    { t:'NEXAN interface · wireframe iteration 1 · ready for review', c:'' },
+    { t:'Sparkline canvas · 2.1ms avg render · within frame budget ✓', c:'ok' },
+    { t:'Fluid typography · clamp() replacing fixed breakpoints', c:'' },
+    { t:'EXPLAINARIUM layout · information hierarchy draft · v0.2', c:'' },
+    { t:'Design token pipeline · Figma → CSS variables · arch doc', c:'' },
+    { t:'SHIELD module UI · 14-day threat map · wireframe v0.1', c:'' },
+    { t:'Accessibility audit · focus-visible styles · 7 components queued', c:'warn' },
+  ],
+  '03': [
+    { t:'USPTO · VYRION trademark · Class 42 · application initiated', c:'ok' },
+    { t:'Terms of Service · SHIELD liability clause · v0.3 · cleared', c:'ok' },
+    { t:'CONSCIENCE · evidence chain review · 3 citations added', c:'' },
+    { t:'Climate litigation scan · 12 new EU cases · no impact', c:'' },
+    { t:'THE RECORD editorial standards · legal review complete ✓', c:'ok' },
+    { t:'EUIPO filing · reference prepared · filing next week', c:'' },
+    { t:'SHIELD disclaimer · "intelligence observation" · cleared', c:'ok' },
+    { t:'IP strategy · Classes 9, 42 priority · documented', c:'' },
+    { t:'"publicly observable outcomes" · language confirmed ✓', c:'ok' },
+    { t:'THE RECORD Issue 01 · legal read · cleared for publication', c:'ok' },
+    { t:'VYRION.earth TOS · privacy policy · draft v0.1 queued', c:'' },
+    { t:'Licensing template · Tier 2 institutional · first draft', c:'' },
+  ],
+  '04': [
+    { t:'Sendai Framework · SHIELD → Priority 1, Target B · mapped ✓', c:'ok' },
+    { t:'Tuvalu · Environment Ministry · contact drafted', c:'' },
+    { t:'Kunming-Montreal Target 15 · CANOPY alignment memo · 4pp', c:'' },
+    { t:'Paris Agreement Art.13 · VYRION positioning brief · draft 1', c:'' },
+    { t:'UNFCCC observer status · eligibility viable at Month 12', c:'' },
+    { t:'Maldives · DG Environment identified · Solomon Rasheed', c:'' },
+    { t:'Vanuatu · NDC review cycle 2026 · ATLAS directly applicable', c:'' },
+    { t:'Sendai Priority 3 crosswalk · DRR investment · complete', c:'ok' },
+    { t:'Barbados · climate ministry contact · research in progress', c:'' },
+    { t:'SHIELD sovereign pitch deck · Sendai framing · v0.1 drafted', c:'ok' },
+    { t:'COP31 agenda preview · VYRION positioning · opportunity noted', c:'' },
+    { t:'Kiribati · sea level data · ATLAS match confirmed', c:'ok' },
+  ],
+  '05': [
+    { t:'MSCI matrix · VYRION deeper on 9 of 11 indicators ✓', c:'ok' },
+    { t:'CSRD Article 8 · ROOT soil carbon → biodiversity disclosure', c:'' },
+    { t:'SEC climate rule · Fifth Circuit stay · ISSB accelerating', c:'warn' },
+    { t:'Due diligence package · Swiss Re section · 12pp · v0.2', c:'' },
+    { t:'CONSCIENCE differentiation · 340 words · finalized ✓', c:'ok' },
+    { t:'Sustainalytics gap · 847 large-caps · no Scope 3 verified', c:'warn' },
+    { t:'ISSB S2 alignment · ATLAS + FLUX → 7 of 11 disclosures', c:'' },
+    { t:'ESG methodology defense · institutional briefing ready', c:'ok' },
+    { t:'LOOP module · Scope 3 Cat.5 data use case · documented', c:'' },
+    { t:'CFA Institute · CONSCIENCE citation opportunity · identified', c:'' },
+    { t:'CSRD double-materiality · VYRION indicator mapping · started', c:'' },
+    { t:'Bloomberg ESG score comparison · gap analysis v0.1 done', c:'ok' },
+  ],
+  '06': [
+    { t:'Swiss Re · introductory email · drafted · awaiting send', c:'' },
+    { t:'Revenue model · Tier 2 $45K/yr · 3 clients = $135K ARR', c:'' },
+    { t:'Bloomberg · 3 prior ESG acquisitions analyzed · criteria mapped', c:'ok' },
+    { t:'Verisk EES · SHIELD product fit: HIGH · outreach in 60 days', c:'ok' },
+    { t:'Series A narrative · "infrastructure not startup" · slide 3', c:'' },
+    { t:'LOOP · Scope 3 Cat.5 licensing value · est. $80K/client/yr', c:'' },
+    { t:'THE RECORD subscription · $2,400/yr · 50 subs = $120K ARR', c:'' },
+    { t:'Salesforce sustainability cloud · CONSCIENCE API case built', c:'ok' },
+    { t:'Revenue milestone map · $0 → $1M → $5M ARR · drafted', c:'ok' },
+    { t:'Verisk relationship · prior transaction intelligence activated', c:'ok' },
+    { t:'Institutional data licensing tiers · v0.3 · circulating', c:'' },
+    { t:'Swiss Re · contact window identified · Thomas office', c:'' },
+  ],
+};
+
+const FEED = [
+  { s:'Amara', m:'CO₂ 424.7ppm confirmed. Flagging for narrative update.' },
+  { s:'Riku', m:'corner-dec.br patched. Design system commit pushed.' },
+  { s:'Valentina', m:'TOS v0.3 ready for review. SHIELD language cleared.' },
+  { s:'Solomon', m:'Tuvalu outreach drafted. Sendai mapping complete.' },
+  { s:'Priya', m:'Swiss Re package section 3 complete. Ready to share.' },
+  { s:'Marcus', m:'Bloomberg criteria mapped. Contact in 30 days.' },
+  { s:'Amara', m:'Cryosphere subscore revised. Greenland acceleration confirmed.' },
+  { s:'Riku', m:'NEXAN wireframe ready for review. Architecture documented.' },
+  { s:'Valentina', m:'THE RECORD Issue 01 cleared for publication. No exposure.' },
+  { s:'Solomon', m:'Maldives DG Environment identified. Outreach in prep.' },
+  { s:'Priya', m:'ISSB S2 complete. 7 of 11 required disclosures covered.' },
+  { s:'Marcus', m:'Verisk EES fit confirmed. Revenue first, acquisition second.' },
+];
+
+const SHIELD_EV = [
+  { t:'Seismic', d:'M4.8 Tonga Trench · 187km depth · below alert threshold' },
+  { t:'Wildfire', d:'NSW Australia · 2,400ha active · Class 3 · monitored' },
+  { t:'Cyclone', d:'Tropical Depression · Bay of Bengal · 85km/h · tracking' },
+  { t:'Flood', d:'Bangladesh Delta · elevated river levels · 72hr window' },
+  { t:'Seismic', d:'M3.2 California · Hayward Fault · below alert threshold' },
+  { t:'Volcanic', d:'Stromboli · SO₂ elevation detected · status: Elevated' },
+  { t:'Drought', d:'Horn of Africa · SPI-12 at −2.1 · severe · monitored' },
+  { t:'Seismic', d:'M6.1 Chile · Atacama · auto-alert triggered · monitoring' },
+];
+
+// Build SHIELD ticker
+const evHTML = SHIELD_EV.map(e =>
+  `<span class="ev"><span class="et">${e.t}</span><span class="esep">·</span>${e.d}</span>`
+).join('');
+$('sticker').innerHTML = evHTML + evHTML;
+
+// Log system
+const ptrs = {};
+const MAX = 8;
+function addLine(id, logObj) {
+  const el = $('log-' + id);
+  if (!el) return;
+  const d = document.createElement('div');
+  d.className = 'log-line' + (logObj.c ? ' ' + logObj.c : '');
+  d.innerHTML = `<span class="pr">▸ </span><span class="lt">${logObj.t}</span>`;
+  el.appendChild(d);
+  while (el.children.length > MAX) el.removeChild(el.firstChild);
+}
+
+Object.keys(LOGS).forEach(id => {
+  const init = Math.min(5, LOGS[id].length);
+  for (let i = 0; i < init; i++) addLine(id, LOGS[id][i]);
+  ptrs[id] = init;
+});
+
+function schedLog(id, ms) {
+  const logs = LOGS[id];
+  const jitter = () => ms + Math.random() * ms * 0.7;
+  setTimeout(function run() {
+    addLine(id, logs[ptrs[id] % logs.length]);
+    ptrs[id]++;
+    setTimeout(run, jitter());
+  }, jitter());
+}
+
+schedLog('01', 5200);
+schedLog('02', 4100);
+schedLog('03', 6300);
+schedLog('04', 7100);
+schedLog('05', 4700);
+schedLog('06', 5600);
+
+// Board feed
+const feedEl = $('board-feed');
+const MAX_FEED = 6;
+let fi = 0;
+function ts() {
+  const n = new Date();
+  return `${String(n.getUTCHours()).padStart(2,'0')}:${String(n.getUTCMinutes()).padStart(2,'0')}`;
+}
+for (let i = 0; i < 4; i++) {
+  const item = FEED[i];
+  const d = document.createElement('div');
+  d.className = 'feed-item';
+  d.innerHTML = `<span class="feed-ts">${ts()}</span><span class="fsender">${item.s}</span> — ${item.m}`;
+  feedEl.appendChild(d);
+}
+fi = 4;
+setInterval(() => {
+  const item = FEED[fi % FEED.length];
+  fi++;
+  const d = document.createElement('div');
+  d.className = 'feed-item';
+  d.innerHTML = `<span class="feed-ts">${ts()}</span><span class="fsender">${item.s}</span> — ${item.m}`;
+  feedEl.appendChild(d);
+  while (feedEl.children.length > MAX_FEED) feedEl.removeChild(feedEl.firstChild);
+}, 6800);
+</script>
+</body>
+</html>
