@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-06-20T14:34:28.250Z",
+    "generatedAt": "2026-06-21T05:21:50.462Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -125,7 +125,7 @@
             57.226
           ],
           "tsunami": false,
-          "significance": 1214
+          "significance": 1246
         },
         {
           "id": "nn00919749",
@@ -236,11 +236,52 @@
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Wildfires": 37,
+        "Severe Storms": 1,
         "Sea and Lake Ice": 11,
-        "Volcanoes": 2
+        "Wildfires": 37,
+        "Volcanoes": 1
       },
       "events": [
+        {
+          "id": "EONET_20606",
+          "title": "Tropical Storm Mekkhala",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC"
+          ],
+          "geometry": {
+            "magnitudeValue": 55,
+            "magnitudeUnit": "kts",
+            "date": "2026-06-21T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              133,
+              15.4
+            ]
+          }
+        },
+        {
+          "id": "EONET_6423",
+          "title": "Iceberg D33A",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 340,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-06-18T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -55.79,
+              -64.24
+            ]
+          }
+        },
         {
           "id": "EONET_20558",
           "title": "Median Wildfire, Gooding, Idaho",
@@ -800,46 +841,6 @@
               27.59925
             ]
           }
-        },
-        {
-          "id": "EONET_20444",
-          "title": "South Mountain Wildfire, Tooele, Utah",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1863,
-            "magnitudeUnit": "acres",
-            "date": "2026-06-09T00:15:00Z",
-            "type": "Point",
-            "coordinates": [
-              -112.410167,
-              40.460017
-            ]
-          }
-        },
-        {
-          "id": "EONET_20443",
-          "title": "PUTAH Wildfire, Yolo, California",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 860,
-            "magnitudeUnit": "acres",
-            "date": "2026-06-08T14:35:00Z",
-            "type": "Point",
-            "coordinates": [
-              -122.0754,
-              38.5148
-            ]
-          }
         }
       ]
     },
@@ -849,55 +850,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -0.4,
-          "surface_pressure": 1011.2,
-          "wind_speed_10m": 3.81,
-          "relative_humidity_2m": 98
+          "temperature_2m": -0.1,
+          "surface_pressure": 1011,
+          "wind_speed_10m": 2.56,
+          "relative_humidity_2m": 93
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 9.9,
-          "surface_pressure": 1018.4,
-          "wind_speed_10m": 2.18,
-          "relative_humidity_2m": 75
+          "temperature_2m": 11.8,
+          "surface_pressure": 1017.5,
+          "wind_speed_10m": 5.98,
+          "relative_humidity_2m": 72
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 24.2,
-          "surface_pressure": 917.7,
-          "wind_speed_10m": 1.57,
-          "relative_humidity_2m": 72
+          "temperature_2m": 18.6,
+          "surface_pressure": 914.2,
+          "wind_speed_10m": 1.51,
+          "relative_humidity_2m": 100
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 27.5,
-          "surface_pressure": 1013.1,
-          "wind_speed_10m": 0.47,
-          "relative_humidity_2m": 81
+          "temperature_2m": 26.5,
+          "surface_pressure": 1013,
+          "wind_speed_10m": 0.92,
+          "relative_humidity_2m": 82
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": 0.7,
-          "surface_pressure": 974.3,
-          "wind_speed_10m": 17.91,
-          "relative_humidity_2m": 93
+          "temperature_2m": -1.2,
+          "surface_pressure": 989.4,
+          "wind_speed_10m": 5.41,
+          "relative_humidity_2m": 85
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -48.2,
-          "surface_pressure": 704.9,
-          "wind_speed_10m": 8.63,
-          "relative_humidity_2m": 60
+          "temperature_2m": -45.5,
+          "surface_pressure": 705.8,
+          "wind_speed_10m": 10.59,
+          "relative_humidity_2m": 71
         }
       ]
     },
