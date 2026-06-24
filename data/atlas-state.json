@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-06-23T15:26:35.484Z",
+    "generatedAt": "2026-06-24T04:42:33.269Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -208,27 +208,47 @@
         {
           "id": "us6000t04s",
           "magnitude": 6.9,
-          "place": "26 km ENE of Calama, Chile",
-          "time": "2026-05-25T21:52:20.045Z",
+          "place": "34 km ENE of Calama, Chile",
+          "time": "2026-05-25T21:52:20.140Z",
           "coordinates": [
-            -68.6779,
-            -22.3975,
+            -68.6013,
+            -22.3667,
             109
           ],
           "tsunami": false,
-          "significance": 782
+          "significance": 783
         }
       ]
     },
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Severe Storms": 1,
-        "Sea and Lake Ice": 11,
+        "Severe Storms": 2,
+        "Sea and Lake Ice": 10,
         "Wildfires": 37,
         "Volcanoes": 1
       },
       "events": [
+        {
+          "id": "EONET_20671",
+          "title": "Tropical Storm Higos",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC"
+          ],
+          "geometry": {
+            "magnitudeValue": 30,
+            "magnitudeUnit": "kts",
+            "date": "2026-06-23T18:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              142.8,
+              14.9
+            ]
+          }
+        },
         {
           "id": "EONET_20606",
           "title": "Typhoon Mekkhala",
@@ -239,13 +259,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 110,
+            "magnitudeValue": 85,
             "magnitudeUnit": "kts",
-            "date": "2026-06-23T06:00:00Z",
+            "date": "2026-06-23T18:00:00Z",
             "type": "Point",
             "coordinates": [
               124.8,
-              19.1
+              20.2
             ]
           }
         },
@@ -808,26 +828,6 @@
               34.0465
             ]
           }
-        },
-        {
-          "id": "EONET_20447",
-          "title": "APQ Area 11 Scrub RX 0608 Prescribed Fire, Highlands, Florida",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 2000,
-            "magnitudeUnit": "acres",
-            "date": "2026-06-09T11:20:00Z",
-            "type": "Point",
-            "coordinates": [
-              -81.2536,
-              27.59925
-            ]
-          }
         }
       ]
     },
@@ -837,55 +837,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": 0.4,
-          "surface_pressure": 1007.6,
-          "wind_speed_10m": 8.35,
+          "temperature_2m": -0.2,
+          "surface_pressure": 1007.4,
+          "wind_speed_10m": 5.63,
           "relative_humidity_2m": 95
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 12.1,
-          "surface_pressure": 1016,
-          "wind_speed_10m": 7.6,
-          "relative_humidity_2m": 83
+          "temperature_2m": 11.6,
+          "surface_pressure": 1016.6,
+          "wind_speed_10m": 7.76,
+          "relative_humidity_2m": 84
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 24,
-          "surface_pressure": 915.5,
-          "wind_speed_10m": 1.98,
-          "relative_humidity_2m": 75
+          "temperature_2m": 19.3,
+          "surface_pressure": 914.1,
+          "wind_speed_10m": 1.5,
+          "relative_humidity_2m": 100
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 29.6,
-          "surface_pressure": 1011.1,
-          "wind_speed_10m": 2.72,
-          "relative_humidity_2m": 73
+          "temperature_2m": 27.3,
+          "surface_pressure": 1011.9,
+          "wind_speed_10m": 1.67,
+          "relative_humidity_2m": 80
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -0.6,
-          "surface_pressure": 979.2,
-          "wind_speed_10m": 15.11,
-          "relative_humidity_2m": 80
+          "temperature_2m": -0.8,
+          "surface_pressure": 982.9,
+          "wind_speed_10m": 20.07,
+          "relative_humidity_2m": 77
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -51.3,
-          "surface_pressure": 705.8,
-          "wind_speed_10m": 4.41,
-          "relative_humidity_2m": 64
+          "temperature_2m": -55.1,
+          "surface_pressure": 698.8,
+          "wind_speed_10m": 4.67,
+          "relative_humidity_2m": 63
         }
       ]
     },
