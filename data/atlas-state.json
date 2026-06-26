@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-06-25T15:19:13.457Z",
+    "generatedAt": "2026-06-26T04:45:50.068Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -21,7 +21,7 @@
             50.923
           ],
           "tsunami": false,
-          "significance": 796
+          "significance": 798
         },
         {
           "id": "us6000t7zp",
@@ -34,7 +34,7 @@
             10
           ],
           "tsunami": false,
-          "significance": 2395
+          "significance": 2465
         },
         {
           "id": "us6000t7zc",
@@ -177,7 +177,7 @@
             57.226
           ],
           "tsunami": false,
-          "significance": 1305
+          "significance": 1306
         },
         {
           "id": "nn00919749",
@@ -263,9 +263,9 @@
       "totalActive": 50,
       "byCategory": {
         "Severe Storms": 2,
-        "Sea and Lake Ice": 10,
+        "Sea and Lake Ice": 9,
         "Wildfires": 37,
-        "Volcanoes": 1
+        "Volcanoes": 2
       },
       "events": [
         {
@@ -278,13 +278,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 45,
+            "magnitudeValue": 50,
             "magnitudeUnit": "kts",
-            "date": "2026-06-25T06:00:00Z",
+            "date": "2026-06-25T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              135.5,
-              19.7
+              134.1,
+              22.4
             ]
           }
         },
@@ -298,13 +298,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 50,
+            "magnitudeValue": 40,
             "magnitudeUnit": "kts",
-            "date": "2026-06-25T06:00:00Z",
+            "date": "2026-06-25T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              126,
-              24.8
+              126.6,
+              26.8
             ]
           }
         },
@@ -545,6 +545,26 @@
             "coordinates": [
               -112.2032,
               36.9157
+            ]
+          }
+        },
+        {
+          "id": "EONET_20710",
+          "title": "Nevados del Chillan Volcano, Chile",
+          "categories": [
+            "Volcanoes"
+          ],
+          "sources": [
+            "SIVolcano"
+          ],
+          "geometry": {
+            "magnitudeValue": null,
+            "magnitudeUnit": null,
+            "date": "2026-06-15T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -71.378,
+              -36.868
             ]
           }
         },
@@ -847,26 +867,6 @@
               42.659167
             ]
           }
-        },
-        {
-          "id": "EONET_20521",
-          "title": "Bear Wildfire, Catron, New Mexico",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 6920,
-            "magnitudeUnit": "acres",
-            "date": "2026-06-09T17:45:00Z",
-            "type": "Point",
-            "coordinates": [
-              -108.292667,
-              34.0465
-            ]
-          }
         }
       ]
     },
@@ -876,55 +876,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": 0.3,
-          "surface_pressure": 1006.2,
-          "wind_speed_10m": 5.74,
-          "relative_humidity_2m": 95
+          "temperature_2m": -0.1,
+          "surface_pressure": 1008.1,
+          "wind_speed_10m": 1.61,
+          "relative_humidity_2m": 99
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 11.6,
-          "surface_pressure": 1024.2,
-          "wind_speed_10m": 5.87,
-          "relative_humidity_2m": 81
+          "temperature_2m": 13.4,
+          "surface_pressure": 1009.4,
+          "wind_speed_10m": 15.47,
+          "relative_humidity_2m": 88
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 25.2,
-          "surface_pressure": 917.1,
-          "wind_speed_10m": 2.52,
-          "relative_humidity_2m": 66
+          "temperature_2m": 19.7,
+          "surface_pressure": 915.4,
+          "wind_speed_10m": 2.28,
+          "relative_humidity_2m": 96
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 29.5,
-          "surface_pressure": 1011,
-          "wind_speed_10m": 3.97,
-          "relative_humidity_2m": 77
+          "temperature_2m": 28.8,
+          "surface_pressure": 1010.9,
+          "wind_speed_10m": 5.06,
+          "relative_humidity_2m": 79
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": 1,
-          "surface_pressure": 968.6,
-          "wind_speed_10m": 14.76,
-          "relative_humidity_2m": 90
+          "temperature_2m": -0.3,
+          "surface_pressure": 968.1,
+          "wind_speed_10m": 16.59,
+          "relative_humidity_2m": 77
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -56.6,
-          "surface_pressure": 700.9,
-          "wind_speed_10m": 7.54,
-          "relative_humidity_2m": 59
+          "temperature_2m": -54.7,
+          "surface_pressure": 708.2,
+          "wind_speed_10m": 8.35,
+          "relative_humidity_2m": 69
         }
       ]
     },
