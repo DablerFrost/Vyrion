@@ -1,18 +1,18 @@
 {
   "meta": {
-    "generated": "2026-06-26T04:36:03.032Z",
+    "generated": "2026-06-26T14:45:29.908Z",
     "generated_date": "2026-06-26",
     "script_version": "1.1",
     "window_days": 14,
     "window_start": "2026-06-12",
     "window_end": "2026-06-26",
-    "runtime_ms": 695,
+    "runtime_ms": 676,
     "seismic_live": true,
-    "eonet_live": true
+    "eonet_live": false
   },
   "threat": {
     "level": "CRITICAL",
-    "score": 30
+    "score": 21.5
   },
   "seismic": {
     "events": [
@@ -65,6 +65,14 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000stti"
       },
       {
+        "id": "us6000t8ec",
+        "magnitude": 6.5,
+        "place": "34 km WSW of Sarangani, Philippines",
+        "time": "2026-06-26T11:34:41.498Z",
+        "depth_km": 42,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8ec"
+      },
+      {
         "id": "us7000stbz",
         "magnitude": 6.3,
         "place": "260 km SSE of Dunhuang, China",
@@ -91,9 +99,9 @@
       {
         "id": "us6000t8cy",
         "magnitude": 5.8,
-        "place": "4 km SSE of Yokoshiba, Japan",
-        "time": "2026-06-26T03:46:37.180Z",
-        "depth_km": 55.6,
+        "place": "3 km SE of Yokoshiba, Japan",
+        "time": "2026-06-26T03:46:35.803Z",
+        "depth_km": 43,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8cy"
       },
       {
@@ -111,6 +119,14 @@
         "time": "2026-06-19T07:52:57.734Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000suii"
+      },
+      {
+        "id": "us6000t8fe",
+        "magnitude": 5.7,
+        "place": "7 km N of Oshino, Japan",
+        "time": "2026-06-26T13:29:01.877Z",
+        "depth_km": 50.9,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8fe"
       },
       {
         "id": "us7000sury",
@@ -225,6 +241,22 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000su9f"
       },
       {
+        "id": "us6000t8ey",
+        "magnitude": 5.2,
+        "place": "7 km NE of Villa El Carmen, Nicaragua",
+        "time": "2026-06-26T11:57:25.458Z",
+        "depth_km": 120.5,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8ey"
+      },
+      {
+        "id": "us6000t8ei",
+        "magnitude": 5.2,
+        "place": "52 km NNE of Barkhan, Pakistan",
+        "time": "2026-06-26T11:48:47.037Z",
+        "depth_km": 10,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8ei"
+      },
+      {
         "id": "us6000t7ll",
         "magnitude": 5.2,
         "place": "265 km SSE of Dunhuang, China",
@@ -303,6 +335,14 @@
         "time": "2026-06-12T19:10:03.582Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ssje"
+      },
+      {
+        "id": "us6000t8di",
+        "magnitude": 5.1,
+        "place": "south of the Kermadec Islands",
+        "time": "2026-06-26T06:18:59.942Z",
+        "depth_km": 10,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8di"
       },
       {
         "id": "us6000t815",
@@ -745,14 +785,6 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ssir"
       },
       {
-        "id": "us7000ssg4",
-        "magnitude": 4.9,
-        "place": "10 km SW of Qutqashen, Azerbaijan",
-        "time": "2026-06-12T11:13:11.592Z",
-        "depth_km": 58.3,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ssg4"
-      },
-      {
         "id": "us6000t83p",
         "magnitude": 4.8,
         "place": "39 km NE of Kuji, Japan",
@@ -985,28 +1017,12 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ssqq"
       },
       {
-        "id": "us7000ssfk",
-        "magnitude": 4.8,
-        "place": "southern East Pacific Rise",
-        "time": "2026-06-12T08:59:34.092Z",
+        "id": "us6000t8dg",
+        "magnitude": 4.7,
+        "place": "49 km NE of Barkhan, Pakistan",
+        "time": "2026-06-26T05:57:52.671Z",
         "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ssfk"
-      },
-      {
-        "id": "us7000ssfb",
-        "magnitude": 4.8,
-        "place": "203 km S of Severo-Kuril’sk, Russia",
-        "time": "2026-06-12T08:15:14.131Z",
-        "depth_km": 42.9,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ssfb"
-      },
-      {
-        "id": "us7000ssen",
-        "magnitude": 4.8,
-        "place": "47 km SSW of Lumatil, Philippines",
-        "time": "2026-06-12T05:14:45.149Z",
-        "depth_km": 57.4,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ssen"
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8dg"
       },
       {
         "id": "us6000t84x",
@@ -1217,12 +1233,20 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sshz"
       },
       {
-        "id": "us7000ssgt",
-        "magnitude": 4.7,
-        "place": "132 km NW of Malango, Solomon Islands",
-        "time": "2026-06-12T14:20:45.314Z",
+        "id": "us6000t8ed",
+        "magnitude": 4.6,
+        "place": "66 km S of Panguna, Papua New Guinea",
+        "time": "2026-06-26T11:32:45.723Z",
+        "depth_km": 35,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8ed"
+      },
+      {
+        "id": "us6000t8dx",
+        "magnitude": 4.6,
+        "place": "162 km E of Beauséjour, Guadeloupe",
+        "time": "2026-06-26T08:23:04.558Z",
         "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ssgt"
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8dx"
       },
       {
         "id": "us6000t7wm",
@@ -1439,14 +1463,6 @@
         "time": "2026-06-13T08:48:38.875Z",
         "depth_km": 59,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ssnf"
-      },
-      {
-        "id": "us7000sses",
-        "magnitude": 4.6,
-        "place": "Fiji region",
-        "time": "2026-06-12T05:42:07.779Z",
-        "depth_km": 552.9,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sses"
       },
       {
         "id": "us6000t80d",
@@ -1759,27 +1775,11 @@
         "time": "2026-06-12T14:52:30.029Z",
         "depth_km": 581.1,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ssh2"
-      },
-      {
-        "id": "us7000ssgf",
-        "magnitude": 4.5,
-        "place": "6 km SSE of Pangyan, Philippines",
-        "time": "2026-06-12T12:47:39.276Z",
-        "depth_km": 54.6,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ssgf"
-      },
-      {
-        "id": "us7000ssf6",
-        "magnitude": 4.5,
-        "place": "south of the Fiji Islands",
-        "time": "2026-06-12T07:18:13.497Z",
-        "depth_km": 535.3,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ssf6"
       }
     ],
     "count_total": 220,
-    "count_m55_plus": 18,
-    "count_m60_plus": 9,
+    "count_m55_plus": 20,
+    "count_m60_plus": 10,
     "count_m70_plus": 2,
     "count_m80_plus": 0,
     "largest": {
@@ -1793,289 +1793,10 @@
     "source": "USGS Earthquake Hazards Program",
     "url": "https://earthquake.usgs.gov/",
     "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-    "retrieved": "2026-06-26T04:36:02.608Z"
+    "retrieved": "2026-06-26T14:45:29.345Z"
   },
-  "wildfire": {
-    "events": [
-      {
-        "id": "EONET_20558",
-        "title": "Median Wildfire, Gooding, Idaho",
-        "type": "WILDFIRE",
-        "time": "2026-06-17T13:57:00.000Z",
-        "coords": [
-          -114.768,
-          42.806
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20565",
-        "title": "TRAIL 13 (09) Wildfire, Citrus, Florida",
-        "type": "WILDFIRE",
-        "time": "2026-06-16T23:57:00.000Z",
-        "coords": [
-          -82.419,
-          28.799
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20560",
-        "title": "Kartar Wildfire, Okanogan, Washington",
-        "type": "WILDFIRE",
-        "time": "2026-06-16T23:43:00.000Z",
-        "coords": [
-          -119.39,
-          48.25
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20562",
-        "title": "Omak Lake Road Wildfire, Okanogan, Washington",
-        "type": "WILDFIRE",
-        "time": "2026-06-16T22:53:00.000Z",
-        "coords": [
-          -119.411,
-          48.275
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20559",
-        "title": "Old Emigrant Wildfire, Umatilla, Oregon",
-        "type": "WILDFIRE",
-        "time": "2026-06-16T16:43:00.000Z",
-        "coords": [
-          -118.615,
-          45.617
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20561",
-        "title": "Sawmill Wildfire, Iron, Utah",
-        "type": "WILDFIRE",
-        "time": "2026-06-16T16:11:00.000Z",
-        "coords": [
-          -113.706,
-          38.092
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20567",
-        "title": "QUARRY 2 (13) Wildfire, Miami-Dade, Florida",
-        "type": "WILDFIRE",
-        "time": "2026-06-15T22:51:00.000Z",
-        "coords": [
-          -80.423,
-          25.812
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20569",
-        "title": "Dellenbaugh Wildfire, Mohave, Arizona",
-        "type": "WILDFIRE",
-        "time": "2026-06-15T18:32:00.000Z",
-        "coords": [
-          -113.535,
-          36.075
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20570",
-        "title": "APQ Area 5A RX 0615 Prescribed Fire, Polk, Florida",
-        "type": "WILDFIRE",
-        "time": "2026-06-15T18:30:00.000Z",
-        "coords": [
-          -81.331,
-          27.721
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20564",
-        "title": "SHORE Wildfire, Riverside, California",
-        "type": "WILDFIRE",
-        "time": "2026-06-15T18:24:00.000Z",
-        "coords": [
-          -117.104,
-          33.977
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20566",
-        "title": "Rock Canyon Wildfire, Coconino, Arizona",
-        "type": "WILDFIRE",
-        "time": "2026-06-15T17:00:00.000Z",
-        "coords": [
-          -112.203,
-          36.916
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20520",
-        "title": "Green Gate (26) Wildfire, Hendry, Florida",
-        "type": "WILDFIRE",
-        "time": "2026-06-14T19:39:00.000Z",
-        "coords": [
-          -81.166,
-          26.367
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20523",
-        "title": "MIDNIGHT FIRE (53) Wildfire, Polk, Florida",
-        "type": "WILDFIRE",
-        "time": "2026-06-14T17:18:00.000Z",
-        "coords": [
-          -81.943,
-          27.715
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20516",
-        "title": "4170 Tule Rd Wildfire, Yakima, Washington",
-        "type": "WILDFIRE",
-        "time": "2026-06-14T16:30:00.000Z",
-        "coords": [
-          -120.314,
-          46.276
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20513",
-        "title": "Rookery Wildfire, Volusia, Florida",
-        "type": "WILDFIRE",
-        "time": "2026-06-14T10:57:00.000Z",
-        "coords": [
-          -81.427,
-          29.078
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20571",
-        "title": "TWIN SISTERS Wildfire, Walla Walla, Washington",
-        "type": "WILDFIRE",
-        "time": "2026-06-14T10:26:00.000Z",
-        "coords": [
-          -118.91,
-          46.057
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20517",
-        "title": "JUNIPER DUNES Wildfire, Franklin, Washington",
-        "type": "WILDFIRE",
-        "time": "2026-06-14T10:25:00.000Z",
-        "coords": [
-          -118.896,
-          46.346
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20519",
-        "title": "WYLY Wildfire, Kern, California",
-        "type": "WILDFIRE",
-        "time": "2026-06-13T17:54:00.000Z",
-        "coords": [
-          -118.634,
-          35.264
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20518",
-        "title": "SNAKE RIVER Wildfire, Whitman, Washington",
-        "type": "WILDFIRE",
-        "time": "2026-06-13T10:37:00.000Z",
-        "coords": [
-          -117.191,
-          46.432
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20522",
-        "title": "Kilolitna Wildfire, Yukon-Koyukuk, Alaska",
-        "type": "WILDFIRE",
-        "time": "2026-06-12T12:12:00.000Z",
-        "coords": [
-          -151.806,
-          66.048
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20524",
-        "title": "Unit 16/20 Rx Prescribed Fire, Bibb, Alabama",
-        "type": "WILDFIRE",
-        "time": "2026-06-12T11:08:00.000Z",
-        "coords": [
-          -87.048,
-          33.063
-        ],
-        "closed": null
-      }
-    ],
-    "count": 21
-  },
-  "storm": {
-    "events": [
-      {
-        "id": "EONET_20671",
-        "title": "Tropical Storm Higos",
-        "type": "STORM",
-        "time": "2026-06-23T00:00:00.000Z",
-        "coords": [
-          145.7,
-          14.7
-        ],
-        "closed": null
-      },
-      {
-        "id": "EONET_20606",
-        "title": "Typhoon Mekkhala",
-        "type": "STORM",
-        "time": "2026-06-19T12:00:00.000Z",
-        "coords": [
-          140,
-          13.7
-        ],
-        "closed": null
-      }
-    ],
-    "count": 2
-  },
-  "flood": {
-    "events": [],
-    "count": 0
-  },
-  "volcanic": {
-    "events": [
-      {
-        "id": "EONET_20710",
-        "title": "Nevados del Chillan Volcano, Chile",
-        "type": "VOLCANIC",
-        "time": "2026-06-15T00:00:00.000Z",
-        "coords": [
-          -71.378,
-          -36.868
-        ],
-        "closed": null
-      }
-    ],
-    "count": 1
-  }
+  "wildfire": null,
+  "storm": null,
+  "flood": null,
+  "volcanic": null
 }
