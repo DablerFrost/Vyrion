@@ -1,13 +1,13 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-06-27T14:09:31.860Z",
+    "generatedAt": "2026-06-28T04:56:11.339Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 21,
+      "count": 20,
       "maxMagnitude": 7.8,
       "events": [
         {
@@ -21,7 +21,7 @@
             47
           ],
           "tsunami": false,
-          "significance": 658
+          "significance": 671
         },
         {
           "id": "us6000t8ec",
@@ -60,7 +60,7 @@
             10
           ],
           "tsunami": false,
-          "significance": 2502
+          "significance": 2529
         },
         {
           "id": "us6000t7zc",
@@ -275,12 +275,32 @@
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Severe Storms": 2,
         "Sea and Lake Ice": 9,
+        "Severe Storms": 2,
         "Wildfires": 37,
         "Volcanoes": 2
       },
       "events": [
+        {
+          "id": "EONET_6051",
+          "title": "Iceberg C39",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 24,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-06-25T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              64.84,
+              -66.81
+            ]
+          }
+        },
         {
           "id": "EONET_20671",
           "title": "Tropical Storm Higos",
@@ -313,11 +333,11 @@
           "geometry": {
             "magnitudeValue": 40,
             "magnitudeUnit": "kts",
-            "date": "2026-06-27T06:00:00Z",
+            "date": "2026-06-27T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              135.8,
-              32.7
+              141.4,
+              35.5
             ]
           }
         },
@@ -791,13 +811,13 @@
             "NATICE"
           ],
           "geometry": {
-            "magnitudeValue": 105,
+            "magnitudeValue": 45,
             "magnitudeUnit": "NM^2",
-            "date": "2026-06-12T00:00:00Z",
+            "date": "2026-06-25T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -54.73,
-              -64.32
+              -54.21,
+              -63.63
             ]
           }
         },
@@ -813,11 +833,11 @@
           "geometry": {
             "magnitudeValue": 98,
             "magnitudeUnit": "NM^2",
-            "date": "2026-06-12T00:00:00Z",
+            "date": "2026-06-25T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              177.7,
-              -67.6
+              178.27,
+              -66.75
             ]
           }
         },
@@ -860,26 +880,6 @@
               38.925944
             ]
           }
-        },
-        {
-          "id": "EONET_20442",
-          "title": "South Fork Wildfire, Sioux, Nebraska",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 8989,
-            "magnitudeUnit": "acres",
-            "date": "2026-06-09T20:08:00Z",
-            "type": "Point",
-            "coordinates": [
-              -103.638333,
-              42.659167
-            ]
-          }
         }
       ]
     },
@@ -889,55 +889,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -0.4,
-          "surface_pressure": 1008.3,
-          "wind_speed_10m": 3.31,
-          "relative_humidity_2m": 96
+          "temperature_2m": 0.1,
+          "surface_pressure": 1011.1,
+          "wind_speed_10m": 2.31,
+          "relative_humidity_2m": 94
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 11.8,
-          "surface_pressure": 1014.8,
-          "wind_speed_10m": 15.01,
-          "relative_humidity_2m": 84
+          "temperature_2m": 12.2,
+          "surface_pressure": 1018.4,
+          "wind_speed_10m": 10.36,
+          "relative_humidity_2m": 88
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 24.3,
-          "surface_pressure": 917.4,
-          "wind_speed_10m": 2.35,
-          "relative_humidity_2m": 72
+          "temperature_2m": 19.7,
+          "surface_pressure": 915.6,
+          "wind_speed_10m": 1.54,
+          "relative_humidity_2m": 99
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 29.7,
-          "surface_pressure": 1010.3,
-          "wind_speed_10m": 2.91,
-          "relative_humidity_2m": 73
+          "temperature_2m": 28.4,
+          "surface_pressure": 1010.7,
+          "wind_speed_10m": 1.25,
+          "relative_humidity_2m": 75
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -5,
-          "surface_pressure": 994.3,
-          "wind_speed_10m": 13.61,
-          "relative_humidity_2m": 76
+          "temperature_2m": 0.6,
+          "surface_pressure": 995,
+          "wind_speed_10m": 15.37,
+          "relative_humidity_2m": 92
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -51.6,
-          "surface_pressure": 708.3,
-          "wind_speed_10m": 8.77,
-          "relative_humidity_2m": 59
+          "temperature_2m": -48.5,
+          "surface_pressure": 706,
+          "wind_speed_10m": 11.88,
+          "relative_humidity_2m": 63
         }
       ]
     },
