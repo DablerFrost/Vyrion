@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-06-28T04:56:11.339Z",
+    "generatedAt": "2026-06-28T14:18:28.914Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -21,7 +21,7 @@
             47
           ],
           "tsunami": false,
-          "significance": 671
+          "significance": 672
         },
         {
           "id": "us6000t8ec",
@@ -34,7 +34,7 @@
             42
           ],
           "tsunami": false,
-          "significance": 676
+          "significance": 678
         },
         {
           "id": "us6000t7zq",
@@ -60,7 +60,7 @@
             10
           ],
           "tsunami": false,
-          "significance": 2529
+          "significance": 2533
         },
         {
           "id": "us6000t7zc",
@@ -203,7 +203,7 @@
             57.226
           ],
           "tsunami": false,
-          "significance": 1310
+          "significance": 1313
         },
         {
           "id": "nn00919749",
@@ -275,10 +275,10 @@
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Sea and Lake Ice": 9,
+        "Sea and Lake Ice": 13,
         "Severe Storms": 2,
-        "Wildfires": 37,
-        "Volcanoes": 2
+        "Wildfires": 34,
+        "Volcanoes": 1
       },
       "events": [
         {
@@ -338,6 +338,26 @@
             "coordinates": [
               141.4,
               35.5
+            ]
+          }
+        },
+        {
+          "id": "EONET_6320",
+          "title": "Iceberg A81",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 700,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-06-25T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -54.2,
+              -62.4
             ]
           }
         },
@@ -802,6 +822,47 @@
           }
         },
         {
+          "id": "EONET_2736",
+          "title": "Iceberg B22A",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "BYU_ICE",
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 725,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-06-18T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              174.59,
+              -69.77
+            ]
+          }
+        },
+        {
+          "id": "EONET_6474",
+          "title": "Iceberg D35",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 168,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-06-12T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -47.65,
+              -62.51
+            ]
+          }
+        },
+        {
           "id": "EONET_6510",
           "title": "Iceberg D33C",
           "categories": [
@@ -820,66 +881,6 @@
               -63.63
             ]
           }
-        },
-        {
-          "id": "EONET_10212",
-          "title": "Iceberg B22F",
-          "categories": [
-            "Sea and Lake Ice"
-          ],
-          "sources": [
-            "NATICE"
-          ],
-          "geometry": {
-            "magnitudeValue": 98,
-            "magnitudeUnit": "NM^2",
-            "date": "2026-06-25T00:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              178.27,
-              -66.75
-            ]
-          }
-        },
-        {
-          "id": "EONET_12716",
-          "title": "Iceberg A85",
-          "categories": [
-            "Sea and Lake Ice"
-          ],
-          "sources": [
-            "NATICE"
-          ],
-          "geometry": {
-            "magnitudeValue": 30,
-            "magnitudeUnit": "NM^2",
-            "date": "2026-06-12T00:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -55.1,
-              -66.42
-            ]
-          }
-        },
-        {
-          "id": "EONET_20446",
-          "title": "Little Schloss RX Prescribed Fire, Shenandoah, Virginia",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1560,
-            "magnitudeUnit": "acres",
-            "date": "2026-06-10T14:51:00Z",
-            "type": "Point",
-            "coordinates": [
-              -78.636,
-              38.925944
-            ]
-          }
         }
       ]
     },
@@ -890,54 +891,54 @@
           "lat": 80,
           "lon": 0,
           "temperature_2m": 0.1,
-          "surface_pressure": 1011.1,
-          "wind_speed_10m": 2.31,
-          "relative_humidity_2m": 94
+          "surface_pressure": 1012.8,
+          "wind_speed_10m": 3.16,
+          "relative_humidity_2m": 95
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 12.2,
-          "surface_pressure": 1018.4,
-          "wind_speed_10m": 10.36,
-          "relative_humidity_2m": 88
+          "temperature_2m": 12.5,
+          "surface_pressure": 1016.8,
+          "wind_speed_10m": 6.49,
+          "relative_humidity_2m": 85
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 19.7,
-          "surface_pressure": 915.6,
-          "wind_speed_10m": 1.54,
-          "relative_humidity_2m": 99
+          "temperature_2m": 23.8,
+          "surface_pressure": 917.6,
+          "wind_speed_10m": 2.71,
+          "relative_humidity_2m": 75
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 28.4,
-          "surface_pressure": 1010.7,
-          "wind_speed_10m": 1.25,
-          "relative_humidity_2m": 75
+          "temperature_2m": 27.7,
+          "surface_pressure": 1011.1,
+          "wind_speed_10m": 1.84,
+          "relative_humidity_2m": 80
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": 0.6,
-          "surface_pressure": 995,
-          "wind_speed_10m": 15.37,
-          "relative_humidity_2m": 92
+          "temperature_2m": 0.3,
+          "surface_pressure": 1000.7,
+          "wind_speed_10m": 13.5,
+          "relative_humidity_2m": 88
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -48.5,
-          "surface_pressure": 706,
-          "wind_speed_10m": 11.88,
-          "relative_humidity_2m": 63
+          "temperature_2m": -47.2,
+          "surface_pressure": 710.9,
+          "wind_speed_10m": 11.49,
+          "relative_humidity_2m": 66
         }
       ]
     },
