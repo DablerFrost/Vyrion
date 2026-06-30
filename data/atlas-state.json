@@ -1,13 +1,13 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-06-29T16:13:12.627Z",
+    "generatedAt": "2026-06-30T04:38:53.614Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 20,
+      "count": 19,
       "maxMagnitude": 7.8,
       "events": [
         {
@@ -60,7 +60,7 @@
             10
           ],
           "tsunami": false,
-          "significance": 2567
+          "significance": 2574
         },
         {
           "id": "us6000t7zc",
@@ -256,28 +256,15 @@
           ],
           "tsunami": false,
           "significance": 645
-        },
-        {
-          "id": "us7000spjy",
-          "magnitude": null,
-          "place": "Sonic Boom - Eastern Massachusetts",
-          "time": "2026-05-30T18:05:00.000Z",
-          "coordinates": [
-            -70.9,
-            42.8,
-            0
-          ],
-          "tsunami": false,
-          "significance": 600
         }
       ]
     },
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Sea and Lake Ice": 13,
+        "Sea and Lake Ice": 14,
         "Severe Storms": 2,
-        "Wildfires": 34,
+        "Wildfires": 33,
         "Volcanoes": 1
       },
       "events": [
@@ -298,6 +285,26 @@
             "coordinates": [
               64.84,
               -66.81
+            ]
+          }
+        },
+        {
+          "id": "EONET_20822",
+          "title": "Iceberg D33D",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 62.73,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-06-25T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -55.51,
+              -64.35
             ]
           }
         },
@@ -861,26 +868,6 @@
               -62.51
             ]
           }
-        },
-        {
-          "id": "EONET_6510",
-          "title": "Iceberg D33C",
-          "categories": [
-            "Sea and Lake Ice"
-          ],
-          "sources": [
-            "NATICE"
-          ],
-          "geometry": {
-            "magnitudeValue": 45,
-            "magnitudeUnit": "NM^2",
-            "date": "2026-06-25T00:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -54.21,
-              -63.63
-            ]
-          }
         }
       ]
     },
@@ -890,55 +877,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -0.9,
-          "surface_pressure": 1008.5,
-          "wind_speed_10m": 6.09,
+          "temperature_2m": -0.3,
+          "surface_pressure": 1003.9,
+          "wind_speed_10m": 6.19,
           "relative_humidity_2m": 98
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 11.9,
-          "surface_pressure": 1022.3,
-          "wind_speed_10m": 9.28,
-          "relative_humidity_2m": 81
+          "temperature_2m": 12.5,
+          "surface_pressure": 1020.5,
+          "wind_speed_10m": 6.93,
+          "relative_humidity_2m": 88
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 25.7,
-          "surface_pressure": 916.2,
-          "wind_speed_10m": 2.59,
-          "relative_humidity_2m": 69
+          "temperature_2m": 18.2,
+          "surface_pressure": 914.5,
+          "wind_speed_10m": 0.87,
+          "relative_humidity_2m": 99
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 29.5,
-          "surface_pressure": 1011.7,
-          "wind_speed_10m": 0.47,
-          "relative_humidity_2m": 62
+          "temperature_2m": 27.7,
+          "surface_pressure": 1011.6,
+          "wind_speed_10m": 2.47,
+          "relative_humidity_2m": 80
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": 0.1,
-          "surface_pressure": 1012.9,
-          "wind_speed_10m": 5.95,
-          "relative_humidity_2m": 94
+          "temperature_2m": -0.6,
+          "surface_pressure": 1021.7,
+          "wind_speed_10m": 4.17,
+          "relative_humidity_2m": 84
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -43.9,
-          "surface_pressure": 726.3,
-          "wind_speed_10m": 9.85,
-          "relative_humidity_2m": 70
+          "temperature_2m": -38.8,
+          "surface_pressure": 729.3,
+          "wind_speed_10m": 10.99,
+          "relative_humidity_2m": 62
         }
       ]
     },
