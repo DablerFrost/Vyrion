@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-06-30T15:20:24.650Z",
+    "generatedAt": "2026-07-01T05:13:51.397Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -13,16 +13,21 @@
   },
   "synthesis": {
     "hazardSummary": {
-      "totalEvents": 19,
-      "categories": {},
+      "totalEvents": 69,
+      "categories": {
+        "Sea and Lake Ice": 14,
+        "Severe Storms": 2,
+        "Wildfires": 33,
+        "Volcanoes": 1
+      },
       "seismicCount": 19,
       "maxMagnitude": 7.8
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 5.53,
-      "minTemperature_2m": -32.9,
-      "maxTemperature_2m": 29.8
+      "avgTemperature_2m": 4.05,
+      "minTemperature_2m": -35.7,
+      "maxTemperature_2m": 27.1
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -36,19 +41,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-06-30T14:40:48.812Z",
-        "generated_date": "2026-06-30",
+        "generated": "2026-07-01T04:49:10.101Z",
+        "generated_date": "2026-07-01",
         "script_version": "1.1",
         "window_days": 14,
-        "window_start": "2026-06-16",
-        "window_end": "2026-06-30",
-        "runtime_ms": 233,
+        "window_start": "2026-06-17",
+        "window_end": "2026-07-01",
+        "runtime_ms": 264,
         "seismic_live": true,
         "eonet_live": true
       },
       "threat": {
         "level": "CRITICAL",
-        "score": 22.65
+        "score": 23.7
       },
       "seismic": {
         "events": [
@@ -107,6 +112,14 @@
             "time": "2026-06-27T13:34:52.534Z",
             "depth_km": 199,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8pa"
+          },
+          {
+            "id": "us6000t99j",
+            "magnitude": 6,
+            "place": "75 km SSW of El Progreso, Mexico",
+            "time": "2026-06-30T19:45:40.116Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t99j"
           },
           {
             "id": "us7000sui2",
@@ -181,6 +194,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc75382936"
           },
           {
+            "id": "us7000suds",
+            "magnitude": 5.6,
+            "place": "Izu Islands, Japan region",
+            "time": "2026-06-18T19:17:39.316Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000suds"
+          },
+          {
             "id": "us6000t8yt",
             "magnitude": 5.5,
             "place": "218 km W of Bandon, Oregon",
@@ -203,6 +224,14 @@
             "time": "2026-06-20T06:43:17.271Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000susv"
+          },
+          {
+            "id": "us6000t978",
+            "magnitude": 5.4,
+            "place": "90 km ESE of Kimbe, Papua New Guinea",
+            "time": "2026-06-30T14:41:10.582Z",
+            "depth_km": 35,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t978"
           },
           {
             "id": "us6000t8le",
@@ -229,6 +258,22 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000su8i"
           },
           {
+            "id": "us6000t9bg",
+            "magnitude": 5.3,
+            "place": "265 km SSE of Dunhuang, China",
+            "time": "2026-06-30T23:44:54.830Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9bg"
+          },
+          {
+            "id": "us6000t9a4",
+            "magnitude": 5.3,
+            "place": "95 km SSW of El Progreso, Mexico",
+            "time": "2026-06-30T21:01:34.191Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9a4"
+          },
+          {
             "id": "aka2026msxacu",
             "magnitude": 5.3,
             "place": "35 km SSW of Cordova, Alaska",
@@ -251,14 +296,6 @@
             "time": "2026-06-23T02:26:20.999Z",
             "depth_km": 140.3,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t7iy"
-          },
-          {
-            "id": "us7000suds",
-            "magnitude": 5.3,
-            "place": "Izu Islands, Japan region",
-            "time": "2026-06-18T19:17:40.105Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000suds"
           },
           {
             "id": "us7000su9f",
@@ -477,12 +514,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000su8c"
           },
           {
-            "id": "us7000stk6",
-            "magnitude": 5.1,
-            "place": "25 km SSE of Tambolaka, Indonesia",
-            "time": "2026-06-17T03:44:18.058Z",
-            "depth_km": 35,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000stk6"
+            "id": "us6000t9bv",
+            "magnitude": 5,
+            "place": "16 km WNW of Tournavista, Peru",
+            "time": "2026-07-01T02:00:38.195Z",
+            "depth_km": 130.5,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9bv"
           },
           {
             "id": "us6000t8ux",
@@ -557,12 +594,28 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000subg"
           },
           {
-            "id": "us7000stka",
-            "magnitude": 5,
-            "place": "144 km SE of Pondaguitan, Philippines",
-            "time": "2026-06-17T03:46:16.541Z",
-            "depth_km": 35,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000stka"
+            "id": "us6000t9ad",
+            "magnitude": 4.9,
+            "place": "8 km SE of Pangyan, Philippines",
+            "time": "2026-06-30T21:34:53.425Z",
+            "depth_km": 76.1,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9ad"
+          },
+          {
+            "id": "us6000t999",
+            "magnitude": 4.9,
+            "place": "south of the Fiji Islands",
+            "time": "2026-06-30T19:21:07.743Z",
+            "depth_km": 209.2,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t999"
+          },
+          {
+            "id": "us6000t97h",
+            "magnitude": 4.9,
+            "place": "South Sandwich Islands region",
+            "time": "2026-06-30T15:15:17.435Z",
+            "depth_km": 57.9,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t97h"
           },
           {
             "id": "us6000t91x",
@@ -749,20 +802,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000su4d"
           },
           {
-            "id": "us7000stjw",
-            "magnitude": 4.9,
-            "place": "267 km SSE of Dunhuang, China",
-            "time": "2026-06-17T02:06:18.423Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000stjw"
-          },
-          {
-            "id": "us7000stf7",
-            "magnitude": 4.9,
-            "place": "South Sandwich Islands region",
-            "time": "2026-06-16T17:13:10.179Z",
-            "depth_km": 23.8,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000stf7"
+            "id": "us6000t9bc",
+            "magnitude": 4.8,
+            "place": "10 km WSW of Hyūga, Japan",
+            "time": "2026-06-30T23:40:16.662Z",
+            "depth_km": 41.6,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9bc"
           },
           {
             "id": "us6000t973",
@@ -965,20 +1010,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000stkl"
           },
           {
-            "id": "us7000stgy",
-            "magnitude": 4.8,
-            "place": "53 km WNW of Poso, Indonesia",
-            "time": "2026-06-16T20:15:31.894Z",
+            "id": "us6000t9ak",
+            "magnitude": 4.7,
+            "place": "Federated States of Micronesia region",
+            "time": "2026-06-30T21:49:19.866Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000stgy"
-          },
-          {
-            "id": "us7000stfx",
-            "magnitude": 4.8,
-            "place": "51 km WNW of Poso, Indonesia",
-            "time": "2026-06-16T18:29:37.547Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000stfx"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9ak"
           },
           {
             "id": "us6000t8v9",
@@ -1205,6 +1242,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000stki"
           },
           {
+            "id": "us6000t977",
+            "magnitude": 4.6,
+            "place": "221 km NNE of Bitung, Indonesia",
+            "time": "2026-06-30T14:26:47.700Z",
+            "depth_km": 56.2,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t977"
+          },
+          {
             "id": "us6000t96r",
             "magnitude": 4.6,
             "place": "168 km SSE of Koshima, Japan",
@@ -1429,12 +1474,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000stn9"
           },
           {
-            "id": "us7000sv5z",
-            "magnitude": 4.6,
-            "place": "293 km NNE of Fais, Micronesia",
-            "time": "2026-06-16T19:17:35.090Z",
+            "id": "us6000t99v",
+            "magnitude": 4.5,
+            "place": "59 km SSW of Topolobampo, Mexico",
+            "time": "2026-06-30T20:29:39.578Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sv5z"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t99v"
           },
           {
             "id": "us6000t8yu",
@@ -1747,51 +1792,11 @@
             "time": "2026-06-17T10:31:54.342Z",
             "depth_km": 61.7,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000stlm"
-          },
-          {
-            "id": "us6000t7m0",
-            "magnitude": 4.5,
-            "place": "122 km NW of Malango, Solomon Islands",
-            "time": "2026-06-17T00:02:24.128Z",
-            "depth_km": 35,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t7m0"
-          },
-          {
-            "id": "us7000sv66",
-            "magnitude": 4.5,
-            "place": "84 km E of Tatsugō, Japan",
-            "time": "2026-06-16T23:18:37.334Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sv66"
-          },
-          {
-            "id": "us7000sv64",
-            "magnitude": 4.5,
-            "place": "38 km E of Palu, Indonesia",
-            "time": "2026-06-16T21:39:21.269Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sv64"
-          },
-          {
-            "id": "us7000stgr",
-            "magnitude": 4.5,
-            "place": "33 km ESE of Palu, Indonesia",
-            "time": "2026-06-16T20:01:39.292Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000stgr"
-          },
-          {
-            "id": "us7000stff",
-            "magnitude": 4.5,
-            "place": "104 km ENE of Miyako, Japan",
-            "time": "2026-06-16T17:25:57.362Z",
-            "depth_km": 35,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000stff"
           }
         ],
         "count_total": 217,
-        "count_m55_plus": 19,
-        "count_m60_plus": 8,
+        "count_m55_plus": 21,
+        "count_m60_plus": 9,
         "count_m70_plus": 2,
         "count_m80_plus": 0,
         "largest": {
@@ -1805,7 +1810,7 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-06-30T14:40:48.698Z"
+        "retrieved": "2026-07-01T04:49:09.963Z"
       },
       "wildfire": {
         "events": [
@@ -1852,31 +1857,9 @@
               48.275
             ],
             "closed": null
-          },
-          {
-            "id": "EONET_20559",
-            "title": "Old Emigrant Wildfire, Umatilla, Oregon",
-            "type": "WILDFIRE",
-            "time": "2026-06-16T16:43:00.000Z",
-            "coords": [
-              -118.615,
-              45.617
-            ],
-            "closed": null
-          },
-          {
-            "id": "EONET_20561",
-            "title": "Sawmill Wildfire, Iron, Utah",
-            "type": "WILDFIRE",
-            "time": "2026-06-16T16:11:00.000Z",
-            "coords": [
-              -113.706,
-              38.092
-            ],
-            "closed": null
           }
         ],
-        "count": 6
+        "count": 4
       },
       "storm": {
         "events": [
@@ -1917,8 +1900,8 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-06-30T14:45:17.709Z",
-        "sourcesResolved": 2,
+        "generatedAt": "2026-07-01T04:57:47.899Z",
+        "sourcesResolved": 3,
         "sourcesTotal": 6
       },
       "layers": {
@@ -1927,14 +1910,27 @@
           "maxMagnitude": 7.8,
           "events": [
             {
+              "id": "us6000t9bg",
+              "magnitude": 5.3,
+              "place": "265 km SSE of Dunhuang, China",
+              "time": "2026-06-30T23:44:54.830Z",
+              "coordinates": [
+                95.3273,
+                37.8295,
+                10
+              ],
+              "tsunami": false,
+              "significance": 650
+            },
+            {
               "id": "aka2026mpitdk",
               "magnitude": 4.2,
               "place": "27 km WNW of Hope, Alaska",
-              "time": "2026-06-27T05:25:52.340Z",
+              "time": "2026-06-27T05:25:52.321Z",
               "coordinates": [
                 -150.125,
-                60.988,
-                47
+                60.989,
+                47.9
               ],
               "tsunami": false,
               "significance": 674
@@ -1976,7 +1972,7 @@
                 10
               ],
               "tsunami": false,
-              "significance": 2580
+              "significance": 2595
             },
             {
               "id": "us6000t7zc",
@@ -2159,24 +2155,620 @@
               ],
               "tsunami": false,
               "significance": 615
-            },
-            {
-              "id": "us7000spqc",
-              "magnitude": 6,
-              "place": "33 km NW of Valparaíso, Chile",
-              "time": "2026-05-31T21:34:17.953Z",
-              "coordinates": [
-                -71.8897,
-                -32.8292,
-                25
-              ],
-              "tsunami": false,
-              "significance": 645
             }
           ]
         },
         "hazards": {
-          "error": "[NASA EONET] HTTP 503 Service Unavailable"
+          "totalActive": 50,
+          "byCategory": {
+            "Sea and Lake Ice": 14,
+            "Severe Storms": 2,
+            "Wildfires": 33,
+            "Volcanoes": 1
+          },
+          "events": [
+            {
+              "id": "EONET_6051",
+              "title": "Iceberg C39",
+              "categories": [
+                "Sea and Lake Ice"
+              ],
+              "sources": [
+                "NATICE"
+              ],
+              "geometry": {
+                "magnitudeValue": 24,
+                "magnitudeUnit": "NM^2",
+                "date": "2026-06-25T00:00:00Z",
+                "type": "Point",
+                "coordinates": [
+                  64.84,
+                  -66.81
+                ]
+              }
+            },
+            {
+              "id": "EONET_20822",
+              "title": "Iceberg D33D",
+              "categories": [
+                "Sea and Lake Ice"
+              ],
+              "sources": [
+                "NATICE"
+              ],
+              "geometry": {
+                "magnitudeValue": 62.73,
+                "magnitudeUnit": "NM^2",
+                "date": "2026-06-25T00:00:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -55.51,
+                  -64.35
+                ]
+              }
+            },
+            {
+              "id": "EONET_20671",
+              "title": "Tropical Storm Higos",
+              "categories": [
+                "Severe Storms"
+              ],
+              "sources": [
+                "JTWC"
+              ],
+              "geometry": {
+                "magnitudeValue": 45,
+                "magnitudeUnit": "kts",
+                "date": "2026-06-27T00:00:00Z",
+                "type": "Point",
+                "coordinates": [
+                  142.9,
+                  36.4
+                ]
+              }
+            },
+            {
+              "id": "EONET_20606",
+              "title": "Typhoon Mekkhala",
+              "categories": [
+                "Severe Storms"
+              ],
+              "sources": [
+                "JTWC"
+              ],
+              "geometry": {
+                "magnitudeValue": 40,
+                "magnitudeUnit": "kts",
+                "date": "2026-06-27T12:00:00Z",
+                "type": "Point",
+                "coordinates": [
+                  141.4,
+                  35.5
+                ]
+              }
+            },
+            {
+              "id": "EONET_6320",
+              "title": "Iceberg A81",
+              "categories": [
+                "Sea and Lake Ice"
+              ],
+              "sources": [
+                "NATICE"
+              ],
+              "geometry": {
+                "magnitudeValue": 700,
+                "magnitudeUnit": "NM^2",
+                "date": "2026-06-25T00:00:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -54.2,
+                  -62.4
+                ]
+              }
+            },
+            {
+              "id": "EONET_6423",
+              "title": "Iceberg D33A",
+              "categories": [
+                "Sea and Lake Ice"
+              ],
+              "sources": [
+                "NATICE"
+              ],
+              "geometry": {
+                "magnitudeValue": 340,
+                "magnitudeUnit": "NM^2",
+                "date": "2026-06-18T00:00:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -55.79,
+                  -64.24
+                ]
+              }
+            },
+            {
+              "id": "EONET_20558",
+              "title": "Median Wildfire, Gooding, Idaho",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 1000,
+                "magnitudeUnit": "acres",
+                "date": "2026-06-17T13:57:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -114.767567,
+                  42.805867
+                ]
+              }
+            },
+            {
+              "id": "EONET_20565",
+              "title": "TRAIL 13 (09) Wildfire, Citrus, Florida",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 687,
+                "magnitudeUnit": "acres",
+                "date": "2026-06-16T23:57:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -82.4186111,
+                  28.7994444
+                ]
+              }
+            },
+            {
+              "id": "EONET_20560",
+              "title": "Kartar Wildfire, Okanogan, Washington",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 1700,
+                "magnitudeUnit": "acres",
+                "date": "2026-06-16T23:43:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -119.390027,
+                  48.250361
+                ]
+              }
+            },
+            {
+              "id": "EONET_20562",
+              "title": "Omak Lake Road Wildfire, Okanogan, Washington",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 670,
+                "magnitudeUnit": "acres",
+                "date": "2026-06-16T22:53:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -119.410833,
+                  48.274722
+                ]
+              }
+            },
+            {
+              "id": "EONET_20559",
+              "title": "Old Emigrant Wildfire, Umatilla, Oregon",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 1000,
+                "magnitudeUnit": "acres",
+                "date": "2026-06-16T16:43:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -118.615417,
+                  45.616957
+                ]
+              }
+            },
+            {
+              "id": "EONET_20561",
+              "title": "Sawmill Wildfire, Iron, Utah",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 1100,
+                "magnitudeUnit": "acres",
+                "date": "2026-06-16T16:11:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -113.70575,
+                  38.09192
+                ]
+              }
+            },
+            {
+              "id": "EONET_20567",
+              "title": "QUARRY 2 (13) Wildfire, Miami-Dade, Florida",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 3500,
+                "magnitudeUnit": "acres",
+                "date": "2026-06-15T22:51:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -80.4233333,
+                  25.8116667
+                ]
+              }
+            },
+            {
+              "id": "EONET_20569",
+              "title": "Dellenbaugh Wildfire, Mohave, Arizona",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 724,
+                "magnitudeUnit": "acres",
+                "date": "2026-06-15T18:32:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -113.535333,
+                  36.075
+                ]
+              }
+            },
+            {
+              "id": "EONET_20570",
+              "title": "APQ Area 5A RX 0615 Prescribed Fire, Polk, Florida",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 556,
+                "magnitudeUnit": "acres",
+                "date": "2026-06-15T18:30:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -81.330714,
+                  27.720842
+                ]
+              }
+            },
+            {
+              "id": "EONET_20564",
+              "title": "SHORE Wildfire, Riverside, California",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 3085,
+                "magnitudeUnit": "acres",
+                "date": "2026-06-15T18:24:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -117.103582,
+                  33.976656
+                ]
+              }
+            },
+            {
+              "id": "EONET_20566",
+              "title": "Rock Canyon Wildfire, Coconino, Arizona",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 1165,
+                "magnitudeUnit": "acres",
+                "date": "2026-06-15T17:00:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -112.2032,
+                  36.9157
+                ]
+              }
+            },
+            {
+              "id": "EONET_20710",
+              "title": "Nevados del Chillan Volcano, Chile",
+              "categories": [
+                "Volcanoes"
+              ],
+              "sources": [
+                "SIVolcano"
+              ],
+              "geometry": {
+                "magnitudeValue": null,
+                "magnitudeUnit": null,
+                "date": "2026-06-15T00:00:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -71.378,
+                  -36.868
+                ]
+              }
+            },
+            {
+              "id": "EONET_20520",
+              "title": "Green Gate (26) Wildfire, Hendry, Florida",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 535,
+                "magnitudeUnit": "acres",
+                "date": "2026-06-14T19:39:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -81.1661111,
+                  26.3666667
+                ]
+              }
+            },
+            {
+              "id": "EONET_20523",
+              "title": "MIDNIGHT FIRE (53) Wildfire, Polk, Florida",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 600,
+                "magnitudeUnit": "acres",
+                "date": "2026-06-14T17:18:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -81.9430556,
+                  27.7152778
+                ]
+              }
+            },
+            {
+              "id": "EONET_20516",
+              "title": "4170 Tule Rd Wildfire, Yakima, Washington",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 5000,
+                "magnitudeUnit": "acres",
+                "date": "2026-06-14T16:30:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -120.3144,
+                  46.27602
+                ]
+              }
+            },
+            {
+              "id": "EONET_20513",
+              "title": "Rookery Wildfire, Volusia, Florida",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 600,
+                "magnitudeUnit": "acres",
+                "date": "2026-06-14T10:57:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -81.426633,
+                  29.07815
+                ]
+              }
+            },
+            {
+              "id": "EONET_20571",
+              "title": "TWIN SISTERS Wildfire, Walla Walla, Washington",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 8262,
+                "magnitudeUnit": "acres",
+                "date": "2026-06-14T10:26:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -118.90997,
+                  46.05679
+                ]
+              }
+            },
+            {
+              "id": "EONET_20517",
+              "title": "JUNIPER DUNES Wildfire, Franklin, Washington",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 1000,
+                "magnitudeUnit": "acres",
+                "date": "2026-06-14T10:25:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -118.896108,
+                  46.346137
+                ]
+              }
+            },
+            {
+              "id": "EONET_20519",
+              "title": "WYLY Wildfire, Kern, California",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 1075,
+                "magnitudeUnit": "acres",
+                "date": "2026-06-13T17:54:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -118.6341667,
+                  35.2638889
+                ]
+              }
+            },
+            {
+              "id": "EONET_20518",
+              "title": "SNAKE RIVER Wildfire, Whitman, Washington",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 686,
+                "magnitudeUnit": "acres",
+                "date": "2026-06-13T10:37:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -117.19118,
+                  46.4322
+                ]
+              }
+            },
+            {
+              "id": "EONET_20522",
+              "title": "Kilolitna Wildfire, Yukon-Koyukuk, Alaska",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 908.28,
+                "magnitudeUnit": "acres",
+                "date": "2026-06-12T12:12:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -151.805649,
+                  66.047957
+                ]
+              }
+            },
+            {
+              "id": "EONET_20524",
+              "title": "Unit 16/20 Rx Prescribed Fire, Bibb, Alabama",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 534,
+                "magnitudeUnit": "acres",
+                "date": "2026-06-12T11:08:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -87.047567,
+                  33.062922
+                ]
+              }
+            },
+            {
+              "id": "EONET_2736",
+              "title": "Iceberg B22A",
+              "categories": [
+                "Sea and Lake Ice"
+              ],
+              "sources": [
+                "BYU_ICE",
+                "NATICE"
+              ],
+              "geometry": {
+                "magnitudeValue": 725,
+                "magnitudeUnit": "NM^2",
+                "date": "2026-06-18T00:00:00Z",
+                "type": "Point",
+                "coordinates": [
+                  174.59,
+                  -69.77
+                ]
+              }
+            },
+            {
+              "id": "EONET_6474",
+              "title": "Iceberg D35",
+              "categories": [
+                "Sea and Lake Ice"
+              ],
+              "sources": [
+                "NATICE"
+              ],
+              "geometry": {
+                "magnitudeValue": 168,
+                "magnitudeUnit": "NM^2",
+                "date": "2026-06-12T00:00:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -47.65,
+                  -62.51
+                ]
+              }
+            }
+          ]
         },
         "atmospheric": {
           "referencePoints": [
@@ -2184,55 +2776,55 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": -1,
-              "surface_pressure": 1003,
-              "wind_speed_10m": 5.73,
-              "relative_humidity_2m": 97
+              "temperature_2m": -0.8,
+              "surface_pressure": 1003.2,
+              "wind_speed_10m": 1.19,
+              "relative_humidity_2m": 92
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 14.2,
-              "surface_pressure": 1014.1,
-              "wind_speed_10m": 10.96,
+              "temperature_2m": 14.3,
+              "surface_pressure": 1015.5,
+              "wind_speed_10m": 10.74,
               "relative_humidity_2m": 96
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 25.2,
-              "surface_pressure": 916.5,
-              "wind_speed_10m": 2.2,
-              "relative_humidity_2m": 67
+              "temperature_2m": 19.7,
+              "surface_pressure": 914,
+              "wind_speed_10m": 1.65,
+              "relative_humidity_2m": 99
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 29.8,
-              "surface_pressure": 1010.6,
-              "wind_speed_10m": 2.76,
-              "relative_humidity_2m": 73
+              "temperature_2m": 27.1,
+              "surface_pressure": 1011,
+              "wind_speed_10m": 2.75,
+              "relative_humidity_2m": 81
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": -2.1,
-              "surface_pressure": 1026.4,
-              "wind_speed_10m": 1.36,
-              "relative_humidity_2m": 82
+              "temperature_2m": -0.3,
+              "surface_pressure": 1021.8,
+              "wind_speed_10m": 12.15,
+              "relative_humidity_2m": 81
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -32.9,
-              "surface_pressure": 729.2,
-              "wind_speed_10m": 10.69,
-              "relative_humidity_2m": 76
+              "temperature_2m": -35.7,
+              "surface_pressure": 728.6,
+              "wind_speed_10m": 6.51,
+              "relative_humidity_2m": 74
             }
           ]
         },
@@ -2250,7 +2842,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-06-30T15:18:06.641Z"
+        "generatedAt": "2026-07-01T05:10:11.251Z"
       },
       "health": {
         "score": 87,
