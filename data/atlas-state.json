@@ -1,27 +1,27 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-07-02T14:32:08.346Z",
+    "generatedAt": "2026-07-03T04:13:39.432Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 20,
+      "count": 19,
       "maxMagnitude": 7.8,
       "events": [
         {
           "id": "uw714040221",
-          "magnitude": 3.81,
-          "place": "2 km ESE of Oak Harbor, Washington",
+          "magnitude": 3.8,
+          "place": "2 km E of Oak Harbor, Washington",
           "time": "2026-07-02T06:35:47.600Z",
           "coordinates": [
-            -122.609333333333,
-            48.2871666666667,
-            25.3
+            -122.6065,
+            48.2888333333333,
+            25.38
           ],
           "tsunami": false,
-          "significance": 603
+          "significance": 602
         },
         {
           "id": "us6000t9bg",
@@ -86,7 +86,7 @@
             10
           ],
           "tsunami": false,
-          "significance": 2600
+          "significance": 2605
         },
         {
           "id": "us6000t7zc",
@@ -208,11 +208,11 @@
         {
           "id": "us7000srjx",
           "magnitude": 6.1,
-          "place": "106 km WNW of Mantua, Cuba",
-          "time": "2026-06-08T18:00:27.577Z",
+          "place": "104 km WNW of Mantua, Cuba",
+          "time": "2026-06-08T18:00:27.551Z",
           "coordinates": [
-            -85.1539,
-            22.8137,
+            -85.1384,
+            22.8015,
             26
           ],
           "tsunami": false,
@@ -256,28 +256,15 @@
           ],
           "tsunami": false,
           "significance": 626
-        },
-        {
-          "id": "hv74975297",
-          "magnitude": 4.57,
-          "place": "6 km WNW of Kahaluu-Keauhou, Hawaii",
-          "time": "2026-06-03T03:58:53.210Z",
-          "coordinates": [
-            -156.016333333333,
-            19.5881666666667,
-            34.01
-          ],
-          "tsunami": false,
-          "significance": 729
         }
       ]
     },
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Severe Storms": 3,
+        "Severe Storms": 2,
         "Sea and Lake Ice": 14,
-        "Wildfires": 32,
+        "Wildfires": 33,
         "Volcanoes": 1
       },
       "events": [
@@ -293,17 +280,17 @@
           "geometry": {
             "magnitudeValue": 35,
             "magnitudeUnit": "kts",
-            "date": "2026-07-01T18:00:00Z",
+            "date": "2026-07-02T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              -126.9,
-              15.5
+              -127.3,
+              17.7
             ]
           }
         },
         {
           "id": "EONET_20877",
-          "title": "Tropical Storm Bavi",
+          "title": "Typhoon Bavi",
           "categories": [
             "Severe Storms"
           ],
@@ -311,13 +298,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 35,
+            "magnitudeValue": 70,
             "magnitudeUnit": "kts",
-            "date": "2026-07-01T12:00:00Z",
+            "date": "2026-07-02T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              162.4,
-              9.7
+              156.6,
+              12.6
             ]
           }
         },
@@ -358,26 +345,6 @@
             "coordinates": [
               -55.51,
               -64.35
-            ]
-          }
-        },
-        {
-          "id": "EONET_20606",
-          "title": "Typhoon Mekkhala",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "JTWC"
-          ],
-          "geometry": {
-            "magnitudeValue": 40,
-            "magnitudeUnit": "kts",
-            "date": "2026-06-27T12:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              141.4,
-              35.5
             ]
           }
         },
@@ -881,6 +848,26 @@
               -69.77
             ]
           }
+        },
+        {
+          "id": "EONET_6474",
+          "title": "Iceberg D35",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 168,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-06-12T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -47.65,
+              -62.51
+            ]
+          }
         }
       ]
     },
@@ -890,55 +877,37 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -0.4,
-          "surface_pressure": 1005.1,
-          "wind_speed_10m": 3.44,
-          "relative_humidity_2m": 96
+          "error": "fetch_failed"
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 14.4,
-          "surface_pressure": 1024.3,
-          "wind_speed_10m": 9.46,
-          "relative_humidity_2m": 97
+          "error": "fetch_failed"
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 24.6,
-          "surface_pressure": 916.7,
-          "wind_speed_10m": 2.17,
-          "relative_humidity_2m": 71
+          "error": "fetch_failed"
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 28.9,
-          "surface_pressure": 1011.5,
-          "wind_speed_10m": 2.94,
-          "relative_humidity_2m": 76
+          "error": "fetch_failed"
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -1.9,
-          "surface_pressure": 1008.4,
-          "wind_speed_10m": 8.4,
-          "relative_humidity_2m": 85
+          "error": "fetch_failed"
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -27.8,
-          "surface_pressure": 720.7,
-          "wind_speed_10m": 10.71,
-          "relative_humidity_2m": 70
+          "error": "fetch_failed"
         }
       ]
     },
