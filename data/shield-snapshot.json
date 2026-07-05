@@ -1,18 +1,18 @@
 {
   "meta": {
-    "generated": "2026-07-05T04:16:07.111Z",
+    "generated": "2026-07-05T14:06:27.664Z",
     "generated_date": "2026-07-05",
     "script_version": "1.1",
     "window_days": 14,
     "window_start": "2026-06-21",
     "window_end": "2026-07-05",
-    "runtime_ms": 263,
+    "runtime_ms": 249,
     "seismic_live": true,
-    "eonet_live": false
+    "eonet_live": true
   },
   "threat": {
     "level": "CRITICAL",
-    "score": 20.25
+    "score": 22.05
   },
   "seismic": {
     "events": [
@@ -199,6 +199,14 @@
         "time": "2026-06-21T22:04:16.864Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sv7m"
+      },
+      {
+        "id": "us6000ta86",
+        "magnitude": 5.3,
+        "place": "71 km S of Severo-Kuril’sk, Russia",
+        "time": "2026-07-05T07:37:07.006Z",
+        "depth_km": 82.9,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ta86"
       },
       {
         "id": "us6000t9zw",
@@ -575,6 +583,14 @@
         "time": "2026-06-21T20:05:26.301Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sv17"
+      },
+      {
+        "id": "us6000ta3q",
+        "magnitude": 4.9,
+        "place": "Reykjanes Ridge",
+        "time": "2026-07-04T12:26:58.093Z",
+        "depth_km": 10,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ta3q"
       },
       {
         "id": "us6000ta31",
@@ -985,14 +1001,6 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sv0m"
       },
       {
-        "id": "us7000suy3",
-        "magnitude": 4.8,
-        "place": "south of the Fiji Islands",
-        "time": "2026-06-21T06:04:30.396Z",
-        "depth_km": 605.6,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000suy3"
-      },
-      {
         "id": "us6000ta64",
         "magnitude": 4.7,
         "place": "51 km S of Atico, Peru",
@@ -1193,14 +1201,6 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sv0p"
       },
       {
-        "id": "us7000suyj",
-        "magnitude": 4.7,
-        "place": "12 km ENE of Torata, Peru",
-        "time": "2026-06-21T08:50:14.066Z",
-        "depth_km": 117,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000suyj"
-      },
-      {
         "id": "us6000ta52",
         "magnitude": 4.6,
         "place": "Izu Islands, Japan region",
@@ -1255,6 +1255,14 @@
         "time": "2026-07-03T01:49:56.752Z",
         "depth_km": 44.7,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9qz"
+      },
+      {
+        "id": "us6000ta7h",
+        "magnitude": 4.6,
+        "place": "west of Macquarie Island",
+        "time": "2026-07-02T21:51:59.993Z",
+        "depth_km": 10,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ta7h"
       },
       {
         "id": "us6000t9li",
@@ -1441,12 +1449,12 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sv1z"
       },
       {
-        "id": "us7000suy7",
-        "magnitude": 4.6,
-        "place": "Off the coast of Baja California Sur, Mexico",
-        "time": "2026-06-21T06:31:58.676Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000suy7"
+        "id": "us6000ta95",
+        "magnitude": 4.5,
+        "place": "71 km W of Ovalle, Chile",
+        "time": "2026-07-05T11:57:27.433Z",
+        "depth_km": 17.7,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ta95"
       },
       {
         "id": "us6000ta6r",
@@ -1735,14 +1743,6 @@
         "time": "2026-06-21T21:26:27.980Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sv1e"
-      },
-      {
-        "id": "us7000suzm",
-        "magnitude": 4.5,
-        "place": "66 km S of Puerto San José, Guatemala",
-        "time": "2026-06-21T13:27:00.532Z",
-        "depth_km": 35,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000suzm"
       }
     ],
     "count_total": 216,
@@ -1761,10 +1761,45 @@
     "source": "USGS Earthquake Hazards Program",
     "url": "https://earthquake.usgs.gov/",
     "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-    "retrieved": "2026-07-05T04:16:07.062Z"
+    "retrieved": "2026-07-05T14:06:27.551Z"
   },
-  "wildfire": null,
-  "storm": null,
-  "flood": null,
-  "volcanic": null
+  "wildfire": {
+    "events": [],
+    "count": 0
+  },
+  "storm": {
+    "events": [
+      {
+        "id": "EONET_20878",
+        "title": "Tropical Storm Douglas",
+        "type": "STORM",
+        "time": "2026-07-01T18:00:00.000Z",
+        "coords": [
+          -126.9,
+          15.5
+        ],
+        "closed": null
+      },
+      {
+        "id": "EONET_20877",
+        "title": "Super Typhoon Bavi",
+        "type": "STORM",
+        "time": "2026-07-01T12:00:00.000Z",
+        "coords": [
+          162.4,
+          9.7
+        ],
+        "closed": null
+      }
+    ],
+    "count": 2
+  },
+  "flood": {
+    "events": [],
+    "count": 0
+  },
+  "volcanic": {
+    "events": [],
+    "count": 0
+  }
 }
