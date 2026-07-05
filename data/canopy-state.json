@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-07-05T04:46:57.995Z",
+    "generatedAt": "2026-07-05T14:21:23.698Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -25,9 +25,9 @@
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 3.2,
-      "minTemperature_2m": -38.8,
-      "maxTemperature_2m": 28.4
+      "avgTemperature_2m": 3.87,
+      "minTemperature_2m": -39.9,
+      "maxTemperature_2m": 29.6
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -41,19 +41,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-07-05T04:16:07.111Z",
+        "generated": "2026-07-05T14:06:27.664Z",
         "generated_date": "2026-07-05",
         "script_version": "1.1",
         "window_days": 14,
         "window_start": "2026-06-21",
         "window_end": "2026-07-05",
-        "runtime_ms": 263,
+        "runtime_ms": 249,
         "seismic_live": true,
-        "eonet_live": false
+        "eonet_live": true
       },
       "threat": {
         "level": "CRITICAL",
-        "score": 20.25
+        "score": 22.05
       },
       "seismic": {
         "events": [
@@ -240,6 +240,14 @@
             "time": "2026-06-21T22:04:16.864Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sv7m"
+          },
+          {
+            "id": "us6000ta86",
+            "magnitude": 5.3,
+            "place": "71 km S of Severo-Kuril’sk, Russia",
+            "time": "2026-07-05T07:37:07.006Z",
+            "depth_km": 82.9,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ta86"
           },
           {
             "id": "us6000t9zw",
@@ -616,6 +624,14 @@
             "time": "2026-06-21T20:05:26.301Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sv17"
+          },
+          {
+            "id": "us6000ta3q",
+            "magnitude": 4.9,
+            "place": "Reykjanes Ridge",
+            "time": "2026-07-04T12:26:58.093Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ta3q"
           },
           {
             "id": "us6000ta31",
@@ -1026,14 +1042,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sv0m"
           },
           {
-            "id": "us7000suy3",
-            "magnitude": 4.8,
-            "place": "south of the Fiji Islands",
-            "time": "2026-06-21T06:04:30.396Z",
-            "depth_km": 605.6,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000suy3"
-          },
-          {
             "id": "us6000ta64",
             "magnitude": 4.7,
             "place": "51 km S of Atico, Peru",
@@ -1234,14 +1242,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sv0p"
           },
           {
-            "id": "us7000suyj",
-            "magnitude": 4.7,
-            "place": "12 km ENE of Torata, Peru",
-            "time": "2026-06-21T08:50:14.066Z",
-            "depth_km": 117,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000suyj"
-          },
-          {
             "id": "us6000ta52",
             "magnitude": 4.6,
             "place": "Izu Islands, Japan region",
@@ -1296,6 +1296,14 @@
             "time": "2026-07-03T01:49:56.752Z",
             "depth_km": 44.7,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9qz"
+          },
+          {
+            "id": "us6000ta7h",
+            "magnitude": 4.6,
+            "place": "west of Macquarie Island",
+            "time": "2026-07-02T21:51:59.993Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ta7h"
           },
           {
             "id": "us6000t9li",
@@ -1482,12 +1490,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sv1z"
           },
           {
-            "id": "us7000suy7",
-            "magnitude": 4.6,
-            "place": "Off the coast of Baja California Sur, Mexico",
-            "time": "2026-06-21T06:31:58.676Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000suy7"
+            "id": "us6000ta95",
+            "magnitude": 4.5,
+            "place": "71 km W of Ovalle, Chile",
+            "time": "2026-07-05T11:57:27.433Z",
+            "depth_km": 17.7,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ta95"
           },
           {
             "id": "us6000ta6r",
@@ -1776,14 +1784,6 @@
             "time": "2026-06-21T21:26:27.980Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sv1e"
-          },
-          {
-            "id": "us7000suzm",
-            "magnitude": 4.5,
-            "place": "66 km S of Puerto San José, Guatemala",
-            "time": "2026-06-21T13:27:00.532Z",
-            "depth_km": 35,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000suzm"
           }
         ],
         "count_total": 216,
@@ -1802,17 +1802,52 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-07-05T04:16:07.062Z"
+        "retrieved": "2026-07-05T14:06:27.551Z"
       },
-      "wildfire": null,
-      "storm": null,
-      "flood": null,
-      "volcanic": null
+      "wildfire": {
+        "events": [],
+        "count": 0
+      },
+      "storm": {
+        "events": [
+          {
+            "id": "EONET_20878",
+            "title": "Tropical Storm Douglas",
+            "type": "STORM",
+            "time": "2026-07-01T18:00:00.000Z",
+            "coords": [
+              -126.9,
+              15.5
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_20877",
+            "title": "Super Typhoon Bavi",
+            "type": "STORM",
+            "time": "2026-07-01T12:00:00.000Z",
+            "coords": [
+              162.4,
+              9.7
+            ],
+            "closed": null
+          }
+        ],
+        "count": 2
+      },
+      "flood": {
+        "events": [],
+        "count": 0
+      },
+      "volcanic": {
+        "events": [],
+        "count": 0
+      }
     },
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-07-05T04:35:38.405Z",
+        "generatedAt": "2026-07-05T14:12:21.609Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
@@ -2096,13 +2131,13 @@
                 "JTWC"
               ],
               "geometry": {
-                "magnitudeValue": 135,
+                "magnitudeValue": 145,
                 "magnitudeUnit": "kts",
-                "date": "2026-07-04T18:00:00Z",
+                "date": "2026-07-05T06:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  149.6,
-                  12.7
+                  148.1,
+                  13.4
                 ]
               }
             },
@@ -2648,8 +2683,8 @@
               }
             },
             {
-              "id": "EONET_6474",
-              "title": "Iceberg D35",
+              "id": "EONET_5359",
+              "title": "Iceberg A76C",
               "categories": [
                 "Sea and Lake Ice"
               ],
@@ -2657,13 +2692,13 @@
                 "NATICE"
               ],
               "geometry": {
-                "magnitudeValue": 168,
+                "magnitudeValue": 112,
                 "magnitudeUnit": "NM^2",
                 "date": "2026-07-03T00:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  -45.53,
-                  -62.45
+                  -32.32,
+                  -52.65
                 ]
               }
             }
@@ -2675,55 +2710,55 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": -0.2,
-              "surface_pressure": 1013.5,
-              "wind_speed_10m": 4.31,
-              "relative_humidity_2m": 96
+              "temperature_2m": 0.2,
+              "surface_pressure": 1011.6,
+              "wind_speed_10m": 6.05,
+              "relative_humidity_2m": 99
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 13.1,
-              "surface_pressure": 1018.7,
-              "wind_speed_10m": 8.91,
-              "relative_humidity_2m": 99
+              "temperature_2m": 14.4,
+              "surface_pressure": 1017.7,
+              "wind_speed_10m": 9.59,
+              "relative_humidity_2m": 97
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 19.2,
-              "surface_pressure": 915.2,
-              "wind_speed_10m": 0.29,
-              "relative_humidity_2m": 100
+              "temperature_2m": 21.6,
+              "surface_pressure": 917.3,
+              "wind_speed_10m": 0.96,
+              "relative_humidity_2m": 96
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 28.4,
-              "surface_pressure": 1012,
-              "wind_speed_10m": 2.8,
-              "relative_humidity_2m": 80
+              "temperature_2m": 29.6,
+              "surface_pressure": 1012.2,
+              "wind_speed_10m": 3.12,
+              "relative_humidity_2m": 75
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": -2.5,
-              "surface_pressure": 978.1,
-              "wind_speed_10m": 1.49,
-              "relative_humidity_2m": 80
+              "temperature_2m": -2.7,
+              "surface_pressure": 977.6,
+              "wind_speed_10m": 6.35,
+              "relative_humidity_2m": 85
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -38.8,
-              "surface_pressure": 732,
-              "wind_speed_10m": 9.64,
-              "relative_humidity_2m": 64
+              "temperature_2m": -39.9,
+              "surface_pressure": 726.7,
+              "wind_speed_10m": 9.63,
+              "relative_humidity_2m": 70
             }
           ]
         },
@@ -2741,7 +2776,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-07-05T04:44:35.266Z"
+        "generatedAt": "2026-07-05T14:19:59.270Z"
       },
       "health": {
         "score": 87,
