@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-07-06T05:01:13.849Z",
+    "generatedAt": "2026-07-06T16:10:35.790Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -13,9 +13,9 @@
   },
   "synthesis": {
     "hazardSummary": {
-      "totalEvents": 66,
+      "totalEvents": 67,
       "categories": {
-        "Severe Storms": 2,
+        "Severe Storms": 3,
         "Sea and Lake Ice": 14,
         "Wildfires": 31,
         "Volcanoes": 1
@@ -25,9 +25,9 @@
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 3.48,
-      "minTemperature_2m": -39,
-      "maxTemperature_2m": 29.7
+      "avgTemperature_2m": 5.35,
+      "minTemperature_2m": -38.3,
+      "maxTemperature_2m": 30.6
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -41,19 +41,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-07-06T04:23:53.614Z",
+        "generated": "2026-07-06T15:53:21.976Z",
         "generated_date": "2026-07-06",
         "script_version": "1.1",
         "window_days": 14,
         "window_start": "2026-06-22",
         "window_end": "2026-07-06",
-        "runtime_ms": 2002,
+        "runtime_ms": 524,
         "seismic_live": true,
         "eonet_live": true
       },
       "threat": {
         "level": "CRITICAL",
-        "score": 22.05
+        "score": 22.3
       },
       "seismic": {
         "events": [
@@ -146,6 +146,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8nf"
           },
           {
+            "id": "us6000tadc",
+            "magnitude": 5.8,
+            "place": "48 km SSW of Sarangani, Philippines",
+            "time": "2026-07-06T08:11:11.032Z",
+            "depth_km": 35,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tadc"
+          },
+          {
             "id": "us6000ta9m",
             "magnitude": 5.8,
             "place": "274 km SE of Levuka, Fiji",
@@ -156,8 +164,8 @@
           {
             "id": "us6000t8qd",
             "magnitude": 5.8,
-            "place": "51 km ENE of Noda, Japan",
-            "time": "2026-06-27T20:21:50.769Z",
+            "place": "54 km ENE of Noda, Japan",
+            "time": "2026-06-27T20:21:50.787Z",
             "depth_km": 34,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8qd"
           },
@@ -216,6 +224,14 @@
             "time": "2026-06-25T06:19:35.965Z",
             "depth_km": 33,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t81q"
+          },
+          {
+            "id": "us6000tadj",
+            "magnitude": 5.4,
+            "place": "65 km SSW of Sarangani, Philippines",
+            "time": "2026-07-06T08:41:38.715Z",
+            "depth_km": 35,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tadj"
           },
           {
             "id": "us6000t978",
@@ -402,12 +418,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t7ll"
           },
           {
-            "id": "us7000sv6e",
-            "magnitude": 5.2,
-            "place": "42 km SSW of Jurm, Afghanistan",
-            "time": "2026-06-22T10:22:23.506Z",
-            "depth_km": 207,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sv6e"
+            "id": "us6000taft",
+            "magnitude": 5.1,
+            "place": "211 km ESE of Hihifo, Tonga",
+            "time": "2026-07-06T14:43:38.525Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000taft"
           },
           {
             "id": "us6000ta4c",
@@ -834,22 +850,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t7fr"
           },
           {
-            "id": "us7000sv75",
-            "magnitude": 4.9,
-            "place": "260 km SSW of ‘Ohonua, Tonga",
-            "time": "2026-06-22T12:39:15.271Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sv75"
-          },
-          {
-            "id": "us7000sv3q",
-            "magnitude": 4.9,
-            "place": "68 km WNW of Tobelo, Indonesia",
-            "time": "2026-06-22T05:28:15.730Z",
-            "depth_km": 124.9,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sv3q"
-          },
-          {
             "id": "us6000ta20",
             "magnitude": 4.8,
             "place": "Izu Islands, Japan region",
@@ -932,8 +932,8 @@
           {
             "id": "us6000t8q8",
             "magnitude": 4.8,
-            "place": "35 km NNE of El Limón, Venezuela",
-            "time": "2026-06-27T19:20:36.606Z",
+            "place": "41 km N of El Limón, Venezuela",
+            "time": "2026-06-27T19:20:37.253Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8q8"
           },
@@ -1016,22 +1016,6 @@
             "time": "2026-06-22T18:03:47.875Z",
             "depth_km": 65.6,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t7fi"
-          },
-          {
-            "id": "us7000sv7j",
-            "magnitude": 4.8,
-            "place": "Fiji region",
-            "time": "2026-06-22T14:51:08.887Z",
-            "depth_km": 543.9,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sv7j"
-          },
-          {
-            "id": "us7000sv6n",
-            "magnitude": 4.8,
-            "place": "76 km E of Kimbe, Papua New Guinea",
-            "time": "2026-06-22T10:58:46.165Z",
-            "depth_km": 108.1,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sv6n"
           },
           {
             "id": "us6000tacl",
@@ -1232,6 +1216,22 @@
             "time": "2026-06-22T17:51:34.136Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t7fh"
+          },
+          {
+            "id": "us6000taf3",
+            "magnitude": 4.6,
+            "place": "28 km NNE of Kuji, Japan",
+            "time": "2026-07-06T11:29:36.717Z",
+            "depth_km": 67,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000taf3"
+          },
+          {
+            "id": "us6000tada",
+            "magnitude": 4.6,
+            "place": "112 km NNW of Neiafu, Tonga",
+            "time": "2026-07-06T08:07:21.524Z",
+            "depth_km": 113.2,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tada"
           },
           {
             "id": "us6000tab5",
@@ -1480,14 +1480,6 @@
             "time": "2026-06-23T12:13:24.754Z",
             "depth_km": 241.1,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t7ks"
-          },
-          {
-            "id": "us7000sv6a",
-            "magnitude": 4.6,
-            "place": "125 km SSE of Kuril’sk, Russia",
-            "time": "2026-06-22T09:43:52.220Z",
-            "depth_km": 35,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sv6a"
           },
           {
             "id": "us6000taa3",
@@ -1794,8 +1786,8 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t7hp"
           }
         ],
-        "count_total": 217,
-        "count_m55_plus": 20,
+        "count_total": 216,
+        "count_m55_plus": 21,
         "count_m60_plus": 9,
         "count_m70_plus": 2,
         "count_m80_plus": 0,
@@ -1810,7 +1802,7 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-07-06T04:23:51.795Z"
+        "retrieved": "2026-07-06T15:53:21.744Z"
       },
       "wildfire": {
         "events": [],
@@ -1855,7 +1847,7 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-07-06T04:46:23.425Z",
+        "generatedAt": "2026-07-06T15:56:28.733Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
@@ -1940,7 +1932,7 @@
                 10
               ],
               "tsunami": false,
-              "significance": 2609
+              "significance": 2610
             },
             {
               "id": "us6000t7zc",
@@ -1997,11 +1989,11 @@
             {
               "id": "us7000stbz",
               "magnitude": 6.3,
-              "place": "260 km SSE of Dunhuang, China",
-              "time": "2026-06-16T09:06:55.226Z",
+              "place": "262 km SSE of Dunhuang, China",
+              "time": "2026-06-16T09:06:55.517Z",
               "coordinates": [
-                95.4028,
-                37.8888,
+                95.4919,
+                37.888,
                 10
               ],
               "tsunami": false,
@@ -2024,10 +2016,10 @@
               "id": "us7000st41",
               "magnitude": 2.4,
               "place": "8 km NE of Bel Air North, Maryland",
-              "time": "2026-06-15T15:02:24.147Z",
+              "time": "2026-06-15T15:02:24.168Z",
               "coordinates": [
-                -76.3097,
-                39.6174,
+                -76.3094,
+                39.6177,
                 5
               ],
               "tsunami": false,
@@ -2036,15 +2028,15 @@
             {
               "id": "us7000st1c",
               "magnitude": 6.2,
-              "place": "67 km ESE of Pondaguitan, Philippines",
-              "time": "2026-06-15T09:18:38.846Z",
+              "place": "68 km ESE of Pondaguitan, Philippines",
+              "time": "2026-06-15T09:18:36.126Z",
               "coordinates": [
-                126.7611,
-                6.193,
-                111.922
+                126.7773,
+                6.2076,
+                84
               ],
               "tsunami": false,
-              "significance": 600
+              "significance": 605
             },
             {
               "id": "hv74978947",
@@ -2101,14 +2093,34 @@
           ]
         },
         "hazards": {
-          "totalActive": 48,
+          "totalActive": 49,
           "byCategory": {
-            "Severe Storms": 2,
+            "Severe Storms": 3,
             "Sea and Lake Ice": 14,
             "Wildfires": 31,
             "Volcanoes": 1
           },
           "events": [
+            {
+              "id": "EONET_20980",
+              "title": "Tropical Storm Maysak",
+              "categories": [
+                "Severe Storms"
+              ],
+              "sources": [
+                "JTWC"
+              ],
+              "geometry": {
+                "magnitudeValue": 50,
+                "magnitudeUnit": "kts",
+                "date": "2026-07-04T18:00:00Z",
+                "type": "Point",
+                "coordinates": [
+                  107.9,
+                  21.6
+                ]
+              }
+            },
             {
               "id": "EONET_20878",
               "title": "Tropical Storm Douglas",
@@ -2139,13 +2151,13 @@
                 "JTWC"
               ],
               "geometry": {
-                "magnitudeValue": 155,
+                "magnitudeValue": 145,
                 "magnitudeUnit": "kts",
-                "date": "2026-07-05T18:00:00Z",
+                "date": "2026-07-06T06:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  146.1,
-                  14
+                  144,
+                  14.9
                 ]
               }
             },
@@ -2689,26 +2701,6 @@
                   -69.18
                 ]
               }
-            },
-            {
-              "id": "EONET_5359",
-              "title": "Iceberg A76C",
-              "categories": [
-                "Sea and Lake Ice"
-              ],
-              "sources": [
-                "NATICE"
-              ],
-              "geometry": {
-                "magnitudeValue": 112,
-                "magnitudeUnit": "NM^2",
-                "date": "2026-07-03T00:00:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -32.32,
-                  -52.65
-                ]
-              }
             }
           ]
         },
@@ -2718,55 +2710,55 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": 0.7,
-              "surface_pressure": 1010.3,
-              "wind_speed_10m": 7.13,
+              "temperature_2m": 0.5,
+              "surface_pressure": 1012.3,
+              "wind_speed_10m": 7.05,
               "relative_humidity_2m": 98
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 14.1,
-              "surface_pressure": 1014.5,
-              "wind_speed_10m": 9.99,
-              "relative_humidity_2m": 97
+              "temperature_2m": 14.7,
+              "surface_pressure": 1012.1,
+              "wind_speed_10m": 11.47,
+              "relative_humidity_2m": 96
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 18.2,
-              "surface_pressure": 915.8,
-              "wind_speed_10m": 0.67,
-              "relative_humidity_2m": 100
+              "temperature_2m": 25.9,
+              "surface_pressure": 918.5,
+              "wind_speed_10m": 1.31,
+              "relative_humidity_2m": 69
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 29.7,
-              "surface_pressure": 1011.7,
-              "wind_speed_10m": 1.96,
-              "relative_humidity_2m": 72
+              "temperature_2m": 30.6,
+              "surface_pressure": 1012.4,
+              "wind_speed_10m": 2.49,
+              "relative_humidity_2m": 68
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": -2.8,
+              "temperature_2m": -1.3,
               "surface_pressure": 983.4,
-              "wind_speed_10m": 11.88,
-              "relative_humidity_2m": 64
+              "wind_speed_10m": 8.22,
+              "relative_humidity_2m": 84
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -39,
-              "surface_pressure": 724.3,
-              "wind_speed_10m": 7.84,
-              "relative_humidity_2m": 77
+              "temperature_2m": -38.3,
+              "surface_pressure": 724.4,
+              "wind_speed_10m": 9.93,
+              "relative_humidity_2m": 65
             }
           ]
         },
@@ -2784,7 +2776,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-07-06T04:58:11.861Z"
+        "generatedAt": "2026-07-06T16:04:48.969Z"
       },
       "health": {
         "score": 87,
