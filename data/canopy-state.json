@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-07-07T04:40:28.312Z",
+    "generatedAt": "2026-07-07T15:36:37.641Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -25,9 +25,9 @@
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 4.27,
-      "minTemperature_2m": -36.4,
-      "maxTemperature_2m": 29.8
+      "avgTemperature_2m": 5.75,
+      "minTemperature_2m": -35.3,
+      "maxTemperature_2m": 30.7
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -41,13 +41,13 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-07-07T04:12:40.711Z",
+        "generated": "2026-07-07T15:11:45.714Z",
         "generated_date": "2026-07-07",
         "script_version": "1.1",
         "window_days": 14,
         "window_start": "2026-06-23",
         "window_end": "2026-07-07",
-        "runtime_ms": 258,
+        "runtime_ms": 531,
         "seismic_live": true,
         "eonet_live": true
       },
@@ -234,6 +234,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t81q"
           },
           {
+            "id": "us6000talg",
+            "magnitude": 5.4,
+            "place": "162 km NNW of Tobelo, Indonesia",
+            "time": "2026-07-07T07:16:26.844Z",
+            "depth_km": 36.8,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000talg"
+          },
+          {
             "id": "us6000tadj",
             "magnitude": 5.4,
             "place": "65 km SSW of Sarangani, Philippines",
@@ -256,6 +264,14 @@
             "time": "2026-06-27T03:06:21.113Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8le"
+          },
+          {
+            "id": "us6000tal2",
+            "magnitude": 5.3,
+            "place": "Reykjanes Ridge",
+            "time": "2026-07-07T05:55:40.352Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tal2"
           },
           {
             "id": "us6000ta86",
@@ -304,14 +320,6 @@
             "time": "2026-06-29T03:32:39.606Z",
             "depth_km": 13.3,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/aka2026msxacu"
-          },
-          {
-            "id": "us6000t7lb",
-            "magnitude": 5.3,
-            "place": "120 km S of Isangel, Vanuatu",
-            "time": "2026-06-23T13:58:34.774Z",
-            "depth_km": 21.5,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t7lb"
           },
           {
             "id": "us6000ta14",
@@ -522,6 +530,22 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t7t2"
           },
           {
+            "id": "us6000talm",
+            "magnitude": 5,
+            "place": "Reykjanes Ridge",
+            "time": "2026-07-07T08:30:56.236Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000talm"
+          },
+          {
+            "id": "us6000takw",
+            "magnitude": 5,
+            "place": "Reykjanes Ridge",
+            "time": "2026-07-07T05:00:43.964Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000takw"
+          },
+          {
             "id": "us6000taab",
             "magnitude": 5,
             "place": "106 km NW of Coquimbo, Chile",
@@ -640,14 +664,6 @@
             "time": "2026-06-24T02:04:49.661Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t7rx"
-          },
-          {
-            "id": "us6000t7k4",
-            "magnitude": 5,
-            "place": "174 km E of Hihifo, Tonga",
-            "time": "2026-06-23T07:11:14.440Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t7k4"
           },
           {
             "id": "us6000taj0",
@@ -840,14 +856,6 @@
             "time": "2026-06-24T01:34:19.440Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t7rq"
-          },
-          {
-            "id": "us6000t7jl",
-            "magnitude": 4.9,
-            "place": "171 km WNW of Tobelo, Indonesia",
-            "time": "2026-06-23T04:53:36.749Z",
-            "depth_km": 35,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t7jl"
           },
           {
             "id": "us6000taht",
@@ -1141,7 +1149,7 @@
             "id": "us6000t8k6",
             "magnitude": 4.7,
             "place": "54 km N of El Limón, Venezuela",
-            "time": "2026-06-26T22:16:11.931Z",
+            "time": "2026-06-26T22:16:11.872Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8k6"
           },
@@ -1466,12 +1474,20 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t7ng"
           },
           {
-            "id": "us6000t7ks",
-            "magnitude": 4.6,
-            "place": "114 km NE of Tobelo, Indonesia",
-            "time": "2026-06-23T12:13:24.754Z",
-            "depth_km": 241.1,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t7ks"
+            "id": "us6000tant",
+            "magnitude": 4.5,
+            "place": "172 km NNW of Tobelo, Indonesia",
+            "time": "2026-07-07T14:21:22.044Z",
+            "depth_km": 35,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tant"
+          },
+          {
+            "id": "us6000talr",
+            "magnitude": 4.5,
+            "place": "32 km NE of Yaguaraparo, Venezuela",
+            "time": "2026-07-07T08:41:37.390Z",
+            "depth_km": 126.8,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000talr"
           },
           {
             "id": "us6000taa3",
@@ -1768,17 +1784,9 @@
             "time": "2026-06-23T15:56:34.958Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t7ls"
-          },
-          {
-            "id": "us6000t7kn",
-            "magnitude": 4.5,
-            "place": "Izu Islands, Japan region",
-            "time": "2026-06-23T11:36:00.672Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t7kn"
           }
         ],
-        "count_total": 215,
+        "count_total": 216,
         "count_m55_plus": 22,
         "count_m60_plus": 9,
         "count_m70_plus": 2,
@@ -1794,7 +1802,7 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-07-07T04:12:40.653Z"
+        "retrieved": "2026-07-07T15:11:45.306Z"
       },
       "wildfire": {
         "events": [],
@@ -1850,7 +1858,7 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-07-07T04:28:25.701Z",
+        "generatedAt": "2026-07-07T15:19:00.987Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
@@ -1935,7 +1943,7 @@
                 10
               ],
               "tsunami": false,
-              "significance": 2610
+              "significance": 2612
             },
             {
               "id": "us6000t7zc",
@@ -2091,7 +2099,7 @@
                 56.991
               ],
               "tsunami": false,
-              "significance": 1318
+              "significance": 1319
             }
           ]
         },
@@ -2154,13 +2162,13 @@
                 "JTWC"
               ],
               "geometry": {
-                "magnitudeValue": 135,
+                "magnitudeValue": 125,
                 "magnitudeUnit": "kts",
-                "date": "2026-07-06T18:00:00Z",
+                "date": "2026-07-07T06:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  141.1,
-                  15.9
+                  138.4,
+                  16.5
                 ]
               }
             },
@@ -2713,55 +2721,55 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": -0.4,
-              "surface_pressure": 1011.6,
-              "wind_speed_10m": 9.37,
-              "relative_humidity_2m": 99
+              "temperature_2m": 0.6,
+              "surface_pressure": 1012,
+              "wind_speed_10m": 7.75,
+              "relative_humidity_2m": 96
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 14.7,
-              "surface_pressure": 1009.8,
-              "wind_speed_10m": 9.01,
-              "relative_humidity_2m": 97
+              "temperature_2m": 13.4,
+              "surface_pressure": 1008.5,
+              "wind_speed_10m": 5.3,
+              "relative_humidity_2m": 96
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 20,
-              "surface_pressure": 917.3,
-              "wind_speed_10m": 1.55,
-              "relative_humidity_2m": 100
+              "temperature_2m": 25,
+              "surface_pressure": 919,
+              "wind_speed_10m": 2.08,
+              "relative_humidity_2m": 74
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 29.8,
-              "surface_pressure": 1011.9,
-              "wind_speed_10m": 5.1,
-              "relative_humidity_2m": 73
+              "temperature_2m": 30.7,
+              "surface_pressure": 1012.4,
+              "wind_speed_10m": 3.08,
+              "relative_humidity_2m": 67
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": -2.1,
-              "surface_pressure": 996.5,
-              "wind_speed_10m": 13.14,
-              "relative_humidity_2m": 74
+              "temperature_2m": 0.1,
+              "surface_pressure": 1000.5,
+              "wind_speed_10m": 13.98,
+              "relative_humidity_2m": 86
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -36.4,
-              "surface_pressure": 721.2,
-              "wind_speed_10m": 7.53,
-              "relative_humidity_2m": 74
+              "temperature_2m": -35.3,
+              "surface_pressure": 723.6,
+              "wind_speed_10m": 8.58,
+              "relative_humidity_2m": 72
             }
           ]
         },
@@ -2779,7 +2787,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-07-07T04:36:44.980Z"
+        "generatedAt": "2026-07-07T15:33:49.242Z"
       },
       "health": {
         "score": 87,
