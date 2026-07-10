@@ -1,13 +1,13 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-07-10T04:28:31.081Z",
+    "generatedAt": "2026-07-10T15:05:06.766Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 16,
+      "count": 15,
       "maxMagnitude": 7.5,
       "events": [
         {
@@ -203,28 +203,15 @@
             84
           ],
           "tsunami": false,
-          "significance": 607
-        },
-        {
-          "id": "hv74978947",
-          "magnitude": 4.71,
-          "place": "23 km E of Pāpa‘ikou, Hawaii",
-          "time": "2026-06-10T08:37:40.490Z",
-          "coordinates": [
-            -154.866166666667,
-            19.7843333333333,
-            39.18
-          ],
-          "tsunami": false,
-          "significance": 733
+          "significance": 608
         }
       ]
     },
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Wildfires": 48,
-        "Severe Storms": 2
+        "Wildfires": 49,
+        "Severe Storms": 1
       },
       "events": [
         {
@@ -688,26 +675,6 @@
           }
         },
         {
-          "id": "EONET_20980",
-          "title": "Tropical Storm Maysak",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "JTWC"
-          ],
-          "geometry": {
-            "magnitudeValue": 50,
-            "magnitudeUnit": "kts",
-            "date": "2026-07-04T18:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              107.9,
-              21.6
-            ]
-          }
-        },
-        {
           "id": "EONET_20877",
           "title": "Super Typhoon Bavi",
           "categories": [
@@ -717,13 +684,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 90,
+            "magnitudeValue": 75,
             "magnitudeUnit": "kts",
-            "date": "2026-07-09T18:00:00Z",
+            "date": "2026-07-10T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              128.2,
-              20.1
+              126.9,
+              21.9
             ]
           }
         },
@@ -826,6 +793,26 @@
               28.3491667
             ]
           }
+        },
+        {
+          "id": "EONET_21037",
+          "title": "Wildfire LAMBDIN, Walla Walla, Washington",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 12776,
+            "magnitudeUnit": "acres",
+            "date": "2026-06-29T14:11:00Z",
+            "type": "Point",
+            "coordinates": [
+              -118.872567,
+              46.051583
+            ]
+          }
         }
       ]
     },
@@ -835,55 +822,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": 0.3,
-          "surface_pressure": 1004.8,
-          "wind_speed_10m": 2.68,
-          "relative_humidity_2m": 98
+          "temperature_2m": 0.9,
+          "surface_pressure": 1003.7,
+          "wind_speed_10m": 3.68,
+          "relative_humidity_2m": 99
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 12.6,
-          "surface_pressure": 1020.9,
-          "wind_speed_10m": 1.5,
-          "relative_humidity_2m": 86
+          "temperature_2m": 13.4,
+          "surface_pressure": 1023.4,
+          "wind_speed_10m": 3.1,
+          "relative_humidity_2m": 82
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 20.1,
-          "surface_pressure": 915.1,
-          "wind_speed_10m": 2.21,
-          "relative_humidity_2m": 97
+          "temperature_2m": 23.1,
+          "surface_pressure": 916.2,
+          "wind_speed_10m": 2.62,
+          "relative_humidity_2m": 81
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 29.6,
-          "surface_pressure": 1012.1,
-          "wind_speed_10m": 3.39,
-          "relative_humidity_2m": 69
+          "temperature_2m": 30.5,
+          "surface_pressure": 1011.6,
+          "wind_speed_10m": 2.26,
+          "relative_humidity_2m": 70
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": 0.4,
-          "surface_pressure": 1020.7,
-          "wind_speed_10m": 8.01,
-          "relative_humidity_2m": 95
+          "temperature_2m": -0.3,
+          "surface_pressure": 1019.9,
+          "wind_speed_10m": 8.77,
+          "relative_humidity_2m": 90
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -38.6,
-          "surface_pressure": 721.6,
-          "wind_speed_10m": 6.42,
-          "relative_humidity_2m": 70
+          "temperature_2m": -40.8,
+          "surface_pressure": 721.5,
+          "wind_speed_10m": 8.48,
+          "relative_humidity_2m": 69
         }
       ]
     },
