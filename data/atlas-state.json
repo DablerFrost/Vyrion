@@ -1,15 +1,28 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-07-11T03:48:06.958Z",
+    "generatedAt": "2026-07-11T13:57:13.417Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 15,
+      "count": 16,
       "maxMagnitude": 7.5,
       "events": [
+        {
+          "id": "us7000szpb",
+          "magnitude": 6.4,
+          "place": "South Sandwich Islands region",
+          "time": "2026-07-11T10:26:42.691Z",
+          "coordinates": [
+            -28.8526,
+            -55.5424,
+            26
+          ],
+          "tsunami": false,
+          "significance": 630
+        },
         {
           "id": "uw714040221",
           "magnitude": 3.8,
@@ -60,7 +73,7 @@
             42
           ],
           "tsunami": false,
-          "significance": 681
+          "significance": 682
         },
         {
           "id": "us6000t7zq",
@@ -86,7 +99,7 @@
             10
           ],
           "tsunami": false,
-          "significance": 2642
+          "significance": 2643
         },
         {
           "id": "us6000t7zc",
@@ -684,13 +697,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 85,
+            "magnitudeValue": 80,
             "magnitudeUnit": "kts",
-            "date": "2026-07-10T18:00:00Z",
+            "date": "2026-07-11T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              125.2,
-              23.8
+              123.2,
+              26.6
             ]
           }
         },
@@ -823,54 +836,54 @@
           "lat": 80,
           "lon": 0,
           "temperature_2m": 1.1,
-          "surface_pressure": 1000.1,
-          "wind_speed_10m": 5.26,
+          "surface_pressure": 999,
+          "wind_speed_10m": 4.6,
           "relative_humidity_2m": 99
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 14.3,
-          "surface_pressure": 1024.2,
-          "wind_speed_10m": 5.76,
-          "relative_humidity_2m": 85
+          "temperature_2m": 14.6,
+          "surface_pressure": 1024.4,
+          "wind_speed_10m": 7.85,
+          "relative_humidity_2m": 86
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 19.5,
-          "surface_pressure": 915.1,
-          "wind_speed_10m": 2.01,
-          "relative_humidity_2m": 100
+          "temperature_2m": 23.3,
+          "surface_pressure": 916.6,
+          "wind_speed_10m": 2.66,
+          "relative_humidity_2m": 77
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 30.2,
-          "surface_pressure": 1011.5,
-          "wind_speed_10m": 2.57,
-          "relative_humidity_2m": 66
+          "temperature_2m": 29,
+          "surface_pressure": 1009.8,
+          "wind_speed_10m": 2.15,
+          "relative_humidity_2m": 82
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": 0.5,
-          "surface_pressure": 1014.1,
-          "wind_speed_10m": 10.28,
-          "relative_humidity_2m": 91
+          "temperature_2m": 1.6,
+          "surface_pressure": 1006.9,
+          "wind_speed_10m": 12.13,
+          "relative_humidity_2m": 96
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -36.1,
-          "surface_pressure": 723.6,
-          "wind_speed_10m": 8.79,
-          "relative_humidity_2m": 68
+          "temperature_2m": -35.8,
+          "surface_pressure": 725.9,
+          "wind_speed_10m": 7.42,
+          "relative_humidity_2m": 70
         }
       ]
     },
