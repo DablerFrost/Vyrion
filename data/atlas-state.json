@@ -1,15 +1,41 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-07-13T04:05:34.481Z",
+    "generatedAt": "2026-07-13T15:14:47.316Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 17,
+      "count": 19,
       "maxMagnitude": 7.5,
       "events": [
+        {
+          "id": "us7000t01n",
+          "magnitude": 6.3,
+          "place": "southeast of the Loyalty Islands",
+          "time": "2026-07-13T14:45:49.203Z",
+          "coordinates": [
+            171.5199,
+            -22.7889,
+            10
+          ],
+          "tsunami": false,
+          "significance": 611
+        },
+        {
+          "id": "us7000szzy",
+          "magnitude": 6.4,
+          "place": "191 km SE of Lorengau, Papua New Guinea",
+          "time": "2026-07-13T08:53:27.913Z",
+          "coordinates": [
+            148.5218,
+            -3.2207,
+            10
+          ],
+          "tsunami": false,
+          "significance": 630
+        },
         {
           "id": "ci41291863",
           "magnitude": 4.10922888670317,
@@ -21,7 +47,7 @@
             13.09
           ],
           "tsunami": false,
-          "significance": 629
+          "significance": 633
         },
         {
           "id": "us7000szpb",
@@ -86,7 +112,7 @@
             42
           ],
           "tsunami": false,
-          "significance": 684
+          "significance": 685
         },
         {
           "id": "us6000t7zq",
@@ -849,54 +875,54 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -0.6,
-          "surface_pressure": 988,
-          "wind_speed_10m": 3.55,
-          "relative_humidity_2m": 98
+          "temperature_2m": -0.3,
+          "surface_pressure": 995.9,
+          "wind_speed_10m": 9.74,
+          "relative_humidity_2m": 94
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 15.5,
-          "surface_pressure": 1020.6,
-          "wind_speed_10m": 5.59,
-          "relative_humidity_2m": 95
+          "temperature_2m": 15.2,
+          "surface_pressure": 1021.7,
+          "wind_speed_10m": 6.27,
+          "relative_humidity_2m": 91
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 18.7,
-          "surface_pressure": 915.8,
-          "wind_speed_10m": 1.58,
-          "relative_humidity_2m": 99
+          "temperature_2m": 24.7,
+          "surface_pressure": 918.1,
+          "wind_speed_10m": 2.46,
+          "relative_humidity_2m": 69
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 28.7,
+          "temperature_2m": 30.6,
           "surface_pressure": 1010.2,
-          "wind_speed_10m": 5.38,
-          "relative_humidity_2m": 79
+          "wind_speed_10m": 7.07,
+          "relative_humidity_2m": 72
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -0.1,
-          "surface_pressure": 991.4,
-          "wind_speed_10m": 1.52,
-          "relative_humidity_2m": 99
+          "temperature_2m": -1.1,
+          "surface_pressure": 989.4,
+          "wind_speed_10m": 12.58,
+          "relative_humidity_2m": 89
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -47.6,
-          "surface_pressure": 717.7,
-          "wind_speed_10m": 6.25,
+          "temperature_2m": -48.5,
+          "surface_pressure": 715.4,
+          "wind_speed_10m": 7.56,
           "relative_humidity_2m": 69
         }
       ]
