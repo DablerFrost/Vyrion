@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-07-13T04:22:52.484Z",
+    "generatedAt": "2026-07-13T15:36:47.031Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -13,20 +13,20 @@
   },
   "synthesis": {
     "hazardSummary": {
-      "totalEvents": 67,
+      "totalEvents": 69,
       "categories": {
         "Wildfires": 46,
         "Sea and Lake Ice": 3,
         "Severe Storms": 1
       },
-      "seismicCount": 17,
+      "seismicCount": 19,
       "maxMagnitude": 7.5
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 2.43,
-      "minTemperature_2m": -47.6,
-      "maxTemperature_2m": 28.7
+      "avgTemperature_2m": 3.43,
+      "minTemperature_2m": -48.5,
+      "maxTemperature_2m": 30.6
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -40,22 +40,30 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-07-13T03:51:12.754Z",
+        "generated": "2026-07-13T15:09:03.520Z",
         "generated_date": "2026-07-13",
         "script_version": "1.1",
         "window_days": 14,
         "window_start": "2026-06-29",
         "window_end": "2026-07-13",
-        "runtime_ms": 362,
+        "runtime_ms": 489,
         "seismic_live": true,
         "eonet_live": true
       },
       "threat": {
         "level": "CRITICAL",
-        "score": 22
+        "score": 24.75
       },
       "seismic": {
         "events": [
+          {
+            "id": "us7000szzy",
+            "magnitude": 6.4,
+            "place": "191 km SE of Lorengau, Papua New Guinea",
+            "time": "2026-07-13T08:53:27.913Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000szzy"
+          },
           {
             "id": "us7000szpb",
             "magnitude": 6.4,
@@ -63,6 +71,14 @@
             "time": "2026-07-11T10:26:42.691Z",
             "depth_km": 26,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000szpb"
+          },
+          {
+            "id": "us7000t01n",
+            "magnitude": 6.3,
+            "place": "southeast of the Loyalty Islands",
+            "time": "2026-07-13T14:45:49.203Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t01n"
           },
           {
             "id": "us6000t9r5",
@@ -175,14 +191,6 @@
             "time": "2026-07-01T17:57:02.913Z",
             "depth_km": 212.9,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9gg"
-          },
-          {
-            "id": "us6000t8yt",
-            "magnitude": 5.5,
-            "place": "218 km W of Bandon, Oregon",
-            "time": "2026-06-29T11:35:33.629Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8yt"
           },
           {
             "id": "us7000szyr",
@@ -369,14 +377,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9jv"
           },
           {
-            "id": "us6000t8x8",
-            "magnitude": 5.2,
-            "place": "107 km SSW of Sarangani, Philippines",
-            "time": "2026-06-29T04:23:05.855Z",
-            "depth_km": 9.9,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8x8"
-          },
-          {
             "id": "us7000szvq",
             "magnitude": 5.1,
             "place": "27 km SSE of Tambolaka, Indonesia",
@@ -481,12 +481,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t93x"
           },
           {
-            "id": "us6000t8xq",
-            "magnitude": 5.1,
-            "place": "off the coast of Central America",
-            "time": "2026-06-29T07:38:27.562Z",
+            "id": "us7000szzl",
+            "magnitude": 5,
+            "place": "southeast of the Loyalty Islands",
+            "time": "2026-07-13T06:45:31.999Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8xq"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000szzl"
           },
           {
             "id": "us7000szuz",
@@ -615,6 +615,14 @@
             "time": "2026-07-01T02:00:38.195Z",
             "depth_km": 130.5,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9bv"
+          },
+          {
+            "id": "us7000szzw",
+            "magnitude": 4.9,
+            "place": "southeast of the Loyalty Islands",
+            "time": "2026-07-13T07:59:35.728Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000szzw"
           },
           {
             "id": "us7000szsv",
@@ -817,12 +825,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t91x"
           },
           {
-            "id": "us6000t8x6",
-            "magnitude": 4.9,
-            "place": "90 km S of Sarangani, Philippines",
-            "time": "2026-06-29T04:14:33.185Z",
-            "depth_km": 45.1,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8x6"
+            "id": "us7000t014",
+            "magnitude": 4.8,
+            "place": "south of the Fiji Islands",
+            "time": "2026-07-13T12:19:58.505Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t014"
           },
           {
             "id": "us7000szhy",
@@ -943,14 +951,6 @@
             "time": "2026-06-30T00:32:02.435Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tap2"
-          },
-          {
-            "id": "us6000t8z3",
-            "magnitude": 4.8,
-            "place": "101 km ENE of Aksu, China",
-            "time": "2026-06-29T12:33:04.790Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8z3"
           },
           {
             "id": "us7000szus",
@@ -1377,30 +1377,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t937"
           },
           {
-            "id": "us6000t8yf",
-            "magnitude": 4.6,
-            "place": "27 km N of Caraballeda, Venezuela",
-            "time": "2026-06-29T11:01:03.516Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8yf"
-          },
-          {
-            "id": "us6000t8xr",
-            "magnitude": 4.6,
-            "place": "213 km SE of Vilyuchinsk, Russia",
-            "time": "2026-06-29T07:36:09.992Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8xr"
-          },
-          {
-            "id": "us6000t8xp",
-            "magnitude": 4.6,
-            "place": "131 km E of Bitung, Indonesia",
-            "time": "2026-06-29T07:19:50.329Z",
-            "depth_km": 35,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8xp"
-          },
-          {
             "id": "us7000szxs",
             "magnitude": 4.5,
             "place": "14 km WNW of Changning, China",
@@ -1601,14 +1577,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ta6j"
           },
           {
-            "id": "us6000ta6h",
-            "magnitude": 4.5,
-            "place": "Pagan region, Northern Mariana Islands",
-            "time": "2026-07-04T22:12:53.394Z",
-            "depth_km": 187.8,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ta6h"
-          },
-          {
             "id": "us6000ta0n",
             "magnitude": 4.5,
             "place": "Fiji region",
@@ -1703,41 +1671,25 @@
             "time": "2026-06-29T15:51:18.767Z",
             "depth_km": 546.6,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t907"
-          },
-          {
-            "id": "us6000t8yu",
-            "magnitude": 4.5,
-            "place": "40 km SW of Jurm, Afghanistan",
-            "time": "2026-06-29T11:33:12.639Z",
-            "depth_km": 204.4,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8yu"
-          },
-          {
-            "id": "us6000t8xk",
-            "magnitude": 4.5,
-            "place": "Volcano Islands, Japan region",
-            "time": "2026-06-29T06:54:16.912Z",
-            "depth_km": 179.4,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8xk"
           }
         ],
-        "count_total": 208,
-        "count_m55_plus": 16,
-        "count_m60_plus": 5,
+        "count_total": 202,
+        "count_m55_plus": 17,
+        "count_m60_plus": 7,
         "count_m70_plus": 0,
         "count_m80_plus": 0,
         "largest": {
-          "id": "us7000szpb",
+          "id": "us7000szzy",
           "magnitude": 6.4,
-          "place": "South Sandwich Islands region",
-          "time": "2026-07-11T10:26:42.691Z",
-          "depth_km": 26,
-          "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000szpb"
+          "place": "191 km SE of Lorengau, Papua New Guinea",
+          "time": "2026-07-13T08:53:27.913Z",
+          "depth_km": 10,
+          "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000szzy"
         },
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-07-13T03:51:12.568Z"
+        "retrieved": "2026-07-13T15:09:03.284Z"
       },
       "wildfire": {
         "events": [
@@ -2113,15 +2065,41 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-07-13T04:05:34.481Z",
+        "generatedAt": "2026-07-13T15:14:47.316Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
       "layers": {
         "seismic": {
-          "count": 17,
+          "count": 19,
           "maxMagnitude": 7.5,
           "events": [
+            {
+              "id": "us7000t01n",
+              "magnitude": 6.3,
+              "place": "southeast of the Loyalty Islands",
+              "time": "2026-07-13T14:45:49.203Z",
+              "coordinates": [
+                171.5199,
+                -22.7889,
+                10
+              ],
+              "tsunami": false,
+              "significance": 611
+            },
+            {
+              "id": "us7000szzy",
+              "magnitude": 6.4,
+              "place": "191 km SE of Lorengau, Papua New Guinea",
+              "time": "2026-07-13T08:53:27.913Z",
+              "coordinates": [
+                148.5218,
+                -3.2207,
+                10
+              ],
+              "tsunami": false,
+              "significance": 630
+            },
             {
               "id": "ci41291863",
               "magnitude": 4.10922888670317,
@@ -2133,7 +2111,7 @@
                 13.09
               ],
               "tsunami": false,
-              "significance": 629
+              "significance": 633
             },
             {
               "id": "us7000szpb",
@@ -2198,7 +2176,7 @@
                 42
               ],
               "tsunami": false,
-              "significance": 684
+              "significance": 685
             },
             {
               "id": "us6000t7zq",
@@ -2961,54 +2939,54 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": -0.6,
-              "surface_pressure": 988,
-              "wind_speed_10m": 3.55,
-              "relative_humidity_2m": 98
+              "temperature_2m": -0.3,
+              "surface_pressure": 995.9,
+              "wind_speed_10m": 9.74,
+              "relative_humidity_2m": 94
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 15.5,
-              "surface_pressure": 1020.6,
-              "wind_speed_10m": 5.59,
-              "relative_humidity_2m": 95
+              "temperature_2m": 15.2,
+              "surface_pressure": 1021.7,
+              "wind_speed_10m": 6.27,
+              "relative_humidity_2m": 91
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 18.7,
-              "surface_pressure": 915.8,
-              "wind_speed_10m": 1.58,
-              "relative_humidity_2m": 99
+              "temperature_2m": 24.7,
+              "surface_pressure": 918.1,
+              "wind_speed_10m": 2.46,
+              "relative_humidity_2m": 69
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 28.7,
+              "temperature_2m": 30.6,
               "surface_pressure": 1010.2,
-              "wind_speed_10m": 5.38,
-              "relative_humidity_2m": 79
+              "wind_speed_10m": 7.07,
+              "relative_humidity_2m": 72
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": -0.1,
-              "surface_pressure": 991.4,
-              "wind_speed_10m": 1.52,
-              "relative_humidity_2m": 99
+              "temperature_2m": -1.1,
+              "surface_pressure": 989.4,
+              "wind_speed_10m": 12.58,
+              "relative_humidity_2m": 89
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -47.6,
-              "surface_pressure": 717.7,
-              "wind_speed_10m": 6.25,
+              "temperature_2m": -48.5,
+              "surface_pressure": 715.4,
+              "wind_speed_10m": 7.56,
               "relative_humidity_2m": 69
             }
           ]
@@ -3027,7 +3005,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-07-13T04:20:18.725Z"
+        "generatedAt": "2026-07-13T15:33:56.549Z"
       },
       "health": {
         "score": 87,
