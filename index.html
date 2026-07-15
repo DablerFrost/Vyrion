@@ -2693,112 +2693,176 @@
         line-height: 1.75
       }
 
-      /* ── EXPLAINARIUM MODAL ──────────────────────────────────────────── */
-      .xpl-overlay {
-        position: fixed;
-        inset: 0;
-        z-index: 97000;
-        background: rgba(2, 9, 18, .88);
-        backdrop-filter: blur(8px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1.5rem;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity .3s ease, visibility .3s ease;
-      }
+/* ── EXPLAINARIUM MODAL ──────────────────────────────────────────── */
 
-      .xpl-overlay.open {
-        opacity: 1;
-        visibility: visible
-      }
+.xpl-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 97000;
+    background: rgba(2, 9, 18, .88);
+    backdrop-filter: blur(8px);
 
-      .xpl-modal {
-        background: var(--void2);
-        border: 1px solid var(--border);
-        border-radius: 8px;
-        max-width: 680px;
-        width: 100%;
-        max-height: 88vh;
-        overflow-y: auto;
-        overflow-x: hidden;
-        box-shadow: 0 24px 80px rgba(0, 0, 0, .6), 0 0 0 1px rgba(0, 212, 255, .08);
-        transform: scale(.94) translateY(12px);
-        transition: transform .3s var(--evo-motion);
-      }
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-      .xpl-overlay.open .xpl-modal {
-        transform: scale(1) translateY(0)
-      }
+    padding: 1rem;
 
-      .xpl-modal-top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1.2rem 1.4rem;
-        border-bottom: 1px solid var(--border);
-        gap: 1rem;
-        position: sticky;
-        top: 0;
-        background: var(--void2);
-        z-index: 2;
-      }
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease, visibility .3s ease;
+}
 
-      .xpl-modal-title-wrap {
-        display: flex;
-        align-items: center;
-        gap: .9rem;
-        flex: 1
-      }
+.xpl-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
 
-      .xpl-modal-mascot {
-        width: 44px;
-        height: 44px;
-        flex-shrink: 0
-      }
+.xpl-modal {
+    background: var(--void2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
 
-      .xpl-modal-heading {
-        font-family: 'Archivo Narrow', sans-serif;
-        font-weight: 800;
-        font-size: .92rem;
-        letter-spacing: .12em;
-        color: var(--t1);
-      }
+    /* Responsive Application Window */
+    width: min(96vw, 1600px);
+    height: min(94vh, 1200px);
 
-      .xpl-modal-tagline {
-        font-family: 'Archivo', sans-serif;
-        font-size: .7rem;
-        color: var(--t2);
-        margin-top: .18rem;
-        line-height: 1.4
-      }
+    display: flex;
+    flex-direction: column;
 
-      .xpl-close {
-        width: 30px;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        border: 1px solid var(--border);
-        color: var(--t2);
-        cursor: none;
-        font-size: .85rem;
-        flex-shrink: 0;
-        transition: background .15s, color .15s, border-color .15s;
-      }
+    overflow: hidden;
 
-      .xpl-close:hover {
-        background: rgba(240, 48, 48, .08);
-        border-color: rgba(240, 48, 48, .3);
-        color: var(--breach)
-      }
+    box-shadow:
+        0 24px 80px rgba(0,0,0,.6),
+        0 0 0 1px rgba(0,212,255,.08);
 
-      .xpl-body {
-        padding: 1.4rem
-      }
+    transform: scale(.96) translateY(12px);
+    transition: transform .3s var(--evo-motion);
+}
 
+.xpl-overlay.open .xpl-modal {
+    transform: scale(1) translateY(0);
+}
+
+.xpl-modal-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 1.4rem;
+    border-bottom: 1px solid var(--border);
+    gap: 1rem;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: var(--void2);
+
+    flex-shrink: 0;
+}
+
+.xpl-modal-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: .9rem;
+    flex: 1;
+}
+
+.xpl-modal-mascot {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+}
+
+.xpl-modal-heading {
+    font-family: 'Archivo Narrow', sans-serif;
+    font-weight: 800;
+    font-size: clamp(1rem, 1.5vw, 2rem);
+    letter-spacing: .12em;
+    color: var(--t1);
+}
+
+.xpl-modal-tagline {
+    font-family: 'Archivo', sans-serif;
+    font-size: clamp(.8rem, .9vw, 1rem);
+    color: var(--t2);
+    margin-top: .18rem;
+    line-height: 1.4;
+}
+
+.xpl-close {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    color: var(--t2);
+    cursor: none;
+    font-size: .85rem;
+    flex-shrink: 0;
+    transition: background .15s, color .15s, border-color .15s;
+}
+
+.xpl-close:hover {
+    background: rgba(240,48,48,.08);
+    border-color: rgba(240,48,48,.3);
+    color: var(--breach);
+}
+
+.xpl-body {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 1.6rem;
+
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ── TABLET ──────────────────────────────────────────── */
+
+@media (max-width:1024px){
+
+    .xpl-overlay{
+        padding:.75rem;
+    }
+
+    .xpl-modal{
+        width:100%;
+        height:96vh;
+    }
+
+}
+
+/* ── MOBILE ──────────────────────────────────────────── */
+
+@media (max-width:768px){
+
+    .xpl-overlay{
+        padding:0;
+    }
+
+    .xpl-modal{
+        width:100vw;
+        height:100vh;
+
+        border:none;
+        border-radius:0;
+    }
+
+    .xpl-modal-top{
+        padding:1rem;
+    }
+
+    .xpl-body{
+        padding:1rem;
+    }
+
+}
       .xpl-intro {
         font-family: 'Archivo', sans-serif;
         font-size: .82rem;
