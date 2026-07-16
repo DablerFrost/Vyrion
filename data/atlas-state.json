@@ -1,13 +1,13 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-07-15T14:13:42.835Z",
+    "generatedAt": "2026-07-16T03:43:59.660Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 20,
+      "count": 18,
       "maxMagnitude": 7.5,
       "events": [
         {
@@ -73,7 +73,7 @@
             13.09
           ],
           "tsunami": false,
-          "significance": 638
+          "significance": 639
         },
         {
           "id": "us7000szpb",
@@ -164,7 +164,7 @@
             10
           ],
           "tsunami": false,
-          "significance": 2647
+          "significance": 2670
         },
         {
           "id": "us6000t7zc",
@@ -243,43 +243,37 @@
           ],
           "tsunami": false,
           "significance": 1000
-        },
-        {
-          "id": "us7000st95",
-          "magnitude": 6.7,
-          "place": "42 km SE of Palu, Indonesia",
-          "time": "2026-06-16T03:27:44.379Z",
-          "coordinates": [
-            120.1842,
-            -1.1245,
-            11
-          ],
-          "tsunami": false,
-          "significance": 698
-        },
-        {
-          "id": "us7000st41",
-          "magnitude": 2.4,
-          "place": "8 km NE of Bel Air North, Maryland",
-          "time": "2026-06-15T15:02:24.168Z",
-          "coordinates": [
-            -76.3094,
-            39.6177,
-            5
-          ],
-          "tsunami": false,
-          "significance": 600
         }
       ]
     },
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Wildfires": 46,
-        "Sea and Lake Ice": 3,
-        "Severe Storms": 1
+        "Severe Storms": 2,
+        "Wildfires": 45,
+        "Sea and Lake Ice": 3
       },
       "events": [
+        {
+          "id": "EONET_21373",
+          "title": "Tropical Storm Elida",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC"
+          ],
+          "geometry": {
+            "magnitudeValue": 45,
+            "magnitudeUnit": "kts",
+            "date": "2026-07-15T18:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -114.1,
+              15.6
+            ]
+          }
+        },
         {
           "id": "EONET_21322",
           "title": "Prescribed Fire RX Infantry Platoon Battle Course, Morrison, Minnesota",
@@ -859,26 +853,6 @@
               43.35394
             ]
           }
-        },
-        {
-          "id": "EONET_21250",
-          "title": "Prescribed Fire RX Artichoke Lake, Swift, Minnesota",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 615,
-            "magnitudeUnit": "acres",
-            "date": "2026-07-08T10:24:00Z",
-            "type": "Point",
-            "coordinates": [
-              -96.0976,
-              45.3332
-            ]
-          }
         }
       ]
     },
@@ -888,52 +862,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": 0.2,
-          "surface_pressure": 1005.6,
-          "wind_speed_10m": 3.54,
-          "relative_humidity_2m": 91
+          "temperature_2m": -0.3,
+          "surface_pressure": 1004.4,
+          "wind_speed_10m": 2.6,
+          "relative_humidity_2m": 93
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "error": "fetch_failed"
+          "temperature_2m": 16,
+          "surface_pressure": 1023.9,
+          "wind_speed_10m": 3.4,
+          "relative_humidity_2m": 91
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 24.4,
-          "surface_pressure": 918,
-          "wind_speed_10m": 2.6,
-          "relative_humidity_2m": 64
+          "temperature_2m": 19.7,
+          "surface_pressure": 916.1,
+          "wind_speed_10m": 1.96,
+          "relative_humidity_2m": 99
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 29.9,
-          "surface_pressure": 1011.8,
-          "wind_speed_10m": 4.4,
-          "relative_humidity_2m": 78
+          "temperature_2m": 27.2,
+          "surface_pressure": 1013.9,
+          "wind_speed_10m": 0.61,
+          "relative_humidity_2m": 82
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -1.8,
-          "surface_pressure": 1000.8,
-          "wind_speed_10m": 14.03,
-          "relative_humidity_2m": 84
+          "temperature_2m": -1.6,
+          "surface_pressure": 1013.1,
+          "wind_speed_10m": 11.9,
+          "relative_humidity_2m": 79
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
           "temperature_2m": -50.7,
-          "surface_pressure": 705.4,
-          "wind_speed_10m": 8.2,
-          "relative_humidity_2m": 68
+          "surface_pressure": 704.2,
+          "wind_speed_10m": 8.97,
+          "relative_humidity_2m": 67
         }
       ]
     },
