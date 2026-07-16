@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-07-16T03:53:29.155Z",
+    "generatedAt": "2026-07-16T14:49:00.838Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -13,20 +13,19 @@
   },
   "synthesis": {
     "hazardSummary": {
-      "totalEvents": 68,
+      "totalEvents": 66,
       "categories": {
-        "Severe Storms": 2,
-        "Wildfires": 45,
-        "Sea and Lake Ice": 3
+        "Wildfires": 49,
+        "Severe Storms": 1
       },
-      "seismicCount": 18,
+      "seismicCount": 16,
       "maxMagnitude": 7.5
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 1.72,
-      "minTemperature_2m": -50.7,
-      "maxTemperature_2m": 27.2
+      "avgTemperature_2m": 3.05,
+      "minTemperature_2m": -49.9,
+      "maxTemperature_2m": 28.7
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -40,19 +39,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-07-16T03:30:44.641Z",
+        "generated": "2026-07-16T14:18:44.055Z",
         "generated_date": "2026-07-16",
         "script_version": "1.1",
         "window_days": 14,
         "window_start": "2026-07-02",
         "window_end": "2026-07-16",
-        "runtime_ms": 570,
+        "runtime_ms": 815,
         "seismic_live": true,
         "eonet_live": true
       },
       "threat": {
         "level": "CRITICAL",
-        "score": 28.95
+        "score": 34.7
       },
       "seismic": {
         "events": [
@@ -103,6 +102,14 @@
             "time": "2026-07-03T04:04:48.066Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9sj"
+          },
+          {
+            "id": "us7000t0xb",
+            "magnitude": 5.9,
+            "place": "42 km NNW of Te Anau, New Zealand",
+            "time": "2026-07-16T09:14:54.293Z",
+            "depth_km": 76.4,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t0xb"
           },
           {
             "id": "us6000t9tf",
@@ -167,6 +174,14 @@
             "time": "2026-07-14T08:21:06.499Z",
             "depth_km": 140.1,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t0a3"
+          },
+          {
+            "id": "us7000t0x0",
+            "magnitude": 5.5,
+            "place": "Volcano Islands, Japan region",
+            "time": "2026-07-16T07:49:09.543Z",
+            "depth_km": 12.8,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t0x0"
           },
           {
             "id": "us7000t0hk",
@@ -299,9 +314,9 @@
           {
             "id": "us6000ta86",
             "magnitude": 5.3,
-            "place": "71 km S of Severo-Kuril’sk, Russia",
-            "time": "2026-07-05T07:37:07.006Z",
-            "depth_km": 82.9,
+            "place": "78 km S of Severo-Kuril’sk, Russia",
+            "time": "2026-07-05T07:37:06.204Z",
+            "depth_km": 76.9,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ta86"
           },
           {
@@ -313,12 +328,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9zw"
           },
           {
-            "id": "us6000t9kl",
-            "magnitude": 5.3,
-            "place": "South Sandwich Islands region",
-            "time": "2026-07-02T05:23:17.823Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9kl"
+            "id": "aka2026nyxoap",
+            "magnitude": 5.2,
+            "place": "122 km SE of McCarthy, Alaska",
+            "time": "2026-07-16T11:37:21.034Z",
+            "depth_km": 8.5,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/aka2026nyxoap"
           },
           {
             "id": "us7000t09m",
@@ -351,22 +366,6 @@
             "time": "2026-07-04T02:21:23.141Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ta14"
-          },
-          {
-            "id": "us6000t9lz",
-            "magnitude": 5.2,
-            "place": "23 km SSE of Karpathos, Greece",
-            "time": "2026-07-02T11:06:21.727Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9lz"
-          },
-          {
-            "id": "us6000t9kj",
-            "magnitude": 5.2,
-            "place": "east of the South Sandwich Islands",
-            "time": "2026-07-02T05:14:00.518Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9kj"
           },
           {
             "id": "us7000t0k1",
@@ -503,6 +502,14 @@
             "time": "2026-07-03T01:44:50.399Z",
             "depth_km": 34,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9qx"
+          },
+          {
+            "id": "us7000t0x8",
+            "magnitude": 5,
+            "place": "141 km ENE of Hicks Bay, New Zealand",
+            "time": "2026-07-16T08:57:58.825Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t0x8"
           },
           {
             "id": "us7000t09u",
@@ -857,6 +864,22 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9si"
           },
           {
+            "id": "us7000t0xw",
+            "magnitude": 4.8,
+            "place": "27 km S of Coquimbo, Chile",
+            "time": "2026-07-16T10:38:08.761Z",
+            "depth_km": 54.1,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t0xw"
+          },
+          {
+            "id": "us7000t0x1",
+            "magnitude": 4.8,
+            "place": "87 km SW of Altata, Mexico",
+            "time": "2026-07-16T07:28:59.217Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t0x1"
+          },
+          {
             "id": "us7000t0uy",
             "magnitude": 4.8,
             "place": "110 km SW of Basco, Philippines",
@@ -993,12 +1016,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9yy"
           },
           {
-            "id": "us6000t9lc",
-            "magnitude": 4.8,
-            "place": "65 km WNW of Catuday, Philippines",
-            "time": "2026-07-02T09:11:23.313Z",
-            "depth_km": 12.5,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9lc"
+            "id": "us7000t0wh",
+            "magnitude": 4.7,
+            "place": "86 km SSW of Sarangani, Philippines",
+            "time": "2026-07-16T05:55:44.809Z",
+            "depth_km": 47.9,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t0wh"
           },
           {
             "id": "us7000t0uf",
@@ -1163,9 +1186,9 @@
           {
             "id": "us6000t9ta",
             "magnitude": 4.7,
-            "place": "67 km W of Tobelo, Indonesia",
-            "time": "2026-07-03T08:11:39.694Z",
-            "depth_km": 141.1,
+            "place": "56 km W of Tobelo, Indonesia",
+            "time": "2026-07-03T08:11:37.886Z",
+            "depth_km": 126.4,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9ta"
           },
           {
@@ -1175,30 +1198,6 @@
             "time": "2026-07-02T14:44:30.397Z",
             "depth_km": 112.2,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9mw"
-          },
-          {
-            "id": "us6000t9m5",
-            "magnitude": 4.7,
-            "place": "39 km E of Uonuma, Japan",
-            "time": "2026-07-02T11:48:28.653Z",
-            "depth_km": 141.7,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9m5"
-          },
-          {
-            "id": "us6000t9m4",
-            "magnitude": 4.7,
-            "place": "60 km WNW of Catuday, Philippines",
-            "time": "2026-07-02T11:24:38.577Z",
-            "depth_km": 22,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9m4"
-          },
-          {
-            "id": "us6000t9ls",
-            "magnitude": 4.7,
-            "place": "64 km WNW of Catuday, Philippines",
-            "time": "2026-07-02T09:59:26.168Z",
-            "depth_km": 22.1,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9ls"
           },
           {
             "id": "us7000t0mp",
@@ -1449,12 +1448,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ta7h"
           },
           {
-            "id": "us6000t9li",
-            "magnitude": 4.6,
-            "place": "56 km WNW of Catuday, Philippines",
-            "time": "2026-07-02T09:30:13.542Z",
-            "depth_km": 22.6,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9li"
+            "id": "us7000t0yi",
+            "magnitude": 4.5,
+            "place": "189 km W of Neiafu, Tonga",
+            "time": "2026-07-16T13:56:19.246Z",
+            "depth_km": 285.2,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t0yi"
           },
           {
             "id": "us7000t0tz",
@@ -1635,9 +1634,9 @@
           {
             "id": "us6000tara",
             "magnitude": 4.5,
-            "place": "81 km NNE of Adak, Alaska",
-            "time": "2026-07-07T18:07:41.091Z",
-            "depth_km": 172.4,
+            "place": "82 km NNE of Adak, Alaska",
+            "time": "2026-07-07T18:07:41.048Z",
+            "depth_km": 174,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tara"
           },
           {
@@ -1729,24 +1728,24 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9um"
           },
           {
+            "id": "us7000sz6p",
+            "magnitude": 4.5,
+            "place": "62 km NW of Port-Olry, Vanuatu",
+            "time": "2026-07-03T07:56:56.760Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000sz6p"
+          },
+          {
             "id": "us6000t9n0",
             "magnitude": 4.5,
             "place": "Bonin Islands, Japan region",
             "time": "2026-07-02T15:00:32.297Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9n0"
-          },
-          {
-            "id": "us6000t9kr",
-            "magnitude": 4.5,
-            "place": "88 km WSW of Gorontalo, Indonesia",
-            "time": "2026-07-02T05:50:15.796Z",
-            "depth_km": 144.3,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t9kr"
           }
         ],
         "count_total": 211,
-        "count_m55_plus": 17,
+        "count_m55_plus": 19,
         "count_m60_plus": 6,
         "count_m70_plus": 0,
         "count_m80_plus": 0,
@@ -1761,10 +1760,131 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-07-16T03:30:44.203Z"
+        "retrieved": "2026-07-16T14:18:43.544Z"
       },
       "wildfire": {
         "events": [
+          {
+            "id": "EONET_21374",
+            "title": "Wildfire 0460 HOPKIN, Gilliam, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T08:04:00.000Z",
+            "coords": [
+              -120.243,
+              45.336
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21375",
+            "title": "Wildfire 0445 CROSSWHITE, Wheeler, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T00:17:00.000Z",
+            "coords": [
+              -120.199,
+              44.803
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21376",
+            "title": "Wildfire 0450 COVE CREEK, Wheeler, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T00:08:00.000Z",
+            "coords": [
+              -120.346,
+              44.943
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21377",
+            "title": "Wildfire 0449 PORCUPINE RIDGE, Gilliam, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-15T22:01:00.000Z",
+            "coords": [
+              -120.35,
+              45.189
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21378",
+            "title": "Wildfire THORN, San Diego, California",
+            "type": "WILDFIRE",
+            "time": "2026-07-15T18:49:00.000Z",
+            "coords": [
+              -116.333,
+              32.691
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21387",
+            "title": "Wildfire BUCKET SHOP (53)~, Hillsborough, Florida",
+            "type": "WILDFIRE",
+            "time": "2026-07-15T11:13:00.000Z",
+            "coords": [
+              -82.083,
+              27.669
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21388",
+            "title": "Prescribed Fire RX Flowing 24, Clay, Minnesota",
+            "type": "WILDFIRE",
+            "time": "2026-07-15T11:10:00.000Z",
+            "coords": [
+              -96.448,
+              47.015
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21386",
+            "title": "Wildfire Little Knife, Lake, Minnesota",
+            "type": "WILDFIRE",
+            "time": "2026-07-15T10:51:00.000Z",
+            "coords": [
+              -91.105,
+              48.161
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21389",
+            "title": "Prescribed Fire RX Chippewa Bottoms, Chippewa, Minnesota",
+            "type": "WILDFIRE",
+            "time": "2026-07-13T16:49:00.000Z",
+            "coords": [
+              -96.016,
+              45.139
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21390",
+            "title": "Prescribed Fire RX Leach Impact Area, Morrison, Minnesota",
+            "type": "WILDFIRE",
+            "time": "2026-07-13T15:46:00.000Z",
+            "coords": [
+              -94.397,
+              46.27
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21380",
+            "title": "Wildfire P-L Gulch, Rio Blanco, Colorado",
+            "type": "WILDFIRE",
+            "time": "2026-07-13T15:02:00.000Z",
+            "coords": [
+              -108.224,
+              39.874
+            ],
+            "closed": null
+          },
           {
             "id": "EONET_21322",
             "title": "Prescribed Fire RX Infantry Platoon Battle Course, Morrison, Minnesota",
@@ -1931,6 +2051,17 @@
             "closed": null
           },
           {
+            "id": "EONET_21382",
+            "title": "Wildfire Wolfpack, St. Louis, Minnesota",
+            "type": "WILDFIRE",
+            "time": "2026-07-09T16:14:00.000Z",
+            "coords": [
+              -92.282,
+              48.185
+            ],
+            "closed": null
+          },
+          {
             "id": "EONET_21339",
             "title": "Prescribed Fire RX Center Range North, Morrison, Minnesota",
             "type": "WILDFIRE",
@@ -1949,6 +2080,17 @@
             "coords": [
               -94.399,
               46.274
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21383",
+            "title": "Wildfire Sioux, St. Louis, Minnesota",
+            "type": "WILDFIRE",
+            "time": "2026-07-09T12:37:00.000Z",
+            "coords": [
+              -92.224,
+              48.153
             ],
             "closed": null
           },
@@ -2129,6 +2271,28 @@
             "closed": null
           },
           {
+            "id": "EONET_21384",
+            "title": "Wildfire Bear Trap, St. Louis, Minnesota",
+            "type": "WILDFIRE",
+            "time": "2026-07-07T18:28:00.000Z",
+            "coords": [
+              -91.925,
+              48.184
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21381",
+            "title": "Wildfire Camp, Lake, Minnesota",
+            "type": "WILDFIRE",
+            "time": "2026-07-07T18:11:00.000Z",
+            "coords": [
+              -91.783,
+              47.999
+            ],
+            "closed": null
+          },
+          {
             "id": "EONET_21245",
             "title": "Wildfire 3-1 PIT, Lassen, California",
             "type": "WILDFIRE",
@@ -2250,7 +2414,7 @@
             "closed": null
           }
         ],
-        "count": 44
+        "count": 59
       },
       "storm": {
         "events": [
@@ -2291,13 +2455,13 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-07-16T03:43:59.660Z",
+        "generatedAt": "2026-07-16T14:26:55.828Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
       "layers": {
         "seismic": {
-          "count": 18,
+          "count": 16,
           "maxMagnitude": 7.5,
           "events": [
             {
@@ -2311,7 +2475,7 @@
                 67.854
               ],
               "tsunami": false,
-              "significance": 637
+              "significance": 638
             },
             {
               "id": "ci41292687",
@@ -2507,43 +2671,176 @@
               ],
               "tsunami": false,
               "significance": 670
-            },
-            {
-              "id": "us7000stcs",
-              "magnitude": 5.4,
-              "place": "272 km S of Dunhuang, China",
-              "time": "2026-06-16T09:45:26.194Z",
-              "coordinates": [
-                95.2738,
-                37.7544,
-                10
-              ],
-              "tsunami": false,
-              "significance": 650
-            },
-            {
-              "id": "us7000stbz",
-              "magnitude": 6.3,
-              "place": "262 km SSE of Dunhuang, China",
-              "time": "2026-06-16T09:06:55.517Z",
-              "coordinates": [
-                95.4919,
-                37.888,
-                10
-              ],
-              "tsunami": false,
-              "significance": 1000
             }
           ]
         },
         "hazards": {
           "totalActive": 50,
           "byCategory": {
-            "Severe Storms": 2,
-            "Wildfires": 45,
-            "Sea and Lake Ice": 3
+            "Wildfires": 49,
+            "Severe Storms": 1
           },
           "events": [
+            {
+              "id": "EONET_21374",
+              "title": "Wildfire 0460 HOPKIN, Gilliam, Oregon",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 2500,
+                "magnitudeUnit": "acres",
+                "date": "2026-07-16T08:04:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -120.24295,
+                  45.336333
+                ]
+              }
+            },
+            {
+              "id": "EONET_21375",
+              "title": "Wildfire 0445 CROSSWHITE, Wheeler, Oregon",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 1000,
+                "magnitudeUnit": "acres",
+                "date": "2026-07-16T00:17:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -120.199167,
+                  44.803333
+                ]
+              }
+            },
+            {
+              "id": "EONET_21376",
+              "title": "Wildfire 0450 COVE CREEK, Wheeler, Oregon",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 1000,
+                "magnitudeUnit": "acres",
+                "date": "2026-07-16T00:08:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -120.346403,
+                  44.942899
+                ]
+              }
+            },
+            {
+              "id": "EONET_21377",
+              "title": "Wildfire 0449 PORCUPINE RIDGE, Gilliam, Oregon",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 1000,
+                "magnitudeUnit": "acres",
+                "date": "2026-07-15T22:01:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -120.350257,
+                  45.18894
+                ]
+              }
+            },
+            {
+              "id": "EONET_21378",
+              "title": "Wildfire THORN, San Diego, California",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 1201,
+                "magnitudeUnit": "acres",
+                "date": "2026-07-15T18:49:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -116.332927,
+                  32.691104
+                ]
+              }
+            },
+            {
+              "id": "EONET_21387",
+              "title": "Wildfire BUCKET SHOP (53)~, Hillsborough, Florida",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 553,
+                "magnitudeUnit": "acres",
+                "date": "2026-07-15T11:13:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -82.0833333,
+                  27.6688889
+                ]
+              }
+            },
+            {
+              "id": "EONET_21388",
+              "title": "Prescribed Fire RX Flowing 24, Clay, Minnesota",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 516,
+                "magnitudeUnit": "acres",
+                "date": "2026-07-15T11:10:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -96.44761667,
+                  47.01508333
+                ]
+              }
+            },
+            {
+              "id": "EONET_21386",
+              "title": "Wildfire Little Knife, Lake, Minnesota",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 6000,
+                "magnitudeUnit": "acres",
+                "date": "2026-07-15T10:51:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -91.104833,
+                  48.161067
+                ]
+              }
+            },
             {
               "id": "EONET_21373",
               "title": "Tropical Storm Elida",
@@ -2551,16 +2848,77 @@
                 "Severe Storms"
               ],
               "sources": [
-                "JTWC"
+                "JTWC",
+                "NOAA_NHC"
               ],
               "geometry": {
-                "magnitudeValue": 45,
+                "magnitudeValue": 50,
                 "magnitudeUnit": "kts",
-                "date": "2026-07-15T18:00:00Z",
+                "date": "2026-07-16T06:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  -114.1,
-                  15.6
+                  -115.8,
+                  15.5
+                ]
+              }
+            },
+            {
+              "id": "EONET_21389",
+              "title": "Prescribed Fire RX Chippewa Bottoms, Chippewa, Minnesota",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 700,
+                "magnitudeUnit": "acres",
+                "date": "2026-07-13T16:49:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -96.01615,
+                  45.13868333
+                ]
+              }
+            },
+            {
+              "id": "EONET_21390",
+              "title": "Prescribed Fire RX Leach Impact Area, Morrison, Minnesota",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 2094,
+                "magnitudeUnit": "acres",
+                "date": "2026-07-13T15:46:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -94.39675,
+                  46.27013333
+                ]
+              }
+            },
+            {
+              "id": "EONET_21380",
+              "title": "Wildfire P-L Gulch, Rio Blanco, Colorado",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 1500,
+                "magnitudeUnit": "acres",
+                "date": "2026-07-13T15:02:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -108.22355,
+                  39.87355
                 ]
               }
             },
@@ -2865,6 +3223,26 @@
               }
             },
             {
+              "id": "EONET_21382",
+              "title": "Wildfire Wolfpack, St. Louis, Minnesota",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 2234,
+                "magnitudeUnit": "acres",
+                "date": "2026-07-09T16:14:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -92.282167,
+                  48.1855
+                ]
+              }
+            },
+            {
               "id": "EONET_21339",
               "title": "Prescribed Fire RX Center Range North, Morrison, Minnesota",
               "categories": [
@@ -2903,246 +3281,6 @@
                   46.2736
                 ]
               }
-            },
-            {
-              "id": "EONET_21233",
-              "title": "Wildfire Rose Hill Bay, Duplin, North Carolina",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 525,
-                "magnitudeUnit": "acres",
-                "date": "2026-07-09T11:59:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -78.0655556,
-                  34.805
-                ]
-              }
-            },
-            {
-              "id": "EONET_21235",
-              "title": "Prescribed Fire RX Agassiz W413-21-20, Lac qui Parle, Minnesota",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 935,
-                "magnitudeUnit": "acres",
-                "date": "2026-07-09T11:14:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -96.24231667,
-                  45.21431667
-                ]
-              }
-            },
-            {
-              "id": "EONET_21237",
-              "title": "Prescribed Fire RX Loen, Swift, Minnesota",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 580,
-                "magnitudeUnit": "acres",
-                "date": "2026-07-09T10:44:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -95.5,
-                  45.38
-                ]
-              }
-            },
-            {
-              "id": "EONET_21238",
-              "title": "Prescribed Fire RX Loen, Swift, Minnesota",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 580,
-                "magnitudeUnit": "acres",
-                "date": "2026-07-09T10:43:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -95.5,
-                  45.38
-                ]
-              }
-            },
-            {
-              "id": "EONET_21239",
-              "title": "Prescribed Fire RX Chippewa Prairie Unit 7 W413-20-28, Chippewa, Minnesota",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 914,
-                "magnitudeUnit": "acres",
-                "date": "2026-07-09T10:39:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -96.01343333,
-                  45.13898333
-                ]
-              }
-            },
-            {
-              "id": "EONET_21317",
-              "title": "Wildfire Hogatza, Yukon-Koyukuk, Alaska",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 3535.97,
-                "magnitudeUnit": "acres",
-                "date": "2026-07-08T22:46:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -153.849167,
-                  66.664667
-                ]
-              }
-            },
-            {
-              "id": "EONET_21243",
-              "title": "Wildfire RYEGRASS COULEE, Kittitas, Washington",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 800,
-                "magnitudeUnit": "acres",
-                "date": "2026-07-08T20:13:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -120.0208,
-                  46.949083
-                ]
-              }
-            },
-            {
-              "id": "EONET_21231",
-              "title": "Wildfire Getaway Pens, Dickens, Texas",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 850,
-                "magnitudeUnit": "acres",
-                "date": "2026-07-08T18:12:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -100.6149183,
-                  33.44265
-                ]
-              }
-            },
-            {
-              "id": "EONET_21241",
-              "title": "Wildfire VAN, Mariposa, California",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 1107,
-                "magnitudeUnit": "acres",
-                "date": "2026-07-08T16:53:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -120.061317,
-                  37.327638
-                ]
-              }
-            },
-            {
-              "id": "EONET_21321",
-              "title": "Wildfire Anthony, Baker, Oregon",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 1643,
-                "magnitudeUnit": "acres",
-                "date": "2026-07-08T16:37:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -118.200333,
-                  44.991867
-                ]
-              }
-            },
-            {
-              "id": "EONET_21326",
-              "title": "Wildfire Olive Butte, Grant, Oregon",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 1642,
-                "magnitudeUnit": "acres",
-                "date": "2026-07-08T14:17:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -118.452867,
-                  44.745217
-                ]
-              }
-            },
-            {
-              "id": "EONET_21240",
-              "title": "Wildfire WHISKEY, Malheur, Oregon",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 999.3,
-                "magnitudeUnit": "acres",
-                "date": "2026-07-08T12:32:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -118.18178,
-                  43.35394
-                ]
-              }
             }
           ]
         },
@@ -3152,54 +3290,54 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": -0.3,
-              "surface_pressure": 1004.4,
-              "wind_speed_10m": 2.6,
-              "relative_humidity_2m": 93
+              "temperature_2m": -1.3,
+              "surface_pressure": 1004.1,
+              "wind_speed_10m": 5.7,
+              "relative_humidity_2m": 98
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 16,
-              "surface_pressure": 1023.9,
-              "wind_speed_10m": 3.4,
-              "relative_humidity_2m": 91
+              "temperature_2m": 15.9,
+              "surface_pressure": 1026.3,
+              "wind_speed_10m": 5.06,
+              "relative_humidity_2m": 85
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 19.7,
-              "surface_pressure": 916.1,
-              "wind_speed_10m": 1.96,
-              "relative_humidity_2m": 99
+              "temperature_2m": 24.8,
+              "surface_pressure": 918,
+              "wind_speed_10m": 2.56,
+              "relative_humidity_2m": 64
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 27.2,
-              "surface_pressure": 1013.9,
-              "wind_speed_10m": 0.61,
-              "relative_humidity_2m": 82
+              "temperature_2m": 28.7,
+              "surface_pressure": 1012,
+              "wind_speed_10m": 0.82,
+              "relative_humidity_2m": 79
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": -1.6,
-              "surface_pressure": 1013.1,
-              "wind_speed_10m": 11.9,
-              "relative_humidity_2m": 79
+              "temperature_2m": 0.1,
+              "surface_pressure": 1009.4,
+              "wind_speed_10m": 15.32,
+              "relative_humidity_2m": 90
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -50.7,
-              "surface_pressure": 704.2,
-              "wind_speed_10m": 8.97,
+              "temperature_2m": -49.9,
+              "surface_pressure": 707,
+              "wind_speed_10m": 7.78,
               "relative_humidity_2m": 67
             }
           ]
@@ -3218,7 +3356,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-07-16T03:50:44.126Z"
+        "generatedAt": "2026-07-16T14:36:08.057Z"
       },
       "health": {
         "score": 87,
