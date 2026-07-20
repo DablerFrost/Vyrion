@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-07-20T04:29:08.284Z",
+    "generatedAt": "2026-07-20T14:58:44.678Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -13,20 +13,20 @@
   },
   "synthesis": {
     "hazardSummary": {
-      "totalEvents": 66,
+      "totalEvents": 67,
       "categories": {
+        "Severe Storms": 2,
         "Sea and Lake Ice": 1,
-        "Wildfires": 48,
-        "Severe Storms": 1
+        "Wildfires": 47
       },
-      "seismicCount": 16,
+      "seismicCount": 17,
       "maxMagnitude": 7.5
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 3.43,
-      "minTemperature_2m": -40.1,
-      "maxTemperature_2m": 27.4
+      "avgTemperature_2m": 3.87,
+      "minTemperature_2m": -43,
+      "maxTemperature_2m": 26.9
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -40,19 +40,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-07-20T03:56:56.275Z",
+        "generated": "2026-07-20T14:31:36.788Z",
         "generated_date": "2026-07-20",
         "script_version": "1.1",
         "window_days": 14,
         "window_start": "2026-07-06",
         "window_end": "2026-07-20",
-        "runtime_ms": 268,
+        "runtime_ms": 307,
         "seismic_live": true,
         "eonet_live": true
       },
       "threat": {
         "level": "CRITICAL",
-        "score": 34.9
+        "score": 35.8
       },
       "seismic": {
         "events": [
@@ -63,6 +63,14 @@
             "time": "2026-07-17T14:48:39.769Z",
             "depth_km": 18.6,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t1bu"
+          },
+          {
+            "id": "us7000t1cc",
+            "magnitude": 6.4,
+            "place": "86 km WSW of Puerto Madero, Mexico",
+            "time": "2026-07-17T15:20:07.228Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t1cc"
           },
           {
             "id": "us7000szzy",
@@ -97,14 +105,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t0d0"
           },
           {
-            "id": "us7000t1cc",
-            "magnitude": 6,
-            "place": "90 km SW of Puerto Madero, Mexico",
-            "time": "2026-07-17T15:20:06.868Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t1cc"
-          },
-          {
             "id": "us7000t0xb",
             "magnitude": 5.9,
             "place": "42 km NNW of Te Anau, New Zealand",
@@ -137,14 +137,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000takd"
           },
           {
-            "id": "us6000tadc",
-            "magnitude": 5.8,
-            "place": "48 km SSW of Sarangani, Philippines",
-            "time": "2026-07-06T08:11:11.032Z",
-            "depth_km": 35,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tadc"
-          },
-          {
             "id": "us7000t1n5",
             "magnitude": 5.7,
             "place": "72 km SW of Puerto Madero, Mexico",
@@ -159,6 +151,14 @@
             "time": "2026-07-15T14:51:37.824Z",
             "depth_km": 13.1,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t0ng"
+          },
+          {
+            "id": "us7000t1w2",
+            "magnitude": 5.6,
+            "place": "208 km SW of Port McNeill, Canada",
+            "time": "2026-07-20T06:41:30.614Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t1w2"
           },
           {
             "id": "us7000t0a3",
@@ -281,14 +281,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000talg"
           },
           {
-            "id": "us6000tadj",
-            "magnitude": 5.4,
-            "place": "65 km SSW of Sarangani, Philippines",
-            "time": "2026-07-06T08:41:38.715Z",
-            "depth_km": 35,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tadj"
-          },
-          {
             "id": "us7000t1q6",
             "magnitude": 5.3,
             "place": "59 km SW of Puerto Madero, Mexico",
@@ -385,6 +377,22 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tal2"
           },
           {
+            "id": "us7000t1wn",
+            "magnitude": 5.2,
+            "place": "22 km NNW of Scarborough, Trinidad and Tobago",
+            "time": "2026-07-20T09:45:10.282Z",
+            "depth_km": 83.5,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t1wn"
+          },
+          {
+            "id": "us7000t1vq",
+            "magnitude": 5.2,
+            "place": "27 km S of Javānrūd, Iran",
+            "time": "2026-07-20T03:48:50.791Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t1vq"
+          },
+          {
             "id": "us7000t1l4",
             "magnitude": 5.2,
             "place": "69 km SW of Puerto Madero, Mexico",
@@ -479,6 +487,14 @@
             "time": "2026-07-07T18:11:30.741Z",
             "depth_km": 35,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tarc"
+          },
+          {
+            "id": "us7000t1wm",
+            "magnitude": 5.1,
+            "place": "83 km W of Tobelo, Indonesia",
+            "time": "2026-07-20T09:40:43.255Z",
+            "depth_km": 70,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t1wm"
           },
           {
             "id": "us7000t1mu",
@@ -825,6 +841,22 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000takw"
           },
           {
+            "id": "us7000t1x3",
+            "magnitude": 4.9,
+            "place": "48 km WSW of Brisas Barra de Suchiate, Mexico",
+            "time": "2026-07-20T10:53:50.628Z",
+            "depth_km": 39.9,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t1x3"
+          },
+          {
+            "id": "us7000t1vp",
+            "magnitude": 4.9,
+            "place": "27 km S of Javānrūd, Iran",
+            "time": "2026-07-20T03:43:19.357Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t1vp"
+          },
+          {
             "id": "us7000t1q8",
             "magnitude": 4.9,
             "place": "40 km ENE of Shahrak-e Kūlūrī, Iran",
@@ -1023,6 +1055,22 @@
             "time": "2026-07-06T16:50:10.079Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tai4"
+          },
+          {
+            "id": "us7000t1xp",
+            "magnitude": 4.8,
+            "place": "51 km NNE of Port-Olry, Vanuatu",
+            "time": "2026-07-20T12:53:50.831Z",
+            "depth_km": 172.3,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t1xp"
+          },
+          {
+            "id": "us7000t1x5",
+            "magnitude": 4.8,
+            "place": "14 km NE of Güiria, Venezuela",
+            "time": "2026-07-20T10:55:00.820Z",
+            "depth_km": 66,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t1x5"
           },
           {
             "id": "us7000t1rh",
@@ -1721,20 +1769,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tai6"
           },
           {
-            "id": "us6000taf3",
-            "magnitude": 4.6,
-            "place": "28 km NNE of Kuji, Japan",
-            "time": "2026-07-06T11:29:36.717Z",
-            "depth_km": 67,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000taf3"
-          },
-          {
-            "id": "us6000tada",
-            "magnitude": 4.6,
-            "place": "112 km NNW of Neiafu, Tonga",
-            "time": "2026-07-06T08:07:21.524Z",
-            "depth_km": 113.2,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tada"
+            "id": "us7000t1x8",
+            "magnitude": 4.5,
+            "place": "70 km SW of Puerto Madero, Mexico",
+            "time": "2026-07-20T11:10:48.518Z",
+            "depth_km": 35,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t1x8"
           },
           {
             "id": "us7000t1uv",
@@ -2073,7 +2113,7 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t03d"
           }
         ],
-        "count_total": 252,
+        "count_total": 257,
         "count_m55_plus": 21,
         "count_m60_plus": 6,
         "count_m70_plus": 1,
@@ -2089,7 +2129,7 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-07-20T03:56:56.199Z"
+        "retrieved": "2026-07-20T14:31:36.667Z"
       },
       "wildfire": {
         "events": [
@@ -2704,6 +2744,17 @@
       "storm": {
         "events": [
           {
+            "id": "EONET_21399",
+            "title": "Tropical Storm Fausto",
+            "type": "STORM",
+            "time": "2026-07-19T18:00:00.000Z",
+            "coords": [
+              -112.1,
+              12.2
+            ],
+            "closed": null
+          },
+          {
             "id": "EONET_21373",
             "title": "Tropical Storm Elida",
             "type": "STORM",
@@ -2715,7 +2766,7 @@
             "closed": null
           }
         ],
-        "count": 1
+        "count": 2
       },
       "flood": {
         "events": [],
@@ -2729,13 +2780,13 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-07-20T04:10:48.940Z",
+        "generatedAt": "2026-07-20T14:34:51.830Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
       "layers": {
         "seismic": {
-          "count": 16,
+          "count": 17,
           "maxMagnitude": 7.5,
           "events": [
             {
@@ -2750,6 +2801,19 @@
               ],
               "tsunami": false,
               "significance": 657
+            },
+            {
+              "id": "us7000t1cc",
+              "magnitude": 6.4,
+              "place": "86 km WSW of Puerto Madero, Mexico",
+              "time": "2026-07-17T15:20:07.228Z",
+              "coordinates": [
+                -93.1039,
+                14.308,
+                10
+              ],
+              "tsunami": false,
+              "significance": 631
             },
             {
               "id": "us7000t1bu",
@@ -2951,11 +3015,31 @@
         "hazards": {
           "totalActive": 50,
           "byCategory": {
+            "Severe Storms": 2,
             "Sea and Lake Ice": 1,
-            "Wildfires": 48,
-            "Severe Storms": 1
+            "Wildfires": 47
           },
           "events": [
+            {
+              "id": "EONET_21399",
+              "title": "Tropical Storm Fausto",
+              "categories": [
+                "Severe Storms"
+              ],
+              "sources": [
+                "JTWC"
+              ],
+              "geometry": {
+                "magnitudeValue": 45,
+                "magnitudeUnit": "kts",
+                "date": "2026-07-20T06:00:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -115.2,
+                  12.7
+                ]
+              }
+            },
             {
               "id": "EONET_12618",
               "title": "Iceberg A84",
@@ -3167,13 +3251,13 @@
                 "NOAA_NHC"
               ],
               "geometry": {
-                "magnitudeValue": 50,
+                "magnitudeValue": 45,
                 "magnitudeUnit": "kts",
-                "date": "2026-07-19T18:00:00Z",
+                "date": "2026-07-20T06:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  -125.7,
-                  22.6
+                  -127,
+                  24.6
                 ]
               }
             },
@@ -3536,26 +3620,6 @@
                   45.10605
                 ]
               }
-            },
-            {
-              "id": "EONET_21382",
-              "title": "Wildfire Wolfpack, St. Louis, Minnesota",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 2234,
-                "magnitudeUnit": "acres",
-                "date": "2026-07-09T16:14:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -92.282167,
-                  48.1855
-                ]
-              }
             }
           ]
         },
@@ -3565,55 +3629,55 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": -1,
-              "surface_pressure": 1011.1,
-              "wind_speed_10m": 4.62,
-              "relative_humidity_2m": 90
+              "temperature_2m": -0.7,
+              "surface_pressure": 1011.2,
+              "wind_speed_10m": 5.47,
+              "relative_humidity_2m": 96
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 15.6,
-              "surface_pressure": 1031.1,
-              "wind_speed_10m": 6.13,
-              "relative_humidity_2m": 94
+              "temperature_2m": 15.7,
+              "surface_pressure": 1034.1,
+              "wind_speed_10m": 5.31,
+              "relative_humidity_2m": 87
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 19.4,
-              "surface_pressure": 914.5,
-              "wind_speed_10m": 2.21,
-              "relative_humidity_2m": 97
+              "temperature_2m": 24.9,
+              "surface_pressure": 915.8,
+              "wind_speed_10m": 2.45,
+              "relative_humidity_2m": 67
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 27.4,
-              "surface_pressure": 1013.7,
-              "wind_speed_10m": 2.24,
-              "relative_humidity_2m": 78
+              "temperature_2m": 26.9,
+              "surface_pressure": 1013,
+              "wind_speed_10m": 0.85,
+              "relative_humidity_2m": 80
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": -0.7,
-              "surface_pressure": 1002.6,
-              "wind_speed_10m": 13.29,
-              "relative_humidity_2m": 72
+              "temperature_2m": -0.6,
+              "surface_pressure": 1003.2,
+              "wind_speed_10m": 14.47,
+              "relative_humidity_2m": 80
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -40.1,
-              "surface_pressure": 718.6,
-              "wind_speed_10m": 11.47,
-              "relative_humidity_2m": 53
+              "temperature_2m": -43,
+              "surface_pressure": 720.3,
+              "wind_speed_10m": 11.07,
+              "relative_humidity_2m": 55
             }
           ]
         },
@@ -3631,7 +3695,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-07-20T04:25:35.350Z"
+        "generatedAt": "2026-07-20T14:56:00.945Z"
       },
       "health": {
         "score": 87,
