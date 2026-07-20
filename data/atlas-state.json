@@ -1,13 +1,13 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-07-20T04:10:48.940Z",
+    "generatedAt": "2026-07-20T14:34:51.830Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 16,
+      "count": 17,
       "maxMagnitude": 7.5,
       "events": [
         {
@@ -22,6 +22,19 @@
           ],
           "tsunami": false,
           "significance": 657
+        },
+        {
+          "id": "us7000t1cc",
+          "magnitude": 6.4,
+          "place": "86 km WSW of Puerto Madero, Mexico",
+          "time": "2026-07-17T15:20:07.228Z",
+          "coordinates": [
+            -93.1039,
+            14.308,
+            10
+          ],
+          "tsunami": false,
+          "significance": 631
         },
         {
           "id": "us7000t1bu",
@@ -223,11 +236,31 @@
     "hazards": {
       "totalActive": 50,
       "byCategory": {
+        "Severe Storms": 2,
         "Sea and Lake Ice": 1,
-        "Wildfires": 48,
-        "Severe Storms": 1
+        "Wildfires": 47
       },
       "events": [
+        {
+          "id": "EONET_21399",
+          "title": "Tropical Storm Fausto",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC"
+          ],
+          "geometry": {
+            "magnitudeValue": 45,
+            "magnitudeUnit": "kts",
+            "date": "2026-07-20T06:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -115.2,
+              12.7
+            ]
+          }
+        },
         {
           "id": "EONET_12618",
           "title": "Iceberg A84",
@@ -439,13 +472,13 @@
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 50,
+            "magnitudeValue": 45,
             "magnitudeUnit": "kts",
-            "date": "2026-07-19T18:00:00Z",
+            "date": "2026-07-20T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              -125.7,
-              22.6
+              -127,
+              24.6
             ]
           }
         },
@@ -808,26 +841,6 @@
               45.10605
             ]
           }
-        },
-        {
-          "id": "EONET_21382",
-          "title": "Wildfire Wolfpack, St. Louis, Minnesota",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 2234,
-            "magnitudeUnit": "acres",
-            "date": "2026-07-09T16:14:00Z",
-            "type": "Point",
-            "coordinates": [
-              -92.282167,
-              48.1855
-            ]
-          }
         }
       ]
     },
@@ -837,55 +850,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -1,
-          "surface_pressure": 1011.1,
-          "wind_speed_10m": 4.62,
-          "relative_humidity_2m": 90
+          "temperature_2m": -0.7,
+          "surface_pressure": 1011.2,
+          "wind_speed_10m": 5.47,
+          "relative_humidity_2m": 96
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 15.6,
-          "surface_pressure": 1031.1,
-          "wind_speed_10m": 6.13,
-          "relative_humidity_2m": 94
+          "temperature_2m": 15.7,
+          "surface_pressure": 1034.1,
+          "wind_speed_10m": 5.31,
+          "relative_humidity_2m": 87
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 19.4,
-          "surface_pressure": 914.5,
-          "wind_speed_10m": 2.21,
-          "relative_humidity_2m": 97
+          "temperature_2m": 24.9,
+          "surface_pressure": 915.8,
+          "wind_speed_10m": 2.45,
+          "relative_humidity_2m": 67
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 27.4,
-          "surface_pressure": 1013.7,
-          "wind_speed_10m": 2.24,
-          "relative_humidity_2m": 78
+          "temperature_2m": 26.9,
+          "surface_pressure": 1013,
+          "wind_speed_10m": 0.85,
+          "relative_humidity_2m": 80
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -0.7,
-          "surface_pressure": 1002.6,
-          "wind_speed_10m": 13.29,
-          "relative_humidity_2m": 72
+          "temperature_2m": -0.6,
+          "surface_pressure": 1003.2,
+          "wind_speed_10m": 14.47,
+          "relative_humidity_2m": 80
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -40.1,
-          "surface_pressure": 718.6,
-          "wind_speed_10m": 11.47,
-          "relative_humidity_2m": 53
+          "temperature_2m": -43,
+          "surface_pressure": 720.3,
+          "wind_speed_10m": 11.07,
+          "relative_humidity_2m": 55
         }
       ]
     },
