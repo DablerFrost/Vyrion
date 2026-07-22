@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-07-21T14:27:14.147Z",
+    "generatedAt": "2026-07-22T03:51:51.455Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -13,15 +13,15 @@
         {
           "id": "us7000t1q7",
           "magnitude": 5.5,
-          "place": "2 km WSW of Sicaya, Peru",
-          "time": "2026-07-19T02:24:36.324Z",
+          "place": "4 km SSW of Chupaca, Peru",
+          "time": "2026-07-19T02:24:35.623Z",
           "coordinates": [
-            -75.3013,
-            -12.0429,
+            -75.3034,
+            -12.1036,
             10
           ],
           "tsunami": false,
-          "significance": 657
+          "significance": 658
         },
         {
           "id": "us7000t1cc",
@@ -236,11 +236,32 @@
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Wildfires": 47,
-        "Severe Storms": 2,
+        "Severe Storms": 3,
+        "Wildfires": 46,
         "Sea and Lake Ice": 1
       },
       "events": [
+        {
+          "id": "EONET_21437",
+          "title": "Tropical Storm Bertha",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC",
+            "NOAA_NHC"
+          ],
+          "geometry": {
+            "magnitudeValue": 35,
+            "magnitudeUnit": "kts",
+            "date": "2026-07-21T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -86,
+              28.5
+            ]
+          }
+        },
         {
           "id": "EONET_21403",
           "title": "Wildfire Big Gulch, Moffat, Colorado",
@@ -271,13 +292,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 70,
+            "magnitudeValue": 65,
             "magnitudeUnit": "kts",
-            "date": "2026-07-21T06:00:00Z",
+            "date": "2026-07-21T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              -117.6,
-              15.1
+              -119.5,
+              16.5
             ]
           }
         },
@@ -820,26 +841,6 @@
               46.863295
             ]
           }
-        },
-        {
-          "id": "EONET_21423",
-          "title": "Wildfire LYONS FERRY, Franklin, Washington",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 34166,
-            "magnitudeUnit": "acres",
-            "date": "2026-07-16T13:04:00Z",
-            "type": "Point",
-            "coordinates": [
-              -118.23915,
-              46.6259
-            ]
-          }
         }
       ]
     },
@@ -849,55 +850,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -1.1,
-          "surface_pressure": 1012.1,
-          "wind_speed_10m": 3.11,
-          "relative_humidity_2m": 98
+          "temperature_2m": -1,
+          "surface_pressure": 1008,
+          "wind_speed_10m": 6.38,
+          "relative_humidity_2m": 96
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 16,
-          "surface_pressure": 1036.4,
-          "wind_speed_10m": 6.29,
-          "relative_humidity_2m": 83
+          "temperature_2m": 15.8,
+          "surface_pressure": 1034.7,
+          "wind_speed_10m": 5.92,
+          "relative_humidity_2m": 88
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 24.8,
-          "surface_pressure": 915.7,
-          "wind_speed_10m": 2.12,
-          "relative_humidity_2m": 69
+          "temperature_2m": 20.2,
+          "surface_pressure": 914.1,
+          "wind_speed_10m": 2.06,
+          "relative_humidity_2m": 97
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 30.3,
-          "surface_pressure": 1012.5,
-          "wind_speed_10m": 0.87,
-          "relative_humidity_2m": 64
+          "temperature_2m": 28.5,
+          "surface_pressure": 1013.6,
+          "wind_speed_10m": 0.63,
+          "relative_humidity_2m": 72
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": 0.1,
-          "surface_pressure": 954.3,
-          "wind_speed_10m": 17.09,
-          "relative_humidity_2m": 95
+          "temperature_2m": -5.9,
+          "surface_pressure": 969.1,
+          "wind_speed_10m": 20.06,
+          "relative_humidity_2m": 75
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -45.9,
-          "surface_pressure": 719,
-          "wind_speed_10m": 9.79,
-          "relative_humidity_2m": 53
+          "temperature_2m": -43.7,
+          "surface_pressure": 715.3,
+          "wind_speed_10m": 11.67,
+          "relative_humidity_2m": 50
         }
       ]
     },
