@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-07-25T14:05:08.984Z",
+    "generatedAt": "2026-07-26T04:02:12.692Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -21,7 +21,7 @@
             5.6885
           ],
           "tsunami": false,
-          "significance": 707
+          "significance": 709
         },
         {
           "id": "us7000t1q7",
@@ -198,8 +198,8 @@
       "totalActive": 50,
       "byCategory": {
         "Severe Storms": 3,
-        "Wildfires": 45,
-        "Sea and Lake Ice": 2
+        "Wildfires": 44,
+        "Sea and Lake Ice": 3
       },
       "events": [
         {
@@ -212,13 +212,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 75,
+            "magnitudeValue": 85,
             "magnitudeUnit": "kts",
-            "date": "2026-07-25T06:00:00Z",
+            "date": "2026-07-25T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              116.6,
-              21.3
+              115.1,
+              22.4
             ]
           }
         },
@@ -259,6 +259,26 @@
             "coordinates": [
               -119.939349,
               46.839052
+            ]
+          }
+        },
+        {
+          "id": "EONET_20822",
+          "title": "Iceberg D33D",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 90,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-07-23T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -55.47,
+              -63.78
             ]
           }
         },
@@ -495,11 +515,11 @@
           "geometry": {
             "magnitudeValue": 85,
             "magnitudeUnit": "kts",
-            "date": "2026-07-25T06:00:00Z",
+            "date": "2026-07-25T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              -134.5,
-              18.7
+              -137,
+              19.2
             ]
           }
         },
@@ -782,26 +802,6 @@
               48.942
             ]
           }
-        },
-        {
-          "id": "EONET_21591",
-          "title": "Wildfire 0501 PAT&#039;S CABIN, Wheeler, Oregon",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 772,
-            "magnitudeUnit": "acres",
-            "date": "2026-07-17T11:19:00Z",
-            "type": "Point",
-            "coordinates": [
-              -120.33328,
-              44.72533
-            ]
-          }
         }
       ]
     },
@@ -811,55 +811,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -0.7,
-          "surface_pressure": 1002.3,
-          "wind_speed_10m": 0.98,
-          "relative_humidity_2m": 99
+          "temperature_2m": -0.8,
+          "surface_pressure": 1003.1,
+          "wind_speed_10m": 2.48,
+          "relative_humidity_2m": 97
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 16.6,
-          "surface_pressure": 1027.5,
-          "wind_speed_10m": 6.77,
-          "relative_humidity_2m": 95
+          "temperature_2m": 16.8,
+          "surface_pressure": 1025,
+          "wind_speed_10m": 5.38,
+          "relative_humidity_2m": 97
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 24.3,
-          "surface_pressure": 918.1,
-          "wind_speed_10m": 1.97,
-          "relative_humidity_2m": 71
+          "temperature_2m": 19.6,
+          "surface_pressure": 916.5,
+          "wind_speed_10m": 1.85,
+          "relative_humidity_2m": 99
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 29.1,
-          "surface_pressure": 1010.2,
-          "wind_speed_10m": 2.97,
-          "relative_humidity_2m": 75
+          "temperature_2m": 28,
+          "surface_pressure": 1010.5,
+          "wind_speed_10m": 3.48,
+          "relative_humidity_2m": 79
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -4.3,
-          "surface_pressure": 987.9,
-          "wind_speed_10m": 15.66,
-          "relative_humidity_2m": 62
+          "temperature_2m": -3.4,
+          "surface_pressure": 992.4,
+          "wind_speed_10m": 13.4,
+          "relative_humidity_2m": 56
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -41.6,
-          "surface_pressure": 722.6,
-          "wind_speed_10m": 10.16,
-          "relative_humidity_2m": 54
+          "temperature_2m": -43.2,
+          "surface_pressure": 724.1,
+          "wind_speed_10m": 6.8,
+          "relative_humidity_2m": 62
         }
       ]
     },
