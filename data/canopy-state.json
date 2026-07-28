@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-07-28T03:53:25.206Z",
+    "generatedAt": "2026-07-28T15:07:14.977Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -13,20 +13,20 @@
   },
   "synthesis": {
     "hazardSummary": {
-      "totalEvents": 63,
+      "totalEvents": 65,
       "categories": {
         "Wildfires": 46,
         "Severe Storms": 3,
         "Sea and Lake Ice": 1
       },
-      "seismicCount": 13,
+      "seismicCount": 15,
       "maxMagnitude": 7.3
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 2.82,
-      "minTemperature_2m": -47,
-      "maxTemperature_2m": 29.5
+      "avgTemperature_2m": 3.93,
+      "minTemperature_2m": -45.8,
+      "maxTemperature_2m": 30.2
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -40,19 +40,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-07-28T03:28:49.734Z",
+        "generated": "2026-07-28T14:33:16.137Z",
         "generated_date": "2026-07-28",
         "script_version": "1.1",
         "window_days": 14,
         "window_start": "2026-07-14",
         "window_end": "2026-07-28",
-        "runtime_ms": 305,
+        "runtime_ms": 877,
         "seismic_live": true,
-        "eonet_live": false
+        "eonet_live": true
       },
       "threat": {
-        "level": "ELEVATED",
-        "score": 12.5
+        "level": "CRITICAL",
+        "score": 55.55
       },
       "seismic": {
         "events": [
@@ -63,6 +63,14 @@
             "time": "2026-07-17T14:48:40.227Z",
             "depth_km": 22,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t1bu"
+          },
+          {
+            "id": "us6000tgb9",
+            "magnitude": 6.8,
+            "place": "5 km E of Uto, Japan",
+            "time": "2026-07-28T07:27:15.512Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tgb9"
           },
           {
             "id": "us7000t1cc",
@@ -89,12 +97,36 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t37a"
           },
           {
+            "id": "us6000tgau",
+            "magnitude": 5.9,
+            "place": "50 km WSW of Brisas Barra de Suchiate, Mexico",
+            "time": "2026-07-28T05:35:18.079Z",
+            "depth_km": 35,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tgau"
+          },
+          {
             "id": "us7000t0xb",
             "magnitude": 5.9,
             "place": "42 km NNW of Te Anau, New Zealand",
             "time": "2026-07-16T09:14:54.293Z",
             "depth_km": 76.4,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t0xb"
+          },
+          {
+            "id": "us6000tgae",
+            "magnitude": 5.8,
+            "place": "160 km E of Ust’-Kamchatsk Staryy, Russia",
+            "time": "2026-07-28T04:42:18.739Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tgae"
+          },
+          {
+            "id": "us6000tga9",
+            "magnitude": 5.8,
+            "place": "191 km NW of Oula Xiuma, China",
+            "time": "2026-07-28T03:34:05.779Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tga9"
           },
           {
             "id": "us7000t3fm",
@@ -119,6 +151,14 @@
             "time": "2026-07-15T22:57:11.162Z",
             "depth_km": 340.3,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t0u6"
+          },
+          {
+            "id": "us6000tga6",
+            "magnitude": 5.7,
+            "place": "192 km NW of Oula Xiuma, China",
+            "time": "2026-07-28T03:16:08.857Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tga6"
           },
           {
             "id": "us7000t387",
@@ -153,6 +193,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t0ng"
           },
           {
+            "id": "us6000tgbm",
+            "magnitude": 5.6,
+            "place": "16 km NE of Tsunagi, Japan",
+            "time": "2026-07-28T08:08:35.421Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tgbm"
+          },
+          {
             "id": "us7000t25y",
             "magnitude": 5.6,
             "place": "Kermadec Islands region",
@@ -175,14 +223,6 @@
             "time": "2026-07-20T06:41:30.614Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t1w2"
-          },
-          {
-            "id": "us7000t0a3",
-            "magnitude": 5.6,
-            "place": "11 km N of Pichigua, Peru",
-            "time": "2026-07-14T08:21:06.499Z",
-            "depth_km": 140.1,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t0a3"
           },
           {
             "id": "us7000t213",
@@ -231,6 +271,14 @@
             "time": "2026-07-14T22:50:12.020Z",
             "depth_km": 574.3,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t0hk"
+          },
+          {
+            "id": "us6000tgaw",
+            "magnitude": 5.4,
+            "place": "109 km S of Akureyri, Iceland",
+            "time": "2026-07-28T05:36:39.419Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tgaw"
           },
           {
             "id": "us7000t3m7",
@@ -377,12 +425,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t14v"
           },
           {
-            "id": "us7000t0b5",
-            "magnitude": 5.3,
-            "place": "96 km SE of False Pass, Alaska",
-            "time": "2026-07-14T12:12:19.529Z",
-            "depth_km": 40.8,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t0b5"
+            "id": "us6000tgcx",
+            "magnitude": 5.2,
+            "place": "151 km WSW of Puerto Santa, Peru",
+            "time": "2026-07-28T13:24:33.090Z",
+            "depth_km": 9.7,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tgcx"
           },
           {
             "id": "us7000t3m6",
@@ -497,20 +545,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/aka2026nyxoap"
           },
           {
-            "id": "us7000t0bm",
-            "magnitude": 5.2,
-            "place": "6 km NW of Nuing, Philippines",
-            "time": "2026-07-14T13:15:06.042Z",
-            "depth_km": 11.3,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t0bm"
-          },
-          {
-            "id": "us7000t09m",
-            "magnitude": 5.2,
-            "place": "14 km WSW of Mabiton, Philippines",
-            "time": "2026-07-14T07:04:54.275Z",
+            "id": "us6000tgbk",
+            "magnitude": 5.1,
+            "place": "198 km NW of Oula Xiuma, China",
+            "time": "2026-07-28T08:04:10.636Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t09m"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tgbk"
           },
           {
             "id": "us6000tg95",
@@ -929,12 +969,20 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t0x8"
           },
           {
-            "id": "us7000t09u",
-            "magnitude": 5,
-            "place": "117 km E of Noda, Japan",
-            "time": "2026-07-14T07:44:09.565Z",
-            "depth_km": 11.3,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t09u"
+            "id": "us6000tgbx",
+            "magnitude": 4.9,
+            "place": "10 km SE of Kawalu, Indonesia",
+            "time": "2026-07-28T09:21:24.953Z",
+            "depth_km": 159,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tgbx"
+          },
+          {
+            "id": "us6000tgbn",
+            "magnitude": 4.9,
+            "place": "14 km NNE of Tsunagi, Japan",
+            "time": "2026-07-28T08:18:54.076Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tgbn"
           },
           {
             "id": "us6000tg2t",
@@ -1129,6 +1177,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t25s"
           },
           {
+            "id": "us6000tg3s",
+            "magnitude": 4.9,
+            "place": "South Sandwich Islands region",
+            "time": "2026-07-21T08:53:03.691Z",
+            "depth_km": 57.8,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tg3s"
+          },
+          {
             "id": "us7000t21n",
             "magnitude": 4.9,
             "place": "62 km WNW of Pangai, Tonga",
@@ -1225,12 +1281,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t0k4"
           },
           {
-            "id": "us7000t09z",
-            "magnitude": 4.9,
-            "place": "50 km E of Noda, Japan",
-            "time": "2026-07-14T08:07:30.199Z",
-            "depth_km": 44.5,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t09z"
+            "id": "us6000tgav",
+            "magnitude": 4.8,
+            "place": "26 km WSW of Santa Cruz, Chile",
+            "time": "2026-07-28T05:38:44.298Z",
+            "depth_km": 53.5,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tgav"
           },
           {
             "id": "us7000t3ll",
@@ -1465,20 +1521,20 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t0la"
           },
           {
-            "id": "us7000t09r",
-            "magnitude": 4.8,
-            "place": "18 km WSW of Mabiton, Philippines",
-            "time": "2026-07-14T07:18:47.994Z",
+            "id": "us6000tgcq",
+            "magnitude": 4.7,
+            "place": "8 km SSW of Mifune, Japan",
+            "time": "2026-07-28T12:26:18.600Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t09r"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tgcq"
           },
           {
-            "id": "us7000t097",
-            "magnitude": 4.8,
-            "place": "Mid-Indian Ridge",
-            "time": "2026-07-14T06:15:06.359Z",
+            "id": "us6000tgc3",
+            "magnitude": 4.7,
+            "place": "198 km NW of Oula Xiuma, China",
+            "time": "2026-07-28T09:52:01.259Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t097"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tgc3"
           },
           {
             "id": "us7000t3gt",
@@ -1793,6 +1849,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t26k"
           },
           {
+            "id": "us7000t265",
+            "magnitude": 4.6,
+            "place": "180 km ESE of Tadine, New Caledonia",
+            "time": "2026-07-21T12:29:13.944Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t265"
+          },
+          {
             "id": "us7000t24u",
             "magnitude": 4.6,
             "place": "84 km SW of Puerto Madero, Mexico",
@@ -1993,12 +2057,20 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t0mp"
           },
           {
-            "id": "us7000t09h",
-            "magnitude": 4.6,
-            "place": "48 km NNE of Kon Tum, Vietnam",
-            "time": "2026-07-14T06:48:05.687Z",
+            "id": "us6000tgd1",
+            "magnitude": 4.5,
+            "place": "44 km SSE of Bodden Town, Cayman Islands",
+            "time": "2026-07-28T13:42:17.919Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t09h"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tgd1"
+          },
+          {
+            "id": "us6000tgb4",
+            "magnitude": 4.5,
+            "place": "38 km N of Ishqoshim, Tajikistan",
+            "time": "2026-07-28T06:57:07.301Z",
+            "depth_km": 132.1,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tgb4"
           },
           {
             "id": "us6000tg6e",
@@ -2329,9 +2401,9 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t1yx"
           }
         ],
-        "count_total": 284,
-        "count_m55_plus": 22,
-        "count_m60_plus": 4,
+        "count_total": 293,
+        "count_m55_plus": 27,
+        "count_m60_plus": 5,
         "count_m70_plus": 1,
         "count_m80_plus": 0,
         "largest": {
@@ -2345,33 +2417,1261 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-07-28T03:28:49.563Z"
+        "retrieved": "2026-07-28T14:33:15.443Z"
       },
-      "wildfire": null,
-      "storm": null,
-      "flood": null,
-      "volcanic": null
+      "wildfire": {
+        "events": [
+          {
+            "id": "EONET_21829",
+            "title": "Wildfire Fairpoint, Meade, South Dakota",
+            "type": "WILDFIRE",
+            "time": "2026-07-27T11:21:00.000Z",
+            "coords": [
+              -102.844,
+              44.764
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21835",
+            "title": "Wildfire Twin Butte Ck, Corson, South Dakota",
+            "type": "WILDFIRE",
+            "time": "2026-07-27T00:31:00.000Z",
+            "coords": [
+              -101.821,
+              45.505
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21821",
+            "title": "Wildfire SINLAHEKIN, Okanogan, Washington",
+            "type": "WILDFIRE",
+            "time": "2026-07-26T17:21:00.000Z",
+            "coords": [
+              -119.693,
+              48.705
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21856",
+            "title": "Wildfire RANSIER, Yakima, Washington",
+            "type": "WILDFIRE",
+            "time": "2026-07-26T16:56:00.000Z",
+            "coords": [
+              -120.742,
+              46.367
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21846",
+            "title": "Wildfire Alice, Harding, South Dakota",
+            "type": "WILDFIRE",
+            "time": "2026-07-26T15:42:00.000Z",
+            "coords": [
+              -103.533,
+              45.858
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21859",
+            "title": "Wildfire KAWAIHAE ROAD, Hawaii, Hawaii",
+            "type": "WILDFIRE",
+            "time": "2026-07-26T15:26:00.000Z",
+            "coords": [
+              -155.793,
+              20.02
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21818",
+            "title": "Wildfire Chimney, Elko, Nevada",
+            "type": "WILDFIRE",
+            "time": "2026-07-26T12:37:00.000Z",
+            "coords": [
+              -116.989,
+              41.442
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21819",
+            "title": "Wildfire New Pass, Churchill, Nevada",
+            "type": "WILDFIRE",
+            "time": "2026-07-26T12:28:00.000Z",
+            "coords": [
+              -117.487,
+              39.699
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21831",
+            "title": "Wildfire SR - Buffalo, Sheridan, Wyoming",
+            "type": "WILDFIRE",
+            "time": "2026-07-26T09:17:00.000Z",
+            "coords": [
+              -106.32,
+              44.793
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21861",
+            "title": "Wildfire Island, La Paz, Arizona",
+            "type": "WILDFIRE",
+            "time": "2026-07-26T02:14:00.000Z",
+            "coords": [
+              -114.681,
+              33.28
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21813",
+            "title": "Wildfire Secret Pass, Elko, Nevada",
+            "type": "WILDFIRE",
+            "time": "2026-07-25T21:45:00.000Z",
+            "coords": [
+              -115.26,
+              40.896
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21828",
+            "title": "Wildfire Bob Creek, Baker, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-25T19:38:00.000Z",
+            "coords": [
+              -116.887,
+              44.996
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21850",
+            "title": "Wildfire PEARL HILL, Douglas, Washington",
+            "type": "WILDFIRE",
+            "time": "2026-07-25T18:35:00.000Z",
+            "coords": [
+              -119.613,
+              47.984
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21824",
+            "title": "Wildfire QUAIL SPRINGS, Lincoln, Nevada",
+            "type": "WILDFIRE",
+            "time": "2026-07-25T18:31:00.000Z",
+            "coords": [
+              -115.71,
+              37.412
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21832",
+            "title": "Wildfire BRADEEN HILL, Stevens, Washington",
+            "type": "WILDFIRE",
+            "time": "2026-07-25T17:15:00.000Z",
+            "coords": [
+              -118.114,
+              48.313
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21855",
+            "title": "Incident Complex CINDER COMPLEX, Inyo, California",
+            "type": "WILDFIRE",
+            "time": "2026-07-25T14:30:00.000Z",
+            "coords": [
+              -118.257,
+              36.998
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21817",
+            "title": "Wildfire Coleman Creek, Harney, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-25T11:35:00.000Z",
+            "coords": [
+              -118.304,
+              43.59
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21816",
+            "title": "Wildfire PEER, Owyhee, Idaho",
+            "type": "WILDFIRE",
+            "time": "2026-07-25T10:13:00.000Z",
+            "coords": [
+              -116.916,
+              42.518
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21848",
+            "title": "Wildfire 4-May, Inyo, California",
+            "type": "WILDFIRE",
+            "time": "2026-07-25T02:54:00.000Z",
+            "coords": [
+              -118.258,
+              37.016
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21854",
+            "title": "Wildfire 3-May, Inyo, California",
+            "type": "WILDFIRE",
+            "time": "2026-07-25T02:54:00.000Z",
+            "coords": [
+              -118.284,
+              36.996
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21839",
+            "title": "Wildfire Jackass Butte, Harney, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-24T22:40:00.000Z",
+            "coords": [
+              -118.956,
+              43.045
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21862",
+            "title": "Wildfire Locust Grove, Benton, Washington",
+            "type": "WILDFIRE",
+            "time": "2026-07-24T21:39:00.000Z",
+            "coords": [
+              -119.141,
+              46.15
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21844",
+            "title": "Wildfire Second Flat, Harney, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-24T20:07:00.000Z",
+            "coords": [
+              -119.439,
+              43.609
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21823",
+            "title": "Wildfire Signal Peak, Yakima, Washington",
+            "type": "WILDFIRE",
+            "time": "2026-07-24T19:10:00.000Z",
+            "coords": [
+              -120.732,
+              46.362
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21836",
+            "title": "Wildfire HAT, Malheur, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-24T18:58:00.000Z",
+            "coords": [
+              -118.15,
+              43.275
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21864",
+            "title": "Wildfire 8 MILE, Wasco, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-24T17:04:00.000Z",
+            "coords": [
+              -121.246,
+              45.463
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21843",
+            "title": "Wildfire 0611 GREEN MOUNTAIN, Crook, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-24T13:51:00.000Z",
+            "coords": [
+              -120.692,
+              44.442
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21822",
+            "title": "Wildfire Tartar, Washington, Idaho",
+            "type": "WILDFIRE",
+            "time": "2026-07-24T13:24:00.000Z",
+            "coords": [
+              -117.093,
+              44.541
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21842",
+            "title": "Wildfire GRASSHOPPER, Wasco, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-23T23:39:00.000Z",
+            "coords": [
+              -121.51,
+              45.253
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21826",
+            "title": "Wildfire FOX, Baker, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-23T23:32:00.000Z",
+            "coords": [
+              -117.213,
+              44.524
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21860",
+            "title": "Wildfire DUNCAN, Owyhee, Idaho",
+            "type": "WILDFIRE",
+            "time": "2026-07-23T21:59:00.000Z",
+            "coords": [
+              -116.088,
+              42.579
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21857",
+            "title": "Wildfire Beachcomb, Jefferson, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-23T21:57:00.000Z",
+            "coords": [
+              -121.404,
+              44.695
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21853",
+            "title": "Wildfire 0567 LITTLE BUCK, Wasco, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-23T21:50:00.000Z",
+            "coords": [
+              -120.647,
+              45.04
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21840",
+            "title": "Wildfire Bald Mountain, Harney, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-23T20:52:00.000Z",
+            "coords": [
+              -118.474,
+              42.996
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21841",
+            "title": "Wildfire Stubble, Harney, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-23T18:23:00.000Z",
+            "coords": [
+              -118.92,
+              43.18
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21845",
+            "title": "Wildfire Bench, Jefferson, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-23T18:13:00.000Z",
+            "coords": [
+              -121.35,
+              44.632
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21837",
+            "title": "Wildfire 0587 SHINGLE, Wheeler, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-23T16:58:00.000Z",
+            "coords": [
+              -119.898,
+              44.469
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21834",
+            "title": "Wildfire FIELDS, Merced, California",
+            "type": "WILDFIRE",
+            "time": "2026-07-23T16:53:00.000Z",
+            "coords": [
+              -120.43,
+              37.528
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21827",
+            "title": "Wildfire BIG GRASS, Malheur, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-23T16:43:00.000Z",
+            "coords": [
+              -117.303,
+              42.65
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21852",
+            "title": "Wildfire 0584 COTTONWOOD, Gilliam, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-23T13:20:00.000Z",
+            "coords": [
+              -120.426,
+              45.453
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21584",
+            "title": "Wildfire 0579 TEN MILE, Jefferson, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-23T11:55:00.000Z",
+            "coords": [
+              -121.014,
+              44.796
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21576",
+            "title": "Wildfire RAILROAD, Grant, Washington",
+            "type": "WILDFIRE",
+            "time": "2026-07-23T10:05:00.000Z",
+            "coords": [
+              -119.939,
+              46.839
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21838",
+            "title": "Wildfire Crater, Harney, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-23T05:04:00.000Z",
+            "coords": [
+              -118.803,
+              43.12
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21825",
+            "title": "Wildfire Castle, Douglas, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-23T00:22:00.000Z",
+            "coords": [
+              -122.563,
+              43.114
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21577",
+            "title": "Wildfire Gypsum Creek, King, Texas",
+            "type": "WILDFIRE",
+            "time": "2026-07-22T19:04:00.000Z",
+            "coords": [
+              -100.041,
+              33.468
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21575",
+            "title": "Wildfire West Blue Crab, Cameron, Louisiana",
+            "type": "WILDFIRE",
+            "time": "2026-07-22T19:02:00.000Z",
+            "coords": [
+              -93.428,
+              29.881
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21587",
+            "title": "Incident Complex COW CAMP COMPLEX, Malheur, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-21T21:41:00.000Z",
+            "coords": [
+              -117.562,
+              44.334
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21586",
+            "title": "Wildfire 188, Malheur, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-21T20:57:00.000Z",
+            "coords": [
+              -117.555,
+              44.353
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21585",
+            "title": "Wildfire COW, Malheur, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-21T18:57:00.000Z",
+            "coords": [
+              -117.521,
+              44.354
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21578",
+            "title": "Wildfire Fuhr Gulch, Moffat, Colorado",
+            "type": "WILDFIRE",
+            "time": "2026-07-21T18:39:00.000Z",
+            "coords": [
+              -107.747,
+              40.422
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21596",
+            "title": "Wildfire 716 Complex 2, Treasure, Montana",
+            "type": "WILDFIRE",
+            "time": "2026-07-21T18:04:00.000Z",
+            "coords": [
+              -107.489,
+              46.29
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21595",
+            "title": "Wildfire Keystone, Rio Blanco, Colorado",
+            "type": "WILDFIRE",
+            "time": "2026-07-21T14:14:00.000Z",
+            "coords": [
+              -108.178,
+              40.221
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21583",
+            "title": "Wildfire ROCK, Inyo, California",
+            "type": "WILDFIRE",
+            "time": "2026-07-20T19:34:00.000Z",
+            "coords": [
+              -118.241,
+              36.917
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21403",
+            "title": "Wildfire Big Gulch, Moffat, Colorado",
+            "type": "WILDFIRE",
+            "time": "2026-07-19T21:36:00.000Z",
+            "coords": [
+              -107.672,
+              40.682
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21594",
+            "title": "Wildfire 518 SULLY, Gilliam, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-18T21:19:00.000Z",
+            "coords": [
+              -120.022,
+              45.746
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21421",
+            "title": "Wildfire BROOK, Shasta, California",
+            "type": "WILDFIRE",
+            "time": "2026-07-18T19:12:00.000Z",
+            "coords": [
+              -122.198,
+              40.698
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21404",
+            "title": "Wildfire Horse Island, Berkeley, South Carolina",
+            "type": "WILDFIRE",
+            "time": "2026-07-18T17:43:00.000Z",
+            "coords": [
+              -79.663,
+              33.189
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21402",
+            "title": "Wildfire Ohio, Blaine, Idaho",
+            "type": "WILDFIRE",
+            "time": "2026-07-18T15:52:00.000Z",
+            "coords": [
+              -114.318,
+              43.588
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21420",
+            "title": "Wildfire BISCAR, Lassen, California",
+            "type": "WILDFIRE",
+            "time": "2026-07-18T14:11:00.000Z",
+            "coords": [
+              -120.304,
+              40.618
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21416",
+            "title": "Wildfire 0512 BOX SPRINGS, Jefferson, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-17T21:13:00.000Z",
+            "coords": [
+              -120.499,
+              44.635
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21433",
+            "title": "Wildfire WALLACE WALKER, Franklin, Washington",
+            "type": "WILDFIRE",
+            "time": "2026-07-17T19:33:00.000Z",
+            "coords": [
+              -118.568,
+              46.576
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21426",
+            "title": "Wildfire DEVIL&#039;S CANYON, Franklin, Washington",
+            "type": "WILDFIRE",
+            "time": "2026-07-17T19:31:00.000Z",
+            "coords": [
+              -118.549,
+              46.6
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21415",
+            "title": "Wildfire BERGER (50), Palm Beach, Florida",
+            "type": "WILDFIRE",
+            "time": "2026-07-17T19:18:00.000Z",
+            "coords": [
+              -80.844,
+              26.447
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21410",
+            "title": "Incident Complex HAY CREEK COMPLEX, Gilliam, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-17T17:16:00.000Z",
+            "coords": [
+              -120.436,
+              45.266
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21579",
+            "title": "Wildfire Burnt Creek, Wallowa, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-17T17:00:00.000Z",
+            "coords": [
+              -117.253,
+              45.768
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21425",
+            "title": "Wildfire NEFF JONES, Franklin, Washington",
+            "type": "WILDFIRE",
+            "time": "2026-07-17T14:34:00.000Z",
+            "coords": [
+              -118.658,
+              46.459
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21427",
+            "title": "Wildfire Modrite, Ferry, Washington",
+            "type": "WILDFIRE",
+            "time": "2026-07-17T13:59:00.000Z",
+            "coords": [
+              -118.313,
+              48.069
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21588",
+            "title": "Wildfire PTARMIGAN, Okanogan, Washington",
+            "type": "WILDFIRE",
+            "time": "2026-07-17T13:09:00.000Z",
+            "coords": [
+              -120.609,
+              48.942
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21591",
+            "title": "Wildfire 0501 PAT&#039;S CABIN, Wheeler, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-17T11:19:00.000Z",
+            "coords": [
+              -120.333,
+              44.725
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21412",
+            "title": "Wildfire POWDER RIVER, Baker, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-17T07:27:00.000Z",
+            "coords": [
+              -117.278,
+              44.755
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21590",
+            "title": "Wildfire 0502, Wheeler, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-17T00:48:00.000Z",
+            "coords": [
+              -120.297,
+              44.829
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21408",
+            "title": "Wildfire 0462, Sherman, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-17T00:37:00.000Z",
+            "coords": [
+              -120.495,
+              45.184
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21589",
+            "title": "Wildfire 0432, Wasco, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T22:52:00.000Z",
+            "coords": [
+              -120.759,
+              45
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21422",
+            "title": "Wildfire COLUMBIA COUNTY, Columbia, Washington",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T22:12:00.000Z",
+            "coords": [
+              -118.104,
+              46.543
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21580",
+            "title": "Wildfire Horse Ridge, Umatilla, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T22:09:00.000Z",
+            "coords": [
+              -118.346,
+              45.542
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21401",
+            "title": "Wildfire 0497 HENRY, Crook, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T21:22:00.000Z",
+            "coords": [
+              -119.948,
+              44.121
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21406",
+            "title": "Wildfire Hagen, Umatilla, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T21:04:00.000Z",
+            "coords": [
+              -118.269,
+              45.707
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21400",
+            "title": "Wildfire 0500 COYOTE, Crook, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T20:39:00.000Z",
+            "coords": [
+              -120.529,
+              44.111
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21405",
+            "title": "Wildfire Egypt, Harney, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T20:11:00.000Z",
+            "coords": [
+              -119.468,
+              43.727
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21407",
+            "title": "Wildfire 0476 HOAG, Gilliam, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T20:08:00.000Z",
+            "coords": [
+              -120.405,
+              45.562
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21418",
+            "title": "Wildfire 0485 DEEP CANYON, Wasco, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T20:08:00.000Z",
+            "coords": [
+              -120.836,
+              44.864
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21413",
+            "title": "Wildfire 0494 AKAWA BUTTE, Jefferson, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T18:18:00.000Z",
+            "coords": [
+              -121.453,
+              44.472
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21411",
+            "title": "Wildfire Bologna, Grant, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T17:52:00.000Z",
+            "coords": [
+              -119.598,
+              44.861
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21432",
+            "title": "Wildfire Mile Marker 40- Broward (06), Broward, Florida",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T16:36:00.000Z",
+            "coords": [
+              -80.541,
+              26.257
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21409",
+            "title": "Wildfire 0480 WILCOX, Sherman, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T16:25:00.000Z",
+            "coords": [
+              -120.61,
+              45.114
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21419",
+            "title": "Incident Complex ROWE CREEK COMPLEX, Wheeler, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T16:20:00.000Z",
+            "coords": [
+              -120.317,
+              44.81
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21581",
+            "title": "Wildfire Paradise, Wallowa, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T15:51:00.000Z",
+            "coords": [
+              -117.974,
+              45.998
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21428",
+            "title": "Wildfire ROYAL LAKE, Adams, Washington",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T13:55:00.000Z",
+            "coords": [
+              -119.361,
+              46.863
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21423",
+            "title": "Wildfire LYONS FERRY, Franklin, Washington",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T13:04:00.000Z",
+            "coords": [
+              -118.239,
+              46.626
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21582",
+            "title": "Wildfire LITTLE GIANT, Chelan, Washington",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T12:18:00.000Z",
+            "coords": [
+              -120.847,
+              48.016
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21431",
+            "title": "Wildfire Kaiser Canyon, Okanogan, Washington",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T11:08:00.000Z",
+            "coords": [
+              -118.959,
+              48.117
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21374",
+            "title": "Wildfire 0460 HOPKIN, Gilliam, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T08:04:00.000Z",
+            "coords": [
+              -120.243,
+              45.336
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21429",
+            "title": "Wildfire Turner, Boundary, Idaho",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T01:14:00.000Z",
+            "coords": [
+              -116.38,
+              48.825
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21417",
+            "title": "Wildfire 0446 CAMEL HUMP, Wheeler, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T01:13:00.000Z",
+            "coords": [
+              -120.052,
+              44.762
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21375",
+            "title": "Wildfire 0445 CROSSWHITE, Wheeler, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T00:17:00.000Z",
+            "coords": [
+              -120.199,
+              44.803
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21376",
+            "title": "Wildfire 0450 COVE CREEK, Wheeler, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-16T00:08:00.000Z",
+            "coords": [
+              -120.346,
+              44.943
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21377",
+            "title": "Wildfire 0449 PORCUPINE RIDGE, Gilliam, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-15T22:01:00.000Z",
+            "coords": [
+              -120.35,
+              45.189
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21414",
+            "title": "Wildfire 0433 BREWER, Jefferson, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-07-15T19:59:00.000Z",
+            "coords": [
+              -120.907,
+              44.589
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21378",
+            "title": "Wildfire THORN, San Diego, California",
+            "type": "WILDFIRE",
+            "time": "2026-07-15T18:49:00.000Z",
+            "coords": [
+              -116.333,
+              32.691
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21395",
+            "title": "Wildfire Charger 2, Collier, Florida",
+            "type": "WILDFIRE",
+            "time": "2026-07-15T11:57:00.000Z",
+            "coords": [
+              -81.061,
+              25.974
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21387",
+            "title": "Wildfire BUCKET SHOP (53)~, Hillsborough, Florida",
+            "type": "WILDFIRE",
+            "time": "2026-07-15T11:13:00.000Z",
+            "coords": [
+              -82.083,
+              27.669
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21388",
+            "title": "Prescribed Fire RX Flowing 24, Clay, Minnesota",
+            "type": "WILDFIRE",
+            "time": "2026-07-15T11:10:00.000Z",
+            "coords": [
+              -96.448,
+              47.015
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21386",
+            "title": "Wildfire Little Knife, Lake, Minnesota",
+            "type": "WILDFIRE",
+            "time": "2026-07-15T10:51:00.000Z",
+            "coords": [
+              -91.105,
+              48.161
+            ],
+            "closed": null
+          }
+        ],
+        "count": 103
+      },
+      "storm": {
+        "events": [
+          {
+            "id": "EONET_21776",
+            "title": "Typhoon Dolphin",
+            "type": "STORM",
+            "time": "2026-07-27T06:00:00.000Z",
+            "coords": [
+              176.7,
+              13.4
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21712",
+            "title": "Hurricane Genevieve",
+            "type": "STORM",
+            "time": "2026-07-24T18:00:00.000Z",
+            "coords": [
+              -101.2,
+              8.9
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21600",
+            "title": "Typhoon Noul",
+            "type": "STORM",
+            "time": "2026-07-23T18:00:00.000Z",
+            "coords": [
+              125,
+              18.1
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21437",
+            "title": "Tropical Storm Bertha",
+            "type": "STORM",
+            "time": "2026-07-21T00:00:00.000Z",
+            "coords": [
+              -86,
+              28.5
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_21399",
+            "title": "Hurricane Fausto",
+            "type": "STORM",
+            "time": "2026-07-19T18:00:00.000Z",
+            "coords": [
+              -112.1,
+              12.2
+            ],
+            "closed": null
+          }
+        ],
+        "count": 5
+      },
+      "flood": {
+        "events": [],
+        "count": 0
+      },
+      "volcanic": {
+        "events": [],
+        "count": 0
+      }
     },
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-07-28T03:42:14.336Z",
+        "generatedAt": "2026-07-28T14:43:11.055Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
       "layers": {
         "seismic": {
-          "count": 13,
+          "count": 15,
           "maxMagnitude": 7.3,
           "events": [
             {
-              "id": "us6000tga6",
-              "magnitude": 5.8,
-              "place": "190 km NW of Oula Xiuma, China",
-              "time": "2026-07-28T03:16:08.940Z",
+              "id": "us6000tgb9",
+              "magnitude": 6.8,
+              "place": "5 km E of Uto, Japan",
+              "time": "2026-07-28T07:27:15.512Z",
               "coordinates": [
-                99.5602,
-                35.3745,
+                130.7217,
+                32.6817,
+                10
+              ],
+              "tsunami": false,
+              "significance": 723
+            },
+            {
+              "id": "us6000tga9",
+              "magnitude": 5.8,
+              "place": "191 km NW of Oula Xiuma, China",
+              "time": "2026-07-28T03:34:05.779Z",
+              "coordinates": [
+                99.5513,
+                35.3866,
+                10
+              ],
+              "tsunami": false,
+              "significance": 650
+            },
+            {
+              "id": "us6000tga6",
+              "magnitude": 5.7,
+              "place": "192 km NW of Oula Xiuma, China",
+              "time": "2026-07-28T03:16:08.857Z",
+              "coordinates": [
+                99.5198,
+                35.3685,
                 10
               ],
               "tsunami": false,
@@ -2565,7 +3865,7 @@
             },
             {
               "id": "EONET_21776",
-              "title": "Tropical Storm Dolphin",
+              "title": "Typhoon Dolphin",
               "categories": [
                 "Severe Storms"
               ],
@@ -2573,13 +3873,13 @@
                 "JTWC"
               ],
               "geometry": {
-                "magnitudeValue": 45,
+                "magnitudeValue": 75,
                 "magnitudeUnit": "kts",
-                "date": "2026-07-27T18:00:00Z",
+                "date": "2026-07-28T06:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  173.7,
-                  13.2
+                  171.7,
+                  13.3
                 ]
               }
             },
@@ -3073,13 +4373,13 @@
                 "JTWC"
               ],
               "geometry": {
-                "magnitudeValue": 130,
+                "magnitudeValue": 120,
                 "magnitudeUnit": "kts",
-                "date": "2026-07-27T18:00:00Z",
+                "date": "2026-07-28T06:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  -113.5,
-                  16.4
+                  -115,
+                  17.3
                 ]
               }
             },
@@ -3151,55 +4451,55 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": -1.2,
-              "surface_pressure": 1011.1,
-              "wind_speed_10m": 4.12,
-              "relative_humidity_2m": 92
+              "temperature_2m": -0.4,
+              "surface_pressure": 1014.1,
+              "wind_speed_10m": 2.26,
+              "relative_humidity_2m": 95
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 15.4,
-              "surface_pressure": 1013.3,
-              "wind_speed_10m": 7.38,
-              "relative_humidity_2m": 89
+              "temperature_2m": 14.2,
+              "surface_pressure": 1016.3,
+              "wind_speed_10m": 6.09,
+              "relative_humidity_2m": 75
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 19,
-              "surface_pressure": 915.8,
-              "wind_speed_10m": 1.41,
-              "relative_humidity_2m": 100
+              "temperature_2m": 25,
+              "surface_pressure": 917.3,
+              "wind_speed_10m": 1.62,
+              "relative_humidity_2m": 76
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 29.5,
-              "surface_pressure": 1010.7,
-              "wind_speed_10m": 6.04,
-              "relative_humidity_2m": 75
+              "temperature_2m": 30.2,
+              "surface_pressure": 1010.3,
+              "wind_speed_10m": 5.92,
+              "relative_humidity_2m": 72
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": 1.2,
-              "surface_pressure": 982.4,
-              "wind_speed_10m": 13.69,
-              "relative_humidity_2m": 95
+              "temperature_2m": 0.4,
+              "surface_pressure": 967.3,
+              "wind_speed_10m": 17.54,
+              "relative_humidity_2m": 93
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -47,
-              "surface_pressure": 723.1,
-              "wind_speed_10m": 9.33,
-              "relative_humidity_2m": 70
+              "temperature_2m": -45.8,
+              "surface_pressure": 723.3,
+              "wind_speed_10m": 9.79,
+              "relative_humidity_2m": 68
             }
           ]
         },
@@ -3217,7 +4517,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-07-28T03:50:36.734Z"
+        "generatedAt": "2026-07-28T15:03:59.360Z"
       },
       "health": {
         "score": 87,
