@@ -1,23 +1,49 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-07-28T03:42:14.336Z",
+    "generatedAt": "2026-07-28T14:43:11.055Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 13,
+      "count": 15,
       "maxMagnitude": 7.3,
       "events": [
         {
-          "id": "us6000tga6",
-          "magnitude": 5.8,
-          "place": "190 km NW of Oula Xiuma, China",
-          "time": "2026-07-28T03:16:08.940Z",
+          "id": "us6000tgb9",
+          "magnitude": 6.8,
+          "place": "5 km E of Uto, Japan",
+          "time": "2026-07-28T07:27:15.512Z",
           "coordinates": [
-            99.5602,
-            35.3745,
+            130.7217,
+            32.6817,
+            10
+          ],
+          "tsunami": false,
+          "significance": 723
+        },
+        {
+          "id": "us6000tga9",
+          "magnitude": 5.8,
+          "place": "191 km NW of Oula Xiuma, China",
+          "time": "2026-07-28T03:34:05.779Z",
+          "coordinates": [
+            99.5513,
+            35.3866,
+            10
+          ],
+          "tsunami": false,
+          "significance": 650
+        },
+        {
+          "id": "us6000tga6",
+          "magnitude": 5.7,
+          "place": "192 km NW of Oula Xiuma, China",
+          "time": "2026-07-28T03:16:08.857Z",
+          "coordinates": [
+            99.5198,
+            35.3685,
             10
           ],
           "tsunami": false,
@@ -211,7 +237,7 @@
         },
         {
           "id": "EONET_21776",
-          "title": "Tropical Storm Dolphin",
+          "title": "Typhoon Dolphin",
           "categories": [
             "Severe Storms"
           ],
@@ -219,13 +245,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 45,
+            "magnitudeValue": 75,
             "magnitudeUnit": "kts",
-            "date": "2026-07-27T18:00:00Z",
+            "date": "2026-07-28T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              173.7,
-              13.2
+              171.7,
+              13.3
             ]
           }
         },
@@ -719,13 +745,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 130,
+            "magnitudeValue": 120,
             "magnitudeUnit": "kts",
-            "date": "2026-07-27T18:00:00Z",
+            "date": "2026-07-28T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              -113.5,
-              16.4
+              -115,
+              17.3
             ]
           }
         },
@@ -797,55 +823,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -1.2,
-          "surface_pressure": 1011.1,
-          "wind_speed_10m": 4.12,
-          "relative_humidity_2m": 92
+          "temperature_2m": -0.4,
+          "surface_pressure": 1014.1,
+          "wind_speed_10m": 2.26,
+          "relative_humidity_2m": 95
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 15.4,
-          "surface_pressure": 1013.3,
-          "wind_speed_10m": 7.38,
-          "relative_humidity_2m": 89
+          "temperature_2m": 14.2,
+          "surface_pressure": 1016.3,
+          "wind_speed_10m": 6.09,
+          "relative_humidity_2m": 75
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 19,
-          "surface_pressure": 915.8,
-          "wind_speed_10m": 1.41,
-          "relative_humidity_2m": 100
+          "temperature_2m": 25,
+          "surface_pressure": 917.3,
+          "wind_speed_10m": 1.62,
+          "relative_humidity_2m": 76
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 29.5,
-          "surface_pressure": 1010.7,
-          "wind_speed_10m": 6.04,
-          "relative_humidity_2m": 75
+          "temperature_2m": 30.2,
+          "surface_pressure": 1010.3,
+          "wind_speed_10m": 5.92,
+          "relative_humidity_2m": 72
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": 1.2,
-          "surface_pressure": 982.4,
-          "wind_speed_10m": 13.69,
-          "relative_humidity_2m": 95
+          "temperature_2m": 0.4,
+          "surface_pressure": 967.3,
+          "wind_speed_10m": 17.54,
+          "relative_humidity_2m": 93
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -47,
-          "surface_pressure": 723.1,
-          "wind_speed_10m": 9.33,
-          "relative_humidity_2m": 70
+          "temperature_2m": -45.8,
+          "surface_pressure": 723.3,
+          "wind_speed_10m": 9.79,
+          "relative_humidity_2m": 68
         }
       ]
     },
