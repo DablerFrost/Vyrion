@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-07-31T04:14:55.772Z",
+    "generatedAt": "2026-07-31T15:10:44.948Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -15,17 +15,17 @@
     "hazardSummary": {
       "totalEvents": 64,
       "categories": {
-        "Wildfires": 47,
-        "Severe Storms": 3
+        "Wildfires": 48,
+        "Severe Storms": 2
       },
       "seismicCount": 14,
       "maxMagnitude": 7.3
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 2.55,
-      "minTemperature_2m": -45.8,
-      "maxTemperature_2m": 27.1
+      "avgTemperature_2m": 3.62,
+      "minTemperature_2m": -44.2,
+      "maxTemperature_2m": 30.1
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -39,19 +39,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-07-31T03:45:33.456Z",
+        "generated": "2026-07-31T14:31:23.542Z",
         "generated_date": "2026-07-31",
         "script_version": "1.1",
         "window_days": 14,
         "window_start": "2026-07-17",
         "window_end": "2026-07-31",
-        "runtime_ms": 275,
+        "runtime_ms": 444,
         "seismic_live": true,
         "eonet_live": true
       },
       "threat": {
         "level": "CRITICAL",
-        "score": 47.55
+        "score": 44.55
       },
       "seismic": {
         "events": [
@@ -448,14 +448,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t1c1"
           },
           {
-            "id": "us7000t19u",
-            "magnitude": 5.3,
-            "place": "203 km N of Hadibu, Yemen",
-            "time": "2026-07-17T12:01:14.725Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t19u"
-          },
-          {
             "id": "us6000th1b",
             "magnitude": 5.2,
             "place": "Kermadec Islands region",
@@ -776,12 +768,20 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t1c2"
           },
           {
-            "id": "us7000t1b3",
-            "magnitude": 5.1,
-            "place": "14 km NW of Kirakira, Solomon Islands",
-            "time": "2026-07-17T13:27:41.522Z",
-            "depth_km": 68,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t1b3"
+            "id": "us6000th5s",
+            "magnitude": 5,
+            "place": "Kermadec Islands region",
+            "time": "2026-07-31T06:30:26.157Z",
+            "depth_km": 37.8,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000th5s"
+          },
+          {
+            "id": "us6000th5f",
+            "magnitude": 5,
+            "place": "Kermadec Islands region",
+            "time": "2026-07-31T04:02:53.372Z",
+            "depth_km": 35,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000th5f"
           },
           {
             "id": "us6000th30",
@@ -1032,12 +1032,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t2se"
           },
           {
-            "id": "us7000t1b0",
-            "magnitude": 5,
-            "place": "south of the Kermadec Islands",
-            "time": "2026-07-17T13:17:00.140Z",
+            "id": "us6000th68",
+            "magnitude": 4.9,
+            "place": "287 km SW of Banda Aceh, Indonesia",
+            "time": "2026-07-31T08:31:28.631Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t1b0"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000th68"
           },
           {
             "id": "us6000th1t",
@@ -1600,14 +1600,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t2qw"
           },
           {
-            "id": "us7000t1gu",
-            "magnitude": 4.8,
-            "place": "southern Mid-Atlantic Ridge",
-            "time": "2026-07-17T13:49:10.255Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t1gu"
-          },
-          {
             "id": "us6000th43",
             "magnitude": 4.7,
             "place": "77 km E of Petropavlovsk-Kamchatsky, Russia",
@@ -1808,12 +1800,20 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t1ej"
           },
           {
-            "id": "us7000t1ai",
-            "magnitude": 4.7,
-            "place": "66 km WSW of Puerto Madero, Mexico",
-            "time": "2026-07-17T13:20:33.889Z",
-            "depth_km": 35,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t1ai"
+            "id": "us6000th7y",
+            "magnitude": 4.6,
+            "place": "95 km WNW of Amagi, Japan",
+            "time": "2026-07-31T12:58:40.829Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000th7y"
+          },
+          {
+            "id": "us6000th6a",
+            "magnitude": 4.6,
+            "place": "37 km WNW of Dāmghān, Iran",
+            "time": "2026-07-31T09:08:55.647Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000th6a"
           },
           {
             "id": "us6000th54",
@@ -2144,28 +2144,20 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t1ev"
           },
           {
-            "id": "us7000t19p",
-            "magnitude": 4.6,
-            "place": "206 km N of Hadibu, Yemen",
-            "time": "2026-07-17T11:48:39.385Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t19p"
+            "id": "us6000th7q",
+            "magnitude": 4.5,
+            "place": "31 km WNW of Titahi Bay, New Zealand",
+            "time": "2026-07-31T11:09:22.344Z",
+            "depth_km": 55.6,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000th7q"
           },
           {
-            "id": "us7000t19a",
-            "magnitude": 4.6,
-            "place": "72 km N of Claveria, Philippines",
-            "time": "2026-07-17T09:40:51.245Z",
-            "depth_km": 37.6,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t19a"
-          },
-          {
-            "id": "us7000t2pq",
-            "magnitude": 4.6,
-            "place": "56 km NW of Malango, Solomon Islands",
-            "time": "2026-07-17T06:55:15.720Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t2pq"
+            "id": "us6000th63",
+            "magnitude": 4.5,
+            "place": "Fiji region",
+            "time": "2026-07-31T07:32:54.950Z",
+            "depth_km": 581,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000th63"
           },
           {
             "id": "us6000th1p",
@@ -2496,7 +2488,7 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t1fg"
           }
         ],
-        "count_total": 305,
+        "count_total": 304,
         "count_m55_plus": 26,
         "count_m60_plus": 4,
         "count_m70_plus": 1,
@@ -2512,7 +2504,7 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-07-31T03:45:33.369Z"
+        "retrieved": "2026-07-31T14:31:23.362Z"
       },
       "wildfire": {
         "events": [
@@ -3406,75 +3398,9 @@
               44.755
             ],
             "closed": null
-          },
-          {
-            "id": "EONET_21590",
-            "title": "Wildfire 0502, Wheeler, Oregon",
-            "type": "WILDFIRE",
-            "time": "2026-07-17T00:48:00.000Z",
-            "coords": [
-              -120.297,
-              44.829
-            ],
-            "closed": null
-          },
-          {
-            "id": "EONET_21408",
-            "title": "Wildfire 0462, Sherman, Oregon",
-            "type": "WILDFIRE",
-            "time": "2026-07-17T00:37:00.000Z",
-            "coords": [
-              -120.495,
-              45.184
-            ],
-            "closed": null
-          },
-          {
-            "id": "EONET_21589",
-            "title": "Wildfire 0432, Wasco, Oregon",
-            "type": "WILDFIRE",
-            "time": "2026-07-16T22:52:00.000Z",
-            "coords": [
-              -120.759,
-              45
-            ],
-            "closed": null
-          },
-          {
-            "id": "EONET_21422",
-            "title": "Wildfire COLUMBIA COUNTY, Columbia, Washington",
-            "type": "WILDFIRE",
-            "time": "2026-07-16T22:12:00.000Z",
-            "coords": [
-              -118.104,
-              46.543
-            ],
-            "closed": null
-          },
-          {
-            "id": "EONET_21580",
-            "title": "Wildfire Horse Ridge, Umatilla, Oregon",
-            "type": "WILDFIRE",
-            "time": "2026-07-16T22:09:00.000Z",
-            "coords": [
-              -118.346,
-              45.542
-            ],
-            "closed": null
-          },
-          {
-            "id": "EONET_21974",
-            "title": "Wildfire Border 2, Whatcom, Washington",
-            "type": "WILDFIRE",
-            "time": "2026-07-16T21:37:00.000Z",
-            "coords": [
-              -121.028,
-              48.998
-            ],
-            "closed": null
           }
         ],
-        "count": 87
+        "count": 81
       },
       "storm": {
         "events": [
@@ -3501,17 +3427,6 @@
             "closed": null
           },
           {
-            "id": "EONET_21600",
-            "title": "Typhoon Noul",
-            "type": "STORM",
-            "time": "2026-07-23T18:00:00.000Z",
-            "coords": [
-              125,
-              18.1
-            ],
-            "closed": null
-          },
-          {
             "id": "EONET_21399",
             "title": "Hurricane Fausto",
             "type": "STORM",
@@ -3523,7 +3438,7 @@
             "closed": null
           }
         ],
-        "count": 4
+        "count": 3
       },
       "flood": {
         "events": [],
@@ -3537,7 +3452,7 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-07-31T03:56:19.493Z",
+        "generatedAt": "2026-07-31T14:39:53.331Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
@@ -3733,8 +3648,8 @@
         "hazards": {
           "totalActive": 50,
           "byCategory": {
-            "Wildfires": 47,
-            "Severe Storms": 3
+            "Wildfires": 48,
+            "Severe Storms": 2
           },
           "events": [
             {
@@ -3947,13 +3862,13 @@
                 "JTWC"
               ],
               "geometry": {
-                "magnitudeValue": 135,
+                "magnitudeValue": 140,
                 "magnitudeUnit": "kts",
-                "date": "2026-07-30T18:00:00Z",
+                "date": "2026-07-31T06:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  162.9,
-                  17.9
+                  161,
+                  18.6
                 ]
               }
             },
@@ -4346,54 +4261,54 @@
               "lat": 80,
               "lon": 0,
               "temperature_2m": -0.9,
-              "surface_pressure": 1018.5,
-              "wind_speed_10m": 2.69,
-              "relative_humidity_2m": 98
+              "surface_pressure": 1020.4,
+              "wind_speed_10m": 3.2,
+              "relative_humidity_2m": 97
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 17.4,
-              "surface_pressure": 1014,
-              "wind_speed_10m": 9.26,
-              "relative_humidity_2m": 92
+              "temperature_2m": 17,
+              "surface_pressure": 1013.3,
+              "wind_speed_10m": 11.28,
+              "relative_humidity_2m": 93
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 20,
-              "surface_pressure": 916.2,
-              "wind_speed_10m": 1.04,
-              "relative_humidity_2m": 98
+              "temperature_2m": 25.5,
+              "surface_pressure": 918.5,
+              "wind_speed_10m": 2,
+              "relative_humidity_2m": 56
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 27.1,
-              "surface_pressure": 1011.2,
-              "wind_speed_10m": 0.81,
-              "relative_humidity_2m": 83
+              "temperature_2m": 30.1,
+              "surface_pressure": 1009.4,
+              "wind_speed_10m": 2.19,
+              "relative_humidity_2m": 68
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": -2.5,
-              "surface_pressure": 993.1,
-              "wind_speed_10m": 14.9,
-              "relative_humidity_2m": 74
+              "temperature_2m": -5.8,
+              "surface_pressure": 999.4,
+              "wind_speed_10m": 11.39,
+              "relative_humidity_2m": 75
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -45.8,
-              "surface_pressure": 720.2,
-              "wind_speed_10m": 10.3,
-              "relative_humidity_2m": 56
+              "temperature_2m": -44.2,
+              "surface_pressure": 720.4,
+              "wind_speed_10m": 11.49,
+              "relative_humidity_2m": 59
             }
           ]
         },
@@ -4411,7 +4326,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-07-31T04:04:54.195Z"
+        "generatedAt": "2026-07-31T15:07:28.791Z"
       },
       "health": {
         "score": 87,
