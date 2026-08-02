@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-08-02T04:00:08.148Z",
+    "generatedAt": "2026-08-02T14:01:15.387Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -184,7 +184,8 @@
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Wildfires": 48,
+        "Wildfires": 47,
+        "Sea and Lake Ice": 1,
         "Severe Storms": 2
       },
       "events": [
@@ -205,6 +206,27 @@
             "coordinates": [
               -81.6666667,
               30.9780556
+            ]
+          }
+        },
+        {
+          "id": "EONET_2736",
+          "title": "Iceberg B22A",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "BYU_ICE",
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 725,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-07-30T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              172.86,
+              -69.01
             ]
           }
         },
@@ -398,13 +420,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 125,
+            "magnitudeValue": 120,
             "magnitudeUnit": "kts",
-            "date": "2026-08-01T18:00:00Z",
+            "date": "2026-08-02T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              154.9,
-              22.1
+              152.2,
+              23.2
             ]
           }
         },
@@ -767,26 +789,6 @@
               37.015833
             ]
           }
-        },
-        {
-          "id": "EONET_21854",
-          "title": "Wildfire 3-May, Inyo, California",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 744,
-            "magnitudeUnit": "acres",
-            "date": "2026-07-25T02:54:00Z",
-            "type": "Point",
-            "coordinates": [
-              -118.284,
-              36.996167
-            ]
-          }
         }
       ]
     },
@@ -796,55 +798,52 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -1.9,
-          "surface_pressure": 1020.3,
-          "wind_speed_10m": 1.31,
-          "relative_humidity_2m": 99
+          "temperature_2m": -1.7,
+          "surface_pressure": 1019.1,
+          "wind_speed_10m": 2.62,
+          "relative_humidity_2m": 95
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 14.7,
-          "surface_pressure": 1017.1,
-          "wind_speed_10m": 8.37,
-          "relative_humidity_2m": 80
+          "temperature_2m": 14.8,
+          "surface_pressure": 1019.4,
+          "wind_speed_10m": 7.03,
+          "relative_humidity_2m": 79
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 18.7,
-          "surface_pressure": 915.4,
-          "wind_speed_10m": 2.07,
-          "relative_humidity_2m": 97
+          "temperature_2m": 24.5,
+          "surface_pressure": 917.4,
+          "wind_speed_10m": 1.45,
+          "relative_humidity_2m": 64
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 29.6,
-          "surface_pressure": 1010.7,
-          "wind_speed_10m": 5.57,
-          "relative_humidity_2m": 72
+          "temperature_2m": 30.4,
+          "surface_pressure": 1009.4,
+          "wind_speed_10m": 3.9,
+          "relative_humidity_2m": 73
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": 0.2,
-          "surface_pressure": 976.5,
-          "wind_speed_10m": 19.4,
-          "relative_humidity_2m": 93
+          "error": "fetch_failed"
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -42.6,
-          "surface_pressure": 724.5,
-          "wind_speed_10m": 8.96,
-          "relative_humidity_2m": 61
+          "temperature_2m": -44.8,
+          "surface_pressure": 726.9,
+          "wind_speed_10m": 8.46,
+          "relative_humidity_2m": 52
         }
       ]
     },
