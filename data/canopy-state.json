@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-08-07T03:41:51.730Z",
+    "generatedAt": "2026-08-07T14:01:20.808Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -24,9 +24,9 @@
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 1.95,
-      "minTemperature_2m": -46.9,
-      "maxTemperature_2m": 29.4
+      "avgTemperature_2m": 2.7,
+      "minTemperature_2m": -50.7,
+      "maxTemperature_2m": 30.7
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -40,19 +40,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-08-07T03:12:47.675Z",
+        "generated": "2026-08-07T13:35:38.731Z",
         "generated_date": "2026-08-07",
         "script_version": "1.1",
         "window_days": 14,
         "window_start": "2026-07-24",
         "window_end": "2026-08-07",
-        "runtime_ms": 683,
+        "runtime_ms": 3290,
         "seismic_live": true,
         "eonet_live": true
       },
       "threat": {
         "level": "CRITICAL",
-        "score": 38.2
+        "score": 37.15
       },
       "seismic": {
         "events": [
@@ -305,14 +305,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t3in"
           },
           {
-            "id": "us7000t30r",
-            "magnitude": 5.4,
-            "place": "202 km W of Abepura, Indonesia",
-            "time": "2026-07-24T12:14:28.267Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t30r"
-          },
-          {
             "id": "us6000tip9",
             "magnitude": 5.3,
             "place": "7 km SSW of Huayucachi, Peru",
@@ -399,14 +391,6 @@
             "time": "2026-07-24T19:38:42.175Z",
             "depth_km": 191.3,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t36n"
-          },
-          {
-            "id": "us7000t309",
-            "magnitude": 5.3,
-            "place": "197 km W of Abepura, Indonesia",
-            "time": "2026-07-24T11:11:34.234Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t309"
           },
           {
             "id": "us6000tie5",
@@ -711,22 +695,6 @@
             "time": "2026-07-24T16:33:19.808Z",
             "depth_km": 69.8,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t34c"
-          },
-          {
-            "id": "us7000t30v",
-            "magnitude": 5.1,
-            "place": "194 km W of Abepura, Indonesia",
-            "time": "2026-07-24T12:27:02.974Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t30v"
-          },
-          {
-            "id": "us7000t2ye",
-            "magnitude": 5.1,
-            "place": "Mid-Indian Ridge",
-            "time": "2026-07-24T08:01:18.986Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t2ye"
           },
           {
             "id": "us6000tivb",
@@ -1545,6 +1513,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t32z"
           },
           {
+            "id": "us6000tiwj",
+            "magnitude": 4.6,
+            "place": "51 km WSW of Sarangani, Philippines",
+            "time": "2026-08-07T08:43:42.850Z",
+            "depth_km": 43.5,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tiwj"
+          },
+          {
             "id": "us6000tipv",
             "magnitude": 4.6,
             "place": "149 km SE of Petropavlovsk-Kamchatsky, Russia",
@@ -1841,14 +1817,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t3fs"
           },
           {
-            "id": "us6000tgq0",
-            "magnitude": 4.6,
-            "place": "central Mid-Atlantic Ridge",
-            "time": "2026-07-24T08:41:07.542Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tgq0"
-          },
-          {
             "id": "us6000tits",
             "magnitude": 4.5,
             "place": "29 km S of Mendoza, Argentina",
@@ -2113,7 +2081,7 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t35u"
           }
         ],
-        "count_total": 257,
+        "count_total": 253,
         "count_m55_plus": 22,
         "count_m60_plus": 4,
         "count_m70_plus": 0,
@@ -2129,7 +2097,7 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-08-07T03:12:47.376Z"
+        "retrieved": "2026-08-07T13:35:35.617Z"
       },
       "wildfire": {
         "events": [
@@ -2913,42 +2881,9 @@
               44.541
             ],
             "closed": null
-          },
-          {
-            "id": "EONET_21842",
-            "title": "Wildfire GRASSHOPPER, Wasco, Oregon",
-            "type": "WILDFIRE",
-            "time": "2026-07-23T23:39:00.000Z",
-            "coords": [
-              -121.51,
-              45.253
-            ],
-            "closed": null
-          },
-          {
-            "id": "EONET_21826",
-            "title": "Wildfire FOX, Baker, Oregon",
-            "type": "WILDFIRE",
-            "time": "2026-07-23T23:32:00.000Z",
-            "coords": [
-              -117.213,
-              44.524
-            ],
-            "closed": null
-          },
-          {
-            "id": "EONET_21860",
-            "title": "Wildfire DUNCAN, Owyhee, Idaho",
-            "type": "WILDFIRE",
-            "time": "2026-07-23T21:59:00.000Z",
-            "coords": [
-              -116.088,
-              42.579
-            ],
-            "closed": null
           }
         ],
-        "count": 74
+        "count": 71
       },
       "storm": {
         "events": [
@@ -2989,7 +2924,7 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-08-07T03:20:32.333Z",
+        "generatedAt": "2026-08-07T13:42:18.985Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
@@ -3812,54 +3747,54 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": -1,
-              "surface_pressure": 1011.9,
-              "wind_speed_10m": 4.98,
-              "relative_humidity_2m": 94
+              "temperature_2m": -0.3,
+              "surface_pressure": 1011.5,
+              "wind_speed_10m": 5.79,
+              "relative_humidity_2m": 97
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 16.1,
-              "surface_pressure": 1023.2,
-              "wind_speed_10m": 2.96,
-              "relative_humidity_2m": 72
+              "temperature_2m": 16.4,
+              "surface_pressure": 1022.5,
+              "wind_speed_10m": 6,
+              "relative_humidity_2m": 77
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 20.1,
-              "surface_pressure": 915.5,
-              "wind_speed_10m": 2.25,
-              "relative_humidity_2m": 99
+              "temperature_2m": 23.9,
+              "surface_pressure": 916.7,
+              "wind_speed_10m": 2.22,
+              "relative_humidity_2m": 72
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 29.4,
-              "surface_pressure": 1010.1,
-              "wind_speed_10m": 5.59,
-              "relative_humidity_2m": 75
+              "temperature_2m": 30.7,
+              "surface_pressure": 1009.7,
+              "wind_speed_10m": 2.51,
+              "relative_humidity_2m": 72
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": -6,
-              "surface_pressure": 992,
-              "wind_speed_10m": 8.31,
-              "relative_humidity_2m": 67
+              "temperature_2m": -3.8,
+              "surface_pressure": 995.5,
+              "wind_speed_10m": 12.72,
+              "relative_humidity_2m": 62
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -46.9,
-              "surface_pressure": 717.7,
-              "wind_speed_10m": 7.56,
+              "temperature_2m": -50.7,
+              "surface_pressure": 712.3,
+              "wind_speed_10m": 6.79,
               "relative_humidity_2m": 68
             }
           ]
@@ -3878,7 +3813,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-08-07T03:36:50.649Z"
+        "generatedAt": "2026-08-07T13:57:15.008Z"
       },
       "health": {
         "score": 87,
