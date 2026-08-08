@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-08-07T13:42:18.985Z",
+    "generatedAt": "2026-08-08T02:25:09.376Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -104,11 +104,11 @@
         {
           "id": "us7000t1cc",
           "magnitude": 6.4,
-          "place": "101 km WSW of Puerto Madero, Mexico",
-          "time": "2026-07-17T15:20:06.414Z",
+          "place": "96 km SW of Puerto Madero, Mexico",
+          "time": "2026-07-17T15:20:06.587Z",
           "coordinates": [
-            -93.2025,
-            14.216,
+            -93.1385,
+            14.2039,
             10
           ],
           "tsunami": false,
@@ -210,9 +210,9 @@
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Wildfires": 48,
-        "Sea and Lake Ice": 1,
-        "Severe Storms": 1
+        "Wildfires": 47,
+        "Severe Storms": 2,
+        "Sea and Lake Ice": 1
       },
       "events": [
         {
@@ -232,6 +232,26 @@
             "coordinates": [
               -121.728667,
               42.4695
+            ]
+          }
+        },
+        {
+          "id": "EONET_22306",
+          "title": "Tropical Cyclone Chan-Hom",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC"
+          ],
+          "geometry": {
+            "magnitudeValue": 30,
+            "magnitudeUnit": "kts",
+            "date": "2026-08-07T18:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              158.1,
+              32
             ]
           }
         },
@@ -795,26 +815,6 @@
               -69.01
             ]
           }
-        },
-        {
-          "id": "EONET_22123",
-          "title": "Wildfire Skillet, Lincoln, Montana",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1318,
-            "magnitudeUnit": "acres",
-            "date": "2026-07-29T18:55:00Z",
-            "type": "Point",
-            "coordinates": [
-              -114.86665,
-              48.491333
-            ]
-          }
         }
       ]
     },
@@ -824,60 +824,60 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -0.3,
-          "surface_pressure": 1011.5,
-          "wind_speed_10m": 5.79,
-          "relative_humidity_2m": 97
+          "temperature_2m": -0.7,
+          "surface_pressure": 1010.8,
+          "wind_speed_10m": 3.45,
+          "relative_humidity_2m": 98
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 16.4,
-          "surface_pressure": 1022.5,
-          "wind_speed_10m": 6,
-          "relative_humidity_2m": 77
+          "temperature_2m": 16.3,
+          "surface_pressure": 1019.2,
+          "wind_speed_10m": 6.76,
+          "relative_humidity_2m": 88
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 23.9,
-          "surface_pressure": 916.7,
-          "wind_speed_10m": 2.22,
-          "relative_humidity_2m": 72
+          "temperature_2m": 19.4,
+          "surface_pressure": 915.1,
+          "wind_speed_10m": 1.48,
+          "relative_humidity_2m": 99
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 30.7,
-          "surface_pressure": 1009.7,
-          "wind_speed_10m": 2.51,
-          "relative_humidity_2m": 72
+          "temperature_2m": 29.8,
+          "surface_pressure": 1011.7,
+          "wind_speed_10m": 1.1,
+          "relative_humidity_2m": 70
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -3.8,
-          "surface_pressure": 995.5,
-          "wind_speed_10m": 12.72,
-          "relative_humidity_2m": 62
+          "temperature_2m": -1.9,
+          "surface_pressure": 997.7,
+          "wind_speed_10m": 16.35,
+          "relative_humidity_2m": 81
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -50.7,
-          "surface_pressure": 712.3,
-          "wind_speed_10m": 6.79,
-          "relative_humidity_2m": 68
+          "temperature_2m": -51.3,
+          "surface_pressure": 710.9,
+          "wind_speed_10m": 6.78,
+          "relative_humidity_2m": 66
         }
       ]
     },
     "climate": {
-      "error": "[NOAA Climate (keyless)] Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+      "error": "[NOAA Climate (keyless)] This operation was aborted"
     },
     "oceanHeat": {
       "error": "[NOAA CRW Ocean Heat] HTTP 404 Not Found"
