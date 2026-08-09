@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-08-09T02:55:09.609Z",
+    "generatedAt": "2026-08-09T13:38:00.485Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -15,18 +15,18 @@
     "hazardSummary": {
       "totalEvents": 66,
       "categories": {
-        "Wildfires": 47,
-        "Severe Storms": 2,
-        "Sea and Lake Ice": 1
+        "Sea and Lake Ice": 3,
+        "Wildfires": 45,
+        "Severe Storms": 2
       },
       "seismicCount": 16,
       "maxMagnitude": 7.3
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 1.07,
-      "minTemperature_2m": -49.7,
-      "maxTemperature_2m": 27.4
+      "avgTemperature_2m": 14.54,
+      "minTemperature_2m": -0.8,
+      "maxTemperature_2m": 30.4
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -40,19 +40,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-08-09T02:23:57.154Z",
+        "generated": "2026-08-09T13:12:31.751Z",
         "generated_date": "2026-08-09",
         "script_version": "1.1",
         "window_days": 14,
         "window_start": "2026-07-26",
         "window_end": "2026-08-09",
-        "runtime_ms": 2507,
+        "runtime_ms": 364,
         "seismic_live": true,
         "eonet_live": true
       },
       "threat": {
         "level": "CRITICAL",
-        "score": 29.6
+        "score": 27.6
       },
       "seismic": {
         "events": [
@@ -127,14 +127,6 @@
             "time": "2026-07-28T03:34:05.627Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tga9"
-          },
-          {
-            "id": "us7000t3fm",
-            "magnitude": 5.8,
-            "place": "109 km SE of Atka, Alaska",
-            "time": "2026-07-26T08:35:18.418Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t3fm"
           },
           {
             "id": "us6000ti49",
@@ -377,12 +369,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tg94"
           },
           {
-            "id": "us7000t3g4",
-            "magnitude": 5.3,
-            "place": "25 km NW of Kupang, Indonesia",
-            "time": "2026-07-26T10:57:37.061Z",
+            "id": "us6000tjen",
+            "magnitude": 5.2,
+            "place": "Galapagos Triple Junction region",
+            "time": "2026-08-09T11:57:33.237Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t3g4"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tjen"
           },
           {
             "id": "us6000tie5",
@@ -495,6 +487,14 @@
             "time": "2026-07-27T03:36:43.373Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t3l3"
+          },
+          {
+            "id": "us6000tjel",
+            "magnitude": 5.1,
+            "place": "central East Pacific Rise",
+            "time": "2026-08-07T23:19:07.914Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tjel"
           },
           {
             "id": "us6000tivz",
@@ -663,6 +663,14 @@
             "time": "2026-07-27T01:54:14.139Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t3km"
+          },
+          {
+            "id": "us6000tjcl",
+            "magnitude": 5,
+            "place": "180 km NW of Sabang, Indonesia",
+            "time": "2026-08-09T03:02:07.086Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tjcl"
           },
           {
             "id": "us6000tj69",
@@ -863,6 +871,14 @@
             "time": "2026-07-26T22:39:02.826Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t3jr"
+          },
+          {
+            "id": "us6000tjcn",
+            "magnitude": 4.9,
+            "place": "68 km ESE of Atka, Alaska",
+            "time": "2026-08-09T03:36:17.166Z",
+            "depth_km": 60.3,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tjcn"
           },
           {
             "id": "us6000tjc4",
@@ -1481,12 +1497,20 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tgc3"
           },
           {
-            "id": "us7000t3gt",
-            "magnitude": 4.7,
-            "place": "15 km ESE of Pinglin, Taiwan",
-            "time": "2026-07-26T12:36:17.467Z",
-            "depth_km": 93.8,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t3gt"
+            "id": "us6000tje3",
+            "magnitude": 4.6,
+            "place": "96 km S of Sarangani, Philippines",
+            "time": "2026-08-09T10:04:31.077Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tje3"
+          },
+          {
+            "id": "us6000tjcr",
+            "magnitude": 4.6,
+            "place": "12 km W of Chambara, Peru",
+            "time": "2026-08-09T04:05:44.245Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tjcr"
           },
           {
             "id": "us6000tjan",
@@ -1495,6 +1519,14 @@
             "time": "2026-08-08T18:28:26.011Z",
             "depth_km": 75.4,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tjan"
+          },
+          {
+            "id": "us6000tjer",
+            "magnitude": 4.6,
+            "place": "southeast of Easter Island",
+            "time": "2026-08-08T13:49:30.800Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tjer"
           },
           {
             "id": "us6000tj96",
@@ -1825,14 +1857,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t3kd"
           },
           {
-            "id": "us7000t3fs",
-            "magnitude": 4.6,
-            "place": "68 km SSW of Masachapa, Nicaragua",
-            "time": "2026-07-26T09:26:55.020Z",
-            "depth_km": 35,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t3fs"
-          },
-          {
             "id": "us6000tjbq",
             "magnitude": 4.5,
             "place": "92 km SSW of Sarangani, Philippines",
@@ -1927,6 +1951,14 @@
             "time": "2026-08-02T20:02:10.395Z",
             "depth_km": 35,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000thna"
+          },
+          {
+            "id": "us6000timv",
+            "magnitude": 4.5,
+            "place": "271 km SSW of ‘Ohonua, Tonga",
+            "time": "2026-08-02T06:15:41.996Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000timv"
           },
           {
             "id": "us6000thk4",
@@ -2153,8 +2185,8 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000t3ia"
           }
         ],
-        "count_total": 262,
-        "count_m55_plus": 22,
+        "count_total": 266,
+        "count_m55_plus": 21,
         "count_m60_plus": 3,
         "count_m70_plus": 0,
         "count_m80_plus": 0,
@@ -2169,7 +2201,7 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-08-09T02:23:55.820Z"
+        "retrieved": "2026-08-09T13:12:31.636Z"
       },
       "wildfire": {
         "events": [
@@ -2700,64 +2732,9 @@
               44.793
             ],
             "closed": null
-          },
-          {
-            "id": "EONET_21861",
-            "title": "Wildfire Island, La Paz, Arizona",
-            "type": "WILDFIRE",
-            "time": "2026-07-26T02:14:00.000Z",
-            "coords": [
-              -114.681,
-              33.28
-            ],
-            "closed": null
-          },
-          {
-            "id": "EONET_21813",
-            "title": "Wildfire Secret Pass, Elko, Nevada",
-            "type": "WILDFIRE",
-            "time": "2026-07-25T21:45:00.000Z",
-            "coords": [
-              -115.26,
-              40.896
-            ],
-            "closed": null
-          },
-          {
-            "id": "EONET_21828",
-            "title": "Wildfire Bob Creek, Baker, Oregon",
-            "type": "WILDFIRE",
-            "time": "2026-07-25T19:38:00.000Z",
-            "coords": [
-              -116.887,
-              44.996
-            ],
-            "closed": null
-          },
-          {
-            "id": "EONET_21850",
-            "title": "Wildfire PEARL HILL, Douglas, Washington",
-            "type": "WILDFIRE",
-            "time": "2026-07-25T18:35:00.000Z",
-            "coords": [
-              -119.613,
-              47.984
-            ],
-            "closed": null
-          },
-          {
-            "id": "EONET_21824",
-            "title": "Wildfire QUAIL SPRINGS, Lincoln, Nevada",
-            "type": "WILDFIRE",
-            "time": "2026-07-25T18:31:00.000Z",
-            "coords": [
-              -115.71,
-              37.412
-            ],
-            "closed": null
           }
         ],
-        "count": 53
+        "count": 48
       },
       "storm": {
         "events": [
@@ -2798,7 +2775,7 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-08-09T02:32:42.927Z",
+        "generatedAt": "2026-08-09T13:19:50.970Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
@@ -2844,7 +2821,7 @@
                 10
               ],
               "tsunami": false,
-              "significance": 652
+              "significance": 658
             },
             {
               "id": "us6000tgb9",
@@ -2909,7 +2886,7 @@
                 10
               ],
               "tsunami": false,
-              "significance": 658
+              "significance": 660
             },
             {
               "id": "us7000t1cc",
@@ -3020,11 +2997,31 @@
         "hazards": {
           "totalActive": 50,
           "byCategory": {
-            "Wildfires": 47,
-            "Severe Storms": 2,
-            "Sea and Lake Ice": 1
+            "Sea and Lake Ice": 3,
+            "Wildfires": 45,
+            "Severe Storms": 2
           },
           "events": [
+            {
+              "id": "EONET_6510",
+              "title": "Iceberg D33C",
+              "categories": [
+                "Sea and Lake Ice"
+              ],
+              "sources": [
+                "NATICE"
+              ],
+              "geometry": {
+                "magnitudeValue": 45,
+                "magnitudeUnit": "NM^2",
+                "date": "2026-08-07T00:00:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -52.35,
+                  -61.52
+                ]
+              }
+            },
             {
               "id": "EONET_22196",
               "title": "Wildfire Wrights Spring, Klamath, Oregon",
@@ -3057,11 +3054,11 @@
               "geometry": {
                 "magnitudeValue": 40,
                 "magnitudeUnit": "kts",
-                "date": "2026-08-08T18:00:00Z",
+                "date": "2026-08-09T06:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  151.7,
-                  32.7
+                  150.7,
+                  32.3
                 ]
               }
             },
@@ -3604,27 +3601,6 @@
                   30.9780556
                 ]
               }
-            },
-            {
-              "id": "EONET_2736",
-              "title": "Iceberg B22A",
-              "categories": [
-                "Sea and Lake Ice"
-              ],
-              "sources": [
-                "BYU_ICE",
-                "NATICE"
-              ],
-              "geometry": {
-                "magnitudeValue": 725,
-                "magnitudeUnit": "NM^2",
-                "date": "2026-07-30T00:00:00Z",
-                "type": "Point",
-                "coordinates": [
-                  172.86,
-                  -69.01
-                ]
-              }
             }
           ]
         },
@@ -3634,55 +3610,52 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": -0.4,
-              "surface_pressure": 1006.4,
-              "wind_speed_10m": 6.31,
-              "relative_humidity_2m": 94
+              "temperature_2m": 1.3,
+              "surface_pressure": 997.1,
+              "wind_speed_10m": 9.06,
+              "relative_humidity_2m": 91
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 17.2,
-              "surface_pressure": 1013.1,
-              "wind_speed_10m": 6.42,
-              "relative_humidity_2m": 92
+              "temperature_2m": 17.5,
+              "surface_pressure": 1005.8,
+              "wind_speed_10m": 12.84,
+              "relative_humidity_2m": 91
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 19.4,
-              "surface_pressure": 915.1,
-              "wind_speed_10m": 0.79,
-              "relative_humidity_2m": 93
+              "temperature_2m": 24.3,
+              "surface_pressure": 917,
+              "wind_speed_10m": 1.82,
+              "relative_humidity_2m": 71
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 27.4,
-              "surface_pressure": 1011.8,
-              "wind_speed_10m": 0.46,
-              "relative_humidity_2m": 81
+              "temperature_2m": 30.4,
+              "surface_pressure": 1010,
+              "wind_speed_10m": 3.67,
+              "relative_humidity_2m": 71
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": -7.5,
-              "surface_pressure": 1021.4,
-              "wind_speed_10m": 7.52,
-              "relative_humidity_2m": 83
+              "temperature_2m": -0.8,
+              "surface_pressure": 993,
+              "wind_speed_10m": 11.27,
+              "relative_humidity_2m": 96
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -49.7,
-              "surface_pressure": 717.2,
-              "wind_speed_10m": 7.48,
-              "relative_humidity_2m": 66
+              "error": "fetch_failed"
             }
           ]
         },
@@ -3700,7 +3673,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-08-09T02:49:24.605Z"
+        "generatedAt": "2026-08-09T13:35:00.444Z"
       },
       "health": {
         "score": 87,
