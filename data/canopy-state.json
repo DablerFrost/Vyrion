@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-08-10T03:03:48.465Z",
+    "generatedAt": "2026-08-10T14:07:50.453Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -20,13 +20,13 @@
         "Severe Storms": 3
       },
       "seismicCount": 16,
-      "maxMagnitude": 7.3
+      "maxMagnitude": 7.4
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 2.9,
-      "minTemperature_2m": -46.9,
-      "maxTemperature_2m": 27.4
+      "avgTemperature_2m": 4.18,
+      "minTemperature_2m": -45.2,
+      "maxTemperature_2m": 28.8
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -2711,15 +2711,28 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-08-10T02:38:06.374Z",
+        "generatedAt": "2026-08-10T13:48:29.244Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
       "layers": {
         "seismic": {
           "count": 16,
-          "maxMagnitude": 7.3,
+          "maxMagnitude": 7.4,
           "events": [
+            {
+              "id": "us6000tjl2",
+              "magnitude": 7.4,
+              "place": "5 km E of San José del Palmar, Colombia",
+              "time": "2026-08-10T12:34:27.787Z",
+              "coordinates": [
+                -76.1885,
+                4.9031,
+                107.029
+              ],
+              "tsunami": false,
+              "significance": 1287
+            },
             {
               "id": "aka2026powmkf",
               "magnitude": 5.6,
@@ -2914,19 +2927,6 @@
               ],
               "tsunami": false,
               "significance": 643
-            },
-            {
-              "id": "us7000szpb",
-              "magnitude": 6.4,
-              "place": "South Sandwich Islands region",
-              "time": "2026-07-11T10:26:42.630Z",
-              "coordinates": [
-                -28.9109,
-                -55.5349,
-                26
-              ],
-              "tsunami": false,
-              "significance": 630
             }
           ]
         },
@@ -2988,13 +2988,13 @@
                 "JTWC"
               ],
               "geometry": {
-                "magnitudeValue": 35,
+                "magnitudeValue": 40,
                 "magnitudeUnit": "kts",
-                "date": "2026-08-09T18:00:00Z",
+                "date": "2026-08-10T06:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  150.2,
-                  33.2
+                  148.8,
+                  34.8
                 ]
               }
             },
@@ -3028,13 +3028,13 @@
                 "JTWC"
               ],
               "geometry": {
-                "magnitudeValue": 35,
+                "magnitudeValue": 40,
                 "magnitudeUnit": "kts",
-                "date": "2026-08-05T00:00:00Z",
+                "date": "2026-08-10T06:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  118.8,
-                  17.5
+                  151,
+                  21.1
                 ]
               }
             },
@@ -3546,55 +3546,55 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": -1.7,
-              "surface_pressure": 997.8,
-              "wind_speed_10m": 11.22,
-              "relative_humidity_2m": 90
+              "temperature_2m": -2.1,
+              "surface_pressure": 993.5,
+              "wind_speed_10m": 13.23,
+              "relative_humidity_2m": 89
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 18,
-              "surface_pressure": 994.1,
-              "wind_speed_10m": 10.24,
-              "relative_humidity_2m": 94
+              "temperature_2m": 16.7,
+              "surface_pressure": 994.5,
+              "wind_speed_10m": 12.46,
+              "relative_humidity_2m": 86
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 19.5,
-              "surface_pressure": 916.1,
-              "wind_speed_10m": 1.95,
-              "relative_humidity_2m": 94
+              "temperature_2m": 24.6,
+              "surface_pressure": 918.7,
+              "wind_speed_10m": 2.2,
+              "relative_humidity_2m": 62
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 27.4,
-              "surface_pressure": 1012.1,
-              "wind_speed_10m": 3.15,
-              "relative_humidity_2m": 81
+              "temperature_2m": 28.8,
+              "surface_pressure": 1009.6,
+              "wind_speed_10m": 3.18,
+              "relative_humidity_2m": 80
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": 1.1,
-              "surface_pressure": 991,
-              "wind_speed_10m": 16.9,
-              "relative_humidity_2m": 87
+              "temperature_2m": 2.3,
+              "surface_pressure": 983.1,
+              "wind_speed_10m": 18.64,
+              "relative_humidity_2m": 95
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -46.9,
-              "surface_pressure": 721.3,
-              "wind_speed_10m": 8.61,
-              "relative_humidity_2m": 67
+              "temperature_2m": -45.2,
+              "surface_pressure": 723.5,
+              "wind_speed_10m": 7.53,
+              "relative_humidity_2m": 68
             }
           ]
         },
@@ -3612,7 +3612,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-08-10T02:56:45.965Z"
+        "generatedAt": "2026-08-10T14:04:23.284Z"
       },
       "health": {
         "score": 87,
