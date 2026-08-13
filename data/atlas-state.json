@@ -1,13 +1,13 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-08-12T13:51:54.308Z",
+    "generatedAt": "2026-08-13T03:03:15.416Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 14,
+      "count": 12,
       "maxMagnitude": 7.4,
       "events": [
         {
@@ -165,43 +165,37 @@
           ],
           "tsunami": false,
           "significance": 643
-        },
-        {
-          "id": "ci41292687",
-          "magnitude": 4.31762677888687,
-          "place": "18 km WSW of Johannesburg, CA",
-          "time": "2026-07-13T16:40:55.170Z",
-          "coordinates": [
-            -117.814833333333,
-            35.3121666666667,
-            7.55
-          ],
-          "tsunami": false,
-          "significance": 667
-        },
-        {
-          "id": "us7000t01n",
-          "magnitude": 6.3,
-          "place": "southeast of the Loyalty Islands",
-          "time": "2026-07-13T14:45:49.630Z",
-          "coordinates": [
-            171.5534,
-            -22.7876,
-            16
-          ],
-          "tsunami": false,
-          "significance": 611
         }
       ]
     },
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Severe Storms": 3,
-        "Wildfires": 46,
+        "Severe Storms": 4,
+        "Wildfires": 45,
         "Sea and Lake Ice": 1
       },
       "events": [
+        {
+          "id": "EONET_22560",
+          "title": "Tropical Storm Cristobal",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "NOAA_NHC"
+          ],
+          "geometry": {
+            "magnitudeValue": 40,
+            "magnitudeUnit": "kts",
+            "date": "2026-08-12T15:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -43,
+              36.7
+            ]
+          }
+        },
         {
           "id": "EONET_22386",
           "title": "Tropical Storm 15W",
@@ -694,11 +688,11 @@
           "geometry": {
             "magnitudeValue": 30,
             "magnitudeUnit": "kts",
-            "date": "2026-08-12T06:00:00Z",
+            "date": "2026-08-12T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              162.7,
-              30.1
+              165.1,
+              30.4
             ]
           }
         },
@@ -781,26 +775,6 @@
               47.733335
             ]
           }
-        },
-        {
-          "id": "EONET_22108",
-          "title": "Wildfire Antelope Creek, Elko, Nevada",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 6500,
-            "magnitudeUnit": "acres",
-            "date": "2026-08-02T14:31:00Z",
-            "type": "Point",
-            "coordinates": [
-              -116.543867,
-              41.049033
-            ]
-          }
         }
       ]
     },
@@ -810,54 +784,54 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -0.3,
-          "surface_pressure": 1008.7,
-          "wind_speed_10m": 5.76,
-          "relative_humidity_2m": 95
+          "temperature_2m": -0.5,
+          "surface_pressure": 1011.9,
+          "wind_speed_10m": 6.85,
+          "relative_humidity_2m": 97
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 15.2,
-          "surface_pressure": 1012.5,
-          "wind_speed_10m": 10.12,
-          "relative_humidity_2m": 83
+          "temperature_2m": 14.5,
+          "surface_pressure": 1020.3,
+          "wind_speed_10m": 4.81,
+          "relative_humidity_2m": 75
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 26.1,
-          "surface_pressure": 917.9,
-          "wind_speed_10m": 1.46,
-          "relative_humidity_2m": 62
+          "temperature_2m": 19.4,
+          "surface_pressure": 915.6,
+          "wind_speed_10m": 2.06,
+          "relative_humidity_2m": 98
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 30.2,
-          "surface_pressure": 1010.7,
-          "wind_speed_10m": 1.51,
-          "relative_humidity_2m": 72
+          "temperature_2m": 27.5,
+          "surface_pressure": 1013.1,
+          "wind_speed_10m": 1.72,
+          "relative_humidity_2m": 80
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": 0.8,
-          "surface_pressure": 974.2,
-          "wind_speed_10m": 15.23,
-          "relative_humidity_2m": 95
+          "temperature_2m": -0.6,
+          "surface_pressure": 989.2,
+          "wind_speed_10m": 10.66,
+          "relative_humidity_2m": 93
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -43.5,
-          "surface_pressure": 710.7,
-          "wind_speed_10m": 7.74,
+          "temperature_2m": -42.4,
+          "surface_pressure": 712.3,
+          "wind_speed_10m": 8.56,
           "relative_humidity_2m": 67
         }
       ]
