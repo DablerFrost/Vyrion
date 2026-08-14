@@ -1,18 +1,18 @@
 {
   "meta": {
-    "generated": "2026-08-14T02:38:33.998Z",
+    "generated": "2026-08-14T13:38:03.526Z",
     "generated_date": "2026-08-14",
     "script_version": "1.1",
     "window_days": 14,
     "window_start": "2026-07-31",
     "window_end": "2026-08-14",
-    "runtime_ms": 704,
+    "runtime_ms": 612,
     "seismic_live": true,
     "eonet_live": true
   },
   "threat": {
     "level": "CRITICAL",
-    "score": 38.25
+    "score": 37.9
   },
   "seismic": {
     "events": [
@@ -593,22 +593,6 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000th96"
       },
       {
-        "id": "us6000th5s",
-        "magnitude": 5,
-        "place": "Kermadec Islands region",
-        "time": "2026-07-31T06:30:26.157Z",
-        "depth_km": 37.8,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000th5s"
-      },
-      {
-        "id": "us6000th5f",
-        "magnitude": 5,
-        "place": "Kermadec Islands region",
-        "time": "2026-07-31T04:02:53.372Z",
-        "depth_km": 35,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000th5f"
-      },
-      {
         "id": "us6000tkkw",
         "magnitude": 4.9,
         "place": "29 km SW of Balangonan, Philippines",
@@ -801,12 +785,20 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000thgg"
       },
       {
-        "id": "us6000th68",
-        "magnitude": 4.9,
-        "place": "279 km SW of Banda Aceh, Indonesia",
-        "time": "2026-07-31T08:31:28.823Z",
+        "id": "us6000tkmy",
+        "magnitude": 4.8,
+        "place": "207 km SE of Katsuura, Japan",
+        "time": "2026-08-14T09:58:43.693Z",
         "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000th68"
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tkmy"
+      },
+      {
+        "id": "us6000tklc",
+        "magnitude": 4.8,
+        "place": "Bonin Islands, Japan region",
+        "time": "2026-08-14T04:53:15.378Z",
+        "depth_km": 516.4,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tklc"
       },
       {
         "id": "us6000tk3b",
@@ -1465,30 +1457,6 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000thbu"
       },
       {
-        "id": "us6000th7y",
-        "magnitude": 4.6,
-        "place": "95 km WNW of Amagi, Japan",
-        "time": "2026-07-31T12:58:40.829Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000th7y"
-      },
-      {
-        "id": "us6000th6a",
-        "magnitude": 4.6,
-        "place": "37 km WNW of Dāmghān, Iran",
-        "time": "2026-07-31T09:08:55.647Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000th6a"
-      },
-      {
-        "id": "us6000thlu",
-        "magnitude": 4.6,
-        "place": "Kermadec Islands region",
-        "time": "2026-07-31T04:16:59.457Z",
-        "depth_km": 7.1,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000thlu"
-      },
-      {
         "id": "us6000tkeb",
         "magnitude": 4.5,
         "place": "222 km SSW of Severo-Kuril’sk, Russia",
@@ -1799,17 +1767,9 @@
         "time": "2026-07-31T17:46:43.912Z",
         "depth_km": 5,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000th99"
-      },
-      {
-        "id": "us6000th7q",
-        "magnitude": 4.5,
-        "place": "31 km WNW of Titahi Bay, New Zealand",
-        "time": "2026-07-31T11:09:22.344Z",
-        "depth_km": 55.6,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000th7q"
       }
     ],
-    "count_total": 224,
+    "count_total": 219,
     "count_m55_plus": 15,
     "count_m60_plus": 4,
     "count_m70_plus": 1,
@@ -1825,7 +1785,7 @@
     "source": "USGS Earthquake Hazards Program",
     "url": "https://earthquake.usgs.gov/",
     "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-    "retrieved": "2026-08-14T02:38:33.502Z"
+    "retrieved": "2026-08-14T13:38:03.109Z"
   },
   "wildfire": {
     "events": [
@@ -2455,20 +2415,9 @@
           39.103
         ],
         "closed": null
-      },
-      {
-        "id": "EONET_22120",
-        "title": "Wildfire Black Canyon, Sanpete, Utah",
-        "type": "WILDFIRE",
-        "time": "2026-07-30T21:26:00.000Z",
-        "coords": [
-          -111.308,
-          39.383
-        ],
-        "closed": null
       }
     ],
-    "count": 58
+    "count": 57
   },
   "storm": {
     "events": [
