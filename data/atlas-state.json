@@ -1,13 +1,13 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-08-15T13:01:59.691Z",
+    "generatedAt": "2026-08-16T01:59:52.662Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 14,
+      "count": 15,
       "maxMagnitude": 7.7,
       "events": [
         {
@@ -21,7 +21,20 @@
             172.526
           ],
           "tsunami": false,
-          "significance": 747
+          "significance": 751
+        },
+        {
+          "id": "us6000tkv2",
+          "magnitude": 5.2,
+          "place": "1 km SW of Otura, Spain",
+          "time": "2026-08-14T23:04:40.797Z",
+          "coordinates": [
+            -3.6486,
+            37.0789,
+            10
+          ],
+          "tsunami": false,
+          "significance": 730
         },
         {
           "id": "us6000tkt2",
@@ -34,7 +47,7 @@
             10
           ],
           "tsunami": false,
-          "significance": 1030
+          "significance": 945
         },
         {
           "id": "nc75417557",
@@ -213,13 +226,13 @@
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 30,
+            "magnitudeValue": 25,
             "magnitudeUnit": "kts",
-            "date": "2026-08-15T06:00:00Z",
+            "date": "2026-08-15T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              -133.2,
-              16.3
+              -135.4,
+              15.8
             ]
           }
         },
@@ -253,13 +266,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 55,
+            "magnitudeValue": 65,
             "magnitudeUnit": "kts",
-            "date": "2026-08-15T06:00:00Z",
+            "date": "2026-08-15T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              -153,
-              17.6
+              -155,
+              17.9
             ]
           }
         },
@@ -811,52 +824,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": 0.1,
-          "surface_pressure": 1007.5,
-          "wind_speed_10m": 6.33,
-          "relative_humidity_2m": 94
+          "temperature_2m": -0.3,
+          "surface_pressure": 1008.6,
+          "wind_speed_10m": 6.92,
+          "relative_humidity_2m": 93
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 15.8,
-          "surface_pressure": 1018.9,
-          "wind_speed_10m": 3.81,
-          "relative_humidity_2m": 87
+          "temperature_2m": 17.3,
+          "surface_pressure": 1016.2,
+          "wind_speed_10m": 7.93,
+          "relative_humidity_2m": 93
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 23.6,
-          "surface_pressure": 916.4,
-          "wind_speed_10m": 1.95,
-          "relative_humidity_2m": 84
+          "temperature_2m": 20.6,
+          "surface_pressure": 915.3,
+          "wind_speed_10m": 1.77,
+          "relative_humidity_2m": 94
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 29.9,
-          "surface_pressure": 1010.9,
-          "wind_speed_10m": 2.3,
-          "relative_humidity_2m": 74
+          "temperature_2m": 28.9,
+          "surface_pressure": 1013.3,
+          "wind_speed_10m": 2.8,
+          "relative_humidity_2m": 75
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -1.5,
-          "surface_pressure": 956.2,
-          "wind_speed_10m": 18.63,
-          "relative_humidity_2m": 86
+          "temperature_2m": -3.6,
+          "surface_pressure": 966.7,
+          "wind_speed_10m": 17.65,
+          "relative_humidity_2m": 68
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "error": "fetch_failed"
+          "temperature_2m": -37.6,
+          "surface_pressure": 730.1,
+          "wind_speed_10m": 8.08,
+          "relative_humidity_2m": 65
         }
       ]
     },
