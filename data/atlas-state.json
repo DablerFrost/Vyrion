@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-08-16T01:59:52.662Z",
+    "generatedAt": "2026-08-16T13:03:34.251Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -211,8 +211,8 @@
       "totalActive": 50,
       "byCategory": {
         "Severe Storms": 7,
-        "Wildfires": 42,
-        "Sea and Lake Ice": 1
+        "Wildfires": 41,
+        "Sea and Lake Ice": 2
       },
       "events": [
         {
@@ -268,11 +268,11 @@
           "geometry": {
             "magnitudeValue": 65,
             "magnitudeUnit": "kts",
-            "date": "2026-08-15T18:00:00Z",
+            "date": "2026-08-16T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              -155,
-              17.9
+              -156.5,
+              19.1
             ]
           }
         },
@@ -825,54 +825,51 @@
           "lat": 80,
           "lon": 0,
           "temperature_2m": -0.3,
-          "surface_pressure": 1008.6,
-          "wind_speed_10m": 6.92,
-          "relative_humidity_2m": 93
+          "surface_pressure": 1009.4,
+          "wind_speed_10m": 5.17,
+          "relative_humidity_2m": 96
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 17.3,
-          "surface_pressure": 1016.2,
-          "wind_speed_10m": 7.93,
-          "relative_humidity_2m": 93
+          "temperature_2m": 18.5,
+          "surface_pressure": 1012.9,
+          "wind_speed_10m": 11.7,
+          "relative_humidity_2m": 96
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 20.6,
-          "surface_pressure": 915.3,
-          "wind_speed_10m": 1.77,
-          "relative_humidity_2m": 94
+          "error": "fetch_failed"
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 28.9,
-          "surface_pressure": 1013.3,
-          "wind_speed_10m": 2.8,
-          "relative_humidity_2m": 75
+          "temperature_2m": 29.4,
+          "surface_pressure": 1012,
+          "wind_speed_10m": 3.95,
+          "relative_humidity_2m": 79
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -3.6,
-          "surface_pressure": 966.7,
-          "wind_speed_10m": 17.65,
-          "relative_humidity_2m": 68
+          "temperature_2m": -3.9,
+          "surface_pressure": 969.5,
+          "wind_speed_10m": 16.63,
+          "relative_humidity_2m": 70
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -37.6,
-          "surface_pressure": 730.1,
-          "wind_speed_10m": 8.08,
-          "relative_humidity_2m": 65
+          "temperature_2m": -40.7,
+          "surface_pressure": 730.4,
+          "wind_speed_10m": 8.59,
+          "relative_humidity_2m": 67
         }
       ]
     },
