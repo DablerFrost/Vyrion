@@ -1,13 +1,13 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-08-16T13:03:34.251Z",
+    "generatedAt": "2026-08-17T01:57:45.075Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 15,
+      "count": 13,
       "maxMagnitude": 7.7,
       "events": [
         {
@@ -178,46 +178,20 @@
           ],
           "tsunami": false,
           "significance": 660
-        },
-        {
-          "id": "us7000t1cc",
-          "magnitude": 6.4,
-          "place": "96 km SW of Puerto Madero, Mexico",
-          "time": "2026-07-17T15:20:06.587Z",
-          "coordinates": [
-            -93.1385,
-            14.2039,
-            10
-          ],
-          "tsunami": false,
-          "significance": 631
-        },
-        {
-          "id": "us7000t1bu",
-          "magnitude": 7.3,
-          "place": "52 km W of Puerto Madero, Mexico",
-          "time": "2026-07-17T14:48:40.227Z",
-          "coordinates": [
-            -92.8969,
-            14.6361,
-            22
-          ],
-          "tsunami": false,
-          "significance": 1033
         }
       ]
     },
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Severe Storms": 7,
-        "Wildfires": 41,
+        "Severe Storms": 6,
+        "Wildfires": 42,
         "Sea and Lake Ice": 2
       },
       "events": [
         {
           "id": "EONET_22562",
-          "title": "Tropical Storm Hernan",
+          "title": "Cyclone Hernan",
           "categories": [
             "Severe Storms"
           ],
@@ -266,13 +240,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 65,
+            "magnitudeValue": 55,
             "magnitudeUnit": "kts",
-            "date": "2026-08-16T06:00:00Z",
+            "date": "2026-08-16T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              -156.5,
-              19.1
+              -158.8,
+              20.8
             ]
           }
         },
@@ -513,26 +487,6 @@
             "coordinates": [
               -119.525167,
               39.822833
-            ]
-          }
-        },
-        {
-          "id": "EONET_22386",
-          "title": "Tropical Storm 15W",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "JTWC"
-          ],
-          "geometry": {
-            "magnitudeValue": 25,
-            "magnitudeUnit": "kts",
-            "date": "2026-08-11T00:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              160.8,
-              28.4
             ]
           }
         },
@@ -815,6 +769,26 @@
               34.79108
             ]
           }
+        },
+        {
+          "id": "EONET_22449",
+          "title": "Wildfire MM115 HWY 20, Elmore, Idaho",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 4936,
+            "magnitudeUnit": "acres",
+            "date": "2026-08-07T17:42:00Z",
+            "type": "Point",
+            "coordinates": [
+              -115.447144,
+              43.302
+            ]
+          }
         }
       ]
     },
@@ -824,52 +798,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -0.3,
-          "surface_pressure": 1009.4,
-          "wind_speed_10m": 5.17,
-          "relative_humidity_2m": 96
+          "temperature_2m": -1.1,
+          "surface_pressure": 1011.5,
+          "wind_speed_10m": 6.25,
+          "relative_humidity_2m": 99
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 18.5,
-          "surface_pressure": 1012.9,
-          "wind_speed_10m": 11.7,
-          "relative_humidity_2m": 96
+          "temperature_2m": 16.8,
+          "surface_pressure": 1015.9,
+          "wind_speed_10m": 8.5,
+          "relative_humidity_2m": 92
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "error": "fetch_failed"
+          "temperature_2m": 19.7,
+          "surface_pressure": 913.7,
+          "wind_speed_10m": 1.25,
+          "relative_humidity_2m": 92
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 29.4,
-          "surface_pressure": 1012,
-          "wind_speed_10m": 3.95,
-          "relative_humidity_2m": 79
+          "temperature_2m": 29.6,
+          "surface_pressure": 1013.1,
+          "wind_speed_10m": 2.04,
+          "relative_humidity_2m": 73
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -3.9,
-          "surface_pressure": 969.5,
-          "wind_speed_10m": 16.63,
-          "relative_humidity_2m": 70
+          "temperature_2m": -4.1,
+          "surface_pressure": 973,
+          "wind_speed_10m": 16.32,
+          "relative_humidity_2m": 72
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -40.7,
-          "surface_pressure": 730.4,
-          "wind_speed_10m": 8.59,
-          "relative_humidity_2m": 67
+          "temperature_2m": -34.7,
+          "surface_pressure": 728.2,
+          "wind_speed_10m": 8.42,
+          "relative_humidity_2m": 73
         }
       ]
     },
