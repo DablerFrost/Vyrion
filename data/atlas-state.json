@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-08-17T13:09:55.681Z",
+    "generatedAt": "2026-08-18T01:54:12.336Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -34,7 +34,7 @@
             10
           ],
           "tsunami": false,
-          "significance": 730
+          "significance": 731
         },
         {
           "id": "us6000tkt2",
@@ -47,7 +47,7 @@
             10
           ],
           "tsunami": false,
-          "significance": 945
+          "significance": 948
         },
         {
           "id": "nc75417557",
@@ -184,11 +184,171 @@
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Severe Storms": 5,
         "Wildfires": 43,
+        "Severe Storms": 5,
         "Sea and Lake Ice": 2
       },
       "events": [
+        {
+          "id": "EONET_22798",
+          "title": "Wildfire Picture Rock, Lake, Oregon",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 1625,
+            "magnitudeUnit": "acres",
+            "date": "2026-08-16T15:55:00Z",
+            "type": "Point",
+            "coordinates": [
+              -120.774487,
+              43.00919
+            ]
+          }
+        },
+        {
+          "id": "EONET_22800",
+          "title": "Wildfire CATO 2, Chaves, New Mexico",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 2080,
+            "magnitudeUnit": "acres",
+            "date": "2026-08-15T23:18:00Z",
+            "type": "Point",
+            "coordinates": [
+              -103.9452,
+              33.50765
+            ]
+          }
+        },
+        {
+          "id": "EONET_22791",
+          "title": "Wildfire THE H1, Palm Beach, Florida",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 3600,
+            "magnitudeUnit": "acres",
+            "date": "2026-08-15T22:19:00Z",
+            "type": "Point",
+            "coordinates": [
+              -80.7516667,
+              26.3688889
+            ]
+          }
+        },
+        {
+          "id": "EONET_22799",
+          "title": "Wildfire THE RADIO TOWER, Miami-Dade, Florida",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 700,
+            "magnitudeUnit": "acres",
+            "date": "2026-08-15T22:06:00Z",
+            "type": "Point",
+            "coordinates": [
+              -80.4744444,
+              25.7111111
+            ]
+          }
+        },
+        {
+          "id": "EONET_22795",
+          "title": "Wildfire Shoshone, Churchill, Nevada",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 7934,
+            "magnitudeUnit": "acres",
+            "date": "2026-08-15T17:48:00Z",
+            "type": "Point",
+            "coordinates": [
+              -117.67618,
+              39.82989
+            ]
+          }
+        },
+        {
+          "id": "EONET_22790",
+          "title": "Wildfire Burnt Canyon, Woodward, Oklahoma",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 3335,
+            "magnitudeUnit": "acres",
+            "date": "2026-08-15T16:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -99.2663889,
+              36.5955556
+            ]
+          }
+        },
+        {
+          "id": "EONET_22801",
+          "title": "Wildfire Snake Mountain, Pushmataha, Oklahoma",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 703,
+            "magnitudeUnit": "acres",
+            "date": "2026-08-14T10:05:00Z",
+            "type": "Point",
+            "coordinates": [
+              -95.1797222,
+              34.4830556
+            ]
+          }
+        },
+        {
+          "id": "EONET_22796",
+          "title": "Wildfire Fielder Mtn, Jackson, Oregon",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 573,
+            "magnitudeUnit": "acres",
+            "date": "2026-08-13T18:23:00Z",
+            "type": "Point",
+            "coordinates": [
+              -123.2067743,
+              42.4217473
+            ]
+          }
+        },
         {
           "id": "EONET_22562",
           "title": "Cyclone Hernan",
@@ -240,13 +400,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 50,
+            "magnitudeValue": 55,
             "magnitudeUnit": "kts",
-            "date": "2026-08-17T06:00:00Z",
+            "date": "2026-08-17T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              -162,
-              20.7
+              -163.9,
+              20.4
             ]
           }
         },
@@ -287,6 +447,26 @@
             "coordinates": [
               -36.8,
               39.4
+            ]
+          }
+        },
+        {
+          "id": "EONET_22802",
+          "title": "Wildfire Austin Non-Stat, Clackamas, Oregon",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 1000,
+            "magnitudeUnit": "acres",
+            "date": "2026-08-12T14:19:00Z",
+            "type": "Point",
+            "coordinates": [
+              -121.9549232,
+              45.02547389
             ]
           }
         },
@@ -609,186 +789,6 @@
               36.215894
             ]
           }
-        },
-        {
-          "id": "EONET_22434",
-          "title": "Wildfire PALOUSE RIVER, Whitman, Washington",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 637,
-            "magnitudeUnit": "acres",
-            "date": "2026-08-08T20:58:00Z",
-            "type": "Point",
-            "coordinates": [
-              -117.307978,
-              46.870892
-            ]
-          }
-        },
-        {
-          "id": "EONET_22432",
-          "title": "Wildfire Bug, Lassen, California",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 15000,
-            "magnitudeUnit": "acres",
-            "date": "2026-08-08T18:49:00Z",
-            "type": "Point",
-            "coordinates": [
-              -120.038117,
-              39.727883
-            ]
-          }
-        },
-        {
-          "id": "EONET_22436",
-          "title": "Wildfire WELLS ROAD, Whitman, Washington",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1812,
-            "magnitudeUnit": "acres",
-            "date": "2026-08-08T18:36:00Z",
-            "type": "Point",
-            "coordinates": [
-              -117.51,
-              47.24
-            ]
-          }
-        },
-        {
-          "id": "EONET_22426",
-          "title": "Wildfire NUNAMAKER ROAD, Franklin, Washington",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 20870,
-            "magnitudeUnit": "acres",
-            "date": "2026-08-08T14:16:00Z",
-            "type": "Point",
-            "coordinates": [
-              -118.4075,
-              46.5942
-            ]
-          }
-        },
-        {
-          "id": "EONET_22425",
-          "title": "Wildfire LITTLE GOOSE, Columbia, Washington",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 8524,
-            "magnitudeUnit": "acres",
-            "date": "2026-08-07T21:01:00Z",
-            "type": "Point",
-            "coordinates": [
-              -118.09,
-              46.536
-            ]
-          }
-        },
-        {
-          "id": "EONET_22433",
-          "title": "Wildfire MP18, Humboldt, California",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1500,
-            "magnitudeUnit": "acres",
-            "date": "2026-08-07T19:52:00Z",
-            "type": "Point",
-            "coordinates": [
-              -123.685,
-              41.1330556
-            ]
-          }
-        },
-        {
-          "id": "EONET_22446",
-          "title": "Wildfire Rocky Canyon, Morgan, Utah",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 4372,
-            "magnitudeUnit": "acres",
-            "date": "2026-08-07T18:30:00Z",
-            "type": "Point",
-            "coordinates": [
-              -111.642133,
-              40.939517
-            ]
-          }
-        },
-        {
-          "id": "EONET_22442",
-          "title": "Wildfire RIDGE, Los Angeles, California",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1134,
-            "magnitudeUnit": "acres",
-            "date": "2026-08-07T17:44:00Z",
-            "type": "Point",
-            "coordinates": [
-              -118.82999,
-              34.79108
-            ]
-          }
-        },
-        {
-          "id": "EONET_22449",
-          "title": "Wildfire MM115 HWY 20, Elmore, Idaho",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 4936,
-            "magnitudeUnit": "acres",
-            "date": "2026-08-07T17:42:00Z",
-            "type": "Point",
-            "coordinates": [
-              -115.447144,
-              43.302
-            ]
-          }
         }
       ]
     },
@@ -798,60 +798,60 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": 0,
-          "surface_pressure": 1012.2,
-          "wind_speed_10m": 6.4,
-          "relative_humidity_2m": 96
+          "temperature_2m": -1.1,
+          "surface_pressure": 1013.5,
+          "wind_speed_10m": 6.25,
+          "relative_humidity_2m": 100
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
           "temperature_2m": 16.5,
-          "surface_pressure": 1022.3,
-          "wind_speed_10m": 6.47,
-          "relative_humidity_2m": 84
+          "surface_pressure": 1021.7,
+          "wind_speed_10m": 3.27,
+          "relative_humidity_2m": 91
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 24.6,
-          "surface_pressure": 916.6,
-          "wind_speed_10m": 1.9,
-          "relative_humidity_2m": 70
+          "temperature_2m": 19.3,
+          "surface_pressure": 915.5,
+          "wind_speed_10m": 1.25,
+          "relative_humidity_2m": 93
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 29,
-          "surface_pressure": 1011,
-          "wind_speed_10m": 1.6,
-          "relative_humidity_2m": 81
+          "temperature_2m": 27.9,
+          "surface_pressure": 1012.4,
+          "wind_speed_10m": 4,
+          "relative_humidity_2m": 82
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -4.3,
-          "surface_pressure": 976.3,
-          "wind_speed_10m": 16.55,
-          "relative_humidity_2m": 67
+          "temperature_2m": -5,
+          "surface_pressure": 980.7,
+          "wind_speed_10m": 15.51,
+          "relative_humidity_2m": 72
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -31.9,
-          "surface_pressure": 729.7,
-          "wind_speed_10m": 8.6,
-          "relative_humidity_2m": 75
+          "temperature_2m": -35.1,
+          "surface_pressure": 726.8,
+          "wind_speed_10m": 6.71,
+          "relative_humidity_2m": 67
         }
       ]
     },
     "climate": {
-      "error": "[NOAA Climate (keyless)] Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+      "error": "[NOAA Climate (keyless)] This operation was aborted"
     },
     "oceanHeat": {
       "error": "[NOAA CRW Ocean Heat] HTTP 404 Not Found"
