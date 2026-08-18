@@ -1,13 +1,13 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-08-18T01:54:12.336Z",
+    "generatedAt": "2026-08-18T13:12:14.487Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 13,
+      "count": 12,
       "maxMagnitude": 7.7,
       "events": [
         {
@@ -34,7 +34,7 @@
             10
           ],
           "tsunami": false,
-          "significance": 731
+          "significance": 732
         },
         {
           "id": "us6000tkt2",
@@ -118,10 +118,10 @@
           "id": "us6000tgb9",
           "magnitude": 6.8,
           "place": "The 2026 Kumamoto Region, Japan Earthquake",
-          "time": "2026-07-28T07:27:15.512Z",
+          "time": "2026-07-28T07:27:14.942Z",
           "coordinates": [
-            130.7217,
-            32.6817,
+            130.6843,
+            32.6297,
             10
           ],
           "tsunami": false,
@@ -165,19 +165,6 @@
           ],
           "tsunami": false,
           "significance": 714
-        },
-        {
-          "id": "us7000t1q7",
-          "magnitude": 5.5,
-          "place": "5 km S of Chambara, Peru",
-          "time": "2026-07-19T02:24:35.593Z",
-          "coordinates": [
-            -75.3819,
-            -12.08,
-            10
-          ],
-          "tsunami": false,
-          "significance": 660
         }
       ]
     },
@@ -400,12 +387,12 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 55,
+            "magnitudeValue": 65,
             "magnitudeUnit": "kts",
-            "date": "2026-08-17T18:00:00Z",
+            "date": "2026-08-18T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              -163.9,
+              -165.8,
               20.4
             ]
           }
@@ -798,45 +785,45 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -1.1,
-          "surface_pressure": 1013.5,
-          "wind_speed_10m": 6.25,
-          "relative_humidity_2m": 100
+          "temperature_2m": 0.4,
+          "surface_pressure": 1014.4,
+          "wind_speed_10m": 6.75,
+          "relative_humidity_2m": 98
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 16.5,
-          "surface_pressure": 1021.7,
-          "wind_speed_10m": 3.27,
-          "relative_humidity_2m": 91
+          "temperature_2m": 14.9,
+          "surface_pressure": 1023.7,
+          "wind_speed_10m": 9.42,
+          "relative_humidity_2m": 79
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 19.3,
-          "surface_pressure": 915.5,
-          "wind_speed_10m": 1.25,
-          "relative_humidity_2m": 93
+          "temperature_2m": 24.2,
+          "surface_pressure": 917.5,
+          "wind_speed_10m": 2.58,
+          "relative_humidity_2m": 68
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 27.9,
-          "surface_pressure": 1012.4,
-          "wind_speed_10m": 4,
-          "relative_humidity_2m": 82
+          "temperature_2m": 29.2,
+          "surface_pressure": 1011.1,
+          "wind_speed_10m": 1.25,
+          "relative_humidity_2m": 74
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -5,
-          "surface_pressure": 980.7,
-          "wind_speed_10m": 15.51,
+          "temperature_2m": -4.4,
+          "surface_pressure": 987.1,
+          "wind_speed_10m": 13.74,
           "relative_humidity_2m": 72
         },
         {
@@ -844,14 +831,14 @@
           "lat": -80,
           "lon": 0,
           "temperature_2m": -35.1,
-          "surface_pressure": 726.8,
-          "wind_speed_10m": 6.71,
-          "relative_humidity_2m": 67
+          "surface_pressure": 725.4,
+          "wind_speed_10m": 6.97,
+          "relative_humidity_2m": 70
         }
       ]
     },
     "climate": {
-      "error": "[NOAA Climate (keyless)] This operation was aborted"
+      "error": "[NOAA Climate (keyless)] Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
     },
     "oceanHeat": {
       "error": "[NOAA CRW Ocean Heat] HTTP 404 Not Found"
