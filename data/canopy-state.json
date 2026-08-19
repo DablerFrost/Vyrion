@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-08-18T13:31:30.108Z",
+    "generatedAt": "2026-08-19T02:09:35.049Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -13,20 +13,20 @@
   },
   "synthesis": {
     "hazardSummary": {
-      "totalEvents": 62,
+      "totalEvents": 63,
       "categories": {
         "Wildfires": 43,
         "Severe Storms": 5,
         "Sea and Lake Ice": 2
       },
-      "seismicCount": 12,
+      "seismicCount": 13,
       "maxMagnitude": 7.7
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 4.87,
-      "minTemperature_2m": -35.1,
-      "maxTemperature_2m": 29.2
+      "avgTemperature_2m": 4.37,
+      "minTemperature_2m": -34.8,
+      "maxTemperature_2m": 28.1
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -40,19 +40,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-08-18T13:05:16.554Z",
-        "generated_date": "2026-08-18",
+        "generated": "2026-08-19T01:48:24.290Z",
+        "generated_date": "2026-08-19",
         "script_version": "1.1",
         "window_days": 14,
-        "window_start": "2026-08-04",
-        "window_end": "2026-08-18",
-        "runtime_ms": 2669,
+        "window_start": "2026-08-05",
+        "window_end": "2026-08-19",
+        "runtime_ms": 576,
         "seismic_live": true,
         "eonet_live": true
       },
       "threat": {
         "level": "CRITICAL",
-        "score": 40.2
+        "score": 39.85
       },
       "seismic": {
         "events": [
@@ -121,6 +121,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tk74"
           },
           {
+            "id": "us6000tlrj",
+            "magnitude": 5.9,
+            "place": "269 km SSE of Dunhuang, China",
+            "time": "2026-08-18T21:36:29.215Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tlrj"
+          },
+          {
             "id": "us6000tkta",
             "magnitude": 5.9,
             "place": "36 km NE of Labuan Bajo, Indonesia",
@@ -147,18 +155,10 @@
           {
             "id": "us6000tl1s",
             "magnitude": 5.7,
-            "place": "125 km NNE of Palu, Indonesia",
-            "time": "2026-08-15T16:25:18.342Z",
-            "depth_km": 72.5,
+            "place": "132 km NNE of Palu, Indonesia",
+            "time": "2026-08-15T16:25:18.277Z",
+            "depth_km": 72,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tl1s"
-          },
-          {
-            "id": "us6000ti49",
-            "magnitude": 5.7,
-            "place": "127 km NW of Ternate, Indonesia",
-            "time": "2026-08-04T20:16:37.181Z",
-            "depth_km": 35,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ti49"
           },
           {
             "id": "us6000tlkt",
@@ -203,8 +203,8 @@
           {
             "id": "us6000tif5",
             "magnitude": 5.6,
-            "place": "40 km SW of Sarangani, Philippines",
-            "time": "2026-08-05T21:41:27.717Z",
+            "place": "41 km SW of Sarangani, Philippines",
+            "time": "2026-08-05T21:41:27.701Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tif5"
           },
@@ -319,6 +319,14 @@
             "time": "2026-08-06T17:43:36.862Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000timf"
+          },
+          {
+            "id": "us6000tlqq",
+            "magnitude": 5.3,
+            "place": "35 km SSW of Jurm, Afghanistan",
+            "time": "2026-08-18T19:51:09.478Z",
+            "depth_km": 195.9,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tlqq"
           },
           {
             "id": "us6000tlgm",
@@ -649,14 +657,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ti6z"
           },
           {
-            "id": "us6000ti0r",
-            "magnitude": 5.1,
-            "place": "south of Tonga",
-            "time": "2026-08-04T14:56:14.381Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ti0r"
-          },
-          {
             "id": "usd0015ee2",
             "magnitude": 5,
             "place": "32 km N of Ruteng, Indonesia",
@@ -763,8 +763,8 @@
           {
             "id": "us6000tji3",
             "magnitude": 5,
-            "place": "206 km SE of Sarangani, Philippines",
-            "time": "2026-08-09T22:17:27.839Z",
+            "place": "205 km SE of Sarangani, Philippines",
+            "time": "2026-08-09T22:17:27.868Z",
             "depth_km": 35,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tji3"
           },
@@ -807,6 +807,22 @@
             "time": "2026-08-05T10:06:09.955Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ti9w"
+          },
+          {
+            "id": "us6000tlqk",
+            "magnitude": 4.9,
+            "place": "76 km NW of Ende, Indonesia",
+            "time": "2026-08-18T19:03:07.854Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tlqk"
+          },
+          {
+            "id": "us6000tlnv",
+            "magnitude": 4.9,
+            "place": "79 km N of Ruteng, Indonesia",
+            "time": "2026-08-18T12:03:50.174Z",
+            "depth_km": 36.3,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tlnv"
           },
           {
             "id": "us6000tllu",
@@ -971,8 +987,8 @@
           {
             "id": "us6000tjhn",
             "magnitude": 4.9,
-            "place": "211 km SE of Sarangani, Philippines",
-            "time": "2026-08-09T21:42:38.761Z",
+            "place": "213 km SE of Sarangani, Philippines",
+            "time": "2026-08-09T21:42:38.829Z",
             "depth_km": 35,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tjhn"
           },
@@ -1033,14 +1049,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tig8"
           },
           {
-            "id": "us6000tifh",
-            "magnitude": 4.9,
-            "place": "42 km SW of Sarangani, Philippines",
-            "time": "2026-08-05T22:11:44.587Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tifh"
-          },
-          {
             "id": "us6000ti7z",
             "magnitude": 4.9,
             "place": "54 km ESE of Sarangani, Philippines",
@@ -1065,12 +1073,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ti6f"
           },
           {
-            "id": "us6000ti4s",
-            "magnitude": 4.9,
-            "place": "south of Tonga",
-            "time": "2026-08-04T21:09:29.122Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ti4s"
+            "id": "us6000tlqv",
+            "magnitude": 4.8,
+            "place": "72 km NW of Ende, Indonesia",
+            "time": "2026-08-18T20:15:46.995Z",
+            "depth_km": 56.4,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tlqv"
           },
           {
             "id": "us6000tlm3",
@@ -1265,6 +1273,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tigl"
           },
           {
+            "id": "us6000tifh",
+            "magnitude": 4.8,
+            "place": "35 km SSW of Sarangani, Philippines",
+            "time": "2026-08-05T22:11:44.622Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tifh"
+          },
+          {
             "id": "us6000ti9k",
             "magnitude": 4.8,
             "place": "45 km SSW of Sarangani, Philippines",
@@ -1289,20 +1305,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ti7f"
           },
           {
-            "id": "us6000ti5u",
-            "magnitude": 4.8,
-            "place": "56 km WSW of Monywa, Burma (Myanmar)",
-            "time": "2026-08-05T00:11:58.154Z",
-            "depth_km": 107.6,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ti5u"
-          },
-          {
-            "id": "us6000ti40",
-            "magnitude": 4.8,
-            "place": "43 km ESE of Koseda, Japan",
-            "time": "2026-08-04T19:56:58.739Z",
-            "depth_km": 45,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ti40"
+            "id": "us6000tlmz",
+            "magnitude": 4.7,
+            "place": "72 km NNE of Ruteng, Indonesia",
+            "time": "2026-08-18T12:00:13.955Z",
+            "depth_km": 35,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tlmz"
           },
           {
             "id": "us6000tlmt",
@@ -1487,22 +1495,6 @@
             "time": "2026-08-05T14:16:50.054Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tial"
-          },
-          {
-            "id": "us6000ti5m",
-            "magnitude": 4.7,
-            "place": "South Sandwich Islands region",
-            "time": "2026-08-04T23:08:00.905Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ti5m"
-          },
-          {
-            "id": "us6000ti4e",
-            "magnitude": 4.7,
-            "place": "Fiji region",
-            "time": "2026-08-04T20:30:04.431Z",
-            "depth_km": 603,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ti4e"
           },
           {
             "id": "us6000tlmc",
@@ -1825,12 +1817,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ti6d"
           },
           {
-            "id": "us6000ti0a",
-            "magnitude": 4.6,
-            "place": "79 km E of Onagawa Chō, Japan",
-            "time": "2026-08-04T14:00:26.620Z",
-            "depth_km": 40.4,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ti0a"
+            "id": "us6000tls8",
+            "magnitude": 4.5,
+            "place": "74 km ENE of Petropavlovsk-Kamchatsky, Russia",
+            "time": "2026-08-19T00:06:39.224Z",
+            "depth_km": 72.8,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tls8"
           },
           {
             "id": "us6000tlm6",
@@ -2129,7 +2121,7 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ti7p"
           }
         ],
-        "count_total": 259,
+        "count_total": 258,
         "count_m55_plus": 28,
         "count_m60_plus": 8,
         "count_m70_plus": 2,
@@ -2145,7 +2137,7 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-08-18T13:05:14.135Z"
+        "retrieved": "2026-08-19T01:48:24.100Z"
       },
       "wildfire": {
         "events": [
@@ -2599,20 +2591,9 @@
               35.909
             ],
             "closed": null
-          },
-          {
-            "id": "EONET_22197",
-            "title": "Wildfire Bare, Sublette, Wyoming",
-            "type": "WILDFIRE",
-            "time": "2026-08-04T17:46:00.000Z",
-            "coords": [
-              -110.482,
-              42.759
-            ],
-            "closed": null
           }
         ],
-        "count": 42
+        "count": 41
       },
       "storm": {
         "events": [
@@ -2686,15 +2667,28 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-08-18T13:12:14.487Z",
+        "generatedAt": "2026-08-19T01:56:00.087Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
       "layers": {
         "seismic": {
-          "count": 12,
+          "count": 13,
           "maxMagnitude": 7.7,
           "events": [
+            {
+              "id": "us6000tlrj",
+              "magnitude": 5.9,
+              "place": "269 km SSE of Dunhuang, China",
+              "time": "2026-08-18T21:36:29.215Z",
+              "coordinates": [
+                95.538,
+                37.8349,
+                10
+              ],
+              "tsunami": false,
+              "significance": 650
+            },
             {
               "id": "us6000tkyk",
               "magnitude": 6.9,
@@ -2719,7 +2713,7 @@
                 10
               ],
               "tsunami": false,
-              "significance": 732
+              "significance": 733
             },
             {
               "id": "us6000tkt2",
@@ -3072,12 +3066,12 @@
                 "JTWC"
               ],
               "geometry": {
-                "magnitudeValue": 65,
+                "magnitudeValue": 70,
                 "magnitudeUnit": "kts",
-                "date": "2026-08-18T06:00:00Z",
+                "date": "2026-08-18T12:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  -165.8,
+                  -166.6,
                   20.4
                 ]
               }
@@ -3470,55 +3464,55 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": 0.4,
-              "surface_pressure": 1014.4,
-              "wind_speed_10m": 6.75,
-              "relative_humidity_2m": 98
+              "temperature_2m": 1.1,
+              "surface_pressure": 1013.4,
+              "wind_speed_10m": 8.03,
+              "relative_humidity_2m": 95
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 14.9,
-              "surface_pressure": 1023.7,
-              "wind_speed_10m": 9.42,
-              "relative_humidity_2m": 79
+              "temperature_2m": 14.5,
+              "surface_pressure": 1027.9,
+              "wind_speed_10m": 5.45,
+              "relative_humidity_2m": 75
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 24.2,
-              "surface_pressure": 917.5,
-              "wind_speed_10m": 2.58,
-              "relative_humidity_2m": 68
+              "temperature_2m": 19.4,
+              "surface_pressure": 916.5,
+              "wind_speed_10m": 1.75,
+              "relative_humidity_2m": 97
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 29.2,
-              "surface_pressure": 1011.1,
-              "wind_speed_10m": 1.25,
-              "relative_humidity_2m": 74
+              "temperature_2m": 28.1,
+              "surface_pressure": 1012.9,
+              "wind_speed_10m": 2.52,
+              "relative_humidity_2m": 78
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": -4.4,
-              "surface_pressure": 987.1,
-              "wind_speed_10m": 13.74,
-              "relative_humidity_2m": 72
+              "temperature_2m": -2.1,
+              "surface_pressure": 988.9,
+              "wind_speed_10m": 13.27,
+              "relative_humidity_2m": 79
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -35.1,
-              "surface_pressure": 725.4,
-              "wind_speed_10m": 6.97,
-              "relative_humidity_2m": 70
+              "temperature_2m": -34.8,
+              "surface_pressure": 720.3,
+              "wind_speed_10m": 6.53,
+              "relative_humidity_2m": 72
             }
           ]
         },
@@ -3536,7 +3530,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-08-18T13:28:09.241Z"
+        "generatedAt": "2026-08-19T02:06:30.463Z"
       },
       "health": {
         "score": 87,
