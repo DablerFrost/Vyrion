@@ -1,15 +1,28 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-08-18T13:12:14.487Z",
+    "generatedAt": "2026-08-19T01:56:00.087Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 12,
+      "count": 13,
       "maxMagnitude": 7.7,
       "events": [
+        {
+          "id": "us6000tlrj",
+          "magnitude": 5.9,
+          "place": "269 km SSE of Dunhuang, China",
+          "time": "2026-08-18T21:36:29.215Z",
+          "coordinates": [
+            95.538,
+            37.8349,
+            10
+          ],
+          "tsunami": false,
+          "significance": 650
+        },
         {
           "id": "us6000tkyk",
           "magnitude": 6.9,
@@ -34,7 +47,7 @@
             10
           ],
           "tsunami": false,
-          "significance": 732
+          "significance": 733
         },
         {
           "id": "us6000tkt2",
@@ -387,12 +400,12 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 65,
+            "magnitudeValue": 70,
             "magnitudeUnit": "kts",
-            "date": "2026-08-18T06:00:00Z",
+            "date": "2026-08-18T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              -165.8,
+              -166.6,
               20.4
             ]
           }
@@ -785,55 +798,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": 0.4,
-          "surface_pressure": 1014.4,
-          "wind_speed_10m": 6.75,
-          "relative_humidity_2m": 98
+          "temperature_2m": 1.1,
+          "surface_pressure": 1013.4,
+          "wind_speed_10m": 8.03,
+          "relative_humidity_2m": 95
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 14.9,
-          "surface_pressure": 1023.7,
-          "wind_speed_10m": 9.42,
-          "relative_humidity_2m": 79
+          "temperature_2m": 14.5,
+          "surface_pressure": 1027.9,
+          "wind_speed_10m": 5.45,
+          "relative_humidity_2m": 75
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 24.2,
-          "surface_pressure": 917.5,
-          "wind_speed_10m": 2.58,
-          "relative_humidity_2m": 68
+          "temperature_2m": 19.4,
+          "surface_pressure": 916.5,
+          "wind_speed_10m": 1.75,
+          "relative_humidity_2m": 97
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 29.2,
-          "surface_pressure": 1011.1,
-          "wind_speed_10m": 1.25,
-          "relative_humidity_2m": 74
+          "temperature_2m": 28.1,
+          "surface_pressure": 1012.9,
+          "wind_speed_10m": 2.52,
+          "relative_humidity_2m": 78
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -4.4,
-          "surface_pressure": 987.1,
-          "wind_speed_10m": 13.74,
-          "relative_humidity_2m": 72
+          "temperature_2m": -2.1,
+          "surface_pressure": 988.9,
+          "wind_speed_10m": 13.27,
+          "relative_humidity_2m": 79
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -35.1,
-          "surface_pressure": 725.4,
-          "wind_speed_10m": 6.97,
-          "relative_humidity_2m": 70
+          "temperature_2m": -34.8,
+          "surface_pressure": 720.3,
+          "wind_speed_10m": 6.53,
+          "relative_humidity_2m": 72
         }
       ]
     },
