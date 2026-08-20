@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-08-19T13:13:08.287Z",
+    "generatedAt": "2026-08-20T01:54:58.030Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -47,7 +47,7 @@
             10
           ],
           "tsunami": false,
-          "significance": 733
+          "significance": 734
         },
         {
           "id": "us6000tkt2",
@@ -60,7 +60,7 @@
             10
           ],
           "tsunami": false,
-          "significance": 948
+          "significance": 949
         },
         {
           "id": "nc75417557",
@@ -184,11 +184,31 @@
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Wildfires": 44,
         "Severe Storms": 4,
+        "Wildfires": 44,
         "Sea and Lake Ice": 2
       },
       "events": [
+        {
+          "id": "EONET_22926",
+          "title": "Tropical Storm Saudel",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC"
+          ],
+          "geometry": {
+            "magnitudeValue": 35,
+            "magnitudeUnit": "kts",
+            "date": "2026-08-19T18:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              152.8,
+              10.5
+            ]
+          }
+        },
         {
           "id": "EONET_22798",
           "title": "Wildfire Picture Rock, Lake, Oregon",
@@ -371,26 +391,6 @@
           }
         },
         {
-          "id": "EONET_22561",
-          "title": "Tropical Storm Nangka",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "JTWC"
-          ],
-          "geometry": {
-            "magnitudeValue": 25,
-            "magnitudeUnit": "kts",
-            "date": "2026-08-14T12:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              154.5,
-              28.3
-            ]
-          }
-        },
-        {
           "id": "EONET_22563",
           "title": "Tropical Storm Lala",
           "categories": [
@@ -400,13 +400,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 115,
+            "magnitudeValue": 110,
             "magnitudeUnit": "kts",
-            "date": "2026-08-19T06:00:00Z",
+            "date": "2026-08-19T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              -169.3,
-              20.7
+              -170.7,
+              21.9
             ]
           }
         },
@@ -798,52 +798,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": 1.1,
-          "surface_pressure": 1011.9,
-          "wind_speed_10m": 6.7,
-          "relative_humidity_2m": 95
+          "temperature_2m": 0.7,
+          "surface_pressure": 1010.8,
+          "wind_speed_10m": 3.85,
+          "relative_humidity_2m": 99
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 14.6,
-          "surface_pressure": 1029.2,
-          "wind_speed_10m": 5.37,
-          "relative_humidity_2m": 72
+          "temperature_2m": 14.3,
+          "surface_pressure": 1028.2,
+          "wind_speed_10m": 3.45,
+          "relative_humidity_2m": 70
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 23,
-          "surface_pressure": 918,
-          "wind_speed_10m": 2.01,
-          "relative_humidity_2m": 74
+          "temperature_2m": 20.3,
+          "surface_pressure": 915.9,
+          "wind_speed_10m": 1.5,
+          "relative_humidity_2m": 94
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 29.5,
-          "surface_pressure": 1011.9,
-          "wind_speed_10m": 3.56,
-          "relative_humidity_2m": 74
+          "temperature_2m": 29.4,
+          "surface_pressure": 1012.7,
+          "wind_speed_10m": 3.68,
+          "relative_humidity_2m": 73
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -0.7,
-          "surface_pressure": 981.6,
-          "wind_speed_10m": 13.26,
-          "relative_humidity_2m": 90
+          "temperature_2m": -4.1,
+          "surface_pressure": 988.6,
+          "wind_speed_10m": 12.83,
+          "relative_humidity_2m": 72
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "error": "fetch_failed"
+          "temperature_2m": -49.4,
+          "surface_pressure": 708.8,
+          "wind_speed_10m": 3.3,
+          "relative_humidity_2m": 64
         }
       ]
     },
