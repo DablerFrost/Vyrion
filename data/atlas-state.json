@@ -1,13 +1,13 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-08-22T01:53:41.345Z",
+    "generatedAt": "2026-08-22T13:03:39.587Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 13,
+      "count": 12,
       "maxMagnitude": 7.7,
       "events": [
         {
@@ -26,12 +26,12 @@
         {
           "id": "us6000tkyk",
           "magnitude": 6.9,
-          "place": "15 km NNW of Pematangsiantar, Indonesia",
-          "time": "2026-08-15T10:54:51.796Z",
+          "place": "9 km WNW of Pematangsiantar, Indonesia",
+          "time": "2026-08-15T10:54:51.798Z",
           "coordinates": [
-            99.015,
-            3.0856,
-            172.526
+            98.9853,
+            2.9863,
+            175
           ],
           "tsunami": false,
           "significance": 751
@@ -117,11 +117,11 @@
         {
           "id": "us6000ti6x",
           "magnitude": 6.3,
-          "place": "32 km SW of Sarangani, Philippines",
-          "time": "2026-08-05T04:14:06.625Z",
+          "place": "28 km SW of Sarangani, Philippines",
+          "time": "2026-08-05T04:14:06.073Z",
           "coordinates": [
-            125.276,
-            5.1812,
+            125.3134,
+            5.1995,
             10
           ],
           "tsunami": false,
@@ -165,28 +165,15 @@
           ],
           "tsunami": false,
           "significance": 650
-        },
-        {
-          "id": "tx2026ojlaky",
-          "magnitude": 5,
-          "place": "38 km SSE of Spearman, Texas",
-          "time": "2026-07-23T10:21:43.909Z",
-          "coordinates": [
-            -100.976,
-            35.902,
-            5.6885
-          ],
-          "tsunami": false,
-          "significance": 714
         }
       ]
     },
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Wildfires": 45,
+        "Wildfires": 42,
         "Severe Storms": 3,
-        "Sea and Lake Ice": 2
+        "Sea and Lake Ice": 5
       },
       "events": [
         {
@@ -259,13 +246,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 80,
+            "magnitudeValue": 95,
             "magnitudeUnit": "kts",
-            "date": "2026-08-21T18:00:00Z",
+            "date": "2026-08-22T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              147.3,
-              17.1
+              145.8,
+              18.6
             ]
           }
         },
@@ -499,13 +486,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 85,
+            "magnitudeValue": 75,
             "magnitudeUnit": "kts",
-            "date": "2026-08-21T12:00:00Z",
+            "date": "2026-08-22T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -171.3,
-              27
+              -170.4,
+              28.7
             ]
           }
         },
@@ -797,55 +784,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -0.8,
-          "surface_pressure": 1007.3,
-          "wind_speed_10m": 2.2,
-          "relative_humidity_2m": 99
+          "temperature_2m": -0.7,
+          "surface_pressure": 1010.1,
+          "wind_speed_10m": 6.85,
+          "relative_humidity_2m": 91
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 16.7,
-          "surface_pressure": 1027.9,
-          "wind_speed_10m": 7.91,
-          "relative_humidity_2m": 72
+          "temperature_2m": 17,
+          "surface_pressure": 1025.5,
+          "wind_speed_10m": 10.36,
+          "relative_humidity_2m": 78
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 20.3,
-          "surface_pressure": 916.4,
-          "wind_speed_10m": 2.13,
-          "relative_humidity_2m": 98
+          "temperature_2m": 24,
+          "surface_pressure": 917.5,
+          "wind_speed_10m": 2.27,
+          "relative_humidity_2m": 74
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 28.4,
-          "surface_pressure": 1013.4,
-          "wind_speed_10m": 4.77,
-          "relative_humidity_2m": 80
+          "temperature_2m": 30.4,
+          "surface_pressure": 1010.7,
+          "wind_speed_10m": 5.26,
+          "relative_humidity_2m": 73
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
           "temperature_2m": -0.8,
-          "surface_pressure": 983.8,
-          "wind_speed_10m": 12.52,
-          "relative_humidity_2m": 90
+          "surface_pressure": 971.7,
+          "wind_speed_10m": 11.52,
+          "relative_humidity_2m": 96
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -52.6,
-          "surface_pressure": 711.7,
-          "wind_speed_10m": 6.54,
-          "relative_humidity_2m": 68
+          "temperature_2m": -56.5,
+          "surface_pressure": 710.2,
+          "wind_speed_10m": 5.45,
+          "relative_humidity_2m": 62
         }
       ]
     },
