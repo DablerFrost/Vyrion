@@ -1,15 +1,28 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-08-26T13:26:00.738Z",
+    "generatedAt": "2026-08-27T09:59:59.793Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 14,
+      "count": 13,
       "maxMagnitude": 7.7,
       "events": [
+        {
+          "id": "us7000tbwb",
+          "magnitude": 5.2,
+          "place": "55 km NW of Kodāri̇̄, Nepal",
+          "time": "2026-08-26T02:52:10.000Z",
+          "coordinates": [
+            85.515,
+            28.271,
+            0
+          ],
+          "tsunami": false,
+          "significance": 601
+        },
         {
           "id": "us6000tna9",
           "magnitude": 4.9,
@@ -48,6 +61,19 @@
           ],
           "tsunami": false,
           "significance": 729
+        },
+        {
+          "id": "us6000tlrj",
+          "magnitude": 5.5,
+          "place": "269 km SSE of Dunhuang, China",
+          "time": "2026-08-18T21:36:27.999Z",
+          "coordinates": [
+            95.5438,
+            37.8333,
+            6
+          ],
+          "tsunami": false,
+          "significance": 650
         },
         {
           "id": "us6000tkyk",
@@ -152,45 +178,6 @@
           ],
           "tsunami": false,
           "significance": 660
-        },
-        {
-          "id": "us6000tgb9",
-          "magnitude": 6.8,
-          "place": "The 2026 Kumamoto Region, Japan Earthquake",
-          "time": "2026-07-28T07:27:14.942Z",
-          "coordinates": [
-            130.6843,
-            32.6297,
-            10
-          ],
-          "tsunami": false,
-          "significance": 723
-        },
-        {
-          "id": "us6000tga9",
-          "magnitude": 5.8,
-          "place": "194 km NW of Oula Xiuma, China",
-          "time": "2026-07-28T03:34:05.627Z",
-          "coordinates": [
-            99.5557,
-            35.429,
-            10
-          ],
-          "tsunami": false,
-          "significance": 650
-        },
-        {
-          "id": "us6000tga6",
-          "magnitude": 5.7,
-          "place": "199 km NW of Oula Xiuma, China",
-          "time": "2026-07-28T03:16:08.865Z",
-          "coordinates": [
-            99.4752,
-            35.4217,
-            10
-          ],
-          "tsunami": false,
-          "significance": 650
         }
       ]
     },
@@ -291,13 +278,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 45,
+            "magnitudeValue": 30,
             "magnitudeUnit": "kts",
-            "date": "2026-08-26T06:00:00Z",
+            "date": "2026-08-27T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -122.9,
-              21.5
+              -125.5,
+              22.8
             ]
           }
         },
@@ -651,13 +638,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 85,
+            "magnitudeValue": 75,
             "magnitudeUnit": "kts",
-            "date": "2026-08-26T06:00:00Z",
+            "date": "2026-08-27T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              126.5,
-              28.3
+              124.9,
+              28.5
             ]
           }
         },
@@ -809,55 +796,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": 0.1,
-          "surface_pressure": 1024,
-          "wind_speed_10m": 7.5,
-          "relative_humidity_2m": 94
+          "temperature_2m": 0.4,
+          "surface_pressure": 1020.5,
+          "wind_speed_10m": 5.99,
+          "relative_humidity_2m": 93
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 14.4,
-          "surface_pressure": 1022.6,
-          "wind_speed_10m": 5.37,
-          "relative_humidity_2m": 73
+          "temperature_2m": 17.1,
+          "surface_pressure": 1014.5,
+          "wind_speed_10m": 9.13,
+          "relative_humidity_2m": 92
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 25.2,
-          "surface_pressure": 916.4,
-          "wind_speed_10m": 1.84,
-          "relative_humidity_2m": 62
+          "temperature_2m": 20.3,
+          "surface_pressure": 913.3,
+          "wind_speed_10m": 2.45,
+          "relative_humidity_2m": 97
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 29.6,
-          "surface_pressure": 1011.6,
-          "wind_speed_10m": 4.69,
-          "relative_humidity_2m": 76
+          "temperature_2m": 29.5,
+          "surface_pressure": 1009.2,
+          "wind_speed_10m": 5.3,
+          "relative_humidity_2m": 75
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -0.5,
-          "surface_pressure": 993.4,
-          "wind_speed_10m": 6.63,
+          "temperature_2m": -0.4,
+          "surface_pressure": 980.8,
+          "wind_speed_10m": 8.87,
           "relative_humidity_2m": 96
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -52.4,
-          "surface_pressure": 708.6,
-          "wind_speed_10m": 7.93,
-          "relative_humidity_2m": 63
+          "temperature_2m": -47.5,
+          "surface_pressure": 713.1,
+          "wind_speed_10m": 10.2,
+          "relative_humidity_2m": 60
         }
       ]
     },
