@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-08-27T10:42:29.510Z",
+    "generatedAt": "2026-08-27T22:38:32.209Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -15,17 +15,17 @@
     "hazardSummary": {
       "totalEvents": 63,
       "categories": {
-        "Severe Storms": 7,
-        "Wildfires": 43
+        "Wildfires": 45,
+        "Severe Storms": 5
       },
       "seismicCount": 13,
       "maxMagnitude": 7.7
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 3.23,
-      "minTemperature_2m": -47.5,
-      "maxTemperature_2m": 29.5
+      "avgTemperature_2m": 3.75,
+      "minTemperature_2m": -44.9,
+      "maxTemperature_2m": 29.9
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -39,19 +39,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-08-27T09:31:35.186Z",
+        "generated": "2026-08-27T22:13:39.655Z",
         "generated_date": "2026-08-27",
         "script_version": "1.1",
         "window_days": 14,
         "window_start": "2026-08-13",
         "window_end": "2026-08-27",
-        "runtime_ms": 4790,
+        "runtime_ms": 372,
         "seismic_live": true,
         "eonet_live": true
       },
       "threat": {
         "level": "CRITICAL",
-        "score": 38.1
+        "score": 44.6
       },
       "seismic": {
         "events": [
@@ -102,6 +102,14 @@
             "time": "2026-08-14T22:28:37.550Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tkuc"
+          },
+          {
+            "id": "us7000tcf3",
+            "magnitude": 6,
+            "place": "145 km N of Caluula, Somalia",
+            "time": "2026-08-27T21:07:38.352Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcf3"
           },
           {
             "id": "us6000tn41",
@@ -194,9 +202,9 @@
           {
             "id": "us7000tc18",
             "magnitude": 5.6,
-            "place": "212 km E of Onagawa Chō, Japan",
-            "time": "2026-08-26T19:21:41.921Z",
-            "depth_km": 10,
+            "place": "209 km ESE of Ōfunato, Japan",
+            "time": "2026-08-26T19:21:42.872Z",
+            "depth_km": 16.1,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tc18"
           },
           {
@@ -222,14 +230,6 @@
             "time": "2026-08-14T22:18:06.706Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tku7"
-          },
-          {
-            "id": "us6000tkhm",
-            "magnitude": 5.6,
-            "place": "Kermadec Islands region",
-            "time": "2026-08-13T16:11:45.826Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tkhm"
           },
           {
             "id": "us6000tnci",
@@ -376,6 +376,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tkvj"
           },
           {
+            "id": "us7000tc8j",
+            "magnitude": 5.3,
+            "place": "54 km NNE of Labuan Bajo, Indonesia",
+            "time": "2026-08-27T10:33:24.325Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tc8j"
+          },
+          {
             "id": "us7000tc7l",
             "magnitude": 5.3,
             "place": "Volcano Islands, Japan region",
@@ -470,14 +478,6 @@
             "time": "2026-08-14T22:53:11.834Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tkuw"
-          },
-          {
-            "id": "us6000tkig",
-            "magnitude": 5.3,
-            "place": "12 km SSW of Sarangani, Philippines",
-            "time": "2026-08-13T18:39:30.077Z",
-            "depth_km": 55.3,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tkig"
           },
           {
             "id": "us7000tbwb",
@@ -688,12 +688,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tkv7"
           },
           {
-            "id": "us6000tki8",
-            "magnitude": 5.1,
-            "place": "west of Macquarie Island",
-            "time": "2026-08-13T17:39:28.662Z",
+            "id": "us7000tc9m",
+            "magnitude": 5,
+            "place": "western Xizang",
+            "time": "2026-08-27T14:45:48.054Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tki8"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tc9m"
           },
           {
             "id": "us7000tbyu",
@@ -872,12 +872,20 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tkv9"
           },
           {
-            "id": "us6000tkgn",
-            "magnitude": 5,
-            "place": "45 km SSW of Angoram, Papua New Guinea",
-            "time": "2026-08-13T12:44:59.102Z",
-            "depth_km": 134,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tkgn"
+            "id": "us7000tcdu",
+            "magnitude": 4.9,
+            "place": "3 km WNW of Mangili, Philippines",
+            "time": "2026-08-27T18:43:40.284Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcdu"
+          },
+          {
+            "id": "us7000tc95",
+            "magnitude": 4.9,
+            "place": "Indian Ocean Triple Junction",
+            "time": "2026-08-27T11:47:16.381Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tc95"
           },
           {
             "id": "us7000tc0k",
@@ -1216,6 +1224,22 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tkkw"
           },
           {
+            "id": "us7000tcef",
+            "magnitude": 4.8,
+            "place": "63 km NE of Kuji, Japan",
+            "time": "2026-08-27T19:54:41.264Z",
+            "depth_km": 63.8,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcef"
+          },
+          {
+            "id": "us7000tc9g",
+            "magnitude": 4.8,
+            "place": "195 km SE of Akutan, Alaska",
+            "time": "2026-08-27T14:30:20.017Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tc9g"
+          },
+          {
             "id": "us7000tbxf",
             "magnitude": 4.8,
             "place": "147 km E of Miyako, Japan",
@@ -1438,6 +1462,14 @@
             "time": "2026-08-26T07:32:17.399Z",
             "depth_km": 159.5,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tbxl"
+          },
+          {
+            "id": "us7000tc8w",
+            "magnitude": 4.7,
+            "place": "central Mid-Atlantic Ridge",
+            "time": "2026-08-25T22:23:25.237Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tc8w"
           },
           {
             "id": "us7000tbu3",
@@ -1968,6 +2000,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tls5"
           },
           {
+            "id": "us6000tn60",
+            "magnitude": 4.6,
+            "place": "south of Tonga",
+            "time": "2026-08-18T18:03:56.304Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tn60"
+          },
+          {
             "id": "us6000tlmc",
             "magnitude": 4.6,
             "place": "5 km ENE of Escúzar, Spain",
@@ -2104,12 +2144,20 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tkvg"
           },
           {
-            "id": "us6000tkg4",
-            "magnitude": 4.6,
-            "place": "3 km ESE of Gambiran Satu, Indonesia",
-            "time": "2026-08-13T10:23:19.536Z",
-            "depth_km": 145.7,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tkg4"
+            "id": "us7000tcc3",
+            "magnitude": 4.5,
+            "place": "42 km E of Estique, Peru",
+            "time": "2026-08-27T17:40:41.549Z",
+            "depth_km": 142,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcc3"
+          },
+          {
+            "id": "us7000tc8e",
+            "magnitude": 4.5,
+            "place": "205 km SE of Vilyuchinsk, Russia",
+            "time": "2026-08-27T09:33:59.785Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tc8e"
           },
           {
             "id": "us7000tc21",
@@ -2528,9 +2576,9 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tkrq"
           }
         ],
-        "count_total": 309,
+        "count_total": 315,
         "count_m55_plus": 33,
-        "count_m60_plus": 8,
+        "count_m60_plus": 9,
         "count_m70_plus": 1,
         "count_m80_plus": 0,
         "largest": {
@@ -2544,10 +2592,142 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-08-27T09:31:30.590Z"
+        "retrieved": "2026-08-27T22:13:39.555Z"
       },
       "wildfire": {
         "events": [
+          {
+            "id": "EONET_23453",
+            "title": "Wildfire Calico, Humboldt, Nevada",
+            "type": "WILDFIRE",
+            "time": "2026-08-26T17:29:00.000Z",
+            "coords": [
+              -117.356,
+              41.867
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23455",
+            "title": "Wildfire McConnell, Humboldt, Nevada",
+            "type": "WILDFIRE",
+            "time": "2026-08-25T20:43:00.000Z",
+            "coords": [
+              -117.742,
+              41.518
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23466",
+            "title": "Wildfire LAUGHLIN, Colfax, New Mexico",
+            "type": "WILDFIRE",
+            "time": "2026-08-25T18:35:00.000Z",
+            "coords": [
+              -104.453,
+              36.523
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23456",
+            "title": "Wildfire MUSTANG, Malheur, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-08-25T16:04:00.000Z",
+            "coords": [
+              -117.443,
+              42.667
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23462",
+            "title": "Wildfire California  Creek, Elko, Nevada",
+            "type": "WILDFIRE",
+            "time": "2026-08-25T00:18:00.000Z",
+            "coords": [
+              -115.938,
+              41.826
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23457",
+            "title": "Wildfire S-1 VYA, Washoe, Nevada",
+            "type": "WILDFIRE",
+            "time": "2026-08-24T17:03:00.000Z",
+            "coords": [
+              -119.916,
+              41.63
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23459",
+            "title": "Wildfire Tom Creek, Tooele, Utah",
+            "type": "WILDFIRE",
+            "time": "2026-08-24T15:20:00.000Z",
+            "coords": [
+              -112.706,
+              40.005
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23452",
+            "title": "Wildfire Ross, Palo Pinto, Texas",
+            "type": "WILDFIRE",
+            "time": "2026-08-24T14:12:00.000Z",
+            "coords": [
+              -98.343,
+              32.76
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23458",
+            "title": "Wildfire Oxley, Elko, Nevada",
+            "type": "WILDFIRE",
+            "time": "2026-08-24T14:12:00.000Z",
+            "coords": [
+              -114.931,
+              41.184
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23461",
+            "title": "Wildfire H2, Palm Beach, Florida",
+            "type": "WILDFIRE",
+            "time": "2026-08-24T11:50:00.000Z",
+            "coords": [
+              -80.791,
+              26.42
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23465",
+            "title": "Wildfire Rabbit Ear East, Union, New Mexico",
+            "type": "WILDFIRE",
+            "time": "2026-08-24T10:36:00.000Z",
+            "coords": [
+              -103.142,
+              36.505
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23463",
+            "title": "Wildfire Mitchell, Ware, Georgia",
+            "type": "WILDFIRE",
+            "time": "2026-08-24T08:16:00.000Z",
+            "coords": [
+              -82.241,
+              30.63
+            ],
+            "closed": null
+          },
           {
             "id": "EONET_23209",
             "title": "Wildfire Old Deer, Carson, Texas",
@@ -2578,6 +2758,17 @@
             "coords": [
               -100.993,
               33.838
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23454",
+            "title": "Wildfire Electric, Whatcom, Washington",
+            "type": "WILDFIRE",
+            "time": "2026-08-22T23:16:00.000Z",
+            "coords": [
+              -121.435,
+              48.652
             ],
             "closed": null
           },
@@ -2615,6 +2806,17 @@
             "closed": null
           },
           {
+            "id": "EONET_23460",
+            "title": "Wildfire Hawk, Washoe, Nevada",
+            "type": "WILDFIRE",
+            "time": "2026-08-22T14:45:00.000Z",
+            "coords": [
+              -119.952,
+              39.542
+            ],
+            "closed": null
+          },
+          {
             "id": "EONET_23214",
             "title": "Wildfire Colwash, Yakima, Washington",
             "type": "WILDFIRE",
@@ -2622,6 +2824,17 @@
             "coords": [
               -120.196,
               46.175
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23451",
+            "title": "Wildfire Camp Creek, Powell, Montana",
+            "type": "WILDFIRE",
+            "time": "2026-08-21T19:25:00.000Z",
+            "coords": [
+              -113.099,
+              47.428
             ],
             "closed": null
           },
@@ -2912,7 +3125,7 @@
             "closed": null
           }
         ],
-        "count": 33
+        "count": 48
       },
       "storm": {
         "events": [
@@ -3008,7 +3221,7 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-08-27T09:59:59.793Z",
+        "generatedAt": "2026-08-27T22:24:38.883Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
@@ -3191,10 +3404,90 @@
         "hazards": {
           "totalActive": 50,
           "byCategory": {
-            "Severe Storms": 7,
-            "Wildfires": 43
+            "Wildfires": 45,
+            "Severe Storms": 5
           },
           "events": [
+            {
+              "id": "EONET_23453",
+              "title": "Wildfire Calico, Humboldt, Nevada",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 10000,
+                "magnitudeUnit": "acres",
+                "date": "2026-08-26T17:29:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -117.3563,
+                  41.86665
+                ]
+              }
+            },
+            {
+              "id": "EONET_23455",
+              "title": "Wildfire McConnell, Humboldt, Nevada",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 5000,
+                "magnitudeUnit": "acres",
+                "date": "2026-08-25T20:43:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -117.74215,
+                  41.517567
+                ]
+              }
+            },
+            {
+              "id": "EONET_23466",
+              "title": "Wildfire LAUGHLIN, Colfax, New Mexico",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 786,
+                "magnitudeUnit": "acres",
+                "date": "2026-08-25T18:35:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -104.4530556,
+                  36.5230556
+                ]
+              }
+            },
+            {
+              "id": "EONET_23456",
+              "title": "Wildfire MUSTANG, Malheur, Oregon",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 13379,
+                "magnitudeUnit": "acres",
+                "date": "2026-08-25T16:04:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -117.442833,
+                  42.667167
+                ]
+              }
+            },
             {
               "id": "EONET_23286",
               "title": "Tropical Storm Julio",
@@ -3212,6 +3505,166 @@
                 "coordinates": [
                   -118.8,
                   19.5
+                ]
+              }
+            },
+            {
+              "id": "EONET_23462",
+              "title": "Wildfire California  Creek, Elko, Nevada",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 984,
+                "magnitudeUnit": "acres",
+                "date": "2026-08-25T00:18:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -115.93761,
+                  41.82602
+                ]
+              }
+            },
+            {
+              "id": "EONET_23457",
+              "title": "Wildfire S-1 VYA, Washoe, Nevada",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 9524,
+                "magnitudeUnit": "acres",
+                "date": "2026-08-24T17:03:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -119.916,
+                  41.630333
+                ]
+              }
+            },
+            {
+              "id": "EONET_23459",
+              "title": "Wildfire Tom Creek, Tooele, Utah",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 4859,
+                "magnitudeUnit": "acres",
+                "date": "2026-08-24T15:20:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -112.705867,
+                  40.00455
+                ]
+              }
+            },
+            {
+              "id": "EONET_23452",
+              "title": "Wildfire Ross, Palo Pinto, Texas",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 80000,
+                "magnitudeUnit": "acres",
+                "date": "2026-08-24T14:12:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -98.34256986,
+                  32.75981855
+                ]
+              }
+            },
+            {
+              "id": "EONET_23458",
+              "title": "Wildfire Oxley, Elko, Nevada",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 11384,
+                "magnitudeUnit": "acres",
+                "date": "2026-08-24T14:12:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -114.930833,
+                  41.1845
+                ]
+              }
+            },
+            {
+              "id": "EONET_23461",
+              "title": "Wildfire H2, Palm Beach, Florida",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 511,
+                "magnitudeUnit": "acres",
+                "date": "2026-08-24T11:50:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -80.7905556,
+                  26.4197222
+                ]
+              }
+            },
+            {
+              "id": "EONET_23465",
+              "title": "Wildfire Rabbit Ear East, Union, New Mexico",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 1700,
+                "magnitudeUnit": "acres",
+                "date": "2026-08-24T10:36:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -103.141587,
+                  36.504679
+                ]
+              }
+            },
+            {
+              "id": "EONET_23463",
+              "title": "Wildfire Mitchell, Ware, Georgia",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 735,
+                "magnitudeUnit": "acres",
+                "date": "2026-08-24T08:16:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -82.241083,
+                  30.630467
                 ]
               }
             },
@@ -3296,6 +3749,26 @@
               }
             },
             {
+              "id": "EONET_23454",
+              "title": "Wildfire Electric, Whatcom, Washington",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 500,
+                "magnitudeUnit": "acres",
+                "date": "2026-08-22T23:16:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -121.4353,
+                  48.652417
+                ]
+              }
+            },
+            {
               "id": "EONET_23219",
               "title": "Wildfire Shale Butte, Lincoln, Idaho",
               "categories": [
@@ -3356,6 +3829,26 @@
               }
             },
             {
+              "id": "EONET_23460",
+              "title": "Wildfire Hawk, Washoe, Nevada",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 15085,
+                "magnitudeUnit": "acres",
+                "date": "2026-08-22T14:45:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -119.952333,
+                  39.5425
+                ]
+              }
+            },
+            {
               "id": "EONET_23214",
               "title": "Wildfire Colwash, Yakima, Washington",
               "categories": [
@@ -3372,6 +3865,26 @@
                 "coordinates": [
                   -120.19615,
                   46.17514
+                ]
+              }
+            },
+            {
+              "id": "EONET_23451",
+              "title": "Wildfire Camp Creek, Powell, Montana",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 7240,
+                "magnitudeUnit": "acres",
+                "date": "2026-08-21T19:25:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -113.099333,
+                  47.427667
                 ]
               }
             },
@@ -3494,306 +4007,6 @@
                   20
                 ]
               }
-            },
-            {
-              "id": "EONET_23213",
-              "title": "Wildfire Pine Tree Rd, Union, Arkansas",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 2328,
-                "magnitudeUnit": "acres",
-                "date": "2026-08-20T18:53:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -92.49237337,
-                  33.16826652
-                ]
-              }
-            },
-            {
-              "id": "EONET_23210",
-              "title": "Wildfire Deer Creek, Lincoln, Montana",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 949,
-                "magnitudeUnit": "acres",
-                "date": "2026-08-20T16:42:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -115.08586,
-                  48.16151
-                ]
-              }
-            },
-            {
-              "id": "EONET_22927",
-              "title": "Prescribed Fire RX Tom Green 7105, Tom Green, Texas",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 560,
-                "magnitudeUnit": "acres",
-                "date": "2026-08-20T09:26:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -100.4783333,
-                  31.14888889
-                ]
-              }
-            },
-            {
-              "id": "EONET_23212",
-              "title": "Wildfire KING, Kittitas, Washington",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 558,
-                "magnitudeUnit": "acres",
-                "date": "2026-08-19T21:54:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -121.255867,
-                  47.4708
-                ]
-              }
-            },
-            {
-              "id": "EONET_23222",
-              "title": "Wildfire Movie Dome, Miami-Dade, Florida",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 6222,
-                "magnitudeUnit": "acres",
-                "date": "2026-08-19T19:42:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -80.823433,
-                  25.434317
-                ]
-              }
-            },
-            {
-              "id": "EONET_22931",
-              "title": "Wildfire Windmill, Stillwater, Montana",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 1000,
-                "magnitudeUnit": "acres",
-                "date": "2026-08-19T18:05:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -109.52349,
-                  45.8358
-                ]
-              }
-            },
-            {
-              "id": "EONET_22929",
-              "title": "Wildfire North Heglar, Cassia, Idaho",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 700,
-                "magnitudeUnit": "acres",
-                "date": "2026-08-19T17:25:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -113.094917,
-                  42.490167
-                ]
-              }
-            },
-            {
-              "id": "EONET_22926",
-              "title": "Typhoon Saudel",
-              "categories": [
-                "Severe Storms"
-              ],
-              "sources": [
-                "JTWC"
-              ],
-              "geometry": {
-                "magnitudeValue": 75,
-                "magnitudeUnit": "kts",
-                "date": "2026-08-27T00:00:00Z",
-                "type": "Point",
-                "coordinates": [
-                  124.9,
-                  28.5
-                ]
-              }
-            },
-            {
-              "id": "EONET_23220",
-              "title": "Wildfire CROOKED, Boise, Idaho",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 1530,
-                "magnitudeUnit": "acres",
-                "date": "2026-08-18T20:19:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -115.539617,
-                  43.847167
-                ]
-              }
-            },
-            {
-              "id": "EONET_22933",
-              "title": "Wildfire Sarpy, Big Horn, Montana",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 897,
-                "magnitudeUnit": "acres",
-                "date": "2026-08-17T19:48:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -107.4745,
-                  45.718833
-                ]
-              }
-            },
-            {
-              "id": "EONET_22928",
-              "title": "Wildfire Mukluk, Southeast Fairbanks, Alaska",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 5077,
-                "magnitudeUnit": "acres",
-                "date": "2026-08-17T15:55:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -143.0636,
-                  63.34225
-                ]
-              }
-            },
-            {
-              "id": "EONET_22798",
-              "title": "Wildfire Picture Rock, Lake, Oregon",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 1625,
-                "magnitudeUnit": "acres",
-                "date": "2026-08-16T15:55:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -120.774487,
-                  43.00919
-                ]
-              }
-            },
-            {
-              "id": "EONET_22932",
-              "title": "Wildfire Jackson - Hwy 90, Jackson, Mississippi",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 1428,
-                "magnitudeUnit": "acres",
-                "date": "2026-08-16T15:16:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -88.4663889,
-                  30.4175
-                ]
-              }
-            },
-            {
-              "id": "EONET_22800",
-              "title": "Wildfire CATO 2, Chaves, New Mexico",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 2080,
-                "magnitudeUnit": "acres",
-                "date": "2026-08-15T23:18:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -103.9452,
-                  33.50765
-                ]
-              }
-            },
-            {
-              "id": "EONET_22791",
-              "title": "Wildfire THE H1, Palm Beach, Florida",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 3600,
-                "magnitudeUnit": "acres",
-                "date": "2026-08-15T22:19:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -80.7516667,
-                  26.3688889
-                ]
-              }
             }
           ]
         },
@@ -3804,54 +4017,54 @@
               "lat": 80,
               "lon": 0,
               "temperature_2m": 0.4,
-              "surface_pressure": 1020.5,
-              "wind_speed_10m": 5.99,
-              "relative_humidity_2m": 93
+              "surface_pressure": 1017.7,
+              "wind_speed_10m": 1.56,
+              "relative_humidity_2m": 99
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 17.1,
-              "surface_pressure": 1014.5,
-              "wind_speed_10m": 9.13,
-              "relative_humidity_2m": 92
+              "temperature_2m": 16.3,
+              "surface_pressure": 1009.7,
+              "wind_speed_10m": 8.92,
+              "relative_humidity_2m": 97
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 20.3,
-              "surface_pressure": 913.3,
-              "wind_speed_10m": 2.45,
-              "relative_humidity_2m": 97
+              "temperature_2m": 22.9,
+              "surface_pressure": 912.1,
+              "wind_speed_10m": 2.24,
+              "relative_humidity_2m": 80
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 29.5,
-              "surface_pressure": 1009.2,
-              "wind_speed_10m": 5.3,
+              "temperature_2m": 29.9,
+              "surface_pressure": 1010.9,
+              "wind_speed_10m": 6.2,
               "relative_humidity_2m": 75
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": -0.4,
-              "surface_pressure": 980.8,
-              "wind_speed_10m": 8.87,
-              "relative_humidity_2m": 96
+              "temperature_2m": -2.1,
+              "surface_pressure": 984.6,
+              "wind_speed_10m": 10.97,
+              "relative_humidity_2m": 83
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -47.5,
-              "surface_pressure": 713.1,
-              "wind_speed_10m": 10.2,
-              "relative_humidity_2m": 60
+              "temperature_2m": -44.9,
+              "surface_pressure": 717.5,
+              "wind_speed_10m": 11.14,
+              "relative_humidity_2m": 56
             }
           ]
         },
@@ -3869,7 +4082,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-08-27T10:29:31.460Z"
+        "generatedAt": "2026-08-27T22:35:16.568Z"
       },
       "health": {
         "score": 87,
