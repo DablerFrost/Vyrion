@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-08-30T16:59:42.430Z",
+    "generatedAt": "2026-08-31T06:20:05.373Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -15,8 +15,8 @@
     "hazardSummary": {
       "totalEvents": 63,
       "categories": {
-        "Wildfires": 44,
-        "Severe Storms": 5,
+        "Severe Storms": 8,
+        "Wildfires": 41,
         "Sea and Lake Ice": 1
       },
       "seismicCount": 13,
@@ -24,9 +24,9 @@
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 6.48,
-      "minTemperature_2m": -33,
-      "maxTemperature_2m": 30.3
+      "avgTemperature_2m": 4.82,
+      "minTemperature_2m": -32.8,
+      "maxTemperature_2m": 28.5
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -40,19 +40,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-08-30T16:38:22.445Z",
-        "generated_date": "2026-08-30",
+        "generated": "2026-08-31T05:23:35.874Z",
+        "generated_date": "2026-08-31",
         "script_version": "1.1",
         "window_days": 14,
-        "window_start": "2026-08-16",
-        "window_end": "2026-08-30",
-        "runtime_ms": 613,
+        "window_start": "2026-08-17",
+        "window_end": "2026-08-31",
+        "runtime_ms": 1992,
         "seismic_live": true,
         "eonet_live": true
       },
       "threat": {
         "level": "CRITICAL",
-        "score": 30.45
+        "score": 32.2
       },
       "seismic": {
         "events": [
@@ -225,14 +225,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tlrj"
           },
           {
-            "id": "usd0015eay",
-            "magnitude": 5.5,
-            "place": "73 km NNW of Ende, Indonesia",
-            "time": "2026-08-17T00:46:39.473Z",
-            "depth_km": 5.1,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usd0015eay"
-          },
-          {
             "id": "us6000tmft",
             "magnitude": 5.4,
             "place": "South Sandwich Islands region",
@@ -319,14 +311,6 @@
             "time": "2026-08-17T22:53:11.231Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tlgm"
-          },
-          {
-            "id": "usd0015ebi",
-            "magnitude": 5.3,
-            "place": "68 km NNW of Ende, Indonesia",
-            "time": "2026-08-17T03:36:39.370Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usd0015ebi"
           },
           {
             "id": "us7000tchl",
@@ -431,14 +415,6 @@
             "time": "2026-08-17T10:42:41.971Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usd0015ed7"
-          },
-          {
-            "id": "usd0015ebj",
-            "magnitude": 5.2,
-            "place": "70 km NNW of Ende, Indonesia",
-            "time": "2026-08-17T03:48:04.873Z",
-            "depth_km": 16.3,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usd0015ebj"
           },
           {
             "id": "us7000tcwd",
@@ -689,6 +665,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usd0015ee2"
           },
           {
+            "id": "us7000td2c",
+            "magnitude": 4.9,
+            "place": "13 km SSE of Union, Philippines",
+            "time": "2026-08-31T04:04:34.127Z",
+            "depth_km": 83.9,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000td2c"
+          },
+          {
             "id": "us7000tcxc",
             "magnitude": 4.9,
             "place": "76 km WNW of Bengkulu, Indonesia",
@@ -835,9 +819,9 @@
           {
             "id": "us6000tn1h",
             "magnitude": 4.9,
-            "place": "8 km NNE of Bowangshan, China",
-            "time": "2026-08-24T00:26:26.410Z",
-            "depth_km": 44.7,
+            "place": "7 km NNW of Bowangshan, China",
+            "time": "2026-08-24T00:26:21.729Z",
+            "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tn1h"
           },
           {
@@ -921,6 +905,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tlvn"
           },
           {
+            "id": "us6000tlqv",
+            "magnitude": 4.9,
+            "place": "77 km NW of Ende, Indonesia",
+            "time": "2026-08-18T20:15:41.238Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tlqv"
+          },
+          {
             "id": "us6000tlqk",
             "magnitude": 4.9,
             "place": "72 km NW of Ende, Indonesia",
@@ -945,10 +937,18 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tllu"
           },
           {
+            "id": "usd0015efp",
+            "magnitude": 4.9,
+            "place": "214 km WSW of Longyearbyen, Svalbard and Jan Mayen",
+            "time": "2026-08-17T19:51:23.051Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usd0015efp"
+          },
+          {
             "id": "usd0015efc",
             "magnitude": 4.9,
-            "place": "28 km NE of Colonia, Micronesia",
-            "time": "2026-08-17T18:51:11.299Z",
+            "place": "30 km NE of Colonia, Micronesia",
+            "time": "2026-08-17T18:51:11.017Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usd0015efc"
           },
@@ -975,38 +975,6 @@
             "time": "2026-08-17T07:20:32.272Z",
             "depth_km": 28.3,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usd0015ech"
-          },
-          {
-            "id": "usd0015ebh",
-            "magnitude": 4.9,
-            "place": "90 km NE of Ruteng, Indonesia",
-            "time": "2026-08-17T03:33:53.507Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usd0015ebh"
-          },
-          {
-            "id": "usd0015eas",
-            "magnitude": 4.9,
-            "place": "213 km E of Levuka, Fiji",
-            "time": "2026-08-17T00:08:07.246Z",
-            "depth_km": 562.3,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usd0015eas"
-          },
-          {
-            "id": "usd0015e9a",
-            "magnitude": 4.9,
-            "place": "77 km N of Ruteng, Indonesia",
-            "time": "2026-08-16T17:26:15.105Z",
-            "depth_km": 9.3,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usd0015e9a"
-          },
-          {
-            "id": "usd0015e96",
-            "magnitude": 4.9,
-            "place": "South Atlantic Ocean",
-            "time": "2026-08-16T17:11:07.915Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usd0015e96"
           },
           {
             "id": "us7000tcvf",
@@ -1177,14 +1145,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tls7"
           },
           {
-            "id": "us6000tlqv",
-            "magnitude": 4.8,
-            "place": "72 km NW of Ende, Indonesia",
-            "time": "2026-08-18T20:15:46.995Z",
-            "depth_km": 56.4,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tlqv"
-          },
-          {
             "id": "us6000tme3",
             "magnitude": 4.8,
             "place": "south of Tonga",
@@ -1217,14 +1177,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tljs"
           },
           {
-            "id": "usd0015efp",
-            "magnitude": 4.8,
-            "place": "219 km WSW of Longyearbyen, Svalbard and Jan Mayen",
-            "time": "2026-08-17T19:51:23.274Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usd0015efp"
-          },
-          {
             "id": "usd0015ed1",
             "magnitude": 4.8,
             "place": "52 km NNW of Ende, Indonesia",
@@ -1241,14 +1193,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usd0015ecf"
           },
           {
-            "id": "usd0015ebc",
-            "magnitude": 4.8,
-            "place": "84 km NNE of Labuan Bajo, Indonesia",
-            "time": "2026-08-17T02:39:20.044Z",
-            "depth_km": 29.5,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usd0015ebc"
-          },
-          {
             "id": "us7000tczt",
             "magnitude": 4.7,
             "place": "62 km SSE of Palca, Peru",
@@ -1263,6 +1207,14 @@
             "time": "2026-08-30T05:19:51.149Z",
             "depth_km": 52.1,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcwp"
+          },
+          {
+            "id": "us7000tcwg",
+            "magnitude": 4.7,
+            "place": "130 km WNW of Ternate, Indonesia",
+            "time": "2026-08-30T04:29:14.480Z",
+            "depth_km": 35.1,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcwg"
           },
           {
             "id": "us7000tcu2",
@@ -1348,8 +1300,8 @@
             "id": "us6000tn6z",
             "magnitude": 4.7,
             "place": "Pagan region, Northern Mariana Islands",
-            "time": "2026-08-24T16:25:24.020Z",
-            "depth_km": 205.7,
+            "time": "2026-08-24T16:25:23.787Z",
+            "depth_km": 204.7,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tn6z"
           },
           {
@@ -1489,6 +1441,22 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tlre"
           },
           {
+            "id": "us6000tlr9",
+            "magnitude": 4.7,
+            "place": "60 km NNW of Ende, Indonesia",
+            "time": "2026-08-18T20:50:15.803Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tlr9"
+          },
+          {
+            "id": "us6000tlr0",
+            "magnitude": 4.7,
+            "place": "77 km NW of Ende, Indonesia",
+            "time": "2026-08-18T20:28:55.753Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tlr0"
+          },
+          {
             "id": "us6000tlmz",
             "magnitude": 4.7,
             "place": "72 km NNE of Ruteng, Indonesia",
@@ -1513,20 +1481,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tlmq"
           },
           {
-            "id": "usd0015ebk",
-            "magnitude": 4.7,
-            "place": "78 km S of Miyakojima, Japan",
-            "time": "2026-08-17T04:54:44.948Z",
+            "id": "us7000tczi",
+            "magnitude": 4.6,
+            "place": "128 km N of Aksu, China",
+            "time": "2026-08-30T14:50:32.433Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usd0015ebk"
-          },
-          {
-            "id": "us6000tmja",
-            "magnitude": 4.7,
-            "place": "87 km N of Ruteng, Indonesia",
-            "time": "2026-08-17T00:53:02.293Z",
-            "depth_km": 19.6,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tmja"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tczi"
           },
           {
             "id": "us7000tcyr",
@@ -1625,18 +1585,18 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tnbk"
           },
           {
-            "id": "us6000tn9r",
+            "id": "us7000tcmp",
             "magnitude": 4.6,
-            "place": "103 km SSE of Tarama, Japan",
-            "time": "2026-08-24T23:26:56.418Z",
+            "place": "southern Mid-Atlantic Ridge",
+            "time": "2026-08-24T21:21:35.730Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tn9r"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcmp"
           },
           {
             "id": "us6000tn8w",
             "magnitude": 4.6,
-            "place": "236 km ESE of Kimbe, Papua New Guinea",
-            "time": "2026-08-24T21:02:14.533Z",
+            "place": "176 km ESE of Kimbe, Papua New Guinea",
+            "time": "2026-08-24T21:02:15.452Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tn8w"
           },
@@ -1647,6 +1607,14 @@
             "time": "2026-08-24T01:12:59.871Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tn1k"
+          },
+          {
+            "id": "us6000tn1g",
+            "magnitude": 4.6,
+            "place": "68 km NNE of Labuan Bajo, Indonesia",
+            "time": "2026-08-24T00:22:03.882Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tn1g"
           },
           {
             "id": "us6000tmy3",
@@ -1817,6 +1785,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tlzp"
           },
           {
+            "id": "us6000tlvm",
+            "magnitude": 4.6,
+            "place": "54 km NNE of Ruteng, Indonesia",
+            "time": "2026-08-19T14:16:25.739Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tlvm"
+          },
+          {
             "id": "us6000tltg",
             "magnitude": 4.6,
             "place": "36 km WNW of Ollagüe, Chile",
@@ -1839,6 +1815,14 @@
             "time": "2026-08-18T23:59:16.821Z",
             "depth_km": 35,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tls5"
+          },
+          {
+            "id": "us6000tn6d",
+            "magnitude": 4.6,
+            "place": "93 km N of Ruteng, Indonesia",
+            "time": "2026-08-18T20:08:02.775Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tn6d"
           },
           {
             "id": "us6000tn60",
@@ -1875,9 +1859,9 @@
           {
             "id": "usd0015ef3",
             "magnitude": 4.6,
-            "place": "155 km N of Pototano, Indonesia",
-            "time": "2026-08-17T18:10:05.545Z",
-            "depth_km": 496.6,
+            "place": "156 km NNW of Pototano, Indonesia",
+            "time": "2026-08-17T18:10:05.009Z",
+            "depth_km": 492.2,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usd0015ef3"
           },
           {
@@ -1889,44 +1873,44 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usd0015ecj"
           },
           {
-            "id": "usd0015ebp",
-            "magnitude": 4.6,
-            "place": "43 km WNW of Turangi, New Zealand",
-            "time": "2026-08-17T05:18:41.824Z",
-            "depth_km": 177.4,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usd0015ebp"
+            "id": "us7000td2f",
+            "magnitude": 4.5,
+            "place": "south of the Fiji Islands",
+            "time": "2026-08-31T04:38:22.200Z",
+            "depth_km": 508.3,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000td2f"
           },
           {
-            "id": "usd0015eb3",
-            "magnitude": 4.6,
-            "place": "99 km N of Ruteng, Indonesia",
-            "time": "2026-08-17T01:42:12.533Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usd0015eb3"
+            "id": "us7000td1g",
+            "magnitude": 4.5,
+            "place": "71 km WSW of Puerto Casma, Peru",
+            "time": "2026-08-31T01:08:05.874Z",
+            "depth_km": 59.4,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000td1g"
           },
           {
-            "id": "us6000tmje",
-            "magnitude": 4.6,
-            "place": "17 km NNE of Ruteng, Indonesia",
-            "time": "2026-08-17T00:59:20.421Z",
-            "depth_km": 12.2,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tmje"
+            "id": "us7000td0v",
+            "magnitude": 4.5,
+            "place": "109 km NW of Hicks Bay, New Zealand",
+            "time": "2026-08-30T22:08:03.257Z",
+            "depth_km": 180.1,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000td0v"
           },
           {
-            "id": "us6000tmj8",
-            "magnitude": 4.6,
-            "place": "226 km SSE of ‘Ohonua, Tonga",
-            "time": "2026-08-17T00:25:55.708Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tmj8"
+            "id": "us7000td0w",
+            "magnitude": 4.5,
+            "place": "137 km S of Vanimo, Papua New Guinea",
+            "time": "2026-08-30T22:07:25.896Z",
+            "depth_km": 52.1,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000td0w"
           },
           {
-            "id": "usd0015e9l",
-            "magnitude": 4.6,
-            "place": "53 km N of Ruteng, Indonesia",
-            "time": "2026-08-16T19:06:04.786Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usd0015e9l"
+            "id": "us7000tczy",
+            "magnitude": 4.5,
+            "place": "101 km SW of Aitape, Papua New Guinea",
+            "time": "2026-08-30T18:18:49.879Z",
+            "depth_km": 46.1,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tczy"
           },
           {
             "id": "us7000tcy0",
@@ -2087,6 +2071,14 @@
             "time": "2026-08-25T01:22:25.241Z",
             "depth_km": 109.3,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tnaa"
+          },
+          {
+            "id": "us6000tn9r",
+            "magnitude": 4.5,
+            "place": "99 km SE of Ishigaki, Japan",
+            "time": "2026-08-24T23:26:56.073Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tn9r"
           },
           {
             "id": "us6000tn2d",
@@ -2335,66 +2327,10 @@
             "time": "2026-08-17T08:52:00.116Z",
             "depth_km": 23.7,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usd0015ecv"
-          },
-          {
-            "id": "usd0015eb2",
-            "magnitude": 4.5,
-            "place": "83 km N of Ruteng, Indonesia",
-            "time": "2026-08-17T01:31:01.388Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usd0015eb2"
-          },
-          {
-            "id": "usd0015eb0",
-            "magnitude": 4.5,
-            "place": "35 km E of Poso, Indonesia",
-            "time": "2026-08-17T01:01:29.183Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usd0015eb0"
-          },
-          {
-            "id": "us6000tmjb",
-            "magnitude": 4.5,
-            "place": "90 km N of Ruteng, Indonesia",
-            "time": "2026-08-17T00:56:34.082Z",
-            "depth_km": 10.9,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tmjb"
-          },
-          {
-            "id": "usd0015eav",
-            "magnitude": 4.5,
-            "place": "59 km NNE of Labuan Bajo, Indonesia",
-            "time": "2026-08-17T00:27:36.445Z",
-            "depth_km": 35,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usd0015eav"
-          },
-          {
-            "id": "us6000tmhn",
-            "magnitude": 4.5,
-            "place": "135 km SSE of Baubau, Indonesia",
-            "time": "2026-08-16T21:53:05.766Z",
-            "depth_km": 9.9,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tmhn"
-          },
-          {
-            "id": "usd0015ea6",
-            "magnitude": 4.5,
-            "place": "99 km W of San Antonio de los Cobres, Argentina",
-            "time": "2026-08-16T21:06:07.026Z",
-            "depth_km": 174.6,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usd0015ea6"
-          },
-          {
-            "id": "us6000tmhx",
-            "magnitude": 4.5,
-            "place": "South Atlantic Ocean",
-            "time": "2026-08-16T19:51:25.957Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tmhx"
           }
         ],
-        "count_total": 292,
-        "count_m55_plus": 22,
+        "count_total": 284,
+        "count_m55_plus": 21,
         "count_m60_plus": 5,
         "count_m70_plus": 0,
         "count_m80_plus": 0,
@@ -2409,7 +2345,7 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-08-30T16:38:22.181Z"
+        "retrieved": "2026-08-31T05:23:34.000Z"
       },
       "wildfire": {
         "events": [
@@ -2808,34 +2744,56 @@
               63.342
             ],
             "closed": null
-          },
-          {
-            "id": "EONET_22798",
-            "title": "Wildfire Picture Rock, Lake, Oregon",
-            "type": "WILDFIRE",
-            "time": "2026-08-16T15:55:00.000Z",
-            "coords": [
-              -120.774,
-              43.009
-            ],
-            "closed": null
-          },
-          {
-            "id": "EONET_22932",
-            "title": "Wildfire Jackson - Hwy 90, Jackson, Mississippi",
-            "type": "WILDFIRE",
-            "time": "2026-08-16T15:16:00.000Z",
-            "coords": [
-              -88.466,
-              30.418
-            ],
-            "closed": null
           }
         ],
-        "count": 38
+        "count": 36
       },
       "storm": {
         "events": [
+          {
+            "id": "EONET_23611",
+            "title": "Hurricane Karina",
+            "type": "STORM",
+            "time": "2026-08-27T18:00:00.000Z",
+            "coords": [
+              -111.5,
+              10.8
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23612",
+            "title": "Tropical Storm Lowell",
+            "type": "STORM",
+            "time": "2026-08-27T18:00:00.000Z",
+            "coords": [
+              -134,
+              11.2
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23613",
+            "title": "Tropical Storm Bang-Lang",
+            "type": "STORM",
+            "time": "2026-08-27T06:00:00.000Z",
+            "coords": [
+              162.4,
+              16.9
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23614",
+            "title": "Tropical Storm Etau",
+            "type": "STORM",
+            "time": "2026-08-27T00:00:00.000Z",
+            "coords": [
+              167.7,
+              20.4
+            ],
+            "closed": null
+          },
           {
             "id": "EONET_23286",
             "title": "Tropical Storm Julio",
@@ -2855,17 +2813,6 @@
             "coords": [
               -111.9,
               14.1
-            ],
-            "closed": null
-          },
-          {
-            "id": "EONET_23206",
-            "title": "Tropical Storm Moke",
-            "type": "STORM",
-            "time": "2026-08-21T18:00:00.000Z",
-            "coords": [
-              -146.7,
-              13.7
             ],
             "closed": null
           },
@@ -2903,7 +2850,7 @@
             "closed": null
           }
         ],
-        "count": 6
+        "count": 9
       },
       "flood": {
         "events": [],
@@ -2917,7 +2864,7 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-08-30T16:45:55.759Z",
+        "generatedAt": "2026-08-31T05:47:09.220Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
@@ -3028,7 +2975,7 @@
                 10
               ],
               "tsunami": false,
-              "significance": 952
+              "significance": 953
             },
             {
               "id": "nc75417557",
@@ -3100,11 +3047,91 @@
         "hazards": {
           "totalActive": 50,
           "byCategory": {
-            "Wildfires": 44,
-            "Severe Storms": 5,
+            "Severe Storms": 8,
+            "Wildfires": 41,
             "Sea and Lake Ice": 1
           },
           "events": [
+            {
+              "id": "EONET_23611",
+              "title": "Hurricane Karina",
+              "categories": [
+                "Severe Storms"
+              ],
+              "sources": [
+                "JTWC"
+              ],
+              "geometry": {
+                "magnitudeValue": 110,
+                "magnitudeUnit": "kts",
+                "date": "2026-08-31T00:00:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -123.3,
+                  17.1
+                ]
+              }
+            },
+            {
+              "id": "EONET_23612",
+              "title": "Tropical Storm Lowell",
+              "categories": [
+                "Severe Storms"
+              ],
+              "sources": [
+                "JTWC"
+              ],
+              "geometry": {
+                "magnitudeValue": 45,
+                "magnitudeUnit": "kts",
+                "date": "2026-08-31T00:00:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -142.8,
+                  13.2
+                ]
+              }
+            },
+            {
+              "id": "EONET_23613",
+              "title": "Tropical Storm Bang-Lang",
+              "categories": [
+                "Severe Storms"
+              ],
+              "sources": [
+                "JTWC"
+              ],
+              "geometry": {
+                "magnitudeValue": 35,
+                "magnitudeUnit": "kts",
+                "date": "2026-08-30T12:00:00Z",
+                "type": "Point",
+                "coordinates": [
+                  165.9,
+                  34.1
+                ]
+              }
+            },
+            {
+              "id": "EONET_23614",
+              "title": "Tropical Storm Etau",
+              "categories": [
+                "Severe Storms"
+              ],
+              "sources": [
+                "JTWC"
+              ],
+              "geometry": {
+                "magnitudeValue": 30,
+                "magnitudeUnit": "kts",
+                "date": "2026-08-30T18:00:00Z",
+                "type": "Point",
+                "coordinates": [
+                  166.8,
+                  31.7
+                ]
+              }
+            },
             {
               "id": "EONET_23453",
               "title": "Wildfire Calico, Humboldt, Nevada",
@@ -3586,26 +3613,6 @@
               }
             },
             {
-              "id": "EONET_23206",
-              "title": "Tropical Storm Moke",
-              "categories": [
-                "Severe Storms"
-              ],
-              "sources": [
-                "JTWC"
-              ],
-              "geometry": {
-                "magnitudeValue": 30,
-                "magnitudeUnit": "kts",
-                "date": "2026-08-25T06:00:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -163.5,
-                  16.2
-                ]
-              }
-            },
-            {
               "id": "EONET_23224",
               "title": "Wildfire Chipmunk, Miami-Dade, Florida",
               "categories": [
@@ -3644,66 +3651,6 @@
                   36.876944
                 ]
               }
-            },
-            {
-              "id": "EONET_23230",
-              "title": "Wildfire 2690, Caddo, Oklahoma",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 900,
-                "magnitudeUnit": "acres",
-                "date": "2026-08-21T10:24:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -98.185052,
-                  35.164635
-                ]
-              }
-            },
-            {
-              "id": "EONET_23217",
-              "title": "Wildfire Salt Wells, Box Elder, Utah",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 585,
-                "magnitudeUnit": "acres",
-                "date": "2026-08-21T07:53:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -112.677817,
-                  41.80951
-                ]
-              }
-            },
-            {
-              "id": "EONET_23207",
-              "title": "Tropical Storm Narra",
-              "categories": [
-                "Severe Storms"
-              ],
-              "sources": [
-                "JTWC"
-              ],
-              "geometry": {
-                "magnitudeValue": 25,
-                "magnitudeUnit": "kts",
-                "date": "2026-08-25T18:00:00Z",
-                "type": "Point",
-                "coordinates": [
-                  109.6,
-                  20
-                ]
-              }
             }
           ]
         },
@@ -3713,55 +3660,55 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": 0.3,
-              "surface_pressure": 1002.7,
-              "wind_speed_10m": 11.41,
-              "relative_humidity_2m": 96
+              "temperature_2m": -2.1,
+              "surface_pressure": 1006.2,
+              "wind_speed_10m": 13.93,
+              "relative_humidity_2m": 92
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 15.4,
-              "surface_pressure": 1016.4,
-              "wind_speed_10m": 7.41,
-              "relative_humidity_2m": 81
+              "temperature_2m": 16.5,
+              "surface_pressure": 1011.4,
+              "wind_speed_10m": 4.66,
+              "relative_humidity_2m": 91
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 27.9,
-              "surface_pressure": 916,
-              "wind_speed_10m": 2.74,
-              "relative_humidity_2m": 55
+              "temperature_2m": 19.7,
+              "surface_pressure": 913.9,
+              "wind_speed_10m": 2.96,
+              "relative_humidity_2m": 99
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 30.3,
-              "surface_pressure": 1013.1,
-              "wind_speed_10m": 1.32,
-              "relative_humidity_2m": 68
+              "temperature_2m": 28.5,
+              "surface_pressure": 1011.7,
+              "wind_speed_10m": 4.59,
+              "relative_humidity_2m": 79
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": -2,
-              "surface_pressure": 986.5,
-              "wind_speed_10m": 6.71,
-              "relative_humidity_2m": 81
+              "temperature_2m": -0.9,
+              "surface_pressure": 984.5,
+              "wind_speed_10m": 10.66,
+              "relative_humidity_2m": 87
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -33,
-              "surface_pressure": 722.5,
-              "wind_speed_10m": 12.15,
-              "relative_humidity_2m": 54
+              "temperature_2m": -32.8,
+              "surface_pressure": 729.8,
+              "wind_speed_10m": 11.29,
+              "relative_humidity_2m": 50
             }
           ]
         },
@@ -3779,7 +3726,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-08-30T16:57:31.723Z"
+        "generatedAt": "2026-08-31T06:08:09.115Z"
       },
       "health": {
         "score": 87,
