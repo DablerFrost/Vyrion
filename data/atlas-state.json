@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-09-02T04:45:58.965Z",
+    "generatedAt": "2026-09-02T16:40:11.926Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -52,11 +52,11 @@
         {
           "id": "us6000tm81",
           "magnitude": 6.7,
-          "place": "31 km NW of Aniso, Peru",
-          "time": "2026-08-20T18:00:18.626Z",
+          "place": "37 km NE of Tambo, Peru",
+          "time": "2026-08-20T18:00:18.541Z",
           "coordinates": [
-            -73.5236,
-            -14.6414,
+            -73.6401,
+            -14.602,
             99
           ],
           "tsunami": false,
@@ -184,10 +184,71 @@
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Wildfires": 46,
-        "Severe Storms": 4
+        "Severe Storms": 7,
+        "Wildfires": 43
       },
       "events": [
+        {
+          "id": "EONET_23800",
+          "title": "Tropical Storm Marie",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC",
+            "NOAA_NHC"
+          ],
+          "geometry": {
+            "magnitudeValue": 40,
+            "magnitudeUnit": "kts",
+            "date": "2026-09-01T06:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -108.1,
+              14.1
+            ]
+          }
+        },
+        {
+          "id": "EONET_23739",
+          "title": "Tropical Storm Edouard",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "NOAA_NHC"
+          ],
+          "geometry": {
+            "magnitudeValue": 30,
+            "magnitudeUnit": "kts",
+            "date": "2026-09-02T09:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -95,
+              30.8
+            ]
+          }
+        },
+        {
+          "id": "EONET_23738",
+          "title": "Tropical Storm Krovanh",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC"
+          ],
+          "geometry": {
+            "magnitudeValue": 35,
+            "magnitudeUnit": "kts",
+            "date": "2026-09-01T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              131.5,
+              22.4
+            ]
+          }
+        },
         {
           "id": "EONET_23656",
           "title": "Wildfire Ruggs, Morrow, Oregon",
@@ -395,16 +456,17 @@
             "Severe Storms"
           ],
           "sources": [
-            "JTWC"
+            "JTWC",
+            "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 115,
+            "magnitudeValue": 125,
             "magnitudeUnit": "kts",
-            "date": "2026-09-01T18:00:00Z",
+            "date": "2026-09-02T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              -129.4,
-              18.1
+              -131.2,
+              18.5
             ]
           }
         },
@@ -415,15 +477,16 @@
             "Severe Storms"
           ],
           "sources": [
-            "JTWC"
+            "JTWC",
+            "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 80,
+            "magnitudeValue": 120,
             "magnitudeUnit": "kts",
-            "date": "2026-09-01T18:00:00Z",
+            "date": "2026-09-02T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              -149.9,
+              -151.7,
               13.5
             ]
           }
@@ -727,66 +790,6 @@
               41.445417
             ]
           }
-        },
-        {
-          "id": "EONET_23457",
-          "title": "Wildfire S-1 VYA, Washoe, Nevada",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 9524,
-            "magnitudeUnit": "acres",
-            "date": "2026-08-24T17:03:00Z",
-            "type": "Point",
-            "coordinates": [
-              -119.916,
-              41.630333
-            ]
-          }
-        },
-        {
-          "id": "EONET_23671",
-          "title": "Wildfire Rio Escondido, Hamilton, Texas",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 2713,
-            "magnitudeUnit": "acres",
-            "date": "2026-08-24T15:31:00Z",
-            "type": "Point",
-            "coordinates": [
-              -98.12037,
-              31.49444497
-            ]
-          }
-        },
-        {
-          "id": "EONET_23459",
-          "title": "Wildfire Tom Creek, Tooele, Utah",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 4859,
-            "magnitudeUnit": "acres",
-            "date": "2026-08-24T15:20:00Z",
-            "type": "Point",
-            "coordinates": [
-              -112.705867,
-              40.00455
-            ]
-          }
         }
       ]
     },
@@ -796,55 +799,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -2.5,
-          "surface_pressure": 1010.4,
-          "wind_speed_10m": 9.62,
-          "relative_humidity_2m": 92
+          "temperature_2m": -1.5,
+          "surface_pressure": 1009,
+          "wind_speed_10m": 8.23,
+          "relative_humidity_2m": 95
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 15.8,
-          "surface_pressure": 1008,
-          "wind_speed_10m": 8.87,
-          "relative_humidity_2m": 87
+          "temperature_2m": 16,
+          "surface_pressure": 1011.5,
+          "wind_speed_10m": 9.7,
+          "relative_humidity_2m": 81
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 19.4,
-          "surface_pressure": 915.3,
-          "wind_speed_10m": 1.77,
-          "relative_humidity_2m": 98
+          "temperature_2m": 28.5,
+          "surface_pressure": 917.3,
+          "wind_speed_10m": 2.21,
+          "relative_humidity_2m": 48
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 27.2,
-          "surface_pressure": 1013,
-          "wind_speed_10m": 3.3,
-          "relative_humidity_2m": 83
+          "temperature_2m": 27.1,
+          "surface_pressure": 1014,
+          "wind_speed_10m": 2.4,
+          "relative_humidity_2m": 81
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -2.8,
-          "surface_pressure": 1005.8,
-          "wind_speed_10m": 8.19,
-          "relative_humidity_2m": 76
+          "temperature_2m": -1.3,
+          "surface_pressure": 1005.9,
+          "wind_speed_10m": 9.23,
+          "relative_humidity_2m": 91
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -45.8,
-          "surface_pressure": 721.2,
-          "wind_speed_10m": 6.89,
-          "relative_humidity_2m": 72
+          "temperature_2m": -46.5,
+          "surface_pressure": 719.4,
+          "wind_speed_10m": 8.01,
+          "relative_humidity_2m": 71
         }
       ]
     },
