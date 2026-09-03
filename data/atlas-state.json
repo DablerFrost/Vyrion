@@ -1,15 +1,41 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-09-03T04:42:10.430Z",
+    "generatedAt": "2026-09-03T16:31:24.944Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 13,
+      "count": 15,
       "maxMagnitude": 7.8,
       "events": [
+        {
+          "id": "us7000tdw6",
+          "magnitude": 5.4,
+          "place": "21 km WNW of Jiangyou, China",
+          "time": "2026-09-03T11:39:41.981Z",
+          "coordinates": [
+            104.5066,
+            31.8458,
+            10
+          ],
+          "tsunami": false,
+          "significance": 652
+        },
+        {
+          "id": "us7000tdvt",
+          "magnitude": 6.3,
+          "place": "84 km SSW of Nikolski, Alaska",
+          "time": "2026-09-03T11:17:24.056Z",
+          "coordinates": [
+            -169.4088,
+            52.2579,
+            35
+          ],
+          "tsunami": true,
+          "significance": 612
+        },
         {
           "id": "us7000tbwb",
           "magnitude": 5.2,
@@ -190,7 +216,7 @@
       "events": [
         {
           "id": "EONET_23800",
-          "title": "Tropical Storm Marie",
+          "title": "Hurricane Marie",
           "categories": [
             "Severe Storms"
           ],
@@ -199,13 +225,13 @@
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 60,
+            "magnitudeValue": 75,
             "magnitudeUnit": "kts",
-            "date": "2026-09-02T18:00:00Z",
+            "date": "2026-09-03T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              -112,
-              17.7
+              -113.4,
+              18.7
             ]
           }
         },
@@ -241,11 +267,11 @@
           "geometry": {
             "magnitudeValue": 40,
             "magnitudeUnit": "kts",
-            "date": "2026-09-02T18:00:00Z",
+            "date": "2026-09-03T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              130.9,
-              24.8
+              129,
+              27
             ]
           }
         },
@@ -460,13 +486,13 @@
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 120,
+            "magnitudeValue": 105,
             "magnitudeUnit": "kts",
-            "date": "2026-09-02T18:00:00Z",
+            "date": "2026-09-03T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              -133.3,
-              18.8
+              -135.2,
+              19.5
             ]
           }
         },
@@ -481,12 +507,12 @@
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 140,
+            "magnitudeValue": 130,
             "magnitudeUnit": "kts",
-            "date": "2026-09-02T18:00:00Z",
+            "date": "2026-09-03T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              -153.7,
+              -155.8,
               13.3
             ]
           }
@@ -799,46 +825,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "error": "fetch_failed"
+          "temperature_2m": -1.8,
+          "surface_pressure": 1009,
+          "wind_speed_10m": 6.81,
+          "relative_humidity_2m": 93
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
           "temperature_2m": 13.8,
-          "surface_pressure": 1013.4,
-          "wind_speed_10m": 9.31,
-          "relative_humidity_2m": 76
+          "surface_pressure": 1019.1,
+          "wind_speed_10m": 6.94,
+          "relative_humidity_2m": 69
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 19.8,
-          "surface_pressure": 914.5,
-          "wind_speed_10m": 1.88,
-          "relative_humidity_2m": 98
+          "temperature_2m": 26.6,
+          "surface_pressure": 916.6,
+          "wind_speed_10m": 2.05,
+          "relative_humidity_2m": 62
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "error": "fetch_failed"
+          "temperature_2m": 28.1,
+          "surface_pressure": 1013.2,
+          "wind_speed_10m": 2.32,
+          "relative_humidity_2m": 82
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "error": "fetch_failed"
+          "temperature_2m": -0.4,
+          "surface_pressure": 1006.4,
+          "wind_speed_10m": 9.4,
+          "relative_humidity_2m": 96
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -46.2,
-          "surface_pressure": 713.6,
-          "wind_speed_10m": 9.53,
-          "relative_humidity_2m": 58
+          "temperature_2m": -38.7,
+          "surface_pressure": 728.7,
+          "wind_speed_10m": 8.7,
+          "relative_humidity_2m": 77
         }
       ]
     },
