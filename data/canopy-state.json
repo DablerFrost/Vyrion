@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-09-05T05:00:30.242Z",
+    "generatedAt": "2026-09-05T15:37:39.731Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -15,17 +15,17 @@
     "hazardSummary": {
       "totalEvents": 63,
       "categories": {
-        "Wildfires": 44,
-        "Severe Storms": 6
+        "Wildfires": 45,
+        "Severe Storms": 5
       },
       "seismicCount": 13,
       "maxMagnitude": 7.8
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 4.18,
-      "minTemperature_2m": -33.9,
-      "maxTemperature_2m": 30
+      "avgTemperature_2m": 5.67,
+      "minTemperature_2m": -34.6,
+      "maxTemperature_2m": 29.9
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -39,19 +39,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-09-05T04:17:15.875Z",
+        "generated": "2026-09-05T15:09:44.900Z",
         "generated_date": "2026-09-05",
         "script_version": "1.1",
         "window_days": 14,
         "window_start": "2026-08-22",
         "window_end": "2026-09-05",
-        "runtime_ms": 870,
+        "runtime_ms": 687,
         "seismic_live": true,
         "eonet_live": true
       },
       "threat": {
         "level": "CRITICAL",
-        "score": 36.3
+        "score": 33.9
       },
       "seismic": {
         "events": [
@@ -70,14 +70,6 @@
             "time": "2026-09-02T23:46:57.617Z",
             "depth_km": 125.9,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tdrv"
-          },
-          {
-            "id": "us6000tmrw",
-            "magnitude": 6.2,
-            "place": "Scotia Sea",
-            "time": "2026-08-22T08:22:37.740Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tmrw"
           },
           {
             "id": "us7000tcf3",
@@ -128,14 +120,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tmta"
           },
           {
-            "id": "us6000tmrn",
-            "magnitude": 5.7,
-            "place": "Scotia Sea",
-            "time": "2026-08-22T07:40:12.697Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tmrn"
-          },
-          {
             "id": "us7000tdmp",
             "magnitude": 5.6,
             "place": "71 km WSW of Puerto Madero, Mexico",
@@ -168,11 +152,19 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tc18"
           },
           {
+            "id": "us7000teji",
+            "magnitude": 5.5,
+            "place": "157 km E of Kokopo, Papua New Guinea",
+            "time": "2026-09-05T14:12:07.727Z",
+            "depth_km": 114.4,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000teji"
+          },
+          {
             "id": "us7000tefx",
             "magnitude": 5.5,
-            "place": "156 km E of Kuril’sk, Russia",
-            "time": "2026-09-04T23:52:30.886Z",
-            "depth_km": 36.4,
+            "place": "168 km ESE of Kuril’sk, Russia",
+            "time": "2026-09-04T23:52:29.825Z",
+            "depth_km": 32,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tefx"
           },
           {
@@ -416,6 +408,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tmxn"
           },
           {
+            "id": "us7000tej2",
+            "magnitude": 5.1,
+            "place": "69 km E of Antofagasta de la Sierra, Argentina",
+            "time": "2026-09-05T11:37:12.553Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tej2"
+          },
+          {
             "id": "us7000tefw",
             "magnitude": 5.1,
             "place": "central Mid-Atlantic Ridge",
@@ -478,6 +478,22 @@
             "time": "2026-08-27T04:19:08.168Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tc56"
+          },
+          {
+            "id": "us7000teiy",
+            "magnitude": 5,
+            "place": "70 km SW of Pagar Alam, Indonesia",
+            "time": "2026-09-05T10:59:15.678Z",
+            "depth_km": 68.9,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000teiy"
+          },
+          {
+            "id": "us7000tehe",
+            "magnitude": 5,
+            "place": "off the coast of Central America",
+            "time": "2026-09-05T05:00:06.778Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tehe"
           },
           {
             "id": "us7000te8r",
@@ -614,22 +630,6 @@
             "time": "2026-08-23T23:20:34.888Z",
             "depth_km": 8.1,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tn19"
-          },
-          {
-            "id": "us6000tmrf",
-            "magnitude": 5,
-            "place": "45 km SE of Lukatan, Philippines",
-            "time": "2026-08-22T06:43:39.032Z",
-            "depth_km": 107.8,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tmrf"
-          },
-          {
-            "id": "us6000tmr2",
-            "magnitude": 5,
-            "place": "6 km S of Kitcharao, Philippines",
-            "time": "2026-08-22T04:44:08.744Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tmr2"
           },
           {
             "id": "us7000tea7",
@@ -872,22 +872,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tmzw"
           },
           {
-            "id": "us6000tmri",
-            "magnitude": 4.9,
-            "place": "northern Mid-Atlantic Ridge",
-            "time": "2026-08-22T07:21:25.611Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tmri"
-          },
-          {
-            "id": "us6000tmra",
-            "magnitude": 4.9,
-            "place": "167 km SE of San Jose Village, Northern Mariana Islands",
-            "time": "2026-08-22T05:47:07.443Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tmra"
-          },
-          {
             "id": "us7000tegg",
             "magnitude": 4.8,
             "place": "Kermadec Islands, New Zealand",
@@ -1072,14 +1056,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tmtu"
           },
           {
-            "id": "us6000tmrx",
-            "magnitude": 4.8,
-            "place": "83 km NNE of Ruteng, Indonesia",
-            "time": "2026-08-22T08:29:00.857Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tmrx"
-          },
-          {
             "id": "us7000te95",
             "magnitude": 4.7,
             "place": "2 km NNW of Cabangan, Philippines",
@@ -1262,14 +1238,6 @@
             "time": "2026-08-22T16:33:04.780Z",
             "depth_km": 26.3,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tmt7"
-          },
-          {
-            "id": "us6000tmr7",
-            "magnitude": 4.7,
-            "place": "71 km NNW of Ende, Indonesia",
-            "time": "2026-08-22T05:45:11.914Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tmr7"
           },
           {
             "id": "us7000tede",
@@ -1544,12 +1512,20 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tmt8"
           },
           {
-            "id": "us6000tmrq",
-            "magnitude": 4.6,
-            "place": "76 km SSW of San Jose Village, Northern Mariana Islands",
-            "time": "2026-08-22T07:43:51.050Z",
-            "depth_km": 115.9,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tmrq"
+            "id": "us7000teim",
+            "magnitude": 4.5,
+            "place": "87 km NNW of Sinabang, Indonesia",
+            "time": "2026-09-05T09:14:15.563Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000teim"
+          },
+          {
+            "id": "us7000tehs",
+            "magnitude": 4.5,
+            "place": "76 km S of Gorontalo, Indonesia",
+            "time": "2026-09-05T06:34:55.998Z",
+            "depth_km": 202.3,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tehs"
           },
           {
             "id": "us7000teg7",
@@ -1675,8 +1651,8 @@
             "id": "us7000tczy",
             "magnitude": 4.5,
             "place": "101 km SW of Aitape, Papua New Guinea",
-            "time": "2026-08-30T18:18:49.879Z",
-            "depth_km": 46.1,
+            "time": "2026-08-30T18:18:49.971Z",
+            "depth_km": 47.8,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tczy"
           },
           {
@@ -1960,9 +1936,9 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tmte"
           }
         ],
-        "count_total": 238,
-        "count_m55_plus": 20,
-        "count_m60_plus": 6,
+        "count_total": 235,
+        "count_m55_plus": 19,
+        "count_m60_plus": 5,
         "count_m70_plus": 0,
         "count_m80_plus": 0,
         "largest": {
@@ -1976,7 +1952,7 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-09-05T04:17:15.685Z"
+        "retrieved": "2026-09-05T15:09:44.316Z"
       },
       "wildfire": {
         "events": [
@@ -2591,17 +2567,6 @@
             "closed": null
           },
           {
-            "id": "EONET_23614",
-            "title": "Tropical Storm Etau",
-            "type": "STORM",
-            "time": "2026-08-27T00:00:00.000Z",
-            "coords": [
-              167.7,
-              20.4
-            ],
-            "closed": null
-          },
-          {
             "id": "EONET_22926",
             "title": "Typhoon Saudel",
             "type": "STORM",
@@ -2613,7 +2578,7 @@
             "closed": null
           }
         ],
-        "count": 7
+        "count": 6
       },
       "flood": {
         "events": [],
@@ -2627,7 +2592,7 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-09-05T04:40:16.731Z",
+        "generatedAt": "2026-09-05T15:19:23.519Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
@@ -2810,8 +2775,8 @@
         "hazards": {
           "totalActive": 50,
           "byCategory": {
-            "Wildfires": 44,
-            "Severe Storms": 6
+            "Wildfires": 45,
+            "Severe Storms": 5
           },
           "events": [
             {
@@ -2887,11 +2852,11 @@
               "geometry": {
                 "magnitudeValue": 85,
                 "magnitudeUnit": "kts",
-                "date": "2026-09-04T18:00:00Z",
+                "date": "2026-09-05T06:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  -118.2,
-                  20.1
+                  -119.3,
+                  21.1
                 ]
               }
             },
@@ -2925,13 +2890,13 @@
                 "JTWC"
               ],
               "geometry": {
-                "magnitudeValue": 45,
+                "magnitudeValue": 40,
                 "magnitudeUnit": "kts",
-                "date": "2026-09-04T18:00:00Z",
+                "date": "2026-09-05T00:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  127.1,
-                  28.4
+                  126.7,
+                  27.8
                 ]
               }
             },
@@ -3166,13 +3131,13 @@
                 "NOAA_NHC"
               ],
               "geometry": {
-                "magnitudeValue": 75,
+                "magnitudeValue": 65,
                 "magnitudeUnit": "kts",
-                "date": "2026-09-04T18:00:00Z",
+                "date": "2026-09-05T06:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  -140.7,
-                  20.5
+                  -142.2,
+                  21.2
                 ]
               }
             },
@@ -3187,13 +3152,13 @@
                 "NOAA_NHC"
               ],
               "geometry": {
-                "magnitudeValue": 130,
+                "magnitudeValue": 140,
                 "magnitudeUnit": "kts",
-                "date": "2026-09-04T18:00:00Z",
+                "date": "2026-09-05T06:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  -160.4,
-                  13.2
+                  -161.7,
+                  13.3
                 ]
               }
             },
@@ -3214,26 +3179,6 @@
                 "coordinates": [
                   -112.4795,
                   41.288667
-                ]
-              }
-            },
-            {
-              "id": "EONET_23614",
-              "title": "Tropical Storm Etau",
-              "categories": [
-                "Severe Storms"
-              ],
-              "sources": [
-                "JTWC"
-              ],
-              "geometry": {
-                "magnitudeValue": 30,
-                "magnitudeUnit": "kts",
-                "date": "2026-08-30T18:00:00Z",
-                "type": "Point",
-                "coordinates": [
-                  166.8,
-                  31.7
                 ]
               }
             },
@@ -3416,6 +3361,26 @@
                   34.4980556
                 ]
               }
+            },
+            {
+              "id": "EONET_23462",
+              "title": "Wildfire California  Creek, Elko, Nevada",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 984,
+                "magnitudeUnit": "acres",
+                "date": "2026-08-25T00:18:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -115.93761,
+                  41.82602
+                ]
+              }
             }
           ]
         },
@@ -3425,54 +3390,54 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": -4.4,
-              "surface_pressure": 1007.6,
-              "wind_speed_10m": 3.36,
-              "relative_humidity_2m": 91
+              "temperature_2m": -4,
+              "surface_pressure": 1008,
+              "wind_speed_10m": 4.52,
+              "relative_humidity_2m": 90
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 14.6,
-              "surface_pressure": 1004.1,
-              "wind_speed_10m": 13.45,
-              "relative_humidity_2m": 86
+              "temperature_2m": 14.2,
+              "surface_pressure": 1005.2,
+              "wind_speed_10m": 13.41,
+              "relative_humidity_2m": 77
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 19.3,
-              "surface_pressure": 914,
-              "wind_speed_10m": 2.25,
-              "relative_humidity_2m": 94
+              "temperature_2m": 27.4,
+              "surface_pressure": 916.9,
+              "wind_speed_10m": 2.36,
+              "relative_humidity_2m": 50
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 30,
-              "surface_pressure": 1013.4,
-              "wind_speed_10m": 2.04,
-              "relative_humidity_2m": 68
+              "temperature_2m": 29.9,
+              "surface_pressure": 1013.8,
+              "wind_speed_10m": 1.36,
+              "relative_humidity_2m": 70
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": -0.5,
-              "surface_pressure": 1009,
-              "wind_speed_10m": 8.44,
-              "relative_humidity_2m": 90
+              "temperature_2m": 1.1,
+              "surface_pressure": 996.8,
+              "wind_speed_10m": 13.71,
+              "relative_humidity_2m": 93
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -33.9,
-              "surface_pressure": 731.4,
-              "wind_speed_10m": 5.26,
+              "temperature_2m": -34.6,
+              "surface_pressure": 737,
+              "wind_speed_10m": 6.84,
               "relative_humidity_2m": 78
             }
           ]
@@ -3491,7 +3456,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-09-05T04:55:24.717Z"
+        "generatedAt": "2026-09-05T15:32:25.456Z"
       },
       "health": {
         "score": 87,
