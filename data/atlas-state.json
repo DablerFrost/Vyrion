@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-09-04T16:27:24.981Z",
+    "generatedAt": "2026-09-05T04:40:16.731Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -164,7 +164,7 @@
             108.174
           ],
           "tsunami": false,
-          "significance": 2790
+          "significance": 2910
         },
         {
           "id": "aka2026powmkf",
@@ -184,8 +184,8 @@
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Wildfires": 43,
-        "Severe Storms": 7
+        "Wildfires": 44,
+        "Severe Storms": 6
       },
       "events": [
         {
@@ -261,11 +261,11 @@
           "geometry": {
             "magnitudeValue": 85,
             "magnitudeUnit": "kts",
-            "date": "2026-09-04T06:00:00Z",
+            "date": "2026-09-04T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              -116.7,
-              19.7
+              -118.2,
+              20.1
             ]
           }
         },
@@ -299,13 +299,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 40,
+            "magnitudeValue": 45,
             "magnitudeUnit": "kts",
-            "date": "2026-09-04T06:00:00Z",
+            "date": "2026-09-04T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              127.5,
-              29.8
+              127.1,
+              28.4
             ]
           }
         },
@@ -540,13 +540,13 @@
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 85,
+            "magnitudeValue": 75,
             "magnitudeUnit": "kts",
-            "date": "2026-09-04T06:00:00Z",
+            "date": "2026-09-04T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              -138.9,
-              20.3
+              -140.7,
+              20.5
             ]
           }
         },
@@ -561,33 +561,13 @@
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 110,
+            "magnitudeValue": 130,
             "magnitudeUnit": "kts",
-            "date": "2026-09-04T06:00:00Z",
+            "date": "2026-09-04T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              -159.2,
-              13.5
-            ]
-          }
-        },
-        {
-          "id": "EONET_23613",
-          "title": "Tropical Storm Bang-Lang",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "JTWC"
-          ],
-          "geometry": {
-            "magnitudeValue": 35,
-            "magnitudeUnit": "kts",
-            "date": "2026-08-30T12:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              165.9,
-              34.1
+              -160.4,
+              13.2
             ]
           }
         },
@@ -790,6 +770,26 @@
               33.620704
             ]
           }
+        },
+        {
+          "id": "EONET_23677",
+          "title": "Wildfire Buck Creek, Pushmataha, Oklahoma",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 597,
+            "magnitudeUnit": "acres",
+            "date": "2026-08-25T10:34:00Z",
+            "type": "Point",
+            "coordinates": [
+              -95.6938889,
+              34.4980556
+            ]
+          }
         }
       ]
     },
@@ -799,55 +799,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -2.4,
-          "surface_pressure": 1007.3,
-          "wind_speed_10m": 6.6,
-          "relative_humidity_2m": 90
+          "temperature_2m": -4.4,
+          "surface_pressure": 1007.6,
+          "wind_speed_10m": 3.36,
+          "relative_humidity_2m": 91
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 14.8,
-          "surface_pressure": 1017.7,
-          "wind_speed_10m": 3.37,
-          "relative_humidity_2m": 59
+          "temperature_2m": 14.6,
+          "surface_pressure": 1004.1,
+          "wind_speed_10m": 13.45,
+          "relative_humidity_2m": 86
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 28.7,
-          "surface_pressure": 917.1,
-          "wind_speed_10m": 2.54,
-          "relative_humidity_2m": 44
+          "temperature_2m": 19.3,
+          "surface_pressure": 914,
+          "wind_speed_10m": 2.25,
+          "relative_humidity_2m": 94
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 29.3,
-          "surface_pressure": 1013.5,
-          "wind_speed_10m": 1.32,
-          "relative_humidity_2m": 77
+          "temperature_2m": 30,
+          "surface_pressure": 1013.4,
+          "wind_speed_10m": 2.04,
+          "relative_humidity_2m": 68
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -0.8,
-          "surface_pressure": 984.7,
-          "wind_speed_10m": 20.49,
-          "relative_humidity_2m": 86
+          "temperature_2m": -0.5,
+          "surface_pressure": 1009,
+          "wind_speed_10m": 8.44,
+          "relative_humidity_2m": 90
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -30.7,
-          "surface_pressure": 741.9,
-          "wind_speed_10m": 9.4,
-          "relative_humidity_2m": 70
+          "temperature_2m": -33.9,
+          "surface_pressure": 731.4,
+          "wind_speed_10m": 5.26,
+          "relative_humidity_2m": 78
         }
       ]
     },
