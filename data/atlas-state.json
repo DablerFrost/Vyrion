@@ -1,13 +1,13 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-09-09T04:53:17.381Z",
+    "generatedAt": "2026-09-09T16:44:28.736Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 13,
+      "count": 12,
       "maxMagnitude": 7.8,
       "events": [
         {
@@ -165,27 +165,14 @@
           ],
           "tsunami": false,
           "significance": 607
-        },
-        {
-          "id": "us6000tjl2",
-          "magnitude": 7.4,
-          "place": "2 km SE of San José del Palmar, Colombia",
-          "time": "2026-08-10T12:34:28.009Z",
-          "coordinates": [
-            -76.2182,
-            4.8836,
-            108.174
-          ],
-          "tsunami": false,
-          "significance": 2910
         }
       ]
     },
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Wildfires": 45,
-        "Severe Storms": 5
+        "Wildfires": 46,
+        "Severe Storms": 4
       },
       "events": [
         {
@@ -350,26 +337,6 @@
           }
         },
         {
-          "id": "EONET_23739",
-          "title": "Tropical Storm Edouard",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "NOAA_NHC"
-          ],
-          "geometry": {
-            "magnitudeValue": 30,
-            "magnitudeUnit": "kts",
-            "date": "2026-09-02T09:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -95,
-              30.8
-            ]
-          }
-        },
-        {
           "id": "EONET_23738",
           "title": "Tropical Storm Krovanh",
           "categories": [
@@ -379,13 +346,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 30,
+            "magnitudeValue": 25,
             "magnitudeUnit": "kts",
-            "date": "2026-09-08T18:00:00Z",
+            "date": "2026-09-09T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              133.5,
-              33.1
+              135.9,
+              34.3
             ]
           }
         },
@@ -641,13 +608,13 @@
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 70,
+            "magnitudeValue": 55,
             "magnitudeUnit": "kts",
-            "date": "2026-09-08T18:00:00Z",
+            "date": "2026-09-09T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              -160.7,
-              24.5
+              -161.1,
+              26.9
             ]
           }
         },
@@ -790,6 +757,26 @@
               42.667167
             ]
           }
+        },
+        {
+          "id": "EONET_23663",
+          "title": "Wildfire Blue Eagle, Churchill, Nevada",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 9218,
+            "magnitudeUnit": "acres",
+            "date": "2026-08-25T14:39:00Z",
+            "type": "Point",
+            "coordinates": [
+              -117.69345,
+              39.751733
+            ]
+          }
         }
       ]
     },
@@ -799,55 +786,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -3.5,
-          "surface_pressure": 998.8,
-          "wind_speed_10m": 5.33,
-          "relative_humidity_2m": 91
+          "temperature_2m": -3,
+          "surface_pressure": 995.4,
+          "wind_speed_10m": 6.36,
+          "relative_humidity_2m": 94
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
           "temperature_2m": 16.8,
-          "surface_pressure": 1006.7,
-          "wind_speed_10m": 7.27,
-          "relative_humidity_2m": 97
+          "surface_pressure": 1008.6,
+          "wind_speed_10m": 11.16,
+          "relative_humidity_2m": 90
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 19.6,
-          "surface_pressure": 915.5,
-          "wind_speed_10m": 2.16,
-          "relative_humidity_2m": 99
+          "temperature_2m": 27.7,
+          "surface_pressure": 916.9,
+          "wind_speed_10m": 3.25,
+          "relative_humidity_2m": 58
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 30.3,
-          "surface_pressure": 1011.5,
-          "wind_speed_10m": 1.74,
+          "temperature_2m": 30.1,
+          "surface_pressure": 1012.4,
+          "wind_speed_10m": 1.42,
           "relative_humidity_2m": 65
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -2.5,
-          "surface_pressure": 988.6,
-          "wind_speed_10m": 10.97,
-          "relative_humidity_2m": 77
+          "temperature_2m": -0.3,
+          "surface_pressure": 975,
+          "wind_speed_10m": 11.76,
+          "relative_humidity_2m": 89
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -50.4,
-          "surface_pressure": 699.3,
-          "wind_speed_10m": 6.75,
-          "relative_humidity_2m": 62
+          "temperature_2m": -47.6,
+          "surface_pressure": 699.8,
+          "wind_speed_10m": 7.45,
+          "relative_humidity_2m": 66
         }
       ]
     },
