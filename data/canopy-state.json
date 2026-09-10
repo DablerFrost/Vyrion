@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-09-09T16:54:40.950Z",
+    "generatedAt": "2026-09-10T05:24:19.910Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -13,19 +13,19 @@
   },
   "synthesis": {
     "hazardSummary": {
-      "totalEvents": 62,
+      "totalEvents": 61,
       "categories": {
         "Wildfires": 46,
         "Severe Storms": 4
       },
-      "seismicCount": 12,
+      "seismicCount": 11,
       "maxMagnitude": 7.8
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 3.95,
-      "minTemperature_2m": -47.6,
-      "maxTemperature_2m": 30.1
+      "avgTemperature_2m": 1.23,
+      "minTemperature_2m": -48.1,
+      "maxTemperature_2m": 27.5
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -39,19 +39,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-09-09T16:35:16.846Z",
-        "generated_date": "2026-09-09",
+        "generated": "2026-09-10T04:31:12.458Z",
+        "generated_date": "2026-09-10",
         "script_version": "1.1",
         "window_days": 14,
-        "window_start": "2026-08-26",
-        "window_end": "2026-09-09",
-        "runtime_ms": 5319,
+        "window_start": "2026-08-27",
+        "window_end": "2026-09-10",
+        "runtime_ms": 309,
         "seismic_live": true,
-        "eonet_live": false
+        "eonet_live": true
       },
       "threat": {
-        "level": "ELEVATED",
-        "score": 7.75
+        "level": "CRITICAL",
+        "score": 17.75
       },
       "seismic": {
         "events": [
@@ -134,14 +134,6 @@
             "time": "2026-09-01T08:22:20.813Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tdav"
-          },
-          {
-            "id": "us7000tc18",
-            "magnitude": 5.6,
-            "place": "209 km ESE of Ōfunato, Japan",
-            "time": "2026-08-26T19:21:42.872Z",
-            "depth_km": 16.1,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tc18"
           },
           {
             "id": "us7000teu1",
@@ -288,6 +280,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tc8j"
           },
           {
+            "id": "us7000tg3x",
+            "magnitude": 5.2,
+            "place": "76 km ESE of Isangel, Vanuatu",
+            "time": "2026-09-09T17:01:52.208Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tg3x"
+          },
+          {
             "id": "us7000tfum",
             "magnitude": 5.2,
             "place": "123 km NNE of Ruteng, Indonesia",
@@ -416,6 +416,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tc7l"
           },
           {
+            "id": "us7000tg43",
+            "magnitude": 5.1,
+            "place": "81 km ESE of Isangel, Vanuatu",
+            "time": "2026-09-09T17:18:45.381Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tg43"
+          },
+          {
             "id": "us7000tfs3",
             "magnitude": 5.1,
             "place": "South Sandwich Islands region",
@@ -496,14 +504,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcs7"
           },
           {
-            "id": "us7000tc56",
-            "magnitude": 5.1,
-            "place": "South Atlantic Ocean",
-            "time": "2026-08-27T04:19:08.168Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tc56"
-          },
-          {
             "id": "us7000tg12",
             "magnitude": 5,
             "place": "53 km W of Cafayate, Argentina",
@@ -570,9 +570,9 @@
           {
             "id": "us7000tdey",
             "magnitude": 5,
-            "place": "118 km SSE of Isangel, Vanuatu",
-            "time": "2026-09-01T18:37:29.222Z",
-            "depth_km": 122.5,
+            "place": "110 km SSE of Isangel, Vanuatu",
+            "time": "2026-09-01T18:37:28.667Z",
+            "depth_km": 122.7,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tdey"
           },
           {
@@ -824,20 +824,20 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tc95"
           },
           {
-            "id": "us7000tc0k",
-            "magnitude": 4.9,
-            "place": "42 km NE of Ruteng, Indonesia",
-            "time": "2026-08-26T18:23:13.728Z",
+            "id": "us7000tg6g",
+            "magnitude": 4.8,
+            "place": "Mid-Indian Ridge",
+            "time": "2026-09-09T21:29:54.374Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tc0k"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tg6g"
           },
           {
-            "id": "us7000tbzn",
-            "magnitude": 4.9,
-            "place": "3 km W of Cepitá, Colombia",
-            "time": "2026-08-26T16:45:14.482Z",
-            "depth_km": 159,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tbzn"
+            "id": "us7000tg51",
+            "magnitude": 4.8,
+            "place": "86 km ESE of Isangel, Vanuatu",
+            "time": "2026-09-09T19:15:11.614Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tg51"
           },
           {
             "id": "us7000terb",
@@ -984,6 +984,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tc9g"
           },
           {
+            "id": "us7000tg5p",
+            "magnitude": 4.7,
+            "place": "164 km SSE of Isangel, Vanuatu",
+            "time": "2026-09-09T20:21:13.645Z",
+            "depth_km": 104.7,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tg5p"
+          },
+          {
             "id": "us7000tg1q",
             "magnitude": 4.7,
             "place": "139 km NNE of Hihifo, Tonga",
@@ -1120,20 +1128,20 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tc9s"
           },
           {
-            "id": "us7000tc0p",
-            "magnitude": 4.7,
-            "place": "34 km NNE of Ruteng, Indonesia",
-            "time": "2026-08-26T18:34:58.482Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tc0p"
+            "id": "us7000tg5i",
+            "magnitude": 4.6,
+            "place": "24 km E of Rasht, Tajikistan",
+            "time": "2026-09-09T20:17:13.749Z",
+            "depth_km": 29.6,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tg5i"
           },
           {
-            "id": "us7000tbzr",
-            "magnitude": 4.7,
-            "place": "77 km NW of Ende, Indonesia",
-            "time": "2026-08-26T16:52:48.110Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tbzr"
+            "id": "us7000tg4e",
+            "magnitude": 4.6,
+            "place": "295 km WNW of Houma, Tonga",
+            "time": "2026-09-09T18:19:02.293Z",
+            "depth_km": 499.4,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tg4e"
           },
           {
             "id": "us7000tg1h",
@@ -1250,9 +1258,9 @@
           {
             "id": "us7000tdfa",
             "magnitude": 4.6,
-            "place": "78 km ENE of Mutsu, Japan",
-            "time": "2026-09-01T19:21:23.337Z",
-            "depth_km": 74,
+            "place": "75 km ENE of Mutsu, Japan",
+            "time": "2026-09-01T19:21:21.987Z",
+            "depth_km": 62,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tdfa"
           },
           {
@@ -1406,14 +1414,6 @@
             "time": "2026-08-27T19:45:59.774Z",
             "depth_km": 49.1,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcee"
-          },
-          {
-            "id": "us7000tc37",
-            "magnitude": 4.6,
-            "place": "115 km ESE of Yujing, Taiwan",
-            "time": "2026-08-26T21:47:18.998Z",
-            "depth_km": 25.3,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tc37"
           },
           {
             "id": "us7000tfyn",
@@ -1774,18 +1774,10 @@
             "time": "2026-08-27T05:30:48.984Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tdwf"
-          },
-          {
-            "id": "us7000tc21",
-            "magnitude": 4.5,
-            "place": "147 km E of Sola, Vanuatu",
-            "time": "2026-08-26T19:50:08.291Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tc21"
           }
         ],
-        "count_total": 216,
-        "count_m55_plus": 16,
+        "count_total": 215,
+        "count_m55_plus": 15,
         "count_m60_plus": 3,
         "count_m70_plus": 0,
         "count_m80_plus": 0,
@@ -1800,37 +1792,304 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-09-09T16:35:11.797Z"
+        "retrieved": "2026-09-10T04:31:12.355Z"
       },
-      "wildfire": null,
-      "storm": null,
-      "flood": null,
-      "volcanic": null
+      "wildfire": {
+        "events": [
+          {
+            "id": "EONET_24100",
+            "title": "Wildfire S7, Broward, Florida",
+            "type": "WILDFIRE",
+            "time": "2026-09-04T15:16:00.000Z",
+            "coords": [
+              -80.5,
+              26.326
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_24096",
+            "title": "Wildfire Needles, Oglala Lakota, South Dakota",
+            "type": "WILDFIRE",
+            "time": "2026-09-04T13:53:00.000Z",
+            "coords": [
+              -102.311,
+              43.304
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_24095",
+            "title": "Incident Complex Rattlesnake Complex, Prairie, Montana",
+            "type": "WILDFIRE",
+            "time": "2026-09-04T12:59:00.000Z",
+            "coords": [
+              -104.928,
+              46.586
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23868",
+            "title": "Emergency Stabilization BAER McConnell, Humboldt, Nevada",
+            "type": "WILDFIRE",
+            "time": "2026-09-03T13:03:00.000Z",
+            "coords": [
+              -117.742,
+              41.518
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23869",
+            "title": "Wildfire Ayers Pond, Prairie, Montana",
+            "type": "WILDFIRE",
+            "time": "2026-09-03T01:45:00.000Z",
+            "coords": [
+              -104.83,
+              46.651
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23870",
+            "title": "Wildfire Snow, Custer, Montana",
+            "type": "WILDFIRE",
+            "time": "2026-09-02T22:16:00.000Z",
+            "coords": [
+              -105.185,
+              46.486
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_24098",
+            "title": "Wildfire Fowl, Harding, New Mexico",
+            "type": "WILDFIRE",
+            "time": "2026-09-02T18:39:00.000Z",
+            "coords": [
+              -103.786,
+              35.569
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23656",
+            "title": "Wildfire Ruggs, Morrow, Oregon",
+            "type": "WILDFIRE",
+            "time": "2026-08-31T15:38:00.000Z",
+            "coords": [
+              -119.691,
+              45.253
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23658",
+            "title": "Wildfire Harris, Throckmorton, Texas",
+            "type": "WILDFIRE",
+            "time": "2026-08-31T14:22:00.000Z",
+            "coords": [
+              -99.076,
+              33.056
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23685",
+            "title": "Wildfire SOUTH RAILROAD, Comanche, Oklahoma",
+            "type": "WILDFIRE",
+            "time": "2026-08-30T09:40:00.000Z",
+            "coords": [
+              -98.721,
+              34.608
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23673",
+            "title": "Wildfire Alexander Trail Fire, Pushmataha, Oklahoma",
+            "type": "WILDFIRE",
+            "time": "2026-08-30T09:04:00.000Z",
+            "coords": [
+              -95.297,
+              34.478
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23871",
+            "title": "Wildfire Alexander Trail, Pushmataha, Oklahoma",
+            "type": "WILDFIRE",
+            "time": "2026-08-30T09:04:00.000Z",
+            "coords": [
+              -95.297,
+              34.478
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23683",
+            "title": "Wildfire 4V, San Miguel, New Mexico",
+            "type": "WILDFIRE",
+            "time": "2026-08-29T19:02:00.000Z",
+            "coords": [
+              -104.295,
+              35.535
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23674",
+            "title": "Wildfire WRIGHT, Hughes, Oklahoma",
+            "type": "WILDFIRE",
+            "time": "2026-08-29T18:05:00.000Z",
+            "coords": [
+              -96.115,
+              35.225
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23676",
+            "title": "Wildfire RAILROAD SOUTH, Comanche, Oklahoma",
+            "type": "WILDFIRE",
+            "time": "2026-08-29T16:31:00.000Z",
+            "coords": [
+              -98.721,
+              34.608
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23666",
+            "title": "Wildfire McKee Draw, Edwards, Texas",
+            "type": "WILDFIRE",
+            "time": "2026-08-29T14:17:00.000Z",
+            "coords": [
+              -100.315,
+              30.184
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23664",
+            "title": "Wildfire West Fork, Sutton, Texas",
+            "type": "WILDFIRE",
+            "time": "2026-08-28T19:23:00.000Z",
+            "coords": [
+              -100.152,
+              30.369
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23669",
+            "title": "Wildfire Roe 2, Beaverhead, Montana",
+            "type": "WILDFIRE",
+            "time": "2026-08-27T19:48:00.000Z",
+            "coords": [
+              -112.778,
+              44.922
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23668",
+            "title": "Wildfire Brushy Canyon, Box Elder, Utah",
+            "type": "WILDFIRE",
+            "time": "2026-08-27T01:42:00.000Z",
+            "coords": [
+              -112.48,
+              41.289
+            ],
+            "closed": null
+          }
+        ],
+        "count": 19
+      },
+      "storm": {
+        "events": [
+          {
+            "id": "EONET_23800",
+            "title": "Cyclone Marie",
+            "type": "STORM",
+            "time": "2026-09-01T06:00:00.000Z",
+            "coords": [
+              -108.1,
+              14.1
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23738",
+            "title": "Tropical Storm Krovanh",
+            "type": "STORM",
+            "time": "2026-09-01T00:00:00.000Z",
+            "coords": [
+              131.5,
+              22.4
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23611",
+            "title": "Hurricane Karina",
+            "type": "STORM",
+            "time": "2026-08-27T18:00:00.000Z",
+            "coords": [
+              -111.5,
+              10.8
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_23612",
+            "title": "Hurricane Lowell",
+            "type": "STORM",
+            "time": "2026-08-27T18:00:00.000Z",
+            "coords": [
+              -134,
+              11.2
+            ],
+            "closed": null
+          }
+        ],
+        "count": 4
+      },
+      "flood": {
+        "events": [],
+        "count": 0
+      },
+      "volcanic": {
+        "events": [],
+        "count": 0
+      }
     },
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-09-09T16:44:28.736Z",
+        "generatedAt": "2026-09-10T04:54:29.654Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
       "layers": {
         "seismic": {
-          "count": 12,
+          "count": 11,
           "maxMagnitude": 7.8,
           "events": [
             {
               "id": "uw714095342",
-              "magnitude": 3.73,
+              "magnitude": 3.75,
               "place": "20 km E of Castle Rock, Washington",
-              "time": "2026-09-05T11:09:28.280Z",
+              "time": "2026-09-05T11:09:28.270Z",
               "coordinates": [
-                -122.643833333333,
-                46.247,
-                17.62
+                -122.642,
+                46.2465,
+                17.67
               ],
               "tsunami": false,
-              "significance": 644
+              "significance": 646
             },
             {
               "id": "us7000tdw6",
@@ -1909,19 +2168,6 @@
               ],
               "tsunami": false,
               "significance": 730
-            },
-            {
-              "id": "us6000tlrj",
-              "magnitude": 5.5,
-              "place": "269 km SSE of Dunhuang, China",
-              "time": "2026-08-18T21:36:27.999Z",
-              "coordinates": [
-                95.5438,
-                37.8333,
-                6
-              ],
-              "tsunami": false,
-              "significance": 650
             },
             {
               "id": "us6000tkyk",
@@ -2417,13 +2663,13 @@
                 "NOAA_NHC"
               ],
               "geometry": {
-                "magnitudeValue": 55,
+                "magnitudeValue": 50,
                 "magnitudeUnit": "kts",
-                "date": "2026-09-09T06:00:00Z",
+                "date": "2026-09-09T18:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  -161.1,
-                  26.9
+                  -163,
+                  28.7
                 ]
               }
             },
@@ -2595,55 +2841,55 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": -3,
-              "surface_pressure": 995.4,
-              "wind_speed_10m": 6.36,
+              "temperature_2m": -3.6,
+              "surface_pressure": 995.3,
+              "wind_speed_10m": 8.74,
               "relative_humidity_2m": 94
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 16.8,
-              "surface_pressure": 1008.6,
-              "wind_speed_10m": 11.16,
-              "relative_humidity_2m": 90
+              "temperature_2m": 14.9,
+              "surface_pressure": 1012.6,
+              "wind_speed_10m": 9.16,
+              "relative_humidity_2m": 85
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 27.7,
-              "surface_pressure": 916.9,
-              "wind_speed_10m": 3.25,
-              "relative_humidity_2m": 58
+              "temperature_2m": 20.1,
+              "surface_pressure": 914.7,
+              "wind_speed_10m": 2.13,
+              "relative_humidity_2m": 98
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 30.1,
-              "surface_pressure": 1012.4,
-              "wind_speed_10m": 1.42,
-              "relative_humidity_2m": 65
+              "temperature_2m": 27.5,
+              "surface_pressure": 1012.2,
+              "wind_speed_10m": 3.89,
+              "relative_humidity_2m": 79
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": -0.3,
-              "surface_pressure": 975,
-              "wind_speed_10m": 11.76,
-              "relative_humidity_2m": 89
+              "temperature_2m": -3.4,
+              "surface_pressure": 981.1,
+              "wind_speed_10m": 18.9,
+              "relative_humidity_2m": 73
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -47.6,
-              "surface_pressure": 699.8,
-              "wind_speed_10m": 7.45,
-              "relative_humidity_2m": 66
+              "temperature_2m": -48.1,
+              "surface_pressure": 696.2,
+              "wind_speed_10m": 8.29,
+              "relative_humidity_2m": 64
             }
           ]
         },
@@ -2661,7 +2907,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-09-09T16:52:56.753Z"
+        "generatedAt": "2026-09-10T05:14:53.950Z"
       },
       "health": {
         "score": 87,
