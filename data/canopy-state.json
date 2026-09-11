@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-09-11T05:21:58.191Z",
+    "generatedAt": "2026-09-11T16:46:44.629Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -23,9 +23,9 @@
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 0.32,
-      "minTemperature_2m": -48.1,
-      "maxTemperature_2m": 27.8
+      "avgTemperature_2m": 1.9,
+      "minTemperature_2m": -46.2,
+      "maxTemperature_2m": 27.3
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -39,19 +39,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-09-11T04:29:30.648Z",
+        "generated": "2026-09-11T16:25:16.484Z",
         "generated_date": "2026-09-11",
         "script_version": "1.1",
         "window_days": 14,
         "window_start": "2026-08-28",
         "window_end": "2026-09-11",
-        "runtime_ms": 543,
+        "runtime_ms": 551,
         "seismic_live": true,
         "eonet_live": true
       },
       "threat": {
         "level": "CRITICAL",
-        "score": 17.6
+        "score": 17.85
       },
       "seismic": {
         "events": [
@@ -70,6 +70,14 @@
             "time": "2026-09-02T23:46:57.617Z",
             "depth_km": 125.9,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tdrv"
+          },
+          {
+            "id": "us7000tgl2",
+            "magnitude": 5.9,
+            "place": "253 km ENE of Lospalos, Timor Leste",
+            "time": "2026-09-11T11:56:23.115Z",
+            "depth_km": 111.8,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tgl2"
           },
           {
             "id": "us7000tdms",
@@ -206,6 +214,14 @@
             "time": "2026-09-02T20:04:32.508Z",
             "depth_km": 57.5,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tdqc"
+          },
+          {
+            "id": "us7000tgky",
+            "magnitude": 5.3,
+            "place": "151 km WSW of Adak, Alaska",
+            "time": "2026-09-11T10:47:12.613Z",
+            "depth_km": 40.9,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tgky"
           },
           {
             "id": "us7000tgf2",
@@ -400,14 +416,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tdbr"
           },
           {
-            "id": "us7000tchl",
-            "magnitude": 5.2,
-            "place": "southeast Indian Ridge",
-            "time": "2026-08-28T04:59:06.623Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tchl"
-          },
-          {
             "id": "us7000tgb6",
             "magnitude": 5.1,
             "place": "162 km SSW of Merizo Village, Guam",
@@ -598,30 +606,6 @@
             "time": "2026-08-28T20:19:38.305Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcp5"
-          },
-          {
-            "id": "us7000tcii",
-            "magnitude": 5,
-            "place": "172 km SE of Petropavlovsk-Kamchatsky, Russia",
-            "time": "2026-08-28T09:12:17.255Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcii"
-          },
-          {
-            "id": "us7000tcig",
-            "magnitude": 5,
-            "place": "115 km WNW of Isangel, Vanuatu",
-            "time": "2026-08-28T08:32:36.200Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcig"
-          },
-          {
-            "id": "us7000tcht",
-            "magnitude": 5,
-            "place": "19 km NW of Fuji, China",
-            "time": "2026-08-28T05:13:35.070Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcht"
           },
           {
             "id": "us7000tgij",
@@ -966,6 +950,22 @@
             "time": "2026-08-28T23:10:36.399Z",
             "depth_km": 34.9,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcqg"
+          },
+          {
+            "id": "us7000tgel",
+            "magnitude": 4.7,
+            "place": "66 km WSW of Zhaotong, China",
+            "time": "2026-09-10T16:53:33.992Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tgel"
+          },
+          {
+            "id": "us7000tgkb",
+            "magnitude": 4.7,
+            "place": "272 km N of Puerto Ayora, Ecuador",
+            "time": "2026-09-10T14:15:53.806Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tgkb"
           },
           {
             "id": "us7000tg9q",
@@ -1336,14 +1336,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tdw9"
           },
           {
-            "id": "us7000tcyu",
-            "magnitude": 4.6,
-            "place": "209 km SSW of Al Ghayz̧ah, Yemen",
-            "time": "2026-08-29T19:36:06.021Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcyu"
-          },
-          {
             "id": "us7000tct6",
             "magnitude": 4.6,
             "place": "32 km ESE of Lospalos, Timor Leste",
@@ -1360,12 +1352,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcrx"
           },
           {
-            "id": "us7000tcj1",
-            "magnitude": 4.6,
-            "place": "176 km NNE of Lospalos, Timor Leste",
-            "time": "2026-08-28T10:23:05.552Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcj1"
+            "id": "us7000tgk1",
+            "magnitude": 4.5,
+            "place": "92 km S of False Pass, Alaska",
+            "time": "2026-09-11T07:31:45.952Z",
+            "depth_km": 43.1,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tgk1"
           },
           {
             "id": "us7000tgb4",
@@ -1632,6 +1624,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcvp"
           },
           {
+            "id": "us7000tcyu",
+            "magnitude": 4.5,
+            "place": "216 km SSW of Al Ghayz̧ah, Yemen",
+            "time": "2026-08-29T19:36:05.484Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcyu"
+          },
+          {
             "id": "us7000tctp",
             "magnitude": 4.5,
             "place": "25 km W of Émponas, Greece",
@@ -1662,42 +1662,10 @@
             "time": "2026-08-28T20:44:36.759Z",
             "depth_km": 88,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcpf"
-          },
-          {
-            "id": "us7000tcjv",
-            "magnitude": 4.5,
-            "place": "19 km WNW of Ollagüe, Chile",
-            "time": "2026-08-28T14:11:54.174Z",
-            "depth_km": 121.5,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcjv"
-          },
-          {
-            "id": "us7000tcjf",
-            "magnitude": 4.5,
-            "place": "109 km S of Vanimo, Papua New Guinea",
-            "time": "2026-08-28T12:21:36.915Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcjf"
-          },
-          {
-            "id": "us7000tcit",
-            "magnitude": 4.5,
-            "place": "114 km N of Hirara, Japan",
-            "time": "2026-08-28T10:11:33.232Z",
-            "depth_km": 131.7,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcit"
-          },
-          {
-            "id": "us7000te0q",
-            "magnitude": 4.5,
-            "place": "14 km SSW of Sarangani, Philippines",
-            "time": "2026-08-28T08:22:26.767Z",
-            "depth_km": 66,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000te0q"
           }
         ],
-        "count_total": 205,
-        "count_m55_plus": 13,
+        "count_total": 201,
+        "count_m55_plus": 14,
         "count_m60_plus": 2,
         "count_m70_plus": 0,
         "count_m80_plus": 0,
@@ -1712,7 +1680,7 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-09-11T04:29:30.346Z"
+        "retrieved": "2026-09-11T16:25:16.216Z"
       },
       "wildfire": {
         "events": [
@@ -1998,7 +1966,7 @@
           },
           {
             "id": "EONET_23612",
-            "title": "Hurricane Lowell",
+            "title": "Cyclone Lowell",
             "type": "STORM",
             "time": "2026-08-27T18:00:00.000Z",
             "coords": [
@@ -2022,7 +1990,7 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-09-11T04:51:29.655Z",
+        "generatedAt": "2026-09-11T16:34:55.292Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
@@ -2099,11 +2067,11 @@
             {
               "id": "us6000tmta",
               "magnitude": 5.8,
-              "place": "2 km NNW of Toride, Japan",
-              "time": "2026-08-22T17:00:39.299Z",
+              "place": "5 km E of Ushiku, Japan",
+              "time": "2026-08-22T17:00:39.194Z",
               "coordinates": [
-                140.0771,
-                35.9182,
+                140.1972,
+                35.9675,
                 61
               ],
               "tsunami": false,
@@ -2194,13 +2162,13 @@
                 "NOAA_NHC"
               ],
               "geometry": {
-                "magnitudeValue": 40,
+                "magnitudeValue": 50,
                 "magnitudeUnit": "kts",
-                "date": "2026-09-10T18:00:00Z",
+                "date": "2026-09-11T06:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  -119.9,
-                  16.5
+                  -122.7,
+                  16.6
                 ]
               }
             },
@@ -2709,7 +2677,7 @@
             },
             {
               "id": "EONET_23612",
-              "title": "Hurricane Lowell",
+              "title": "Cyclone Lowell",
               "categories": [
                 "Severe Storms"
               ],
@@ -2721,10 +2689,10 @@
               "geometry": {
                 "magnitudeValue": 45,
                 "magnitudeUnit": "kts",
-                "date": "2026-09-10T18:00:00Z",
+                "date": "2026-09-11T00:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  -168.3,
+                  -169.5,
                   29
                 ]
               }
@@ -2797,54 +2765,54 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": -9.2,
-              "surface_pressure": 1010.9,
-              "wind_speed_10m": 0.5,
+              "temperature_2m": -5.8,
+              "surface_pressure": 1011.9,
+              "wind_speed_10m": 1.11,
               "relative_humidity_2m": 94
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 17.3,
-              "surface_pressure": 1003.8,
-              "wind_speed_10m": 7.18,
-              "relative_humidity_2m": 96
+              "temperature_2m": 14.6,
+              "surface_pressure": 1009.8,
+              "wind_speed_10m": 10.51,
+              "relative_humidity_2m": 81
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 19.6,
-              "surface_pressure": 913.9,
-              "wind_speed_10m": 2.8,
-              "relative_humidity_2m": 95
+              "temperature_2m": 26.6,
+              "surface_pressure": 914.8,
+              "wind_speed_10m": 3.01,
+              "relative_humidity_2m": 64
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 27.8,
-              "surface_pressure": 1012.3,
-              "wind_speed_10m": 3.27,
-              "relative_humidity_2m": 80
+              "temperature_2m": 27.3,
+              "surface_pressure": 1012.9,
+              "wind_speed_10m": 2.86,
+              "relative_humidity_2m": 82
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": -5.5,
-              "surface_pressure": 1002.3,
-              "wind_speed_10m": 15.86,
-              "relative_humidity_2m": 74
+              "temperature_2m": -5.1,
+              "surface_pressure": 1009.3,
+              "wind_speed_10m": 9.57,
+              "relative_humidity_2m": 77
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -48.1,
-              "surface_pressure": 698,
-              "wind_speed_10m": 9.62,
+              "temperature_2m": -46.2,
+              "surface_pressure": 701.4,
+              "wind_speed_10m": 9.51,
               "relative_humidity_2m": 65
             }
           ]
@@ -2863,7 +2831,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-09-11T05:13:44.279Z"
+        "generatedAt": "2026-09-11T16:44:54.159Z"
       },
       "health": {
         "score": 87,
