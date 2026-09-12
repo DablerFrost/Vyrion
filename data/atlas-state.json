@@ -1,27 +1,27 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-09-12T04:44:25.190Z",
+    "generatedAt": "2026-09-12T15:36:31.528Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 12,
+      "count": 11,
       "maxMagnitude": 7.8,
       "events": [
         {
           "id": "us7000tgrk",
-          "magnitude": 6.6,
-          "place": "115 km NNE of Teluknaga, Indonesia",
-          "time": "2026-09-11T21:23:55.001Z",
+          "magnitude": 6.5,
+          "place": "126 km NNE of Teluknaga, Indonesia",
+          "time": "2026-09-11T21:23:55.907Z",
           "coordinates": [
-            106.903,
-            -5.0932,
-            358.597
+            106.8742,
+            -4.9832,
+            372
           ],
           "tsunami": false,
-          "significance": 677
+          "significance": 657
         },
         {
           "id": "uw714095342",
@@ -152,27 +152,15 @@
           ],
           "tsunami": false,
           "significance": 1059
-        },
-        {
-          "id": "nc75417557",
-          "magnitude": 3.84,
-          "place": "3 km N of San Leandro, CA",
-          "time": "2026-08-13T15:30:04.700Z",
-          "coordinates": [
-            -122.150166666667,
-            37.7551666666667,
-            5.55
-          ],
-          "tsunami": false,
-          "significance": 607
         }
       ]
     },
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Severe Storms": 5,
-        "Wildfires": 45
+        "Severe Storms": 4,
+        "Wildfires": 44,
+        "Sea and Lake Ice": 2
       },
       "events": [
         {
@@ -186,13 +174,13 @@
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 55,
+            "magnitudeValue": 50,
             "magnitudeUnit": "kts",
-            "date": "2026-09-11T18:00:00Z",
+            "date": "2026-09-12T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              -125.2,
-              16.7
+              -127,
+              17
             ]
           }
         },
@@ -333,6 +321,26 @@
             "coordinates": [
               -104.927967,
               46.586036
+            ]
+          }
+        },
+        {
+          "id": "EONET_6474",
+          "title": "Iceberg D35",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 90,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-09-04T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -44.63,
+              -60.41
             ]
           }
         },
@@ -678,28 +686,6 @@
           }
         },
         {
-          "id": "EONET_23611",
-          "title": "Hurricane Karina",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "EO",
-            "JTWC",
-            "NOAA_NHC"
-          ],
-          "geometry": {
-            "magnitudeValue": 40,
-            "magnitudeUnit": "kts",
-            "date": "2026-09-07T00:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -145.7,
-              23
-            ]
-          }
-        },
-        {
           "id": "EONET_23612",
           "title": "Cyclone Lowell",
           "categories": [
@@ -742,6 +728,26 @@
           }
         },
         {
+          "id": "EONET_12716",
+          "title": "Iceberg A85",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 30,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-09-04T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -53.92,
+              -62.41
+            ]
+          }
+        },
+        {
           "id": "EONET_23453",
           "title": "Wildfire Calico, Humboldt, Nevada",
           "categories": [
@@ -760,26 +766,6 @@
               41.86665
             ]
           }
-        },
-        {
-          "id": "EONET_23672",
-          "title": "Wildfire Dudley, Shoshone, Idaho",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 553,
-            "magnitudeUnit": "acres",
-            "date": "2026-08-26T16:46:00Z",
-            "type": "Point",
-            "coordinates": [
-              -115.920767,
-              47.539417
-            ]
-          }
         }
       ]
     },
@@ -789,55 +775,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -4.4,
-          "surface_pressure": 1007,
-          "wind_speed_10m": 5.58,
-          "relative_humidity_2m": 95
+          "temperature_2m": 1.5,
+          "surface_pressure": 999.4,
+          "wind_speed_10m": 6.97,
+          "relative_humidity_2m": 94
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 15.9,
-          "surface_pressure": 1012.3,
-          "wind_speed_10m": 6.44,
-          "relative_humidity_2m": 75
+          "temperature_2m": 17.2,
+          "surface_pressure": 1009.4,
+          "wind_speed_10m": 12.64,
+          "relative_humidity_2m": 89
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 20,
-          "surface_pressure": 913.5,
-          "wind_speed_10m": 1.9,
-          "relative_humidity_2m": 99
+          "temperature_2m": 27.8,
+          "surface_pressure": 916.4,
+          "wind_speed_10m": 2.44,
+          "relative_humidity_2m": 56
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 27.2,
-          "surface_pressure": 1012.8,
-          "wind_speed_10m": 1.1,
-          "relative_humidity_2m": 81
+          "temperature_2m": 27.6,
+          "surface_pressure": 1012.7,
+          "wind_speed_10m": 2.99,
+          "relative_humidity_2m": 82
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -2.6,
-          "surface_pressure": 1005,
-          "wind_speed_10m": 9.84,
-          "relative_humidity_2m": 85
+          "temperature_2m": -0.4,
+          "surface_pressure": 992.3,
+          "wind_speed_10m": 11.54,
+          "relative_humidity_2m": 94
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -48.6,
-          "surface_pressure": 701.1,
-          "wind_speed_10m": 8.67,
-          "relative_humidity_2m": 64
+          "temperature_2m": -50.8,
+          "surface_pressure": 697.5,
+          "wind_speed_10m": 7.12,
+          "relative_humidity_2m": 62
         }
       ]
     },
