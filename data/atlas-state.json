@@ -1,15 +1,28 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-09-11T16:34:55.292Z",
+    "generatedAt": "2026-09-12T04:44:25.190Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 11,
+      "count": 12,
       "maxMagnitude": 7.8,
       "events": [
+        {
+          "id": "us7000tgrk",
+          "magnitude": 6.6,
+          "place": "115 km NNE of Teluknaga, Indonesia",
+          "time": "2026-09-11T21:23:55.001Z",
+          "coordinates": [
+            106.903,
+            -5.0932,
+            358.597
+          ],
+          "tsunami": false,
+          "significance": 677
+        },
         {
           "id": "uw714095342",
           "magnitude": 3.75,
@@ -173,13 +186,13 @@
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 50,
+            "magnitudeValue": 55,
             "magnitudeUnit": "kts",
-            "date": "2026-09-11T06:00:00Z",
+            "date": "2026-09-11T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              -122.7,
-              16.6
+              -125.2,
+              16.7
             ]
           }
         },
@@ -776,55 +789,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -5.8,
-          "surface_pressure": 1011.9,
-          "wind_speed_10m": 1.11,
-          "relative_humidity_2m": 94
+          "temperature_2m": -4.4,
+          "surface_pressure": 1007,
+          "wind_speed_10m": 5.58,
+          "relative_humidity_2m": 95
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 14.6,
-          "surface_pressure": 1009.8,
-          "wind_speed_10m": 10.51,
-          "relative_humidity_2m": 81
+          "temperature_2m": 15.9,
+          "surface_pressure": 1012.3,
+          "wind_speed_10m": 6.44,
+          "relative_humidity_2m": 75
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 26.6,
-          "surface_pressure": 914.8,
-          "wind_speed_10m": 3.01,
-          "relative_humidity_2m": 64
+          "temperature_2m": 20,
+          "surface_pressure": 913.5,
+          "wind_speed_10m": 1.9,
+          "relative_humidity_2m": 99
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 27.3,
-          "surface_pressure": 1012.9,
-          "wind_speed_10m": 2.86,
-          "relative_humidity_2m": 82
+          "temperature_2m": 27.2,
+          "surface_pressure": 1012.8,
+          "wind_speed_10m": 1.1,
+          "relative_humidity_2m": 81
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -5.1,
-          "surface_pressure": 1009.3,
-          "wind_speed_10m": 9.57,
-          "relative_humidity_2m": 77
+          "temperature_2m": -2.6,
+          "surface_pressure": 1005,
+          "wind_speed_10m": 9.84,
+          "relative_humidity_2m": 85
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -46.2,
-          "surface_pressure": 701.4,
-          "wind_speed_10m": 9.51,
-          "relative_humidity_2m": 65
+          "temperature_2m": -48.6,
+          "surface_pressure": 701.1,
+          "wind_speed_10m": 8.67,
+          "relative_humidity_2m": 64
         }
       ]
     },
