@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-09-14T18:05:48.244Z",
+    "generatedAt": "2026-09-15T05:02:35.874Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -119,9 +119,9 @@
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Severe Storms": 3,
+        "Severe Storms": 2,
         "Sea and Lake Ice": 3,
-        "Wildfires": 44
+        "Wildfires": 45
       },
       "events": [
         {
@@ -137,11 +137,11 @@
           "geometry": {
             "magnitudeValue": 35,
             "magnitudeUnit": "kts",
-            "date": "2026-09-14T12:00:00Z",
+            "date": "2026-09-14T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              -137.1,
-              19.3
+              -138.5,
+              19.6
             ]
           }
         },
@@ -402,26 +402,6 @@
             "coordinates": [
               -103.7858,
               35.5693
-            ]
-          }
-        },
-        {
-          "id": "EONET_23738",
-          "title": "Tropical Storm Krovanh",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "JTWC"
-          ],
-          "geometry": {
-            "magnitudeValue": 25,
-            "magnitudeUnit": "kts",
-            "date": "2026-09-09T06:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              135.9,
-              34.3
             ]
           }
         },
@@ -726,6 +706,26 @@
               41.86665
             ]
           }
+        },
+        {
+          "id": "EONET_23672",
+          "title": "Wildfire Dudley, Shoshone, Idaho",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 553,
+            "magnitudeUnit": "acres",
+            "date": "2026-08-26T16:46:00Z",
+            "type": "Point",
+            "coordinates": [
+              -115.920767,
+              47.539417
+            ]
+          }
         }
       ]
     },
@@ -735,55 +735,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -6.5,
-          "surface_pressure": 1009.7,
-          "wind_speed_10m": 2.74,
-          "relative_humidity_2m": 86
+          "temperature_2m": -2.8,
+          "surface_pressure": 1011.9,
+          "wind_speed_10m": 7.49,
+          "relative_humidity_2m": 84
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 14.1,
-          "surface_pressure": 1029.1,
-          "wind_speed_10m": 9.94,
-          "relative_humidity_2m": 68
+          "temperature_2m": 15.7,
+          "surface_pressure": 1033.5,
+          "wind_speed_10m": 6.99,
+          "relative_humidity_2m": 75
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 28.6,
-          "surface_pressure": 914,
-          "wind_speed_10m": 2.35,
-          "relative_humidity_2m": 50
+          "temperature_2m": 19.7,
+          "surface_pressure": 913.6,
+          "wind_speed_10m": 2.5,
+          "relative_humidity_2m": 98
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 30.4,
-          "surface_pressure": 1011.7,
-          "wind_speed_10m": 2.23,
-          "relative_humidity_2m": 64
+          "temperature_2m": 28.6,
+          "surface_pressure": 1012.9,
+          "wind_speed_10m": 3.02,
+          "relative_humidity_2m": 76
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -6.8,
-          "surface_pressure": 979,
-          "wind_speed_10m": 15.55,
-          "relative_humidity_2m": 76
+          "temperature_2m": -4.4,
+          "surface_pressure": 987.7,
+          "wind_speed_10m": 14.18,
+          "relative_humidity_2m": 66
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -42.7,
-          "surface_pressure": 700.7,
-          "wind_speed_10m": 9.71,
-          "relative_humidity_2m": 59
+          "temperature_2m": -42.8,
+          "surface_pressure": 699.3,
+          "wind_speed_10m": 11.06,
+          "relative_humidity_2m": 50
         }
       ]
     },
