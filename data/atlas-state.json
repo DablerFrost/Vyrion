@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-09-16T04:57:57.226Z",
+    "generatedAt": "2026-09-16T17:06:28.891Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -119,9 +119,9 @@
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Severe Storms": 2,
+        "Severe Storms": 1,
         "Sea and Lake Ice": 3,
-        "Wildfires": 45
+        "Wildfires": 46
       },
       "events": [
         {
@@ -626,28 +626,6 @@
           }
         },
         {
-          "id": "EONET_23612",
-          "title": "Cyclone Lowell",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "EO",
-            "JTWC",
-            "NOAA_NHC"
-          ],
-          "geometry": {
-            "magnitudeValue": 45,
-            "magnitudeUnit": "kts",
-            "date": "2026-09-11T00:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -169.5,
-              29
-            ]
-          }
-        },
-        {
           "id": "EONET_23668",
           "title": "Wildfire Brushy Canyon, Box Elder, Utah",
           "categories": [
@@ -726,6 +704,26 @@
               47.539417
             ]
           }
+        },
+        {
+          "id": "EONET_23681",
+          "title": "Wildfire Plaskett, Monterey, California",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 15479,
+            "magnitudeUnit": "acres",
+            "date": "2026-08-26T12:46:00Z",
+            "type": "Point",
+            "coordinates": [
+              -121.4125,
+              35.905667
+            ]
+          }
         }
       ]
     },
@@ -735,55 +733,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -0.1,
-          "surface_pressure": 1005.1,
-          "wind_speed_10m": 5.52,
-          "relative_humidity_2m": 99
+          "temperature_2m": 0.3,
+          "surface_pressure": 999,
+          "wind_speed_10m": 2.96,
+          "relative_humidity_2m": 95
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 16.5,
+          "temperature_2m": 15,
           "surface_pressure": 1029.5,
-          "wind_speed_10m": 13.44,
-          "relative_humidity_2m": 89
+          "wind_speed_10m": 7.16,
+          "relative_humidity_2m": 85
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 19,
-          "surface_pressure": 913.6,
-          "wind_speed_10m": 1.87,
-          "relative_humidity_2m": 93
+          "temperature_2m": 26.7,
+          "surface_pressure": 915.9,
+          "wind_speed_10m": 2.7,
+          "relative_humidity_2m": 64
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 28.6,
-          "surface_pressure": 1013.3,
-          "wind_speed_10m": 3.16,
+          "temperature_2m": 28.5,
+          "surface_pressure": 1013.5,
+          "wind_speed_10m": 4.55,
           "relative_humidity_2m": 77
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -1.7,
-          "surface_pressure": 979.4,
-          "wind_speed_10m": 12.61,
-          "relative_humidity_2m": 89
+          "temperature_2m": -0.5,
+          "surface_pressure": 995,
+          "wind_speed_10m": 13.91,
+          "relative_humidity_2m": 86
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -40.7,
-          "surface_pressure": 695.1,
-          "wind_speed_10m": 11.71,
-          "relative_humidity_2m": 53
+          "temperature_2m": -39.8,
+          "surface_pressure": 701.7,
+          "wind_speed_10m": 10.65,
+          "relative_humidity_2m": 54
         }
       ]
     },
