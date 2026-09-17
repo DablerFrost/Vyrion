@@ -1,15 +1,28 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-09-17T05:00:35.087Z",
+    "generatedAt": "2026-09-17T17:06:59.143Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 8,
+      "count": 9,
       "maxMagnitude": 6.7,
       "events": [
+        {
+          "id": "us7000ti1p",
+          "magnitude": 6.5,
+          "place": "165 km W of Nikolski, Alaska",
+          "time": "2026-09-17T14:19:53.164Z",
+          "coordinates": [
+            -171.2949,
+            52.7648,
+            111.666
+          ],
+          "tsunami": true,
+          "significance": 652
+        },
         {
           "id": "us7000tgrk",
           "magnitude": 6.5,
@@ -119,11 +132,31 @@
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Severe Storms": 1,
+        "Severe Storms": 2,
         "Sea and Lake Ice": 3,
-        "Wildfires": 46
+        "Wildfires": 45
       },
       "events": [
+        {
+          "id": "EONET_24317",
+          "title": "Tropical Storm Dujuan",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC"
+          ],
+          "geometry": {
+            "magnitudeValue": 35,
+            "magnitudeUnit": "kts",
+            "date": "2026-09-16T12:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              149.5,
+              16.5
+            ]
+          }
+        },
         {
           "id": "EONET_24184",
           "title": "Cyclone Norbert",
@@ -704,26 +737,6 @@
               47.539417
             ]
           }
-        },
-        {
-          "id": "EONET_23681",
-          "title": "Wildfire Plaskett, Monterey, California",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 15479,
-            "magnitudeUnit": "acres",
-            "date": "2026-08-26T12:46:00Z",
-            "type": "Point",
-            "coordinates": [
-              -121.4125,
-              35.905667
-            ]
-          }
         }
       ]
     },
@@ -733,55 +746,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -3,
-          "surface_pressure": 997.8,
-          "wind_speed_10m": 0.96,
-          "relative_humidity_2m": 98
+          "temperature_2m": -8.3,
+          "surface_pressure": 1000.8,
+          "wind_speed_10m": 3.22,
+          "relative_humidity_2m": 95
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 14.4,
-          "surface_pressure": 1026.6,
-          "wind_speed_10m": 4.4,
-          "relative_humidity_2m": 87
+          "temperature_2m": 16.9,
+          "surface_pressure": 1016.5,
+          "wind_speed_10m": 13.22,
+          "relative_humidity_2m": 94
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 19.8,
-          "surface_pressure": 915.9,
-          "wind_speed_10m": 2.65,
-          "relative_humidity_2m": 97
+          "temperature_2m": 29.4,
+          "surface_pressure": 916.8,
+          "wind_speed_10m": 2.89,
+          "relative_humidity_2m": 46
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 29.4,
-          "surface_pressure": 1012.4,
-          "wind_speed_10m": 1.26,
-          "relative_humidity_2m": 68
+          "temperature_2m": 27.7,
+          "surface_pressure": 1012.7,
+          "wind_speed_10m": 0.59,
+          "relative_humidity_2m": 80
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
           "temperature_2m": -0.7,
-          "surface_pressure": 986.8,
-          "wind_speed_10m": 9.38,
-          "relative_humidity_2m": 96
+          "surface_pressure": 990.8,
+          "wind_speed_10m": 12.59,
+          "relative_humidity_2m": 86
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -43.6,
-          "surface_pressure": 705.8,
-          "wind_speed_10m": 8.99,
-          "relative_humidity_2m": 54
+          "temperature_2m": -43.7,
+          "surface_pressure": 705.1,
+          "wind_speed_10m": 8.62,
+          "relative_humidity_2m": 57
         }
       ]
     },
