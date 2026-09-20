@@ -1,14 +1,14 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-09-19T15:56:21.875Z",
+    "generatedAt": "2026-09-20T05:02:07.815Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 9,
-      "maxMagnitude": 6.7,
+      "count": 8,
+      "maxMagnitude": 6.5,
       "events": [
         {
           "id": "us7000ti1p",
@@ -113,30 +113,58 @@
           ],
           "tsunami": false,
           "significance": 606
-        },
-        {
-          "id": "us6000tm81",
-          "magnitude": 6.7,
-          "place": "38 km NE of Tambo, Peru",
-          "time": "2026-08-20T18:00:18.619Z",
-          "coordinates": [
-            -73.6538,
-            -14.5704,
-            99
-          ],
-          "tsunami": false,
-          "significance": 730
         }
       ]
     },
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Wildfires": 44,
-        "Severe Storms": 2,
-        "Sea and Lake Ice": 4
+        "Sea and Lake Ice": 6,
+        "Wildfires": 42,
+        "Severe Storms": 2
       },
       "events": [
+        {
+          "id": "EONET_6523",
+          "title": "Iceberg A83",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "EO",
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 84,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-09-18T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -51.39,
+              -61.27
+            ]
+          }
+        },
+        {
+          "id": "EONET_10212",
+          "title": "Iceberg B22F",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 98,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-09-18T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -176.03,
+              -67.52
+            ]
+          }
+        },
         {
           "id": "EONET_24483",
           "title": "Wildfire Breezy, Starr, Texas",
@@ -189,11 +217,11 @@
           "geometry": {
             "magnitudeValue": 65,
             "magnitudeUnit": "kts",
-            "date": "2026-09-19T06:00:00Z",
+            "date": "2026-09-19T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              139.1,
-              27
+              137.7,
+              28.5
             ]
           }
         },
@@ -697,46 +725,6 @@
               41.95365
             ]
           }
-        },
-        {
-          "id": "EONET_24100",
-          "title": "Wildfire S7, Broward, Florida",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 884,
-            "magnitudeUnit": "acres",
-            "date": "2026-09-04T15:16:00Z",
-            "type": "Point",
-            "coordinates": [
-              -80.4997222,
-              26.3258333
-            ]
-          }
-        },
-        {
-          "id": "EONET_24096",
-          "title": "Wildfire Needles, Oglala Lakota, South Dakota",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 6017.81,
-            "magnitudeUnit": "acres",
-            "date": "2026-09-04T13:53:00Z",
-            "type": "Point",
-            "coordinates": [
-              -102.311123,
-              43.30421421
-            ]
-          }
         }
       ]
     },
@@ -746,55 +734,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -5.5,
-          "surface_pressure": 1005.6,
-          "wind_speed_10m": 1.12,
-          "relative_humidity_2m": 92
+          "temperature_2m": -9.8,
+          "surface_pressure": 1007.1,
+          "wind_speed_10m": 6.36,
+          "relative_humidity_2m": 94
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 14.4,
-          "surface_pressure": 1013.1,
-          "wind_speed_10m": 8.48,
-          "relative_humidity_2m": 78
+          "temperature_2m": 18,
+          "surface_pressure": 1003.5,
+          "wind_speed_10m": 14.94,
+          "relative_humidity_2m": 93
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 27.2,
-          "surface_pressure": 917,
-          "wind_speed_10m": 2.88,
-          "relative_humidity_2m": 54
+          "temperature_2m": 18.7,
+          "surface_pressure": 914.4,
+          "wind_speed_10m": 1.45,
+          "relative_humidity_2m": 95
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 27.8,
-          "surface_pressure": 1014.5,
-          "wind_speed_10m": 5.88,
-          "relative_humidity_2m": 82
+          "temperature_2m": 28.4,
+          "surface_pressure": 1013.8,
+          "wind_speed_10m": 6.38,
+          "relative_humidity_2m": 80
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -2.7,
-          "surface_pressure": 1008,
-          "wind_speed_10m": 10.3,
-          "relative_humidity_2m": 68
+          "temperature_2m": -1.1,
+          "surface_pressure": 1007,
+          "wind_speed_10m": 11.52,
+          "relative_humidity_2m": 90
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -49.9,
-          "surface_pressure": 689.2,
-          "wind_speed_10m": 6.63,
-          "relative_humidity_2m": 56
+          "temperature_2m": -51.5,
+          "surface_pressure": 690.1,
+          "wind_speed_10m": 6.31,
+          "relative_humidity_2m": 64
         }
       ]
     },
