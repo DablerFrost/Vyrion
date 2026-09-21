@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-09-20T16:14:32.575Z",
+    "generatedAt": "2026-09-21T05:08:01.554Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -133,8 +133,8 @@
       "totalActive": 50,
       "byCategory": {
         "Sea and Lake Ice": 6,
-        "Wildfires": 42,
-        "Severe Storms": 2
+        "Wildfires": 43,
+        "Severe Storms": 1
       },
       "events": [
         {
@@ -230,11 +230,11 @@
           "geometry": {
             "magnitudeValue": 60,
             "magnitudeUnit": "kts",
-            "date": "2026-09-20T06:00:00Z",
+            "date": "2026-09-20T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              137.5,
-              29.8
+              137.9,
+              31.3
             ]
           }
         },
@@ -599,27 +599,6 @@
           }
         },
         {
-          "id": "EONET_24184",
-          "title": "Cyclone Norbert",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "JTWC",
-            "NOAA_NHC"
-          ],
-          "geometry": {
-            "magnitudeValue": 30,
-            "magnitudeUnit": "kts",
-            "date": "2026-09-15T12:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -142.4,
-              20.4
-            ]
-          }
-        },
-        {
           "id": "EONET_12618",
           "title": "Iceberg A84",
           "categories": [
@@ -738,6 +717,26 @@
               41.95365
             ]
           }
+        },
+        {
+          "id": "EONET_24100",
+          "title": "Wildfire S7, Broward, Florida",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 884,
+            "magnitudeUnit": "acres",
+            "date": "2026-09-04T15:16:00Z",
+            "type": "Point",
+            "coordinates": [
+              -80.4997222,
+              26.3258333
+            ]
+          }
         }
       ]
     },
@@ -747,55 +746,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -6.8,
-          "surface_pressure": 1010.3,
-          "wind_speed_10m": 6.55,
-          "relative_humidity_2m": 88
+          "temperature_2m": -7.6,
+          "surface_pressure": 1013.7,
+          "wind_speed_10m": 5.55,
+          "relative_humidity_2m": 92
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 16.7,
-          "surface_pressure": 1004.4,
-          "wind_speed_10m": 8.63,
-          "relative_humidity_2m": 92
+          "temperature_2m": 15.8,
+          "surface_pressure": 1013.3,
+          "wind_speed_10m": 13.28,
+          "relative_humidity_2m": 70
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 28.4,
-          "surface_pressure": 917.7,
-          "wind_speed_10m": 2.57,
-          "relative_humidity_2m": 50
+          "temperature_2m": 19.2,
+          "surface_pressure": 914.6,
+          "wind_speed_10m": 2.33,
+          "relative_humidity_2m": 99
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 29.3,
-          "surface_pressure": 1014.2,
-          "wind_speed_10m": 1.9,
-          "relative_humidity_2m": 72
+          "temperature_2m": 29.4,
+          "surface_pressure": 1012,
+          "wind_speed_10m": 0.45,
+          "relative_humidity_2m": 66
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": 0.3,
-          "surface_pressure": 1002,
-          "wind_speed_10m": 13.97,
-          "relative_humidity_2m": 95
+          "temperature_2m": -0.8,
+          "surface_pressure": 990.2,
+          "wind_speed_10m": 14.83,
+          "relative_humidity_2m": 92
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -49.7,
-          "surface_pressure": 694.4,
-          "wind_speed_10m": 6.33,
-          "relative_humidity_2m": 65
+          "temperature_2m": -52.6,
+          "surface_pressure": 691.8,
+          "wind_speed_10m": 6.64,
+          "relative_humidity_2m": 70
         }
       ]
     },
