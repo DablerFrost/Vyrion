@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-09-24T05:03:06.467Z",
+    "generatedAt": "2026-09-24T17:17:54.205Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -106,11 +106,51 @@
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Severe Storms": 5,
-        "Wildfires": 39,
-        "Sea and Lake Ice": 6
+        "Severe Storms": 7,
+        "Wildfires": 38,
+        "Sea and Lake Ice": 5
       },
       "events": [
+        {
+          "id": "EONET_24786",
+          "title": "Tropical Storm Nolo",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC"
+          ],
+          "geometry": {
+            "magnitudeValue": 40,
+            "magnitudeUnit": "kts",
+            "date": "2026-09-24T06:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -156,
+              14.8
+            ]
+          }
+        },
+        {
+          "id": "EONET_24787",
+          "title": "Tropical Storm Surigae",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC"
+          ],
+          "geometry": {
+            "magnitudeValue": 40,
+            "magnitudeUnit": "kts",
+            "date": "2026-09-24T12:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              132.5,
+              18.6
+            ]
+          }
+        },
         {
           "id": "EONET_24785",
           "title": "Tropical Cyclone 01B",
@@ -142,13 +182,13 @@
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 140,
+            "magnitudeValue": 135,
             "magnitudeUnit": "kts",
-            "date": "2026-09-24T00:00:00Z",
+            "date": "2026-09-24T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              -102.3,
-              15.8
+              -103.9,
+              16.7
             ]
           }
         },
@@ -182,13 +222,13 @@
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 40,
+            "magnitudeValue": 35,
             "magnitudeUnit": "kts",
-            "date": "2026-09-21T21:00:00Z",
+            "date": "2026-09-24T09:00:00Z",
             "type": "Point",
             "coordinates": [
-              -32.2,
-              33.1
+              -40.5,
+              29.8
             ]
           }
         },
@@ -203,13 +243,13 @@
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 75,
+            "magnitudeValue": 80,
             "magnitudeUnit": "kts",
-            "date": "2026-09-24T00:00:00Z",
+            "date": "2026-09-24T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              -126.9,
-              15.6
+              -125.8,
+              16.2
             ]
           }
         },
@@ -673,46 +713,6 @@
               34.225084
             ]
           }
-        },
-        {
-          "id": "EONET_24713",
-          "title": "Prescribed Fire D7 Butler West RX, Apache, Arizona",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 788,
-            "magnitudeUnit": "acres",
-            "date": "2026-09-14T11:03:00Z",
-            "type": "Point",
-            "coordinates": [
-              -109.720126,
-              34.191317
-            ]
-          }
-        },
-        {
-          "id": "EONET_24714",
-          "title": "Prescribed Fire D7 Brushy Mtn South RX, Apache, Arizona",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 887,
-            "magnitudeUnit": "acres",
-            "date": "2026-09-14T11:01:00Z",
-            "type": "Point",
-            "coordinates": [
-              -109.811902,
-              34.127578
-            ]
-          }
         }
       ]
     },
@@ -722,55 +722,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -7.2,
-          "surface_pressure": 1006.6,
-          "wind_speed_10m": 6.47,
-          "relative_humidity_2m": 86
+          "temperature_2m": -9.7,
+          "surface_pressure": 1012.1,
+          "wind_speed_10m": 3.23,
+          "relative_humidity_2m": 94
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 12.5,
-          "surface_pressure": 1012.6,
-          "wind_speed_10m": 15.73,
-          "relative_humidity_2m": 63
+          "temperature_2m": 12.6,
+          "surface_pressure": 1016.5,
+          "wind_speed_10m": 12.68,
+          "relative_humidity_2m": 70
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 19.1,
-          "surface_pressure": 913.3,
-          "wind_speed_10m": 1.98,
-          "relative_humidity_2m": 100
+          "temperature_2m": 28.3,
+          "surface_pressure": 914.3,
+          "wind_speed_10m": 2.25,
+          "relative_humidity_2m": 54
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 26.8,
-          "surface_pressure": 1012.7,
-          "wind_speed_10m": 0.51,
-          "relative_humidity_2m": 83
+          "temperature_2m": 27.9,
+          "surface_pressure": 1013,
+          "wind_speed_10m": 1.51,
+          "relative_humidity_2m": 82
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -2.5,
-          "surface_pressure": 981.4,
-          "wind_speed_10m": 13.43,
-          "relative_humidity_2m": 89
+          "temperature_2m": -5.7,
+          "surface_pressure": 997.6,
+          "wind_speed_10m": 2.95,
+          "relative_humidity_2m": 93
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -50.4,
-          "surface_pressure": 694.7,
-          "wind_speed_10m": 8.35,
-          "relative_humidity_2m": 71
+          "temperature_2m": -47.6,
+          "surface_pressure": 698.8,
+          "wind_speed_10m": 7.88,
+          "relative_humidity_2m": 74
         }
       ]
     },
