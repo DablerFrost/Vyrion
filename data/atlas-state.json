@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-09-26T16:29:31.652Z",
+    "generatedAt": "2026-09-27T05:27:13.645Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -107,8 +107,8 @@
       "totalActive": 50,
       "byCategory": {
         "Severe Storms": 8,
-        "Wildfires": 39,
-        "Sea and Lake Ice": 3
+        "Sea and Lake Ice": 4,
+        "Wildfires": 38
       },
       "events": [
         {
@@ -132,6 +132,26 @@
           }
         },
         {
+          "id": "EONET_6510",
+          "title": "Iceberg D33C",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 45,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-09-24T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -54.38,
+              -61.95
+            ]
+          }
+        },
+        {
           "id": "EONET_24786",
           "title": "Hurricane Nolo",
           "categories": [
@@ -141,13 +161,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 90,
+            "magnitudeValue": 80,
             "magnitudeUnit": "kts",
-            "date": "2026-09-26T06:00:00Z",
+            "date": "2026-09-27T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -155.2,
-              16.9
+              -156.1,
+              16.7
             ]
           }
         },
@@ -161,13 +181,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 70,
+            "magnitudeValue": 90,
             "magnitudeUnit": "kts",
-            "date": "2026-09-26T06:00:00Z",
+            "date": "2026-09-27T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              126.8,
-              22.9
+              127.6,
+              24.6
             ]
           }
         },
@@ -222,13 +242,13 @@
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 150,
+            "magnitudeValue": 110,
             "magnitudeUnit": "kts",
-            "date": "2026-09-26T06:00:00Z",
+            "date": "2026-09-27T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -110.5,
-              17.5
+              -112.9,
+              19
             ]
           }
         },
@@ -283,13 +303,13 @@
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 105,
+            "magnitudeValue": 75,
             "magnitudeUnit": "kts",
-            "date": "2026-09-26T06:00:00Z",
+            "date": "2026-09-27T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -123.8,
-              18.8
+              -123.6,
+              20.8
             ]
           }
         },
@@ -693,26 +713,6 @@
               33.5744871
             ]
           }
-        },
-        {
-          "id": "EONET_24477",
-          "title": "Wildfire Black Kettle, Roger Mills, Oklahoma",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1526.5,
-            "magnitudeUnit": "acres",
-            "date": "2026-09-14T13:07:00Z",
-            "type": "Point",
-            "coordinates": [
-              -99.6561111,
-              35.7588889
-            ]
-          }
         }
       ]
     },
@@ -722,54 +722,54 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -9.2,
-          "surface_pressure": 1008.5,
-          "wind_speed_10m": 6,
-          "relative_humidity_2m": 94
+          "temperature_2m": -7.4,
+          "surface_pressure": 1007.5,
+          "wind_speed_10m": 5.85,
+          "relative_humidity_2m": 93
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 12.1,
-          "surface_pressure": 1011,
-          "wind_speed_10m": 12.21,
-          "relative_humidity_2m": 69
+          "temperature_2m": 12,
+          "surface_pressure": 1013.6,
+          "wind_speed_10m": 9.9,
+          "relative_humidity_2m": 72
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 29,
-          "surface_pressure": 916.3,
-          "wind_speed_10m": 1.82,
-          "relative_humidity_2m": 48
+          "temperature_2m": 18.5,
+          "surface_pressure": 913.1,
+          "wind_speed_10m": 1.46,
+          "relative_humidity_2m": 95
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 27.1,
-          "surface_pressure": 1013.7,
-          "wind_speed_10m": 1.08,
+          "temperature_2m": 28.6,
+          "surface_pressure": 1011.9,
+          "wind_speed_10m": 4.45,
           "relative_humidity_2m": 82
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -0.3,
-          "surface_pressure": 996.2,
-          "wind_speed_10m": 6.67,
-          "relative_humidity_2m": 97
+          "temperature_2m": 1.1,
+          "surface_pressure": 989.9,
+          "wind_speed_10m": 17.12,
+          "relative_humidity_2m": 95
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -40.7,
-          "surface_pressure": 700.9,
-          "wind_speed_10m": 9.02,
+          "temperature_2m": -44.2,
+          "surface_pressure": 702.6,
+          "wind_speed_10m": 9.22,
           "relative_humidity_2m": 63
         }
       ]
