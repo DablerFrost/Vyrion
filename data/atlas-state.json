@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-09-27T17:02:58.860Z",
+    "generatedAt": "2026-09-28T05:34:47.918Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -112,6 +112,27 @@
       },
       "events": [
         {
+          "id": "EONET_24875",
+          "title": "Tropical Storm Rachel",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC",
+            "NOAA_NHC"
+          ],
+          "geometry": {
+            "magnitudeValue": 35,
+            "magnitudeUnit": "kts",
+            "date": "2026-09-28T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -99.5,
+              12.8
+            ]
+          }
+        },
+        {
           "id": "EONET_24811",
           "title": "Tropical Storm Gonzalo",
           "categories": [
@@ -121,13 +142,13 @@
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 40,
+            "magnitudeValue": 35,
             "magnitudeUnit": "kts",
-            "date": "2026-09-25T09:00:00Z",
+            "date": "2026-09-26T21:00:00Z",
             "type": "Point",
             "coordinates": [
-              -22.4,
-              14.2
+              -23.3,
+              19.3
             ]
           }
         },
@@ -161,19 +182,19 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 85,
+            "magnitudeValue": 115,
             "magnitudeUnit": "kts",
-            "date": "2026-09-27T06:00:00Z",
+            "date": "2026-09-28T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -156.9,
-              16.6
+              -159.8,
+              16.2
             ]
           }
         },
         {
           "id": "EONET_24787",
-          "title": "Typhoon Surigae",
+          "title": "Super Typhoon Surigae",
           "categories": [
             "Severe Storms"
           ],
@@ -181,13 +202,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 105,
+            "magnitudeValue": 120,
             "magnitudeUnit": "kts",
-            "date": "2026-09-27T06:00:00Z",
+            "date": "2026-09-28T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              128.3,
-              25.4
+              130.9,
+              26.6
             ]
           }
         },
@@ -238,17 +259,18 @@
             "Severe Storms"
           ],
           "sources": [
+            "EO",
             "JTWC",
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 105,
+            "magnitudeValue": 110,
             "magnitudeUnit": "kts",
-            "date": "2026-09-27T06:00:00Z",
+            "date": "2026-09-28T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -113.4,
-              19.8
+              -114.1,
+              22.4
             ]
           }
         },
@@ -282,13 +304,13 @@
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 45,
+            "magnitudeValue": 30,
             "magnitudeUnit": "kts",
-            "date": "2026-09-25T09:00:00Z",
+            "date": "2026-09-27T21:00:00Z",
             "type": "Point",
             "coordinates": [
-              -42.8,
-              29.8
+              -44,
+              28.9
             ]
           }
         },
@@ -303,13 +325,13 @@
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 70,
+            "magnitudeValue": 40,
             "magnitudeUnit": "kts",
-            "date": "2026-09-27T06:00:00Z",
+            "date": "2026-09-27T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              -123.5,
-              21.6
+              -123.2,
+              22.7
             ]
           }
         },
@@ -451,26 +473,6 @@
             "coordinates": [
               -120.025216,
               39.394425
-            ]
-          }
-        },
-        {
-          "id": "EONET_24317",
-          "title": "Typhoon Dujuan",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "JTWC"
-          ],
-          "geometry": {
-            "magnitudeValue": 60,
-            "magnitudeUnit": "kts",
-            "date": "2026-09-22T06:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              150.2,
-              39
             ]
           }
         },
@@ -722,52 +724,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -6.6,
-          "surface_pressure": 1008.9,
-          "wind_speed_10m": 5.65,
-          "relative_humidity_2m": 92
+          "temperature_2m": -6.2,
+          "surface_pressure": 1006.9,
+          "wind_speed_10m": 7.65,
+          "relative_humidity_2m": 91
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 12.5,
-          "surface_pressure": 1007.9,
-          "wind_speed_10m": 11.95,
+          "temperature_2m": 12.2,
+          "surface_pressure": 996.5,
+          "wind_speed_10m": 9.26,
           "relative_humidity_2m": 77
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 28.2,
-          "surface_pressure": 915.3,
-          "wind_speed_10m": 2.51,
-          "relative_humidity_2m": 60
+          "temperature_2m": 20.1,
+          "surface_pressure": 914.5,
+          "wind_speed_10m": 2.27,
+          "relative_humidity_2m": 99
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 29.5,
-          "surface_pressure": 1011.2,
-          "wind_speed_10m": 6.75,
-          "relative_humidity_2m": 76
+          "temperature_2m": 30.1,
+          "surface_pressure": 1011.1,
+          "wind_speed_10m": 6.37,
+          "relative_humidity_2m": 73
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -0.6,
-          "surface_pressure": 989.8,
-          "wind_speed_10m": 13.57,
-          "relative_humidity_2m": 87
+          "temperature_2m": -3.2,
+          "surface_pressure": 1004.9,
+          "wind_speed_10m": 12.83,
+          "relative_humidity_2m": 62
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "error": "fetch_failed"
+          "temperature_2m": -46,
+          "surface_pressure": 701.3,
+          "wind_speed_10m": 8.65,
+          "relative_humidity_2m": 59
         }
       ]
     },
