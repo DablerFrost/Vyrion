@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-09-29T05:52:38.295Z",
+    "generatedAt": "2026-09-29T18:07:45.967Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -106,8 +106,8 @@
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Severe Storms": 9,
-        "Wildfires": 37,
+        "Severe Storms": 8,
+        "Wildfires": 38,
         "Sea and Lake Ice": 4
       },
       "events": [
@@ -142,13 +142,13 @@
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 50,
+            "magnitudeValue": 55,
             "magnitudeUnit": "kts",
-            "date": "2026-09-29T00:00:00Z",
+            "date": "2026-09-29T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              -102.5,
-              14.3
+              -104.8,
+              15.1
             ]
           }
         },
@@ -262,13 +262,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 125,
+            "magnitudeValue": 100,
             "magnitudeUnit": "kts",
-            "date": "2026-09-29T00:00:00Z",
+            "date": "2026-09-29T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              -163.5,
-              18.3
+              -164.2,
+              20.1
             ]
           }
         },
@@ -282,13 +282,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 55,
+            "magnitudeValue": 45,
             "magnitudeUnit": "kts",
-            "date": "2026-09-29T00:00:00Z",
+            "date": "2026-09-29T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              133.9,
-              28.6
+              136.3,
+              29.2
             ]
           }
         },
@@ -333,26 +333,6 @@
           }
         },
         {
-          "id": "EONET_24785",
-          "title": "Tropical Cyclone 01B",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "JTWC"
-          ],
-          "geometry": {
-            "magnitudeValue": 35,
-            "magnitudeUnit": "kts",
-            "date": "2026-09-24T00:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              83.7,
-              18.1
-            ]
-          }
-        },
-        {
           "id": "EONET_24721",
           "title": "Hurricane Polo",
           "categories": [
@@ -364,13 +344,13 @@
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 100,
+            "magnitudeValue": 65,
             "magnitudeUnit": "kts",
-            "date": "2026-09-29T00:00:00Z",
+            "date": "2026-09-29T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              -112.8,
-              25.5
+              -111.5,
+              26.9
             ]
           }
         },
@@ -715,6 +695,26 @@
               32.42654762
             ]
           }
+        },
+        {
+          "id": "EONET_24484",
+          "title": "Wildfire DOME, Mariposa, California",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 1177,
+            "magnitudeUnit": "acres",
+            "date": "2026-09-15T11:29:00Z",
+            "type": "Point",
+            "coordinates": [
+              -119.616167,
+              37.5662
+            ]
+          }
         }
       ]
     },
@@ -724,55 +724,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -10.7,
-          "surface_pressure": 1008.9,
-          "wind_speed_10m": 9.85,
-          "relative_humidity_2m": 90
+          "temperature_2m": -13.7,
+          "surface_pressure": 1021.6,
+          "wind_speed_10m": 4.14,
+          "relative_humidity_2m": 88
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 11.1,
-          "surface_pressure": 997.7,
-          "wind_speed_10m": 15.81,
-          "relative_humidity_2m": 77
+          "temperature_2m": 11.4,
+          "surface_pressure": 1005.1,
+          "wind_speed_10m": 14.98,
+          "relative_humidity_2m": 67
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 19.1,
-          "surface_pressure": 912.6,
-          "wind_speed_10m": 2.77,
-          "relative_humidity_2m": 99
+          "temperature_2m": 29.4,
+          "surface_pressure": 912.8,
+          "wind_speed_10m": 2.8,
+          "relative_humidity_2m": 41
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 28.4,
-          "surface_pressure": 1013.4,
-          "wind_speed_10m": 4.48,
-          "relative_humidity_2m": 79
+          "temperature_2m": 28.2,
+          "surface_pressure": 1013.1,
+          "wind_speed_10m": 1.77,
+          "relative_humidity_2m": 80
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -2.4,
-          "surface_pressure": 1008.7,
-          "wind_speed_10m": 11.55,
-          "relative_humidity_2m": 81
+          "temperature_2m": -2.7,
+          "surface_pressure": 997.7,
+          "wind_speed_10m": 7.73,
+          "relative_humidity_2m": 85
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -45.4,
-          "surface_pressure": 691,
-          "wind_speed_10m": 8.57,
-          "relative_humidity_2m": 67
+          "temperature_2m": -43.5,
+          "surface_pressure": 693.8,
+          "wind_speed_10m": 7.84,
+          "relative_humidity_2m": 64
         }
       ]
     },
