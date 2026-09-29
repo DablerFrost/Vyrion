@@ -1,8 +1,8 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-09-28T19:43:00.074Z",
-    "sourcesResolved": 2,
+    "generatedAt": "2026-09-29T05:52:38.295Z",
+    "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
@@ -104,7 +104,619 @@
       ]
     },
     "hazards": {
-      "error": "[NASA EONET] This operation was aborted"
+      "totalActive": 50,
+      "byCategory": {
+        "Severe Storms": 9,
+        "Wildfires": 37,
+        "Sea and Lake Ice": 4
+      },
+      "events": [
+        {
+          "id": "EONET_24909",
+          "title": "Tropical Storm Hanna",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "NOAA_NHC"
+          ],
+          "geometry": {
+            "magnitudeValue": 40,
+            "magnitudeUnit": "kts",
+            "date": "2026-09-28T15:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -50.4,
+              36.6
+            ]
+          }
+        },
+        {
+          "id": "EONET_24875",
+          "title": "Tropical Storm Rachel",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC",
+            "NOAA_NHC"
+          ],
+          "geometry": {
+            "magnitudeValue": 50,
+            "magnitudeUnit": "kts",
+            "date": "2026-09-29T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -102.5,
+              14.3
+            ]
+          }
+        },
+        {
+          "id": "EONET_24904",
+          "title": "Wildfire Rafter 4B, Schleicher, Texas",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 2125,
+            "magnitudeUnit": "acres",
+            "date": "2026-09-26T15:18:00Z",
+            "type": "Point",
+            "coordinates": [
+              -100.49806,
+              30.76633
+            ]
+          }
+        },
+        {
+          "id": "EONET_24905",
+          "title": "Wildfire SECOND STREET, Benton, Washington",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 1151,
+            "magnitudeUnit": "acres",
+            "date": "2026-09-25T18:57:00Z",
+            "type": "Point",
+            "coordinates": [
+              -119.470139,
+              46.253671
+            ]
+          }
+        },
+        {
+          "id": "EONET_24811",
+          "title": "Tropical Storm Gonzalo",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "NOAA_NHC"
+          ],
+          "geometry": {
+            "magnitudeValue": 35,
+            "magnitudeUnit": "kts",
+            "date": "2026-09-26T21:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -23.3,
+              19.3
+            ]
+          }
+        },
+        {
+          "id": "EONET_24908",
+          "title": "Prescribed Fire Bonanza Ridge RX, Broadwater, Montana",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 550,
+            "magnitudeUnit": "acres",
+            "date": "2026-09-24T12:55:00Z",
+            "type": "Point",
+            "coordinates": [
+              -111.7702,
+              46.2447
+            ]
+          }
+        },
+        {
+          "id": "EONET_6510",
+          "title": "Iceberg D33C",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 45,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-09-24T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -54.38,
+              -61.95
+            ]
+          }
+        },
+        {
+          "id": "EONET_24786",
+          "title": "Hurricane Nolo",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC"
+          ],
+          "geometry": {
+            "magnitudeValue": 125,
+            "magnitudeUnit": "kts",
+            "date": "2026-09-29T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -163.5,
+              18.3
+            ]
+          }
+        },
+        {
+          "id": "EONET_24787",
+          "title": "Super Typhoon Surigae",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC"
+          ],
+          "geometry": {
+            "magnitudeValue": 55,
+            "magnitudeUnit": "kts",
+            "date": "2026-09-29T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              133.9,
+              28.6
+            ]
+          }
+        },
+        {
+          "id": "EONET_24809",
+          "title": "Wildfire Merit Creek, Greene, Mississippi",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 828,
+            "magnitudeUnit": "acres",
+            "date": "2026-09-23T10:12:00Z",
+            "type": "Point",
+            "coordinates": [
+              -88.83785,
+              31.052583
+            ]
+          }
+        },
+        {
+          "id": "EONET_24907",
+          "title": "Prescribed Fire Kelly Gulch RX, Lewis and Clark, Montana",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 1250,
+            "magnitudeUnit": "acres",
+            "date": "2026-09-22T13:20:00Z",
+            "type": "Point",
+            "coordinates": [
+              -111.726667,
+              46.735
+            ]
+          }
+        },
+        {
+          "id": "EONET_24785",
+          "title": "Tropical Cyclone 01B",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC"
+          ],
+          "geometry": {
+            "magnitudeValue": 35,
+            "magnitudeUnit": "kts",
+            "date": "2026-09-24T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              83.7,
+              18.1
+            ]
+          }
+        },
+        {
+          "id": "EONET_24721",
+          "title": "Hurricane Polo",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "EO",
+            "JTWC",
+            "NOAA_NHC"
+          ],
+          "geometry": {
+            "magnitudeValue": 100,
+            "magnitudeUnit": "kts",
+            "date": "2026-09-29T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -112.8,
+              25.5
+            ]
+          }
+        },
+        {
+          "id": "EONET_24710",
+          "title": "Wildfire Round Prarie, Morehouse, Louisiana",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 738.55,
+            "magnitudeUnit": "acres",
+            "date": "2026-09-20T17:32:00Z",
+            "type": "Point",
+            "coordinates": [
+              -91.989455,
+              32.858241
+            ]
+          }
+        },
+        {
+          "id": "EONET_24722",
+          "title": "Tropical Storm Fay",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "NOAA_NHC"
+          ],
+          "geometry": {
+            "magnitudeValue": 30,
+            "magnitudeUnit": "kts",
+            "date": "2026-09-27T21:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -44,
+              28.9
+            ]
+          }
+        },
+        {
+          "id": "EONET_24720",
+          "title": "Hurricane Odalys",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC",
+            "NOAA_NHC"
+          ],
+          "geometry": {
+            "magnitudeValue": 40,
+            "magnitudeUnit": "kts",
+            "date": "2026-09-27T18:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -123.2,
+              22.7
+            ]
+          }
+        },
+        {
+          "id": "EONET_24810",
+          "title": "Prescribed Fire CRAWFORD CORRAL RX, Tulare, California",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 690,
+            "magnitudeUnit": "acres",
+            "date": "2026-09-19T13:26:00Z",
+            "type": "Point",
+            "coordinates": [
+              -118.9721,
+              36.601661
+            ]
+          }
+        },
+        {
+          "id": "EONET_24906",
+          "title": "Prescribed Fire Bear River MBR Unit 2c RX, Box Elder, Utah",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 710,
+            "magnitudeUnit": "acres",
+            "date": "2026-09-18T15:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -112.314683,
+              41.4797
+            ]
+          }
+        },
+        {
+          "id": "EONET_6523",
+          "title": "Iceberg A83",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "EO",
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 84,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-09-18T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -51.39,
+              -61.27
+            ]
+          }
+        },
+        {
+          "id": "EONET_10212",
+          "title": "Iceberg B22F",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 98,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-09-18T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -176.03,
+              -67.52
+            ]
+          }
+        },
+        {
+          "id": "EONET_24719",
+          "title": "Prescribed Fire D2 Dye RX, Coconino, Arizona",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 5246,
+            "magnitudeUnit": "acres",
+            "date": "2026-09-17T17:44:00Z",
+            "type": "Point",
+            "coordinates": [
+              -110.9112,
+              34.43545
+            ]
+          }
+        },
+        {
+          "id": "EONET_24718",
+          "title": "Prescribed Fire D2 Vincent RX, Coconino, Arizona",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 2258,
+            "magnitudeUnit": "acres",
+            "date": "2026-09-17T17:35:00Z",
+            "type": "Point",
+            "coordinates": [
+              -110.965566,
+              34.446292
+            ]
+          }
+        },
+        {
+          "id": "EONET_24483",
+          "title": "Wildfire Breezy, Starr, Texas",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 500,
+            "magnitudeUnit": "acres",
+            "date": "2026-09-16T20:17:00Z",
+            "type": "Point",
+            "coordinates": [
+              -98.712896,
+              26.45826
+            ]
+          }
+        },
+        {
+          "id": "EONET_24488",
+          "title": "Wildfire FLORISTON, Nevada, California",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 610,
+            "magnitudeUnit": "acres",
+            "date": "2026-09-16T13:01:00Z",
+            "type": "Point",
+            "coordinates": [
+              -120.025216,
+              39.394425
+            ]
+          }
+        },
+        {
+          "id": "EONET_24499",
+          "title": "Prescribed Fire RX CALV BU 104-108, Vernon, Louisiana",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 878,
+            "magnitudeUnit": "acres",
+            "date": "2026-09-16T09:08:00Z",
+            "type": "Point",
+            "coordinates": [
+              -93.164867,
+              30.957333
+            ]
+          }
+        },
+        {
+          "id": "EONET_24482",
+          "title": "Wildfire Clark, Edwards, Texas",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 1523,
+            "magnitudeUnit": "acres",
+            "date": "2026-09-16T00:29:00Z",
+            "type": "Point",
+            "coordinates": [
+              -100.3453084,
+              29.9328492
+            ]
+          }
+        },
+        {
+          "id": "EONET_24476",
+          "title": "Wildfire Calvary Creek, Washita, Oklahoma",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 905.9,
+            "magnitudeUnit": "acres",
+            "date": "2026-09-15T17:09:00Z",
+            "type": "Point",
+            "coordinates": [
+              -98.9880556,
+              35.1580556
+            ]
+          }
+        },
+        {
+          "id": "EONET_24481",
+          "title": "Wildfire Dry River, Sutton, Texas",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 8761,
+            "magnitudeUnit": "acres",
+            "date": "2026-09-15T16:59:00Z",
+            "type": "Point",
+            "coordinates": [
+              -100.7446997,
+              30.54096369
+            ]
+          }
+        },
+        {
+          "id": "EONET_24478",
+          "title": "Wildfire BLUE LAKE, Indian River, Florida",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 950,
+            "magnitudeUnit": "acres",
+            "date": "2026-09-15T16:38:00Z",
+            "type": "Point",
+            "coordinates": [
+              -80.7169444,
+              27.7427778
+            ]
+          }
+        },
+        {
+          "id": "EONET_24485",
+          "title": "Wildfire Lobo, Eastland, Texas",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 658,
+            "magnitudeUnit": "acres",
+            "date": "2026-09-15T14:12:00Z",
+            "type": "Point",
+            "coordinates": [
+              -98.93066189,
+              32.42654762
+            ]
+          }
+        }
+      ]
     },
     "atmospheric": {
       "referencePoints": [
@@ -112,55 +724,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -6.1,
-          "surface_pressure": 1003.7,
-          "wind_speed_10m": 7.76,
-          "relative_humidity_2m": 92
+          "temperature_2m": -10.7,
+          "surface_pressure": 1008.9,
+          "wind_speed_10m": 9.85,
+          "relative_humidity_2m": 90
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 10.8,
-          "surface_pressure": 993.6,
-          "wind_speed_10m": 9.28,
+          "temperature_2m": 11.1,
+          "surface_pressure": 997.7,
+          "wind_speed_10m": 15.81,
           "relative_humidity_2m": 77
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 27,
-          "surface_pressure": 913,
-          "wind_speed_10m": 2.3,
-          "relative_humidity_2m": 64
+          "temperature_2m": 19.1,
+          "surface_pressure": 912.6,
+          "wind_speed_10m": 2.77,
+          "relative_humidity_2m": 99
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 29.4,
-          "surface_pressure": 1011.8,
-          "wind_speed_10m": 6.09,
-          "relative_humidity_2m": 80
+          "temperature_2m": 28.4,
+          "surface_pressure": 1013.4,
+          "wind_speed_10m": 4.48,
+          "relative_humidity_2m": 79
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -2.7,
-          "surface_pressure": 1007.7,
-          "wind_speed_10m": 11.83,
-          "relative_humidity_2m": 73
+          "temperature_2m": -2.4,
+          "surface_pressure": 1008.7,
+          "wind_speed_10m": 11.55,
+          "relative_humidity_2m": 81
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -46.7,
-          "surface_pressure": 691.1,
-          "wind_speed_10m": 7.18,
-          "relative_humidity_2m": 63
+          "temperature_2m": -45.4,
+          "surface_pressure": 691,
+          "wind_speed_10m": 8.57,
+          "relative_humidity_2m": 67
         }
       ]
     },
