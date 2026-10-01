@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-10-01T06:09:18.216Z",
+    "generatedAt": "2026-10-01T18:27:37.035Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -119,11 +119,91 @@
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Severe Storms": 8,
+        "Severe Storms": 9,
         "Wildfires": 38,
-        "Sea and Lake Ice": 4
+        "Sea and Lake Ice": 3
       },
       "events": [
+        {
+          "id": "EONET_24962",
+          "title": "Tropical Storm Choi-wan",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC"
+          ],
+          "geometry": {
+            "magnitudeValue": 50,
+            "magnitudeUnit": "kts",
+            "date": "2026-10-01T12:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              145.8,
+              16.5
+            ]
+          }
+        },
+        {
+          "id": "EONET_24964",
+          "title": "Wildfire SAN FRANCISCO 2, Starr, Texas",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 510,
+            "magnitudeUnit": "acres",
+            "date": "2026-09-30T08:56:00Z",
+            "type": "Point",
+            "coordinates": [
+              -98.692222,
+              26.286667
+            ]
+          }
+        },
+        {
+          "id": "EONET_24963",
+          "title": "Wildfire Hatch Grade, Walla Walla, Washington",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 5000,
+            "magnitudeUnit": "acres",
+            "date": "2026-09-29T19:50:00Z",
+            "type": "Point",
+            "coordinates": [
+              -118.8588,
+              46.0322
+            ]
+          }
+        },
+        {
+          "id": "EONET_24965",
+          "title": "Wildfire 3 ALPHA SIERRA, Broward, Florida",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 774,
+            "magnitudeUnit": "acres",
+            "date": "2026-09-28T21:53:00Z",
+            "type": "Point",
+            "coordinates": [
+              -80.5952778,
+              26.1341667
+            ]
+          }
+        },
         {
           "id": "EONET_24909",
           "title": "Tropical Storm Hanna",
@@ -155,13 +235,13 @@
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 75,
+            "magnitudeValue": 90,
             "magnitudeUnit": "kts",
-            "date": "2026-10-01T00:00:00Z",
+            "date": "2026-10-01T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              -108.3,
-              19
+              -109.5,
+              19.5
             ]
           }
         },
@@ -275,13 +355,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 40,
+            "magnitudeValue": 50,
             "magnitudeUnit": "kts",
-            "date": "2026-10-01T00:00:00Z",
+            "date": "2026-10-01T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              -164.7,
-              21.6
+              -165.3,
+              21.8
             ]
           }
         },
@@ -648,86 +728,6 @@
               35.1580556
             ]
           }
-        },
-        {
-          "id": "EONET_24481",
-          "title": "Wildfire Dry River, Sutton, Texas",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 8761,
-            "magnitudeUnit": "acres",
-            "date": "2026-09-15T16:59:00Z",
-            "type": "Point",
-            "coordinates": [
-              -100.7446997,
-              30.54096369
-            ]
-          }
-        },
-        {
-          "id": "EONET_24478",
-          "title": "Wildfire BLUE LAKE, Indian River, Florida",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 950,
-            "magnitudeUnit": "acres",
-            "date": "2026-09-15T16:38:00Z",
-            "type": "Point",
-            "coordinates": [
-              -80.7169444,
-              27.7427778
-            ]
-          }
-        },
-        {
-          "id": "EONET_24485",
-          "title": "Wildfire Lobo, Eastland, Texas",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 658,
-            "magnitudeUnit": "acres",
-            "date": "2026-09-15T14:12:00Z",
-            "type": "Point",
-            "coordinates": [
-              -98.93066189,
-              32.42654762
-            ]
-          }
-        },
-        {
-          "id": "EONET_24484",
-          "title": "Wildfire DOME, Mariposa, California",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1177,
-            "magnitudeUnit": "acres",
-            "date": "2026-09-15T11:29:00Z",
-            "type": "Point",
-            "coordinates": [
-              -119.616167,
-              37.5662
-            ]
-          }
         }
       ]
     },
@@ -737,55 +737,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -11.9,
-          "surface_pressure": 1026,
-          "wind_speed_10m": 0.25,
-          "relative_humidity_2m": 89
+          "temperature_2m": -3.2,
+          "surface_pressure": 1021.7,
+          "wind_speed_10m": 6.31,
+          "relative_humidity_2m": 90
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 13.1,
-          "surface_pressure": 1009.2,
-          "wind_speed_10m": 11.4,
-          "relative_humidity_2m": 75
+          "temperature_2m": 12,
+          "surface_pressure": 1012.4,
+          "wind_speed_10m": 6.23,
+          "relative_humidity_2m": 69
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 20.2,
-          "surface_pressure": 912,
-          "wind_speed_10m": 1.9,
-          "relative_humidity_2m": 99
+          "temperature_2m": 27.6,
+          "surface_pressure": 913,
+          "wind_speed_10m": 3.04,
+          "relative_humidity_2m": 61
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 29.5,
-          "surface_pressure": 1012.5,
-          "wind_speed_10m": 2.75,
-          "relative_humidity_2m": 65
+          "temperature_2m": 26.5,
+          "surface_pressure": 1013.6,
+          "wind_speed_10m": 3.41,
+          "relative_humidity_2m": 84
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -3.2,
-          "surface_pressure": 987.1,
-          "wind_speed_10m": 12.36,
-          "relative_humidity_2m": 78
+          "temperature_2m": -3,
+          "surface_pressure": 976,
+          "wind_speed_10m": 12.94,
+          "relative_humidity_2m": 74
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -49.7,
-          "surface_pressure": 705.1,
-          "wind_speed_10m": 7.09,
-          "relative_humidity_2m": 67
+          "temperature_2m": -49,
+          "surface_pressure": 703.6,
+          "wind_speed_10m": 6.3,
+          "relative_humidity_2m": 61
         }
       ]
     },
@@ -796,7 +796,7 @@
       "error": "[NOAA CRW Ocean Heat] HTTP 404 Not Found"
     },
     "cryosphere": {
-      "error": "[NSIDC Sea Ice] This operation was aborted"
+      "error": "[NSIDC Sea Ice] HTTP 404 Not Found"
     }
   }
 }
