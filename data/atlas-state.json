@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-09-30T18:00:52.537Z",
+    "generatedAt": "2026-10-01T06:09:18.216Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -157,11 +157,11 @@
           "geometry": {
             "magnitudeValue": 75,
             "magnitudeUnit": "kts",
-            "date": "2026-09-30T12:00:00Z",
+            "date": "2026-10-01T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -107.7,
-              17.8
+              -108.3,
+              19
             ]
           }
         },
@@ -275,13 +275,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 55,
+            "magnitudeValue": 40,
             "magnitudeUnit": "kts",
-            "date": "2026-09-30T12:00:00Z",
+            "date": "2026-10-01T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -164.8,
-              22.2
+              -164.7,
+              21.6
             ]
           }
         },
@@ -737,52 +737,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -14.6,
-          "surface_pressure": 1025.9,
-          "wind_speed_10m": 4.29,
-          "relative_humidity_2m": 88
+          "temperature_2m": -11.9,
+          "surface_pressure": 1026,
+          "wind_speed_10m": 0.25,
+          "relative_humidity_2m": 89
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 13.2,
-          "surface_pressure": 1009.6,
-          "wind_speed_10m": 13.71,
-          "relative_humidity_2m": 79
+          "temperature_2m": 13.1,
+          "surface_pressure": 1009.2,
+          "wind_speed_10m": 11.4,
+          "relative_humidity_2m": 75
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 28.8,
-          "surface_pressure": 912.1,
-          "wind_speed_10m": 2.3,
-          "relative_humidity_2m": 56
+          "temperature_2m": 20.2,
+          "surface_pressure": 912,
+          "wind_speed_10m": 1.9,
+          "relative_humidity_2m": 99
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 27.9,
-          "surface_pressure": 1013.7,
-          "wind_speed_10m": 2.16,
-          "relative_humidity_2m": 77
+          "temperature_2m": 29.5,
+          "surface_pressure": 1012.5,
+          "wind_speed_10m": 2.75,
+          "relative_humidity_2m": 65
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "error": "fetch_failed"
+          "temperature_2m": -3.2,
+          "surface_pressure": 987.1,
+          "wind_speed_10m": 12.36,
+          "relative_humidity_2m": 78
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -47.2,
-          "surface_pressure": 707.1,
-          "wind_speed_10m": 6.34,
-          "relative_humidity_2m": 66
+          "temperature_2m": -49.7,
+          "surface_pressure": 705.1,
+          "wind_speed_10m": 7.09,
+          "relative_humidity_2m": 67
         }
       ]
     },
@@ -793,7 +796,7 @@
       "error": "[NOAA CRW Ocean Heat] HTTP 404 Not Found"
     },
     "cryosphere": {
-      "error": "[NSIDC Sea Ice] HTTP 404 Not Found"
+      "error": "[NSIDC Sea Ice] This operation was aborted"
     }
   }
 }
