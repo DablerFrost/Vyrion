@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="icon" href="/assets/favicon.ico">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#020912">
@@ -36,7 +35,7 @@
   --pink:#FF8FD8;
   --sun:#FFD966;
   --mint:#6EEBC4;
-  --font-scale:1;
+  --font-scale:1.25;
   /* eight Earth systems — accents match ATLAS/index.html exactly */
   --atm:#00CCFF; --ocn:#3399DD; --ice:#88DDFF; --fst:#00CC66;
   --bio:#44BB88; --fw:#33AAFF; --sol:#CC9944; --corp:#FFB84D;
@@ -69,6 +68,44 @@ body::after{
 
 button,input{font:inherit}
 button{color:inherit}
+
+/* ── CUSTOM CURSOR — same precedent as vyrion.earth/index.html ── */
+body{cursor:none}
+#termSearch,#reportInput{cursor:text}
+#xplCursor{
+  position:fixed;width:8px;height:8px;background:var(--cyan);border-radius:50%;
+  pointer-events:none;z-index:9998;transform:translate(-50%,-50%);
+  box-shadow:0 0 10px rgba(0,212,255,.75);transition:width .12s,height .12s;
+}
+#xplCursorRing{
+  position:fixed;width:30px;height:30px;border:1.5px solid rgba(0,212,255,.45);
+  border-radius:50%;pointer-events:none;z-index:9997;transform:translate(-50%,-50%);
+  transition:width .18s,height .18s,border-color .18s;
+}
+#xplMagBtn{
+  position:fixed;right:1.1rem;bottom:1.1rem;z-index:900;
+  display:flex;align-items:center;gap:.5rem;padding:.5rem .85rem;border-radius:99px;
+  background:rgba(2,9,18,.92);border:1px solid var(--border2);backdrop-filter:blur(14px);
+  cursor:none;font:10px "Courier Prime",monospace;letter-spacing:.06em;color:var(--t2);
+  transition:border-color .2s,color .2s,transform .2s;
+}
+#xplMagBtn:hover{border-color:var(--cyan);color:var(--t1);transform:translateY(-2px)}
+#xplMagBtn.on{border-color:rgba(0,212,255,.5);color:var(--cyan);background:rgba(0,212,255,.08)}
+.xpl-magsw{width:24px;height:13px;border-radius:7px;background:rgba(255,255,255,.08);position:relative;flex-shrink:0;transition:background .2s}
+.xpl-magsw:before{content:"";position:absolute;top:2px;left:2px;width:9px;height:9px;border-radius:50%;background:var(--t3);transition:left .2s,background .2s}
+#xplMagBtn.on .xpl-magsw{background:rgba(0,212,255,.2)}
+#xplMagBtn.on .xpl-magsw:before{left:13px;background:var(--cyan);box-shadow:0 0 5px var(--cyan)}
+#xplMagLens{
+  position:fixed;width:150px;height:150px;border-radius:50%;pointer-events:none;z-index:9996;
+  transform:translate(-50%,-50%);border:2px solid rgba(0,212,255,.55);
+  box-shadow:0 0 0 1px rgba(0,212,255,.18),0 0 30px rgba(0,212,255,.14),inset 0 0 40px rgba(2,9,18,.5);
+  display:none;backdrop-filter:brightness(1.35) contrast(1.08);
+}
+#xplMagLens.on{display:block}
+@media(hover:none){
+  body{cursor:auto}
+  #xplCursor,#xplCursorRing,#xplMagBtn,#xplMagLens{display:none!important}
+}
 button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
 ::selection{background:rgba(0,212,255,.28);color:#fff}
 
@@ -136,6 +173,16 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
 }
 .xpl-fscale button:hover{color:var(--t1)}
 .xpl-fscale button.active{background:rgba(0,212,255,.14);color:var(--cyan)}
+
+.xpl-home-btn{
+  display:flex;align-items:center;gap:.4rem;
+  border:1px solid rgba(0,212,255,.3);background:rgba(0,212,255,.06);
+  border-radius:99px;padding:.42rem .85rem;cursor:pointer;
+  font:10px "Courier Prime",monospace;font-weight:700;letter-spacing:.06em;
+  color:var(--cyan);text-decoration:none;transition:.18s ease;white-space:nowrap;
+}
+.xpl-home-btn:hover{background:rgba(0,212,255,.14);border-color:var(--cyan);transform:translateY(-1px)}
+.xpl-home-btn svg{width:12px;height:12px;flex-shrink:0}
 
 .xpl-nav-dot{
   width:6px;height:6px;border-radius:50%;background:var(--cyan);flex-shrink:0;
@@ -606,25 +653,6 @@ h1,h2,h3{font-family:"Archivo Narrow",sans-serif}
 .xpl-matcher-opt.correct{border-color:var(--green);background:rgba(66,230,164,.08);color:var(--green)}
 .xpl-matcher-opt.wrong{border-color:var(--red);background:rgba(240,48,48,.08);color:var(--red)}
 
-.xpl-proof-tabs{display:flex;gap:.5rem;margin-bottom:1rem}
-.xpl-proof-tab{
-  padding:.5rem 1rem;border-radius:6px;cursor:pointer;font:10px "Courier Prime",monospace;
-  letter-spacing:.06em;border:1px solid var(--border2);background:rgba(255,255,255,.02);color:var(--t3);
-}
-.xpl-proof-tab.active.orig{border-color:var(--red);color:var(--red);background:rgba(240,48,48,.08)}
-.xpl-proof-tab.active.fix{border-color:var(--green);color:var(--green);background:rgba(66,230,164,.08)}
-.xpl-proof-panel{
-  padding:1.1rem 1.2rem;border-radius:7px;border:1px solid var(--border2);
-  background:rgba(255,255,255,.015);font-size:.78rem;color:var(--t2);line-height:1.75;
-}
-.xpl-proof-panel .tag{
-  display:inline-block;font:9px "Courier Prime",monospace;letter-spacing:.08em;
-  padding:.15rem .5rem;border-radius:3px;margin-bottom:.6rem;
-}
-.xpl-proof-panel.orig .tag{background:rgba(240,48,48,.12);color:var(--red);border:1px solid rgba(240,48,48,.3)}
-.xpl-proof-panel.fix .tag{background:rgba(66,230,164,.12);color:var(--green);border:1px solid rgba(66,230,164,.3)}
-.xpl-proof-steps{margin-top:1.3rem;padding-left:1.2rem;color:var(--t2);font-size:.72rem;line-height:1.9}
-
 /* ── CONSCIENCE SECTION ─────────────────────────────── */
 .xpl-conscience-shell{display:grid;grid-template-columns:1.1fr .9fr;gap:1.2rem}
 .xpl-conscience-card{padding:1.4rem}
@@ -726,6 +754,7 @@ h1,h2,h3{font-family:"Archivo Narrow",sans-serif}
   display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--cyan);
   box-shadow:0 0 12px var(--cyan);margin-right:.4rem;
 }
+.xpl-footer-right{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
 
 /* ── ASK VI'BRANT (floating mascot tip) ────────────── */
 .xpl-vibrant-fab{
@@ -752,14 +781,7 @@ h1,h2,h3{font-family:"Archivo Narrow",sans-serif}
 .xpl-vibrant-pop-label{font:9px "Courier Prime",monospace;color:#c397ff;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.45rem}
 .xpl-vibrant-pop p{margin:0;font-size:.75rem;color:var(--t1);line-height:1.65}
 
-/* ── STARFIELD (happiness + light) ─────────────────── */
-.xpl-stars{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.xpl-star{
-  position:absolute;border-radius:50%;background:#fff;
-  box-shadow:0 0 4px 1px rgba(255,255,255,.5);
-  animation:xplTwinkle 4s ease-in-out infinite;
-}
-@keyframes xplTwinkle{0%,100%{opacity:.15;transform:scale(.7)}50%{opacity:.9;transform:scale(1.2)}}
+/* ── STARFIELD + AURORA (happiness + light, drawn on #xplCanvas) ── */
 .xpl-app,.xpl-topbar,.xpl-layout{position:relative;z-index:1}
 
 /* ── VI'BRANT LIVELINESS ────────────────────────────── */
@@ -846,6 +868,7 @@ h1,h2,h3{font-family:"Archivo Narrow",sans-serif}
   .xpl-brand-sub{display:none}
   .xpl-nav-btn{display:none}
   .xpl-nav-live{display:none}
+  .xpl-home-btn span{display:none}
   .xpl-hero h1{font-size:clamp(2.2rem,10vw,3rem)}
   .xpl-tile-grid{grid-template-columns:1fr}
   .xpl-flow{grid-template-columns:1fr}
@@ -866,6 +889,12 @@ h1,h2,h3{font-family:"Archivo Narrow",sans-serif}
 
 <body>
 <canvas id="xplCanvas" aria-hidden="true"></canvas>
+<div id="xplCursor"></div>
+<div id="xplCursorRing"></div>
+<div id="xplMagLens"></div>
+<button id="xplMagBtn" onclick="toggleMagnifier()" aria-label="Toggle magnifier lens">
+  <span class="xpl-magsw"></span><span>🔍 MAGNIFIER</span>
+</button>
 <div class="xpl-app">
 
 <header class="xpl-topbar">
@@ -896,11 +925,15 @@ h1,h2,h3{font-family:"Archivo Narrow",sans-serif}
     <button class="xpl-nav-btn" onclick="go('timeline')">TIMELINE</button>
     <button class="xpl-nav-btn" onclick="go('quiz')">TAKE THE QUIZ</button>
     <div class="xpl-fscale" role="group" aria-label="Text size">
-      <button data-fs="0.9" onclick="setScale(this)">S</button>
-      <button data-fs="1" class="active" onclick="setScale(this)">M</button>
-      <button data-fs="1.15" onclick="setScale(this)">L</button>
+      <button data-fs="1.1" onclick="setScale(this)">S</button>
+      <button data-fs="1.25" class="active" onclick="setScale(this)">M</button>
+      <button data-fs="1.45" onclick="setScale(this)">L</button>
     </div>
     <button class="xpl-icon-btn" onclick="toggleHelp()" aria-label="Keyboard help">?</button>
+    <a class="xpl-home-btn" href="https://vyrion.earth" target="_blank" rel="noopener" aria-label="Return to vyrion.earth">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12L12 4L21 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10V20H19V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>VYRION.EARTH</span>
+    </a>
     <span class="xpl-nav-live"><span class="xpl-nav-dot"></span>LIVE</span>
   </div>
 </header>
@@ -1178,9 +1211,9 @@ h1,h2,h3{font-family:"Archivo Narrow",sans-serif}
       and eight <strong>platform modules</strong> (the tools that actually go and do something about them, next section).
       They launched together and share a family resemblance, but they are not the same list.</p>
       <p>ATLAS is the module that gathers live signals from all eight Earth systems below. SHIELD, ROOT, CANOPY, FLUX,
-      TIDE, LOOP and PULSE are the other seven operating modules, each focused on a distinct planetary function.
-      CONSCIENCE sits alongside the module stack as a separate accountability hub and supplies the Corporate
-      Accountability system with a portfolio-mean signal. Nothing here is the same list twice.</p>
+      TIDE, LOOP and PULSE each act on one specific piece of the picture. CONSCIENCE checks whether the humans and
+      companies involved kept their word. Nothing here is named the same thing twice by accident — and nothing is
+      named the same thing twice by coincidence, either.</p>
     </div>
   </div>
 
@@ -1267,8 +1300,9 @@ h1,h2,h3{font-family:"Archivo Narrow",sans-serif}
   <div class="xpl-section-head">
     <div>
       <div class="xpl-kicker">05 · THE ACCOUNTABILITY HUB</div>
-      <h2>CONSCIENCE isn't a module. It's the corporate accountability hub.</h2>
-      <p>CONSCIENCE asks a specific accountability question: are corporate commitments supported by the evidence in the public record?</p>
+      <h2>CONSCIENCE isn't a module. It's where every module reports.</h2>
+      <p>Every signal VYRION gathers eventually answers one question: are the people and companies
+      responsible for these systems keeping their word?</p>
     </div>
   </div>
 
@@ -1406,8 +1440,8 @@ h1,h2,h3{font-family:"Archivo Narrow",sans-serif}
     </div>
     <div class="xpl-step">
       <div class="xpl-step-num">03 / COMBINE</div>
-      <h3>Build the Index from eight Earth systems</h3>
-      <p>Six indicators build each Earth system. The eight weighted Earth systems build the Index. CONSCIENCE independently evaluates corporate commitments and feeds a portfolio-mean signal into the Corporate Accountability system.</p>
+      <h3>Roll up through modules</h3>
+      <p>Six indicators build each Earth system. Eight weighted systems build the Index. CONSCIENCE folds corporate accountability in as the ninth, lightest input.</p>
     </div>
     <div class="xpl-step">
       <div class="xpl-step-num">04 / EXPLAIN</div>
@@ -1467,14 +1501,20 @@ h1,h2,h3{font-family:"Archivo Narrow",sans-serif}
 
 <footer class="xpl-footer">
   <div><span class="xpl-orb"></span>EXPLAINARIUM / VYRION · Built for curiosity, with love, guided by Vi'brant. 🌍💛</div>
-  <div>Educational interface · Verify live values against <a href="https://vyrion.earth" target="_blank" rel="noopener">vyrion.earth</a> and the underlying methodology documentation.</div>
+  <div class="xpl-footer-right">
+    <span>Educational interface · Verify live values against the underlying methodology documentation.</span>
+    <a class="xpl-home-btn" href="https://vyrion.earth" target="_blank" rel="noopener" aria-label="Return to vyrion.earth">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12L12 4L21 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10V20H19V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>← BACK TO VYRION.EARTH</span>
+    </a>
+  </div>
 </footer>
 
 </main>
 </div>
 </div>
 
-<button class="xpl-vibrant-fab" onclick="vibrantTip()" aria-label="Ask Vi'brant for a fact">
+<button class="xpl-vibrant-fab" id="vibrantFab" onclick="vibrantTip()" aria-label="Ask Vi'brant for a fact">
   <svg class="vibrant-bob" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <circle cx="26" cy="30" r="17" fill="rgba(0,50,120,0.85)" stroke="#a050ff" stroke-width="1.5"/>
     <path d="M20 22c2-3 6-4 8-2s3 6 1 9-6 3-8 1-3-5-1-8z" fill="rgba(0,180,80,0.5)"/>
@@ -1497,6 +1537,62 @@ h1,h2,h3{font-family:"Archivo Narrow",sans-serif}
 
 <script>
 'use strict';
+
+/* ══════════════════════════════════════════════════════════════════
+   CUSTOM CURSOR + MAGNIFIER — same precedent as vyrion.earth/index.html
+   Magnifier now also nudges the page font-scale up a few points while
+   active, on top of the visual lens, since a blur-lens alone doesn't
+   actually make text easier to read.
+   ══════════════════════════════════════════════════════════════════ */
+
+let baseFontScale = 1.25;
+const MAG_FONT_BOOST = 0.18;
+
+(function(){
+  const dot = document.getElementById('xplCursor');
+  const ring = document.getElementById('xplCursorRing');
+  const lens = document.getElementById('xplMagLens');
+  if(!dot || !ring || window.matchMedia('(hover:none)').matches) return;
+
+  let mx = 0, my = 0, rx = 0, ry = 0, magOn = false;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    dot.style.left = mx + 'px'; dot.style.top = my + 'px';
+    if(magOn){ lens.style.left = mx + 'px'; lens.style.top = my + 'px'; }
+  });
+
+  (function loop(){
+    rx += (mx - rx) * .16; ry += (my - ry) * .16;
+    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+    requestAnimationFrame(loop);
+  })();
+
+  document.addEventListener('mouseover', e => {
+    if(e.target.closest('a,button,input,.xpl-module,.xpl-orbit-dot,.xpl-term-btn')){
+      ring.style.width = '42px'; ring.style.height = '42px'; ring.style.borderColor = 'rgba(0,212,255,.85)';
+      dot.style.width = '4px'; dot.style.height = '4px';
+    }
+  });
+  document.addEventListener('mouseout', e => {
+    if(e.target.closest('a,button,input,.xpl-module,.xpl-orbit-dot,.xpl-term-btn')){
+      ring.style.width = '30px'; ring.style.height = '30px'; ring.style.borderColor = 'rgba(0,212,255,.45)';
+      dot.style.width = '8px'; dot.style.height = '8px';
+    }
+  });
+
+  window.toggleMagnifier = function(){
+    magOn = !magOn;
+    document.getElementById('xplMagBtn').classList.toggle('on', magOn);
+    lens.classList.toggle('on', magOn);
+    if(magOn){
+      lens.style.left = mx + 'px'; lens.style.top = my + 'px';
+      document.documentElement.style.setProperty('--font-scale', (baseFontScale + MAG_FONT_BOOST).toFixed(2));
+    } else {
+      document.documentElement.style.setProperty('--font-scale', baseFontScale.toFixed(2));
+    }
+  };
+})();
 
 /* ══════════════════════════════════════════════════════════════════
    DATA — grounded in the real, locked VYRION architecture
@@ -1635,7 +1731,7 @@ const GLOSSARY = [
   {name:'ATLAS', tag:'MODULE',
    body:'The module that gathers the 48 live indicators behind the Index. Every other module either feeds ATLAS or draws from it — it\'s described internally as VYRION\'s nervous system.'},
   {name:'CONSCIENCE', tag:'HUB',
-   body:'The accountability hub — not one of the eight modules. CONSCIENCE scores corporate climate pledges against verified public data and feeds a portfolio-mean signal into the Index\'s Corporate Accountability system.'},
+   body:'The accountability hub — not one of the eight modules. CONSCIENCE scores corporate climate pledges against verified public data and feeds a portfolio-mean signal back into the Index\'s Corporate Accountability system.'},
   {name:'VYRION Index', tag:'SCORE',
    body:'The daily 0–100 planetary health benchmark, computed as the weighted sum of the eight Earth systems: S = Σ(Wᵢ × Sᵢ). Published every day since Day 1, March 18, 2026.'},
   {name:'BREACH / WARNING / ON TRACK', tag:'CONSCIENCE',
@@ -1663,7 +1759,7 @@ const VIBRANT_FACTS = [
   "ATLAS refreshes roughly every 15 minutes. The VYRION Index you see today is rarely more than a quarter-hour old.",
   "Soil holds nearly twice as much carbon as the atmosphere — which is exactly why ROOT treats land regeneration as climate infrastructure, not just farming.",
   "There are eight Earth systems and eight platform modules — but they're two different lists. Even Vi'brant had to double-check that one.",
-  "Vi'brant's mushroom hat isn't just for style — mycelium networks share nutrients between trees underground. It's a tiny reminder that living systems are connected, even when the connections are hidden.",
+  "Vi'brant's mushroom hat isn't just for style — mycelium networks share nutrients between trees underground. VYRION named its data-sharing protocol RELAY after the same idea.",
   "The pre-industrial baseline year range, 1850–1900, was chosen because it's the earliest period with dense enough thermometer records to trust. Earlier data exists — it's just too patchy.",
   "Hilo, Hawaii, where VYRION is built, sits on one of the most actively monitored volcanic islands on Earth. SHIELD's volcanic-hazard category isn't a hypothetical for the team that built it."
 ];
@@ -1740,12 +1836,13 @@ function go(id){
 }
 
 function setScale(btn){
-  document.documentElement.style.setProperty('--font-scale', btn.dataset.fs);
+  baseFontScale = parseFloat(btn.dataset.fs);
+  document.documentElement.style.setProperty('--font-scale', baseFontScale.toFixed(2));
   document.querySelectorAll('.xpl-fscale button').forEach(b=>b.classList.toggle('active', b===btn));
 }
 
 function toggleHelp(){
-  alert("No controller needed — just scroll, or click anything in the sidebar! 🎮\n\nFive things to try: the Planet Lab sliders, the SHIELD threat sim, the CONSCIENCE Score Builder, the Module Matcher game, and the Field Test quiz. Collect all five Explorer Badges and Vi'brant throws you a little confetti party. 🎉");
+  alert("No controller needed — just scroll, or click anything in the sidebar! 🎮\n\nFive things to try: the Planet Lab sliders, the SHIELD threat sim, the CONSCIENCE Score Builder, the Module Matcher game, and the Field Test quiz. Collect all five Explorer Badges and Vi'brant throws you a little confetti party. 🎉\n\nTip: the 🔍 Magnifier (bottom right) also bumps text size up a few points while it's on.");
 }
 
 /* ══════════════════════════════════════════════════════════════════
@@ -1799,7 +1896,7 @@ function renderModules(){
     </div>
     <div class="xpl-module-icon">🧭</div>
     <h3>CONSCIENCE</h3>
-    <p>Scores corporate pledges against verified public evidence, then feeds its portfolio-mean signal into the Index's Corporate Accountability system.</p>
+    <p>Every module's data eventually flows here. Scores corporate pledges against verified reality — the ninth thing, deliberately unnumbered.</p>
     <span class="learn">JUMP TO SECTION 04 →</span>`;
   grid.appendChild(conscienceCard);
 }
@@ -2242,19 +2339,37 @@ function filterTerms(){
 }
 
 /* ══════════════════════════════════════════════════════════════════
-   VI'BRANT FLOATING TIPS
+   VI'BRANT FLOATING TIPS — now hover-persistent: the popup stays open
+   as long as the cursor is over the fab or the popup itself, and only
+   closes (after a short grace period) once the cursor truly leaves
+   both. Click still works to pick a fresh fact, including on touch.
    ══════════════════════════════════════════════════════════════════ */
 
 let vLast = -1;
-function vibrantTip(){
-  const pop = document.getElementById('vibrantPop');
+let vibrantCloseTimer = null;
+
+function vibrantPickFact(){
   let idx;
   do { idx = Math.floor(Math.random()*VIBRANT_FACTS.length); } while(idx===vLast && VIBRANT_FACTS.length>1);
   vLast = idx;
   document.getElementById('vibrantText').textContent = VIBRANT_FACTS[idx];
-  pop.classList.add('open');
-  clearTimeout(window._vTimer);
-  window._vTimer = setTimeout(()=>pop.classList.remove('open'), 7000);
+}
+
+function vibrantShow(){
+  clearTimeout(vibrantCloseTimer);
+  document.getElementById('vibrantPop').classList.add('open');
+}
+
+function vibrantScheduleClose(){
+  clearTimeout(vibrantCloseTimer);
+  vibrantCloseTimer = setTimeout(() => {
+    document.getElementById('vibrantPop').classList.remove('open');
+  }, 260);
+}
+
+function vibrantTip(){
+  vibrantPickFact();
+  vibrantShow();
 }
 
 /* ══════════════════════════════════════════════════════════════════
@@ -2325,23 +2440,71 @@ function initFadeIn(){
    ══════════════════════════════════════════════════════════════════ */
 
 function initStars(){
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const layer = document.createElement('div');
-  layer.className = 'xpl-stars';
-  const count = window.innerWidth < 700 ? 26 : 46;
-  for(let i=0;i<count;i++){
-    const star = document.createElement('span');
-    star.className = 'xpl-star';
-    star.style.left = Math.random()*100 + 'vw';
-    star.style.top = Math.random()*100 + 'vh';
-    const size = 1 + Math.random()*2;
-    star.style.width = size+'px';
-    star.style.height = size+'px';
-    star.style.animationDuration = (2.5 + Math.random()*4) + 's';
-    star.style.animationDelay = (Math.random()*4) + 's';
-    layer.appendChild(star);
+  const canvas = document.getElementById('xplCanvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W, H, stars = [], t = 0;
+
+  function resize(){
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+    const count = Math.min(140, Math.floor((W * H) / 15000));
+    stars = Array.from({length: count}, () => ({
+      x: Math.random() * W, y: Math.random() * H,
+      r: .4 + Math.random() * 1.1,
+      phase: Math.random() * Math.PI * 2,
+      speed: .01 + Math.random() * .02
+    }));
+    if(reduced) drawStatic();
   }
-  document.body.prepend(layer);
+
+  const waves = [
+    {y:.1,  amp:55, freq:.0009, speed:.15, color:'0,212,255'},
+    {y:.36, amp:75, freq:.0007, speed:.11, color:'160,80,255'},
+    {y:.66, amp:60, freq:.0011, speed:.13, color:'255,184,77'}
+  ];
+
+  function paintWaves(){
+    waves.forEach(w => {
+      const yBase = H * w.y;
+      const grad = ctx.createLinearGradient(0, yBase - w.amp*1.5, 0, yBase + w.amp*1.5);
+      grad.addColorStop(0, `rgba(${w.color},0)`);
+      grad.addColorStop(.5, `rgba(${w.color},.035)`);
+      grad.addColorStop(1, `rgba(${w.color},0)`);
+      ctx.beginPath();
+      ctx.moveTo(0, yBase);
+      for(let x=0; x<=W; x+=10){ ctx.lineTo(x, yBase + Math.sin(x*w.freq + t*w.speed)*w.amp); }
+      ctx.lineTo(W, yBase+400); ctx.lineTo(0, yBase+400); ctx.closePath();
+      ctx.fillStyle = grad; ctx.fill();
+    });
+  }
+
+  function drawStatic(){
+    ctx.clearRect(0,0,W,H);
+    paintWaves();
+    stars.forEach(s => {
+      ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+      ctx.fillStyle = 'rgba(255,255,255,.5)'; ctx.fill();
+    });
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    paintWaves();
+    stars.forEach(s => {
+      s.phase += s.speed;
+      const a = .25 + .55 * Math.abs(Math.sin(s.phase));
+      ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+      ctx.fillStyle = `rgba(255,255,255,${a})`; ctx.fill();
+    });
+    t += 1;
+    if(!reduced) requestAnimationFrame(draw);
+  }
+
+  resize();
+  if(reduced) drawStatic(); else draw();
+  window.addEventListener('resize', resize);
 }
 
 /* ══════════════════════════════════════════════════════════════════
@@ -2364,6 +2527,19 @@ async function init(){
   initFadeIn();
   initScrollspy();
   initStars();
+
+  const fab = document.getElementById('vibrantFab');
+  const pop = document.getElementById('vibrantPop');
+  fab.addEventListener('mouseenter', () => { if(vLast===-1) vibrantPickFact(); vibrantShow(); });
+  fab.addEventListener('mouseleave', vibrantScheduleClose);
+  pop.addEventListener('mouseenter', vibrantShow);
+  pop.addEventListener('mouseleave', vibrantScheduleClose);
+  document.addEventListener('click', (e) => {
+    if(!fab.contains(e.target) && !pop.contains(e.target)){
+      clearTimeout(vibrantCloseTimer);
+      pop.classList.remove('open');
+    }
+  });
 
   const live = await fetchLiveScore();
   applyScore(live);
