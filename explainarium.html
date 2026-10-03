@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" href="/assets/favicon.ico">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#020912">
+<meta name="color-scheme" content="dark">
 <meta name="description" content="The VYRION Explainarium — an interactive guide to the eight Earth systems, the eight platform modules, and CONSCIENCE, VYRION's corporate accountability hub. Guided by Vi'brant.">
 <title>The Explainarium — VYRION Planetary Intelligence</title>
 
@@ -46,7 +48,8 @@
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;font-size:calc(17px * var(--font-scale))}
+html{scroll-behavior:smooth;font-size:calc(17px * var(--font-scale));overflow-x:clip}
+body{overflow-x:clip}
 body{
   margin:0;
   background:
@@ -70,7 +73,7 @@ button,input{font:inherit}
 button{color:inherit}
 
 /* ── CUSTOM CURSOR — same precedent as vyrion.earth/index.html ── */
-body{cursor:none}
+@media (pointer:fine) and (hover:hover){body{cursor:none}}
 #termSearch,#reportInput{cursor:text}
 #xplCursor{
   position:fixed;width:8px;height:8px;background:var(--cyan);border-radius:50%;
@@ -86,7 +89,7 @@ body{cursor:none}
   position:fixed;right:1.1rem;bottom:1.1rem;z-index:900;
   display:flex;align-items:center;gap:.5rem;padding:.5rem .85rem;border-radius:99px;
   background:rgba(2,9,18,.92);border:1px solid var(--border2);backdrop-filter:blur(14px);
-  cursor:none;font:10px "Courier Prime",monospace;letter-spacing:.06em;color:var(--t2);
+  cursor:pointer;font:10px "Courier Prime",monospace;letter-spacing:.06em;color:var(--t2);
   transition:border-color .2s,color .2s,transform .2s;
 }
 #xplMagBtn:hover{border-color:var(--cyan);color:var(--t1);transform:translateY(-2px)}
@@ -379,7 +382,7 @@ h1,h2,h3{font-family:"Archivo Narrow",sans-serif}
   color:var(--t3);letter-spacing:.04em;pointer-events:none;
   opacity:0;transition:opacity .15s;
 }
-.xpl-orbit-node:hover .xpl-orbit-label{opacity:1;color:var(--t1)}
+.xpl-orbit-node:hover .xpl-orbit-label,.xpl-orbit-node:focus-within .xpl-orbit-label{opacity:1;color:var(--t1)}
 .xpl-orbit-caption{
   text-align:center;margin-top:.6rem;font:10px "Courier Prime",monospace;
   color:var(--t3);letter-spacing:.05em;
@@ -884,20 +887,76 @@ h1,h2,h3{font-family:"Archivo Narrow",sans-serif}
 @media(prefers-reduced-motion:reduce){
   *,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
 }
+
+/* ── ACCESSIBILITY + MOBILE QA LAYER ───────────────────────────── */
+.sr-only,.xpl-mobile-nav-label{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.xpl-skip-link{position:fixed;left:1rem;top:.5rem;z-index:10010;padding:.7rem 1rem;background:var(--cyan);color:#001018;border-radius:6px;font-weight:800;transform:translateY(-180%);text-decoration:none}
+.xpl-skip-link:focus{transform:translateY(0)}
+.xpl-data-notice{display:flex;gap:.6rem 1rem;align-items:flex-start;flex-wrap:wrap;padding:.7rem clamp(1rem,3vw,2rem);background:rgba(0,212,255,.055);border-bottom:1px solid var(--border);font:11px/1.6 "Courier Prime",monospace;color:var(--t2)}
+.xpl-data-notice strong{color:var(--cyan);white-space:nowrap}.xpl-data-notice #dataStatusText{color:var(--t1);flex:1 1 16rem}.xpl-data-notice #dataStatusMeta{flex:1 1 100%;overflow-wrap:anywhere}
+.xpl-mobile-nav,.xpl-mobile-nav-label{display:none}
+button,a,input,select,textarea,[role="button"],[tabindex]:not([tabindex="-1"]){touch-action:manipulation}
+button,a,input,select,textarea,[role="button"]{scroll-margin-top:5rem}
+:focus-visible{outline:3px solid var(--amber)!important;outline-offset:3px!important;box-shadow:0 0 0 3px rgba(255,184,77,.18)!important}
+.xpl-module[role="button"]{cursor:pointer}.xpl-module[role="button"]:focus-visible{border-color:var(--cyan)}
+.xpl-module[role="button"]:focus-visible .learn{color:var(--cyan)}
+.xpl-slider-row input[type=range],.xpl-builder-row input[type=range]{height:28px;min-height:28px;accent-color:var(--cyan);touch-action:pan-y}
+.xpl-term-btn{min-height:44px}.xpl-answer,.xpl-primary,.xpl-secondary,.xpl-preset-btn,.xpl-stepper-btn,.xpl-icon-btn,.xpl-nav-btn,.xpl-side-link{min-height:44px}
+.xpl-vibrant-fab{max-width:calc(100vw - 2rem)}.xpl-vibrant-pop{max-height:min(45vh,24rem);overflow:auto;overscroll-behavior:contain}
+@media(max-width:800px){
+  .xpl-data-notice{font-size:10px}
+  .xpl-top-actions .xpl-nav-btn,.xpl-top-actions .xpl-nav-live{display:none}
+  .xpl-mobile-nav-label{display:block;position:static!important;width:auto!important;height:auto!important;clip:auto!important;overflow:visible!important;margin:0!important;font:10px "Courier Prime",monospace;color:var(--t2);white-space:nowrap}
+  .xpl-mobile-nav{display:block;min-width:0;max-width:100%;flex:1 1 100%;height:42px;padding:.4rem .65rem;color:var(--t1);background:var(--panel);border:1px solid var(--border);border-radius:6px;font-size:14px}
+  .xpl-orbit-wrap{max-width:100%;overflow:visible;transform:scale(.9);transform-origin:left top;margin-bottom:-1rem}
+  .xpl-content{min-width:0;overflow-wrap:anywhere}
+  .xpl-layout,.xpl-main,.xpl-section{min-width:0;max-width:100%}
+  .xpl-module-grid,.xpl-tile-grid,.xpl-matcher-grid{min-width:0}
+}
+@media(max-width:600px){
+  .xpl-topbar{height:auto;min-height:58px;flex-wrap:wrap;gap:.35rem;padding:.45rem .65rem}
+  .xpl-top-actions{display:flex;align-items:center;gap:.35rem;flex-wrap:wrap;min-width:0;flex:1}
+  .xpl-top-actions .xpl-nav-btn,.xpl-top-actions .xpl-nav-live{display:none}
+  .xpl-mobile-nav-label{display:block;position:static!important;width:auto!important;height:auto!important;clip:auto!important;overflow:visible!important;margin:0!important;font:10px "Courier Prime",monospace;color:var(--t2);white-space:nowrap}
+  .xpl-mobile-nav{display:block;min-width:0;max-width:100%;flex:1 1 100%;height:42px;padding:.4rem .65rem;color:var(--t1);background:var(--panel);border:1px solid var(--border);border-radius:6px;font-size:14px}
+  .xpl-fscale{margin-left:auto}
+  .xpl-home-btn{min-width:42px;min-height:42px;display:flex;align-items:center;justify-content:center}
+  .xpl-hero{padding-left:1rem;padding-right:1rem;overflow:hidden}
+  .xpl-orbit-wrap{transform:scale(.72);transform-origin:left top;margin-bottom:-3.2rem}
+  .xpl-section{padding-left:1rem;padding-right:1rem}
+  .xpl-score-card,.xpl-panel,.xpl-quiz,.xpl-glossary,.xpl-conscience-card{padding:1rem;max-width:100%}
+  .xpl-vibrant-fab{left:.55rem;bottom:.55rem;padding:.35rem;border-radius:50%;width:52px;height:52px;justify-content:center}
+  .xpl-vibrant-fab svg{width:38px;height:38px}
+  .xpl-vibrant-fab span{display:none}
+  .xpl-vibrant-pop{left:.55rem;bottom:4.25rem;width:min(300px,calc(100vw - 1.1rem));max-height:40vh}
+  #xplMagBtn{right:.55rem;bottom:.55rem;min-height:44px;padding:.45rem .6rem;font-size:10px}
+  .xpl-live-cell{min-width:100%;width:100%}
+  .xpl-footer{overflow-wrap:anywhere}
+}
+@media(hover:none){body{cursor:auto!important}#xplCursor,#xplCursorRing,#xplMagLens{display:none!important}#xplMagBtn{cursor:pointer!important}}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto!important}
+  .fade-in{opacity:1!important;transform:none!important}
+  #xplCanvas{display:none!important}
+  .vibrant-bob{animation:none!important}
+  *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+
 </style>
 </head>
 
 <body>
+<a class="xpl-skip-link" href="#xpl-main">Skip to main content</a>
 <canvas id="xplCanvas" aria-hidden="true"></canvas>
 <div id="xplCursor"></div>
 <div id="xplCursorRing"></div>
 <div id="xplMagLens"></div>
-<button id="xplMagBtn" onclick="toggleMagnifier()" aria-label="Toggle magnifier lens">
+<button id="xplMagBtn" type="button" onclick="toggleMagnifier()" aria-label="Toggle reading magnifier" aria-pressed="false">
   <span class="xpl-magsw"></span><span>🔍 MAGNIFIER</span>
 </button>
 <div class="xpl-app">
 
-<header class="xpl-topbar">
+<header class="xpl-topbar" aria-label="Explainarium header">
   <button class="xpl-brand" onclick="go('start')" aria-label="Return to top">
     <svg class="xpl-brand-mark vibrant-bob" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <circle cx="26" cy="30" r="17" fill="rgba(0,50,120,0.75)" stroke="#a050ff" stroke-width="1.5"/>
@@ -920,7 +979,7 @@ h1,h2,h3{font-family:"Archivo Narrow",sans-serif}
       <div class="xpl-brand-sub">VYRION · a happy little science playground</div>
     </div>
   </button>
-  <div class="xpl-top-actions">
+  <nav class="xpl-top-actions" aria-label="Primary navigation">
     <button class="xpl-nav-btn" onclick="go('systems')">8 EARTH SYSTEMS</button>
     <button class="xpl-nav-btn" onclick="go('timeline')">TIMELINE</button>
     <button class="xpl-nav-btn" onclick="go('quiz')">TAKE THE QUIZ</button>
@@ -934,14 +993,28 @@ h1,h2,h3{font-family:"Archivo Narrow",sans-serif}
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12L12 4L21 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10V20H19V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <span>VYRION.EARTH</span>
     </a>
-    <span class="xpl-nav-live"><span class="xpl-nav-dot"></span>LIVE</span>
-  </div>
+    <span class="xpl-nav-live"><span class="xpl-nav-dot"></span>DATA STATUS</span>
+    <label class="xpl-mobile-nav-label" for="mobileSectionNav">Jump to section</label>
+    <select id="mobileSectionNav" class="xpl-mobile-nav" aria-label="Navigate to a section" onchange="if(this.value){go(this.value);this.value='';}">
+      <option value="">Explore sections…</option>
+      <option value="start">Start here</option><option value="score">The Index</option><option value="lab">Planet Lab</option>
+      <option value="systems">Eight Earth systems</option><option value="modules">Eight platform modules</option>
+      <option value="shieldsim">SHIELD scenario lab</option><option value="conscience">CONSCIENCE</option>
+      <option value="matcher">Module matcher</option><option value="timeline">Timeline</option><option value="proof">Open Proof Protocol</option>
+      <option value="how">How it works</option><option value="quiz">Field test</option><option value="glossary">Glossary</option>
+    </select>
+  </nav>
 </header>
 
-<div class="xpl-live-strip" aria-label="Live VYRION data">
+<div class="xpl-data-notice" id="dataNotice" role="status" aria-live="polite">
+  <strong>DATA STATUS</strong><span id="dataStatusText">Checking the published Index endpoint…</span>
+  <span id="dataStatusMeta">Source: vyrion.earth/conscience-data.json · timestamp availability depends on the published feed.</span>
+</div>
+
+<div class="xpl-live-strip" aria-label="Data overview; values may be illustrative unless explicitly sourced">
   <div class="xpl-live-cell">
-    <div class="xpl-live-lbl"><span class="xpl-live-dot"></span>Atmospheric CO₂</div>
-    <div class="xpl-live-val" id="liveCo2">— ppm</div>
+    <div class="xpl-live-lbl">Atmospheric CO₂ · feed status</div>
+    <div class="xpl-live-val dim" id="liveCo2">Not connected in this view</div>
   </div>
   <div class="xpl-live-cell">
     <div class="xpl-live-lbl">VYRION Index</div>
@@ -953,24 +1026,24 @@ h1,h2,h3{font-family:"Archivo Narrow",sans-serif}
   </div>
   <div class="xpl-live-cell">
     <div class="xpl-live-lbl">SHIELD Threat</div>
-    <div class="xpl-live-val dim" id="liveThreat">—</div>
+    <div class="xpl-live-val dim" id="liveThreat">Scenario only</div>
   </div>
   <div class="xpl-live-cell">
-    <div class="xpl-live-lbl">CONSCIENCE Bands</div>
-    <div class="xpl-live-val dim">5 BREACH · 3 WARN · 3 TRACK</div>
+    <div class="xpl-live-lbl">CONSCIENCE example bands</div>
+    <div class="xpl-live-val dim">Illustrative example</div>
   </div>
 </div>
 
 <div class="xpl-layout">
 
-<aside class="xpl-sidebar">
+<aside class="xpl-sidebar" aria-label="Explore sections">
   <div class="xpl-side-label">✦ Explore the Playground</div>
   <button class="xpl-side-link active" data-nav="start" onclick="go('start')"><span class="xpl-side-icon">◉</span>Start Here</button>
   <button class="xpl-side-link" data-nav="score" onclick="go('score')"><span class="xpl-side-icon">01</span>The Big Number</button>
   <button class="xpl-side-link" data-nav="lab" onclick="go('lab')"><span class="xpl-side-icon">⌁</span>Planet Lab</button>
   <button class="xpl-side-link" data-nav="systems" onclick="go('systems')"><span class="xpl-side-icon">02</span>Eight Earth Systems</button>
   <button class="xpl-side-link" data-nav="modules" onclick="go('modules')"><span class="xpl-side-icon">03</span>Eight Platform Modules</button>
-  <button class="xpl-side-link" data-nav="shieldsim" onclick="go('shieldsim')"><span class="xpl-side-icon">⌁</span>Run SHIELD Live</button>
+  <button class="xpl-side-link" data-nav="shieldsim" onclick="go('shieldsim')"><span class="xpl-side-icon">⌁</span>SHIELD Scenario Lab</button>
   <button class="xpl-side-link" data-nav="conscience" onclick="go('conscience')"><span class="xpl-side-icon">04</span>CONSCIENCE</button>
   <button class="xpl-side-link" data-nav="matcher" onclick="go('matcher')"><span class="xpl-side-icon">⌁</span>Module Matcher</button>
   <button class="xpl-side-link" data-nav="timeline" onclick="go('timeline')"><span class="xpl-side-icon">07</span>VYRION Timeline</button>
@@ -1002,7 +1075,7 @@ h1,h2,h3{font-family:"Archivo Narrow",sans-serif}
   </div>
 </aside>
 
-<main class="xpl-main">
+<main class="xpl-main" id="xpl-main" tabindex="-1">
 
 <section class="xpl-hero" id="start">
   <div class="xpl-bg-word" aria-hidden="true">VYRION</div>
@@ -1011,8 +1084,8 @@ h1,h2,h3{font-family:"Archivo Narrow",sans-serif}
     <div class="eyebrow">VYRION · THE EXPLAINARIUM</div>
     <h1>Hi! The planet is being<br>watched — let's go<br>see how, <span>together.</span></h1>
     <p class="xpl-lede">
-      VYRION tracks <strong>48 live indicators</strong> across <strong>eight Earth systems</strong>,
-      routes them through <strong>eight platform modules</strong>, and checks corporate promises against
+      VYRION organizes <strong>48 indicators</strong> across <strong>eight Earth systems</strong>,
+      connects planetary intelligence to <strong>eight platform modules</strong>, and checks corporate promises against
       the evidence in <strong>CONSCIENCE</strong>. The Explainarium turns all of that into something fun
       to poke at — no science degree required. Play with the sliders, sort a few scenarios, meet Vi'brant.
       Curiosity is the only prerequisite. 🚀
@@ -1093,16 +1166,16 @@ h1,h2,h3{font-family:"Archivo Narrow",sans-serif}
 
   <div class="xpl-score-shell">
     <div class="xpl-score-card">
-      <div class="xpl-score-label">VYRION Index · today</div>
+      <div class="xpl-score-label">VYRION Index · published feed status below</div>
       <div class="xpl-score" id="scoreNumber">41.2</div>
       <div class="xpl-score-unc">± 1.8 uncertainty · min. detectable change ± 0.5</div>
       <div class="xpl-score-status st-warning" id="scoreStatus">WARNING</div>
-      <div class="xpl-score-note">
-        This example reflects the current published VYRION Index. Connect this component to
-        <a href="https://vyrion.earth/conscience-data.json" target="_blank" rel="noopener">conscience-data.json</a>
-        for the live feed — the page already tries, and falls back to this value if the feed isn't reachable.
+      <div class="xpl-score-note" id="scoreDataNote" role="status" aria-live="polite">
+        The displayed number is a fallback example until the published feed responds. Verify the source before treating it as current.
+        Source: <a href="https://vyrion.earth/conscience-data.json" target="_blank" rel="noopener">vyrion.earth/conscience-data.json</a>.
       </div>
       <div class="xpl-score-day" id="scoreDay">Day — · Origin: March 18, 2026</div>
+      <div class="xpl-score-day" id="scoreTimestamp">Timestamp: not yet verified.</div>
     </div>
 
     <div class="xpl-score-explain">
@@ -1144,48 +1217,48 @@ h1,h2,h3{font-family:"Archivo Narrow",sans-serif}
         <div class="xpl-slider-grid">
           <div class="xpl-slider-row">
             <label for="s_atm"><span class="sw" style="background:var(--atm)"></span>Atmosphere <span class="swwt">22%</span></label>
-            <output id="s_atmOut">38</output>
+            <output id="s_atmOut" aria-live="off">38</output>
             <input id="s_atm" type="range" min="0" max="100" value="38" oninput="simulate()">
           </div>
           <div class="xpl-slider-row">
             <label for="s_ocn"><span class="sw" style="background:var(--ocn)"></span>Ocean <span class="swwt">18%</span></label>
-            <output id="s_ocnOut">40</output>
+            <output id="s_ocnOut" aria-live="off">40</output>
             <input id="s_ocn" type="range" min="0" max="100" value="40" oninput="simulate()">
           </div>
           <div class="xpl-slider-row">
             <label for="s_ice"><span class="sw" style="background:var(--ice)"></span>Ice / Cryosphere <span class="swwt">14%</span></label>
-            <output id="s_iceOut">33</output>
+            <output id="s_iceOut" aria-live="off">33</output>
             <input id="s_ice" type="range" min="0" max="100" value="33" oninput="simulate()">
           </div>
           <div class="xpl-slider-row">
             <label for="s_fst"><span class="sw" style="background:var(--fst)"></span>Forest <span class="swwt">13%</span></label>
-            <output id="s_fstOut">44</output>
+            <output id="s_fstOut" aria-live="off">44</output>
             <input id="s_fst" type="range" min="0" max="100" value="44" oninput="simulate()">
           </div>
           <div class="xpl-slider-row">
             <label for="s_bio"><span class="sw" style="background:var(--bio)"></span>Biodiversity <span class="swwt">12%</span></label>
-            <output id="s_bioOut">37</output>
+            <output id="s_bioOut" aria-live="off">37</output>
             <input id="s_bio" type="range" min="0" max="100" value="37" oninput="simulate()">
           </div>
           <div class="xpl-slider-row">
             <label for="s_fw"><span class="sw" style="background:var(--fw)"></span>Freshwater <span class="swwt">10%</span></label>
-            <output id="s_fwOut">51</output>
+            <output id="s_fwOut" aria-live="off">51</output>
             <input id="s_fw" type="range" min="0" max="100" value="51" oninput="simulate()">
           </div>
           <div class="xpl-slider-row">
             <label for="s_sol"><span class="sw" style="background:var(--sol)"></span>Soil <span class="swwt">7%</span></label>
-            <output id="s_solOut">48</output>
+            <output id="s_solOut" aria-live="off">48</output>
             <input id="s_sol" type="range" min="0" max="100" value="48" oninput="simulate()">
           </div>
           <div class="xpl-slider-row">
             <label for="s_corp"><span class="sw" style="background:var(--corp)"></span>Corp. Accountability <span class="swwt">4%</span></label>
-            <output id="s_corpOut">35</output>
+            <output id="s_corpOut" aria-live="off">35</output>
             <input id="s_corp" type="range" min="0" max="100" value="35" oninput="simulate()">
           </div>
         </div>
 
-        <div class="xpl-lab-result">
-          Hypothetical composite: <strong id="simScore">40.2</strong> / 100
+        <div class="xpl-lab-result" aria-live="polite" aria-atomic="true">
+          <strong>SIMULATION — NOT A LIVE PLANETARY SCORE.</strong> Hypothetical composite: <strong id="simScore">40.2</strong> / 100
           · <span id="simMessage">The system is under significant pressure.</span>
         </div>
         <button class="xpl-lab-reset" onclick="resetLab()">↺ RESET TO EXAMPLE VALUES</button>
@@ -1239,12 +1312,12 @@ h1,h2,h3{font-family:"Archivo Narrow",sans-serif}
     <div>
       <div class="xpl-kicker">04 · RUN THE ALGORITHM YOURSELF</div>
       <h2>🛡️ SHIELD Threat Level Simulator</h2>
-      <p>This is the real threat-scoring formula SHIELD runs on live USGS and NASA EONET data. Set hazard counts and watch the threat level compute live.</p>
+      <p>This is an educational scenario using the SHIELD scoring model and example hazard counts. The controls below do not fetch live USGS or NASA EONET events and do not issue operational warnings. Check the SHIELD production interface and linked source feeds for current hazard information.</p>
     </div>
   </div>
 
   <div class="xpl-lab">
-    <div class="xpl-lab-title">Set today's hazard counts</div>
+    <div class="xpl-lab-title">Set example hazard counts</div>
     <div class="xpl-lab-copy">Each hazard type carries a different weight — a major earthquake moves the needle far more than one extra wildfire.</div>
 
     <div class="xpl-preset-row">
@@ -1441,7 +1514,7 @@ h1,h2,h3{font-family:"Archivo Narrow",sans-serif}
     <div class="xpl-step">
       <div class="xpl-step-num">03 / COMBINE</div>
       <h3>Roll up through modules</h3>
-      <p>Six indicators build each Earth system. Eight weighted systems build the Index. CONSCIENCE folds corporate accountability in as the ninth, lightest input.</p>
+      <p>Eight weighted Earth systems build the Index. CONSCIENCE is a separate corporate accountability hub whose portfolio-mean signal contributes to the Corporate Accountability Earth system.</p>
     </div>
     <div class="xpl-step">
       <div class="xpl-step-num">04 / EXPLAIN</div>
@@ -1462,9 +1535,9 @@ h1,h2,h3{font-family:"Archivo Narrow",sans-serif}
 
   <div class="xpl-quiz">
     <div class="xpl-kicker" id="quizCount">QUESTION 01 / 07</div>
-    <div class="xpl-question" id="quizQuestion"></div>
+    <div class="xpl-question" id="quizQuestion" aria-live="polite" aria-atomic="true"></div>
     <div class="xpl-answers" id="quizAnswers"></div>
-    <div class="xpl-quiz-feedback" id="quizFeedback"></div>
+    <div class="xpl-quiz-feedback" id="quizFeedback" role="status" aria-live="polite" aria-atomic="true"></div>
     <div class="xpl-quiz-bottom">
       <div class="xpl-quiz-score">SCORE: <span id="quizScore">0</span></div>
       <button class="xpl-secondary" id="nextQuiz" onclick="nextQuestion()" disabled>NEXT →</button>
@@ -1514,7 +1587,7 @@ h1,h2,h3{font-family:"Archivo Narrow",sans-serif}
 </div>
 </div>
 
-<button class="xpl-vibrant-fab" id="vibrantFab" onclick="vibrantTip()" aria-label="Ask Vi'brant for a fact">
+<button class="xpl-vibrant-fab" id="vibrantFab" onclick="vibrantTip()" aria-label="Ask Vi'brant for a fact" aria-expanded="false" aria-controls="vibrantPop">
   <svg class="vibrant-bob" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <circle cx="26" cy="30" r="17" fill="rgba(0,50,120,0.85)" stroke="#a050ff" stroke-width="1.5"/>
     <path d="M20 22c2-3 6-4 8-2s3 6 1 9-6 3-8 1-3-5-1-8z" fill="rgba(0,180,80,0.5)"/>
@@ -1530,7 +1603,7 @@ h1,h2,h3{font-family:"Archivo Narrow",sans-serif}
   </svg>
   <span>SAY HI TO VI'BRANT</span>
 </button>
-<div class="xpl-vibrant-pop" id="vibrantPop">
+<div class="xpl-vibrant-pop" id="vibrantPop" role="status" aria-live="polite" aria-atomic="true">
   <div class="xpl-vibrant-pop-label">✦ Vi'brant says</div>
   <p id="vibrantText">Tap again for another fact.</p>
 </div>
@@ -1584,6 +1657,7 @@ const MAG_FONT_BOOST = 0.18;
   window.toggleMagnifier = function(){
     magOn = !magOn;
     document.getElementById('xplMagBtn').classList.toggle('on', magOn);
+    document.getElementById('xplMagBtn').setAttribute('aria-pressed', String(magOn));
     lens.classList.toggle('on', magOn);
     if(magOn){
       lens.style.left = mx + 'px'; lens.style.top = my + 'px';
@@ -1629,42 +1703,42 @@ const SYSTEMS = [
 ];
 
 const MODULES = [
-  {key:'shield', num:'01', icon:'🛡️', title:'SHIELD', accent:'var(--mod-shield)', status:'built', statusLabel:'Built · Live',
+  {key:'shield', num:'01', icon:'🛡️', title:'SHIELD', accent:'var(--mod-shield)', status:'live', statusLabel:'Live · deployed',
     card:'Predictive disaster intelligence — a 2 to 14 day early warning for floods, wildfires, cyclones and drought onset.',
     intro:"SHIELD watches for trouble before it arrives. It combines live USGS seismic data with NASA EONET hazard events to produce a 2–14 day early-warning window for floods, wildfires, cyclones and drought onset — offered as a free public tier for every nation on Earth.",
     bullets:['Seismic events, M4.5+ (USGS)','Wildfire, storm, flood and volcanic events (NASA EONET)','One computed threat level: NOMINAL → WATCH → ELEVATED → CRITICAL'],
     indicators:[['M4.5+ seismic events','LIVE'],['Active wildfire count','LIVE'],['Storm &amp; flood events','LIVE'],['14-day threat algorithm','LIVE']]},
-  {key:'atlas', num:'02', icon:'🌐', title:'ATLAS', accent:'var(--mod-atlas)', status:'live', statusLabel:'Live',
-    card:"The nervous system. Gathers the 48 live indicators that build the VYRION Index across all eight Earth systems.",
+  {key:'atlas', num:'02', icon:'🌐', title:'ATLAS', accent:'var(--mod-atlas)', status:'live', statusLabel:'Live · deployed',
+    card:"The nervous system. Gathers the 48 indicators that build the VYRION Index across all eight Earth systems.",
     intro:"ATLAS is the backbone every other module leans on — it's literally where the Index number comes from. Live feeds from NOAA, NASA, USGS, GBIF and Open-Meteo flow through all eight Earth systems here, and the composite score is computed on a roughly 15-minute refresh.",
     bullets:['8 Earth systems, 48 indicators total','Direct live feeds — no proprietary or estimated data','Refreshes on page load and every ~15 minutes'],
     indicators:[['CO₂ concentration','LIVE'],['Sea surface temp. anomaly','LIVE'],['Arctic + Antarctic ice extent','LIVE'],['48 indicators, 6 per system','MIXED']]},
-  {key:'root', num:'03', icon:'🌱', title:'ROOT', accent:'var(--mod-root)', status:'live', statusLabel:'Live',
+  {key:'root', num:'03', icon:'🌱', title:'ROOT', accent:'var(--mod-root)', status:'live', statusLabel:'Live · deployed',
     card:'Regenerative agriculture OS — AI-guided soil restoration and water-efficient farming protocols.',
     intro:"ROOT turns degraded land back into a living carbon sink. It's a regenerative-agriculture operating system: AI-guided soil restoration, water-efficient farming protocols, and land-management guidance, built on six composite soil-health indicators that also cross-check against CONSCIENCE pledge data.",
     bullets:['Soil organic carbon change (SOC-D)','Land degradation &amp; vegetation index (LDVI)','Cross-module integration with CONSCIENCE'],
     indicators:[['Soil organic carbon (SOC-D)','PERIODIC'],['Land degradation (LDVI)','PERIODIC'],['Soil water-function (SWFI)','PERIODIC'],['Corporate soil exposure','PERIODIC']]},
-  {key:'canopy', num:'04', icon:'🌳', title:'CANOPY', accent:'var(--mod-canopy)', status:'built', statusLabel:'Built',
+  {key:'canopy', num:'04', icon:'🌳', title:'CANOPY', accent:'var(--mod-canopy)', status:'live', statusLabel:'Live · deployed',
     card:'Satellite-guided precision reforestation — AI picks optimal planting sites and tracks species recovery.',
     intro:"CANOPY plans and verifies reforestation at scale. Satellite imagery identifies optimal planting sites, species mix and climate compatibility, while biodiversity monitoring nodes track whether replanted habitat is actually recovering — not just whether trees went in the ground.",
     bullets:['Canopy cover change detection','Habitat corridor integrity','Post-planting biodiversity recovery tracking'],
     indicators:[['Forest cover change','PERIODIC'],['Canopy loss events','LIVE'],['Habitat corridor integrity','PERIODIC']]},
-  {key:'flux', num:'05', icon:'⚡', title:'FLUX', accent:'var(--mod-flux)', status:'phase', statusLabel:'Architecture Phase',
+  {key:'flux', num:'05', icon:'⚡', title:'FLUX', accent:'var(--mod-flux)', status:'live', statusLabel:'Live · deployed',
     card:'Clean energy infrastructure — licensing distributed solar, hydrogen and carbon capture to cities.',
     intro:"FLUX is modular clean-energy deployment: licensing distributed solar, green hydrogen, and atmospheric carbon capture systems to cities and industrial operators, on a capacity-based annual license rather than per-watt pricing. It's built to close the gap between what the energy transition needs and what actually gets installed.",
     bullets:['Distributed solar, 50kW–5MW modular units','Green hydrogen electrolysis and storage','Direct air capture, geologically stored or mineralised'],
     indicators:[['Solar capacity licensed (MW)','TARGET'],['Green hydrogen output (kt/yr)','TARGET'],['CO₂ captured (Mt/yr)','TARGET']]},
-  {key:'tide', num:'06', icon:'🐋', title:'TIDE', accent:'var(--mod-tide)', status:'phase', statusLabel:'Phase 2',
+  {key:'tide', num:'06', icon:'🐋', title:'TIDE', accent:'var(--mod-tide)', status:'live', statusLabel:'Live · deployed',
     card:'Ocean &amp; water systems — plastic remediation hardware, water purification, acidification mitigation.',
     intro:"TIDE addresses ocean and freshwater systems with actual hardware, not just measurement: scalable ocean-plastic remediation routed by AI, atmospheric and filter-based water purification, and ocean-acidification mitigation protocols.",
     bullets:['Ocean plastic remediation hardware + AI routing','Atmospheric and filter-based water purification','Acidification mitigation protocols'],
     indicators:[['Plastic remediation volume','TARGET'],['Water purification throughput','TARGET'],['Acidification mitigation coverage','TARGET']]},
-  {key:'loop', num:'07', icon:'♻️', title:'LOOP', accent:'var(--mod-loop)', status:'phase', statusLabel:'Phase 2',
+  {key:'loop', num:'07', icon:'♻️', title:'LOOP', accent:'var(--mod-loop)', status:'live', statusLabel:'Live · deployed',
     card:'Circular waste economy — tracks materials through their lifecycle and reroutes waste into manufacturing.',
     intro:"LOOP is enterprise and municipal circular-economy software. It tracks materials through their entire lifecycle and reroutes waste — plastics, e-waste, industrial byproducts — back into manufacturing input streams instead of a landfill.",
     bullets:['Full material lifecycle tracking','Waste-to-input rerouting for manufacturers','Municipal and enterprise deployment'],
     indicators:[['Material lifecycle tracked (t)','TARGET'],['Waste rerouted to manufacturing','TARGET'],['Portfolio circularity rate','TARGET']]},
-  {key:'pulse', num:'08', icon:'💠', title:'PULSE', accent:'var(--mod-pulse)', status:'phase', statusLabel:'Phase 2',
+  {key:'pulse', num:'08', icon:'💠', title:'PULSE', accent:'var(--mod-pulse)', status:'live', statusLabel:'Live · deployed',
     card:'Verified impact credit marketplace — carbon, biodiversity, water and soil credits tied to module outputs.',
     intro:"PULSE is the economic engine: a marketplace for carbon, biodiversity, water and soil credits, verified directly against other VYRION module outputs rather than self-reported claims. Corporations meet compliance; the projects doing the actual restoration get paid, funded by a 3–8% transaction fee.",
     bullets:['Credits tied to verified module outputs, not self-reporting','3–8% transaction fee funds the verification layer','Corporations and governments on the same marketplace'],
@@ -1729,7 +1803,7 @@ const GLOSSARY = [
   {name:'Earth system', tag:'ARCHITECTURE',
    body:'One of the eight components of the VYRION Index score itself — Atmosphere, Ocean, Ice, Forest, Biodiversity, Freshwater, Soil, and Corporate Accountability. Not the same list as the eight modules.'},
   {name:'ATLAS', tag:'MODULE',
-   body:'The module that gathers the 48 live indicators behind the Index. Every other module either feeds ATLAS or draws from it — it\'s described internally as VYRION\'s nervous system.'},
+   body:'The module that gathers the 48 indicators behind the Index. The eight platform modules have distinct operational roles; CONSCIENCE remains a separate corporate accountability hub.'},
   {name:'CONSCIENCE', tag:'HUB',
    body:'The accountability hub — not one of the eight modules. CONSCIENCE scores corporate climate pledges against verified public data and feeds a portfolio-mean signal back into the Index\'s Corporate Accountability system.'},
   {name:'VYRION Index', tag:'SCORE',
@@ -1759,7 +1833,7 @@ const VIBRANT_FACTS = [
   "ATLAS refreshes roughly every 15 minutes. The VYRION Index you see today is rarely more than a quarter-hour old.",
   "Soil holds nearly twice as much carbon as the atmosphere — which is exactly why ROOT treats land regeneration as climate infrastructure, not just farming.",
   "There are eight Earth systems and eight platform modules — but they're two different lists. Even Vi'brant had to double-check that one.",
-  "Vi'brant's mushroom hat isn't just for style — mycelium networks share nutrients between trees underground. VYRION named its data-sharing protocol RELAY after the same idea.",
+  "Vi'brant's mushroom hat isn't just for style — mycelium networks connect organisms and can transfer resources and signals through complex underground relationships.",
   "The pre-industrial baseline year range, 1850–1900, was chosen because it's the earliest period with dense enough thermometer records to trust. Earlier data exists — it's just too patchy.",
   "Hilo, Hawaii, where VYRION is built, sits on one of the most actively monitored volcanic islands on Earth. SHIELD's volcanic-hazard category isn't a hypothetical for the team that built it."
 ];
@@ -1828,21 +1902,30 @@ const TIMELINE_EVENTS = [
 function go(id){
   const el = document.getElementById(id);
   if(!el) return;
-  el.scrollIntoView({behavior:'smooth', block:'start'});
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  el.scrollIntoView({behavior:reduceMotion ? 'auto' : 'smooth', block:'start'});
   const top = ['start','score','systems','modules','conscience','how','lab','quiz','glossary'];
   if(top.includes(id)){
-    document.querySelectorAll('.xpl-side-link').forEach(b=>b.classList.toggle('active', b.dataset.nav===id));
+    document.querySelectorAll('.xpl-side-link').forEach(b=>{
+      const active = b.dataset.nav === id;
+      b.classList.toggle('active', active);
+      if(active) b.setAttribute('aria-current','location'); else b.removeAttribute('aria-current');
+    });
   }
 }
 
 function setScale(btn){
   baseFontScale = parseFloat(btn.dataset.fs);
   document.documentElement.style.setProperty('--font-scale', baseFontScale.toFixed(2));
-  document.querySelectorAll('.xpl-fscale button').forEach(b=>b.classList.toggle('active', b===btn));
+  document.querySelectorAll('.xpl-fscale button').forEach(b=>{
+    const active = b === btn;
+    b.classList.toggle('active', active);
+    b.setAttribute('aria-pressed', String(active));
+  });
 }
 
 function toggleHelp(){
-  alert("No controller needed — just scroll, or click anything in the sidebar! 🎮\n\nFive things to try: the Planet Lab sliders, the SHIELD threat sim, the CONSCIENCE Score Builder, the Module Matcher game, and the Field Test quiz. Collect all five Explorer Badges and Vi'brant throws you a little confetti party. 🎉\n\nTip: the 🔍 Magnifier (bottom right) also bumps text size up a few points while it's on.");
+  alert("Keyboard access: use Tab and Shift+Tab to move between controls, Enter or Space to activate buttons, and arrow keys to adjust sliders. Use the text-size controls for easier reading; reduced-motion preferences are respected.\n\nTry the Planet Lab, SHIELD scenario lab, CONSCIENCE Score Builder, Module Matcher, and Field Test. Simulator results are educational examples, not operational alerts.");
 }
 
 /* ══════════════════════════════════════════════════════════════════
@@ -1873,7 +1956,7 @@ function renderSystems(){
 function renderModules(){
   const grid = document.getElementById('modulesGrid');
   grid.innerHTML = MODULES.map(m => `
-    <div class="xpl-module fade-in" style="--tile-accent:${m.accent}" onclick="openModule('${m.key}')">
+    <div class="xpl-module fade-in" style="--tile-accent:${m.accent}" role="button" tabindex="0" aria-label="Explore ${m.title} module details" onclick="openModule('${m.key}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModule('${m.key}');}">
       <div class="xpl-module-top">
         <span class="xpl-module-num">MODULE ${m.num}</span>
         <span class="xpl-status-tag ${m.status}">${m.statusLabel}</span>
@@ -1887,8 +1970,12 @@ function renderModules(){
 
   const conscienceCard = document.createElement('div');
   conscienceCard.className = 'xpl-module fade-in';
+  conscienceCard.setAttribute('role','button');
+  conscienceCard.setAttribute('tabindex','0');
+  conscienceCard.setAttribute('aria-label','Open CONSCIENCE corporate accountability hub');
   conscienceCard.style.setProperty('--tile-accent','var(--mod-conscience)');
   conscienceCard.onclick = () => go('conscience');
+  conscienceCard.onkeydown = (event) => { if(event.key === 'Enter' || event.key === ' '){ event.preventDefault(); go('conscience'); } };
   conscienceCard.innerHTML = `
     <div class="xpl-module-top">
       <span class="xpl-module-num">HUB · NOT A MODULE</span>
@@ -1896,8 +1983,8 @@ function renderModules(){
     </div>
     <div class="xpl-module-icon">🧭</div>
     <h3>CONSCIENCE</h3>
-    <p>Every module's data eventually flows here. Scores corporate pledges against verified reality — the ninth thing, deliberately unnumbered.</p>
-    <span class="learn">JUMP TO SECTION 04 →</span>`;
+    <p>CONSCIENCE is a separate corporate accountability hub. It evaluates corporate commitments against public-record evidence and contributes a portfolio-mean signal to the Corporate Accountability Earth system.</p>
+    <span class="learn">OPEN THE ACCOUNTABILITY HUB →</span>`;
   grid.appendChild(conscienceCard);
 }
 
@@ -2280,7 +2367,7 @@ function answer(i){
   });
   if(i === item.c){
     qScore++;
-    confettiBurst(event?.clientX, event?.clientY, 14);
+    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches) confettiBurst(window.innerWidth/2, window.innerHeight*.35, 14);
   }
   document.getElementById('quizScore').textContent = qScore;
   document.getElementById('quizFeedback').textContent = (i===item.c ? '✓ Correct. ' : '✕ Not quite. ') + item.e;
@@ -2317,15 +2404,19 @@ function renderGlossary(){
   const box = document.getElementById('glossaryList');
   box.innerHTML = GLOSSARY.map((t,i) => `
     <div class="xpl-term" data-search="${(t.name+' '+t.body).toLowerCase()}">
-      <button class="xpl-term-btn" onclick="toggleTerm(${i})">
+      <button class="xpl-term-btn" id="termBtn${i}" aria-expanded="false" aria-controls="termBody${i}" onclick="toggleTerm(${i})">
         <span class="xpl-term-name">${t.name}</span>
         <span class="xpl-term-tag">${t.tag}</span>
       </button>
-      <div class="xpl-term-body">${t.body}</div>
+      <div class="xpl-term-body" id="termBody${i}">${t.body}</div>
     </div>`).join('');
 }
 function toggleTerm(i){
-  document.querySelectorAll('.xpl-term')[i].classList.toggle('open');
+  const item = document.querySelectorAll('.xpl-term')[i];
+  if(!item) return;
+  const open = item.classList.toggle('open');
+  const button = document.getElementById('termBtn'+i);
+  if(button) button.setAttribute('aria-expanded', String(open));
 }
 function filterTerms(){
   const q = document.getElementById('termSearch').value.toLowerCase().trim();
@@ -2358,12 +2449,14 @@ function vibrantPickFact(){
 function vibrantShow(){
   clearTimeout(vibrantCloseTimer);
   document.getElementById('vibrantPop').classList.add('open');
+  document.getElementById('vibrantFab')?.setAttribute('aria-expanded','true');
 }
 
 function vibrantScheduleClose(){
   clearTimeout(vibrantCloseTimer);
   vibrantCloseTimer = setTimeout(() => {
     document.getElementById('vibrantPop').classList.remove('open');
+    document.getElementById('vibrantFab')?.setAttribute('aria-expanded','false');
   }, 260);
 }
 
@@ -2380,11 +2473,31 @@ function dayNumber(){
   return Math.max(1, Math.floor((Date.now() - new Date(DAY_ONE_ISO).getTime()) / 86400000) + 1);
 }
 
-function applyScore(score){
-  const s = Number(score) || FALLBACK_SCORE;
+function applyScore(score, meta = {}){
+  const parsed = Number(score);
+  const valid = Number.isFinite(parsed) && parsed >= 0 && parsed <= 100;
+  const s = valid ? parsed : FALLBACK_SCORE;
   document.getElementById('scoreNumber').textContent = s.toFixed(1);
   document.getElementById('orbitScore').textContent = s.toFixed(1);
+  document.getElementById('liveIndex').textContent = s.toFixed(1) + ' ± 1.8';
   document.getElementById('scaleMarker').style.left = Math.min(98, Math.max(1, s)) + '%';
+  const statusText = document.getElementById('dataStatusText');
+  const statusMeta = document.getElementById('dataStatusMeta');
+  const scoreNote = document.getElementById('scoreDataNote');
+  const stamp = document.getElementById('scoreTimestamp');
+  const sourceDate = meta.timestamp ? new Date(typeof meta.timestamp === 'number' && meta.timestamp < 1000000000000 ? meta.timestamp * 1000 : meta.timestamp) : null;
+  const timeText = sourceDate && Number.isFinite(sourceDate.getTime()) ? sourceDate.toLocaleString() : new Date().toLocaleString() + ' (retrieved by this page; source timestamp not supplied)';
+  if(meta.live && valid){
+    statusText.textContent = 'Published Index feed responded. The score below was read from the endpoint.';
+    statusMeta.textContent = 'Source: vyrion.earth/conscience-data.json · ' + timeText + ' · Uncertainty shown as ±1.8 per the current page methodology note.';
+    scoreNote.innerHTML = 'Published endpoint responded. Treat this as the endpoint value, not independent validation of the underlying observations. Source: <a href="https://vyrion.earth/conscience-data.json" target="_blank" rel="noopener">vyrion.earth/conscience-data.json</a>.';
+    stamp.textContent = 'Feed check: ' + timeText;
+  } else {
+    statusText.textContent = 'Illustrative fallback shown — the published Index endpoint could not be verified in this session.';
+    statusMeta.textContent = 'Source checked: vyrion.earth/conscience-data.json · ' + timeText + ' · fallback is not a live observation.';
+    scoreNote.innerHTML = 'ILLUSTRATIVE FALLBACK — not confirmed as today’s published value. Source attempted: <a href="https://vyrion.earth/conscience-data.json" target="_blank" rel="noopener">vyrion.earth/conscience-data.json</a>. The endpoint did not provide a verifiable score to this page.';
+    stamp.textContent = 'Fallback rendered: ' + timeText + ' · source timestamp unavailable.';
+  }
 
   const statusEl = document.getElementById('scoreStatus');
   let band, cls;
@@ -2396,17 +2509,23 @@ function applyScore(score){
 
   document.getElementById('scoreDay').textContent =
     `Day ${dayNumber()} · Origin: March 18, 2026`;
+  document.getElementById('liveDay').textContent = `Day ${dayNumber()}`;
 }
 
 async function fetchLiveScore(){
   try{
-    const r = await fetch('https://vyrion.earth/conscience-data.json', {mode:'cors'});
-    if(!r.ok) throw new Error('bad response');
+    const r = await fetch('https://vyrion.earth/conscience-data.json', {mode:'cors', cache:'no-store'});
+    if(!r.ok) throw new Error('HTTP ' + r.status);
     const d = await r.json();
     const score = d?.vyrion_index?.score;
-    if(typeof score === 'number') return score;
-  }catch(e){ /* offline, blocked, or CORS — fall back silently */ }
-  return FALLBACK_SCORE;
+    if(typeof score === 'number' && Number.isFinite(score) && score >= 0 && score <= 100){
+      const timestamp = d?.vyrion_index?.updated_at || d?.vyrion_index?.timestamp || d?.updated_at || d?.generated_at || d?.timestamp || d?.date || null;
+      return {score, live:true, timestamp};
+    }
+    throw new Error('Expected score not found in published JSON');
+  }catch(e){
+    return {score:FALLBACK_SCORE, live:false, timestamp:null};
+  }
 }
 
 /* ══════════════════════════════════════════════════════════════════
@@ -2419,7 +2538,11 @@ function initScrollspy(){
   const obs = new IntersectionObserver(entries=>{
     entries.forEach(e=>{
       if(e.isIntersecting){
-        document.querySelectorAll('.xpl-side-link').forEach(b=>b.classList.toggle('active', b.dataset.nav===e.target.id));
+        document.querySelectorAll('.xpl-side-link').forEach(b=>{
+          const active = b.dataset.nav === e.target.id;
+          b.classList.toggle('active', active);
+          if(active) b.setAttribute('aria-current','location'); else b.removeAttribute('aria-current');
+        });
       }
     });
   }, {rootMargin:'-40% 0px -50% 0px'});
@@ -2523,7 +2646,7 @@ async function init(){
   renderGlossary();
   renderBadges();
   simulate();
-  applyScore(FALLBACK_SCORE);
+  applyScore(FALLBACK_SCORE, {live:false});
   initFadeIn();
   initScrollspy();
   initStars();
@@ -2538,11 +2661,12 @@ async function init(){
     if(!fab.contains(e.target) && !pop.contains(e.target)){
       clearTimeout(vibrantCloseTimer);
       pop.classList.remove('open');
+      fab.setAttribute('aria-expanded','false');
     }
   });
 
   const live = await fetchLiveScore();
-  applyScore(live);
+  applyScore(live.score, live);
 }
 
 document.addEventListener('DOMContentLoaded', init);
