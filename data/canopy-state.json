@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-10-03T16:47:03.591Z",
+    "generatedAt": "2026-10-04T06:29:58.034Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -16,17 +16,17 @@
       "totalEvents": 57,
       "categories": {
         "Severe Storms": 8,
-        "Wildfires": 39,
-        "Sea and Lake Ice": 3
+        "Wildfires": 38,
+        "Sea and Lake Ice": 4
       },
       "seismicCount": 7,
       "maxMagnitude": 6.6
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 3.78,
-      "minTemperature_2m": -45.8,
-      "maxTemperature_2m": 28.6
+      "avgTemperature_2m": 1.88,
+      "minTemperature_2m": -48.4,
+      "maxTemperature_2m": 27
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -40,19 +40,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-10-03T16:14:09.563Z",
-        "generated_date": "2026-10-03",
+        "generated": "2026-10-04T05:42:41.842Z",
+        "generated_date": "2026-10-04",
         "script_version": "1.1",
         "window_days": 14,
-        "window_start": "2026-09-19",
-        "window_end": "2026-10-03",
-        "runtime_ms": 1030,
+        "window_start": "2026-09-20",
+        "window_end": "2026-10-04",
+        "runtime_ms": 249,
         "seismic_live": true,
-        "eonet_live": false
+        "eonet_live": true
       },
       "threat": {
-        "level": "WATCH",
-        "score": 5.25
+        "level": "CRITICAL",
+        "score": 16.1
       },
       "seismic": {
         "events": [
@@ -73,6 +73,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tiqc"
           },
           {
+            "id": "us6000tzer",
+            "magnitude": 5.9,
+            "place": "39 km WSW of Tambolaka, Indonesia",
+            "time": "2026-10-03T22:55:55.358Z",
+            "depth_km": 46,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tzer"
+          },
+          {
             "id": "us6000tz62",
             "magnitude": 5.8,
             "place": "165 km SSE of Vilyuchinsk, Russia",
@@ -87,6 +95,14 @@
             "time": "2026-09-23T14:41:02.650Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tx3m"
+          },
+          {
+            "id": "us6000tzfg",
+            "magnitude": 5.6,
+            "place": "80 km S of Banda Aceh, Indonesia",
+            "time": "2026-10-03T23:37:35.621Z",
+            "depth_km": 69.7,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tzfg"
           },
           {
             "id": "us6000tymj",
@@ -281,30 +297,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tiq2"
           },
           {
-            "id": "us7000tinl",
-            "magnitude": 5.3,
-            "place": "108 km ESE of Yigo Village, Guam",
-            "time": "2026-09-20T03:43:24.649Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tinl"
-          },
-          {
-            "id": "us7000timy",
-            "magnitude": 5.3,
-            "place": "Reykjanes Ridge",
-            "time": "2026-09-20T00:58:14.425Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000timy"
-          },
-          {
-            "id": "us7000tild",
-            "magnitude": 5.3,
-            "place": "Reykjanes Ridge",
-            "time": "2026-09-19T20:24:42.324Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tild"
-          },
-          {
             "id": "us6000tyny",
             "magnitude": 5.2,
             "place": "7 km ESE of Baghlān, Afghanistan",
@@ -383,6 +375,14 @@
             "time": "2026-09-20T13:00:45.411Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tirq"
+          },
+          {
+            "id": "us6000tze2",
+            "magnitude": 5.1,
+            "place": "182 km SSE of Vilyuchinsk, Russia",
+            "time": "2026-10-03T20:00:44.104Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tze2"
           },
           {
             "id": "us6000tz8c",
@@ -633,14 +633,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000txvu"
           },
           {
-            "id": "us6000txur",
-            "magnitude": 5,
-            "place": "52 km NNW of Ruteng, Indonesia",
-            "time": "2026-09-26T19:37:01.212Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000txur"
-          },
-          {
             "id": "us6000txtn",
             "magnitude": 5,
             "place": "78 km ENE of Tadine, New Caledonia",
@@ -753,12 +745,28 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tit6"
           },
           {
-            "id": "us7000tip2",
-            "magnitude": 5,
-            "place": "78 km W of Hihifo, Tonga",
-            "time": "2026-09-20T05:07:03.090Z",
+            "id": "us6000tzg0",
+            "magnitude": 4.9,
+            "place": "South Sandwich Islands region",
+            "time": "2026-10-04T01:47:52.030Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tip2"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tzg0"
+          },
+          {
+            "id": "us6000tzfv",
+            "magnitude": 4.9,
+            "place": "21 km NE of Lae, Papua New Guinea",
+            "time": "2026-10-04T01:38:46.078Z",
+            "depth_km": 94.2,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tzfv"
+          },
+          {
+            "id": "us6000tzdp",
+            "magnitude": 4.9,
+            "place": "72 km NE of Sittwe, Burma (Myanmar)",
+            "time": "2026-10-03T18:12:46.916Z",
+            "depth_km": 35,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tzdp"
           },
           {
             "id": "us6000tz8a",
@@ -881,6 +889,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000txv7"
           },
           {
+            "id": "us6000txur",
+            "magnitude": 4.9,
+            "place": "53 km NNW of Ruteng, Indonesia",
+            "time": "2026-09-26T19:37:01.041Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000txur"
+          },
+          {
             "id": "us6000txse",
             "magnitude": 4.9,
             "place": "73 km ENE of Tadine, New Caledonia",
@@ -975,14 +991,6 @@
             "time": "2026-09-20T06:47:57.789Z",
             "depth_km": 16.6,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tipi"
-          },
-          {
-            "id": "us7000timw",
-            "magnitude": 4.9,
-            "place": "85 km W of Hihifo, Tonga",
-            "time": "2026-09-20T00:33:21.417Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000timw"
           },
           {
             "id": "us6000tzb5",
@@ -1275,8 +1283,8 @@
           {
             "id": "us6000txuj",
             "magnitude": 4.7,
-            "place": "5 km N of Bowangshan, China",
-            "time": "2026-09-26T18:31:42.679Z",
+            "place": "15 km WNW of Bowangshan, China",
+            "time": "2026-09-26T18:31:42.676Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000txuj"
           },
@@ -1401,6 +1409,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tirt"
           },
           {
+            "id": "us6000tzdj",
+            "magnitude": 4.6,
+            "place": "76 km NNE of Lae, Papua New Guinea",
+            "time": "2026-10-03T17:24:12.545Z",
+            "depth_km": 81.9,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tzdj"
+          },
+          {
             "id": "us6000tz9t",
             "magnitude": 4.6,
             "place": "174 km SSE of Vilyuchinsk, Russia",
@@ -1423,6 +1439,14 @@
             "time": "2026-10-02T20:26:02.878Z",
             "depth_km": 86.7,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tz8b"
+          },
+          {
+            "id": "us6000tz20",
+            "magnitude": 4.6,
+            "place": "20 km ESE of Petropavlovsk-Kamchatsky, Russia",
+            "time": "2026-10-02T16:02:10.426Z",
+            "depth_km": 99.1,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tz20"
           },
           {
             "id": "us6000tyw9",
@@ -1521,6 +1545,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tz6g"
           },
           {
+            "id": "us6000txzx",
+            "magnitude": 4.6,
+            "place": "19 km NW of Yongning, China",
+            "time": "2026-09-27T18:29:58.261Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000txzx"
+          },
+          {
             "id": "us6000txxm",
             "magnitude": 4.6,
             "place": "Rat Islands, Aleutian Islands, Alaska",
@@ -1532,7 +1564,7 @@
             "id": "us6000txuc",
             "magnitude": 4.6,
             "place": "south of Africa",
-            "time": "2026-09-26T17:50:20.706Z",
+            "time": "2026-09-26T17:50:20.700Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000txuc"
           },
@@ -1623,6 +1655,14 @@
             "time": "2026-09-23T12:23:20.274Z",
             "depth_km": 48.5,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tx31"
+          },
+          {
+            "id": "us6000tyda",
+            "magnitude": 4.6,
+            "place": "South Sandwich Islands region",
+            "time": "2026-09-23T03:52:06.685Z",
+            "depth_km": 29.2,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tyda"
           },
           {
             "id": "us6000twzi",
@@ -1737,6 +1777,22 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000txkw"
           },
           {
+            "id": "us6000tzf7",
+            "magnitude": 4.5,
+            "place": "293 km SSE of Tabiauan, Philippines",
+            "time": "2026-10-03T23:14:35.782Z",
+            "depth_km": 575,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tzf7"
+          },
+          {
+            "id": "us6000tze6",
+            "magnitude": 4.5,
+            "place": "121 km SW of Puerto Madero, Mexico",
+            "time": "2026-10-03T20:33:45.577Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tze6"
+          },
+          {
             "id": "us6000tzcm",
             "magnitude": 4.5,
             "place": "Kermadec Islands region",
@@ -1759,6 +1815,22 @@
             "time": "2026-10-02T20:34:56.862Z",
             "depth_km": 50,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tz8f"
+          },
+          {
+            "id": "us6000tz6z",
+            "magnitude": 4.5,
+            "place": "56 km SSE of Mawlaik, Burma (Myanmar)",
+            "time": "2026-10-02T16:55:33.449Z",
+            "depth_km": 103.9,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tz6z"
+          },
+          {
+            "id": "us6000tz1r",
+            "magnitude": 4.5,
+            "place": "7 km NE of Chalandrítsa, Greece",
+            "time": "2026-10-02T15:26:42.710Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tz1r"
           },
           {
             "id": "us6000tyzy",
@@ -1873,14 +1945,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty0k"
           },
           {
-            "id": "us6000txzx",
-            "magnitude": 4.5,
-            "place": "78 km N of Daocheng, China",
-            "time": "2026-09-27T18:30:09.687Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000txzx"
-          },
-          {
             "id": "us6000txwk",
             "magnitude": 4.5,
             "place": "145 km WNW of Lebu, Chile",
@@ -1951,14 +2015,6 @@
             "time": "2026-09-23T22:31:20.377Z",
             "depth_km": 35,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tye0"
-          },
-          {
-            "id": "us6000tx08",
-            "magnitude": 4.5,
-            "place": "63 km NE of Ruteng, Indonesia",
-            "time": "2026-09-23T02:02:43.755Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tx08"
           },
           {
             "id": "us6000tyd7",
@@ -2047,18 +2103,10 @@
             "time": "2026-09-20T15:33:50.990Z",
             "depth_km": 513.3,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tis4"
-          },
-          {
-            "id": "us7000tinf",
-            "magnitude": 4.5,
-            "place": "54 km ENE of Sainte-Marie, Martinique",
-            "time": "2026-09-20T02:44:21.022Z",
-            "depth_km": 46.4,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tinf"
           }
         ],
-        "count_total": 250,
-        "count_m55_plus": 11,
+        "count_total": 256,
+        "count_m55_plus": 13,
         "count_m60_plus": 2,
         "count_m70_plus": 0,
         "count_m80_plus": 0,
@@ -2073,17 +2121,218 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-10-03T16:14:08.668Z"
+        "retrieved": "2026-10-04T05:42:41.703Z"
       },
-      "wildfire": null,
-      "storm": null,
-      "flood": null,
-      "volcanic": null
+      "wildfire": {
+        "events": [
+          {
+            "id": "EONET_24964",
+            "title": "Wildfire SAN FRANCISCO 2, Starr, Texas",
+            "type": "WILDFIRE",
+            "time": "2026-09-30T08:56:00.000Z",
+            "coords": [
+              -98.692,
+              26.287
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_24963",
+            "title": "Wildfire Hatch Grade, Walla Walla, Washington",
+            "type": "WILDFIRE",
+            "time": "2026-09-29T19:50:00.000Z",
+            "coords": [
+              -118.859,
+              46.032
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_24965",
+            "title": "Wildfire 3 ALPHA SIERRA, Broward, Florida",
+            "type": "WILDFIRE",
+            "time": "2026-09-28T21:53:00.000Z",
+            "coords": [
+              -80.595,
+              26.134
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_24904",
+            "title": "Wildfire Rafter 4B, Schleicher, Texas",
+            "type": "WILDFIRE",
+            "time": "2026-09-26T15:18:00.000Z",
+            "coords": [
+              -100.498,
+              30.766
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_24905",
+            "title": "Wildfire SECOND STREET, Benton, Washington",
+            "type": "WILDFIRE",
+            "time": "2026-09-25T18:57:00.000Z",
+            "coords": [
+              -119.47,
+              46.254
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_24908",
+            "title": "Prescribed Fire Bonanza Ridge RX, Broadwater, Montana",
+            "type": "WILDFIRE",
+            "time": "2026-09-24T12:55:00.000Z",
+            "coords": [
+              -111.77,
+              46.245
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_24809",
+            "title": "Wildfire Merit Creek, Greene, Mississippi",
+            "type": "WILDFIRE",
+            "time": "2026-09-23T10:12:00.000Z",
+            "coords": [
+              -88.838,
+              31.053
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_24907",
+            "title": "Prescribed Fire Kelly Gulch RX, Lewis and Clark, Montana",
+            "type": "WILDFIRE",
+            "time": "2026-09-22T13:20:00.000Z",
+            "coords": [
+              -111.727,
+              46.735
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_24710",
+            "title": "Wildfire Round Prarie, Morehouse, Louisiana",
+            "type": "WILDFIRE",
+            "time": "2026-09-20T17:32:00.000Z",
+            "coords": [
+              -91.989,
+              32.858
+            ],
+            "closed": null
+          }
+        ],
+        "count": 9
+      },
+      "storm": {
+        "events": [
+          {
+            "id": "EONET_24962",
+            "title": "Typhoon Choi-wan",
+            "type": "STORM",
+            "time": "2026-09-30T12:00:00.000Z",
+            "coords": [
+              150.8,
+              16
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_24909",
+            "title": "Tropical Storm Hanna",
+            "type": "STORM",
+            "time": "2026-09-28T15:00:00.000Z",
+            "coords": [
+              -50.4,
+              36.6
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_24875",
+            "title": "Hurricane Rachel",
+            "type": "STORM",
+            "time": "2026-09-27T18:00:00.000Z",
+            "coords": [
+              -98.9,
+              12.7
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_24811",
+            "title": "Tropical Storm Gonzalo",
+            "type": "STORM",
+            "time": "2026-09-25T03:00:00.000Z",
+            "coords": [
+              -22.1,
+              13.2
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_24786",
+            "title": "Hurricane Nolo",
+            "type": "STORM",
+            "time": "2026-09-24T00:00:00.000Z",
+            "coords": [
+              -155.8,
+              14.6
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_24787",
+            "title": "Super Typhoon Surigae",
+            "type": "STORM",
+            "time": "2026-09-23T18:00:00.000Z",
+            "coords": [
+              135.8,
+              17.3
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_24721",
+            "title": "Hurricane Polo",
+            "type": "STORM",
+            "time": "2026-09-21T00:00:00.000Z",
+            "coords": [
+              -104.8,
+              15.1
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_24722",
+            "title": "Tropical Storm Fay",
+            "type": "STORM",
+            "time": "2026-09-20T09:00:00.000Z",
+            "coords": [
+              -33.1,
+              33.7
+            ],
+            "closed": null
+          }
+        ],
+        "count": 8
+      },
+      "flood": {
+        "events": [],
+        "count": 0
+      },
+      "volcanic": {
+        "events": [],
+        "count": 0
+      }
     },
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-10-03T16:29:07.822Z",
+        "generatedAt": "2026-10-04T06:02:58.747Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
@@ -2189,8 +2438,8 @@
           "totalActive": 50,
           "byCategory": {
             "Severe Storms": 8,
-            "Wildfires": 39,
-            "Sea and Lake Ice": 3
+            "Wildfires": 38,
+            "Sea and Lake Ice": 4
           },
           "events": [
             {
@@ -2203,13 +2452,13 @@
                 "JTWC"
               ],
               "geometry": {
-                "magnitudeValue": 80,
+                "magnitudeValue": 110,
                 "magnitudeUnit": "kts",
-                "date": "2026-10-03T06:00:00Z",
+                "date": "2026-10-04T00:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  145.9,
-                  19.4
+                  147.1,
+                  22.1
                 ]
               }
             },
@@ -2304,13 +2553,13 @@
                 "NOAA_NHC"
               ],
               "geometry": {
-                "magnitudeValue": 85,
+                "magnitudeValue": 75,
                 "magnitudeUnit": "kts",
-                "date": "2026-10-03T06:00:00Z",
+                "date": "2026-10-04T00:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  -111.6,
-                  19.3
+                  -112.6,
+                  19.9
                 ]
               }
             },
@@ -2424,12 +2673,12 @@
                 "JTWC"
               ],
               "geometry": {
-                "magnitudeValue": 90,
+                "magnitudeValue": 105,
                 "magnitudeUnit": "kts",
-                "date": "2026-10-03T06:00:00Z",
+                "date": "2026-10-04T00:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  -169,
+                  -174.2,
                   23.3
                 ]
               }
@@ -2593,6 +2842,26 @@
                 "coordinates": [
                   -112.314683,
                   41.4797
+                ]
+              }
+            },
+            {
+              "id": "EONET_6474",
+              "title": "Iceberg D35",
+              "categories": [
+                "Sea and Lake Ice"
+              ],
+              "sources": [
+                "NATICE"
+              ],
+              "geometry": {
+                "magnitudeValue": 90,
+                "magnitudeUnit": "NM^2",
+                "date": "2026-09-18T00:00:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -45.73,
+                  -60.27
                 ]
               }
             },
@@ -2776,26 +3045,6 @@
                   35.1580556
                 ]
               }
-            },
-            {
-              "id": "EONET_24481",
-              "title": "Wildfire Dry River, Sutton, Texas",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 8761,
-                "magnitudeUnit": "acres",
-                "date": "2026-09-15T16:59:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -100.7446997,
-                  30.54096369
-                ]
-              }
             }
           ]
         },
@@ -2805,54 +3054,54 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": 0.6,
-              "surface_pressure": 993,
-              "wind_speed_10m": 7.22,
-              "relative_humidity_2m": 98
+              "temperature_2m": -1.3,
+              "surface_pressure": 992.7,
+              "wind_speed_10m": 4.79,
+              "relative_humidity_2m": 99
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 13.7,
-              "surface_pressure": 1020.6,
-              "wind_speed_10m": 7.91,
-              "relative_humidity_2m": 79
+              "temperature_2m": 14.8,
+              "surface_pressure": 1018.4,
+              "wind_speed_10m": 10.65,
+              "relative_humidity_2m": 91
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 28.6,
-              "surface_pressure": 915.2,
-              "wind_speed_10m": 3.09,
-              "relative_humidity_2m": 45
+              "temperature_2m": 19.2,
+              "surface_pressure": 912.5,
+              "wind_speed_10m": 2.86,
+              "relative_humidity_2m": 98
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 26.3,
-              "surface_pressure": 1015.3,
-              "wind_speed_10m": 1.39,
-              "relative_humidity_2m": 83
+              "temperature_2m": 27,
+              "surface_pressure": 1012.9,
+              "wind_speed_10m": 2.24,
+              "relative_humidity_2m": 81
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": -0.7,
-              "surface_pressure": 964.7,
-              "wind_speed_10m": 17.06,
-              "relative_humidity_2m": 94
+              "temperature_2m": 0,
+              "surface_pressure": 945.7,
+              "wind_speed_10m": 11.36,
+              "relative_humidity_2m": 96
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -45.8,
-              "surface_pressure": 702.2,
-              "wind_speed_10m": 6.69,
+              "temperature_2m": -48.4,
+              "surface_pressure": 707.5,
+              "wind_speed_10m": 6.54,
               "relative_humidity_2m": 70
             }
           ]
@@ -2871,7 +3120,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-10-03T16:42:38.149Z"
+        "generatedAt": "2026-10-04T06:19:41.291Z"
       },
       "health": {
         "score": 87,
