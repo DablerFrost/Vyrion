@@ -1,13 +1,13 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-10-05T05:54:28.450Z",
+    "generatedAt": "2026-10-05T20:45:22.994Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 7,
+      "count": 6,
       "maxMagnitude": 6.6,
       "events": [
         {
@@ -87,27 +87,14 @@
           ],
           "tsunami": false,
           "significance": 657
-        },
-        {
-          "id": "uw714095342",
-          "magnitude": 3.75,
-          "place": "20 km E of Castle Rock, Washington",
-          "time": "2026-09-05T11:09:28.270Z",
-          "coordinates": [
-            -122.642,
-            46.2465,
-            17.67
-          ],
-          "tsunami": false,
-          "significance": 646
         }
       ]
     },
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Severe Storms": 8,
-        "Wildfires": 38,
+        "Severe Storms": 7,
+        "Wildfires": 39,
         "Sea and Lake Ice": 4
       },
       "events": [
@@ -121,13 +108,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 130,
+            "magnitudeValue": 110,
             "magnitudeUnit": "kts",
-            "date": "2026-10-05T00:00:00Z",
+            "date": "2026-10-05T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              146.5,
-              25.2
+              145.9,
+              27.3
             ]
           }
         },
@@ -222,13 +209,13 @@
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 85,
+            "magnitudeValue": 75,
             "magnitudeUnit": "kts",
-            "date": "2026-10-05T00:00:00Z",
+            "date": "2026-10-05T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              -114.5,
-              20.1
+              -115.8,
+              20.4
             ]
           }
         },
@@ -344,11 +331,11 @@
           "geometry": {
             "magnitudeValue": 105,
             "magnitudeUnit": "kts",
-            "date": "2026-10-05T00:00:00Z",
+            "date": "2026-10-05T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              179.3,
-              24.8
+              176.2,
+              25.6
             ]
           }
         },
@@ -409,28 +396,6 @@
             "coordinates": [
               -111.726667,
               46.735
-            ]
-          }
-        },
-        {
-          "id": "EONET_24721",
-          "title": "Hurricane Polo",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "EO",
-            "JTWC",
-            "NOAA_NHC"
-          ],
-          "geometry": {
-            "magnitudeValue": 30,
-            "magnitudeUnit": "kts",
-            "date": "2026-09-30T00:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -108.5,
-              30
             ]
           }
         },
@@ -714,6 +679,26 @@
               35.1580556
             ]
           }
+        },
+        {
+          "id": "EONET_24481",
+          "title": "Wildfire Dry River, Sutton, Texas",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 8761,
+            "magnitudeUnit": "acres",
+            "date": "2026-09-15T16:59:00Z",
+            "type": "Point",
+            "coordinates": [
+              -100.7446997,
+              30.54096369
+            ]
+          }
         }
       ]
     },
@@ -723,55 +708,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -1.9,
-          "surface_pressure": 993.2,
-          "wind_speed_10m": 8.41,
-          "relative_humidity_2m": 96
+          "temperature_2m": -5.4,
+          "surface_pressure": 996.1,
+          "wind_speed_10m": 12.48,
+          "relative_humidity_2m": 89
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 11.8,
-          "surface_pressure": 1023.3,
-          "wind_speed_10m": 6.72,
-          "relative_humidity_2m": 80
+          "temperature_2m": 11.7,
+          "surface_pressure": 1031.1,
+          "wind_speed_10m": 6.6,
+          "relative_humidity_2m": 63
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 19.9,
-          "surface_pressure": 913.3,
-          "wind_speed_10m": 2.1,
-          "relative_humidity_2m": 100
+          "temperature_2m": 23.7,
+          "surface_pressure": 912,
+          "wind_speed_10m": 1.86,
+          "relative_humidity_2m": 83
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 28.2,
-          "surface_pressure": 1012,
-          "wind_speed_10m": 3.76,
-          "relative_humidity_2m": 77
+          "temperature_2m": 27.4,
+          "surface_pressure": 1011.4,
+          "wind_speed_10m": 4.36,
+          "relative_humidity_2m": 81
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -6.2,
-          "surface_pressure": 963.6,
-          "wind_speed_10m": 14.32,
-          "relative_humidity_2m": 68
+          "temperature_2m": -6,
+          "surface_pressure": 963,
+          "wind_speed_10m": 20.18,
+          "relative_humidity_2m": 71
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -51,
-          "surface_pressure": 706.8,
-          "wind_speed_10m": 7.06,
-          "relative_humidity_2m": 67
+          "temperature_2m": -46.4,
+          "surface_pressure": 715.2,
+          "wind_speed_10m": 11.62,
+          "relative_humidity_2m": 48
         }
       ]
     },
