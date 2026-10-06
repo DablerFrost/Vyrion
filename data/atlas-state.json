@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-10-06T06:32:43.518Z",
+    "generatedAt": "2026-10-06T18:27:39.692Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -93,11 +93,31 @@
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Wildfires": 40,
-        "Severe Storms": 6,
+        "Severe Storms": 7,
+        "Wildfires": 39,
         "Sea and Lake Ice": 4
       },
       "events": [
+        {
+          "id": "EONET_25046",
+          "title": "Tropical Storm Koguma",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC"
+          ],
+          "geometry": {
+            "magnitudeValue": 45,
+            "magnitudeUnit": "kts",
+            "date": "2026-10-06T12:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              165.8,
+              14
+            ]
+          }
+        },
         {
           "id": "EONET_25043",
           "title": "Prescribed Fire D3 Bear RX, Greenlee, Arizona",
@@ -168,13 +188,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 95,
+            "magnitudeValue": 80,
             "magnitudeUnit": "kts",
-            "date": "2026-10-06T00:00:00Z",
+            "date": "2026-10-06T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              145.8,
-              29.8
+              147.6,
+              33.7
             ]
           }
         },
@@ -289,12 +309,12 @@
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 80,
+            "magnitudeValue": 75,
             "magnitudeUnit": "kts",
-            "date": "2026-10-06T00:00:00Z",
+            "date": "2026-10-06T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              -117.5,
+              -119.1,
               20.4
             ]
           }
@@ -429,13 +449,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 105,
+            "magnitudeValue": 100,
             "magnitudeUnit": "kts",
-            "date": "2026-10-06T00:00:00Z",
+            "date": "2026-10-06T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              173,
-              25.7
+              169.1,
+              25.4
             ]
           }
         },
@@ -679,26 +699,6 @@
               26.45826
             ]
           }
-        },
-        {
-          "id": "EONET_24488",
-          "title": "Wildfire FLORISTON, Nevada, California",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 610,
-            "magnitudeUnit": "acres",
-            "date": "2026-09-16T13:01:00Z",
-            "type": "Point",
-            "coordinates": [
-              -120.025216,
-              39.394425
-            ]
-          }
         }
       ]
     },
@@ -708,55 +708,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -7.4,
-          "surface_pressure": 999.4,
-          "wind_speed_10m": 13.73,
-          "relative_humidity_2m": 89
+          "temperature_2m": -10,
+          "surface_pressure": 1007.7,
+          "wind_speed_10m": 13.69,
+          "relative_humidity_2m": 86
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 11.3,
-          "surface_pressure": 1031.6,
-          "wind_speed_10m": 3.46,
-          "relative_humidity_2m": 63
+          "temperature_2m": 12.3,
+          "surface_pressure": 1029.7,
+          "wind_speed_10m": 7.46,
+          "relative_humidity_2m": 64
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 20,
-          "surface_pressure": 911.8,
-          "wind_speed_10m": 2.07,
-          "relative_humidity_2m": 99
+          "temperature_2m": 28.2,
+          "surface_pressure": 912.7,
+          "wind_speed_10m": 1.9,
+          "relative_humidity_2m": 49
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 26.9,
-          "surface_pressure": 1012.4,
-          "wind_speed_10m": 2.7,
-          "relative_humidity_2m": 83
+          "temperature_2m": 28,
+          "surface_pressure": 1013.1,
+          "wind_speed_10m": 1,
+          "relative_humidity_2m": 82
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -5.5,
-          "surface_pressure": 975.8,
-          "wind_speed_10m": 18.36,
-          "relative_humidity_2m": 77
+          "temperature_2m": -4.3,
+          "surface_pressure": 982.2,
+          "wind_speed_10m": 14.76,
+          "relative_humidity_2m": 68
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -43.7,
-          "surface_pressure": 716.1,
-          "wind_speed_10m": 11.15,
-          "relative_humidity_2m": 50
+          "temperature_2m": -44.1,
+          "surface_pressure": 713.7,
+          "wind_speed_10m": 8.4,
+          "relative_humidity_2m": 52
         }
       ]
     },
