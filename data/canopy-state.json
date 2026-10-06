@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-10-06T06:57:10.940Z",
+    "generatedAt": "2026-10-06T18:38:46.479Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -15,8 +15,8 @@
     "hazardSummary": {
       "totalEvents": 56,
       "categories": {
-        "Wildfires": 40,
-        "Severe Storms": 6,
+        "Severe Storms": 7,
+        "Wildfires": 39,
         "Sea and Lake Ice": 4
       },
       "seismicCount": 6,
@@ -24,9 +24,9 @@
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 0.27,
-      "minTemperature_2m": -43.7,
-      "maxTemperature_2m": 26.9
+      "avgTemperature_2m": 1.68,
+      "minTemperature_2m": -44.1,
+      "maxTemperature_2m": 28.2
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -40,19 +40,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-10-06T06:11:22.685Z",
+        "generated": "2026-10-06T18:19:03.501Z",
         "generated_date": "2026-10-06",
         "script_version": "1.1",
         "window_days": 14,
         "window_start": "2026-09-22",
         "window_end": "2026-10-06",
-        "runtime_ms": 348,
+        "runtime_ms": 675,
         "seismic_live": true,
         "eonet_live": true
       },
       "threat": {
         "level": "ELEVATED",
-        "score": 13.45
+        "score": 14.6
       },
       "seismic": {
         "events": [
@@ -63,6 +63,14 @@
             "time": "2026-09-25T21:23:03.309Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000txpi"
+          },
+          {
+            "id": "us6000u0hy",
+            "magnitude": 5.9,
+            "place": "264 km SSW of Severo-Kuril’sk, Russia",
+            "time": "2026-10-06T16:48:21.805Z",
+            "depth_km": 26,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u0hy"
           },
           {
             "id": "us6000tzer",
@@ -321,6 +329,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000txbm"
           },
           {
+            "id": "us6000u0hz",
+            "magnitude": 5.1,
+            "place": "34 km NNW of Bāgeshwar, India",
+            "time": "2026-10-06T16:53:11.296Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u0hz"
+          },
+          {
             "id": "us6000tzid",
             "magnitude": 5.1,
             "place": "Volcano Islands, Japan region",
@@ -335,14 +351,6 @@
             "time": "2026-10-03T20:00:44.104Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tze2"
-          },
-          {
-            "id": "us6000tz8c",
-            "magnitude": 5.1,
-            "place": "199 km SSE of Vilyuchinsk, Russia",
-            "time": "2026-10-02T20:27:27.120Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tz8c"
           },
           {
             "id": "us6000tyzl",
@@ -441,14 +449,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000txf9"
           },
           {
-            "id": "us7000tj4y",
-            "magnitude": 5.1,
-            "place": "88 km NNW of Uken, Japan",
-            "time": "2026-09-22T10:46:22.312Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tj4y"
-          },
-          {
             "id": "us6000tzsc",
             "magnitude": 5,
             "place": "south of the Fiji Islands",
@@ -511,6 +511,14 @@
             "time": "2026-10-02T20:54:15.391Z",
             "depth_km": 30.9,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tz8l"
+          },
+          {
+            "id": "us6000tz8c",
+            "magnitude": 5,
+            "place": "176 km SSE of Vilyuchinsk, Russia",
+            "time": "2026-10-02T20:27:28.083Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tz8c"
           },
           {
             "id": "us6000tz7b",
@@ -703,6 +711,22 @@
             "time": "2026-09-22T20:11:49.199Z",
             "depth_km": 94.1,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000twyf"
+          },
+          {
+            "id": "us6000tzwg",
+            "magnitude": 4.9,
+            "place": "48 km NNE of Semporna, Malaysia",
+            "time": "2026-10-06T13:11:22.577Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tzwg"
+          },
+          {
+            "id": "us6000tzvn",
+            "magnitude": 4.9,
+            "place": "55 km ESE of Kokopo, Papua New Guinea",
+            "time": "2026-10-06T08:45:26.946Z",
+            "depth_km": 20.6,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tzvn"
           },
           {
             "id": "us6000tzus",
@@ -1169,6 +1193,22 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000txnq"
           },
           {
+            "id": "us6000u01m",
+            "magnitude": 4.7,
+            "place": "Chagos Archipelago region",
+            "time": "2026-10-06T15:12:09.822Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u01m"
+          },
+          {
+            "id": "us6000tzv6",
+            "magnitude": 4.7,
+            "place": "36 km WNW of Ollagüe, Chile",
+            "time": "2026-10-06T06:16:33.173Z",
+            "depth_km": 122,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tzv6"
+          },
+          {
             "id": "us6000tzpq",
             "magnitude": 4.7,
             "place": "105 km WNW of Höfn, Iceland",
@@ -1375,14 +1415,6 @@
             "time": "2026-09-22T20:34:43.245Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000twys"
-          },
-          {
-            "id": "us7000tj58",
-            "magnitude": 4.7,
-            "place": "7 km WNW of La Gomera, Guatemala",
-            "time": "2026-09-22T11:43:45.547Z",
-            "depth_km": 88.8,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tj58"
           },
           {
             "id": "us6000tzuq",
@@ -1721,28 +1753,20 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000twzi"
           },
           {
-            "id": "us7000tj5n",
-            "magnitude": 4.6,
-            "place": "37 km SE of Severo-Kuril’sk, Russia",
-            "time": "2026-09-22T13:56:15.091Z",
-            "depth_km": 83.9,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tj5n"
+            "id": "us6000tzwi",
+            "magnitude": 4.5,
+            "place": "Kermadec Islands region",
+            "time": "2026-10-06T13:26:22.092Z",
+            "depth_km": 537.9,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tzwi"
           },
           {
-            "id": "us7000tj4v",
-            "magnitude": 4.6,
-            "place": "296 km S of Ambon, Indonesia",
-            "time": "2026-09-22T10:30:19.045Z",
-            "depth_km": 295.6,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tj4v"
-          },
-          {
-            "id": "us7000tj3v",
-            "magnitude": 4.6,
-            "place": "19 km ENE of Nailong, Philippines",
-            "time": "2026-09-22T06:48:09.705Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tj3v"
+            "id": "us6000tzva",
+            "magnitude": 4.5,
+            "place": "60 km WNW of Colchani, Bolivia",
+            "time": "2026-10-06T06:54:10.618Z",
+            "depth_km": 191.7,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tzva"
           },
           {
             "id": "us6000tzss",
@@ -2039,18 +2063,10 @@
             "time": "2026-09-22T22:27:39.202Z",
             "depth_km": 35,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000twzp"
-          },
-          {
-            "id": "us6000twwy",
-            "magnitude": 4.5,
-            "place": "51 km W of Kuqa, China",
-            "time": "2026-09-22T16:09:09.440Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000twwy"
           }
         ],
-        "count_total": 249,
-        "count_m55_plus": 9,
+        "count_total": 251,
+        "count_m55_plus": 10,
         "count_m60_plus": 1,
         "count_m70_plus": 0,
         "count_m80_plus": 0,
@@ -2065,7 +2081,7 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-10-06T06:11:22.569Z"
+        "retrieved": "2026-10-06T18:19:03.083Z"
       },
       "wildfire": {
         "events": [
@@ -2218,6 +2234,17 @@
       "storm": {
         "events": [
           {
+            "id": "EONET_25046",
+            "title": "Tropical Storm Koguma",
+            "type": "STORM",
+            "time": "2026-10-05T06:00:00.000Z",
+            "coords": [
+              168.2,
+              10.9
+            ],
+            "closed": null
+          },
+          {
             "id": "EONET_24962",
             "title": "Super Typhoon Choi-wan",
             "type": "STORM",
@@ -2284,7 +2311,7 @@
             "closed": null
           }
         ],
-        "count": 6
+        "count": 7
       },
       "flood": {
         "events": [],
@@ -2298,7 +2325,7 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-10-06T06:32:43.518Z",
+        "generatedAt": "2026-10-06T18:27:39.692Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
@@ -2390,11 +2417,31 @@
         "hazards": {
           "totalActive": 50,
           "byCategory": {
-            "Wildfires": 40,
-            "Severe Storms": 6,
+            "Severe Storms": 7,
+            "Wildfires": 39,
             "Sea and Lake Ice": 4
           },
           "events": [
+            {
+              "id": "EONET_25046",
+              "title": "Tropical Storm Koguma",
+              "categories": [
+                "Severe Storms"
+              ],
+              "sources": [
+                "JTWC"
+              ],
+              "geometry": {
+                "magnitudeValue": 45,
+                "magnitudeUnit": "kts",
+                "date": "2026-10-06T12:00:00Z",
+                "type": "Point",
+                "coordinates": [
+                  165.8,
+                  14
+                ]
+              }
+            },
             {
               "id": "EONET_25043",
               "title": "Prescribed Fire D3 Bear RX, Greenlee, Arizona",
@@ -2465,13 +2512,13 @@
                 "JTWC"
               ],
               "geometry": {
-                "magnitudeValue": 95,
+                "magnitudeValue": 80,
                 "magnitudeUnit": "kts",
-                "date": "2026-10-06T00:00:00Z",
+                "date": "2026-10-06T12:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  145.8,
-                  29.8
+                  147.6,
+                  33.7
                 ]
               }
             },
@@ -2586,12 +2633,12 @@
                 "NOAA_NHC"
               ],
               "geometry": {
-                "magnitudeValue": 80,
+                "magnitudeValue": 75,
                 "magnitudeUnit": "kts",
-                "date": "2026-10-06T00:00:00Z",
+                "date": "2026-10-06T12:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  -117.5,
+                  -119.1,
                   20.4
                 ]
               }
@@ -2726,13 +2773,13 @@
                 "JTWC"
               ],
               "geometry": {
-                "magnitudeValue": 105,
+                "magnitudeValue": 100,
                 "magnitudeUnit": "kts",
-                "date": "2026-10-06T00:00:00Z",
+                "date": "2026-10-06T12:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  173,
-                  25.7
+                  169.1,
+                  25.4
                 ]
               }
             },
@@ -2976,26 +3023,6 @@
                   26.45826
                 ]
               }
-            },
-            {
-              "id": "EONET_24488",
-              "title": "Wildfire FLORISTON, Nevada, California",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 610,
-                "magnitudeUnit": "acres",
-                "date": "2026-09-16T13:01:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -120.025216,
-                  39.394425
-                ]
-              }
             }
           ]
         },
@@ -3005,55 +3032,55 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": -7.4,
-              "surface_pressure": 999.4,
-              "wind_speed_10m": 13.73,
-              "relative_humidity_2m": 89
+              "temperature_2m": -10,
+              "surface_pressure": 1007.7,
+              "wind_speed_10m": 13.69,
+              "relative_humidity_2m": 86
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 11.3,
-              "surface_pressure": 1031.6,
-              "wind_speed_10m": 3.46,
-              "relative_humidity_2m": 63
+              "temperature_2m": 12.3,
+              "surface_pressure": 1029.7,
+              "wind_speed_10m": 7.46,
+              "relative_humidity_2m": 64
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 20,
-              "surface_pressure": 911.8,
-              "wind_speed_10m": 2.07,
-              "relative_humidity_2m": 99
+              "temperature_2m": 28.2,
+              "surface_pressure": 912.7,
+              "wind_speed_10m": 1.9,
+              "relative_humidity_2m": 49
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 26.9,
-              "surface_pressure": 1012.4,
-              "wind_speed_10m": 2.7,
-              "relative_humidity_2m": 83
+              "temperature_2m": 28,
+              "surface_pressure": 1013.1,
+              "wind_speed_10m": 1,
+              "relative_humidity_2m": 82
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": -5.5,
-              "surface_pressure": 975.8,
-              "wind_speed_10m": 18.36,
-              "relative_humidity_2m": 77
+              "temperature_2m": -4.3,
+              "surface_pressure": 982.2,
+              "wind_speed_10m": 14.76,
+              "relative_humidity_2m": 68
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -43.7,
-              "surface_pressure": 716.1,
-              "wind_speed_10m": 11.15,
-              "relative_humidity_2m": 50
+              "temperature_2m": -44.1,
+              "surface_pressure": 713.7,
+              "wind_speed_10m": 8.4,
+              "relative_humidity_2m": 52
             }
           ]
         },
@@ -3071,7 +3098,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-10-06T06:50:18.898Z"
+        "generatedAt": "2026-10-06T18:36:15.042Z"
       },
       "health": {
         "score": 87,
