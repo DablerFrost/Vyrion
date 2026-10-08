@@ -1,15 +1,28 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-10-08T06:18:42.310Z",
+    "generatedAt": "2026-10-08T18:53:38.029Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 7,
+      "count": 8,
       "maxMagnitude": 6.6,
       "events": [
+        {
+          "id": "us6000u0xi",
+          "magnitude": 6.3,
+          "place": "102 km NE of Norsup, Vanuatu",
+          "time": "2026-10-08T09:00:07.768Z",
+          "coordinates": [
+            168.1889,
+            -15.5411,
+            10
+          ],
+          "tsunami": false,
+          "significance": 613
+        },
         {
           "id": "aka2026tuxgky",
           "magnitude": 5.5,
@@ -106,34 +119,14 @@
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Severe Storms": 8,
-        "Wildfires": 38,
+        "Severe Storms": 9,
+        "Wildfires": 37,
         "Sea and Lake Ice": 4
       },
       "events": [
         {
-          "id": "EONET_25063",
-          "title": "Tropical Storm Isaias",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "NOAA_NHC"
-          ],
-          "geometry": {
-            "magnitudeValue": 35,
-            "magnitudeUnit": "kts",
-            "date": "2026-10-07T09:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -94.1,
-              22
-            ]
-          }
-        },
-        {
-          "id": "EONET_25046",
-          "title": "Tropical Storm Koguma",
+          "id": "EONET_25094",
+          "title": "Tropical Storm Simon",
           "categories": [
             "Severe Storms"
           ],
@@ -143,11 +136,51 @@
           "geometry": {
             "magnitudeValue": 55,
             "magnitudeUnit": "kts",
-            "date": "2026-10-08T00:00:00Z",
+            "date": "2026-10-08T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              161.2,
-              16.9
+              -103.1,
+              15.4
+            ]
+          }
+        },
+        {
+          "id": "EONET_25063",
+          "title": "Hurricane Isaias",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "NOAA_NHC"
+          ],
+          "geometry": {
+            "magnitudeValue": 70,
+            "magnitudeUnit": "kts",
+            "date": "2026-10-08T09:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -91.2,
+              23.3
+            ]
+          }
+        },
+        {
+          "id": "EONET_25046",
+          "title": "Typhoon Koguma",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC"
+          ],
+          "geometry": {
+            "magnitudeValue": 65,
+            "magnitudeUnit": "kts",
+            "date": "2026-10-08T12:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              159,
+              17.7
             ]
           }
         },
@@ -342,13 +375,13 @@
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 65,
+            "magnitudeValue": 60,
             "magnitudeUnit": "kts",
-            "date": "2026-10-08T00:00:00Z",
+            "date": "2026-10-08T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              -122.6,
-              21.3
+              -124,
+              22
             ]
           }
         },
@@ -482,13 +515,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 55,
+            "magnitudeValue": 50,
             "magnitudeUnit": "kts",
-            "date": "2026-10-08T00:00:00Z",
+            "date": "2026-10-08T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              156,
-              26.9
+              152.7,
+              27.6
             ]
           }
         },
@@ -692,26 +725,6 @@
               34.43545
             ]
           }
-        },
-        {
-          "id": "EONET_24718",
-          "title": "Prescribed Fire D2 Vincent RX, Coconino, Arizona",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 2258,
-            "magnitudeUnit": "acres",
-            "date": "2026-09-17T17:35:00Z",
-            "type": "Point",
-            "coordinates": [
-              -110.965566,
-              34.446292
-            ]
-          }
         }
       ]
     },
@@ -721,55 +734,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -10.3,
-          "surface_pressure": 1011.9,
-          "wind_speed_10m": 6.35,
-          "relative_humidity_2m": 79
+          "temperature_2m": -11.4,
+          "surface_pressure": 1012.5,
+          "wind_speed_10m": 4.24,
+          "relative_humidity_2m": 85
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 15.6,
-          "surface_pressure": 1016.3,
-          "wind_speed_10m": 13.83,
-          "relative_humidity_2m": 96
+          "temperature_2m": 13.5,
+          "surface_pressure": 1022.7,
+          "wind_speed_10m": 10.88,
+          "relative_humidity_2m": 72
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 20,
-          "surface_pressure": 912.6,
-          "wind_speed_10m": 2.29,
-          "relative_humidity_2m": 97
+          "temperature_2m": 28.3,
+          "surface_pressure": 913.3,
+          "wind_speed_10m": 2.47,
+          "relative_humidity_2m": 49
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 27.6,
-          "surface_pressure": 1013,
-          "wind_speed_10m": 3.47,
-          "relative_humidity_2m": 80
+          "temperature_2m": 29.5,
+          "surface_pressure": 1011,
+          "wind_speed_10m": 2.87,
+          "relative_humidity_2m": 70
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -7.1,
-          "surface_pressure": 969.8,
-          "wind_speed_10m": 13.27,
-          "relative_humidity_2m": 64
+          "temperature_2m": -6,
+          "surface_pressure": 980.7,
+          "wind_speed_10m": 15.21,
+          "relative_humidity_2m": 79
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -49.2,
-          "surface_pressure": 695.4,
-          "wind_speed_10m": 7.32,
-          "relative_humidity_2m": 59
+          "temperature_2m": -46.5,
+          "surface_pressure": 698.5,
+          "wind_speed_10m": 7.27,
+          "relative_humidity_2m": 64
         }
       ]
     },
