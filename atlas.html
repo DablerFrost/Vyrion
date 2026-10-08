@@ -345,13 +345,13 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:990;ba
         <circle class="r-fill" cx="70" cy="70" r="58" stroke-dasharray="364.4" stroke-dashoffset="150.8"/>
       </svg>
       <div class="ring-inner">
-        <div class="ri-score" id="master-score">35.6</div>
+        <div class="ri-score" id="master-score">41.2</div>
         <div class="ri-denom">/ 100</div>
         <div class="ri-unc">± 1.8</div>
       </div>
     </div>
     <div class="ms-formula">
-      Baseline 100 → Current <b>35.6</b><br>
+      Baseline 100 → Current <b>41.2</b><br>
       Degradation: <b>−58.8 pts</b><br>
       5 BREACH · 1 CRITICAL · 3 WARNING
     </div>
@@ -550,7 +550,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:990;ba
     </div>
     <div class="sc-live">
       <div class="sc-val" id="fw-val" style="color:var(--warn)"><span class="lp">—.—</span><span class="sc-unit">°C surface temp anomaly</span></div>
-      <div class="sc-desc" id="fw-desc">ERA5 global mean surface temperature anomaly vs 1991–2020 baseline · Open-Meteo · fetching…</div>
+      <div class="sc-desc" id="fw-desc">ERA5 multi-latitude mean temp anomaly vs pre-industrial ~13.8°C baseline · Open-Meteo · fetching…</div>
     </div>
     <div class="sc-inds">
       <span class="ind-pill live" style="--sc-a:var(--fw)" data-mag="i-bw">Blue water flow</span>
@@ -774,7 +774,7 @@ b.classList.toggle('active',b.dataset.scale===s)
 'use strict';
 /* ── MAGNIFIER DATA ─────────────────────────────────── */
 const MAG={
-  ms:{t:'VYRION Index — 35.6 ± 1.8 / 100',b:'Score computed as S = Σ(Wᵢ × Sᵢ) across 8 Earth systems. Current 35.6 = 58.8 points below the 1850–1900 pre-industrial baseline of 100. 5 systems are in BREACH or CRITICAL status. Uncertainty ±1.8 propagated across all 48 indicators. Min detectable change ±0.5.',s:'VYRION-METHODOLOGY-v1.0.md · Prior art timestamped March 20, 2026'},
+  ms:{t:'VYRION Index — 41.2 ± 1.8 / 100',b:'Score computed as S = Σ(Wᵢ × Sᵢ) across 8 Earth systems. Current 41.2 = 58.8 points below the 1850–1900 pre-industrial baseline of 100. 5 systems are in BREACH or CRITICAL status. Uncertainty ±1.8 propagated across all 48 indicators. Min detectable change ±0.5.',s:'VYRION-METHODOLOGY-v1.0.md · Prior art timestamped March 20, 2026'},
   'sys-atm':{t:'Atmosphere · 22% · BREACH',b:'The highest-weighted system. Primary indicator: CO₂. Pre-industrial ~280 ppm → safe boundary 350 ppm → current ~424 ppm. The climate boundary was first exceeded ~1988. Every additional ppm moves this system score further into breach.',s:'NOAA GML · gml.noaa.gov · Daily'},
   'sys-ocn':{t:'Ocean · 18% · BREACH',b:'14th consecutive monthly ocean heat record (March 2026). SST anomaly +0.9°C. Ocean pH 8.05 vs pre-industrial 8.18. Higher ocean temperatures intensify hurricanes, bleach coral, and drive sea level rise.',s:'NOAA OISST v2.1 · Copernicus Marine'},
   'sys-ice':{t:'Ice / Cryosphere · 14% · CRITICAL',b:'Most degraded system in the Index. 2026 Arctic maximum: 14.22M km² — among the lowest in 47 years. Arctic melt season active since March 20. Ice loss reduces planetary albedo, accelerating warming nonlinearly.',s:'NSIDC · 47-year passive microwave satellite record'},
@@ -891,11 +891,15 @@ async function fetchEONET(){
 }
 
 async function fetchGlobalTemp(){
-  /* Open-Meteo ERA5 — global mean using multi-latitude average (equatorial + NH + SH representatives) */
+  /* Open-Meteo ERA5 — global mean using multi-latitude average (equatorial + NH + SH representatives).
+     NOTE: the v1 era5 host at api.open-meteo.com is dead (HTTP 404 on all requests); ERA5 now lives
+     on the archive API. Dates roll with today minus a 7-day ERA5 lag so the feed is never frozen. */
   try{
+    const end=new Date(Date.now()-7*864e5).toISOString().slice(0,10);
+    const start=new Date(Date.now()-8*864e5).toISOString().slice(0,10);
     const lats=[60,30,0,-30,-60];
     const promises=lats.map(lat=>
-      fetch(`https://api.open-meteo.com/v1/era5?latitude=${lat}&longitude=0&daily=temperature_2m_mean&timezone=UTC&start_date=2026-04-04&end_date=2026-04-05`)
+      fetch(`https://archive-api.open-meteo.com/v1/era5?latitude=${lat}&longitude=0&daily=temperature_2m_mean&timezone=UTC&start_date=${start}&end_date=${end}`)
         .then(r=>r.json())
         .then(d=>d.daily?.temperature_2m_mean?.[0]??null)
         .catch(()=>null)
