@@ -6,6 +6,7 @@
 <title>VYRION SHIELD — Global Disaster Early Warning</title>
 <link rel="icon" href="/assets/favicon.ico">
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&family=Archivo:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
 <style>
 :root {
   --void:      #020912;
@@ -913,6 +914,58 @@ body::after {
   .h-val { font-size: 1.4rem; }
 }
 @media(hover:none){#mag{display:none!important}}
+
+/* ── SHIELD LIVE HAZARD MAP (v2 · map patterns inspired by OSIRIS, MIT) ── */
+.shm-section{border-top:1px solid var(--border);padding:0}
+.shm-head{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 2rem;gap:1rem;flex-wrap:wrap}
+.shm-title{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:.9rem;letter-spacing:.12em;text-transform:uppercase;color:var(--t1)}
+.shm-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--breach);margin-right:.6rem;box-shadow:0 0 10px rgba(240,48,48,.6);animation:shm-pulse 2.2s infinite}
+@keyframes shm-pulse{0%,100%{opacity:1}50%{opacity:.45}}
+.shm-sub{font-family:'Courier Prime',monospace;font-size:.65rem;color:var(--t3);margin-top:.15rem}
+.shm-live{font-family:'Courier Prime',monospace;font-size:.62rem;color:var(--glow);letter-spacing:.1em;white-space:nowrap}
+.shm-wrap{position:relative;display:flex;margin:0 2rem 2rem;border:1px solid var(--border);border-radius:4px;overflow:hidden;height:74vh;min-height:540px;max-height:860px;background:var(--void2)}
+#shm-map{flex:1;min-width:0;position:relative;background:var(--void2)}
+.shm-legend{position:absolute;left:14px;bottom:26px;z-index:400;background:rgba(2,9,18,.88);border:1px solid var(--border);border-radius:3px;padding:.6rem .8rem;backdrop-filter:blur(8px)}
+.shm-legend div{display:flex;align-items:center;gap:.5rem;font-family:'Courier Prime',monospace;font-size:.6rem;color:var(--t2);padding:.12rem 0}
+.shm-legend i{width:9px;height:9px;border-radius:50%;display:inline-block;box-shadow:0 0 8px currentColor}
+.shm-panel{width:300px;flex-shrink:0;background:var(--void2);border-left:1px solid var(--border);display:flex;flex-direction:column;z-index:500}
+.shm-panel-head{padding:1rem 1.1rem .4rem}
+.shm-eyebrow{font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--breach);letter-spacing:.24em;text-transform:uppercase;margin-bottom:.6rem;display:flex;align-items:center;gap:.55rem}
+.shm-eyebrow::before{content:'';width:18px;height:1px;background:var(--breach);opacity:.6}
+.shm-layers{flex:1;overflow-y:auto;padding:.4rem .8rem}
+.shm-layer{display:flex;align-items:center;gap:.7rem;padding:.6rem .65rem;border:1px solid var(--border2);border-radius:3px;margin-bottom:.45rem;cursor:pointer;transition:border-color .2s,background .2s;background:rgba(0,212,255,.02)}
+.shm-layer:hover{border-color:var(--border)}
+.shm-layer.off{opacity:.45}
+.shm-ldot{width:11px;height:11px;border-radius:50%;flex-shrink:0;box-shadow:0 0 10px currentColor}
+.shm-linfo{flex:1;min-width:0}
+.shm-lname{font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:.76rem;letter-spacing:.04em}
+.shm-lsub{font-family:'Courier Prime',monospace;font-size:.56rem;color:var(--t2)}
+.shm-count{font-family:'Courier Prime',monospace;font-size:.7rem;font-weight:700;color:var(--t1)}
+.shm-status{font-family:'Courier Prime',monospace;font-size:.54rem;letter-spacing:.06em}
+.shm-ok{color:var(--glow)} .shm-loading{color:var(--amber)} .shm-err{color:var(--breach)}
+.shm-toggle{width:34px;height:19px;border-radius:10px;background:var(--void3);border:1px solid var(--border);position:relative;flex-shrink:0;transition:background .2s}
+.shm-toggle::after{content:'';position:absolute;top:2px;left:2px;width:13px;height:13px;border-radius:50%;background:var(--t2);transition:all .2s}
+.shm-layer:not(.off) .shm-toggle{background:rgba(0,212,255,.25);border-color:var(--glow)}
+.shm-layer:not(.off) .shm-toggle::after{left:17px;background:var(--glow)}
+.shm-panel-foot{padding:.8rem 1.1rem;border-top:1px solid var(--border);font-family:'Courier Prime',monospace;font-size:.56rem;color:var(--t3);line-height:1.7}
+.shm-panel-foot a{color:var(--t2)}
+.shm-error{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:'Courier Prime',monospace;font-size:.75rem;color:var(--amber);padding:2rem;line-height:1.9}
+.shm-error span{color:var(--t2);font-size:.65rem}
+.maplibregl-ctrl-attrib{background:rgba(2,9,18,.7)!important;font-size:9px!important}
+.maplibregl-ctrl-attrib a{color:var(--t3)!important}
+.maplibregl-popup-content{background:rgba(3,17,31,.97)!important;border:1px solid var(--border);border-radius:3px!important;color:var(--t1)!important;padding:.8rem .95rem!important;max-width:260px;box-shadow:0 16px 48px rgba(0,0,0,.7)!important}
+.maplibregl-popup-tip{border-top-color:var(--border)!important}
+.shm-pop-title{font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:.85rem;margin-bottom:.25rem}
+.shm-pop-meta{font-family:'Courier Prime',monospace;font-size:.62rem;color:var(--t2);line-height:1.7}
+.shm-pop-meta b{color:var(--t1)}
+.shm-pop-link{display:inline-block;margin-top:.4rem;font-family:'Courier Prime',monospace;font-size:.6rem;color:var(--glow);text-decoration:none}
+@media(max-width:860px){
+  .shm-head{padding:1rem}
+  .shm-wrap{flex-direction:column;height:auto;max-height:none;margin:0 1rem 1.5rem}
+  #shm-map{height:52vh;min-height:340px;flex:none}
+  .shm-panel{width:100%;border-left:none;border-top:1px solid var(--border)}
+  .shm-legend{display:none}
+}
 </style>
 </head>
 <body>
@@ -1055,6 +1108,31 @@ body::after {
     <div class="threat-updated" id="window-dates" style="color:var(--t3);font-family:'Courier Prime',monospace;font-size:0.6rem;margin-top:0.15rem;">—</div>
   </div>
 </div>
+
+<!-- LIVE HAZARD MAP -->
+<section class="shm-section" id="hazard-map">
+  <div class="shm-head">
+    <div>
+      <div class="shm-title"><span class="shm-dot"></span>Global Hazard Map</div>
+      <div class="shm-sub">Five live feeds · One GPU-rendered canvas · Click any marker for the source record</div>
+    </div>
+    <div class="shm-live" id="shm-live">SYNCING…</div>
+  </div>
+  <div class="shm-wrap">
+    <div id="shm-map"></div>
+    <div class="shm-legend" id="shm-legend"></div>
+    <aside class="shm-panel">
+      <div class="shm-panel-head">
+        <div class="shm-eyebrow">Live feed control</div>
+      </div>
+      <div class="shm-layers" id="shm-layers"></div>
+      <div class="shm-panel-foot">
+        Map engine patterns inspired by <a href="https://github.com/simplifaisoul/osiris" target="_blank" rel="noopener">OSIRIS</a> (MIT © simplifaisoul). Basemap © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> © <a href="https://carto.com/" target="_blank" rel="noopener">CARTO</a>. Data: USGS Earthquake Hazards Program · NASA EONET (public domain).<br>
+        <a href="#" id="shm-reset-view">reset view</a>
+      </div>
+    </aside>
+  </div>
+</section>
 
 <!-- 5-HAZARD GRID -->
 <section class="hazard-grid">
@@ -1308,6 +1386,245 @@ body::after {
     <div class="mag-src" id="mag-s">—</div>
   </div>
 </div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   VYRION SHIELD — Live Hazard Map (integrated v2)
+   Map engine patterns inspired by OSIRIS (MIT © simplifaisoul).
+   Feeds: USGS Earthquake Hazards Program + NASA EONET (public domain).
+   Every feed is normalized into one entity shape:
+   { id, layer, lng, lat, title, time, detail, url, mag? }
+   ═══════════════════════════════════════════════════════════════ */
+function bootShieldMap(){
+const SHM_LAYERS = {
+  seismic:  { label:'Seismic', color:'#F03030', refresh: 5*60*1000,
+              url:'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson', parse: shmParseUSGS },
+  fire:     { label:'Wildfire', color:'#FF6B1A', refresh:15*60*1000,
+              url:'https://eonet.gsfc.nasa.gov/api/v3/events?category=wildfires&status=open&limit=200', parse: shmParseEONET },
+  storm:    { label:'Severe Storm', color:'#4AADFF', refresh:15*60*1000,
+              url:'https://eonet.gsfc.nasa.gov/api/v3/events?category=severeStorms&status=open&limit=200', parse: shmParseEONET },
+  flood:    { label:'Flood', color:'#44CCAA', refresh:15*60*1000,
+              url:'https://eonet.gsfc.nasa.gov/api/v3/events?category=floods&status=open&limit=200', parse: shmParseEONET },
+  volcanic: { label:'Volcanic', color:'#FF4400', refresh:15*60*1000,
+              url:'https://eonet.gsfc.nasa.gov/api/v3/events?category=volcanoes&status=open&limit=200', parse: shmParseEONET },
+};
+const shmState = {};
+Object.keys(SHM_LAYERS).forEach(k => shmState[k] = { features:[], count:0, status:'idle', updatedAt:null, timer:null, fetching:false });
+
+/* ── Normalizers ── */
+function shmParseUSGS(json, key){
+  return (json.features||[]).map(f=>{
+    const p = f.properties||{}, c = (f.geometry||{}).coordinates||[];
+    if(c.length < 2) return null;
+    return { type:'Feature',
+      geometry:{ type:'Point', coordinates:[c[0], c[1]] },
+      properties:{ id:String(f.id||p.code||Math.random()), layer:key,
+        title:p.place||'Earthquake', mag:p.mag??null,
+        time:p.time||null, depth:(c[2]??null),
+        url:p.url||'https://earthquake.usgs.gov/',
+        detail:(p.mag!=null?'M'+p.mag.toFixed(1):'M?') + (c[2]!=null?' · '+Math.round(c[2])+' km deep':'') } };
+  }).filter(Boolean);
+}
+function shmGeomPoint(g){
+  if(!g) return null;
+  if(g.type==='Point') return g.coordinates.slice(0,2);
+  if(g.type==='Polygon'){
+    const ring=(g.coordinates&&g.coordinates[0])||[];
+    if(!ring.length) return null;
+    let x=0,y=0; ring.forEach(pt=>{x+=pt[0];y+=pt[1];});
+    return [x/ring.length, y/ring.length];
+  }
+  return null;
+}
+function shmParseEONET(json, key){
+  return (json.events||[]).map(ev=>{
+    const geoms = ev.geometry||[];
+    const g = geoms[geoms.length-1];
+    const pt = shmGeomPoint(g);
+    if(!pt) return null;
+    return { type:'Feature',
+      geometry:{ type:'Point', coordinates:pt },
+      properties:{ id:String(ev.id), layer:key,
+        title:ev.title||'Event',
+        time:(g&&g.date)||null,
+        url:(ev.sources&&ev.sources[0]&&ev.sources[0].url)||'https://eonet.gsfc.nasa.gov/',
+        detail:((ev.categories||[]).map(c=>c.title).join(', ')||'EONET event') } };
+  }).filter(Boolean);
+}
+function shmEscape(s){ return String(s??'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function shmAgo(t){
+  const s = Math.max(1, Math.round((Date.now()-t)/1000));
+  if(s<60) return s+'s ago';
+  return Math.round(s/60)+'m ago';
+}
+
+/* ── Map ── */
+const SHM_DEF_VIEW = { center:[-160, 20], zoom:2.4 };
+const shmMap = new maplibregl.Map({
+  container:'shm-map',
+  style:'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json',
+  center:SHM_DEF_VIEW.center, zoom:SHM_DEF_VIEW.zoom, minZoom:1.2, maxZoom:9,
+  attributionControl:{ compact:true }
+});
+shmMap.addControl(new maplibregl.NavigationControl({ showCompass:false }), 'top-right');
+
+function shmCirclePaint(color, magField){
+  const p = {
+    'circle-color': color, 'circle-opacity': .82,
+    'circle-stroke-width': 1, 'circle-stroke-color': 'rgba(255,255,255,.55)', 'circle-stroke-opacity': .35,
+  };
+  p['circle-radius'] = magField
+    ? ['interpolate',['linear'],['coalesce',['get','mag'],4.5], 4.5,5, 6,9, 7,15, 8,22]
+    : 6;
+  return p;
+}
+
+shmMap.on('load', ()=>{
+  Object.keys(SHM_LAYERS).forEach(key=>{
+    const L = SHM_LAYERS[key];
+    shmMap.addSource('shm-src-'+key, { type:'geojson', data:{ type:'FeatureCollection', features:[] } });
+    shmMap.addLayer({ id:'shm-lyr-'+key, type:'circle', source:'shm-src-'+key, paint:shmCirclePaint(L.color, key==='seismic') });
+    shmMap.addLayer({ id:'shm-halo-'+key, type:'circle', source:'shm-src-'+key,
+      paint:{ 'circle-color':L.color, 'circle-opacity':.14,
+        'circle-radius': key==='seismic'
+          ? ['interpolate',['linear'],['coalesce',['get','mag'],4.5], 4.5,11, 6,18, 7,28, 8,40]
+          : 13 } }, 'shm-lyr-'+key);
+    shmMap.on('click','shm-lyr-'+key, e=>shmShowPopup(e.features[0]));
+    shmMap.on('mouseenter','shm-lyr-'+key, ()=> shmMap.getCanvas().style.cursor='pointer');
+    shmMap.on('mouseleave','shm-lyr-'+key, ()=> shmMap.getCanvas().style.cursor='');
+  });
+  shmBuildPanel(); shmBuildLegend();
+  Object.keys(SHM_LAYERS).forEach(shmScheduleLayer);
+});
+
+function shmShowPopup(f){
+  const p = f.properties, L = SHM_LAYERS[p.layer];
+  const when = p.time ? new Date(p.time).toUTCString() : 'time unknown';
+  new maplibregl.Popup({ closeButton:false, offset:12 })
+    .setLngLat(f.geometry.coordinates.slice(0,2))
+    .setHTML(
+      '<div class="shm-pop-title" style="color:'+L.color+'">'+shmEscape(p.title)+'</div>'+
+      '<div class="shm-pop-meta"><b>'+L.label+'</b> · '+shmEscape(p.detail)+'<br>'+when+
+      '<br><a class="shm-pop-link" href="'+shmEscape(p.url)+'" target="_blank" rel="noopener">open source record →</a></div>'
+    ).addTo(shmMap);
+}
+
+/* ── Feed engine: fetch → normalize → render ── */
+async function shmRefreshLayer(key){
+  const L = SHM_LAYERS[key], S = shmState[key];
+  if(S.fetching) return;
+  S.fetching = true; S.status='loading'; shmRenderPanel();
+  try{
+    const r = await fetch(L.url, { headers:{ 'Accept':'application/json' } });
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    const feats = L.parse(await r.json(), key);
+    S.features = feats; S.count = feats.length;
+    S.status='ok'; S.updatedAt = Date.now();
+    const src = shmMap.getSource('shm-src-'+key);
+    if(src) src.setData({ type:'FeatureCollection', features:feats });
+  }catch(err){
+    S.status='err';
+    console.warn('[SHIELD map] '+key+' feed failed:', err.message);
+  }finally{
+    S.fetching = false; shmRenderPanel();
+  }
+}
+function shmScheduleLayer(key){
+  shmRefreshLayer(key);
+  const S = shmState[key];
+  if(S.timer) clearInterval(S.timer);
+  S.timer = setInterval(()=>shmRefreshLayer(key), SHM_LAYERS[key].refresh);
+}
+
+/* ── Panel + legend ── */
+function shmBuildPanel(){
+  const el = document.getElementById('shm-layers');
+  if(!el) return;
+  el.innerHTML = '';
+  Object.keys(SHM_LAYERS).forEach(key=>{
+    const L = SHM_LAYERS[key];
+    const d = document.createElement('div');
+    d.className='shm-layer'; d.id='shm-row-'+key;
+    d.innerHTML =
+      '<span class="shm-ldot" style="background:'+L.color+';color:'+L.color+'"></span>'+
+      '<div class="shm-linfo"><div class="shm-lname">'+L.label+'</div>'+
+      '<div class="shm-lsub"><span class="shm-status" id="shm-st-'+key+'"></span> <span id="shm-up-'+key+'"></span></div></div>'+
+      '<span class="shm-count" id="shm-ct-'+key+'">—</span><span class="shm-toggle"></span>';
+    d.addEventListener('click', ()=>{
+      const vis = shmMap.getLayoutProperty('shm-lyr-'+key,'visibility') !== 'none';
+      const nv = vis ? 'none' : 'visible';
+      shmMap.setLayoutProperty('shm-lyr-'+key,'visibility',nv);
+      shmMap.setLayoutProperty('shm-halo-'+key,'visibility',nv);
+      d.classList.toggle('off', vis);
+    });
+    el.appendChild(d);
+  });
+  shmRenderPanel();
+}
+function shmRenderPanel(){
+  let loading=false, err=false, live=false;
+  Object.keys(SHM_LAYERS).forEach(key=>{
+    const S = shmState[key];
+    const st = document.getElementById('shm-st-'+key), ct = document.getElementById('shm-ct-'+key), up = document.getElementById('shm-up-'+key);
+    if(!st) return;
+    ct.textContent = S.count || '—';
+    if(S.status==='loading'){ st.textContent='● syncing'; st.className='shm-status shm-loading'; loading=true; }
+    else if(S.status==='err'){ st.textContent='● feed down'; st.className='shm-status shm-err'; err=true; }
+    else if(S.updatedAt){ st.textContent='● live'; st.className='shm-status shm-ok'; live=true; }
+    else { st.textContent='● idle'; st.className='shm-status'; }
+    up.textContent = S.updatedAt ? '· '+shmAgo(S.updatedAt) : '';
+  });
+  const liveEl = document.getElementById('shm-live');
+  if(liveEl){
+    liveEl.textContent = loading ? 'SYNCING…' : (err ? '● DEGRADED' : (live ? '● LIVE' : 'SYNCING…'));
+    liveEl.style.color = err ? 'var(--breach)' : (loading ? 'var(--amber)' : 'var(--glow)');
+  }
+}
+setInterval(shmRenderPanel, 15000);
+function shmBuildLegend(){
+  const el = document.getElementById('shm-legend');
+  if(!el) return;
+  el.innerHTML = Object.keys(SHM_LAYERS).map(key=>{
+    const L = SHM_LAYERS[key];
+    return '<div><i style="background:'+L.color+';color:'+L.color+'"></i>'+L.label+'</div>';
+  }).join('');
+  const rv = document.getElementById('shm-reset-view');
+  if(rv) rv.addEventListener('click', e=>{
+    e.preventDefault();
+    shmMap.flyTo({ center:SHM_DEF_VIEW.center, zoom:SHM_DEF_VIEW.zoom, duration:1200 });
+  });
+}
+} // ── end bootShieldMap ──
+
+/* ── Boot: MapLibre CDN fallback chain (PC ad-blockers often kill unpkg) ── */
+(function(){
+  var CDNS = [
+    'https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js',
+    'https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.js'
+  ];
+  function shmFail(){
+    var m = document.getElementById('shm-map');
+    if(m) m.innerHTML = '<div class="shm-error">⚠ MAP ENGINE FAILED TO LOAD<span>All map CDNs unreachable from this network.<br>An ad-blocker or privacy extension may be blocking them — try disabling it for this page.</span></div>';
+    var liveEl = document.getElementById('shm-live');
+    if(liveEl){ liveEl.textContent = '● MAP OFFLINE'; liveEl.style.color = 'var(--breach)'; }
+  }
+  function tryLoad(i){
+    if(i >= CDNS.length){ shmFail(); return; }
+    var s = document.createElement('script');
+    s.src = CDNS[i];
+    s.onload = function(){ if(window.maplibregl) bootShieldMap(); else tryLoad(i+1); };
+    s.onerror = function(){ tryLoad(i+1); };
+    document.head.appendChild(s);
+  }
+  if(!document.getElementById('shm-map')) return;
+  if(window.maplibregl){ bootShieldMap(); }
+  else{
+    tryLoad(0);
+    setTimeout(function(){ if(!window.maplibregl) shmFail(); }, 25000);
+  }
+})();
+</script>
 
 <script>
 // ── MAGNIFIER DATA ──────────────────────────────────────────────
