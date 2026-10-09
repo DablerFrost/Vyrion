@@ -2,14 +2,14 @@
 ## Data Sources, Scoring Independence, and Limitations
 
 **Version:** 1.0 · Effective March 20, 2026
-**Entity:** VYRION PBC · Tyler Frost, Founder · Hilo, Hawaii
+**Entity:** VYRION LLC · Tyler Frost, Founder · Hilo, Hawaii
 **Contact:** contact@vyrion.earth
 
 ---
 
 ## 1. Independence of Analysis
 
-All VYRION Index scores and VYRION CONSCIENCE scores are produced by VYRION PBC through independent analytical assessment. Scores represent VYRION's own evaluation of publicly available information and do not represent the views, endorsements, or assessments of any data source organization, government agency, or third party referenced in the methodology.
+All VYRION Index scores and VYRION CONSCIENCE scores are produced by VYRION LLC through independent analytical assessment. Scores represent VYRION's own evaluation of publicly available information and do not represent the views, endorsements, or assessments of any data source organization, government agency, or third party referenced in the methodology.
 
 No data source listed in VYRION-METHODOLOGY-v1.0.md or CONSCIENCE-METHODOLOGY.md has reviewed, approved, sponsored, or endorsed VYRION's scoring methodology or published scores.
 
@@ -59,7 +59,7 @@ VYRION publishes scores in good faith based on the best available publicly acces
 
 ### VYRION's Work Product
 
-The following are the intellectual property of VYRION PBC:
+The following are the intellectual property of VYRION LLC:
 - VYRION Index scoring methodology (VYRION-METHODOLOGY-v1.0.md)
 - CONSCIENCE scoring framework (CONSCIENCE-METHODOLOGY.md)
 - VYRION Index daily composite scores
@@ -105,9 +105,9 @@ Contact: contact@vyrion.earth
 
 ## 6. Limitation of Liability
 
-VYRION scores and methodology documentation are provided "as is" for informational purposes. VYRION PBC makes no warranties, express or implied, regarding the accuracy, completeness, or fitness for any particular purpose of any score, data point, or analytical output.
+VYRION scores and methodology documentation are provided "as is" for informational purposes. VYRION LLC makes no warranties, express or implied, regarding the accuracy, completeness, or fitness for any particular purpose of any score, data point, or analytical output.
 
-VYRION PBC shall not be liable for any loss, damage, or consequence arising from reliance on VYRION scores, including decisions made by institutional investors, fund managers, analysts, journalists, or any other party on the basis of VYRION's published information.
+VYRION LLC shall not be liable for any loss, damage, or consequence arising from reliance on VYRION scores, including decisions made by institutional investors, fund managers, analysts, journalists, or any other party on the basis of VYRION's published information.
 
 This disclaimer does not limit VYRION's obligation to publish corrections under its Open Proof Protocol.
 
@@ -120,5 +120,5 @@ This disclaimer is governed by the laws of the State of Hawaii, United States. A
 ---
 
 *LEGAL-DISCLAIMER.md · Version 1.0 · March 20, 2026*
-*VYRION PBC · Tyler Frost / DablerFrost · Hilo, Hawaii*
+*VYRION LLC · Tyler Frost / DablerFrost · Hilo, Hawaii*
 *contact@vyrion.earth · github.com/dablerfrost/conscience*

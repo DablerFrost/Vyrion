@@ -87,5 +87,5 @@ All changes to scoring logic, indicator definitions, system weights, baseline va
 
 ---
 
-*CHANGELOG.md · VYRION PBC · Tyler Frost / DablerFrost · Hilo, Hawaii*
+*CHANGELOG.md · VYRION LLC · Tyler Frost / DablerFrost · Hilo, Hawaii*
 *github.com/dablerfrost/conscience · contact@vyrion.earth*

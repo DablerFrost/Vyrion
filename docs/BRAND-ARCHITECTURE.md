@@ -125,7 +125,7 @@ Tyler Frost / DablerFrost (founder)
 │   └── Praxis decision framework · Luxem instrument · Alignment protocols
 │   └── Research · Training · AI system certification (future)
 │
-├── VYRION PBC (operational subsidiary — to be formed)
+├── VYRION LLC (operational subsidiary — to be formed)
 │   └── CONSCIENCE · VYRION Index · 8 modules · Planetary accountability
 │   └── "VYRION is The Nexan Institute's first published proof of concept"
 │

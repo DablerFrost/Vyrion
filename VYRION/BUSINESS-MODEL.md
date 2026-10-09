@@ -119,10 +119,10 @@ Actively building digital environmental platform. VYRION's architecture gives th
 
 ## CORPORATE STRUCTURE
 
-**Recommended:** Public Benefit Corporation (PBC) — Delaware
-- Mission lock encoded at legal level
-- Cannot be acquired by fossil fuel revenue entities
-- Science Council authority cannot be removed through restructuring
+**Structure:** Limited Liability Company (LLC) — Hawaii (filed 2026)
+- Founder-owned and controlled; mission commitments encoded in the operating agreement
+- Convertible to benefit corporation as the mission scales
+- Science Council authority protected by operating agreement provisions
 - 10% hard sector revenue cap from high-emission industries
 - Tripartite Governance: Science Council · Nations Council · Civil Council
 

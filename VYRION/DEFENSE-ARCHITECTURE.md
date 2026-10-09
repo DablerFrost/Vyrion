@@ -64,8 +64,8 @@ VYRION is deliberately designed so no single nation, company, or ideology can go
 **Six mechanisms:**
 1. **National Data Enclaves** — every nation's data stays in sovereign infrastructure
 2. **Tripartite Governance Council** — Science · Nations · Civil Society with equal veto power
-3. **Mission Lock** — irrevocable PBC charter provisions
-4. **Jurisdiction Distribution** — Delaware PBC · Swiss Foundation · EU entity · Singapore holding
+3. **Mission Lock** — operating agreement mission provisions
+4. **Jurisdiction Distribution** — Hawaii LLC · Swiss Foundation · EU entity · Singapore holding
 5. **Five-9s ATLAS Redundancy** — three competing cloud providers simultaneously
 6. **10% Hard Cap Rule** — no single industry sector exceeds 10% of revenue
 
@@ -95,7 +95,7 @@ VYRION does not try to launch eight modules simultaneously. It launches SHIELD f
 | VYRION CODEX (open algorithms) | T·01 T·05 T·09 T·37 | Architecture defined |
 | VYRION LEDGER (immutable public chain) | T·02 T·06 T·07 T·47 | LIVE in CONSCIENCE |
 | Tripartite Council | T·03 T·08 T·34 T·42 | Governance defined |
-| Mission Lock (PBC charter) | T·16 T·17 T·22 T·34 | Legal framework defined |
+| Mission Lock (operating agreement) | T·16 T·17 T·22 T·34 | Legal framework defined |
 | VYRION Challengers (paid critics) | T·01 T·03 T·05 T·37 | Program designed |
 | SHIELD Free Public Tier | T·25 T·37 T·38 T·41 | Architecture defined |
 | Indigenous Knowledge Protocol | T·08 T·38 T·40 | Protocol designed |

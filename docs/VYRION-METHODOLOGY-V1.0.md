@@ -353,5 +353,5 @@ Find an error — contact@vyrion.earth. Correction published within 24 hours. No
 ---
 
 *VYRION-METHODOLOGY-v1.0.md · Locked March 20, 2026*
-*VYRION PBC · Tyler Frost / DablerFrost · Hilo, Hawaii*
+*VYRION LLC · Tyler Frost / DablerFrost · Hilo, Hawaii*
 *github.com/dablerfrost/Vyrion · contact@vyrion.earth*

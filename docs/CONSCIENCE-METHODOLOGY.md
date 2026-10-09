@@ -1,6 +1,6 @@
 # CONSCIENCE-METHODOLOGY.md
 ## Per-Company Score Derivation · v1.1 · May 5, 2026
-## VYRION PBC · Open Proof Protocol
+## VYRION LLC · Open Proof Protocol
 
 **Platform:** https://Vyrion.earth  
 **Errors:** contact@vyrion.earth → correction published within 24 hours  
@@ -417,5 +417,5 @@ Find the error. We will publish the correction.
 ---
 
 *CONSCIENCE-METHODOLOGY.md · v1.1 · May 5, 2026*  
-*VYRION PBC · Tyler Frost / DablerFrost · Hilo, Hawaii*  
+*VYRION LLC · Tyler Frost / DablerFrost · Hilo, Hawaii*  
 *github.com/DablerFrost/Vyrion · About: vyrion.earth/about*

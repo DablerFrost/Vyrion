@@ -5,7 +5,7 @@
 **Version:** 2.0
 **Effective:** June 2026
 
-**Entity:** VYRION PBC
+**Entity:** VYRION LLC
 **Founder:** Tyler Frost
 **Location:** Hilo, Hawaii, USA
 **Contact:** [contact@vyrion.earth](mailto:contact@vyrion.earth)
@@ -309,7 +309,7 @@ For licensing inquiries:
 
 # REGULATORY STATUS
 
-Unless explicitly stated otherwise, VYRION PBC is not:
+Unless explicitly stated otherwise, VYRION LLC is not:
 
 * A registered investment advisor
 * A broker-dealer
@@ -341,7 +341,7 @@ Nothing less.
 
 ---
 
-**VYRION PBC**
+**VYRION LLC**
 **Planetary Intelligence in an Always-On State**
 **vyrion.earth**
 **[contact@vyrion.earth](mailto:contact@vyrion.earth)**

@@ -63,5 +63,5 @@ we invite your statement. See instructions above.*
 
 ---
 
-*VYRION PBC · Tyler Frost · Hilo, Hawaii*
+*VYRION LLC · Tyler Frost · Hilo, Hawaii*
 *Methodology timestamped: March 20, 2026 · github.com/DablerFrost/conscience*
