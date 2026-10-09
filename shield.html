@@ -1992,10 +1992,23 @@ const EONET_ICONS = { WILDFIRE:'🔥', STORM:'🌀', FLOOD:'🌊', VOLCANIC:'�
 
 async function fetchEONET() {
   try {
-    const r = await fetch('https://eonet.gsfc.nasa.gov/api/v3/events?status=open&limit=200&days=14');
-    if (!r.ok) throw new Error('HTTP ' + r.status);
-    const d = await r.json();
-    const events = d.events || [];
+    // Two queries: 14-day window for fast-moving hazards, plus the full
+    // volcano catalog — eruptions run for months/years, so days=14 hides
+    // every active volcano even though status=open.
+    const [r1, r2] = await Promise.all([
+      fetch('https://eonet.gsfc.nasa.gov/api/v3/events?status=open&limit=200&days=14'),
+      fetch('https://eonet.gsfc.nasa.gov/api/v3/events?category=volcanoes&status=open&limit=100')
+    ]);
+    if (!r1.ok) throw new Error('HTTP ' + r1.status);
+    if (!r2.ok) throw new Error('HTTP ' + r2.status);
+    const d1 = await r1.json();
+    const d2 = await r2.json();
+    const recentEvents = d1.events || [];
+    const volcanoEvents = (d2.events || []).filter(e =>
+      e.categories && e.categories.some(c => c.id === 'volcanoes')
+    );
+    const seen = new Set(recentEvents.map(e => e.id));
+    const events = recentEvents.concat(volcanoEvents.filter(e => !seen.has(e.id)));
 
     // ── CHANGE DETECTION ────────────────────────────────────────
     const newEonetEvents = [];
