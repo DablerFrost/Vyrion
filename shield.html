@@ -1394,7 +1394,14 @@ body::after {
    Feeds: USGS Earthquake Hazards Program + NASA EONET (public domain).
    Every feed is normalized into one entity shape:
    { id, layer, lng, lat, title, time, detail, url, mag? }
+   Data sharing: the page's own USGS/EONET polls publish here —
+   the map consumes them instead of fetching twice.
    ═══════════════════════════════════════════════════════════════ */
+window.__SHIELD_FEEDS = window.__SHIELD_FEEDS || {};
+function shmPublish(feed, data){
+  window.__SHIELD_FEEDS[feed] = { data:data, at:Date.now(), ok:!!data };
+  window.dispatchEvent(new CustomEvent('shield:feeds', { detail:{ feed:feed } }));
+}
 function bootShieldMap(){
 const SHM_LAYERS = {
   seismic:  { label:'Seismic', color:'#F03030', refresh: 5*60*1000,
@@ -1494,6 +1501,7 @@ shmMap.on('load', ()=>{
     shmMap.on('mouseleave','shm-lyr-'+key, ()=> shmMap.getCanvas().style.cursor='');
   });
   shmBuildPanel(); shmBuildLegend();
+  window.addEventListener('shield:feeds', shmOnPageFeeds);   // page polls → map re-renders, no duplicate fetch
   Object.keys(SHM_LAYERS).forEach(shmScheduleLayer);
 });
 
@@ -1509,31 +1517,84 @@ function shmShowPopup(f){
     ).addTo(shmMap);
 }
 
-/* ── Feed engine: fetch → normalize → render ── */
-async function shmRefreshLayer(key){
+/* ── Feed engine: shared page data first, own fetch as fallback ── */
+const SHM_CAT = { fire:'wildfires', storm:'severeStorms', flood:'floods', volcanic:'volcanoes' };
+const SHM_SHARED_TTL = 10*60*1000;   // shared page data trusted for 10 min (page polls every 30s/2min)
+
+function shmSharedFeatures(key){
+  const F = window.__SHIELD_FEEDS || {};
+  try{
+    if(key==='seismic'){
+      const s = F.seismic;
+      if(s && s.ok && Array.isArray(s.data) && Date.now()-s.at < SHM_SHARED_TTL)
+        return shmParseUSGS({ features:s.data }, key);
+    }else{
+      const s = F.eonet;
+      if(s && s.ok && Array.isArray(s.data) && Date.now()-s.at < SHM_SHARED_TTL){
+        const cat = SHM_CAT[key];
+        const filtered = s.data.filter(e => e.categories && e.categories.some(c=>c.id===cat));
+        return shmParseEONET({ events:filtered }, key);
+      }
+    }
+  }catch(e){ console.warn('[SHIELD map] shared parse failed for '+key, e); }
+  return null;
+}
+function shmRenderFeatures(key, feats){
+  const S = shmState[key];
+  S.features = feats; S.count = feats.length;
+  S.status='ok'; S.updatedAt = Date.now();
+  const src = shmMap.getSource('shm-src-'+key);
+  if(src) src.setData({ type:'FeatureCollection', features:feats });
+  shmRenderPanel();
+}
+async function shmFetchDirect(key){
+  // Fallback only: page feed down or map opened before first page poll.
   const L = SHM_LAYERS[key], S = shmState[key];
   if(S.fetching) return;
   S.fetching = true; S.status='loading'; shmRenderPanel();
   try{
     const r = await fetch(L.url, { headers:{ 'Accept':'application/json' } });
     if(!r.ok) throw new Error('HTTP '+r.status);
-    const feats = L.parse(await r.json(), key);
-    S.features = feats; S.count = feats.length;
-    S.status='ok'; S.updatedAt = Date.now();
-    const src = shmMap.getSource('shm-src-'+key);
-    if(src) src.setData({ type:'FeatureCollection', features:feats });
+    shmRenderFeatures(key, L.parse(await r.json(), key));
   }catch(err){
     S.status='err';
-    console.warn('[SHIELD map] '+key+' feed failed:', err.message);
+    console.warn('[SHIELD map] '+key+' direct fetch failed:', err.message);
   }finally{
     S.fetching = false; shmRenderPanel();
   }
 }
+function shmRefreshLayer(key){
+  // Prefer the page's canonical feed data — zero duplicate requests.
+  const feats = shmSharedFeatures(key);
+  if(feats){ shmRenderFeatures(key, feats); return; }
+  shmFetchDirect(key);
+}
+function shmOnPageFeeds(e){
+  const feed = e && e.detail && e.detail.feed;
+  const keys = feed==='seismic' ? ['seismic'] : feed==='eonet' ? ['fire','storm','flood','volcanic'] : [];
+  keys.forEach(k=>{
+    const F = window.__SHIELD_FEEDS || {};
+    const s = F[feed];
+    if(s && !s.ok) shmFetchDirect(k);   // page feed down → backfill ourselves
+    else shmRefreshLayer(k);
+  });
+}
 function shmScheduleLayer(key){
-  shmRefreshLayer(key);
+  // Wait for the page's first poll (seconds away) instead of double-fetching.
+  // Direct fetch only if no shared data arrives within 30s.
   const S = shmState[key];
   if(S.timer) clearInterval(S.timer);
-  S.timer = setInterval(()=>shmRefreshLayer(key), SHM_LAYERS[key].refresh);
+  S.status='loading'; shmRenderPanel();
+  let waited = 0;
+  S.timer = setInterval(()=>{
+    if(shmSharedFeatures(key)){
+      clearInterval(S.timer); S.timer=null;
+      shmRefreshLayer(key);
+      return;
+    }
+    waited += 5000;
+    if(waited >= 30000){ clearInterval(S.timer); S.timer=null; shmFetchDirect(key); }
+  }, 5000);
 }
 
 /* ── Panel + legend ── */
@@ -1907,6 +1968,7 @@ async function fetchSeismic() {
     lastSeismicRaw = recent;
     lastUsgsMs     = Date.now();
     usgsOnline     = true;
+    if (window.shmPublish) window.shmPublish('seismic', recent);   // share with hazard map
     return recent;
   } catch (e) {
     document.getElementById('seis-primary').innerHTML = `—<span class="h-unit">M4.5+ / 14 days</span>`;
@@ -1914,6 +1976,7 @@ async function fetchSeismic() {
     document.getElementById('ct-seismic').textContent = '—';
     setPill('pill-seismic', 'OFFLINE', 'pill-static');
     usgsOnline = false;
+    if (window.shmPublish) window.shmPublish('seismic', null);     // map falls back to direct fetch
     return [];
   }
 }
@@ -1987,9 +2050,11 @@ async function fetchEONET() {
 
     lastEonetMs  = Date.now();
     eonetOnline  = true;
+    if (window.shmPublish) window.shmPublish('eonet', events);      // share with hazard map
   } catch (e) {
     ['fire','storm','flood','volcanic'].forEach(k => setPill('pill-' + k, 'OFFLINE', 'pill-static'));
     eonetOnline = false;
+    if (window.shmPublish) window.shmPublish('eonet', null);       // map falls back to direct fetch
   }
 }
 
