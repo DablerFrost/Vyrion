@@ -426,7 +426,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:990;ba
 
 <!-- TICKER -->
 <div class="ticker">
-  <div class="tc" data-mag="t-idx"><div class="tc-lbl"><span class="tc-dot"></span>VYRION Index · Day 19</div><div class="tc-val" style="color:var(--amber)">41.2 <span style="font-size:.6rem;color:var(--t3);font-weight:normal">± 1.8</span></div><div class="tc-sub">/ 100 · Pre-industrial baseline = 100</div></div>
+  <div class="tc" data-mag="t-idx"><div class="tc-lbl"><span class="tc-dot"></span>VYRION Index · <span id="t-idx-day">Day 19</span></div><div class="tc-val" style="color:var(--amber)">41.2 <span style="font-size:.6rem;color:var(--t3);font-weight:normal">± 1.8</span></div><div class="tc-sub">/ 100 · Pre-industrial baseline = 100</div></div>
   <div class="tc" data-mag="t-co2"><div class="tc-lbl"><span class="tc-dot"></span>Atmospheric CO₂</div><div class="tc-val" id="co2-val" style="color:var(--breach)"><span class="loading-pulse">—.—</span></div><div class="tc-sub" id="co2-sub">ppm · NOAA Mauna Loa · fetching…</div></div>
   <div class="tc" data-mag="t-cov"><div class="tc-lbl">CONSCIENCE</div><div class="tc-val" style="color:var(--glow)">11</div><div class="tc-sub">Companies · 5 Breach · 3 Warn · 3 On Track</div></div>
   <div class="tc" data-mag="t-seis"><div class="tc-lbl"><span class="tc-dot"></span>Seismic M4.5+ / 14d</div><div class="tc-val" id="seis-val"><span class="loading-pulse">—</span></div><div class="tc-sub" id="seis-sub">USGS · fetching…</div></div>
@@ -538,7 +538,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:990;ba
     <div class="df-card" style="--df-accent:#44CCAA"><div class="df-label"><span class="df-live"></span>Active Floods</div><div class="df-val" id="obs-flood"><span class="loading-pulse">—</span><span class="df-unit">events</span></div><div class="df-sub" id="obs-flood-d">NASA EONET · fetching…</div><div class="df-src"><a href="https://eonet.gsfc.nasa.gov/" target="_blank">eonet.gsfc.nasa.gov →</a></div></div>
     <div class="df-card" style="--df-accent:#4AADFF"><div class="df-label"><span class="df-live"></span>Severe Storms</div><div class="df-val" id="obs-storm"><span class="loading-pulse">—</span><span class="df-unit">events</span></div><div class="df-sub" id="obs-storm-d">NASA EONET · fetching…</div><div class="df-src"><a href="https://eonet.gsfc.nasa.gov/" target="_blank">eonet.gsfc.nasa.gov →</a></div></div>
     <div class="df-card" style="--df-accent:#FF4400"><div class="df-label"><span class="df-live"></span>Active Volcanoes</div><div class="df-val" id="obs-volc"><span class="loading-pulse">—</span><span class="df-unit">events</span></div><div class="df-sub" id="obs-volc-d">NASA EONET · fetching…</div><div class="df-src"><a href="https://eonet.gsfc.nasa.gov/" target="_blank">eonet.gsfc.nasa.gov →</a></div></div>
-    <div class="df-card" style="--df-accent:var(--glow2)"><div class="df-label"><span class="df-live"></span>VYRION Index</div><div class="df-val" style="color:var(--amber)">41.2<span class="df-unit">/ 100</span></div><div class="df-sub">± 1.8 · Day 19 · April 5, 2026</div><div class="df-src"><a href="https://dablerfrost.github.io/Vyrion" target="_blank">dablerfrost.github.io →</a></div></div>
+    <div class="df-card" style="--df-accent:var(--glow2)"><div class="df-label"><span class="df-live"></span>VYRION Index</div><div class="df-val" style="color:var(--amber)">41.2<span class="df-unit">/ 100</span></div><div class="df-sub" id="df-idx-sub">± 1.8 · Day 19 · April 5, 2026</div><div class="df-src"><a href="https://vyrion.earth" target="_blank">vyrion.earth →</a></div></div>
     <div class="df-card" style="--df-accent:var(--breach)"><div class="df-label">Climate Lawsuits</div><div class="df-val" style="color:var(--breach)">97<span class="df-unit">active</span></div><div class="df-sub">Sabin Center · Columbia Law</div><div class="df-src"><a href="https://climatecasechart.com/" target="_blank">climatecasechart.com →</a></div></div>
   </div>
 
@@ -661,11 +661,26 @@ const MAG={
   'r-opp':{t:'Open Proof Protocol',b:'Find an error → contact@vyrion.earth. Corrections published within 24 hours as permanent, timestamped changelog entries. No original entry ever deleted. Day 2 Arctic correction issued publicly March 20.',s:'Open Proof Protocol · VYRION · github.com/DablerFrost/Vyrion'},
 };
 const magEl=document.getElementById('mag'),magT=document.getElementById('mag-t'),magB=document.getElementById('mag-b'),magS=document.getElementById('mag-s');
+// ── DYNAMIC DAY COUNTER — origin 2026-03-18, never stale ──────────────────
+const DAY_ONE_ISO='2026-03-18T00:00:00-10:00';
+function getDayNumber(){return Math.max(1,Math.floor((Date.now()-new Date(DAY_ONE_ISO).getTime())/86400000)+1);}
+function getDateLabel(){return new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}
+// patch MAG tooltip entries that reference the day
+MAG['pph'].s=`VYRION Index · Day ${getDayNumber()} · 41.2 ± 1.8 / 100`;
+MAG['t-idx'].t=`VYRION Index — Day ${getDayNumber()}`;
 let mx=0,my=0,mon=false;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;if(mon)pm()});
 function pm(){const W=290,H=magEl.offsetHeight||180,vw=window.innerWidth,vh=window.innerHeight;let x=mx+20,y=my-14;if(x+W>vw-6)x=mx-W-20;if(y+H>vh-6)y=vh-H-6;if(y<6)y=6;if(x<6)x=6;magEl.style.left=x+'px';magEl.style.top=y+'px';}
 function am(root){(root||document).querySelectorAll('[data-mag]').forEach(el=>{const fr=el.cloneNode(true);el.parentNode?.replaceChild(fr,el);fr.addEventListener('mouseenter',()=>{const d=MAG[fr.dataset.mag];if(!d)return;magT.textContent=d.t;magB.textContent=d.b;magS.textContent=d.s;mon=true;pm();magEl.classList.add('show');});fr.addEventListener('mouseleave',()=>{magEl.classList.remove('show');mon=false;});});}
-document.addEventListener('DOMContentLoaded',()=>am());
+document.addEventListener('DOMContentLoaded',()=>{
+  am();
+  // inject dynamic day + date into VYRION Index displays
+  const day=getDayNumber(),date=getDateLabel();
+  const tIdx=document.getElementById('t-idx-day');
+  if(tIdx)tIdx.textContent=`Day ${day}`;
+  const dfSub=document.getElementById('df-idx-sub');
+  if(dfSub)dfSub.textContent=`± 1.8 · Day ${day} · ${date}`;
+});
 
 function toggleTheme(){const h=document.documentElement,il=h.getAttribute('data-theme')==='light';h.setAttribute('data-theme',il?'dark':'light');const b=document.getElementById('theme-btn');b.textContent=il?'◐ DARK':'◑ LIGHT';try{localStorage.setItem('nx-theme',il?'dark':'light')}catch(e){}}
 (function(){try{const t=localStorage.getItem('nx-theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');const b=document.getElementById('theme-btn');if(b)b.textContent='◑ LIGHT';}}catch(e){}})();
