@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-10-08T18:53:38.029Z",
+    "generatedAt": "2026-10-09T06:20:58.503Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -21,7 +21,7 @@
             10
           ],
           "tsunami": false,
-          "significance": 613
+          "significance": 614
         },
         {
           "id": "aka2026tuxgky",
@@ -126,7 +126,7 @@
       "events": [
         {
           "id": "EONET_25094",
-          "title": "Tropical Storm Simon",
+          "title": "Hurricane Simon",
           "categories": [
             "Severe Storms"
           ],
@@ -134,13 +134,33 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 55,
+            "magnitudeValue": 65,
             "magnitudeUnit": "kts",
-            "date": "2026-10-08T12:00:00Z",
+            "date": "2026-10-09T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -103.1,
-              15.4
+              -104.3,
+              15.7
+            ]
+          }
+        },
+        {
+          "id": "EONET_25119",
+          "title": "Prescribed Fire CON BSE13 RX, Covington, Alabama",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 614,
+            "magnitudeUnit": "acres",
+            "date": "2026-10-07T10:45:00Z",
+            "type": "Point",
+            "coordinates": [
+              -86.526643,
+              31.124246
             ]
           }
         },
@@ -165,6 +185,26 @@
           }
         },
         {
+          "id": "EONET_25117",
+          "title": "Wildfire Jones, Elko, Nevada",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 1657,
+            "magnitudeUnit": "acres",
+            "date": "2026-10-05T23:14:00Z",
+            "type": "Point",
+            "coordinates": [
+              -115.20765,
+              41.02195
+            ]
+          }
+        },
+        {
           "id": "EONET_25046",
           "title": "Typhoon Koguma",
           "categories": [
@@ -174,13 +214,33 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 65,
+            "magnitudeValue": 85,
             "magnitudeUnit": "kts",
-            "date": "2026-10-08T12:00:00Z",
+            "date": "2026-10-09T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              159,
-              17.7
+              156.6,
+              18.3
+            ]
+          }
+        },
+        {
+          "id": "EONET_25118",
+          "title": "Wildfire BOUQUET, Los Angeles, California",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 1048,
+            "magnitudeUnit": "acres",
+            "date": "2026-10-03T17:30:00Z",
+            "type": "Point",
+            "coordinates": [
+              -118.40183,
+              34.561835
             ]
           }
         },
@@ -375,13 +435,13 @@
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 60,
+            "magnitudeValue": 50,
             "magnitudeUnit": "kts",
-            "date": "2026-10-08T12:00:00Z",
+            "date": "2026-10-09T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -124,
-              22
+              -125.2,
+              22.5
             ]
           }
         },
@@ -517,11 +577,11 @@
           "geometry": {
             "magnitudeValue": 50,
             "magnitudeUnit": "kts",
-            "date": "2026-10-08T12:00:00Z",
+            "date": "2026-10-09T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              152.7,
-              27.6
+              149.8,
+              28.2
             ]
           }
         },
@@ -664,67 +724,6 @@
               -60.27
             ]
           }
-        },
-        {
-          "id": "EONET_6523",
-          "title": "Iceberg A83",
-          "categories": [
-            "Sea and Lake Ice"
-          ],
-          "sources": [
-            "EO",
-            "NATICE"
-          ],
-          "geometry": {
-            "magnitudeValue": 84,
-            "magnitudeUnit": "NM^2",
-            "date": "2026-10-01T00:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -52.12,
-              -60.77
-            ]
-          }
-        },
-        {
-          "id": "EONET_10212",
-          "title": "Iceberg B22F",
-          "categories": [
-            "Sea and Lake Ice"
-          ],
-          "sources": [
-            "NATICE"
-          ],
-          "geometry": {
-            "magnitudeValue": 98,
-            "magnitudeUnit": "NM^2",
-            "date": "2026-10-01T00:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -174.86,
-              -67.65
-            ]
-          }
-        },
-        {
-          "id": "EONET_24719",
-          "title": "Prescribed Fire D2 Dye RX, Coconino, Arizona",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 5246,
-            "magnitudeUnit": "acres",
-            "date": "2026-09-17T17:44:00Z",
-            "type": "Point",
-            "coordinates": [
-              -110.9112,
-              34.43545
-            ]
-          }
         }
       ]
     },
@@ -734,55 +733,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -11.4,
-          "surface_pressure": 1012.5,
-          "wind_speed_10m": 4.24,
-          "relative_humidity_2m": 85
+          "temperature_2m": -13.3,
+          "surface_pressure": 1013.6,
+          "wind_speed_10m": 0.89,
+          "relative_humidity_2m": 86
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 13.5,
-          "surface_pressure": 1022.7,
-          "wind_speed_10m": 10.88,
-          "relative_humidity_2m": 72
+          "temperature_2m": 12,
+          "surface_pressure": 1027.4,
+          "wind_speed_10m": 6.25,
+          "relative_humidity_2m": 70
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 28.3,
+          "temperature_2m": 20.1,
           "surface_pressure": 913.3,
-          "wind_speed_10m": 2.47,
-          "relative_humidity_2m": 49
+          "wind_speed_10m": 2.61,
+          "relative_humidity_2m": 97
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 29.5,
-          "surface_pressure": 1011,
-          "wind_speed_10m": 2.87,
-          "relative_humidity_2m": 70
+          "temperature_2m": 29,
+          "surface_pressure": 1009.9,
+          "wind_speed_10m": 4.74,
+          "relative_humidity_2m": 73
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -6,
-          "surface_pressure": 980.7,
-          "wind_speed_10m": 15.21,
-          "relative_humidity_2m": 79
+          "temperature_2m": -4.3,
+          "surface_pressure": 990.1,
+          "wind_speed_10m": 11.16,
+          "relative_humidity_2m": 76
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -46.5,
-          "surface_pressure": 698.5,
-          "wind_speed_10m": 7.27,
-          "relative_humidity_2m": 64
+          "temperature_2m": -48.3,
+          "surface_pressure": 701.7,
+          "wind_speed_10m": 6.78,
+          "relative_humidity_2m": 65
         }
       ]
     },
