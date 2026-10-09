@@ -1713,6 +1713,228 @@
       @media(prefers-reduced-motion:reduce) {
         *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
       }
+
+      /* ── 10 CORE PROBLEMS (salvaged from pulse, rebuilt for PULSEE) ── */
+      .problems-section { border-top: 1px solid var(--border); background: var(--void); }
+      .problems-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        margin: 0 2rem 2rem;
+      }
+      .prob-item {
+        background: var(--void2);
+        padding: 1rem 1.1rem;
+        display: flex;
+        gap: .9rem;
+      }
+      .prob-num {
+        font-family: 'Courier Prime', monospace;
+        font-weight: 700;
+        font-size: .85rem;
+        color: var(--pulse);
+        flex: 0 0 auto;
+      }
+      .prob-title {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: .8rem;
+        color: var(--t1);
+        margin-bottom: .15rem;
+      }
+      .prob-tag {
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        color: var(--t3);
+        margin-bottom: .35rem;
+      }
+      .prob-desc {
+        font-family: 'Courier Prime', monospace;
+        font-size: .62rem;
+        line-height: 1.65;
+        color: var(--t2);
+      }
+      @media(max-width: 768px) { .problems-grid { grid-template-columns: 1fr; } }
+
+      /* ── 41.2 PLANETARY SIGNAL STRIP (static · honestly labeled) ── */
+      .signal-strip { border-top: 1px solid var(--border); background: var(--void2); }
+      .signal-inner {
+        display: flex;
+        align-items: center;
+        gap: 1.8rem;
+        flex-wrap: wrap;
+        padding: 1.4rem 2rem;
+        max-width: 1340px;
+        margin: 0 auto;
+      }
+      .signal-index { flex: 0 0 auto; text-align: center; }
+      .signal-score {
+        font-family: 'Courier Prime', monospace;
+        font-weight: 700;
+        font-size: 2.6rem;
+        line-height: 1;
+        color: var(--t1);
+      }
+      .signal-score small { font-size: 1rem; color: var(--t3); font-weight: 400; }
+      .signal-cap {
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        color: var(--t3);
+        margin-top: .3rem;
+      }
+      .signal-note {
+        font-family: 'Courier Prime', monospace;
+        font-size: .55rem;
+        color: var(--t3);
+        margin-top: .35rem;
+        font-style: italic;
+      }
+      .signal-chips {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: .5rem;
+        flex: 1;
+        min-width: 280px;
+      }
+      .sig-chip {
+        background: var(--void);
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--t3);
+        border-radius: 3px;
+        padding: .5rem .6rem;
+      }
+      .sig-chip.c-bre { border-left-color: var(--breach); }
+      .sig-chip.c-cri { border-left-color: var(--warn); }
+      .sig-chip.c-war { border-left-color: var(--amber); }
+      .sig-name {
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: var(--t2);
+      }
+      .sig-val {
+        font-family: 'Courier Prime', monospace;
+        font-weight: 700;
+        font-size: .95rem;
+        color: var(--t1);
+        margin-top: .1rem;
+      }
+      .sig-val small { font-size: .6rem; color: var(--t3); font-weight: 400; }
+      .sig-meta {
+        font-family: 'Courier Prime', monospace;
+        font-size: .5rem;
+        color: var(--t3);
+        margin-top: .1rem;
+      }
+      @media(max-width: 900px) { .signal-chips { grid-template-columns: repeat(2, 1fr); } }
+
+      /* ── STAKEHOLDER TIERS (salvaged from pulse · adds citizen tier) ── */
+      .sh-section { border-top: 1px solid var(--border); background: var(--void); }
+      .sh-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        margin: 0 2rem 2rem;
+      }
+      .sh-card { background: var(--void2); padding: 1.2rem 1.2rem 1.1rem; }
+      .sh-num {
+        font-family: 'Courier Prime', monospace;
+        font-size: .55rem;
+        letter-spacing: .18em;
+        color: var(--pulse);
+        margin-bottom: .4rem;
+      }
+      .sh-title {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: 1rem;
+        color: var(--t1);
+        margin-bottom: .1rem;
+      }
+      .sh-sub {
+        font-family: 'Courier Prime', monospace;
+        font-size: .58rem;
+        font-style: italic;
+        color: var(--t3);
+        margin-bottom: .6rem;
+      }
+      .sh-desc {
+        font-family: 'Courier Prime', monospace;
+        font-size: .62rem;
+        line-height: 1.65;
+        color: var(--t2);
+        margin-bottom: .7rem;
+      }
+      .sh-b {
+        font-family: 'Courier Prime', monospace;
+        font-size: .58rem;
+        color: var(--t2);
+        padding: .28rem 0;
+        border-top: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        gap: .45rem;
+      }
+      .sh-b::before { content: '→'; color: var(--pulse); opacity: .6; }
+      @media(max-width: 900px) { .sh-grid { grid-template-columns: 1fr; } }
+
+      /* ── BE FIRST CTA BAND (salvaged from pulse) ── */
+      .cta-band {
+        border-top: 1px solid var(--border);
+        background: linear-gradient(180deg, var(--void2), var(--void));
+        text-align: center;
+        padding: 3rem 2rem;
+      }
+      .cta-eyebrow {
+        font-family: 'Courier Prime', monospace;
+        font-size: .58rem;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+        color: var(--pulse);
+        margin-bottom: .7rem;
+      }
+      .cta-title {
+        font-family: 'Archivo Narrow', sans-serif;
+        font-weight: 800;
+        font-size: 1.6rem;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        color: var(--t1);
+        margin-bottom: .7rem;
+      }
+      .cta-desc {
+        font-family: 'Courier Prime', monospace;
+        font-size: .65rem;
+        line-height: 1.7;
+        color: var(--t2);
+        max-width: 640px;
+        margin: 0 auto 1.4rem;
+      }
+      .cta-btns { display: flex; gap: .7rem; justify-content: center; flex-wrap: wrap; }
+      .cta-btn {
+        font-family: 'Courier Prime', monospace;
+        font-size: .62rem;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: .65rem 1.3rem;
+        border-radius: 3px;
+        border: 1px solid var(--pulse);
+        color: var(--pulse);
+        transition: background .18s, color .18s;
+      }
+      .cta-btn:hover { background: var(--pulse); color: #fff; }
+      .cta-btn.solid { background: var(--pulse); color: #fff; }
+      .cta-btn.solid:hover { background: transparent; color: var(--pulse); }
     </style>
   </head>
   <body>
@@ -1812,6 +2034,98 @@
         <strong>Architecture Defined.</strong> PULSE's four credit streams — carbon, biodiversity, water, and soil — are in tokenization design phase. The ATLAS verification backbone is architecture-complete. CONSCIENCE integration is live as the demand-side accountability layer. Open methodology published. The integrity infrastructure that the voluntary carbon market has never had.
       </div>
     </div>
+
+    <!-- ── 10 CORE PROBLEMS (salvaged from pulse) ───────────────────────────── -->
+    <section class="problems-section">
+      <div class="section-header">
+        <div>
+          <div class="section-title">The 10 Core Problems PULSE Addresses</div>
+          <div class="section-sub">Ten interconnected planetary and systemic problems the credit marketplace is architected to help solve — by converting environmental repair into economic incentive</div>
+        </div>
+      </div>
+      <div class="problems-grid fade-in">
+        <div class="prob-item">
+          <div class="prob-num">01</div>
+          <div>
+            <div class="prob-title">Atmospheric CO₂ Overload</div>
+            <div class="prob-tag">Carbon Credits · VYRION Atmosphere · 22%</div>
+            <p class="prob-desc">CO₂ at 424+ ppm above the 280 ppm pre-industrial baseline. PULSE Carbon Credits create direct market incentive for verified removal and avoidance — not accounting offsets.</p>
+          </div>
+        </div>
+        <div class="prob-item">
+          <div class="prob-num">02</div>
+          <div>
+            <div class="prob-title">Ocean Acidification &amp; Warming</div>
+            <div class="prob-tag">Water Credits · VYRION Ocean · 18%</div>
+            <p class="prob-desc">Ocean pH declining, coral collapse accelerating. Water Stewardship Credits fund verified ocean protection and coastal restoration programs with ATLAS telemetry verification.</p>
+          </div>
+        </div>
+        <div class="prob-item">
+          <div class="prob-num">03</div>
+          <div>
+            <div class="prob-title">Cryosphere Retreat</div>
+            <div class="prob-tag">Carbon Credits · VYRION Ice &amp; Cryosphere · 14%</div>
+            <p class="prob-desc">Arctic sea ice and glacial systems in sustained decline. Carbon removal credits fund upstream emissions reduction that directly decelerates melt trajectories.</p>
+          </div>
+        </div>
+        <div class="prob-item">
+          <div class="prob-num">04</div>
+          <div>
+            <div class="prob-title">Tropical Deforestation</div>
+            <div class="prob-tag">Biodiversity Credits · VYRION Forest · 13%</div>
+            <p class="prob-desc">10M+ hectares of tropical forest lost annually. Biodiversity Credits reward verified forest protection and CANOPY satellite-monitored reforestation with real revenue.</p>
+          </div>
+        </div>
+        <div class="prob-item">
+          <div class="prob-num">05</div>
+          <div>
+            <div class="prob-title">Biodiversity Collapse</div>
+            <div class="prob-tag">Biodiversity Credits · VYRION Biodiversity · 12%</div>
+            <p class="prob-desc">1M+ species under extinction threat. PULSE Biodiversity Credits fund ecosystem recovery, habitat restoration, and species monitoring with GBIF-verified outcomes.</p>
+          </div>
+        </div>
+        <div class="prob-item">
+          <div class="prob-num">06</div>
+          <div>
+            <div class="prob-title">Freshwater Depletion</div>
+            <div class="prob-tag">Water Credits · VYRION Freshwater · 10%</div>
+            <p class="prob-desc">Aquifer depletion and river system degradation threatening billions. Water Credits create direct revenue for verified watershed protection and USGS-monitored aquifer recharge.</p>
+          </div>
+        </div>
+        <div class="prob-item">
+          <div class="prob-num">07</div>
+          <div>
+            <div class="prob-title">Soil Degradation</div>
+            <div class="prob-tag">Soil Health Credits · VYRION Soil · 7%</div>
+            <p class="prob-desc">24B+ tonnes of topsoil lost annually. Soil Health Credits reward regenerative land management and soil carbon sequestration — measured by ROOT, verified by NASA SMAP.</p>
+          </div>
+        </div>
+        <div class="prob-item">
+          <div class="prob-num">08</div>
+          <div>
+            <div class="prob-title">Corporate Greenwashing</div>
+            <div class="prob-tag">All Credits · VYRION CONSCIENCE · 4%</div>
+            <p class="prob-desc">Net-zero pledges without verified action. PULSE forces compliance into market transactions logged on the Open Proof Protocol — timestamped, immutable, and publicly auditable forever.</p>
+          </div>
+        </div>
+        <div class="prob-item">
+          <div class="prob-num">09</div>
+          <div>
+            <div class="prob-title">Climate Finance Gap</div>
+            <div class="prob-tag">All Credits · VYRION Economic Layer</div>
+            <p class="prob-desc">$4T/yr needed for climate transition — under $1T currently deployed. PULSE routes corporate compliance capital directly to verified restoration through transparent market infrastructure.</p>
+          </div>
+        </div>
+        <div class="prob-item">
+          <div class="prob-num">10</div>
+          <div>
+            <div class="prob-title">Systemic Incentive Misalignment</div>
+            <div class="prob-tag">Architecture · VYRION Global Incentive Layer</div>
+            <p class="prob-desc">No unified system makes planetary repair economically rational for all actors simultaneously. PULSE is that architecture — the missing incentive layer that makes Earth repair the rational economic choice.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ── MISSION BRIEF ──────────────────────────────────────────────────── -->
     <section style="border-top:1px solid var(--border);background:var(--void)">
@@ -1922,6 +2236,33 @@
             <div class="ind-val" style="color:#00CC66">35.0</div>
             <div class="ind-badge b-gr">RISING</div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 41.2 PLANETARY SIGNAL STRIP (static · salvaged from pulse, honestly labeled) ── -->
+    <section class="signal-strip">
+      <div class="section-header">
+        <div>
+          <div class="section-title">Planetary Signal · VYRION Index</div>
+          <div class="section-sub">Why credit demand exists — eight Earth systems, one composite score</div>
+        </div>
+      </div>
+      <div class="signal-inner fade-in">
+        <div class="signal-index">
+          <div class="signal-score">41.2<small> /100</small></div>
+          <div class="signal-cap">VYRION Index · ±1.8</div>
+          <div class="signal-note">Illustrative snapshot · ATLAS methodology<br>Values update with the published VYRION Index</div>
+        </div>
+        <div class="signal-chips">
+          <div class="sig-chip c-cri"><div class="sig-name">Atmosphere</div><div class="sig-val">31.0<small>/100</small></div><div class="sig-meta">CRITICAL · Wt 22%</div></div>
+          <div class="sig-chip c-cri"><div class="sig-name">Ocean Health</div><div class="sig-val">34.0<small>/100</small></div><div class="sig-meta">CRITICAL · Wt 18%</div></div>
+          <div class="sig-chip c-cri"><div class="sig-name">Ice &amp; Cryosphere</div><div class="sig-val">38.0<small>/100</small></div><div class="sig-meta">CRITICAL · Wt 14%</div></div>
+          <div class="sig-chip c-war"><div class="sig-name">Forest Integrity</div><div class="sig-val">47.0<small>/100</small></div><div class="sig-meta">WARNING · Wt 13%</div></div>
+          <div class="sig-chip c-war"><div class="sig-name">Biodiversity</div><div class="sig-val">44.0<small>/100</small></div><div class="sig-meta">WARNING · Wt 12%</div></div>
+          <div class="sig-chip c-bre"><div class="sig-name">Freshwater</div><div class="sig-val">29.0<small>/100</small></div><div class="sig-meta">BREACH · Wt 10%</div></div>
+          <div class="sig-chip c-bre"><div class="sig-name">Soil Vitality</div><div class="sig-val">33.0<small>/100</small></div><div class="sig-meta">BREACH · Wt 7%</div></div>
+          <div class="sig-chip c-war"><div class="sig-name">Corp. Accountability</div><div class="sig-val">38.6<small>/100</small></div><div class="sig-meta">WARNING · Wt 4%</div></div>
         </div>
       </div>
     </section>
@@ -2064,6 +2405,51 @@
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- ── STAKEHOLDER TIERS (salvaged from pulse · adds citizen tier) ─────── -->
+    <section class="sh-section">
+      <div class="section-header">
+        <div>
+          <div class="section-title">Who PULSE Serves · Three Stakeholder Tiers</div>
+          <div class="section-sub">Corporations · Governments · Citizens — everyone has a stake in the outcome</div>
+        </div>
+      </div>
+      <div class="sh-grid fade-in">
+        <div class="sh-card">
+          <div class="sh-num">TIER 01</div>
+          <div class="sh-title">Corporations</div>
+          <div class="sh-sub">Compliance meets accountability</div>
+          <p class="sh-desc">Corporations face mandatory climate disclosure under CSRD, SEC rules, and SBTi frameworks. PULSE converts compliance obligation into verified environmental action — not accounting. Every credit purchase updates the CONSCIENCE score. Auditable. Institutional-grade.</p>
+          <div class="sh-b">Verified CONSCIENCE score improvement</div>
+          <div class="sh-b">CSRD · SEC · SBTi disclosure support</div>
+          <div class="sh-b">Auditable credit portfolio · Open Proof</div>
+          <div class="sh-b">ATLAS verification backbone</div>
+          <div class="sh-b">Annual third-party audit package</div>
+        </div>
+        <div class="sh-card">
+          <div class="sh-num">TIER 02</div>
+          <div class="sh-title">Governments</div>
+          <div class="sh-sub">Monetize national restoration</div>
+          <p class="sh-desc">Nations and regional governments can list verified restoration credits from sovereign land management programs. Protected national parks, wetland restoration, and reforestation programs become economic assets — not budget line items.</p>
+          <div class="sh-b">Sovereign credit listing and market pricing</div>
+          <div class="sh-b">National restoration fund integration</div>
+          <div class="sh-b">VYRION RELAY data protocol support</div>
+          <div class="sh-b">Bilateral and multilateral trading</div>
+          <div class="sh-b">Paris Agreement accounting linkage</div>
+        </div>
+        <div class="sh-card">
+          <div class="sh-num">TIER 03</div>
+          <div class="sh-title">Citizens</div>
+          <div class="sh-sub">Earn for conscious action</div>
+          <p class="sh-desc">Individuals participating in verified environmental actions — regenerative farming, community reforestation, citizen science monitoring — earn PULSE credits. Conscious action becomes economic participation in planetary repair.</p>
+          <div class="sh-b">Individual action credit earning</div>
+          <div class="sh-b">Community restoration program access</div>
+          <div class="sh-b">PULSE citizen wallet and dashboard</div>
+          <div class="sh-b">Direct marketplace participation</div>
+          <div class="sh-b">Transparent personal impact accounting</div>
+        </div>
       </div>
     </section>
 
@@ -2362,6 +2748,18 @@
           <a class="proof-link" href="https://vyrion.earth/conscience">CONSCIENCE Corporate Demand →</a>
           <a class="proof-link" href="https://vyrion.earth/about">About VYRION LLC →</a>
         </div>
+      </div>
+    </section>
+
+    <!-- ── BE FIRST CTA BAND (salvaged from pulse) ─────────────────────────── -->
+    <section class="cta-band fade-in">
+      <div class="cta-eyebrow">Early Access · Register Interest</div>
+      <h2 class="cta-title">Be First on PULSE</h2>
+      <p class="cta-desc">Corporations, governments, and land managers can register interest for early access to the PULSE marketplace. Architecture defined. The economic engine of planetary repair is almost ready.</p>
+      <div class="cta-btns">
+        <a href="mailto:contact@vyrion.earth?subject=PULSE%20Early%20Access%20%E2%80%94%20Corporation" class="cta-btn solid">Register Interest · Corporations</a>
+        <a href="mailto:contact@vyrion.earth?subject=PULSE%20Early%20Access%20%E2%80%94%20Government" class="cta-btn">Register Interest · Governments</a>
+        <a href="https://vyrion.earth" class="cta-btn">Return to VYRION</a>
       </div>
     </section>
 
