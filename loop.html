@@ -1531,6 +1531,100 @@
         border-color: var(--loop-border)
       }
 
+      /* ── CIRCULARITY RING GAUGE (salvaged from loopp, rebuilt for LOOP) ── */
+      .circ-gauge-wrap {
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+        flex-wrap: wrap;
+        margin: 0 0 1.2rem;
+        padding: 1.1rem 1.3rem;
+        background: var(--void2);
+        border: 1px solid var(--border2);
+        border-radius: 4px;
+      }
+      .circ-gauge { position: relative; width: 148px; height: 148px; flex: 0 0 auto; }
+      .ring-track { fill: none; stroke: var(--border2); stroke-width: 8; }
+      .ring-fill {
+        fill: none;
+        stroke: var(--loop);
+        stroke-width: 8;
+        stroke-linecap: round;
+        transition: stroke-dashoffset 2s cubic-bezier(.4, 0, .2, 1);
+        filter: drop-shadow(0 0 8px rgba(120, 200, 0, .35));
+        transform: rotate(-90deg);
+        transform-origin: 80px 80px;
+      }
+      .ring-inner {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        pointer-events: none;
+      }
+      .ring-score {
+        font-family: 'Courier Prime', monospace;
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 1;
+        letter-spacing: -.03em;
+        color: var(--loop);
+      }
+      .ring-denom {
+        font-family: 'Courier Prime', monospace;
+        font-size: .58rem;
+        color: var(--t3);
+        margin-top: .12rem;
+      }
+      .ring-label {
+        font-family: 'Courier Prime', monospace;
+        font-size: .5rem;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: var(--t3);
+        margin-top: .15rem;
+      }
+      .circ-gauge-meta { min-width: 220px; flex: 1; }
+      .circ-index-badge {
+        display: inline-block;
+        font-family: 'Courier Prime', monospace;
+        font-size: .58rem;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        padding: .25rem .65rem;
+        border-radius: 2px;
+        background: rgba(120, 200, 0, .08);
+        color: var(--loop);
+        border: 1px solid var(--loop-border);
+        margin-bottom: .5rem;
+      }
+      .circ-day-label {
+        font-family: 'Courier Prime', monospace;
+        font-size: .62rem;
+        color: var(--t3);
+        line-height: 1.7;
+      }
+      /* ── SOURCE-STATUS TAXONOMY (salvaged from loopp) ── */
+      .src-status {
+        display: flex;
+        align-items: center;
+        gap: .35rem;
+        font-family: 'Courier Prime', monospace;
+        font-size: .52rem;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        margin-top: .3rem;
+      }
+      .src-dot { width: 5px; height: 5px; border-radius: 50%; flex: 0 0 auto; }
+      .st-live .src-dot { background: var(--recycle); animation: srcDotPulse 2s infinite; }
+      .st-live .src-status { color: var(--recycle); }
+      .st-static .src-dot { background: var(--loop); }
+      .st-static .src-status { color: var(--t3); }
+      @keyframes srcDotPulse { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+
       .src-name {
         font-family: 'Archivo Narrow', sans-serif;
         font-weight: 800;
@@ -2089,6 +2183,23 @@
             <div class="section-sub">LOOP module scoring methodology · VYRION 48-indicator framework</div>
           </div>
         </div>
+        <div class="circ-gauge-wrap fade-in">
+          <div class="circ-gauge">
+            <svg viewBox="0 0 160 160" width="148" height="148" role="img" aria-label="Global circularity rate: 7.2 out of 100">
+              <circle class="ring-track" cx="80" cy="80" r="68"/>
+              <circle class="ring-fill" id="ring-fill" cx="80" cy="80" r="68" stroke-dasharray="427.3" stroke-dashoffset="427.3"/>
+            </svg>
+            <div class="ring-inner">
+              <div class="ring-score">7.2</div>
+              <div class="ring-denom">/ 100</div>
+              <div class="ring-label">global circularity</div>
+            </div>
+          </div>
+          <div class="circ-gauge-meta">
+            <div class="circ-index-badge">Critical zone · Circularity Gap Report 2024</div>
+            <div class="circ-day-label">Only 7.2% of materials re-enter the economy.<br>The linear economy captures the other 92.8%.</div>
+          </div>
+        </div>
         <table class="indicator-table fade-in">
           <thead>
             <tr>
@@ -2567,53 +2678,61 @@
           </div>
         </div>
         <div class="source-grid fade-in">
-          <div class="src-card">
+          <div class="src-card st-static">
             <div class="src-type">MSW · Annual / Live</div>
             <div class="src-name">World Bank What a Waste 2.0</div>
             <div class="src-desc">2.2M+ data points on solid waste management from 217 countries. MSW generation, composition, collection, treatment rates. REST API with country-level granularity.</div>
             <a class="src-url" href="https://datatopics.worldbank.org/what-a-waste/" target="_blank">datatopics.worldbank.org/what-a-waste</a>
+            <div class="src-status"><span class="src-dot"></span>Published dataset · What a Waste 2.0</div>
           </div>
-          <div class="src-card">
+          <div class="src-card st-static">
             <div class="src-type">E-Waste · Biannual</div>
             <div class="src-name">Global E-Waste Monitor</div>
             <div class="src-desc">UNITAR / ITU / WHO comprehensive e-waste statistics. National generation, collection, and treatment rates. 2024 edition documents 62 Mt generated, 22.3% formally recycled.</div>
             <a class="src-url" href="https://globalewaste.org" target="_blank">globalewaste.org</a>
+            <div class="src-status"><span class="src-dot"></span>Published dataset · 2024 edition</div>
           </div>
-          <div class="src-card">
+          <div class="src-card st-live">
             <div class="src-type">Hazardous Waste · Live</div>
             <div class="src-name">EPA ECHO</div>
             <div class="src-desc">Enforcement and Compliance History Online. RCRA hazardous waste handler database. REST API — CORS-enabled. Facility permits, compliance status, enforcement actions.</div>
             <a class="src-url" href="https://echo.epa.gov/tools/web-services" target="_blank">echo.epa.gov/tools/web-services</a>
+            <div class="src-status"><span class="src-dot"></span>Live via LOOP · ECHO API</div>
           </div>
-          <div class="src-card">
+          <div class="src-card st-static">
             <div class="src-type">Recycling Rates · Annual</div>
             <div class="src-name">Eurostat Waste Statistics</div>
             <div class="src-desc">EU27 waste generation, recycling, and recovery rates by waste category. Country-level MSW data updated annually. Circular material use rate, packaging recycling targets tracking.</div>
             <a class="src-url" href="https://ec.europa.eu/eurostat/statistics-explained/index.php/Waste_statistics" target="_blank">ec.europa.eu/eurostat/waste</a>
+            <div class="src-status"><span class="src-dot"></span>Published dataset · Annual</div>
           </div>
-          <div class="src-card">
+          <div class="src-card st-static">
             <div class="src-type">Plastics · Annual</div>
             <div class="src-name">OECD Global Plastics Outlook</div>
             <div class="src-desc">Comprehensive plastics lifecycle data — production, use, waste, emissions. 2022 edition covers 50 countries. 2060 scenarios under policy/no-policy trajectories.</div>
             <a class="src-url" href="https://www.oecd.org/environment/plastics/" target="_blank">oecd.org/environment/plastics</a>
+            <div class="src-status"><span class="src-dot"></span>Published dataset · 2022 edition</div>
           </div>
-          <div class="src-card">
+          <div class="src-card st-static">
             <div class="src-type">Soil Contamination · Annual</div>
             <div class="src-name">EEA Contaminated Sites</div>
             <div class="src-desc">European Environment Agency soil contamination indicator. 900k+ identified sites in EU. Contaminant profiles, remediation status, health impact estimates per member state.</div>
             <a class="src-url" href="https://www.eea.europa.eu/themes/soil" target="_blank">eea.europa.eu/themes/soil</a>
+            <div class="src-status"><span class="src-dot"></span>Published dataset · Annual</div>
           </div>
-          <div class="src-card">
+          <div class="src-card st-static">
             <div class="src-type">Transboundary Waste · Annual</div>
             <div class="src-name">Basel Convention Secretariat</div>
             <div class="src-desc">International treaty controlling hazardous waste transboundary movements. 187 parties. Annual national reporting database. 2021 plastic waste amendment enforcement tracker.</div>
             <a class="src-url" href="https://www.basel.int" target="_blank">basel.int</a>
+            <div class="src-status"><span class="src-dot"></span>Published dataset · Annual</div>
           </div>
-          <div class="src-card">
+          <div class="src-card st-static">
             <div class="src-type">Food Waste · Annual</div>
             <div class="src-name">UNEP Food Waste Index 2024</div>
             <div class="src-desc">1.05 Bt food wasted at household/retail/food service levels annually. 56 country datasets. Methodology aligned with SDG 12.3 target — halve food waste per capita by 2030.</div>
             <a class="src-url" href="https://www.unep.org/resources/report/unep-food-waste-index-report-2024" target="_blank">unep.org · Food Waste Index 2024</a>
+            <div class="src-status"><span class="src-dot"></span>Published dataset · 2024 edition</div>
           </div>
         </div>
       </div>
@@ -3174,6 +3293,9 @@
           document.querySelectorAll('.ind-bar-fill').forEach(el => {
             el.style.width = (parseFloat(el.dataset.pct) || 0) + '%';
           });
+          // ── CIRCULARITY RING GAUGE: animate 7.2/100 on load ──
+          const ringFill = document.getElementById('ring-fill');
+          if (ringFill) ringFill.style.strokeDashoffset = (427.3 * (1 - 7.2 / 100)).toFixed(1);
         }, 400);
       }
       // ── CUSTOM CURSOR ───────────────────────────────────────────────────────
