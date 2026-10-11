@@ -1,18 +1,18 @@
 {
   "meta": {
-    "generated": "2026-10-11T05:36:51.277Z",
+    "generated": "2026-10-11T17:40:04.855Z",
     "generated_date": "2026-10-11",
     "script_version": "1.1",
     "window_days": 14,
     "window_start": "2026-09-27",
     "window_end": "2026-10-11",
-    "runtime_ms": 305,
+    "runtime_ms": 273,
     "seismic_live": true,
-    "eonet_live": false
+    "eonet_live": true
   },
   "threat": {
-    "level": "ELEVATED",
-    "score": 11
+    "level": "CRITICAL",
+    "score": 22.3
   },
   "seismic": {
     "events": [
@@ -39,6 +39,14 @@
         "time": "2026-10-08T09:00:07.768Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u0xi"
+      },
+      {
+        "id": "us6000u1kv",
+        "magnitude": 6.2,
+        "place": "79 km SSE of Panguna, Papua New Guinea",
+        "time": "2026-10-11T14:07:23.188Z",
+        "depth_km": 53.5,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1kv"
       },
       {
         "id": "us6000u1cf",
@@ -249,12 +257,20 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty2b"
       },
       {
-        "id": "us6000tyt8",
-        "magnitude": 5.3,
-        "place": "Balleny Islands region",
-        "time": "2026-09-27T15:41:04.974Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tyt8"
+        "id": "us6000u1ld",
+        "magnitude": 5.2,
+        "place": "101 km SSW of Severo-Kuril’sk, Russia",
+        "time": "2026-10-11T17:00:29.277Z",
+        "depth_km": 83.4,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1ld"
+      },
+      {
+        "id": "us6000u1kt",
+        "magnitude": 5.2,
+        "place": "18 km SSE of Camaná, Peru",
+        "time": "2026-10-11T13:42:59.788Z",
+        "depth_km": 44.9,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1kt"
       },
       {
         "id": "us6000u1i6",
@@ -681,14 +697,6 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty0j"
       },
       {
-        "id": "us6000txzj",
-        "magnitude": 5,
-        "place": "191 km NW of Oula Xiuma, China",
-        "time": "2026-09-27T16:43:10.066Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000txzj"
-      },
-      {
         "id": "us6000u1gm",
         "magnitude": 4.9,
         "place": "Kermadec Islands region",
@@ -983,6 +991,14 @@
         "time": "2026-09-28T00:54:42.901Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty1l"
+      },
+      {
+        "id": "us6000u1ka",
+        "magnitude": 4.8,
+        "place": "165 km SSE of Miyakojima, Japan",
+        "time": "2026-10-11T12:13:18.599Z",
+        "depth_km": 10,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1ka"
       },
       {
         "id": "us6000u1fj",
@@ -1289,6 +1305,14 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty0q"
       },
       {
+        "id": "us6000u1il",
+        "magnitude": 4.7,
+        "place": "110 km SSE of Sola, Vanuatu",
+        "time": "2026-10-11T05:07:57.511Z",
+        "depth_km": 10.6,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1il"
+      },
+      {
         "id": "us6000u1fk",
         "magnitude": 4.7,
         "place": "2 km WNW of El Cacao, Panama",
@@ -1539,9 +1563,9 @@
       {
         "id": "us6000ty5h",
         "magnitude": 4.7,
-        "place": "115 km WSW of Banda Aceh, Indonesia",
-        "time": "2026-09-28T14:43:10.687Z",
-        "depth_km": 45.7,
+        "place": "112 km WSW of Banda Aceh, Indonesia",
+        "time": "2026-09-28T14:43:11.391Z",
+        "depth_km": 51.1,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty5h"
       },
       {
@@ -1577,6 +1601,22 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty3j"
       },
       {
+        "id": "us6000u1k3",
+        "magnitude": 4.6,
+        "place": "82 km E of Petropavlovsk-Kamchatsky, Russia",
+        "time": "2026-10-11T11:18:27.916Z",
+        "depth_km": 68.7,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1k3"
+      },
+      {
+        "id": "us6000u1jv",
+        "magnitude": 4.6,
+        "place": "260 km WNW of Houma, Tonga",
+        "time": "2026-10-11T10:05:41.414Z",
+        "depth_km": 512.9,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1jv"
+      },
+      {
         "id": "us6000u1i0",
         "magnitude": 4.6,
         "place": "109 km SSE of Pondaguitan, Philippines",
@@ -1591,6 +1631,14 @@
         "time": "2026-10-11T00:06:09.289Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1hj"
+      },
+      {
+        "id": "us6000u1jt",
+        "magnitude": 4.6,
+        "place": "southern Mid-Atlantic Ridge",
+        "time": "2026-10-10T19:15:54.315Z",
+        "depth_km": 10,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1jt"
       },
       {
         "id": "us6000u1fa",
@@ -1977,20 +2025,12 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000txzx"
       },
       {
-        "id": "us6000txz9",
-        "magnitude": 4.6,
-        "place": "52 km NNW of Barishal, Pakistan",
-        "time": "2026-09-27T15:00:53.288Z",
-        "depth_km": 43.2,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000txz9"
-      },
-      {
-        "id": "us6000txxm",
-        "magnitude": 4.6,
-        "place": "Rat Islands, Aleutian Islands, Alaska",
-        "time": "2026-09-27T07:48:11.749Z",
-        "depth_km": 46.5,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000txxm"
+        "id": "us6000u1j3",
+        "magnitude": 4.5,
+        "place": "south of the Fiji Islands",
+        "time": "2026-10-11T07:28:52.878Z",
+        "depth_km": 546.3,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1j3"
       },
       {
         "id": "us6000u1gu",
@@ -2345,9 +2385,9 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty1j"
       }
     ],
-    "count_total": 291,
-    "count_m55_plus": 16,
-    "count_m60_plus": 4,
+    "count_total": 296,
+    "count_m55_plus": 17,
+    "count_m60_plus": 5,
     "count_m70_plus": 1,
     "count_m80_plus": 0,
     "largest": {
@@ -2361,10 +2401,211 @@
     "source": "USGS Earthquake Hazards Program",
     "url": "https://earthquake.usgs.gov/",
     "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-    "retrieved": "2026-10-11T05:36:51.248Z"
+    "retrieved": "2026-10-11T17:40:04.818Z"
   },
-  "wildfire": null,
-  "storm": null,
-  "flood": null,
-  "volcanic": null
+  "wildfire": {
+    "events": [
+      {
+        "id": "EONET_25119",
+        "title": "Prescribed Fire CON BSE13 RX, Covington, Alabama",
+        "type": "WILDFIRE",
+        "time": "2026-10-07T10:45:00.000Z",
+        "coords": [
+          -86.527,
+          31.124
+        ],
+        "closed": null
+      },
+      {
+        "id": "EONET_25117",
+        "title": "Wildfire Jones, Elko, Nevada",
+        "type": "WILDFIRE",
+        "time": "2026-10-05T23:14:00.000Z",
+        "coords": [
+          -115.208,
+          41.022
+        ],
+        "closed": null
+      },
+      {
+        "id": "EONET_25118",
+        "title": "Wildfire BOUQUET, Los Angeles, California",
+        "type": "WILDFIRE",
+        "time": "2026-10-03T17:30:00.000Z",
+        "coords": [
+          -118.402,
+          34.562
+        ],
+        "closed": null
+      },
+      {
+        "id": "EONET_25043",
+        "title": "Prescribed Fire D3 Bear RX, Greenlee, Arizona",
+        "type": "WILDFIRE",
+        "time": "2026-10-02T17:58:00.000Z",
+        "coords": [
+          -109.402,
+          33.447
+        ],
+        "closed": null
+      },
+      {
+        "id": "EONET_25042",
+        "title": "Wildfire Bull, Washoe, Nevada",
+        "type": "WILDFIRE",
+        "time": "2026-10-02T14:26:00.000Z",
+        "coords": [
+          -119.988,
+          39.539
+        ],
+        "closed": null
+      },
+      {
+        "id": "EONET_25045",
+        "title": "Prescribed Fire Starvation 11A Rx, Wallowa, Oregon",
+        "type": "WILDFIRE",
+        "time": "2026-09-30T15:52:00.000Z",
+        "coords": [
+          -117.252,
+          45.701
+        ],
+        "closed": null
+      },
+      {
+        "id": "EONET_24964",
+        "title": "Wildfire SAN FRANCISCO 2, Starr, Texas",
+        "type": "WILDFIRE",
+        "time": "2026-09-30T08:56:00.000Z",
+        "coords": [
+          -98.692,
+          26.287
+        ],
+        "closed": null
+      },
+      {
+        "id": "EONET_24963",
+        "title": "Wildfire Hatch Grade, Walla Walla, Washington",
+        "type": "WILDFIRE",
+        "time": "2026-09-29T19:50:00.000Z",
+        "coords": [
+          -118.859,
+          46.032
+        ],
+        "closed": null
+      },
+      {
+        "id": "EONET_24965",
+        "title": "Wildfire 3 ALPHA SIERRA, Broward, Florida",
+        "type": "WILDFIRE",
+        "time": "2026-09-28T21:53:00.000Z",
+        "coords": [
+          -80.595,
+          26.134
+        ],
+        "closed": null
+      },
+      {
+        "id": "EONET_25041",
+        "title": "Prescribed Fire Walker Hill Piles RX, Coconino, Arizona",
+        "type": "WILDFIRE",
+        "time": "2026-09-28T09:55:00.000Z",
+        "coords": [
+          -111.847,
+          35.282
+        ],
+        "closed": null
+      }
+    ],
+    "count": 10
+  },
+  "storm": {
+    "events": [
+      {
+        "id": "EONET_25094",
+        "title": "Hurricane Simon",
+        "type": "STORM",
+        "time": "2026-10-07T18:00:00.000Z",
+        "coords": [
+          -101.3,
+          15.2
+        ],
+        "closed": null
+      },
+      {
+        "id": "EONET_25063",
+        "title": "Hurricane Isaias",
+        "type": "STORM",
+        "time": "2026-10-07T09:00:00.000Z",
+        "coords": [
+          -94.1,
+          22
+        ],
+        "closed": null
+      },
+      {
+        "id": "EONET_25046",
+        "title": "Typhoon Koguma",
+        "type": "STORM",
+        "time": "2026-10-05T06:00:00.000Z",
+        "coords": [
+          168.2,
+          10.9
+        ],
+        "closed": null
+      },
+      {
+        "id": "EONET_24962",
+        "title": "Super Typhoon Choi-wan",
+        "type": "STORM",
+        "time": "2026-09-30T12:00:00.000Z",
+        "coords": [
+          150.8,
+          16
+        ],
+        "closed": null
+      },
+      {
+        "id": "EONET_24909",
+        "title": "Tropical Storm Hanna",
+        "type": "STORM",
+        "time": "2026-09-28T15:00:00.000Z",
+        "coords": [
+          -50.4,
+          36.6
+        ],
+        "closed": null
+      },
+      {
+        "id": "EONET_24875",
+        "title": "Cyclone Rachel",
+        "type": "STORM",
+        "time": "2026-09-27T18:00:00.000Z",
+        "coords": [
+          -98.9,
+          12.7
+        ],
+        "closed": null
+      },
+      {
+        "id": "EONET_24786",
+        "title": "Hurricane Nolo",
+        "type": "STORM",
+        "time": "2026-09-24T00:00:00.000Z",
+        "coords": [
+          -155.8,
+          14.6
+        ],
+        "closed": null
+      }
+    ],
+    "count": 7
+  },
+  "flood": {
+    "events": [],
+    "count": 0
+  },
+  "volcanic": {
+    "events": [],
+    "count": 0
+  }
 }
