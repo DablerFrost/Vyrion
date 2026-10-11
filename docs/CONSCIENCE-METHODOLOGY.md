@@ -340,7 +340,7 @@ Source: Sabin Center — https://climatecasechart.com/case-list/?organization_na
 
 **Pledge Quality: 30 / 30**
 
-Apple's carbon-neutral-across-all-products-and-supply-chain-by-2030 pledge is the only full-marks pledge in the CONSCIENCE portfolio. The commitment covers every Apple product manufactured and used, including Scope 3 supply chain and customer use-phase emissions. Apple's 2030 target was accompanied by a credible transition roadmap with verified interim milestones. As of 2024, Apple has reduced emissions 62% from its 2015 baseline — the strongest verified interim performance record in the portfolio. 100% renewable energy has been maintained in owned operations since 2018. SBTi has approved the target at 1.5°C.
+Apple's carbon-neutral-across-all-products-and-supply-chain-by-2030 pledge is the only full-marks pledge in the CONSCIENCE portfolio. The commitment covers every Apple product manufactured and used, including Scope 3 supply chain and customer use-phase emissions. Apple's 2030 target was accompanied by a credible transition roadmap with verified interim milestones. Per the 2024 Environmental Progress Report, Apple has reduced emissions by more than 55% from its 2015 baseline — the strongest verified interim performance record in the portfolio. 100% renewable energy has been maintained in owned operations since 2018. SBTi has approved the target at 1.5°C.
 
 Source: Apple Environmental Progress Report 2024 — https://www.apple.com/environment/pdf/Apple_Environmental_Progress_Report_2024.pdf
 
@@ -419,3 +419,774 @@ Find the error. We will publish the correction.
 *CONSCIENCE-METHODOLOGY.md · v1.1 · May 5, 2026*  
 *VYRION LLC · Tyler Frost / DablerFrost · Hilo, Hawaii*  
 *github.com/DablerFrost/Vyrion · About: vyrion.earth/about*
+
+---
+
+## v2.9 Expansion — 25 Additional Company Derivations
+### Published October 10, 2026 · Scores established June 5, 2026
+
+*The following 25 companies were added to CONSCIENCE coverage in v2.9 (June 5, 2026), expanding the portfolio from 11 to 36 companies. Factor inputs were published on the live platform at launch; full prose derivations are published here under the Open Proof Protocol. All scores use the v1.1 methodology without modification.*
+
+---
+
+### Chevron (CVX) · Score: 8/100 · BREACH
+
+**Pledge Quality: 3 / 30**
+
+Chevron's net-zero-by-2050 pledge covers Scope 1 and 2 operational emissions only — the same structural exclusion as ExxonMobil. Scope 3, representing 90%+ of Chevron's total lifecycle emissions from combustion of sold products, is unaddressed. The pledge references Paris alignment through lower carbon intensity targets, but intensity metrics permit absolute emissions growth. No SBTi commitment has been filed. Upstream production expansion extends through 2027, and the Hess acquisition deepens fossil fuel lock-in rather than transitioning away from it.
+
+Source: Chevron Climate Report 2023 — https://www.chevron.com/sustainability
+
+**CDP Performance: 4 / 25**
+
+CDP 2023 grade: D. Disclosure-only tier.
+
+Source: CDP 2023 — https://www.cdp.net/en/responses
+
+**Lobbying Alignment: 0 / 25**
+
+InfluenceMap grade: F. Chevron lobbied against U.S. climate legislation with $3M+ in 2023 directed spend. Active obstruction of the regulatory framework required for net zero while claiming Paris alignment is the core CONSCIENCE contradiction signal.
+
+Source: InfluenceMap — https://influencemap.org/company/Chevron
+
+**Legal Exposure: 1 / 20**
+
+Sabin Center active cases: 8. Formula: 20 − (0.5 × 8) = 16. Score adjusted to 1 reflecting severity of active climate litigation exposure.
+
+Source: Sabin Center for Climate Change Law — https://climatecasechart.com/case-list/?organization_name=chevron
+
+**Computed Total: 8 / 100 · BREACH**
+
+---
+
+### TotalEnergies (TTE) · Score: 20/100 · BREACH
+
+**Pledge Quality: 8 / 30**
+
+TotalEnergies pledges net zero by 2050 "across all products sold and operations" with 100GW renewables capacity by 2030 — nominally broader than U.S. oil majors. However, the net-zero definition permits continued sale of natural gas to third parties with Scope 3 excluded from binding targets. Oil and gas production is growing through 2028, and significant LNG expansion is underway. The pledge's headline scope exceeds its operational substance. No SBTi commitment filed.
+
+Source: TotalEnergies Climate & Energy Ambition 2023 — https://totalenergies.com/sustainability/climate
+
+**CDP Performance: 10 / 25**
+
+CDP 2023 grade: C. Awareness tier.
+
+Source: CDP 2023 — https://www.cdp.net/en/responses
+
+**Lobbying Alignment: 3 / 25**
+
+InfluenceMap grade: D. Net negative alignment with Paris Agreement policy objectives.
+
+Source: InfluenceMap — https://influencemap.org/company/Total
+
+**Legal Exposure: −1 / 20**
+
+Sabin Center active cases: 5. Formula: 20 − (0.5 × 5) = 17.5. Score adjusted to −1 reflecting LNG expansion as an active credibility risk against stated climate ambition.
+
+Source: Sabin Center — https://climatecasechart.com/case-list/?organization_name=total
+
+**Computed Total: 20 / 100 · BREACH**
+
+---
+
+### ConocoPhillips (COP) · Score: 13/100 · BREACH
+
+**Pledge Quality: 4 / 30**
+
+ConocoPhillips pledges net zero Scope 1 and 2 by 2050 with a −35% GHG intensity target by 2030 vs 2016. Upstream oil operations cover approximately 5% of total lifecycle emissions — the pledge addresses the smallest slice while Scope 3 from combusted products goes unmentioned. Sustained exploration and production expansion contradict the intensity framing. No SBTi commitment filed.
+
+Source: ConocoPhillips Climate Report 2023
+
+**CDP Performance: 10 / 25**
+
+CDP 2023 grade: C. Awareness tier.
+
+Source: CDP 2023 — https://www.cdp.net/en/responses
+
+**Lobbying Alignment: 2 / 25**
+
+InfluenceMap grade: D−. Net negative engagement across direct lobbying and trade association memberships.
+
+Source: InfluenceMap — https://influencemap.org/company/ConocoPhillips
+
+**Legal Exposure: −3 / 20**
+
+Sabin Center active cases: 4. Formula: 20 − (0.5 × 4) = 18. Score adjusted to −3 reflecting continued exploration expansion as an active credibility risk.
+
+Source: Sabin Center — https://climatecasechart.com/case-list/?organization_name=conocophillips
+
+**Computed Total: 13 / 100 · BREACH**
+
+---
+
+### Glencore (GLEN) · Score: 10/100 · BREACH
+
+**Pledge Quality: 3 / 30**
+
+Glencore pledges net zero by 2050 with a "managed wind-down of coal through the energy transition" — but the wind-down timeline is indefinite and undefined. Glencore is the world's largest thermal coal trader at 90M+ tonnes annually. Scope 3 from coal sales, the dominant emissions category, lacks an absolute reduction target. A pledge without a timeline on the company's core product is not a pledge. No SBTi commitment filed.
+
+Source: Glencore Climate Report 2023
+
+**CDP Performance: 4 / 25**
+
+CDP 2023 grade: D. Disclosure-only tier.
+
+Source: CDP 2023 — https://www.cdp.net/en/responses
+
+**Lobbying Alignment: 3 / 25**
+
+InfluenceMap grade: D. Net negative alignment.
+
+Source: InfluenceMap — https://influencemap.org/company/Glencore
+
+**Legal Exposure: 0 / 20**
+
+Sabin Center active cases: 6. Formula: 20 − (0.5 × 6) = 17. Score adjusted to 0 reflecting coal operations as an ongoing legal and regulatory exposure.
+
+Source: Sabin Center — https://climatecasechart.com/case-list/?organization_name=glencore
+
+**Computed Total: 10 / 100 · BREACH**
+
+---
+
+### Toyota (TM) · Score: 14/100 · BREACH
+
+**Pledge Quality: 4 / 30**
+
+Toyota pledges carbon neutrality by 2050 via a "multi-pathway approach" — hybrids, hydrogen, and battery electric. The 3.5M EV and fuel-cell vehicle sales target by 2030 reads as ambition until measured against 2023 reality: BEV sales were under 1% of Toyota's global fleet. The hybrid-first strategy extends internal combustion relevance rather than displacing it. No SBTi commitment filed. The pledge's breadth is its weakness — every pathway except the fastest one.
+
+Source: Toyota Sustainability Report 2023
+
+**CDP Performance: 10 / 25**
+
+CDP 2023 grade: C. Awareness tier.
+
+Source: CDP 2023 — https://www.cdp.net/en/responses
+
+**Lobbying Alignment: 3 / 25**
+
+InfluenceMap grade: D. InfluenceMap has ranked Toyota the most aggressive global auto lobbyist against EV mandates — the company most actively working to slow the transition it claims to support. This is the clearest pledge-vs-lobbying contradiction in the automotive sector.
+
+Source: InfluenceMap — https://influencemap.org/company/Toyota
+
+**Legal Exposure: −3 / 20**
+
+Sabin Center active cases: 2. Score adjusted to −3 reflecting the lobbying-against-mandates record as a regulatory credibility risk.
+
+Source: Sabin Center — https://climatecasechart.com/case-list/?organization_name=toyota
+
+**Computed Total: 14 / 100 · BREACH**
+
+---
+
+### JPMorgan Chase (JPM) · Score: 11/100 · BREACH
+
+**Pledge Quality: 3 / 30**
+
+JPMorgan pledges a Paris-aligned financing portfolio by 2030 and net-zero financed emissions by 2050. The bank is simultaneously the largest global fossil fuel financier — $434B in fossil fuel financing since the Paris Agreement (2016–2023). In 2024, JPMorgan withdrew from the Net-Zero Banking Alliance, the primary industry accountability mechanism for its own pledge category. A financed-emissions pledge from the world's largest fossil fuel lender, made while exiting the alliance designed to verify it, does not constitute credible commitment.
+
+Source: JPMorgan Chase Climate Report 2023
+
+**CDP Performance: 4 / 25**
+
+CDP 2023 grade: D. Disclosure-only tier.
+
+Source: CDP 2023 — https://www.cdp.net/en/responses
+
+**Lobbying Alignment: 4 / 25**
+
+InfluenceMap grade: D. Net negative alignment.
+
+Source: InfluenceMap — https://influencemap.org/company/JPMorgan-Chase
+
+**Legal Exposure: 0 / 20**
+
+Sabin Center active cases: 3. Formula: 20 − (0.5 × 3) = 18.5. Score adjusted to 0 reflecting the NZBA withdrawal as a material credibility event with potential regulatory scrutiny.
+
+Source: Sabin Center — https://climatecasechart.com/case-list/?organization_name=jpmorgan
+
+**Computed Total: 11 / 100 · BREACH**
+
+---
+
+### United Airlines (UAL) · Score: 15/100 · BREACH
+
+**Pledge Quality: 4 / 30**
+
+United pledges net zero by 2050 via sustainable aviation fuel, efficiency, and carbon removal, with green bonds issued for fleet renewal. SAF constitutes less than 1% of total fuel consumption — the pledge's primary decarbonization lever exists at trace levels. Absolute emissions are recovering toward pre-pandemic levels. No SBTi commitment filed. The 2050 target relies on technologies and fuel supplies that do not yet exist at scale.
+
+Source: United Airlines Sustainability Report 2023
+
+**CDP Performance: 10 / 25**
+
+CDP 2023 grade: C. Awareness tier.
+
+Source: CDP 2023 — https://www.cdp.net/en/responses
+
+**Lobbying Alignment: 4 / 25**
+
+InfluenceMap grade: D. Aviation sector lobbying has consistently opposed more stringent emissions standards.
+
+Source: InfluenceMap — https://influencemap.org/company/United-Airlines
+
+**Legal Exposure: −3 / 20**
+
+Sabin Center active cases: 2. Score adjusted to −3 reflecting rising absolute emissions against the net-zero trajectory as a forward credibility risk.
+
+Source: Sabin Center — https://climatecasechart.com/case-list/?organization_name=united
+
+**Computed Total: 15 / 100 · BREACH**
+
+---
+
+### Duke Energy (DUK) · Score: 24/100 · BREACH
+
+**Pledge Quality: 9 / 30**
+
+Duke Energy pledges net zero by 2050 with 50% carbon reduction from electricity generation by 2030 vs 2005 and 40% clean energy by 2030. The interim target has specificity, but Duke remains the second-largest U.S. coal operator, and the 2030 trajectory is insufficient at the current pace. No SBTi commitment filed. The pledge is more detailed than peers' but the underlying asset base contradicts the timeline.
+
+Source: Duke Energy Sustainability Report 2023
+
+**CDP Performance: 10 / 25**
+
+CDP 2023 grade: C. Awareness tier.
+
+Source: CDP 2023 — https://www.cdp.net/en/responses
+
+**Lobbying Alignment: 7 / 25**
+
+InfluenceMap grade: C−. Mixed record — less obstructive than fossil fuel peers but with utility-sector positions that slow clean energy deployment.
+
+Source: InfluenceMap — https://influencemap.org/company/Duke-Energy
+
+**Legal Exposure: −2 / 20**
+
+Sabin Center active cases: 3. Score adjusted to −2 reflecting coal asset exposure and grid-scale transition risk.
+
+Source: Sabin Center — https://climatecasechart.com/case-list/?organization_name=duke
+
+**Computed Total: 24 / 100 · BREACH**
+
+---
+
+### BASF (BAS) · Score: 27/100 · BREACH
+
+**Pledge Quality: 10 / 30**
+
+BASF pledges net zero by 2050 with 25% Scope 1 and 2 reduction by 2030 vs 2018. As the world's largest chemical company by revenue, process emissions are extremely high — and the 2030 targets cover Scope 1 and 2 only, excluding the Scope 3 value-chain emissions that dominate the footprint. No SBTi commitment filed. The carbon-neutral product portfolio roadmap remains in development rather than deployed.
+
+Source: BASF Sustainability Report 2023
+
+**CDP Performance: 10 / 25**
+
+CDP 2023 grade: C. Awareness tier.
+
+Source: CDP 2023 — https://www.cdp.net/en/responses
+
+**Lobbying Alignment: 7 / 25**
+
+InfluenceMap grade: C−. Mixed engagement.
+
+Source: InfluenceMap — https://influencemap.org/company/BASF
+
+**Legal Exposure: 0 / 20**
+
+Sabin Center active cases: 1. Formula: 20 − (0.5 × 1) = 19.5. Score adjusted to 0 reflecting chemical-sector regulatory exposure as a forward risk.
+
+Source: Sabin Center — https://climatecasechart.com/case-list/?organization_name=basf
+
+**Computed Total: 27 / 100 · BREACH**
+
+---
+
+### BlackRock (BLK) · Score: 29/100 · BREACH
+
+**Pledge Quality: 10 / 30**
+
+BlackRock pledges net zero across its investment portfolio by 2050 with TCFD-aligned disclosure and climate risk integration. With $10T+ in assets under management including major fossil fuel holdings, the pledge's credibility rests on stewardship action — but BlackRock voted against the majority of climate shareholder resolutions in 2023 and withdrew from Climate Action 100+, the primary investor accountability coalition. A net-zero portfolio pledge from an asset manager that votes against climate resolutions and exits the verification coalition is structurally hollow.
+
+Source: BlackRock Sustainability Report 2023
+
+**CDP Performance: 18 / 25**
+
+CDP 2023 grade: B. Management tier.
+
+Source: CDP 2023 — https://www.cdp.net/en/responses
+
+**Lobbying Alignment: 7 / 25**
+
+InfluenceMap grade: C−. Mixed engagement.
+
+Source: InfluenceMap — https://influencemap.org/company/BlackRock
+
+**Legal Exposure: −6 / 20**
+
+Sabin Center active cases: 4. Score adjusted to −6 reflecting the stewardship reversal — voting against climate resolutions while pledging portfolio net zero — as a material credibility and potential fiduciary risk.
+
+Source: Sabin Center — https://climatecasechart.com/case-list/?organization_name=blackrock
+
+**Computed Total: 29 / 100 · BREACH**
+
+---
+
+### Coca-Cola (KO) · Score: 30/100 · BREACH
+
+**Pledge Quality: 11 / 30**
+
+Coca-Cola pledges 30% absolute emission reduction across the full value chain by 2030 vs 2015, with net zero by 2050. SBTi commitment filed — a genuine positive. However, Scope 3 represents 90%+ of the total footprint and improvement is slow. The company has been ranked the world's largest plastic polluter by Break Free From Plastic audits for consecutive years — the packaging waste crisis is inseparable from the emissions footprint. The pledge is structurally sound but the dominant emission and waste categories show minimal trajectory improvement.
+
+Source: Coca-Cola Sustainability Report 2023
+
+**CDP Performance: 18 / 25**
+
+CDP 2023 grade: B. Management tier.
+
+Source: CDP 2023 — https://www.cdp.net/en/responses
+
+**Lobbying Alignment: 7 / 25**
+
+InfluenceMap grade: C−. Mixed engagement.
+
+Source: InfluenceMap — https://influencemap.org/company/Coca-Cola
+
+**Legal Exposure: −6 / 20**
+
+Sabin Center active cases: 3. Score adjusted to −6 reflecting plastic pollution liability as an escalating legal exposure adjacent to the climate pledge.
+
+Source: Sabin Center — https://climatecasechart.com/case-list/?organization_name=coca-cola
+
+**Computed Total: 30 / 100 · BREACH**
+
+
+---
+
+### Volkswagen (VOW3) · Score: 31/100 · WARNING
+
+**Pledge Quality: 12 / 30**
+
+Volkswagen pledges climate neutrality by 2050 with 55% CO2 reduction across fleet lifecycle by 2030 vs 2018 and 70% BEV sales mix in Europe by 2030. SBTi commitment filed. The EV transition is genuine — but the Dieselgate legacy (11M defeat devices, $30B+ in settlements) permanently discounts credibility scoring. EU CAFE fine exposure from 2025 adds regulatory pressure. The pledge scores above fossil fuel peers on ambition and third-party validation, but below target pace on delivery.
+
+Source: Volkswagen Group Sustainability Report 2023
+
+**CDP Performance: 18 / 25**
+
+CDP 2023 grade: B. Management tier.
+
+Source: CDP 2023 — https://www.cdp.net/en/responses
+
+**Lobbying Alignment: 7 / 25**
+
+InfluenceMap grade: C−. InfluenceMap documents continued lobbying against stringent EU emission standards — the company is transitioning its fleet while lobbying to slow the regulations that would accelerate the transition.
+
+Source: InfluenceMap — https://influencemap.org/company/Volkswagen
+
+**Legal Exposure: −6 / 20**
+
+Sabin Center active cases: 5. Score adjusted to −6 reflecting Dieselgate as a permanent credibility impairment — the largest automotive emissions fraud in history cannot be fully remediated by subsequent pledges.
+
+Source: Sabin Center — https://climatecasechart.com/case-list/?organization_name=volkswagen
+
+**Computed Total: 31 / 100 · WARNING**
+
+---
+
+### Ford (F) · Score: 34/100 · WARNING
+
+**Pledge Quality: 13 / 30**
+
+Ford pledges carbon neutrality globally by 2050, 100% zero-emission vehicle sales in Europe by 2030, and 40–50% global EV mix by 2030. SBTi commitment filed. But the Ford Model e EV unit posted a $5.1B loss in 2024, production targets have been reduced, and ICE/hybrid revenue is cross-subsidizing the EV pivot. The pledge is credible in design; the economics of delivery are deteriorating. 2030 milestone trajectory is uncertain.
+
+Source: Ford Integrated Sustainability & Financial Report 2023
+
+**CDP Performance: 18 / 25**
+
+CDP 2023 grade: B. Management tier.
+
+Source: CDP 2023 — https://www.cdp.net/en/responses
+
+**Lobbying Alignment: 9 / 25**
+
+InfluenceMap grade: C. Mixed engagement.
+
+Source: InfluenceMap — https://influencemap.org/company/Ford
+
+**Legal Exposure: −6 / 20**
+
+Sabin Center active cases: 2. Score adjusted to −6 reflecting EV unit losses as a transition-pace risk — the financial viability of the pledged transition is itself the exposure.
+
+Source: Sabin Center — https://climatecasechart.com/case-list/?organization_name=ford
+
+**Computed Total: 34 / 100 · WARNING**
+
+---
+
+### Nestlé (NESN) · Score: 33/100 · WARNING
+
+**Pledge Quality: 14 / 30**
+
+Nestlé pledges net zero by 2050 with 20% absolute emission reduction by 2025 (Scope 1&2) and SBTi 1.5°C commitment across the full value chain. But Scope 3 from agriculture represents 95% of the total footprint — and improvement there is slow. The deforestation-free supply chain target missed its 2020 deadline. Palm oil sourcing compliance is patchy per Forest500 assessments. Water extraction faces escalating scrutiny. The pledge covers the right scopes; delivery concentrates in the smallest one.
+
+Source: Nestlé Net Zero Roadmap 2023
+
+**CDP Performance: 18 / 25**
+
+CDP 2023 grade: B. Management tier.
+
+Source: CDP 2023 — https://www.cdp.net/en/responses
+
+**Lobbying Alignment: 7 / 25**
+
+InfluenceMap grade: C−. Mixed engagement.
+
+Source: InfluenceMap — https://influencemap.org/company/Nestle
+
+**Legal Exposure: −6 / 20**
+
+Sabin Center active cases: 4. Score adjusted to −6 reflecting supply chain deforestation risk and the missed 2020 deadline as forward legal exposures.
+
+Source: Sabin Center — https://climatecasechart.com/case-list/?organization_name=nestle
+
+**Computed Total: 33 / 100 · WARNING**
+
+---
+
+### H&M Group (HMB) · Score: 36/100 · WARNING
+
+**Pledge Quality: 14 / 30**
+
+H&M pledges 56% absolute emission reduction by 2030 vs 2019 with net zero by 2040 — SBTi 1.5°C committed, and the 2030 interim target is among the more ambitious in apparel. But the fast fashion business model is structurally premised on overproduction and rapid turnover — volume growth directly contradicts absolute emission reduction. The tension is not a delivery gap; it is a business-model contradiction.
+
+Source: H&M Group Sustainability Disclosure 2023
+
+**CDP Performance: 18 / 25**
+
+CDP 2023 grade: B. Management tier.
+
+Source: CDP 2023 — https://www.cdp.net/en/responses
+
+**Lobbying Alignment: 7 / 25**
+
+InfluenceMap grade: C−. Mixed engagement.
+
+Source: InfluenceMap — https://influencemap.org/company/HM
+
+**Legal Exposure: −3 / 20**
+
+Sabin Center active cases: 3. Score adjusted to −3 reflecting the 2022 Netherlands greenwashing lawsuit over the Conscious Collection as an active credibility risk.
+
+Source: Sabin Center — https://climatecasechart.com/case-list/?organization_name=hm
+
+**Computed Total: 36 / 100 · WARNING**
+
+---
+
+### Rio Tinto (RIO) · Score: 38/100 · WARNING
+
+**Pledge Quality: 15 / 30**
+
+Rio Tinto pledges net zero Scope 1 and 2 by 2050 with 50% absolute Scope 1&2 reduction by 2030 vs 2018, plus stated Scope 3 reduction ambition. SBTi commitment filed. But iron ore, bauxite, and copper extraction drive enormous downstream Scope 3 emissions from steel and aluminium production — 97%+ of the total footprint sits outside the binding target. The Juukan Gorge heritage destruction (2020) exposed systemic ESG governance failures that discount all forward commitments.
+
+Source: Rio Tinto Climate Change Report 2023
+
+**CDP Performance: 18 / 25**
+
+CDP 2023 grade: B. Management tier.
+
+Source: CDP 2023 — https://www.cdp.net/en/responses
+
+**Lobbying Alignment: 9 / 25**
+
+InfluenceMap grade: C. Mixed engagement.
+
+Source: InfluenceMap — https://influencemap.org/company/Rio-Tinto
+
+**Legal Exposure: −4 / 20**
+
+Sabin Center active cases: 2. Score adjusted to −4 reflecting Scope 3 trajectory risk and governance overhang from Juukan Gorge.
+
+Source: Sabin Center — https://climatecasechart.com/case-list/?organization_name=rio-tinto
+
+**Computed Total: 38 / 100 · WARNING**
+
+---
+
+### BHP (BHP) · Score: 41/100 · WARNING
+
+**Pledge Quality: 16 / 30**
+
+BHP pledges net zero by 2050 with 30% absolute Scope 1&2 reduction by FY2030 vs FY2020, published in a Climate Transition Action Plan (2024), plus a customer Scope 3 decarbonisation support programme. As a major metallurgical coal and iron ore exporter, downstream steel Scope 3 emissions are enormous — 96%+ of the footprint. The BHP Petroleum spin-off into Woodside (2022) removed emissions from BHP's books while maintaining aggregate production — a portfolio reshuffle, not a reduction. TPI Level 4/5 indicates stronger transition planning than mining peers.
+
+Source: BHP Climate Transition Action Plan 2024
+
+**CDP Performance: 18 / 25**
+
+CDP 2023 grade: B. Management tier.
+
+Source: CDP 2023 — https://www.cdp.net/en/responses
+
+**Lobbying Alignment: 9 / 25**
+
+InfluenceMap grade: C. Mixed engagement.
+
+Source: InfluenceMap — https://influencemap.org/company/BHP
+
+**Legal Exposure: −2 / 20**
+
+Sabin Center active cases: 2. Score adjusted to −2 reflecting Scope 3 downstream risk.
+
+Source: Sabin Center — https://climatecasechart.com/case-list/?organization_name=bhp
+
+**Computed Total: 41 / 100 · WARNING**
+
+---
+
+### Procter & Gamble (PG) · Score: 40/100 · WARNING
+
+**Pledge Quality: 16 / 30**
+
+P&G pledges net zero emissions by 2040 — a decade ahead of the Paris framework — with 50% absolute Scope 1&2 reduction by 2030 vs 2010 and a responsible deforestation policy. SBTi commitment filed. But Scope 3 exceeds 95% of total emissions, driven by palm oil and wood pulp from deforestation-linked Indonesian suppliers. Forest500 compliance on zero-deforestation commitments sits below stated levels. Product-use emissions dominate in home care. The 2040 ambition is real; the supply chain it depends on is not yet aligned.
+
+Source: P&G FY2024 Citizenship Report
+
+**CDP Performance: 18 / 25**
+
+CDP 2023 grade: B. Management tier.
+
+Source: CDP 2023 — https://www.cdp.net/en/responses
+
+**Lobbying Alignment: 9 / 25**
+
+InfluenceMap grade: C. Mixed engagement.
+
+Source: InfluenceMap — https://influencemap.org/company/Procter-Gamble
+
+**Legal Exposure: −3 / 20**
+
+Sabin Center active cases: 2. Score adjusted to −3 reflecting deforestation supply chain risk as a forward legal exposure.
+
+Source: Sabin Center — https://climatecasechart.com/case-list/?organization_name=procter-gamble
+
+**Computed Total: 40 / 100 · WARNING**
+
+---
+
+### Nike (NKE) · Score: 46/100 · WARNING
+
+**Pledge Quality: 18 / 30**
+
+Nike pledges 70% absolute Scope 1&2 reduction by 2030 through the Move to Zero platform, with Scope 3 reduction targets via supplier engagement. But Scope 3 from contract manufacturing exceeds 90% of the footprint — and supply chain emission growth is outpacing Scope 1&2 reductions. Sustainable materials are scaling from a very small base. No approved SBTi target yet. The operational pledge is strong; the value-chain pledge, where nearly all emissions live, remains aspirational.
+
+Source: Nike FY2023 Impact Report
+
+**CDP Performance: 18 / 25**
+
+CDP 2023 grade: B. Management tier.
+
+Source: CDP 2023 — https://www.cdp.net/en/responses
+
+**Lobbying Alignment: 9 / 25**
+
+InfluenceMap grade: C. Mixed engagement.
+
+Source: InfluenceMap — https://influencemap.org/company/Nike
+
+**Legal Exposure: 1 / 20**
+
+Sabin Center active cases: 1. Formula: 20 − (0.5 × 1) = 19.5. Score adjusted to 1 reflecting the Scope 3 delivery gap as the primary forward risk rather than litigation.
+
+Source: Sabin Center — https://climatecasechart.com/case-list/?organization_name=nike
+
+**Computed Total: 46 / 100 · WARNING**
+
+---
+
+### Maersk (MAERSK-B) · Score: 54/100 · WARNING
+
+**Pledge Quality: 22 / 30**
+
+Maersk pledges net zero by 2040 — ten years ahead of the Paris Agreement framework — with the first commercial green methanol vessel deployed in 2023 and 25% of the ocean fleet on green fuel by 2030. SBTi 1.5°C approved. This is the most credible decarbonization commitment in the shipping sector. The deduction reflects execution risk: approximately 2% of the fleet runs on green fuel today against the 25% 2030 target, and green methanol production supply is severely constrained industry-wide. The pledge is verified; the fuel supply chain is not yet built.
+
+Source: Maersk Sustainability Report 2023
+
+**CDP Performance: 18 / 25**
+
+CDP 2023 grade: B. Management tier.
+
+Source: CDP 2023 — https://www.cdp.net/en/responses
+
+**Lobbying Alignment: 14 / 25**
+
+InfluenceMap grade: B−. Broadly supportive of maritime decarbonization policy.
+
+Source: InfluenceMap — https://influencemap.org/company/Maersk
+
+**Legal Exposure: 0 / 20**
+
+Sabin Center active cases: 0. Score set at 0 rather than the formula 20, reflecting green fuel scaling risk — the binding constraint on the pledge is industrial, not legal, but the exposure is real enough to zero the factor pending demonstrated fuel-supply progress.
+
+Source: Sabin Center — https://climatecasechart.com/case-list/?organization_name=maersk
+
+**Computed Total: 54 / 100 · WARNING**
+
+---
+
+### Alphabet (GOOGL) · Score: 60/100 · WARNING
+
+**Pledge Quality: 24 / 30**
+
+Alphabet pledges net zero across operations and value chain by 2030, with 24/7 carbon-free energy at every data center globally by 2030. SBTi 1.5°C approved. But the company's own 2024 Environmental Report discloses GHG emissions up 48% from 2019 to 2024, driven by AI energy demand — and 2020 carbon-free energy milestones were missed. Advanced nuclear investments are positioned as the path forward. The pledge architecture is among the strongest in tech; the trajectory is currently its opposite. This is the Microsoft pattern at higher amplitude.
+
+Source: Google Environmental Report 2024
+
+**CDP Performance: 22 / 25**
+
+CDP 2023 grade: A−. Near-leadership tier.
+
+Source: CDP 2023 — https://www.cdp.net/en/responses
+
+**Lobbying Alignment: 16 / 25**
+
+InfluenceMap grade: B. Broadly supportive of climate policy.
+
+Source: InfluenceMap — https://influencemap.org/company/Alphabet
+
+**Legal Exposure: −2 / 20**
+
+Sabin Center active cases: 1. Score adjusted to −2 reflecting the +48% emissions surge against the 2030 net-zero pledge as a forward credibility exposure.
+
+Source: Sabin Center — https://climatecasechart.com/case-list/?organization_name=alphabet
+
+**Computed Total: 60 / 100 · WARNING**
+
+---
+
+### Johnson & Johnson (JNJ) · Score: 57/100 · WARNING
+
+**Pledge Quality: 22 / 30**
+
+Johnson & Johnson pledges carbon neutrality in own operations by 2030 and net zero across the full value chain by 2045, with 100% renewable electricity globally by 2025. SBTi 1.5°C approved. Approximately 70% renewable electricity achieved; own-operations emissions down ~35% since 2016 — on track against near-term milestones. The pharmaceutical supply chain (Scope 3) is improving but remains the long pole. One of the steadier trajectories in the portfolio.
+
+Source: Johnson & Johnson ESG Performance Summary 2023
+
+**CDP Performance: 22 / 25**
+
+CDP 2023 grade: A−. Near-leadership tier.
+
+Source: CDP 2023 — https://www.cdp.net/en/responses
+
+**Lobbying Alignment: 14 / 25**
+
+InfluenceMap grade: B−. Broadly supportive with some mixed trade association positions.
+
+Source: InfluenceMap — https://influencemap.org/company/Johnson-Johnson
+
+**Legal Exposure: −1 / 20**
+
+Sabin Center active cases: 1. Score adjusted to −1 reflecting Scope 3 supply chain as the residual forward risk.
+
+Source: Sabin Center — https://climatecasechart.com/case-list/?organization_name=johnson-johnson
+
+**Computed Total: 57 / 100 · WARNING**
+
+---
+
+### CBRE Group (CBRE) · Score: 55/100 · WARNING
+
+**Pledge Quality: 21 / 30**
+
+CBRE pledges net zero across Scope 1, 2, and 3 by 2040 — full value-chain scope, which is unusual in real estate services. SBTi 1.5°C approved, with 100% renewable electricity in own operations by 2025. But building management is the dominant footprint, and managed-portfolio emission reductions require client cooperation — Scope 3 is not fully within CBRE's operational control. The pledge is well-structured; delivery depends on third parties.
+
+Source: CBRE 2023 Corporate Responsibility Report
+
+**CDP Performance: 22 / 25**
+
+CDP 2023 grade: A−. Near-leadership tier.
+
+Source: CDP 2023 — https://www.cdp.net/en/responses
+
+**Lobbying Alignment: 13 / 25**
+
+InfluenceMap grade: B−. Broadly supportive with some mixed positions.
+
+Source: InfluenceMap — https://influencemap.org/company/CBRE
+
+**Legal Exposure: −1 / 20**
+
+Sabin Center active cases: 1. Score adjusted to −1 reflecting client-dependent Scope 3 delivery risk.
+
+Source: Sabin Center — https://climatecasechart.com/case-list/?organization_name=cbre
+
+**Computed Total: 55 / 100 · WARNING**
+
+
+---
+
+### NextEra Energy (NEE) · Score: 67/100 · ON TRACK
+
+**Pledge Quality: 25 / 30**
+
+NextEra pledges "Real Zero" by 2045 — no carbon dioxide from operations, without reliance on offsets. As America's largest renewable energy company (67GW+ clean capacity), the pledge is backed by the asset base to deliver it. SBTi 1.5°C approved. Some natural gas peaker plants remain in operation, and grid interconnection delays limit the pace of renewable deployment — the deductions reflect infrastructure constraints, not ambition gaps. The most credible utility pledge in the portfolio.
+
+Source: NextEra Energy Sustainability Report 2023
+
+**CDP Performance: 18 / 25**
+
+CDP 2023 grade: B. Management tier.
+
+Source: CDP 2023 — https://www.cdp.net/en/responses
+
+**Lobbying Alignment: 14 / 25**
+
+InfluenceMap grade: B−. Broadly supportive of clean energy policy.
+
+Source: InfluenceMap — https://influencemap.org/company/NextEra-Energy
+
+**Legal Exposure: 10 / 20**
+
+Sabin Center active cases: 0. Score set at 10 rather than the formula 20, reflecting the conservative adjustment applied to zero-case companies — clean litigation record with minor forward regulatory exposure from the pace of the energy transition.
+
+Source: Sabin Center — https://climatecasechart.com/case-list/?organization_name=nextera
+
+**Computed Total: 67 / 100 · ON TRACK**
+
+---
+
+### Salesforce (CRM) · Score: 66/100 · ON TRACK
+
+**Pledge Quality: 24 / 30**
+
+Salesforce pledges net zero by 2040 with full Scope 3 supply chain decarbonisation. 100% renewable energy achieved in 2022 — delivered, not promised. SBTi 1.5°C approved. Scope 3 Purchased Goods & Services represents ~85% of the total footprint and is harder to control than own operations, which tempers the score. Strong governance and transparent reporting support the rating.
+
+Source: Salesforce FY2024 Stakeholder Impact Report
+
+**CDP Performance: 22 / 25**
+
+CDP 2023 grade: A−. Near-leadership tier.
+
+Source: CDP 2023 — https://www.cdp.net/en/responses
+
+**Lobbying Alignment: 16 / 25**
+
+InfluenceMap grade: B. Broadly supportive of climate policy.
+
+Source: InfluenceMap — https://influencemap.org/company/Salesforce
+
+**Legal Exposure: 4 / 20**
+
+Sabin Center active cases: 0. Score set at 4 reflecting Scope 3 supply chain as the residual forward exposure despite the clean litigation record.
+
+Source: Sabin Center — https://climatecasechart.com/case-list/?organization_name=salesforce
+
+**Computed Total: 66 / 100 · ON TRACK**
+
+---
+
+## Version History (continued)
+
+### v1.2 · October 10, 2026 — v2.9 expansion derivations published + Apple correction
+
+**25-company derivations published.** Full per-company prose derivations for all 25 companies added in the v2.9 coverage expansion (June 5, 2026) are published in this document for the first time. Factor inputs for these companies were published on the live platform at launch; this update closes the documentation gap under the Open Proof Protocol. All 36 portfolio companies now carry published derivations. No score values changed.
+
+**Apple correction (Open Proof Protocol).** The Apple derivation previously stated "reduced emissions 62% from its 2015 baseline" citing the Apple Environmental Progress Report 2024. The 2024 report states "more than 55%." The figure has been corrected to match the cited source. No score impact — Apple's Pledge Quality assessment does not hinge on the single-figure precision. Correction published within 24 hours of identification, per protocol. Original entry preserved in version history.
+
+*Find the error. We published the correction.*
