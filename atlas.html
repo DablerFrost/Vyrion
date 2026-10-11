@@ -940,13 +940,13 @@ function am(root){(root||document).querySelectorAll('[data-mag]').forEach(el=>{c
 document.addEventListener('DOMContentLoaded',()=>am());
 
 /* ── THEME ──────────────────────────────────────────── */
-function toggleTheme(){const h=document.documentElement,il=h.getAttribute('data-theme')==='light';h.setAttribute('data-theme',il?'dark':'light');const b=document.getElementById('theme-btn');b.textContent=il?'◐ DARK':'◑ LIGHT';try{localStorage.setItem('at-theme',il?'dark':'light')}catch(e){}}
-(function(){try{const t=localStorage.getItem('at-theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');const b=document.getElementById('theme-btn');if(b)b.textContent='◑ LIGHT';}}catch(e){}})();
+function toggleTheme(){const h=document.documentElement,il=h.getAttribute('data-theme')==='light';h.setAttribute('data-theme',il?'dark':'light');const b=document.getElementById('theme-btn');b.textContent=il?'◐ DARK':'◑ LIGHT';try{localStorage.setItem('vc-theme',il?'dark':'light')}catch(e){}}
+(function(){try{const t=localStorage.getItem('vc-theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');const b=document.getElementById('theme-btn');if(b)b.textContent='◑ LIGHT';}}catch(e){}})();
 
 /* ── FONT SCALE ─────────────────────────────────────── */
 const SCALES={'0.88':16,'1.0':18,'1.22':22};
-function setScale(btn){const px=SCALES[btn.dataset.scale]||18;document.documentElement.style.fontSize=px+'px';document.documentElement.dataset.tscale=btn.dataset.scale;document.querySelectorAll('.nc-sz').forEach(b=>b.classList.toggle('active',b===btn));try{localStorage.setItem('at-scale',btn.dataset.scale)}catch(e){}}
-(function(){try{const s=localStorage.getItem('at-scale');if(s&&SCALES[s]){document.documentElement.style.fontSize=SCALES[s]+'px';requestAnimationFrame(()=>document.querySelectorAll('.nc-sz').forEach(b=>b.classList.toggle('active',b.dataset.scale===s)));}}catch(e){}})();
+function setScale(btn){const px=SCALES[btn.dataset.scale]||18;document.documentElement.style.fontSize=px+'px';document.documentElement.dataset.tscale=btn.dataset.scale;document.querySelectorAll('.nc-sz').forEach(b=>b.classList.toggle('active',b===btn));try{localStorage.setItem('vc-scale',btn.dataset.scale)}catch(e){}}
+(function(){try{const s=localStorage.getItem('vc-scale');if(s&&SCALES[s]){document.documentElement.style.fontSize=SCALES[s]+'px';requestAnimationFrame(()=>document.querySelectorAll('.nc-sz').forEach(b=>b.classList.toggle('active',b.dataset.scale===s)));}}catch(e){}})();
 
 /* ── TIMESTAMP ──────────────────────────────────────── */
 function stamp(){const e=document.getElementById('ts-val');if(e)e.textContent=new Date().toUTCString().replace(' GMT','').slice(0,-3)+' UTC';}
