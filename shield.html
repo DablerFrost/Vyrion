@@ -966,6 +966,17 @@ body::after {
   .shm-panel{width:100%;border-left:none;border-top:1px solid var(--border)}
   .shm-legend{display:none}
 }
+/* ── MOBILE HAMBURGER NAV ── */
+.nav-burger{display:none;align-items:center;justify-content:center;width:42px;height:42px;flex-shrink:0;cursor:pointer;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.28);border-radius:9px;color:var(--t1,#e8f4ff);font-size:1.25rem;line-height:1;transition:background .2s,border-color .2s}
+.nav-burger:hover{background:rgba(0,212,255,.14);border-color:rgba(0,212,255,.5)}
+@media (max-width:1100px){
+  .nav-burger{display:flex;margin-left:auto}
+  .nav-links{display:none;position:fixed;top:52px;left:0;right:0;z-index:149;flex-direction:column;gap:0;margin:0;padding:10px;list-style:none;background:rgba(3,9,16,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,212,255,.14);box-shadow:0 30px 60px rgba(0,0,0,.6);max-height:calc(100vh - 52px);max-height:calc(100dvh - 52px);overflow-y:auto}
+  .nav-links.open{display:flex}
+  .nav-links li{width:100%}
+  .nav-links a{display:flex;align-items:center;width:100%;padding:13px 16px}
+  .nav-links .nav-tooltip{display:none}
+}
 </style>
 </head>
 <body>
@@ -1006,7 +1017,7 @@ body::after {
 <!-- NAV -->
 <nav class="nav">
   <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="nav-links">
     <li><a href="https://vyrion.earth/conscience">CONSCIENCE</a></li>
     <li><a href="https://vyrion.earth/shield" class="active">SHIELD</a></li>
     <li><a href="https://vyrion.earth/atlas">ATLAS</a></li>
@@ -1020,7 +1031,8 @@ body::after {
 	<li><a href="https://vyrion.earth/about">ABOUT</a></li>
     <li><a href="https://vyrion.earth/nexan">NEXAN</a></li>
   </ul>
-  <div class="nav-controls">
+  <button class="nav-burger" id="nav-burger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+<div class="nav-controls">
     <button class="nc-theme active" id="theme-btn" onclick="toggleTheme()" title="Toggle light/dark mode">◐ DARK</button>
     <div class="nc-sep"></div>
     <button class="nc-sz" data-scale="0.88" onclick="setScale(this)" title="Small">S</button>
@@ -2434,5 +2446,8 @@ function setScale(btn) {
 })();
 </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"10eb5392c70c4c4fa5452b5bbc652e0e","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script>
+(function(){var b=document.getElementById('nav-burger'),l=document.getElementById('nav-links');if(!b||!l)return;function s(o){l.classList.toggle('open',o);b.setAttribute('aria-expanded',String(o));b.setAttribute('aria-label',o?'Close navigation menu':'Open navigation menu')}b.addEventListener('click',function(){s(!l.classList.contains('open'))});l.addEventListener('click',function(e){if(e.target.closest('a'))s(false)});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open'))s(false)})})();
+</script>
 </body>
 </html>

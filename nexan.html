@@ -318,20 +318,32 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:990;ba
   .ec{padding:1.4rem 1rem 1.2rem}
 }
 @media(hover:none){#mag{display:none!important}}
+/* ── MOBILE HAMBURGER NAV ── */
+.nav-burger{display:none;align-items:center;justify-content:center;width:42px;height:42px;flex-shrink:0;cursor:pointer;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.28);border-radius:9px;color:var(--t1,#e8f4ff);font-size:1.25rem;line-height:1;transition:background .2s,border-color .2s}
+.nav-burger:hover{background:rgba(0,212,255,.14);border-color:rgba(0,212,255,.5)}
+@media (max-width:1100px){
+  .nav-burger{display:flex;margin-left:auto}
+  .nav-links{display:none;position:fixed;top:54px;left:0;right:0;z-index:149;flex-direction:column;gap:0;margin:0;padding:10px;list-style:none;background:rgba(3,9,16,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,212,255,.14);box-shadow:0 30px 60px rgba(0,0,0,.6);max-height:calc(100vh - 54px);max-height:calc(100dvh - 54px);overflow-y:auto}
+  .nav-links.open{display:flex}
+  .nav-links li{width:100%}
+  .nav-links a{display:flex;align-items:center;width:100%;padding:13px 16px}
+  .nav-links .nav-tooltip{display:none}
+}
 </style>
 </head>
 <body>
 
 <nav class="nav">
   <a class="nav-logo" href="nexan.html">THE NEXAN INSTITUTE</a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="nav-links">
     <li><a href="#research">RESEARCH</a></li>
     <li><a href="#nexus">NEX-US</a></li>
     <li><a href="#vyrion">VYRION</a></li>
     <li><a href="https://vyrion.earth/about">ABOUT</a></li>
     <li><a href="https://vyrion.earth/conscience" class="cta">THE CONSCIENCE PORTAL</a></li>
   </ul>
-  <div class="nav-controls">
+  <button class="nav-burger" id="nav-burger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+<div class="nav-controls">
     <button class="nc-theme" id="theme-btn" onclick="toggleTheme()">◐ DARK</button>
     <div class="nc-sep"></div>
     <button class="nc-sz" data-scale="0.88" onclick="setScale(this)">S</button>
@@ -463,7 +475,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:990;ba
         <div class="ec-item">SHIELD — 14-day global disaster early warning system</div>
         <div class="ec-item">PULSE, ROOT, CANOPY, TIDE, LOOP — modules in development</div>
       </div>
-      <div class="ec-status"><div class="ec-dot"></div>Live · dablerfrost.github.io/Vyrion</div>
+      <div class="ec-status"><div class="ec-dot"></div>Live · vyrion.earth</div>
       <a class="ec-link" href="https://vyrion.earth">→ OPEN CONSCIENCE PLATFORM</a>
     </div>
     <div class="ec ec-synth">
@@ -527,7 +539,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:990;ba
   <div class="s-eyebrow">Earth Data Observatory</div>
   <h2 class="s-title">Live Planetary Intelligence</h2>
   <p class="s-sub">VYRION ingests real-time Earth science data across atmosphere, ocean, cryosphere, biosphere, and seismic systems — the same data underlying platforms like NASA Giovanni, ASF SAR Search, and NASA EarthData. The goal: a unified daily signal from distributed feeds.</p>
-  <li><a href="https://dablerfrost.github.io/Vyrion" class="cta">CLICK HERE - THE CONSCIENCE PORTAL</a></li>
+  <li><a href="https://vyrion.earth/conscience" class="cta">CLICK HERE - THE CONSCIENCE PORTAL</a></li>
   </div>
 
   <div class="section-bar" style="margin-bottom:1rem">Live Feeds<span></span><span style="font-size:.55rem;font-weight:400;color:var(--t3);letter-spacing:.06em">Auto-refresh 15 min</span></div>
@@ -611,7 +623,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:990;ba
     <p class="f-bio">Solo founder of The Nexan Institute, VYRION LLC, and Synthekai Collective LLC. Based in Hilo, Hawaii. Building accountability infrastructure for planetary systems — the VYRION Index, CONSCIENCE, and SHIELD — as the first operational proof of Nexan's alignment research. The work is pre-revenue, open-source, and publicly auditable by design.</p>
   </div>
   <div class="founder-r">
-    <div class="cr"><span class="cr-lbl">Email</span><span class="cr-val"><a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a></span></div>
+    <div class="cr"><span class="cr-lbl">Email</span><span class="cr-val"><a href="/cdn-cgi/l/email-protection#35565a5b4154564175434c475c5a5b1b505447415d"><span class="__cf_email__" data-cfemail="5b3834352f3a382f1b2d2229323435753e3a292f33">[email&#160;protected]</span></a></span></div>
     <div class="cr"><span class="cr-lbl">Platform</span><span class="cr-val"><a href="https://vyrion.earth" target="_blank">vyrion.earth</a></span></div>
     <div class="cr"><span class="cr-lbl">GitHub</span><span class="cr-val"><a href="https://github.com/DablerFrost/Vyrion" target="_blank">github.com/DablerFrost/Vyrion</a></span></div>
     <div class="cr"><span class="cr-lbl">X</span><span class="cr-val"><a href="https://x.com/dablerfrost" target="_blank">@DablerFrost</a></span></div>
@@ -625,7 +637,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:990;ba
     The Nexan Institute · Hilo, Hawaii · 2026<br>
     Parent of <a href="https://vyrion.earth">VYRION - THE CONSCIENCE</a> and Synthekai Collective LLC ·
     <a href="https://github.com/DablerFrost/Vyrion" target="_blank">github.com/DablerFrost/Vyrion</a> ·
-    <a href="mailto:contact@vyrion.earth">contact@vyrion.earth</a>
+    <a href="/cdn-cgi/l/email-protection#debdb1b0aabfbdaa9ea8a7acb7b1b0f0bbbfacaab6"><span class="__cf_email__" data-cfemail="dab9b5b4aebbb9ae9aaca3a8b3b5b4f4bfbba8aeb2">[email&#160;protected]</span></a>
   </div>
   <div class="footer-r">
         <a href="https://vyrion.earth/conscience">CONSCIENCE →</a>
@@ -642,7 +654,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:990;ba
 
 <div id="mag"><div class="mag-box"><div class="mag-brand">NEXAN INSTITUTE</div><div class="mag-title" id="mag-t"></div><div class="mag-body" id="mag-b"></div><div class="mag-src" id="mag-s"></div></div></div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 'use strict';
 const MAG={
   pai:{t:'AI Research — Nexan Pillar 01',b:'Developing frameworks (Praxis) for evaluating AI alignment at the system architecture level — not just output behavior. The question is structural: does the system\'s design produce alignment as an emergent property?',s:'The Nexan Institute · Praxis framework · AI-human alignment research'},
@@ -650,7 +662,7 @@ const MAG={
   pph:{t:'Planetary Health — Nexan Pillar 03',b:'VYRION operationalizes planetary health as a daily 0–100 benchmark across 8 Earth systems and 48 indicators. Current score: 41.2 ± 1.8 / 100 against a pre-industrial baseline of 100. This is the quantitative foundation for Nexan\'s alignment research.',s:'VYRION Index · Day 19 · 41.2 ± 1.8 / 100'},
   't-idx':{t:'VYRION Index — Day 19',b:'Score of 41.2 ± 1.8 / 100 against pre-industrial 1850–1900 baseline = 100. 8 Earth systems: Atmosphere 22%, Ocean 18%, Ice 14%, Forest 13%, Biodiversity 12%, Freshwater 10%, Soil 7%, Corporate Accountability 4%. Min detectable change ±0.5.',s:'VYRION-METHODOLOGY-v1.0.md · github.com/DablerFrost/Vyrion'},
   't-co2':{t:'Atmospheric CO₂ — NOAA Mauna Loa',b:'Real-time CO₂ concentration. World\'s longest continuous atmospheric CO₂ record since 1958. Pre-industrial baseline ≈ 280 ppm. Feeds VYRION Atmosphere system (22% weight).',s:'NOAA GML · gml.noaa.gov/ccgg/trends · Daily measurement'},
-  't-cov':{t:'CONSCIENCE Coverage — 11 Companies',b:'ExxonMobil 8 · BP 11 · Shell 19 · Delta 14 · Starbucks 29 · Walmart 38 · Meta 43 · Amazon 47 · Microsoft 61 · Unilever 72 · Apple 84.',s:'CONSCIENCE v2.8 · dablerfrost.github.io/Vyrion'},
+  't-cov':{t:'CONSCIENCE Coverage — 11 Companies',b:'ExxonMobil 8 · BP 11 · Shell 19 · Delta 14 · Starbucks 29 · Walmart 38 · Meta 43 · Amazon 47 · Microsoft 61 · Unilever 72 · Apple 84.',s:'CONSCIENCE v2.8 · vyrion.earth'},
   't-seis':{t:'Seismic Events — USGS Real-Time',b:'Total M4.5+ events in the 14-day window from the USGS real-time GeoJSON feed. Feeds VYRION SHIELD seismic hazard monitoring.',s:'USGS Earthquake Hazards Program · earthquake.usgs.gov'},
   't-ev':{t:'Active Earth Events — NASA EONET',b:'Total open natural event count across all NASA EONET categories: wildfire, storm, flood, volcanic. Powers VYRION SHIELD.',s:'NASA EONET v3 · eonet.gsfc.nasa.gov'},
   'r-ai':{t:'AI-Human Alignment Research',b:'Praxis evaluation framework: does a system\'s design produce alignment as a structural property, or only under constrained test conditions?',s:'The Nexan Institute · Praxis · Research ongoing'},
@@ -717,6 +729,9 @@ async function load(){
   [['obs-fire','obs-fire-d',fi,'NASA EONET · open events'],['obs-flood','obs-flood-d',fl,'NASA EONET · open events'],['obs-storm','obs-storm-d',st,'NASA EONET · open events'],['obs-volc','obs-volc-d',vo,'NASA EONET · open events']].forEach(([vid,sid,val,sub])=>{const v=document.getElementById(vid);const s=document.getElementById(sid);if(v)v.textContent=val;if(s)s.textContent=sub;});
 }
 load();setInterval(load,15*60*1000);
+</script>
+<script>
+(function(){var b=document.getElementById('nav-burger'),l=document.getElementById('nav-links');if(!b||!l)return;function s(o){l.classList.toggle('open',o);b.setAttribute('aria-expanded',String(o));b.setAttribute('aria-label',o?'Close navigation menu':'Open navigation menu')}b.addEventListener('click',function(){s(!l.classList.contains('open'))});l.addEventListener('click',function(e){if(e.target.closest('a'))s(false)});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open'))s(false)})})();
 </script>
 </body>
 </html>

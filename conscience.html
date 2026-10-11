@@ -1138,7 +1138,7 @@ body::after{
 <!-- NAV -->
 <nav class="nav">
   <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="nav-links">
     <li><a href="https://vyrion.earth/conscience" class="active">CONSCIENCE</a></li>
     <li><a href="https://vyrion.earth/shield">SHIELD</a></li>
     <li><a href="https://vyrion.earth/atlas">ATLAS</a></li>
@@ -1152,7 +1152,8 @@ body::after{
 	<li><a href="https://vyrion.earth/about">ABOUT</a></li>
     <li><a href="https://vyrion.earth/nexan">NEXAN</a></li>
   </ul>
-  <div class="nav-controls">
+  <button class="nav-burger" id="nav-burger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+<div class="nav-controls">
     <button class="nc-theme active" id="theme-btn" onclick="toggleTheme()" title="Toggle light/dark mode">◐ DARK</button>
     <div class="nc-sep"></div>
     <button class="nc-sz" data-scale="0.88" onclick="setScale(this)" title="Small">S</button>
@@ -1176,8 +1177,8 @@ body::after{
   </div>
   <div class="lb-cell" data-mag="coverage">
     <div class="lb-lbl">Companies Tracked</div>
-    <div class="lb-val white">11</div>
-    <div class="lb-sub">5 Breach · 3 Warning · 3 On Track</div>
+    <div class="lb-val white">36</div>
+    <div class="lb-sub">16 Breach · 15 Warning · 5 On Track</div>
   </div>
   <div class="lb-cell" data-mag="lawsuits">
     <div class="lb-lbl">Active Lawsuits</div>
@@ -1453,6 +1454,17 @@ body::after{
 .cta-secondary{font-family:'Courier Prime',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;padding:.42rem .9rem;border-radius:2px;cursor:pointer;border:1px solid rgba(0,212,255,.22);background:transparent;color:var(--t2);text-decoration:none;transition:all .18s;white-space:nowrap;}
 .cta-secondary:hover{border-color:rgba(0,212,255,.4);color:var(--t1)}
 .cta-note{font-family:'Courier Prime',monospace;font-size:.56rem;color:var(--t3);line-height:1.6;flex:1;min-width:180px;}
+/* ── MOBILE HAMBURGER NAV ── */
+.nav-burger{display:none;align-items:center;justify-content:center;width:42px;height:42px;flex-shrink:0;cursor:pointer;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.28);border-radius:9px;color:var(--t1,#e8f4ff);font-size:1.25rem;line-height:1;transition:background .2s,border-color .2s}
+.nav-burger:hover{background:rgba(0,212,255,.14);border-color:rgba(0,212,255,.5)}
+@media (max-width:1100px){
+  .nav-burger{display:flex;margin-left:auto}
+  .nav-links{display:none;position:fixed;top:52px;left:0;right:0;z-index:149;flex-direction:column;gap:0;margin:0;padding:10px;list-style:none;background:rgba(3,9,16,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,212,255,.14);box-shadow:0 30px 60px rgba(0,0,0,.6);max-height:calc(100vh - 52px);max-height:calc(100dvh - 52px);overflow-y:auto}
+  .nav-links.open{display:flex}
+  .nav-links li{width:100%}
+  .nav-links a{display:flex;align-items:center;width:100%;padding:13px 16px}
+  .nav-links .nav-tooltip{display:none}
+}
 </style>
 
 <!-- SECTION 1: INVESTOR TERMINAL BANNER -->
@@ -1540,7 +1552,7 @@ body::after{
         <div class="attr-row"><span class="attr-lbl">Biosphere Int.</span><div class="attr-bar-bg"><div class="attr-bar-fill" style="width:52%;background:linear-gradient(90deg,rgba(0,128,255,.7),var(--glow))"></div></div><span class="attr-pct">52%</span></div>
         <div class="attr-row"><span class="attr-lbl">Land System</span><div class="attr-bar-bg"><div class="attr-bar-fill" style="width:44%;background:var(--glow)"></div></div><span class="attr-pct">44%</span></div>
         <div class="attr-row"><span class="attr-lbl">Ocean Chem.</span><div class="attr-bar-bg"><div class="attr-bar-fill" style="width:22%;background:linear-gradient(90deg,rgba(0,128,255,.5),var(--glow))"></div></div><span class="attr-pct">22%</span></div>
-        <div style="font-family:'Courier Prime',monospace;font-size:.5rem;color:var(--t3);margin-top:.4rem">Proxy alignment score · 62% emissions reduction since 2015 verified · Apple EPR 2024</div>
+        <div style="font-family:'Courier Prime',monospace;font-size:.5rem;color:var(--t3);margin-top:.4rem">Proxy alignment score · more than 55% emissions reduction since 2015 · Apple EPR 2024</div>
       </div>
     </div>
   </div>
@@ -1880,7 +1892,7 @@ const MAG = {
   co2:{t:'Atmospheric CO₂ — NOAA Mauna Loa Observatory',b:'Real-time CO₂ concentration from NOAA\'s Global Monitoring Laboratory. Mauna Loa has the world\'s longest continuous atmospheric CO₂ record, running since 1958. Pre-industrial baseline ≈ 280 ppm. VYRION uses this as one of 6 Atmosphere indicators (22% weight in the Index).',s:'NOAA GML · gml.noaa.gov/ccgg/trends · Daily · Fetched live'},
   index:{t:'VYRION Index — Daily Planetary Health Benchmark',b:'The world\'s first daily investable planetary health benchmark. Score of 41.2 ± 1.8 / 100 against a pre-industrial 1850–1900 baseline of 100. Computed across 8 Earth systems: Atmosphere 22%, Ocean 18%, Ice 14%, Forest 13%, Biodiversity 12%, Freshwater 10%, Soil 7%, Corporate Accountability 4%. Changes <±0.5 are within measurement error.',s:'VYRION-METHODOLOGY-v1.0.md · github.com/DablerFrost/Vyrion · Dynamic day counter · Origin: 2026-03-18'},
   coverage:{t:'CONSCIENCE Coverage — 36 Companies',b:'36 major corporations tracked across Oil & Gas, Aviation, Food & Beverage, Retail, Technology, Automotive, Mining, Finance, Chemicals, Apparel, Shipping, Utilities, Real Estate, and Healthcare. Selected for material climate pledges and significant emissions footprints. Full selection criteria in CONSCIENCE-METHODOLOGY.md.',s:'VYRION CONSCIENCE · v2.9'},
-  lawsuits:{t:'Total Active Climate Lawsuits',b:'Aggregate active climate litigation against the 11 tracked companies, per Sabin Center for Climate Change Law at Columbia Law School. Legal exposure = one of the four CONSCIENCE scoring factors (20 pts max). Counts refreshed monthly.',s:'Sabin Center for Climate Change Law · climatecasechart.com · Columbia Law School'},
+  lawsuits:{t:'Total Active Climate Lawsuits',b:'Aggregate active climate litigation against the 36 tracked companies, per Sabin Center for Climate Change Law at Columbia Law School. Legal exposure = one of the four CONSCIENCE scoring factors (20 pts max). Counts refreshed monthly.',s:'Sabin Center for Climate Change Law · climatecasechart.com · Columbia Law School'},
   refresh:{t:'Auto-Refresh — Live Data',b:'CONSCIENCE refreshes on page load and every 15 minutes. Live: NOAA GML CO₂ (direct API), SEC EDGAR filing dates (data.sec.gov). Static sources (CDP, InfluenceMap, SBTi, TPI) update when annual assessments publish.',s:'NOAA GML · data.sec.gov/submissions · 15 min interval'},
   'src-cdp':{t:'CDP — Carbon Disclosure Project',b:'World\'s largest environmental disclosure system. Companies respond annually to standardised climate questionnaires. Full 9-tier grade scale: A, A−, B, B−, C, C−, D, D−, F. A (Leadership) requires demonstrated governance, strategy, and action — not just reporting. F = failure to provide sufficient information. CONSCIENCE v1.1 maps the full 9-tier scale to scoring points (A=25, A−=22, B=18, B−=14, C=10, C−=7, D=4, D−=2, F=0). CDP grades are independent; companies cannot buy a better score.',s:'CDP · cdp.net/en/responses · Annual cycle · 23,000+ companies'},
   'src-im':{t:'InfluenceMap — Corporate Lobbying',b:'Assesses corporate engagement with climate policy including direct lobbying and trade association affiliations. A+ = strongly supportive of Paris-aligned policy. F = actively lobbying against climate legislation. Lobbying misalignment is penalised heavily in CONSCIENCE — a company cannot claim net zero while blocking the laws needed to get there.',s:'InfluenceMap · influencemap.org · Continuous · Peer-reviewed'},
@@ -1969,7 +1981,7 @@ const COMPANIES = [
    sb:[{f:'Pledge Quality — 2039 net zero; SBTi 1.5°C; 2030 interim',w:'30 max',p:28},{f:'CDP Grade A−',w:'25 max',p:22},{f:'InfluenceMap Grade B',w:'25 max',p:16},{f:'Legal Exposure — 1 case; palm oil risk',w:'20 max',p:6}]},
   {id:'apple',name:'Apple',ticker:'AAPL',sector:'Technology',cik:'0000320193',score:84,band:'on-track',bandLabel:'ON TRACK',
    pledge:'Carbon neutral across all products and supply chain by 2030.',pledgeSrc:'Apple Environmental Progress Report 2024',pledgeUrl:'https://www.apple.com/environment/pdf/Apple_Environmental_Progress_Report_2024.pdf',
-   reality:'62% emission reduction since 2015. 100% renewable energy since 2018. Supplier Clean Energy Program: >80% of manufacturing energy now clean.',realitySrc:'Apple EPR 2024 · CDP 2023 · SEC 10-K · SBTi Registry',realityClass:'ok',
+   reality:'More than 55% emission reduction since 2015. 100% renewable energy since 2018. Supplier Clean Energy Program: >80% of manufacturing energy now clean.',realitySrc:'Apple EPR 2024 · CDP 2023 · SEC 10-K · SBTi Registry',realityClass:'ok',
    cdpGrade:'A',cdpYear:'2023',cdpUrl:'https://www.cdp.net/en/responses',im:'B+',imUrl:'https://influencemap.org/company/Apple',
    sabin:0,sabinUrl:'https://climatecasechart.com/case-list/?organization_name=apple',sbti:'Approved 1.5°C',sbtiClass:'sbti-yes',sbtiUrl:'https://sciencebasedtargets.org/companies-taking-action',
    tpi:'Level 5/5',tpiUrl:'https://www.transitionpathwayinitiative.org/',
@@ -2514,7 +2526,7 @@ async function init() {
   });
 
   const today = new Date().toISOString().slice(0,10);
-  document.getElementById('edgar-status').textContent = `${ok}/11 verified · ${today}`;
+  document.getElementById('edgar-status').textContent = `${ok}/36 verified · ${today}`;
 }
 
 // ─── STRESS TESTER ────────────────────────────────────────────────────
@@ -2872,6 +2884,9 @@ function oScrollCheck() {
 window.addEventListener('scroll',oScrollCheck,{passive:true});
 
 (function oInit(){oWelcomeInit();vyrLog('onboarding_layer_init',{welcomeSeen:oState.welcomeSeen,installDismissed:oState.installDismissed});})();
+</script>
+<script>
+(function(){var b=document.getElementById('nav-burger'),l=document.getElementById('nav-links');if(!b||!l)return;function s(o){l.classList.toggle('open',o);b.setAttribute('aria-expanded',String(o));b.setAttribute('aria-label',o?'Close navigation menu':'Open navigation menu')}b.addEventListener('click',function(){s(!l.classList.contains('open'))});l.addEventListener('click',function(e){if(e.target.closest('a'))s(false)});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open'))s(false)})})();
 </script>
 </body>
 </html>
