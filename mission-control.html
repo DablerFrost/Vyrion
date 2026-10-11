@@ -237,8 +237,6 @@
     .p-title::before { content: '◈'; color: var(--glow); font-size: .8em; }
 
     /* ── TERMINALS ── */
-    .term { min-height: 235px; display: flex; flex-direction: column; }
-    .term-hdr { display: flex; align-items: center; gap: 9px; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid rgba(0,212,255,.1); }
     .act-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; box-shadow: 0 0 7px var(--green); animation: blink 2.4s ease-in-out infinite; flex-shrink: 0; }
     .act-dot.idle { background: var(--amber); box-shadow: 0 0 7px var(--amber); animation-duration: 3.6s; }
     .m-num { font-family: var(--font-m); font-size: .72rem; color: var(--t4); }
@@ -246,30 +244,7 @@
     .m-name.dim { color: var(--t3); font-style: italic; font-weight: 600; }
     .m-role { font-family: var(--font-d); font-size: .62rem; font-weight: 600; letter-spacing: .14em; color: var(--t3); margin-left: auto; }
     .m-role.open { color: var(--amber); }
-    .log-area {
-      flex: 1; overflow: hidden; position: relative;
-      background: rgba(2, 8, 17, 0.78);
-      border: 1px solid rgba(0,212,255,0.10);
-      border-radius: 8px;
-      box-shadow: inset 0 2px 18px rgba(0,0,0,.55);
-    }
-    .log-area::before, .log-area::after {
-      content: ''; position: absolute; left: 0; right: 0; height: 30px;
-      z-index: 2; pointer-events: none;
-    }
-    .log-area::before { top: 0; background: linear-gradient(to bottom, rgba(2,8,17,.92), transparent); border-radius: 8px 8px 0 0; }
-    .log-area::after { bottom: 0; background: linear-gradient(to top, rgba(2,8,17,.92), transparent); border-radius: 0 0 8px 8px; }
-    .term-ticker { display: flex; flex-direction: column; padding: 12px 14px; will-change: transform; }
-    .log-line { font-family: var(--font-m); font-size: .72rem; line-height: 2.0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; animation: fadein .35s ease; padding: 0 2px; border-radius: 3px; display: flex; align-items: baseline; }
-    .log-line:hover { background: rgba(0,212,255,.06); }
     @keyframes fadein { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
-    .log-line .sdot { flex-shrink: 0; width: 6px; height: 6px; border-radius: 50%; margin-right: 8px; transform: translateY(-1px); background: rgba(0,212,255,.4); box-shadow: 0 0 6px rgba(0,212,255,.3); }
-    .log-line .sdot.ok { background: var(--green); box-shadow: 0 0 7px var(--green); }
-    .log-line .sdot.warn { background: var(--amber); box-shadow: 0 0 7px var(--amber); }
-    .log-line .sdot.err { background: var(--red); box-shadow: 0 0 7px var(--red); }
-    .log-line .dt { color: rgba(0,212,255,.5); font-size: .66rem; margin-right: 7px; flex-shrink: 0; }
-    .log-line .lt { color: #d7ecff; overflow: hidden; text-overflow: ellipsis; }
-    .seat-open { border-style: dashed; border-color: rgba(255,176,32,.3); }
     .cta {
       display: inline-block; margin-top: 12px;
       font-family: var(--font-m); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
@@ -362,6 +337,116 @@
       .pod-head, .ticker-wrap { margin-left: 14px; margin-right: 14px; }
       .pod-head { padding-left: 0; padding-right: 0; }
     }
+
+    /* ══ NETWORK BLOCK · node cards + detail hubs ══ */
+    .network-block { grid-column: 1 / 4; grid-row: 1 / 3; display: flex; flex-direction: column; min-height: 0; }
+    .network-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+    .network-vibrant { width: 64px; height: 64px; border-radius: 50%; flex-shrink: 0;
+      box-shadow: 0 0 24px rgba(0,212,255,.3), 0 0 0 1px rgba(0,212,255,.25); }
+    .network-head-text { flex: 1; min-width: 0; }
+    .network-sub { font-family: var(--font-m); font-size: .68rem; color: var(--t3); letter-spacing: .06em; margin-top: 4px; }
+    .network-sub .seated-n { color: var(--green); font-weight: 700; }
+    .network-hint { font-family: var(--font-m); font-size: .62rem; color: var(--t4); letter-spacing: .1em; }
+    .node-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; flex: 1; align-content: start; }
+    .node-card {
+      appearance: none; text-align: left; cursor: pointer; font-family: inherit;
+      background: rgba(2, 8, 17, 0.55);
+      border: 1px solid rgba(0,212,255,0.12);
+      border-radius: 10px; padding: 14px 15px;
+      display: flex; flex-direction: column; gap: 6px;
+      box-shadow: inset 0 2px 14px rgba(0,0,0,.4);
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+      color: var(--t1); width: 100%;
+    }
+    .node-card:hover { border-color: rgba(0,212,255,.45); transform: translateY(-2px);
+      box-shadow: inset 0 2px 14px rgba(0,0,0,.4), 0 8px 28px rgba(0,212,255,.12); }
+    .node-card:focus-visible { outline: 2px solid var(--glow); outline-offset: 2px; }
+    .node-top { display: flex; align-items: center; gap: 8px; }
+    .node-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+      background: var(--green); box-shadow: 0 0 8px var(--green); }
+    .node-dot.open { background: var(--amber); box-shadow: 0 0 8px var(--amber); animation: blink 2.4s ease-in-out infinite; }
+    .node-num { font-family: var(--font-m); font-size: .62rem; color: var(--t4); letter-spacing: .12em; }
+    .node-name { font-size: 1.02rem; font-weight: 700; letter-spacing: .01em; }
+    .node-name.dim { color: var(--t3); font-style: italic; font-weight: 400; }
+    .node-role { font-family: var(--font-m); font-size: .62rem; color: var(--glow); letter-spacing: .14em; }
+    .node-role.open { color: var(--amber); }
+    .node-desc { font-size: .74rem; color: var(--t3); line-height: 1.5; flex: 1; }
+    .node-cta { font-family: var(--font-m); font-size: .66rem; letter-spacing: .1em; color: var(--glow); margin-top: 2px; }
+    .node-card.open .node-cta { color: var(--amber); }
+    .node-card .node-cta::after { content: ' →'; }
+
+    /* ══ DETAIL HUB MODAL ══ */
+    .hub-overlay {
+      position: fixed; inset: 0; z-index: 400;
+      background: rgba(2, 6, 12, 0.72);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      display: flex; align-items: center; justify-content: center; padding: 20px;
+      opacity: 0; visibility: hidden; transition: opacity .28s ease, visibility .28s;
+    }
+    .hub-overlay.open { opacity: 1; visibility: visible; }
+    .hub-modal {
+      position: relative; width: min(680px, 100%); max-height: min(84vh, 780px);
+      display: flex; flex-direction: column; overflow: hidden;
+      background: linear-gradient(165deg, rgba(10,24,40,.96), rgba(4,10,20,.98));
+      border: 1px solid rgba(0,212,255,.25); border-radius: 16px;
+      box-shadow: 0 40px 120px rgba(0,0,0,.7), 0 0 60px rgba(0,212,255,.1), inset 0 1px 0 rgba(255,255,255,.08);
+      transform: perspective(1200px) rotateX(6deg) translateY(26px) scale(.97);
+      opacity: 0; transition: transform .38s cubic-bezier(.2,.9,.25,1.05), opacity .3s ease;
+    }
+    .hub-overlay.open .hub-modal { transform: perspective(1200px) rotateX(0) translateY(0) scale(1); opacity: 1; }
+    .hub-close {
+      position: absolute; top: 12px; right: 14px; z-index: 2;
+      width: 34px; height: 34px; border-radius: 50%; cursor: pointer;
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12);
+      color: var(--t2); font-size: 1.15rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center; transition: all .2s;
+    }
+    .hub-close:hover { background: rgba(255,80,80,.15); border-color: rgba(255,80,80,.4); color: #fff; }
+    .hub-head { display: flex; align-items: center; gap: 16px; padding: 22px 24px 16px; border-bottom: 1px solid rgba(0,212,255,.12); }
+    .hub-avatar { width: 58px; height: 58px; border-radius: 50%; flex-shrink: 0;
+      box-shadow: 0 0 22px rgba(0,212,255,.28), 0 0 0 1px rgba(0,212,255,.25); object-fit: cover; }
+    .hub-avatar.seat { display: flex; align-items: center; justify-content: center;
+      background: rgba(255,176,32,.08); border: 1px dashed rgba(255,176,32,.45);
+      font-family: var(--font-m); font-size: 1rem; color: var(--amber); box-shadow: none; }
+    .hub-title h3 { margin: 0; font-size: 1.35rem; letter-spacing: .01em; }
+    .hub-title .hub-role { font-family: var(--font-m); font-size: .66rem; letter-spacing: .16em; color: var(--glow); margin-top: 4px; }
+    .hub-title .hub-role.open { color: var(--amber); }
+    .hub-status { margin-left: auto; font-family: var(--font-m); font-size: .62rem; letter-spacing: .12em;
+      padding: 6px 12px; border-radius: 99px; border: 1px solid; flex-shrink: 0; }
+    .hub-status.seated { color: var(--green); border-color: rgba(0,255,136,.4); background: rgba(0,255,136,.07); }
+    .hub-status.open { color: var(--amber); border-color: rgba(255,176,32,.4); background: rgba(255,176,32,.07); }
+    .hub-body { padding: 18px 24px; overflow-y: auto; flex: 1; min-height: 0; }
+    .hub-body::-webkit-scrollbar { width: 8px; }
+    .hub-body::-webkit-scrollbar-thumb { background: rgba(0,212,255,.2); border-radius: 4px; }
+    .hub-sec-lbl { font-family: var(--font-m); font-size: .62rem; letter-spacing: .16em; color: var(--t4); margin: 16px 0 8px; }
+    .hub-sec-lbl:first-child { margin-top: 0; }
+    .hub-bio { font-size: .86rem; color: var(--t2); line-height: 1.7; margin: 0 0 6px; }
+    .hub-log { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+    .hub-log li { display: flex; gap: 10px; align-items: baseline; padding: 7px 0;
+      border-bottom: 1px solid rgba(255,255,255,.05); font-family: var(--font-m); font-size: .74rem; }
+    .hub-log li:last-child { border-bottom: none; }
+    .hub-log .dt { color: rgba(0,212,255,.55); flex-shrink: 0; font-size: .68rem; }
+    .hub-log .sdot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; transform: translateY(-1px);
+      background: rgba(0,212,255,.4); align-self: center; }
+    .hub-log .sdot.ok { background: var(--green); box-shadow: 0 0 7px var(--green); }
+    .hub-log .sdot.warn { background: var(--amber); box-shadow: 0 0 7px var(--amber); }
+    .hub-log .lt { color: #d7ecff; }
+    .hub-foot { padding: 16px 24px 20px; border-top: 1px solid rgba(0,212,255,.12); display: flex; gap: 12px; align-items: center; }
+    .hub-apply {
+      display: inline-block; padding: 12px 26px; border-radius: 8px; text-decoration: none;
+      font-family: var(--font-m); font-size: .74rem; letter-spacing: .12em; font-weight: 700;
+      color: #06121f; background: linear-gradient(120deg, #ffb020, #ffcf6b);
+      box-shadow: 0 8px 28px rgba(255,176,32,.3); transition: transform .2s, box-shadow .2s;
+    }
+    .hub-apply:hover { transform: translateY(-2px); box-shadow: 0 12px 34px rgba(255,176,32,.42); }
+    .hub-foot-note { font-size: .72rem; color: var(--t4); }
+    @media (max-width: 700px) {
+      .hub-overlay { padding: 0; align-items: flex-end; }
+      .hub-modal { width: 100%; max-height: 92vh; border-radius: 18px 18px 0 0; }
+      .node-grid { grid-template-columns: 1fr 1fr; }
+      .network-hint { display: none; }
+    }
+    @media (max-width: 460px) { .node-grid { grid-template-columns: 1fr; } }
 
     /* ══ SYNTHEKAI PLAYER · Mycelium Bloom (Bandcamp) ══ */
     #sk-wrap {
@@ -460,36 +545,17 @@
   <!-- MAIN -->
   <main class="main">
 
-    <div class="panel term tilt" id="t01">
-      <div class="term-hdr">
-        <div class="act-dot"></div>
-        <span class="m-num">01</span>
-        <span class="m-name">Tyler Frost</span>
-        <span class="m-role">FOUNDER</span>
+    <section class="panel network-block tilt" id="network" aria-label="VYRION Network">
+      <div class="network-head">
+        <img src="vibrant-avatar.webp" alt="Vi'brant — VYRION network guardian" class="network-vibrant" width="64" height="64">
+        <div class="network-head-text">
+          <div class="p-title" style="margin:0">THE NETWORK</div>
+          <div class="network-sub"><span class="seated-n">2</span> of 6 seats held · 4 open for application</div>
+        </div>
+        <div class="network-hint">Select a node ↓</div>
       </div>
-      <div class="log-area" id="log-01"></div>
-    </div>
-
-    <div class="panel term tilt" id="t02">
-      <div class="term-hdr">
-        <div class="act-dot"></div>
-        <span class="m-num">02</span>
-        <span class="m-name">Samuel Chidubem</span>
-        <span class="m-role">NODE 001 · NIGERIA</span>
-      </div>
-      <div class="log-area" id="log-02"></div>
-    </div>
-
-    <div class="panel term tilt seat-open" id="t03">
-      <div class="term-hdr">
-        <div class="act-dot idle"></div>
-        <span class="m-num">03</span>
-        <span class="m-name dim">Open Seat</span>
-        <span class="m-role open">NODE 002 · OPEN</span>
-      </div>
-      <div class="log-area" id="log-03"></div>
-      <a class="cta" href="mailto:contact@vyrion.earth?subject=Node%20002%20application">Apply for Node 002 ›</a>
-    </div>
+      <div class="node-grid" id="node-grid" role="list"></div>
+    </section>
 
     <div class="right-col">
       <div class="panel tilt" id="idx-p">
@@ -515,39 +581,6 @@
         <div class="p-title">Activity Record</div>
         <div class="feed-body" id="board-feed"></div>
       </div>
-    </div>
-
-    <div class="panel term tilt seat-open" id="t04">
-      <div class="term-hdr">
-        <div class="act-dot idle"></div>
-        <span class="m-num">04</span>
-        <span class="m-name dim">Open Seat</span>
-        <span class="m-role open">NODE 003 · OPEN</span>
-      </div>
-      <div class="log-area" id="log-04"></div>
-      <a class="cta" href="mailto:contact@vyrion.earth?subject=Node%20003%20application">Apply for Node 003 ›</a>
-    </div>
-
-    <div class="panel term tilt seat-open" id="t05">
-      <div class="term-hdr">
-        <div class="act-dot idle"></div>
-        <span class="m-num">05</span>
-        <span class="m-name dim">Open Seat</span>
-        <span class="m-role open">NODE 004 · OPEN</span>
-      </div>
-      <div class="log-area" id="log-05"></div>
-      <a class="cta" href="mailto:contact@vyrion.earth?subject=Node%20004%20application">Apply for Node 004 ›</a>
-    </div>
-
-    <div class="panel term tilt seat-open" id="t06">
-      <div class="term-hdr">
-        <div class="act-dot idle"></div>
-        <span class="m-num">06</span>
-        <span class="m-name dim">Open Seat</span>
-        <span class="m-role open">NODE 005 · OPEN</span>
-      </div>
-      <div class="log-area" id="log-06"></div>
-      <a class="cta" href="mailto:contact@vyrion.earth?subject=Node%20005%20application">Apply for Node 005 ›</a>
     </div>
 
   </main>
@@ -640,20 +673,6 @@ document.addEventListener('mousemove', e => {
   requestAnimationFrame(animCursor);
 })();
 
-// ── 3D TILT (glass immersion, hover devices only) ───────
-if (window.matchMedia('(hover:hover)').matches) {
-  document.querySelectorAll('.tilt').forEach(p => {
-    p.addEventListener('mousemove', e => {
-      const r = p.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width - 0.5;
-      const y = (e.clientY - r.top) / r.height - 0.5;
-      p.style.transform = `perspective(1100px) rotateX(${(-y*6).toFixed(2)}deg) rotateY(${(x*8).toFixed(2)}deg) translateZ(8px)`;
-      p.style.boxShadow = '0 34px 80px rgba(0,0,0,.55), 0 0 44px rgba(0,212,255,.10), inset 0 1px 0 rgba(255,255,255,.09)';
-    });
-    p.addEventListener('mouseleave', () => { p.style.transform = ''; p.style.boxShadow = ''; });
-  });
-}
-
 // ── MAGNIFIER ────────────────────────────────────────────
 const magLens  = document.getElementById('mag-lens');
 const magLabel = document.getElementById('mag-label');
@@ -662,23 +681,18 @@ let magPos = {x:-400,y:-400}, magTgt = {x:-400,y:-400}, magVis = false;
 
 function getMagInfo(el) {
   if (!el) return null;
-  const logLine  = el.closest('.log-line');
+  const nodeCard = el.closest('.node-card');
   const feedItem = el.closest('.feed-item');
   const sysRow   = el.closest('.sys-row');
   const bigIdx   = el.closest('.big-idx');
-  if (logLine) {
-    const lt   = logLine.querySelector('.lt');
-    const text = lt ? lt.textContent.trim() : logLine.textContent.trim();
+  if (nodeCard) {
+    const name = nodeCard.querySelector('.node-name');
+    const role = nodeCard.querySelector('.node-role');
+    const desc = nodeCard.querySelector('.node-desc');
+    const text = ((name ? name.textContent.trim() : '') + ' — ' + (desc ? desc.textContent.trim() : '')).trim();
     if (!text) return null;
-    const term = logLine.closest('.term');
-    let label = 'VYRION';
-    if (term) {
-      const num  = term.querySelector('.m-num');
-      const role = term.querySelector('.m-role');
-      if (num && role) label = `${num.textContent.trim()} · ${role.textContent.trim()}`;
-    }
-    const sdot = logLine.querySelector('.sdot');
-    return { label, text, type: sdot && sdot.classList.contains('ok') ? 'ok' : sdot && sdot.classList.contains('warn') ? 'warn' : sdot && sdot.classList.contains('err') ? 'err' : '' };
+    const label = (role ? role.textContent.trim() : 'VYRION') + ' · NODE';
+    return { label, text, type: nodeCard.classList.contains('open') ? 'warn' : 'ok' };
   }
   if (feedItem) {
     const text = feedItem.textContent.trim();
@@ -752,69 +766,6 @@ BANDS.forEach(b => {
   bb.appendChild(r);
 });
 
-// ── SEAT LOGS · recorded VYRION activity, every entry real and dated ──
-const LOGS = {
-  '01':[
-    {d:'10-10',t:'Mission Control v2 · glass pod · verified',c:'ok'},
-    {d:'10-10',t:'CONSCIENCE truth pass · 111 → 36 verified companies',c:'ok'},
-    {d:'10-10',t:'THE RECORD · 11 issues · immutable',c:''},
-    {d:'10-10',t:'Node program live · first lead signed',c:'ok'},
-    {d:'10-09',t:'EIN issued · single-member disregarded entity',c:'ok'},
-    {d:'10-09',t:'Operating agreement drafted · review pending',c:''},
-    {d:'10-09',t:'PBC → LLC rebrand · sweep complete',c:'ok'},
-    {d:'10-08',t:'VYRION LLC filed · DCCA ref 001293005',c:'ok'},
-    {d:'10-08',t:'SHIELD map v2 · USGS + EONET live',c:'ok'},
-    {d:'10-08',t:'Module consolidation · loop + pulse kept · fakes removed',c:'ok'},
-    {d:'10-08',t:'Planetary Index 41.2 canonical · ±1.8',c:'ok'},
-    {d:'10-08',t:'GET license · Hawaii Tax Online · letter pending',c:'warn'},
-    {d:'06-05',t:'CONSCIENCE v2.9 · 11 → 36 · 9 new sectors',c:'ok'},
-    {d:'05-05',t:'Methodology v1.1 · full 9-tier CDP scale',c:'ok'},
-    {d:'04-24',t:'Platform v2.8 · bands corrected · ARCHIVE live',c:'ok'},
-    {d:'03-30',t:'Platform v2.7 · Investor Terminal · Stress Test',c:'ok'},
-    {d:'03-18',t:'CONSCIENCE v1.0 · 11-company baseline scored',c:'ok'},
-    {d:'03-18',t:'VYRION public launch · vyrion.earth live',c:'ok'},
-  ],
-  '02':[
-    {d:'10-10',t:'Node 001 signed · Youth Energy Transition',c:'ok'},
-    {d:'10-10',t:'Wrote the SHIELD launch caption',c:'ok'},
-    {d:'10-10',t:'Championing the launch on LinkedIn',c:'ok'},
-    {d:'10-10',t:'Addendum v1.1 review-only · v1 operative',c:''},
-    {d:'10-10',t:'Scope: Nigeria / regional',c:''},
-  ],
-  '03':[
-    {d:'—',t:'OPEN SEAT · Node 002 · accepting',c:'warn'},
-    {d:'—',t:'Scope: open region · TBA',c:''},
-    {d:'—',t:'Leads document climate + infrastructure',c:''},
-    {d:'—',t:'Publishes quarterly node reports',c:''},
-    {d:'—',t:'Coordinates with SHIELD live feeds',c:''},
-    {d:'—',t:'Use the apply link below ↓',c:''},
-  ],
-  '04':[
-    {d:'—',t:'OPEN SEAT · Node 003 · accepting',c:'warn'},
-    {d:'—',t:'Scope: open region · TBA',c:''},
-    {d:'—',t:'Leads document climate + infrastructure',c:''},
-    {d:'—',t:'Publishes quarterly node reports',c:''},
-    {d:'—',t:'Coordinates with SHIELD live feeds',c:''},
-    {d:'—',t:'Use the apply link below ↓',c:''},
-  ],
-  '05':[
-    {d:'—',t:'OPEN SEAT · Node 004 · accepting',c:'warn'},
-    {d:'—',t:'Scope: open region · TBA',c:''},
-    {d:'—',t:'Leads document climate + infrastructure',c:''},
-    {d:'—',t:'Publishes quarterly node reports',c:''},
-    {d:'—',t:'Coordinates with SHIELD live feeds',c:''},
-    {d:'—',t:'Use the apply link below ↓',c:''},
-  ],
-  '06':[
-    {d:'—',t:'OPEN SEAT · Node 005 · accepting',c:'warn'},
-    {d:'—',t:'Scope: open region · TBA',c:''},
-    {d:'—',t:'Leads document climate + infrastructure',c:''},
-    {d:'—',t:'Publishes quarterly node reports',c:''},
-    {d:'—',t:'Coordinates with SHIELD live feeds',c:''},
-    {d:'—',t:'Use the apply link below ↓',c:''},
-  ],
-};
-
 const FEED = [
   {d:'10-10', s:'CONSCIENCE', m:'Truth pass complete — 36 companies verified, 16 Breach · 15 Warning · 5 On Track.'},
   {d:'10-10', s:'Samuel',     m:'Node 001 championing the SHIELD launch on LinkedIn.'},
@@ -826,69 +777,195 @@ const FEED = [
   {d:'03-18', s:'VYRION',     m:'Public launch — vyrion.earth goes live.'},
 ];
 
-// ── TERMINAL TICKERS · JS-driven, measurement-proof ────────
-// One shared rAF loop scrolls every well at a constant px/sec.
-// Copy counts come from a sanity-bounded line probe (never blind
-// scrollHeight trust), each track is guaranteed >= 2.5x its well,
-// and the wrap distance is exactly one copy -> seamless, always full.
-const _tickers = [];
-const _reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-let _tickLast = 0;
-function _tickLoop(t) {
-  if (!_tickLast) _tickLast = t;
-  const dt = Math.min((t - _tickLast) / 1000, 0.1);
-  _tickLast = t;
-  if (!_reduceMotion) {
-    for (const tk of _tickers) {
-      if (tk.paused || tk.shift <= 0) continue;
-      tk.pos = (tk.pos + 22 * dt) % tk.shift;
-      tk.track.style.transform = 'translateY(' + (-tk.pos).toFixed(1) + 'px)';
-    }
+// ── NODE DETAIL HUBS · data, cards, modal ────────────────
+const NODES = {
+  '01': { num:'01', name:'Tyler Frost', role:'FOUNDER', open:false,
+    desc:'Founder of VYRION · building planetary intelligence from Hilo, Hawai\u02bbi.',
+    bio:[
+      'Tyler Frost founded VYRION and launched vyrion.earth in March 2026 — a planetary intelligence platform measuring Earth\u2019s health across 8 systems and 48 indicators, with a single canonical score: 41.2.',
+      'As sole member and manager of VYRION LLC (filed October 2026), he holds the build to one standard: every figure on this page is verified VYRION data or a labeled live feed. Nothing is simulated.',
+    ],
+    log:[
+      ['10-10','Mission Control v2 · glass pod · verified','ok'],
+      ['10-10','CONSCIENCE truth pass · 111 \u2192 36 verified companies','ok'],
+      ['10-10','THE RECORD · 11 issues · immutable',''],
+      ['10-10','Node program live · first lead signed','ok'],
+      ['10-09','EIN issued · single-member disregarded entity','ok'],
+      ['10-09','Operating agreement drafted · review pending',''],
+      ['10-09','PBC \u2192 LLC rebrand · sweep complete','ok'],
+      ['10-08','VYRION LLC filed · DCCA ref 001293005','ok'],
+      ['10-08','SHIELD map v2 · USGS + EONET live','ok'],
+      ['10-08','Module consolidation · loop + pulse kept · fakes removed','ok'],
+      ['10-08','Planetary Index 41.2 canonical · \u00b11.8','ok'],
+      ['10-08','GET license · Hawaii Tax Online · letter pending','warn'],
+      ['06-05','CONSCIENCE v2.9 · 11 \u2192 36 · 9 new sectors','ok'],
+      ['05-05','Methodology v1.1 · full 9-tier CDP scale','ok'],
+      ['04-24','Platform v2.8 · bands corrected · ARCHIVE live','ok'],
+      ['03-30','Platform v2.7 · Investor Terminal · Stress Test','ok'],
+      ['03-18','CONSCIENCE v1.0 · 11-company baseline scored','ok'],
+      ['03-18','VYRION public launch · vyrion.earth live','ok'],
+    ]},
+  '02': { num:'02', name:'Samuel Chidubem', role:'NODE 001 · NIGERIA', open:false,
+    desc:'First signed node lead · Youth Energy Transition, Nigeria / regional scope.',
+    bio:[
+      'Samuel Chidubem is VYRION\u2019s first signed node lead (Node 001), covering Nigeria with a regional lens and a focus on youth energy transition.',
+      'He wrote the SHIELD launch caption, champions VYRION launches publicly, and holds the signed v1 node agreement (v1.1 addendum in review).',
+    ],
+    log:[
+      ['10-10','Node 001 signed · Youth Energy Transition','ok'],
+      ['10-10','Wrote the SHIELD launch caption','ok'],
+      ['10-10','Championing the launch on LinkedIn','ok'],
+      ['10-10','Addendum v1.1 review-only · v1 operative',''],
+      ['10-10','Scope: Nigeria / regional',''],
+    ]},
+  '03': { num:'03', name:'Open Seat', role:'NODE 002 · OPEN', open:true, nodeId:'002',
+    desc:'Regional node lead · scope TBA · accepting candidates.',
+    bio:[
+      'Node 002 is an open regional seat in the VYRION node network.',
+      'Node leads document regional climate and infrastructure issues, publish quarterly node reports, and coordinate with SHIELD live feeds.',
+    ],
+    log:[
+      ['\u2014','OPEN SEAT · Node 002 · accepting','warn'],
+      ['\u2014','Scope: open region · TBA',''],
+      ['\u2014','Leads document climate + infrastructure',''],
+      ['\u2014','Publishes quarterly node reports',''],
+      ['\u2014','Coordinates with SHIELD live feeds',''],
+    ]},
+  '04': { num:'04', name:'Open Seat', role:'NODE 003 · OPEN', open:true, nodeId:'003',
+    desc:'Regional node lead · scope TBA · accepting candidates.',
+    bio:[
+      'Node 003 is an open regional seat in the VYRION node network.',
+      'Node leads document regional climate and infrastructure issues, publish quarterly node reports, and coordinate with SHIELD live feeds.',
+    ],
+    log:[
+      ['\u2014','OPEN SEAT · Node 003 · accepting','warn'],
+      ['\u2014','Scope: open region · TBA',''],
+      ['\u2014','Leads document climate + infrastructure',''],
+      ['\u2014','Publishes quarterly node reports',''],
+      ['\u2014','Coordinates with SHIELD live feeds',''],
+    ]},
+  '05': { num:'05', name:'Open Seat', role:'NODE 004 · OPEN', open:true, nodeId:'004',
+    desc:'Regional node lead · scope TBA · accepting candidates.',
+    bio:[
+      'Node 004 is an open regional seat in the VYRION node network.',
+      'Node leads document regional climate and infrastructure issues, publish quarterly node reports, and coordinate with SHIELD live feeds.',
+    ],
+    log:[
+      ['\u2014','OPEN SEAT · Node 004 · accepting','warn'],
+      ['\u2014','Scope: open region · TBA',''],
+      ['\u2014','Leads document climate + infrastructure',''],
+      ['\u2014','Publishes quarterly node reports',''],
+      ['\u2014','Coordinates with SHIELD live feeds',''],
+    ]},
+  '06': { num:'06', name:'Open Seat', role:'NODE 005 · OPEN', open:true, nodeId:'005',
+    desc:'Regional node lead · scope TBA · accepting candidates.',
+    bio:[
+      'Node 005 is an open regional seat in the VYRION node network.',
+      'Node leads document regional climate and infrastructure issues, publish quarterly node reports, and coordinate with SHIELD live feeds.',
+    ],
+    log:[
+      ['\u2014','OPEN SEAT · Node 005 · accepting','warn'],
+      ['\u2014','Scope: open region · TBA',''],
+      ['\u2014','Leads document climate + infrastructure',''],
+      ['\u2014','Publishes quarterly node reports',''],
+      ['\u2014','Coordinates with SHIELD live feeds',''],
+    ]},
+};
+
+// Render the six node cards
+(function renderNodes(){
+  const grid = document.getElementById('node-grid');
+  if (!grid) return;
+  Object.keys(NODES).forEach(id => {
+    const n = NODES[id];
+    const b = document.createElement('button');
+    b.className = 'node-card tilt' + (n.open ? ' open' : '');
+    b.setAttribute('role','listitem');
+    b.setAttribute('aria-label', n.open ? `Node ${n.nodeId} open seat — view and apply` : `${n.name}, ${n.role} — view dossier`);
+    b.innerHTML =
+      `<div class="node-top"><span class="node-dot${n.open ? ' open' : ''}"></span>` +
+      `<span class="node-num">${n.num}</span></div>` +
+      `<div class="node-name${n.open ? ' dim' : ''}">${n.name}</div>` +
+      `<div class="node-role${n.open ? ' open' : ''}">${n.role}</div>` +
+      `<div class="node-desc">${n.desc}</div>` +
+      `<div class="node-cta">${n.open ? 'Apply now' : 'View dossier'}</div>`;
+    b.addEventListener('click', () => openHub(id));
+    grid.appendChild(b);
+  });
+})();
+
+// Detail hub modal
+const hubOverlay = document.getElementById('hub-overlay');
+const hubModal = document.getElementById('hub-modal');
+const hubHead = document.getElementById('hub-head');
+const hubBody = document.getElementById('hub-body');
+const hubFoot = document.getElementById('hub-foot');
+let hubLastFocus = null;
+
+function openHub(id) {
+  const n = NODES[id];
+  if (!n) return;
+  hubLastFocus = document.activeElement;
+  const avatar = n.open
+    ? `<div class="hub-avatar seat">${n.num}</div>`
+    : `<img class="hub-avatar" src="vibrant-avatar.webp" alt="Vi\u2019brant">`;
+  hubHead.innerHTML =
+    `${avatar}<div class="hub-title"><h3 id="hub-name">${n.name}</h3>` +
+    `<div class="hub-role${n.open ? ' open' : ''}">${n.role}</div></div>` +
+    `<span class="hub-status ${n.open ? 'open' : 'seated'}">${n.open ? '● OPEN' : '● SEATED'}</span>`;
+  let body = `<div class="hub-sec-lbl">DOSSIER</div>`;
+  n.bio.forEach(p => { body += `<p class="hub-bio">${p}</p>`; });
+  body += `<div class="hub-sec-lbl">ACTIVITY LOG · VERIFIED</div><ul class="hub-log">`;
+  n.log.forEach(e => {
+    body += `<li><span class="sdot ${e[2]}"></span><span class="dt">[${e[0]}]</span><span class="lt">${e[1]}</span></li>`;
+  });
+  body += `</ul>`;
+  hubBody.innerHTML = body;
+  hubBody.scrollTop = 0;
+  if (n.open) {
+    hubFoot.innerHTML =
+      `<a class="hub-apply" href="mailto:contact@vyrion.earth?subject=Node%20${n.nodeId}%20application">APPLY FOR NODE ${n.nodeId}</a>` +
+      `<span class="hub-foot-note">Applications reviewed by the founder directly.</span>`;
+    hubFoot.style.display = 'flex';
+  } else {
+    hubFoot.innerHTML = `<span class="hub-foot-note">Seat held · verified activity only · nothing simulated.</span>`;
+    hubFoot.style.display = 'flex';
   }
-  requestAnimationFrame(_tickLoop);
+  hubOverlay.classList.add('open');
+  hubOverlay.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  if (history.replaceState) history.replaceState(null, '', '#node-' + id);
+  document.getElementById('hub-close').focus();
 }
-function buildTicker(id) {
-  const el = document.getElementById('log-' + id);
-  const entries = LOGS[id];
-  if (!el || !entries || !entries.length) return;
-  const track = document.createElement('div');
-  track.className = 'term-ticker';
-  const make = obj => {
-    const d = document.createElement('div');
-    d.className = 'log-line';
-    d.innerHTML = `<span class="sdot ${obj.c || ''}"></span><span class="dt">[${obj.d || '—'}]</span><span class="lt">${obj.t}</span>`;
-    return d;
-  };
-  const tk = { el, track, entries, pos: Math.random() * 300, shift: 0, paused: false };
-  const fill = () => {
-    track.innerHTML = '';
-    const probe = make(entries[0]);
-    track.appendChild(probe);
-    let lh = probe.getBoundingClientRect().height || 0;
-    track.innerHTML = '';
-    if (!(lh > 8 && lh < 80)) lh = 24;
-    const wellH = el.clientHeight || 240;
-    const copyH = lh * entries.length;
-    const copies = Math.max(2, Math.ceil((wellH * 2.5) / copyH) + 1);
-    for (let i = 0; i < copies; i++) entries.forEach(o => track.appendChild(make(o)));
-    tk.shift = copyH;
-    tk.pos = tk.pos % copyH;
-  };
-  tk.fill = fill;
-  el.appendChild(track);
-  el.addEventListener('mouseenter', () => { tk.paused = true; });
-  el.addEventListener('mouseleave', () => { tk.paused = false; });
-  _tickers.push(tk);
-  requestAnimationFrame(fill);
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fill);
+function closeHub() {
+  hubOverlay.classList.remove('open');
+  hubOverlay.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  if (history.replaceState) history.replaceState(null, '', location.pathname);
+  if (hubLastFocus && hubLastFocus.focus) hubLastFocus.focus();
 }
-Object.keys(LOGS).forEach(buildTicker);
-requestAnimationFrame(_tickLoop);
-let _tkRz = null;
-window.addEventListener('resize', () => {
-  clearTimeout(_tkRz);
-  _tkRz = setTimeout(() => _tickers.forEach(tk => tk.fill()), 200);
-});
+document.getElementById('hub-close').addEventListener('click', closeHub);
+hubOverlay.addEventListener('click', e => { if (e.target === hubOverlay) closeHub(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && hubOverlay.classList.contains('open')) closeHub(); });
+// Deep links: #node-01 … #node-06
+if (location.hash && /^#node-0[1-6]$/.test(location.hash)) {
+  openHub(location.hash.replace('#node-', ''));
+}
+
+// ── 3D TILT (glass immersion, hover devices only) ───────
+if (window.matchMedia('(hover:hover)').matches) {
+  document.querySelectorAll('.tilt').forEach(p => {
+    p.addEventListener('mousemove', e => {
+      const r = p.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      p.style.transform = `perspective(1100px) rotateX(${(-y*6).toFixed(2)}deg) rotateY(${(x*8).toFixed(2)}deg) translateZ(8px)`;
+      p.style.boxShadow = '0 34px 80px rgba(0,0,0,.55), 0 0 44px rgba(0,212,255,.10), inset 0 1px 0 rgba(255,255,255,.09)';
+    });
+    p.addEventListener('mouseleave', () => { p.style.transform = ''; p.style.boxShadow = ''; });
+  });
+}
+
 
 // ── ACTIVITY RECORD ──────────────────────────────────────
 const feedEl = document.getElementById('board-feed');
@@ -985,5 +1062,15 @@ function skToggle() {
 }
 document.getElementById('sk-btn').addEventListener('click', skToggle);
 </script>
+
+  <!-- NODE DETAIL HUB -->
+  <div class="hub-overlay" id="hub-overlay" aria-hidden="true">
+    <div class="hub-modal" id="hub-modal" role="dialog" aria-modal="true" aria-labelledby="hub-name">
+      <button class="hub-close" id="hub-close" aria-label="Close detail hub">×</button>
+      <div class="hub-head" id="hub-head"></div>
+      <div class="hub-body" id="hub-body"></div>
+      <div class="hub-foot" id="hub-foot"></div>
+    </div>
+  </div>
 </body>
 </html>
