@@ -194,7 +194,7 @@ body::before {
   text-shadow: 0 0 40px rgba(0,212,255,.7), 0 0 12px rgba(0,212,255,.35);
 }
 
-.nav-links { display: flex; gap: 1.8rem; list-style: none; flex: 1; }
+.nav-links { display: flex; gap:1.3rem; list-style: none; flex: 1; }
 .nav-links a {
   font-family: 'Archivo Narrow', sans-serif;
   font-weight: 700;
@@ -205,7 +205,7 @@ body::before {
   text-decoration: none;
   transition: color .2s;
   padding-bottom: 2px;
-}
+;white-space:nowrap}
 .nav-links a:hover { color: var(--t1); }
 .nav-links a.active {
   color: var(--root);
@@ -1222,38 +1222,77 @@ svg line {
   .nav-links{display:none;position:fixed;top:52px;left:0;right:0;z-index:149;flex-direction:column;gap:0;margin:0;padding:10px;list-style:none;background:rgba(3,9,16,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,212,255,.14);box-shadow:0 30px 60px rgba(0,0,0,.6);max-height:calc(100vh - 52px);max-height:calc(100dvh - 52px);overflow-y:auto}
   .nav-links.open{display:flex}
   .nav-links li{width:100%}
-  .nav-links a{display:flex;align-items:center;width:100%;padding:13px 16px}
+  .nav-links a{display:flex;align-items:center;width:100%;padding:13px 16px;white-space:nowrap}
   .nav-links .nav-tooltip{display:none}
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   VYRION STANDARD HEADER — the single source of truth for site chrome.
+   Stamped identically on every page. Per-page differences allowed:
+   (1) the .active class on the current page's link, (2) logo text.
+   Do not hand-edit per page — update this file and re-stamp.
+   ═══════════════════════════════════════════════════════════════════ */
+.nav{position:sticky;top:0;z-index:600;display:flex;align-items:center;gap:1rem;height:58px;padding:0 20px;background:rgba(3,9,16,.82);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--border,rgba(0,212,255,.14));}
+.nav-logo{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:.28em;color:var(--glow,#00d4ff);text-decoration:none;flex-shrink:0;text-shadow:0 0 22px rgba(0,212,255,.45);}
+.nav-links{display:flex;gap:1.3rem;list-style:none;margin:0 0 0 2rem;padding:0;flex:1;align-items:center;min-width:0;}
+.nav-links a{position:relative;display:inline-flex;align-items:center;font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--t2);text-decoration:none;transition:color .2s;padding-bottom:2px;white-space:nowrap;}
+.nav-links a:hover{color:var(--t1);}
+.nav-links a.active{color:var(--t1);border-bottom:none;}
+.nav-links a.active::after{content:'';position:absolute;left:0;right:0;bottom:-4px;height:1px;background:rgba(0,212,255,.5);}
+.nav-tooltip{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(-6px);background:rgba(2,9,18,.97);border:1px solid rgba(0,212,255,.22);border-radius:3px;padding:.35rem .65rem;font-family:'Courier Prime',monospace;font-size:.52rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--t2);white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .18s,transform .18s;z-index:700;}
+.nav-item:hover .nav-tooltip{opacity:1;transform:translateX(-50%) translateY(0);}
+.nav-burger{display:none;align-items:center;justify-content:center;width:42px;height:42px;flex-shrink:0;cursor:pointer;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.28);border-radius:9px;color:var(--t1,#e8f4ff);font-size:1.25rem;line-height:1;transition:background .2s,border-color .2s;}
+.nav-controls{margin-left:auto;display:flex;align-items:center;gap:.45rem;flex-shrink:0;}
+.nc-live{display:flex;align-items:center;gap:.45rem;font-family:'Archivo Narrow',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.2em;color:#00ff88;margin-right:.6rem;white-space:nowrap;}
+.nc-live .dot{width:6px;height:6px;border-radius:50%;background:#00ff88;box-shadow:0 0 8px #00ff88;animation:vstdot 2.2s infinite;}
+.nc-theme{font-family:'Courier Prime',monospace;font-size:.56rem;font-weight:700;letter-spacing:.1em;padding:.25rem .5rem;border-radius:2px;border:1px solid var(--border);background:transparent;color:var(--t2);cursor:pointer;transition:all .2s;white-space:nowrap;}
+.nc-theme:hover{border-color:var(--glow,#00d4ff);color:var(--glow,#00d4ff);}
+.nc-sep{width:1px;height:16px;background:var(--border);margin:0 .1rem;}
+.nc-sz{font-family:'Courier Prime',monospace;font-size:.58rem;font-weight:700;width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;border-radius:2px;border:1px solid var(--border);background:transparent;color:var(--t2);cursor:pointer;transition:all .2s;}
+.nc-sz.active{border-color:var(--glow,#00d4ff);color:var(--glow,#00d4ff);}
+@keyframes vstdot{0%,100%{opacity:1}50%{opacity:.35}}
+@media (max-width:1100px){
+  .nav-burger{display:flex;}
+  .nav-controls{margin-left:auto;}
+  .nc-live{display:none;}
+  .nav-links{display:none;position:fixed;top:58px;left:0;right:0;z-index:599;flex-direction:column;gap:0;margin:0;padding:10px;list-style:none;background:rgba(3,9,16,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,212,255,.14);box-shadow:0 30px 60px rgba(0,0,0,.6);max-height:calc(100vh - 58px);max-height:calc(100dvh - 58px);overflow-y:auto;}
+  .nav-links.open{display:flex;}
+  .nav-links li{width:100%;}
+  .nav-links a{display:flex;align-items:center;width:100%;padding:13px 16px;font-size:.72rem;}
+  .nav-links a.active::after{display:none;}
+  .nav-tooltip{display:none;}
+}
+
 </style>
 <body>
 
 <!-- NAV -->
 <nav class="nav">
-  <a href="https://vyrion.earth/" class="nav-logo">VYRION</a>
+  <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
   <ul class="nav-links" id="nav-links">
-    <li><a href="https://vyrion.earth/conscience">CONSCIENCE</a></li>
-    <li><a href="https://vyrion.earth/shield">SHIELD</a></li>
-    <li><a href="https://vyrion.earth/atlas">ATLAS</a></li>
-    <li><a href="https://vyrion.earth/root" class="active">ROOT</a></li>
-	<li><a href="https://vyrion.earth/canopy">CANOPY</a></li>
-	<li><a href="https://vyrion.earth/flux">FLUX</a></li>
-	<li><a href="https://vyrion.earth/tide">TIDE</a></li>
-	<li><a href="https://vyrion.earth/loop">LOOP</a></li>
-	<li><a href="https://vyrion.earth/pulse">PULSE</a></li>
-    <li><a href="https://vyrion.earth/record">RECORD</a></li>
-	<li><a href="https://vyrion.earth/about">ABOUT</a></li>
-    <li><a href="https://vyrion.earth/nexan">NEXAN</a></li><li><a href="https://vyrion.earth/mission-control.html">MISSION CONTROL</a></li>
+    <li><a href="https://vyrion.earth/conscience" class="nav-item">CONSCIENCE<span class="nav-tooltip">Corporate Climate Pledge Verification</span></a></li>
+    <li><a href="https://vyrion.earth/shield" class="nav-item">SHIELD<span class="nav-tooltip">Global Disaster Early Warning</span></a></li>
+    <li><a href="https://vyrion.earth/atlas" class="nav-item">ATLAS<span class="nav-tooltip">Planetary Intelligence Backbone</span></a></li>
+    <li><a href="https://vyrion.earth/root" class="nav-item active">ROOT<span class="nav-tooltip">Terrestrial Intelligence &amp; Soil Health</span></a></li>
+    <li><a href="https://vyrion.earth/canopy" class="nav-item">CANOPY<span class="nav-tooltip">Reforestation Intelligence</span></a></li>
+    <li><a href="https://vyrion.earth/flux" class="nav-item">FLUX<span class="nav-tooltip">Clean Energy Infrastructure</span></a></li>
+    <li><a href="https://vyrion.earth/tide" class="nav-item">TIDE<span class="nav-tooltip">Ocean Remediation Intelligence</span></a></li>
+    <li><a href="https://vyrion.earth/loop" class="nav-item">LOOP<span class="nav-tooltip">Planetary Material Flow</span></a></li>
+    <li><a href="https://vyrion.earth/pulse" class="nav-item">PULSE<span class="nav-tooltip">Environmental Credit Marketplace</span></a></li>
+    <li><a href="https://vyrion.earth/record" class="nav-item">RECORD<span class="nav-tooltip">Intelligence Reports</span></a></li>
+    <li><a href="https://vyrion.earth/about" class="nav-item">ABOUT<span class="nav-tooltip">Mission &amp; Open Methodology</span></a></li>
+    <li><a href="https://vyrion.earth/mission-control.html" class="nav-item">MISSION CONTROL<span class="nav-tooltip">Planetary Command Interface</span></a></li>
+    <li><a href="https://vyrion.earth/nexan" class="nav-item">NEXAN<span class="nav-tooltip">Research &amp; Validation Institute</span></a></li>
   </ul>
   <button class="nav-burger" id="nav-burger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">☰</button>
-<div class="nav-controls">
-    <button class="nc-theme" id="theme-btn" onclick="toggleTheme()" title="Toggle light/dark">◐ DARK</button>
+  <div class="nav-controls">
+    <span class="nc-live"><span class="dot"></span>LIVE</span>
+    <button class="nc-theme" id="theme-btn" onclick="toggleTheme()" title="Toggle light/dark mode">◐ DARK</button>
     <div class="nc-sep"></div>
     <button class="nc-sz" data-scale="0.88" onclick="setScale(this)" title="Small text">S</button>
     <button class="nc-sz active" data-scale="1.0" onclick="setScale(this)" title="Medium text">M</button>
     <button class="nc-sz" data-scale="1.22" onclick="setScale(this)" title="Large text">L</button>
   </div>
-  <div class="nav-dot"></div>
 </nav>
 
 <!-- MODULE STATUS STRIP -->
