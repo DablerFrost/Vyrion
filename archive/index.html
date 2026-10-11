@@ -17,6 +17,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&family=Archivo:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <link rel="icon" href="/assets/favicon.ico">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#020912">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <style>
 
 /* ── THEME ──────────────────────────────────────────────── */
@@ -384,6 +387,17 @@ body::after{
   .score-table{font-size:.6rem}
   .td-note{display:none}
 }
+/* ── MOBILE HAMBURGER NAV ── */
+.nav-burger{display:none;align-items:center;justify-content:center;width:42px;height:42px;flex-shrink:0;cursor:pointer;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.28);border-radius:9px;color:var(--t1,#e8f4ff);font-size:1.25rem;line-height:1;transition:background .2s,border-color .2s}
+.nav-burger:hover{background:rgba(0,212,255,.14);border-color:rgba(0,212,255,.5)}
+@media (max-width:1100px){
+  .nav-burger{display:flex;margin-left:auto}
+  .nav-links{display:none;position:fixed;top:52px;left:0;right:0;z-index:149;flex-direction:column;gap:0;margin:0;padding:10px;list-style:none;background:rgba(3,9,16,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,212,255,.14);box-shadow:0 30px 60px rgba(0,0,0,.6);max-height:calc(100vh - 52px);max-height:calc(100dvh - 52px);overflow-y:auto}
+  .nav-links.open{display:flex}
+  .nav-links li{width:100%}
+  .nav-links a{display:flex;align-items:center;width:100%;padding:13px 16px}
+  .nav-links .nav-tooltip{display:none}
+}
 </style>
 </head>
 <body>
@@ -391,7 +405,7 @@ body::after{
 <!-- NAV -->
 <nav class="nav">
   <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="nav-links">
     <li><a href="https://vyrion.earth/conscience">CONSCIENCE</a></li>
     <li><a href="https://vyrion.earth/shield">SHIELD</a></li>
     <li><a href="https://vyrion.earth/atlas">ATLAS</a></li>
@@ -405,7 +419,8 @@ body::after{
 	  <li><a href="https://vyrion.earth/about">ABOUT</a></li>
     <li><a href="https://vyrion.earth/nexan">NEXAN</a></li>
   </ul>
-  <div class="nav-controls">
+  <button class="nav-burger" id="nav-burger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+<div class="nav-controls">
     <button class="nc-theme active" id="theme-btn" onclick="toggleTheme()" title="Toggle light/dark mode">◐ DARK</button>
     <div class="nc-sep"></div>
     <button class="nc-sz" data-scale="0.88" onclick="setScale(this)" title="Small">S</button>
@@ -565,7 +580,7 @@ body::after{
   <div class="record-grid">
 
     <!-- 004 DELTA -->
-    <a class="record-card" href="https://vyrion.earth/record/issue-004-delta.html">
+    <a class="record-card" href="https://vyrion.earth/record/issue-004.html">
       <div class="rc-watermark">004</div>
       <div class="rc-num">ISSUE 004 · AVIATION · April 8, 2026</div>
       <div class="rc-company">Delta Air Lines</div>
@@ -587,7 +602,7 @@ body::after{
     </a>
 
     <!-- 003 SHELL -->
-    <a class="record-card" href="https://vyrion.earth/record/issue-003-shell.html">
+    <a class="record-card" href="https://vyrion.earth/record/issue-003.html">
       <div class="rc-watermark">003</div>
       <div class="rc-num">ISSUE 003 · OIL & GAS · April 1, 2026</div>
       <div class="rc-company">Shell</div>
@@ -609,7 +624,7 @@ body::after{
     </a>
 
     <!-- 002 EXXON -->
-    <a class="record-card" href="https://vyrion.earth/record/issue-002-exxonmobil.html">
+    <a class="record-card" href="https://vyrion.earth/record/issue-002.html">
       <div class="rc-watermark">002</div>
       <div class="rc-num">ISSUE 002 · OIL & GAS · March 25, 2026</div>
       <div class="rc-company">ExxonMobil</div>
@@ -794,6 +809,9 @@ function setScale(btn){
     }
   }catch(e){}
 })();
+</script>
+<script>
+if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){});});}
 </script>
 </body>
 </html>
