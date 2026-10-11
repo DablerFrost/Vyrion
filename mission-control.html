@@ -247,12 +247,22 @@
     .m-role { font-family: var(--font-d); font-size: .62rem; font-weight: 600; letter-spacing: .14em; color: var(--t3); margin-left: auto; }
     .m-role.open { color: var(--amber); }
     .log-area {
-      flex: 1; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-start;
+      flex: 1; overflow: hidden; position: relative;
       background: rgba(2, 8, 17, 0.78);
       border: 1px solid rgba(0,212,255,0.10);
-      border-radius: 8px; padding: 12px 14px;
+      border-radius: 8px;
       box-shadow: inset 0 2px 18px rgba(0,0,0,.55);
     }
+    .log-area::before, .log-area::after {
+      content: ''; position: absolute; left: 0; right: 0; height: 30px;
+      z-index: 2; pointer-events: none;
+    }
+    .log-area::before { top: 0; background: linear-gradient(to bottom, rgba(2,8,17,.92), transparent); border-radius: 8px 8px 0 0; }
+    .log-area::after { bottom: 0; background: linear-gradient(to top, rgba(2,8,17,.92), transparent); border-radius: 0 0 8px 8px; }
+    .term-ticker { display: flex; flex-direction: column; padding: 12px 14px; animation: termtick linear infinite; will-change: transform; }
+    .log-area:hover .term-ticker { animation-play-state: paused; }
+    @keyframes termtick { from { transform: translateY(0); } to { transform: translateY(calc(var(--shift, 240px) * -1)); } }
+    @media (prefers-reduced-motion: reduce) { .term-ticker { animation: none; } }
     .log-line { font-family: var(--font-m); font-size: .72rem; line-height: 2.0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; animation: fadein .35s ease; padding: 0 2px; border-radius: 3px; display: flex; align-items: baseline; }
     .log-line:hover { background: rgba(0,212,255,.06); }
     @keyframes fadein { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
@@ -611,14 +621,9 @@ document.querySelectorAll('.nc-sz').forEach(b => {
     document.querySelectorAll('.nc-sz').forEach(x => x.classList.remove('active'));
     b.classList.add('active');
     document.documentElement.style.setProperty('--text-scale', b.dataset.scale);
-    setTimeout(refitAllLogs, 80);
   });
 });
-let _rzT = null;
-window.addEventListener('resize', () => {
-  clearTimeout(_rzT);
-  _rzT = setTimeout(refitAllLogs, 150);
-});
+
 
 // ── CURSOR ───────────────────────────────────────────────
 const cDot = document.getElementById('c-dot');
@@ -781,22 +786,34 @@ const LOGS = {
   ],
   '03':[
     {d:'—',t:'OPEN SEAT · Node 002 · accepting',c:'warn'},
+    {d:'—',t:'Scope: open region · TBA',c:''},
     {d:'—',t:'Leads document climate + infrastructure',c:''},
+    {d:'—',t:'Publishes quarterly node reports',c:''},
+    {d:'—',t:'Coordinates with SHIELD live feeds',c:''},
     {d:'—',t:'Use the apply link below ↓',c:''},
   ],
   '04':[
     {d:'—',t:'OPEN SEAT · Node 003 · accepting',c:'warn'},
+    {d:'—',t:'Scope: open region · TBA',c:''},
     {d:'—',t:'Leads document climate + infrastructure',c:''},
+    {d:'—',t:'Publishes quarterly node reports',c:''},
+    {d:'—',t:'Coordinates with SHIELD live feeds',c:''},
     {d:'—',t:'Use the apply link below ↓',c:''},
   ],
   '05':[
     {d:'—',t:'OPEN SEAT · Node 004 · accepting',c:'warn'},
+    {d:'—',t:'Scope: open region · TBA',c:''},
     {d:'—',t:'Leads document climate + infrastructure',c:''},
+    {d:'—',t:'Publishes quarterly node reports',c:''},
+    {d:'—',t:'Coordinates with SHIELD live feeds',c:''},
     {d:'—',t:'Use the apply link below ↓',c:''},
   ],
   '06':[
     {d:'—',t:'OPEN SEAT · Node 005 · accepting',c:'warn'},
+    {d:'—',t:'Scope: open region · TBA',c:''},
     {d:'—',t:'Leads document climate + infrastructure',c:''},
+    {d:'—',t:'Publishes quarterly node reports',c:''},
+    {d:'—',t:'Coordinates with SHIELD live feeds',c:''},
     {d:'—',t:'Use the apply link below ↓',c:''},
   ],
 };
@@ -812,53 +829,34 @@ const FEED = [
   {d:'03-18', s:'VYRION',     m:'Public launch — vyrion.earth goes live.'},
 ];
 
-// ── LOGGER ───────────────────────────────────────────────
-const ptrs = {};
-const MAX_LINES = 6;
-
-// Uniform shrink-to-fit per box: all lines in a terminal share one size,
-// stepped down only until the longest line fits. No ransom-note sizing.
-function fitBoxLines(boxEl) {
-  const lines = boxEl.querySelectorAll('.log-line');
-  if (!lines.length) return;
-  lines.forEach(el => { el.style.fontSize = ''; });
-  let size = parseFloat(getComputedStyle(lines[0]).fontSize);
-  let guard = 24;
-  const fits = () => [...lines].every(el => el.scrollWidth <= el.clientWidth);
-  while (!fits() && size > 7 && guard-- > 0) {
-    size -= 0.4;
-    lines.forEach(el => { el.style.fontSize = size.toFixed(1) + 'px'; });
-  }
-}
-function refitAllLogs() {
-  document.querySelectorAll('.log-area').forEach(fitBoxLines);
-}
-
-function addLine(id, obj) {
+// ── TERMINAL TICKERS · true vertical tickers ───────────────
+// Each well holds a seamless looping track (entries ×2). The well is
+// always full of flowing text at every text scale — no blank space.
+function buildTicker(id) {
   const el = document.getElementById('log-' + id);
-  if (!el) return;
-  const d = document.createElement('div');
-  d.className = 'log-line';
-  d.innerHTML = `<span class="sdot ${obj.c || ''}"></span><span class="dt">[${obj.d || '—'}]</span><span class="lt">${obj.t}</span>`;
-  el.appendChild(d);
-  while (el.children.length > MAX_LINES) el.removeChild(el.firstChild);
-  fitBoxLines(el);
+  if (!el || !LOGS[id]) return;
+  const track = document.createElement('div');
+  track.className = 'term-ticker';
+  const make = obj => {
+    const d = document.createElement('div');
+    d.className = 'log-line';
+    d.innerHTML = `<span class="sdot ${obj.c || ''}"></span><span class="dt">[${obj.d || '—'}]</span><span class="lt">${obj.t}</span>`;
+    return d;
+  };
+  LOGS[id].forEach(o => track.appendChild(make(o)));
+  el.appendChild(track);
+  requestAnimationFrame(() => {
+    const copyH = track.scrollHeight;
+    const wellH = el.clientHeight || 200;
+    // Repeat until the track is at least 2× the well height — the well
+    // can never show blank space, at any text scale.
+    const copies = Math.max(2, Math.ceil((wellH * 2) / Math.max(copyH, 1)) + 1);
+    for (let i = 1; i < copies; i++) LOGS[id].forEach(o => track.appendChild(make(o)));
+    track.style.setProperty('--shift', copyH + 'px');
+    track.style.animationDuration = (copyH / 26).toFixed(1) + 's';
+  });
 }
-Object.keys(LOGS).forEach(id => {
-  const init = Math.min(6, LOGS[id].length);
-  for (let i = 0; i < init; i++) addLine(id, LOGS[id][i]);
-  ptrs[id] = init;
-});
-function sched(id, ms) {
-  const logs = LOGS[id];
-  const jit  = () => ms + Math.random() * ms * 0.6;
-  setTimeout(function run() {
-    addLine(id, logs[ptrs[id]++ % logs.length]);
-    setTimeout(run, jit());
-  }, jit());
-}
-sched('01', 5200); sched('02', 4100); sched('03', 6300);
-sched('04', 7100); sched('05', 4700); sched('06', 5500);
+Object.keys(LOGS).forEach(buildTicker);
 
 // ── ACTIVITY RECORD ──────────────────────────────────────
 const feedEl = document.getElementById('board-feed');
