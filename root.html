@@ -11,6 +11,9 @@
 <meta name="twitter:card" content="summary">
 <link rel="canonical" href="https://vyrion.earth/root.html">
 <link rel="icon" href="/assets/favicon.ico">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#020912">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <title>VYRION ROOT — Soil Intelligence System</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2055,6 +2058,9 @@ function setScale(btn) {
 </script>
 <script>
 (function(){var b=document.getElementById('nav-burger'),l=document.getElementById('nav-links');if(!b||!l)return;function s(o){l.classList.toggle('open',o);b.setAttribute('aria-expanded',String(o));b.setAttribute('aria-label',o?'Close navigation menu':'Open navigation menu')}b.addEventListener('click',function(){s(!l.classList.contains('open'))});l.addEventListener('click',function(e){if(e.target.closest('a'))s(false)});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open'))s(false)})})();
+</script>
+<script>
+if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){});});}
 </script>
 </body>
 </html>

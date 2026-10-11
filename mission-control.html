@@ -7,6 +7,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" href="/assets/favicon.ico">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#020912">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700;800&family=Archivo:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* ══ VYRION MISSION CONTROL v2 ══
@@ -1118,5 +1121,8 @@ document.getElementById('sk-btn').addEventListener('click', skToggle);
 </script>
 
   </div>
+<script>
+if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){});});}
+</script>
 </body>
 </html>

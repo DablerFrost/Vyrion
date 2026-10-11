@@ -6,6 +6,9 @@
 <meta name="description" content="VYRION ATLAS — Real-time planetary intelligence. 8 Earth systems. 48 indicators. The backbone of the VYRION Index.">
 <title>VYRION ATLAS — Planetary Intelligence</title>
 <link rel="icon" href="/assets/favicon.ico">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#020912">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&family=Archivo:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
@@ -1028,6 +1031,9 @@ setInterval(load,15*60*1000);
 </script>
 <script>
 (function(){var b=document.getElementById('nav-burger'),l=document.getElementById('nav-links');if(!b||!l)return;function s(o){l.classList.toggle('open',o);b.setAttribute('aria-expanded',String(o));b.setAttribute('aria-label',o?'Close navigation menu':'Open navigation menu')}b.addEventListener('click',function(){s(!l.classList.contains('open'))});l.addEventListener('click',function(e){if(e.target.closest('a'))s(false)});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open'))s(false)})})();
+</script>
+<script>
+if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){});});}
 </script>
 </body>
 </html>
