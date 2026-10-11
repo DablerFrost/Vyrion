@@ -604,7 +604,13 @@ document.querySelectorAll('.nc-sz').forEach(b => {
     document.querySelectorAll('.nc-sz').forEach(x => x.classList.remove('active'));
     b.classList.add('active');
     document.documentElement.style.setProperty('--text-scale', b.dataset.scale);
+    setTimeout(refitAllLogs, 80);
   });
+});
+let _rzT = null;
+window.addEventListener('resize', () => {
+  clearTimeout(_rzT);
+  _rzT = setTimeout(refitAllLogs, 150);
 });
 
 // ── CURSOR ───────────────────────────────────────────────
@@ -801,6 +807,24 @@ const FEED = [
 // ── LOGGER ───────────────────────────────────────────────
 const ptrs = {};
 const MAX_LINES = 10;
+
+// Shrink-to-fit: each log line scales its own font down until the full
+// text fits the box — at S, M, or L text scale. Ellipsis is last resort.
+function fitLogLine(el) {
+  el.style.fontSize = '';
+  const max = el.clientWidth;
+  if (!max) return;
+  let size = parseFloat(getComputedStyle(el).fontSize);
+  let guard = 24;
+  while (el.scrollWidth > max && size > 7 && guard-- > 0) {
+    size -= 0.4;
+    el.style.fontSize = size.toFixed(1) + 'px';
+  }
+}
+function refitAllLogs() {
+  document.querySelectorAll('.log-line').forEach(fitLogLine);
+}
+
 function addLine(id, obj) {
   const el = document.getElementById('log-' + id);
   if (!el) return;
@@ -809,6 +833,7 @@ function addLine(id, obj) {
   d.innerHTML = `<span class="dt">[${obj.d || '—'}]</span><span class="pr">▸ </span><span class="lt">${obj.t}</span>`;
   el.appendChild(d);
   while (el.children.length > MAX_LINES) el.removeChild(el.firstChild);
+  fitLogLine(d);
 }
 Object.keys(LOGS).forEach(id => {
   const init = Math.min(9, LOGS[id].length);
