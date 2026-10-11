@@ -114,7 +114,13 @@
         line-height: 1.65;
         min-height: 100vh;
         overflow-x: hidden;
+        overflow-x: clip;
         transition: background .3s, color .3s;
+      }
+      html {
+        overflow-x: hidden;
+        overflow-x: clip;
+        max-width: 100%;
       }
 
       @media(hover:hover) {
@@ -606,11 +612,11 @@
       @keyframes iPanelRight { 0%{opacity:0;transform:translateX(18px)} 100%{opacity:1;transform:translateX(0)} }
 
       /* mobile — stack intro vertically */
-      @media(max-width:600px) {
-        #intro-overlay { grid-template-columns:1fr; grid-template-rows:auto 1fr auto; }
-        .intro-panel-left  { padding:1.2rem; order:0; min-height:0; max-height:80px; }
-        .intro-panel-right { padding:1.2rem; order:2; min-height:0; max-height:80px; }
-        .intro-center { order:1; padding:1.2rem 1rem; min-width:auto; }
+      @media(max-width:820px) {
+        #intro-overlay { grid-template-columns:minmax(0,1fr); grid-template-rows:auto minmax(0,1fr) auto; }
+        .intro-panel-left  { padding:1.2rem; order:0; min-height:0; max-height:80px; min-width:0; }
+        .intro-panel-right { padding:1.2rem; order:2; min-height:0; max-height:80px; min-width:0; }
+        .intro-center { order:1; padding:1.2rem 1rem; min-width:0; max-width:100%; }
         .intro-left-tree,.intro-right-city { display:none; }
         .intro-divider-left,.intro-divider-right { display:none; }
         .intro-panel-left::after,.intro-panel-right::before,.intro-panel-right::after { display:none; }
