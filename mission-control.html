@@ -246,15 +246,22 @@
     .m-name.dim { color: var(--t3); font-style: italic; font-weight: 600; }
     .m-role { font-family: var(--font-d); font-size: .62rem; font-weight: 600; letter-spacing: .14em; color: var(--t3); margin-left: auto; }
     .m-role.open { color: var(--amber); }
-    .log-area { flex: 1; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-start; }
-    .log-line { font-family: var(--font-m); font-size: .66rem; line-height: 1.7; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; animation: fadein .35s ease; padding: 0 2px; border-radius: 3px; }
-    .log-line:hover { background: rgba(0,212,255,.05); white-space: normal; overflow: visible; }
+    .log-area {
+      flex: 1; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-start;
+      background: rgba(2, 8, 17, 0.78);
+      border: 1px solid rgba(0,212,255,0.10);
+      border-radius: 8px; padding: 12px 14px;
+      box-shadow: inset 0 2px 18px rgba(0,0,0,.55);
+    }
+    .log-line { font-family: var(--font-m); font-size: .72rem; line-height: 2.0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; animation: fadein .35s ease; padding: 0 2px; border-radius: 3px; display: flex; align-items: baseline; }
+    .log-line:hover { background: rgba(0,212,255,.06); }
     @keyframes fadein { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
-    .log-line .dt { color: var(--t4); font-size: .66rem; margin-right: 6px; }
-    .log-line .pr { color: var(--glow); opacity: .4; }
-    .log-line .lt { color: var(--t3); }
-    .log-line.ok   .lt { color: var(--green); }
-    .log-line.warn .lt { color: var(--amber); }
+    .log-line .sdot { flex-shrink: 0; width: 6px; height: 6px; border-radius: 50%; margin-right: 8px; transform: translateY(-1px); background: rgba(0,212,255,.4); box-shadow: 0 0 6px rgba(0,212,255,.3); }
+    .log-line .sdot.ok { background: var(--green); box-shadow: 0 0 7px var(--green); }
+    .log-line .sdot.warn { background: var(--amber); box-shadow: 0 0 7px var(--amber); }
+    .log-line .sdot.err { background: var(--red); box-shadow: 0 0 7px var(--red); }
+    .log-line .dt { color: rgba(0,212,255,.5); font-size: .66rem; margin-right: 7px; flex-shrink: 0; }
+    .log-line .lt { color: #d7ecff; overflow: hidden; text-overflow: ellipsis; }
     .seat-open { border-style: dashed; border-color: rgba(255,176,32,.3); }
     .cta {
       display: inline-block; margin-top: 12px;
@@ -668,7 +675,8 @@ function getMagInfo(el) {
       const role = term.querySelector('.m-role');
       if (num && role) label = `${num.textContent.trim()} · ${role.textContent.trim()}`;
     }
-    return { label, text, type: logLine.classList.contains('ok') ? 'ok' : logLine.classList.contains('warn') ? 'warn' : logLine.classList.contains('err') ? 'err' : '' };
+    const sdot = logLine.querySelector('.sdot');
+    return { label, text, type: sdot && sdot.classList.contains('ok') ? 'ok' : sdot && sdot.classList.contains('warn') ? 'warn' : sdot && sdot.classList.contains('err') ? 'err' : '' };
   }
   if (feedItem) {
     const text = feedItem.textContent.trim();
@@ -806,37 +814,38 @@ const FEED = [
 
 // ── LOGGER ───────────────────────────────────────────────
 const ptrs = {};
-const MAX_LINES = 10;
+const MAX_LINES = 6;
 
-// Shrink-to-fit: each log line scales its own font down until the full
-// text fits the box — at S, M, or L text scale. Ellipsis is last resort.
-function fitLogLine(el) {
-  el.style.fontSize = '';
-  const max = el.clientWidth;
-  if (!max) return;
-  let size = parseFloat(getComputedStyle(el).fontSize);
+// Uniform shrink-to-fit per box: all lines in a terminal share one size,
+// stepped down only until the longest line fits. No ransom-note sizing.
+function fitBoxLines(boxEl) {
+  const lines = boxEl.querySelectorAll('.log-line');
+  if (!lines.length) return;
+  lines.forEach(el => { el.style.fontSize = ''; });
+  let size = parseFloat(getComputedStyle(lines[0]).fontSize);
   let guard = 24;
-  while (el.scrollWidth > max && size > 7 && guard-- > 0) {
+  const fits = () => [...lines].every(el => el.scrollWidth <= el.clientWidth);
+  while (!fits() && size > 7 && guard-- > 0) {
     size -= 0.4;
-    el.style.fontSize = size.toFixed(1) + 'px';
+    lines.forEach(el => { el.style.fontSize = size.toFixed(1) + 'px'; });
   }
 }
 function refitAllLogs() {
-  document.querySelectorAll('.log-line').forEach(fitLogLine);
+  document.querySelectorAll('.log-area').forEach(fitBoxLines);
 }
 
 function addLine(id, obj) {
   const el = document.getElementById('log-' + id);
   if (!el) return;
   const d = document.createElement('div');
-  d.className = 'log-line' + (obj.c ? ' ' + obj.c : '');
-  d.innerHTML = `<span class="dt">[${obj.d || '—'}]</span><span class="pr">▸ </span><span class="lt">${obj.t}</span>`;
+  d.className = 'log-line';
+  d.innerHTML = `<span class="sdot ${obj.c || ''}"></span><span class="dt">[${obj.d || '—'}]</span><span class="lt">${obj.t}</span>`;
   el.appendChild(d);
   while (el.children.length > MAX_LINES) el.removeChild(el.firstChild);
-  fitLogLine(d);
+  fitBoxLines(el);
 }
 Object.keys(LOGS).forEach(id => {
-  const init = Math.min(9, LOGS[id].length);
+  const init = Math.min(6, LOGS[id].length);
   for (let i = 0; i < init; i++) addLine(id, LOGS[id][i]);
   ptrs[id] = init;
 });
