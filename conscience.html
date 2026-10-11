@@ -733,74 +733,6 @@ body::after{
 }
 .oi-btn-dismiss:hover { color: var(--t2); }
 
-/* ── 3. FLOATING ORB ─────────────────────────────────────── */
-#vyr-orb {
-  position: fixed; bottom: 28px; right: 28px;
-  z-index: 8000; width: 58px; height: 58px;
-}
-.oo-btn {
-  width: 100%; height: 100%; border-radius: 50%;
-  background: radial-gradient(circle at 36% 36%, rgba(0,212,255,0.35), rgba(0,60,140,0.7));
-  border: 1.5px solid rgba(0,212,255,0.45);
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer;
-  animation: oOrbPulse 3s ease-in-out infinite;
-  transition: transform 0.2s var(--ov-ease), border-color 0.2s;
-  box-shadow: 0 0 0 0 rgba(0,212,255,0.45);
-}
-.oo-btn:hover { transform: scale(1.12); animation: none; border-color: var(--glow); box-shadow: 0 0 22px rgba(0,212,255,0.4); }
-.oo-btn:active { transform: scale(0.94); }
-@keyframes oOrbPulse {
-  0%   { box-shadow: 0 0 0 0 rgba(0,212,255,0.5); }
-  65%  { box-shadow: 0 0 0 14px rgba(0,212,255,0); }
-  100% { box-shadow: 0 0 0 0 rgba(0,212,255,0); }
-}
-.oo-icon {
-  font-family: 'Archivo Narrow', sans-serif; font-weight: 800;
-  font-size: 1.1rem; color: var(--glow);
-  letter-spacing: 0; line-height: 1;
-  transition: transform 0.3s var(--ov-ease); user-select: none;
-}
-.oo-btn.open .oo-icon { transform: rotate(45deg); }
-.oo-tooltip {
-  position: absolute; right: calc(100% + 10px); top: 50%;
-  transform: translateY(-50%); white-space: nowrap;
-  background: rgba(2,9,18,0.94); border: 1px solid var(--ov-border);
-  border-radius: 4px; padding: 5px 11px;
-  font-family: 'Courier Prime', monospace; font-size: 0.62rem;
-  letter-spacing: 0.07em; color: var(--t2);
-  pointer-events: none; opacity: 0; transition: opacity 0.18s;
-}
-#vyr-orb:hover .oo-tooltip { opacity: 1; }
-.oo-panel {
-  position: absolute; bottom: calc(100% + 10px); right: 0;
-  width: 215px;
-  background: rgba(2, 9, 18, 0.96); backdrop-filter: blur(24px);
-  border: 1px solid var(--ov-border); border-radius: 10px; padding: 5px;
-  opacity: 0; transform: scale(0.88) translateY(8px);
-  transform-origin: bottom right; pointer-events: none;
-  transition: opacity 0.22s var(--ov-ease), transform 0.22s var(--ov-ease);
-  box-shadow: 0 14px 44px rgba(0,0,0,0.55);
-}
-.oo-panel.open { opacity: 1; transform: scale(1) translateY(0); pointer-events: auto; }
-.oo-panel-header {
-  padding: 9px 13px 7px;
-  font-family: 'Courier Prime', monospace; font-size: 0.56rem;
-  letter-spacing: 0.2em; color: var(--glow); text-transform: uppercase;
-  border-bottom: 1px solid var(--ov-border); margin-bottom: 4px;
-}
-.oo-link {
-  display: flex; align-items: center; gap: 9px;
-  padding: 9px 13px; border-radius: 6px; color: var(--t2);
-  font-family: 'Archivo', sans-serif; font-size: 0.78rem;
-  transition: background 0.14s, color 0.14s; cursor: pointer; text-decoration: none;
-}
-.oo-link:hover { background: rgba(0,212,255,0.07); color: var(--t1); }
-.oo-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; background: var(--glow); box-shadow: 0 0 5px var(--glow); }
-.oo-link:nth-child(2) .oo-dot { background: var(--amber); box-shadow: 0 0 5px var(--amber); }
-.oo-link:nth-child(3) .oo-dot { background: var(--warn); box-shadow: 0 0 5px var(--warn); }
-.oo-link:nth-child(4) .oo-dot { background: var(--void3); box-shadow: 0 0 5px var(--void3); }
-
 /* ── 4. SIDE PANEL ───────────────────────────────────────── */
 #vyr-backdrop {
   position: fixed; inset: 0; z-index: 7500;
@@ -964,8 +896,6 @@ body::after{
   .ov-actions .ov-btn-primary,
   .ov-actions .ov-btn-ghost { width: 100%; justify-content: center; }
   #vyr-install { left: 10px; right: 10px; bottom: 10px; max-width: 100%; }
-  #vyr-orb { bottom: 18px; right: 18px; }
-  .oo-tooltip { display: none; }
   #vyr-scroll-notif { font-size: 0.6rem; padding: 8px 14px; }
   .nav-controls .nc-sz{display:none}
   .nc-sep{display:none}
@@ -1851,20 +1781,6 @@ html[data-tscale="1.22"] .nc-live .lbl{display:none;}
   <div class="oi-actions">
     <button class="oi-btn-install" id="oi-install-btn" onclick="oInstallTrigger()">Install</button>
     <button class="oi-btn-dismiss" onclick="oInstallDismiss()">Not now</button>
-  </div>
-</div>
-
-<!-- ── 3. FLOATING ORB ──────────────────────────────────────── -->
-<div id="vyr-orb" aria-label="Quick navigation">
-  <div class="oo-btn" id="oo-btn" onclick="oOrbToggle()" role="button" tabindex="0" aria-expanded="false" aria-controls="oo-panel">
-    <span class="oo-icon">⬟</span>
-  </div>
-  <span class="oo-tooltip">VYRION Index</span>
-  <div class="oo-panel" id="oo-panel" aria-hidden="true">
-    <div class="oo-panel-header">Quick Access</div>
-    <a class="oo-link" href="#terminal" onclick="oOrbClose()"><span class="oo-dot"></span> Investor Terminal</a>
-    <a class="oo-link" href="#boundary-board" onclick="oOrbClose()"><span class="oo-dot"></span> Boundary Signal Board</a>
-    <a class="oo-link" href="https://vyrion.earth/nexan.html" onclick="oOrbClose()"><span class="oo-dot"></span> Nexan Institute</a>
   </div>
 </div>
 
@@ -2862,7 +2778,6 @@ const oState = {
   welcomeSeen:      localStorage.getItem('vyr_welcome_seen') === 'true',
   installDismissed: localStorage.getItem('vyr_install_dismissed') === 'true',
   scrollNotifShown: false,
-  orbOpen:          false,
   panelOpen:        false,
   deferredPrompt:   null,
 };
@@ -2904,20 +2819,6 @@ async function oInstallTrigger() {
 function oInstallDismiss() { oState.installDismissed=true; localStorage.setItem('vyr_install_dismissed','true'); oInstallHide(); vyrLog('pwa_dismissed'); }
 function oInstallHide() { if(!oInstallEl)return; oInstallEl.classList.remove('visible'); oInstallEl.classList.add('dismissed'); setTimeout(()=>{oInstallEl.style.display='none';},600); }
 
-const oOrbBtn=document.getElementById('oo-btn'); const oOrbPanel=document.getElementById('oo-panel');
-function oOrbToggle() {
-  oState.orbOpen=!oState.orbOpen;
-  if(oOrbBtn){oOrbBtn.classList.toggle('open',oState.orbOpen);oOrbBtn.setAttribute('aria-expanded',String(oState.orbOpen));}
-  if(oOrbPanel){oOrbPanel.classList.toggle('open',oState.orbOpen);oOrbPanel.setAttribute('aria-hidden',String(!oState.orbOpen));}
-  vyrLog('orb_toggled',{open:oState.orbOpen});
-}
-function oOrbClose() {
-  oState.orbOpen=false;
-  if(oOrbBtn){oOrbBtn.classList.remove('open');oOrbBtn.setAttribute('aria-expanded','false');}
-  if(oOrbPanel){oOrbPanel.classList.remove('open');oOrbPanel.setAttribute('aria-hidden','true');}
-}
-if(oOrbBtn){oOrbBtn.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();oOrbToggle();}});}
-document.addEventListener('click',(e)=>{const orbEl=document.getElementById('vyr-orb');if(oState.orbOpen&&orbEl&&!orbEl.contains(e.target))oOrbClose();});
 
 const oPanelEl=document.getElementById('vyr-panel'); const oBackdropEl=document.getElementById('vyr-backdrop');
 function oPanelOpen() {
@@ -2933,7 +2834,7 @@ function oPanelClose() {
   document.body.style.overflow=''; vyrLog('panel_closed');
 }
 document.addEventListener('keydown',(e)=>{
-  if(e.key==='Escape'){if(oState.panelOpen)oPanelClose();if(oState.orbOpen)oOrbClose();if(!oState.welcomeSeen)oWelcomeDismiss('escape');}
+  if(e.key==='Escape'){if(oState.panelOpen)oPanelClose();if(!oState.welcomeSeen)oWelcomeDismiss('escape');}
 });
 
 const oScrollNotifEl=document.getElementById('vyr-scroll-notif');
