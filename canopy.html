@@ -432,6 +432,39 @@ html[data-tscale="1.22"] .nc-live .lbl{display:none;}
 }
 
 </style>
+<style>
+/* ── PLANETARY TONE ─────────────────────────────────────────────── */
+#pt-fab{position:fixed;bottom:1.3rem;right:1.3rem;z-index:800;width:46px;height:46px;border-radius:50%;cursor:pointer;border:1px solid rgba(0,212,255,.28);background:rgba(2,9,18,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:#67e8f9;font-size:1.15rem;display:flex;align-items:center;justify-content:center;transition:all .25s;box-shadow:0 12px 34px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06);font-family:system-ui,sans-serif;line-height:1}
+#pt-fab:hover{border-color:rgba(139,92,246,.65);box-shadow:0 12px 34px rgba(0,0,0,.5),0 0 26px rgba(139,92,246,.35);transform:translateY(-2px)}
+#pt-fab.on{border-color:rgba(139,92,246,.8);box-shadow:0 0 32px rgba(139,92,246,.5);color:#c4b5fd}
+#pt-fab svg{display:block}
+#pt-fab.on svg rect{transform-box:fill-box;transform-origin:50% 100%;animation:pt-eq 1.1s ease-in-out infinite}
+#pt-fab.on svg rect:nth-of-type(2){animation-delay:.12s}
+#pt-fab.on svg rect:nth-of-type(3){animation-delay:.24s}
+#pt-fab.on svg rect:nth-of-type(4){animation-delay:.36s}
+#pt-fab.on svg rect:nth-of-type(5){animation-delay:.48s}
+@keyframes pt-eq{0%,100%{transform:scaleY(.55)}50%{transform:scaleY(1)}}
+#pt-overlay{position:fixed;inset:0;z-index:950;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(2,5,12,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);opacity:0;pointer-events:none;transition:opacity .3s}
+#pt-overlay.open{opacity:1;pointer-events:auto}
+#pt-modal{width:100%;max-width:430px;text-align:center;background:rgba(10,20,38,.96);border:1px solid rgba(139,92,246,.3);border-radius:20px;padding:34px 28px 26px;box-shadow:0 30px 80px rgba(0,0,0,.6);position:relative;transform:translateY(12px) scale(.98);transition:transform .3s}
+#pt-overlay.open #pt-modal{transform:none}
+#pt-close{position:absolute;top:12px;right:14px;background:none;border:none;color:#7f8db3;font-size:1.3rem;cursor:pointer;line-height:1;padding:4px}
+#pt-close:hover{color:#dfe9ff}
+.pt-kicker{font-size:.62rem;letter-spacing:.32em;color:#7f8db3;margin-bottom:10px}
+.pt-title{font-size:1.35rem;font-weight:700;margin-bottom:8px;background:linear-gradient(100deg,#b9a7ff,#67e8f9);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pt-sub{font-size:.8rem;color:#93a1c7;line-height:1.55;margin-bottom:16px}
+.pt-status{min-height:1.2em;font-size:.66rem;letter-spacing:.2em;color:#67e8f9;margin-bottom:14px}
+#pt-play{width:88px;height:88px;border-radius:50%;border:1px solid rgba(0,212,255,.4);background:radial-gradient(circle at 35% 30%,#16294a,#080f22 70%);color:#dfe9ff;font-size:.66rem;letter-spacing:.2em;cursor:pointer;transition:box-shadow .4s,transform .15s;margin-bottom:18px;font-family:inherit}
+#pt-play:hover{box-shadow:0 0 30px rgba(0,212,255,.35)}
+#pt-play:active{transform:scale(.96)}
+#pt-play.on{box-shadow:0 0 40px rgba(139,92,246,.55);border-color:rgba(139,92,246,.65)}
+.pt-volrow{display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:16px;font-size:.68rem;letter-spacing:.14em;color:#7f8db3}
+.pt-volrow input[type=range]{width:150px;accent-color:#8b5cf6}
+.pt-recipe{font-size:.66rem;color:#66739a;line-height:1.7;border-top:1px solid rgba(255,255,255,.07);padding-top:12px}
+.pt-recipe b{color:#9fb0dd}
+.pt-note{margin-top:10px;font-size:.62rem;color:#525d80;line-height:1.6}
+
+</style>
 </head>
 <body>
 
@@ -1193,6 +1226,89 @@ function setScale(btn) {
 </script>
 <script>
 if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){});});}
+</script>
+<!-- PLANETARY TONE -->
+<button id="pt-fab" title="Planetary Tone — ambient" aria-label="Open planetary tone"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><defs><linearGradient id="pt-grad" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#67e8f9"/></linearGradient></defs><rect x="1" y="14" width="2.8" height="7" rx="1.4" fill="url(#pt-grad)"/><rect x="5.8" y="9" width="2.8" height="12" rx="1.4" fill="url(#pt-grad)"/><rect x="10.6" y="4" width="2.8" height="17" rx="1.4" fill="url(#pt-grad)"/><rect x="15.4" y="10" width="2.8" height="11" rx="1.4" fill="url(#pt-grad)"/><rect x="20.2" y="15" width="2.8" height="6" rx="1.4" fill="url(#pt-grad)"/></svg></button>
+<div id="pt-overlay" aria-hidden="true">
+  <div id="pt-modal" role="dialog" aria-modal="true" aria-labelledby="pt-title">
+    <button id="pt-close" aria-label="Close">×</button>
+    <div class="pt-kicker">VYRION · PLANETARY TONE</div>
+    <div class="pt-title" id="pt-title">Planetary Tone</div>
+    <p class="pt-sub">An ambient drone synthesized live in your browser — no audio files.<br>Inspired by Earth's Schumann resonance, the planet's measured electromagnetic heartbeat at <b style="color:#c9d6ff">7.83&nbsp;Hz</b>.</p>
+    <div class="pt-status" id="pt-status">SILENT</div>
+    <button id="pt-play" aria-pressed="false">PLAY</button>
+    <div class="pt-volrow"><span>VOLUME</span><input type="range" id="pt-vol" min="0" max="100" value="38" aria-label="Volume"></div>
+    <div class="pt-recipe"><b>Recipe</b> — 7.83 Hz is below human hearing, so this stacks its audible harmonics:<br>62.6 Hz · 94.0 Hz · 125.3 Hz · 156.6 Hz (×8 ×12 ×16 ×20)<br>slow 0.07 Hz &ldquo;breathing&rdquo; swell · ±0.4 Hz shimmer detune · soft low-pass</div>
+    <p class="pt-note">For calm focus while you explore. An aesthetic ambience, not a medical or healing claim.<br>Tap PLAY — browsers require one tap before any sound.</p>
+  </div>
+</div>
+<script>
+// ── PLANETARY TONE · Web Audio ambient drone ──────────────────────────
+(function(){
+  var fab=document.getElementById('pt-fab'),ov=document.getElementById('pt-overlay'),
+      play=document.getElementById('pt-play'),vol=document.getElementById('pt-vol'),
+      status=document.getElementById('pt-status'),close=document.getElementById('pt-close');
+  if(!fab||!ov||!play)return;
+  var ctx=null,master=null,nodes=[],playing=false;
+  var FUND=7.83;
+  var PARTIALS=[[8,.50],[12,.30],[16,.22],[20,.14]];
+  try{var sv=localStorage.getItem('vyr-tone-vol');if(sv!==null)vol.value=sv;}catch(e){}
+  function build(){
+    var AC=window.AudioContext||window.webkitAudioContext;
+    if(!AC)return false;
+    ctx=new AC();
+    master=ctx.createGain();master.gain.value=0;
+    var filt=ctx.createBiquadFilter();filt.type='lowpass';filt.frequency.value=520;filt.Q.value=.4;
+    master.connect(filt);filt.connect(ctx.destination);
+    var lfo=ctx.createOscillator();lfo.frequency.value=.07;
+    var lfoAmt=ctx.createGain();lfoAmt.gain.value=.35;
+    var base=ctx.createConstantSource();base.offset.value=.65;
+    lfo.connect(lfoAmt);lfoAmt.connect(master.gain);base.connect(master.gain);
+    lfo.start();base.start();nodes.push(lfo,base);
+    PARTIALS.forEach(function(p){
+      var f=FUND*p[0],g=p[1]/2;
+      var o1=ctx.createOscillator();o1.type='sine';o1.frequency.value=f;
+      var o2=ctx.createOscillator();o2.type='sine';o2.frequency.value=f+.4;
+      var g1=ctx.createGain();g1.gain.value=g;
+      var g2=ctx.createGain();g2.gain.value=g;
+      o1.connect(g1);g1.connect(master);o2.connect(g2);g2.connect(master);
+      o1.start();o2.start();nodes.push(o1,o2);
+    });
+    return true;
+  }
+  function fadeTo(v,t){
+    master.gain.cancelScheduledValues(ctx.currentTime);
+    master.gain.setValueAtTime(master.gain.value,ctx.currentTime);
+    master.gain.linearRampToValueAtTime(v,ctx.currentTime+t);
+  }
+  function setPlaying(p){
+    playing=p;
+    fab.classList.toggle('on',p);play.classList.toggle('on',p);
+    play.setAttribute('aria-pressed',p?'true':'false');
+    play.textContent=p?'STOP':'PLAY';
+    status.textContent=p?'RESONATING \u00b7 7.83 Hz':'SILENT';
+    fadeTo(p?(vol.value/100)*.5:.0001,p?2.5:1.2);
+    if(!p){var old=nodes;nodes=[];setTimeout(function(){
+      old.forEach(function(n){try{n.stop();}catch(e){}});
+      if(ctx){ctx.close();ctx=null;}
+    },1400);}
+  }
+  play.addEventListener('click',function(){
+    if(!ctx&&!build())return;
+    if(ctx.state==='suspended')ctx.resume();
+    setPlaying(!playing);
+  });
+  vol.addEventListener('input',function(){
+    try{localStorage.setItem('vyr-tone-vol',vol.value);}catch(e){}
+    if(playing&&master)fadeTo((vol.value/100)*.5,.2);
+  });
+  function openM(){ov.classList.add('open');ov.setAttribute('aria-hidden','false');}
+  function closeM(){ov.classList.remove('open');ov.setAttribute('aria-hidden','true');}
+  fab.addEventListener('click',openM);
+  close.addEventListener('click',closeM);
+  ov.addEventListener('click',function(e){if(e.target===ov)closeM();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+})();
 </script>
 </body>
 </html>
