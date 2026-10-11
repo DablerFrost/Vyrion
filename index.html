@@ -4734,7 +4734,7 @@ A Happy Little Science Playground - CLICK TO ENTER → </button>
           try {
             const s = localStorage.getItem('vc-scale');
             if (s && FONT_SCALES[s]) {
-              document.documentElement.style.fontSize = FONT_SCALES[s] + 'px';
+              document.documentElement.style.fontSize = FONT_SCALES[s] + 'px';document.documentElement.dataset.tscale=s;
               requestAnimationFrame(() => document.querySelectorAll('.nc-sz').forEach(b => b.classList.toggle('active', b.dataset.scale === s)));
             }
           } catch (e) {}
