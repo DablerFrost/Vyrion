@@ -259,10 +259,7 @@
     }
     .log-area::before { top: 0; background: linear-gradient(to bottom, rgba(2,8,17,.92), transparent); border-radius: 8px 8px 0 0; }
     .log-area::after { bottom: 0; background: linear-gradient(to top, rgba(2,8,17,.92), transparent); border-radius: 0 0 8px 8px; }
-    .term-ticker { display: flex; flex-direction: column; padding: 12px 14px; animation: termtick linear infinite; will-change: transform; }
-    .log-area:hover .term-ticker { animation-play-state: paused; }
-    @keyframes termtick { from { transform: translateY(0); } to { transform: translateY(calc(var(--shift, 240px) * -1)); } }
-    @media (prefers-reduced-motion: reduce) { .term-ticker { animation: none; } }
+    .term-ticker { display: flex; flex-direction: column; padding: 12px 14px; will-change: transform; }
     .log-line { font-family: var(--font-m); font-size: .72rem; line-height: 2.0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; animation: fadein .35s ease; padding: 0 2px; border-radius: 3px; display: flex; align-items: baseline; }
     .log-line:hover { background: rgba(0,212,255,.06); }
     @keyframes fadein { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
@@ -829,12 +826,31 @@ const FEED = [
   {d:'03-18', s:'VYRION',     m:'Public launch — vyrion.earth goes live.'},
 ];
 
-// ── TERMINAL TICKERS · true vertical tickers ───────────────
-// Each well holds a seamless looping track (entries ×2). The well is
-// always full of flowing text at every text scale — no blank space.
+// ── TERMINAL TICKERS · JS-driven, measurement-proof ────────
+// One shared rAF loop scrolls every well at a constant px/sec.
+// Copy counts come from a sanity-bounded line probe (never blind
+// scrollHeight trust), each track is guaranteed >= 2.5x its well,
+// and the wrap distance is exactly one copy -> seamless, always full.
+const _tickers = [];
+const _reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let _tickLast = 0;
+function _tickLoop(t) {
+  if (!_tickLast) _tickLast = t;
+  const dt = Math.min((t - _tickLast) / 1000, 0.1);
+  _tickLast = t;
+  if (!_reduceMotion) {
+    for (const tk of _tickers) {
+      if (tk.paused || tk.shift <= 0) continue;
+      tk.pos = (tk.pos + 22 * dt) % tk.shift;
+      tk.track.style.transform = 'translateY(' + (-tk.pos).toFixed(1) + 'px)';
+    }
+  }
+  requestAnimationFrame(_tickLoop);
+}
 function buildTicker(id) {
   const el = document.getElementById('log-' + id);
-  if (!el || !LOGS[id]) return;
+  const entries = LOGS[id];
+  if (!el || !entries || !entries.length) return;
   const track = document.createElement('div');
   track.className = 'term-ticker';
   const make = obj => {
@@ -843,20 +859,36 @@ function buildTicker(id) {
     d.innerHTML = `<span class="sdot ${obj.c || ''}"></span><span class="dt">[${obj.d || '—'}]</span><span class="lt">${obj.t}</span>`;
     return d;
   };
-  LOGS[id].forEach(o => track.appendChild(make(o)));
+  const tk = { el, track, entries, pos: Math.random() * 300, shift: 0, paused: false };
+  const fill = () => {
+    track.innerHTML = '';
+    const probe = make(entries[0]);
+    track.appendChild(probe);
+    let lh = probe.getBoundingClientRect().height || 0;
+    track.innerHTML = '';
+    if (!(lh > 8 && lh < 80)) lh = 24;
+    const wellH = el.clientHeight || 240;
+    const copyH = lh * entries.length;
+    const copies = Math.max(2, Math.ceil((wellH * 2.5) / copyH) + 1);
+    for (let i = 0; i < copies; i++) entries.forEach(o => track.appendChild(make(o)));
+    tk.shift = copyH;
+    tk.pos = tk.pos % copyH;
+  };
+  tk.fill = fill;
   el.appendChild(track);
-  requestAnimationFrame(() => {
-    const copyH = track.scrollHeight;
-    const wellH = el.clientHeight || 200;
-    // Repeat until the track is at least 2× the well height — the well
-    // can never show blank space, at any text scale.
-    const copies = Math.max(2, Math.ceil((wellH * 2) / Math.max(copyH, 1)) + 1);
-    for (let i = 1; i < copies; i++) LOGS[id].forEach(o => track.appendChild(make(o)));
-    track.style.setProperty('--shift', copyH + 'px');
-    track.style.animationDuration = (copyH / 26).toFixed(1) + 's';
-  });
+  el.addEventListener('mouseenter', () => { tk.paused = true; });
+  el.addEventListener('mouseleave', () => { tk.paused = false; });
+  _tickers.push(tk);
+  requestAnimationFrame(fill);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fill);
 }
 Object.keys(LOGS).forEach(buildTicker);
+requestAnimationFrame(_tickLoop);
+let _tkRz = null;
+window.addEventListener('resize', () => {
+  clearTimeout(_tkRz);
+  _tkRz = setTimeout(() => _tickers.forEach(tk => tk.fill()), 200);
+});
 
 // ── ACTIVITY RECORD ──────────────────────────────────────
 const feedEl = document.getElementById('board-feed');
