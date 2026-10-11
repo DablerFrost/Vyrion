@@ -789,6 +789,7 @@ const FEED = [
 // ── NODE DETAIL HUBS · data, cards, modal ────────────────
 const NODES = {
   '01': { num:'01', name:'Tyler Frost', role:'FOUNDER', open:false,
+    avatar:'tyler-avatar.webp', avatarAlt:'Tyler Frost',
     desc:'Founder of VYRION · building planetary intelligence from Hilo, Hawai\u02bbi.',
     bio:[
       'Tyler Frost founded VYRION and launched vyrion.earth in March 2026 — a planetary intelligence platform measuring Earth\u2019s health across 8 systems and 48 indicators, with a single canonical score: 41.2.',
@@ -815,6 +816,7 @@ const NODES = {
       ['03-18','VYRION public launch · vyrion.earth live','ok'],
     ]},
   '02': { num:'02', name:'Samuel Chidubem', role:'NODE 001 · NIGERIA', open:false,
+    avatar:'samuel-avatar.webp', avatarAlt:'Samuel Chidubem',
     desc:'First signed node lead · Youth Energy Transition, Nigeria / regional scope.',
     bio:[
       'Samuel Chidubem is VYRION\u2019s first signed node lead (Node 001), covering Nigeria with a regional lens and a focus on youth energy transition.',
@@ -827,7 +829,7 @@ const NODES = {
       ['10-10','Addendum v1.1 review-only · v1 operative',''],
       ['10-10','Scope: Nigeria / regional',''],
     ]},
-  '03': { num:'03', name:'Open Seat', role:'NODE 002 · OPEN', open:true, nodeId:'002',
+  '03': { num:'03', name:'Open Seat', avatar:'vibrant-avatar.webp', avatarAlt:'Vi\u2019brant', role:'NODE 002 · OPEN', open:true, nodeId:'002',
     desc:'Regional node lead · scope TBA · accepting candidates.',
     bio:[
       'Node 002 is an open regional seat in the VYRION node network.',
@@ -840,7 +842,7 @@ const NODES = {
       ['\u2014','Publishes quarterly node reports',''],
       ['\u2014','Coordinates with SHIELD live feeds',''],
     ]},
-  '04': { num:'04', name:'Open Seat', role:'NODE 003 · OPEN', open:true, nodeId:'003',
+  '04': { num:'04', name:'Open Seat', avatar:'vibrant-avatar.webp', avatarAlt:'Vi\u2019brant', role:'NODE 003 · OPEN', open:true, nodeId:'003',
     desc:'Regional node lead · scope TBA · accepting candidates.',
     bio:[
       'Node 003 is an open regional seat in the VYRION node network.',
@@ -853,7 +855,7 @@ const NODES = {
       ['\u2014','Publishes quarterly node reports',''],
       ['\u2014','Coordinates with SHIELD live feeds',''],
     ]},
-  '05': { num:'05', name:'Open Seat', role:'NODE 004 · OPEN', open:true, nodeId:'004',
+  '05': { num:'05', name:'Open Seat', avatar:'vibrant-avatar.webp', avatarAlt:'Vi\u2019brant', role:'NODE 004 · OPEN', open:true, nodeId:'004',
     desc:'Regional node lead · scope TBA · accepting candidates.',
     bio:[
       'Node 004 is an open regional seat in the VYRION node network.',
@@ -866,7 +868,7 @@ const NODES = {
       ['\u2014','Publishes quarterly node reports',''],
       ['\u2014','Coordinates with SHIELD live feeds',''],
     ]},
-  '06': { num:'06', name:'Open Seat', role:'NODE 005 · OPEN', open:true, nodeId:'005',
+  '06': { num:'06', name:'Open Seat', avatar:'vibrant-avatar.webp', avatarAlt:'Vi\u2019brant', role:'NODE 005 · OPEN', open:true, nodeId:'005',
     desc:'Regional node lead · scope TBA · accepting candidates.',
     bio:[
       'Node 005 is an open regional seat in the VYRION node network.',
@@ -915,9 +917,7 @@ function openHub(id) {
   const n = NODES[id];
   if (!n) return;
   hubLastFocus = document.activeElement;
-  const avatar = n.open
-    ? `<div class="hub-avatar seat">${n.num}</div>`
-    : `<img class="hub-avatar" src="vibrant-avatar.webp" alt="Vi\u2019brant">`;
+  const avatar = `<img class="hub-avatar" src="${n.avatar || 'vibrant-avatar.webp'}" alt="${n.avatarAlt || 'Vi\u2019brant'}">`;
   hubHead.innerHTML =
     `${avatar}<div class="hub-title"><h3 id="hub-name">${n.name}</h3>` +
     `<div class="hub-role${n.open ? ' open' : ''}">${n.role}</div></div>` +
