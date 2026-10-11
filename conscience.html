@@ -2860,14 +2860,12 @@ function oWelcomeInit() {
 function oWelcomeDismiss(action) {
   if (!oWelcomeEl) return;
   oState.welcomeSeen = true;
-  localStorage.setItem('vyr_welcome_seen','true');
+  try { localStorage.setItem('vyr_welcome_seen','true'); } catch(e) {}
   oWelcomeEl.classList.add('dismissed');
   vyrLog('welcome_dismissed',{action});
   setTimeout(() => { oWelcomeEl.style.display='none'; oWelcomeEl.removeEventListener('keydown',oWelcomeTrapFocus); }, 560);
-  if (action==='enter') {
-    setTimeout(() => { window.location.href = 'https://vyrion.earth/conscience'; }, 500);
-  } else if (action==='learn') {
-    setTimeout(() => { window.location.href = 'https://github.com/DablerFrost/Vyrion/blob/main/docs/CONSCIENCE-METHODOLOGY.md'; }, 500);
+  if (action==='learn') {
+    window.open('https://github.com/DablerFrost/Vyrion/blob/main/docs/CONSCIENCE-METHODOLOGY.md','_blank','noopener');
   }
 }
 function oWelcomeTrapFocus(e) { if (e.key==='Escape') oWelcomeDismiss('escape'); }
