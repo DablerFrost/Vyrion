@@ -1576,18 +1576,23 @@ shmMap.on('load', ()=>{
           ? ['interpolate',['linear'],['coalesce',['get','mag'],4.5], 4.5,11, 6,18, 7,28, 8,40]
           : 13 } }, 'shm-lyr-'+key);
     shmMap.on('click','shm-lyr-'+key, e=>shmShowPopup(e.features[0]));
+    shmMap.on('click','shm-halo-'+key, e=>shmShowPopup(e.features[0]));
     shmMap.on('mouseenter','shm-lyr-'+key, ()=> shmMap.getCanvas().style.cursor='pointer');
+    shmMap.on('mouseenter','shm-halo-'+key, ()=> shmMap.getCanvas().style.cursor='pointer');
     shmMap.on('mouseleave','shm-lyr-'+key, ()=> shmMap.getCanvas().style.cursor='');
+    shmMap.on('mouseleave','shm-halo-'+key, ()=> shmMap.getCanvas().style.cursor='');
   });
   shmBuildPanel(); shmBuildLegend();
   window.addEventListener('shield:feeds', shmOnPageFeeds);   // page polls → map re-renders, no duplicate fetch
   Object.keys(SHM_LAYERS).forEach(shmScheduleLayer);
 });
 
+let shmPopup = null;
 function shmShowPopup(f){
   const p = f.properties, L = SHM_LAYERS[p.layer];
   const when = p.time ? new Date(p.time).toUTCString() : 'time unknown';
-  new maplibregl.Popup({ closeButton:false, offset:12 })
+  if (shmPopup) shmPopup.remove();
+  shmPopup = new maplibregl.Popup({ closeButton:false, offset:12 })
     .setLngLat(f.geometry.coordinates.slice(0,2))
     .setHTML(
       '<div class="shm-pop-title" style="color:'+L.color+'">'+shmEscape(p.title)+'</div>'+
