@@ -619,10 +619,10 @@
         .intro-panel-left  { padding:1rem 1.2rem; order:0; min-height:0; max-height:76px; min-width:0; }
         .intro-center { order:1; padding:6vh 1rem 1.2rem; min-width:0; max-width:100%; justify-content:flex-start; }
         .intro-panel-right {
-          position:absolute; left:0; right:0; top:62%; z-index:4;
+          position:absolute; right:1.2rem; bottom:3.4rem; left:auto; top:auto; z-index:4;
           background:none; border:none; max-height:none; min-height:0; min-width:0;
-          display:flex; flex-direction:column; align-items:center; text-align:center;
-          padding:0 1.5rem; gap:.35rem; pointer-events:none;
+          display:flex; flex-direction:column; align-items:flex-end; text-align:right;
+          padding:0; gap:.3rem; pointer-events:none;
           animation:iFade .9s ease .3s forwards;
         }
         .intro-panel-right > div { display:contents; }
@@ -3204,7 +3204,10 @@
         }
 
         .btn-explainarium {
-          width: 100%
+          width: 100%;
+          white-space: normal;
+          font-size: .78rem;
+          line-height: 1.55;
         }
       }
 
