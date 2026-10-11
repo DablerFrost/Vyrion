@@ -610,6 +610,15 @@
     <button id="sk-btn" title="Synthekai — Mycelium Bloom">♪</button>
   </div>
 
+  <!-- NODE DETAIL HUB -->
+  <div class="hub-overlay" id="hub-overlay" aria-hidden="true">
+    <div class="hub-modal" id="hub-modal" role="dialog" aria-modal="true" aria-labelledby="hub-name">
+      <button class="hub-close" id="hub-close" aria-label="Close detail hub">×</button>
+      <div class="hub-head" id="hub-head"></div>
+      <div class="hub-body" id="hub-body"></div>
+      <div class="hub-foot" id="hub-foot"></div>
+    </div>
+
 <script>
 // ── CANVAS GRID ──────────────────────────────────────────
 const cvs = document.getElementById('canvas-bg');
@@ -1063,14 +1072,6 @@ function skToggle() {
 document.getElementById('sk-btn').addEventListener('click', skToggle);
 </script>
 
-  <!-- NODE DETAIL HUB -->
-  <div class="hub-overlay" id="hub-overlay" aria-hidden="true">
-    <div class="hub-modal" id="hub-modal" role="dialog" aria-modal="true" aria-labelledby="hub-name">
-      <button class="hub-close" id="hub-close" aria-label="Close detail hub">×</button>
-      <div class="hub-head" id="hub-head"></div>
-      <div class="hub-body" id="hub-body"></div>
-      <div class="hub-foot" id="hub-foot"></div>
-    </div>
   </div>
 </body>
 </html>
