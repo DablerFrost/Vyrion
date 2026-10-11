@@ -2834,6 +2834,87 @@ window.addEventListener('hashchange', checkHash);
 })();
 
 </script>
+
+<script>
+/* ── VYRION ONBOARDING LAYER v1.0 ───────────────────────────────────── */
+const vyrLog = (event, data = {}) => {
+  console.log(`%c[VYRION Analytics] ${event}`,'color:#00D4FF;font-family:monospace;font-size:11px',{ts:new Date().toISOString(),...data});
+};
+
+const oState = {
+  welcomeSeen:      localStorage.getItem('vyr_welcome_seen') === 'true',
+  installDismissed: localStorage.getItem('vyr_install_dismissed') === 'true',
+  scrollNotifShown: false,
+  panelOpen:        false,
+  deferredPrompt:   null,
+};
+
+const oWelcomeEl = document.getElementById('vyr-welcome');
+function oWelcomeInit() {
+  if (!oWelcomeEl) return;
+  if (oState.welcomeSeen) { oWelcomeEl.style.display='none'; vyrLog('welcome_skipped',{reason:'returning_visitor'}); return; }
+  vyrLog('welcome_shown',{firstVisit:true});
+  oWelcomeEl.addEventListener('keydown', oWelcomeTrapFocus);
+  setTimeout(() => { if (!oState.welcomeSeen) oWelcomeDismiss('timeout'); }, 90000);
+}
+function oWelcomeDismiss(action) {
+  if (!oWelcomeEl) return;
+  oState.welcomeSeen = true;
+  localStorage.setItem('vyr_welcome_seen','true');
+  oWelcomeEl.classList.add('dismissed');
+  vyrLog('welcome_dismissed',{action});
+  setTimeout(() => { oWelcomeEl.style.display='none'; oWelcomeEl.removeEventListener('keydown',oWelcomeTrapFocus); }, 560);
+  if (action==='enter') {
+    setTimeout(() => { window.location.href = 'https://vyrion.earth/conscience'; }, 500);
+  } else if (action==='learn') {
+    setTimeout(() => { window.location.href = 'https://github.com/DablerFrost/Vyrion/blob/main/docs/CONSCIENCE-METHODOLOGY.md'; }, 500);
+  }
+}
+function oWelcomeTrapFocus(e) { if (e.key==='Escape') oWelcomeDismiss('escape'); }
+
+const oInstallEl = document.getElementById('vyr-install');
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault(); oState.deferredPrompt=e; vyrLog('pwa_available');
+  if (!oState.installDismissed) { const delay=oState.welcomeSeen?3500:7000; setTimeout(()=>{if(oInstallEl)oInstallEl.classList.add('visible');vyrLog('pwa_prompt_shown');},delay); }
+});
+window.addEventListener('appinstalled', () => { vyrLog('pwa_installed'); oInstallHide(); });
+async function oInstallTrigger() {
+  if (!oState.deferredPrompt) return; vyrLog('pwa_install_clicked');
+  oState.deferredPrompt.prompt(); const {outcome}=await oState.deferredPrompt.userChoice;
+  vyrLog('pwa_outcome',{outcome}); oState.deferredPrompt=null; oInstallDismiss();
+}
+function oInstallDismiss() { oState.installDismissed=true; localStorage.setItem('vyr_install_dismissed','true'); oInstallHide(); vyrLog('pwa_dismissed'); }
+function oInstallHide() { if(!oInstallEl)return; oInstallEl.classList.remove('visible'); oInstallEl.classList.add('dismissed'); setTimeout(()=>{oInstallEl.style.display='none';},600); }
+
+
+const oPanelEl=document.getElementById('vyr-panel'); const oBackdropEl=document.getElementById('vyr-backdrop');
+function oPanelOpen() {
+  oState.panelOpen=true;
+  if(oPanelEl){oPanelEl.classList.add('open');oPanelEl.setAttribute('aria-hidden','false');}
+  if(oBackdropEl)oBackdropEl.classList.add('open');
+  document.body.style.overflow='hidden'; vyrLog('panel_opened');
+}
+function oPanelClose() {
+  oState.panelOpen=false;
+  if(oPanelEl){oPanelEl.classList.remove('open');oPanelEl.setAttribute('aria-hidden','true');}
+  if(oBackdropEl)oBackdropEl.classList.remove('open');
+  document.body.style.overflow=''; vyrLog('panel_closed');
+}
+document.addEventListener('keydown',(e)=>{
+  if(e.key==='Escape'){if(oState.panelOpen)oPanelClose();if(!oState.welcomeSeen)oWelcomeDismiss('escape');}
+});
+
+const oScrollNotifEl=document.getElementById('vyr-scroll-notif');
+function oScrollCheck() {
+  if(oState.scrollNotifShown)return;
+  const docH=document.documentElement.scrollHeight-window.innerHeight;
+  const pct=docH>0?(window.scrollY/docH)*100:0;
+  if(pct>=40){oState.scrollNotifShown=true;if(oScrollNotifEl)oScrollNotifEl.classList.add('show');vyrLog('scroll_notif_shown',{scrollPct:Math.round(pct)});setTimeout(()=>{if(oScrollNotifEl)oScrollNotifEl.classList.remove('show');},3800);}
+}
+window.addEventListener('scroll',oScrollCheck,{passive:true});
+
+(function oInit(){oWelcomeInit();vyrLog('onboarding_layer_init',{welcomeSeen:oState.welcomeSeen,installDismissed:oState.installDismissed});})();
+</script>
 <script>
 (function(){var b=document.getElementById('nav-burger'),l=document.getElementById('nav-links');if(!b||!l)return;function s(o){l.classList.toggle('open',o);b.setAttribute('aria-expanded',String(o));b.setAttribute('aria-label',o?'Close navigation menu':'Open navigation menu')}b.addEventListener('click',function(){s(!l.classList.contains('open'))});l.addEventListener('click',function(e){if(e.target.closest('a'))s(false)});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open'))s(false)})})();
 </script>
