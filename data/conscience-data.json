@@ -1,384 +1,1678 @@
 {
-  "meta": {
-    "generated": "2026-05-05T03:44:15.387Z",
-    "generated_date": "2026-05-05",
-    "script_version": "1.0",
-    "runtime_ms": 1180,
-    "sources": [
-      "NOAA Global Monitoring Laboratory (CO₂)",
-      "SEC EDGAR Public API (corporate filings)",
-      "Open-Meteo ERA5 Reanalysis (temperature)",
-      "World Bank Open Data (global emissions)",
-      "NOAA NCEI (global temperature anomaly)"
-    ]
+ "meta": {
+  "generated": "2026-10-11T21:22:45Z",
+  "generated_date": "2026-10-11",
+  "coverage": "36 companies \u00b7 CONSCIENCE v2.9 (expanded 11 \u2192 36 on 2026-06-05)",
+  "bands": {
+   "breach": 16,
+   "warning": 15,
+   "on_track": 5
   },
-  "atmosphere": {
-    "co2": {
-      "ppm": 433.95,
-      "date": "2026-05-01",
-      "source": "NOAA Global Monitoring Laboratory — Mauna Loa Observatory",
-      "url": "https://gml.noaa.gov/ccgg/trends/",
-      "retrieved": "2026-05-05T03:44:14.664Z"
-    },
-    "global_temp_anomaly": null,
-    "global_temp_era5": {
-      "sample_avg_celsius": 18.73,
-      "anomaly_vs_proxy": 10.23,
-      "sample_coords": [
-        "N.Europe",
-        "N.America",
-        "S.America",
-        "SE.Asia"
-      ],
-      "period": "2026-04-26 to 2026-05-03",
-      "baseline_note": "Proxy baseline from ERA5 sample mean — not IPCC global mean. Supplementary signal only.",
-      "source": "Open-Meteo ERA5 Reanalysis (ECMWF)",
-      "url": "https://open-meteo.com/",
-      "license": "CC BY 4.0",
-      "retrieved": "2026-05-05T03:44:15.387Z"
-    }
+  "mean_score": 35.7,
+  "sabin_total_active": 135,
+  "sources": [
+   "NOAA Global Monitoring Laboratory (CO\u2082)",
+   "SEC EDGAR Public API (corporate filings)",
+   "Open-Meteo ERA5 Reanalysis (temperature)",
+   "World Bank Open Data (global emissions)",
+   "NOAA NCEI (global temperature anomaly)"
+  ],
+  "note": "companies[] matches the dataset rendered on vyrion.earth/conscience-data; v1.0 11-company EDGAR filing snapshot (2026-05-05) superseded and preserved in git history."
+ },
+ "atmosphere": {
+  "co2": {
+   "ppm": 433.95,
+   "date": "2026-05-01",
+   "source": "NOAA Global Monitoring Laboratory \u2014 Mauna Loa Observatory",
+   "url": "https://gml.noaa.gov/ccgg/trends/",
+   "retrieved": "2026-05-05T03:44:14.664Z"
   },
-  "global_emissions": null,
-  "vyrion_index": {
-    "score": 41.2,
-    "uncertainty": 1.8,
-    "day": 12,
-    "date": "2026-03-29",
-    "note": "Updated manually by Tyler Frost / DablerFrost each morning"
-  },
-  "companies": {
-    "exxon": {
-      "name": "ExxonMobil",
-      "ticker": "XOM",
-      "cik": "34088",
-      "edgar": {
-        "ticker": "XOM",
-        "cik": "34088",
-        "annual_filing": {
-          "form": "10-K",
-          "date": "2026-02-18",
-          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=34088&type=10-K&dateb=&owner=include&count=5"
-        },
-        "latest_8k": {
-          "date": "2026-05-04",
-          "items": "5.02"
-        },
-        "count_8k_90d": 5,
-        "recent_8k_items": [
-          {
-            "date": "2026-05-04",
-            "items": "5.02"
-          },
-          {
-            "date": "2026-05-01",
-            "items": "2.02,7.01"
-          },
-          {
-            "date": "2026-04-08",
-            "items": "7.01"
-          },
-          {
-            "date": "2026-03-31",
-            "items": "8.01,9.01"
-          },
-          {
-            "date": "2026-02-20",
-            "items": "5.02"
-          }
-        ],
-        "retrieved": "2026-05-05T03:44:14.610Z"
-      }
-    },
-    "bp": {
-      "name": "BP",
-      "ticker": "BP",
-      "cik": "313807",
-      "edgar": {
-        "ticker": "BP",
-        "cik": "313807",
-        "annual_filing": {
-          "form": "20-F",
-          "date": "2026-03-06",
-          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=313807&type=20-F&dateb=&owner=include&count=5"
-        },
-        "latest_8k": null,
-        "count_8k_90d": 0,
-        "recent_8k_items": [],
-        "retrieved": "2026-05-05T03:44:14.542Z"
-      }
-    },
-    "shell": {
-      "name": "Shell",
-      "ticker": "SHEL",
-      "cik": "806517",
-      "edgar": {
-        "ticker": "SHEL",
-        "cik": "806517",
-        "annual_filing": {
-          "form": "10-K",
-          "date": "2025-03-24",
-          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=806517&type=10-K&dateb=&owner=include&count=5"
-        },
-        "latest_8k": {
-          "date": "2024-12-10",
-          "items": "8.01"
-        },
-        "count_8k_90d": 0,
-        "recent_8k_items": [],
-        "retrieved": "2026-05-05T03:44:14.569Z"
-      }
-    },
-    "delta": {
-      "name": "Delta Air Lines",
-      "ticker": "DAL",
-      "cik": "27904",
-      "edgar": {
-        "ticker": "DAL",
-        "cik": "27904",
-        "annual_filing": {
-          "form": "10-K",
-          "date": "2026-02-11",
-          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=27904&type=10-K&dateb=&owner=include&count=5"
-        },
-        "latest_8k": {
-          "date": "2026-04-08",
-          "items": "2.02,9.01"
-        },
-        "count_8k_90d": 4,
-        "recent_8k_items": [
-          {
-            "date": "2026-04-08",
-            "items": "2.02,9.01"
-          },
-          {
-            "date": "2026-03-17",
-            "items": "7.01,9.01"
-          },
-          {
-            "date": "2026-03-05",
-            "items": "5.02,9.01"
-          },
-          {
-            "date": "2026-02-13",
-            "items": "5.02"
-          }
-        ],
-        "retrieved": "2026-05-05T03:44:14.504Z"
-      }
-    },
-    "starbucks": {
-      "name": "Starbucks",
-      "ticker": "SBUX",
-      "cik": "829224",
-      "edgar": {
-        "ticker": "SBUX",
-        "cik": "829224",
-        "annual_filing": {
-          "form": "10-K",
-          "date": "2025-11-14",
-          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=829224&type=10-K&dateb=&owner=include&count=5"
-        },
-        "latest_8k": {
-          "date": "2026-04-28",
-          "items": "2.02,9.01"
-        },
-        "count_8k_90d": 3,
-        "recent_8k_items": [
-          {
-            "date": "2026-04-28",
-            "items": "2.02,9.01"
-          },
-          {
-            "date": "2026-04-02",
-            "items": "7.01,9.01"
-          },
-          {
-            "date": "2026-03-30",
-            "items": "5.07"
-          }
-        ],
-        "retrieved": "2026-05-05T03:44:14.525Z"
-      }
-    },
-    "walmart": {
-      "name": "Walmart",
-      "ticker": "WMT",
-      "cik": "104169",
-      "edgar": {
-        "ticker": "WMT",
-        "cik": "104169",
-        "annual_filing": {
-          "form": "10-K",
-          "date": "2026-03-13",
-          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=104169&type=10-K&dateb=&owner=include&count=5"
-        },
-        "latest_8k": {
-          "date": "2026-04-30",
-          "items": "8.01,9.01"
-        },
-        "count_8k_90d": 4,
-        "recent_8k_items": [
-          {
-            "date": "2026-04-30",
-            "items": "8.01,9.01"
-          },
-          {
-            "date": "2026-03-27",
-            "items": "8.01"
-          },
-          {
-            "date": "2026-03-13",
-            "items": "8.01"
-          },
-          {
-            "date": "2026-02-19",
-            "items": "2.02,9.01"
-          }
-        ],
-        "retrieved": "2026-05-05T03:44:14.547Z"
-      }
-    },
-    "meta": {
-      "name": "Meta",
-      "ticker": "META",
-      "cik": "1326801",
-      "edgar": {
-        "ticker": "META",
-        "cik": "1326801",
-        "annual_filing": {
-          "form": "10-K",
-          "date": "2026-01-29",
-          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1326801&type=10-K&dateb=&owner=include&count=5"
-        },
-        "latest_8k": {
-          "date": "2026-05-04",
-          "items": "8.01,9.01"
-        },
-        "count_8k_90d": 3,
-        "recent_8k_items": [
-          {
-            "date": "2026-05-04",
-            "items": "8.01,9.01"
-          },
-          {
-            "date": "2026-04-29",
-            "items": "2.02,9.01"
-          },
-          {
-            "date": "2026-04-14",
-            "items": "5.02"
-          }
-        ],
-        "retrieved": "2026-05-05T03:44:14.505Z"
-      }
-    },
-    "amazon": {
-      "name": "Amazon",
-      "ticker": "AMZN",
-      "cik": "1018724",
-      "edgar": {
-        "ticker": "AMZN",
-        "cik": "1018724",
-        "annual_filing": {
-          "form": "10-K",
-          "date": "2026-02-06",
-          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1018724&type=10-K&dateb=&owner=include&count=5"
-        },
-        "latest_8k": {
-          "date": "2026-04-29",
-          "items": "2.02,9.01"
-        },
-        "count_8k_90d": 7,
-        "recent_8k_items": [
-          {
-            "date": "2026-04-29",
-            "items": "2.02,9.01"
-          },
-          {
-            "date": "2026-04-14",
-            "items": "7.01,9.01"
-          },
-          {
-            "date": "2026-04-09",
-            "items": "7.01,9.01"
-          },
-          {
-            "date": "2026-03-16",
-            "items": "8.01,9.01"
-          },
-          {
-            "date": "2026-03-13",
-            "items": "8.01,9.01"
-          }
-        ],
-        "retrieved": "2026-05-05T03:44:14.549Z"
-      }
-    },
-    "microsoft": {
-      "name": "Microsoft",
-      "ticker": "MSFT",
-      "cik": "789019",
-      "edgar": {
-        "ticker": "MSFT",
-        "cik": "789019",
-        "annual_filing": {
-          "form": "10-K",
-          "date": "2025-07-30",
-          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=789019&type=10-K&dateb=&owner=include&count=5"
-        },
-        "latest_8k": {
-          "date": "2026-04-29",
-          "items": "2.02,9.01"
-        },
-        "count_8k_90d": 1,
-        "recent_8k_items": [
-          {
-            "date": "2026-04-29",
-            "items": "2.02,9.01"
-          }
-        ],
-        "retrieved": "2026-05-05T03:44:14.646Z"
-      }
-    },
-    "unilever": {
-      "name": "Unilever",
-      "ticker": "ULVR",
-      "cik": "49519",
-      "edgar": null
-    },
-    "apple": {
-      "name": "Apple",
-      "ticker": "AAPL",
-      "cik": "320193",
-      "edgar": {
-        "ticker": "AAPL",
-        "cik": "320193",
-        "annual_filing": {
-          "form": "10-K",
-          "date": "2025-10-31",
-          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=320193&type=10-K&dateb=&owner=include&count=5"
-        },
-        "latest_8k": {
-          "date": "2026-04-30",
-          "items": "2.02,9.01"
-        },
-        "count_8k_90d": 3,
-        "recent_8k_items": [
-          {
-            "date": "2026-04-30",
-            "items": "2.02,9.01"
-          },
-          {
-            "date": "2026-04-20",
-            "items": "5.02"
-          },
-          {
-            "date": "2026-02-24",
-            "items": "5.07,9.01"
-          }
-        ],
-        "retrieved": "2026-05-05T03:44:14.508Z"
-      }
-    }
+  "global_temp_anomaly": null,
+  "global_temp_era5": {
+   "sample_avg_celsius": 18.73,
+   "anomaly_vs_proxy": 10.23,
+   "sample_coords": [
+    "N.Europe",
+    "N.America",
+    "S.America",
+    "SE.Asia"
+   ],
+   "period": "2026-04-26 to 2026-05-03",
+   "baseline_note": "Proxy baseline from ERA5 sample mean \u2014 not IPCC global mean. Supplementary signal only.",
+   "source": "Open-Meteo ERA5 Reanalysis (ECMWF)",
+   "url": "https://open-meteo.com/",
+   "license": "CC BY 4.0",
+   "retrieved": "2026-05-05T03:44:15.387Z"
   }
+ },
+ "global_emissions": null,
+ "vyrion_index": {
+  "score": 41.2,
+  "uncertainty": 1.8,
+  "day": 12,
+  "date": "2026-03-29",
+  "note": "Updated manually by Tyler Frost / DablerFrost each morning"
+ },
+ "companies": [
+  {
+   "id": "exxon",
+   "name": "ExxonMobil",
+   "ticker": "XOM",
+   "sector": "Oil & Gas",
+   "cik": "0000034088",
+   "score": 8,
+   "band": "breach",
+   "cdp": {
+    "grade": "D"
+   },
+   "influencemap": {
+    "grade": "F"
+   },
+   "sbti": {
+    "status": "Not committed"
+   },
+   "sabin_center": {
+    "active_cases": 27
+   },
+   "tpi": {
+    "level": "Level 2/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000034088.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 3,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 4,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 0,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": 1,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "bp",
+   "name": "BP",
+   "ticker": "BP",
+   "sector": "Oil & Gas",
+   "cik": "0000313807",
+   "score": 11,
+   "band": "breach",
+   "cdp": {
+    "grade": "C"
+   },
+   "influencemap": {
+    "grade": "D-"
+   },
+   "sbti": {
+    "status": "Not committed"
+   },
+   "sabin_center": {
+    "active_cases": 12
+   },
+   "tpi": {
+    "level": "Level 3/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000313807.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 2,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 10,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 2,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": -3,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "shell",
+   "name": "Shell",
+   "ticker": "SHEL",
+   "sector": "Oil & Gas",
+   "cik": "0000806517",
+   "score": 19,
+   "band": "breach",
+   "cdp": {
+    "grade": "C"
+   },
+   "influencemap": {
+    "grade": "D"
+   },
+   "sbti": {
+    "status": "Not committed"
+   },
+   "sabin_center": {
+    "active_cases": 19
+   },
+   "tpi": {
+    "level": "Level 3/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000806517.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 8,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 10,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 3,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": -2,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "delta",
+   "name": "Delta Air Lines",
+   "ticker": "DAL",
+   "sector": "Aviation",
+   "cik": "0000027904",
+   "score": 14,
+   "band": "breach",
+   "cdp": {
+    "grade": "C"
+   },
+   "influencemap": {
+    "grade": "D"
+   },
+   "sbti": {
+    "status": "Not committed"
+   },
+   "sabin_center": {
+    "active_cases": 3
+   },
+   "tpi": {
+    "level": "Level 2/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000027904.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 4,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 10,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 3,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": -3,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "starbucks",
+   "name": "Starbucks",
+   "ticker": "SBUX",
+   "sector": "Food & Beverage",
+   "cik": "0000829224",
+   "score": 29,
+   "band": "breach",
+   "cdp": {
+    "grade": "B"
+   },
+   "influencemap": {
+    "grade": "C"
+   },
+   "sbti": {
+    "status": "Committed"
+   },
+   "sabin_center": {
+    "active_cases": 1
+   },
+   "tpi": {
+    "level": "Level 3/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000829224.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 14,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 18,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 9,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": -12,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "walmart",
+   "name": "Walmart",
+   "ticker": "WMT",
+   "sector": "Retail",
+   "cik": "0000104169",
+   "score": 38,
+   "band": "warning",
+   "cdp": {
+    "grade": "B"
+   },
+   "influencemap": {
+    "grade": "C"
+   },
+   "sbti": {
+    "status": "Approved (ops)"
+   },
+   "sabin_center": {
+    "active_cases": 2
+   },
+   "tpi": {
+    "level": "Level 3/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000104169.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 18,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 18,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 9,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": -7,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "meta",
+   "name": "Meta",
+   "ticker": "META",
+   "sector": "Technology",
+   "cik": "0001326801",
+   "score": 43,
+   "band": "warning",
+   "cdp": {
+    "grade": "B"
+   },
+   "influencemap": {
+    "grade": "C-"
+   },
+   "sbti": {
+    "status": "Committed"
+   },
+   "sabin_center": {
+    "active_cases": 1
+   },
+   "tpi": {
+    "level": "Level 3/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0001326801.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 20,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 18,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 7,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": -2,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "amazon",
+   "name": "Amazon",
+   "ticker": "AMZN",
+   "sector": "Tech / Retail",
+   "cik": "0001018724",
+   "score": 47,
+   "band": "warning",
+   "cdp": {
+    "grade": "B"
+   },
+   "influencemap": {
+    "grade": "C"
+   },
+   "sbti": {
+    "status": "Committed"
+   },
+   "sabin_center": {
+    "active_cases": 3
+   },
+   "tpi": {
+    "level": "Level 3/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0001018724.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 20,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 18,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 9,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": 0,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "microsoft",
+   "name": "Microsoft",
+   "ticker": "MSFT",
+   "sector": "Technology",
+   "cik": "0000789019",
+   "score": 61,
+   "band": "on_track",
+   "cdp": {
+    "grade": "A-"
+   },
+   "influencemap": {
+    "grade": "B-"
+   },
+   "sbti": {
+    "status": "Approved 1.5\u00b0C"
+   },
+   "sabin_center": {
+    "active_cases": 1
+   },
+   "tpi": {
+    "level": "Level 4/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000789019.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 26,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 22,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 13,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": 0,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "unilever",
+   "name": "Unilever",
+   "ticker": "ULVR",
+   "sector": "Consumer Goods",
+   "cik": "0000049519",
+   "score": 72,
+   "band": "on_track",
+   "cdp": {
+    "grade": "A-"
+   },
+   "influencemap": {
+    "grade": "B"
+   },
+   "sbti": {
+    "status": "Approved 1.5\u00b0C"
+   },
+   "sabin_center": {
+    "active_cases": 1
+   },
+   "tpi": {
+    "level": "Level 4/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000049519.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 28,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 22,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 16,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": 6,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "apple",
+   "name": "Apple",
+   "ticker": "AAPL",
+   "sector": "Technology",
+   "cik": "0000320193",
+   "score": 84,
+   "band": "on_track",
+   "cdp": {
+    "grade": "A"
+   },
+   "influencemap": {
+    "grade": "B+"
+   },
+   "sbti": {
+    "status": "Approved 1.5\u00b0C"
+   },
+   "sabin_center": {
+    "active_cases": 0
+   },
+   "tpi": {
+    "level": "Level 5/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000320193.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 30,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 25,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 19,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": 10,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "chevron",
+   "name": "Chevron",
+   "ticker": "CVX",
+   "sector": "Oil & Gas",
+   "cik": "0000093410",
+   "score": 8,
+   "band": "breach",
+   "cdp": {
+    "grade": "D"
+   },
+   "influencemap": {
+    "grade": "F"
+   },
+   "sbti": {
+    "status": "Not committed"
+   },
+   "sabin_center": {
+    "active_cases": 8
+   },
+   "tpi": {
+    "level": "Level 2/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000093410.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 3,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 4,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 0,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": 1,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "totalenergies",
+   "name": "TotalEnergies",
+   "ticker": "TTE",
+   "sector": "Oil & Gas",
+   "cik": "0000879764",
+   "score": 20,
+   "band": "breach",
+   "cdp": {
+    "grade": "C"
+   },
+   "influencemap": {
+    "grade": "D"
+   },
+   "sbti": {
+    "status": "Not committed"
+   },
+   "sabin_center": {
+    "active_cases": 5
+   },
+   "tpi": {
+    "level": "Level 3/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000879764.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 8,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 10,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 3,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": -1,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "conocophillips",
+   "name": "ConocoPhillips",
+   "ticker": "COP",
+   "sector": "Oil & Gas",
+   "cik": "0001163165",
+   "score": 13,
+   "band": "breach",
+   "cdp": {
+    "grade": "C"
+   },
+   "influencemap": {
+    "grade": "D-"
+   },
+   "sbti": {
+    "status": "Not committed"
+   },
+   "sabin_center": {
+    "active_cases": 4
+   },
+   "tpi": {
+    "level": "Level 2/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0001163165.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 4,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 10,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 2,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": -3,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "glencore",
+   "name": "Glencore",
+   "ticker": "GLEN",
+   "sector": "Mining",
+   "cik": "0000000N/A",
+   "score": 10,
+   "band": "breach",
+   "cdp": {
+    "grade": "D"
+   },
+   "influencemap": {
+    "grade": "D"
+   },
+   "sbti": {
+    "status": "Not committed"
+   },
+   "sabin_center": {
+    "active_cases": 6
+   },
+   "tpi": {
+    "level": "Level 2/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000000N/A.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 3,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 4,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 3,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": 0,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "toyota",
+   "name": "Toyota",
+   "ticker": "TM",
+   "sector": "Automotive",
+   "cik": "0001094517",
+   "score": 14,
+   "band": "breach",
+   "cdp": {
+    "grade": "C"
+   },
+   "influencemap": {
+    "grade": "D"
+   },
+   "sbti": {
+    "status": "Not committed"
+   },
+   "sabin_center": {
+    "active_cases": 2
+   },
+   "tpi": {
+    "level": "Level 3/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0001094517.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 4,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 10,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 3,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": -3,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "jpmorgan",
+   "name": "JPMorgan Chase",
+   "ticker": "JPM",
+   "sector": "Finance",
+   "cik": "0000019617",
+   "score": 11,
+   "band": "breach",
+   "cdp": {
+    "grade": "D"
+   },
+   "influencemap": {
+    "grade": "D"
+   },
+   "sbti": {
+    "status": "Not committed"
+   },
+   "sabin_center": {
+    "active_cases": 3
+   },
+   "tpi": {
+    "level": "Level 2/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000019617.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 3,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 4,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 4,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": 0,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "united",
+   "name": "United Airlines",
+   "ticker": "UAL",
+   "sector": "Aviation",
+   "cik": "0000100517",
+   "score": 15,
+   "band": "breach",
+   "cdp": {
+    "grade": "C"
+   },
+   "influencemap": {
+    "grade": "D"
+   },
+   "sbti": {
+    "status": "Not committed"
+   },
+   "sabin_center": {
+    "active_cases": 2
+   },
+   "tpi": {
+    "level": "Level 2/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000100517.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 4,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 10,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 4,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": -3,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "duke",
+   "name": "Duke Energy",
+   "ticker": "DUK",
+   "sector": "Utilities",
+   "cik": "0001326160",
+   "score": 24,
+   "band": "breach",
+   "cdp": {
+    "grade": "C"
+   },
+   "influencemap": {
+    "grade": "C-"
+   },
+   "sbti": {
+    "status": "Not committed"
+   },
+   "sabin_center": {
+    "active_cases": 3
+   },
+   "tpi": {
+    "level": "Level 3/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0001326160.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 9,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 10,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 7,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": -2,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "basf",
+   "name": "BASF",
+   "ticker": "BAS",
+   "sector": "Chemicals",
+   "cik": "0000000N/A",
+   "score": 27,
+   "band": "breach",
+   "cdp": {
+    "grade": "C"
+   },
+   "influencemap": {
+    "grade": "C-"
+   },
+   "sbti": {
+    "status": "Not committed"
+   },
+   "sabin_center": {
+    "active_cases": 1
+   },
+   "tpi": {
+    "level": "Level 3/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000000N/A.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 10,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 10,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 7,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": 0,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "blackrock",
+   "name": "BlackRock",
+   "ticker": "BLK",
+   "sector": "Finance",
+   "cik": "0001364742",
+   "score": 29,
+   "band": "breach",
+   "cdp": {
+    "grade": "B"
+   },
+   "influencemap": {
+    "grade": "C-"
+   },
+   "sbti": {
+    "status": "Not committed"
+   },
+   "sabin_center": {
+    "active_cases": 4
+   },
+   "tpi": {
+    "level": "Level 3/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0001364742.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 10,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 18,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 7,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": -6,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "cocacola",
+   "name": "Coca-Cola",
+   "ticker": "KO",
+   "sector": "Food & Beverage",
+   "cik": "0000021344",
+   "score": 30,
+   "band": "breach",
+   "cdp": {
+    "grade": "B"
+   },
+   "influencemap": {
+    "grade": "C-"
+   },
+   "sbti": {
+    "status": "Committed"
+   },
+   "sabin_center": {
+    "active_cases": 3
+   },
+   "tpi": {
+    "level": "Level 3/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000021344.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 11,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 18,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 7,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": -6,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "volkswagen",
+   "name": "Volkswagen",
+   "ticker": "VOW3",
+   "sector": "Automotive",
+   "cik": "0000000N/A",
+   "score": 31,
+   "band": "warning",
+   "cdp": {
+    "grade": "B"
+   },
+   "influencemap": {
+    "grade": "C-"
+   },
+   "sbti": {
+    "status": "Committed"
+   },
+   "sabin_center": {
+    "active_cases": 5
+   },
+   "tpi": {
+    "level": "Level 3/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000000N/A.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 12,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 18,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 7,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": -6,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "ford",
+   "name": "Ford",
+   "ticker": "F",
+   "sector": "Automotive",
+   "cik": "0000037996",
+   "score": 34,
+   "band": "warning",
+   "cdp": {
+    "grade": "B"
+   },
+   "influencemap": {
+    "grade": "C"
+   },
+   "sbti": {
+    "status": "Committed"
+   },
+   "sabin_center": {
+    "active_cases": 2
+   },
+   "tpi": {
+    "level": "Level 3/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000037996.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 13,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 18,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 9,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": -6,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "nestle",
+   "name": "Nestl\u00e9",
+   "ticker": "NESN",
+   "sector": "Food & Beverage",
+   "cik": "0000792990",
+   "score": 33,
+   "band": "warning",
+   "cdp": {
+    "grade": "B"
+   },
+   "influencemap": {
+    "grade": "C-"
+   },
+   "sbti": {
+    "status": "Committed"
+   },
+   "sabin_center": {
+    "active_cases": 4
+   },
+   "tpi": {
+    "level": "Level 3/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000792990.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 14,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 18,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 7,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": -6,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "hm",
+   "name": "H&M Group",
+   "ticker": "HMB",
+   "sector": "Apparel",
+   "cik": "0000000N/A",
+   "score": 36,
+   "band": "warning",
+   "cdp": {
+    "grade": "B"
+   },
+   "influencemap": {
+    "grade": "C-"
+   },
+   "sbti": {
+    "status": "Committed"
+   },
+   "sabin_center": {
+    "active_cases": 3
+   },
+   "tpi": {
+    "level": "Level 3/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000000N/A.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 14,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 18,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 7,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": -3,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "riotinto",
+   "name": "Rio Tinto",
+   "ticker": "RIO",
+   "sector": "Mining",
+   "cik": "0000863064",
+   "score": 38,
+   "band": "warning",
+   "cdp": {
+    "grade": "B"
+   },
+   "influencemap": {
+    "grade": "C"
+   },
+   "sbti": {
+    "status": "Committed"
+   },
+   "sabin_center": {
+    "active_cases": 2
+   },
+   "tpi": {
+    "level": "Level 3/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000863064.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 15,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 18,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 9,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": -4,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "bhp",
+   "name": "BHP",
+   "ticker": "BHP",
+   "sector": "Mining",
+   "cik": "0000811809",
+   "score": 41,
+   "band": "warning",
+   "cdp": {
+    "grade": "B"
+   },
+   "influencemap": {
+    "grade": "C"
+   },
+   "sbti": {
+    "status": "Committed"
+   },
+   "sabin_center": {
+    "active_cases": 2
+   },
+   "tpi": {
+    "level": "Level 4/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000811809.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 16,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 18,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 9,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": -2,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "pg",
+   "name": "Procter & Gamble",
+   "ticker": "PG",
+   "sector": "Consumer Goods",
+   "cik": "0000080424",
+   "score": 40,
+   "band": "warning",
+   "cdp": {
+    "grade": "B"
+   },
+   "influencemap": {
+    "grade": "C"
+   },
+   "sbti": {
+    "status": "Committed"
+   },
+   "sabin_center": {
+    "active_cases": 2
+   },
+   "tpi": {
+    "level": "Level 3/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000080424.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 16,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 18,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 9,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": -3,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "nike",
+   "name": "Nike",
+   "ticker": "NKE",
+   "sector": "Consumer Goods",
+   "cik": "0000320187",
+   "score": 46,
+   "band": "warning",
+   "cdp": {
+    "grade": "B"
+   },
+   "influencemap": {
+    "grade": "C"
+   },
+   "sbti": {
+    "status": "Committed"
+   },
+   "sabin_center": {
+    "active_cases": 1
+   },
+   "tpi": {
+    "level": "Level 3/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000320187.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 18,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 18,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 9,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": 1,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "maersk",
+   "name": "Maersk",
+   "ticker": "MAERSK-B",
+   "sector": "Shipping",
+   "cik": "0000000N/A",
+   "score": 54,
+   "band": "warning",
+   "cdp": {
+    "grade": "B"
+   },
+   "influencemap": {
+    "grade": "B-"
+   },
+   "sbti": {
+    "status": "Approved 1.5\u00b0C"
+   },
+   "sabin_center": {
+    "active_cases": 0
+   },
+   "tpi": {
+    "level": "Level 4/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000000N/A.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 22,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 18,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 14,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": 0,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "alphabet",
+   "name": "Alphabet",
+   "ticker": "GOOGL",
+   "sector": "Technology",
+   "cik": "0001652044",
+   "score": 60,
+   "band": "warning",
+   "cdp": {
+    "grade": "A-"
+   },
+   "influencemap": {
+    "grade": "B"
+   },
+   "sbti": {
+    "status": "Approved 1.5\u00b0C"
+   },
+   "sabin_center": {
+    "active_cases": 1
+   },
+   "tpi": {
+    "level": "Level 4/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0001652044.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 24,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 22,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 16,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": -2,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "jnj",
+   "name": "Johnson & Johnson",
+   "ticker": "JNJ",
+   "sector": "Healthcare",
+   "cik": "0000200406",
+   "score": 57,
+   "band": "warning",
+   "cdp": {
+    "grade": "A-"
+   },
+   "influencemap": {
+    "grade": "B-"
+   },
+   "sbti": {
+    "status": "Approved 1.5\u00b0C"
+   },
+   "sabin_center": {
+    "active_cases": 1
+   },
+   "tpi": {
+    "level": "Level 4/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000200406.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 22,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 22,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 14,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": -1,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "cbre",
+   "name": "CBRE Group",
+   "ticker": "CBRE",
+   "sector": "Real Estate",
+   "cik": "0001138118",
+   "score": 55,
+   "band": "warning",
+   "cdp": {
+    "grade": "A-"
+   },
+   "influencemap": {
+    "grade": "B-"
+   },
+   "sbti": {
+    "status": "Approved 1.5\u00b0C"
+   },
+   "sabin_center": {
+    "active_cases": 1
+   },
+   "tpi": {
+    "level": "Level 4/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0001138118.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 21,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 22,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 13,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": -1,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "nextera",
+   "name": "NextEra Energy",
+   "ticker": "NEE",
+   "sector": "Utilities",
+   "cik": "0000753308",
+   "score": 67,
+   "band": "on_track",
+   "cdp": {
+    "grade": "B"
+   },
+   "influencemap": {
+    "grade": "B-"
+   },
+   "sbti": {
+    "status": "Approved 1.5\u00b0C"
+   },
+   "sabin_center": {
+    "active_cases": 0
+   },
+   "tpi": {
+    "level": "Level 4/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0000753308.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 25,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 18,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 14,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": 10,
+     "max": 20
+    }
+   }
+  },
+  {
+   "id": "salesforce",
+   "name": "Salesforce",
+   "ticker": "CRM",
+   "sector": "Technology",
+   "cik": "0001108524",
+   "score": 66,
+   "band": "on_track",
+   "cdp": {
+    "grade": "A-"
+   },
+   "influencemap": {
+    "grade": "B"
+   },
+   "sbti": {
+    "status": "Approved 1.5\u00b0C"
+   },
+   "sabin_center": {
+    "active_cases": 0
+   },
+   "tpi": {
+    "level": "Level 4/5"
+   },
+   "edgar": {
+    "cik_url": "https://data.sec.gov/submissions/CIK0001108524.json"
+   },
+   "factors": {
+    "pledge_quality": {
+     "points": 24,
+     "max": 30
+    },
+    "cdp_performance": {
+     "points": 22,
+     "max": 25
+    },
+    "lobbying_alignment": {
+     "points": 16,
+     "max": 25
+    },
+    "legal_exposure": {
+     "points": 4,
+     "max": 20
+    }
+   }
+  }
+ ]
 }
