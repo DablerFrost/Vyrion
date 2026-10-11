@@ -246,8 +246,8 @@
     .m-name.dim { color: var(--t3); font-style: italic; font-weight: 600; }
     .m-role { font-family: var(--font-d); font-size: .62rem; font-weight: 600; letter-spacing: .14em; color: var(--t3); margin-left: auto; }
     .m-role.open { color: var(--amber); }
-    .log-area { flex: 1; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; }
-    .log-line { font-family: var(--font-m); font-size: .72rem; line-height: 1.8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; animation: fadein .35s ease; padding: 0 2px; border-radius: 3px; }
+    .log-area { flex: 1; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-start; }
+    .log-line { font-family: var(--font-m); font-size: .66rem; line-height: 1.7; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; animation: fadein .35s ease; padding: 0 2px; border-radius: 3px; }
     .log-line:hover { background: rgba(0,212,255,.05); white-space: normal; overflow: visible; }
     @keyframes fadein { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
     .log-line .dt { color: var(--t4); font-size: .66rem; margin-right: 6px; }
@@ -739,22 +739,22 @@ BANDS.forEach(b => {
 // ── SEAT LOGS · recorded VYRION activity, every entry real and dated ──
 const LOGS = {
   '01':[
-    {d:'10-10',t:'Mission Control v2 · glass pod · verified data only',c:'ok'},
+    {d:'10-10',t:'Mission Control v2 · glass pod · verified',c:'ok'},
     {d:'10-10',t:'CONSCIENCE truth pass · 111 → 36 verified companies',c:'ok'},
-    {d:'10-10',t:'THE RECORD · 11 issues · immutable ledger',c:''},
-    {d:'10-10',t:'Node program live · first lead signed (Nigeria)',c:'ok'},
+    {d:'10-10',t:'THE RECORD · 11 issues · immutable',c:''},
+    {d:'10-10',t:'Node program live · first lead signed',c:'ok'},
     {d:'10-09',t:'EIN issued · single-member disregarded entity',c:'ok'},
-    {d:'10-09',t:'Operating agreement drafted · attorney review pending',c:''},
-    {d:'10-09',t:'PBC → LLC rebrand sweep · zero PBC references remain',c:'ok'},
-    {d:'10-08',t:'VYRION LLC filed · Hawaii DCCA · ref 001293005',c:'ok'},
-    {d:'10-08',t:'SHIELD map v2 · live USGS + EONET · zero dup requests',c:'ok'},
+    {d:'10-09',t:'Operating agreement drafted · review pending',c:''},
+    {d:'10-09',t:'PBC → LLC rebrand · sweep complete',c:'ok'},
+    {d:'10-08',t:'VYRION LLC filed · DCCA ref 001293005',c:'ok'},
+    {d:'10-08',t:'SHIELD map v2 · USGS + EONET live',c:'ok'},
     {d:'10-08',t:'Module consolidation · loop + pulse kept · fakes removed',c:'ok'},
     {d:'10-08',t:'Planetary Index 41.2 canonical · ±1.8',c:'ok'},
     {d:'10-08',t:'GET license · Hawaii Tax Online · letter pending',c:'warn'},
-    {d:'06-05',t:'CONSCIENCE v2.9 · 11 → 36 companies · 9 new sectors',c:'ok'},
+    {d:'06-05',t:'CONSCIENCE v2.9 · 11 → 36 · 9 new sectors',c:'ok'},
     {d:'05-05',t:'Methodology v1.1 · full 9-tier CDP scale',c:'ok'},
-    {d:'04-24',t:'Platform v2.8 · band counts corrected · ARCHIVE live',c:'ok'},
-    {d:'03-30',t:'Platform v2.7 · Investor Terminal · Stress Tester',c:'ok'},
+    {d:'04-24',t:'Platform v2.8 · bands corrected · ARCHIVE live',c:'ok'},
+    {d:'03-30',t:'Platform v2.7 · Investor Terminal · Stress Test',c:'ok'},
     {d:'03-18',t:'CONSCIENCE v1.0 · 11-company baseline scored',c:'ok'},
     {d:'03-18',t:'VYRION public launch · vyrion.earth live',c:'ok'},
   ],
@@ -766,23 +766,23 @@ const LOGS = {
     {d:'10-10',t:'Scope: Nigeria / regional',c:''},
   ],
   '03':[
-    {d:'—',t:'OPEN SEAT · Node 002 · accepting candidates',c:'warn'},
-    {d:'—',t:'Regional leads document climate + infrastructure issues',c:''},
+    {d:'—',t:'OPEN SEAT · Node 002 · accepting',c:'warn'},
+    {d:'—',t:'Leads document climate + infrastructure',c:''},
     {d:'—',t:'Use the apply link below ↓',c:''},
   ],
   '04':[
-    {d:'—',t:'OPEN SEAT · Node 003 · accepting candidates',c:'warn'},
-    {d:'—',t:'Regional leads document climate + infrastructure issues',c:''},
+    {d:'—',t:'OPEN SEAT · Node 003 · accepting',c:'warn'},
+    {d:'—',t:'Leads document climate + infrastructure',c:''},
     {d:'—',t:'Use the apply link below ↓',c:''},
   ],
   '05':[
-    {d:'—',t:'OPEN SEAT · Node 004 · accepting candidates',c:'warn'},
-    {d:'—',t:'Regional leads document climate + infrastructure issues',c:''},
+    {d:'—',t:'OPEN SEAT · Node 004 · accepting',c:'warn'},
+    {d:'—',t:'Leads document climate + infrastructure',c:''},
     {d:'—',t:'Use the apply link below ↓',c:''},
   ],
   '06':[
-    {d:'—',t:'OPEN SEAT · Node 005 · accepting candidates',c:'warn'},
-    {d:'—',t:'Regional leads document climate + infrastructure issues',c:''},
+    {d:'—',t:'OPEN SEAT · Node 005 · accepting',c:'warn'},
+    {d:'—',t:'Leads document climate + infrastructure',c:''},
     {d:'—',t:'Use the apply link below ↓',c:''},
   ],
 };
@@ -800,7 +800,7 @@ const FEED = [
 
 // ── LOGGER ───────────────────────────────────────────────
 const ptrs = {};
-const MAX_LINES = 7;
+const MAX_LINES = 10;
 function addLine(id, obj) {
   const el = document.getElementById('log-' + id);
   if (!el) return;
@@ -811,7 +811,7 @@ function addLine(id, obj) {
   while (el.children.length > MAX_LINES) el.removeChild(el.firstChild);
 }
 Object.keys(LOGS).forEach(id => {
-  const init = Math.min(4, LOGS[id].length);
+  const init = Math.min(9, LOGS[id].length);
   for (let i = 0; i < init; i++) addLine(id, LOGS[id][i]);
   ptrs[id] = init;
 });
