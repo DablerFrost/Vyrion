@@ -3415,6 +3415,25 @@ html[data-tscale="1.22"] .nc-live .lbl{display:none;}
 #pt-fab.on svg rect:nth-of-type(4){animation-delay:.36s}
 #pt-fab.on svg rect:nth-of-type(5){animation-delay:.48s}
 @keyframes pt-eq{0%,100%{transform:scaleY(.55)}50%{transform:scaleY(1)}}
+#pt-overlay{position:fixed;inset:0;z-index:950;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(2,5,12,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);opacity:0;pointer-events:none;transition:opacity .3s}
+#pt-overlay.open{opacity:1;pointer-events:auto}
+#pt-modal{width:100%;max-width:430px;text-align:center;background:rgba(10,20,38,.96);border:1px solid rgba(139,92,246,.3);border-radius:20px;padding:34px 28px 26px;box-shadow:0 30px 80px rgba(0,0,0,.6);position:relative;transform:translateY(12px) scale(.98);transition:transform .3s}
+#pt-overlay.open #pt-modal{transform:none}
+#pt-close{position:absolute;top:12px;right:14px;background:none;border:none;color:#7f8db3;font-size:1.3rem;cursor:pointer;line-height:1;padding:4px}
+#pt-close:hover{color:#dfe9ff}
+.pt-kicker{font-size:.62rem;letter-spacing:.32em;color:#7f8db3;margin-bottom:10px}
+.pt-title{font-size:1.35rem;font-weight:700;margin-bottom:8px;background:linear-gradient(100deg,#b9a7ff,#67e8f9);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pt-sub{font-size:.8rem;color:#93a1c7;line-height:1.55;margin-bottom:16px}
+.pt-status{min-height:1.2em;font-size:.66rem;letter-spacing:.2em;color:#67e8f9;margin-bottom:14px}
+#pt-play{width:88px;height:88px;border-radius:50%;border:1px solid rgba(0,212,255,.4);background:radial-gradient(circle at 35% 30%,#16294a,#080f22 70%);color:#dfe9ff;font-size:.66rem;letter-spacing:.2em;cursor:pointer;transition:box-shadow .4s,transform .15s;margin-bottom:18px;font-family:inherit}
+#pt-play:hover{box-shadow:0 0 30px rgba(0,212,255,.35)}
+#pt-play:active{transform:scale(.96)}
+#pt-play.on{box-shadow:0 0 40px rgba(139,92,246,.55);border-color:rgba(139,92,246,.65)}
+.pt-volrow{display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:16px;font-size:.68rem;letter-spacing:.14em;color:#7f8db3}
+.pt-volrow input[type=range]{width:150px;accent-color:#8b5cf6}
+.pt-recipe{font-size:.66rem;color:#66739a;line-height:1.7;border-top:1px solid rgba(255,255,255,.07);padding-top:12px}
+.pt-recipe b{color:#9fb0dd}
+.pt-note{margin-top:10px;font-size:.62rem;color:#525d80;line-height:1.6}
 
 </style>
   </head>
@@ -4892,6 +4911,15 @@ if('serviceWorker' in navigator){window.addEventListener('load',function(){navig
     <button id="pt-close" aria-label="Close">×</button>
     <div class="pt-kicker">VYRION · PLANETARY TONE</div>
     <div class="pt-title" id="pt-title">Planetary Tone</div>
+<p class="pt-sub">An ambient drone synthesized live in your browser — no audio files.<br>Inspired by Earth's Schumann resonance, the planet's measured electromagnetic heartbeat at <b style="color:#c9d6ff">7.83&nbsp;Hz</b>.</p>
+    <div class="pt-status" id="pt-status">SILENT</div>
+    <button id="pt-play" aria-pressed="false">PLAY</button>
+    <div class="pt-volrow"><span>VOLUME</span><input type="range" id="pt-vol" min="0" max="100" value="38" aria-label="Volume"></div>
+    <div class="pt-recipe"><b>Recipe</b> — 7.83 Hz is below human hearing, so this stacks its audible harmonics:<br>62.6 Hz · 94.0 Hz · 125.3 Hz · 156.6 Hz (×8 ×12 ×16 ×20)<br>slow 0.07 Hz &ldquo;breathing&rdquo; swell · ±0.4 Hz shimmer detune · soft low-pass</div>
+    <p class="pt-note">For calm focus while you explore. An aesthetic ambience, not a medical or healing claim.<br>Tap PLAY — browsers require one tap before any sound.</p>
+  
+  </div>
+</div>
 <script>
 // ── PLANETARY TONE · Web Audio ambient drone ──────────────────────────
 (function(){
