@@ -2895,29 +2895,29 @@ html[data-tscale="1.22"] .nc-live .lbl{display:none;}
       async function fetchEPAECHO() {
         // Query EPA ECHO for active RCRA hazardous waste handlers
         const url = `https://echo.epa.gov/api/qid?output=JSON&p_act=Y&p_med=R&responseset=2&qcolumns=1,2,3`;
+        let total = null;
         try {
           const r = await fetch(url, {
             signal: AbortSignal.timeout(6000)
           });
           if (!r.ok) throw new Error();
           const d = await r.json();
-          const total = d?.Results?.TotalRecords || d?.results?.total;
-          if (total) {
-            const k = (parseInt(total) / 1000).toFixed(0) + 'k';
-            setEl('lb-epa', k);
-            setEl('dc-epa-sites', k);
-            setEl('dc-epa-sub', `${total.toLocaleString()} active handlers · RCRA`);
-            setEl('l-epa-ts', new Date().toISOString().replace('T', ' ').slice(0, 16) + ' UTC');
-          }
-          return total;
-        } catch (e) {
-          // Fallback to known figure
+          total = d?.Results?.TotalRecords || d?.results?.total;
+        } catch (e) { /* fall through to baseline below */ }
+        const ts = new Date().toISOString().replace('T', ' ').slice(0, 16) + ' UTC';
+        if (total) {
+          const k = (parseInt(total) / 1000).toFixed(0) + 'k';
+          setEl('lb-epa', k);
+          setEl('dc-epa-sites', k);
+          setEl('dc-epa-sub', `${parseInt(total).toLocaleString()} active handlers · RCRA`);
+        } else {
+          // Baseline: API unreachable or response shape changed — never leave "fetching…"
           setEl('lb-epa', '~47k');
           setEl('dc-epa-sites', '~47k');
           setEl('dc-epa-sub', 'EPA ECHO · known handler baseline');
-          setEl('l-epa-ts', new Date().toISOString().replace('T', ' ').slice(0, 16) + ' UTC');
-          return null;
         }
+        setEl('l-epa-ts', ts);
+        return total;
       }
       // ── WORLD BANK MSW PER CAPITA ────────────────────────────────────────────
       async function fetchWorldBankMSW() {
