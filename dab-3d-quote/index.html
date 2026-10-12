@@ -130,6 +130,7 @@
     }
     .chip:hover, .chip:focus-visible { border-color: var(--accent); outline: none; }
     .chip.active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+    .chip.reset { margin-left: auto; color: var(--accent-deep); }
     .layout {
       display: grid;
       grid-template-columns: minmax(0, 1.42fr) minmax(310px, .88fr);
@@ -331,6 +332,7 @@
       .actions { grid-template-columns: 1fr; }
       .preset-row { align-items: flex-start; }
       .preset-label { width: 100%; }
+      .chip.reset { margin-left: 0; }
     }
     @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
   </style>
@@ -343,11 +345,12 @@
       <p>Turn slicer stats into a client-ready quote using your real material, machine, power, labor, risk, and markup rates.</p>
     </header>
 
-    <div class="preset-row" aria-label="Quote presets">
-      <span class="preset-label">Current 15-plate job:</span>
-      <button class="chip" type="button" data-discount="0">Full rate</button>
+    <div class="preset-row" aria-label="Quote controls">
+      <span class="preset-label">Quick pricing:</span>
+      <button class="chip active" type="button" data-discount="0">Full rate</button>
       <button class="chip" type="button" data-discount="15">15% courtesy</button>
-      <button class="chip active" type="button" data-discount="50">50% goodwill</button>
+      <button class="chip" type="button" data-discount="50">50% goodwill</button>
+      <button class="chip reset" id="resetBtn" type="button">Reset job to zero</button>
     </div>
 
     <div class="layout">
@@ -355,12 +358,12 @@
         <div class="section">
           <div class="section-head">
             <h2>Print job</h2>
-            <span class="section-note">Preloaded from the 15-plate PETG slice</span>
+            <span class="section-note">Start with your current slicer stats</span>
           </div>
           <div class="grid">
             <div class="field full">
               <label for="jobName">Job description</label>
-              <input id="jobName" type="text" value="Custom PETG panel set — 15 plates" />
+              <input id="jobName" type="text" value="" placeholder="e.g. Custom PETG panel set" />
             </div>
             <div class="field">
               <label for="material">Material</label>
@@ -374,19 +377,19 @@
             </div>
             <div class="field">
               <label for="grams">Material used</label>
-              <div class="input-wrap"><input id="grams" class="with-unit" type="number" min="0" step="1" value="3405" inputmode="decimal" /><span class="unit">grams</span></div>
+              <div class="input-wrap"><input id="grams" class="with-unit" type="number" min="0" step="1" value="0" inputmode="decimal" /><span class="unit">grams</span></div>
             </div>
             <div class="field">
               <label for="hours">Print time</label>
-              <div class="input-wrap"><input id="hours" class="with-unit" type="number" min="0" step="1" value="92" inputmode="numeric" /><span class="unit">hours</span></div>
+              <div class="input-wrap"><input id="hours" class="with-unit" type="number" min="0" step="1" value="0" inputmode="numeric" /><span class="unit">hours</span></div>
             </div>
             <div class="field">
               <label for="minutes">Extra minutes</label>
-              <div class="input-wrap"><input id="minutes" class="with-unit" type="number" min="0" max="59" step="1" value="5" inputmode="numeric" /><span class="unit">min</span></div>
+              <div class="input-wrap"><input id="minutes" class="with-unit" type="number" min="0" max="59" step="1" value="0" inputmode="numeric" /><span class="unit">min</span></div>
             </div>
             <div class="field">
               <label for="laborHours">Hands-on labor</label>
-              <div class="input-wrap"><input id="laborHours" class="with-unit" type="number" min="0" step="0.25" value="4" inputmode="decimal" /><span class="unit">hours</span></div>
+              <div class="input-wrap"><input id="laborHours" class="with-unit" type="number" min="0" step="0.25" value="0" inputmode="decimal" /><span class="unit">hours</span></div>
             </div>
             <div class="field">
               <label for="extras">Other job costs</label>
@@ -403,11 +406,11 @@
           <div class="grid">
             <div class="field">
               <label for="discount">Courtesy discount</label>
-              <div class="input-wrap"><input id="discount" class="with-unit" type="number" min="0" max="100" step="1" value="50" inputmode="decimal" /><span class="unit">%</span></div>
+              <div class="input-wrap"><input id="discount" class="with-unit" type="number" min="0" max="100" step="1" value="0" inputmode="decimal" /><span class="unit">%</span></div>
             </div>
             <div class="field">
               <label for="balance">Prior invoice balance due</label>
-              <div class="input-wrap"><input id="balance" class="with-unit" type="number" min="0" step="0.01" value="50" inputmode="decimal" /><span class="unit">$</span></div>
+              <div class="input-wrap"><input id="balance" class="with-unit" type="number" min="0" step="0.01" value="0" inputmode="decimal" /><span class="unit">$</span></div>
             </div>
           </div>
         </div>
@@ -573,7 +576,11 @@
 
         var health = document.getElementById("health");
         var advice = document.getElementById("advice");
-        if (contribution < -0.005) {
+        if (trueCost <= 0.005 && balance <= 0.005) {
+          health.className = "health";
+          health.textContent = "Ready for a new print job";
+          advice.innerHTML = "<strong>Start with the slicer.</strong>Enter material used, print time, and hands-on labor. Your shop rates are already set below.";
+        } else if (contribution < -0.005) {
           health.className = "health bad";
           health.textContent = "This print loses " + money(Math.abs(contribution)) + " at " + Math.round(discountRate * 100) + "% off";
           advice.innerHTML = "<strong>Goodwill should not mean subsidizing the order.</strong>A discount above " + breakEvenDiscount.toFixed(1) + "% drops this print below true cost. A 15% courtesy rate is the safer ceiling with these numbers.";
@@ -583,7 +590,7 @@
           advice.innerHTML = discountRate > 0 ? "<strong>Courtesy rate stays above true cost.</strong>Collect the prior balance first, take a 50% non-refundable deposit, and collect the remainder before delivery." : "<strong>Full-rate quote protects the business.</strong>Collect the prior balance first, take a 50% non-refundable deposit, and collect the remainder before delivery.";
         }
 
-        document.querySelectorAll(".chip").forEach(function (chip) {
+        document.querySelectorAll(".chip[data-discount]").forEach(function (chip) {
           chip.classList.toggle("active", Math.abs(parseFloat(chip.dataset.discount) - discountRate * 100) < .01);
         });
       }
@@ -625,11 +632,23 @@
         if (el.material.value !== "custom" && Math.abs(parseFloat(el.material.value) - n(el.materialRate)) > .001) el.material.value = "custom";
       });
 
-      document.querySelectorAll(".chip").forEach(function (chip) {
+      document.querySelectorAll(".chip[data-discount]").forEach(function (chip) {
         chip.addEventListener("click", function () {
           el.discount.value = chip.dataset.discount;
           calculate();
         });
+      });
+
+      document.getElementById("resetBtn").addEventListener("click", function () {
+        el.jobName.value = "";
+        el.material.value = "18";
+        el.materialRate.value = "18";
+        ["grams", "hours", "minutes", "laborHours", "extras", "discount", "balance"].forEach(function (id) {
+          el[id].value = "0";
+        });
+        calculate();
+        showToast("Job reset to zero. Shop rates kept.");
+        el.jobName.focus();
       });
 
       document.getElementById("copyBtn").addEventListener("click", function () {
