@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-10-11T17:48:42.201Z",
+    "generatedAt": "2026-10-12T06:40:37.140Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -13,20 +13,20 @@
   },
   "synthesis": {
     "hazardSummary": {
-      "totalEvents": 62,
+      "totalEvents": 61,
       "categories": {
         "Severe Storms": 8,
         "Wildfires": 32,
         "Sea and Lake Ice": 10
       },
-      "seismicCount": 12,
+      "seismicCount": 11,
       "maxMagnitude": 7.7
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 2.1,
-      "minTemperature_2m": -40.5,
-      "maxTemperature_2m": 27.1
+      "avgTemperature_2m": 0.07,
+      "minTemperature_2m": -42.4,
+      "maxTemperature_2m": 27.5
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -40,19 +40,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-10-11T17:40:04.855Z",
-        "generated_date": "2026-10-11",
+        "generated": "2026-10-12T05:47:03.638Z",
+        "generated_date": "2026-10-12",
         "script_version": "1.1",
         "window_days": 14,
-        "window_start": "2026-09-27",
-        "window_end": "2026-10-11",
-        "runtime_ms": 273,
+        "window_start": "2026-09-28",
+        "window_end": "2026-10-12",
+        "runtime_ms": 3755,
         "seismic_live": true,
         "eonet_live": true
       },
       "threat": {
         "level": "CRITICAL",
-        "score": 22.3
+        "score": 22.55
       },
       "seismic": {
         "events": [
@@ -153,6 +153,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tyhk"
           },
           {
+            "id": "us6000u1pl",
+            "magnitude": 5.5,
+            "place": "122 km W of Neiafu, Tonga",
+            "time": "2026-10-12T04:38:12.859Z",
+            "depth_km": 195.2,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1pl"
+          },
+          {
             "id": "us6000u18t",
             "magnitude": 5.5,
             "place": "3 km SW of Bajo Corral, Panama",
@@ -233,12 +241,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty57"
           },
           {
-            "id": "us6000ty2u",
-            "magnitude": 5.4,
-            "place": "231 km WSW of Port McNeill, Canada",
-            "time": "2026-09-28T04:41:21.639Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty2u"
+            "id": "us6000u1mj",
+            "magnitude": 5.3,
+            "place": "150 km W of Gorontalo, Indonesia",
+            "time": "2026-10-11T21:34:53.822Z",
+            "depth_km": 110.5,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1mj"
           },
           {
             "id": "us6000u1gs",
@@ -287,14 +295,6 @@
             "time": "2026-09-29T03:23:54.418Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tya5"
-          },
-          {
-            "id": "us6000ty2b",
-            "magnitude": 5.3,
-            "place": "60 km NE of Tadine, New Caledonia",
-            "time": "2026-09-28T03:25:06.893Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty2b"
           },
           {
             "id": "us6000u1ld",
@@ -367,14 +367,6 @@
             "time": "2026-09-28T09:13:39.402Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty43"
-          },
-          {
-            "id": "us6000ty38",
-            "magnitude": 5.2,
-            "place": "67 km ENE of Tadine, New Caledonia",
-            "time": "2026-09-28T05:45:29.689Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty38"
           },
           {
             "id": "us6000u1bu",
@@ -471,22 +463,6 @@
             "time": "2026-09-30T08:15:17.486Z",
             "depth_km": 28,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tyit"
-          },
-          {
-            "id": "us6000ty33",
-            "magnitude": 5.1,
-            "place": "78 km ENE of Tadine, New Caledonia",
-            "time": "2026-09-28T05:28:08.891Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty33"
-          },
-          {
-            "id": "us6000ty2e",
-            "magnitude": 5.1,
-            "place": "South Sandwich Islands region",
-            "time": "2026-09-28T03:43:44.172Z",
-            "depth_km": 35,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty2e"
           },
           {
             "id": "us6000u1hw",
@@ -727,14 +703,6 @@
             "time": "2026-09-29T10:42:57.409Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tybr"
-          },
-          {
-            "id": "us6000ty0j",
-            "magnitude": 5,
-            "place": "South Sandwich Islands region",
-            "time": "2026-09-27T21:13:35.077Z",
-            "depth_km": 117.7,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty0j"
           },
           {
             "id": "us6000u1gm",
@@ -1001,36 +969,28 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty5b"
           },
           {
-            "id": "us6000ty36",
-            "magnitude": 4.9,
-            "place": "39 km ENE of Tadine, New Caledonia",
-            "time": "2026-09-28T05:42:32.024Z",
+            "id": "us6000u1nx",
+            "magnitude": 4.8,
+            "place": "southern East Pacific Rise",
+            "time": "2026-10-12T01:59:24.315Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty36"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1nx"
           },
           {
-            "id": "us6000ty2y",
-            "magnitude": 4.9,
-            "place": "South Sandwich Islands region",
-            "time": "2026-09-28T04:41:33.467Z",
-            "depth_km": 35,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty2y"
+            "id": "us6000u1nr",
+            "magnitude": 4.8,
+            "place": "56 km E of Yairipok, India",
+            "time": "2026-10-12T01:28:20.094Z",
+            "depth_km": 78.2,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1nr"
           },
           {
-            "id": "us6000ty27",
-            "magnitude": 4.9,
-            "place": "195 km WSW of Port McNeill, Canada",
-            "time": "2026-09-28T02:53:43.974Z",
+            "id": "us6000u1lf",
+            "magnitude": 4.8,
+            "place": "31 km W of Río Grande, Panama",
+            "time": "2026-10-11T17:11:29.405Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty27"
-          },
-          {
-            "id": "us6000ty1l",
-            "magnitude": 4.9,
-            "place": "40 km W of Palauig, Philippines",
-            "time": "2026-09-28T00:54:42.901Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty1l"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1lf"
           },
           {
             "id": "us6000u1ka",
@@ -1321,28 +1281,20 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tzqv"
           },
           {
-            "id": "us6000ty1m",
-            "magnitude": 4.8,
-            "place": "78 km E of Tadine, New Caledonia",
-            "time": "2026-09-28T00:47:33.215Z",
+            "id": "us6000u1lk",
+            "magnitude": 4.7,
+            "place": "156 km ESE of Neiafu, Tonga",
+            "time": "2026-10-11T18:06:35.803Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty1m"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1lk"
           },
           {
-            "id": "us6000ty11",
-            "magnitude": 4.8,
-            "place": "117 km SSE of Panguna, Papua New Guinea",
-            "time": "2026-09-27T22:47:06.874Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty11"
-          },
-          {
-            "id": "us6000ty0q",
-            "magnitude": 4.8,
-            "place": "7 km WSW of Guaymate, Dominican Republic",
-            "time": "2026-09-27T21:49:47.506Z",
-            "depth_km": 113,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty0q"
+            "id": "us6000u1l7",
+            "magnitude": 4.7,
+            "place": "6 km ESE of Tōgane, Japan",
+            "time": "2026-10-11T16:24:25.015Z",
+            "depth_km": 55.8,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1l7"
           },
           {
             "id": "us6000u1il",
@@ -1587,8 +1539,8 @@
           {
             "id": "us6000tyf0",
             "magnitude": 4.7,
-            "place": "49 km N of Dicabisagan, Philippines",
-            "time": "2026-09-29T20:45:50.983Z",
+            "place": "48 km N of Dicabisagan, Philippines",
+            "time": "2026-09-29T20:45:50.870Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tyf0"
           },
@@ -1633,12 +1585,20 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty3c"
           },
           {
-            "id": "us6000ty3j",
-            "magnitude": 4.7,
-            "place": "59 km NE of Tadine, New Caledonia",
-            "time": "2026-09-28T03:15:54.201Z",
+            "id": "us6000u1nn",
+            "magnitude": 4.6,
+            "place": "Volcano Islands, Japan region",
+            "time": "2026-10-12T00:53:12.394Z",
+            "depth_km": 199.8,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1nn"
+          },
+          {
+            "id": "us6000u1mz",
+            "magnitude": 4.6,
+            "place": "0 km NE of Leones Arriba, Panama",
+            "time": "2026-10-11T22:40:24.458Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty3j"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1mz"
           },
           {
             "id": "us6000u1k3",
@@ -1759,6 +1719,14 @@
             "time": "2026-10-09T15:18:55.617Z",
             "depth_km": 501.6,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u168"
+          },
+          {
+            "id": "us6000u15t",
+            "magnitude": 4.6,
+            "place": "Southwest Indian Ridge",
+            "time": "2026-10-09T13:24:16.979Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u15t"
           },
           {
             "id": "us6000u14r",
@@ -2017,52 +1985,52 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty73"
           },
           {
-            "id": "us6000ty3a",
-            "magnitude": 4.6,
-            "place": "63 km ENE of Tadine, New Caledonia",
-            "time": "2026-09-28T05:42:21.379Z",
+            "id": "us6000u1pz",
+            "magnitude": 4.5,
+            "place": "south of the Fiji Islands",
+            "time": "2026-10-12T05:15:50.307Z",
+            "depth_km": 470.8,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1pz"
+          },
+          {
+            "id": "us6000u1pa",
+            "magnitude": 4.5,
+            "place": "53 km S of Kushiro, Japan",
+            "time": "2026-10-12T03:44:57.923Z",
+            "depth_km": 65.9,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1pa"
+          },
+          {
+            "id": "us6000u1ny",
+            "magnitude": 4.5,
+            "place": "7 km ENE of Lajamina, Panama",
+            "time": "2026-10-12T02:22:29.883Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty3a"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1ny"
           },
           {
-            "id": "us6000ty2w",
-            "magnitude": 4.6,
-            "place": "northwest of the Kuril Islands",
-            "time": "2026-09-28T04:42:56.780Z",
-            "depth_km": 258.7,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty2w"
+            "id": "us6000u1n6",
+            "magnitude": 4.5,
+            "place": "103 km SSW of La Libertad, El Salvador",
+            "time": "2026-10-11T23:20:35.800Z",
+            "depth_km": 35,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1n6"
           },
           {
-            "id": "us6000ty0u",
-            "magnitude": 4.6,
-            "place": "23 km SW of Sipí, Colombia",
-            "time": "2026-09-27T21:57:52.940Z",
-            "depth_km": 71.7,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty0u"
-          },
-          {
-            "id": "us6000ty0k",
-            "magnitude": 4.6,
-            "place": "59 km WNW of Pante Makasar, Timor Leste",
-            "time": "2026-09-27T21:14:44.538Z",
+            "id": "us6000u1mv",
+            "magnitude": 4.5,
+            "place": "116 km SE of Nabire, Indonesia",
+            "time": "2026-10-11T22:07:25.771Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty0k"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1mv"
           },
           {
-            "id": "us6000tz6g",
-            "magnitude": 4.6,
-            "place": "102 km ENE of Tadine, New Caledonia",
-            "time": "2026-09-27T19:05:12.429Z",
+            "id": "us6000u1me",
+            "magnitude": 4.5,
+            "place": "27 km W of Río Grande, Panama",
+            "time": "2026-10-11T21:19:20.354Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tz6g"
-          },
-          {
-            "id": "us6000txzx",
-            "magnitude": 4.6,
-            "place": "19 km NW of Yongning, China",
-            "time": "2026-09-27T18:29:58.261Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000txzx"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1me"
           },
           {
             "id": "us6000u1j3",
@@ -2407,26 +2375,10 @@
             "time": "2026-09-29T00:05:24.143Z",
             "depth_km": 35,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty9i"
-          },
-          {
-            "id": "us6000tzr9",
-            "magnitude": 4.5,
-            "place": "90 km ENE of Tadine, New Caledonia",
-            "time": "2026-09-28T00:40:17.586Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tzr9"
-          },
-          {
-            "id": "us6000ty1j",
-            "magnitude": 4.5,
-            "place": "83 km SE of Ossora, Russia",
-            "time": "2026-09-28T00:37:59.308Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ty1j"
           }
         ],
-        "count_total": 296,
-        "count_m55_plus": 17,
+        "count_total": 290,
+        "count_m55_plus": 18,
         "count_m60_plus": 5,
         "count_m70_plus": 1,
         "count_m80_plus": 0,
@@ -2441,7 +2393,7 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-10-11T17:40:04.818Z"
+        "retrieved": "2026-10-12T05:47:00.115Z"
       },
       "wildfire": {
         "events": [
@@ -2652,13 +2604,13 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-10-11T17:42:18.735Z",
+        "generatedAt": "2026-10-12T06:10:49.703Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
       "layers": {
         "seismic": {
-          "count": 12,
+          "count": 11,
           "maxMagnitude": 7.7,
           "events": [
             {
@@ -2672,7 +2624,7 @@
                 10
               ],
               "tsunami": false,
-              "significance": 685
+              "significance": 686
             },
             {
               "id": "us6000u19w",
@@ -2803,19 +2755,6 @@
               ],
               "tsunami": true,
               "significance": 653
-            },
-            {
-              "id": "us7000tgrk",
-              "magnitude": 6.5,
-              "place": "121 km NNE of Teluknaga, Indonesia",
-              "time": "2026-09-11T21:23:55.815Z",
-              "coordinates": [
-                106.8682,
-                -5.0271,
-                372
-              ],
-              "tsunami": false,
-              "significance": 657
             }
           ]
         },
@@ -2837,13 +2776,13 @@
                 "JTWC"
               ],
               "geometry": {
-                "magnitudeValue": 135,
+                "magnitudeValue": 115,
                 "magnitudeUnit": "kts",
-                "date": "2026-10-11T06:00:00Z",
+                "date": "2026-10-11T18:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  -105,
-                  18.4
+                  -105.6,
+                  19.4
                 ]
               }
             },
@@ -2917,13 +2856,13 @@
                 "JTWC"
               ],
               "geometry": {
-                "magnitudeValue": 115,
+                "magnitudeValue": 105,
                 "magnitudeUnit": "kts",
-                "date": "2026-10-11T06:00:00Z",
+                "date": "2026-10-11T18:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  147.8,
-                  25.3
+                  147.3,
+                  27.1
                 ]
               }
             },
@@ -3138,13 +3077,13 @@
                 "NOAA_NHC"
               ],
               "geometry": {
-                "magnitudeValue": 50,
+                "magnitudeValue": 30,
                 "magnitudeUnit": "kts",
-                "date": "2026-10-11T06:00:00Z",
+                "date": "2026-10-11T12:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  -116.3,
-                  31.8
+                  -115.4,
+                  33.9
                 ]
               }
             },
@@ -3437,55 +3376,55 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": -10.4,
-              "surface_pressure": 1005.9,
-              "wind_speed_10m": 3.33,
-              "relative_humidity_2m": 86
+              "temperature_2m": -14.2,
+              "surface_pressure": 1005.3,
+              "wind_speed_10m": 8.01,
+              "relative_humidity_2m": 84
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 12.2,
-              "surface_pressure": 997.3,
-              "wind_speed_10m": 6.87,
-              "relative_humidity_2m": 77
+              "temperature_2m": 11.2,
+              "surface_pressure": 997,
+              "wind_speed_10m": 10.03,
+              "relative_humidity_2m": 73
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 26.4,
-              "surface_pressure": 914.6,
-              "wind_speed_10m": 2.97,
-              "relative_humidity_2m": 65
+              "temperature_2m": 20.3,
+              "surface_pressure": 912.3,
+              "wind_speed_10m": 2.77,
+              "relative_humidity_2m": 98
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 27.1,
-              "surface_pressure": 1012.6,
-              "wind_speed_10m": 2.53,
-              "relative_humidity_2m": 84
+              "temperature_2m": 27.5,
+              "surface_pressure": 1012.1,
+              "wind_speed_10m": 3.04,
+              "relative_humidity_2m": 83
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": -2.2,
-              "surface_pressure": 976.8,
-              "wind_speed_10m": 13.3,
-              "relative_humidity_2m": 83
+              "temperature_2m": -2,
+              "surface_pressure": 963.2,
+              "wind_speed_10m": 8.59,
+              "relative_humidity_2m": 87
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -40.5,
-              "surface_pressure": 714.3,
-              "wind_speed_10m": 8.5,
-              "relative_humidity_2m": 63
+              "temperature_2m": -42.4,
+              "surface_pressure": 715.2,
+              "wind_speed_10m": 8.61,
+              "relative_humidity_2m": 68
             }
           ]
         },
@@ -3503,7 +3442,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-10-11T17:46:49.251Z"
+        "generatedAt": "2026-10-12T06:29:55.761Z"
       },
       "health": {
         "score": 87,
