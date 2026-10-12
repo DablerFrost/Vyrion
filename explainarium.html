@@ -2141,7 +2141,7 @@ function renderConscience(){
     </div>`).join('');
 
   document.getElementById('companyList').innerHTML = COMPANIES.map(c =>
-    `<span class="xpl-company-pill cp-${c.band}">${c.name} · ${c.score}</span>`).join('');
+    `<span class="xpl-company-pill cp-${escHtml(c.band)}">${escHtml(c.name)} · ${Number(c.score)||0}</span>`).join('');
 
   document.getElementById('factorRows').innerHTML = FACTORS.map(f => `
     <div class="xpl-factor-row">
@@ -2265,7 +2265,7 @@ function buildScore(){
     if(diff < bestDiff){ bestDiff = diff; nearest = c; }
   });
   document.getElementById('buildNearest').innerHTML =
-    `Closest real match: <b>${nearest.name}</b> · ${nearest.score}/100` +
+    `Closest real match: <b>${escHtml(nearest.name)}</b> · ${Number(nearest.score)||0}/100` +
     (rawTotal < 0 ? ' <span style="color:var(--t3)">(CONSCIENCE floors every score at 0 — negative legal exposure can\'t sink a company below the bottom of the scale)</span>' : '');
   markBadge('builder');
 }
@@ -2368,6 +2368,7 @@ function renderTimeline(){
     </div>`).join('');
 }
 
+function escHtml(s){ return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
 function submitReportDemo(){
   const input = document.getElementById('reportInput');
   const box = document.getElementById('reportResponse');
@@ -2377,7 +2378,7 @@ function submitReportDemo(){
     box.classList.add('show');
     return;
   }
-  box.innerHTML = `Thanks — <strong>"${val}"</strong> is flagged for review. If confirmed, a correction publishes within 24 hours, right on this page, forever. That's the whole protocol. (This box is a demo — for a real report, use <a href="mailto:contact@vyrion.earth" style="color:var(--cyan)">contact@vyrion.earth</a>.)`;
+  box.innerHTML = `Thanks — <strong>"${escHtml(val)}"</strong> is flagged for review. If confirmed, a correction publishes within 24 hours, right on this page, forever. That's the whole protocol. (This box is a demo — for a real report, use <a href="mailto:contact@vyrion.earth" style="color:var(--cyan)">contact@vyrion.earth</a>.)`;
   box.classList.add('show');
   input.value = '';
   confettiBurst(window.innerWidth/2, 200, 10);
