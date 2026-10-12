@@ -1,13 +1,13 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-10-11T17:42:18.735Z",
+    "generatedAt": "2026-10-12T06:10:49.703Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 12,
+      "count": 11,
       "maxMagnitude": 7.7,
       "events": [
         {
@@ -21,7 +21,7 @@
             10
           ],
           "tsunami": false,
-          "significance": 685
+          "significance": 686
         },
         {
           "id": "us6000u19w",
@@ -152,19 +152,6 @@
           ],
           "tsunami": true,
           "significance": 653
-        },
-        {
-          "id": "us7000tgrk",
-          "magnitude": 6.5,
-          "place": "121 km NNE of Teluknaga, Indonesia",
-          "time": "2026-09-11T21:23:55.815Z",
-          "coordinates": [
-            106.8682,
-            -5.0271,
-            372
-          ],
-          "tsunami": false,
-          "significance": 657
         }
       ]
     },
@@ -186,13 +173,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 135,
+            "magnitudeValue": 115,
             "magnitudeUnit": "kts",
-            "date": "2026-10-11T06:00:00Z",
+            "date": "2026-10-11T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              -105,
-              18.4
+              -105.6,
+              19.4
             ]
           }
         },
@@ -266,13 +253,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 115,
+            "magnitudeValue": 105,
             "magnitudeUnit": "kts",
-            "date": "2026-10-11T06:00:00Z",
+            "date": "2026-10-11T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              147.8,
-              25.3
+              147.3,
+              27.1
             ]
           }
         },
@@ -487,13 +474,13 @@
             "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 50,
+            "magnitudeValue": 30,
             "magnitudeUnit": "kts",
-            "date": "2026-10-11T06:00:00Z",
+            "date": "2026-10-11T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              -116.3,
-              31.8
+              -115.4,
+              33.9
             ]
           }
         },
@@ -786,55 +773,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -10.4,
-          "surface_pressure": 1005.9,
-          "wind_speed_10m": 3.33,
-          "relative_humidity_2m": 86
+          "temperature_2m": -14.2,
+          "surface_pressure": 1005.3,
+          "wind_speed_10m": 8.01,
+          "relative_humidity_2m": 84
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 12.2,
-          "surface_pressure": 997.3,
-          "wind_speed_10m": 6.87,
-          "relative_humidity_2m": 77
+          "temperature_2m": 11.2,
+          "surface_pressure": 997,
+          "wind_speed_10m": 10.03,
+          "relative_humidity_2m": 73
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 26.4,
-          "surface_pressure": 914.6,
-          "wind_speed_10m": 2.97,
-          "relative_humidity_2m": 65
+          "temperature_2m": 20.3,
+          "surface_pressure": 912.3,
+          "wind_speed_10m": 2.77,
+          "relative_humidity_2m": 98
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 27.1,
-          "surface_pressure": 1012.6,
-          "wind_speed_10m": 2.53,
-          "relative_humidity_2m": 84
+          "temperature_2m": 27.5,
+          "surface_pressure": 1012.1,
+          "wind_speed_10m": 3.04,
+          "relative_humidity_2m": 83
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -2.2,
-          "surface_pressure": 976.8,
-          "wind_speed_10m": 13.3,
-          "relative_humidity_2m": 83
+          "temperature_2m": -2,
+          "surface_pressure": 963.2,
+          "wind_speed_10m": 8.59,
+          "relative_humidity_2m": 87
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -40.5,
-          "surface_pressure": 714.3,
-          "wind_speed_10m": 8.5,
-          "relative_humidity_2m": 63
+          "temperature_2m": -42.4,
+          "surface_pressure": 715.2,
+          "wind_speed_10m": 8.61,
+          "relative_humidity_2m": 68
         }
       ]
     },
