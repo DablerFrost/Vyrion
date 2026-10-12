@@ -1,4 +1,4 @@
-var CACHE_NAME = "dab-3d-quote-calculator-v2";
+var CACHE_NAME = "dab-3d-quote-calculator-v3";
 var APP_SHELL = [
   "./",
   "./manifest.json",
