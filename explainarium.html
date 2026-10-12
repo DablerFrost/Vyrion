@@ -947,6 +947,25 @@ button,a,input,select,textarea,[role="button"]{scroll-margin-top:5rem}
   *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
 
+
+/* ── Learning Tracks (00 · START HERE) ── */
+.xpl-tracks{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.2rem}
+.xpl-track{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.3rem;display:flex;flex-direction:column;gap:.55rem;transition:border-color .2s,transform .2s}
+.xpl-track:hover{border-color:rgba(0,212,255,.45);transform:translateY(-2px)}
+.xpl-track-emoji{font-size:1.9rem}
+.xpl-track-age{font-size:.62rem;text-transform:uppercase;letter-spacing:.14em;color:var(--cyan);font-weight:700}
+.xpl-track h3{margin:0;font-size:1.15rem}
+.xpl-track>p{margin:0;font-size:.82rem;color:var(--t2);line-height:1.6}
+.xpl-track-stops{list-style:none;margin:.4rem 0 0;padding:0;display:flex;flex-direction:column;gap:.45rem;counter-reset:stop}
+.xpl-track-stops a{display:flex;gap:.6rem;align-items:flex-start;text-decoration:none;color:var(--t1);padding:.5rem .6rem;border:1px solid var(--border2);border-radius:8px;font-size:.78rem;line-height:1.45;transition:border-color .2s}
+.xpl-track-stops a:hover{border-color:rgba(0,212,255,.5)}
+.xpl-track-stops b{display:block;font-size:.78rem}
+.xpl-track-stops span{color:var(--t3);font-size:.72rem}
+.xpl-track .xpl-secondary{margin-top:auto;align-self:flex-start}
+/* ── Plain-words callout ── */
+.xpl-plain{border-left:3px solid var(--cyan);background:rgba(0,212,255,.06);padding:.85rem 1.1rem;border-radius:0 10px 10px 0;margin:0 0 1.3rem;font-size:.86rem;line-height:1.65;color:var(--t1)}
+.xpl-plain b{color:var(--cyan)}
+@media(max-width:900px){.xpl-tracks{grid-template-columns:1fr}}
 </style>
 <style>
 /* ── PLANETARY TONE ─────────────────────────────────────────────── */
@@ -1157,6 +1176,58 @@ button,a,input,select,textarea,[role="button"]{scroll-margin-top:5rem}
 
 <div class="xpl-content">
 
+<section class="xpl-section" id="tracks">
+  <div class="xpl-section-head">
+    <div>
+      <div class="xpl-kicker">00 · START HERE</div>
+      <h2>Pick your learning track</h2>
+      <p>Three guided paths through everything below — one for every age. Each track walks the sections in the order that clicks for you. No wrong answers, no prerequisites.</p>
+    </div>
+  </div>
+  <div class="xpl-tracks">
+    <div class="xpl-track">
+      <div class="xpl-track-emoji">🌱</div>
+      <div class="xpl-track-age">Ages 8–12 · Young Explorers</div>
+      <h3>Earth's report card</h3>
+      <p>Start with the big picture. No math degree needed — just curiosity about the planet you live on.</p>
+      <div class="xpl-track-stops">
+        <a href="#score"><div><b>01 · The Big Number</b><span>What 41.2 means — a grade for the whole planet.</span></div></a>
+        <a href="#systems"><div><b>02 · The Ingredients</b><span>Eight Earth systems, like subjects on a report card.</span></div></a>
+        <a href="#shieldsim"><div><b>04 · SHIELD Simulator</b><span>Push the buttons. What happens if the ocean gets sicker?</span></div></a>
+        <a href="#quiz"><div><b>09 · Quiz</b><span>Prove you're a certified planetary expert.</span></div></a>
+      </div>
+      <button class="xpl-secondary" onclick="document.getElementById('score').scrollIntoView({behavior:'smooth'})">Start this track →</button>
+    </div>
+    <div class="xpl-track">
+      <div class="xpl-track-emoji">🧭</div>
+      <div class="xpl-track-age">Ages 13–17 · Teen Track</div>
+      <h3>How the dashboard works</h3>
+      <p>Go deeper: the tools, the corporate scorecards, and matching real problems to the systems that fix them.</p>
+      <div class="xpl-track-stops">
+        <a href="#score"><div><b>01 · The Big Number</b><span>One score, eight systems, updated daily.</span></div></a>
+        <a href="#modules"><div><b>03 · The Tools</b><span>Eight modules, eight jobs — meet the crew.</span></div></a>
+        <a href="#conscience"><div><b>05 · CONSCIENCE Lab</b><span>Build a real company's score with your own hands.</span></div></a>
+        <a href="#matcher"><div><b>06 · Module Matcher</b><span>Match the crisis to the module that handles it.</span></div></a>
+        <a href="#timeline"><div><b>07 · Timeline</b><span>How VYRION got here, milestone by milestone.</span></div></a>
+      </div>
+      <button class="xpl-secondary" onclick="document.getElementById('score').scrollIntoView({behavior:'smooth'})">Start this track →</button>
+    </div>
+    <div class="xpl-track">
+      <div class="xpl-track-emoji">🔬</div>
+      <div class="xpl-track-age">Adults & educators · Deep Dive</div>
+      <h3>Methodology and proof</h3>
+      <p>The full machinery: open methods, the accountability dataset, and the permanent public record.</p>
+      <div class="xpl-track-stops">
+        <a href="#how"><div><b>08 · How It Works</b><span>From raw data to signal, step by step.</span></div></a>
+        <a href="#conscience"><div><b>05 · CONSCIENCE</b><span>36 companies, four factors, zero secrets.</span></div></a>
+        <a href="#timeline"><div><b>07 · Timeline</b><span>Every milestone, timestamped and checkable.</span></div></a>
+        <a href="#glossary"><div><b>10 · Glossary</b><span>Speak fluent planetary.</span></div></a>
+      </div>
+      <button class="xpl-secondary" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">Start this track →</button>
+    </div>
+  </div>
+</section>
+
 <section class="xpl-section" id="score">
   <div class="xpl-section-head">
     <div>
@@ -1166,6 +1237,7 @@ button,a,input,select,textarea,[role="button"]{scroll-margin-top:5rem}
     </div>
   </div>
 
+  <div class="xpl-plain"><b>💬 In plain words:</b> Earth gets a health checkup every single day — like you do at the doctor. The VYRION Index is the grade. 100 would be a perfectly healthy planet. Right now it reads 41.2, which means Earth needs serious care — and that is exactly why VYRION exists.</div>
   <div class="xpl-score-shell">
     <div class="xpl-score-card">
       <div class="xpl-score-label">VYRION Index · published feed status below</div>
@@ -1381,6 +1453,7 @@ button,a,input,select,textarea,[role="button"]{scroll-margin-top:5rem}
     </div>
   </div>
 
+  <div class="xpl-plain"><b>💬 In plain words:</b> Big companies promise to protect the planet. CONSCIENCE checks whether they actually do — like checking whether someone really did their homework instead of just saying they did. Every score comes from public records that anyone can look up.</div>
   <div class="xpl-conscience-shell">
     <div class="xpl-conscience-card">
       <h3>Pledge vs. reality, scored 0–100</h3>
@@ -1502,6 +1575,7 @@ button,a,input,select,textarea,[role="button"]{scroll-margin-top:5rem}
     </div>
   </div>
 
+  <div class="xpl-plain"><b>💬 In plain words:</b> Satellites, ocean buoys, and public filings send in measurements every day. VYRION turns them into scores using open math that anyone can check — no secret formulas, no black boxes.</div>
   <div class="xpl-flow">
     <div class="xpl-step">
       <div class="xpl-step-num">01 / OBSERVE</div>
@@ -1735,20 +1809,68 @@ const MODULES = [
     indicators:[['Verified carbon credits issued','TARGET'],['Biodiversity credits issued','TARGET'],['Marketplace transaction volume','TARGET']]}
 ];
 
-const BANDS = [
-  {name:'BREACH', range:'0–30', color:'var(--red)', count:5},
-  {name:'WARNING', range:'31–60', color:'var(--warn)', count:3},
-  {name:'ON TRACK', range:'61–100', color:'var(--cyan)', count:3}
-];
-
-const COMPANIES = [
-  {name:'ExxonMobil', score:8, band:'breach'}, {name:'BP', score:11, band:'breach'},
-  {name:'Shell', score:19, band:'breach'}, {name:'Delta Air Lines', score:14, band:'breach'},
-  {name:'Starbucks', score:29, band:'breach'}, {name:'Walmart', score:38, band:'warning'},
-  {name:'Meta', score:43, band:'warning'}, {name:'Amazon', score:47, band:'warning'},
-  {name:'Microsoft', score:61, band:'aligned'}, {name:'Unilever', score:72, band:'aligned'},
+/* CONSCIENCE v2.9 — 36 companies. Loads live from data/conscience-data.json;
+   the embedded snapshot below is the fallback if the fetch fails. */
+function conscienceBand(score){ return score<=30?'breach':(score<=60?'warning':'aligned'); }
+const CONSCIENCE_SNAPSHOT = [
+  {name:'ExxonMobil', score:8, band:'breach'},
+  {name:'Chevron', score:8, band:'breach'},
+  {name:'Glencore', score:10, band:'breach'},
+  {name:'BP', score:11, band:'breach'},
+  {name:'JPMorgan Chase', score:11, band:'breach'},
+  {name:'ConocoPhillips', score:13, band:'breach'},
+  {name:'Delta Air Lines', score:14, band:'breach'},
+  {name:'Toyota', score:14, band:'breach'},
+  {name:'United Airlines', score:15, band:'breach'},
+  {name:'Shell', score:19, band:'breach'},
+  {name:'TotalEnergies', score:20, band:'breach'},
+  {name:'Duke Energy', score:24, band:'breach'},
+  {name:'BASF', score:27, band:'breach'},
+  {name:'Starbucks', score:29, band:'breach'},
+  {name:'BlackRock', score:29, band:'breach'},
+  {name:'Coca-Cola', score:30, band:'breach'},
+  {name:'Volkswagen', score:31, band:'warning'},
+  {name:'Nestlé', score:33, band:'warning'},
+  {name:'Ford', score:34, band:'warning'},
+  {name:'H&M Group', score:36, band:'warning'},
+  {name:'Walmart', score:38, band:'warning'},
+  {name:'Rio Tinto', score:38, band:'warning'},
+  {name:'Procter & Gamble', score:40, band:'warning'},
+  {name:'BHP', score:41, band:'warning'},
+  {name:'Meta', score:43, band:'warning'},
+  {name:'Nike', score:46, band:'warning'},
+  {name:'Amazon', score:47, band:'warning'},
+  {name:'Maersk', score:54, band:'warning'},
+  {name:'CBRE Group', score:55, band:'warning'},
+  {name:'Johnson & Johnson', score:57, band:'warning'},
+  {name:'Alphabet', score:60, band:'warning'},
+  {name:'Microsoft', score:61, band:'aligned'},
+  {name:'Salesforce', score:66, band:'aligned'},
+  {name:'NextEra Energy', score:67, band:'aligned'},
+  {name:'Unilever', score:72, band:'aligned'},
   {name:'Apple', score:84, band:'aligned'}
 ];
+function buildBands(list){
+  const counts = {breach:0, warning:0, aligned:0};
+  list.forEach(c=>counts[conscienceBand(c.score)]++);
+  return [
+    {name:'BREACH', range:'0–30', color:'var(--red)', count:counts.breach},
+    {name:'WARNING', range:'31–60', color:'var(--warn)', count:counts.warning},
+    {name:'ON TRACK', range:'61–100', color:'var(--cyan)', count:counts.aligned}
+  ];
+}
+let COMPANIES = CONSCIENCE_SNAPSHOT.slice();
+let BANDS = buildBands(COMPANIES);
+async function loadConscienceData(){
+  try{
+    const r = await fetch('data/conscience-data.json');
+    if(!r.ok) throw new Error('fetch failed');
+    const d = await r.json();
+    const live = (d.companies||[]).map(c=>({name:c.name, score:c.score, band:conscienceBand(c.score)}));
+    if(live.length){ COMPANIES = live; BANDS = buildBands(live); }
+  }catch(e){ /* snapshot stands in */ }
+  loadConscienceData();
+}
 
 const FACTORS = [
   {label:'Pledge Quality', max:30, note:'Ambition, scope 1/2/3 coverage, deadline, third-party validation'},
@@ -1881,6 +2003,8 @@ const TIMELINE_EVENTS = [
    body:'Weekly pledge-vs-reality investigations — ExxonMobil, Shell, Delta Air Lines — every Wednesday, sourced and dated.'},
   {date:'May 5, 2026', title:'CONSCIENCE Methodology v1.1', proof:false,
    body:"CDP's full 9-tier grading scale (A through F) formally adopted. Every one of the original 11 baseline scores preserved bit-for-bit."},
+  {date:'June 5, 2026', title:'CONSCIENCE v2.9 — 11 companies become 36', proof:false,
+   body:"Coverage triples. Mean company score: 35.7/100 — 16 in BREACH, 15 in WARNING, 5 ON TRACK. The score formula doesn't change; the lens gets wider."},
   {date:'Today', title:'Day counter, live', proof:false, dynamic:true,
    body:'The Index keeps publishing — every single day, without exception, since Day 1.'}
 ];
@@ -2012,7 +2136,7 @@ function renderConscience(){
       <span class="xpl-band-swatch" style="background:${b.color}"></span>
       <span class="xpl-band-name" style="color:${b.color}">${b.name}</span>
       <span class="xpl-band-range">${b.range}</span>
-      <span class="xpl-band-track"><span class="xpl-band-fill" style="width:${(b.count/11*100).toFixed(0)}%;background:${b.color}"></span></span>
+      <span class="xpl-band-track"><span class="xpl-band-fill" style="width:${(b.count/COMPANIES.length*100).toFixed(0)}%;background:${b.color}"></span></span>
       <span class="xpl-band-count">${b.count}</span>
     </div>`).join('');
 
@@ -2627,7 +2751,7 @@ function initStars(){
 async function init(){
   renderSystems();
   renderModules();
-  renderConscience();
+  loadConscienceData();
   renderShield();
   buildScore();
   renderScenario();
