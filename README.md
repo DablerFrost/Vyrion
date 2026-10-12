@@ -1,6 +1,6 @@
 # VYRION
 
-## Planetary Intelligence in an Always-On State
+## Planetary Intelligence in Continuous Awareness
 
 **Measure What Matters.**
 **Trust Evidence Over Narrative.**
@@ -9,7 +9,9 @@
 🌍 Platform: https://vyrion.earth
 📡 Intelligence Network: https://vyrion.earth
 📧 Contact: [contact@vyrion.earth](mailto:contact@vyrion.earth)
-<img width="1190" height="367" alt="Screenshot 2026-05-23 143641" src="https://github.com/user-attachments/assets/e9206299-7a1f-4774-95c1-093a5ef7a9c6" />
+
+![VYRION — The 8 Earth Systems · 48 Indicators of Planetary Reality](assets/readme-banner.png)
+
 ---
 
 ## What Is VYRION?
@@ -18,11 +20,11 @@ VYRION is a planetary intelligence platform designed to measure, verify, and com
 
 The platform combines public data, scientific research, environmental monitoring, and accountability frameworks into a unified intelligence network designed to make complex realities more visible, understandable, and actionable.
 
-<img width="938" height="935" alt="Screenshot 2026-05-23 103509" src="https://github.com/user-attachments/assets/f72d336d-00d9-4160-93d3-d91c59a76310" />
-
 VYRION exists to help answer a simple question:
 
 > What is actually happening, and how do we know?
+
+**Current state:** the VYRION Index reads **41.2 / 100** — a daily composite across **8 Earth systems** and **48 indicators**. CONSCIENCE v2.9 scores **36 companies** (16 Breach · 15 Warning · 5 On Track · mean 35.7) on pledge-vs.-reality alignment. The platform is an installable app (phone · tablet · desktop).
 
 ---
 
@@ -34,7 +36,7 @@ Eight interconnected modules form the operational foundation of the VYRION ecosy
 
 **Planetary Intelligence**
 
-Environmental monitoring, Earth-system analysis, and global condition awareness.
+Environmental monitoring, Earth-system analysis, and global condition awareness. Publishes the daily VYRION Index.
 
 ### SHIELD
 
@@ -88,7 +90,13 @@ Beyond operational intelligence, VYRION includes public-facing experiences desig
 
 Corporate accountability intelligence.
 
-Tracks alignment between public commitments and publicly observable outcomes using transparent methodologies and evidence-based evaluation.
+Tracks alignment between public commitments and publicly observable outcomes using transparent methodologies and evidence-based evaluation. v2.9 covers 36 companies across four public factors — no proprietary or self-reported-only data enters the score.
+
+### MISSION CONTROL
+
+The human network behind the Index.
+
+Founder seat, regional node leads, and open positions — the people turning planetary signal into local action.
 
 ### NEXAN
 
@@ -100,7 +108,7 @@ A conceptual framework for navigating interconnected planetary challenges and so
 
 Public learning and visualization platform.
 
-Transforms complex environmental, scientific, and societal data into understandable narratives and interactive experiences.
+Transforms complex environmental, scientific, and societal data into understandable narratives and interactive experiences — with guided learning tracks for ages 8 to adult.
 
 ---
 
@@ -120,7 +128,7 @@ The objective is visibility.
 
 ### Evidence First
 
-Claims should be supported by verifiable evidence.
+Claims should be supported by verifiable evidence. No unlabeled simulated data — ever.
 
 ### Continuous Verification
 
@@ -155,9 +163,9 @@ Documentation is available within the repository and continues to evolve alongsi
 
 ---
 
-## Public Benefit Mission
+## The Mission
 
-VYRION is being developed as infrastructure for planetary awareness, accountability, and decision-grade intelligence.
+VYRION LLC was filed in Hawaii in October 2026 to build infrastructure for planetary awareness, accountability, and decision-grade intelligence — and to keep it independent while doing so.
 
 The goal is not to control information.
 
@@ -183,12 +191,10 @@ Verification improves through scrutiny.
 
 ## VYRION
 
-**Planetary Intelligence in an Always-On State**
+**Planetary Intelligence in Continuous Awareness**
 
 Measure What Matters.
 Trust Evidence Over Narrative.
 Verification Over Speculation.
 
 https://vyrion.earth
-
-<img width="1815" height="363" alt="Screenshot 2026-05-23 103542" src="https://github.com/user-attachments/assets/0179197c-6c41-47fb-9c86-2482d6aa8a77" />
