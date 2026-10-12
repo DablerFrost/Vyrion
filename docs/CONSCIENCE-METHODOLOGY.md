@@ -1,5 +1,5 @@
 # CONSCIENCE-METHODOLOGY.md
-## Per-Company Score Derivation · v1.1 · May 5, 2026
+## Per-Company Score Derivation · v1.2 · October 10, 2026
 ## VYRION LLC · Open Proof Protocol
 
 **Platform:** https://Vyrion.earth  
