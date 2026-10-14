@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-10-14T05:03:39.949Z",
+    "generatedAt": "2026-10-14T17:19:24.091Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -197,11 +197,31 @@
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Wildfires": 32,
-        "Sea and Lake Ice": 11,
-        "Severe Storms": 7
+        "Severe Storms": 8,
+        "Wildfires": 31,
+        "Sea and Lake Ice": 11
       },
       "events": [
+        {
+          "id": "EONET_25290",
+          "title": "Tropical Storm Trudy",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC"
+          ],
+          "geometry": {
+            "magnitudeValue": 45,
+            "magnitudeUnit": "kts",
+            "date": "2026-10-14T12:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -99.2,
+              11.3
+            ]
+          }
+        },
         {
           "id": "EONET_25238",
           "title": "Wildfire Buckhorn 2, Cassia, Idaho",
@@ -332,13 +352,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 80,
+            "magnitudeValue": 85,
             "magnitudeUnit": "kts",
-            "date": "2026-10-13T18:00:00Z",
+            "date": "2026-10-14T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              -107.4,
-              20.2
+              -108,
+              19.8
             ]
           }
         },
@@ -782,26 +802,6 @@
               44.1182
             ]
           }
-        },
-        {
-          "id": "EONET_24908",
-          "title": "Prescribed Fire Bonanza Ridge RX, Broadwater, Montana",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 550,
-            "magnitudeUnit": "acres",
-            "date": "2026-09-24T12:55:00Z",
-            "type": "Point",
-            "coordinates": [
-              -111.7702,
-              46.2447
-            ]
-          }
         }
       ]
     },
@@ -811,52 +811,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -8.9,
-          "surface_pressure": 990.6,
-          "wind_speed_10m": 11.36,
+          "temperature_2m": -6.2,
+          "surface_pressure": 984,
+          "wind_speed_10m": 14.94,
           "relative_humidity_2m": 89
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 10.8,
-          "surface_pressure": 1003.8,
-          "wind_speed_10m": 13.05,
+          "temperature_2m": 11.2,
+          "surface_pressure": 1010.6,
+          "wind_speed_10m": 12.67,
           "relative_humidity_2m": 64
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 20.3,
-          "surface_pressure": 913.6,
-          "wind_speed_10m": 2.5,
-          "relative_humidity_2m": 99
+          "temperature_2m": 29.2,
+          "surface_pressure": 914.5,
+          "wind_speed_10m": 2.21,
+          "relative_humidity_2m": 54
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 28,
-          "surface_pressure": 1012.6,
-          "wind_speed_10m": 3.13,
-          "relative_humidity_2m": 79
+          "temperature_2m": 28.4,
+          "surface_pressure": 1012.9,
+          "wind_speed_10m": 2.9,
+          "relative_humidity_2m": 81
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -6.7,
-          "surface_pressure": 977,
-          "wind_speed_10m": 12.79,
-          "relative_humidity_2m": 75
+          "temperature_2m": -6.4,
+          "surface_pressure": 976.1,
+          "wind_speed_10m": 14.71,
+          "relative_humidity_2m": 77
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "error": "fetch_failed"
+          "temperature_2m": -44.9,
+          "surface_pressure": 719.1,
+          "wind_speed_10m": 6.03,
+          "relative_humidity_2m": 61
         }
       ]
     },
