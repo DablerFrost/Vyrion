@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-10-14T05:34:01.493Z",
+    "generatedAt": "2026-10-14T17:37:42.261Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -15,18 +15,18 @@
     "hazardSummary": {
       "totalEvents": 64,
       "categories": {
-        "Wildfires": 32,
-        "Sea and Lake Ice": 11,
-        "Severe Storms": 7
+        "Severe Storms": 8,
+        "Wildfires": 31,
+        "Sea and Lake Ice": 11
       },
       "seismicCount": 14,
       "maxMagnitude": 7.7
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 8.7,
-      "minTemperature_2m": -8.9,
-      "maxTemperature_2m": 28
+      "avgTemperature_2m": 1.88,
+      "minTemperature_2m": -44.9,
+      "maxTemperature_2m": 29.2
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -40,19 +40,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-10-14T04:44:04.910Z",
+        "generated": "2026-10-14T17:05:56.226Z",
         "generated_date": "2026-10-14",
         "script_version": "1.1",
         "window_days": 14,
         "window_start": "2026-09-30",
         "window_end": "2026-10-14",
-        "runtime_ms": 466,
+        "runtime_ms": 684,
         "seismic_live": true,
         "eonet_live": true
       },
       "threat": {
         "level": "CRITICAL",
-        "score": 29.5
+        "score": 30.05
       },
       "seismic": {
         "events": [
@@ -129,6 +129,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1cf"
           },
           {
+            "id": "us6000u28y",
+            "magnitude": 5.9,
+            "place": "Fiji region",
+            "time": "2026-10-14T10:49:47.588Z",
+            "depth_km": 585.1,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u28y"
+          },
+          {
             "id": "us6000u164",
             "magnitude": 5.9,
             "place": "west of Macquarie Island",
@@ -175,14 +183,6 @@
             "time": "2026-09-30T21:55:26.296Z",
             "depth_km": 8,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tymj"
-          },
-          {
-            "id": "us6000tyhk",
-            "magnitude": 5.6,
-            "place": "74 km S of Yonakuni, Japan",
-            "time": "2026-09-30T05:00:24.971Z",
-            "depth_km": 10.8,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tyhk"
           },
           {
             "id": "us6000u1pl",
@@ -249,19 +249,11 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u15x"
           },
           {
-            "id": "us6000tyhi",
-            "magnitude": 5.4,
-            "place": "Balleny Islands region",
-            "time": "2026-09-30T04:48:06.031Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tyhi"
-          },
-          {
             "id": "us6000u21s",
             "magnitude": 5.3,
-            "place": "122 km S of Kokopo, Papua New Guinea",
-            "time": "2026-10-13T14:36:10.660Z",
-            "depth_km": 18.5,
+            "place": "128 km S of Kokopo, Papua New Guinea",
+            "time": "2026-10-13T14:36:12.430Z",
+            "depth_km": 31,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u21s"
           },
           {
@@ -377,14 +369,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tyny"
           },
           {
-            "id": "us6000tyik",
-            "magnitude": 5.2,
-            "place": "Balleny Islands region",
-            "time": "2026-09-30T07:07:16.005Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tyik"
-          },
-          {
             "id": "us6000u26c",
             "magnitude": 5.1,
             "place": "93 km NNW of Coquimbo, Chile",
@@ -395,9 +379,9 @@
           {
             "id": "us6000u23d",
             "magnitude": 5.1,
-            "place": "119 km S of Kokopo, Papua New Guinea",
-            "time": "2026-10-13T16:28:14.303Z",
-            "depth_km": 28.4,
+            "place": "123 km S of Kokopo, Papua New Guinea",
+            "time": "2026-10-13T16:28:15.172Z",
+            "depth_km": 37,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u23d"
           },
           {
@@ -497,14 +481,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tyw6"
           },
           {
-            "id": "us6000tyit",
-            "magnitude": 5.1,
-            "place": "121 km S of Kokopo, Papua New Guinea",
-            "time": "2026-09-30T08:15:17.486Z",
-            "depth_km": 28,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tyit"
-          },
-          {
             "id": "us6000u26f",
             "magnitude": 5,
             "place": "98 km NW of Coquimbo, Chile",
@@ -539,24 +515,32 @@
           {
             "id": "us6000u1aa",
             "magnitude": 5,
-            "place": "13 km W of Río Grande, Panama",
-            "time": "2026-10-09T20:42:08.725Z",
+            "place": "18 km W of Río Grande, Panama",
+            "time": "2026-10-09T20:42:08.628Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1aa"
           },
           {
+            "id": "us6000u1a5",
+            "magnitude": 5,
+            "place": "4 km ENE of Leones Arriba, Panama",
+            "time": "2026-10-09T20:41:04.285Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1a5"
+          },
+          {
             "id": "us6000u19t",
             "magnitude": 5,
-            "place": "6 km NE of La Tronosa, Panama",
-            "time": "2026-10-09T20:21:37.940Z",
+            "place": "9 km NW of Tonosí, Panama",
+            "time": "2026-10-09T20:21:37.961Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u19t"
           },
           {
             "id": "us6000u197",
             "magnitude": 5,
-            "place": "14 km SE of Río Grande, Panama",
-            "time": "2026-10-09T19:04:49.305Z",
+            "place": "10 km SE of Río Grande, Panama",
+            "time": "2026-10-09T19:04:49.376Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u197"
           },
@@ -729,20 +713,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tyku"
           },
           {
-            "id": "us6000tyjb",
-            "magnitude": 5,
-            "place": "27 km N of Kupang, Indonesia",
-            "time": "2026-09-30T10:58:50.586Z",
-            "depth_km": 19.4,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tyjb"
-          },
-          {
-            "id": "us6000tyid",
-            "magnitude": 5,
-            "place": "83 km NE of Tadine, New Caledonia",
-            "time": "2026-09-30T06:50:03.339Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tyid"
+            "id": "us6000u27u",
+            "magnitude": 4.9,
+            "place": "121 km S of Kokopo, Papua New Guinea",
+            "time": "2026-10-14T06:27:06.453Z",
+            "depth_km": 35,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u27u"
           },
           {
             "id": "us6000u272",
@@ -819,24 +795,16 @@
           {
             "id": "us6000u1a6",
             "magnitude": 4.9,
-            "place": "16 km SSW of Calidonia, Panama",
-            "time": "2026-10-09T20:54:56.367Z",
+            "place": "14 km NW of Río Grande, Panama",
+            "time": "2026-10-09T20:54:56.362Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1a6"
           },
           {
-            "id": "us6000u1a5",
-            "magnitude": 4.9,
-            "place": "8 km SSE of Leones Arriba, Panama",
-            "time": "2026-10-09T20:41:04.293Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1a5"
-          },
-          {
             "id": "us6000u19s",
             "magnitude": 4.9,
-            "place": "12 km SSW of Tebario, Panama",
-            "time": "2026-10-09T20:20:23.334Z",
+            "place": "19 km SSW of Tebario, Panama",
+            "time": "2026-10-09T20:20:22.599Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u19s"
           },
@@ -1305,6 +1273,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tyuf"
           },
           {
+            "id": "us6000u27j",
+            "magnitude": 4.7,
+            "place": "10 km S of La Mesa, Panama",
+            "time": "2026-10-14T05:09:35.397Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u27j"
+          },
+          {
             "id": "us6000u271",
             "magnitude": 4.7,
             "place": "128 km S of Kokopo, Papua New Guinea",
@@ -1615,6 +1591,14 @@
             "time": "2026-10-01T10:03:15.128Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tysi"
+          },
+          {
+            "id": "us6000u28e",
+            "magnitude": 4.6,
+            "place": "42 km NNE of Kilimatinde, Tanzania",
+            "time": "2026-10-14T09:16:18.828Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u28e"
           },
           {
             "id": "us6000u26u",
@@ -2065,22 +2049,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tym9"
           },
           {
-            "id": "us6000tyjm",
-            "magnitude": 4.6,
-            "place": "83 km S of Yonakuni, Japan",
-            "time": "2026-09-30T12:02:58.808Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tyjm"
-          },
-          {
-            "id": "us6000tyhn",
-            "magnitude": 4.6,
-            "place": "3 km W of Thívai, Greece",
-            "time": "2026-09-30T05:20:59.067Z",
-            "depth_km": 9.8,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tyhn"
-          },
-          {
             "id": "us6000u21d",
             "magnitude": 4.5,
             "place": "26 km SSW of Zapotillo, Panama",
@@ -2495,25 +2463,9 @@
             "time": "2026-10-01T02:09:19.068Z",
             "depth_km": 94.8,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000typ5"
-          },
-          {
-            "id": "us6000tyjg",
-            "magnitude": 4.5,
-            "place": "271 km S of Dunhuang, China",
-            "time": "2026-09-30T11:21:31.407Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000tyjg"
-          },
-          {
-            "id": "us6000u0sa",
-            "magnitude": 4.5,
-            "place": "224 km SE of Hihifo, Tonga",
-            "time": "2026-09-30T04:56:35.943Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u0sa"
           }
         ],
-        "count_total": 307,
+        "count_total": 301,
         "count_m55_plus": 21,
         "count_m60_plus": 9,
         "count_m70_plus": 1,
@@ -2529,7 +2481,7 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-10-14T04:44:04.618Z"
+        "retrieved": "2026-10-14T17:05:55.723Z"
       },
       "wildfire": {
         "events": [
@@ -2697,23 +2649,23 @@
               45.701
             ],
             "closed": null
-          },
-          {
-            "id": "EONET_24964",
-            "title": "Wildfire SAN FRANCISCO 2, Starr, Texas",
-            "type": "WILDFIRE",
-            "time": "2026-09-30T08:56:00.000Z",
-            "coords": [
-              -98.692,
-              26.287
-            ],
-            "closed": null
           }
         ],
-        "count": 16
+        "count": 15
       },
       "storm": {
         "events": [
+          {
+            "id": "EONET_25290",
+            "title": "Tropical Storm Trudy",
+            "type": "STORM",
+            "time": "2026-10-13T18:00:00.000Z",
+            "coords": [
+              -95.9,
+              10.3
+            ],
+            "closed": null
+          },
           {
             "id": "EONET_25094",
             "title": "Hurricane Simon",
@@ -2781,7 +2733,7 @@
             "closed": null
           }
         ],
-        "count": 6
+        "count": 7
       },
       "flood": {
         "events": [],
@@ -2795,7 +2747,7 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-10-14T05:03:39.949Z",
+        "generatedAt": "2026-10-14T17:19:24.091Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
@@ -2991,11 +2943,31 @@
         "hazards": {
           "totalActive": 50,
           "byCategory": {
-            "Wildfires": 32,
-            "Sea and Lake Ice": 11,
-            "Severe Storms": 7
+            "Severe Storms": 8,
+            "Wildfires": 31,
+            "Sea and Lake Ice": 11
           },
           "events": [
+            {
+              "id": "EONET_25290",
+              "title": "Tropical Storm Trudy",
+              "categories": [
+                "Severe Storms"
+              ],
+              "sources": [
+                "JTWC"
+              ],
+              "geometry": {
+                "magnitudeValue": 45,
+                "magnitudeUnit": "kts",
+                "date": "2026-10-14T12:00:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -99.2,
+                  11.3
+                ]
+              }
+            },
             {
               "id": "EONET_25238",
               "title": "Wildfire Buckhorn 2, Cassia, Idaho",
@@ -3126,13 +3098,13 @@
                 "JTWC"
               ],
               "geometry": {
-                "magnitudeValue": 80,
+                "magnitudeValue": 85,
                 "magnitudeUnit": "kts",
-                "date": "2026-10-13T18:00:00Z",
+                "date": "2026-10-14T12:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  -107.4,
-                  20.2
+                  -108,
+                  19.8
                 ]
               }
             },
@@ -3576,26 +3548,6 @@
                   44.1182
                 ]
               }
-            },
-            {
-              "id": "EONET_24908",
-              "title": "Prescribed Fire Bonanza Ridge RX, Broadwater, Montana",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 550,
-                "magnitudeUnit": "acres",
-                "date": "2026-09-24T12:55:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -111.7702,
-                  46.2447
-                ]
-              }
             }
           ]
         },
@@ -3605,52 +3557,55 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": -8.9,
-              "surface_pressure": 990.6,
-              "wind_speed_10m": 11.36,
+              "temperature_2m": -6.2,
+              "surface_pressure": 984,
+              "wind_speed_10m": 14.94,
               "relative_humidity_2m": 89
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 10.8,
-              "surface_pressure": 1003.8,
-              "wind_speed_10m": 13.05,
+              "temperature_2m": 11.2,
+              "surface_pressure": 1010.6,
+              "wind_speed_10m": 12.67,
               "relative_humidity_2m": 64
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 20.3,
-              "surface_pressure": 913.6,
-              "wind_speed_10m": 2.5,
-              "relative_humidity_2m": 99
+              "temperature_2m": 29.2,
+              "surface_pressure": 914.5,
+              "wind_speed_10m": 2.21,
+              "relative_humidity_2m": 54
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 28,
-              "surface_pressure": 1012.6,
-              "wind_speed_10m": 3.13,
-              "relative_humidity_2m": 79
+              "temperature_2m": 28.4,
+              "surface_pressure": 1012.9,
+              "wind_speed_10m": 2.9,
+              "relative_humidity_2m": 81
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": -6.7,
-              "surface_pressure": 977,
-              "wind_speed_10m": 12.79,
-              "relative_humidity_2m": 75
+              "temperature_2m": -6.4,
+              "surface_pressure": 976.1,
+              "wind_speed_10m": 14.71,
+              "relative_humidity_2m": 77
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "error": "fetch_failed"
+              "temperature_2m": -44.9,
+              "surface_pressure": 719.1,
+              "wind_speed_10m": 6.03,
+              "relative_humidity_2m": 61
             }
           ]
         },
@@ -3668,7 +3623,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-10-14T05:21:43.362Z"
+        "generatedAt": "2026-10-14T17:35:41.469Z"
       },
       "health": {
         "score": 87,
