@@ -7,6 +7,7 @@ const TRACKS = [{"title": "Self Taught - A message from Brock", "file": "audio/c
 (function () {
   const words1 = "THE DRIFT IS CALLING ∞ SOUND · MYTH · SIGNAL ∞ ";
   const words2 = "NIHILISM EFFECT VOL_II ∞ MUSIC · MYTH · CONSCIOUSNESS ∞ ";
+  const words3 = "THE BLACK SIGNAL TRILOGY ∞ WEAR THE SIGNAL ∞ ";
   const fill = (el, words) => {
     if (!el) return;
     let html = "";
@@ -17,6 +18,7 @@ const TRACKS = [{"title": "Self Taught - A message from Brock", "file": "audio/c
   };
   fill(document.getElementById("marquee-1"), words1);
   fill(document.getElementById("marquee-2"), words2);
+  fill(document.getElementById("marquee-3"), words3);
 })();
 
 /* ---------- theme switcher ---------- */
@@ -77,7 +79,7 @@ const TRACKS = [{"title": "Self Taught - A message from Brock", "file": "audio/c
     const m = Math.floor(s / 60), sec = Math.floor(s % 60);
     return m + ":" + String(sec).padStart(2, "0");
   };
-  const accent = () => getComputedStyle(document.documentElement).getPropertyValue("--accent").trim() || "#b6ff2e";
+  const accent = () => getComputedStyle(document.documentElement).getPropertyValue("--accent").trim() || "#00d9ff";
 
   /* ----- visualizer ----- */
   function sizeCanvas() {
