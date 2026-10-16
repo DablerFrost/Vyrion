@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-10-16T04:43:46.159Z",
+    "generatedAt": "2026-10-16T16:45:50.195Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -21,7 +21,7 @@
             135
           ],
           "tsunami": false,
-          "significance": 732
+          "significance": 733
         },
         {
           "id": "us6000u214",
@@ -60,7 +60,7 @@
             11
           ],
           "tsunami": false,
-          "significance": 610
+          "significance": 611
         },
         {
           "id": "us6000u1cf",
@@ -210,11 +210,51 @@
     "hazards": {
       "totalActive": 50,
       "byCategory": {
+        "Severe Storms": 9,
         "Wildfires": 32,
-        "Severe Storms": 7,
-        "Sea and Lake Ice": 11
+        "Sea and Lake Ice": 9
       },
       "events": [
+        {
+          "id": "EONET_25340",
+          "title": "Tropical Cyclone 01P",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC"
+          ],
+          "geometry": {
+            "magnitudeValue": 35,
+            "magnitudeUnit": "kts",
+            "date": "2026-10-16T06:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -163.3,
+              -10.8
+            ]
+          }
+        },
+        {
+          "id": "EONET_25339",
+          "title": "Tropical Storm Champi",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC"
+          ],
+          "geometry": {
+            "magnitudeValue": 45,
+            "magnitudeUnit": "kts",
+            "date": "2026-10-16T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              153.8,
+              11.3
+            ]
+          }
+        },
         {
           "id": "EONET_25310",
           "title": "Prescribed Fire Newman Piles RX, Coconino, Arizona",
@@ -245,13 +285,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 85,
+            "magnitudeValue": 105,
             "magnitudeUnit": "kts",
-            "date": "2026-10-16T00:00:00Z",
+            "date": "2026-10-16T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              -101.9,
-              14.1
+              -102.4,
+              14
             ]
           }
         },
@@ -445,13 +485,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 40,
+            "magnitudeValue": 35,
             "magnitudeUnit": "kts",
-            "date": "2026-10-16T00:00:00Z",
+            "date": "2026-10-16T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              -108.3,
-              19.3
+              -108.5,
+              19.7
             ]
           }
         },
@@ -774,47 +814,6 @@
               33.4
             ]
           }
-        },
-        {
-          "id": "EONET_25041",
-          "title": "Prescribed Fire Walker Hill Piles RX, Coconino, Arizona",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 725,
-            "magnitudeUnit": "acres",
-            "date": "2026-09-28T09:55:00Z",
-            "type": "Point",
-            "coordinates": [
-              -111.847278,
-              35.281778
-            ]
-          }
-        },
-        {
-          "id": "EONET_24875",
-          "title": "Cyclone Rachel",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "JTWC",
-            "NOAA_NHC"
-          ],
-          "geometry": {
-            "magnitudeValue": 30,
-            "magnitudeUnit": "kts",
-            "date": "2026-10-11T12:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -115.4,
-              33.9
-            ]
-          }
         }
       ]
     },
@@ -824,55 +823,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -13.9,
-          "surface_pressure": 987,
-          "wind_speed_10m": 17.33,
-          "relative_humidity_2m": 88
+          "temperature_2m": -11.3,
+          "surface_pressure": 994.2,
+          "wind_speed_10m": 13.49,
+          "relative_humidity_2m": 85
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 12.4,
-          "surface_pressure": 1024.9,
-          "wind_speed_10m": 8.9,
-          "relative_humidity_2m": 62
+          "temperature_2m": 14.1,
+          "surface_pressure": 1015.2,
+          "wind_speed_10m": 15.38,
+          "relative_humidity_2m": 83
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 20.8,
-          "surface_pressure": 913.4,
-          "wind_speed_10m": 2.25,
-          "relative_humidity_2m": 98
+          "temperature_2m": 27.7,
+          "surface_pressure": 914.5,
+          "wind_speed_10m": 2.49,
+          "relative_humidity_2m": 55
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 27.5,
-          "surface_pressure": 1011.8,
-          "wind_speed_10m": 1.68,
-          "relative_humidity_2m": 81
+          "temperature_2m": 28.7,
+          "surface_pressure": 1011.2,
+          "wind_speed_10m": 1.52,
+          "relative_humidity_2m": 83
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -6.1,
-          "surface_pressure": 978.6,
-          "wind_speed_10m": 8.94,
-          "relative_humidity_2m": 67
+          "temperature_2m": -6.3,
+          "surface_pressure": 988,
+          "wind_speed_10m": 8.43,
+          "relative_humidity_2m": 83
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -49.4,
-          "surface_pressure": 703.2,
-          "wind_speed_10m": 6.9,
-          "relative_humidity_2m": 57
+          "temperature_2m": -45.6,
+          "surface_pressure": 708.6,
+          "wind_speed_10m": 5.34,
+          "relative_humidity_2m": 64
         }
       ]
     },
