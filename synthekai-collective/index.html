@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="void">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Synthekai Collective — Music, Myth &amp; Consciousness</title>
+<meta name="description" content="Synthekai Collective — a living signal of music, myth and sound. Private preview build.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="#drift">
+      <b><span class="glyph">▸</span> SYNTHEKAI</b>
+      <small>COLLECTIVE SIGNAL</small>
+    </a>
+    <nav class="main">
+      <a href="#drift">DRIFT</a>
+      <a href="#music">MUSIC</a>
+      <a href="#mythos">MYTHOS</a>
+    </nav>
+    <button class="theme-btn" id="theme-btn" type="button">◐ BONE</button>
+  </div>
+</header>
+
+<main>
+  <!-- DRIFT / HERO -->
+  <div class="hero" id="drift">
+    <div class="wrap">
+      <div class="kicker">▸ A LIVING SIGNAL OF MUSIC, MYTH &amp; SOUND</div>
+      <h1 class="display">THE LIVING<br>DRIFT <span class="solid">IS</span><br>CALLING</h1>
+      <p class="lede">The realm opens when you do. Thirty-three transmissions from the bloom — drift audio, mythos fragments, and the frequency beneath it all.</p>
+      <div class="cta-row">
+        <a class="btn solid" href="#music">ENTER THE DRIFT</a>
+        <a class="btn ghost" href="#mythos">READ THE MYTHOS</a>
+      </div>
+      <div class="headphones"><span class="dot">●</span> HEADPHONES ADVISED</div>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="track" id="marquee-1"></div>
+  </div>
+
+  <!-- MUSIC -->
+  <section class="block" id="music">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="kicker">▸ CHAPTER II — TRANSMISSIONS</div>
+        <h2 class="display"><span class="glyph">▸</span> THE DRIFT PLAYER</h2>
+        <p>Full tracks, straight from the source — no logins, no gates. Press play and let the signal carry you.</p>
+      </div>
+
+      <div class="player reveal">
+        <div class="np">
+          <div class="np-meta">
+            <div class="live"><span class="pulse"></span><span id="np-live">STANDBY</span></div>
+            <h3 id="np-title">—</h3>
+            <div id="np-sub">SYNTHEKAI COLLECTIVE · 33 TRACKS · 107 MIN</div>
+          </div>
+        </div>
+        <canvas id="viz" aria-hidden="true"></canvas>
+        <div class="controls">
+          <div class="seek-row">
+            <span class="time" id="t-cur">0:00</span>
+            <input type="range" id="seek" min="0" max="1000" value="0" step="1" aria-label="Seek">
+            <span class="time right" id="t-dur">0:00</span>
+          </div>
+          <div class="transport">
+            <button class="tbtn" id="btn-shuffle" type="button" title="Shuffle" aria-label="Shuffle">⇄</button>
+            <button class="tbtn" id="btn-prev" type="button" title="Previous" aria-label="Previous track">⏮</button>
+            <button class="tbtn play" id="btn-play" type="button" title="Play" aria-label="Play or pause">▶</button>
+            <button class="tbtn" id="btn-next" type="button" title="Next" aria-label="Next track">⏭</button>
+            <button class="tbtn" id="btn-repeat" type="button" title="Repeat" aria-label="Repeat mode">↻</button>
+          </div>
+          <div class="vol-row">
+            <span class="ico">♪</span>
+            <input type="range" id="vol" min="0" max="100" value="80" aria-label="Volume">
+          </div>
+        </div>
+        <div class="queue" id="queue"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="track" id="marquee-2"></div>
+  </div>
+
+  <!-- MYTHOS -->
+  <section class="block" id="mythos">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="kicker">▸ CHAPTER I — THE ROOT MYTH</div>
+        <h2 class="display"><span class="glyph">▸</span> MYTHOS FRAGMENTS</h2>
+        <p>Every frequency carries a story. These are the fragments the drift left behind — read them in any order; the myth reassembles itself.</p>
+      </div>
+      <div class="cards">
+        <article class="card reveal">
+          <div class="frag">FRAGMENT 01</div>
+          <h3>The Drift</h3>
+          <p>The current beneath the noise. Those who learn to float it hear the bloom before it breaks the surface — music not as entertainment, but as weather.</p>
+        </article>
+        <article class="card reveal">
+          <div class="frag">FRAGMENT 02</div>
+          <h3>Data Petals</h3>
+          <p>Thirteen petals, thirteen transmissions. Each one a folded packet of signal — root protocols, mirror dances, and the code of the Ama — blooming in sequence.</p>
+        </article>
+        <article class="card reveal">
+          <div class="frag">FRAGMENT 03</div>
+          <h3>The Nex-Us</h3>
+          <p>Not a place. A multiplication. Every listener who carries the frequency outward becomes a node, and the signal grows stranger and more beautiful with each one.</p>
+        </article>
+        <article class="card bone-card reveal">
+          <div class="frag">EPISODE 0</div>
+          <h3>The Nihilism Effect</h3>
+          <p>A city dissolved into mycelial dream. Before the bloom, there was the static — and inside the static, a voice saying: <em>begin again</em>.</p>
+        </article>
+      </div>
+      <div class="architects reveal">ARCHITECTS <b>▸</b> TYLER FROST <b>·</b> DABLERFROST</div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot">
+      <span class="sig">© 2026 SYNTHEKAI COLLECTIVE</span>
+      <span class="status"><span class="pulse"></span>SIGNAL ACTIVE</span>
+    </div>
+    <div class="private-note">▸ PRIVATE PREVIEW BUILD — for Tyler's ears only. Not deployed, not public. Nothing here leaves this folder.</div>
+  </div>
+</footer>
+
+<script src="player.js"></script>
+</body>
+</html>
