@@ -1,15 +1,28 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-10-15T17:08:30.036Z",
+    "generatedAt": "2026-10-16T04:43:46.159Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 14,
+      "count": 15,
       "maxMagnitude": 7.7,
       "events": [
+        {
+          "id": "us6000u2mq",
+          "magnitude": 6.9,
+          "place": "76 km NE of Ozernovskiy, Russia",
+          "time": "2026-10-16T03:35:31.925Z",
+          "coordinates": [
+            157.2701,
+            51.9848,
+            135
+          ],
+          "tsunami": false,
+          "significance": 732
+        },
         {
           "id": "us6000u214",
           "magnitude": 6.8,
@@ -198,8 +211,8 @@
       "totalActive": 50,
       "byCategory": {
         "Wildfires": 32,
-        "Severe Storms": 8,
-        "Sea and Lake Ice": 10
+        "Severe Storms": 7,
+        "Sea and Lake Ice": 11
       },
       "events": [
         {
@@ -232,13 +245,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 80,
+            "magnitudeValue": 85,
             "magnitudeUnit": "kts",
-            "date": "2026-10-15T12:00:00Z",
+            "date": "2026-10-16T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -101.6,
-              12.9
+              -101.9,
+              14.1
             ]
           }
         },
@@ -432,13 +445,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 50,
+            "magnitudeValue": 40,
             "magnitudeUnit": "kts",
-            "date": "2026-10-15T12:00:00Z",
+            "date": "2026-10-16T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -108,
-              19.2
+              -108.3,
+              19.3
             ]
           }
         },
@@ -811,54 +824,54 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -14.7,
-          "surface_pressure": 982.2,
-          "wind_speed_10m": 19.05,
-          "relative_humidity_2m": 89
+          "temperature_2m": -13.9,
+          "surface_pressure": 987,
+          "wind_speed_10m": 17.33,
+          "relative_humidity_2m": 88
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 11.3,
-          "surface_pressure": 1024.4,
-          "wind_speed_10m": 6,
-          "relative_humidity_2m": 66
+          "temperature_2m": 12.4,
+          "surface_pressure": 1024.9,
+          "wind_speed_10m": 8.9,
+          "relative_humidity_2m": 62
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 28.6,
-          "surface_pressure": 914.6,
-          "wind_speed_10m": 2.06,
-          "relative_humidity_2m": 52
+          "temperature_2m": 20.8,
+          "surface_pressure": 913.4,
+          "wind_speed_10m": 2.25,
+          "relative_humidity_2m": 98
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
           "temperature_2m": 27.5,
-          "surface_pressure": 1012.3,
-          "wind_speed_10m": 4.25,
-          "relative_humidity_2m": 84
+          "surface_pressure": 1011.8,
+          "wind_speed_10m": 1.68,
+          "relative_humidity_2m": 81
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -5.5,
-          "surface_pressure": 979.4,
-          "wind_speed_10m": 11.33,
-          "relative_humidity_2m": 75
+          "temperature_2m": -6.1,
+          "surface_pressure": 978.6,
+          "wind_speed_10m": 8.94,
+          "relative_humidity_2m": 67
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -44.3,
-          "surface_pressure": 710.8,
-          "wind_speed_10m": 6.77,
+          "temperature_2m": -49.4,
+          "surface_pressure": 703.2,
+          "wind_speed_10m": 6.9,
           "relative_humidity_2m": 57
         }
       ]
