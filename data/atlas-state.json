@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-10-16T16:45:50.195Z",
+    "generatedAt": "2026-10-17T04:41:25.034Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -21,7 +21,7 @@
             135
           ],
           "tsunami": false,
-          "significance": 733
+          "significance": 734
         },
         {
           "id": "us6000u214",
@@ -143,15 +143,15 @@
         {
           "id": "us6000tz1y",
           "magnitude": 4.7,
-          "place": "5 km NNE of Korumburra, Australia",
-          "time": "2026-10-02T16:01:39.581Z",
+          "place": "5 km NNW of Korumburra, Australia",
+          "time": "2026-10-02T16:01:39.602Z",
           "coordinates": [
-            145.8401,
-            -38.3802,
+            145.8076,
+            -38.3847,
             10
           ],
           "tsunami": false,
-          "significance": 763
+          "significance": 764
         },
         {
           "id": "uw714111952",
@@ -210,9 +210,9 @@
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Severe Storms": 9,
+        "Severe Storms": 8,
         "Wildfires": 32,
-        "Sea and Lake Ice": 9
+        "Sea and Lake Ice": 10
       },
       "events": [
         {
@@ -225,19 +225,19 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 35,
+            "magnitudeValue": 40,
             "magnitudeUnit": "kts",
-            "date": "2026-10-16T06:00:00Z",
+            "date": "2026-10-16T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              -163.3,
-              -10.8
+              -163.4,
+              -12.7
             ]
           }
         },
         {
           "id": "EONET_25339",
-          "title": "Tropical Storm Champi",
+          "title": "Typhoon Champi",
           "categories": [
             "Severe Storms"
           ],
@@ -245,13 +245,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 45,
+            "magnitudeValue": 75,
             "magnitudeUnit": "kts",
-            "date": "2026-10-16T00:00:00Z",
+            "date": "2026-10-16T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              153.8,
-              11.3
+              150.2,
+              11.9
             ]
           }
         },
@@ -285,13 +285,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 105,
+            "magnitudeValue": 75,
             "magnitudeUnit": "kts",
-            "date": "2026-10-16T06:00:00Z",
+            "date": "2026-10-16T18:00:00Z",
             "type": "Point",
             "coordinates": [
               -102.4,
-              14
+              14.6
             ]
           }
         },
@@ -485,13 +485,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 35,
+            "magnitudeValue": 30,
             "magnitudeUnit": "kts",
-            "date": "2026-10-16T06:00:00Z",
+            "date": "2026-10-16T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              -108.5,
-              19.7
+              -110,
+              21.3
             ]
           }
         },
@@ -823,55 +823,52 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -11.3,
-          "surface_pressure": 994.2,
-          "wind_speed_10m": 13.49,
-          "relative_humidity_2m": 85
+          "temperature_2m": -13.1,
+          "surface_pressure": 1000,
+          "wind_speed_10m": 8.6,
+          "relative_humidity_2m": 86
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 14.1,
-          "surface_pressure": 1015.2,
-          "wind_speed_10m": 15.38,
-          "relative_humidity_2m": 83
+          "temperature_2m": 13,
+          "surface_pressure": 1006.8,
+          "wind_speed_10m": 9.29,
+          "relative_humidity_2m": 86
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 27.7,
-          "surface_pressure": 914.5,
-          "wind_speed_10m": 2.49,
-          "relative_humidity_2m": 55
+          "error": "fetch_failed"
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 28.7,
-          "surface_pressure": 1011.2,
-          "wind_speed_10m": 1.52,
-          "relative_humidity_2m": 83
+          "temperature_2m": 27.2,
+          "surface_pressure": 1012.9,
+          "wind_speed_10m": 1.03,
+          "relative_humidity_2m": 84
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -6.3,
-          "surface_pressure": 988,
-          "wind_speed_10m": 8.43,
-          "relative_humidity_2m": 83
+          "temperature_2m": -6,
+          "surface_pressure": 991.7,
+          "wind_speed_10m": 5.76,
+          "relative_humidity_2m": 85
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -45.6,
-          "surface_pressure": 708.6,
-          "wind_speed_10m": 5.34,
-          "relative_humidity_2m": 64
+          "temperature_2m": -48.5,
+          "surface_pressure": 712.4,
+          "wind_speed_10m": 5.93,
+          "relative_humidity_2m": 68
         }
       ]
     },
@@ -882,7 +879,7 @@
       "error": "[NOAA CRW Ocean Heat] HTTP 404 Not Found"
     },
     "cryosphere": {
-      "error": "[NSIDC Sea Ice] HTTP 404 Not Found"
+      "error": "[NSIDC Sea Ice] This operation was aborted"
     }
   }
 }
