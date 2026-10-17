@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-10-17T04:41:25.034Z",
+    "generatedAt": "2026-10-17T15:42:48.243Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -10,6 +10,19 @@
       "count": 15,
       "maxMagnitude": 7.7,
       "events": [
+        {
+          "id": "us6000u2y1",
+          "magnitude": 5.7,
+          "place": "48 km WNW of Khuzdar, Pakistan",
+          "time": "2026-10-17T05:06:57.657Z",
+          "coordinates": [
+            66.1708,
+            28.0179,
+            10
+          ],
+          "tsunami": false,
+          "significance": 651
+        },
         {
           "id": "us6000u2mq",
           "magnitude": 6.9,
@@ -168,16 +181,16 @@
         },
         {
           "id": "us6000txpi",
-          "magnitude": 6.6,
-          "place": "80 km ENE of Tadine, New Caledonia",
-          "time": "2026-09-25T21:23:03.309Z",
+          "magnitude": 6.7,
+          "place": "74 km ENE of Tadine, New Caledonia",
+          "time": "2026-09-25T21:23:03.906Z",
           "coordinates": [
-            168.61,
-            -21.2982,
+            168.5544,
+            -21.3128,
             10
           ],
           "tsunami": false,
-          "significance": 678
+          "significance": 700
         },
         {
           "id": "us7000tiqc",
@@ -191,19 +204,6 @@
           ],
           "tsunami": false,
           "significance": 647
-        },
-        {
-          "id": "us7000ti1p",
-          "magnitude": 6.5,
-          "place": "177 km W of Nikolski, Alaska",
-          "time": "2026-09-17T14:19:52.472Z",
-          "coordinates": [
-            -171.5033,
-            52.9564,
-            98
-          ],
-          "tsunami": true,
-          "significance": 653
         }
       ]
     },
@@ -225,13 +225,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 40,
+            "magnitudeValue": 60,
             "magnitudeUnit": "kts",
-            "date": "2026-10-16T18:00:00Z",
+            "date": "2026-10-17T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              -163.4,
-              -12.7
+              -163.2,
+              -13.2
             ]
           }
         },
@@ -245,13 +245,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 75,
+            "magnitudeValue": 115,
             "magnitudeUnit": "kts",
-            "date": "2026-10-16T18:00:00Z",
+            "date": "2026-10-17T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              150.2,
-              11.9
+              147.3,
+              12.5
             ]
           }
         },
@@ -285,13 +285,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 75,
+            "magnitudeValue": 80,
             "magnitudeUnit": "kts",
-            "date": "2026-10-16T18:00:00Z",
+            "date": "2026-10-17T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              -102.4,
-              14.6
+              -103.2,
+              15.7
             ]
           }
         },
@@ -824,50 +824,53 @@
           "lat": 80,
           "lon": 0,
           "temperature_2m": -13.1,
-          "surface_pressure": 1000,
-          "wind_speed_10m": 8.6,
-          "relative_humidity_2m": 86
+          "surface_pressure": 1005,
+          "wind_speed_10m": 7.27,
+          "relative_humidity_2m": 83
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 13,
-          "surface_pressure": 1006.8,
-          "wind_speed_10m": 9.29,
-          "relative_humidity_2m": 86
+          "temperature_2m": 12.3,
+          "surface_pressure": 1021.2,
+          "wind_speed_10m": 10.75,
+          "relative_humidity_2m": 73
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "error": "fetch_failed"
+          "temperature_2m": 27,
+          "surface_pressure": 916.1,
+          "wind_speed_10m": 2.67,
+          "relative_humidity_2m": 56
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 27.2,
-          "surface_pressure": 1012.9,
-          "wind_speed_10m": 1.03,
-          "relative_humidity_2m": 84
+          "temperature_2m": 28.3,
+          "surface_pressure": 1013.1,
+          "wind_speed_10m": 2.31,
+          "relative_humidity_2m": 81
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -6,
-          "surface_pressure": 991.7,
-          "wind_speed_10m": 5.76,
-          "relative_humidity_2m": 85
+          "temperature_2m": -0.9,
+          "surface_pressure": 986.7,
+          "wind_speed_10m": 6.86,
+          "relative_humidity_2m": 95
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -48.5,
-          "surface_pressure": 712.4,
-          "wind_speed_10m": 5.93,
+          "temperature_2m": -44.5,
+          "surface_pressure": 719,
+          "wind_speed_10m": 5.23,
           "relative_humidity_2m": 68
         }
       ]
@@ -879,7 +882,7 @@
       "error": "[NOAA CRW Ocean Heat] HTTP 404 Not Found"
     },
     "cryosphere": {
-      "error": "[NSIDC Sea Ice] This operation was aborted"
+      "error": "[NSIDC Sea Ice] HTTP 404 Not Found"
     }
   }
 }
