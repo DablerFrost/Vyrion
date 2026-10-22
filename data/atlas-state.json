@@ -1,15 +1,28 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-10-22T05:03:14.532Z",
+    "generatedAt": "2026-10-22T17:17:58.522Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 15,
+      "count": 16,
       "maxMagnitude": 7.7,
       "events": [
+        {
+          "id": "us6000u43g",
+          "magnitude": 7,
+          "place": "191 km ENE of Nagqu, China",
+          "time": "2026-10-22T14:33:40.353Z",
+          "coordinates": [
+            93.7797,
+            32.3805,
+            18
+          ],
+          "tsunami": false,
+          "significance": 1003
+        },
         {
           "id": "us6000u3jl",
           "magnitude": 6.3,
@@ -210,8 +223,8 @@
     "hazards": {
       "totalActive": 50,
       "byCategory": {
-        "Severe Storms": 5,
-        "Wildfires": 34,
+        "Severe Storms": 4,
+        "Wildfires": 35,
         "Sea and Lake Ice": 11
       },
       "events": [
@@ -227,7 +240,7 @@
           "geometry": {
             "magnitudeValue": 50,
             "magnitudeUnit": "kts",
-            "date": "2026-10-21T18:00:00Z",
+            "date": "2026-10-22T06:00:00Z",
             "type": "Point",
             "coordinates": [
               50.8,
@@ -365,13 +378,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 135,
+            "magnitudeValue": 105,
             "magnitudeUnit": "kts",
-            "date": "2026-10-21T18:00:00Z",
+            "date": "2026-10-22T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              126.9,
-              19.9
+              125.4,
+              20.9
             ]
           }
         },
@@ -636,26 +649,6 @@
           }
         },
         {
-          "id": "EONET_25094",
-          "title": "Hurricane Simon",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "JTWC"
-          ],
-          "geometry": {
-            "magnitudeValue": 30,
-            "magnitudeUnit": "kts",
-            "date": "2026-10-16T18:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -110,
-              21.3
-            ]
-          }
-        },
-        {
           "id": "EONET_25119",
           "title": "Prescribed Fire CON BSE13 RX, Covington, Alabama",
           "categories": [
@@ -814,6 +807,26 @@
               35.116944
             ]
           }
+        },
+        {
+          "id": "EONET_25237",
+          "title": "Prescribed Fire KENDRICK RX-WRD CY26, Coconino, Arizona",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 1190,
+            "magnitudeUnit": "acres",
+            "date": "2026-10-01T16:51:00Z",
+            "type": "Point",
+            "coordinates": [
+              -111.909179,
+              35.403321
+            ]
+          }
         }
       ]
     },
@@ -823,60 +836,60 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -11.3,
-          "surface_pressure": 1006.3,
-          "wind_speed_10m": 12.05,
+          "temperature_2m": -15.2,
+          "surface_pressure": 1018.8,
+          "wind_speed_10m": 7.99,
           "relative_humidity_2m": 88
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 8.6,
-          "surface_pressure": 1016.7,
-          "wind_speed_10m": 12.86,
-          "relative_humidity_2m": 71
+          "temperature_2m": 9.7,
+          "surface_pressure": 1023.5,
+          "wind_speed_10m": 10.42,
+          "relative_humidity_2m": 70
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 19,
-          "surface_pressure": 913.8,
-          "wind_speed_10m": 2.43,
-          "relative_humidity_2m": 94
+          "temperature_2m": 28.1,
+          "surface_pressure": 915.1,
+          "wind_speed_10m": 2.7,
+          "relative_humidity_2m": 47
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 28.3,
-          "surface_pressure": 1012.3,
-          "wind_speed_10m": 1.44,
-          "relative_humidity_2m": 80
+          "temperature_2m": 27.5,
+          "surface_pressure": 1012.2,
+          "wind_speed_10m": 5.44,
+          "relative_humidity_2m": 87
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -2.9,
-          "surface_pressure": 1000.6,
-          "wind_speed_10m": 11.31,
-          "relative_humidity_2m": 83
+          "temperature_2m": -1,
+          "surface_pressure": 996.6,
+          "wind_speed_10m": 12.1,
+          "relative_humidity_2m": 90
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -38.5,
+          "temperature_2m": -33.5,
           "surface_pressure": 708.5,
-          "wind_speed_10m": 10.67,
-          "relative_humidity_2m": 53
+          "wind_speed_10m": 10.39,
+          "relative_humidity_2m": 61
         }
       ]
     },
     "climate": {
-      "error": "[NOAA Climate (keyless)] HTTP 503 Service Unavailable"
+      "error": "[NOAA Climate (keyless)] Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
     },
     "oceanHeat": {
       "error": "[NOAA CRW Ocean Heat] HTTP 404 Not Found"
