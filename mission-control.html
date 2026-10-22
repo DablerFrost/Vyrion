@@ -1172,6 +1172,20 @@ tickerEl.innerHTML = `<span class="ev"><span class="ev-type">SHIELD</span><span 
 (async function loadCO2() {
   const chip = document.getElementById('chip-co2');
   const sub  = document.getElementById('chip-co2-sub');
+  function show(ppm, date) {
+    chip.textContent = Number(ppm).toFixed(1);
+    sub.textContent = `ppm · ${date}`;
+  }
+  // 1) Same-origin snapshot (data/co2.json, refreshed from NOAA GML) — always renders.
+  let haveSnapshot = false;
+  try {
+    const sr = await fetch('/data/co2.json', { cache: 'no-store' });
+    if (sr.ok) {
+      const s = await sr.json();
+      if (s && s.ppm > 0 && s.date) { show(s.ppm, s.date); haveSnapshot = true; }
+    }
+  } catch (_) {}
+  // 2) Best-effort live refresh via public CORS proxies; snapshot stays if they fail.
   try {
     const NOAA_URL = 'https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_daily_mlo.txt';
     let r;
@@ -1185,16 +1199,17 @@ tickerEl.innerHTML = `<span class="ev"><span class="ev-type">SHIELD</span><span 
       if (p.length >= 5) {
         const v = parseFloat(p[4]);
         if (!isNaN(v) && v > 0) {
-          chip.textContent = v.toFixed(1);
-          sub.textContent = `ppm · ${p[0]}-${p[1].padStart(2,'0')}-${p[2].padStart(2,'0')}`;
+          show(v, `${p[0]}-${p[1].padStart(2,'0')}-${p[2].padStart(2,'0')}`);
           return;
         }
       }
     }
     throw new Error();
   } catch (_) {
-    chip.textContent = '—';
-    sub.textContent = 'feed unavailable';
+    if (!haveSnapshot) {
+      chip.textContent = '—';
+      sub.textContent = 'feed unavailable';
+    }
   }
 })();
 // ── PLANETARY TONE · Web Audio ambient drone ──────────────────────────
