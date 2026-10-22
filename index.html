@@ -3332,6 +3332,10 @@
 .nav-links a:hover{color:var(--t1);}
 .nav-links a.active{color:var(--t1);border-bottom:none;}
 .nav-links a.active::after{content:'';position:absolute;left:0;right:0;bottom:-4px;height:1px;background:rgba(0,212,255,.5);}
+.nav-links a.nav-shop-pill{background:linear-gradient(92deg,#00d4ff,#a050ff);color:#02101e !important;padding:.34rem .72rem;border-radius:999px;box-shadow:0 0 18px rgba(0,212,255,.45);font-weight:800;}
+.nav-links a.nav-shop-pill:hover{color:#02101e !important;filter:brightness(1.1);}
+.nav-links a.nav-shop-pill::after{display:none !important;}
+.shop-pill{display:inline-block;margin-top:.65rem;font-family:'Archivo Narrow',sans-serif;font-weight:800;letter-spacing:.16em;font-size:.78rem;text-transform:uppercase;text-decoration:none;color:#02101e !important;background:linear-gradient(92deg,#00d4ff,#a050ff);padding:.6rem 1.2rem;border-radius:999px;box-shadow:0 0 26px rgba(0,212,255,.45);}
 .nav-tooltip{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(-6px);background:rgba(2,9,18,.97);border:1px solid rgba(0,212,255,.22);border-radius:3px;padding:.35rem .65rem;font-family:'Courier Prime',monospace;font-size:.52rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--t2);white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .18s,transform .18s;z-index:700;}
 .nav-item:hover .nav-tooltip{opacity:1;transform:translateX(-50%) translateY(0);}
 .nav-burger{display:none;align-items:center;justify-content:center;width:42px;height:42px;flex-shrink:0;cursor:pointer;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.28);border-radius:9px;color:var(--t1,#e8f4ff);font-size:1.25rem;line-height:1;transition:background .2s,border-color .2s;}
@@ -3591,6 +3595,7 @@ html[data-tscale="1.22"] .nc-live .lbl{display:none;}
     <li><a href="https://vyrion.earth/about" class="nav-item">ABOUT<span class="nav-tooltip">Mission &amp; Open Methodology</span></a></li>
     <li><a href="https://vyrion.earth/mission-control.html" class="nav-item">MISSION CONTROL<span class="nav-tooltip">Planetary Command Interface</span></a></li>
     <li><a href="https://vyrion.earth/nexan" class="nav-item">NEXAN<span class="nav-tooltip">Research &amp; Validation Institute</span></a></li>
+    <li><a href="https://vyrion.earth/shop" class="nav-item nav-shop-pill">🛒 SHOP<span class="nav-tooltip">SIGNALWEAR · Drop 001</span></a></li>
   </ul>
   <button class="nav-burger" id="nav-burger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">☰</button>
   <div class="nav-controls">
@@ -3933,7 +3938,8 @@ A Happy Little Science Playground - CLICK TO ENTER → </button>
             <span style="color:var(--t3)">Architecture Defined</span>
           </div>
         </div>
-         </a>
+      </div>
+    </section>
       <!-- ── CONSCIENCE SNAPSHOT ────────────────────────────────────────────── -->
       <section class="conscience-snap">
         <div class="section-header">
@@ -4199,6 +4205,7 @@ A Happy Little Science Playground - CLICK TO ENTER → </button>
           <br> Not financial advice. Scores are informational outputs derived from public data. <br>
           <a href="https://github.com/DablerFrost/Vyrion/blob/main/docs/INVESTABLE-DISCLAIMER.md" target="_blank" rel="noopener noreferrer">INVESTABLE-DISCLAIMER.md</a> · <a href="https://github.com/DablerFrost/Vyrion/blob/main/docs/VYRION-LEGAL-DISCLAIMER-v1.0.md" target="_blank" rel="noopener noreferrer">LEGAL-DISCLAIMER.md</a>
           <div class="footer-nexan"> A subsidiary of <a href="https://vyrion.earth/nexan">The Nexan Institute</a> · Behavioral infrastructure for human-AI cooperation </div>
+          <a class="shop-pill" href="https://vyrion.earth/shop">🛒 Shop — SIGNALWEAR Drop 001 →</a>
         </div>
       </footer>
       <!-- ── EXPLAINARIUM MODAL ─────────────────────────────────────────────── -->
