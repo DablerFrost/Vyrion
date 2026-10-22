@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-10-22T05:32:38.414Z",
+    "generatedAt": "2026-10-22T17:39:55.915Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -13,20 +13,20 @@
   },
   "synthesis": {
     "hazardSummary": {
-      "totalEvents": 65,
+      "totalEvents": 66,
       "categories": {
-        "Severe Storms": 5,
-        "Wildfires": 34,
+        "Severe Storms": 4,
+        "Wildfires": 35,
         "Sea and Lake Ice": 11
       },
-      "seismicCount": 15,
+      "seismicCount": 16,
       "maxMagnitude": 7.7
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 0.53,
-      "minTemperature_2m": -38.5,
-      "maxTemperature_2m": 28.3
+      "avgTemperature_2m": 2.6,
+      "minTemperature_2m": -33.5,
+      "maxTemperature_2m": 28.1
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -40,19 +40,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-10-22T04:32:22.888Z",
+        "generated": "2026-10-22T17:06:22.602Z",
         "generated_date": "2026-10-22",
         "script_version": "1.1",
         "window_days": 14,
         "window_start": "2026-10-08",
         "window_end": "2026-10-22",
-        "runtime_ms": 947,
+        "runtime_ms": 777,
         "seismic_live": true,
         "eonet_live": true
       },
       "threat": {
         "level": "CRITICAL",
-        "score": 32.5
+        "score": 33.1
       },
       "seismic": {
         "events": [
@@ -63,6 +63,14 @@
             "time": "2026-10-09T17:56:06.036Z",
             "depth_km": 12.6,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u18k"
+          },
+          {
+            "id": "us6000u43g",
+            "magnitude": 7,
+            "place": "191 km ENE of Nagqu, China",
+            "time": "2026-10-22T14:33:40.353Z",
+            "depth_km": 18,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u43g"
           },
           {
             "id": "us6000u2mq",
@@ -103,14 +111,6 @@
             "time": "2026-10-20T04:20:38.737Z",
             "depth_km": 16,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3jl"
-          },
-          {
-            "id": "us6000u0xi",
-            "magnitude": 6.3,
-            "place": "102 km NE of Norsup, Vanuatu",
-            "time": "2026-10-08T09:00:07.768Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u0xi"
           },
           {
             "id": "us6000u1kv",
@@ -225,22 +225,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u18t"
           },
           {
-            "id": "us6000u0x4",
-            "magnitude": 5.5,
-            "place": "13 km SW of Burias, Philippines",
-            "time": "2026-10-08T08:07:59.721Z",
-            "depth_km": 57.8,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u0x4"
-          },
-          {
-            "id": "us6000u0ws",
-            "magnitude": 5.5,
-            "place": "west of Macquarie Island",
-            "time": "2026-10-08T06:46:48.002Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u0ws"
-          },
-          {
             "id": "us6000u3nl",
             "magnitude": 5.4,
             "place": "192 km S of Burica, Panama",
@@ -351,6 +335,14 @@
             "time": "2026-10-10T03:58:18.250Z",
             "depth_km": 111.6,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1cd"
+          },
+          {
+            "id": "us6000u44n",
+            "magnitude": 5.2,
+            "place": "201 km ENE of Nagqu, China",
+            "time": "2026-10-22T15:12:04.462Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u44n"
           },
           {
             "id": "us6000u3t6",
@@ -484,7 +476,7 @@
             "id": "us6000u3wh",
             "magnitude": 5.1,
             "place": "south of Africa",
-            "time": "2026-10-21T18:12:35.440Z",
+            "time": "2026-10-21T18:12:35.474Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3wh"
           },
@@ -601,14 +593,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u11v"
           },
           {
-            "id": "us6000u0xn",
-            "magnitude": 5.1,
-            "place": "236 km E of Levuka, Fiji",
-            "time": "2026-10-08T10:07:28.642Z",
-            "depth_km": 602.3,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u0xn"
-          },
-          {
             "id": "us6000u3yp",
             "magnitude": 5,
             "place": "Reykjanes Ridge",
@@ -620,15 +604,15 @@
             "id": "us6000u3x2",
             "magnitude": 5,
             "place": "Reykjanes Ridge",
-            "time": "2026-10-21T19:06:06.706Z",
+            "time": "2026-10-21T19:06:05.512Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3x2"
           },
           {
             "id": "us6000u3xx",
             "magnitude": 5,
-            "place": "198 km WNW of Port-Olry, Vanuatu",
-            "time": "2026-10-21T18:41:04.974Z",
+            "place": "190 km WNW of Port-Olry, Vanuatu",
+            "time": "2026-10-21T18:41:04.960Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3xx"
           },
@@ -793,12 +777,28 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u2td"
           },
           {
-            "id": "us6000u0wa",
-            "magnitude": 5,
-            "place": "92 km N of Ruteng, Indonesia",
-            "time": "2026-10-08T04:48:59.943Z",
+            "id": "us6000u44w",
+            "magnitude": 4.9,
+            "place": "western Xizang",
+            "time": "2026-10-22T15:45:37.094Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u0wa"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u44w"
+          },
+          {
+            "id": "us6000u432",
+            "magnitude": 4.9,
+            "place": "200 km NW of Port-Olry, Vanuatu",
+            "time": "2026-10-22T12:22:57.822Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u432"
+          },
+          {
+            "id": "us6000u42q",
+            "magnitude": 4.9,
+            "place": "85 km NNW of Curup, Indonesia",
+            "time": "2026-10-22T10:57:52.259Z",
+            "depth_km": 135.3,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u42q"
           },
           {
             "id": "us6000u3y1",
@@ -1105,6 +1105,30 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u13m"
           },
           {
+            "id": "us6000u41y",
+            "magnitude": 4.8,
+            "place": "Balleny Islands region",
+            "time": "2026-10-22T07:49:29.455Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u41y"
+          },
+          {
+            "id": "us6000u417",
+            "magnitude": 4.8,
+            "place": "86 km S of Kokopo, Papua New Guinea",
+            "time": "2026-10-22T05:23:59.562Z",
+            "depth_km": 57.3,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u417"
+          },
+          {
+            "id": "us6000u411",
+            "magnitude": 4.8,
+            "place": "Reykjanes Ridge",
+            "time": "2026-10-22T04:44:17.421Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u411"
+          },
+          {
             "id": "us6000u3nd",
             "magnitude": 4.8,
             "place": "south of the Fiji Islands",
@@ -1351,14 +1375,6 @@
             "time": "2026-10-08T18:06:02.409Z",
             "depth_km": 104.9,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u10n"
-          },
-          {
-            "id": "us6000u0yr",
-            "magnitude": 4.8,
-            "place": "115 km NW of Baa, Indonesia",
-            "time": "2026-10-08T14:11:53.009Z",
-            "depth_km": 32.9,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u0yr"
           },
           {
             "id": "us6000u3ws",
@@ -1657,20 +1673,20 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u10v"
           },
           {
-            "id": "us6000u0yy",
-            "magnitude": 4.7,
-            "place": "84 km WNW of Bengkulu, Indonesia",
-            "time": "2026-10-08T15:23:46.740Z",
-            "depth_km": 41.6,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u0yy"
+            "id": "us6000u42e",
+            "magnitude": 4.6,
+            "place": "11 km W of Ashkāsham, Afghanistan",
+            "time": "2026-10-22T10:07:41.749Z",
+            "depth_km": 174.5,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u42e"
           },
           {
-            "id": "us6000u0wb",
-            "magnitude": 4.7,
-            "place": "39 km SW of Tambolaka, Indonesia",
-            "time": "2026-10-08T05:06:50.387Z",
-            "depth_km": 60.2,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u0wb"
+            "id": "us6000u41z",
+            "magnitude": 4.6,
+            "place": "49 km NE of Yigo Village, Guam",
+            "time": "2026-10-22T08:06:35.200Z",
+            "depth_km": 99.2,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u41z"
           },
           {
             "id": "us6000u40r",
@@ -2073,12 +2089,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u13n"
           },
           {
-            "id": "us6000u0w9",
-            "magnitude": 4.6,
-            "place": "124 km ESE of Iwaki, Japan",
-            "time": "2026-10-08T04:41:59.702Z",
-            "depth_km": 45.5,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u0w9"
+            "id": "us6000u423",
+            "magnitude": 4.5,
+            "place": "136 km NE of Petropavlovsk-Kamchatsky, Russia",
+            "time": "2026-10-22T08:34:18.537Z",
+            "depth_km": 61.1,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u423"
           },
           {
             "id": "us6000u3tn",
@@ -2377,6 +2393,22 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1me"
           },
           {
+            "id": "us6000u1jc",
+            "magnitude": 4.5,
+            "place": "4 km E of Nuario, Panama",
+            "time": "2026-10-11T08:13:57.841Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1jc"
+          },
+          {
+            "id": "us6000u3mm",
+            "magnitude": 4.5,
+            "place": "Volcano Islands, Japan region",
+            "time": "2026-10-11T07:43:45.588Z",
+            "depth_km": 72,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3mm"
+          },
+          {
             "id": "us6000u1j3",
             "magnitude": 4.5,
             "place": "south of the Fiji Islands",
@@ -2519,36 +2551,12 @@
             "time": "2026-10-08T18:09:22.443Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u2rc"
-          },
-          {
-            "id": "us6000u0x2",
-            "magnitude": 4.5,
-            "place": "70 km W of Banda Aceh, Indonesia",
-            "time": "2026-10-08T07:45:11.354Z",
-            "depth_km": 88.6,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u0x2"
-          },
-          {
-            "id": "us6000u0wk",
-            "magnitude": 4.5,
-            "place": "western Indian-Antarctic Ridge",
-            "time": "2026-10-08T05:59:28.649Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u0wk"
-          },
-          {
-            "id": "us6000u0wh",
-            "magnitude": 4.5,
-            "place": "36 km NE of Calama, Chile",
-            "time": "2026-10-08T05:35:56.118Z",
-            "depth_km": 123.1,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u0wh"
           }
         ],
-        "count_total": 311,
-        "count_m55_plus": 23,
+        "count_total": 312,
+        "count_m55_plus": 21,
         "count_m60_plus": 12,
-        "count_m70_plus": 1,
+        "count_m70_plus": 2,
         "count_m80_plus": 0,
         "largest": {
           "id": "us6000u18k",
@@ -2561,7 +2569,7 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-10-22T04:32:22.190Z"
+        "retrieved": "2026-10-22T17:06:22.299Z"
       },
       "wildfire": {
         "events": [
@@ -2778,20 +2786,9 @@
               10.3
             ],
             "closed": null
-          },
-          {
-            "id": "EONET_25094",
-            "title": "Hurricane Simon",
-            "type": "STORM",
-            "time": "2026-10-07T18:00:00.000Z",
-            "coords": [
-              -101.3,
-              15.2
-            ],
-            "closed": null
           }
         ],
-        "count": 5
+        "count": 4
       },
       "flood": {
         "events": [],
@@ -2805,15 +2802,28 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-10-22T05:03:14.532Z",
+        "generatedAt": "2026-10-22T17:17:58.522Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
       "layers": {
         "seismic": {
-          "count": 15,
+          "count": 16,
           "maxMagnitude": 7.7,
           "events": [
+            {
+              "id": "us6000u43g",
+              "magnitude": 7,
+              "place": "191 km ENE of Nagqu, China",
+              "time": "2026-10-22T14:33:40.353Z",
+              "coordinates": [
+                93.7797,
+                32.3805,
+                18
+              ],
+              "tsunami": false,
+              "significance": 1003
+            },
             {
               "id": "us6000u3jl",
               "magnitude": 6.3,
@@ -3014,8 +3024,8 @@
         "hazards": {
           "totalActive": 50,
           "byCategory": {
-            "Severe Storms": 5,
-            "Wildfires": 34,
+            "Severe Storms": 4,
+            "Wildfires": 35,
             "Sea and Lake Ice": 11
           },
           "events": [
@@ -3031,7 +3041,7 @@
               "geometry": {
                 "magnitudeValue": 50,
                 "magnitudeUnit": "kts",
-                "date": "2026-10-21T18:00:00Z",
+                "date": "2026-10-22T06:00:00Z",
                 "type": "Point",
                 "coordinates": [
                   50.8,
@@ -3169,13 +3179,13 @@
                 "JTWC"
               ],
               "geometry": {
-                "magnitudeValue": 135,
+                "magnitudeValue": 105,
                 "magnitudeUnit": "kts",
-                "date": "2026-10-21T18:00:00Z",
+                "date": "2026-10-22T06:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  126.9,
-                  19.9
+                  125.4,
+                  20.9
                 ]
               }
             },
@@ -3440,26 +3450,6 @@
               }
             },
             {
-              "id": "EONET_25094",
-              "title": "Hurricane Simon",
-              "categories": [
-                "Severe Storms"
-              ],
-              "sources": [
-                "JTWC"
-              ],
-              "geometry": {
-                "magnitudeValue": 30,
-                "magnitudeUnit": "kts",
-                "date": "2026-10-16T18:00:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -110,
-                  21.3
-                ]
-              }
-            },
-            {
               "id": "EONET_25119",
               "title": "Prescribed Fire CON BSE13 RX, Covington, Alabama",
               "categories": [
@@ -3618,6 +3608,26 @@
                   35.116944
                 ]
               }
+            },
+            {
+              "id": "EONET_25237",
+              "title": "Prescribed Fire KENDRICK RX-WRD CY26, Coconino, Arizona",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 1190,
+                "magnitudeUnit": "acres",
+                "date": "2026-10-01T16:51:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -111.909179,
+                  35.403321
+                ]
+              }
             }
           ]
         },
@@ -3627,60 +3637,60 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": -11.3,
-              "surface_pressure": 1006.3,
-              "wind_speed_10m": 12.05,
+              "temperature_2m": -15.2,
+              "surface_pressure": 1018.8,
+              "wind_speed_10m": 7.99,
               "relative_humidity_2m": 88
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 8.6,
-              "surface_pressure": 1016.7,
-              "wind_speed_10m": 12.86,
-              "relative_humidity_2m": 71
+              "temperature_2m": 9.7,
+              "surface_pressure": 1023.5,
+              "wind_speed_10m": 10.42,
+              "relative_humidity_2m": 70
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 19,
-              "surface_pressure": 913.8,
-              "wind_speed_10m": 2.43,
-              "relative_humidity_2m": 94
+              "temperature_2m": 28.1,
+              "surface_pressure": 915.1,
+              "wind_speed_10m": 2.7,
+              "relative_humidity_2m": 47
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 28.3,
-              "surface_pressure": 1012.3,
-              "wind_speed_10m": 1.44,
-              "relative_humidity_2m": 80
+              "temperature_2m": 27.5,
+              "surface_pressure": 1012.2,
+              "wind_speed_10m": 5.44,
+              "relative_humidity_2m": 87
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": -2.9,
-              "surface_pressure": 1000.6,
-              "wind_speed_10m": 11.31,
-              "relative_humidity_2m": 83
+              "temperature_2m": -1,
+              "surface_pressure": 996.6,
+              "wind_speed_10m": 12.1,
+              "relative_humidity_2m": 90
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -38.5,
+              "temperature_2m": -33.5,
               "surface_pressure": 708.5,
-              "wind_speed_10m": 10.67,
-              "relative_humidity_2m": 53
+              "wind_speed_10m": 10.39,
+              "relative_humidity_2m": 61
             }
           ]
         },
         "climate": {
-          "error": "[NOAA Climate (keyless)] HTTP 503 Service Unavailable"
+          "error": "[NOAA Climate (keyless)] Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
         },
         "oceanHeat": {
           "error": "[NOAA CRW Ocean Heat] HTTP 404 Not Found"
@@ -3693,7 +3703,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-10-22T05:20:09.607Z"
+        "generatedAt": "2026-10-22T17:37:29.975Z"
       },
       "health": {
         "score": 87,
