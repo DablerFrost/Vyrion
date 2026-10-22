@@ -150,7 +150,7 @@ body::after {
 .ec-src a { color:rgba(0,212,255,.38); text-decoration:none; transition:color .18s }
 .ec-src a:hover { color:var(--glow) }
 /* DEPLOYMENT */
-.deploy-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr)); gap:1px; background:var(--border); border:1px solid var(--border) }
+.deploy-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:1px; background:var(--border); border:1px solid var(--border) }
 .deploy-card { background:var(--void2); padding:1.4rem; position:relative; overflow:hidden; transition:background .2s }
 .deploy-card:hover { background:var(--void3) }
 .deploy-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--flux),var(--solar)); opacity:.6 }
@@ -160,7 +160,7 @@ body::after {
 .dc-body { font-size:.71rem; color:var(--t2); line-height:1.65 }
 .dc-time { display:inline-block; font-family:'Courier Prime',monospace; font-size:.5rem; letter-spacing:.1em; text-transform:uppercase; padding:.09rem .35rem; border-radius:2px; margin-top:.75rem; background:var(--flux-dim); color:var(--flux); border:1px solid var(--flux-border) }
 /* TIERS */
-.tiers-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr)); gap:1px; background:var(--border); border:1px solid var(--border) }
+.tiers-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:1px; background:var(--border); border:1px solid var(--border) }
 .tier-card { background:var(--void2); padding:1.6rem 1.5rem; position:relative; overflow:hidden; transition:background .2s }
 .tier-card:hover { background:var(--void3) }
 .tier-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:var(--tc-accent,var(--flux)) }
@@ -173,7 +173,7 @@ body::after {
 .tier-features li { list-style:none; display:flex; gap:.3rem }
 .tier-features li::before { content:'→'; color:var(--flux); flex-shrink:0 }
 /* IMPACT */
-.impact-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr)); gap:1px; background:var(--border); border:1px solid var(--border) }
+.impact-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr)); gap:1px; background:var(--border); border:1px solid var(--border) }
 .impact-card { background:var(--void2); padding:1.3rem; transition:background .2s }
 .impact-card:hover { background:var(--void3) }
 .impact-icon { font-size:1.6rem; display:block; margin-bottom:.55rem }

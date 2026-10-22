@@ -1174,7 +1174,9 @@ tickerEl.innerHTML = `<span class="ev"><span class="ev-type">SHIELD</span><span 
   const sub  = document.getElementById('chip-co2-sub');
   try {
     const NOAA_URL = 'https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_daily_mlo.txt';
-    const r = await fetch('https://corsproxy.io/?' + encodeURIComponent(NOAA_URL));
+    let r;
+    try { r = await fetch('https://corsproxy.io/?' + encodeURIComponent(NOAA_URL)); if (!r.ok) throw new Error(); }
+    catch (_) { r = await fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(NOAA_URL)); }
     if (!r.ok) throw new Error();
     const txt = await r.text();
     const lines = txt.split('\n').filter(l => l.trim() && !l.startsWith('#'));
