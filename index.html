@@ -4239,7 +4239,7 @@ A Happy Little Science Playground - CLICK TO ENTER → </button>
             <div class="xpl-score-bar">
               <div class="xpl-score-example">
                 <div class="xpl-big-score" id="xpl-baseline-score">41.2</div>
-                <div class="xpl-score-speech">Think of Earth like a <strong>patient at the doctor's office.</strong> The VYRION EARTH is Earth's <strong>health score</strong> — out of 100. Our baseline reading says <strong>41.2</strong> — first measured in March 2026 — which means Earth is in the <em>critical zone</em>. That's why we built VYRION — and why we're rebuilding the Index to update monthly from live public data, so the whole world can watch it move. 📋 </div>
+                <div class="xpl-score-speech">Think of Earth like a <strong>patient at the doctor's office.</strong> The VYRION EARTH is Earth's <strong>health score</strong> — out of 100. Our restated baseline says <strong>49.2</strong> — computed from March 2026 data and rebuilt in the open — which means Earth is in the <em>critical zone</em>. That's why we built VYRION — and why the Index now updates monthly from live public data, so the whole world can watch it move. 📋 </div>
               </div>
               <div class="xpl-health-bar-wrap">
                 <div class="xpl-health-labels">
@@ -4248,7 +4248,7 @@ A Happy Little Science Playground - CLICK TO ENTER → </button>
                   <span style="color:var(--green)">100 — Super Healthy 🌟</span>
                 </div>
                 <div class="xpl-health-bar">
-                  <div class="xpl-health-marker" id="xpl-health-marker" style="left:41.2%"></div>
+                  <div class="xpl-health-marker" id="xpl-health-marker" style="left:49.2%"></div>
                 </div>
                 <div class="xpl-health-zones">
                   <span class="xpl-zone" style="color:var(--breach)">❌ Danger Zone</span>
@@ -4646,7 +4646,7 @@ A Happy Little Science Playground - CLICK TO ENTER → </button>
         }
         // ── RENDER INDEX ───────────────────────────────────────────────────────
         function renderIndex(score) {
-          const s = score || 41.2;
+          const s = score || 49.2;
           const CIRC = 427.3; // 2π × 68
           document.getElementById('ring-score').textContent = s.toFixed(1);
           document.getElementById('ring-fill').style.strokeDashoffset = (CIRC * (1 - s / 100)).toFixed(1);
@@ -4654,7 +4654,7 @@ A Happy Little Science Playground - CLICK TO ENTER → </button>
           document.getElementById('hdr-score').textContent = `${s.toFixed(1)} / 100`;
           const day = getDayNumber();
           const date = getDateLabel();
-          document.getElementById('idx-sub').textContent = `/ 100 · Baseline Index · March 2026`;
+          document.getElementById('idx-sub').textContent = `/ 100 · Restated Baseline · March 2026 · v1.1`;
           document.getElementById('hdr-day').textContent = day;
           document.getElementById('day-label').innerHTML = `Day ${day} · ${date}<br>Origin: March 18, 2026`;
           // Explainarium score sync
@@ -4671,7 +4671,7 @@ A Happy Little Science Playground - CLICK TO ENTER → </button>
             });
             const fill = document.getElementById('ring-fill');
             if (fill) {
-              const score = parseFloat(document.getElementById('ring-score').textContent) || 41.2;
+              const score = parseFloat(document.getElementById('ring-score').textContent) || 49.2;
               fill.style.strokeDashoffset = (427.3 * (1 - score / 100)).toFixed(1);
             }
           }, 300);
@@ -4721,7 +4721,7 @@ A Happy Little Science Playground - CLICK TO ENTER → </button>
           // SHIELD
           renderShield(shield);
           // Index
-          const score = idx?.vyrion_index?.score || 41.2;
+          const score = idx?.vyrion_index?.score || 49.2;
           renderIndex(score);
           animateBars();
           stamp();
@@ -4820,7 +4820,7 @@ A Happy Little Science Playground - CLICK TO ENTER → </button>
           overlay.classList.add('open');
           document.body.style.overflow = 'hidden';
           // Sync current score into explainarium
-          const score = parseFloat(document.getElementById('ring-score').textContent) || 41.2;
+          const score = parseFloat(document.getElementById('ring-score').textContent) || 49.2;
           const xplScore = document.getElementById('xpl-baseline-score');
           if (xplScore) xplScore.textContent = score.toFixed(1);
           const xplMarker = document.getElementById('xpl-health-marker');
