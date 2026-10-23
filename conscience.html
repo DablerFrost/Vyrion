@@ -1107,8 +1107,8 @@ body::after{
   </div>
   <div class="lb-cell" data-mag="index">
     <div class="lb-lbl">VYRION Index</div>
-    <div class="lb-val amber" id="idx-val">41.2 <span style="font-size:.62rem;color:var(--t3)">± 1.8</span></div>
-    <div class="lb-sub" id="idx-sub">/ 100 · Day — · —</div>
+    <div class="lb-val amber" id="idx-val">49.2 <span style="font-size:.62rem;color:var(--t3)">± 1.8</span></div>
+    <div class="lb-sub" id="idx-sub">/ 100 · Restated Baseline · Mar 2026 · v1.1</div>
   </div>
   <div class="lb-cell" data-mag="coverage">
     <div class="lb-lbl">Companies Tracked</div>
@@ -1117,7 +1117,7 @@ body::after{
   </div>
   <div class="lb-cell" data-mag="lawsuits">
     <div class="lb-lbl">Active Lawsuits</div>
-    <div class="lb-val red">97</div>
+    <div class="lb-val red">135</div>
     <div class="lb-sub">Sabin Center · Columbia Law</div>
   </div>
   <div class="lb-cell" data-mag="refresh">
@@ -1804,7 +1804,7 @@ html[data-tscale="1.22"] .nc-live .lbl{display:none;}
     <p class="op-label">Live Metrics</p>
     <div class="op-stats">
       <div class="op-stat"><div class="op-stat-num">36</div><div class="op-stat-lbl">Companies</div></div>
-      <div class="op-stat"><div class="op-stat-num amber">35.7</div><div class="op-stat-lbl">VYRION Index</div></div>
+      <div class="op-stat"><div class="op-stat-num amber">35.7</div><div class="op-stat-lbl">Pledge Integrity Score</div></div>
       <div class="op-stat"><div class="op-stat-num" style="color:var(--breach)">16</div><div class="op-stat-lbl">In Breach</div></div>
       <div class="op-stat"><div class="op-stat-num">135</div><div class="op-stat-lbl">Active Lawsuits</div></div>
     </div>
@@ -1872,7 +1872,7 @@ var _dayNum   = Math.floor((Date.now() - _originMs) / 86400000) + 1;
 var _dayDate  = new Date();
 var _dayStr   = _dayDate.toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
 var _idxSub   = document.getElementById('idx-sub');
-if (_idxSub) _idxSub.textContent = '/ 100 \u00b7 Day ' + _dayNum + ' \u00b7 ' + _dayStr;
+if (_idxSub) _idxSub.textContent = '/ 100 \u00b7 Restated Baseline \u00b7 Mar 2026 \u00b7 v1.1';
 
 // ─────────────────────────────────────────────────────────
 //  MAGNIFIER DATA — static elements
