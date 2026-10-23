@@ -1,6 +1,8 @@
 # 01 — VYRION BRAND ARCHITECTURE
 ## Name · Concept · Eight Modules · Design DNA
 
+> **Positioning update (October 2026):** This document records the brand architecture as framed at launch (March 2026). Two elements have since evolved: the 'investable' framing for the VYRION Index was retired — current positioning is verifiability and open data — and the Index itself was restated under methodology v1.1 (baseline **49.2**, March 2026, recomputed monthly from published inputs; see docs/RESTATEMENT-NOTE-V1.1.md). The architecture, name, and module structure below are unchanged.
+
 ---
 
 ## THE NAME
