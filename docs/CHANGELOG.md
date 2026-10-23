@@ -75,6 +75,22 @@ All changes to scoring logic, indicator definitions, system weights, baseline va
 **Correction posted:** March 20, 2026, as public reply to original post on X
 **Score impact:** None — the value and its significance were correctly computed. The error was in the descriptive language (minimum vs maximum), not the number.
 
+### October 23, 2026 — Day 1 CO₂ Source Value Correction
+
+**Original value (March 18, 2026, Day 1 readings):** Atmospheric CO₂ recorded as 424.9 ppm
+**Correct value:** 430.15 ppm — the NOAA Mauna Loa monthly mean for March 2026. The 424.9 ppm figure corresponds to roughly February–March 2024.
+**Source:** NOAA Global Monitoring Laboratory — https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_mlo.txt
+**Correction posted:** October 23, 2026, as part of the v1.1 baseline reconstruction
+**Score impact:** Under the v1.0 A1 function, the corrected value scores A1 at 11.7 instead of 14.8 — composite impact −0.1 points in the reconstruction (the stale value flattered the score). The originally published Day 1 and Day 2 scores (41.3 / 41.2) are not altered; they stand as published. This correction applies to the source value and to the v1.1 restated baseline (data/index-baseline.json).
+
+### October 23, 2026 — Arctic Sea Ice March Maximum Value Correction
+
+**Original value (March 19, 2026, Day 2; repeated in the March 20, 2026 correction above):** 2026 Arctic sea ice annual maximum stated as 14.22M km²
+**Correct value:** 14.29M km² — NSIDC's announced 2026 annual maximum, reached March 15, 2026; the lowest annual maximum in the 48-year satellite record (tied with 2025), 1.36M km² below the 1981–2010 average maximum of 15.65M km²
+**Source:** NSIDC — https://nsidc.org/news-analyses/news-stories/arctic-sea-ice-record-low-maximum-strikes-again
+**Correction posted:** October 23, 2026, as part of the v1.1 baseline reconstruction
+**Score impact:** The March 20, 2026 entry above is not edited — its descriptive-language correction (maximum, not minimum) stands; this entry corrects the value that entry repeated, per the additive protocol. In the v1.1 baseline, C1 is computed from the corrected value (C1 = 93.0).
+
 ---
 
 ## Planned — v1.1 (Target: Month 3–6)
