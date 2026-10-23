@@ -24,7 +24,7 @@ VYRION exists to help answer a simple question:
 
 > What is actually happening, and how do we know?
 
-**Current state:** the VYRION Index reads **41.2 / 100** — a daily composite across **8 Earth systems** and **48 indicators**. CONSCIENCE v2.9 scores **36 companies** (16 Breach · 15 Warning · 5 On Track · mean 35.7) on pledge-vs.-reality alignment. The platform is an installable app (phone · tablet · desktop).
+**Current state:** the VYRION Index reads **49.2 / 100** — the restated baseline under methodology v1.1 (March 2026; see docs/RESTATEMENT-NOTE-V1.1.md), recomputed monthly from published inputs across **8 Earth systems** and **49 indicators**. CONSCIENCE v2.9 scores **36 companies** (16 Breach · 15 Warning · 5 On Track · Corporate Pledge Integrity Score mean 35.7) on pledge-vs.-reality alignment. The platform is an installable app (phone · tablet · desktop).
 
 ---
 
