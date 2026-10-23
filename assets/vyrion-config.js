@@ -25,6 +25,9 @@ const VYRION_CONFIG = {
     currentScore: 41.2,
     uncertainty: 1.8,
     minDetectableChange: 0.5,
+    status: 'baseline',            // 'baseline' until monthly recomputation ships
+    asOfISO: '2026-03-29',         // last computation (Day 12)
+    asOfLabel: 'Baseline \u00b7 March 2026',
     // Computed dynamically — do not hardcode
     get dayNumber() {
       const d1 = new Date(this.dayOneISO);
@@ -36,7 +39,7 @@ const VYRION_CONFIG = {
       });
     },
     get displayString() {
-      return this.currentScore.toFixed(1) + ' \u00b1 ' + this.uncertainty + ' / 100';
+      return this.currentScore.toFixed(1) + ' \u00b1 ' + this.uncertainty + ' / 100 \u00b7 ' + this.asOfLabel;
     },
     get tickerSub() {
       return '/ 100 \u00b7 Day ' + this.dayNumber + ' \u00b7 ' + this.dateLabel;
@@ -73,7 +76,7 @@ const VYRION_CONFIG = {
       accentBd: 'rgba(0,212,255,0.25)',
       icon:     '◈',
       tagline:  'Real-time planetary intelligence',
-      description: 'Live Earth system data backbone. Atmospheric CO\u2082, ocean temperature, Arctic sea ice, forest cover, and biodiversity indicators — aggregated, normalized, and streamed into CONSCIENCE continuously.',
+      description: 'Live Earth system data backbone. Atmospheric CO\u2082, ocean temperature, Arctic sea ice, forest cover, and biodiversity indicators — aggregated from public sources and published with the VYRION Index.',
       systems:  ['Atmosphere', 'Ocean', 'Cryosphere', 'Forest', 'Biodiversity'],
       dataRefresh: '15 min'
     },
