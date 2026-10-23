@@ -35,6 +35,8 @@ Every existing planetary health measurement is annual or biennial. Published onc
 
 > **Series status (Oct 2026):** Daily publication paused after Day 2 (March 19, 2026); the value 41.2 is maintained as the **VYRION Baseline Index** (data file last updated Day 12 · March 29, 2026). The series resumes with monthly recomputation under methodology v1.1, with per-indicator inputs published alongside each score.
 
+> **Restatement — October 23, 2026:** The March 2026 baseline was reconstructed under methodology v1.1 from published inputs: **49.2 / 100 · ± 1.8 measurement · ± 4.4 total**. The v1.0 values in the table above stand exactly as originally published; this note is additive, per the correction protocol. Full note: docs/RESTATEMENT-NOTE-V1.1.md · Inputs: data/index-baseline.json · Series: data/index-history.json.
+
 ---
 
 ## THE EIGHT SYSTEMS
