@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-10-23T05:03:23.017Z",
+    "generatedAt": "2026-10-23T17:15:43.098Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -21,7 +21,7 @@
             18
           ],
           "tsunami": false,
-          "significance": 1004
+          "significance": 1005
         },
         {
           "id": "us6000u3jl",
@@ -221,13 +221,53 @@
       ]
     },
     "hazards": {
-      "totalActive": 49,
+      "totalActive": 50,
       "byCategory": {
-        "Severe Storms": 4,
-        "Wildfires": 34,
-        "Sea and Lake Ice": 11
+        "Wildfires": 36,
+        "Severe Storms": 5,
+        "Sea and Lake Ice": 9
       },
       "events": [
+        {
+          "id": "EONET_25590",
+          "title": "Wildfire BEE HAVEN (2) (24-06), Hamilton, Florida",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 2060,
+            "magnitudeUnit": "acres",
+            "date": "2026-10-22T21:45:00Z",
+            "type": "Point",
+            "coordinates": [
+              -82.8577778,
+              30.4952778
+            ]
+          }
+        },
+        {
+          "id": "EONET_25589",
+          "title": "Hurricane Vance",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC"
+          ],
+          "geometry": {
+            "magnitudeValue": 35,
+            "magnitudeUnit": "kts",
+            "date": "2026-10-21T18:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -99.5,
+              9.4
+            ]
+          }
+        },
         {
           "id": "EONET_25457",
           "title": "Tropical Cyclone Agueda",
@@ -238,13 +278,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 50,
+            "magnitudeValue": 35,
             "magnitudeUnit": "kts",
-            "date": "2026-10-22T18:00:00Z",
+            "date": "2026-10-23T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              49.7,
-              -6.7
+              49.5,
+              -5.7
             ]
           }
         },
@@ -265,6 +305,26 @@
             "coordinates": [
               -84.376511,
               36.948746
+            ]
+          }
+        },
+        {
+          "id": "EONET_25591",
+          "title": "Wildfire Bras, Sanders, Montana",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 1688,
+            "magnitudeUnit": "acres",
+            "date": "2026-10-17T23:28:00Z",
+            "type": "Point",
+            "coordinates": [
+              -114.5861111,
+              47.2780556
             ]
           }
         },
@@ -378,13 +438,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 95,
+            "magnitudeValue": 105,
             "magnitudeUnit": "kts",
-            "date": "2026-10-22T18:00:00Z",
+            "date": "2026-10-23T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              124.3,
-              21.9
+              123.4,
+              23.7
             ]
           }
         },
@@ -709,6 +769,26 @@
           }
         },
         {
+          "id": "EONET_25592",
+          "title": "Prescribed Fire RX MFD Morrison Peak, Missoula, Montana",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 672,
+            "magnitudeUnit": "acres",
+            "date": "2026-10-05T17:33:00Z",
+            "type": "Point",
+            "coordinates": [
+              -113.615933,
+              46.930733
+            ]
+          }
+        },
+        {
           "id": "EONET_25239",
           "title": "Prescribed Fire West Fork RX, Wasatch, Utah",
           "categories": [
@@ -747,86 +827,6 @@
               34.561835
             ]
           }
-        },
-        {
-          "id": "EONET_25043",
-          "title": "Prescribed Fire D3 Bear RX, Greenlee, Arizona",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 5072,
-            "magnitudeUnit": "acres",
-            "date": "2026-10-02T17:58:00Z",
-            "type": "Point",
-            "coordinates": [
-              -109.401883,
-              33.447133
-            ]
-          }
-        },
-        {
-          "id": "EONET_25042",
-          "title": "Wildfire Bull, Washoe, Nevada",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1529,
-            "magnitudeUnit": "acres",
-            "date": "2026-10-02T14:26:00Z",
-            "type": "Point",
-            "coordinates": [
-              -119.987683,
-              39.539067
-            ]
-          }
-        },
-        {
-          "id": "EONET_25236",
-          "title": "Prescribed Fire McCRAKEN RX-WRD CY26, Coconino, Arizona",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 530,
-            "magnitudeUnit": "acres",
-            "date": "2026-10-01T17:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -112.266889,
-              35.116944
-            ]
-          }
-        },
-        {
-          "id": "EONET_25237",
-          "title": "Prescribed Fire KENDRICK RX-WRD CY26, Coconino, Arizona",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1190,
-            "magnitudeUnit": "acres",
-            "date": "2026-10-01T16:51:00Z",
-            "type": "Point",
-            "coordinates": [
-              -111.909179,
-              35.403321
-            ]
-          }
         }
       ]
     },
@@ -836,55 +836,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -13.7,
-          "surface_pressure": 1021.8,
-          "wind_speed_10m": 6.2,
-          "relative_humidity_2m": 90
+          "temperature_2m": -5.4,
+          "surface_pressure": 1016.1,
+          "wind_speed_10m": 7.04,
+          "relative_humidity_2m": 96
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 11.4,
-          "surface_pressure": 1021.8,
-          "wind_speed_10m": 11.68,
-          "relative_humidity_2m": 73
+          "temperature_2m": 14.5,
+          "surface_pressure": 1003,
+          "wind_speed_10m": 15.45,
+          "relative_humidity_2m": 94
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 20.5,
-          "surface_pressure": 914.8,
-          "wind_speed_10m": 2.35,
-          "relative_humidity_2m": 88
+          "temperature_2m": 27.4,
+          "surface_pressure": 915.6,
+          "wind_speed_10m": 2.3,
+          "relative_humidity_2m": 61
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 27.6,
-          "surface_pressure": 1011.6,
-          "wind_speed_10m": 1.48,
-          "relative_humidity_2m": 80
+          "temperature_2m": 27.4,
+          "surface_pressure": 1011.5,
+          "wind_speed_10m": 2.76,
+          "relative_humidity_2m": 82
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -0.8,
-          "surface_pressure": 990.6,
-          "wind_speed_10m": 11.76,
-          "relative_humidity_2m": 88
+          "temperature_2m": -1.1,
+          "surface_pressure": 985.1,
+          "wind_speed_10m": 11.26,
+          "relative_humidity_2m": 86
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -34.6,
-          "surface_pressure": 715.5,
-          "wind_speed_10m": 9.11,
-          "relative_humidity_2m": 64
+          "temperature_2m": -30.2,
+          "surface_pressure": 721.9,
+          "wind_speed_10m": 7.71,
+          "relative_humidity_2m": 65
         }
       ]
     },
