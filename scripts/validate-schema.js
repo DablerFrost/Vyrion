@@ -595,6 +595,109 @@ if (data.global_emissions === null || data.global_emissions === undefined) {
   pass('global_emissions data present');
 }
 
+// ── CHECK 10: VYRION Index data files (v1.1) ─────────────────────────────
+// Validates data/index-baseline.json and data/index-current.json WHEN
+// PRESENT (either file may legitimately not exist yet — baseline is a
+// Phase 1 artifact, current is written only by an approved --publish run).
+// Checks, per docs/VYRION-METHODOLOGY-V1.0.md and the Phase 2 design:
+//   · system weights sum to 1.0 (±0.001)
+//   · every system score equals the mean of its scored indicators (±0.15)
+//   · composite equals Σ(W × S) (±0.15)
+//   · all scores (composite, system, indicator) within [0, 100]
+//   · an as-of stamp is present
+['index-baseline.json', 'index-current.json'].forEach(fname => {
+  const fpath = join(__dirname, '..', 'data', fname);
+  const label = `data/${fname}`;
+
+  if (!existsSync(fpath)) {
+    pass(`${label} not present — index validation skipped`);
+    return;
+  }
+
+  let idx;
+  try {
+    idx = JSON.parse(readFileSync(fpath, 'utf8'));
+  } catch(e) {
+    fail(`${label} is not valid JSON: ${e.message}`);
+    return;
+  }
+
+  // As-of present (top level, or inside the composite block)
+  const asOf = idx.as_of ?? idx.composite?.as_of;
+  check(
+    typeof asOf === 'string' && asOf.length > 0,
+    `${label} as_of present: "${asOf}"`,
+    `${label} is missing an as-of stamp`
+  );
+
+  // Systems structure
+  check(
+    Array.isArray(idx.systems) && idx.systems.length > 0,
+    `${label} has a non-empty systems array (${idx.systems?.length ?? 0} systems)`,
+    `${label} systems is missing or empty`
+  );
+  if (!Array.isArray(idx.systems)) return;
+
+  // Weights sum to 1.0
+  const wSum = idx.systems.reduce((a, s) => a + (typeof s.weight === 'number' ? s.weight : 0), 0);
+  check(
+    Math.abs(wSum - 1.0) <= 0.001,
+    `${label} system weights sum to 1.0 (${wSum.toFixed(4)})`,
+    `${label} system weights sum to ${wSum.toFixed(4)}, must equal 1.0 (±0.001)`
+  );
+
+  // Per-system: score range + score = mean of scored indicators
+  const rangeViolations = [];
+  let recomputed = 0;
+  idx.systems.forEach(sys => {
+    const sLabel = `${label} · ${sys.id || sys.name || '?'}`;
+    if (typeof sys.score === 'number') {
+      if (sys.score < 0 || sys.score > 100) rangeViolations.push(`${sLabel} system score ${sys.score}`);
+      if (typeof sys.weight === 'number') recomputed += sys.score * sys.weight;
+    }
+    const scored = (sys.indicators || []).filter(i => typeof i.score === 'number');
+    (sys.indicators || []).forEach(i => {
+      if (typeof i.score === 'number' && (i.score < 0 || i.score > 100)) {
+        rangeViolations.push(`${sLabel} indicator ${i.id} score ${i.score}`);
+      }
+    });
+    if (typeof sys.score === 'number' && scored.length > 0) {
+      const mean = scored.reduce((a, i) => a + i.score, 0) / scored.length;
+      check(
+        Math.abs(mean - sys.score) <= 0.15,
+        `${sLabel} score ${sys.score} = mean of ${scored.length} scored indicators (${mean.toFixed(2)})`,
+        `${sLabel} score ${sys.score} ≠ mean of scored indicators ${mean.toFixed(2)} (tolerance ±0.15)`
+      );
+    } else if (typeof sys.score === 'number' && scored.length === 0) {
+      warn(`${sLabel} carries a system score but no scored indicators`);
+    } else if (sys.score == null && scored.length > 0) {
+      warn(`${sLabel} has ${scored.length} scored indicators but a null system score`);
+    }
+  });
+
+  // Composite range
+  const compScore = typeof idx.composite === 'number' ? idx.composite : idx.composite?.score;
+  if (typeof compScore === 'number' && (compScore < 0 || compScore > 100)) {
+    rangeViolations.push(`${label} composite score ${compScore}`);
+  }
+  check(
+    rangeViolations.length === 0,
+    `${label} all scores within [0–100]`,
+    `${label} scores outside [0–100]: ${rangeViolations.join('; ')}`
+  );
+
+  // Composite = Σ(W × S)
+  if (typeof compScore === 'number') {
+    check(
+      Math.abs(recomputed - compScore) <= 0.15,
+      `${label} composite ${compScore} = Σ(W × S) (${recomputed.toFixed(2)})`,
+      `${label} composite ${compScore} ≠ Σ(W × S) ${recomputed.toFixed(2)} (tolerance ±0.15)`
+    );
+  } else {
+    warn(`${label} has no numeric composite score to verify`);
+  }
+});
+
 // ─────────────────────────────────────────────────────────────────────────────
 //  REPORT
 // ─────────────────────────────────────────────────────────────────────────────
