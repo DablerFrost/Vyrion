@@ -97,7 +97,7 @@ Spend $300M/yr on catastrophe modeling. SHIELD at 91% accuracy costs a fraction 
 CONSCIENCE and RELAY fit directly into their enterprise ESG product. They have a $400M climate commitment and are actively buying environmental data companies.
 
 ### 4. Bloomberg LP · $4M–$10M
-The VYRION Index is a ready-made product Bloomberg can distribute to 330,000 terminal users on day one. They have been looking for a daily planetary health benchmark.
+The VYRION Index is a ready-made product Bloomberg can distribute to 330,000 terminal users on day one. They have been looking for a planetary health benchmark.
 
 ### 5. ICF International · $3M–$6M
 Actively building digital environmental platform. VYRION's architecture gives them a 3-year head start. Classic acqui-hire opportunity.
