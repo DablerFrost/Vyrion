@@ -7,6 +7,8 @@
 No changes to scoring logic, indicator definitions, weights, or baseline without a version increment.
 Changes are logged in CHANGELOG.md. Prior art timestamped: GitHub, March 20, 2026.
 
+**Implementation status — October 2026:** This document describes the Index as designed. In production, the Index currently stands at its March 2026 baseline computation. The daily cadence described below is the design target; production cadence is monthly from the v1.1 recomputation launch. Where this document and current production differ, this note governs.
+
 **One-Line Definition:**
 *The VYRION Score is a weighted transparency index measuring deviation of planetary systems from pre-industrial baseline conditions.*
 
