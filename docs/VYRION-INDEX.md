@@ -1,4 +1,7 @@
 # VYRION Index
+
+> **Status note (October 2026):** This is the v1.0 launch document, published March 18, 2026, and preserved as the prior-art record of the Index's first publication. Its figures are Day 1 values under methodology v1.0 — including a Day 1 CO₂ reading later corrected (see docs/CHANGELOG.md). The Index's current state is the **restated baseline of 49.2 under methodology v1.1**, recomputed monthly from published inputs: see docs/VYRION-METHODOLOGY-V1.1-ADDENDUM.md, docs/RESTATEMENT-NOTE-V1.1.md, and data/index-baseline.json. The 'investable' framing in the tagline below was retired in October 2026; VYRION's positioning is verifiability and open data.
+
 ### The world's first daily investable planetary health benchmark.
 
 **Day 1 Score: 41.3 / 100**
