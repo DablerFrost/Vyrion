@@ -33,6 +33,8 @@ Every existing planetary health measurement is annual or biennial. Published onc
 | 001 | March 18, 2026 | 41.3 / 100 | Baseline | Baseline established |
 | 002 | March 19, 2026 | 41.2 / 100 | −0.1 | Arctic sea ice new daily low · Ocean heat 14th consecutive record month |
 
+> **Series status (Oct 2026):** Daily publication paused after Day 2 (March 19, 2026); the value 41.2 is maintained as the **VYRION Baseline Index** (data file last updated Day 12 · March 29, 2026). The series resumes with monthly recomputation under methodology v1.1, with per-indicator inputs published alongside each score.
+
 ---
 
 ## THE EIGHT SYSTEMS
