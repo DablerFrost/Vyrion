@@ -34,7 +34,7 @@ VYRION/
 ├── 02-BUSINESS-MODEL.md                ← Revenue, licensing, buyers
 ├── 03-DEFENSE-ARCHITECTURE.md          ← 47 threats, 3 methodologies
 ├── 04-CONSCIENCE-MODULE.md             ← Live product documentation
-├── 05-VYRION-INDEX.md                  ← Daily benchmark documentation
+├── 05-VYRION-INDEX.md                  ← Index benchmark documentation (v1.1)
 ├── 06-90-DAY-ROADMAP.md                ← Execution plan to $5M
 └── 07-COFOUNDER-PITCH.md               ← For partners and co-founders
 ```
