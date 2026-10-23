@@ -22,12 +22,12 @@ const VYRION_CONFIG = {
   /* ── VYRION INDEX ────────────────────────────────────── */
   index: {
     dayOneISO: '2026-03-18T00:00:00-10:00', // Hawaii time — do not change
-    currentScore: 41.2,
+    currentScore: 49.2,
     uncertainty: 1.8,
     minDetectableChange: 0.5,
-    status: 'baseline',            // 'baseline' until monthly recomputation ships
+    status: 'restated-baseline',            // 'baseline' until monthly recomputation ships
     asOfISO: '2026-03-29',         // last computation (Day 12)
-    asOfLabel: 'Baseline \u00b7 March 2026',
+    asOfLabel: 'Restated Baseline \u00b7 March 2026 \u00b7 v1.1',
     // Computed dynamically — do not hardcode
     get dayNumber() {
       const d1 = new Date(this.dayOneISO);
