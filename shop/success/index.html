@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order confirmed — VYRION Shop</title>
+<meta name="robots" content="noindex">
+<style>
+body{margin:0;font-family:Georgia,serif;background:#04070f;color:#e8efff;display:flex;min-height:100dvh;align-items:center;justify-content:center;padding:1.5rem}
+.box{max-width:560px;text-align:center;border:1px solid #2a3550;border-radius:16px;padding:2.5rem 2rem;background:#0a1120}
+h1{font-size:1.6rem;margin:.4rem 0}
+p{color:#a9bce0;line-height:1.65}
+a{color:#37e0ff}
+.ord{font-family:monospace;color:#37e0ff}
+</style>
+</head>
+<body>
+<div class="box">
+  <div style="font-size:2.2rem">◈</div>
+  <h1 id="t">Payment received</h1>
+  <p id="m">We are placing your order with production now — this takes a few seconds. Your receipt is on its way from Stripe, and tracking follows by email when your piece ships.</p>
+  <p id="o"></p>
+  <p><a href="/shop/">← Back to the shop</a></p>
+</div>
+<script>
+const WORKER_BASE = "https://vyrion-shop.synthekaicollective.workers.dev";
+const sid = new URLSearchParams(location.search).get("session_id");
+const o = document.getElementById("o");
+async function poll(n){
+  if(!sid){ document.getElementById("m").textContent = "Your payment went through. If you need anything, write to contact@vyrion.earth with your Stripe receipt."; return; }
+  try {
+    const r = await fetch(WORKER_BASE + "/order-status?session_id=" + encodeURIComponent(sid));
+    const d = await r.json();
+    if(d.found){
+      document.getElementById("t").textContent = "Order confirmed";
+      o.innerHTML = 'Printify order <span class="ord"></span> — made to order, ships from our production partner.';
+      o.querySelector(".ord").textContent = "#" + String(d.printify_order_id).slice(0, 13);
+      return;
+    }
+  } catch(e) {}
+  if(n < 20) setTimeout(() => poll(n + 1), 3000);
+  else o.textContent = "Still confirming — your payment is safe; the order record will appear in Printify shortly.";
+}
+poll(0);
+</script>
+</body>
+</html>
