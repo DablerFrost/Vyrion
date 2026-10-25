@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VYRION Standards — Self-Grading Scorecard</title>
+<meta name="description" content="VYRION's self-grading Standards Scorecard: 7-day internal trial results, October 18–24, 2026. Average 93.9, Exemplary — with what the score checks and what it doesn't.">
+<meta property="og:title" content="VYRION Standards — Self-Grading Scorecard">
+<meta property="og:description" content="7-day internal trial results, October 18–24, 2026. Average 93.9, Exemplary — published so the public can check our work, not just our claims.">
+<meta property="og:image" content="https://vyrion.earth/assets/og-image-49.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://vyrion.earth/assets/og-image-49.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700;800&family=Archivo:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#020912;--void2:#061624;--void3:#0b2035;
+    --glow:#00D4FF;--amber:#FFB84D;--breach:#F03030;--warn:#F09000;
+    --t1:#e4f2ff;--t2:#6a9ab8;--t3:#2d6080;
+    --border:rgba(0,212,255,.12);--border2:rgba(0,212,255,.07);
+    --nav-bg:rgba(2,9,18,.97);
+    --evo-elev:0 12px 36px rgba(0,0,0,.38),0 2px 8px rgba(0,0,0,.22);
+    --green:#00ff88;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--void);color:var(--t1);font-family:'Archivo',sans-serif;font-size:1rem;line-height:1.65;min-height:100vh;overflow-x:hidden}
+  a{color:var(--glow)}
+  .banner{background:#7f1d1d;color:#fff;text-align:center;padding:10px 16px;font-size:14px;letter-spacing:.04em}
+  /* ---- homepage nav ---- */
+  .nav{display:flex;align-items:center;gap:18px;background:var(--nav-bg);border-bottom:1px solid var(--border);padding:10px 22px;position:sticky;top:0;z-index:50;flex-wrap:wrap}
+  .nav-logo{font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:22px;letter-spacing:.14em;color:var(--t1);text-decoration:none}
+  .nav-links{display:flex;gap:2px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+  .nav-item{font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:14px;letter-spacing:.08em;color:var(--t1);text-decoration:none;padding:6px 10px;border-radius:6px;white-space:nowrap}
+  .nav-item:hover{background:rgba(0,212,255,.12)}
+  .nav-controls{margin-left:auto;display:flex;align-items:center;gap:10px;font-family:'Archivo Narrow',sans-serif;font-size:13px;letter-spacing:.08em}
+  .nc-live{display:flex;align-items:center;gap:6px;color:var(--green)}
+  .nc-live .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
+  .nc-theme,.nc-sz{background:transparent;border:1px solid var(--border);color:var(--t1);border-radius:6px;padding:4px 9px;font-family:inherit;font-size:13px;cursor:pointer}
+  .nc-sz.active{background:rgba(0,212,255,.2);border-color:var(--glow)}
+  /* ---- homepage header ---- */
+  .page-header{position:relative;padding:56px 22px 8px;max-width:1100px;margin:0 auto;overflow:hidden}
+  .bg-word{position:absolute;top:6px;left:10px;font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:clamp(90px,17vw,180px);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(0,212,255,.13);pointer-events:none;letter-spacing:.04em}
+  .eyebrow{position:relative;font-family:'Archivo Narrow',sans-serif;font-weight:700;letter-spacing:.18em;font-size:14px;color:var(--amber);text-transform:uppercase}
+  .page-title{position:relative;font-family:'Archivo Narrow',sans-serif;font-weight:800;font-size:clamp(44px,7vw,72px);line-height:1;margin:6px 0 10px;letter-spacing:.04em}
+  .page-sub{position:relative;color:var(--t2);max-width:740px;margin:0 0 22px;font-size:17px}
+  .header-meta{position:relative;display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .hm-cell{padding:16px 26px 16px 0;margin-right:26px;border-right:1px solid var(--border2)}
+  .hm-cell:last-child{border-right:none}
+  .hm-label{font-family:'Archivo Narrow',sans-serif;font-size:12px;letter-spacing:.16em;color:var(--t2);text-transform:uppercase}
+  .hm-val{font-family:'Courier Prime',monospace;font-size:26px;font-weight:700;color:var(--t1);line-height:1.2}
+  .hm-val.amber{color:var(--amber)}
+  .hm-val.green{color:var(--green)}
+  /* ---- homepage sections & cards ---- */
+  .wrap{max-width:1100px;margin:0 auto;padding:28px 22px 64px}
+  .section{margin:44px 0}
+  .section h2{font-family:'Archivo Narrow',sans-serif;font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:22px;color:var(--t1);border-bottom:1px solid var(--border);padding-bottom:10px;margin:0 0 20px}
+  .card{background:var(--void2);border:1px solid var(--border);border-radius:14px;padding:24px 26px;box-shadow:var(--evo-elev)}
+  .hero{display:flex;flex-wrap:wrap;gap:30px;align-items:center}
+  .bignum{font-family:'Courier Prime',monospace;font-size:68px;font-weight:700;line-height:1}
+  .bignum small{font-size:22px;color:var(--t2)}
+  .band{display:inline-block;background:var(--green);color:#04140c;font-family:'Archivo Narrow',sans-serif;font-weight:800;padding:4px 14px;border-radius:999px;font-size:14px;letter-spacing:.1em}
+  .hero p{margin:6px 0;color:var(--t2);max-width:580px}
+  .hero p strong{color:var(--t1)}
+  table{width:100%;border-collapse:collapse;font-size:15px}
+  th{text-align:left;color:var(--t2);font-family:'Archivo Narrow',sans-serif;letter-spacing:.06em;font-size:13px;text-transform:uppercase;padding:8px 10px;border-bottom:1px solid var(--border)}
+  td{padding:10px;border-bottom:1px solid var(--border2)}
+  td.num,th.num{text-align:right;font-family:'Courier Prime',monospace}
+  .pill{display:inline-block;font-size:12px;font-weight:700;font-family:'Archivo Narrow',sans-serif;letter-spacing:.08em;padding:2px 10px;border-radius:999px}
+  .pill.ex{background:rgba(0,255,136,.12);color:var(--green)}
+  .pill.sound{background:rgba(255,184,77,.12);color:var(--amber)}
+  .bars{display:flex;align-items:flex-end;gap:10px;height:160px;padding:16px 4px 0;border-bottom:1px solid var(--border)}
+  .barwrap{flex:1;text-align:center}
+  .bar{background:linear-gradient(180deg,var(--glow),#006a85);border-radius:6px 6px 0 0;margin:0 auto;width:100%;max-width:56px}
+  .bar.dim{opacity:.5}
+  .barlabel{font-size:12px;color:var(--t2);margin-top:8px;font-family:'Archivo Narrow',sans-serif;letter-spacing:.06em}
+  .barval{font-size:14px;font-weight:700;font-family:'Courier Prime',monospace}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media (max-width:700px){.cols{grid-template-columns:1fr}.nav-controls{margin-left:0}.hm-cell{border-right:none}}
+  .card h3{margin:0 0 10px;font-family:'Archivo Narrow',sans-serif;font-size:17px;letter-spacing:.06em;color:var(--glow);text-transform:uppercase}
+  .card ul{margin:0;padding-left:20px;font-size:15px;color:var(--t2)}
+  .card ul li{margin:7px 0}
+  .card ul li strong{color:var(--t1)}
+  .note{background:rgba(255,184,77,.07);border:1px solid rgba(255,184,77,.35);border-radius:12px;padding:16px 20px;font-size:15px;color:var(--t2)}
+  .note strong{color:var(--amber)}
+  .footer{border-top:1px solid var(--border);margin-top:56px;padding:24px 0 8px;color:var(--t2);font-size:14px}
+  .footer strong{color:var(--t1)}
+</style>
+</head>
+<body>
+
+
+<nav class="nav">
+  <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
+  <ul class="nav-links">
+    <li><a href="https://vyrion.earth/conscience" class="nav-item">CONSCIENCE</a></li>
+    <li><a href="https://vyrion.earth/shield" class="nav-item">SHIELD</a></li>
+    <li><a href="https://vyrion.earth/atlas" class="nav-item">ATLAS</a></li>
+    <li><a href="https://vyrion.earth/root" class="nav-item">ROOT</a></li>
+    <li><a href="https://vyrion.earth/canopy" class="nav-item">CANOPY</a></li>
+    <li><a href="https://vyrion.earth/flux" class="nav-item">FLUX</a></li>
+    <li><a href="https://vyrion.earth/tide" class="nav-item">TIDE</a></li>
+    <li><a href="https://vyrion.earth/loop" class="nav-item">LOOP</a></li>
+    <li><a href="https://vyrion.earth/pulse" class="nav-item">PULSE</a></li>
+    <li><a href="https://vyrion.earth/record" class="nav-item">RECORD</a></li>
+    <li><a href="https://vyrion.earth/about" class="nav-item">ABOUT</a></li>
+    <li><a href="https://vyrion.earth/mission-control.html" class="nav-item">MISSION CONTROL</a></li>
+    <li><a href="https://vyrion.earth/nexan" class="nav-item">NEXAN</a></li>
+  </ul>
+  <div class="nav-controls">
+    <span class="nc-live"><span class="dot"></span><span>Live</span></span>
+    <button class="nc-theme">◐ DARK</button>
+    <button class="nc-sz">S</button>
+    <button class="nc-sz active">M</button>
+    <button class="nc-sz">L</button>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="bg-word">STANDARDS</div>
+  <div class="eyebrow">Planetary Intelligence Network · Standards</div>
+  <h1 class="page-title">STANDARDS</h1>
+  <p class="page-sub">Published so the public can check our work, not just our claims. Scored daily against a fixed rubric — and the rubric itself is under audit.</p>
+  <div class="header-meta">
+    <div class="hm-cell"><div class="hm-label">7-Day Average</div><div class="hm-val amber">93.9</div></div>
+    <div class="hm-cell"><div class="hm-label">Days Scored</div><div class="hm-val">7 / 7</div></div>
+    <div class="hm-cell"><div class="hm-label">Band</div><div class="hm-val green">EXEMPLARY</div></div>
+    <div class="hm-cell"><div class="hm-label">Rubric</div><div class="hm-val">v1</div></div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="section">
+    <div class="card hero">
+      <div>
+        <div class="bignum">93.9 <small>/ 100</small></div>
+        <div style="margin-top:12px;"><span class="band">EXEMPLARY</span></div>
+      </div>
+      <div>
+        <p><strong>7-day internal trial · October 18–24, 2026.</strong> Five categories, fixed weights: Ethics &amp; Morals, Data Integrity, Consistency, Transparency, Operational health.</p>
+        <p>No day fell below Sound. No critical failure ever triggered — no unlabeled simulated data, no conflation of the VYRION Index with the CONSCIENCE score, no outage.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Daily scores</h2>
+    <div class="bars">
+      <div class="barwrap"><div class="bar dim" style="height:79.5%"></div><div class="barval">79.5</div><div class="barlabel">OCT 18</div></div>
+      <div class="barwrap"><div class="bar" style="height:97%"></div><div class="barval">97</div><div class="barlabel">OCT 19</div></div>
+      <div class="barwrap"><div class="bar" style="height:97%"></div><div class="barval">97</div><div class="barlabel">OCT 20</div></div>
+      <div class="barwrap"><div class="bar" style="height:97%"></div><div class="barval">97</div><div class="barlabel">OCT 21</div></div>
+      <div class="barwrap"><div class="bar" style="height:97%"></div><div class="barval">97</div><div class="barlabel">OCT 22</div></div>
+      <div class="barwrap"><div class="bar" style="height:97%"></div><div class="barval">97</div><div class="barlabel">OCT 23</div></div>
+      <div class="barwrap"><div class="bar" style="height:93%"></div><div class="barval">93</div><div class="barlabel">OCT 24</div></div>
+    </div>
+    <table style="margin-top:12px;">
+      <tr><th>Date</th><th class="num">Score</th><th>Band</th><th>What moved it</th></tr>
+      <tr><td>Oct 18</td><td class="num">79.5</td><td><span class="pill sound">SOUND</span></td><td>5 findings on day one — all fixed within 24 hours</td></tr>
+      <tr><td>Oct 19–23</td><td class="num">97</td><td><span class="pill ex">EXEMPLARY</span></td><td>One stale stat (nexan Record count) carried over</td></tr>
+      <tr><td>Oct 24</td><td class="num">93</td><td><span class="pill ex">EXEMPLARY</span></td><td>Two fresh findings; the carryover resolved</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Category averages</h2>
+    <table>
+      <tr><th>Category</th><th class="num">Weight</th><th class="num">Average</th><th>Notes</th></tr>
+      <tr><td>Ethics &amp; Morals</td><td class="num">35%</td><td class="num">100.0</td><td>Perfect all 7 days — the heaviest-weighted category never wavered</td></tr>
+      <tr><td>Data Integrity</td><td class="num">25%</td><td class="num">90.0</td><td>Day 1 dips; otherwise clean</td></tr>
+      <tr><td>Consistency</td><td class="num">20%</td><td class="num">82.1</td><td>Weakest — the 5-day stale-stat carryover</td></tr>
+      <tr><td>Transparency</td><td class="num">15%</td><td class="num">100.0</td><td>Perfect all 7 days</td></tr>
+      <tr><td>Operational</td><td class="num">5%</td><td class="num">100.0</td><td>Feeds, PWA, and metadata all held</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>What the score checks — and what it doesn't</h2>
+    <div class="cols">
+      <div class="card">
+        <h3>Checked daily</h3>
+        <ul>
+          <li><strong>Canonical figures:</strong> VYRION Index 49.2 (v1.1 baseline, March 2026) and the CONSCIENCE Pledge Integrity Score 35.7 — never conflated</li>
+          <li><strong>Data files</strong> parse and match what's displayed</li>
+          <li><strong>Retired language</strong> stays retired outside historical record</li>
+          <li><strong>Link health</strong> on cited sources</li>
+          <li><strong>SHIELD feeds</strong> (USGS, NASA EONET) reachable</li>
+          <li><strong>PWA health</strong> and social preview metadata</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Not yet checked</h3>
+        <ul>
+          <li>Dark patterns / manipulative interface design</li>
+          <li>Undisclosed tracking</li>
+          <li>Accessibility regressions</li>
+          <li>Unlabeled simulated data in visual-only elements (maps, canvas)</li>
+          <li>Exact live-vs-local page parity</li>
+        </ul>
+        <p style="font-size:15px;color:var(--t2);margin:12px 0 0;">A score that hides its blind spots would overstate its own certainty. These are listed until they can be checked.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Findings from the trial</h2>
+    <p style="color:var(--t2);">8 distinct findings across the week. Every finding on the live site was fixed — Day 1's batch within 24 hours, the stale Record count on Day 7, and the final two (an outdated Arctic figure and an outdated indicator count) the following day.</p>
+    <p style="color:var(--t2);"><strong style="color:var(--t1);">Status as of October 25, 2026: no open items remain from the trial.</strong> The two linked-surface items found during review — the repository description and the homepage hero line — were both corrected on October 25, and the scorecard counts them as resolved.</p>
+  </div>
+
+  <div class="footer">
+    <p><strong>VYRION LLC</strong> · Planetary Accountability Infrastructure · Founder: Tyler Frost / DablerFrost · Hilo, Hawaii<br>
+    <a href="https://github.com/DablerFrost/Vyrion" target="_blank" rel="noopener">github.com/DablerFrost/Vyrion</a> · <a href="https://x.com/dablerfrost" target="_blank" rel="noopener">x.com/dablerfrost</a> · <a href="https://linkedin.com/in/vyrion/" target="_blank" rel="noopener">linkedin.com/in/vyrion</a></p>
+    <p>Self-assessment, not a third-party audit. Rubric v1. Trial period October 18–24, 2026. Scores reflect the live site on each date. The rubric itself is under audit: one known flaw is that a stale finding can sit unresolved while the daily score stays high — a carryover rule is being added.</p>
+  </div>
+</div>
+</body>
+</html>
