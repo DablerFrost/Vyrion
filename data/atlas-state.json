@@ -1,15 +1,28 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-10-24T16:03:20.284Z",
+    "generatedAt": "2026-10-25T04:56:27.476Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 18,
+      "count": 21,
       "maxMagnitude": 7.7,
       "events": [
+        {
+          "id": "us6000u4r9",
+          "magnitude": 6.5,
+          "place": "Bonin Islands, Japan region",
+          "time": "2026-10-25T02:09:23.818Z",
+          "coordinates": [
+            139.6184,
+            27.7953,
+            492.376
+          ],
+          "tsunami": true,
+          "significance": 650
+        },
         {
           "id": "us6000u4jb",
           "magnitude": 6.3,
@@ -35,6 +48,32 @@
           ],
           "tsunami": true,
           "significance": 734
+        },
+        {
+          "id": "pt26297050",
+          "magnitude": 7,
+          "place": "Bonin Islands, Japan region",
+          "time": "2026-10-24T02:09:00.000Z",
+          "coordinates": [
+            139.9,
+            28,
+            473
+          ],
+          "tsunami": false,
+          "significance": 754
+        },
+        {
+          "id": "pt26298050",
+          "magnitude": 7,
+          "place": "Bonin Islands, Japan region",
+          "time": "2026-10-24T02:09:00.000Z",
+          "coordinates": [
+            139.9,
+            28,
+            473
+          ],
+          "tsunami": false,
+          "significance": 754
         },
         {
           "id": "us6000u43g",
@@ -230,27 +269,14 @@
           ],
           "tsunami": false,
           "significance": 645
-        },
-        {
-          "id": "us6000txpi",
-          "magnitude": 6.7,
-          "place": "74 km ENE of Tadine, New Caledonia",
-          "time": "2026-09-25T21:23:03.906Z",
-          "coordinates": [
-            168.5544,
-            -21.3128,
-            10
-          ],
-          "tsunami": false,
-          "significance": 700
         }
       ]
     },
     "hazards": {
-      "totalActive": 50,
+      "totalActive": 48,
       "byCategory": {
-        "Wildfires": 35,
-        "Severe Storms": 5,
+        "Wildfires": 34,
+        "Severe Storms": 4,
         "Sea and Lake Ice": 10
       },
       "events": [
@@ -284,13 +310,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 95,
+            "magnitudeValue": 85,
             "magnitudeUnit": "kts",
-            "date": "2026-10-24T06:00:00Z",
+            "date": "2026-10-24T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              -102.7,
-              12.1
+              -103.2,
+              13
             ]
           }
         },
@@ -415,26 +441,6 @@
           }
         },
         {
-          "id": "EONET_25340",
-          "title": "Tropical Cyclone Wati",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "JTWC"
-          ],
-          "geometry": {
-            "magnitudeValue": 45,
-            "magnitudeUnit": "kts",
-            "date": "2026-10-19T06:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -156.8,
-              -20.7
-            ]
-          }
-        },
-        {
           "id": "EONET_25451",
           "title": "Wildfire HENDERSON, San Diego, California",
           "categories": [
@@ -464,13 +470,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 55,
+            "magnitudeValue": 50,
             "magnitudeUnit": "kts",
-            "date": "2026-10-24T06:00:00Z",
+            "date": "2026-10-24T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              123.3,
-              26.8
+              123.8,
+              28.3
             ]
           }
         },
@@ -853,6 +859,26 @@
               34.561835
             ]
           }
+        },
+        {
+          "id": "EONET_25043",
+          "title": "Prescribed Fire D3 Bear RX, Greenlee, Arizona",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 5072,
+            "magnitudeUnit": "acres",
+            "date": "2026-10-02T17:58:00Z",
+            "type": "Point",
+            "coordinates": [
+              -109.401883,
+              33.447133
+            ]
+          }
         }
       ]
     },
@@ -862,55 +888,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": 0.3,
-          "surface_pressure": 1004.8,
-          "wind_speed_10m": 2.24,
-          "relative_humidity_2m": 99
+          "temperature_2m": 0.9,
+          "surface_pressure": 1002.6,
+          "wind_speed_10m": 5.15,
+          "relative_humidity_2m": 97
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 10.2,
-          "surface_pressure": 1012,
-          "wind_speed_10m": 7.81,
-          "relative_humidity_2m": 67
+          "temperature_2m": 10.8,
+          "surface_pressure": 1010.4,
+          "wind_speed_10m": 6.72,
+          "relative_humidity_2m": 63
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 29.7,
-          "surface_pressure": 915.9,
-          "wind_speed_10m": 2.37,
-          "relative_humidity_2m": 42
+          "temperature_2m": 20.7,
+          "surface_pressure": 914,
+          "wind_speed_10m": 2.2,
+          "relative_humidity_2m": 98
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 27.1,
-          "surface_pressure": 1012,
-          "wind_speed_10m": 1.88,
-          "relative_humidity_2m": 81
+          "temperature_2m": 26.7,
+          "surface_pressure": 1011.7,
+          "wind_speed_10m": 5.83,
+          "relative_humidity_2m": 85
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -0.9,
-          "surface_pressure": 1000.1,
-          "wind_speed_10m": 12.29,
-          "relative_humidity_2m": 89
+          "temperature_2m": -0.5,
+          "surface_pressure": 995.6,
+          "wind_speed_10m": 11.57,
+          "relative_humidity_2m": 94
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -32.1,
-          "surface_pressure": 723,
-          "wind_speed_10m": 6.79,
-          "relative_humidity_2m": 64
+          "temperature_2m": -37.6,
+          "surface_pressure": 715.1,
+          "wind_speed_10m": 6.43,
+          "relative_humidity_2m": 67
         }
       ]
     },
