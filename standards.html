@@ -93,6 +93,21 @@
   .note strong{color:var(--amber)}
   .footer{border-top:1px solid var(--border);margin-top:56px;padding:24px 0 8px;color:var(--t2);font-size:14px}
   .footer strong{color:var(--t1)}
+
+  /* ---- mobile hamburger nav (matches site standard) ---- */
+  .nav-burger{display:none;align-items:center;justify-content:center;width:42px;height:42px;flex-shrink:0;cursor:pointer;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.28);border-radius:9px;color:var(--t1);font-size:1.25rem;line-height:1;transition:background .2s,border-color .2s}
+  .nav-burger:hover{background:rgba(0,212,255,.14);border-color:rgba(0,212,255,.5)}
+  @media (max-width:1100px){
+    .nav-burger{display:flex;}
+    .nav-controls{margin-left:auto;}
+    .nc-live{display:none;}
+    .nav-links{display:none;position:fixed;top:58px;left:0;right:0;z-index:599;flex-direction:column;gap:0;margin:0;padding:10px;list-style:none;background:rgba(3,9,16,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,212,255,.14);box-shadow:0 30px 60px rgba(0,0,0,.6);max-height:calc(100vh - 58px);max-height:calc(100dvh - 58px);overflow-y:auto;}
+    .nav-links.open{display:flex;}
+    .nav-links li{width:100%;}
+    .nav-links a{display:flex;align-items:center;width:100%;padding:13px 16px;font-size:.72rem;}
+    .nav-links a.active::after{display:none;}
+    .nav-tooltip{display:none;}
+  }
 </style>
 </head>
 <body>
@@ -100,7 +115,7 @@
 
 <nav class="nav">
   <a href="https://vyrion.earth" class="nav-logo">VYRION</a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="nav-links">
     <li><a href="https://vyrion.earth/conscience" class="nav-item">CONSCIENCE</a></li>
     <li><a href="https://vyrion.earth/shield" class="nav-item">SHIELD</a></li>
     <li><a href="https://vyrion.earth/atlas" class="nav-item">ATLAS</a></li>
@@ -115,6 +130,7 @@
     <li><a href="https://vyrion.earth/mission-control.html" class="nav-item">MISSION CONTROL</a></li>
     <li><a href="https://vyrion.earth/nexan" class="nav-item">NEXAN</a></li>
   </ul>
+  <button class="nav-burger" id="nav-burger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">☰</button>
   <div class="nav-controls">
     <span class="nc-live"><span class="dot"></span><span>Live</span></span>
     <button class="nc-theme" id="theme-btn" onclick="toggleTheme()" title="Toggle light/dark mode">◐ DARK</button>
@@ -259,6 +275,9 @@ document.querySelectorAll('.nc-sz').forEach(b=>b.classList.toggle('active',b.dat
 }
 }catch(e){}
 })();
+</script>
+<script>
+(function(){var b=document.getElementById('nav-burger'),l=document.getElementById('nav-links');if(!b||!l)return;function s(o){l.classList.toggle('open',o);b.setAttribute('aria-expanded',String(o));b.setAttribute('aria-label',o?'Close navigation menu':'Open navigation menu')}b.addEventListener('click',function(){s(!l.classList.contains('open'))});l.addEventListener('click',function(e){if(e.target.closest('a'))s(false)});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open'))s(false)})})();
 </script>
 </body>
 </html>
