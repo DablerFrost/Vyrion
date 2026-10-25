@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-10-25T04:56:27.476Z",
+    "generatedAt": "2026-10-25T16:32:18.276Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -273,10 +273,10 @@
       ]
     },
     "hazards": {
-      "totalActive": 48,
+      "totalActive": 47,
       "byCategory": {
         "Wildfires": 34,
-        "Severe Storms": 4,
+        "Severe Storms": 3,
         "Sea and Lake Ice": 10
       },
       "events": [
@@ -310,13 +310,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 85,
+            "magnitudeValue": 75,
             "magnitudeUnit": "kts",
-            "date": "2026-10-24T18:00:00Z",
+            "date": "2026-10-25T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              -103.2,
-              13
+              -103.3,
+              14.1
             ]
           }
         },
@@ -470,13 +470,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 50,
+            "magnitudeValue": 45,
             "magnitudeUnit": "kts",
-            "date": "2026-10-24T18:00:00Z",
+            "date": "2026-10-25T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              123.8,
-              28.3
+              125.5,
+              30.1
             ]
           }
         },
@@ -517,26 +517,6 @@
             "coordinates": [
               -111.65,
               35.016667
-            ]
-          }
-        },
-        {
-          "id": "EONET_25290",
-          "title": "Hurricane Trudy",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "JTWC"
-          ],
-          "geometry": {
-            "magnitudeValue": 30,
-            "magnitudeUnit": "kts",
-            "date": "2026-10-20T00:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -108,
-              19.4
             ]
           }
         },
@@ -879,6 +859,26 @@
               33.447133
             ]
           }
+        },
+        {
+          "id": "EONET_25042",
+          "title": "Wildfire Bull, Washoe, Nevada",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 1529,
+            "magnitudeUnit": "acres",
+            "date": "2026-10-02T14:26:00Z",
+            "type": "Point",
+            "coordinates": [
+              -119.987683,
+              39.539067
+            ]
+          }
         }
       ]
     },
@@ -888,55 +888,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": 0.9,
-          "surface_pressure": 1002.6,
-          "wind_speed_10m": 5.15,
-          "relative_humidity_2m": 97
+          "temperature_2m": -0.5,
+          "surface_pressure": 999.7,
+          "wind_speed_10m": 4.83,
+          "relative_humidity_2m": 98
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 10.8,
-          "surface_pressure": 1010.4,
-          "wind_speed_10m": 6.72,
-          "relative_humidity_2m": 63
+          "temperature_2m": 12.3,
+          "surface_pressure": 987.4,
+          "wind_speed_10m": 6.87,
+          "relative_humidity_2m": 94
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 20.7,
-          "surface_pressure": 914,
-          "wind_speed_10m": 2.2,
-          "relative_humidity_2m": 98
+          "temperature_2m": 29.2,
+          "surface_pressure": 915.3,
+          "wind_speed_10m": 2.75,
+          "relative_humidity_2m": 46
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 26.7,
-          "surface_pressure": 1011.7,
-          "wind_speed_10m": 5.83,
-          "relative_humidity_2m": 85
+          "temperature_2m": 26.3,
+          "surface_pressure": 1012.7,
+          "wind_speed_10m": 3.35,
+          "relative_humidity_2m": 86
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -0.5,
-          "surface_pressure": 995.6,
-          "wind_speed_10m": 11.57,
+          "temperature_2m": 0.3,
+          "surface_pressure": 990.1,
+          "wind_speed_10m": 12.51,
           "relative_humidity_2m": 94
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -37.6,
-          "surface_pressure": 715.1,
-          "wind_speed_10m": 6.43,
-          "relative_humidity_2m": 67
+          "temperature_2m": -35,
+          "surface_pressure": 715.7,
+          "wind_speed_10m": 5.59,
+          "relative_humidity_2m": 64
         }
       ]
     },
