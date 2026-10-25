@@ -10,7 +10,7 @@
 📡 Intelligence Network: https://vyrion.earth
 📧 Contact: [contact@vyrion.earth](mailto:contact@vyrion.earth)
 
-![VYRION — The 8 Earth Systems · 48 Indicators of Planetary Reality](assets/readme-banner.png)
+![VYRION — The 8 Earth Systems · 49 Indicators of Planetary Reality](assets/readme-banner.png)
 
 ---
 
