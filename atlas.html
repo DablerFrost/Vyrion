@@ -1072,15 +1072,9 @@ async function load(){
     if(ad)ad.textContent=`NOAA Mauna Loa Observatory · ${co2.date} · Daily measurement`;
     const ap=document.getElementById('atm-ppm');
     if(ap)ap.textContent=co2.ppm;
-    /* Dynamically update atmosphere system bar and score */
-    const atmScore=Math.max(0,Math.min(100,100-((ppm-280)/(450-280))*100));
-    const bar=document.getElementById('bar-atm');
-    if(bar)bar.style.width=atmScore.toFixed(0)+'%';
-    const sc=document.getElementById('sc-atm');
-    if(sc){sc.textContent=atmScore.toFixed(1);sc.style.color=atmScore<31?'var(--breach)':'var(--warn)';}
   }else{
     const av=document.getElementById('atm-val');
-    if(av){av.innerHTML='424.8<span class="sc-unit">ppm CO₂</span>';av.style.color='var(--breach)';}
+    if(av){av.innerHTML='—<span class="sc-unit">ppm CO₂</span>';av.style.color='var(--breach)';}
   }
 
   /* Fire count — Forest card only */
