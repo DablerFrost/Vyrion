@@ -1,13 +1,13 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-10-26T04:59:37.352Z",
+    "generatedAt": "2026-10-26T18:42:35.936Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 20,
+      "count": 18,
       "maxMagnitude": 7.7,
       "events": [
         {
@@ -48,32 +48,6 @@
           ],
           "tsunami": true,
           "significance": 734
-        },
-        {
-          "id": "pt26297050",
-          "magnitude": 7,
-          "place": "Bonin Islands, Japan region",
-          "time": "2026-10-24T02:09:00.000Z",
-          "coordinates": [
-            139.9,
-            28,
-            473
-          ],
-          "tsunami": false,
-          "significance": 754
-        },
-        {
-          "id": "pt26298050",
-          "magnitude": 7,
-          "place": "Bonin Islands, Japan region",
-          "time": "2026-10-24T02:09:00.000Z",
-          "coordinates": [
-            139.9,
-            28,
-            473
-          ],
-          "tsunami": false,
-          "significance": 754
         },
         {
           "id": "us6000u43g",
@@ -273,13 +247,74 @@
       ]
     },
     "hazards": {
-      "totalActive": 46,
+      "totalActive": 49,
       "byCategory": {
+        "Severe Storms": 6,
         "Wildfires": 33,
-        "Severe Storms": 3,
         "Sea and Lake Ice": 10
       },
       "events": [
+        {
+          "id": "EONET_25729",
+          "title": "Tropical Cyclone Arnab",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC"
+          ],
+          "geometry": {
+            "magnitudeValue": 80,
+            "magnitudeUnit": "kts",
+            "date": "2026-10-26T12:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              87.2,
+              15.9
+            ]
+          }
+        },
+        {
+          "id": "EONET_25730",
+          "title": "Tropical Storm Olana",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC",
+            "NOAA_NHC"
+          ],
+          "geometry": {
+            "magnitudeValue": 30,
+            "magnitudeUnit": "kts",
+            "date": "2026-10-26T12:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -176.8,
+              14.1
+            ]
+          }
+        },
+        {
+          "id": "EONET_25728",
+          "title": "Typhoon In-fa",
+          "categories": [
+            "Severe Storms"
+          ],
+          "sources": [
+            "JTWC"
+          ],
+          "geometry": {
+            "magnitudeValue": 115,
+            "magnitudeUnit": "kts",
+            "date": "2026-10-26T12:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              162.7,
+              14.1
+            ]
+          }
+        },
         {
           "id": "EONET_25590",
           "title": "Wildfire BEE HAVEN (2) (24-06), Hamilton, Florida",
@@ -307,16 +342,17 @@
             "Severe Storms"
           ],
           "sources": [
-            "JTWC"
+            "JTWC",
+            "NOAA_NHC"
           ],
           "geometry": {
-            "magnitudeValue": 60,
+            "magnitudeValue": 55,
             "magnitudeUnit": "kts",
-            "date": "2026-10-25T18:00:00Z",
+            "date": "2026-10-26T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              -104,
-              14.6
+              -105.5,
+              15.4
             ]
           }
         },
@@ -819,66 +855,6 @@
               40.4646
             ]
           }
-        },
-        {
-          "id": "EONET_25118",
-          "title": "Wildfire BOUQUET, Los Angeles, California",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1048,
-            "magnitudeUnit": "acres",
-            "date": "2026-10-03T17:30:00Z",
-            "type": "Point",
-            "coordinates": [
-              -118.40183,
-              34.561835
-            ]
-          }
-        },
-        {
-          "id": "EONET_25043",
-          "title": "Prescribed Fire D3 Bear RX, Greenlee, Arizona",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 5072,
-            "magnitudeUnit": "acres",
-            "date": "2026-10-02T17:58:00Z",
-            "type": "Point",
-            "coordinates": [
-              -109.401883,
-              33.447133
-            ]
-          }
-        },
-        {
-          "id": "EONET_25042",
-          "title": "Wildfire Bull, Washoe, Nevada",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1529,
-            "magnitudeUnit": "acres",
-            "date": "2026-10-02T14:26:00Z",
-            "type": "Point",
-            "coordinates": [
-              -119.987683,
-              39.539067
-            ]
-          }
         }
       ]
     },
@@ -888,55 +864,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -0.3,
-          "surface_pressure": 1000.3,
-          "wind_speed_10m": 1.15,
+          "temperature_2m": 0.7,
+          "surface_pressure": 1003.5,
+          "wind_speed_10m": 3.32,
           "relative_humidity_2m": 98
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 8.6,
-          "surface_pressure": 992.3,
-          "wind_speed_10m": 14.18,
-          "relative_humidity_2m": 66
+          "temperature_2m": 9.6,
+          "surface_pressure": 1007.2,
+          "wind_speed_10m": 14.48,
+          "relative_humidity_2m": 65
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 20.6,
-          "surface_pressure": 913.4,
-          "wind_speed_10m": 2.45,
-          "relative_humidity_2m": 99
+          "temperature_2m": 29.1,
+          "surface_pressure": 913.6,
+          "wind_speed_10m": 3.01,
+          "relative_humidity_2m": 55
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 26.8,
-          "surface_pressure": 1013,
-          "wind_speed_10m": 1.39,
-          "relative_humidity_2m": 84
+          "temperature_2m": 27.3,
+          "surface_pressure": 1011.7,
+          "wind_speed_10m": 1.59,
+          "relative_humidity_2m": 81
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -1.5,
-          "surface_pressure": 985.2,
-          "wind_speed_10m": 7.48,
-          "relative_humidity_2m": 93
+          "temperature_2m": 1,
+          "surface_pressure": 970.1,
+          "wind_speed_10m": 8.39,
+          "relative_humidity_2m": 94
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -39.2,
-          "surface_pressure": 711,
-          "wind_speed_10m": 5.98,
-          "relative_humidity_2m": 66
+          "temperature_2m": -36.2,
+          "surface_pressure": 715.1,
+          "wind_speed_10m": 5.83,
+          "relative_humidity_2m": 65
         }
       ]
     },
