@@ -488,6 +488,7 @@ function initCard(card){
   const enabled = p.v.filter(v => v[3] === 1);
   const def = enabled.find(v => v[5] === 1) || enabled[0];
   const sel = def ? def[2].slice() : p.o.map(() => 0);
+  const sels = [];
   p.o.forEach((g, gi) => {
     const present = new Set(enabled.map(v => v[2][gi]));
     const lab = document.createElement("div"); lab.className = "opt-label"; lab.textContent = g[0];
@@ -498,7 +499,15 @@ function initCard(card){
       if(sel[gi] === oi) o.selected = true;
       s.appendChild(o);
     });
-    s.addEventListener("change", () => { sel[gi] = parseInt(s.value, 10); refresh(); });
+    sels.push(s);
+    s.addEventListener("change", () => {
+      sel[gi] = parseInt(s.value, 10);
+      if(!resolveVariant(p, sel)){
+        const match = enabled.find(v => v[2][gi] === sel[gi]);
+        if(match) match[2].forEach((oi, gj) => { sel[gj] = oi; if(sels[gj]) sels[gj].value = String(oi); });
+      }
+      refresh();
+    });
     buy.appendChild(lab); buy.appendChild(s);
   });
   const note = document.createElement("div"); note.className = "oos"; note.style.display = "none";
