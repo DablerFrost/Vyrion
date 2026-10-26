@@ -3446,6 +3446,16 @@ html[data-tscale="1.22"] .nc-live .lbl{display:none;}
   @media(max-width:480px){.nav{padding-left:.6rem;padding-right:.6rem}.nav-controls{gap:.15rem}.nav-controls .nc-sz{width:24px;height:24px}}
 </style>
   <style>html[data-tscale="1.22"] .nc-live{display:none;}</style>
+<style>
+/* Tablet Explainarium fix (Oct 25): the teaser row only wrapped at <=720px, so at
+   tablet widths (721-1100px) the nowrap, no-shrink button spilled off-screen right.
+   Wrap the teaser and let the button go full-width below 1100px, matching the
+   phone pattern. Desktop above 1100px is untouched. */
+@media(max-width:1100px){
+  .explainarium-teaser{flex-wrap:wrap}
+  .btn-explainarium{width:100%;white-space:normal;text-align:center}
+}
+</style>
 </head>
   <body>
     <!-- ── CUSTOM CURSOR ─────────────────────────────────────────────────── -->
