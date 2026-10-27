@@ -471,6 +471,7 @@ function initCard(card){
   const def = enabled.find(v => v[5] === 1) || enabled[0];
   const sel = def ? def[2].slice() : p.o.map(() => 0);
   const sels = [];
+  let touched = false;
   p.o.forEach((g, gi) => {
     const present = new Set(enabled.map(v => v[2][gi]));
     const lab = document.createElement("div"); lab.className = "opt-label"; lab.textContent = g[0];
@@ -483,6 +484,7 @@ function initCard(card){
     });
     sels.push(s);
     s.addEventListener("change", () => {
+      touched = true;
       sel[gi] = parseInt(s.value, 10);
       if(!resolveVariant(p, sel)){
         const match = enabled.find(v => v[2][gi] === sel[gi]);
@@ -498,7 +500,7 @@ function initCard(card){
   function refresh(){
     const v = resolveVariant(p, sel);
     if(!v){ priceEl.textContent = "—"; btn.disabled = true; note.style.display = "none"; return; }
-    priceEl.textContent = money(v[1]);
+    if(!touched){var en=p.v.filter(function(e){return e[3]===1});var mn=Math.min.apply(null,en.map(function(e){return e[1]}));var mx=Math.max.apply(null,en.map(function(e){return e[1]}));priceEl.textContent=(mn!==mx)?"From "+money(mn):money(v[1]);}else{priceEl.textContent=money(v[1]);}
     if(v[4] !== 1){
       btn.disabled = true; btn.textContent = "Unavailable";
       note.textContent = BLOCKED_NOTES[v[0]] ? BLOCKED_NOTES[v[0]] + " — pick another variant" : "This variant is unavailable";
