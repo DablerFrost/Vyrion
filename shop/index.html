@@ -69,7 +69,7 @@ a{color:inherit}
 .chip:hover{color:var(--t1);border-color:var(--glow)}
 .chip.active{color:#02101e;background:var(--glow);border-color:var(--glow)}.sort-select{font-family:'Archivo Narrow',sans-serif;font-weight:700;letter-spacing:.12em;font-size:.68rem;text-transform:uppercase;padding:.5rem 1rem;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--t2);cursor:pointer}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.1rem}
-.card{display:block;text-decoration:none;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:linear-gradient(165deg,rgba(0,212,255,.03),transparent 60%);transition:transform .18s,border-color .18s,box-shadow .18s}
+.card{display:flex;flex-direction:column;text-decoration:none;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:linear-gradient(165deg,rgba(0,212,255,.03),transparent 60%);transition:transform .18s,border-color .18s,box-shadow .18s}
 .card:hover{transform:translateY(-3px);border-color:rgba(0,212,255,.38);box-shadow:0 14px 34px rgba(0,0,0,.35)}
 .card-img{position:relative;aspect-ratio:1/1;background:#0a1826;overflow:hidden}
 .card-img img{width:100%;height:100%;object-fit:cover;display:block}.card-img.tall img{object-fit:contain}
@@ -93,7 +93,7 @@ a{color:inherit}
 .shop-pill{display:inline-block;margin-top:.7rem;font-family:'Archivo Narrow',sans-serif;font-weight:800;letter-spacing:.16em;font-size:.78rem;text-transform:uppercase;text-decoration:none;color:#02101e!important;background:linear-gradient(92deg,var(--glow),var(--purple));padding:.6rem 1.2rem;border-radius:999px;box-shadow:0 0 26px rgba(0,212,255,.45)}
 @media(max-width:900px){.nav-links{display:none}.meta-strip{grid-template-columns:repeat(2,1fr)}.sw{grid-template-columns:1fr}.section,.hero{padding-left:1.1rem;padding-right:1.1rem}}
 
-.buy{padding:.2rem 1rem 1rem;display:flex;flex-direction:column;gap:.5rem}
+.buy{padding:.2rem 1rem 1rem;display:flex;flex-direction:column;gap:.5rem;margin-top:auto}
 .buy select{width:100%;padding:.5rem .6rem;border-radius:8px;border:1px solid var(--border,#2a3550);background:var(--void2,#0d1526);color:var(--t1,#e8efff);font-size:.82rem}
 .buy .opt-label{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t3,#8fa3c8);margin-top:.15rem}
 .add-btn{padding:.65rem 1rem;border:none;border-radius:9px;font-weight:800;letter-spacing:.06em;cursor:pointer;color:#06121f;background:linear-gradient(120deg,#37e0ff,#8b7bff)}
@@ -190,7 +190,7 @@ a{color:inherit}
     <button class="chip" data-filter="wear">Wear</button>
     <button class="chip" data-filter="wall">Wall Art</button>
     <button class="chip" data-filter="home">Home &amp; Gear</button>
-    <select class="sort-select" id="sort" aria-label="Sort products"><option value="featured" selected>Sort: Featured</option><option value="price-asc">Price: Low to High</option><option value="price-desc">Price: High to Low</option><option value="name">Name A-Z</option></select>
+    <select class="sort-select" id="sort" aria-label="Sort products"><option value="featured" selected>Sort: Default</option><option value="price-asc">Price: Low to High</option><option value="price-desc">Price: High to Low</option><option value="name">Name A-Z</option></select>
   </div>
   <div class="grid" id="grid"><div class="card" data-cat="featured" data-feat="1" data-pid="6ad6c635003392ba2b0bd304">
   <div class="card-img"><img src="https://images-api.printify.com/mockup/6ad6c635003392ba2b0bd304/103468/99692/reflections-still-waters-run-deep-2027-hilo-hawaii-photo-wall-calendar.jpg?camera_label=context-covers" alt="REFLECTIONS: Still Waters Run Deep — 2027 Hilo, Hawaii Photo Wall Calendar" loading="lazy"></div>
