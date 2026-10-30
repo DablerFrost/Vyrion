@@ -14,7 +14,7 @@ So we rebuilt it.
 
 ## What we did
 
-We reconstructed the March 2026 baseline from the methodology's own inputs: 49 indicators across 8 Earth systems, every value taken from the named public source, every threshold published, every input that could not be honestly retrieved **excluded and listed** rather than filled in. Where our own March record contained stale source values, we corrected them in the open, in the changelog, using the correction protocol that has existed since Day 1.
+We reconstructed the March 2026 baseline from the methodology's own inputs: 49 indicators across 8 Index systems, every value taken from the named public source, every threshold published, every input that could not be honestly retrieved **excluded and listed** rather than filled in. Where our own March record contained stale source values, we corrected them in the open, in the changelog, using the correction protocol that has existed since Day 1.
 
 The reconstruction does not reproduce 41.2. It was never going to — 41.2 was a judgment, and a judgment cannot be recomputed. What can be recomputed is this:
 

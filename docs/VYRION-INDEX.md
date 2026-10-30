@@ -10,7 +10,7 @@
 
 ---
 
-The VYRION Index tracks planetary health the way markets track economic health — as a single, daily, actionable number. The composite draws from 49 verified indicators across eight Earth systems, sourced exclusively from publicly auditable scientific datasets. Every input, every weighting, and every calculation is published openly at vyrion.earth/codex — making the VYRION Index the first planetary benchmark designed to survive adversarial scrutiny.
+The VYRION Index tracks planetary health the way markets track economic health — as a single, daily, actionable number. The composite draws from 49 verified indicators across eight Index systems, sourced exclusively from publicly auditable scientific datasets. Every input, every weighting, and every calculation is published openly at vyrion.earth/codex — making the VYRION Index the first planetary benchmark designed to survive adversarial scrutiny.
 
 ---
 

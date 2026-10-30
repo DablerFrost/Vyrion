@@ -16,7 +16,7 @@
 --void2:   #061624  (card/cell backgrounds)
 --border:  rgba(0,212,255,0.12) (all borders)
 
-Previous green system (#030a05 / #00FF9D) is retired. Cyan is the single unified system across all modules: CONSCIENCE, ATLAS, SHIELD, and all future builds.
+Previous green system (#030a05 / #00FF9D) is retired. Cyan is the single unified system across VYRION: CONSCIENCE, ATLAS, SHIELD, and all future builds.
 
 ---
 
