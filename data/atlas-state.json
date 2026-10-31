@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-10-31T05:57:16.333Z",
+    "generatedAt": "2026-10-31T17:16:22.921Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -247,13 +247,33 @@
       ]
     },
     "hazards": {
-      "totalActive": 48,
+      "totalActive": 47,
       "byCategory": {
+        "Sea and Lake Ice": 10,
         "Wildfires": 33,
-        "Severe Storms": 5,
-        "Sea and Lake Ice": 10
+        "Severe Storms": 4
       },
       "events": [
+        {
+          "id": "EONET_6051",
+          "title": "Iceberg C39",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 24,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-10-30T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              55.55,
+              -65.58
+            ]
+          }
+        },
         {
           "id": "EONET_25827",
           "title": "Wildfire South Tank Trail, Perry, Mississippi",
@@ -405,13 +425,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 115,
+            "magnitudeValue": 110,
             "magnitudeUnit": "kts",
-            "date": "2026-10-30T18:00:00Z",
+            "date": "2026-10-31T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              143.4,
-              20.5
+              143.5,
+              22.8
             ]
           }
         },
@@ -432,6 +452,26 @@
             "coordinates": [
               -82.8577778,
               30.4952778
+            ]
+          }
+        },
+        {
+          "id": "EONET_6288",
+          "title": "Iceberg D32",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 54,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-10-22T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -39.35,
+              -56.65
             ]
           }
         },
@@ -597,26 +637,6 @@
           }
         },
         {
-          "id": "EONET_25339",
-          "title": "Super Typhoon Champi",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "JTWC"
-          ],
-          "geometry": {
-            "magnitudeValue": 35,
-            "magnitudeUnit": "kts",
-            "date": "2026-10-25T18:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              127.4,
-              31.2
-            ]
-          }
-        },
-        {
           "id": "EONET_25456",
           "title": "Prescribed Fire Newman 2 Piles RX, Coconino, Arizona",
           "categories": [
@@ -777,8 +797,8 @@
           }
         },
         {
-          "id": "EONET_6474",
-          "title": "Iceberg D35",
+          "id": "EONET_5359",
+          "title": "Iceberg A76C",
           "categories": [
             "Sea and Lake Ice"
           ],
@@ -786,19 +806,19 @@
             "NATICE"
           ],
           "geometry": {
-            "magnitudeValue": 90,
+            "magnitudeValue": 112,
             "magnitudeUnit": "NM^2",
-            "date": "2026-10-15T00:00:00Z",
+            "date": "2026-10-22T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -43.77,
-              -60.14
+              -23.74,
+              -56.87
             ]
           }
         },
         {
-          "id": "EONET_25268",
-          "title": "Iceberg B52",
+          "id": "EONET_6320",
+          "title": "Iceberg A81",
           "categories": [
             "Sea and Lake Ice"
           ],
@@ -806,53 +826,33 @@
             "NATICE"
           ],
           "geometry": {
-            "magnitudeValue": 48.88,
+            "magnitudeValue": 700,
             "magnitudeUnit": "NM^2",
-            "date": "2026-10-09T00:00:00Z",
+            "date": "2026-10-30T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -130.24,
-              -74.4
+              -36.62,
+              -55.65
             ]
           }
         },
         {
-          "id": "EONET_25309",
-          "title": "Wildfire Craig Lake 1, Baraga, Michigan",
+          "id": "EONET_6424",
+          "title": "Iceberg D33B",
           "categories": [
-            "Wildfires"
+            "Sea and Lake Ice"
           ],
           "sources": [
-            "IRWIN"
+            "NATICE"
           ],
           "geometry": {
-            "magnitudeValue": 604,
-            "magnitudeUnit": "acres",
-            "date": "2026-10-08T18:05:00Z",
+            "magnitudeValue": 252,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-10-30T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -88.16960353,
-              46.63331342
-            ]
-          }
-        },
-        {
-          "id": "EONET_25235",
-          "title": "Prescribed Fire COOPER UNIT - KPERP RX NKRD  CY26, Coconino, Arizona",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 2000,
-            "magnitudeUnit": "acres",
-            "date": "2026-10-08T12:16:00Z",
-            "type": "Point",
-            "coordinates": [
-              -112.214205,
-              36.754175
+              -42.25,
+              -55.87
             ]
           }
         }
@@ -864,55 +864,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -0.7,
-          "surface_pressure": 987.7,
-          "wind_speed_10m": 11.96,
-          "relative_humidity_2m": 95
+          "temperature_2m": -5.6,
+          "surface_pressure": 984.9,
+          "wind_speed_10m": 3.96,
+          "relative_humidity_2m": 91
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 11.5,
-          "surface_pressure": 1027.1,
-          "wind_speed_10m": 8.17,
-          "relative_humidity_2m": 71
+          "temperature_2m": 12.9,
+          "surface_pressure": 1030.9,
+          "wind_speed_10m": 8.02,
+          "relative_humidity_2m": 79
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 20.2,
-          "surface_pressure": 912.6,
-          "wind_speed_10m": 2.3,
-          "relative_humidity_2m": 99
+          "temperature_2m": 28.5,
+          "surface_pressure": 913.8,
+          "wind_speed_10m": 1.99,
+          "relative_humidity_2m": 50
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 28.5,
-          "surface_pressure": 1013.4,
-          "wind_speed_10m": 2.55,
-          "relative_humidity_2m": 81
+          "temperature_2m": 28.6,
+          "surface_pressure": 1014.6,
+          "wind_speed_10m": 1.33,
+          "relative_humidity_2m": 78
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -2.3,
-          "surface_pressure": 992.6,
-          "wind_speed_10m": 15.01,
-          "relative_humidity_2m": 77
+          "temperature_2m": -0.6,
+          "surface_pressure": 983,
+          "wind_speed_10m": 15.62,
+          "relative_humidity_2m": 91
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -34.2,
-          "surface_pressure": 716.5,
-          "wind_speed_10m": 10.11,
-          "relative_humidity_2m": 53
+          "temperature_2m": -33.3,
+          "surface_pressure": 708.9,
+          "wind_speed_10m": 5.75,
+          "relative_humidity_2m": 62
         }
       ]
     },
