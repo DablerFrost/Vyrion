@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-10-31T06:23:44.911Z",
+    "generatedAt": "2026-10-31T17:22:47.210Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -13,20 +13,20 @@
   },
   "synthesis": {
     "hazardSummary": {
-      "totalEvents": 66,
+      "totalEvents": 65,
       "categories": {
+        "Sea and Lake Ice": 10,
         "Wildfires": 33,
-        "Severe Storms": 5,
-        "Sea and Lake Ice": 10
+        "Severe Storms": 4
       },
       "seismicCount": 18,
       "maxMagnitude": 7.7
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 3.83,
-      "minTemperature_2m": -34.2,
-      "maxTemperature_2m": 28.5
+      "avgTemperature_2m": 5.08,
+      "minTemperature_2m": -33.3,
+      "maxTemperature_2m": 28.6
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -40,19 +40,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-10-31T05:26:16.477Z",
+        "generated": "2026-10-31T17:14:04.370Z",
         "generated_date": "2026-10-31",
         "script_version": "1.1",
         "window_days": 14,
         "window_start": "2026-10-17",
         "window_end": "2026-10-31",
-        "runtime_ms": 548,
+        "runtime_ms": 378,
         "seismic_live": true,
         "eonet_live": true
       },
       "threat": {
         "level": "CRITICAL",
-        "score": 29.4
+        "score": 28.5
       },
       "seismic": {
         "events": [
@@ -473,6 +473,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3be"
           },
           {
+            "id": "us7000tujf",
+            "magnitude": 5.2,
+            "place": "4 km S of Bajo Corral, Panama",
+            "time": "2026-10-31T15:50:18.909Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tujf"
+          },
+          {
             "id": "us7000ttth",
             "magnitude": 5.2,
             "place": "Reykjanes Ridge",
@@ -591,14 +599,6 @@
             "time": "2026-10-18T08:00:05.896Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u34e"
-          },
-          {
-            "id": "us6000u309",
-            "magnitude": 5.2,
-            "place": "86 km SW of Brisas Barra de Suchiate, Mexico",
-            "time": "2026-10-17T13:59:34.575Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u309"
           },
           {
             "id": "us7000tu7j",
@@ -767,6 +767,14 @@
             "time": "2026-10-18T22:31:43.253Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u38g"
+          },
+          {
+            "id": "us7000tuif",
+            "magnitude": 5,
+            "place": "196 km NW of Port-Olry, Vanuatu",
+            "time": "2026-10-31T11:31:12.352Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tuif"
           },
           {
             "id": "us7000tu3u",
@@ -1007,6 +1015,22 @@
             "time": "2026-10-19T10:57:08.127Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3c7"
+          },
+          {
+            "id": "us7000tuht",
+            "magnitude": 4.9,
+            "place": "236 km NW of Port-Olry, Vanuatu",
+            "time": "2026-10-31T09:18:32.051Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tuht"
+          },
+          {
+            "id": "us7000tuhs",
+            "magnitude": 4.9,
+            "place": "213 km W of Sola, Vanuatu",
+            "time": "2026-10-31T09:15:52.568Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tuhs"
           },
           {
             "id": "us7000ttyd",
@@ -1561,14 +1585,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u459"
           },
           {
-            "id": "us6000u41y",
-            "magnitude": 4.8,
-            "place": "Balleny Islands region",
-            "time": "2026-10-22T07:49:29.455Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u41y"
-          },
-          {
             "id": "us6000u417",
             "magnitude": 4.8,
             "place": "89 km S of Kokopo, Papua New Guinea",
@@ -1639,14 +1655,6 @@
             "time": "2026-10-18T00:28:29.111Z",
             "depth_km": 124.1,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u32r"
-          },
-          {
-            "id": "us6000u2z9",
-            "magnitude": 4.8,
-            "place": "110 km NE of Norsup, Vanuatu",
-            "time": "2026-10-17T08:59:51.583Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u2z9"
           },
           {
             "id": "us7000tufc",
@@ -1823,6 +1831,14 @@
             "time": "2026-10-22T15:27:48.445Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u44u"
+          },
+          {
+            "id": "us6000u41y",
+            "magnitude": 4.7,
+            "place": "Balleny Islands region",
+            "time": "2026-10-22T07:49:29.549Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u41y"
           },
           {
             "id": "us6000u3ws",
@@ -2203,9 +2219,9 @@
           {
             "id": "us6000u41z",
             "magnitude": 4.6,
-            "place": "49 km NE of Yigo Village, Guam",
-            "time": "2026-10-22T08:06:35.200Z",
-            "depth_km": 99.2,
+            "place": "37 km NE of Yigo Village, Guam",
+            "time": "2026-10-22T08:06:34.938Z",
+            "depth_km": 98,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u41z"
           },
           {
@@ -2303,38 +2319,6 @@
             "time": "2026-10-18T07:37:26.848Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ttpw"
-          },
-          {
-            "id": "us6000u30x",
-            "magnitude": 4.6,
-            "place": "88 km SSW of Uyuni, Bolivia",
-            "time": "2026-10-17T16:52:45.164Z",
-            "depth_km": 189.5,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u30x"
-          },
-          {
-            "id": "us6000u300",
-            "magnitude": 4.6,
-            "place": "86 km W of Tambolaka, Indonesia",
-            "time": "2026-10-17T12:46:16.057Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u300"
-          },
-          {
-            "id": "us7000tthr",
-            "magnitude": 4.6,
-            "place": "Mariana Islands region",
-            "time": "2026-10-17T11:04:40.626Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tthr"
-          },
-          {
-            "id": "us6000u2zb",
-            "magnitude": 4.6,
-            "place": "52 km N of Pante Makasar, Timor Leste",
-            "time": "2026-10-17T09:07:41.082Z",
-            "depth_km": 96.1,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u2zb"
           },
           {
             "id": "us7000tugs",
@@ -2532,7 +2516,7 @@
             "id": "us6000u4kg",
             "magnitude": 4.5,
             "place": "Balleny Islands region",
-            "time": "2026-10-23T08:17:10.700Z",
+            "time": "2026-10-23T08:17:11.274Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u4kg"
           },
@@ -2571,10 +2555,18 @@
           {
             "id": "us6000u423",
             "magnitude": 4.5,
-            "place": "136 km NE of Petropavlovsk-Kamchatsky, Russia",
-            "time": "2026-10-22T08:34:18.537Z",
-            "depth_km": 61.1,
+            "place": "129 km ENE of Petropavlovsk-Kamchatsky, Russia",
+            "time": "2026-10-22T08:34:19.153Z",
+            "depth_km": 70.2,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u423"
+          },
+          {
+            "id": "us7000tuaf",
+            "magnitude": 4.5,
+            "place": "220 km WNW of Port-Olry, Vanuatu",
+            "time": "2026-10-22T06:13:19.456Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tuaf"
           },
           {
             "id": "us7000tu2e",
@@ -2711,25 +2703,9 @@
             "time": "2026-10-17T18:48:10.802Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u31a"
-          },
-          {
-            "id": "us6000u2yz",
-            "magnitude": 4.5,
-            "place": "80 km NW of Sola, Vanuatu",
-            "time": "2026-10-17T07:40:02.596Z",
-            "depth_km": 145.3,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u2yz"
-          },
-          {
-            "id": "us6000u2yw",
-            "magnitude": 4.5,
-            "place": "59 km NNW of Ruteng, Indonesia",
-            "time": "2026-10-17T07:20:48.242Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u2yw"
           }
         ],
-        "count_total": 334,
+        "count_total": 331,
         "count_m55_plus": 29,
         "count_m60_plus": 10,
         "count_m70_plus": 1,
@@ -2745,7 +2721,7 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-10-31T05:26:16.047Z"
+        "retrieved": "2026-10-31T17:14:04.209Z"
       },
       "wildfire": {
         "events": [
@@ -2896,20 +2872,9 @@
               9.4
             ],
             "closed": null
-          },
-          {
-            "id": "EONET_25339",
-            "title": "Super Typhoon Champi",
-            "type": "STORM",
-            "time": "2026-10-15T12:00:00.000Z",
-            "coords": [
-              157.4,
-              11
-            ],
-            "closed": null
           }
         ],
-        "count": 5
+        "count": 4
       },
       "flood": {
         "events": [],
@@ -2923,7 +2888,7 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-10-31T05:57:16.333Z",
+        "generatedAt": "2026-10-31T17:16:22.921Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
@@ -3169,13 +3134,33 @@
           ]
         },
         "hazards": {
-          "totalActive": 48,
+          "totalActive": 47,
           "byCategory": {
+            "Sea and Lake Ice": 10,
             "Wildfires": 33,
-            "Severe Storms": 5,
-            "Sea and Lake Ice": 10
+            "Severe Storms": 4
           },
           "events": [
+            {
+              "id": "EONET_6051",
+              "title": "Iceberg C39",
+              "categories": [
+                "Sea and Lake Ice"
+              ],
+              "sources": [
+                "NATICE"
+              ],
+              "geometry": {
+                "magnitudeValue": 24,
+                "magnitudeUnit": "NM^2",
+                "date": "2026-10-30T00:00:00Z",
+                "type": "Point",
+                "coordinates": [
+                  55.55,
+                  -65.58
+                ]
+              }
+            },
             {
               "id": "EONET_25827",
               "title": "Wildfire South Tank Trail, Perry, Mississippi",
@@ -3327,13 +3312,13 @@
                 "JTWC"
               ],
               "geometry": {
-                "magnitudeValue": 115,
+                "magnitudeValue": 110,
                 "magnitudeUnit": "kts",
-                "date": "2026-10-30T18:00:00Z",
+                "date": "2026-10-31T12:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  143.4,
-                  20.5
+                  143.5,
+                  22.8
                 ]
               }
             },
@@ -3354,6 +3339,26 @@
                 "coordinates": [
                   -82.8577778,
                   30.4952778
+                ]
+              }
+            },
+            {
+              "id": "EONET_6288",
+              "title": "Iceberg D32",
+              "categories": [
+                "Sea and Lake Ice"
+              ],
+              "sources": [
+                "NATICE"
+              ],
+              "geometry": {
+                "magnitudeValue": 54,
+                "magnitudeUnit": "NM^2",
+                "date": "2026-10-22T00:00:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -39.35,
+                  -56.65
                 ]
               }
             },
@@ -3519,26 +3524,6 @@
               }
             },
             {
-              "id": "EONET_25339",
-              "title": "Super Typhoon Champi",
-              "categories": [
-                "Severe Storms"
-              ],
-              "sources": [
-                "JTWC"
-              ],
-              "geometry": {
-                "magnitudeValue": 35,
-                "magnitudeUnit": "kts",
-                "date": "2026-10-25T18:00:00Z",
-                "type": "Point",
-                "coordinates": [
-                  127.4,
-                  31.2
-                ]
-              }
-            },
-            {
               "id": "EONET_25456",
               "title": "Prescribed Fire Newman 2 Piles RX, Coconino, Arizona",
               "categories": [
@@ -3699,8 +3684,8 @@
               }
             },
             {
-              "id": "EONET_6474",
-              "title": "Iceberg D35",
+              "id": "EONET_5359",
+              "title": "Iceberg A76C",
               "categories": [
                 "Sea and Lake Ice"
               ],
@@ -3708,19 +3693,19 @@
                 "NATICE"
               ],
               "geometry": {
-                "magnitudeValue": 90,
+                "magnitudeValue": 112,
                 "magnitudeUnit": "NM^2",
-                "date": "2026-10-15T00:00:00Z",
+                "date": "2026-10-22T00:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  -43.77,
-                  -60.14
+                  -23.74,
+                  -56.87
                 ]
               }
             },
             {
-              "id": "EONET_25268",
-              "title": "Iceberg B52",
+              "id": "EONET_6320",
+              "title": "Iceberg A81",
               "categories": [
                 "Sea and Lake Ice"
               ],
@@ -3728,53 +3713,33 @@
                 "NATICE"
               ],
               "geometry": {
-                "magnitudeValue": 48.88,
+                "magnitudeValue": 700,
                 "magnitudeUnit": "NM^2",
-                "date": "2026-10-09T00:00:00Z",
+                "date": "2026-10-30T00:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  -130.24,
-                  -74.4
+                  -36.62,
+                  -55.65
                 ]
               }
             },
             {
-              "id": "EONET_25309",
-              "title": "Wildfire Craig Lake 1, Baraga, Michigan",
+              "id": "EONET_6424",
+              "title": "Iceberg D33B",
               "categories": [
-                "Wildfires"
+                "Sea and Lake Ice"
               ],
               "sources": [
-                "IRWIN"
+                "NATICE"
               ],
               "geometry": {
-                "magnitudeValue": 604,
-                "magnitudeUnit": "acres",
-                "date": "2026-10-08T18:05:00Z",
+                "magnitudeValue": 252,
+                "magnitudeUnit": "NM^2",
+                "date": "2026-10-30T00:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  -88.16960353,
-                  46.63331342
-                ]
-              }
-            },
-            {
-              "id": "EONET_25235",
-              "title": "Prescribed Fire COOPER UNIT - KPERP RX NKRD  CY26, Coconino, Arizona",
-              "categories": [
-                "Wildfires"
-              ],
-              "sources": [
-                "IRWIN"
-              ],
-              "geometry": {
-                "magnitudeValue": 2000,
-                "magnitudeUnit": "acres",
-                "date": "2026-10-08T12:16:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -112.214205,
-                  36.754175
+                  -42.25,
+                  -55.87
                 ]
               }
             }
@@ -3786,55 +3751,55 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": -0.7,
-              "surface_pressure": 987.7,
-              "wind_speed_10m": 11.96,
-              "relative_humidity_2m": 95
+              "temperature_2m": -5.6,
+              "surface_pressure": 984.9,
+              "wind_speed_10m": 3.96,
+              "relative_humidity_2m": 91
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 11.5,
-              "surface_pressure": 1027.1,
-              "wind_speed_10m": 8.17,
-              "relative_humidity_2m": 71
+              "temperature_2m": 12.9,
+              "surface_pressure": 1030.9,
+              "wind_speed_10m": 8.02,
+              "relative_humidity_2m": 79
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 20.2,
-              "surface_pressure": 912.6,
-              "wind_speed_10m": 2.3,
-              "relative_humidity_2m": 99
+              "temperature_2m": 28.5,
+              "surface_pressure": 913.8,
+              "wind_speed_10m": 1.99,
+              "relative_humidity_2m": 50
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 28.5,
-              "surface_pressure": 1013.4,
-              "wind_speed_10m": 2.55,
-              "relative_humidity_2m": 81
+              "temperature_2m": 28.6,
+              "surface_pressure": 1014.6,
+              "wind_speed_10m": 1.33,
+              "relative_humidity_2m": 78
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": -2.3,
-              "surface_pressure": 992.6,
-              "wind_speed_10m": 15.01,
-              "relative_humidity_2m": 77
+              "temperature_2m": -0.6,
+              "surface_pressure": 983,
+              "wind_speed_10m": 15.62,
+              "relative_humidity_2m": 91
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -34.2,
-              "surface_pressure": 716.5,
-              "wind_speed_10m": 10.11,
-              "relative_humidity_2m": 53
+              "temperature_2m": -33.3,
+              "surface_pressure": 708.9,
+              "wind_speed_10m": 5.75,
+              "relative_humidity_2m": 62
             }
           ]
         },
@@ -3852,7 +3817,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-10-31T06:15:37.087Z"
+        "generatedAt": "2026-10-31T17:21:25.303Z"
       },
       "health": {
         "score": 87,
