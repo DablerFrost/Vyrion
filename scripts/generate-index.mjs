@@ -795,30 +795,36 @@ async function main() {
     console.log(`Current written → ${currentPath}`);
 
     const historyPath = path.join(OUT_DIR, "index-history.json");
-    let history = [];
+    // Preserve the published history shape: {"series": [...]}. The old
+    // code reset any non-array doc to [], which would have wiped the
+    // curated series. Bare arrays are still accepted for back-compat.
+    // Series entries use {date, score, version, note}; full publish
+    // detail (systems, uncertainty, published_at) lives in
+    // index-current.json, which is the INDEX log entry's companion.
+    let historyDoc = null;
+    let series = [];
     if (fs.existsSync(historyPath)) {
       try {
-        history = JSON.parse(fs.readFileSync(historyPath, "utf8"));
-        if (!Array.isArray(history)) history = [];
+        historyDoc = JSON.parse(fs.readFileSync(historyPath, "utf8"));
+        if (Array.isArray(historyDoc)) series = historyDoc;
+        else if (Array.isArray(historyDoc.series)) series = historyDoc.series;
       } catch {
-        history = [];
+        historyDoc = null;
+        series = [];
       }
     }
     const entry = {
-      as_of: output.as_of,
-      published_at: nowISO(),
+      date: output.as_of,
       score: composite,
-      uncertainty,
-      based_on_baseline: baseline.version ?? null,
-      systems: Object.fromEntries(
-        outSystems.map((s) => [s.id, s.score])
-      ),
+      version: baseline.version ?? null,
+      note: "First monthly publication",
     };
-    const existing = history.findIndex((h) => h.as_of === entry.as_of);
-    if (existing >= 0) history[existing] = entry; // same-day republication
-    else history.push(entry);
-    fs.writeFileSync(historyPath, JSON.stringify(history, null, 2), "utf8");
-    console.log(`History updated → ${historyPath} (${history.length} entries)`);
+    const existing = series.findIndex((h) => (h.date ?? h.as_of) === entry.date);
+    if (existing >= 0) series[existing] = entry; // same-day republication
+    else series.push(entry);
+    const historyOut = Array.isArray(historyDoc) ? series : { ...(historyDoc ?? {}), series };
+    fs.writeFileSync(historyPath, JSON.stringify(historyOut, null, 2), "utf8");
+    console.log(`History updated → ${historyPath} (${series.length} entries)`);
   }
 
   // ── Summary ───────────────────────────────────────────────────────────────
