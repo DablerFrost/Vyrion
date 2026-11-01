@@ -1,13 +1,13 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-11-01T06:25:58.499Z",
+    "generatedAt": "2026-11-01T17:58:03.966Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 18,
+      "count": 17,
       "maxMagnitude": 7.7,
       "events": [
         {
@@ -65,11 +65,11 @@
         {
           "id": "us6000u43g",
           "magnitude": 7,
-          "place": "191 km ENE of Nagqu, China",
-          "time": "2026-10-22T14:33:40.353Z",
+          "place": "189 km ENE of Nagqu, China",
+          "time": "2026-10-22T14:33:40.289Z",
           "coordinates": [
-            93.7797,
-            32.3805,
+            93.7837,
+            32.3376,
             18
           ],
           "tsunami": false,
@@ -230,28 +230,15 @@
           ],
           "tsunami": false,
           "significance": 623
-        },
-        {
-          "id": "us6000tz1y",
-          "magnitude": 4.7,
-          "place": "5 km NNW of Korumburra, Australia",
-          "time": "2026-10-02T16:01:39.602Z",
-          "coordinates": [
-            145.8076,
-            -38.3847,
-            10
-          ],
-          "tsunami": false,
-          "significance": 749
         }
       ]
     },
     "hazards": {
-      "totalActive": 45,
+      "totalActive": 44,
       "byCategory": {
         "Sea and Lake Ice": 10,
         "Wildfires": 31,
-        "Severe Storms": 4
+        "Severe Storms": 3
       },
       "events": [
         {
@@ -375,27 +362,6 @@
           }
         },
         {
-          "id": "EONET_25730",
-          "title": "Tropical Storm Olana",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "JTWC",
-            "NOAA_NHC"
-          ],
-          "geometry": {
-            "magnitudeValue": 25,
-            "magnitudeUnit": "kts",
-            "date": "2026-10-27T00:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -176.2,
-              13.2
-            ]
-          }
-        },
-        {
           "id": "EONET_25769",
           "title": "Wildfire Range  47B, Forrest, Mississippi",
           "categories": [
@@ -425,13 +391,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 95,
+            "magnitudeValue": 90,
             "magnitudeUnit": "kts",
-            "date": "2026-11-01T00:00:00Z",
+            "date": "2026-11-01T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              144.3,
-              22.8
+              144.1,
+              22.3
             ]
           }
         },
@@ -855,6 +821,26 @@
               -55.87
             ]
           }
+        },
+        {
+          "id": "EONET_6474",
+          "title": "Iceberg D35",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 90,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-10-15T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -43.77,
+              -60.14
+            ]
+          }
         }
       ]
     },
@@ -864,55 +850,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -9.2,
-          "surface_pressure": 991.9,
-          "wind_speed_10m": 11.12,
-          "relative_humidity_2m": 85
+          "temperature_2m": -12.9,
+          "surface_pressure": 1003,
+          "wind_speed_10m": 7.16,
+          "relative_humidity_2m": 94
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 12.5,
-          "surface_pressure": 1029.4,
-          "wind_speed_10m": 9.18,
-          "relative_humidity_2m": 85
+          "temperature_2m": 12.8,
+          "surface_pressure": 1023.2,
+          "wind_speed_10m": 13.17,
+          "relative_humidity_2m": 87
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 20.4,
-          "surface_pressure": 912.6,
-          "wind_speed_10m": 2.35,
-          "relative_humidity_2m": 98
+          "temperature_2m": 28.7,
+          "surface_pressure": 913.5,
+          "wind_speed_10m": 2.68,
+          "relative_humidity_2m": 57
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 28.3,
-          "surface_pressure": 1012.4,
-          "wind_speed_10m": 2.22,
+          "temperature_2m": 28.9,
+          "surface_pressure": 1013.2,
+          "wind_speed_10m": 3.3,
           "relative_humidity_2m": 78
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -0.7,
-          "surface_pressure": 988.3,
-          "wind_speed_10m": 13.74,
-          "relative_humidity_2m": 91
+          "temperature_2m": -1.4,
+          "surface_pressure": 992.7,
+          "wind_speed_10m": 11.26,
+          "relative_humidity_2m": 84
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -36.1,
-          "surface_pressure": 708.8,
-          "wind_speed_10m": 8.76,
-          "relative_humidity_2m": 56
+          "temperature_2m": -34.9,
+          "surface_pressure": 714.6,
+          "wind_speed_10m": 8.84,
+          "relative_humidity_2m": 50
         }
       ]
     },
@@ -923,7 +909,7 @@
       "error": "[NOAA CRW Ocean Heat] HTTP 404 Not Found"
     },
     "cryosphere": {
-      "error": "[NSIDC Sea Ice] This operation was aborted"
+      "error": "[NSIDC Sea Ice] HTTP 404 Not Found"
     }
   }
 }
