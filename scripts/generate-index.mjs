@@ -15,8 +15,9 @@
 //     baseline = target and threshold = target (see Phase 1 draft).
 //   A1 carries the methodology's SPECIFIED function instead:
 //     S_A1 = max(0, min(100, 100 − ((CO₂ − 280) / (450 − 280)) × 100))
-//     For A1 the `threshold` field holds the absolute ceiling (450),
-//     not a deviation.
+//     For A1 the `threshold` field holds the deviation (170) from the
+//     280 baseline to the 450 ceiling, matching every other indicator;
+//     the ceiling passed to the function is baseline + threshold.
 //   System score = mean of scored indicators (nulls excluded, the
 //   scored count is always disclosed).
 //   Uncertainty = RSS over systems: σ = √(Σ(W_i² × σ_i,eff²)).
@@ -162,8 +163,9 @@ function scoreGeneral(value, baseline, threshold) {
   );
 }
 
-// A1's specified function (methodology, System 1). Here `threshold`
-// holds the ABSOLUTE ceiling (450 ppm), not a deviation.
+// A1's specified function (methodology, System 1). It takes the
+// ABSOLUTE ceiling (450 ppm); the caller passes baseline + threshold
+// (280 + 170), since the baseline file stores the deviation.
 function scoreA1Specified(value, baseline, ceiling) {
   if (value == null || baseline == null || ceiling == null) return null;
   if (ceiling === baseline) return null;
@@ -172,7 +174,7 @@ function scoreA1Specified(value, baseline, ceiling) {
 
 function scoreIndicator(ind, value) {
   if (ind.function === "A1_CO2_SPECIFIED" || ind.id === "A1") {
-    return scoreA1Specified(value, ind.baseline, ind.threshold);
+    return scoreA1Specified(value, ind.baseline, ind.baseline + ind.threshold);
   }
   return scoreGeneral(value, ind.baseline, ind.threshold);
 }
