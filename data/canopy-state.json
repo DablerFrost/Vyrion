@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-11-02T06:56:56.618Z",
+    "generatedAt": "2026-11-02T21:57:11.931Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -13,20 +13,20 @@
   },
   "synthesis": {
     "hazardSummary": {
-      "totalEvents": 59,
+      "totalEvents": 62,
       "categories": {
-        "Sea and Lake Ice": 10,
-        "Wildfires": 29,
-        "Severe Storms": 3
+        "Severe Storms": 3,
+        "Wildfires": 32,
+        "Sea and Lake Ice": 10
       },
       "seismicCount": 17,
       "maxMagnitude": 7.7
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 1.22,
-      "minTemperature_2m": -39.2,
-      "maxTemperature_2m": 28.8
+      "avgTemperature_2m": 0.53,
+      "minTemperature_2m": -40.5,
+      "maxTemperature_2m": 26.8
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -40,19 +40,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-11-02T05:52:03.297Z",
+        "generated": "2026-11-02T21:40:52.717Z",
         "generated_date": "2026-11-02",
         "script_version": "1.1",
         "window_days": 14,
         "window_start": "2026-10-19",
         "window_end": "2026-11-02",
-        "runtime_ms": 634,
+        "runtime_ms": 339,
         "seismic_live": true,
         "eonet_live": true
       },
       "threat": {
         "level": "CRITICAL",
-        "score": 29.9
+        "score": 28.95
       },
       "seismic": {
         "events": [
@@ -145,14 +145,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ttlm"
           },
           {
-            "id": "us6000u3bc",
-            "magnitude": 6,
-            "place": "186 km NW of Port-Olry, Vanuatu",
-            "time": "2026-10-19T07:49:04.900Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3bc"
-          },
-          {
             "id": "us6000u4ty",
             "magnitude": 5.9,
             "place": "218 km ENE of Nagqu, China",
@@ -239,22 +231,6 @@
             "time": "2026-10-23T10:19:16.729Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u4bk"
-          },
-          {
-            "id": "us6000u3ge",
-            "magnitude": 5.7,
-            "place": "203 km WNW of Port-Olry, Vanuatu",
-            "time": "2026-10-19T18:55:37.471Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3ge"
-          },
-          {
-            "id": "us6000u3ga",
-            "magnitude": 5.7,
-            "place": "198 km NW of Port-Olry, Vanuatu",
-            "time": "2026-10-19T18:52:36.659Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3ga"
           },
           {
             "id": "us7000ttlt",
@@ -387,26 +363,18 @@
           {
             "id": "us6000u3nl",
             "magnitude": 5.4,
-            "place": "192 km S of Burica, Panama",
-            "time": "2026-10-20T17:05:48.338Z",
+            "place": "210 km S of Burica, Panama",
+            "time": "2026-10-20T17:05:47.182Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3nl"
           },
           {
-            "id": "us6000u3c6",
-            "magnitude": 5.4,
-            "place": "196 km NW of Port-Olry, Vanuatu",
-            "time": "2026-10-19T10:40:21.108Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3c6"
-          },
-          {
-            "id": "us6000u3bi",
-            "magnitude": 5.4,
-            "place": "184 km WNW of Port-Olry, Vanuatu",
-            "time": "2026-10-19T08:12:38.235Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3bi"
+            "id": "us7000tuxy",
+            "magnitude": 5.3,
+            "place": "81 km SSE of Palekastro, Greece",
+            "time": "2026-11-02T16:49:17.895Z",
+            "depth_km": 48.5,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tuxy"
           },
           {
             "id": "us7000tttl",
@@ -471,30 +439,6 @@
             "time": "2026-10-21T21:38:54.747Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3yj"
-          },
-          {
-            "id": "us6000u3ct",
-            "magnitude": 5.3,
-            "place": "116 km WNW of Höfn, Iceland",
-            "time": "2026-10-19T14:44:24.015Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3ct"
-          },
-          {
-            "id": "us7000ttse",
-            "magnitude": 5.3,
-            "place": "221 km NW of Port-Olry, Vanuatu",
-            "time": "2026-10-19T10:40:47.803Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ttse"
-          },
-          {
-            "id": "us6000u3be",
-            "magnitude": 5.3,
-            "place": "188 km NW of Port-Olry, Vanuatu",
-            "time": "2026-10-19T07:55:36.888Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3be"
           },
           {
             "id": "us7000tuky",
@@ -609,12 +553,20 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3k5"
           },
           {
-            "id": "us6000u3bk",
-            "magnitude": 5.2,
-            "place": "211 km WNW of Port-Olry, Vanuatu",
-            "time": "2026-10-19T08:21:47.100Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3bk"
+            "id": "us7000tuxg",
+            "magnitude": 5.1,
+            "place": "50 km WSW of Huarmey, Peru",
+            "time": "2026-11-02T15:28:13.954Z",
+            "depth_km": 67.2,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tuxg"
+          },
+          {
+            "id": "us7000tuuy",
+            "magnitude": 5.1,
+            "place": "19 km WNW of Tomohon, Indonesia",
+            "time": "2026-11-02T08:13:14.014Z",
+            "depth_km": 196.6,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tuuy"
           },
           {
             "id": "us7000tut4",
@@ -787,8 +739,8 @@
           {
             "id": "us6000u3p1",
             "magnitude": 5.1,
-            "place": "39 km W of Mosteiros, Portugal",
-            "time": "2026-10-20T18:07:18.131Z",
+            "place": "41 km WNW of Mosteiros, Portugal",
+            "time": "2026-10-20T18:07:17.921Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3p1"
           },
@@ -799,14 +751,6 @@
             "time": "2026-10-20T06:41:23.116Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3ka"
-          },
-          {
-            "id": "us6000u3ft",
-            "magnitude": 5.1,
-            "place": "South Sandwich Islands region",
-            "time": "2026-10-19T17:45:50.479Z",
-            "depth_km": 101.5,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3ft"
           },
           {
             "id": "us7000tuqx",
@@ -1063,14 +1007,6 @@
             "time": "2026-10-20T00:38:27.904Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3j1"
-          },
-          {
-            "id": "us6000u3c7",
-            "magnitude": 5,
-            "place": "31 km NW of Jiangyou, China",
-            "time": "2026-10-19T10:57:08.127Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3c7"
           },
           {
             "id": "us7000tuu0",
@@ -1409,54 +1345,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3ic"
           },
           {
-            "id": "us6000u3d2",
-            "magnitude": 4.9,
-            "place": "76 km WSW of Murghob, Tajikistan",
-            "time": "2026-10-19T15:35:37.049Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3d2"
-          },
-          {
-            "id": "us6000u3c1",
-            "magnitude": 4.9,
-            "place": "54 km NE of Labuan Bajo, Indonesia",
-            "time": "2026-10-19T09:45:56.107Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3c1"
-          },
-          {
-            "id": "us6000u3bz",
-            "magnitude": 4.9,
-            "place": "115 km NNW of Sola, Vanuatu",
-            "time": "2026-10-19T09:25:14.552Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3bz"
-          },
-          {
-            "id": "us6000u3bu",
-            "magnitude": 4.9,
-            "place": "202 km NW of Port-Olry, Vanuatu",
-            "time": "2026-10-19T08:54:18.185Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3bu"
-          },
-          {
-            "id": "us6000u3b8",
-            "magnitude": 4.9,
-            "place": "203 km WNW of Port-Olry, Vanuatu",
-            "time": "2026-10-19T07:20:52.028Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3b8"
-          },
-          {
-            "id": "us6000u3b4",
-            "magnitude": 4.9,
-            "place": "218 km WNW of Port-Olry, Vanuatu",
-            "time": "2026-10-19T07:00:02.899Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3b4"
-          },
-          {
             "id": "us7000tur0",
             "magnitude": 4.8,
             "place": "Mid-Indian Ridge",
@@ -1729,28 +1617,44 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ttz4"
           },
           {
-            "id": "us6000u3g6",
-            "magnitude": 4.8,
-            "place": "88 km WNW of Hihifo, Tonga",
-            "time": "2026-10-19T18:27:46.554Z",
-            "depth_km": 156.8,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3g6"
+            "id": "us7000tuxi",
+            "magnitude": 4.7,
+            "place": "193 km ENE of Nagqu, China",
+            "time": "2026-11-02T15:35:12.369Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tuxi"
           },
           {
-            "id": "us6000u3ch",
-            "magnitude": 4.8,
-            "place": "56 km N of Ruteng, Indonesia",
-            "time": "2026-10-19T12:06:01.884Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3ch"
+            "id": "us7000tuwv",
+            "magnitude": 4.7,
+            "place": "south of the Fiji Islands",
+            "time": "2026-11-02T14:05:23.380Z",
+            "depth_km": 502.4,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tuwv"
           },
           {
-            "id": "us6000u3ce",
-            "magnitude": 4.8,
-            "place": "212 km WNW of Port-Olry, Vanuatu",
-            "time": "2026-10-19T11:52:37.111Z",
+            "id": "us7000tuv8",
+            "magnitude": 4.7,
+            "place": "100 km SSE of Palekastro, Greece",
+            "time": "2026-11-02T08:59:22.968Z",
+            "depth_km": 40.2,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tuv8"
+          },
+          {
+            "id": "us7000tuv5",
+            "magnitude": 4.7,
+            "place": "113 km SW of Basco, Philippines",
+            "time": "2026-11-02T08:42:47.228Z",
+            "depth_km": 35,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tuv5"
+          },
+          {
+            "id": "us7000tuts",
+            "magnitude": 4.7,
+            "place": "Mid-Indian Ridge",
+            "time": "2026-11-02T02:43:47.892Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3ce"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tuts"
           },
           {
             "id": "us7000turj",
@@ -2020,25 +1924,17 @@
             "id": "us6000u3pm",
             "magnitude": 4.7,
             "place": "Kuril Islands",
-            "time": "2026-10-20T19:53:59.721Z",
-            "depth_km": 28.7,
+            "time": "2026-10-20T19:53:56.931Z",
+            "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3pm"
           },
           {
-            "id": "us6000u3c5",
-            "magnitude": 4.7,
-            "place": "53 km NNE of Labuan Bajo, Indonesia",
-            "time": "2026-10-19T10:10:56.335Z",
+            "id": "us7000tv03",
+            "magnitude": 4.6,
+            "place": "226 km NW of Port-Olry, Vanuatu",
+            "time": "2026-11-02T20:54:25.928Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3c5"
-          },
-          {
-            "id": "us6000u3bv",
-            "magnitude": 4.7,
-            "place": "163 km WNW of Tobelo, Indonesia",
-            "time": "2026-10-19T09:00:39.067Z",
-            "depth_km": 49,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3bv"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tv03"
           },
           {
             "id": "us7000tutv",
@@ -2409,28 +2305,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3k7"
           },
           {
-            "id": "us7000ttrv",
-            "magnitude": 4.6,
-            "place": "61 km N of Pucallpa, Peru",
-            "time": "2026-10-19T16:41:54.785Z",
-            "depth_km": 142.4,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ttrv"
-          },
-          {
-            "id": "us6000u3db",
-            "magnitude": 4.6,
-            "place": "south of the Fiji Islands",
-            "time": "2026-10-19T16:13:53.698Z",
-            "depth_km": 534.4,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3db"
-          },
-          {
-            "id": "us6000u3cu",
-            "magnitude": 4.6,
-            "place": "5 km E of San José El Ídolo, Guatemala",
-            "time": "2026-10-19T14:47:45.038Z",
-            "depth_km": 109.7,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3cu"
+            "id": "us7000tuzd",
+            "magnitude": 4.5,
+            "place": "168 km SE of San Jose Village, Northern Mariana Islands",
+            "time": "2026-11-02T19:59:04.529Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tuzd"
           },
           {
             "id": "us7000tute",
@@ -2796,7 +2676,7 @@
             "id": "us6000u3nn",
             "magnitude": 4.5,
             "place": "215 km S of Burica, Panama",
-            "time": "2026-10-20T17:18:36.707Z",
+            "time": "2026-10-20T17:18:36.745Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3nn"
           },
@@ -2847,35 +2727,11 @@
             "time": "2026-10-19T21:43:35.170Z",
             "depth_km": 91.4,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3i2"
-          },
-          {
-            "id": "us6000u3bs",
-            "magnitude": 4.5,
-            "place": "2 km W of Lunca Jariștei, Romania",
-            "time": "2026-10-19T08:51:57.571Z",
-            "depth_km": 124.8,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3bs"
-          },
-          {
-            "id": "us6000u3b9",
-            "magnitude": 4.5,
-            "place": "79 km W of San Antonio de los Cobres, Argentina",
-            "time": "2026-10-19T07:33:35.444Z",
-            "depth_km": 170.3,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3b9"
-          },
-          {
-            "id": "us6000u3ar",
-            "magnitude": 4.5,
-            "place": "Banda Sea",
-            "time": "2026-10-19T06:15:13.394Z",
-            "depth_km": 157.8,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3ar"
           }
         ],
-        "count_total": 352,
-        "count_m55_plus": 31,
-        "count_m60_plus": 12,
+        "count_total": 334,
+        "count_m55_plus": 28,
+        "count_m60_plus": 11,
         "count_m70_plus": 1,
         "count_m80_plus": 0,
         "largest": {
@@ -2889,10 +2745,43 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-11-02T05:52:02.766Z"
+        "retrieved": "2026-11-02T21:40:52.573Z"
       },
       "wildfire": {
         "events": [
+          {
+            "id": "EONET_25984",
+            "title": "Prescribed Fire Dry Lake Hills Piles RX, Coconino, Arizona",
+            "type": "WILDFIRE",
+            "time": "2026-10-30T10:13:00.000Z",
+            "coords": [
+              -111.617,
+              35.267
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_25986",
+            "title": "Prescribed Fire McCarty Piles RX, Coconino, Arizona",
+            "type": "WILDFIRE",
+            "time": "2026-10-29T12:16:00.000Z",
+            "coords": [
+              -111.263,
+              34.514
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_25985",
+            "title": "Prescribed Fire Freidland-Chimney Piles RX, Coconino, Arizona",
+            "type": "WILDFIRE",
+            "time": "2026-10-29T11:37:00.000Z",
+            "coords": [
+              -111.667,
+              35.283
+            ],
+            "closed": null
+          },
           {
             "id": "EONET_25827",
             "title": "Wildfire South Tank Trail, Perry, Mississippi",
@@ -2971,18 +2860,18 @@
             "closed": null
           }
         ],
-        "count": 7
+        "count": 10
       },
       "storm": {
         "events": [
           {
-            "id": "EONET_25729",
-            "title": "Tropical Cyclone Arnab",
+            "id": "EONET_25964",
+            "title": "Tropical Cyclone Murasu",
             "type": "STORM",
-            "time": "2026-10-25T18:00:00.000Z",
+            "time": "2026-11-01T00:00:00.000Z",
             "coords": [
-              89.3,
-              15.6
+              86.2,
+              11.4
             ],
             "closed": null
           },
@@ -3023,7 +2912,7 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-11-02T06:26:36.760Z",
+        "generatedAt": "2026-11-02T21:46:32.796Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
@@ -3204,11 +3093,11 @@
             {
               "id": "us6000u18x",
               "magnitude": 5.8,
-              "place": "1 km S of El Cacao, Panama",
-              "time": "2026-10-09T18:37:46.146Z",
+              "place": "4 km W of Flores, Panama",
+              "time": "2026-10-09T18:37:45.872Z",
               "coordinates": [
-                -80.4012,
-                7.4362,
+                -80.451,
+                7.4835,
                 10
               ],
               "tsunami": false,
@@ -3217,12 +3106,12 @@
             {
               "id": "us6000u18k",
               "magnitude": 7.7,
-              "place": "12 km WSW of Pitaloza Arriba, Panama",
-              "time": "2026-10-09T17:56:06.036Z",
+              "place": "10 km WSW of Pitaloza Arriba, Panama",
+              "time": "2026-10-09T17:56:05.537Z",
               "coordinates": [
-                -80.769,
-                7.5868,
-                12.647
+                -80.7566,
+                7.6069,
+                10
               ],
               "tsunami": false,
               "significance": 1790
@@ -3256,13 +3145,53 @@
           ]
         },
         "hazards": {
-          "totalActive": 42,
+          "totalActive": 45,
           "byCategory": {
-            "Sea and Lake Ice": 10,
-            "Wildfires": 29,
-            "Severe Storms": 3
+            "Severe Storms": 3,
+            "Wildfires": 32,
+            "Sea and Lake Ice": 10
           },
           "events": [
+            {
+              "id": "EONET_25964",
+              "title": "Tropical Cyclone Murasu",
+              "categories": [
+                "Severe Storms"
+              ],
+              "sources": [
+                "JTWC"
+              ],
+              "geometry": {
+                "magnitudeValue": 65,
+                "magnitudeUnit": "kts",
+                "date": "2026-11-02T12:00:00Z",
+                "type": "Point",
+                "coordinates": [
+                  80.7,
+                  14.7
+                ]
+              }
+            },
+            {
+              "id": "EONET_25984",
+              "title": "Prescribed Fire Dry Lake Hills Piles RX, Coconino, Arizona",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 902,
+                "magnitudeUnit": "acres",
+                "date": "2026-10-30T10:13:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -111.616667,
+                  35.266667
+                ]
+              }
+            },
             {
               "id": "EONET_6051",
               "title": "Iceberg C39",
@@ -3280,6 +3209,46 @@
                 "coordinates": [
                   55.55,
                   -65.58
+                ]
+              }
+            },
+            {
+              "id": "EONET_25986",
+              "title": "Prescribed Fire McCarty Piles RX, Coconino, Arizona",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 832,
+                "magnitudeUnit": "acres",
+                "date": "2026-10-29T12:16:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -111.262694,
+                  34.513944
+                ]
+              }
+            },
+            {
+              "id": "EONET_25985",
+              "title": "Prescribed Fire Freidland-Chimney Piles RX, Coconino, Arizona",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 1029,
+                "magnitudeUnit": "acres",
+                "date": "2026-10-29T11:37:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -111.666667,
+                  35.283333
                 ]
               }
             },
@@ -3364,26 +3333,6 @@
               }
             },
             {
-              "id": "EONET_25729",
-              "title": "Tropical Cyclone Arnab",
-              "categories": [
-                "Severe Storms"
-              ],
-              "sources": [
-                "JTWC"
-              ],
-              "geometry": {
-                "magnitudeValue": 55,
-                "magnitudeUnit": "kts",
-                "date": "2026-10-28T06:00:00Z",
-                "type": "Point",
-                "coordinates": [
-                  81.8,
-                  16.4
-                ]
-              }
-            },
-            {
               "id": "EONET_25769",
               "title": "Wildfire Range  47B, Forrest, Mississippi",
               "categories": [
@@ -3413,13 +3362,13 @@
                 "JTWC"
               ],
               "geometry": {
-                "magnitudeValue": 75,
+                "magnitudeValue": 65,
                 "magnitudeUnit": "kts",
-                "date": "2026-11-01T18:00:00Z",
+                "date": "2026-11-02T12:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  143,
-                  22
+                  140.2,
+                  23
                 ]
               }
             },
@@ -3803,66 +3752,6 @@
                   -56.87
                 ]
               }
-            },
-            {
-              "id": "EONET_6320",
-              "title": "Iceberg A81",
-              "categories": [
-                "Sea and Lake Ice"
-              ],
-              "sources": [
-                "NATICE"
-              ],
-              "geometry": {
-                "magnitudeValue": 700,
-                "magnitudeUnit": "NM^2",
-                "date": "2026-10-30T00:00:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -36.62,
-                  -55.65
-                ]
-              }
-            },
-            {
-              "id": "EONET_6424",
-              "title": "Iceberg D33B",
-              "categories": [
-                "Sea and Lake Ice"
-              ],
-              "sources": [
-                "NATICE"
-              ],
-              "geometry": {
-                "magnitudeValue": 252,
-                "magnitudeUnit": "NM^2",
-                "date": "2026-10-30T00:00:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -42.25,
-                  -55.87
-                ]
-              }
-            },
-            {
-              "id": "EONET_6474",
-              "title": "Iceberg D35",
-              "categories": [
-                "Sea and Lake Ice"
-              ],
-              "sources": [
-                "NATICE"
-              ],
-              "geometry": {
-                "magnitudeValue": 90,
-                "magnitudeUnit": "NM^2",
-                "date": "2026-10-15T00:00:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -43.77,
-                  -60.14
-                ]
-              }
             }
           ]
         },
@@ -3872,55 +3761,55 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": -14.1,
-              "surface_pressure": 1006.3,
-              "wind_speed_10m": 5.18,
-              "relative_humidity_2m": 89
+              "temperature_2m": -16.3,
+              "surface_pressure": 1005.5,
+              "wind_speed_10m": 4.31,
+              "relative_humidity_2m": 88
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 13.5,
-              "surface_pressure": 1016.4,
-              "wind_speed_10m": 13.71,
-              "relative_humidity_2m": 89
+              "temperature_2m": 11.3,
+              "surface_pressure": 1024.8,
+              "wind_speed_10m": 6.62,
+              "relative_humidity_2m": 61
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 20.5,
-              "surface_pressure": 912,
-              "wind_speed_10m": 1.75,
-              "relative_humidity_2m": 98
+              "temperature_2m": 23.1,
+              "surface_pressure": 911.8,
+              "wind_speed_10m": 2.08,
+              "relative_humidity_2m": 86
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 28.8,
-              "surface_pressure": 1011.5,
-              "wind_speed_10m": 2.95,
-              "relative_humidity_2m": 76
+              "temperature_2m": 26.8,
+              "surface_pressure": 1011.7,
+              "wind_speed_10m": 2.5,
+              "relative_humidity_2m": 85
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "temperature_2m": -2.2,
-              "surface_pressure": 992.1,
-              "wind_speed_10m": 14.43,
-              "relative_humidity_2m": 83
+              "temperature_2m": -1.2,
+              "surface_pressure": 997.5,
+              "wind_speed_10m": 11.74,
+              "relative_humidity_2m": 91
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -39.2,
-              "surface_pressure": 712.9,
-              "wind_speed_10m": 6.06,
-              "relative_humidity_2m": 53
+              "temperature_2m": -40.5,
+              "surface_pressure": 707.7,
+              "wind_speed_10m": 4.85,
+              "relative_humidity_2m": 59
             }
           ]
         },
@@ -3938,7 +3827,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-11-02T06:47:39.364Z"
+        "generatedAt": "2026-11-02T21:55:33.965Z"
       },
       "health": {
         "score": 87,
