@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-11-04T06:41:38.474Z",
+    "generatedAt": "2026-11-04T19:52:12.611Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -169,12 +169,12 @@
         {
           "id": "us6000u19w",
           "magnitude": 6.6,
-          "place": "12 km W of Río Grande, Panama",
-          "time": "2026-10-09T20:25:40.656Z",
+          "place": "13 km WSW of Río Grande, Panama",
+          "time": "2026-10-09T20:25:38.424Z",
           "coordinates": [
-            -81.444,
-            7.7013,
-            24.044
+            -81.4515,
+            7.676,
+            10
           ],
           "tsunami": true,
           "significance": 696
@@ -234,9 +234,9 @@
       ]
     },
     "hazards": {
-      "totalActive": 45,
+      "totalActive": 44,
       "byCategory": {
-        "Severe Storms": 3,
+        "Severe Storms": 2,
         "Wildfires": 31,
         "Sea and Lake Ice": 11
       },
@@ -471,13 +471,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 85,
+            "magnitudeValue": 80,
             "magnitudeUnit": "kts",
-            "date": "2026-11-03T18:00:00Z",
+            "date": "2026-11-04T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              138.7,
-              23.8
+              138.4,
+              25.8
             ]
           }
         },
@@ -518,27 +518,6 @@
             "coordinates": [
               -39.35,
               -56.65
-            ]
-          }
-        },
-        {
-          "id": "EONET_25589",
-          "title": "Hurricane Vance",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "JTWC",
-            "NOAA_NHC"
-          ],
-          "geometry": {
-            "magnitudeValue": 25,
-            "magnitudeUnit": "kts",
-            "date": "2026-10-30T00:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -107.8,
-              22.6
             ]
           }
         },
@@ -841,6 +820,26 @@
               36.73752
             ]
           }
+        },
+        {
+          "id": "EONET_5359",
+          "title": "Iceberg A76C",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 112,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-10-22T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -23.74,
+              -56.87
+            ]
+          }
         }
       ]
     },
@@ -850,60 +849,60 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -10.4,
-          "surface_pressure": 994.1,
-          "wind_speed_10m": 7.79,
-          "relative_humidity_2m": 91
+          "temperature_2m": -13.5,
+          "surface_pressure": 1006.5,
+          "wind_speed_10m": 8.99,
+          "relative_humidity_2m": 84
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 10.3,
-          "surface_pressure": 1021.4,
-          "wind_speed_10m": 1.68,
-          "relative_humidity_2m": 68
+          "temperature_2m": 11.3,
+          "surface_pressure": 1016.7,
+          "wind_speed_10m": 3.5,
+          "relative_humidity_2m": 83
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 20.5,
-          "surface_pressure": 912.4,
-          "wind_speed_10m": 2.05,
-          "relative_humidity_2m": 99
+          "temperature_2m": 27.7,
+          "surface_pressure": 911.4,
+          "wind_speed_10m": 2.2,
+          "relative_humidity_2m": 55
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 28.8,
-          "surface_pressure": 1010.1,
-          "wind_speed_10m": 3.66,
-          "relative_humidity_2m": 78
+          "temperature_2m": 26.8,
+          "surface_pressure": 1012.1,
+          "wind_speed_10m": 3.11,
+          "relative_humidity_2m": 82
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -1.2,
-          "surface_pressure": 991.8,
-          "wind_speed_10m": 9.67,
-          "relative_humidity_2m": 88
+          "temperature_2m": -1.6,
+          "surface_pressure": 984.3,
+          "wind_speed_10m": 6.22,
+          "relative_humidity_2m": 96
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -42.8,
-          "surface_pressure": 707.4,
-          "wind_speed_10m": 5.88,
-          "relative_humidity_2m": 66
+          "temperature_2m": -41.9,
+          "surface_pressure": 711.1,
+          "wind_speed_10m": 6.11,
+          "relative_humidity_2m": 67
         }
       ]
     },
     "climate": {
-      "error": "[NOAA Climate (keyless)] fetch failed"
+      "error": "[NOAA Climate (keyless)] Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
     },
     "oceanHeat": {
       "error": "[NOAA CRW Ocean Heat] HTTP 404 Not Found"
