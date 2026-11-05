@@ -2505,7 +2505,7 @@ async function init() {
 
   fetchCO2().then(co2 => {
     if (co2) { document.getElementById('co2-val').textContent = co2.ppm; document.getElementById('co2-sub').textContent = `ppm · NOAA Mauna Loa · ${co2.date}`; }
-    else { document.getElementById('co2-val').textContent = '424.8'; document.getElementById('co2-sub').textContent = 'ppm · NOAA Mauna Loa · estimate'; }
+    else { document.getElementById('co2-val').textContent = '428.95'; document.getElementById('co2-sub').textContent = 'ppm · NOAA Mauna Loa · estimate'; }
   });
 
   document.getElementById('edgar-status').textContent = 'Fetching…';

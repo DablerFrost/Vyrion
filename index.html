@@ -4113,7 +4113,7 @@ A Happy Little Science Playground - CLICK TO ENTER → </button>
                 <td>
                   <span class="ledger-type lt-ingest">DATA INGEST</span>
                 </td>
-                <td class="ledger-event" id="ledger-co2-row">Atmospheric CO₂ — 433.95 ppm · NOAA Mauna Loa</td>
+                <td class="ledger-event" id="ledger-co2-row">Atmospheric CO₂ — 428.95 ppm · NOAA Mauna Loa</td>
                 <td class="ledger-source">NOAA GML · gml.noaa.gov</td>
                 <td class="ledger-ts">2026-05-09 · 03:50 UTC</td>
               </tr>
@@ -4351,7 +4351,7 @@ A Happy Little Science Playground - CLICK TO ENTER → </button>
               <div class="xpl-card">
                 <span class="xpl-card-emoji">🌡️</span>
                 <div class="xpl-card-title">CO₂ — Earth's Invisible Blanket</div>
-                <div class="xpl-card-body">CO₂ is a gas. Too much of it, Earth gets extra warm — like too many blankets on a hot night! <span class="xpl-warn">433 ppm means it's getting quite warm.</span>
+                <div class="xpl-card-body">CO₂ is a gas. Too much of it, Earth gets extra warm — like too many blankets on a hot night! <span class="xpl-warn">429 ppm (Nov 2026) means it's getting quite warm.</span>
                 </div>
               </div>
               <div class="xpl-card">
@@ -4723,8 +4723,8 @@ A Happy Little Science Playground - CLICK TO ENTER → </button>
           const shield = shieldR.status === 'fulfilled' ? shieldR.value : null;
           const idx = indexR.status === 'fulfilled' ? indexR.value : null;
           // CO₂
-          const ppm = co2 ? co2.ppm : '433.95';
-          const date = co2 ? co2.date : '2026-05-01';
+          const ppm = co2 ? co2.ppm : '428.95';
+          const date = co2 ? co2.date : '2026-11-04';
           document.getElementById('co2-val').textContent = ppm;
           document.getElementById('co2-sub').textContent = `ppm · NOAA Mauna Loa · ${date}`;
           document.getElementById('hdr-co2').textContent = `${ppm} ppm`;

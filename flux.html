@@ -898,7 +898,7 @@ function renderAll(solar, co2, events, temp, score) {
   else        { set('mc-solar','7.2'); }
 
   if (co2)   { set('mc-co2', co2.ppm); document.getElementById('mc-co2-sub').textContent = `ppm · NOAA Mauna Loa · ${co2.date}`; }
-  else        { set('mc-co2','424.8'); }
+  else        { set('mc-co2','428.95'); }
 
   if (events) { set('mc-events', events.total); document.getElementById('mc-events-sub').textContent = `${events.fires} fires · ${events.storms} storms · NASA EONET · 14d`; }
   else         { set('mc-events','—'); }

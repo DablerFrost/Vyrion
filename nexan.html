@@ -822,7 +822,7 @@ async function load(){
   if(co2){
     ['co2-val','obs-co2'].forEach(id=>{const e=document.getElementById(id);if(e){e.textContent=co2.ppm;e.style.color='var(--breach)';}});
     ['co2-sub','obs-co2-d'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=`ppm · NOAA Mauna Loa · ${co2.date}`;});
-  }else{['co2-val','obs-co2'].forEach(id=>{const e=document.getElementById(id);if(e){e.textContent='424.8';e.style.color='var(--breach)';}});}
+  }else{['co2-val','obs-co2'].forEach(id=>{const e=document.getElementById(id);if(e){e.textContent='428.95';e.style.color='var(--breach)';}});}
 
   const sd=seis.status==='fulfilled'?seis.value:[];
   const big=sd.length>0?sd.reduce((a,b)=>b.properties.mag>a.properties.mag?b:a):null;
