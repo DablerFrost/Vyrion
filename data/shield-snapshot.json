@@ -1,29 +1,21 @@
 {
   "meta": {
-    "generated": "2026-11-05T06:31:58.215Z",
+    "generated": "2026-11-05T19:53:19.065Z",
     "generated_date": "2026-11-05",
     "script_version": "1.1",
     "window_days": 14,
     "window_start": "2026-10-22",
     "window_end": "2026-11-05",
-    "runtime_ms": 462,
+    "runtime_ms": 2069,
     "seismic_live": true,
     "eonet_live": true
   },
   "threat": {
     "level": "CRITICAL",
-    "score": 26.2
+    "score": 24.9
   },
   "seismic": {
     "events": [
-      {
-        "id": "us6000u43g",
-        "magnitude": 7,
-        "place": "189 km ENE of Nagqu, China",
-        "time": "2026-10-22T14:33:40.289Z",
-        "depth_km": 18,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u43g"
-      },
       {
         "id": "us6000u4j2",
         "magnitude": 6.9,
@@ -63,6 +55,14 @@
         "time": "2026-10-29T21:46:44.786Z",
         "depth_km": 142.8,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tu4f"
+      },
+      {
+        "id": "us7000tw8r",
+        "magnitude": 6.1,
+        "place": "Fiji region",
+        "time": "2026-11-05T17:21:45.897Z",
+        "depth_km": 540.8,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tw8r"
       },
       {
         "id": "us6000u4rf",
@@ -404,8 +404,8 @@
         "id": "us7000tvie",
         "magnitude": 5.2,
         "place": "Volcano Islands, Japan region",
-        "time": "2026-11-03T16:48:13.110Z",
-        "depth_km": 139.5,
+        "time": "2026-11-03T16:48:12.006Z",
+        "depth_km": 129.2,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tvie"
       },
       {
@@ -497,12 +497,12 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u4dc"
       },
       {
-        "id": "us6000u44n",
-        "magnitude": 5.2,
-        "place": "197 km ENE of Nagqu, China",
-        "time": "2026-10-22T15:12:04.407Z",
+        "id": "us7000tw76",
+        "magnitude": 5.1,
+        "place": "19 km NNW of Masumbwe, Tanzania",
+        "time": "2026-11-05T09:22:32.714Z",
         "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u44n"
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tw76"
       },
       {
         "id": "us7000tuxg",
@@ -665,11 +665,19 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u4e2"
       },
       {
+        "id": "us7000tw8p",
+        "magnitude": 5,
+        "place": "130 km NE of Thang, India",
+        "time": "2026-11-05T16:56:25.875Z",
+        "depth_km": 76.9,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tw8p"
+      },
+      {
         "id": "nc75462637",
         "magnitude": 5,
-        "place": "114 km W of Petrolia, CA",
-        "time": "2026-11-05T04:56:01.430Z",
-        "depth_km": 2.1,
+        "place": "111 km W of Petrolia, CA",
+        "time": "2026-11-05T04:56:02.670Z",
+        "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc75462637"
       },
       {
@@ -679,6 +687,14 @@
         "time": "2026-11-04T07:40:12.288Z",
         "depth_km": 49.1,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tvwj"
+      },
+      {
+        "id": "us7000tv5i",
+        "magnitude": 5,
+        "place": "South Sandwich Islands region",
+        "time": "2026-11-03T13:34:04.565Z",
+        "depth_km": 133.1,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tv5i"
       },
       {
         "id": "us7000tuqx",
@@ -857,28 +873,12 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u473"
       },
       {
-        "id": "us6000u45j",
-        "magnitude": 5,
-        "place": "207 km ENE of Nagqu, China",
-        "time": "2026-10-22T18:06:44.294Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u45j"
-      },
-      {
         "id": "ci41572064",
         "magnitude": 4.9,
         "place": "9 km N of Delta, B.C., MX",
         "time": "2026-11-03T18:27:31.190Z",
         "depth_km": 15.6,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ci41572064"
-      },
-      {
-        "id": "us7000tv5i",
-        "magnitude": 4.9,
-        "place": "South Sandwich Islands region",
-        "time": "2026-11-03T13:34:06.694Z",
-        "depth_km": 152,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tv5i"
       },
       {
         "id": "us7000tv51",
@@ -1105,52 +1105,12 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u4bg"
       },
       {
-        "id": "us6000u46r",
-        "magnitude": 4.9,
-        "place": "104 km NNE of Hihifo, Tonga",
-        "time": "2026-10-22T19:06:56.074Z",
-        "depth_km": 23.4,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u46r"
-      },
-      {
-        "id": "us6000u451",
-        "magnitude": 4.9,
-        "place": "202 km ENE of Nagqu, China",
-        "time": "2026-10-22T16:21:33.644Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u451"
-      },
-      {
-        "id": "us6000u44w",
-        "magnitude": 4.9,
-        "place": "western Xizang",
-        "time": "2026-10-22T15:45:37.290Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u44w"
-      },
-      {
-        "id": "us7000tuaw",
-        "magnitude": 4.9,
-        "place": "204 km ENE of Nagqu, China",
-        "time": "2026-10-22T15:13:44.781Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tuaw"
-      },
-      {
-        "id": "us6000u432",
-        "magnitude": 4.9,
-        "place": "200 km NW of Port-Olry, Vanuatu",
-        "time": "2026-10-22T12:22:57.822Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u432"
-      },
-      {
-        "id": "us6000u42q",
-        "magnitude": 4.9,
-        "place": "85 km NNW of Curup, Indonesia",
-        "time": "2026-10-22T10:57:52.259Z",
-        "depth_km": 135.3,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u42q"
+        "id": "us7000tw7b",
+        "magnitude": 4.8,
+        "place": "Sea of Okhotsk",
+        "time": "2026-11-05T10:09:33.723Z",
+        "depth_km": 554.4,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tw7b"
       },
       {
         "id": "us7000tva7",
@@ -1393,14 +1353,6 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u47l"
       },
       {
-        "id": "us6000u45f",
-        "magnitude": 4.8,
-        "place": "39 km NE of Shikotan, Russia",
-        "time": "2026-10-22T17:21:26.780Z",
-        "depth_km": 76.3,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u45f"
-      },
-      {
         "id": "us7000tv2p",
         "magnitude": 4.7,
         "place": "74 km E of Petropavlovsk-Kamchatsky, Russia",
@@ -1639,46 +1591,6 @@
         "time": "2026-10-23T14:14:04.311Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u4df"
-      },
-      {
-        "id": "us6000u45a",
-        "magnitude": 4.7,
-        "place": "189 km ENE of Nagqu, China",
-        "time": "2026-10-22T16:57:54.041Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u45a"
-      },
-      {
-        "id": "us6000u459",
-        "magnitude": 4.7,
-        "place": "165 km SSW of ‘Ohonua, Tonga",
-        "time": "2026-10-22T16:51:22.396Z",
-        "depth_km": 35,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u459"
-      },
-      {
-        "id": "us7000tuc1",
-        "magnitude": 4.7,
-        "place": "33 km WNW of Mosteiros, Portugal",
-        "time": "2026-10-22T16:14:12.996Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tuc1"
-      },
-      {
-        "id": "us6000u44u",
-        "magnitude": 4.7,
-        "place": "151 km NE of Kashgar, China",
-        "time": "2026-10-22T15:27:49.414Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u44u"
-      },
-      {
-        "id": "us6000u41y",
-        "magnitude": 4.7,
-        "place": "Balleny Islands region",
-        "time": "2026-10-22T07:49:29.549Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u41y"
       },
       {
         "id": "us7000tw43",
@@ -2017,36 +1929,12 @@
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u47n"
       },
       {
-        "id": "us6000u455",
-        "magnitude": 4.6,
-        "place": "187 km ENE of Nagqu, China",
-        "time": "2026-10-22T16:45:00.682Z",
+        "id": "us7000tw3n",
+        "magnitude": 4.5,
+        "place": "South Indian Ocean",
+        "time": "2026-11-04T20:06:06.968Z",
         "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u455"
-      },
-      {
-        "id": "us7000tuas",
-        "magnitude": 4.6,
-        "place": "186 km ENE of Nagqu, China",
-        "time": "2026-10-22T14:59:39.697Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tuas"
-      },
-      {
-        "id": "us6000u42e",
-        "magnitude": 4.6,
-        "place": "11 km W of Ashkāsham, Afghanistan",
-        "time": "2026-10-22T10:07:41.749Z",
-        "depth_km": 174.5,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u42e"
-      },
-      {
-        "id": "us6000u41z",
-        "magnitude": 4.6,
-        "place": "37 km NE of Yigo Village, Guam",
-        "time": "2026-10-22T08:06:34.938Z",
-        "depth_km": 98,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u41z"
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tw3n"
       },
       {
         "id": "us7000tw3k",
@@ -2087,6 +1975,14 @@
         "time": "2026-11-02T19:59:04.529Z",
         "depth_km": 10,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tuzd"
+      },
+      {
+        "id": "us7000tuyi",
+        "magnitude": 4.5,
+        "place": "212 km ENE of Nagqu, China",
+        "time": "2026-11-02T18:33:10.139Z",
+        "depth_km": 10,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tuyi"
       },
       {
         "id": "us7000tute",
@@ -2391,60 +2287,39 @@
         "time": "2026-10-23T00:09:35.519Z",
         "depth_km": 185.5,
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u48i"
-      },
-      {
-        "id": "us6000u458",
-        "magnitude": 4.5,
-        "place": "211 km ENE of Nagqu, China",
-        "time": "2026-10-22T16:50:16.759Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u458"
-      },
-      {
-        "id": "us7000tud3",
-        "magnitude": 4.5,
-        "place": "227 km NE of Nagqu, China",
-        "time": "2026-10-22T16:17:09.329Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tud3"
-      },
-      {
-        "id": "us7000tuau",
-        "magnitude": 4.5,
-        "place": "225 km ENE of Nagqu, China",
-        "time": "2026-10-22T14:46:13.831Z",
-        "depth_km": 10,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tuau"
-      },
-      {
-        "id": "us6000u423",
-        "magnitude": 4.5,
-        "place": "129 km ENE of Petropavlovsk-Kamchatsky, Russia",
-        "time": "2026-10-22T08:34:19.153Z",
-        "depth_km": 70.2,
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u423"
       }
     ],
-    "count_total": 301,
+    "count_total": 284,
     "count_m55_plus": 27,
     "count_m60_plus": 10,
-    "count_m70_plus": 1,
+    "count_m70_plus": 0,
     "count_m80_plus": 0,
     "largest": {
-      "id": "us6000u43g",
-      "magnitude": 7,
-      "place": "189 km ENE of Nagqu, China",
-      "time": "2026-10-22T14:33:40.289Z",
-      "depth_km": 18,
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u43g"
+      "id": "us6000u4j2",
+      "magnitude": 6.9,
+      "place": "197 km WNW of Port-Olry, Vanuatu",
+      "time": "2026-10-24T02:31:28.641Z",
+      "depth_km": 10,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u4j2"
     },
     "source": "USGS Earthquake Hazards Program",
     "url": "https://earthquake.usgs.gov/",
     "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-    "retrieved": "2026-11-05T06:31:58.090Z"
+    "retrieved": "2026-11-05T19:53:17.177Z"
   },
   "wildfire": {
     "events": [
+      {
+        "id": "EONET_26057",
+        "title": "Wildfire Wild River, Coos, New Hampshire",
+        "type": "WILDFIRE",
+        "time": "2026-11-02T07:58:00.000Z",
+        "coords": [
+          -71.031,
+          44.331
+        ],
+        "closed": null
+      },
       {
         "id": "EONET_25984",
         "title": "Prescribed Fire Dry Lake Hills Piles RX, Coconino, Arizona",
@@ -2475,6 +2350,17 @@
         "coords": [
           -111.667,
           35.283
+        ],
+        "closed": null
+      },
+      {
+        "id": "EONET_26056",
+        "title": "Prescribed Fire TON RX - BAILEY LOST HP, Okanogan, Washington",
+        "type": "WILDFIRE",
+        "time": "2026-10-29T11:08:00.000Z",
+        "coords": [
+          -119.055,
+          48.533
         ],
         "closed": null
       },
@@ -2545,7 +2431,7 @@
         "closed": null
       }
     ],
-    "count": 9
+    "count": 11
   },
   "storm": {
     "events": [
