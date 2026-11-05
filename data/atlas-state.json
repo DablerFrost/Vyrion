@@ -1,13 +1,13 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-11-05T07:00:57.072Z",
+    "generatedAt": "2026-11-05T20:04:02.846Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 17,
+      "count": 16,
       "maxMagnitude": 7.7,
       "events": [
         {
@@ -118,10 +118,10 @@
           "id": "us6000u214",
           "magnitude": 6.8,
           "place": "central Mid-Atlantic Ridge",
-          "time": "2026-10-13T12:23:07.248Z",
+          "time": "2026-10-13T12:23:07.141Z",
           "coordinates": [
-            -19.4308,
-            -0.4085,
+            -19.3913,
+            -0.346,
             10
           ],
           "tsunami": true,
@@ -217,30 +217,37 @@
           ],
           "tsunami": false,
           "significance": 614
-        },
-        {
-          "id": "aka2026tuxgky",
-          "magnitude": 5.5,
-          "place": "92 km NNW of Aleneva, Alaska",
-          "time": "2026-10-06T18:34:31.760Z",
-          "coordinates": [
-            -153.609,
-            58.802,
-            87.6
-          ],
-          "tsunami": false,
-          "significance": 623
         }
       ]
     },
     "hazards": {
-      "totalActive": 41,
+      "totalActive": 42,
       "byCategory": {
+        "Wildfires": 29,
         "Severe Storms": 2,
-        "Wildfires": 28,
         "Sea and Lake Ice": 11
       },
       "events": [
+        {
+          "id": "EONET_26057",
+          "title": "Wildfire Wild River, Coos, New Hampshire",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 982,
+            "magnitudeUnit": "acres",
+            "date": "2026-11-02T07:58:00Z",
+            "type": "Point",
+            "coordinates": [
+              -71.031283,
+              44.330583
+            ]
+          }
+        },
         {
           "id": "EONET_25964",
           "title": "Tropical Cyclone Murasu",
@@ -362,6 +369,26 @@
           }
         },
         {
+          "id": "EONET_26056",
+          "title": "Prescribed Fire TON RX - BAILEY LOST HP, Okanogan, Washington",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 740,
+            "magnitudeUnit": "acres",
+            "date": "2026-10-29T11:08:00Z",
+            "type": "Point",
+            "coordinates": [
+              -119.055205,
+              48.532726
+            ]
+          }
+        },
+        {
           "id": "EONET_25827",
           "title": "Wildfire South Tank Trail, Perry, Mississippi",
           "categories": [
@@ -471,13 +498,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 75,
+            "magnitudeValue": 60,
             "magnitudeUnit": "kts",
-            "date": "2026-11-05T00:00:00Z",
+            "date": "2026-11-05T06:00:00Z",
             "type": "Point",
             "coordinates": [
-              140,
-              28.1
+              141.5,
+              29.4
             ]
           }
         },
@@ -800,46 +827,6 @@
               35.69875
             ]
           }
-        },
-        {
-          "id": "EONET_25234",
-          "title": "Prescribed Fire Bridger Trail Unit - KPERP Rx NKRD CY26, Coconino, Arizona",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 5019,
-            "magnitudeUnit": "acres",
-            "date": "2026-10-09T11:49:00Z",
-            "type": "Point",
-            "coordinates": [
-              -112.185988,
-              36.73752
-            ]
-          }
-        },
-        {
-          "id": "EONET_5359",
-          "title": "Iceberg A76C",
-          "categories": [
-            "Sea and Lake Ice"
-          ],
-          "sources": [
-            "NATICE"
-          ],
-          "geometry": {
-            "magnitudeValue": 112,
-            "magnitudeUnit": "NM^2",
-            "date": "2026-10-22T00:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -23.74,
-              -56.87
-            ]
-          }
         }
       ]
     },
@@ -849,55 +836,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -14.8,
-          "surface_pressure": 1012.1,
-          "wind_speed_10m": 4.58,
-          "relative_humidity_2m": 92
+          "temperature_2m": -12.1,
+          "surface_pressure": 1010.8,
+          "wind_speed_10m": 3.47,
+          "relative_humidity_2m": 91
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 12.1,
-          "surface_pressure": 1012.9,
-          "wind_speed_10m": 4.84,
-          "relative_humidity_2m": 94
+          "temperature_2m": 12.9,
+          "surface_pressure": 1011.8,
+          "wind_speed_10m": 11.22,
+          "relative_humidity_2m": 87
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 20.1,
-          "surface_pressure": 911.8,
-          "wind_speed_10m": 2.21,
-          "relative_humidity_2m": 99
+          "temperature_2m": 27.5,
+          "surface_pressure": 911.4,
+          "wind_speed_10m": 2.3,
+          "relative_humidity_2m": 52
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 28.4,
-          "surface_pressure": 1010.5,
-          "wind_speed_10m": 3.83,
-          "relative_humidity_2m": 79
+          "temperature_2m": 27,
+          "surface_pressure": 1011,
+          "wind_speed_10m": 1.68,
+          "relative_humidity_2m": 81
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -2.6,
-          "surface_pressure": 987.6,
-          "wind_speed_10m": 11.92,
-          "relative_humidity_2m": 89
+          "temperature_2m": -5.1,
+          "surface_pressure": 1006.1,
+          "wind_speed_10m": 7.3,
+          "relative_humidity_2m": 87
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -39.9,
-          "surface_pressure": 714,
-          "wind_speed_10m": 6.95,
-          "relative_humidity_2m": 68
+          "temperature_2m": -38.2,
+          "surface_pressure": 712.7,
+          "wind_speed_10m": 6.48,
+          "relative_humidity_2m": 69
         }
       ]
     },
