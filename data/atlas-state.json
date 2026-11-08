@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-11-07T17:46:06.504Z",
+    "generatedAt": "2026-11-08T06:19:47.817Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -195,10 +195,10 @@
       ]
     },
     "hazards": {
-      "totalActive": 42,
+      "totalActive": 39,
       "byCategory": {
-        "Sea and Lake Ice": 12,
-        "Wildfires": 28,
+        "Sea and Lake Ice": 11,
+        "Wildfires": 26,
         "Severe Storms": 2
       },
       "events": [
@@ -300,6 +300,26 @@
             "coordinates": [
               55.55,
               -65.58
+            ]
+          }
+        },
+        {
+          "id": "EONET_12618",
+          "title": "Iceberg A84",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 72,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-11-06T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -89.73,
+              -69.02
             ]
           }
         },
@@ -524,6 +544,26 @@
           }
         },
         {
+          "id": "EONET_5359",
+          "title": "Iceberg A76C",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 112,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-10-22T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -23.74,
+              -56.87
+            ]
+          }
+        },
+        {
           "id": "EONET_6288",
           "title": "Iceberg D32",
           "categories": [
@@ -704,102 +744,62 @@
           }
         },
         {
-          "id": "EONET_25310",
-          "title": "Prescribed Fire Newman Piles RX, Coconino, Arizona",
+          "id": "EONET_6320",
+          "title": "Iceberg A81",
           "categories": [
-            "Wildfires"
+            "Sea and Lake Ice"
           ],
           "sources": [
-            "IRWIN"
+            "NATICE"
           ],
           "geometry": {
-            "magnitudeValue": 751,
-            "magnitudeUnit": "acres",
-            "date": "2026-10-14T10:42:00Z",
+            "magnitudeValue": 700,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-11-06T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -111.65,
-              35.016667
+              -35.52,
+              -55.81
             ]
           }
         },
         {
-          "id": "EONET_25311",
-          "title": "Prescribed Fire Jane 102 RX, Harney, Oregon",
+          "id": "EONET_6424",
+          "title": "Iceberg D33B",
           "categories": [
-            "Wildfires"
+            "Sea and Lake Ice"
           ],
           "sources": [
-            "IRWIN"
+            "NATICE"
           ],
           "geometry": {
-            "magnitudeValue": 3000,
-            "magnitudeUnit": "acres",
-            "date": "2026-10-13T10:24:00Z",
+            "magnitudeValue": 252,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-10-30T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -118.766432,
-              44.025847
+              -42.25,
+              -55.87
             ]
           }
         },
         {
-          "id": "EONET_25312",
-          "title": "Prescribed Fire SRF 2026 Rx Implementation, Humboldt, California",
+          "id": "EONET_6474",
+          "title": "Iceberg D35",
           "categories": [
-            "Wildfires"
+            "Sea and Lake Ice"
           ],
           "sources": [
-            "IRWIN"
+            "NATICE"
           ],
           "geometry": {
-            "magnitudeValue": 500,
-            "magnitudeUnit": "acres",
-            "date": "2026-10-12T16:27:00Z",
+            "magnitudeValue": 90,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-11-06T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -123.540573,
-              41.300685
-            ]
-          }
-        },
-        {
-          "id": "EONET_25238",
-          "title": "Wildfire Buckhorn 2, Cassia, Idaho",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 2000,
-            "magnitudeUnit": "acres",
-            "date": "2026-10-10T14:58:00Z",
-            "type": "Point",
-            "coordinates": [
-              -114.102967,
-              42.337217
-            ]
-          }
-        },
-        {
-          "id": "EONET_25233",
-          "title": "Wildfire PK, Sheridan, Wyoming",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1645,
-            "magnitudeUnit": "acres",
-            "date": "2026-10-09T19:26:00Z",
-            "type": "Point",
-            "coordinates": [
-              -107.2199,
-              44.7516
+              -44.72,
+              -60.15
             ]
           }
         }
@@ -811,55 +811,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -12.1,
-          "surface_pressure": 997.4,
-          "wind_speed_10m": 12.64,
-          "relative_humidity_2m": 82
+          "temperature_2m": -12.9,
+          "surface_pressure": 1000.3,
+          "wind_speed_10m": 12.18,
+          "relative_humidity_2m": 88
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 12.5,
-          "surface_pressure": 1008,
-          "wind_speed_10m": 6.66,
-          "relative_humidity_2m": 93
+          "temperature_2m": 12.4,
+          "surface_pressure": 1002.5,
+          "wind_speed_10m": 4.01,
+          "relative_humidity_2m": 97
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 29,
-          "surface_pressure": 914.4,
-          "wind_speed_10m": 2.8,
-          "relative_humidity_2m": 47
+          "temperature_2m": 18.7,
+          "surface_pressure": 913.2,
+          "wind_speed_10m": 2.45,
+          "relative_humidity_2m": 95
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 27.7,
-          "surface_pressure": 1011.2,
-          "wind_speed_10m": 3.24,
-          "relative_humidity_2m": 83
+          "temperature_2m": 28.6,
+          "surface_pressure": 1010.2,
+          "wind_speed_10m": 2.82,
+          "relative_humidity_2m": 76
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -1.1,
-          "surface_pressure": 1000.8,
-          "wind_speed_10m": 8.14,
+          "temperature_2m": -0.5,
+          "surface_pressure": 985.3,
+          "wind_speed_10m": 7.13,
           "relative_humidity_2m": 96
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -40.9,
-          "surface_pressure": 716.8,
-          "wind_speed_10m": 4.67,
-          "relative_humidity_2m": 62
+          "temperature_2m": -42.5,
+          "surface_pressure": 711.5,
+          "wind_speed_10m": 5.51,
+          "relative_humidity_2m": 63
         }
       ]
     },
