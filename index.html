@@ -3992,27 +3992,16 @@ A Happy Little Science Playground - CLICK TO ENTER → </button>
         })();
         // ── LIVE DATA FETCHES ──────────────────────────────────────────────────
         async function fetchCO2() {
-          // NOAA GML doesn't send CORS headers for browser requests, so we
-          // route through a CORS proxy. Replace the proxy URL with your own
-          // server-side endpoint (e.g. /api/co2) for production use.
-          const NOAA_URL = 'https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_daily_mlo.txt';
-          const PROXY_URL = 'https://corsproxy.io/?' + encodeURIComponent(NOAA_URL);
+          // Same-origin snapshot (refreshed daily by the integrity check).
+          // The direct NOAA fetch truncates in some browsers and returned
+          // stale/wrong readings (e.g. 40.00 ppm dated 2015-05-31).
           try {
-            const r = await fetch(PROXY_URL);
+            const r = await fetch('/data/co2.json');
             if (!r.ok) throw new Error();
-            const txt = await r.text();
-            const lines = txt.split('\n').filter(l => l.trim() && !l.startsWith('#'));
-            for (let i = lines.length - 1; i >= 0; i--) {
-              const p = lines[i].trim().split(/\s+/);
-              if (p.length >= 5) {
-                const v = parseFloat(p[4]);
-                if (!isNaN(v) && v > 0) {
-                  return {
-                    ppm: v.toFixed(2),
-                    date: `${p[0]}-${p[1].padStart(2,'0')}-${p[2].padStart(2,'0')}`
-                  };
-                }
-              }
+            const d = await r.json();
+            const v = parseFloat(d.ppm);
+            if (!isNaN(v) && v > 0 && d.date) {
+              return { ppm: v.toFixed(2), date: d.date };
             }
           } catch (e) {}
           return null;

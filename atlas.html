@@ -958,7 +958,7 @@ const MAG={
   'i-lobby':{t:'Lobbying Alignment Grade · Continuous',b:'InfluenceMap grades A+–F based on direct lobbying positions, trade association memberships, and policy interference. A company claiming net zero while funding climate policy obstruction scores F. Continuous monitoring.',s:'InfluenceMap · influencemap.org · Continuous'},
   'i-lit':{t:'Climate Litigation Exposure · Monthly',b:'Active climate lawsuit count from Sabin Center. Scoring: base 20 pts − (0.5 × active cases), floor 0. 97 active cases across the CONSCIENCE portfolio.',s:'Sabin Center for Climate Change Law · Columbia Law · climatecasechart.com'},
   'i-sbti-c':{t:'SBTi Adoption Rate · Annual',b:'Science Based Targets initiative registry. Approved 1.5°C = highest tier. Committed = intent filed. Not committed = no engagement. Only 3 of 11 CONSCIENCE companies have approved 1.5°C targets.',s:'SBTi · sciencebasedtargets.org · Annual'},
-  'i-cdp-c':{t:'CDP Disclosure Quality · Annual',b:'CDP A = Leadership. B = Management. C = Awareness. D = Disclosure only. CONSCIENCE scoring: A=25, B=18, C=10, D=4. Only Apple scores A. 2 companies score A−.',s:'CDP · cdp.net/en/responses · Annual cycle'},
+  'i-cdp-c':{t:'CDP Disclosure Quality · Annual',b:'CDP A = Leadership. B = Management. C = Awareness. D = Disclosure only. CONSCIENCE scoring: A=25, B=18, C=10, D=4. Only Apple scores A. 2 companies score A−.',s:'CDP · cdp.net/en/data/scores · Annual cycle'},
   'i-con':{t:'CONSCIENCE Portfolio Score · Daily',b:'Mean CONSCIENCE score across 11-company portfolio: 38.6/100. Range: ExxonMobil 8 to Apple 84. This is the only system indicator built entirely from VYRION\'s own methodology.',s:'VYRION CONSCIENCE v2.8 · dablerfrost.github.io/Vyrion'},
   /* Planetary boundaries */
   'pb-clim':{t:'Climate Change — BOUNDARY EXCEEDED',b:'Safe: CO₂ < 350 ppm. Current ~429 ppm (Nov 2026). First exceeded ~1988. High-risk zone begins at 450 ppm. Earth system feedbacks (ice-albedo, permafrost CH₄) risk acceleration beyond this point.',s:'Steffen et al. 2015 · Science · Richardson et al. 2023'},
@@ -993,16 +993,15 @@ function setScale(btn){const px=SCALES[btn.dataset.scale]||18;document.documentE
 function stamp(){const e=document.getElementById('ts-val');if(e)e.textContent=new Date().toUTCString().replace(' GMT','').slice(0,-3)+' UTC';}
 
 /* ── LIVE DATA — ALL PARALLEL ───────────────────────── */
-async function fetchCO2(){
-  try{
-    const r=await fetch('https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_daily_mlo.txt');
-    if(!r.ok)throw 0;
-    const lines=(await r.text()).split('\n').filter(l=>l.trim()&&!l.startsWith('#'));
-    for(let i=lines.length-1;i>=0;i--){
-      const p=lines[i].trim().split(/\s+/);
-      if(p.length>=5){const v=parseFloat(p[4]);if(!isNaN(v)&&v>0)return{ppm:v.toFixed(2),date:`${p[0]}-${String(p[1]).padStart(2,'0')}-${String(p[2]).padStart(2,'0')}`};}
-    }
-  }catch(e){}return null;
+async function fetchCO2() {
+  try {
+    const r = await fetch('/data/co2.json');
+    if (!r.ok) throw new Error();
+    const d = await r.json();
+    const v = parseFloat(d.ppm);
+    if (!isNaN(v) && v > 0 && d.date) return { ppm: v.toFixed(2), date: d.date };
+  } catch(e) {}
+  return null;
 }
 
 async function fetchEONET(){

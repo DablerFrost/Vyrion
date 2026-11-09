@@ -834,18 +834,13 @@ async function fetchNASAPower() {
 
 async function fetchCO2() {
   try {
-    const r = await fetch('https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_daily_mlo.txt');
+    const r = await fetch('/data/co2.json');
     if (!r.ok) throw 0;
-    const txt = await r.text();
-    const lines = txt.split('\n').filter(l => l.trim() && !l.startsWith('#'));
-    for (let i = lines.length-1; i>=0; i--) {
-      const p = lines[i].trim().split(/\s+/);
-      if (p.length >= 5) {
-        const v = parseFloat(p[4]);
-        if (!isNaN(v) && v > 0) return { ppm: v.toFixed(2), excess: (v-280).toFixed(2), date:`${p[0]}-${p[1].padStart(2,'0')}-${p[2].padStart(2,'0')}` };
-      }
-    }
+    const d = await r.json();
+    const v = parseFloat(d.ppm);
+    if (!isNaN(v) && v > 0 && d.date) return { ppm: v.toFixed(2), excess: (v-280).toFixed(2), date: d.date };
   } catch { return null; }
+  return null;
 }
 
 async function fetchEONET() {

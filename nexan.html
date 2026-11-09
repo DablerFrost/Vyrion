@@ -549,7 +549,7 @@ html[data-tscale="1.22"] .nc-live .lbl{display:none;}
 
 <!-- TICKER -->
 <div class="ticker">
-  <div class="tc" data-mag="t-idx"><div class="tc-lbl"><span class="tc-dot"></span>VYRION Index · <span id="t-idx-day">Day 19</span></div><div class="tc-val" style="color:var(--amber)">49.2 <span style="font-size:.6rem;color:var(--t3);font-weight:normal">± 1.8</span></div><div class="tc-sub">/ 100 · Pre-industrial baseline = 100</div></div>
+  <div class="tc" data-mag="t-idx"><div class="tc-lbl"><span class="tc-dot"></span>VYRION Index · <span id="t-idx-day">Day —</span></div><div class="tc-val" style="color:var(--amber)">49.2 <span style="font-size:.6rem;color:var(--t3);font-weight:normal">± 1.8</span></div><div class="tc-sub">/ 100 · Pre-industrial baseline = 100</div></div>
   <div class="tc" data-mag="t-co2"><div class="tc-lbl"><span class="tc-dot"></span>Atmospheric CO₂</div><div class="tc-val" id="co2-val" style="color:var(--breach)"><span class="loading-pulse">—.—</span></div><div class="tc-sub" id="co2-sub">ppm · NOAA Mauna Loa · fetching…</div></div>
   <div class="tc" data-mag="t-cov"><div class="tc-lbl">CONSCIENCE</div><div class="tc-val" style="color:var(--glow)">36</div><div class="tc-sub">Companies · 16 Breach · 15 Warn · 5 On Track</div></div>
   <div class="tc" data-mag="t-seis"><div class="tc-lbl"><span class="tc-dot"></span>Seismic M4.5+ / 14d</div><div class="tc-val" id="seis-val"><span class="loading-pulse">—</span></div><div class="tc-sub" id="seis-sub">USGS · fetching…</div></div>
@@ -812,7 +812,7 @@ const SCALES={'0.88':16,'1.0':18,'1.22':22};
 function setScale(btn){const px=SCALES[btn.dataset.scale]||18;document.documentElement.style.fontSize=px+'px';document.documentElement.dataset.tscale=btn.dataset.scale;document.querySelectorAll('.nc-sz').forEach(b=>b.classList.toggle('active',b===btn));try{localStorage.setItem('vc-scale',btn.dataset.scale)}catch(e){}}
 (function(){try{let s=localStorage.getItem('vc-scale');if(!(s&&SCALES[s]))s='1.0';document.documentElement.style.fontSize=SCALES[s]+'px';document.documentElement.dataset.tscale=s;requestAnimationFrame(()=>document.querySelectorAll('.nc-sz').forEach(b=>b.classList.toggle('active',b.dataset.scale===s)));}catch(e){}})();
 
-async function fetchCO2(){try{const r=await fetch('https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_daily_mlo.txt');if(!r.ok)throw 0;const txt=await r.text();const lines=txt.split('\n').filter(l=>l.trim()&&!l.startsWith('#'));for(let i=lines.length-1;i>=0;i--){const p=lines[i].trim().split(/\s+/);if(p.length>=5){const v=parseFloat(p[4]);if(!isNaN(v)&&v>0)return{ppm:v.toFixed(2),date:`${p[0]}-${String(p[1]).padStart(2,'0')}-${String(p[2]).padStart(2,'0')}`};}}}catch(e){}return null;}
+async function fetchCO2(){try{const r=await fetch('/data/co2.json');if(!r.ok)throw 0;const d=await r.json();const v=parseFloat(d.ppm);if(!isNaN(v)&&v>0&&d.date)return{ppm:v.toFixed(2),date:d.date};}catch(e){}return null;}
 async function fetchEONET(){try{const r=await fetch('https://eonet.gsfc.nasa.gov/api/v3/events?status=open&limit=200&days=14');const d=await r.json();return d.events||[];}catch(e){return[];}}
 async function fetchSeis(){try{const cut=Date.now()-14*864e5;const r=await fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson');const d=await r.json();return d.features.filter(f=>f.properties.time>cut);}catch(e){return[];}}
 

@@ -46,7 +46,7 @@ Source: ExxonMobil 2023 Sustainability Report — https://corporate.exxonmobil.c
 
 CDP 2023 grade: D. Disclosure-only tier — the lowest active participation level. Grade D reflects disclosure of some climate information without demonstrated governance integration, strategic action, or credible reduction plans. Fewer than 2% of CDP respondents receive grade A (Leadership). Grade D respondents are in the initial disclosure phase.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 0 / 25**
 
@@ -76,7 +76,7 @@ Source: BP Strategy Update 2023 — https://www.bp.com/en/global/corporate/news-
 
 CDP 2023 grade: C. Awareness tier. BP demonstrates basic climate risk awareness and reporting but lacks the governance integration and strategic ambition required for Management (B) or Leadership (A) tier. The C grade is consistent with companies that report climate data without embedding it in core business strategy.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 2 / 25**
 
@@ -106,7 +106,7 @@ Source: Shell Energy Transition Strategy 2023 — https://www.shell.com/sustaina
 
 CDP 2023 grade: C. Consistent with BP's grade — disclosure without demonstrated strategic integration at the level required for B or A tier.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 3 / 25**
 
@@ -136,7 +136,7 @@ Source: Delta Sustainability Report 2023 — https://www.delta.com/us/en/about-d
 
 CDP 2023 grade: C.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 3 / 25**
 
@@ -168,7 +168,7 @@ Source: Starbucks FY2024 Global Environmental and Social Impact Report — https
 
 CDP 2023 grade: B. Management tier — demonstrates governance integration and strategic planning. Consistent with a company that has filed SBTi commitment and published detailed sustainability reporting.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 9 / 25**
 
@@ -198,7 +198,7 @@ Source: Walmart ESG Report FY2024 — https://corporate.walmart.com/esgreport
 
 CDP 2023 grade: B.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 9 / 25**
 
@@ -228,7 +228,7 @@ Source: Meta Sustainability Report 2023 — https://sustainability.fb.com/
 
 CDP 2023 grade: B.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 7 / 25**
 
@@ -258,7 +258,7 @@ Source: Amazon Climate Pledge — https://sustainability.aboutamazon.com/
 
 CDP 2023 grade: B.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 9 / 25**
 
@@ -288,7 +288,7 @@ Source: Microsoft Sustainability Report 2024 — https://www.microsoft.com/en-us
 
 CDP 2023 grade: A−. Near-leadership tier. Demonstrates strong governance integration, science-based strategy, and comprehensive disclosure.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 13 / 25**
 
@@ -318,7 +318,7 @@ Source: Unilever Climate Transition Action Plan 2023 — https://www.unilever.co
 
 CDP 2023 grade: A−.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 16 / 25**
 
@@ -348,7 +348,7 @@ Source: Apple Environmental Progress Report 2024 — https://www.apple.com/envir
 
 CDP 2023 grade: A. Leadership tier — the highest CDP grade. Fewer than 2% of CDP respondents achieve A-list status. Apple's A grade reflects demonstrated best practice in governance, strategy, targets, and action.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 19 / 25**
 
@@ -441,7 +441,7 @@ Source: Chevron Climate Report 2023 — https://www.chevron.com/sustainability
 
 CDP 2023 grade: D. Disclosure-only tier.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 0 / 25**
 
@@ -471,7 +471,7 @@ Source: TotalEnergies Climate & Energy Ambition 2023 — https://totalenergies.c
 
 CDP 2023 grade: C. Awareness tier.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 3 / 25**
 
@@ -501,7 +501,7 @@ Source: ConocoPhillips Climate Report 2023
 
 CDP 2023 grade: C. Awareness tier.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 2 / 25**
 
@@ -531,7 +531,7 @@ Source: Glencore Climate Report 2023
 
 CDP 2023 grade: D. Disclosure-only tier.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 3 / 25**
 
@@ -561,7 +561,7 @@ Source: Toyota Sustainability Report 2023
 
 CDP 2023 grade: C. Awareness tier.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 3 / 25**
 
@@ -591,7 +591,7 @@ Source: JPMorgan Chase Climate Report 2023
 
 CDP 2023 grade: D. Disclosure-only tier.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 4 / 25**
 
@@ -621,7 +621,7 @@ Source: United Airlines Sustainability Report 2023
 
 CDP 2023 grade: C. Awareness tier.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 4 / 25**
 
@@ -651,7 +651,7 @@ Source: Duke Energy Sustainability Report 2023
 
 CDP 2023 grade: C. Awareness tier.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 7 / 25**
 
@@ -681,7 +681,7 @@ Source: BASF Sustainability Report 2023
 
 CDP 2023 grade: C. Awareness tier.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 7 / 25**
 
@@ -711,7 +711,7 @@ Source: BlackRock Sustainability Report 2023
 
 CDP 2023 grade: B. Management tier.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 7 / 25**
 
@@ -741,7 +741,7 @@ Source: Coca-Cola Sustainability Report 2023
 
 CDP 2023 grade: B. Management tier.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 7 / 25**
 
@@ -772,7 +772,7 @@ Source: Volkswagen Group Sustainability Report 2023
 
 CDP 2023 grade: B. Management tier.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 7 / 25**
 
@@ -802,7 +802,7 @@ Source: Ford Integrated Sustainability & Financial Report 2023
 
 CDP 2023 grade: B. Management tier.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 9 / 25**
 
@@ -832,7 +832,7 @@ Source: Nestlé Net Zero Roadmap 2023
 
 CDP 2023 grade: B. Management tier.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 7 / 25**
 
@@ -862,7 +862,7 @@ Source: H&M Group Sustainability Disclosure 2023
 
 CDP 2023 grade: B. Management tier.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 7 / 25**
 
@@ -892,7 +892,7 @@ Source: Rio Tinto Climate Change Report 2023
 
 CDP 2023 grade: B. Management tier.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 9 / 25**
 
@@ -922,7 +922,7 @@ Source: BHP Climate Transition Action Plan 2024
 
 CDP 2023 grade: B. Management tier.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 9 / 25**
 
@@ -952,7 +952,7 @@ Source: P&G FY2024 Citizenship Report
 
 CDP 2023 grade: B. Management tier.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 9 / 25**
 
@@ -982,7 +982,7 @@ Source: Nike FY2023 Impact Report
 
 CDP 2023 grade: B. Management tier.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 9 / 25**
 
@@ -1012,7 +1012,7 @@ Source: Maersk Sustainability Report 2023
 
 CDP 2023 grade: B. Management tier.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 14 / 25**
 
@@ -1042,7 +1042,7 @@ Source: Google Environmental Report 2024
 
 CDP 2023 grade: A−. Near-leadership tier.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 16 / 25**
 
@@ -1072,7 +1072,7 @@ Source: Johnson & Johnson ESG Performance Summary 2023
 
 CDP 2023 grade: A−. Near-leadership tier.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 14 / 25**
 
@@ -1102,7 +1102,7 @@ Source: CBRE 2023 Corporate Responsibility Report
 
 CDP 2023 grade: A−. Near-leadership tier.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 13 / 25**
 
@@ -1133,7 +1133,7 @@ Source: NextEra Energy Sustainability Report 2023
 
 CDP 2023 grade: B. Management tier.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 14 / 25**
 
@@ -1163,7 +1163,7 @@ Source: Salesforce FY2024 Stakeholder Impact Report
 
 CDP 2023 grade: A−. Near-leadership tier.
 
-Source: CDP 2023 — https://www.cdp.net/en/responses
+Source: CDP 2023 — https://www.cdp.net/en/data/scores
 
 **Lobbying Alignment: 16 / 25**
 
