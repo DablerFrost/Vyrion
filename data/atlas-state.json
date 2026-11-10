@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-11-10T07:30:05.612Z",
+    "generatedAt": "2026-11-10T19:50:33.462Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -73,7 +73,7 @@
             18
           ],
           "tsunami": false,
-          "significance": 1006
+          "significance": 1007
         },
         {
           "id": "us6000u3jl",
@@ -156,9 +156,9 @@
       ]
     },
     "hazards": {
-      "totalActive": 40,
+      "totalActive": 39,
       "byCategory": {
-        "Severe Storms": 4,
+        "Severe Storms": 3,
         "Sea and Lake Ice": 11,
         "Wildfires": 25
       },
@@ -193,13 +193,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 95,
+            "magnitudeValue": 85,
             "magnitudeUnit": "kts",
-            "date": "2026-11-10T00:00:00Z",
+            "date": "2026-11-10T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              138,
-              25
+              142.1,
+              26.1
             ]
           }
         },
@@ -215,11 +215,11 @@
           "geometry": {
             "magnitudeValue": 35,
             "magnitudeUnit": "kts",
-            "date": "2026-11-10T00:00:00Z",
+            "date": "2026-11-10T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              -162.1,
-              11.7
+              -164.2,
+              11.2
             ]
           }
         },
@@ -565,26 +565,6 @@
           }
         },
         {
-          "id": "EONET_25728",
-          "title": "Super Typhoon In-fa",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "JTWC"
-          ],
-          "geometry": {
-            "magnitudeValue": 60,
-            "magnitudeUnit": "kts",
-            "date": "2026-11-05T06:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              141.5,
-              29.4
-            ]
-          }
-        },
-        {
           "id": "EONET_25590",
           "title": "Wildfire BEE HAVEN (2) (24-06), Hamilton, Florida",
           "categories": [
@@ -763,6 +743,26 @@
               30.57111111
             ]
           }
+        },
+        {
+          "id": "EONET_25451",
+          "title": "Wildfire HENDERSON, San Diego, California",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 3260,
+            "magnitudeUnit": "acres",
+            "date": "2026-10-15T17:11:00Z",
+            "type": "Point",
+            "coordinates": [
+              -117.40938,
+              33.34329
+            ]
+          }
         }
       ]
     },
@@ -772,55 +772,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -7.1,
-          "surface_pressure": 1010.6,
-          "wind_speed_10m": 8.32,
-          "relative_humidity_2m": 78
+          "temperature_2m": -13.3,
+          "surface_pressure": 1016.4,
+          "wind_speed_10m": 8.91,
+          "relative_humidity_2m": 89
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 11.9,
-          "surface_pressure": 1003.7,
-          "wind_speed_10m": 10.09,
-          "relative_humidity_2m": 92
+          "temperature_2m": 11.7,
+          "surface_pressure": 1007.9,
+          "wind_speed_10m": 9.63,
+          "relative_humidity_2m": 89
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 20.6,
-          "surface_pressure": 916,
-          "wind_speed_10m": 1.87,
-          "relative_humidity_2m": 97
+          "temperature_2m": 27.6,
+          "surface_pressure": 915.1,
+          "wind_speed_10m": 3.01,
+          "relative_humidity_2m": 60
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 28.5,
-          "surface_pressure": 1009.2,
-          "wind_speed_10m": 2.41,
-          "relative_humidity_2m": 78
+          "temperature_2m": 28.7,
+          "surface_pressure": 1009.7,
+          "wind_speed_10m": 2.78,
+          "relative_humidity_2m": 68
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -1.5,
-          "surface_pressure": 983.8,
-          "wind_speed_10m": 10.54,
-          "relative_humidity_2m": 89
+          "temperature_2m": -0.2,
+          "surface_pressure": 977.3,
+          "wind_speed_10m": 13.21,
+          "relative_humidity_2m": 94
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -38.2,
-          "surface_pressure": 718.4,
-          "wind_speed_10m": 7.92,
-          "relative_humidity_2m": 50
+          "temperature_2m": -36,
+          "surface_pressure": 718.5,
+          "wind_speed_10m": 8.95,
+          "relative_humidity_2m": 52
         }
       ]
     },
