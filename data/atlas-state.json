@@ -1,13 +1,13 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-11-12T07:25:18.268Z",
+    "generatedAt": "2026-11-12T20:05:11.249Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 9,
+      "count": 8,
       "maxMagnitude": 7,
       "events": [
         {
@@ -27,10 +27,10 @@
           "id": "us7000ttxz",
           "magnitude": 6.4,
           "place": "southeast of Easter Island",
-          "time": "2026-10-29T07:49:50.928Z",
+          "time": "2026-10-29T07:49:50.096Z",
           "coordinates": [
-            -98.0489,
-            -36.4058,
+            -98.0105,
+            -36.4649,
             10
           ],
           "tsunami": false,
@@ -113,30 +113,77 @@
           ],
           "tsunami": false,
           "significance": 734
-        },
-        {
-          "id": "us6000u214",
-          "magnitude": 6.8,
-          "place": "central Mid-Atlantic Ridge",
-          "time": "2026-10-13T12:23:07.141Z",
-          "coordinates": [
-            -19.3913,
-            -0.346,
-            10
-          ],
-          "tsunami": true,
-          "significance": 711
         }
       ]
     },
     "hazards": {
-      "totalActive": 38,
+      "totalActive": 41,
       "byCategory": {
+        "Wildfires": 27,
         "Severe Storms": 3,
-        "Sea and Lake Ice": 11,
-        "Wildfires": 24
+        "Sea and Lake Ice": 11
       },
       "events": [
+        {
+          "id": "EONET_26331",
+          "title": "Wildfire Red Hill, Perry, Mississippi",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 519,
+            "magnitudeUnit": "acres",
+            "date": "2026-11-12T00:22:00Z",
+            "type": "Point",
+            "coordinates": [
+              -89.063853,
+              31.130069
+            ]
+          }
+        },
+        {
+          "id": "EONET_26332",
+          "title": "Prescribed Fire Bienville CPT 29 Sub 2 RX, Scott, Mississippi",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 660,
+            "magnitudeUnit": "acres",
+            "date": "2026-11-11T09:57:00Z",
+            "type": "Point",
+            "coordinates": [
+              -89.5974,
+              32.425
+            ]
+          }
+        },
+        {
+          "id": "EONET_26333",
+          "title": "Prescribed Fire Compartment 170 RX, Greene, Georgia",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 643,
+            "magnitudeUnit": "acres",
+            "date": "2026-11-09T16:30:00Z",
+            "type": "Point",
+            "coordinates": [
+              -83.259363,
+              33.747313
+            ]
+          }
+        },
         {
           "id": "EONET_26159",
           "title": "Tropical Cyclone 03S",
@@ -187,13 +234,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 40,
+            "magnitudeValue": 30,
             "magnitudeUnit": "kts",
-            "date": "2026-11-11T18:00:00Z",
+            "date": "2026-11-12T12:00:00Z",
             "type": "Point",
             "coordinates": [
-              -168.7,
-              9.9
+              -173.2,
+              9.8
             ]
           }
         },
@@ -519,6 +566,26 @@
           }
         },
         {
+          "id": "EONET_26334",
+          "title": "Prescribed Fire REP RX - WALKER HP, Ferry, Washington",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 540,
+            "magnitudeUnit": "acres",
+            "date": "2026-10-26T11:39:00Z",
+            "type": "Point",
+            "coordinates": [
+              -118.561685,
+              48.675381
+            ]
+          }
+        },
+        {
           "id": "EONET_25769",
           "title": "Wildfire Range  47B, Forrest, Mississippi",
           "categories": [
@@ -657,86 +724,6 @@
               47.2780556
             ]
           }
-        },
-        {
-          "id": "EONET_25450",
-          "title": "Wildfire COOLEY, Mendocino, California",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1365,
-            "magnitudeUnit": "acres",
-            "date": "2026-10-16T20:14:00Z",
-            "type": "Point",
-            "coordinates": [
-              -123.188056,
-              38.819722
-            ]
-          }
-        },
-        {
-          "id": "EONET_25452",
-          "title": "Wildfire NORTE, Orange, California",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 570,
-            "magnitudeUnit": "acres",
-            "date": "2026-10-16T14:52:00Z",
-            "type": "Point",
-            "coordinates": [
-              -117.63483,
-              33.47965118
-            ]
-          }
-        },
-        {
-          "id": "EONET_25454",
-          "title": "Prescribed Fire Rx Polk 9275, Polk, Texas",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 900,
-            "magnitudeUnit": "acres",
-            "date": "2026-10-16T08:31:00Z",
-            "type": "Point",
-            "coordinates": [
-              -94.72916667,
-              30.57111111
-            ]
-          }
-        },
-        {
-          "id": "EONET_25451",
-          "title": "Wildfire HENDERSON, San Diego, California",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 3260,
-            "magnitudeUnit": "acres",
-            "date": "2026-10-15T17:11:00Z",
-            "type": "Point",
-            "coordinates": [
-              -117.40938,
-              33.34329
-            ]
-          }
         }
       ]
     },
@@ -746,49 +733,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -14.7,
-          "surface_pressure": 1020.5,
-          "wind_speed_10m": 7.82,
-          "relative_humidity_2m": 80
+          "temperature_2m": -15.3,
+          "surface_pressure": 1021.5,
+          "wind_speed_10m": 7.69,
+          "relative_humidity_2m": 82
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 11.5,
-          "surface_pressure": 1011.4,
-          "wind_speed_10m": 7.06,
-          "relative_humidity_2m": 87
+          "temperature_2m": 12,
+          "surface_pressure": 1009.2,
+          "wind_speed_10m": 6.87,
+          "relative_humidity_2m": 90
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "error": "fetch_failed"
+          "temperature_2m": 26.9,
+          "surface_pressure": 913.4,
+          "wind_speed_10m": 3.07,
+          "relative_humidity_2m": 59
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 27.9,
-          "surface_pressure": 1008.5,
-          "wind_speed_10m": 5.01,
-          "relative_humidity_2m": 84
+          "temperature_2m": 26.7,
+          "surface_pressure": 1011.2,
+          "wind_speed_10m": 2.95,
+          "relative_humidity_2m": 83
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -1.9,
-          "surface_pressure": 981.6,
-          "wind_speed_10m": 11.33,
-          "relative_humidity_2m": 81
+          "temperature_2m": -1.6,
+          "surface_pressure": 999.2,
+          "wind_speed_10m": 8.14,
+          "relative_humidity_2m": 84
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "error": "fetch_failed"
+          "temperature_2m": -29.8,
+          "surface_pressure": 726.1,
+          "wind_speed_10m": 5.41,
+          "relative_humidity_2m": 70
         }
       ]
     },
