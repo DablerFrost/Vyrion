@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-11-13T06:57:30.706Z",
+    "generatedAt": "2026-11-13T19:50:56.160Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -117,9 +117,9 @@
       ]
     },
     "hazards": {
-      "totalActive": 41,
+      "totalActive": 40,
       "byCategory": {
-        "Wildfires": 27,
+        "Wildfires": 26,
         "Severe Storms": 3,
         "Sea and Lake Ice": 11
       },
@@ -733,37 +733,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "error": "fetch_failed"
+          "temperature_2m": -14.1,
+          "surface_pressure": 1018.2,
+          "wind_speed_10m": 7.56,
+          "relative_humidity_2m": 89
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "error": "fetch_failed"
+          "temperature_2m": 9.9,
+          "surface_pressure": 1006.2,
+          "wind_speed_10m": 10.63,
+          "relative_humidity_2m": 72
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "error": "fetch_failed"
+          "temperature_2m": 27.3,
+          "surface_pressure": 913.9,
+          "wind_speed_10m": 2.84,
+          "relative_humidity_2m": 57
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "error": "fetch_failed"
+          "temperature_2m": 28.8,
+          "surface_pressure": 1011,
+          "wind_speed_10m": 2.27,
+          "relative_humidity_2m": 72
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "error": "fetch_failed"
+          "temperature_2m": 0.8,
+          "surface_pressure": 969.6,
+          "wind_speed_10m": 16.46,
+          "relative_humidity_2m": 95
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "error": "fetch_failed"
+          "temperature_2m": -25.1,
+          "surface_pressure": 727.4,
+          "wind_speed_10m": 6.54,
+          "relative_humidity_2m": 69
         }
       ]
     },
