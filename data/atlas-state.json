@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-11-13T19:50:56.160Z",
+    "generatedAt": "2026-11-14T06:44:41.798Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -117,10 +117,10 @@
       ]
     },
     "hazards": {
-      "totalActive": 40,
+      "totalActive": 39,
       "byCategory": {
         "Wildfires": 26,
-        "Severe Storms": 3,
+        "Severe Storms": 2,
         "Sea and Lake Ice": 11
       },
       "events": [
@@ -185,26 +185,6 @@
           }
         },
         {
-          "id": "EONET_26159",
-          "title": "Tropical Cyclone 03S",
-          "categories": [
-            "Severe Storms"
-          ],
-          "sources": [
-            "JTWC"
-          ],
-          "geometry": {
-            "magnitudeValue": 25,
-            "magnitudeUnit": "kts",
-            "date": "2026-11-08T18:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              50.5,
-              -11.3
-            ]
-          }
-        },
-        {
           "id": "EONET_26157",
           "title": "Typhoon Cempaka",
           "categories": [
@@ -262,6 +242,26 @@
             "coordinates": [
               163.59,
               -69.59
+            ]
+          }
+        },
+        {
+          "id": "EONET_6474",
+          "title": "Iceberg D35",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 90,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-11-06T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -44.72,
+              -60.15
             ]
           }
         },
@@ -362,6 +362,47 @@
             "coordinates": [
               55.55,
               -65.58
+            ]
+          }
+        },
+        {
+          "id": "EONET_6320",
+          "title": "Iceberg A81",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 700,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-11-06T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -35.52,
+              -55.81
+            ]
+          }
+        },
+        {
+          "id": "EONET_6523",
+          "title": "Iceberg A83",
+          "categories": [
+            "Sea and Lake Ice"
+          ],
+          "sources": [
+            "EO",
+            "NATICE"
+          ],
+          "geometry": {
+            "magnitudeValue": 84,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-10-30T00:00:00Z",
+            "type": "Point",
+            "coordinates": [
+              -49.52,
+              -59.61
             ]
           }
         },
@@ -666,62 +707,22 @@
           }
         },
         {
-          "id": "EONET_25768",
-          "title": "Prescribed Fire Frog Tank 2 Piles RX, Coconino, Arizona",
+          "id": "EONET_6424",
+          "title": "Iceberg D33B",
           "categories": [
-            "Wildfires"
+            "Sea and Lake Ice"
           ],
           "sources": [
-            "IRWIN"
+            "NATICE"
           ],
           "geometry": {
-            "magnitudeValue": 1989,
-            "magnitudeUnit": "acres",
-            "date": "2026-10-21T15:57:00Z",
+            "magnitudeValue": 252,
+            "magnitudeUnit": "NM^2",
+            "date": "2026-10-30T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -111.657083,
-              34.962583
-            ]
-          }
-        },
-        {
-          "id": "EONET_25455",
-          "title": "Prescribed Fire STE - Goodin Ridge RX, McCreary, Kentucky",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 2604,
-            "magnitudeUnit": "acres",
-            "date": "2026-10-18T08:25:00Z",
-            "type": "Point",
-            "coordinates": [
-              -84.376511,
-              36.948746
-            ]
-          }
-        },
-        {
-          "id": "EONET_25591",
-          "title": "Wildfire Bras, Sanders, Montana",
-          "categories": [
-            "Wildfires"
-          ],
-          "sources": [
-            "IRWIN"
-          ],
-          "geometry": {
-            "magnitudeValue": 1688,
-            "magnitudeUnit": "acres",
-            "date": "2026-10-17T23:28:00Z",
-            "type": "Point",
-            "coordinates": [
-              -114.5861111,
-              47.2780556
+              -42.25,
+              -55.87
             ]
           }
         }
@@ -733,55 +734,37 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -14.1,
-          "surface_pressure": 1018.2,
-          "wind_speed_10m": 7.56,
-          "relative_humidity_2m": 89
+          "error": "fetch_failed"
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 9.9,
-          "surface_pressure": 1006.2,
-          "wind_speed_10m": 10.63,
-          "relative_humidity_2m": 72
+          "error": "fetch_failed"
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 27.3,
-          "surface_pressure": 913.9,
-          "wind_speed_10m": 2.84,
-          "relative_humidity_2m": 57
+          "error": "fetch_failed"
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 28.8,
-          "surface_pressure": 1011,
-          "wind_speed_10m": 2.27,
-          "relative_humidity_2m": 72
+          "error": "fetch_failed"
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": 0.8,
-          "surface_pressure": 969.6,
-          "wind_speed_10m": 16.46,
-          "relative_humidity_2m": 95
+          "error": "fetch_failed"
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -25.1,
-          "surface_pressure": 727.4,
-          "wind_speed_10m": 6.54,
-          "relative_humidity_2m": 69
+          "error": "fetch_failed"
         }
       ]
     },
