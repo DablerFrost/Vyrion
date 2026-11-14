@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-11-14T07:07:09.808Z",
+    "generatedAt": "2026-11-14T18:31:22.314Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -13,9 +13,9 @@
   },
   "synthesis": {
     "hazardSummary": {
-      "totalEvents": 47,
+      "totalEvents": 46,
       "categories": {
-        "Wildfires": 26,
+        "Wildfires": 25,
         "Severe Storms": 2,
         "Sea and Lake Ice": 11
       },
@@ -24,9 +24,9 @@
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": null,
-      "minTemperature_2m": null,
-      "maxTemperature_2m": null
+      "avgTemperature_2m": 5.97,
+      "minTemperature_2m": -25.6,
+      "maxTemperature_2m": 28.1
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -40,19 +40,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-11-14T06:07:33.974Z",
+        "generated": "2026-11-14T17:57:37.063Z",
         "generated_date": "2026-11-14",
         "script_version": "1.1",
         "window_days": 14,
         "window_start": "2026-10-31",
         "window_end": "2026-11-14",
-        "runtime_ms": 1043,
+        "runtime_ms": 2604,
         "seismic_live": true,
         "eonet_live": true
       },
       "threat": {
         "level": "ELEVATED",
-        "score": 13.15
+        "score": 13.4
       },
       "seismic": {
         "events": [
@@ -129,6 +129,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tx1f"
           },
           {
+            "id": "us7000ty84",
+            "magnitude": 5.5,
+            "place": "northern Mid-Atlantic Ridge",
+            "time": "2026-11-14T09:26:13.073Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ty84"
+          },
+          {
             "id": "us7000txb8",
             "magnitude": 5.5,
             "place": "40 km S of Puerto San José, Guatemala",
@@ -147,9 +155,9 @@
           {
             "id": "us7000twrq",
             "magnitude": 5.5,
-            "place": "74 km NE of Hasaki, Japan",
-            "time": "2026-11-07T11:07:43.355Z",
-            "depth_km": 31.7,
+            "place": "77 km NE of Hasaki, Japan",
+            "time": "2026-11-07T11:07:42.734Z",
+            "depth_km": 28,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twrq"
           },
           {
@@ -199,6 +207,14 @@
             "time": "2026-11-09T10:23:53.528Z",
             "depth_km": 11.5,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tx38"
+          },
+          {
+            "id": "us7000ty7d",
+            "magnitude": 5.2,
+            "place": "State of Yap, Federated States of Micronesia",
+            "time": "2026-11-14T06:52:26.706Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ty7d"
           },
           {
             "id": "us7000ty6n",
@@ -279,14 +295,6 @@
             "time": "2026-10-31T22:42:39.540Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tuky"
-          },
-          {
-            "id": "us7000tujf",
-            "magnitude": 5.2,
-            "place": "2 km SSW of Nuario, Panama",
-            "time": "2026-10-31T15:50:18.484Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tujf"
           },
           {
             "id": "us7000ty56",
@@ -521,12 +529,20 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tukm"
           },
           {
-            "id": "us7000tuif",
-            "magnitude": 5,
-            "place": "202 km NW of Port-Olry, Vanuatu",
-            "time": "2026-10-31T11:31:12.432Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tuif"
+            "id": "us7000ty9l",
+            "magnitude": 4.9,
+            "place": "7 km SE of Tagbina, Philippines",
+            "time": "2026-11-14T16:04:22.205Z",
+            "depth_km": 154.1,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ty9l"
+          },
+          {
+            "id": "us7000ty90",
+            "magnitude": 4.9,
+            "place": "south of the Kermadec Islands",
+            "time": "2026-11-14T13:17:20.799Z",
+            "depth_km": 12,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ty90"
           },
           {
             "id": "us7000ty4w",
@@ -668,7 +684,7 @@
             "id": "us7000twrt",
             "magnitude": 4.9,
             "place": "southern Mid-Atlantic Ridge",
-            "time": "2026-11-07T11:35:38.338Z",
+            "time": "2026-11-07T11:35:38.547Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twrt"
           },
@@ -713,20 +729,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tunq"
           },
           {
-            "id": "us7000tuht",
-            "magnitude": 4.9,
-            "place": "236 km NW of Port-Olry, Vanuatu",
-            "time": "2026-10-31T09:18:32.027Z",
+            "id": "us7000ty7b",
+            "magnitude": 4.8,
+            "place": "West Chile Rise",
+            "time": "2026-11-14T06:33:19.009Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tuht"
-          },
-          {
-            "id": "us7000tuhs",
-            "magnitude": 4.9,
-            "place": "214 km NW of Port-Olry, Vanuatu",
-            "time": "2026-10-31T09:15:52.457Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tuhs"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ty7b"
           },
           {
             "id": "us7000ty43",
@@ -1041,14 +1049,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twt8"
           },
           {
-            "id": "us7000twrh",
-            "magnitude": 4.7,
-            "place": "156 km ESE of Modisi, Indonesia",
-            "time": "2026-11-07T09:47:33.240Z",
-            "depth_km": 38.5,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twrh"
-          },
-          {
             "id": "us7000tweq",
             "magnitude": 4.7,
             "place": "139 km SSE of False Pass, Alaska",
@@ -1137,12 +1137,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tung"
           },
           {
-            "id": "us7000tx5l",
-            "magnitude": 4.7,
-            "place": "south of the Kermadec Islands",
-            "time": "2026-10-31T09:09:53.417Z",
-            "depth_km": 7.9,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tx5l"
+            "id": "us7000ty7h",
+            "magnitude": 4.6,
+            "place": "102 km NNE of Hihifo, Tonga",
+            "time": "2026-11-14T07:02:22.573Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ty7h"
           },
           {
             "id": "us7000ty59",
@@ -1281,6 +1281,22 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twyd"
           },
           {
+            "id": "us7000twrh",
+            "magnitude": 4.6,
+            "place": "156 km ESE of Modisi, Indonesia",
+            "time": "2026-11-07T09:47:32.997Z",
+            "depth_km": 36.8,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twrh"
+          },
+          {
+            "id": "us7000ty2h",
+            "magnitude": 4.6,
+            "place": "133 km SSE of Kokopo, Papua New Guinea",
+            "time": "2026-11-07T09:22:42.204Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ty2h"
+          },
+          {
             "id": "us7000twqw",
             "magnitude": 4.6,
             "place": "South Sandwich Islands region",
@@ -1407,6 +1423,14 @@
             "time": "2026-11-01T18:30:23.197Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tuqv"
+          },
+          {
+            "id": "us7000ty8u",
+            "magnitude": 4.5,
+            "place": "137 km SE of Petropavlovsk-Kamchatsky, Russia",
+            "time": "2026-11-14T12:28:00.653Z",
+            "depth_km": 17.4,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ty8u"
           },
           {
             "id": "us7000ty73",
@@ -1579,9 +1603,9 @@
           {
             "id": "us7000twrp",
             "magnitude": 4.5,
-            "place": "57 km SW of Ollagüe, Chile",
-            "time": "2026-11-07T10:53:12.299Z",
-            "depth_km": 110.7,
+            "place": "62 km SW of Ollagüe, Chile",
+            "time": "2026-11-07T10:53:12.538Z",
+            "depth_km": 106.8,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twrp"
           },
           {
@@ -1607,14 +1631,6 @@
             "time": "2026-11-06T10:12:58.285Z",
             "depth_km": 100.9,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twg3"
-          },
-          {
-            "id": "us7000twfu",
-            "magnitude": 4.5,
-            "place": "87 km N of Isangel, Vanuatu",
-            "time": "2026-11-06T08:14:08.319Z",
-            "depth_km": 246.5,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twfu"
           },
           {
             "id": "us7000twh9",
@@ -1767,18 +1783,10 @@
             "time": "2026-10-31T18:50:58.577Z",
             "depth_km": 1,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/aka2026vpcige"
-          },
-          {
-            "id": "us7000tumt",
-            "magnitude": 4.5,
-            "place": "295 km ESE of Tadine, New Caledonia",
-            "time": "2026-10-31T13:56:59.106Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tumt"
           }
         ],
-        "count_total": 215,
-        "count_m55_plus": 12,
+        "count_total": 216,
+        "count_m55_plus": 13,
         "count_m60_plus": 5,
         "count_m70_plus": 0,
         "count_m80_plus": 0,
@@ -1793,7 +1801,7 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-11-14T06:07:33.181Z"
+        "retrieved": "2026-11-14T17:57:34.654Z"
       },
       "wildfire": {
         "events": [
@@ -1905,7 +1913,7 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-11-14T06:44:41.798Z",
+        "generatedAt": "2026-11-14T18:15:17.256Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
@@ -2021,9 +2029,9 @@
           ]
         },
         "hazards": {
-          "totalActive": 39,
+          "totalActive": 38,
           "byCategory": {
-            "Wildfires": 26,
+            "Wildfires": 25,
             "Severe Storms": 2,
             "Sea and Lake Ice": 11
           },
@@ -2161,11 +2169,11 @@
               "geometry": {
                 "magnitudeValue": 90,
                 "magnitudeUnit": "NM^2",
-                "date": "2026-11-06T00:00:00Z",
+                "date": "2026-11-13T00:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  -44.72,
-                  -60.15
+                  -43.29,
+                  -59.8
                 ]
               }
             },
@@ -2281,11 +2289,11 @@
               "geometry": {
                 "magnitudeValue": 700,
                 "magnitudeUnit": "NM^2",
-                "date": "2026-11-06T00:00:00Z",
+                "date": "2026-11-13T00:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  -35.52,
-                  -55.81
+                  -34.36,
+                  -55.48
                 ]
               }
             },
@@ -2302,11 +2310,11 @@
               "geometry": {
                 "magnitudeValue": 84,
                 "magnitudeUnit": "NM^2",
-                "date": "2026-10-30T00:00:00Z",
+                "date": "2026-11-13T00:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  -49.52,
-                  -59.61
+                  -48.45,
+                  -58.98
                 ]
               }
             },
@@ -2322,11 +2330,11 @@
               "geometry": {
                 "magnitudeValue": 72,
                 "magnitudeUnit": "NM^2",
-                "date": "2026-11-06T00:00:00Z",
+                "date": "2026-11-13T00:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  -89.73,
-                  -69.02
+                  -90.01,
+                  -68.39
                 ]
               }
             },
@@ -2622,11 +2630,11 @@
               "geometry": {
                 "magnitudeValue": 252,
                 "magnitudeUnit": "NM^2",
-                "date": "2026-10-30T00:00:00Z",
+                "date": "2026-11-13T00:00:00Z",
                 "type": "Point",
                 "coordinates": [
-                  -42.25,
-                  -55.87
+                  -39.34,
+                  -55.19
                 ]
               }
             }
@@ -2638,37 +2646,55 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "error": "fetch_failed"
+              "temperature_2m": -3.5,
+              "surface_pressure": 1003,
+              "wind_speed_10m": 12.71,
+              "relative_humidity_2m": 78
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "error": "fetch_failed"
+              "temperature_2m": 10.6,
+              "surface_pressure": 1007.9,
+              "wind_speed_10m": 4.6,
+              "relative_humidity_2m": 78
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "error": "fetch_failed"
+              "temperature_2m": 28.1,
+              "surface_pressure": 914.4,
+              "wind_speed_10m": 2.88,
+              "relative_humidity_2m": 56
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "error": "fetch_failed"
+              "temperature_2m": 27.6,
+              "surface_pressure": 1012.2,
+              "wind_speed_10m": 0.25,
+              "relative_humidity_2m": 83
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "error": "fetch_failed"
+              "temperature_2m": -1.4,
+              "surface_pressure": 985,
+              "wind_speed_10m": 15.65,
+              "relative_humidity_2m": 83
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "error": "fetch_failed"
+              "temperature_2m": -25.6,
+              "surface_pressure": 725,
+              "wind_speed_10m": 5.95,
+              "relative_humidity_2m": 70
             }
           ]
         },
@@ -2686,7 +2712,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-11-14T06:59:36.946Z"
+        "generatedAt": "2026-11-14T18:28:57.606Z"
       },
       "health": {
         "score": 87,
