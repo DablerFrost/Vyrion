@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-11-14T06:44:41.798Z",
+    "generatedAt": "2026-11-14T18:15:17.256Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -117,9 +117,9 @@
       ]
     },
     "hazards": {
-      "totalActive": 39,
+      "totalActive": 38,
       "byCategory": {
-        "Wildfires": 26,
+        "Wildfires": 25,
         "Severe Storms": 2,
         "Sea and Lake Ice": 11
       },
@@ -257,11 +257,11 @@
           "geometry": {
             "magnitudeValue": 90,
             "magnitudeUnit": "NM^2",
-            "date": "2026-11-06T00:00:00Z",
+            "date": "2026-11-13T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -44.72,
-              -60.15
+              -43.29,
+              -59.8
             ]
           }
         },
@@ -377,11 +377,11 @@
           "geometry": {
             "magnitudeValue": 700,
             "magnitudeUnit": "NM^2",
-            "date": "2026-11-06T00:00:00Z",
+            "date": "2026-11-13T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -35.52,
-              -55.81
+              -34.36,
+              -55.48
             ]
           }
         },
@@ -398,11 +398,11 @@
           "geometry": {
             "magnitudeValue": 84,
             "magnitudeUnit": "NM^2",
-            "date": "2026-10-30T00:00:00Z",
+            "date": "2026-11-13T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -49.52,
-              -59.61
+              -48.45,
+              -58.98
             ]
           }
         },
@@ -418,11 +418,11 @@
           "geometry": {
             "magnitudeValue": 72,
             "magnitudeUnit": "NM^2",
-            "date": "2026-11-06T00:00:00Z",
+            "date": "2026-11-13T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -89.73,
-              -69.02
+              -90.01,
+              -68.39
             ]
           }
         },
@@ -718,11 +718,11 @@
           "geometry": {
             "magnitudeValue": 252,
             "magnitudeUnit": "NM^2",
-            "date": "2026-10-30T00:00:00Z",
+            "date": "2026-11-13T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -42.25,
-              -55.87
+              -39.34,
+              -55.19
             ]
           }
         }
@@ -734,37 +734,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "error": "fetch_failed"
+          "temperature_2m": -3.5,
+          "surface_pressure": 1003,
+          "wind_speed_10m": 12.71,
+          "relative_humidity_2m": 78
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "error": "fetch_failed"
+          "temperature_2m": 10.6,
+          "surface_pressure": 1007.9,
+          "wind_speed_10m": 4.6,
+          "relative_humidity_2m": 78
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "error": "fetch_failed"
+          "temperature_2m": 28.1,
+          "surface_pressure": 914.4,
+          "wind_speed_10m": 2.88,
+          "relative_humidity_2m": 56
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "error": "fetch_failed"
+          "temperature_2m": 27.6,
+          "surface_pressure": 1012.2,
+          "wind_speed_10m": 0.25,
+          "relative_humidity_2m": 83
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "error": "fetch_failed"
+          "temperature_2m": -1.4,
+          "surface_pressure": 985,
+          "wind_speed_10m": 15.65,
+          "relative_humidity_2m": 83
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "error": "fetch_failed"
+          "temperature_2m": -25.6,
+          "surface_pressure": 725,
+          "wind_speed_10m": 5.95,
+          "relative_humidity_2m": 70
         }
       ]
     },
