@@ -1,13 +1,13 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-11-15T18:57:11.912Z",
+    "generatedAt": "2026-11-16T06:49:17.240Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 7,
+      "count": 6,
       "maxMagnitude": 7,
       "events": [
         {
@@ -87,26 +87,13 @@
           ],
           "tsunami": true,
           "significance": 611
-        },
-        {
-          "id": "us6000u2y1",
-          "magnitude": 5.7,
-          "place": "47 km WNW of Khuzdar, Pakistan",
-          "time": "2026-10-17T05:06:57.619Z",
-          "coordinates": [
-            66.1855,
-            28.0196,
-            10
-          ],
-          "tsunami": false,
-          "significance": 651
         }
       ]
     },
     "hazards": {
-      "totalActive": 36,
+      "totalActive": 34,
       "byCategory": {
-        "Wildfires": 23,
+        "Wildfires": 21,
         "Severe Storms": 2,
         "Sea and Lake Ice": 11
       },
@@ -721,55 +708,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -3.2,
-          "surface_pressure": 1002.5,
-          "wind_speed_10m": 0.9,
-          "relative_humidity_2m": 93
+          "temperature_2m": -2.9,
+          "surface_pressure": 1002.9,
+          "wind_speed_10m": 3.08,
+          "relative_humidity_2m": 85
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 14,
-          "surface_pressure": 978.9,
-          "wind_speed_10m": 15.44,
-          "relative_humidity_2m": 94
+          "temperature_2m": 12.2,
+          "surface_pressure": 977.7,
+          "wind_speed_10m": 14.89,
+          "relative_humidity_2m": 84
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 25.5,
-          "surface_pressure": 914.4,
-          "wind_speed_10m": 3.4,
-          "relative_humidity_2m": 65
+          "temperature_2m": 18.7,
+          "surface_pressure": 913.8,
+          "wind_speed_10m": 3.06,
+          "relative_humidity_2m": 95
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 27.3,
-          "surface_pressure": 1012.2,
-          "wind_speed_10m": 6.41,
-          "relative_humidity_2m": 83
+          "temperature_2m": 28.2,
+          "surface_pressure": 1010.2,
+          "wind_speed_10m": 5.63,
+          "relative_humidity_2m": 78
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -0.3,
-          "surface_pressure": 987.7,
-          "wind_speed_10m": 15.84,
-          "relative_humidity_2m": 92
+          "temperature_2m": 0,
+          "surface_pressure": 991.2,
+          "wind_speed_10m": 12.21,
+          "relative_humidity_2m": 95
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -26.1,
-          "surface_pressure": 722.2,
+          "temperature_2m": -28.7,
+          "surface_pressure": 719,
           "wind_speed_10m": 5.71,
-          "relative_humidity_2m": 68
+          "relative_humidity_2m": 66
         }
       ]
     },
