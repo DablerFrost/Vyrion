@@ -1,23 +1,36 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-11-17T21:03:27.052Z",
+    "generatedAt": "2026-11-18T07:43:01.619Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 7,
+      "count": 8,
       "maxMagnitude": 7,
       "events": [
+        {
+          "id": "us7000tyw8",
+          "magnitude": 5.3,
+          "place": "16 km ESE of Comandău, Romania",
+          "time": "2026-11-18T00:48:56.089Z",
+          "coordinates": [
+            26.452,
+            45.6863,
+            130.266
+          ],
+          "tsunami": false,
+          "significance": 600
+        },
         {
           "id": "us7000tymu",
           "magnitude": 6.6,
           "place": "148 km WSW of Tual, Indonesia",
-          "time": "2026-11-16T21:11:20.515Z",
+          "time": "2026-11-16T21:11:20.376Z",
           "coordinates": [
             131.4868,
-            -6.0804,
+            -6.0602,
             68
           ],
           "tsunami": false,
@@ -121,13 +134,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 40,
+            "magnitudeValue": 45,
             "magnitudeUnit": "kts",
-            "date": "2026-11-17T12:00:00Z",
+            "date": "2026-11-18T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              87.3,
-              12.2
+              86.9,
+              13
             ]
           }
         },
@@ -141,13 +154,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 125,
+            "magnitudeValue": 130,
             "magnitudeUnit": "kts",
-            "date": "2026-11-17T06:00:00Z",
+            "date": "2026-11-17T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              -163.5,
-              -9.1
+              -163.8,
+              -9.6
             ]
           }
         },
