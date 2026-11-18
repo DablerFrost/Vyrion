@@ -3381,7 +3381,7 @@ A Happy Little Science Playground - CLICK TO ENTER → </button>
               <div class="sys-bar-fill" style="background:var(--ocn)" data-pct="49.6"></div>
             </div>
             <div class="sys-score" style="color:var(--ocn)">49.6</div>
-            <div class="sys-badge b-wa">WARNING</div>
+            <div class="sys-badge b-cr">CRITICAL</div>
           </div>
           <div class="sys-row">
             <div class="sys-dot" style="background:var(--ice);box-shadow:0 0 5px var(--ice)"></div>
@@ -3391,7 +3391,7 @@ A Happy Little Science Playground - CLICK TO ENTER → </button>
               <div class="sys-bar-fill" style="background:var(--ice)" data-pct="75.4"></div>
             </div>
             <div class="sys-score" style="color:var(--ice)">75.4</div>
-            <div class="sys-badge b-br">BREACH</div>
+            <div class="sys-badge b-wa">WARNING</div>
           </div>
           <div class="sys-row">
             <div class="sys-dot" style="background:var(--fst);box-shadow:0 0 5px var(--fst)"></div>
@@ -3401,7 +3401,7 @@ A Happy Little Science Playground - CLICK TO ENTER → </button>
               <div class="sys-bar-fill" style="background:var(--fst)" data-pct="36.1"></div>
             </div>
             <div class="sys-score" style="color:var(--fst)">36.1</div>
-            <div class="sys-badge b-cr">CRITICAL</div>
+            <div class="sys-badge b-br">BREACH</div>
           </div>
           <div class="sys-row">
             <div class="sys-dot" style="background:var(--bio);box-shadow:0 0 5px var(--bio)"></div>
@@ -3421,7 +3421,7 @@ A Happy Little Science Playground - CLICK TO ENTER → </button>
               <div class="sys-bar-fill" style="background:var(--fw)" data-pct="53.6"></div>
             </div>
             <div class="sys-score" style="color:var(--fw)">53.6</div>
-            <div class="sys-badge b-wa">WARNING</div>
+            <div class="sys-badge b-cr">CRITICAL</div>
           </div>
           <div class="sys-row">
             <div class="sys-dot" style="background:var(--sol);box-shadow:0 0 5px var(--sol)"></div>
@@ -3431,7 +3431,7 @@ A Happy Little Science Playground - CLICK TO ENTER → </button>
               <div class="sys-bar-fill" style="background:var(--sol)" data-pct="62.4"></div>
             </div>
             <div class="sys-score" style="color:var(--sol)">62.4</div>
-            <div class="sys-badge b-br">BREACH</div>
+            <div class="sys-badge b-wa">WARNING</div>
           </div>
           <div class="sys-row">
             <div class="sys-dot" style="background:var(--corp);box-shadow:0 0 5px var(--corp)"></div>
@@ -3441,7 +3441,7 @@ A Happy Little Science Playground - CLICK TO ENTER → </button>
               <div class="sys-bar-fill" style="background:var(--corp)" data-pct="34.6"></div>
             </div>
             <div class="sys-score" style="color:var(--corp)">34.6</div>
-            <div class="sys-badge b-wa">WARNING</div>
+            <div class="sys-badge b-br">BREACH</div>
           </div>
         </div>
       </div>
@@ -3708,9 +3708,9 @@ A Happy Little Science Playground - CLICK TO ENTER → </button>
                 <td>
                   <span class="ledger-type lt-ingest">DATA INGEST</span>
                 </td>
-                <td class="ledger-event" id="ledger-co2-row">Atmospheric CO₂ — 428.95 ppm · NOAA Mauna Loa</td>
+                <td class="ledger-event" id="ledger-co2-row">Atmospheric CO₂ — 429.12 ppm · NOAA Mauna Loa</td>
                 <td class="ledger-source">NOAA GML · gml.noaa.gov</td>
-                <td class="ledger-ts">2026-05-09 · 03:50 UTC</td>
+                <td class="ledger-ts" id="ledger-co2-ts">2026-11-17</td>
               </tr>
               <tr class="ledger-row">
                 <td>
@@ -4089,9 +4089,11 @@ A Happy Little Science Playground - CLICK TO ENTER → </button>
           }, 300);
         }
         // ── LEDGER CO₂ UPDATE ──────────────────────────────────────────────────
-        function updateLedgerCO2(ppm) {
+        function updateLedgerCO2(ppm, date) {
           const row = document.getElementById('ledger-co2-row');
           if (row && ppm) row.textContent = `Atmospheric CO₂ — ${ppm} ppm · NOAA Mauna Loa`;
+          const ts = document.getElementById('ledger-co2-ts');
+          if (ts && date) ts.textContent = date;
         }
         // ── COPY API URL ───────────────────────────────────────────────────────
         function copyApiUrl() {
@@ -4124,12 +4126,12 @@ A Happy Little Science Playground - CLICK TO ENTER → </button>
           const shield = shieldR.status === 'fulfilled' ? shieldR.value : null;
           const idx = indexR.status === 'fulfilled' ? indexR.value : null;
           // CO₂
-          const ppm = co2 ? co2.ppm : '428.95';
-          const date = co2 ? co2.date : '2026-11-04';
+          const ppm = co2 ? co2.ppm : '429.12';
+          const date = co2 ? co2.date : '2026-11-17';
           document.getElementById('co2-val').textContent = ppm;
           document.getElementById('co2-sub').textContent = `ppm · NOAA Mauna Loa · ${date}`;
           document.getElementById('hdr-co2').textContent = `${ppm} ppm`;
-          updateLedgerCO2(ppm);
+          updateLedgerCO2(ppm, date);
           // SHIELD
           renderShield(shield);
           // Index
