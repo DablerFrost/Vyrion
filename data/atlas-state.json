@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-11-19T20:46:27.075Z",
+    "generatedAt": "2026-11-20T07:29:58.854Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -13,12 +13,12 @@
         {
           "id": "us7000tyw8",
           "magnitude": 5.3,
-          "place": "16 km ESE of Comandău, Romania",
-          "time": "2026-11-18T00:48:56.089Z",
+          "place": "17 km ESE of Comandău, Romania",
+          "time": "2026-11-18T00:48:56.305Z",
           "coordinates": [
-            26.452,
-            45.6863,
-            130.266
+            26.4521,
+            45.6816,
+            132.362
           ],
           "tsunami": false,
           "significance": 617
@@ -26,11 +26,11 @@
         {
           "id": "us7000tymu",
           "magnitude": 6.6,
-          "place": "148 km WSW of Tual, Indonesia",
-          "time": "2026-11-16T21:11:20.376Z",
+          "place": "149 km WSW of Tual, Indonesia",
+          "time": "2026-11-16T21:11:20.488Z",
           "coordinates": [
-            131.4868,
-            -6.0602,
+            131.4593,
+            -6.0208,
             68
           ],
           "tsunami": false,
@@ -121,13 +121,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 35,
+            "magnitudeValue": 30,
             "magnitudeUnit": "kts",
-            "date": "2026-11-19T12:00:00Z",
+            "date": "2026-11-19T18:00:00Z",
             "type": "Point",
             "coordinates": [
-              85.3,
-              16
+              84.7,
+              17.2
             ]
           }
         },
@@ -141,13 +141,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 105,
+            "magnitudeValue": 90,
             "magnitudeUnit": "kts",
-            "date": "2026-11-19T06:00:00Z",
+            "date": "2026-11-20T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -163.2,
-              -10.6
+              -162.6,
+              -11.1
             ]
           }
         },
@@ -721,55 +721,37 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -13.7,
-          "surface_pressure": 1007.7,
-          "wind_speed_10m": 7.52,
-          "relative_humidity_2m": 90
+          "error": "fetch_failed"
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 10,
-          "surface_pressure": 998.6,
-          "wind_speed_10m": 6.61,
-          "relative_humidity_2m": 82
+          "error": "fetch_failed"
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 24.1,
-          "surface_pressure": 911.9,
-          "wind_speed_10m": 2.44,
-          "relative_humidity_2m": 84
+          "error": "fetch_failed"
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 27.8,
-          "surface_pressure": 1011.7,
-          "wind_speed_10m": 2.44,
-          "relative_humidity_2m": 77
+          "error": "fetch_failed"
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -3.4,
-          "surface_pressure": 997.9,
-          "wind_speed_10m": 8.09,
-          "relative_humidity_2m": 75
+          "error": "fetch_failed"
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -31,
-          "surface_pressure": 716.6,
-          "wind_speed_10m": 5.32,
-          "relative_humidity_2m": 75
+          "error": "fetch_failed"
         }
       ]
     },
