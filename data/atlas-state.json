@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-11-22T19:49:19.591Z",
+    "generatedAt": "2026-11-23T07:53:52.699Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -10,6 +10,19 @@
       "count": 11,
       "maxMagnitude": 6.8,
       "events": [
+        {
+          "id": "us6000ucvm",
+          "magnitude": 6.5,
+          "place": "Vanuatu region",
+          "time": "2026-11-23T02:40:58.052Z",
+          "coordinates": [
+            172.2672,
+            -13.5846,
+            598
+          ],
+          "tsunami": true,
+          "significance": 650
+        },
         {
           "id": "us6000ucly",
           "magnitude": 5.9,
@@ -39,15 +52,15 @@
         {
           "id": "us6000ucfm",
           "magnitude": 6.7,
-          "place": "9 km NE of Carhuamayo, Peru",
-          "time": "2026-11-21T00:09:19.667Z",
+          "place": "7 km ENE of Carhuamayo, Peru",
+          "time": "2026-11-21T00:09:21.810Z",
           "coordinates": [
-            -75.9779,
-            -10.8548,
-            107.991
+            -75.966,
+            -10.8889,
+            125
           ],
           "tsunami": true,
-          "significance": 759
+          "significance": 773
         },
         {
           "id": "ci41364111",
@@ -139,19 +152,6 @@
           ],
           "tsunami": true,
           "significance": 650
-        },
-        {
-          "id": "us6000u4j2",
-          "magnitude": 6.8,
-          "place": "203 km NW of Port-Olry, Vanuatu",
-          "time": "2026-10-24T02:31:28.880Z",
-          "coordinates": [
-            165.5629,
-            -13.9369,
-            16
-          ],
-          "tsunami": true,
-          "significance": 715
         }
       ]
     },
@@ -353,13 +353,13 @@
             "JTWC"
           ],
           "geometry": {
-            "magnitudeValue": 40,
+            "magnitudeValue": 30,
             "magnitudeUnit": "kts",
-            "date": "2026-11-22T12:00:00Z",
+            "date": "2026-11-23T00:00:00Z",
             "type": "Point",
             "coordinates": [
-              -167.9,
-              -11.7
+              -168.8,
+              -11.8
             ]
           }
         },
@@ -773,55 +773,37 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -19.2,
-          "surface_pressure": 1012.7,
-          "wind_speed_10m": 5.66,
-          "relative_humidity_2m": 83
+          "error": "fetch_failed"
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 8.8,
-          "surface_pressure": 999.1,
-          "wind_speed_10m": 15.58,
-          "relative_humidity_2m": 75
+          "error": "fetch_failed"
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 25.9,
-          "surface_pressure": 912,
-          "wind_speed_10m": 2.53,
-          "relative_humidity_2m": 69
+          "error": "fetch_failed"
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 28.7,
-          "surface_pressure": 1011.1,
-          "wind_speed_10m": 1.95,
-          "relative_humidity_2m": 80
+          "error": "fetch_failed"
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -1.2,
-          "surface_pressure": 998.7,
-          "wind_speed_10m": 12.11,
-          "relative_humidity_2m": 86
+          "error": "fetch_failed"
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -26.6,
-          "surface_pressure": 725.6,
-          "wind_speed_10m": 5.22,
-          "relative_humidity_2m": 67
+          "error": "fetch_failed"
         }
       ]
     },
