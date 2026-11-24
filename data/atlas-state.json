@@ -1,15 +1,41 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-11-24T10:05:55.630Z",
+    "generatedAt": "2026-11-24T22:34:35.420Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 10,
+      "count": 12,
       "maxMagnitude": 6.8,
       "events": [
+        {
+          "id": "aka2026xhgksb",
+          "magnitude": 4.2,
+          "place": "10 km WSW of Point MacKenzie, Alaska",
+          "time": "2026-11-24T16:37:31.591Z",
+          "coordinates": [
+            -150.154,
+            61.32,
+            44.6
+          ],
+          "tsunami": false,
+          "significance": 622
+        },
+        {
+          "id": "us6000ud6h",
+          "magnitude": 6.4,
+          "place": "Mauritius - Reunion region",
+          "time": "2026-11-24T11:06:14.036Z",
+          "coordinates": [
+            65.6995,
+            -17.7049,
+            10
+          ],
+          "tsunami": false,
+          "significance": 630
+        },
         {
           "id": "us6000ucvm",
           "magnitude": 6.5,
@@ -104,11 +130,11 @@
         {
           "id": "us7000tymu",
           "magnitude": 6.6,
-          "place": "149 km WSW of Tual, Indonesia",
-          "time": "2026-11-16T21:11:20.488Z",
+          "place": "147 km WSW of Tual, Indonesia",
+          "time": "2026-11-16T21:11:20.489Z",
           "coordinates": [
-            131.4593,
-            -6.0208,
+            131.4829,
+            -6.0196,
             68
           ],
           "tsunami": false,
@@ -759,55 +785,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -17.2,
-          "surface_pressure": 1019.6,
-          "wind_speed_10m": 9.53,
-          "relative_humidity_2m": 87
+          "temperature_2m": -17,
+          "surface_pressure": 1030.8,
+          "wind_speed_10m": 6.33,
+          "relative_humidity_2m": 90
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 10.3,
-          "surface_pressure": 1018.2,
-          "wind_speed_10m": 7.15,
-          "relative_humidity_2m": 74
+          "temperature_2m": 13.1,
+          "surface_pressure": 1007.2,
+          "wind_speed_10m": 14.91,
+          "relative_humidity_2m": 89
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 19.6,
-          "surface_pressure": 913.5,
-          "wind_speed_10m": 2.56,
-          "relative_humidity_2m": 97
+          "temperature_2m": 21.9,
+          "surface_pressure": 912.4,
+          "wind_speed_10m": 2.28,
+          "relative_humidity_2m": 90
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 28.5,
-          "surface_pressure": 1009.9,
-          "wind_speed_10m": 2.12,
-          "relative_humidity_2m": 80
+          "temperature_2m": 27.1,
+          "surface_pressure": 1011.3,
+          "wind_speed_10m": 4.11,
+          "relative_humidity_2m": 84
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": -1.2,
-          "surface_pressure": 1008.1,
-          "wind_speed_10m": 5.77,
-          "relative_humidity_2m": 91
+          "temperature_2m": -1,
+          "surface_pressure": 1003.5,
+          "wind_speed_10m": 5.63,
+          "relative_humidity_2m": 93
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -25.5,
-          "surface_pressure": 729.4,
-          "wind_speed_10m": 7.41,
-          "relative_humidity_2m": 60
+          "temperature_2m": -27.1,
+          "surface_pressure": 727,
+          "wind_speed_10m": 8.54,
+          "relative_humidity_2m": 58
         }
       ]
     },
