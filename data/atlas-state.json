@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-11-23T07:53:52.699Z",
+    "generatedAt": "2026-11-24T00:01:20.153Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -99,7 +99,7 @@
             132.362
           ],
           "tsunami": false,
-          "significance": 617
+          "significance": 618
         },
         {
           "id": "us7000tymu",
@@ -156,10 +156,10 @@
       ]
     },
     "hazards": {
-      "totalActive": 43,
+      "totalActive": 42,
       "byCategory": {
         "Sea and Lake Ice": 11,
-        "Wildfires": 30,
+        "Wildfires": 29,
         "Severe Storms": 2
       },
       "events": [
@@ -773,37 +773,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "error": "fetch_failed"
+          "temperature_2m": -16.7,
+          "surface_pressure": 1010.6,
+          "wind_speed_10m": 7.79,
+          "relative_humidity_2m": 85
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "error": "fetch_failed"
+          "temperature_2m": 9.8,
+          "surface_pressure": 1015.3,
+          "wind_speed_10m": 12.4,
+          "relative_humidity_2m": 71
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "error": "fetch_failed"
+          "temperature_2m": 20.9,
+          "surface_pressure": 913.1,
+          "wind_speed_10m": 2.05,
+          "relative_humidity_2m": 92
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "error": "fetch_failed"
+          "temperature_2m": 26.9,
+          "surface_pressure": 1013.5,
+          "wind_speed_10m": 2.42,
+          "relative_humidity_2m": 86
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "error": "fetch_failed"
+          "temperature_2m": -1.2,
+          "surface_pressure": 1006.9,
+          "wind_speed_10m": 7.32,
+          "relative_humidity_2m": 93
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "error": "fetch_failed"
+          "temperature_2m": -28.7,
+          "surface_pressure": 726.4,
+          "wind_speed_10m": 6.14,
+          "relative_humidity_2m": 66
         }
       ]
     },
