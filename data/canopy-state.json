@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-11-24T00:25:11.811Z",
+    "generatedAt": "2026-11-24T10:30:33.288Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -13,20 +13,20 @@
   },
   "synthesis": {
     "hazardSummary": {
-      "totalEvents": 53,
+      "totalEvents": 56,
       "categories": {
+        "Wildfires": 33,
         "Sea and Lake Ice": 11,
-        "Wildfires": 29,
         "Severe Storms": 2
       },
-      "seismicCount": 11,
+      "seismicCount": 10,
       "maxMagnitude": 6.8
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": 1.83,
-      "minTemperature_2m": -28.7,
-      "maxTemperature_2m": 26.9
+      "avgTemperature_2m": 2.42,
+      "minTemperature_2m": -25.5,
+      "maxTemperature_2m": 28.5
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -40,19 +40,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-11-23T23:48:44.647Z",
-        "generated_date": "2026-11-23",
+        "generated": "2026-11-24T09:43:31.226Z",
+        "generated_date": "2026-11-24",
         "script_version": "1.1",
         "window_days": 14,
-        "window_start": "2026-11-09",
-        "window_end": "2026-11-23",
-        "runtime_ms": 1623,
+        "window_start": "2026-11-10",
+        "window_end": "2026-11-24",
+        "runtime_ms": 400,
         "seismic_live": true,
         "eonet_live": true
       },
       "threat": {
         "level": "CRITICAL",
-        "score": 17.8
+        "score": 18.85
       },
       "seismic": {
         "events": [
@@ -257,12 +257,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000txqr"
           },
           {
-            "id": "us7000tx8d",
-            "magnitude": 5.4,
-            "place": "Pulau Pulau Tanimbar, Indonesia",
-            "time": "2026-11-10T01:53:24.195Z",
+            "id": "us6000ud3i",
+            "magnitude": 5.3,
+            "place": "67 km WNW of Mangan, India",
+            "time": "2026-11-24T01:32:42.417Z",
             "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tx8d"
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ud3i"
           },
           {
             "id": "us6000uc2q",
@@ -303,14 +303,6 @@
             "time": "2026-11-18T00:46:31.418Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tyw6"
-          },
-          {
-            "id": "us7000tx9n",
-            "magnitude": 5.3,
-            "place": "northern Mid-Atlantic Ridge",
-            "time": "2026-11-10T06:43:10.592Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tx9n"
           },
           {
             "id": "us6000ucky",
@@ -423,14 +415,6 @@
             "time": "2026-11-10T17:36:28.861Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000txc3"
-          },
-          {
-            "id": "us7000tx8s",
-            "magnitude": 5.2,
-            "place": "19 km WSW of Lata, Solomon Islands",
-            "time": "2026-11-10T03:37:46.152Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tx8s"
           },
           {
             "id": "us6000ucrp",
@@ -671,14 +655,6 @@
             "time": "2026-11-10T19:54:18.234Z",
             "depth_km": 12.3,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000txea"
-          },
-          {
-            "id": "us7000tx9z",
-            "magnitude": 5,
-            "place": "58 km NE of Fef, Indonesia",
-            "time": "2026-11-10T08:34:07.131Z",
-            "depth_km": 35,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tx9z"
           },
           {
             "id": "us6000ucw1",
@@ -927,22 +903,6 @@
             "time": "2026-11-11T19:21:15.400Z",
             "depth_km": 18.8,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000txmq"
-          },
-          {
-            "id": "us7000tx96",
-            "magnitude": 4.9,
-            "place": "83 km ESE of Takahagi, Japan",
-            "time": "2026-11-10T05:20:08.393Z",
-            "depth_km": 35,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tx96"
-          },
-          {
-            "id": "us7000tx8i",
-            "magnitude": 4.9,
-            "place": "north of Franz Josef Land",
-            "time": "2026-11-10T02:00:03.024Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tx8i"
           },
           {
             "id": "us6000ucyd",
@@ -1313,6 +1273,14 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000txay"
           },
           {
+            "id": "us6000ud2y",
+            "magnitude": 4.6,
+            "place": "130 km SSW of Merizo Village, Guam",
+            "time": "2026-11-23T21:25:33.408Z",
+            "depth_km": 35,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ud2y"
+          },
+          {
             "id": "us6000ucy7",
             "magnitude": 4.6,
             "place": "30 km SW of Finschhafen, Papua New Guinea",
@@ -1545,20 +1513,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tz2n"
           },
           {
-            "id": "us7000tx9i",
-            "magnitude": 4.6,
-            "place": "89 km SSE of Tateyama, Japan",
-            "time": "2026-11-10T06:36:48.820Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tx9i"
-          },
-          {
-            "id": "us7000tx8z",
-            "magnitude": 4.6,
-            "place": "65 km SW of Lata, Solomon Islands",
-            "time": "2026-11-10T04:30:17.109Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tx8z"
+            "id": "us6000ud3m",
+            "magnitude": 4.5,
+            "place": "9 km NNW of La Tronosa, Panama",
+            "time": "2026-11-24T01:55:57.417Z",
+            "depth_km": 15.7,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ud3m"
           },
           {
             "id": "us6000ucxy",
@@ -1799,17 +1759,9 @@
             "time": "2026-11-10T22:15:10.031Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000txf9"
-          },
-          {
-            "id": "us7000txa7",
-            "magnitude": 4.5,
-            "place": "203 km W of Abepura, Indonesia",
-            "time": "2026-11-10T00:11:22.956Z",
-            "depth_km": 35,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000txa7"
           }
         ],
-        "count_total": 219,
+        "count_total": 213,
         "count_m55_plus": 18,
         "count_m60_plus": 5,
         "count_m70_plus": 0,
@@ -1825,10 +1777,32 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-11-23T23:48:43.358Z"
+        "retrieved": "2026-11-24T09:43:30.993Z"
       },
       "wildfire": {
         "events": [
+          {
+            "id": "EONET_26661",
+            "title": "Wildfire Little Ridge, Highland, Virginia",
+            "type": "WILDFIRE",
+            "time": "2026-11-21T23:15:00.000Z",
+            "coords": [
+              -79.791,
+              38.314
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_26662",
+            "title": "Wildfire White Oak Flat, Alleghany, Virginia",
+            "type": "WILDFIRE",
+            "time": "2026-11-20T13:16:00.000Z",
+            "coords": [
+              -79.862,
+              37.842
+            ],
+            "closed": null
+          },
           {
             "id": "EONET_26568",
             "title": "Wildfire Greene - Caney Creek Lane, Greene, Tennessee",
@@ -1881,6 +1855,17 @@
             "coords": [
               -120.5,
               38.619
+            ],
+            "closed": null
+          },
+          {
+            "id": "EONET_26665",
+            "title": "Prescribed Fire RX D7 Second Skinny Landings, Mineral, Montana",
+            "type": "WILDFIRE",
+            "time": "2026-11-16T09:41:00.000Z",
+            "coords": [
+              -114.752,
+              47.123
             ],
             "closed": null
           },
@@ -1995,7 +1980,7 @@
             "closed": null
           }
         ],
-        "count": 15
+        "count": 18
       },
       "storm": {
         "events": [
@@ -2036,13 +2021,13 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-11-24T00:01:20.153Z",
+        "generatedAt": "2026-11-24T10:05:55.630Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
       "layers": {
         "seismic": {
-          "count": 11,
+          "count": 10,
           "maxMagnitude": 6.8,
           "events": [
             {
@@ -2174,30 +2159,57 @@
               ],
               "tsunami": false,
               "significance": 630
-            },
-            {
-              "id": "us6000u4r9",
-              "magnitude": 6.5,
-              "place": "Bonin Islands, Japan region",
-              "time": "2026-10-25T02:09:22.321Z",
-              "coordinates": [
-                139.7102,
-                27.8093,
-                475
-              ],
-              "tsunami": true,
-              "significance": 650
             }
           ]
         },
         "hazards": {
-          "totalActive": 42,
+          "totalActive": 46,
           "byCategory": {
+            "Wildfires": 33,
             "Sea and Lake Ice": 11,
-            "Wildfires": 29,
             "Severe Storms": 2
           },
           "events": [
+            {
+              "id": "EONET_26661",
+              "title": "Wildfire Little Ridge, Highland, Virginia",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 900,
+                "magnitudeUnit": "acres",
+                "date": "2026-11-21T23:15:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -79.791367,
+                  38.313617
+                ]
+              }
+            },
+            {
+              "id": "EONET_26662",
+              "title": "Wildfire White Oak Flat, Alleghany, Virginia",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 2237,
+                "magnitudeUnit": "acres",
+                "date": "2026-11-20T13:16:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -79.862117,
+                  37.8422
+                ]
+              }
+            },
             {
               "id": "EONET_5359",
               "title": "Iceberg A76C",
@@ -2355,6 +2367,26 @@
                 "coordinates": [
                   -120.50025,
                   38.619383
+                ]
+              }
+            },
+            {
+              "id": "EONET_26665",
+              "title": "Prescribed Fire RX D7 Second Skinny Landings, Mineral, Montana",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 542,
+                "magnitudeUnit": "acres",
+                "date": "2026-11-16T09:41:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -114.752017,
+                  47.122717
                 ]
               }
             },
@@ -2599,6 +2631,26 @@
               }
             },
             {
+              "id": "EONET_26663",
+              "title": "Prescribed Fire 3R RX - ROCKY MP, Stevens, Washington",
+              "categories": [
+                "Wildfires"
+              ],
+              "sources": [
+                "IRWIN"
+              ],
+              "geometry": {
+                "magnitudeValue": 550,
+                "magnitudeUnit": "acres",
+                "date": "2026-11-09T11:50:00Z",
+                "type": "Point",
+                "coordinates": [
+                  -117.618779,
+                  48.387611
+                ]
+              }
+            },
+            {
               "id": "EONET_2736",
               "title": "Iceberg B22A",
               "categories": [
@@ -2718,87 +2770,6 @@
                   35.266667
                 ]
               }
-            },
-            {
-              "id": "EONET_6051",
-              "title": "Iceberg C39",
-              "categories": [
-                "Sea and Lake Ice"
-              ],
-              "sources": [
-                "NATICE"
-              ],
-              "geometry": {
-                "magnitudeValue": 24,
-                "magnitudeUnit": "NM^2",
-                "date": "2026-11-20T00:00:00Z",
-                "type": "Point",
-                "coordinates": [
-                  54,
-                  -65.32
-                ]
-              }
-            },
-            {
-              "id": "EONET_6320",
-              "title": "Iceberg A81",
-              "categories": [
-                "Sea and Lake Ice"
-              ],
-              "sources": [
-                "NATICE"
-              ],
-              "geometry": {
-                "magnitudeValue": 700,
-                "magnitudeUnit": "NM^2",
-                "date": "2026-11-20T00:00:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -34.64,
-                  -54.58
-                ]
-              }
-            },
-            {
-              "id": "EONET_6424",
-              "title": "Iceberg D33B",
-              "categories": [
-                "Sea and Lake Ice"
-              ],
-              "sources": [
-                "NATICE"
-              ],
-              "geometry": {
-                "magnitudeValue": 252,
-                "magnitudeUnit": "NM^2",
-                "date": "2026-11-20T00:00:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -36.91,
-                  -55.17
-                ]
-              }
-            },
-            {
-              "id": "EONET_6523",
-              "title": "Iceberg A83",
-              "categories": [
-                "Sea and Lake Ice"
-              ],
-              "sources": [
-                "EO",
-                "NATICE"
-              ],
-              "geometry": {
-                "magnitudeValue": 84,
-                "magnitudeUnit": "NM^2",
-                "date": "2026-11-20T00:00:00Z",
-                "type": "Point",
-                "coordinates": [
-                  -48.93,
-                  -59.4
-                ]
-              }
             }
           ]
         },
@@ -2808,55 +2779,55 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "temperature_2m": -16.7,
-              "surface_pressure": 1010.6,
-              "wind_speed_10m": 7.79,
-              "relative_humidity_2m": 85
+              "temperature_2m": -17.2,
+              "surface_pressure": 1019.6,
+              "wind_speed_10m": 9.53,
+              "relative_humidity_2m": 87
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "temperature_2m": 9.8,
-              "surface_pressure": 1015.3,
-              "wind_speed_10m": 12.4,
-              "relative_humidity_2m": 71
+              "temperature_2m": 10.3,
+              "surface_pressure": 1018.2,
+              "wind_speed_10m": 7.15,
+              "relative_humidity_2m": 74
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "temperature_2m": 20.9,
-              "surface_pressure": 913.1,
-              "wind_speed_10m": 2.05,
-              "relative_humidity_2m": 92
+              "temperature_2m": 19.6,
+              "surface_pressure": 913.5,
+              "wind_speed_10m": 2.56,
+              "relative_humidity_2m": 97
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "temperature_2m": 26.9,
-              "surface_pressure": 1013.5,
-              "wind_speed_10m": 2.42,
-              "relative_humidity_2m": 86
+              "temperature_2m": 28.5,
+              "surface_pressure": 1009.9,
+              "wind_speed_10m": 2.12,
+              "relative_humidity_2m": 80
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
               "temperature_2m": -1.2,
-              "surface_pressure": 1006.9,
-              "wind_speed_10m": 7.32,
-              "relative_humidity_2m": 93
+              "surface_pressure": 1008.1,
+              "wind_speed_10m": 5.77,
+              "relative_humidity_2m": 91
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "temperature_2m": -28.7,
-              "surface_pressure": 726.4,
-              "wind_speed_10m": 6.14,
-              "relative_humidity_2m": 66
+              "temperature_2m": -25.5,
+              "surface_pressure": 729.4,
+              "wind_speed_10m": 7.41,
+              "relative_humidity_2m": 60
             }
           ]
         },
@@ -2874,7 +2845,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-11-24T00:21:11.019Z"
+        "generatedAt": "2026-11-24T10:24:41.184Z"
       },
       "health": {
         "score": 87,
