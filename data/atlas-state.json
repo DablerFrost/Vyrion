@@ -1,13 +1,13 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-11-24T00:01:20.153Z",
+    "generatedAt": "2026-11-24T10:05:55.630Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
   "layers": {
     "seismic": {
-      "count": 11,
+      "count": 10,
       "maxMagnitude": 6.8,
       "events": [
         {
@@ -139,30 +139,57 @@
           ],
           "tsunami": false,
           "significance": 630
-        },
-        {
-          "id": "us6000u4r9",
-          "magnitude": 6.5,
-          "place": "Bonin Islands, Japan region",
-          "time": "2026-10-25T02:09:22.321Z",
-          "coordinates": [
-            139.7102,
-            27.8093,
-            475
-          ],
-          "tsunami": true,
-          "significance": 650
         }
       ]
     },
     "hazards": {
-      "totalActive": 42,
+      "totalActive": 46,
       "byCategory": {
+        "Wildfires": 33,
         "Sea and Lake Ice": 11,
-        "Wildfires": 29,
         "Severe Storms": 2
       },
       "events": [
+        {
+          "id": "EONET_26661",
+          "title": "Wildfire Little Ridge, Highland, Virginia",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 900,
+            "magnitudeUnit": "acres",
+            "date": "2026-11-21T23:15:00Z",
+            "type": "Point",
+            "coordinates": [
+              -79.791367,
+              38.313617
+            ]
+          }
+        },
+        {
+          "id": "EONET_26662",
+          "title": "Wildfire White Oak Flat, Alleghany, Virginia",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 2237,
+            "magnitudeUnit": "acres",
+            "date": "2026-11-20T13:16:00Z",
+            "type": "Point",
+            "coordinates": [
+              -79.862117,
+              37.8422
+            ]
+          }
+        },
         {
           "id": "EONET_5359",
           "title": "Iceberg A76C",
@@ -320,6 +347,26 @@
             "coordinates": [
               -120.50025,
               38.619383
+            ]
+          }
+        },
+        {
+          "id": "EONET_26665",
+          "title": "Prescribed Fire RX D7 Second Skinny Landings, Mineral, Montana",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 542,
+            "magnitudeUnit": "acres",
+            "date": "2026-11-16T09:41:00Z",
+            "type": "Point",
+            "coordinates": [
+              -114.752017,
+              47.122717
             ]
           }
         },
@@ -564,6 +611,26 @@
           }
         },
         {
+          "id": "EONET_26663",
+          "title": "Prescribed Fire 3R RX - ROCKY MP, Stevens, Washington",
+          "categories": [
+            "Wildfires"
+          ],
+          "sources": [
+            "IRWIN"
+          ],
+          "geometry": {
+            "magnitudeValue": 550,
+            "magnitudeUnit": "acres",
+            "date": "2026-11-09T11:50:00Z",
+            "type": "Point",
+            "coordinates": [
+              -117.618779,
+              48.387611
+            ]
+          }
+        },
+        {
           "id": "EONET_2736",
           "title": "Iceberg B22A",
           "categories": [
@@ -683,87 +750,6 @@
               35.266667
             ]
           }
-        },
-        {
-          "id": "EONET_6051",
-          "title": "Iceberg C39",
-          "categories": [
-            "Sea and Lake Ice"
-          ],
-          "sources": [
-            "NATICE"
-          ],
-          "geometry": {
-            "magnitudeValue": 24,
-            "magnitudeUnit": "NM^2",
-            "date": "2026-11-20T00:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              54,
-              -65.32
-            ]
-          }
-        },
-        {
-          "id": "EONET_6320",
-          "title": "Iceberg A81",
-          "categories": [
-            "Sea and Lake Ice"
-          ],
-          "sources": [
-            "NATICE"
-          ],
-          "geometry": {
-            "magnitudeValue": 700,
-            "magnitudeUnit": "NM^2",
-            "date": "2026-11-20T00:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -34.64,
-              -54.58
-            ]
-          }
-        },
-        {
-          "id": "EONET_6424",
-          "title": "Iceberg D33B",
-          "categories": [
-            "Sea and Lake Ice"
-          ],
-          "sources": [
-            "NATICE"
-          ],
-          "geometry": {
-            "magnitudeValue": 252,
-            "magnitudeUnit": "NM^2",
-            "date": "2026-11-20T00:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -36.91,
-              -55.17
-            ]
-          }
-        },
-        {
-          "id": "EONET_6523",
-          "title": "Iceberg A83",
-          "categories": [
-            "Sea and Lake Ice"
-          ],
-          "sources": [
-            "EO",
-            "NATICE"
-          ],
-          "geometry": {
-            "magnitudeValue": 84,
-            "magnitudeUnit": "NM^2",
-            "date": "2026-11-20T00:00:00Z",
-            "type": "Point",
-            "coordinates": [
-              -48.93,
-              -59.4
-            ]
-          }
         }
       ]
     },
@@ -773,55 +759,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": -16.7,
-          "surface_pressure": 1010.6,
-          "wind_speed_10m": 7.79,
-          "relative_humidity_2m": 85
+          "temperature_2m": -17.2,
+          "surface_pressure": 1019.6,
+          "wind_speed_10m": 9.53,
+          "relative_humidity_2m": 87
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 9.8,
-          "surface_pressure": 1015.3,
-          "wind_speed_10m": 12.4,
-          "relative_humidity_2m": 71
+          "temperature_2m": 10.3,
+          "surface_pressure": 1018.2,
+          "wind_speed_10m": 7.15,
+          "relative_humidity_2m": 74
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 20.9,
-          "surface_pressure": 913.1,
-          "wind_speed_10m": 2.05,
-          "relative_humidity_2m": 92
+          "temperature_2m": 19.6,
+          "surface_pressure": 913.5,
+          "wind_speed_10m": 2.56,
+          "relative_humidity_2m": 97
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 26.9,
-          "surface_pressure": 1013.5,
-          "wind_speed_10m": 2.42,
-          "relative_humidity_2m": 86
+          "temperature_2m": 28.5,
+          "surface_pressure": 1009.9,
+          "wind_speed_10m": 2.12,
+          "relative_humidity_2m": 80
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
           "temperature_2m": -1.2,
-          "surface_pressure": 1006.9,
-          "wind_speed_10m": 7.32,
-          "relative_humidity_2m": 93
+          "surface_pressure": 1008.1,
+          "wind_speed_10m": 5.77,
+          "relative_humidity_2m": 91
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -28.7,
-          "surface_pressure": 726.4,
-          "wind_speed_10m": 6.14,
-          "relative_humidity_2m": 66
+          "temperature_2m": -25.5,
+          "surface_pressure": 729.4,
+          "wind_speed_10m": 7.41,
+          "relative_humidity_2m": 60
         }
       ]
     },
