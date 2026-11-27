@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-11-27T09:11:31.454Z",
+    "generatedAt": "2026-11-27T21:40:47.321Z",
     "layersLoaded": 3,
     "layersTotal": 4,
     "layerStatus": {
@@ -13,9 +13,9 @@
   },
   "synthesis": {
     "hazardSummary": {
-      "totalEvents": 56,
+      "totalEvents": 52,
       "categories": {
-        "Wildfires": 32,
+        "Wildfires": 28,
         "Sea and Lake Ice": 11,
         "Severe Storms": 1
       },
@@ -24,9 +24,9 @@
     },
     "atmosphericSummary": {
       "referencePointCount": 6,
-      "avgTemperature_2m": null,
-      "minTemperature_2m": null,
-      "maxTemperature_2m": null
+      "avgTemperature_2m": 5.92,
+      "minTemperature_2m": -23.2,
+      "maxTemperature_2m": 28.4
     },
     "planetaryHealth": {
       "conscienceAvailable": false,
@@ -40,19 +40,19 @@
     },
     "shield": {
       "meta": {
-        "generated": "2026-11-27T08:12:00.772Z",
+        "generated": "2026-11-27T21:10:15.433Z",
         "generated_date": "2026-11-27",
         "script_version": "1.1",
         "window_days": 14,
         "window_start": "2026-11-13",
         "window_end": "2026-11-27",
-        "runtime_ms": 848,
+        "runtime_ms": 759,
         "seismic_live": true,
         "eonet_live": true
       },
       "threat": {
         "level": "CRITICAL",
-        "score": 17.6
+        "score": 16.65
       },
       "seismic": {
         "events": [
@@ -151,14 +151,6 @@
             "time": "2026-11-18T02:22:56.671Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tywi"
-          },
-          {
-            "id": "us7000ty1a",
-            "magnitude": 5.8,
-            "place": "79 km WSW of Changuillo, Peru",
-            "time": "2026-11-13T16:43:02.131Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ty1a"
           },
           {
             "id": "us6000udq5",
@@ -425,22 +417,6 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ty7d"
           },
           {
-            "id": "us7000ty14",
-            "magnitude": 5.2,
-            "place": "79 km NE of Kuqa, China",
-            "time": "2026-11-13T16:17:51.680Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ty14"
-          },
-          {
-            "id": "us7000ty0s",
-            "magnitude": 5.2,
-            "place": "West Chile Rise",
-            "time": "2026-11-13T14:12:47.843Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ty0s"
-          },
-          {
             "id": "us6000udt9",
             "magnitude": 5.1,
             "place": "107 km SSE of Auki, Solomon Islands",
@@ -511,14 +487,6 @@
             "time": "2026-11-13T23:30:38.320Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ty56"
-          },
-          {
-            "id": "us7000ty3q",
-            "magnitude": 5.1,
-            "place": "South Sandwich Islands region",
-            "time": "2026-11-13T19:04:07.703Z",
-            "depth_km": 63.8,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ty3q"
           },
           {
             "id": "us6000udua",
@@ -707,9 +675,9 @@
           {
             "id": "us6000ucni",
             "magnitude": 4.9,
-            "place": "88 km WNW of El Aguilar, Argentina",
-            "time": "2026-11-21T19:03:04.170Z",
-            "depth_km": 209.8,
+            "place": "84 km WNW of El Aguilar, Argentina",
+            "time": "2026-11-21T19:03:03.540Z",
+            "depth_km": 203.9,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucni"
           },
           {
@@ -857,20 +825,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ty4w"
           },
           {
-            "id": "us7000ty3g",
-            "magnitude": 4.9,
-            "place": "south of the Fiji Islands",
-            "time": "2026-11-13T18:55:40.754Z",
-            "depth_km": 563.3,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ty3g"
-          },
-          {
-            "id": "us7000txz3",
-            "magnitude": 4.9,
-            "place": "southeast of the Loyalty Islands",
-            "time": "2026-11-13T09:55:45.053Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000txz3"
+            "id": "us6000udw4",
+            "magnitude": 4.8,
+            "place": "183 km SSE of Vilyuchinsk, Russia",
+            "time": "2026-11-27T11:02:25.335Z",
+            "depth_km": 35.5,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udw4"
           },
           {
             "id": "us6000udm5",
@@ -999,30 +959,6 @@
             "time": "2026-11-15T22:38:18.982Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tygk"
-          },
-          {
-            "id": "us7000ty43",
-            "magnitude": 4.8,
-            "place": "153 km NW of Kavieng, Papua New Guinea",
-            "time": "2026-11-13T19:49:21.768Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ty43"
-          },
-          {
-            "id": "us7000ty16",
-            "magnitude": 4.8,
-            "place": "10 km SW of Guaymate, Dominican Republic",
-            "time": "2026-11-13T16:35:58.400Z",
-            "depth_km": 136.7,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ty16"
-          },
-          {
-            "id": "us7000txzd",
-            "magnitude": 4.8,
-            "place": "59 km WSW of Houma, Tonga",
-            "time": "2026-11-13T11:18:12.734Z",
-            "depth_km": 162.8,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000txzd"
           },
           {
             "id": "us6000udht",
@@ -1425,12 +1361,12 @@
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ty4n"
           },
           {
-            "id": "us7000txz0",
-            "magnitude": 4.6,
-            "place": "84 km E of Barcelona, Philippines",
-            "time": "2026-11-13T09:40:47.087Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000txz0"
+            "id": "us6000udwh",
+            "magnitude": 4.5,
+            "place": "131 km WNW of Neiafu, Tonga",
+            "time": "2026-11-27T12:48:16.841Z",
+            "depth_km": 271.6,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udwh"
           },
           {
             "id": "us6000udqa",
@@ -1511,6 +1447,14 @@
             "time": "2026-11-19T21:49:33.219Z",
             "depth_km": 124.8,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000uc3v"
+          },
+          {
+            "id": "us6000udp6",
+            "magnitude": 4.5,
+            "place": "28 km SE of Ikungi, Tanzania",
+            "time": "2026-11-19T10:03:48.612Z",
+            "depth_km": 10,
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udp6"
           },
           {
             "id": "us7000tz33",
@@ -1639,26 +1583,10 @@
             "time": "2026-11-13T23:58:23.875Z",
             "depth_km": 10,
             "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ty5b"
-          },
-          {
-            "id": "us7000ty3x",
-            "magnitude": 4.5,
-            "place": "9 km WSW of Chaparral, Colombia",
-            "time": "2026-11-13T19:43:17.748Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ty3x"
-          },
-          {
-            "id": "us7000txza",
-            "magnitude": 4.5,
-            "place": "86 km NNE of Lagunas, Peru",
-            "time": "2026-11-13T10:55:12.777Z",
-            "depth_km": 10,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000txza"
           }
         ],
-        "count_total": 200,
-        "count_m55_plus": 20,
+        "count_total": 191,
+        "count_m55_plus": 19,
         "count_m60_plus": 6,
         "count_m70_plus": 0,
         "count_m80_plus": 0,
@@ -1673,7 +1601,7 @@
         "source": "USGS Earthquake Hazards Program",
         "url": "https://earthquake.usgs.gov/",
         "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson",
-        "retrieved": "2026-11-27T08:12:00.178Z"
+        "retrieved": "2026-11-27T21:10:14.773Z"
       },
       "wildfire": {
         "events": [
@@ -1786,31 +1714,9 @@
               31.1
             ],
             "closed": null
-          },
-          {
-            "id": "EONET_26464",
-            "title": "Wildfire 201W, Perry, Mississippi",
-            "type": "WILDFIRE",
-            "time": "2026-11-13T13:31:00.000Z",
-            "coords": [
-              -89.08,
-              31.12
-            ],
-            "closed": null
-          },
-          {
-            "id": "EONET_26469",
-            "title": "Prescribed Fire rx-Northern Scuppernong, Waukesha, Wisconsin",
-            "type": "WILDFIRE",
-            "time": "2026-11-13T10:30:00.000Z",
-            "coords": [
-              -88.483,
-              42.924
-            ],
-            "closed": null
           }
         ],
-        "count": 12
+        "count": 10
       },
       "storm": {
         "events": [
@@ -1840,7 +1746,7 @@
     "atlas": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-11-27T08:48:31.812Z",
+        "generatedAt": "2026-11-27T21:26:38.855Z",
         "sourcesResolved": 3,
         "sourcesTotal": 6
       },
@@ -1860,7 +1766,7 @@
                 44.6
               ],
               "tsunami": false,
-              "significance": 632
+              "significance": 633
             },
             {
               "id": "us6000ud6h",
@@ -2008,9 +1914,9 @@
           ]
         },
         "hazards": {
-          "totalActive": 44,
+          "totalActive": 40,
           "byCategory": {
-            "Wildfires": 32,
+            "Wildfires": 28,
             "Sea and Lake Ice": 11,
             "Severe Storms": 1
           },
@@ -2624,37 +2530,55 @@
               "name": "Arctic",
               "lat": 80,
               "lon": 0,
-              "error": "fetch_failed"
+              "temperature_2m": 0.1,
+              "surface_pressure": 1008.4,
+              "wind_speed_10m": 11,
+              "relative_humidity_2m": 93
             },
             {
               "name": "North Atlantic",
               "lat": 50,
               "lon": -30,
-              "error": "fetch_failed"
+              "temperature_2m": 6.1,
+              "surface_pressure": 1004.9,
+              "wind_speed_10m": 12.7,
+              "relative_humidity_2m": 61
             },
             {
               "name": "Tropics West",
               "lat": 5,
               "lon": -60,
-              "error": "fetch_failed"
+              "temperature_2m": 23.7,
+              "surface_pressure": 912.1,
+              "wind_speed_10m": 2.28,
+              "relative_humidity_2m": 81
             },
             {
               "name": "Tropics East",
               "lat": 5,
               "lon": 100,
-              "error": "fetch_failed"
+              "temperature_2m": 28.4,
+              "surface_pressure": 1011.5,
+              "wind_speed_10m": 2.93,
+              "relative_humidity_2m": 78
             },
             {
               "name": "Southern Ocean",
               "lat": -55,
               "lon": 0,
-              "error": "fetch_failed"
+              "temperature_2m": 0.4,
+              "surface_pressure": 994.6,
+              "wind_speed_10m": 6.82,
+              "relative_humidity_2m": 99
             },
             {
               "name": "Antarctic",
               "lat": -80,
               "lon": 0,
-              "error": "fetch_failed"
+              "temperature_2m": -23.2,
+              "surface_pressure": 735.2,
+              "wind_speed_10m": 6.08,
+              "relative_humidity_2m": 70
             }
           ]
         },
@@ -2672,7 +2596,7 @@
     "root": {
       "meta": {
         "version": "1.0.0",
-        "generatedAt": "2026-11-27T09:03:28.537Z"
+        "generatedAt": "2026-11-27T21:38:01.172Z"
       },
       "health": {
         "score": 87,
