@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0.0",
-    "generatedAt": "2026-11-27T21:26:38.855Z",
+    "generatedAt": "2026-11-28T08:05:29.875Z",
     "sourcesResolved": 3,
     "sourcesTotal": 6
   },
@@ -10,6 +10,19 @@
       "count": 12,
       "maxMagnitude": 6.8,
       "events": [
+        {
+          "id": "aka2026xnvqjt",
+          "magnitude": 4,
+          "place": "10 km WSW of Point MacKenzie, Alaska",
+          "time": "2026-11-28T06:11:42.401Z",
+          "coordinates": [
+            -150.163,
+            61.333,
+            39.5
+          ],
+          "tsunami": true,
+          "significance": 656
+        },
         {
           "id": "aka2026xhgksb",
           "magnitude": 4.2,
@@ -21,7 +34,7 @@
             44.6
           ],
           "tsunami": false,
-          "significance": 633
+          "significance": 636
         },
         {
           "id": "us6000ud6h",
@@ -152,26 +165,13 @@
           ],
           "tsunami": false,
           "significance": 631
-        },
-        {
-          "id": "us7000ttxz",
-          "magnitude": 6.4,
-          "place": "southeast of Easter Island",
-          "time": "2026-10-29T07:49:50.096Z",
-          "coordinates": [
-            -98.0105,
-            -36.4649,
-            10
-          ],
-          "tsunami": false,
-          "significance": 630
         }
       ]
     },
     "hazards": {
-      "totalActive": 40,
+      "totalActive": 39,
       "byCategory": {
-        "Wildfires": 28,
+        "Wildfires": 27,
         "Sea and Lake Ice": 11,
         "Severe Storms": 1
       },
@@ -785,55 +785,55 @@
           "name": "Arctic",
           "lat": 80,
           "lon": 0,
-          "temperature_2m": 0.1,
-          "surface_pressure": 1008.4,
-          "wind_speed_10m": 11,
-          "relative_humidity_2m": 93
+          "temperature_2m": -1.1,
+          "surface_pressure": 1007.4,
+          "wind_speed_10m": 7.94,
+          "relative_humidity_2m": 97
         },
         {
           "name": "North Atlantic",
           "lat": 50,
           "lon": -30,
-          "temperature_2m": 6.1,
-          "surface_pressure": 1004.9,
-          "wind_speed_10m": 12.7,
-          "relative_humidity_2m": 61
+          "temperature_2m": 8.7,
+          "surface_pressure": 1003.7,
+          "wind_speed_10m": 12.79,
+          "relative_humidity_2m": 73
         },
         {
           "name": "Tropics West",
           "lat": 5,
           "lon": -60,
-          "temperature_2m": 23.7,
-          "surface_pressure": 912.1,
-          "wind_speed_10m": 2.28,
-          "relative_humidity_2m": 81
+          "temperature_2m": 20,
+          "surface_pressure": 912.6,
+          "wind_speed_10m": 2.63,
+          "relative_humidity_2m": 96
         },
         {
           "name": "Tropics East",
           "lat": 5,
           "lon": 100,
-          "temperature_2m": 28.4,
-          "surface_pressure": 1011.5,
-          "wind_speed_10m": 2.93,
-          "relative_humidity_2m": 78
+          "temperature_2m": 27.4,
+          "surface_pressure": 1011.3,
+          "wind_speed_10m": 2.97,
+          "relative_humidity_2m": 83
         },
         {
           "name": "Southern Ocean",
           "lat": -55,
           "lon": 0,
-          "temperature_2m": 0.4,
-          "surface_pressure": 994.6,
-          "wind_speed_10m": 6.82,
-          "relative_humidity_2m": 99
+          "temperature_2m": 0.8,
+          "surface_pressure": 974.7,
+          "wind_speed_10m": 16.4,
+          "relative_humidity_2m": 94
         },
         {
           "name": "Antarctic",
           "lat": -80,
           "lon": 0,
-          "temperature_2m": -23.2,
-          "surface_pressure": 735.2,
-          "wind_speed_10m": 6.08,
-          "relative_humidity_2m": 70
+          "temperature_2m": -22.4,
+          "surface_pressure": 736,
+          "wind_speed_10m": 6.03,
+          "relative_humidity_2m": 75
         }
       ]
     },
@@ -841,7 +841,7 @@
       "error": "[NOAA Climate (keyless)] Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
     },
     "oceanHeat": {
-      "error": "[NOAA CRW Ocean Heat] HTTP 404 Not Found"
+      "error": "[NOAA CRW Ocean Heat] fetch failed"
     },
     "cryosphere": {
       "error": "[NSIDC Sea Ice] HTTP 404 Not Found"
